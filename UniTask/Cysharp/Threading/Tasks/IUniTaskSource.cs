@@ -1,6 +1,14 @@
+using System;
+
 namespace Cysharp.Threading.Tasks;
 
-public interface IUniTaskSource<out T> : IUniTaskSource
+public interface IUniTaskSource
 {
-	new T GetResult(short token);
+	UniTaskStatus GetStatus(short token);
+
+	void OnCompleted(Action<object> continuation, object state, short token);
+
+	void GetResult(short token);
+
+	UniTaskStatus UnsafeGetStatus();
 }

@@ -1,41 +1,45 @@
 using System.Collections;
-using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq.Parallel;
 using Unity;
 
 namespace System.Linq;
 
 /// <summary>Represents a parallel sequence.</summary>
-/// <typeparam name="TSource">The type of element in the source sequence.</typeparam>
-public class ParallelQuery<TSource> : ParallelQuery, IEnumerable<TSource>, IEnumerable
+public class ParallelQuery : IEnumerable
 {
-	internal ParallelQuery(QuerySettings settings)
-		: base(settings)
+	private QuerySettings _specifiedSettings;
+
+	internal QuerySettings SpecifiedQuerySettings => _specifiedSettings;
+
+	internal ParallelQuery(QuerySettings specifiedSettings)
 	{
+		_specifiedSettings = specifiedSettings;
 	}
 
-	internal sealed override ParallelQuery<TCastTo> Cast<TCastTo>()
+	[ExcludeFromCodeCoverage]
+	internal virtual ParallelQuery<TCastTo> Cast<TCastTo>()
 	{
-		return this.Select((TSource elem) => (TCastTo)(object)elem);
+		throw new NotSupportedException();
 	}
 
-	internal sealed override ParallelQuery<TCastTo> OfType<TCastTo>()
+	[ExcludeFromCodeCoverage]
+	internal virtual ParallelQuery<TCastTo> OfType<TCastTo>()
 	{
-		return from elem in this
-			where elem is TCastTo
-			select (TCastTo)(object)elem;
+		throw new NotSupportedException();
 	}
 
-	internal override IEnumerator GetEnumeratorUntyped()
+	[ExcludeFromCodeCoverage]
+	internal virtual IEnumerator GetEnumeratorUntyped()
 	{
-		return ((IEnumerable<TSource>)this).GetEnumerator();
+		throw new NotSupportedException();
 	}
 
 	/// <summary>Returns an enumerator that iterates through the sequence.</summary>
 	/// <returns>An enumerator that iterates through the sequence.</returns>
-	public virtual IEnumerator<TSource> GetEnumerator()
+	IEnumerator IEnumerable.GetEnumerator()
 	{
-		throw new NotSupportedException();
+		return GetEnumeratorUntyped();
 	}
 
 	internal ParallelQuery()

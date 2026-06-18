@@ -1,21 +1,25 @@
+using System.Collections;
 using System.Collections.Generic;
 
 namespace System.Linq.Parallel;
 
-internal class ParallelEnumerableWrapper<T> : ParallelQuery<T>
+internal class ParallelEnumerableWrapper : ParallelQuery<object>
 {
-	private readonly IEnumerable<T> _wrappedEnumerable;
+	private readonly IEnumerable _source;
 
-	internal IEnumerable<T> WrappedEnumerable => _wrappedEnumerable;
-
-	internal ParallelEnumerableWrapper(IEnumerable<T> wrappedEnumerable)
+	internal ParallelEnumerableWrapper(IEnumerable source)
 		: base(QuerySettings.Empty)
 	{
-		_wrappedEnumerable = wrappedEnumerable;
+		_source = source;
 	}
 
-	public override IEnumerator<T> GetEnumerator()
+	internal override IEnumerator GetEnumeratorUntyped()
 	{
-		return _wrappedEnumerable.GetEnumerator();
+		return _source.GetEnumerator();
+	}
+
+	public override IEnumerator<object> GetEnumerator()
+	{
+		return new EnumerableWrapperWeakToStrong(_source).GetEnumerator();
 	}
 }

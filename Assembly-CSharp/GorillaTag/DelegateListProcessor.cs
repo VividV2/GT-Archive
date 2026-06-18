@@ -2,12 +2,8 @@ using System;
 
 namespace GorillaTag;
 
-public class DelegateListProcessor<T1, T2> : DelegateListProcessorPlusMinus<DelegateListProcessor<T1, T2>, Action<T1, T2>>
+public class DelegateListProcessor : DelegateListProcessorPlusMinus<DelegateListProcessor, Action>
 {
-	private T1 m_data1;
-
-	private T2 m_data2;
-
 	public DelegateListProcessor()
 	{
 	}
@@ -17,34 +13,18 @@ public class DelegateListProcessor<T1, T2> : DelegateListProcessorPlusMinus<Dele
 	{
 	}
 
-	public void InvokeSafe(in T1 data1, in T2 data2)
+	public void Invoke()
 	{
-		SetData(in data1, in data2);
-		ProcessListSafe();
-		ResetData();
-	}
-
-	public void Invoke(in T1 data1, in T2 data2)
-	{
-		SetData(in data1, in data2);
 		ProcessList();
-		ResetData();
 	}
 
-	protected override void ProcessItem(in Action<T1, T2> item)
+	public void InvokeSafe()
 	{
-		item(m_data1, m_data2);
+		ProcessListSafe();
 	}
 
-	private void SetData(in T1 data1, in T2 data2)
+	protected override void ProcessItem(in Action del)
 	{
-		m_data1 = data1;
-		m_data2 = data2;
-	}
-
-	private void ResetData()
-	{
-		m_data1 = default(T1);
-		m_data2 = default(T2);
+		del();
 	}
 }

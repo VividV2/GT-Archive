@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace UnityEngine.ResourceManagement.AsyncOperations;
 
-public struct AsyncOperationHandle : IEnumerator
+public struct AsyncOperationHandle<TObject> : IEnumerator, IEquatable<AsyncOperationHandle<TObject>>
 {
-	internal IAsyncOperation m_InternalOp;
+	internal AsyncOperationBase<TObject> m_InternalOp;
 
 	private int m_Version;
 
@@ -35,11 +35,11 @@ public struct AsyncOperationHandle : IEnumerator
 			{
 				return "InvalidHandle";
 			}
-			return InternalOp.DebugName;
+			return ((IAsyncOperation)InternalOp).DebugName;
 		}
 	}
 
-	private IAsyncOperation InternalOp
+	internal AsyncOperationBase<TObject> InternalOp
 	{
 		get
 		{
@@ -69,15 +69,27 @@ public struct AsyncOperationHandle : IEnumerator
 
 	internal int ReferenceCount => InternalOp.ReferenceCount;
 
-	public object Result => InternalOp.GetResultAsObject();
+	public TObject Result => InternalOp.Result;
 
 	public AsyncOperationStatus Status => InternalOp.Status;
 
-	public Task<object> Task => InternalOp.Task;
+	public Task<TObject> Task => InternalOp.Task;
 
 	object IEnumerator.Current => Result;
 
-	public event Action<AsyncOperationHandle> Completed
+	public event Action<AsyncOperationHandle<TObject>> Completed
+	{
+		add
+		{
+			InternalOp.Completed += value;
+		}
+		remove
+		{
+			InternalOp.Completed -= value;
+		}
+	}
+
+	public event Action<AsyncOperationHandle> CompletedTypeless
 	{
 		add
 		{
@@ -101,83 +113,16 @@ public struct AsyncOperationHandle : IEnumerator
 		}
 	}
 
-	internal AsyncOperationHandle(IAsyncOperation op)
+	public static implicit operator AsyncOperationHandle(AsyncOperationHandle<TObject> obj)
+	{
+		return new AsyncOperationHandle(obj.m_InternalOp, obj.m_Version, obj.m_LocationName);
+	}
+
+	internal AsyncOperationHandle(AsyncOperationBase<TObject> op)
 	{
 		m_InternalOp = op;
 		m_Version = op?.Version ?? 0;
 		m_LocationName = null;
-	}
-
-	internal AsyncOperationHandle(IAsyncOperation op, int version)
-	{
-		m_InternalOp = op;
-		m_Version = version;
-		m_LocationName = null;
-	}
-
-	internal AsyncOperationHandle(IAsyncOperation op, string locationName)
-	{
-		m_InternalOp = op;
-		m_Version = op?.Version ?? 0;
-		m_LocationName = locationName;
-	}
-
-	internal AsyncOperationHandle(IAsyncOperation op, int version, string locationName)
-	{
-		m_InternalOp = op;
-		m_Version = version;
-		m_LocationName = locationName;
-	}
-
-	internal AsyncOperationHandle Acquire()
-	{
-		InternalOp.IncrementReferenceCount();
-		return this;
-	}
-
-	public void ReleaseHandleOnCompletion()
-	{
-		Completed += delegate(AsyncOperationHandle op)
-		{
-			op.Release();
-		};
-	}
-
-	public AsyncOperationHandle<T> Convert<T>()
-	{
-		return new AsyncOperationHandle<T>(InternalOp, m_Version, m_LocationName);
-	}
-
-	public bool Equals(AsyncOperationHandle other)
-	{
-		if (m_Version == other.m_Version)
-		{
-			return m_InternalOp == other.m_InternalOp;
-		}
-		return false;
-	}
-
-	public void GetDependencies(List<AsyncOperationHandle> deps)
-	{
-		InternalOp.GetDependencies(deps);
-	}
-
-	public override int GetHashCode()
-	{
-		if (m_InternalOp != null)
-		{
-			return m_InternalOp.GetHashCode() * 17 + m_Version;
-		}
-		return 0;
-	}
-
-	public bool IsValid()
-	{
-		if (m_InternalOp != null)
-		{
-			return m_InternalOp.Version == m_Version;
-		}
-		return false;
 	}
 
 	public DownloadStatus GetDownloadStatus()
@@ -201,6 +146,94 @@ public struct AsyncOperationHandle : IEnumerator
 		return InternalOp.GetDownloadStatus(visited);
 	}
 
+	internal AsyncOperationHandle(IAsyncOperation op)
+	{
+		m_InternalOp = (AsyncOperationBase<TObject>)op;
+		m_Version = op?.Version ?? 0;
+		m_LocationName = null;
+	}
+
+	internal AsyncOperationHandle(IAsyncOperation op, int version)
+	{
+		m_InternalOp = (AsyncOperationBase<TObject>)op;
+		m_Version = version;
+		m_LocationName = null;
+	}
+
+	internal AsyncOperationHandle(IAsyncOperation op, string locationName)
+	{
+		m_InternalOp = (AsyncOperationBase<TObject>)op;
+		m_Version = op?.Version ?? 0;
+		m_LocationName = locationName;
+	}
+
+	internal AsyncOperationHandle(IAsyncOperation op, int version, string locationName)
+	{
+		m_InternalOp = (AsyncOperationBase<TObject>)op;
+		m_Version = version;
+		m_LocationName = locationName;
+	}
+
+	internal AsyncOperationHandle<TObject> Acquire()
+	{
+		InternalOp.IncrementReferenceCount();
+		return this;
+	}
+
+	public void ReleaseHandleOnCompletion()
+	{
+		Completed += delegate(AsyncOperationHandle<TObject> op)
+		{
+			op.Release();
+		};
+	}
+
+	public void GetDependencies(List<AsyncOperationHandle> deps)
+	{
+		InternalOp.GetDependencies(deps);
+	}
+
+	public bool Equals(AsyncOperationHandle<TObject> other)
+	{
+		if (m_Version == other.m_Version)
+		{
+			return m_InternalOp == other.m_InternalOp;
+		}
+		return false;
+	}
+
+	public override int GetHashCode()
+	{
+		if (m_InternalOp != null)
+		{
+			return m_InternalOp.GetHashCode() * 17 + m_Version;
+		}
+		return 0;
+	}
+
+	public TObject WaitForCompletion()
+	{
+		if (IsValid() && !InternalOp.IsDone)
+		{
+			InternalOp.WaitForCompletion();
+		}
+		m_InternalOp?.m_RM?.Update(Time.unscaledDeltaTime);
+		if (IsValid())
+		{
+			return Result;
+		}
+		return default(TObject);
+	}
+
+	public bool IsValid()
+	{
+		if (m_InternalOp != null)
+		{
+			return m_InternalOp.Version == m_Version;
+		}
+		return false;
+	}
+
 	public void Release()
 	{
 		InternalOp.DecrementReferenceCount();
@@ -214,18 +247,5 @@ public struct AsyncOperationHandle : IEnumerator
 
 	void IEnumerator.Reset()
 	{
-	}
-
-	public object WaitForCompletion()
-	{
-		if (IsValid() && !InternalOp.IsDone)
-		{
-			InternalOp.WaitForCompletion();
-		}
-		if (IsValid())
-		{
-			return Result;
-		}
-		return null;
 	}
 }
