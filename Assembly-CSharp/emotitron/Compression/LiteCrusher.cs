@@ -1,23 +1,17 @@
 using System;
-using UnityEngine;
 
 namespace emotitron.Compression;
 
 [Serializable]
-public abstract class LiteCrusher
+public abstract class LiteCrusher<T> : LiteCrusher where T : struct
 {
-	[SerializeField]
-	protected int bits;
+	public abstract ulong Encode(T val);
 
-	public static int GetBitsForMaxValue(uint maxvalue)
-	{
-		for (int i = 0; i < 32; i++)
-		{
-			if (maxvalue >> i == 0)
-			{
-				return i;
-			}
-		}
-		return 32;
-	}
+	public abstract T Decode(uint val);
+
+	public abstract ulong WriteValue(T val, byte[] buffer, ref int bitposition);
+
+	public abstract void WriteCValue(uint val, byte[] buffer, ref int bitposition);
+
+	public abstract T ReadValue(byte[] buffer, ref int bitposition);
 }

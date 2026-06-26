@@ -1,182 +1,86 @@
 using System;
-using System.Collections.Generic;
 using Unity.Properties.Internal;
 
 namespace Unity.Properties;
 
-public static class PropertyBag
+public abstract class PropertyBag<TContainer> : IPropertyBag<TContainer>, IPropertyBag, IPropertyBagRegister, IConstructor<TContainer>, IConstructor
 {
-	public static void AcceptWithSpecializedVisitor<TContainer>(IPropertyBag<TContainer> properties, IPropertyBagVisitor visitor, ref TContainer container)
+	InstantiationKind IConstructor.InstantiationKind => InstantiationKind;
+
+	protected virtual InstantiationKind InstantiationKind { get; } = InstantiationKind.Activator;
+
+	static PropertyBag()
 	{
-		if (properties == null)
+		if (!TypeTraits.IsContainer(typeof(TContainer)))
 		{
-			throw new ArgumentNullException("properties");
-		}
-		if (!(properties is IDictionaryPropertyBagAccept<TContainer> dictionaryPropertyBagAccept) || !(visitor is IDictionaryPropertyBagVisitor visitor2))
-		{
-			if (!(properties is IListPropertyBagAccept<TContainer> listPropertyBagAccept) || !(visitor is IListPropertyBagVisitor visitor3))
-			{
-				if (!(properties is ISetPropertyBagAccept<TContainer> setPropertyBagAccept) || !(visitor is ISetPropertyBagVisitor visitor4))
-				{
-					if (properties is ICollectionPropertyBagAccept<TContainer> collectionPropertyBagAccept && visitor is ICollectionPropertyBagVisitor visitor5)
-					{
-						collectionPropertyBagAccept.Accept(visitor5, ref container);
-					}
-					else
-					{
-						properties.Accept(visitor, ref container);
-					}
-				}
-				else
-				{
-					setPropertyBagAccept.Accept(visitor4, ref container);
-				}
-			}
-			else
-			{
-				listPropertyBagAccept.Accept(visitor3, ref container);
-			}
-		}
-		else
-		{
-			dictionaryPropertyBagAccept.Accept(visitor2, ref container);
+			throw new InvalidOperationException($"Failed to create a property bag for Type=[{typeof(TContainer)}]. The type is not a valid container type.");
 		}
 	}
 
-	public static void Register<TContainer>(PropertyBag<TContainer> propertyBag)
+	void IPropertyBagRegister.Register()
 	{
-		PropertyBagStore.AddPropertyBag(propertyBag);
+		PropertyBagStore.AddPropertyBag(this);
 	}
 
-	public static void RegisterArray<TElement>()
+	public void Accept(ITypeVisitor visitor)
 	{
-		if (PropertyBagStore.TypedStore<IPropertyBag<TElement[]>>.PropertyBag == null)
+		if (visitor == null)
 		{
-			PropertyBagStore.AddPropertyBag(new ArrayPropertyBag<TElement>());
+			throw new ArgumentNullException("visitor");
 		}
+		visitor.Visit<TContainer>();
 	}
 
-	public static void RegisterArray<TContainer, TElement>()
+	void IPropertyBag.Accept(IPropertyBagVisitor visitor, ref object container)
 	{
-		RegisterArray<TElement>();
-	}
-
-	public static void RegisterList<TElement>()
-	{
-		if (PropertyBagStore.TypedStore<IPropertyBag<TElement[]>>.PropertyBag == null)
+		if (container == null)
 		{
-			PropertyBagStore.AddPropertyBag(new ListPropertyBag<TElement>());
+			throw new ArgumentNullException("container");
 		}
-	}
-
-	public static void RegisterList<TContainer, TElement>()
-	{
-		RegisterList<TElement>();
-	}
-
-	public static void RegisterHashSet<TElement>()
-	{
-		if (PropertyBagStore.TypedStore<IPropertyBag<HashSet<TElement>>>.PropertyBag == null)
+		if (!(container is TContainer container2) || 1 == 0)
 		{
-			PropertyBagStore.AddPropertyBag(new HashSetPropertyBag<TElement>());
+			throw new ArgumentException($"The given ContainerType=[{container.GetType()}] does not match the PropertyBagType=[{typeof(TContainer)}]");
 		}
+		PropertyBag.AcceptWithSpecializedVisitor(this, visitor, ref container2);
+		container = container2;
 	}
 
-	public static void RegisterHashSet<TContainer, TElement>()
+	void IPropertyBag<TContainer>.Accept(IPropertyBagVisitor visitor, ref TContainer container)
 	{
-		RegisterHashSet<TElement>();
+		visitor.Visit(this, ref container);
 	}
 
-	public static void RegisterDictionary<TKey, TValue>()
+	PropertyCollection<TContainer> IPropertyBag<TContainer>.GetProperties()
 	{
-		if (PropertyBagStore.TypedStore<IPropertyBag<Dictionary<TKey, TValue>>>.PropertyBag == null)
-		{
-			PropertyBagStore.AddPropertyBag(new DictionaryPropertyBag<TKey, TValue>());
-		}
+		return GetProperties();
 	}
 
-	public static void RegisterDictionary<TContainer, TKey, TValue>()
+	PropertyCollection<TContainer> IPropertyBag<TContainer>.GetProperties(ref TContainer container)
 	{
-		RegisterDictionary<TKey, TValue>();
+		return GetProperties(ref container);
 	}
 
-	public static void RegisterIList<TList, TElement>() where TList : IList<TElement>
+	TContainer IConstructor<TContainer>.Instantiate()
 	{
-		if (PropertyBagStore.TypedStore<IPropertyBag<TList>>.PropertyBag == null)
-		{
-			PropertyBagStore.AddPropertyBag(new IndexedCollectionPropertyBag<TList, TElement>());
-		}
+		return Instantiate();
 	}
 
-	public static void RegisterIList<TContainer, TList, TElement>() where TList : IList<TElement>
+	public abstract PropertyCollection<TContainer> GetProperties();
+
+	public abstract PropertyCollection<TContainer> GetProperties(ref TContainer container);
+
+	protected virtual TContainer Instantiate()
 	{
-		RegisterIList<TList, TElement>();
+		return default(TContainer);
 	}
 
-	public static void RegisterISet<TSet, TElement>() where TSet : ISet<TElement>
+	public TContainer CreateInstance()
 	{
-		if (PropertyBagStore.TypedStore<IPropertyBag<TSet>>.PropertyBag == null)
-		{
-			PropertyBagStore.AddPropertyBag(new SetPropertyBagBase<TSet, TElement>());
-		}
+		return TypeUtility.Instantiate<TContainer>();
 	}
 
-	public static void RegisterISet<TContainer, TSet, TElement>() where TSet : ISet<TElement>
+	public bool TryCreateInstance(out TContainer instance)
 	{
-		RegisterISet<TSet, TElement>();
-	}
-
-	public static void RegisterIDictionary<TDictionary, TKey, TValue>() where TDictionary : IDictionary<TKey, TValue>
-	{
-		if (PropertyBagStore.TypedStore<IPropertyBag<TDictionary>>.PropertyBag == null)
-		{
-			PropertyBagStore.AddPropertyBag(new KeyValueCollectionPropertyBag<TDictionary, TKey, TValue>());
-			PropertyBagStore.AddPropertyBag(new KeyValuePairPropertyBag<TKey, TValue>());
-		}
-	}
-
-	public static void RegisterIDictionary<TContainer, TDictionary, TKey, TValue>() where TDictionary : IDictionary<TKey, TValue>
-	{
-		RegisterIDictionary<TDictionary, TKey, TValue>();
-	}
-
-	public static TContainer CreateInstance<TContainer>()
-	{
-		IPropertyBag<TContainer> propertyBag = PropertyBagStore.GetPropertyBag<TContainer>();
-		if (propertyBag == null)
-		{
-			throw new MissingPropertyBagException(typeof(TContainer));
-		}
-		return propertyBag.CreateInstance();
-	}
-
-	public static IPropertyBag GetPropertyBag(Type type)
-	{
-		return PropertyBagStore.GetPropertyBag(type);
-	}
-
-	public static IPropertyBag<TContainer> GetPropertyBag<TContainer>()
-	{
-		return PropertyBagStore.GetPropertyBag<TContainer>();
-	}
-
-	public static bool TryGetPropertyBagForValue<TValue>(ref TValue value, out IPropertyBag propertyBag)
-	{
-		return PropertyBagStore.TryGetPropertyBagForValue(ref value, out propertyBag);
-	}
-
-	public static bool Exists<TContainer>()
-	{
-		return PropertyBagStore.Exists<TContainer>();
-	}
-
-	public static bool Exists(Type type)
-	{
-		return PropertyBagStore.Exists(type);
-	}
-
-	public static IEnumerable<Type> GetAllTypesWithAPropertyBag()
-	{
-		return PropertyBagStore.AllTypes;
+		return TypeUtility.TryInstantiate<TContainer>(out instance);
 	}
 }

@@ -5,13 +5,13 @@ namespace Fusion.CodeGen;
 
 [Serializable]
 [WeaverGenerated]
-internal class UnityValueSurrogate@ReaderWriter@Fusion_NetworkString`1<Fusion__128> : UnityValueSurrogate<NetworkString<_128>, ReaderWriter@Fusion_NetworkString`1<Fusion__128>>
+internal class UnityValueSurrogate@ReaderWriter@Fusion_NetworkString`1<Fusion__32> : UnityValueSurrogate<NetworkString<_32>, ReaderWriter@Fusion_NetworkString`1<Fusion__32>>
 {
 	[WeaverGenerated]
-	public NetworkString<_128> Data;
+	public NetworkString<_32> Data;
 
 	[WeaverGenerated]
-	public override NetworkString<_128> DataProperty
+	public override NetworkString<_32> DataProperty
 	{
 		[WeaverGenerated]
 		get
@@ -26,7 +26,7 @@ internal class UnityValueSurrogate@ReaderWriter@Fusion_NetworkString`1<Fusion__1
 	}
 
 	[WeaverGenerated]
-	public UnityValueSurrogate@ReaderWriter@Fusion_NetworkString`1<Fusion__128>()
+	public UnityValueSurrogate@ReaderWriter@Fusion_NetworkString`1<Fusion__32>()
 	{
 	}
 }

@@ -1,71 +1,35 @@
 using System;
-using WebSocketSharp.Net.WebSockets;
 
 namespace WebSocketSharp.Server;
 
-public abstract class WebSocketServiceHost
+internal class WebSocketServiceHost<TBehavior> : WebSocketServiceHost where TBehavior : WebSocketBehavior, new()
 {
-	private Logger _log;
+	private Func<TBehavior> _creator;
 
-	private string _path;
+	public override Type BehaviorType => typeof(TBehavior);
 
-	private WebSocketSessionManager _sessions;
-
-	internal ServerState State => _sessions.State;
-
-	protected Logger Log => _log;
-
-	public bool KeepClean
+	internal WebSocketServiceHost(string path, Action<TBehavior> initializer, Logger log)
+		: base(path, log)
 	{
-		get
+		_creator = createSessionCreator(initializer);
+	}
+
+	private static Func<TBehavior> createSessionCreator(Action<TBehavior> initializer)
+	{
+		if (initializer == null)
 		{
-			return _sessions.KeepClean;
+			return () => new TBehavior();
 		}
-		set
+		return delegate
 		{
-			_sessions.KeepClean = value;
-		}
+			TBehavior val = new TBehavior();
+			initializer(val);
+			return val;
+		};
 	}
 
-	public string Path => _path;
-
-	public WebSocketSessionManager Sessions => _sessions;
-
-	public abstract Type BehaviorType { get; }
-
-	public TimeSpan WaitTime
+	protected override WebSocketBehavior CreateSession()
 	{
-		get
-		{
-			return _sessions.WaitTime;
-		}
-		set
-		{
-			_sessions.WaitTime = value;
-		}
+		return _creator();
 	}
-
-	protected WebSocketServiceHost(string path, Logger log)
-	{
-		_path = path;
-		_log = log;
-		_sessions = new WebSocketSessionManager(log);
-	}
-
-	internal void Start()
-	{
-		_sessions.Start();
-	}
-
-	internal void StartSession(WebSocketContext context)
-	{
-		CreateSession().Start(context, _sessions);
-	}
-
-	internal void Stop(ushort code, string reason)
-	{
-		_sessions.Stop(code, reason);
-	}
-
-	protected abstract WebSocketBehavior CreateSession();
 }

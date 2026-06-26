@@ -1,6 +1,6 @@
 namespace Unity.Properties;
 
-public interface IDictionaryElementProperty : ICollectionElementProperty
+public interface IDictionaryElementProperty<out TKey> : IDictionaryElementProperty, ICollectionElementProperty
 {
-	object ObjectKey { get; }
+	TKey Key { get; }
 }

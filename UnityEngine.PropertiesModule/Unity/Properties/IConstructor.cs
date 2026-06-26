@@ -1,6 +1,6 @@
 namespace Unity.Properties;
 
-internal interface IConstructor
+internal interface IConstructor<out T> : IConstructor
 {
-	InstantiationKind InstantiationKind { get; }
+	T Instantiate();
 }
