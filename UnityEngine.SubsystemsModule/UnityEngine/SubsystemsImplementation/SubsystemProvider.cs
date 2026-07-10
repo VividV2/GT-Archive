@@ -1,15 +1,8 @@
 namespace UnityEngine.SubsystemsImplementation;
 
-public abstract class SubsystemProvider<TSubsystem> : SubsystemProvider where TSubsystem : SubsystemWithProvider, new()
+public abstract class SubsystemProvider
 {
-	protected internal virtual bool TryInitialize()
-	{
-		return true;
-	}
+	internal bool m_Running;
 
-	public abstract void Start();
-
-	public abstract void Stop();
-
-	public abstract void Destroy();
+	public bool running => m_Running;
 }

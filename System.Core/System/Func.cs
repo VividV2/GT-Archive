@@ -1,6 +1,6 @@
 namespace System;
 
-/// <summary>Encapsulates a method that has 16 parameters and returns a value of the type specified by the <paramref name="TResult" /> parameter.</summary>
+/// <summary>Encapsulates a method that has 14 parameters and returns a value of the type specified by the <paramref name="TResult" /> parameter.</summary>
 /// <param name="arg1">The first parameter of the method that this delegate encapsulates.</param>
 /// <param name="arg2">The second parameter of the method that this delegate encapsulates.</param>
 /// <param name="arg3">The third parameter of the method that this delegate encapsulates.</param>
@@ -15,8 +15,6 @@ namespace System;
 /// <param name="arg12">The twelfth parameter of the method that this delegate encapsulates.</param>
 /// <param name="arg13">The thirteenth parameter of the method that this delegate encapsulates.</param>
 /// <param name="arg14">The fourteenth parameter of the method that this delegate encapsulates.</param>
-/// <param name="arg15">The fifteenth parameter of the method that this delegate encapsulates.</param>
-/// <param name="arg16">The sixteenth parameter of the method that this delegate encapsulates.</param>
 /// <typeparam name="T1">The type of the first parameter of the method that this delegate encapsulates.</typeparam>
 /// <typeparam name="T2">The type of the second parameter of the method that this delegate encapsulates.</typeparam>
 /// <typeparam name="T3">The type of the third parameter of the method that this delegate encapsulates.</typeparam>
@@ -31,8 +29,6 @@ namespace System;
 /// <typeparam name="T12">The type of the twelfth parameter of the method that this delegate encapsulates.</typeparam>
 /// <typeparam name="T13">The type of the thirteenth parameter of the method that this delegate encapsulates.</typeparam>
 /// <typeparam name="T14">The type of the fourteenth parameter of the method that this delegate encapsulates.</typeparam>
-/// <typeparam name="T15">The type of the fifteenth parameter of the method that this delegate encapsulates.</typeparam>
-/// <typeparam name="T16">The type of the sixteenth parameter of the method that this delegate encapsulates.</typeparam>
 /// <typeparam name="TResult">The type of the return value of the method that this delegate encapsulates.</typeparam>
 /// <returns>The return value of the method that this delegate encapsulates.</returns>
-public delegate TResult Func<in T1, in T2, in T3, in T4, in T5, in T6, in T7, in T8, in T9, in T10, in T11, in T12, in T13, in T14, in T15, in T16, out TResult>(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14, T15 arg15, T16 arg16);
+public delegate TResult Func<in T1, in T2, in T3, in T4, in T5, in T6, in T7, in T8, in T9, in T10, in T11, in T12, in T13, in T14, out TResult>(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14);

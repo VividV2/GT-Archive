@@ -1,16 +1,8 @@
+using UnityEngine;
+
 namespace XNode;
 
-public class SceneGraph<T> : SceneGraph where T : NodeGraph
+public class SceneGraph : MonoBehaviour
 {
-	public new T graph
-	{
-		get
-		{
-			return base.graph as T;
-		}
-		set
-		{
-			base.graph = value;
-		}
-	}
+	public NodeGraph graph;
 }

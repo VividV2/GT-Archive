@@ -7,15 +7,13 @@ using System.Security;
 namespace Cysharp.Threading.Tasks.CompilerServices;
 
 [StructLayout(LayoutKind.Auto)]
-public struct AsyncUniTaskMethodBuilder<T>
+public struct AsyncUniTaskMethodBuilder
 {
-	private IStateMachineRunnerPromise<T> runnerPromise;
+	private IStateMachineRunnerPromise runnerPromise;
 
 	private Exception ex;
 
-	private T result;
-
-	public UniTask<T> Task
+	public UniTask Task
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[DebuggerHidden]
@@ -27,17 +25,17 @@ public struct AsyncUniTaskMethodBuilder<T>
 			}
 			if (ex != null)
 			{
-				return UniTask.FromException<T>(ex);
+				return UniTask.FromException(ex);
 			}
-			return UniTask.FromResult(result);
+			return UniTask.CompletedTask;
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[DebuggerHidden]
-	public static AsyncUniTaskMethodBuilder<T> Create()
+	public static AsyncUniTaskMethodBuilder Create()
 	{
-		return default(AsyncUniTaskMethodBuilder<T>);
+		return default(AsyncUniTaskMethodBuilder);
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -56,15 +54,11 @@ public struct AsyncUniTaskMethodBuilder<T>
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[DebuggerHidden]
-	public void SetResult(T result)
+	public void SetResult()
 	{
-		if (runnerPromise == null)
+		if (runnerPromise != null)
 		{
-			this.result = result;
-		}
-		else
-		{
-			runnerPromise.SetResult(result);
+			runnerPromise.SetResult();
 		}
 	}
 
@@ -74,7 +68,7 @@ public struct AsyncUniTaskMethodBuilder<T>
 	{
 		if (runnerPromise == null)
 		{
-			AsyncUniTask<TStateMachine, T>.SetStateMachine(ref stateMachine, ref runnerPromise);
+			AsyncUniTask<TStateMachine>.SetStateMachine(ref stateMachine, ref runnerPromise);
 		}
 		Action moveNext = runnerPromise.MoveNext;
 		awaiter.OnCompleted(moveNext);
@@ -87,7 +81,7 @@ public struct AsyncUniTaskMethodBuilder<T>
 	{
 		if (runnerPromise == null)
 		{
-			AsyncUniTask<TStateMachine, T>.SetStateMachine(ref stateMachine, ref runnerPromise);
+			AsyncUniTask<TStateMachine>.SetStateMachine(ref stateMachine, ref runnerPromise);
 		}
 		Action moveNext = runnerPromise.MoveNext;
 		awaiter.UnsafeOnCompleted(moveNext);

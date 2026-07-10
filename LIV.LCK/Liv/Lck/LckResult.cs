@@ -1,6 +1,6 @@
 namespace Liv.Lck;
 
-public class LckResult<T> : ILckResult
+public class LckResult : ILckResult
 {
 	private readonly bool _success;
 
@@ -8,31 +8,26 @@ public class LckResult<T> : ILckResult
 
 	private readonly LckError? _error;
 
-	private readonly T _result;
-
 	public bool Success => _success;
 
 	public string Message => _message;
 
 	public LckError? Error => _error;
 
-	public T Result => _result;
-
-	private LckResult(bool success, string message, LckError? error, T result)
+	private LckResult(bool success, string message, LckError? error)
 	{
 		_success = success;
 		_message = message;
 		_error = error;
-		_result = result;
 	}
 
-	internal static LckResult<T> NewSuccess(T result)
+	internal static LckResult NewSuccess()
 	{
-		return new LckResult<T>(success: true, null, null, result);
+		return new LckResult(success: true, null, null);
 	}
 
-	internal static LckResult<T> NewError(LckError error, string message)
+	internal static LckResult NewError(LckError error, string message)
 	{
-		return new LckResult<T>(success: false, message, error, default(T));
+		return new LckResult(success: false, message, error);
 	}
 }

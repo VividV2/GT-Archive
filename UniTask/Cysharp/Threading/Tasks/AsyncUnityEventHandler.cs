@@ -4,13 +4,13 @@ using UnityEngine.Events;
 
 namespace Cysharp.Threading.Tasks;
 
-public class AsyncUnityEventHandler<T> : IUniTaskSource<T>, IUniTaskSource, IDisposable, IAsyncValueChangedEventHandler<T>, IAsyncEndEditEventHandler<T>, IAsyncEndTextSelectionEventHandler<T>, IAsyncTextSelectionEventHandler<T>, IAsyncDeselectEventHandler<T>, IAsyncSelectEventHandler<T>, IAsyncSubmitEventHandler<T>
+public class AsyncUnityEventHandler : IUniTaskSource, IDisposable, IAsyncClickEventHandler
 {
 	private static Action<object> cancellationCallback = CancellationCallback;
 
-	private readonly UnityAction<T> action;
+	private readonly UnityAction action;
 
-	private readonly UnityEvent<T> unityEvent;
+	private readonly UnityEvent unityEvent;
 
 	private CancellationToken cancellationToken;
 
@@ -20,9 +20,9 @@ public class AsyncUnityEventHandler<T> : IUniTaskSource<T>, IUniTaskSource, IDis
 
 	private bool callOnce;
 
-	private UniTaskCompletionSourceCore<T> core;
+	private UniTaskCompletionSourceCore<AsyncUnit> core;
 
-	public AsyncUnityEventHandler(UnityEvent<T> unityEvent, CancellationToken cancellationToken, bool callOnce)
+	public AsyncUnityEventHandler(UnityEvent unityEvent, CancellationToken cancellationToken, bool callOnce)
 	{
 		this.cancellationToken = cancellationToken;
 		if (cancellationToken.IsCancellationRequested)
@@ -40,85 +40,50 @@ public class AsyncUnityEventHandler<T> : IUniTaskSource<T>, IUniTaskSource, IDis
 		}
 	}
 
-	public UniTask<T> OnInvokeAsync()
+	public UniTask OnInvokeAsync()
 	{
 		core.Reset();
 		if (isDisposed)
 		{
 			core.TrySetCanceled(cancellationToken);
 		}
-		return new UniTask<T>(this, core.Version);
+		return new UniTask(this, core.Version);
 	}
 
-	private void Invoke(T result)
+	private void Invoke()
 	{
-		core.TrySetResult(result);
+		core.TrySetResult(AsyncUnit.Default);
 	}
 
 	private static void CancellationCallback(object state)
 	{
-		((AsyncUnityEventHandler<T>)state).Dispose();
+		((AsyncUnityEventHandler)state).Dispose();
 	}
 
 	public void Dispose()
 	{
-		if (isDisposed)
+		if (!isDisposed)
 		{
-			return;
-		}
-		isDisposed = true;
-		registration.Dispose();
-		if (unityEvent != null)
-		{
-			if (unityEvent is IDisposable disposable)
+			isDisposed = true;
+			registration.Dispose();
+			if (unityEvent != null)
 			{
-				disposable.Dispose();
+				unityEvent.RemoveListener(action);
 			}
-			unityEvent.RemoveListener(action);
+			core.TrySetCanceled(cancellationToken);
 		}
-		core.TrySetCanceled();
 	}
 
-	UniTask<T> IAsyncValueChangedEventHandler<T>.OnValueChangedAsync()
+	UniTask IAsyncClickEventHandler.OnClickAsync()
 	{
 		return OnInvokeAsync();
 	}
 
-	UniTask<T> IAsyncEndEditEventHandler<T>.OnEndEditAsync()
-	{
-		return OnInvokeAsync();
-	}
-
-	UniTask<T> IAsyncEndTextSelectionEventHandler<T>.OnEndTextSelectionAsync()
-	{
-		return OnInvokeAsync();
-	}
-
-	UniTask<T> IAsyncTextSelectionEventHandler<T>.OnTextSelectionAsync()
-	{
-		return OnInvokeAsync();
-	}
-
-	UniTask<T> IAsyncDeselectEventHandler<T>.OnDeselectAsync()
-	{
-		return OnInvokeAsync();
-	}
-
-	UniTask<T> IAsyncSelectEventHandler<T>.OnSelectAsync()
-	{
-		return OnInvokeAsync();
-	}
-
-	UniTask<T> IAsyncSubmitEventHandler<T>.OnSubmitAsync()
-	{
-		return OnInvokeAsync();
-	}
-
-	T IUniTaskSource<T>.GetResult(short token)
+	void IUniTaskSource.GetResult(short token)
 	{
 		try
 		{
-			return core.GetResult(token);
+			core.GetResult(token);
 		}
 		finally
 		{
@@ -127,11 +92,6 @@ public class AsyncUnityEventHandler<T> : IUniTaskSource<T>, IUniTaskSource, IDis
 				Dispose();
 			}
 		}
-	}
-
-	void IUniTaskSource.GetResult(short token)
-	{
-		((IUniTaskSource<T>)this).GetResult(token);
 	}
 
 	UniTaskStatus IUniTaskSource.GetStatus(short token)

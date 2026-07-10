@@ -1,111 +1,125 @@
 using System;
+using UnityEngine;
 
 namespace ExitGames.Client.Photon.StructWrapping;
 
-public class StructWrapper<T> : StructWrapper
+public abstract class StructWrapper : IDisposable
 {
-	internal Pooling pooling;
+	public readonly WrappedType wrappedType;
 
-	internal T value;
+	public readonly Type ttype;
 
-	internal static StructWrapperPool<T> staticPool = new StructWrapperPool<T>(isStaticPool: true);
-
-	public StructWrapperPool<T> ReturnPool { get; internal set; }
-
-	public StructWrapper(Pooling releasing)
-		: base(typeof(T), StructWrapperPool.GetWrappedType(typeof(T)))
+	public StructWrapper(Type ttype, WrappedType wrappedType)
 	{
-		pooling = releasing;
+		this.ttype = ttype;
+		this.wrappedType = wrappedType;
 	}
 
-	public StructWrapper(Pooling releasing, Type tType, WrappedType wType)
-		: base(tType, wType)
+	public abstract object Box();
+
+	public abstract void DisconnectFromPool();
+
+	public abstract void Dispose();
+
+	public abstract string ToString(bool writeType);
+
+	public static implicit operator StructWrapper(bool value)
 	{
-		pooling = releasing;
+		return value.Wrap();
 	}
 
-	public StructWrapper<T> Poke(byte value)
+	public static implicit operator StructWrapper(byte value)
 	{
-		if (pooling == Pooling.Readonly)
-		{
-			throw new InvalidOperationException("Trying to Poke the value of a readonly StructWrapper<byte>. Value cannot be modified.");
-		}
-		return this;
+		return value.Wrap();
 	}
 
-	public StructWrapper<T> Poke(bool value)
+	public static implicit operator StructWrapper(float value)
 	{
-		if (pooling == Pooling.Readonly)
-		{
-			throw new InvalidOperationException("Trying to Poke the value of a readonly StructWrapper<bool>. Value cannot be modified.");
-		}
-		return this;
+		return value.Wrap();
 	}
 
-	public StructWrapper<T> Poke(T value)
+	public static implicit operator StructWrapper(double value)
 	{
-		this.value = value;
-		return this;
+		return value.Wrap();
 	}
 
-	public T Unwrap()
+	public static implicit operator StructWrapper(short value)
 	{
-		T result = value;
-		if (pooling != Pooling.Readonly)
-		{
-			ReturnPool.Release(this);
-		}
-		return result;
+		return value.Wrap();
 	}
 
-	public T Peek()
+	public static implicit operator StructWrapper(int value)
 	{
-		return value;
+		return value.Wrap();
 	}
 
-	public override object Box()
+	public static implicit operator StructWrapper(long value)
 	{
-		T val = value;
-		if (ReturnPool != null)
-		{
-			ReturnPool.Release(this);
-		}
-		return val;
+		return value.Wrap();
 	}
 
-	public override void Dispose()
+	public static implicit operator bool(StructWrapper wrapper)
 	{
-		if ((pooling & Pooling.CheckedOut) == Pooling.CheckedOut && ReturnPool != null)
-		{
-			ReturnPool.Release(this);
-		}
+		return (wrapper as StructWrapper<bool>).Unwrap();
 	}
 
-	public override void DisconnectFromPool()
+	public static implicit operator byte(StructWrapper wrapper)
 	{
-		if (pooling != Pooling.Readonly)
-		{
-			pooling = Pooling.Disconnected;
-			ReturnPool = null;
-		}
+		return (wrapper as StructWrapper<byte>).Unwrap();
 	}
 
-	public override string ToString()
+	public static implicit operator float(StructWrapper wrapper)
 	{
-		return Unwrap().ToString();
+		return (wrapper as StructWrapper<float>).Unwrap();
 	}
 
-	public override string ToString(bool writeTypeInfo)
+	public static implicit operator double(StructWrapper wrapper)
 	{
-		if (writeTypeInfo)
-		{
-			return $"(StructWrapper<{wrappedType}>){Unwrap().ToString()}";
-		}
-		return Unwrap().ToString();
+		return (wrapper as StructWrapper<double>).Unwrap();
 	}
 
-	public static implicit operator StructWrapper<T>(T value)
+	public static implicit operator short(StructWrapper wrapper)
 	{
-		return staticPool.Acquire(value);
+		return (wrapper as StructWrapper<short>).Unwrap();
+	}
+
+	public static implicit operator int(StructWrapper wrapper)
+	{
+		return (wrapper as StructWrapper<int>).Unwrap();
+	}
+
+	public static implicit operator long(StructWrapper wrapper)
+	{
+		return (wrapper as StructWrapper<long>).Unwrap();
+	}
+
+	public static implicit operator StructWrapper(Vector2 value)
+	{
+		return value.Wrap();
+	}
+
+	public static implicit operator StructWrapper(Vector3 value)
+	{
+		return value.Wrap();
+	}
+
+	public static implicit operator StructWrapper(Quaternion value)
+	{
+		return value.Wrap();
+	}
+
+	public static implicit operator Vector2(StructWrapper wrapper)
+	{
+		return (wrapper as StructWrapper<Vector2>).Unwrap();
+	}
+
+	public static implicit operator Vector3(StructWrapper wrapper)
+	{
+		return (wrapper as StructWrapper<Vector3>).Unwrap();
+	}
+
+	public static implicit operator Quaternion(StructWrapper wrapper)
+	{
+		return (wrapper as StructWrapper<Quaternion>).Unwrap();
 	}
 }
