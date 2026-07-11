@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace Cysharp.Threading.Tasks.Linq;
 
-internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumerable<TResult>
+internal class CombineLatest<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult> : IUniTaskAsyncEnumerable<TResult>
 {
 	private class _CombineLatest : MoveNextSource, IUniTaskAsyncEnumerator<TResult>, IUniTaskAsyncDisposable
 	{
@@ -17,7 +17,23 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 
 		private static readonly Action<object> Completed5Delegate = Completed5;
 
-		private const int CompleteCount = 5;
+		private static readonly Action<object> Completed6Delegate = Completed6;
+
+		private static readonly Action<object> Completed7Delegate = Completed7;
+
+		private static readonly Action<object> Completed8Delegate = Completed8;
+
+		private static readonly Action<object> Completed9Delegate = Completed9;
+
+		private static readonly Action<object> Completed10Delegate = Completed10;
+
+		private static readonly Action<object> Completed11Delegate = Completed11;
+
+		private static readonly Action<object> Completed12Delegate = Completed12;
+
+		private static readonly Action<object> Completed13Delegate = Completed13;
+
+		private const int CompleteCount = 13;
 
 		private readonly IUniTaskAsyncEnumerable<T1> source1;
 
@@ -29,7 +45,23 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 
 		private readonly IUniTaskAsyncEnumerable<T5> source5;
 
-		private readonly Func<T1, T2, T3, T4, T5, TResult> resultSelector;
+		private readonly IUniTaskAsyncEnumerable<T6> source6;
+
+		private readonly IUniTaskAsyncEnumerable<T7> source7;
+
+		private readonly IUniTaskAsyncEnumerable<T8> source8;
+
+		private readonly IUniTaskAsyncEnumerable<T9> source9;
+
+		private readonly IUniTaskAsyncEnumerable<T10> source10;
+
+		private readonly IUniTaskAsyncEnumerable<T11> source11;
+
+		private readonly IUniTaskAsyncEnumerable<T12> source12;
+
+		private readonly IUniTaskAsyncEnumerable<T13> source13;
+
+		private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult> resultSelector;
 
 		private CancellationToken cancellationToken;
 
@@ -83,6 +115,86 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 
 		private T5 current5;
 
+		private IUniTaskAsyncEnumerator<T6> enumerator6;
+
+		private UniTask<bool>.Awaiter awaiter6;
+
+		private bool hasCurrent6;
+
+		private bool running6;
+
+		private T6 current6;
+
+		private IUniTaskAsyncEnumerator<T7> enumerator7;
+
+		private UniTask<bool>.Awaiter awaiter7;
+
+		private bool hasCurrent7;
+
+		private bool running7;
+
+		private T7 current7;
+
+		private IUniTaskAsyncEnumerator<T8> enumerator8;
+
+		private UniTask<bool>.Awaiter awaiter8;
+
+		private bool hasCurrent8;
+
+		private bool running8;
+
+		private T8 current8;
+
+		private IUniTaskAsyncEnumerator<T9> enumerator9;
+
+		private UniTask<bool>.Awaiter awaiter9;
+
+		private bool hasCurrent9;
+
+		private bool running9;
+
+		private T9 current9;
+
+		private IUniTaskAsyncEnumerator<T10> enumerator10;
+
+		private UniTask<bool>.Awaiter awaiter10;
+
+		private bool hasCurrent10;
+
+		private bool running10;
+
+		private T10 current10;
+
+		private IUniTaskAsyncEnumerator<T11> enumerator11;
+
+		private UniTask<bool>.Awaiter awaiter11;
+
+		private bool hasCurrent11;
+
+		private bool running11;
+
+		private T11 current11;
+
+		private IUniTaskAsyncEnumerator<T12> enumerator12;
+
+		private UniTask<bool>.Awaiter awaiter12;
+
+		private bool hasCurrent12;
+
+		private bool running12;
+
+		private T12 current12;
+
+		private IUniTaskAsyncEnumerator<T13> enumerator13;
+
+		private UniTask<bool>.Awaiter awaiter13;
+
+		private bool hasCurrent13;
+
+		private bool running13;
+
+		private T13 current13;
+
 		private int completedCount;
 
 		private bool syncRunning;
@@ -91,13 +203,21 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 
 		public TResult Current => result;
 
-		public _CombineLatest(IUniTaskAsyncEnumerable<T1> source1, IUniTaskAsyncEnumerable<T2> source2, IUniTaskAsyncEnumerable<T3> source3, IUniTaskAsyncEnumerable<T4> source4, IUniTaskAsyncEnumerable<T5> source5, Func<T1, T2, T3, T4, T5, TResult> resultSelector, CancellationToken cancellationToken)
+		public _CombineLatest(IUniTaskAsyncEnumerable<T1> source1, IUniTaskAsyncEnumerable<T2> source2, IUniTaskAsyncEnumerable<T3> source3, IUniTaskAsyncEnumerable<T4> source4, IUniTaskAsyncEnumerable<T5> source5, IUniTaskAsyncEnumerable<T6> source6, IUniTaskAsyncEnumerable<T7> source7, IUniTaskAsyncEnumerable<T8> source8, IUniTaskAsyncEnumerable<T9> source9, IUniTaskAsyncEnumerable<T10> source10, IUniTaskAsyncEnumerable<T11> source11, IUniTaskAsyncEnumerable<T12> source12, IUniTaskAsyncEnumerable<T13> source13, Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult> resultSelector, CancellationToken cancellationToken)
 		{
 			this.source1 = source1;
 			this.source2 = source2;
 			this.source3 = source3;
 			this.source4 = source4;
 			this.source5 = source5;
+			this.source6 = source6;
+			this.source7 = source7;
+			this.source8 = source8;
+			this.source9 = source9;
+			this.source10 = source10;
+			this.source11 = source11;
+			this.source12 = source12;
+			this.source13 = source13;
 			this.resultSelector = resultSelector;
 			this.cancellationToken = cancellationToken;
 		}
@@ -105,7 +225,7 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 		public UniTask<bool> MoveNextAsync()
 		{
 			cancellationToken.ThrowIfCancellationRequested();
-			if (completedCount == 5)
+			if (completedCount == 13)
 			{
 				return CompletedTasks.False;
 			}
@@ -116,6 +236,14 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				enumerator3 = source3.GetAsyncEnumerator(cancellationToken);
 				enumerator4 = source4.GetAsyncEnumerator(cancellationToken);
 				enumerator5 = source5.GetAsyncEnumerator(cancellationToken);
+				enumerator6 = source6.GetAsyncEnumerator(cancellationToken);
+				enumerator7 = source7.GetAsyncEnumerator(cancellationToken);
+				enumerator8 = source8.GetAsyncEnumerator(cancellationToken);
+				enumerator9 = source9.GetAsyncEnumerator(cancellationToken);
+				enumerator10 = source10.GetAsyncEnumerator(cancellationToken);
+				enumerator11 = source11.GetAsyncEnumerator(cancellationToken);
+				enumerator12 = source12.GetAsyncEnumerator(cancellationToken);
+				enumerator13 = source13.GetAsyncEnumerator(cancellationToken);
 			}
 			completionSource.Reset();
 			do
@@ -186,8 +314,112 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 						awaiter5.SourceOnCompleted(Completed5Delegate, this);
 					}
 				}
+				if (!running6)
+				{
+					running6 = true;
+					awaiter6 = enumerator6.MoveNextAsync().GetAwaiter();
+					if (awaiter6.IsCompleted)
+					{
+						Completed6(this);
+					}
+					else
+					{
+						awaiter6.SourceOnCompleted(Completed6Delegate, this);
+					}
+				}
+				if (!running7)
+				{
+					running7 = true;
+					awaiter7 = enumerator7.MoveNextAsync().GetAwaiter();
+					if (awaiter7.IsCompleted)
+					{
+						Completed7(this);
+					}
+					else
+					{
+						awaiter7.SourceOnCompleted(Completed7Delegate, this);
+					}
+				}
+				if (!running8)
+				{
+					running8 = true;
+					awaiter8 = enumerator8.MoveNextAsync().GetAwaiter();
+					if (awaiter8.IsCompleted)
+					{
+						Completed8(this);
+					}
+					else
+					{
+						awaiter8.SourceOnCompleted(Completed8Delegate, this);
+					}
+				}
+				if (!running9)
+				{
+					running9 = true;
+					awaiter9 = enumerator9.MoveNextAsync().GetAwaiter();
+					if (awaiter9.IsCompleted)
+					{
+						Completed9(this);
+					}
+					else
+					{
+						awaiter9.SourceOnCompleted(Completed9Delegate, this);
+					}
+				}
+				if (!running10)
+				{
+					running10 = true;
+					awaiter10 = enumerator10.MoveNextAsync().GetAwaiter();
+					if (awaiter10.IsCompleted)
+					{
+						Completed10(this);
+					}
+					else
+					{
+						awaiter10.SourceOnCompleted(Completed10Delegate, this);
+					}
+				}
+				if (!running11)
+				{
+					running11 = true;
+					awaiter11 = enumerator11.MoveNextAsync().GetAwaiter();
+					if (awaiter11.IsCompleted)
+					{
+						Completed11(this);
+					}
+					else
+					{
+						awaiter11.SourceOnCompleted(Completed11Delegate, this);
+					}
+				}
+				if (!running12)
+				{
+					running12 = true;
+					awaiter12 = enumerator12.MoveNextAsync().GetAwaiter();
+					if (awaiter12.IsCompleted)
+					{
+						Completed12(this);
+					}
+					else
+					{
+						awaiter12.SourceOnCompleted(Completed12Delegate, this);
+					}
+				}
+				if (!running13)
+				{
+					running13 = true;
+					awaiter13 = enumerator13.MoveNextAsync().GetAwaiter();
+					if (awaiter13.IsCompleted)
+					{
+						Completed13(this);
+					}
+					else
+					{
+						awaiter13.SourceOnCompleted(Completed13Delegate, this);
+					}
+				}
 			}
-			while (!running1 || !running2 || !running3 || !running4 || !running5);
+			while (!running1 || !running2 || !running3 || !running4 || !running5 || !running6 || !running7 || !running8 || !running9 || !running10 || !running11 || !running12 || !running13);
 			syncRunning = false;
 			return new UniTask<bool>(this, completionSource.Version);
 		}
@@ -202,10 +434,10 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				{
 					combineLatest.hasCurrent1 = true;
 					combineLatest.current1 = combineLatest.enumerator1.Current;
-					goto IL_006f;
+					goto IL_0074;
 				}
 				combineLatest.running1 = true;
-				if (Interlocked.Increment(ref combineLatest.completedCount) != 5)
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
 				{
 					return;
 				}
@@ -213,13 +445,13 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 			catch (Exception error)
 			{
 				combineLatest.running1 = true;
-				combineLatest.completedCount = 5;
+				combineLatest.completedCount = 13;
 				combineLatest.completionSource.TrySetException(error);
 				return;
 			}
 			combineLatest.completionSource.TrySetResult(result: false);
 			return;
-			IL_006f:
+			IL_0074:
 			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
 			{
 				combineLatest.running1 = true;
@@ -229,7 +461,7 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				}
 				catch (Exception error2)
 				{
-					combineLatest.completedCount = 5;
+					combineLatest.completedCount = 13;
 					combineLatest.completionSource.TrySetException(error2);
 					return;
 				}
@@ -247,10 +479,10 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				{
 					combineLatest.hasCurrent2 = true;
 					combineLatest.current2 = combineLatest.enumerator2.Current;
-					goto IL_006f;
+					goto IL_0074;
 				}
 				combineLatest.running2 = true;
-				if (Interlocked.Increment(ref combineLatest.completedCount) != 5)
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
 				{
 					return;
 				}
@@ -258,13 +490,13 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 			catch (Exception error)
 			{
 				combineLatest.running2 = true;
-				combineLatest.completedCount = 5;
+				combineLatest.completedCount = 13;
 				combineLatest.completionSource.TrySetException(error);
 				return;
 			}
 			combineLatest.completionSource.TrySetResult(result: false);
 			return;
-			IL_006f:
+			IL_0074:
 			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
 			{
 				combineLatest.running2 = true;
@@ -274,7 +506,7 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				}
 				catch (Exception error2)
 				{
-					combineLatest.completedCount = 5;
+					combineLatest.completedCount = 13;
 					combineLatest.completionSource.TrySetException(error2);
 					return;
 				}
@@ -292,10 +524,10 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				{
 					combineLatest.hasCurrent3 = true;
 					combineLatest.current3 = combineLatest.enumerator3.Current;
-					goto IL_006f;
+					goto IL_0074;
 				}
 				combineLatest.running3 = true;
-				if (Interlocked.Increment(ref combineLatest.completedCount) != 5)
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
 				{
 					return;
 				}
@@ -303,13 +535,13 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 			catch (Exception error)
 			{
 				combineLatest.running3 = true;
-				combineLatest.completedCount = 5;
+				combineLatest.completedCount = 13;
 				combineLatest.completionSource.TrySetException(error);
 				return;
 			}
 			combineLatest.completionSource.TrySetResult(result: false);
 			return;
-			IL_006f:
+			IL_0074:
 			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
 			{
 				combineLatest.running3 = true;
@@ -319,7 +551,7 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				}
 				catch (Exception error2)
 				{
-					combineLatest.completedCount = 5;
+					combineLatest.completedCount = 13;
 					combineLatest.completionSource.TrySetException(error2);
 					return;
 				}
@@ -337,10 +569,10 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				{
 					combineLatest.hasCurrent4 = true;
 					combineLatest.current4 = combineLatest.enumerator4.Current;
-					goto IL_006f;
+					goto IL_0074;
 				}
 				combineLatest.running4 = true;
-				if (Interlocked.Increment(ref combineLatest.completedCount) != 5)
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
 				{
 					return;
 				}
@@ -348,13 +580,13 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 			catch (Exception error)
 			{
 				combineLatest.running4 = true;
-				combineLatest.completedCount = 5;
+				combineLatest.completedCount = 13;
 				combineLatest.completionSource.TrySetException(error);
 				return;
 			}
 			combineLatest.completionSource.TrySetResult(result: false);
 			return;
-			IL_006f:
+			IL_0074:
 			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
 			{
 				combineLatest.running4 = true;
@@ -364,7 +596,7 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				}
 				catch (Exception error2)
 				{
-					combineLatest.completedCount = 5;
+					combineLatest.completedCount = 13;
 					combineLatest.completionSource.TrySetException(error2);
 					return;
 				}
@@ -382,10 +614,10 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				{
 					combineLatest.hasCurrent5 = true;
 					combineLatest.current5 = combineLatest.enumerator5.Current;
-					goto IL_006f;
+					goto IL_0074;
 				}
 				combineLatest.running5 = true;
-				if (Interlocked.Increment(ref combineLatest.completedCount) != 5)
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
 				{
 					return;
 				}
@@ -393,13 +625,13 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 			catch (Exception error)
 			{
 				combineLatest.running5 = true;
-				combineLatest.completedCount = 5;
+				combineLatest.completedCount = 13;
 				combineLatest.completionSource.TrySetException(error);
 				return;
 			}
 			combineLatest.completionSource.TrySetResult(result: false);
 			return;
-			IL_006f:
+			IL_0074:
 			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
 			{
 				combineLatest.running5 = true;
@@ -409,7 +641,7 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 				}
 				catch (Exception error2)
 				{
-					combineLatest.completedCount = 5;
+					combineLatest.completedCount = 13;
 					combineLatest.completionSource.TrySetException(error2);
 					return;
 				}
@@ -417,11 +649,371 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 			}
 		}
 
+		private static void Completed6(object state)
+		{
+			_CombineLatest combineLatest = (_CombineLatest)state;
+			combineLatest.running6 = false;
+			try
+			{
+				if (combineLatest.awaiter6.GetResult())
+				{
+					combineLatest.hasCurrent6 = true;
+					combineLatest.current6 = combineLatest.enumerator6.Current;
+					goto IL_0074;
+				}
+				combineLatest.running6 = true;
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
+				{
+					return;
+				}
+			}
+			catch (Exception error)
+			{
+				combineLatest.running6 = true;
+				combineLatest.completedCount = 13;
+				combineLatest.completionSource.TrySetException(error);
+				return;
+			}
+			combineLatest.completionSource.TrySetResult(result: false);
+			return;
+			IL_0074:
+			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
+			{
+				combineLatest.running6 = true;
+				try
+				{
+					combineLatest.awaiter6 = combineLatest.enumerator6.MoveNextAsync().GetAwaiter();
+				}
+				catch (Exception error2)
+				{
+					combineLatest.completedCount = 13;
+					combineLatest.completionSource.TrySetException(error2);
+					return;
+				}
+				combineLatest.awaiter6.SourceOnCompleted(Completed6Delegate, combineLatest);
+			}
+		}
+
+		private static void Completed7(object state)
+		{
+			_CombineLatest combineLatest = (_CombineLatest)state;
+			combineLatest.running7 = false;
+			try
+			{
+				if (combineLatest.awaiter7.GetResult())
+				{
+					combineLatest.hasCurrent7 = true;
+					combineLatest.current7 = combineLatest.enumerator7.Current;
+					goto IL_0074;
+				}
+				combineLatest.running7 = true;
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
+				{
+					return;
+				}
+			}
+			catch (Exception error)
+			{
+				combineLatest.running7 = true;
+				combineLatest.completedCount = 13;
+				combineLatest.completionSource.TrySetException(error);
+				return;
+			}
+			combineLatest.completionSource.TrySetResult(result: false);
+			return;
+			IL_0074:
+			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
+			{
+				combineLatest.running7 = true;
+				try
+				{
+					combineLatest.awaiter7 = combineLatest.enumerator7.MoveNextAsync().GetAwaiter();
+				}
+				catch (Exception error2)
+				{
+					combineLatest.completedCount = 13;
+					combineLatest.completionSource.TrySetException(error2);
+					return;
+				}
+				combineLatest.awaiter7.SourceOnCompleted(Completed7Delegate, combineLatest);
+			}
+		}
+
+		private static void Completed8(object state)
+		{
+			_CombineLatest combineLatest = (_CombineLatest)state;
+			combineLatest.running8 = false;
+			try
+			{
+				if (combineLatest.awaiter8.GetResult())
+				{
+					combineLatest.hasCurrent8 = true;
+					combineLatest.current8 = combineLatest.enumerator8.Current;
+					goto IL_0074;
+				}
+				combineLatest.running8 = true;
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
+				{
+					return;
+				}
+			}
+			catch (Exception error)
+			{
+				combineLatest.running8 = true;
+				combineLatest.completedCount = 13;
+				combineLatest.completionSource.TrySetException(error);
+				return;
+			}
+			combineLatest.completionSource.TrySetResult(result: false);
+			return;
+			IL_0074:
+			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
+			{
+				combineLatest.running8 = true;
+				try
+				{
+					combineLatest.awaiter8 = combineLatest.enumerator8.MoveNextAsync().GetAwaiter();
+				}
+				catch (Exception error2)
+				{
+					combineLatest.completedCount = 13;
+					combineLatest.completionSource.TrySetException(error2);
+					return;
+				}
+				combineLatest.awaiter8.SourceOnCompleted(Completed8Delegate, combineLatest);
+			}
+		}
+
+		private static void Completed9(object state)
+		{
+			_CombineLatest combineLatest = (_CombineLatest)state;
+			combineLatest.running9 = false;
+			try
+			{
+				if (combineLatest.awaiter9.GetResult())
+				{
+					combineLatest.hasCurrent9 = true;
+					combineLatest.current9 = combineLatest.enumerator9.Current;
+					goto IL_0074;
+				}
+				combineLatest.running9 = true;
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
+				{
+					return;
+				}
+			}
+			catch (Exception error)
+			{
+				combineLatest.running9 = true;
+				combineLatest.completedCount = 13;
+				combineLatest.completionSource.TrySetException(error);
+				return;
+			}
+			combineLatest.completionSource.TrySetResult(result: false);
+			return;
+			IL_0074:
+			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
+			{
+				combineLatest.running9 = true;
+				try
+				{
+					combineLatest.awaiter9 = combineLatest.enumerator9.MoveNextAsync().GetAwaiter();
+				}
+				catch (Exception error2)
+				{
+					combineLatest.completedCount = 13;
+					combineLatest.completionSource.TrySetException(error2);
+					return;
+				}
+				combineLatest.awaiter9.SourceOnCompleted(Completed9Delegate, combineLatest);
+			}
+		}
+
+		private static void Completed10(object state)
+		{
+			_CombineLatest combineLatest = (_CombineLatest)state;
+			combineLatest.running10 = false;
+			try
+			{
+				if (combineLatest.awaiter10.GetResult())
+				{
+					combineLatest.hasCurrent10 = true;
+					combineLatest.current10 = combineLatest.enumerator10.Current;
+					goto IL_0074;
+				}
+				combineLatest.running10 = true;
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
+				{
+					return;
+				}
+			}
+			catch (Exception error)
+			{
+				combineLatest.running10 = true;
+				combineLatest.completedCount = 13;
+				combineLatest.completionSource.TrySetException(error);
+				return;
+			}
+			combineLatest.completionSource.TrySetResult(result: false);
+			return;
+			IL_0074:
+			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
+			{
+				combineLatest.running10 = true;
+				try
+				{
+					combineLatest.awaiter10 = combineLatest.enumerator10.MoveNextAsync().GetAwaiter();
+				}
+				catch (Exception error2)
+				{
+					combineLatest.completedCount = 13;
+					combineLatest.completionSource.TrySetException(error2);
+					return;
+				}
+				combineLatest.awaiter10.SourceOnCompleted(Completed10Delegate, combineLatest);
+			}
+		}
+
+		private static void Completed11(object state)
+		{
+			_CombineLatest combineLatest = (_CombineLatest)state;
+			combineLatest.running11 = false;
+			try
+			{
+				if (combineLatest.awaiter11.GetResult())
+				{
+					combineLatest.hasCurrent11 = true;
+					combineLatest.current11 = combineLatest.enumerator11.Current;
+					goto IL_0074;
+				}
+				combineLatest.running11 = true;
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
+				{
+					return;
+				}
+			}
+			catch (Exception error)
+			{
+				combineLatest.running11 = true;
+				combineLatest.completedCount = 13;
+				combineLatest.completionSource.TrySetException(error);
+				return;
+			}
+			combineLatest.completionSource.TrySetResult(result: false);
+			return;
+			IL_0074:
+			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
+			{
+				combineLatest.running11 = true;
+				try
+				{
+					combineLatest.awaiter11 = combineLatest.enumerator11.MoveNextAsync().GetAwaiter();
+				}
+				catch (Exception error2)
+				{
+					combineLatest.completedCount = 13;
+					combineLatest.completionSource.TrySetException(error2);
+					return;
+				}
+				combineLatest.awaiter11.SourceOnCompleted(Completed11Delegate, combineLatest);
+			}
+		}
+
+		private static void Completed12(object state)
+		{
+			_CombineLatest combineLatest = (_CombineLatest)state;
+			combineLatest.running12 = false;
+			try
+			{
+				if (combineLatest.awaiter12.GetResult())
+				{
+					combineLatest.hasCurrent12 = true;
+					combineLatest.current12 = combineLatest.enumerator12.Current;
+					goto IL_0074;
+				}
+				combineLatest.running12 = true;
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
+				{
+					return;
+				}
+			}
+			catch (Exception error)
+			{
+				combineLatest.running12 = true;
+				combineLatest.completedCount = 13;
+				combineLatest.completionSource.TrySetException(error);
+				return;
+			}
+			combineLatest.completionSource.TrySetResult(result: false);
+			return;
+			IL_0074:
+			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
+			{
+				combineLatest.running12 = true;
+				try
+				{
+					combineLatest.awaiter12 = combineLatest.enumerator12.MoveNextAsync().GetAwaiter();
+				}
+				catch (Exception error2)
+				{
+					combineLatest.completedCount = 13;
+					combineLatest.completionSource.TrySetException(error2);
+					return;
+				}
+				combineLatest.awaiter12.SourceOnCompleted(Completed12Delegate, combineLatest);
+			}
+		}
+
+		private static void Completed13(object state)
+		{
+			_CombineLatest combineLatest = (_CombineLatest)state;
+			combineLatest.running13 = false;
+			try
+			{
+				if (combineLatest.awaiter13.GetResult())
+				{
+					combineLatest.hasCurrent13 = true;
+					combineLatest.current13 = combineLatest.enumerator13.Current;
+					goto IL_0074;
+				}
+				combineLatest.running13 = true;
+				if (Interlocked.Increment(ref combineLatest.completedCount) != 13)
+				{
+					return;
+				}
+			}
+			catch (Exception error)
+			{
+				combineLatest.running13 = true;
+				combineLatest.completedCount = 13;
+				combineLatest.completionSource.TrySetException(error);
+				return;
+			}
+			combineLatest.completionSource.TrySetResult(result: false);
+			return;
+			IL_0074:
+			if (!combineLatest.TrySetResult() && !combineLatest.syncRunning)
+			{
+				combineLatest.running13 = true;
+				try
+				{
+					combineLatest.awaiter13 = combineLatest.enumerator13.MoveNextAsync().GetAwaiter();
+				}
+				catch (Exception error2)
+				{
+					combineLatest.completedCount = 13;
+					combineLatest.completionSource.TrySetException(error2);
+					return;
+				}
+				combineLatest.awaiter13.SourceOnCompleted(Completed13Delegate, combineLatest);
+			}
+		}
+
 		private bool TrySetResult()
 		{
-			if (hasCurrent1 && hasCurrent2 && hasCurrent3 && hasCurrent4 && hasCurrent5)
+			if (hasCurrent1 && hasCurrent2 && hasCurrent3 && hasCurrent4 && hasCurrent5 && hasCurrent6 && hasCurrent7 && hasCurrent8 && hasCurrent9 && hasCurrent10 && hasCurrent11 && hasCurrent12 && hasCurrent13)
 			{
-				result = resultSelector(current1, current2, current3, current4, current5);
+				result = resultSelector(current1, current2, current3, current4, current5, current6, current7, current8, current9, current10, current11, current12, current13);
 				completionSource.TrySetResult(result: true);
 				return true;
 			}
@@ -450,6 +1042,38 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 			{
 				await enumerator5.DisposeAsync();
 			}
+			if (enumerator6 != null)
+			{
+				await enumerator6.DisposeAsync();
+			}
+			if (enumerator7 != null)
+			{
+				await enumerator7.DisposeAsync();
+			}
+			if (enumerator8 != null)
+			{
+				await enumerator8.DisposeAsync();
+			}
+			if (enumerator9 != null)
+			{
+				await enumerator9.DisposeAsync();
+			}
+			if (enumerator10 != null)
+			{
+				await enumerator10.DisposeAsync();
+			}
+			if (enumerator11 != null)
+			{
+				await enumerator11.DisposeAsync();
+			}
+			if (enumerator12 != null)
+			{
+				await enumerator12.DisposeAsync();
+			}
+			if (enumerator13 != null)
+			{
+				await enumerator13.DisposeAsync();
+			}
 		}
 	}
 
@@ -463,20 +1087,44 @@ internal class CombineLatest<T1, T2, T3, T4, T5, TResult> : IUniTaskAsyncEnumera
 
 	private readonly IUniTaskAsyncEnumerable<T5> source5;
 
-	private readonly Func<T1, T2, T3, T4, T5, TResult> resultSelector;
+	private readonly IUniTaskAsyncEnumerable<T6> source6;
 
-	public CombineLatest(IUniTaskAsyncEnumerable<T1> source1, IUniTaskAsyncEnumerable<T2> source2, IUniTaskAsyncEnumerable<T3> source3, IUniTaskAsyncEnumerable<T4> source4, IUniTaskAsyncEnumerable<T5> source5, Func<T1, T2, T3, T4, T5, TResult> resultSelector)
+	private readonly IUniTaskAsyncEnumerable<T7> source7;
+
+	private readonly IUniTaskAsyncEnumerable<T8> source8;
+
+	private readonly IUniTaskAsyncEnumerable<T9> source9;
+
+	private readonly IUniTaskAsyncEnumerable<T10> source10;
+
+	private readonly IUniTaskAsyncEnumerable<T11> source11;
+
+	private readonly IUniTaskAsyncEnumerable<T12> source12;
+
+	private readonly IUniTaskAsyncEnumerable<T13> source13;
+
+	private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult> resultSelector;
+
+	public CombineLatest(IUniTaskAsyncEnumerable<T1> source1, IUniTaskAsyncEnumerable<T2> source2, IUniTaskAsyncEnumerable<T3> source3, IUniTaskAsyncEnumerable<T4> source4, IUniTaskAsyncEnumerable<T5> source5, IUniTaskAsyncEnumerable<T6> source6, IUniTaskAsyncEnumerable<T7> source7, IUniTaskAsyncEnumerable<T8> source8, IUniTaskAsyncEnumerable<T9> source9, IUniTaskAsyncEnumerable<T10> source10, IUniTaskAsyncEnumerable<T11> source11, IUniTaskAsyncEnumerable<T12> source12, IUniTaskAsyncEnumerable<T13> source13, Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult> resultSelector)
 	{
 		this.source1 = source1;
 		this.source2 = source2;
 		this.source3 = source3;
 		this.source4 = source4;
 		this.source5 = source5;
+		this.source6 = source6;
+		this.source7 = source7;
+		this.source8 = source8;
+		this.source9 = source9;
+		this.source10 = source10;
+		this.source11 = source11;
+		this.source12 = source12;
+		this.source13 = source13;
 		this.resultSelector = resultSelector;
 	}
 
 	public IUniTaskAsyncEnumerator<TResult> GetAsyncEnumerator(CancellationToken cancellationToken = default(CancellationToken))
 	{
-		return new _CombineLatest(source1, source2, source3, source4, source5, resultSelector, cancellationToken);
+		return new _CombineLatest(source1, source2, source3, source4, source5, source6, source7, source8, source9, source10, source11, source12, source13, resultSelector, cancellationToken);
 	}
 }

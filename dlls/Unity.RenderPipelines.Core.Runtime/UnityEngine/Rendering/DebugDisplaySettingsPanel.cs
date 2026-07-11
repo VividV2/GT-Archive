@@ -1,23 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+
 namespace UnityEngine.Rendering;
 
-public abstract class DebugDisplaySettingsPanel<T> : DebugDisplaySettingsPanel where T : IDebugDisplaySettingsData
+public abstract class DebugDisplaySettingsPanel : IDebugDisplaySettingsPanelDisposable, IDebugDisplaySettingsPanel, IDisposable
 {
-	internal T m_Data;
+	private readonly List<DebugUI.Widget> m_Widgets = new List<DebugUI.Widget>();
 
-	public T data
+	private readonly DisplayInfoAttribute m_DisplayInfo;
+
+	public virtual string PanelName => m_DisplayInfo?.name ?? string.Empty;
+
+	public virtual int Order => m_DisplayInfo?.order ?? 0;
+
+	public DebugUI.Widget[] Widgets => m_Widgets.ToArray();
+
+	public virtual DebugUI.Flags Flags => DebugUI.Flags.None;
+
+	protected void AddWidget(DebugUI.Widget widget)
 	{
-		get
+		if (widget == null)
 		{
-			return m_Data;
+			throw new ArgumentNullException("widget");
 		}
-		internal set
-		{
-			m_Data = value;
-		}
+		m_Widgets.Add(widget);
 	}
 
-	protected DebugDisplaySettingsPanel(T data)
+	protected void Clear()
 	{
-		m_Data = data;
+		m_Widgets.Clear();
+	}
+
+	public virtual void Dispose()
+	{
+		Clear();
+	}
+
+	protected DebugDisplaySettingsPanel()
+	{
+		m_DisplayInfo = GetType().GetCustomAttribute<DisplayInfoAttribute>();
+		if (m_DisplayInfo == null)
+		{
+			Debug.Log(string.Format("Type {0} should specify the attribute {1}", GetType(), "DisplayInfoAttribute"));
+		}
 	}
 }

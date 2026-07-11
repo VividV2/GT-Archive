@@ -3,7 +3,7 @@ using System.Buffers;
 
 namespace Cysharp.Text;
 
-public sealed class Utf8PreparedFormat<T1, T2, T3, T4, T5, T6, T7, T8, T9>
+public sealed class Utf8PreparedFormat<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>
 {
 	private readonly Utf8FormatSegment[] segments;
 
@@ -30,12 +30,12 @@ public sealed class Utf8PreparedFormat<T1, T2, T3, T4, T5, T6, T7, T8, T9>
 		MinSize = num;
 	}
 
-	public string Format(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9)
+	public string Format(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14, T15 arg15)
 	{
 		Utf8ValueStringBuilder sb = new Utf8ValueStringBuilder(disposeImmediately: true);
 		try
 		{
-			FormatTo(ref sb, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
+			FormatTo(ref sb, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15);
 			return sb.ToString();
 		}
 		finally
@@ -44,7 +44,7 @@ public sealed class Utf8PreparedFormat<T1, T2, T3, T4, T5, T6, T7, T8, T9>
 		}
 	}
 
-	public void FormatTo<TBufferWriter>(ref TBufferWriter sb, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9) where TBufferWriter : IBufferWriter<byte>
+	public void FormatTo<TBufferWriter>(ref TBufferWriter sb, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14, T15 arg15) where TBufferWriter : IBufferWriter<byte>
 	{
 		Span<byte> span = MemoryExtensions.AsSpan(utf8PreEncodedbuffer);
 		Utf8FormatSegment[] array = segments;
@@ -89,6 +89,24 @@ public sealed class Utf8PreparedFormat<T1, T2, T3, T4, T5, T6, T7, T8, T9>
 				break;
 			case 8:
 				Utf8FormatHelper.FormatTo(ref sb, arg9, utf8FormatSegment.Alignment, utf8FormatSegment.StandardFormat, "arg9");
+				break;
+			case 9:
+				Utf8FormatHelper.FormatTo(ref sb, arg10, utf8FormatSegment.Alignment, utf8FormatSegment.StandardFormat, "arg10");
+				break;
+			case 10:
+				Utf8FormatHelper.FormatTo(ref sb, arg11, utf8FormatSegment.Alignment, utf8FormatSegment.StandardFormat, "arg11");
+				break;
+			case 11:
+				Utf8FormatHelper.FormatTo(ref sb, arg12, utf8FormatSegment.Alignment, utf8FormatSegment.StandardFormat, "arg12");
+				break;
+			case 12:
+				Utf8FormatHelper.FormatTo(ref sb, arg13, utf8FormatSegment.Alignment, utf8FormatSegment.StandardFormat, "arg13");
+				break;
+			case 13:
+				Utf8FormatHelper.FormatTo(ref sb, arg14, utf8FormatSegment.Alignment, utf8FormatSegment.StandardFormat, "arg14");
+				break;
+			case 14:
+				Utf8FormatHelper.FormatTo(ref sb, arg15, utf8FormatSegment.Alignment, utf8FormatSegment.StandardFormat, "arg15");
 				break;
 			}
 		}

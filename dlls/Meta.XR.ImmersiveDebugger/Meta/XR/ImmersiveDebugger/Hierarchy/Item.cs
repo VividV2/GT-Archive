@@ -1,20 +1,80 @@
+using Meta.XR.ImmersiveDebugger.Manager;
 using Meta.XR.ImmersiveDebugger.Utils;
 
 namespace Meta.XR.ImmersiveDebugger.Hierarchy;
 
-internal abstract class Item<T> : Item
+internal abstract class Item
 {
-	protected T _owner;
+	private Item _parent;
 
-	public override object Owner => _owner;
+	private int _depth;
 
-	public T TypedOwner => _owner;
+	protected InstanceHandle _handle;
 
-	public void SetOwner(T owner)
+	public Item Parent => _parent;
+
+	public int Depth => _depth;
+
+	public InstanceHandle Handle => _handle;
+
+	public int Id => Handle.InstanceId;
+
+	public virtual Category Category => new Category
 	{
-		_owner = owner;
-		_handle = BuildHandle();
+		Item = this
+	};
+
+	public bool Dirty { get; set; }
+
+	public abstract object Owner { get; }
+
+	public abstract string Label { get; }
+
+	public abstract bool Valid { get; }
+
+	public void Clear()
+	{
+		ClearContent();
+		ClearChildren();
+		Unregister();
 	}
 
-	protected abstract InstanceHandle BuildHandle();
+	public virtual void Unregister()
+	{
+		DebugManagerAddon<Manager>.Instance.UnprocessItem(this);
+		_parent = null;
+	}
+
+	public virtual void Register(Item parent)
+	{
+		_parent = parent;
+		_depth = (_parent?.Depth ?? (-1)) + 1;
+		DebugManagerAddon<Manager>.Instance.ProcessItem(this);
+	}
+
+	public virtual int ComputeNumberOfChildren()
+	{
+		return 0;
+	}
+
+	public virtual bool ComputeNeedsRefresh()
+	{
+		return false;
+	}
+
+	public virtual void BuildContent()
+	{
+	}
+
+	public virtual void ClearContent()
+	{
+	}
+
+	public virtual void BuildChildren()
+	{
+	}
+
+	public virtual void ClearChildren()
+	{
+	}
 }

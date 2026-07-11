@@ -1,267 +1,562 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using Unity.Collections.LowLevel.Unsafe;
+using UnityEngine.InputSystem.Controls;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.Utilities;
 
 namespace UnityEngine.InputSystem;
 
-public abstract class InputControl<TValue> : InputControl where TValue : struct
+[DebuggerDisplay("{DebuggerDisplay(),nq}")]
+public abstract class InputControl
 {
-	internal InlinedArray<InputProcessor<TValue>> m_ProcessorStack;
+	[Flags]
+	internal enum ControlFlags
+	{
+		ConfigUpToDate = 1,
+		IsNoisy = 2,
+		IsSynthetic = 4,
+		IsButton = 8,
+		DontReset = 0x10,
+		SetupFinished = 0x20,
+		UsesStateFromOtherControl = 0x40
+	}
 
-	private TValue m_CachedValue;
+	protected internal InputStateBlock m_StateBlock;
 
-	private TValue m_UnprocessedCachedValue;
+	internal InternedString m_Name;
 
-	internal bool evaluateProcessorsEveryRead;
+	internal string m_Path;
 
-	public override Type valueType => typeof(TValue);
+	internal string m_DisplayName;
 
-	public override int valueSizeInBytes => UnsafeUtility.SizeOf<TValue>();
+	internal string m_DisplayNameFromLayout;
 
-	public ref readonly TValue value
+	internal string m_ShortDisplayName;
+
+	internal string m_ShortDisplayNameFromLayout;
+
+	internal InternedString m_Layout;
+
+	internal InternedString m_Variants;
+
+	internal InputDevice m_Device;
+
+	internal InputControl m_Parent;
+
+	internal int m_UsageCount;
+
+	internal int m_UsageStartIndex;
+
+	internal int m_AliasCount;
+
+	internal int m_AliasStartIndex;
+
+	internal int m_ChildCount;
+
+	internal int m_ChildStartIndex;
+
+	internal ControlFlags m_ControlFlags;
+
+	internal bool m_CachedValueIsStale = true;
+
+	internal bool m_UnprocessedCachedValueIsStale = true;
+
+	internal PrimitiveValue m_DefaultState;
+
+	internal PrimitiveValue m_MinValue;
+
+	internal PrimitiveValue m_MaxValue;
+
+	internal FourCC m_OptimizedControlDataType;
+
+	public string name => m_Name;
+
+	public string displayName
 	{
 		get
 		{
-			if (!InputSystem.s_Manager.readValueCachingFeatureEnabled || m_CachedValueIsStale || evaluateProcessorsEveryRead)
+			RefreshConfigurationIfNeeded();
+			if (m_DisplayName != null)
 			{
-				m_CachedValue = ProcessValue(unprocessedValue);
-				m_CachedValueIsStale = false;
+				return m_DisplayName;
 			}
-			return ref m_CachedValue;
+			if (m_DisplayNameFromLayout != null)
+			{
+				return m_DisplayNameFromLayout;
+			}
+			return m_Name;
+		}
+		protected set
+		{
+			m_DisplayName = value;
 		}
 	}
 
-	internal unsafe ref readonly TValue unprocessedValue
+	public string shortDisplayName
 	{
 		get
 		{
-			if (base.currentStatePtr == null)
+			RefreshConfigurationIfNeeded();
+			if (m_ShortDisplayName != null)
 			{
-				return ref m_UnprocessedCachedValue;
+				return m_ShortDisplayName;
 			}
-			if (!InputSystem.s_Manager.readValueCachingFeatureEnabled || m_UnprocessedCachedValueIsStale)
+			if (m_ShortDisplayNameFromLayout != null)
 			{
-				m_UnprocessedCachedValue = ReadUnprocessedValueFromState(base.currentStatePtr);
-				m_UnprocessedCachedValueIsStale = false;
+				return m_ShortDisplayNameFromLayout;
 			}
-			return ref m_UnprocessedCachedValue;
+			return null;
+		}
+		protected set
+		{
+			m_ShortDisplayName = value;
 		}
 	}
 
-	internal InputProcessor<TValue>[] processors => m_ProcessorStack.ToArray();
-
-	public TValue ReadValue()
+	public string path
 	{
-		return value;
+		get
+		{
+			if (m_Path == null)
+			{
+				m_Path = InputControlPath.Combine(m_Parent, m_Name);
+			}
+			return m_Path;
+		}
 	}
 
-	public unsafe TValue ReadValueFromPreviousFrame()
+	public string layout => m_Layout;
+
+	public string variants => m_Variants;
+
+	public InputDevice device => m_Device;
+
+	public InputControl parent => m_Parent;
+
+	public ReadOnlyArray<InputControl> children => new ReadOnlyArray<InputControl>(m_Device.m_ChildrenForEachControl, m_ChildStartIndex, m_ChildCount);
+
+	public ReadOnlyArray<InternedString> usages => new ReadOnlyArray<InternedString>(m_Device.m_UsagesForEachControl, m_UsageStartIndex, m_UsageCount);
+
+	public ReadOnlyArray<InternedString> aliases => new ReadOnlyArray<InternedString>(m_Device.m_AliasesForEachControl, m_AliasStartIndex, m_AliasCount);
+
+	public InputStateBlock stateBlock => m_StateBlock;
+
+	public bool noisy
 	{
-		return ReadValueFromState(base.previousFrameStatePtr);
+		get
+		{
+			return (m_ControlFlags & ControlFlags.IsNoisy) != 0;
+		}
+		internal set
+		{
+			if (value)
+			{
+				m_ControlFlags |= ControlFlags.IsNoisy;
+				ReadOnlyArray<InputControl> readOnlyArray = children;
+				for (int i = 0; i < readOnlyArray.Count; i++)
+				{
+					if (readOnlyArray[i] != null)
+					{
+						readOnlyArray[i].noisy = true;
+					}
+				}
+			}
+			else
+			{
+				m_ControlFlags &= ~ControlFlags.IsNoisy;
+			}
+		}
 	}
 
-	public unsafe TValue ReadDefaultValue()
+	public bool synthetic
 	{
-		return ReadValueFromState(base.defaultStatePtr);
+		get
+		{
+			return (m_ControlFlags & ControlFlags.IsSynthetic) != 0;
+		}
+		internal set
+		{
+			if (value)
+			{
+				m_ControlFlags |= ControlFlags.IsSynthetic;
+			}
+			else
+			{
+				m_ControlFlags &= ~ControlFlags.IsSynthetic;
+			}
+		}
 	}
 
-	public unsafe TValue ReadValueFromState(void* statePtr)
+	public InputControl this[string path] => InputControlPath.TryFindChild(this, path) ?? throw new KeyNotFoundException($"Cannot find control '{path}' as child of '{this}'");
+
+	public abstract Type valueType { get; }
+
+	public abstract int valueSizeInBytes { get; }
+
+	public float magnitude => EvaluateMagnitude();
+
+	protected internal unsafe void* currentStatePtr => InputStateBuffers.GetFrontBufferForDevice(GetDeviceIndex());
+
+	protected internal unsafe void* previousFrameStatePtr => InputStateBuffers.GetBackBufferForDevice(GetDeviceIndex());
+
+	protected internal unsafe void* defaultStatePtr => InputStateBuffers.s_DefaultStateBuffer;
+
+	protected internal unsafe void* noiseMaskPtr => InputStateBuffers.s_NoiseMaskBuffer;
+
+	protected internal uint stateOffsetRelativeToDeviceRoot
 	{
-		if (statePtr == null)
+		get
 		{
-			throw new ArgumentNullException("statePtr");
+			uint byteOffset = device.m_StateBlock.byteOffset;
+			return m_StateBlock.byteOffset - byteOffset;
 		}
-		return ProcessValue(ReadUnprocessedValueFromState(statePtr));
 	}
 
-	public unsafe TValue ReadValueFromStateWithCaching(void* statePtr)
+	public FourCC optimizedControlDataType => m_OptimizedControlDataType;
+
+	internal bool isSetupFinished
 	{
-		if (statePtr != base.currentStatePtr)
+		get
 		{
-			return ReadValueFromState(statePtr);
+			return (m_ControlFlags & ControlFlags.SetupFinished) == ControlFlags.SetupFinished;
 		}
-		return value;
+		set
+		{
+			if (value)
+			{
+				m_ControlFlags |= ControlFlags.SetupFinished;
+			}
+			else
+			{
+				m_ControlFlags &= ~ControlFlags.SetupFinished;
+			}
+		}
 	}
 
-	public unsafe TValue ReadUnprocessedValueFromStateWithCaching(void* statePtr)
+	internal bool isButton
 	{
-		if (statePtr != base.currentStatePtr)
+		get
 		{
-			return ReadUnprocessedValueFromState(statePtr);
+			return (m_ControlFlags & ControlFlags.IsButton) == ControlFlags.IsButton;
 		}
-		return unprocessedValue;
+		set
+		{
+			if (value)
+			{
+				m_ControlFlags |= ControlFlags.IsButton;
+			}
+			else
+			{
+				m_ControlFlags &= ~ControlFlags.IsButton;
+			}
+		}
 	}
 
-	public TValue ReadUnprocessedValue()
+	internal bool isConfigUpToDate
 	{
-		return unprocessedValue;
+		get
+		{
+			return (m_ControlFlags & ControlFlags.ConfigUpToDate) == ControlFlags.ConfigUpToDate;
+		}
+		set
+		{
+			if (value)
+			{
+				m_ControlFlags |= ControlFlags.ConfigUpToDate;
+			}
+			else
+			{
+				m_ControlFlags &= ~ControlFlags.ConfigUpToDate;
+			}
+		}
 	}
 
-	public unsafe abstract TValue ReadUnprocessedValueFromState(void* statePtr);
-
-	public unsafe override object ReadValueFromStateAsObject(void* statePtr)
+	internal bool dontReset
 	{
-		return ReadValueFromState(statePtr);
+		get
+		{
+			return (m_ControlFlags & ControlFlags.DontReset) == ControlFlags.DontReset;
+		}
+		set
+		{
+			if (value)
+			{
+				m_ControlFlags |= ControlFlags.DontReset;
+			}
+			else
+			{
+				m_ControlFlags &= ~ControlFlags.DontReset;
+			}
+		}
 	}
 
-	public unsafe override void ReadValueFromStateIntoBuffer(void* statePtr, void* bufferPtr, int bufferSize)
+	internal bool usesStateFromOtherControl
 	{
-		if (statePtr == null)
+		get
 		{
-			throw new ArgumentNullException("statePtr");
+			return (m_ControlFlags & ControlFlags.UsesStateFromOtherControl) == ControlFlags.UsesStateFromOtherControl;
 		}
-		if (bufferPtr == null)
+		set
 		{
-			throw new ArgumentNullException("bufferPtr");
+			if (value)
+			{
+				m_ControlFlags |= ControlFlags.UsesStateFromOtherControl;
+			}
+			else
+			{
+				m_ControlFlags &= ~ControlFlags.UsesStateFromOtherControl;
+			}
 		}
-		int num = UnsafeUtility.SizeOf<TValue>();
-		if (bufferSize < num)
-		{
-			throw new ArgumentException($"bufferSize={bufferSize} < sizeof(TValue)={num}", "bufferSize");
-		}
-		TValue output = ReadValueFromState(statePtr);
-		void* source = UnsafeUtility.AddressOf(ref output);
-		UnsafeUtility.MemCpy(bufferPtr, source, num);
 	}
 
-	public unsafe override void WriteValueFromBufferIntoState(void* bufferPtr, int bufferSize, void* statePtr)
+	internal bool hasDefaultState => !m_DefaultState.isEmpty;
+
+	public override string ToString()
 	{
-		if (bufferPtr == null)
-		{
-			throw new ArgumentNullException("bufferPtr");
-		}
-		if (statePtr == null)
-		{
-			throw new ArgumentNullException("statePtr");
-		}
-		int num = UnsafeUtility.SizeOf<TValue>();
-		if (bufferSize < num)
-		{
-			throw new ArgumentException($"bufferSize={bufferSize} < sizeof(TValue)={num}", "bufferSize");
-		}
-		TValue output = default(TValue);
-		UnsafeUtility.MemCpy(UnsafeUtility.AddressOf(ref output), bufferPtr, num);
-		WriteValueIntoState(output, statePtr);
+		return layout + ":" + path;
 	}
 
-	public unsafe override void WriteValueFromObjectIntoState(object value, void* statePtr)
+	private string DebuggerDisplay()
 	{
-		if (statePtr == null)
+		if (!device.added)
 		{
-			throw new ArgumentNullException("statePtr");
+			return ToString();
 		}
-		if (value == null)
+		try
 		{
-			throw new ArgumentNullException("value");
+			return $"{layout}:{path}={this.ReadValueAsObject()}";
 		}
-		if (!(value is TValue))
+		catch (Exception)
 		{
-			value = Convert.ChangeType(value, typeof(TValue));
+			return ToString();
 		}
-		TValue val = (TValue)value;
-		WriteValueIntoState(val, statePtr);
 	}
 
-	public unsafe virtual void WriteValueIntoState(TValue value, void* statePtr)
+	public unsafe float EvaluateMagnitude()
+	{
+		return EvaluateMagnitude(currentStatePtr);
+	}
+
+	public unsafe virtual float EvaluateMagnitude(void* statePtr)
+	{
+		return -1f;
+	}
+
+	public unsafe abstract object ReadValueFromBufferAsObject(void* buffer, int bufferSize);
+
+	public unsafe abstract object ReadValueFromStateAsObject(void* statePtr);
+
+	public unsafe abstract void ReadValueFromStateIntoBuffer(void* statePtr, void* bufferPtr, int bufferSize);
+
+	public unsafe virtual void WriteValueFromBufferIntoState(void* bufferPtr, int bufferSize, void* statePtr)
 	{
 		throw new NotSupportedException($"Control '{this}' does not support writing");
 	}
 
-	public unsafe override object ReadValueFromBufferAsObject(void* buffer, int bufferSize)
+	public unsafe virtual void WriteValueFromObjectIntoState(object value, void* statePtr)
 	{
-		if (buffer == null)
-		{
-			throw new ArgumentNullException("buffer");
-		}
-		int num = UnsafeUtility.SizeOf<TValue>();
-		if (bufferSize < num)
-		{
-			throw new ArgumentException($"Expecting buffer of at least {num} bytes for value of type {typeof(TValue).Name} but got buffer of only {bufferSize} bytes instead", "bufferSize");
-		}
-		TValue output = default(TValue);
-		UnsafeUtility.MemCpy(UnsafeUtility.AddressOf(ref output), buffer, num);
-		return output;
+		throw new NotSupportedException($"Control '{this}' does not support writing");
 	}
 
-	private unsafe static bool CompareValue(ref TValue firstValue, ref TValue secondValue)
+	public unsafe abstract bool CompareValue(void* firstStatePtr, void* secondStatePtr);
+
+	public InputControl TryGetChildControl(string path)
 	{
-		void* ptr = UnsafeUtility.AddressOf(ref firstValue);
-		void* ptr2 = UnsafeUtility.AddressOf(ref secondValue);
-		return UnsafeUtility.MemCmp(ptr, ptr2, UnsafeUtility.SizeOf<TValue>()) != 0;
+		if (string.IsNullOrEmpty(path))
+		{
+			throw new ArgumentNullException("path");
+		}
+		return InputControlPath.TryFindChild(this, path);
 	}
 
-	public unsafe override bool CompareValue(void* firstStatePtr, void* secondStatePtr)
+	public TControl TryGetChildControl<TControl>(string path) where TControl : InputControl
 	{
-		TValue firstValue = ReadValueFromState(firstStatePtr);
-		TValue secondValue = ReadValueFromState(secondStatePtr);
-		return CompareValue(ref firstValue, ref secondValue);
+		if (string.IsNullOrEmpty(path))
+		{
+			throw new ArgumentNullException("path");
+		}
+		InputControl inputControl = TryGetChildControl(path);
+		if (inputControl == null)
+		{
+			return null;
+		}
+		if (!(inputControl is TControl result))
+		{
+			throw new InvalidOperationException("Expected control '" + path + "' to be of type '" + typeof(TControl).Name + "' but is of type '" + inputControl.GetType().Name + "' instead!");
+		}
+		return result;
+	}
+
+	public InputControl GetChildControl(string path)
+	{
+		if (string.IsNullOrEmpty(path))
+		{
+			throw new ArgumentNullException("path");
+		}
+		return TryGetChildControl(path) ?? throw new ArgumentException("Cannot find input control '" + MakeChildPath(path) + "'", "path");
+	}
+
+	public TControl GetChildControl<TControl>(string path) where TControl : InputControl
+	{
+		InputControl childControl = GetChildControl(path);
+		if (!(childControl is TControl result))
+		{
+			throw new ArgumentException("Expected control '" + path + "' to be of type '" + typeof(TControl).Name + "' but is of type '" + childControl.GetType().Name + "' instead!", "path");
+		}
+		return result;
+	}
+
+	protected InputControl()
+	{
+		m_StateBlock.byteOffset = 4294967294u;
+	}
+
+	protected virtual void FinishSetup()
+	{
+	}
+
+	protected void RefreshConfigurationIfNeeded()
+	{
+		if (!isConfigUpToDate)
+		{
+			RefreshConfiguration();
+			isConfigUpToDate = true;
+		}
+	}
+
+	protected virtual void RefreshConfiguration()
+	{
+	}
+
+	protected virtual FourCC CalculateOptimizedControlDataType()
+	{
+		return 0;
+	}
+
+	public void ApplyParameterChanges()
+	{
+		SetOptimizedControlDataTypeRecursively();
+		for (InputControl inputControl = parent; inputControl != null; inputControl = inputControl.parent)
+		{
+			inputControl.SetOptimizedControlDataType();
+		}
+		MarkAsStaleRecursively();
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public TValue ProcessValue(TValue value)
+	private void SetOptimizedControlDataType()
 	{
-		ProcessValue(ref value);
-		return value;
+		m_OptimizedControlDataType = (InputSystem.s_Manager.optimizedControlsFeatureEnabled ? CalculateOptimizedControlDataType() : ((FourCC)0));
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public void ProcessValue(ref TValue value)
+	internal void SetOptimizedControlDataTypeRecursively()
 	{
-		if (m_ProcessorStack.length <= 0)
+		if (m_ChildCount > 0)
+		{
+			foreach (InputControl child in children)
+			{
+				child.SetOptimizedControlDataTypeRecursively();
+			}
+		}
+		SetOptimizedControlDataType();
+	}
+
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Conditional("UNITY_EDITOR")]
+	internal void EnsureOptimizationTypeHasNotChanged()
+	{
+		if (!InputSystem.s_Manager.optimizedControlsFeatureEnabled)
 		{
 			return;
 		}
-		value = m_ProcessorStack.firstValue.Process(value, this);
-		if (m_ProcessorStack.additionalValues != null)
+		FourCC fourCC = CalculateOptimizedControlDataType();
+		if (fourCC != optimizedControlDataType)
 		{
-			for (int i = 0; i < m_ProcessorStack.length - 1; i++)
-			{
-				value = m_ProcessorStack.additionalValues[i].Process(value, this);
-			}
+			Debug.LogError("Control '" + name + "' / '" + path + "' suddenly changed optimization state due to either format " + $"change or control parameters change (was '{optimizedControlDataType}' but became '{fourCC}'), " + "this hinders control hot path optimization, please call control.ApplyParameterChanges() after the changes to the control to fix this error.");
+			m_OptimizedControlDataType = fourCC;
+		}
+		if (m_ChildCount <= 0)
+		{
+			return;
+		}
+		foreach (InputControl child in children)
+		{
+			_ = child;
 		}
 	}
 
-	internal TProcessor TryGetProcessor<TProcessor>() where TProcessor : InputProcessor<TValue>
+	internal void CallFinishSetupRecursive()
 	{
-		if (m_ProcessorStack.length > 0)
+		ReadOnlyArray<InputControl> readOnlyArray = children;
+		for (int i = 0; i < readOnlyArray.Count; i++)
 		{
-			if (m_ProcessorStack.firstValue is TProcessor result)
-			{
-				return result;
-			}
-			if (m_ProcessorStack.additionalValues != null)
-			{
-				for (int i = 0; i < m_ProcessorStack.length - 1; i++)
-				{
-					if (m_ProcessorStack.additionalValues[i] is TProcessor result2)
-					{
-						return result2;
-					}
-				}
-			}
+			readOnlyArray[i].CallFinishSetupRecursive();
 		}
-		return null;
+		FinishSetup();
+		SetOptimizedControlDataTypeRecursively();
 	}
 
-	internal override void AddProcessor(object processor)
+	internal string MakeChildPath(string path)
 	{
-		if (!(processor is InputProcessor<TValue> inputProcessor))
+		if (this is InputDevice)
 		{
-			throw new ArgumentException("Cannot add processor of type '" + processor.GetType().Name + "' to control of type '" + GetType().Name + "'", "processor");
+			return path;
 		}
-		m_ProcessorStack.Append(inputProcessor);
+		return this.path + "/" + path;
 	}
 
-	protected override void FinishSetup()
+	internal void BakeOffsetIntoStateBlockRecursive(uint offset)
 	{
-		foreach (InputProcessor<TValue> item in m_ProcessorStack)
+		m_StateBlock.byteOffset += offset;
+		ReadOnlyArray<InputControl> readOnlyArray = children;
+		for (int i = 0; i < readOnlyArray.Count; i++)
 		{
-			if (item.cachingPolicy == InputProcessor.CachingPolicy.EvaluateOnEveryRead)
+			readOnlyArray[i].BakeOffsetIntoStateBlockRecursive(offset);
+		}
+	}
+
+	internal int GetDeviceIndex()
+	{
+		int deviceIndex = m_Device.m_DeviceIndex;
+		if (deviceIndex == -1)
+		{
+			throw new InvalidOperationException("Cannot query value of control '" + path + "' before '" + device.name + "' has been added to system!");
+		}
+		return deviceIndex;
+	}
+
+	internal bool IsValueConsideredPressed(float value)
+	{
+		if (isButton)
+		{
+			return ((ButtonControl)this).IsValueConsideredPressed(value);
+		}
+		return value >= ButtonControl.s_GlobalDefaultButtonPressPoint;
+	}
+
+	internal virtual void AddProcessor(object first)
+	{
+	}
+
+	internal void MarkAsStale()
+	{
+		m_CachedValueIsStale = true;
+		m_UnprocessedCachedValueIsStale = true;
+	}
+
+	internal void MarkAsStaleRecursively()
+	{
+		MarkAsStale();
+		foreach (InputControl child in children)
+		{
+			child.MarkAsStale();
+			if (child is ButtonControl buttonControl)
 			{
-				evaluateProcessorsEveryRead = true;
+				buttonControl.UpdateWasPressed();
 			}
 		}
-		base.FinishSetup();
 	}
 }

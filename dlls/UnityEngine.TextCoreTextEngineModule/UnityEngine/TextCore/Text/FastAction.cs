@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace UnityEngine.TextCore.Text;
 
-public class FastAction<A, B, C>
+public class FastAction
 {
-	private LinkedList<Action<A, B, C>> delegates = new LinkedList<Action<A, B, C>>();
+	private LinkedList<Action> delegates = new LinkedList<Action>();
 
-	private Dictionary<Action<A, B, C>, LinkedListNode<Action<A, B, C>>> lookup = new Dictionary<Action<A, B, C>, LinkedListNode<Action<A, B, C>>>();
+	private Dictionary<Action, LinkedListNode<Action>> lookup = new Dictionary<Action, LinkedListNode<Action>>();
 
-	public void Add(Action<A, B, C> rhs)
+	public void Add(Action rhs)
 	{
 		if (!lookup.ContainsKey(rhs))
 		{
@@ -17,7 +17,7 @@ public class FastAction<A, B, C>
 		}
 	}
 
-	public void Remove(Action<A, B, C> rhs)
+	public void Remove(Action rhs)
 	{
 		if (lookup.TryGetValue(rhs, out var value))
 		{
@@ -26,11 +26,11 @@ public class FastAction<A, B, C>
 		}
 	}
 
-	public void Call(A a, B b, C c)
+	public void Call()
 	{
-		for (LinkedListNode<Action<A, B, C>> linkedListNode = delegates.First; linkedListNode != null; linkedListNode = linkedListNode.Next)
+		for (LinkedListNode<Action> linkedListNode = delegates.First; linkedListNode != null; linkedListNode = linkedListNode.Next)
 		{
-			linkedListNode.Value(a, b, c);
+			linkedListNode.Value();
 		}
 	}
 }

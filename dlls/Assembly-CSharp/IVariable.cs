@@ -1,22 +1,6 @@
 using System;
 
-public interface IVariable<T> : IVariable
+public interface IVariable
 {
-	T Value
-	{
-		get
-		{
-			return Get();
-		}
-		set
-		{
-			Set(value);
-		}
-	}
-
-	Type IVariable.ValueType => typeof(T);
-
-	T Get();
-
-	void Set(T value);
+	Type ValueType { get; }
 }
