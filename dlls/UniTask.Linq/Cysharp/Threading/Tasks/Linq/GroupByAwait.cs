@@ -5,15 +5,19 @@ using System.Threading;
 
 namespace Cysharp.Threading.Tasks.Linq;
 
-internal sealed class GroupByAwait<TSource, TKey, TElement> : IUniTaskAsyncEnumerable<IGrouping<TKey, TElement>>
+internal sealed class GroupByAwait<TSource, TKey, TElement, TResult> : IUniTaskAsyncEnumerable<TResult>
 {
-	private sealed class _GroupByAwait : MoveNextSource, IUniTaskAsyncEnumerator<IGrouping<TKey, TElement>>, IUniTaskAsyncDisposable
+	private sealed class _GroupByAwait : MoveNextSource, IUniTaskAsyncEnumerator<TResult>, IUniTaskAsyncDisposable
 	{
+		private static readonly Action<object> ResultSelectCoreDelegate = ResultSelectCore;
+
 		private readonly IUniTaskAsyncEnumerable<TSource> source;
 
 		private readonly Func<TSource, UniTask<TKey>> keySelector;
 
 		private readonly Func<TSource, UniTask<TElement>> elementSelector;
+
+		private readonly Func<TKey, IEnumerable<TElement>, UniTask<TResult>> resultSelector;
 
 		private readonly IEqualityComparer<TKey> comparer;
 
@@ -21,13 +25,16 @@ internal sealed class GroupByAwait<TSource, TKey, TElement> : IUniTaskAsyncEnume
 
 		private IEnumerator<IGrouping<TKey, TElement>> groupEnumerator;
 
-		public IGrouping<TKey, TElement> Current { get; private set; }
+		private UniTask<TResult>.Awaiter awaiter;
 
-		public _GroupByAwait(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, UniTask<TKey>> keySelector, Func<TSource, UniTask<TElement>> elementSelector, IEqualityComparer<TKey> comparer, CancellationToken cancellationToken)
+		public TResult Current { get; private set; }
+
+		public _GroupByAwait(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, UniTask<TKey>> keySelector, Func<TSource, UniTask<TElement>> elementSelector, Func<TKey, IEnumerable<TElement>, UniTask<TResult>> resultSelector, IEqualityComparer<TKey> comparer, CancellationToken cancellationToken)
 		{
 			this.source = source;
 			this.keySelector = keySelector;
 			this.elementSelector = elementSelector;
+			this.resultSelector = resultSelector;
 			this.comparer = comparer;
 			this.cancellationToken = cancellationToken;
 		}
@@ -67,8 +74,16 @@ internal sealed class GroupByAwait<TSource, TKey, TElement> : IUniTaskAsyncEnume
 			{
 				if (groupEnumerator.MoveNext())
 				{
-					Current = groupEnumerator.Current;
-					completionSource.TrySetResult(result: true);
+					IGrouping<TKey, TElement> current = groupEnumerator.Current;
+					awaiter = resultSelector(current.Key, current).GetAwaiter();
+					if (awaiter.IsCompleted)
+					{
+						ResultSelectCore(this);
+					}
+					else
+					{
+						awaiter.SourceOnCompleted(ResultSelectCoreDelegate, this);
+					}
 				}
 				else
 				{
@@ -78,6 +93,16 @@ internal sealed class GroupByAwait<TSource, TKey, TElement> : IUniTaskAsyncEnume
 			catch (Exception error)
 			{
 				completionSource.TrySetException(error);
+			}
+		}
+
+		private static void ResultSelectCore(object state)
+		{
+			_GroupByAwait groupByAwait = (_GroupByAwait)state;
+			if (groupByAwait.TryGetResult(groupByAwait.awaiter, out var result))
+			{
+				groupByAwait.Current = result;
+				groupByAwait.completionSource.TrySetResult(result: true);
 			}
 		}
 
@@ -97,18 +122,21 @@ internal sealed class GroupByAwait<TSource, TKey, TElement> : IUniTaskAsyncEnume
 
 	private readonly Func<TSource, UniTask<TElement>> elementSelector;
 
+	private readonly Func<TKey, IEnumerable<TElement>, UniTask<TResult>> resultSelector;
+
 	private readonly IEqualityComparer<TKey> comparer;
 
-	public GroupByAwait(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, UniTask<TKey>> keySelector, Func<TSource, UniTask<TElement>> elementSelector, IEqualityComparer<TKey> comparer)
+	public GroupByAwait(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, UniTask<TKey>> keySelector, Func<TSource, UniTask<TElement>> elementSelector, Func<TKey, IEnumerable<TElement>, UniTask<TResult>> resultSelector, IEqualityComparer<TKey> comparer)
 	{
 		this.source = source;
 		this.keySelector = keySelector;
 		this.elementSelector = elementSelector;
+		this.resultSelector = resultSelector;
 		this.comparer = comparer;
 	}
 
-	public IUniTaskAsyncEnumerator<IGrouping<TKey, TElement>> GetAsyncEnumerator(CancellationToken cancellationToken = default(CancellationToken))
+	public IUniTaskAsyncEnumerator<TResult> GetAsyncEnumerator(CancellationToken cancellationToken = default(CancellationToken))
 	{
-		return new _GroupByAwait(source, keySelector, elementSelector, comparer, cancellationToken);
+		return new _GroupByAwait(source, keySelector, elementSelector, resultSelector, comparer, cancellationToken);
 	}
 }

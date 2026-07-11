@@ -1,6 +1,12 @@
+using System;
+
 namespace Oculus.Interaction.Input;
 
-public interface IDataSource<TData> : IDataSource
+public interface IDataSource
 {
-	TData GetData();
+	int CurrentDataVersion { get; }
+
+	event Action InputDataAvailable;
+
+	void MarkInputDataRequiresUpdate();
 }

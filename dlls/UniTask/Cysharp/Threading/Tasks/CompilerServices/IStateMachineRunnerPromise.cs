@@ -2,13 +2,13 @@ using System;
 
 namespace Cysharp.Threading.Tasks.CompilerServices;
 
-internal interface IStateMachineRunnerPromise<T> : IUniTaskSource<T>, IUniTaskSource
+internal interface IStateMachineRunnerPromise : IUniTaskSource
 {
 	Action MoveNext { get; }
 
-	UniTask<T> Task { get; }
+	UniTask Task { get; }
 
-	void SetResult(T result);
+	void SetResult();
 
 	void SetException(Exception exception);
 }
