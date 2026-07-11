@@ -1,6 +1,6 @@
 namespace Cysharp.Threading.Tasks;
 
-public interface IResolvePromise<T>
+public interface IResolvePromise
 {
-	bool TrySetResult(T value);
+	bool TrySetResult();
 }

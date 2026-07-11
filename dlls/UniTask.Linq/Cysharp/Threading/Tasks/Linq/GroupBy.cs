@@ -5,9 +5,9 @@ using System.Threading;
 
 namespace Cysharp.Threading.Tasks.Linq;
 
-internal sealed class GroupBy<TSource, TKey, TElement, TResult> : IUniTaskAsyncEnumerable<TResult>
+internal sealed class GroupBy<TSource, TKey, TElement> : IUniTaskAsyncEnumerable<IGrouping<TKey, TElement>>
 {
-	private sealed class _GroupBy : MoveNextSource, IUniTaskAsyncEnumerator<TResult>, IUniTaskAsyncDisposable
+	private sealed class _GroupBy : MoveNextSource, IUniTaskAsyncEnumerator<IGrouping<TKey, TElement>>, IUniTaskAsyncDisposable
 	{
 		private readonly IUniTaskAsyncEnumerable<TSource> source;
 
@@ -15,22 +15,19 @@ internal sealed class GroupBy<TSource, TKey, TElement, TResult> : IUniTaskAsyncE
 
 		private readonly Func<TSource, TElement> elementSelector;
 
-		private readonly Func<TKey, IEnumerable<TElement>, TResult> resultSelector;
-
 		private readonly IEqualityComparer<TKey> comparer;
 
 		private CancellationToken cancellationToken;
 
 		private IEnumerator<IGrouping<TKey, TElement>> groupEnumerator;
 
-		public TResult Current { get; private set; }
+		public IGrouping<TKey, TElement> Current { get; private set; }
 
-		public _GroupBy(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector, IEqualityComparer<TKey> comparer, CancellationToken cancellationToken)
+		public _GroupBy(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer, CancellationToken cancellationToken)
 		{
 			this.source = source;
 			this.keySelector = keySelector;
 			this.elementSelector = elementSelector;
-			this.resultSelector = resultSelector;
 			this.comparer = comparer;
 			this.cancellationToken = cancellationToken;
 		}
@@ -70,8 +67,7 @@ internal sealed class GroupBy<TSource, TKey, TElement, TResult> : IUniTaskAsyncE
 			{
 				if (groupEnumerator.MoveNext())
 				{
-					IGrouping<TKey, TElement> current = groupEnumerator.Current;
-					Current = resultSelector(current.Key, current);
+					Current = groupEnumerator.Current;
 					completionSource.TrySetResult(result: true);
 				}
 				else
@@ -101,21 +97,18 @@ internal sealed class GroupBy<TSource, TKey, TElement, TResult> : IUniTaskAsyncE
 
 	private readonly Func<TSource, TElement> elementSelector;
 
-	private readonly Func<TKey, IEnumerable<TElement>, TResult> resultSelector;
-
 	private readonly IEqualityComparer<TKey> comparer;
 
-	public GroupBy(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector, IEqualityComparer<TKey> comparer)
+	public GroupBy(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)
 	{
 		this.source = source;
 		this.keySelector = keySelector;
 		this.elementSelector = elementSelector;
-		this.resultSelector = resultSelector;
 		this.comparer = comparer;
 	}
 
-	public IUniTaskAsyncEnumerator<TResult> GetAsyncEnumerator(CancellationToken cancellationToken = default(CancellationToken))
+	public IUniTaskAsyncEnumerator<IGrouping<TKey, TElement>> GetAsyncEnumerator(CancellationToken cancellationToken = default(CancellationToken))
 	{
-		return new _GroupBy(source, keySelector, elementSelector, resultSelector, comparer, cancellationToken);
+		return new _GroupBy(source, keySelector, elementSelector, comparer, cancellationToken);
 	}
 }

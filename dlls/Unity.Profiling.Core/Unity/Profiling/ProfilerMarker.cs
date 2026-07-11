@@ -6,13 +6,13 @@ using System.Runtime.InteropServices;
 namespace Unity.Profiling;
 
 [StructLayout(LayoutKind.Sequential, Size = 1)]
-public readonly struct ProfilerMarker<TP1, TP2, TP3> where TP1 : unmanaged where TP2 : unmanaged where TP3 : unmanaged
+public readonly struct ProfilerMarker<TP1> where TP1 : unmanaged
 {
 	[StructLayout(LayoutKind.Sequential, Size = 1)]
 	public readonly struct AutoScope : IDisposable
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal AutoScope(ProfilerMarker<TP1, TP2, TP3> marker, TP1 p1, TP2 p2, TP3 p3)
+		internal AutoScope(ProfilerMarker<TP1> marker, TP1 p1)
 		{
 		}
 
@@ -23,18 +23,18 @@ public readonly struct ProfilerMarker<TP1, TP2, TP3> where TP1 : unmanaged where
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public ProfilerMarker(string name, string param1Name, string param2Name, string param3Name)
+	public ProfilerMarker(string name, string param1Name)
 	{
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public ProfilerMarker(ProfilerCategory category, string name, string param1Name, string param2Name, string param3Name)
+	public ProfilerMarker(ProfilerCategory category, string name, string param1Name)
 	{
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Conditional("ENABLE_PROFILER")]
-	public void Begin(TP1 p1, TP2 p2, TP3 p3)
+	public void Begin(TP1 p1)
 	{
 	}
 
@@ -45,7 +45,7 @@ public readonly struct ProfilerMarker<TP1, TP2, TP3> where TP1 : unmanaged where
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public AutoScope Auto(TP1 p1, TP2 p2, TP3 p3)
+	public AutoScope Auto(TP1 p1)
 	{
 		return default(AutoScope);
 	}

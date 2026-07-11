@@ -1,36 +1,72 @@
+using System.Globalization;
+using UnityEngine;
+
 namespace Valve.VR;
 
-public abstract class SteamVR_Action_Source_Map<SourceElement> : SteamVR_Action_Source_Map where SourceElement : SteamVR_Action_Source, new()
+public abstract class SteamVR_Action_Source_Map
 {
-	protected SourceElement[] sources = new SourceElement[SteamVR_Input_Source.numSources];
+	public SteamVR_Action action;
 
-	public SourceElement this[SteamVR_Input_Sources inputSource] => GetSourceElementForIndexer(inputSource);
+	private static string inLowered = "IN".ToLower(CultureInfo.CurrentCulture);
 
-	protected virtual void OnAccessSource(SteamVR_Input_Sources inputSource)
+	private static string outLowered = "OUT".ToLower(CultureInfo.CurrentCulture);
+
+	public string fullPath { get; protected set; }
+
+	public ulong handle { get; protected set; }
+
+	public SteamVR_ActionSet actionSet { get; protected set; }
+
+	public SteamVR_ActionDirections direction { get; protected set; }
+
+	public virtual void PreInitialize(SteamVR_Action wrappingAction, string actionPath, bool throwErrors = true)
 	{
-	}
-
-	public override void Initialize()
-	{
-		base.Initialize();
-		for (int i = 0; i < sources.Length; i++)
+		fullPath = actionPath;
+		action = wrappingAction;
+		actionSet = SteamVR_Input.GetActionSetFromPath(GetActionSetPath());
+		direction = GetActionDirection();
+		SteamVR_Input_Sources[] allSources = SteamVR_Input_Source.GetAllSources();
+		for (int i = 0; i < allSources.Length; i++)
 		{
-			if (sources[i] != null)
-			{
-				sources[i].Initialize();
-			}
+			PreinitializeMap(allSources[i], wrappingAction);
 		}
 	}
 
-	protected override void PreinitializeMap(SteamVR_Input_Sources inputSource, SteamVR_Action wrappingAction)
+	protected abstract void PreinitializeMap(SteamVR_Input_Sources inputSource, SteamVR_Action wrappingAction);
+
+	public virtual void Initialize()
 	{
-		sources[(int)inputSource] = new SourceElement();
-		sources[(int)inputSource].Preinitialize(wrappingAction, inputSource);
+		ulong pHandle = 0uL;
+		EVRInputError actionHandle = OpenVR.Input.GetActionHandle(fullPath.ToLowerInvariant(), ref pHandle);
+		handle = pHandle;
+		if (actionHandle != EVRInputError.None)
+		{
+			Debug.LogError("<b>[SteamVR]</b> GetActionHandle (" + fullPath.ToLowerInvariant() + ") error: " + actionHandle);
+		}
 	}
 
-	protected virtual SourceElement GetSourceElementForIndexer(SteamVR_Input_Sources inputSource)
+	private string GetActionSetPath()
 	{
-		OnAccessSource(inputSource);
-		return sources[(int)inputSource];
+		int startIndex = fullPath.IndexOf('/', 1) + 1;
+		int length = fullPath.IndexOf('/', startIndex);
+		return fullPath.Substring(0, length);
+	}
+
+	private SteamVR_ActionDirections GetActionDirection()
+	{
+		int startIndex = fullPath.IndexOf('/', 1) + 1;
+		int num = fullPath.IndexOf('/', startIndex);
+		int length = fullPath.IndexOf('/', num + 1) - num - 1;
+		string text = fullPath.Substring(num + 1, length);
+		if (text == inLowered)
+		{
+			return SteamVR_ActionDirections.In;
+		}
+		if (text == outLowered)
+		{
+			return SteamVR_ActionDirections.Out;
+		}
+		Debug.LogError("Could not find match for direction: " + text);
+		return SteamVR_ActionDirections.In;
 	}
 }

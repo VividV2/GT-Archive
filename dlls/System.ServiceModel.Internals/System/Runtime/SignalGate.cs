@@ -1,70 +1,23 @@
-using System.Threading;
-
 namespace System.Runtime;
 
-internal class SignalGate
+internal class SignalGate<T> : SignalGate
 {
-	private static class GateState
+	private T result;
+
+	public bool Signal(T result)
 	{
-		public const int Locked = 0;
-
-		public const int SignalPending = 1;
-
-		public const int Unlocked = 2;
-
-		public const int Signalled = 3;
+		this.result = result;
+		return Signal();
 	}
 
-	private int state;
-
-	internal bool IsLocked => state == 0;
-
-	internal bool IsSignalled => state == 3;
-
-	public bool Signal()
+	public bool Unlock(out T result)
 	{
-		int num = state;
-		if (num == 0)
+		if (Unlock())
 		{
-			num = Interlocked.CompareExchange(ref state, 1, 0);
-		}
-		switch (num)
-		{
-		case 2:
-			state = 3;
+			result = this.result;
 			return true;
-		default:
-			ThrowInvalidSignalGateState();
-			break;
-		case 0:
-			break;
 		}
+		result = default(T);
 		return false;
-	}
-
-	public bool Unlock()
-	{
-		int num = state;
-		if (num == 0)
-		{
-			num = Interlocked.CompareExchange(ref state, 2, 0);
-		}
-		switch (num)
-		{
-		case 1:
-			state = 3;
-			return true;
-		default:
-			ThrowInvalidSignalGateState();
-			break;
-		case 0:
-			break;
-		}
-		return false;
-	}
-
-	private void ThrowInvalidSignalGateState()
-	{
-		throw Fx.Exception.AsError(new InvalidOperationException("Invalid Semaphore Exit"));
 	}
 }
