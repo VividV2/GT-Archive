@@ -1,9 +1,3 @@
-namespace System.Globalization;
-
-[Flags]
-internal enum MonthNameStyles
+namespace System.IO
 {
-	Regular = 0,
-	Genitive = 1,
-	LeapYear = 2
 }

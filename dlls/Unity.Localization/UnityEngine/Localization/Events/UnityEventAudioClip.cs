@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Events;
+namespace UnityEngine.Localization.SmartFormat.Core.Parsing;
 
-namespace UnityEngine.Localization.Events;
-
-[Serializable]
-public class UnityEventAudioClip : UnityEvent<AudioClip>
-{
-}

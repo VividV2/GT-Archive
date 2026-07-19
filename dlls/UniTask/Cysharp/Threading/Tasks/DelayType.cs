@@ -1,8 +1,15 @@
-namespace Cysharp.Threading.Tasks;
-
-public enum DelayType
+namespace Cysharp.Threading.Tasks
 {
-	DeltaTime,
-	UnscaledDeltaTime,
-	Realtime
+}
+namespace Cysharp.Threading.Tasks
+{
+	public enum DelayType
+	{
+		DeltaTime,
+		UnscaledDeltaTime,
+		Realtime
+	}
+}
+namespace Cysharp.Threading.Tasks
+{
 }

@@ -1,13 +1,17 @@
 using System.ComponentModel;
 
-namespace Oculus.Platform;
-
-public enum SdkAccountType
+namespace Oculus.Platform
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("OCULUS")]
-	Oculus,
-	[Description("FACEBOOK_GAMEROOM")]
-	FacebookGameroom
+	public enum SdkAccountType
+	{
+		[Description("UNKNOWN")]
+		Unknown,
+		[Description("OCULUS")]
+		Oculus,
+		[Description("FACEBOOK_GAMEROOM")]
+		FacebookGameroom
+	}
+}
+namespace Oculus.Platform.Models
+{
 }

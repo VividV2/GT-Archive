@@ -3,157 +3,167 @@ using Oculus.Interaction.GrabAPI;
 using Oculus.Interaction.Input;
 using UnityEngine;
 
-namespace Oculus.Interaction;
-
-public class HandPinchOffset : MonoBehaviour
+namespace Oculus.Interaction
 {
-	[SerializeField]
-	[Interface(typeof(IHand), new Type[] { })]
-	private UnityEngine.Object _hand;
-
-	[SerializeField]
-	private HandGrabAPI _handGrabApi;
-
-	[SerializeField]
-	[Optional]
-	private Collider _collider;
-
-	[SerializeField]
-	[InspectorName("Offset")]
-	private Vector3 _localPositionOffset;
-
-	[SerializeField]
-	[InspectorName("Rotation")]
-	private Quaternion _rotationOffset = Quaternion.identity;
-
-	[SerializeField]
-	[InspectorName("Offset")]
-	private Vector3 _posOffset;
-
-	[SerializeField]
-	[InspectorName("Rotation")]
-	private Quaternion _rotOffset = Quaternion.identity;
-
-	[SerializeField]
-	[Tooltip("When the attached hand's handedness is set to Left, this property will mirror the offsets. This allows for offset values to be set in Right hand coordinates for both Left and Right hands.")]
-	private bool _mirrorOffsetsForLeftHand = true;
-
-	protected bool _started;
-
-	private Pose _cachedPose = Pose.identity;
-
-	public IHand Hand { get; private set; }
-
-	public bool MirrorOffsetsForLeftHand
+	public class HandPinchOffset : MonoBehaviour
 	{
-		get
+		[SerializeField]
+		[Interface(typeof(IHand), new Type[] { })]
+		private UnityEngine.Object _hand;
+
+		[SerializeField]
+		private HandGrabAPI _handGrabApi;
+
+		[SerializeField]
+		[Optional]
+		private Collider _collider;
+
+		[SerializeField]
+		[InspectorName("Offset")]
+		private Vector3 _localPositionOffset;
+
+		[SerializeField]
+		[InspectorName("Rotation")]
+		private Quaternion _rotationOffset = Quaternion.identity;
+
+		[SerializeField]
+		[InspectorName("Offset")]
+		private Vector3 _posOffset;
+
+		[SerializeField]
+		[InspectorName("Rotation")]
+		private Quaternion _rotOffset = Quaternion.identity;
+
+		[SerializeField]
+		[Tooltip("When the attached hand's handedness is set to Left, this property will mirror the offsets. This allows for offset values to be set in Right hand coordinates for both Left and Right hands.")]
+		private bool _mirrorOffsetsForLeftHand = true;
+
+		protected bool _started;
+
+		private Pose _cachedPose = Pose.identity;
+
+		public IHand Hand { get; private set; }
+
+		public bool MirrorOffsetsForLeftHand
 		{
-			return _mirrorOffsetsForLeftHand;
+			get
+			{
+				return _mirrorOffsetsForLeftHand;
+			}
+			set
+			{
+				_mirrorOffsetsForLeftHand = value;
+			}
 		}
-		set
+
+		public Vector3 LocalPositionOffset
 		{
-			_mirrorOffsetsForLeftHand = value;
+			get
+			{
+				return _posOffset;
+			}
+			set
+			{
+				_posOffset = value;
+			}
 		}
-	}
 
-	public Vector3 LocalPositionOffset
-	{
-		get
+		public Quaternion RotationOffset
 		{
-			return _posOffset;
+			get
+			{
+				return _rotOffset;
+			}
+			set
+			{
+				_rotOffset = value;
+			}
 		}
-		set
+
+		protected virtual void Awake()
 		{
-			_posOffset = value;
+			Hand = _hand as IHand;
 		}
-	}
 
-	public Quaternion RotationOffset
-	{
-		get
+		protected virtual void Start()
 		{
-			return _rotOffset;
+			this.BeginStart(ref _started);
+			this.EndStart(ref _started);
 		}
-		set
+
+		protected virtual void OnEnable()
 		{
-			_rotOffset = value;
+			if (_started)
+			{
+				Hand.WhenHandUpdated += HandleHandUpdated;
+			}
 		}
-	}
 
-	protected virtual void Awake()
-	{
-		Hand = _hand as IHand;
-	}
-
-	protected virtual void Start()
-	{
-		this.BeginStart(ref _started);
-		this.EndStart(ref _started);
-	}
-
-	protected virtual void OnEnable()
-	{
-		if (_started)
+		protected virtual void OnDisable()
 		{
-			Hand.WhenHandUpdated += HandleHandUpdated;
+			if (_started)
+			{
+				Hand.WhenHandUpdated -= HandleHandUpdated;
+			}
 		}
-	}
 
-	protected virtual void OnDisable()
-	{
-		if (_started)
+		private void HandleHandUpdated()
 		{
-			Hand.WhenHandUpdated -= HandleHandUpdated;
+			Vector3 position = _handGrabApi.GetPinchCenter();
+			if (_collider != null)
+			{
+				position = _collider.ClosestPoint(position);
+			}
+			Hand.GetRootPose(out var pose);
+			Pose b = new Pose(position, pose.rotation);
+			GetOffset(ref _cachedPose, Hand.Handedness, Hand.Scale);
+			_cachedPose.Postmultiply(in b);
+			base.transform.SetPose(in _cachedPose);
 		}
-	}
 
-	private void HandleHandUpdated()
-	{
-		Vector3 position = _handGrabApi.GetPinchCenter();
-		if (_collider != null)
+		private void GetOffset(ref Pose pose, Handedness handedness, float scale)
 		{
-			position = _collider.ClosestPoint(position);
+			if (_mirrorOffsetsForLeftHand && handedness == Handedness.Left)
+			{
+				pose.position = HandMirroring.Mirror(LocalPositionOffset * scale);
+				pose.rotation = HandMirroring.Mirror(RotationOffset);
+			}
+			else
+			{
+				pose.position = LocalPositionOffset * scale;
+				pose.rotation = RotationOffset;
+			}
 		}
-		Hand.GetRootPose(out var pose);
-		Pose b = new Pose(position, pose.rotation);
-		GetOffset(ref _cachedPose, Hand.Handedness, Hand.Scale);
-		_cachedPose.Postmultiply(in b);
-		base.transform.SetPose(in _cachedPose);
-	}
 
-	private void GetOffset(ref Pose pose, Handedness handedness, float scale)
-	{
-		if (_mirrorOffsetsForLeftHand && handedness == Handedness.Left)
+		public void InjectAllHandPinchOffset(IHand hand, HandGrabAPI handGrabApi)
 		{
-			pose.position = HandMirroring.Mirror(LocalPositionOffset * scale);
-			pose.rotation = HandMirroring.Mirror(RotationOffset);
+			InjectHand(hand);
+			InjectHandGrabAPI(handGrabApi);
 		}
-		else
+
+		public void InjectHand(IHand hand)
 		{
-			pose.position = LocalPositionOffset * scale;
-			pose.rotation = RotationOffset;
+			Hand = hand;
+			_hand = hand as UnityEngine.Object;
+		}
+
+		public void InjectHandGrabAPI(HandGrabAPI handGrabApi)
+		{
+			_handGrabApi = handGrabApi;
+		}
+
+		public void InjectOptionalCollider(Collider collider)
+		{
+			_collider = collider;
 		}
 	}
-
-	public void InjectAllHandPinchOffset(IHand hand, HandGrabAPI handGrabApi)
-	{
-		InjectHand(hand);
-		InjectHandGrabAPI(handGrabApi);
-	}
-
-	public void InjectHand(IHand hand)
-	{
-		Hand = hand;
-		_hand = hand as UnityEngine.Object;
-	}
-
-	public void InjectHandGrabAPI(HandGrabAPI handGrabApi)
-	{
-		_handGrabApi = handGrabApi;
-	}
-
-	public void InjectOptionalCollider(Collider collider)
-	{
-		_collider = collider;
-	}
+}
+namespace Oculus.Interaction
+{
+}
+namespace Oculus.Interaction
+{
+}
+namespace Oculus.Interaction
+{
 }

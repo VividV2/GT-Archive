@@ -1,29 +1,37 @@
-namespace Oculus.Interaction.Input;
-
-public class LastKnownGoodHand : Hand
+namespace Oculus.Interaction.Input.Compatibility.OVR
 {
-	private readonly HandDataAsset _lastState = new HandDataAsset();
-
-	protected override void Apply(HandDataAsset data)
+	public enum HandJointId
 	{
-		bool flag = data.IsHighConfidence || data.RootPoseOrigin == PoseOrigin.FilteredTrackedPose || data.RootPoseOrigin == PoseOrigin.SyntheticPose;
-		if (data.IsDataValid && data.IsTracked && flag)
-		{
-			_lastState.CopyFrom(data);
-		}
-		else if (_lastState.IsDataValid && data.IsConnected)
-		{
-			data.CopyPosesFrom(_lastState);
-			data.RootPoseOrigin = PoseOrigin.SyntheticPose;
-			data.IsDataValid = true;
-			data.IsTracked = true;
-			data.IsHighConfidence = true;
-		}
-		else
-		{
-			data.IsTracked = false;
-			data.IsHighConfidence = false;
-			data.RootPoseOrigin = PoseOrigin.None;
-		}
+		Invalid = -1,
+		HandStart = 0,
+		HandWristRoot = 0,
+		HandForearmStub = 1,
+		HandThumb0 = 2,
+		HandThumb1 = 3,
+		HandThumb2 = 4,
+		HandThumb3 = 5,
+		HandIndex1 = 6,
+		HandIndex2 = 7,
+		HandIndex3 = 8,
+		HandMiddle1 = 9,
+		HandMiddle2 = 10,
+		HandMiddle3 = 11,
+		HandRing1 = 12,
+		HandRing2 = 13,
+		HandRing3 = 14,
+		HandPinky0 = 15,
+		HandPinky1 = 16,
+		HandPinky2 = 17,
+		HandPinky3 = 18,
+		HandMaxSkinnable = 19,
+		HandThumbTip = 19,
+		HandIndexTip = 20,
+		HandMiddleTip = 21,
+		HandRingTip = 22,
+		HandPinkyTip = 23,
+		HandEnd = 24
 	}
+}
+namespace Oculus.Interaction.GrabAPI
+{
 }

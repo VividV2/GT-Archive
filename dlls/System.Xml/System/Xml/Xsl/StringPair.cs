@@ -1,12 +1,16 @@
-namespace System.Xml.Xsl;
-
-internal struct StringPair(string left, string right)
+namespace System.Xml.Xsl
 {
-	private string left = left;
+	internal struct StringPair(string left, string right)
+	{
+		private string left = left;
 
-	private string right = right;
+		private string right = right;
 
-	public string Left => left;
+		public string Left => left;
 
-	public string Right => right;
+		public string Right => right;
+	}
+}
+namespace System.Xml.Xsl.XsltOld
+{
 }

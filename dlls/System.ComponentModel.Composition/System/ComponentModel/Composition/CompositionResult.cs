@@ -1,14 +1,15 @@
 using System.Collections.Generic;
+using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using Microsoft.Internal.Collections;
 
 namespace System.ComponentModel.Composition;
 
-internal struct CompositionResult<T>
+internal struct CompositionResult
 {
-	private readonly IEnumerable<CompositionError> _errors;
+	public static readonly CompositionResult SucceededResult;
 
-	private readonly T _value;
+	private readonly IEnumerable<CompositionError> _errors;
 
 	public bool Succeeded
 	{
@@ -24,51 +25,58 @@ internal struct CompositionResult<T>
 
 	public IEnumerable<CompositionError> Errors => _errors ?? Enumerable.Empty<CompositionError>();
 
-	public T Value
-	{
-		get
-		{
-			ThrowOnErrors();
-			return _value;
-		}
-	}
-
-	public CompositionResult(T value)
-		: this(value, null)
-	{
-	}
-
 	public CompositionResult(params CompositionError[] errors)
-		: this(default(T), errors)
+		: this((IEnumerable<CompositionError>)errors)
 	{
 	}
 
 	public CompositionResult(IEnumerable<CompositionError> errors)
-		: this(default(T), errors)
-	{
-	}
-
-	internal CompositionResult(T value, IEnumerable<CompositionError> errors)
 	{
 		_errors = errors;
-		_value = value;
 	}
 
-	internal CompositionResult<TValue> ToResult<TValue>()
+	public CompositionResult MergeResult(CompositionResult result)
 	{
-		return new CompositionResult<TValue>(_errors);
+		if (Succeeded)
+		{
+			return result;
+		}
+		if (result.Succeeded)
+		{
+			return this;
+		}
+		return MergeErrors(result._errors);
 	}
 
-	internal CompositionResult ToResult()
+	public CompositionResult MergeError(CompositionError error)
 	{
-		return new CompositionResult(_errors);
+		return MergeErrors(new CompositionError[1] { error });
 	}
 
-	private void ThrowOnErrors()
+	public CompositionResult MergeErrors(IEnumerable<CompositionError> errors)
+	{
+		return new CompositionResult(_errors.ConcatAllowingNull(errors));
+	}
+
+	public CompositionResult<T> ToResult<T>(T value)
+	{
+		return new CompositionResult<T>(value, _errors);
+	}
+
+	public void ThrowOnErrors()
+	{
+		ThrowOnErrors(null);
+	}
+
+	public void ThrowOnErrors(AtomicComposition atomicComposition)
 	{
 		if (!Succeeded)
 		{
-			throw new CompositionException(_errors);
+			if (atomicComposition == null)
+			{
+				throw new CompositionException(_errors);
+			}
+			throw new ChangeRejectedException(_errors);
 		}
 	}
 }

@@ -1,8 +1,12 @@
-namespace Modio.Platforms;
-
-public enum ModioVirtualKeyboardType
+namespace Modio.Platforms
 {
-	Default,
-	Search,
-	EmailAddress
+	public enum ModioVirtualKeyboardType
+	{
+		Default,
+		Search,
+		EmailAddress
+	}
+}
+namespace Modio.Users
+{
 }

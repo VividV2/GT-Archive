@@ -2,56 +2,60 @@ using System;
 using System.Reflection;
 using UnityEngine.Scripting;
 
-namespace UnityEngine;
-
-[AttributeUsage(AttributeTargets.Method)]
-public class GUITargetAttribute : Attribute
+namespace UnityEngine
 {
-	internal int displayMask;
-
-	public GUITargetAttribute()
+	[AttributeUsage(AttributeTargets.Method)]
+	public class GUITargetAttribute : Attribute
 	{
-		displayMask = -1;
-	}
+		internal int displayMask;
 
-	public GUITargetAttribute(int displayIndex)
-	{
-		displayMask = 1 << displayIndex;
-	}
-
-	public GUITargetAttribute(int displayIndex, int displayIndex1)
-	{
-		displayMask = (1 << displayIndex) | (1 << displayIndex1);
-	}
-
-	public GUITargetAttribute(int displayIndex, int displayIndex1, params int[] displayIndexList)
-	{
-		displayMask = (1 << displayIndex) | (1 << displayIndex1);
-		for (int i = 0; i < displayIndexList.Length; i++)
+		public GUITargetAttribute()
 		{
-			displayMask |= 1 << displayIndexList[i];
+			displayMask = -1;
 		}
-	}
 
-	[RequiredByNativeCode]
-	private static int GetGUITargetAttrValue(Type klass, string methodName)
-	{
-		MethodInfo method = klass.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-		if (method != null)
+		public GUITargetAttribute(int displayIndex)
 		{
-			object[] customAttributes = method.GetCustomAttributes(inherit: true);
-			if (customAttributes != null)
+			displayMask = 1 << displayIndex;
+		}
+
+		public GUITargetAttribute(int displayIndex, int displayIndex1)
+		{
+			displayMask = (1 << displayIndex) | (1 << displayIndex1);
+		}
+
+		public GUITargetAttribute(int displayIndex, int displayIndex1, params int[] displayIndexList)
+		{
+			displayMask = (1 << displayIndex) | (1 << displayIndex1);
+			for (int i = 0; i < displayIndexList.Length; i++)
 			{
-				for (int i = 0; i < customAttributes.Length; i++)
+				displayMask |= 1 << displayIndexList[i];
+			}
+		}
+
+		[RequiredByNativeCode]
+		private static int GetGUITargetAttrValue(Type klass, string methodName)
+		{
+			MethodInfo method = klass.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+			if (method != null)
+			{
+				object[] customAttributes = method.GetCustomAttributes(inherit: true);
+				if (customAttributes != null)
 				{
-					if (!(customAttributes[i].GetType() != typeof(GUITargetAttribute)))
+					for (int i = 0; i < customAttributes.Length; i++)
 					{
-						GUITargetAttribute gUITargetAttribute = customAttributes[i] as GUITargetAttribute;
-						return gUITargetAttribute.displayMask;
+						if (!(customAttributes[i].GetType() != typeof(GUITargetAttribute)))
+						{
+							GUITargetAttribute gUITargetAttribute = customAttributes[i] as GUITargetAttribute;
+							return gUITargetAttribute.displayMask;
+						}
 					}
 				}
 			}
+			return -1;
 		}
-		return -1;
 	}
+}
+namespace UnityEngine
+{
 }

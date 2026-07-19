@@ -1,7 +1,11 @@
-namespace PlayFab.Internal;
-
-public enum ApiProcessingEventType
+namespace PlayFab.ClientModels
 {
-	Pre,
-	Post
+}
+namespace PlayFab.Internal
+{
+	public enum ApiProcessingEventType
+	{
+		Pre,
+		Post
+	}
 }

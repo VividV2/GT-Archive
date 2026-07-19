@@ -1,9 +1,2 @@
-namespace System.Security.Cryptography.Asn1;
+namespace Internal.Cryptography;
 
-internal class PrintableStringEncoding : RestrictedAsciiStringEncoding
-{
-	internal PrintableStringEncoding()
-		: base("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 '()+,-./:=?")
-	{
-	}
-}

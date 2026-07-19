@@ -1,8 +1,12 @@
-namespace Meta.WitAi.Data.Configuration;
-
-public struct WitConfigurationCacheKey
+namespace Meta.WitAi.Data.Configuration
 {
-	public string clientAccessToken;
+	public struct WitConfigurationCacheKey
+	{
+		public string clientAccessToken;
 
-	public string versionTag;
+		public string versionTag;
+	}
+}
+namespace Meta.Conduit
+{
 }

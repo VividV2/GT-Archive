@@ -1,6 +1,10 @@
-namespace System.Threading.Tasks;
-
-internal static class PaddingHelpers
+namespace System.Threading.Tasks
 {
-	internal const int CACHE_LINE_SIZE = 128;
+	internal static class PaddingHelpers
+	{
+		internal const int CACHE_LINE_SIZE = 128;
+	}
+}
+namespace System
+{
 }

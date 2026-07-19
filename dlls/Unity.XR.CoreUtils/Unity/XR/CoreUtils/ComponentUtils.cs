@@ -1,31 +1,16 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Unity.XR.CoreUtils;
 
-public static class ComponentUtils<T>
+public static class ComponentUtils
 {
-	private static readonly List<T> k_RetrievalList = new List<T>();
-
-	public static T GetComponent(GameObject gameObject)
+	public static T GetOrAddIf<T>(GameObject gameObject, bool add) where T : Component
 	{
-		T result = default(T);
-		gameObject.GetComponents(k_RetrievalList);
-		if (k_RetrievalList.Count > 0)
+		T val = gameObject.GetComponent<T>();
+		if (add && val == null)
 		{
-			return k_RetrievalList[0];
+			val = gameObject.AddComponent<T>();
 		}
-		return result;
-	}
-
-	public static T GetComponentInChildren(GameObject gameObject)
-	{
-		T result = default(T);
-		gameObject.GetComponentsInChildren(k_RetrievalList);
-		if (k_RetrievalList.Count > 0)
-		{
-			return k_RetrievalList[0];
-		}
-		return result;
+		return val;
 	}
 }

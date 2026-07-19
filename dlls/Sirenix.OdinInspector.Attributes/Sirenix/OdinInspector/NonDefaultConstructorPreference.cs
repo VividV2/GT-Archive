@@ -1,9 +1,13 @@
-namespace Sirenix.OdinInspector;
-
-public enum NonDefaultConstructorPreference
+namespace Sirenix.OdinInspector
 {
-	Exclude,
-	ConstructIdeal,
-	PreferUninitialized,
-	LogWarning
+	public enum NonDefaultConstructorPreference
+	{
+		Exclude,
+		ConstructIdeal,
+		PreferUninitialized,
+		LogWarning
+	}
+}
+namespace Sirenix.OdinInspector
+{
 }

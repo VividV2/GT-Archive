@@ -1,28 +1,19 @@
-using System.Diagnostics;
+namespace System.IO;
 
-namespace System.Collections.Generic;
-
-internal sealed class DictionaryValueCollectionDebugView<TKey, TValue>
+internal static class __HResults
 {
-	private readonly ICollection<TValue> _collection;
+	public const int COR_E_ENDOFSTREAM = -2147024858;
 
-	[DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
-	public TValue[] Items
-	{
-		get
-		{
-			TValue[] array = new TValue[_collection.Count];
-			_collection.CopyTo(array, 0);
-			return array;
-		}
-	}
+	public const int COR_E_FILELOAD = -2146232799;
 
-	public DictionaryValueCollectionDebugView(ICollection<TValue> collection)
-	{
-		if (collection == null)
-		{
-			throw new ArgumentNullException("collection");
-		}
-		_collection = collection;
-	}
+	public const int COR_E_FILENOTFOUND = -2147024894;
+
+	public const int COR_E_DIRECTORYNOTFOUND = -2147024893;
+
+	public const int COR_E_PATHTOOLONG = -2147024690;
+
+	public const int COR_E_IO = -2146232800;
+}
+namespace System.Numerics
+{
 }

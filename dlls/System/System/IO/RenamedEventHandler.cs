@@ -1,6 +1,3 @@
-namespace System.IO;
+namespace System.ComponentModel.Design;
 
-/// <summary>Represents the method that will handle the <see cref="E:System.IO.FileSystemWatcher.Renamed" /> event of a <see cref="T:System.IO.FileSystemWatcher" /> class.</summary>
-/// <param name="sender">The source of the event.</param>
-/// <param name="e">The <see cref="T:System.IO.RenamedEventArgs" /> that contains the event data.</param>
-public delegate void RenamedEventHandler(object sender, RenamedEventArgs e);
+public delegate void ComponentRenameEventHandler(object sender, ComponentRenameEventArgs e);

@@ -1,20 +1,12 @@
-using System.Diagnostics.CodeAnalysis;
-
-namespace System.Runtime.CompilerServices;
-
-[AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
-[ExcludeFromCodeCoverage]
-internal sealed class InterpolatedStringHandlerArgumentAttribute : Attribute
+namespace System.Runtime.CompilerServices
 {
-	public string[] Arguments { get; }
-
-	public InterpolatedStringHandlerArgumentAttribute(string argument)
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = false, Inherited = false)]
+	[ExcludeFromCodeCoverage]
+	internal sealed class InterpolatedStringHandlerAttribute : Attribute
 	{
-		Arguments = new string[1] { argument };
-	}
-
-	public InterpolatedStringHandlerArgumentAttribute(params string[] arguments)
-	{
-		Arguments = arguments;
+		public InterpolatedStringHandlerAttribute()
+		{
+			base..ctor();
+		}
 	}
 }

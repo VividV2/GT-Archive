@@ -1,8 +1,12 @@
 using System;
 
-namespace Fusion.Photon.Realtime.Async;
-
-internal class PhotonLobbyCallbacks
+namespace Fusion.Photon.Realtime.Async
 {
-	public Action JoinedLobby;
+	internal class PhotonLobbyCallbacks
+	{
+		public Action JoinedLobby;
+	}
+}
+namespace Fusion.Photon.Realtime
+{
 }

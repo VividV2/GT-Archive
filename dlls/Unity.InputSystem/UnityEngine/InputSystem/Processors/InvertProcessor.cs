@@ -1,14 +1,8 @@
-namespace UnityEngine.InputSystem.Processors;
+namespace UnityEngine.InputSystem.LowLevel;
 
-public class InvertProcessor : InputProcessor<float>
+internal static class InputRuntime
 {
-	public override float Process(float value, InputControl control)
-	{
-		return value * -1f;
-	}
+	public static IInputRuntime s_Instance;
 
-	public override string ToString()
-	{
-		return "Invert()";
-	}
+	public static double s_CurrentTimeOffsetToRealtimeSinceStartup;
 }

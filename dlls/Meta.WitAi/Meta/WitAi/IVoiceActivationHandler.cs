@@ -1,22 +1,9 @@
-using System.Threading.Tasks;
-using Meta.WitAi.Configuration;
-using Meta.WitAi.Requests;
+using System.Collections.Generic;
+using System.Collections.Generic;
 
-namespace Meta.WitAi;
+namespace Meta.Voice.Net.WebSockets;
 
-public interface IVoiceActivationHandler
+public interface IWebSocketProvider
 {
-	bool Active { get; }
-
-	Task<VoiceServiceRequest> Activate(string text, WitRequestOptions requestOptions, VoiceServiceRequestEvents requestEvents);
-
-	VoiceServiceRequest Activate(WitRequestOptions requestOptions, VoiceServiceRequestEvents requestEvents);
-
-	VoiceServiceRequest ActivateImmediately(WitRequestOptions requestOptions, VoiceServiceRequestEvents requestEvents);
-
-	void Deactivate();
-
-	void DeactivateAndAbortRequest();
-
-	void DeactivateAndAbortRequest(VoiceServiceRequest request);
+	IWebSocket GetWebSocket(string url, Dictionary<string, string> headers);
 }

@@ -1,12 +1,9 @@
-namespace System.Runtime.InteropServices.ComTypes;
-
-/// <summary>Contains information needed for transferring a structure element, parameter, or function return value between processes.</summary>
-[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-public struct IDLDESC
+namespace System.Runtime.InteropServices.WindowsRuntime
 {
-	/// <summary>Reserved; set to <see langword="null" />.</summary>
-	public IntPtr dwReserved;
-
-	/// <summary>Indicates an <see cref="T:System.Runtime.InteropServices.IDLFLAG" /> value describing the type.</summary>
-	public IDLFLAG wIDLFlags;
+}
+namespace System.Runtime.InteropServices
+{
+}
+namespace System.Resources
+{
 }

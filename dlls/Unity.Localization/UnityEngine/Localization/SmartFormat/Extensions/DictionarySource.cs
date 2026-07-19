@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Localization.SmartFormat.Core.Extensions;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.Localization.SmartFormat.Core.Extensions;
 
 namespace UnityEngine.Localization.SmartFormat.Extensions;
 
@@ -20,6 +25,8 @@ public class DictionarySource : ISource
 	{
 		object currentValue = selectorInfo.CurrentValue;
 		string selector = selectorInfo.SelectorText;
+		object currentValue;
+		string selector;
 		if (currentValue is IDictionary dictionary)
 		{
 			foreach (DictionaryEntry item in dictionary)
@@ -34,6 +41,7 @@ public class DictionarySource : ISource
 		if (currentValue is IDictionary<string, object> source)
 		{
 			object value = source.FirstOrDefault((KeyValuePair<string, object> x) => x.Key.Equals(selector, selectorInfo.FormatDetails.Settings.GetCaseSensitivityComparison())).Value;
+			object value;
 			if (value != null)
 			{
 				selectorInfo.Result = value;

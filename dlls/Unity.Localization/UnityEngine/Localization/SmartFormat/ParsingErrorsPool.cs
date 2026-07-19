@@ -1,24 +1,53 @@
-using UnityEngine.Localization.SmartFormat.Core.Parsing;
-using UnityEngine.Pool;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.Localization.SmartFormat.Core.Extensions;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.Localization.SmartFormat.Core.Extensions;
 
-namespace UnityEngine.Localization.SmartFormat;
+namespace UnityEngine.Localization.SmartFormat.Extensions;
 
-internal static class ParsingErrorsPool
+[Serializable]
+public class DictionarySource : ISource
 {
-	internal static readonly ObjectPool<ParsingErrors> s_Pool = new ObjectPool<ParsingErrors>(() => new ParsingErrors(), null, delegate(ParsingErrors pe)
+	public DictionarySource(SmartFormatter formatter)
 	{
-		pe.Clear();
-	});
-
-	public static ParsingErrors Get(Format format)
-	{
-		ParsingErrors parsingErrors = s_Pool.Get();
-		parsingErrors.Init(format);
-		return parsingErrors;
+		formatter.Parser.AddAlphanumericSelectors();
+		formatter.Parser.AddAdditionalSelectorChars("_");
+		formatter.Parser.AddOperators(".");
 	}
 
-	public static void Release(ParsingErrors toRelease)
+	public bool TryEvaluateSelector(ISelectorInfo selectorInfo)
 	{
-		s_Pool.Release(toRelease);
+		object currentValue = selectorInfo.CurrentValue;
+		string selector = selectorInfo.SelectorText;
+		object currentValue;
+		string selector;
+		if (currentValue is IDictionary dictionary)
+		{
+			foreach (DictionaryEntry item in dictionary)
+			{
+				if (((item.Key as string) ?? item.Key.ToString()).Equals(selector, selectorInfo.FormatDetails.Settings.GetCaseSensitivityComparison()))
+				{
+					selectorInfo.Result = item.Value;
+					return true;
+				}
+			}
+		}
+		if (currentValue is IDictionary<string, object> source)
+		{
+			object value = source.FirstOrDefault((KeyValuePair<string, object> x) => x.Key.Equals(selector, selectorInfo.FormatDetails.Settings.GetCaseSensitivityComparison())).Value;
+			object value;
+			if (value != null)
+			{
+				selectorInfo.Result = value;
+				return true;
+			}
+		}
+		return false;
 	}
 }

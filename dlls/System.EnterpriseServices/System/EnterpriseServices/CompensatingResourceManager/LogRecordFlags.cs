@@ -1,22 +1,12 @@
-namespace System.EnterpriseServices.CompensatingResourceManager;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-/// <summary>Describes the origin of a Compensating Resource Manager (CRM) log record.</summary>
+namespace System.EnterpriseServices;
+
 [Serializable]
-[Flags]
-public enum LogRecordFlags
+[ComVisible(false)]
+public enum PropertyReleaseMode
 {
-	/// <summary>Indicates the delivered record should be forgotten.</summary>
-	ForgetTarget = 1,
-	/// <summary>Log record was written during prepare.</summary>
-	WrittenDuringPrepare = 2,
-	/// <summary>Log record was written during commit.</summary>
-	WrittenDuringCommit = 4,
-	/// <summary>Log record was written during abort.</summary>
-	WrittenDuringAbort = 8,
-	/// <summary>Log record was written during recovery.</summary>
-	WrittenDurringRecovery = 0x10,
-	/// <summary>Log record was written during replay.</summary>
-	WrittenDuringReplay = 0x20,
-	/// <summary>Log record was written when replay was in progress.</summary>
-	ReplayInProgress = 0x40
+	Process = 1,
+	Standard = 0
 }

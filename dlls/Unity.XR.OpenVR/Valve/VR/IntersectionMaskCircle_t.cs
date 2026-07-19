@@ -1,10 +1,21 @@
 namespace Valve.VR;
 
-public struct IntersectionMaskCircle_t
+public enum EVRSceneApplicationState
 {
-	public float m_flCenterX;
+	None,
+	Starting,
+	Quitting,
+	Running,
+	Waiting
+}
+namespace Valve.VR
+{
+	public struct IntersectionMaskCircle_t
+	{
+		public float m_flCenterX;
 
-	public float m_flCenterY;
+		public float m_flCenterY;
 
-	public float m_flRadius;
+		public float m_flRadius;
+	}
 }

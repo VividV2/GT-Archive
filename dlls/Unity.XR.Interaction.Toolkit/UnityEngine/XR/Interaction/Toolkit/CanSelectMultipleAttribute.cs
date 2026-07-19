@@ -1,14 +1,5 @@
-using System;
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs;
 
-namespace UnityEngine.XR.Interaction.Toolkit;
-
-[AttributeUsage(AttributeTargets.Class)]
-public sealed class CanSelectMultipleAttribute : Attribute
+namespace UnityEngine.XR.Interaction.Toolkit.Attachment
 {
-	public bool allowMultiple { get; }
-
-	public CanSelectMultipleAttribute(bool allowMultiple = true)
-	{
-		this.allowMultiple = allowMultiple;
-	}
 }

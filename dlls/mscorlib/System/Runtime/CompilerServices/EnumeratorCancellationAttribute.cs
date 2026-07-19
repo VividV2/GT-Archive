@@ -1,6 +1,9 @@
-namespace System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
-[AttributeUsage(AttributeTargets.Parameter, Inherited = false)]
-public sealed class EnumeratorCancellationAttribute : Attribute
+namespace System.Diagnostics.SymbolStore;
+
+[ComVisible(true)]
+public interface ISymbolBinder1
 {
+	ISymbolReader GetReader(IntPtr importer, string filename, string searchPath);
 }

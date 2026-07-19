@@ -1,6 +1,13 @@
 namespace System.Security.Cryptography.Asn1;
 
-[AttributeUsage(AttributeTargets.Field)]
-internal sealed class SetOfAttribute : AsnTypeAttribute
+internal class AsnSerializerInvalidDefaultException : AsnSerializationConstraintException
 {
+	internal AsnSerializerInvalidDefaultException()
+	{
+	}
+
+	internal AsnSerializerInvalidDefaultException(Exception innerException)
+		: base(string.Empty, innerException)
+	{
+	}
 }

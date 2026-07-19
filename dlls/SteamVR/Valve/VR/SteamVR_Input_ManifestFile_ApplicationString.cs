@@ -1,6 +1,10 @@
-namespace Valve.VR;
-
-public class SteamVR_Input_ManifestFile_ApplicationString
+namespace Valve.VR
 {
-	public string name;
+}
+namespace Valve.VR
+{
+	public class SteamVR_Input_ManifestFile_ApplicationString
+	{
+		public string name;
+	}
 }

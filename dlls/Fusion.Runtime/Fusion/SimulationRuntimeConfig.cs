@@ -1,25 +1,14 @@
-using System.Runtime.InteropServices;
+using System;
 
-namespace Fusion;
-
-[StructLayout(LayoutKind.Explicit)]
-public struct SimulationRuntimeConfig
+namespace Fusion
 {
-	[FieldOffset(0)]
-	public TickRate.Resolved TickRate;
-
-	[FieldOffset(16)]
-	public SimulationModes ServerMode;
-
-	[FieldOffset(20)]
-	public int PlayerMaxCount;
-
-	[FieldOffset(24)]
-	public PlayerRef MasterClient;
-
-	[FieldOffset(28)]
-	public PlayerRef HostPlayer;
-
-	[FieldOffset(32)]
-	public Topologies Topology;
+	[Flags]
+	internal enum NetworkObjectDestroyFlags
+	{
+		None = 0,
+		DestroyedByEngine = 1,
+		DestroyState = 2,
+		DestroyedByReplicator = 4,
+		DestroyedByDespawn = 8
+	}
 }

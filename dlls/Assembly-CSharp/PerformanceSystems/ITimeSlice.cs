@@ -1,10 +1,14 @@
-namespace PerformanceSystems;
-
-public interface ITimeSlice
+namespace PerformanceSystems
 {
-	void SliceUpdate();
+	public interface ITimeSlice
+	{
+		void SliceUpdate();
 
-	void SliceUpdateAlways(float deltaTime);
+		void SliceUpdateAlways(float deltaTime);
 
-	void SliceUpdate(float deltaTime);
+		void SliceUpdate(float deltaTime);
+	}
+}
+namespace Fusion.CodeGen
+{
 }

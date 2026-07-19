@@ -1,22 +1,40 @@
 using System;
 using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
+using System;
 
-namespace Oculus.Platform.Models;
-
-public class ChallengeEntryList : DeserializableList<ChallengeEntry>
+namespace Oculus.Platform.Models
 {
-	public readonly ulong TotalCount;
-
-	public ChallengeEntryList(IntPtr a)
+	public class InstalledApplicationList : DeserializableList<InstalledApplication>
 	{
-		int num = (int)(uint)CAPI.ovr_ChallengeEntryArray_GetSize(a);
-		_Data = new List<ChallengeEntry>(num);
-		for (int i = 0; i < num; i++)
+		public InstalledApplicationList(IntPtr a)
 		{
-			_Data.Add(new ChallengeEntry(CAPI.ovr_ChallengeEntryArray_GetElement(a, (UIntPtr)(ulong)i)));
+			int num = (int)(uint)CAPI.ovr_InstalledApplicationArray_GetSize(a);
+			int num;
+			_Data = new List<InstalledApplication>(num);
+			int i;
+			for (int i = 0; i < num; i++)
+			{
+				_Data.Add(new InstalledApplication(CAPI.ovr_InstalledApplicationArray_GetElement(a, (UIntPtr)(ulong)i)));
+			}
 		}
-		TotalCount = CAPI.ovr_ChallengeEntryArray_GetTotalCount(a);
-		_PreviousUrl = CAPI.ovr_ChallengeEntryArray_GetPreviousUrl(a);
-		_NextUrl = CAPI.ovr_ChallengeEntryArray_GetNextUrl(a);
+	}
+}
+namespace Oculus.Platform.Models
+{
+	public class ApplicationVersion(IntPtr o)
+	{
+		public readonly int CurrentCode = CAPI.ovr_ApplicationVersion_GetCurrentCode(o);
+
+		public readonly string CurrentName = CAPI.ovr_ApplicationVersion_GetCurrentName(o);
+
+		public readonly int LatestCode = CAPI.ovr_ApplicationVersion_GetLatestCode(o);
+
+		public readonly string LatestName = CAPI.ovr_ApplicationVersion_GetLatestName(o);
+
+		public readonly long ReleaseDate = CAPI.ovr_ApplicationVersion_GetReleaseDate(o);
+
+		public readonly string Size = CAPI.ovr_ApplicationVersion_GetSize(o);
 	}
 }

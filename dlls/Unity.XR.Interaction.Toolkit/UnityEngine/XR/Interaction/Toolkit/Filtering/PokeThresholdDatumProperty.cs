@@ -1,18 +1,22 @@
 using System;
 using Unity.XR.CoreUtils.Datums;
 
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering;
-
-[Serializable]
-public class PokeThresholdDatumProperty : DatumProperty<PokeThresholdData, PokeThresholdDatum>
+namespace UnityEngine.XR.Interaction.Toolkit.Filtering
 {
-	public PokeThresholdDatumProperty(PokeThresholdData value)
-		: base(value)
+	[Serializable]
+	public class PokeThresholdDatumProperty : DatumProperty<PokeThresholdData, PokeThresholdDatum>
 	{
-	}
+		public PokeThresholdDatumProperty(PokeThresholdData value)
+			: base(value)
+		{
+		}
 
-	public PokeThresholdDatumProperty(PokeThresholdDatum datum)
-		: base(datum)
-	{
+		public PokeThresholdDatumProperty(PokeThresholdDatum datum)
+			: base(datum)
+		{
+		}
 	}
+}
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs
+{
 }

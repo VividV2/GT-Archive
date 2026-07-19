@@ -1,40 +1,12 @@
 namespace Pathfinding.ClipperLib;
 
-internal class TEdge
+internal class LocalMinima
 {
-	public IntPoint Bot;
+	public long Y;
 
-	public IntPoint Curr;
+	public TEdge LeftBound;
 
-	public IntPoint Top;
+	public TEdge RightBound;
 
-	public IntPoint Delta;
-
-	public double Dx;
-
-	public PolyType PolyTyp;
-
-	public EdgeSide Side;
-
-	public int WindDelta;
-
-	public int WindCnt;
-
-	public int WindCnt2;
-
-	public int OutIdx;
-
-	public TEdge Next;
-
-	public TEdge Prev;
-
-	public TEdge NextInLML;
-
-	public TEdge NextInAEL;
-
-	public TEdge PrevInAEL;
-
-	public TEdge NextInSEL;
-
-	public TEdge PrevInSEL;
+	public LocalMinima Next;
 }

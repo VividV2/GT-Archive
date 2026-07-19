@@ -1,11 +1,15 @@
-namespace g3;
-
-public class SculptCurveSmooth : StandardSculptCurveDeformation
+namespace g3
 {
-	public SculptCurveSmooth()
+	public class SculptCurveSmooth : StandardSculptCurveDeformation
 	{
-		DeformF = null;
-		SmoothAlpha = 0.10000000149011612;
-		SmoothIterations = 3;
+		public SculptCurveSmooth()
+		{
+			DeformF = null;
+			SmoothAlpha = 0.10000000149011612;
+			SmoothIterations = 3;
+		}
 	}
+}
+namespace g3
+{
 }

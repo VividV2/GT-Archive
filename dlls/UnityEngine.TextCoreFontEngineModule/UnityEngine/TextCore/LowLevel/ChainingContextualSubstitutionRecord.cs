@@ -1,74 +1,45 @@
 using System;
 using UnityEngine.Bindings;
 using UnityEngine.Scripting;
+using System;
+using UnityEngine.Bindings;
+using UnityEngine.Scripting;
 
 namespace UnityEngine.TextCore.LowLevel;
 
 [Serializable]
 [UsedByNativeCode]
-internal struct ChainingContextualSubstitutionRecord
+internal struct AlternateSubstitutionRecord
 {
+	[NativeName("targetGlyphID")]
 	[SerializeField]
-	[NativeName("backtrackGlyphSequences")]
-	private GlyphIDSequence[] m_BacktrackGlyphSequences;
+	private uint m_TargetGlyphID;
 
+	[NativeName("substituteGlyphIDs")]
 	[SerializeField]
-	[NativeName("inputGlyphSequences")]
-	private GlyphIDSequence[] m_InputGlyphSequences;
+	private uint[] m_SubstituteGlyphIDs;
 
-	[SerializeField]
-	[NativeName("lookaheadGlyphSequences")]
-	private GlyphIDSequence[] m_LookaheadGlyphSequences;
-
-	[SerializeField]
-	[NativeName("sequenceLookupRecords")]
-	private SequenceLookupRecord[] m_SequenceLookupRecords;
-
-	public GlyphIDSequence[] backtrackGlyphSequences
+	public uint targetGlyphID
 	{
 		get
 		{
-			return m_BacktrackGlyphSequences;
+			return m_TargetGlyphID;
 		}
 		set
 		{
-			m_BacktrackGlyphSequences = value;
+			m_TargetGlyphID = value;
 		}
 	}
 
-	public GlyphIDSequence[] inputGlyphSequences
+	public uint[] substituteGlyphIDs
 	{
 		get
 		{
-			return m_InputGlyphSequences;
+			return m_SubstituteGlyphIDs;
 		}
 		set
 		{
-			m_InputGlyphSequences = value;
-		}
-	}
-
-	public GlyphIDSequence[] lookaheadGlyphSequences
-	{
-		get
-		{
-			return m_LookaheadGlyphSequences;
-		}
-		set
-		{
-			m_LookaheadGlyphSequences = value;
-		}
-	}
-
-	public SequenceLookupRecord[] sequenceLookupRecords
-	{
-		get
-		{
-			return m_SequenceLookupRecords;
-		}
-		set
-		{
-			m_SequenceLookupRecords = value;
+			m_SubstituteGlyphIDs = value;
 		}
 	}
 }

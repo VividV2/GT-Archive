@@ -1,16 +1,16 @@
-using System;
+using System.ComponentModel;
+using System.ComponentModel;
 
-namespace Oculus.Platform.Models;
+namespace Oculus.Platform;
 
-public class SystemVoipState
+public enum AccountAgeCategory
 {
-	public readonly VoipMuteState MicrophoneMuted;
-
-	public readonly SystemVoipStatus Status;
-
-	public SystemVoipState(IntPtr o)
-	{
-		MicrophoneMuted = CAPI.ovr_SystemVoipState_GetMicrophoneMuted(o);
-		Status = CAPI.ovr_SystemVoipState_GetStatus(o);
-	}
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("CH")]
+	Ch,
+	[Description("TN")]
+	Tn,
+	[Description("AD")]
+	Ad
 }

@@ -1,7 +1,9 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace System.Security.Cryptography;
 
+/// <summary>Represents the base class from which all implementations of asymmetric signature formatters derive.</summary>
 /// <summary>Represents the base class from which all implementations of asymmetric signature formatters derive.</summary>
 [ComVisible(true)]
 public abstract class AsymmetricSignatureFormatter

@@ -1,13 +1,37 @@
-using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
-namespace Modio.API.SchemaDefinitions;
+namespace Modio.API.Interfaces;
 
-[JsonObject]
-internal readonly struct WebMessageObject(long code, bool success, string message)
+public interface IModioAPIInterface : IDisposable
 {
-	internal readonly long Code = code;
+	void SetBasePath(string value);
 
-	internal readonly bool Success = success;
+	void SetDefaultHeader(string name, string value);
 
-	internal readonly string Message = message;
+	void AddDefaultPathParameter(string key, string value);
+
+	void RemoveDefaultPathParameter(string key);
+
+	void RemoveDefaultHeader(string name);
+
+	void AddDefaultParameter(string value);
+
+	void RemoveDefaultParameter(string value);
+
+	void ResetConfiguration();
+
+	Task<(Error, Stream)> DownloadFile(string url, CancellationToken token = default(CancellationToken));
+
+	Task<(Error error, T? result)> GetJson<T>(ModioAPIRequest request) where T : struct;
+
+	Task<(Error error, JToken)> GetJson(ModioAPIRequest request);
 }

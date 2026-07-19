@@ -1,10 +1,14 @@
 using Meta.WitAi.Events;
 
-namespace Meta.WitAi.Interfaces;
-
-public interface ITranscriptionEvent
+namespace Meta.WitAi.Events
 {
-	WitTranscriptionEvent OnPartialTranscription { get; }
+}
+namespace Meta.WitAi.Interfaces
+{
+	public interface ITranscriptionEvent
+	{
+		WitTranscriptionEvent OnPartialTranscription { get; }
 
-	WitTranscriptionEvent OnFullTranscription { get; }
+		WitTranscriptionEvent OnFullTranscription { get; }
+	}
 }

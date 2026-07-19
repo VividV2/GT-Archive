@@ -1,107 +1,33 @@
-using System;
-using System.Diagnostics;
+using System.Collections.Concurrent;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Security;
+using System.Collections.Concurrent;
+using System.Runtime.CompilerServices;
 
-namespace Cysharp.Threading.Tasks.CompilerServices;
+namespace Cysharp.Threading.Tasks.Internal;
 
-[StructLayout(LayoutKind.Auto)]
-public struct AsyncUniTaskMethodBuilder<T>
+internal static class StatePool<T1>
 {
-	private IStateMachineRunnerPromise<T> runnerPromise;
+	private static readonly ConcurrentQueue<StateTuple<T1>> queue = new ConcurrentQueue<StateTuple<T1>>();
 
-	private Exception ex;
-
-	private T result;
-
-	public UniTask<T> Task
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static StateTuple<T1> Create(T1 item1)
 	{
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[DebuggerHidden]
-		get
+		if (queue.TryDequeue(out var result))
 		{
-			if (runnerPromise != null)
-			{
-				return runnerPromise.Task;
-			}
-			if (ex != null)
-			{
-				return UniTask.FromException<T>(ex);
-			}
-			return UniTask.FromResult(result);
+			StateTuple<T1> result;
+			result.Item1 = item1;
+			return result;
 		}
+		return new StateTuple<T1>
+		{
+			Item1 = item1
+		};
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[DebuggerHidden]
-	public static AsyncUniTaskMethodBuilder<T> Create()
+	public static void Return(StateTuple<T1> tuple)
 	{
-		return default(AsyncUniTaskMethodBuilder<T>);
-	}
-
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[DebuggerHidden]
-	public void SetException(Exception exception)
-	{
-		if (runnerPromise == null)
-		{
-			ex = exception;
-		}
-		else
-		{
-			runnerPromise.SetException(exception);
-		}
-	}
-
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[DebuggerHidden]
-	public void SetResult(T result)
-	{
-		if (runnerPromise == null)
-		{
-			this.result = result;
-		}
-		else
-		{
-			runnerPromise.SetResult(result);
-		}
-	}
-
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[DebuggerHidden]
-	public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
-	{
-		if (runnerPromise == null)
-		{
-			AsyncUniTask<TStateMachine, T>.SetStateMachine(ref stateMachine, ref runnerPromise);
-		}
-		Action moveNext = runnerPromise.MoveNext;
-		awaiter.OnCompleted(moveNext);
-	}
-
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[DebuggerHidden]
-	[SecuritySafeCritical]
-	public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
-	{
-		if (runnerPromise == null)
-		{
-			AsyncUniTask<TStateMachine, T>.SetStateMachine(ref stateMachine, ref runnerPromise);
-		}
-		Action moveNext = runnerPromise.MoveNext;
-		awaiter.UnsafeOnCompleted(moveNext);
-	}
-
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[DebuggerHidden]
-	public void Start<TStateMachine>(ref TStateMachine stateMachine) where TStateMachine : IAsyncStateMachine
-	{
-		stateMachine.MoveNext();
-	}
-
-	[DebuggerHidden]
-	public void SetStateMachine(IAsyncStateMachine stateMachine)
-	{
+		tuple.Item1 = default(T1);
+		queue.Enqueue(tuple);
 	}
 }

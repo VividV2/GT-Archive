@@ -1,35 +1,18 @@
 using System.Runtime.InteropServices;
-using Unity;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace System.EnterpriseServices;
 
-/// <summary>Accesses a shared property. This class cannot be inherited.</summary>
+/// <summary>Indicates the context in which to run the COM+ partition.</summary>
+[Serializable]
 [ComVisible(false)]
-public sealed class SharedProperty
+public enum PartitionOption
 {
-	private ISharedProperty property;
-
-	/// <summary>Gets or sets the value of the shared property.</summary>
-	/// <returns>The value of the shared property.</returns>
-	public object Value
-	{
-		get
-		{
-			return property.Value;
-		}
-		set
-		{
-			property.Value = value;
-		}
-	}
-
-	internal SharedProperty(ISharedProperty property)
-	{
-		this.property = property;
-	}
-
-	internal SharedProperty()
-	{
-		Unity.ThrowStub.ThrowNotSupportedException();
-	}
+	/// <summary>The enclosed context runs in the Global Partition. <see cref="F:System.EnterpriseServices.PartitionOption.Ignore" /> is the default setting for <see cref="P:System.EnterpriseServices.ServiceConfig.PartitionOption" /> when <see cref="P:System.EnterpriseServices.ServiceConfig.Inheritance" /> is set to <see cref="F:System.EnterpriseServices.InheritanceOption.Ignore" />.</summary>
+	Ignore,
+	/// <summary>The enclosed context runs in the current containing COM+ partition. This is the default setting for <see cref="P:System.EnterpriseServices.ServiceConfig.PartitionOption" /> when <see cref="P:System.EnterpriseServices.ServiceConfig.Inheritance" /> is set to <see cref="F:System.EnterpriseServices.InheritanceOption.Inherit" />.</summary>
+	Inherit,
+	/// <summary>The enclosed context runs in a COM+ partition that is different from the current containing partition.</summary>
+	New
 }

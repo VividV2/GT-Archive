@@ -1,5 +1,11 @@
-namespace Microsoft.SqlServer.Server;
+namespace System.Data;
 
-internal abstract class SmiMetaDataProperty
+/// <summary>Determines the serialization format for a <see cref="T:System.Data.DataSet" />.</summary>
+/// <summary>Determines the serialization format for a <see cref="T:System.Data.DataSet" />.</summary>
+public enum SerializationFormat
 {
+	/// <summary>Serialize as XML content. The default.</summary>
+	Xml,
+	/// <summary>Serialize as binary content. Available in ADO.NET 2.0 only.</summary>
+	Binary
 }

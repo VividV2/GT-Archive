@@ -1,11 +1,15 @@
-namespace Unity.Properties;
-
-public abstract class ConcreteTypeVisitor : IPropertyBagVisitor
+namespace Unity.Properties
 {
-	protected abstract void VisitContainer<TContainer>(ref TContainer container);
-
-	void IPropertyBagVisitor.Visit<TContainer>(IPropertyBag<TContainer> properties, ref TContainer container)
+	public abstract class ConcreteTypeVisitor : IPropertyBagVisitor
 	{
-		VisitContainer(ref container);
+		protected abstract void VisitContainer<TContainer>(ref TContainer container);
+
+		void IPropertyBagVisitor.Visit<TContainer>(IPropertyBag<TContainer> properties, ref TContainer container)
+		{
+			VisitContainer(ref container);
+		}
 	}
+}
+namespace Unity.Properties
+{
 }

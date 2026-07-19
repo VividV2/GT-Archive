@@ -1,11 +1,20 @@
-using System;
+namespace System.EnterpriseServices.CompensatingResourceManager;
 
-namespace Unity;
-
-internal sealed class ThrowStub : ObjectDisposedException
+/// <summary>Specifies the state of the current Compensating Resource Manager (CRM) transaction.</summary>
+/// <summary>Specifies the state of the current Compensating Resource Manager (CRM) transaction.</summary>
+[Serializable]
+public enum TransactionState
 {
-	public static void ThrowNotSupportedException()
-	{
-		throw new PlatformNotSupportedException();
-	}
+	/// <summary>The transaction is active.</summary>
+	/// <summary>The transaction is active.</summary>
+	Active,
+	/// <summary>The transaction is commited.</summary>
+	/// <summary>The transaction is commited.</summary>
+	Committed,
+	/// <summary>The transaction is aborted.</summary>
+	/// <summary>The transaction is aborted.</summary>
+	Aborted,
+	/// <summary>The transaction is in-doubt.</summary>
+	/// <summary>The transaction is in-doubt.</summary>
+	Indoubt
 }

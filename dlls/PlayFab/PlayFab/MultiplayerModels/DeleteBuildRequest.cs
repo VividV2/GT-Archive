@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.ProfilesModels;
 
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class DeleteBuildRequest : PlayFabRequestCommon
-{
-	public string BuildId;
-}

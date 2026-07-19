@@ -1,7 +1,11 @@
-namespace TMPro;
-
-public enum TextElementType : byte
+namespace TMPro
 {
-	Character = 1,
-	Sprite
+	public enum TextElementType : byte
+	{
+		Character = 1,
+		Sprite
+	}
+}
+namespace TMPro
+{
 }

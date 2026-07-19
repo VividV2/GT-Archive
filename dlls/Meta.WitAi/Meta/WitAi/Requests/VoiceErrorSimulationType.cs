@@ -1,8 +1,2 @@
-namespace Meta.WitAi.Requests;
+namespace Meta.WitAi.Interfaces;
 
-public enum VoiceErrorSimulationType
-{
-	Server,
-	Timeout,
-	Disconnect
-}

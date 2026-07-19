@@ -1,19 +1,4 @@
-using UnityEngine;
-
-public class GorillaUIParent : MonoBehaviour
+public interface IBuildValidation
 {
-	[OnEnterPlay_SetNull]
-	public static volatile GorillaUIParent instance;
-
-	private void Awake()
-	{
-		if (instance == null)
-		{
-			instance = this;
-		}
-		else if (instance != this)
-		{
-			Object.Destroy(base.gameObject);
-		}
-	}
+	bool BuildValidationCheck();
 }

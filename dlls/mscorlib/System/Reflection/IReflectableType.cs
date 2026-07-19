@@ -1,9 +1,31 @@
-namespace System.Reflection;
+using System.Runtime.InteropServices;
 
-/// <summary>Represents a type that you can reflect over.</summary>
-public interface IReflectableType
+namespace System.Reflection
 {
-	/// <summary>Retrieves an object that represents this type.</summary>
-	/// <returns>An object that represents this type.</returns>
-	TypeInfo GetTypeInfo();
+}
+namespace System.Diagnostics.SymbolStore
+{
+	[ComVisible(true)]
+	public interface ISymbolDocument
+	{
+		Guid CheckSumAlgorithmId { get; }
+
+		Guid DocumentType { get; }
+
+		bool HasEmbeddedSource { get; }
+
+		Guid Language { get; }
+
+		Guid LanguageVendor { get; }
+
+		int SourceLength { get; }
+
+		string URL { get; }
+
+		int FindClosestLine(int line);
+
+		byte[] GetCheckSum();
+
+		byte[] GetSourceRange(int startLine, int startColumn, int endLine, int endColumn);
+	}
 }

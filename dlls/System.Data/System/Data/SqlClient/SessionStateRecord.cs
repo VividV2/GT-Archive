@@ -1,12 +1,14 @@
 namespace System.Data.SqlClient;
 
-internal class SessionStateRecord
+internal enum PreLoginOptions
 {
-	internal bool _recoverable;
-
-	internal uint _version;
-
-	internal int _dataLength;
-
-	internal byte[] _data;
+	VERSION = 0,
+	ENCRYPT = 1,
+	INSTANCE = 2,
+	THREADID = 3,
+	MARS = 4,
+	TRACEID = 5,
+	FEDAUTHREQUIRED = 6,
+	NUMOPT = 7,
+	LASTOPT = 255
 }

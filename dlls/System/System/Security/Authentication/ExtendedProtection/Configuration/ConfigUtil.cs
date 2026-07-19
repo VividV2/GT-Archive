@@ -1,27 +1,33 @@
-using System.ComponentModel;
-using System.Configuration;
-using System.Reflection;
-
-namespace System.Security.Authentication.ExtendedProtection.Configuration;
-
-internal static class ConfigUtil
+namespace System.CodeDom.Compiler
 {
-	internal static T GetCustomAttribute<T>(MemberInfo m, bool inherit)
+	[Flags]
+	public enum GeneratorSupport
 	{
-		object[] customAttributes = m.GetCustomAttributes(typeof(T), inherit: false);
-		if (customAttributes.Length == 0)
-		{
-			return default(T);
-		}
-		return (T)customAttributes[0];
-	}
-
-	internal static ConfigurationProperty BuildProperty(Type t, string name)
-	{
-		PropertyInfo property = t.GetProperty(name);
-		ConfigurationPropertyAttribute customAttribute = GetCustomAttribute<ConfigurationPropertyAttribute>(property, inherit: false);
-		TypeConverterAttribute customAttribute2 = GetCustomAttribute<TypeConverterAttribute>(property, inherit: false);
-		ConfigurationValidatorAttribute customAttribute3 = GetCustomAttribute<ConfigurationValidatorAttribute>(property, inherit: false);
-		return new ConfigurationProperty(customAttribute.Name, property.PropertyType, customAttribute.DefaultValue, (customAttribute2 != null) ? ((TypeConverter)Activator.CreateInstance(Type.GetType(customAttribute2.ConverterTypeName))) : null, customAttribute3?.ValidatorInstance, customAttribute.Options);
+		ArraysOfArrays = 1,
+		EntryPointMethod = 2,
+		GotoStatements = 4,
+		MultidimensionalArrays = 8,
+		StaticConstructors = 0x10,
+		TryCatchStatements = 0x20,
+		ReturnTypeAttributes = 0x40,
+		DeclareValueTypes = 0x80,
+		DeclareEnums = 0x100,
+		DeclareDelegates = 0x200,
+		DeclareInterfaces = 0x400,
+		DeclareEvents = 0x800,
+		AssemblyAttributes = 0x1000,
+		ParameterAttributes = 0x2000,
+		ReferenceParameters = 0x4000,
+		ChainedConstructorArguments = 0x8000,
+		NestedTypes = 0x10000,
+		MultipleInterfaceMembers = 0x20000,
+		PublicStaticMembers = 0x40000,
+		ComplexExpressions = 0x80000,
+		Win32Resources = 0x100000,
+		Resources = 0x200000,
+		PartialTypes = 0x400000,
+		GenericTypeReference = 0x800000,
+		GenericTypeDeclaration = 0x1000000,
+		DeclareIndexerProperties = 0x2000000
 	}
 }

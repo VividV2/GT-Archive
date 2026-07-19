@@ -1,27 +1,31 @@
-namespace UnityEngine.UIElements;
-
-internal class ReusableMultiColumnTreeViewItem : ReusableTreeViewItem
+namespace UnityEngine.UIElements
 {
-	public override VisualElement rootElement => base.bindableElement;
-
-	public override void Init(VisualElement item)
+	internal class ReusableMultiColumnTreeViewItem : ReusableTreeViewItem
 	{
-	}
+		public override VisualElement rootElement => base.bindableElement;
 
-	public void Init(VisualElement container, Columns columns)
-	{
-		int num = 0;
-		base.bindableElement = container;
-		foreach (Column visible in columns.visibleList)
+		public override void Init(VisualElement item)
 		{
-			if (columns.IsPrimary(visible))
+		}
+
+		public void Init(VisualElement container, Columns columns)
+		{
+			int num = 0;
+			base.bindableElement = container;
+			foreach (Column visible in columns.visibleList)
 			{
-				VisualElement visualElement = container[num];
-				VisualElement item = visualElement.GetProperty(MultiColumnController.bindableElementPropertyName) as VisualElement;
-				InitExpandHierarchy(visualElement, item);
-				break;
+				if (columns.IsPrimary(visible))
+				{
+					VisualElement visualElement = container[num];
+					VisualElement item = visualElement.GetProperty(MultiColumnController.bindableElementPropertyName) as VisualElement;
+					InitExpandHierarchy(visualElement, item);
+					break;
+				}
+				num++;
 			}
-			num++;
 		}
 	}
+}
+namespace UnityEngine.UIElements
+{
 }

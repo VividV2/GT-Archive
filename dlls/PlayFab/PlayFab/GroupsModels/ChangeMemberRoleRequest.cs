@@ -1,17 +1,16 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.GroupsModels;
-
-[Serializable]
-public class ChangeMemberRoleRequest : PlayFabRequestCommon
+namespace PlayFab.GroupsModels
 {
-	public string DestinationRoleId;
+	[Serializable]
+	public class ListMembershipResponse : PlayFabResultCommon
+	{
+		public List<GroupWithRoles> Groups;
 
-	public EntityKey Group;
-
-	public List<EntityKey> Members;
-
-	public string OriginRoleId;
+		public ListMembershipResponse()
+		{
+			base..ctor();
+		}
+	}
+}
+namespace PlayFab.ExperimentationModels
+{
 }

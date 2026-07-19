@@ -3,10 +3,13 @@ using System;
 namespace UnityEngine.VFX;
 
 [Flags]
-internal enum VFXCullingFlags
+internal enum VFXUpdateMode
 {
-	CullNone = 0,
-	CullSimulation = 1,
-	CullBoundsUpdate = 2,
-	CullDefault = 3
+	FixedDeltaTime = 0,
+	DeltaTime = 1,
+	IgnoreTimeScale = 2,
+	ExactFixedTimeStep = 4,
+	DeltaTimeAndIgnoreTimeScale = 3,
+	FixedDeltaAndExactTime = 4,
+	FixedDeltaAndExactTimeAndIgnoreTimeScale = 6
 }

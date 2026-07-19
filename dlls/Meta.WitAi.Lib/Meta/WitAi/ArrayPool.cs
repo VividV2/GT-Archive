@@ -1,14 +1,18 @@
 using System;
 
-namespace Meta.WitAi;
-
-public class ArrayPool<TElementType> : ObjectPool<TElementType[]>
+namespace Meta.WitAi
 {
-	public int Capacity { get; }
-
-	public ArrayPool(int capacity, int preload = 0)
-		: base((Func<TElementType[]>)(() => new TElementType[capacity]), preload)
+	public class ArrayPool<TElementType> : ObjectPool<TElementType[]>
 	{
-		Capacity = capacity;
+		public int Capacity { get; }
+
+		public ArrayPool(int capacity, int preload = 0)
+			: base((Func<TElementType[]>)(() => new TElementType[capacity]), preload)
+		{
+			Capacity = capacity;
+		}
 	}
+}
+namespace Meta.Voice.Logging
+{
 }

@@ -1,7 +1,11 @@
-namespace System.Data.SqlClient;
-
-internal enum CallbackType
+namespace System.Data.SqlClient
 {
-	Read,
-	Write
+	internal enum CallbackType
+	{
+		Read,
+		Write
+	}
+}
+namespace System.Data.SqlClient
+{
 }

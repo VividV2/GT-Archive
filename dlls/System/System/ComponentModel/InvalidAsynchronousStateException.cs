@@ -1,37 +1,22 @@
-using System.Runtime.Serialization;
+namespace System.Net;
 
-namespace System.ComponentModel;
-
-/// <summary>Thrown when a thread on which an operation should execute no longer exists or has no message loop.</summary>
-[Serializable]
-public class InvalidAsynchronousStateException : ArgumentException
+internal enum ContextAttribute
 {
-	/// <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.InvalidAsynchronousStateException" /> class.</summary>
-	public InvalidAsynchronousStateException()
-		: this(null)
-	{
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.InvalidAsynchronousStateException" /> class with the specified detailed description.</summary>
-	/// <param name="message">A detailed description of the error.</param>
-	public InvalidAsynchronousStateException(string message)
-		: base(message)
-	{
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.InvalidAsynchronousStateException" /> class with the specified detailed description and the specified exception.</summary>
-	/// <param name="message">A detailed description of the error.</param>
-	/// <param name="innerException">A reference to the inner exception that is the cause of this exception.</param>
-	public InvalidAsynchronousStateException(string message, Exception innerException)
-		: base(message, innerException)
-	{
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.InvalidAsynchronousStateException" /> class with the given <see cref="T:System.Runtime.Serialization.SerializationInfo" /> and <see cref="T:System.Runtime.Serialization.StreamingContext" />.</summary>
-	/// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> to be used for deserialization.</param>
-	/// <param name="context">The destination to be used for deserialization.</param>
-	protected InvalidAsynchronousStateException(SerializationInfo info, StreamingContext context)
-		: base(info, context)
-	{
-	}
+	Sizes = 0,
+	Names = 1,
+	Lifespan = 2,
+	DceInfo = 3,
+	StreamSizes = 4,
+	Authority = 6,
+	PackageInfo = 10,
+	NegotiationInfo = 12,
+	UniqueBindings = 25,
+	EndpointBindings = 26,
+	ClientSpecifiedSpn = 27,
+	RemoteCertificate = 83,
+	LocalCertificate = 84,
+	RootStore = 85,
+	IssuerListInfoEx = 89,
+	ConnectionInfo = 90,
+	UiInfo = 104
 }

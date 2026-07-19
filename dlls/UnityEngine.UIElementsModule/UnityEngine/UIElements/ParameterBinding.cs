@@ -1,37 +1,15 @@
-using System;
-
 namespace UnityEngine.UIElements;
 
-[Serializable]
-internal struct ParameterBinding
+[EventCategory(EventCategory.EnterLeave)]
+public sealed class PointerOutEvent : PointerEventBase<PointerOutEvent>
 {
-	[SerializeField]
-	private int m_Index;
-
-	[SerializeField]
-	private string m_Name;
-
-	public int index
+	static PointerOutEvent()
 	{
-		get
-		{
-			return m_Index;
-		}
-		set
-		{
-			m_Index = value;
-		}
+		EventBase<PointerOutEvent>.SetCreateFunction(() => new PointerOutEvent());
 	}
 
-	public string name
+	internal override void Dispatch(BaseVisualElementPanel panel)
 	{
-		get
-		{
-			return m_Name;
-		}
-		set
-		{
-			m_Name = value;
-		}
+		EventDispatchUtilities.DispatchToAssignedTarget(this, panel);
 	}
 }

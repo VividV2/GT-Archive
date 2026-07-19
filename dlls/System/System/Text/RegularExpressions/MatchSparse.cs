@@ -1,26 +1,38 @@
 using System.Collections;
+using System.Collections;
 
-namespace System.Text.RegularExpressions;
-
-internal class MatchSparse : Match
+namespace System.Text.RegularExpressions
 {
-	internal new readonly Hashtable _caps;
-
-	public override GroupCollection Groups
+	internal class MatchSparse : Match
 	{
-		get
+		internal new readonly Hashtable _caps;
+
+		public override GroupCollection Groups
 		{
-			if (_groupcoll == null)
+			get
 			{
-				_groupcoll = new GroupCollection(this, _caps);
+				if (_groupcoll == null)
+				{
+					_groupcoll = new GroupCollection(this, _caps);
+				}
+				return _groupcoll;
 			}
-			return _groupcoll;
+		}
+
+		internal MatchSparse(Regex regex, Hashtable caps, int capcount, string text, int begpos, int len, int startpos)
+			: base(regex, capcount, text, begpos, len, startpos)
+		{
+			_caps = caps;
 		}
 	}
-
-	internal MatchSparse(Regex regex, Hashtable caps, int capcount, string text, int begpos, int len, int startpos)
-		: base(regex, capcount, text, begpos, len, startpos)
-	{
-		_caps = caps;
-	}
+}
+namespace System.Security.Cryptography.X509Certificates
+{
+}
+namespace Microsoft.Win32
+{
+	/// <summary>Represents the method that will handle the <see cref="E:Microsoft.Win32.SystemEvents.SessionEnding" /> event from the operating system.</summary>
+	/// <param name="sender">The source of the event. When this event is raised by the <see cref="T:Microsoft.Win32.SystemEvents" /> class, this object is always <see langword="null" />.</param>
+	/// <param name="e">A <see cref="T:Microsoft.Win32.SessionEndingEventArgs" /> that contains the event data.</param>
+	public delegate void SessionEndingEventHandler(object sender, SessionEndingEventArgs e);
 }

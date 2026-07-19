@@ -1,13 +1,17 @@
 using System;
 
-namespace Meta.WitAi.TTS.Data;
-
-[Serializable]
-public class TTSDiskCacheSettings
+namespace Meta.WitAi.TTS.Data
 {
-	public TTSDiskCacheLocation DiskCacheLocation;
+	[Serializable]
+	public class TTSDiskCacheSettings
+	{
+		public TTSDiskCacheLocation DiskCacheLocation;
 
-	public bool StreamFromDisk;
+		public bool StreamFromDisk;
 
-	public float StreamBufferLength = 5f;
+		public float StreamBufferLength = 5f;
+	}
+}
+namespace Meta.WitAi.TTS.Data
+{
 }

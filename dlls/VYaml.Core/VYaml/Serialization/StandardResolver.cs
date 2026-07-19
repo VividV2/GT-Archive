@@ -1,41 +1,45 @@
-namespace VYaml.Serialization;
-
-public class StandardResolver : IYamlFormatterResolver
+namespace VYaml.Serialization
 {
-	private static class FormatterCache<T>
+}
+namespace VYaml.Serialization
+{
+	public class StandardResolver : IYamlFormatterResolver
 	{
-		public static readonly IYamlFormatter<T>? Formatter;
-
-		static FormatterCache()
+		private static class FormatterCache<T>
 		{
-			if (typeof(T) == typeof(object))
+			public static readonly IYamlFormatter<T>? Formatter;
+
+			static FormatterCache()
 			{
-				Formatter = PrimitiveObjectResolver.Instance.GetFormatter<T>();
-				return;
-			}
-			IYamlFormatterResolver[] defaultResolvers = DefaultResolvers;
-			for (int i = 0; i < defaultResolvers.Length; i++)
-			{
-				IYamlFormatter<T> formatter = defaultResolvers[i].GetFormatter<T>();
-				if (formatter != null)
+				if (typeof(T) == typeof(object))
 				{
-					Formatter = formatter;
-					break;
+					Formatter = PrimitiveObjectResolver.Instance.GetFormatter<T>();
+					return;
+				}
+				IYamlFormatterResolver[] defaultResolvers = DefaultResolvers;
+				for (int i = 0; i < defaultResolvers.Length; i++)
+				{
+					IYamlFormatter<T> formatter = defaultResolvers[i].GetFormatter<T>();
+					if (formatter != null)
+					{
+						Formatter = formatter;
+						break;
+					}
 				}
 			}
 		}
-	}
 
-	public static readonly StandardResolver Instance = new StandardResolver();
+		public static readonly StandardResolver Instance = new StandardResolver();
 
-	public static readonly IYamlFormatterResolver[] DefaultResolvers = new IYamlFormatterResolver[2]
-	{
-		BuiltinResolver.Instance,
-		GeneratedResolver.Instance
-	};
+		public static readonly IYamlFormatterResolver[] DefaultResolvers = new IYamlFormatterResolver[2]
+		{
+			BuiltinResolver.Instance,
+			GeneratedResolver.Instance
+		};
 
-	public IYamlFormatter<T>? GetFormatter<T>()
-	{
-		return FormatterCache<T>.Formatter;
+		public IYamlFormatter<T>? GetFormatter<T>()
+		{
+			return FormatterCache<T>.Formatter;
+		}
 	}
 }

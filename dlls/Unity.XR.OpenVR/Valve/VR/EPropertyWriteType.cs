@@ -1,8 +1,18 @@
-namespace Valve.VR;
-
-public enum EPropertyWriteType
+namespace Valve.VR
 {
-	PropertyWrite_Set,
-	PropertyWrite_Erase,
-	PropertyWrite_SetError
+	public enum EVRNotificationType
+	{
+		Transient,
+		Persistent,
+		Transient_SystemWithUserValue
+	}
+}
+namespace Valve.VR
+{
+	public enum EPropertyWriteType
+	{
+		PropertyWrite_Set,
+		PropertyWrite_Erase,
+		PropertyWrite_SetError
+	}
 }

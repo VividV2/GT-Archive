@@ -1,9 +1,6 @@
-namespace System.Runtime.Serialization;
-
-internal class GMonthDayDataContract : StringDataContract
+namespace System.Runtime.Serialization
 {
-	internal GMonthDayDataContract()
-		: base(DictionaryGlobals.gMonthDayLocalName, DictionaryGlobals.SchemaNamespace)
-	{
-	}
+}
+namespace System.Runtime.Serialization
+{
 }

@@ -1,10 +1,3 @@
-namespace System.Runtime.CompilerServices;
-
-[AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
-public sealed class AsyncIteratorStateMachineAttribute : StateMachineAttribute
+namespace System.Runtime.InteropServices.ComTypes
 {
-	public AsyncIteratorStateMachineAttribute(Type stateMachineType)
-		: base(stateMachineType)
-	{
-	}
 }

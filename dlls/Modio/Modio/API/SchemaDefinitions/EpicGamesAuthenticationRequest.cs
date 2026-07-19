@@ -1,28 +1,28 @@
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
-namespace Modio.API.SchemaDefinitions;
+namespace Modio.Users;
 
-[JsonObject]
-internal readonly struct EpicGamesAuthenticationRequest(string access_token, bool terms_agreed, string email, long date_expires) : IApiRequest
+[Serializable]
+public class UserSaveObject
 {
-	private static readonly Dictionary<string, object> _bodyParameters = new Dictionary<string, object>();
+	public string LocalUserId;
 
-	internal readonly string AccessToken = access_token;
+	public string Username;
 
-	internal readonly bool TermsAgreed = terms_agreed;
+	public long UserId;
 
-	internal readonly string Email = email;
+	public string AuthToken;
 
-	internal readonly long DateExpires = date_expires;
+	public long AuthExpiration;
 
-	public IReadOnlyDictionary<string, object> GetBodyParameters()
-	{
-		_bodyParameters.Clear();
-		_bodyParameters.Add("access_token", AccessToken);
-		_bodyParameters.Add("terms_agreed", TermsAgreed);
-		_bodyParameters.Add("email", Email);
-		_bodyParameters.Add("date_expires", DateExpires);
-		return _bodyParameters;
-	}
+	public List<long> SubscribedMods;
+
+	public List<long> DisabledMods;
+
+	public List<long> PurchasedMods;
 }

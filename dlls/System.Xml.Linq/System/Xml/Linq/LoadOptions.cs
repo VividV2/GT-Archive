@@ -13,3 +13,6 @@ public enum LoadOptions
 	/// <summary>Requests the line information from the <see cref="T:System.Xml.XmlReader" /> and makes it available via properties on <see cref="T:System.Xml.Linq.XObject" />.</summary>
 	SetLineInfo = 4
 }
+namespace System.Xml.Linq
+{
+}

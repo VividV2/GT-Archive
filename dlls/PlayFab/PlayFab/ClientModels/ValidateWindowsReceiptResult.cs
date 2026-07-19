@@ -1,11 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
+namespace PlayFab;
 
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class ValidateWindowsReceiptResult : PlayFabResultCommon
-{
-	public List<PurchaseReceiptFulfillment> Fulfillments;
-}

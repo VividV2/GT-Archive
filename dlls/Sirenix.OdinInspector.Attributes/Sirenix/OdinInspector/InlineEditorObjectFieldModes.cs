@@ -1,9 +1,13 @@
-namespace Sirenix.OdinInspector;
-
-public enum InlineEditorObjectFieldModes
+namespace Sirenix.OdinInspector
 {
-	Boxed,
-	Foldout,
-	Hidden,
-	CompletelyHidden
+	public enum InlineEditorObjectFieldModes
+	{
+		Boxed,
+		Foldout,
+		Hidden,
+		CompletelyHidden
+	}
+}
+namespace Sirenix.OdinInspector
+{
 }

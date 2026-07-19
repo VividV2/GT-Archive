@@ -1,8 +1,3 @@
-namespace System.Runtime.Remoting.Contexts;
-
-internal class ContextCallbackObject : ContextBoundObject
+namespace System.Runtime.Remoting.Messaging
 {
-	public void DoCallBack(CrossContextDelegate deleg)
-	{
-	}
 }

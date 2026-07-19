@@ -1,12 +1,3 @@
-using System;
-using System.Runtime.InteropServices;
-
-namespace Meta.XR.Acoustics;
-
-public struct SceneIRCallbacks
+namespace Meta.XR.Acoustics
 {
-	public IntPtr userData;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	public ProgressCallback progress;
 }

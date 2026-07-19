@@ -1,9 +1,12 @@
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Activation;
 
-namespace System.Runtime.Remoting.Messaging;
-
-/// <summary>Marks an object that can propagate outside of an <see cref="T:System.AppDomain" /> in a <see cref="T:System.Runtime.Remoting.Messaging.LogicalCallContext" />.</summary>
-[ComVisible(true)]
-public interface ILogicalThreadAffinative
+namespace System.Runtime.Remoting.Contexts
 {
-}
+	[ComVisible(true)]
+	public interface IContextAttribute
+	{
+		void GetPropertiesForNewContext(IConstructionCallMessage msg);
+
+		bool IsContextOK(Context ctx, IConstructionCallMessage msg);
+	}

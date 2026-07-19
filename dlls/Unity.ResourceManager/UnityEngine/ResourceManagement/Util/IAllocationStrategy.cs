@@ -1,10 +1,9 @@
-using System;
-
-namespace UnityEngine.ResourceManagement.Util;
-
-public interface IAllocationStrategy
+namespace UnityEngine.ResourceManagement.Util
 {
-	object New(Type type, int typeHash);
+	public interface IObjectInitializationDataProvider
+	{
+		string Name { get; }
 
-	void Release(int typeHash, object obj);
+		ObjectInitializationData CreateObjectInitializationData();
+	}
 }

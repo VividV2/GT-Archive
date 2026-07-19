@@ -1,8 +1,12 @@
-namespace System.Xml.Xsl.Qil;
-
-internal enum SerializationHints
+namespace System.Xml.Xsl.Runtime
 {
-	None,
-	CData,
-	DisableOutputEscaping
+}
+namespace System.Xml.Xsl.Qil
+{
+	internal enum SerializationHints
+	{
+		None,
+		CData,
+		DisableOutputEscaping
+	}
 }

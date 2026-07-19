@@ -1,59 +1,22 @@
-namespace System.ComponentModel;
+namespace System.ComponentModel.Design;
 
-/// <summary>Enables attribute redirection. This class cannot be inherited.</summary>
-[AttributeUsage(AttributeTargets.Property)]
-public class AttributeProviderAttribute : Attribute
+/// <summary>Provides support for root-level designer view technologies.</summary>
+/// <summary>Provides support for root-level designer view technologies.</summary>
+public interface IRootDesigner : IDesigner, IDisposable
 {
-	/// <summary>Gets the assembly qualified type name passed into the constructor.</summary>
-	/// <returns>The assembly qualified name of the type specified in the constructor.</returns>
-	public string TypeName { get; }
+	/// <summary>Gets the set of technologies that this designer can support for its display.</summary>
+	/// <returns>An array of supported <see cref="T:System.ComponentModel.Design.ViewTechnology" /> values.</returns>
+	/// <summary>Gets the set of technologies that this designer can support for its display.</summary>
+	/// <returns>An array of supported <see cref="T:System.ComponentModel.Design.ViewTechnology" /> values.</returns>
+	ViewTechnology[] SupportedTechnologies { get; }
 
-	/// <summary>Gets the name of the property for which attributes will be retrieved.</summary>
-	/// <returns>The name of the property for which attributes will be retrieved.</returns>
-	public string PropertyName { get; }
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.AttributeProviderAttribute" /> class with the given type name.</summary>
-	/// <param name="typeName">The name of the type to specify.</param>
-	/// <exception cref="T:System.ArgumentNullException">
-	///   <paramref name="typeName" /> is <see langword="null" />.</exception>
-	public AttributeProviderAttribute(string typeName)
-	{
-		if (typeName == null)
-		{
-			throw new ArgumentNullException("typeName");
-		}
-		TypeName = typeName;
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.AttributeProviderAttribute" /> class with the given type name and property name.</summary>
-	/// <param name="typeName">The name of the type to specify.</param>
-	/// <param name="propertyName">The name of the property for which attributes will be retrieved.</param>
-	/// <exception cref="T:System.ArgumentNullException">
-	///   <paramref name="propertyName" /> is <see langword="null" />.</exception>
-	public AttributeProviderAttribute(string typeName, string propertyName)
-	{
-		if (typeName == null)
-		{
-			throw new ArgumentNullException("typeName");
-		}
-		if (propertyName == null)
-		{
-			throw new ArgumentNullException("propertyName");
-		}
-		TypeName = typeName;
-		PropertyName = propertyName;
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.AttributeProviderAttribute" /> class with the given type.</summary>
-	/// <param name="type">The type to specify.</param>
-	/// <exception cref="T:System.ArgumentNullException">
-	///   <paramref name="type" /> is <see langword="null" />.</exception>
-	public AttributeProviderAttribute(Type type)
-	{
-		if (type == null)
-		{
-			throw new ArgumentNullException("type");
-		}
-		TypeName = type.AssemblyQualifiedName;
-	}
+	/// <summary>Gets a view object for the specified view technology.</summary>
+	/// <param name="technology">A <see cref="T:System.ComponentModel.Design.ViewTechnology" /> that indicates a particular view technology.</param>
+	/// <returns>An object that represents the view for this designer.</returns>
+	/// <exception cref="T:System.ArgumentException">The specified view technology is not supported or does not exist.</exception>
+	/// <summary>Gets a view object for the specified view technology.</summary>
+	/// <param name="technology">A <see cref="T:System.ComponentModel.Design.ViewTechnology" /> that indicates a particular view technology.</param>
+	/// <returns>An object that represents the view for this designer.</returns>
+	/// <exception cref="T:System.ArgumentException">The specified view technology is not supported or does not exist.</exception>
+	object GetView(ViewTechnology technology);
 }

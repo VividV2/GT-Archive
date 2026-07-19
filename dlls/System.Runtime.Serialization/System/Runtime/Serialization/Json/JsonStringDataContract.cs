@@ -1,22 +1,29 @@
-namespace System.Runtime.Serialization.Json;
-
-internal class JsonStringDataContract : JsonDataContract
+namespace System.Runtime.Serialization.Json
 {
-	public JsonStringDataContract(StringDataContract traditionalStringDataContract)
-		: base(traditionalStringDataContract)
+	internal class JsonStringDataContract : JsonDataContract
 	{
-	}
-
-	public override object ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
-	{
-		if (context == null)
+		public JsonStringDataContract(StringDataContract traditionalStringDataContract)
+			: base(traditionalStringDataContract)
 		{
-			if (!JsonDataContract.TryReadNullAtTopLevel(jsonReader))
-			{
-				return jsonReader.ReadElementContentAsString();
-			}
-			return null;
 		}
-		return JsonDataContract.HandleReadValue(jsonReader.ReadElementContentAsString(), context);
+
+		public override object ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+		{
+			if (context == null)
+			{
+				if (!JsonDataContract.TryReadNullAtTopLevel(jsonReader))
+				{
+					return jsonReader.ReadElementContentAsString();
+				}
+				return null;
+			}
+			return JsonDataContract.HandleReadValue(jsonReader.ReadElementContentAsString(), context);
+		}
 	}
+}
+namespace System.Runtime.Serialization.Configuration
+{
+}
+namespace System.Runtime.Serialization
+{
 }

@@ -1,10 +1,18 @@
-namespace System.IO;
-
-/// <summary>Specifies whether to search the current directory, or the current directory and all subdirectories.</summary>
-public enum SearchOption
+namespace System.Globalization
 {
-	/// <summary>Includes only the current directory in a search operation.</summary>
-	TopDirectoryOnly,
-	/// <summary>Includes the current directory and all its subdirectories in a search operation. This option includes reparse points such as mounted drives and symbolic links in the search.</summary>
-	AllDirectories
+	[Flags]
+	internal enum DateTimeFormatFlags
+	{
+		None = 0,
+		UseGenitiveMonth = 1,
+		UseLeapYearMonth = 2,
+		UseSpacesInMonthNames = 4,
+		UseHebrewRule = 8,
+		UseSpacesInDayNames = 0x10,
+		UseDigitPrefixInTokens = 0x20,
+		NotInitialized = -1
+	}
+}
+namespace System.Collections.Generic
+{
 }

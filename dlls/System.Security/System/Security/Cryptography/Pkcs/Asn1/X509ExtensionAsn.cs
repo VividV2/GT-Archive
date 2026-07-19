@@ -1,28 +1,29 @@
 using System.Security.Cryptography.Asn1;
-using System.Security.Cryptography.X509Certificates;
-using Internal.Cryptography;
+using System.Security.Cryptography.Asn1;
+using System.Security.Cryptography.Asn1;
 
 namespace System.Security.Cryptography.Pkcs.Asn1;
 
-internal struct X509ExtensionAsn
+internal struct SignerInfoAsn
 {
-	[ObjectIdentifier]
-	internal string ExtnId;
+	public int Version;
 
-	[DefaultValue(new byte[] { 1, 1, 0 })]
-	internal bool Critical;
+	public SignerIdentifierAsn Sid;
+
+	public AlgorithmIdentifierAsn DigestAlgorithm;
+
+	[ExpectedTag(0)]
+	[OptionalValue]
+	[AnyValue]
+	public ReadOnlyMemory<byte>? SignedAttributes;
+
+	public AlgorithmIdentifierAsn SignatureAlgorithm;
 
 	[OctetString]
-	internal ReadOnlyMemory<byte> ExtnValue;
+	public ReadOnlyMemory<byte> SignatureValue;
 
-	public X509ExtensionAsn(X509Extension extension, bool copyValue = true)
-	{
-		if (extension == null)
-		{
-			throw new ArgumentNullException("extension");
-		}
-		ExtnId = extension.Oid.Value;
-		Critical = extension.Critical;
-		ExtnValue = (copyValue ? extension.RawData.CloneByteArray() : extension.RawData);
-	}
+	[ExpectedTag(1)]
+	[SetOf]
+	[OptionalValue]
+	public AttributeAsn[] UnsignedAttributes;
 }

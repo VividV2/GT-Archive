@@ -1,46 +1,26 @@
-using System;
-using System.Collections.Generic;
-using Fusion.Sockets;
+using System.Runtime.InteropServices;
 
-namespace Fusion;
-
-public interface INetworkRunnerCallbacks : IPublicFacingInterface
+namespace Fusion
 {
-	void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player);
+	[StructLayout(LayoutKind.Explicit)]
+	public struct SimulationRuntimeConfig
+	{
+		[FieldOffset(0)]
+		public Resolved TickRate;
 
-	void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player);
+		[FieldOffset(16)]
+		public SimulationModes ServerMode;
 
-	void OnPlayerJoined(NetworkRunner runner, PlayerRef player);
+		[FieldOffset(20)]
+		public int PlayerMaxCount;
 
-	void OnPlayerLeft(NetworkRunner runner, PlayerRef player);
+		[FieldOffset(24)]
+		public PlayerRef MasterClient;
 
-	void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason);
+		[FieldOffset(28)]
+		public PlayerRef HostPlayer;
 
-	void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason);
-
-	void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token);
-
-	void OnConnectFailed(NetworkRunner runner, NetAddress remoteAddress, NetConnectFailedReason reason);
-
-	void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message);
-
-	void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ArraySegment<byte> data);
-
-	void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress);
-
-	void OnInput(NetworkRunner runner, NetworkInput input);
-
-	void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input);
-
-	void OnConnectedToServer(NetworkRunner runner);
-
-	void OnSessionListUpdated(NetworkRunner runner, List<SessionInfo> sessionList);
-
-	void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary<string, object> data);
-
-	void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken);
-
-	void OnSceneLoadDone(NetworkRunner runner);
-
-	void OnSceneLoadStart(NetworkRunner runner);
+		[FieldOffset(32)]
+		public Topologies Topology;
+	}
 }

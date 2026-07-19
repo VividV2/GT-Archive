@@ -1,15 +1,25 @@
-namespace System.Runtime.InteropServices.ComTypes;
-
-/// <summary>Defines the kind of variable.</summary>
-[Serializable]
-public enum VARKIND
+namespace System.Runtime.InteropServices
 {
-	/// <summary>The variable is a field or member of the type. It exists at a fixed offset within each instance of the type.</summary>
-	VAR_PERINSTANCE,
-	/// <summary>There is only one instance of the variable.</summary>
-	VAR_STATIC,
-	/// <summary>The <see langword="VARDESC" /> structure describes a symbolic constant. There is no memory associated with it.</summary>
-	VAR_CONST,
-	/// <summary>The variable can be accessed only through <see langword="IDispatch::Invoke" />.</summary>
-	VAR_DISPATCH
+	[ComImport]
+	[Obsolete]
+	[Guid("0000010b-0000-0000-c000-000000000046")]
+	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+	public interface UCOMIPersistFile
+	{
+		void GetClassID(out Guid pClassID);
+
+		[PreserveSig]
+		int IsDirty();
+
+		void Load([MarshalAs(UnmanagedType.LPWStr)] string pszFileName, int dwMode);
+
+		void Save([MarshalAs(UnmanagedType.LPWStr)] string pszFileName, [MarshalAs(UnmanagedType.Bool)] bool fRemember);
+
+		void SaveCompleted([MarshalAs(UnmanagedType.LPWStr)] string pszFileName);
+
+		void GetCurFile([MarshalAs(UnmanagedType.LPWStr)] out string ppszFileName);
+	}
+}
+namespace System.Runtime.Remoting.Messaging
+{
 }

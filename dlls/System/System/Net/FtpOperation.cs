@@ -1,19 +1,23 @@
-namespace System.Net;
-
-internal enum FtpOperation
+namespace System.Net
 {
-	DownloadFile,
-	ListDirectory,
-	ListDirectoryDetails,
-	UploadFile,
-	UploadFileUnique,
-	AppendFile,
-	DeleteFile,
-	GetDateTimestamp,
-	GetFileSize,
-	Rename,
-	MakeDirectory,
-	RemoveDirectory,
-	PrintWorkingDirectory,
-	Other
+	internal enum FtpOperation
+	{
+		DownloadFile,
+		ListDirectory,
+		ListDirectoryDetails,
+		UploadFile,
+		UploadFileUnique,
+		AppendFile,
+		DeleteFile,
+		GetDateTimestamp,
+		GetFileSize,
+		Rename,
+		MakeDirectory,
+		RemoveDirectory,
+		PrintWorkingDirectory,
+		Other
+	}
+}
+namespace System.Net.Security
+{
 }

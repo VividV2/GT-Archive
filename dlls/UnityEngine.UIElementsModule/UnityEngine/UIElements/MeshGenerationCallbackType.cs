@@ -1,8 +1,12 @@
-namespace UnityEngine.UIElements;
-
-internal enum MeshGenerationCallbackType
+namespace UnityEngine.UIElements
 {
-	Fork,
-	WorkThenFork,
-	Work
+	internal enum MeshGenerationCallbackType
+	{
+		Fork,
+		WorkThenFork,
+		Work
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

@@ -1,18 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.GroupsModels;
-
-[Serializable]
-public class GroupInvitation : PlayFabBaseModel
+namespace PlayFab.GroupsModels
 {
-	public DateTime Expires;
-
-	public EntityKey Group;
-
-	public EntityWithLineage InvitedByEntity;
-
-	public EntityWithLineage InvitedEntity;
-
-	public string RoleId;
+}
+namespace PlayFab.ExperimentationModels
+{
 }

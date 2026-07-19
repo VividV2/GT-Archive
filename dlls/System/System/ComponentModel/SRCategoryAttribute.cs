@@ -1,9 +1,2 @@
-namespace System.ComponentModel;
+namespace System.CodeDom;
 
-internal sealed class SRCategoryAttribute : CategoryAttribute
-{
-	public SRCategoryAttribute(string category)
-		: base(category)
-	{
-	}
-}

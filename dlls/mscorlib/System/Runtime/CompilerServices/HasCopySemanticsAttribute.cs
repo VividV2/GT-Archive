@@ -1,12 +1,21 @@
-namespace System.Runtime.CompilerServices;
-
-/// <summary>This class is not used in the .NET Framework version 2.0 and is reserved for future use. This class cannot be inherited.</summary>
-[Serializable]
-[AttributeUsage(AttributeTargets.Struct)]
-public sealed class HasCopySemanticsAttribute : Attribute
+namespace System.Reflection
 {
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.HasCopySemanticsAttribute" /> class.</summary>
-	public HasCopySemanticsAttribute()
+	internal struct MonoEventInfo
 	{
+		public Type declaring_type;
+
+		public Type reflected_type;
+
+		public string name;
+
+		public MethodInfo add_method;
+
+		public MethodInfo remove_method;
+
+		public MethodInfo raise_method;
+
+		public EventAttributes attrs;
+
+		public MethodInfo[] other_methods;
 	}
 }

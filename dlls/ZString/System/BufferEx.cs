@@ -1,26 +1,40 @@
-namespace System;
+using System;
+using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.CompilerServices;
 
-internal static class BufferEx
+namespace System
 {
-	internal unsafe static void ZeroMemory(byte* dest, uint len)
+	internal static class BufferEx
 	{
-		if (len != 0)
+		internal unsafe static void ZeroMemory(byte* dest, uint len)
 		{
-			for (int i = 0; i < len; i++)
+			if (len != 0)
 			{
-				dest[i] = 0;
+				for (int i = 0; i < len; i++)
+				{
+					dest[i] = 0;
+				}
+			}
+		}
+
+		internal unsafe static void Memcpy(byte* dest, byte* src, int len)
+		{
+			if (len != 0)
+			{
+				for (int i = 0; i < len; i++)
+				{
+					dest[i] = src[i];
+				}
 			}
 		}
 	}
-
-	internal unsafe static void Memcpy(byte* dest, byte* src, int len)
+}
+namespace Microsoft.CodeAnalysis
+{
+	[CompilerGenerated]
+	[Microsoft.CodeAnalysis.Embedded]
+	internal sealed class EmbeddedAttribute : Attribute
 	{
-		if (len != 0)
-		{
-			for (int i = 0; i < len; i++)
-			{
-				dest[i] = src[i];
-			}
-		}
 	}
 }

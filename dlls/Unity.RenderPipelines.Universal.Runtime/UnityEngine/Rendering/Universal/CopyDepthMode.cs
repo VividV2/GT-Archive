@@ -1,8 +1,12 @@
-namespace UnityEngine.Rendering.Universal;
-
-public enum CopyDepthMode
+namespace UnityEngine.Rendering.Universal.Internal
 {
-	AfterOpaques,
-	AfterTransparents,
-	ForcePrepass
+}
+namespace UnityEngine.Rendering.Universal
+{
+	public enum CopyDepthMode
+	{
+		AfterOpaques,
+		AfterTransparents,
+		ForcePrepass
+	}
 }

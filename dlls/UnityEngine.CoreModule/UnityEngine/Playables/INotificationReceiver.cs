@@ -1,10 +1,3 @@
-using UnityEngine.Scripting;
-
-namespace UnityEngine.Playables;
-
-[RequiredByNativeCode]
-public interface INotificationReceiver
+namespace UnityEngine.Pool
 {
-	[RequiredByNativeCode]
-	void OnNotify(Playable origin, INotification notification, object context);
 }

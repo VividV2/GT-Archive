@@ -12,3 +12,6 @@ public enum XmlSchemaContentType
 	/// <summary>Mixed content.</summary>
 	Mixed
 }
+namespace System.Xml.Schema
+{
+}

@@ -1,33 +1,9 @@
-namespace Mono.Net.Security;
+namespace System.Diagnostics;
 
-internal class AsyncWriteRequest : AsyncReadOrWriteRequest
+internal class AssertWrapper
 {
-	public AsyncWriteRequest(MobileAuthenticatedStream parent, bool sync, byte[] buffer, int offset, int size)
-		: base(parent, sync, buffer, offset, size)
+	public static void ShowAssert(string stackTrace, StackFrame frame, string message, string detailMessage)
 	{
-	}
-
-	protected override AsyncOperationStatus Run(AsyncOperationStatus status)
-	{
-		if (base.UserBuffer.Size == 0)
-		{
-			base.UserResult = base.CurrentSize;
-			return AsyncOperationStatus.Complete;
-		}
-		var (num, flag) = base.Parent.ProcessWrite(base.UserBuffer);
-		if (num < 0)
-		{
-			base.UserResult = -1;
-			return AsyncOperationStatus.Complete;
-		}
-		base.CurrentSize += num;
-		base.UserBuffer.Offset += num;
-		base.UserBuffer.Size -= num;
-		if (flag)
-		{
-			return AsyncOperationStatus.Continue;
-		}
-		base.UserResult = base.CurrentSize;
-		return AsyncOperationStatus.Complete;
+		new DefaultTraceListener().Fail(message, detailMessage);
 	}
 }

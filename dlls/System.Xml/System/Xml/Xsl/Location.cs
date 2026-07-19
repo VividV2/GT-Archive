@@ -1,28 +1,32 @@
 using System.Diagnostics;
 
-namespace System.Xml.Xsl;
-
-[DebuggerDisplay("({Line},{Pos})")]
-internal struct Location
+namespace System.Xml.XPath
 {
-	private ulong value;
-
-	public int Line => (int)(value >> 32);
-
-	public int Pos => (int)value;
-
-	public Location(int line, int pos)
+}
+namespace System.Xml.Xsl
+{
+	[DebuggerDisplay("({Line},{Pos})")]
+	internal struct Location
 	{
-		value = (ulong)(((long)line << 32) | (uint)pos);
-	}
+		private ulong value;
 
-	public Location(Location that)
-	{
-		value = that.value;
-	}
+		public int Line => (int)(value >> 32);
 
-	public bool LessOrEqual(Location that)
-	{
-		return value <= that.value;
+		public int Pos => (int)value;
+
+		public Location(int line, int pos)
+		{
+			value = (ulong)(((long)line << 32) | (uint)pos);
+		}
+
+		public Location(Location that)
+		{
+			value = that.value;
+		}
+
+		public bool LessOrEqual(Location that)
+		{
+			return value <= that.value;
+		}
 	}
 }

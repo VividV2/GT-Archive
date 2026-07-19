@@ -1,32 +1,36 @@
 using System;
 
-namespace UnityEngine.UIElements;
-
-internal class MainCameraScreenRaycaster : CameraScreenRaycaster
+namespace UnityEngine.UIElements
 {
-	private Camera[] singleCameraArray = new Camera[1];
-
-	public MainCameraScreenRaycaster()
+	internal class MainCameraScreenRaycaster : CameraScreenRaycaster
 	{
-		ResolveCamera();
-	}
+		private Camera[] singleCameraArray = new Camera[1];
 
-	public override void Update()
-	{
-		ResolveCamera();
-	}
-
-	private void ResolveCamera()
-	{
-		Camera main = Camera.main;
-		if (main != null)
+		public MainCameraScreenRaycaster()
 		{
-			cameras = singleCameraArray;
-			cameras[0] = main;
+			ResolveCamera();
 		}
-		else
+
+		public override void Update()
 		{
-			cameras = Array.Empty<Camera>();
+			ResolveCamera();
+		}
+
+		private void ResolveCamera()
+		{
+			Camera main = Camera.main;
+			if (main != null)
+			{
+				cameras = singleCameraArray;
+				cameras[0] = main;
+			}
+			else
+			{
+				cameras = Array.Empty<Camera>();
+			}
 		}
 	}
+}
+namespace UnityEngine.UIElements
+{
 }

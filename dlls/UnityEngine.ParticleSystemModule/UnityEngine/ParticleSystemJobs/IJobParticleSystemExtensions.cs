@@ -1,17 +1,21 @@
 using System;
 
-namespace UnityEngine.ParticleSystemJobs;
-
-public static class IJobParticleSystemExtensions
+namespace UnityEngine.ParticleSystemJobs
 {
-	public static void EarlyJobInit<T>() where T : struct, IJobParticleSystem
+	public static class IJobParticleSystemExtensions
 	{
-		ParticleSystemJobStruct<T>.Initialize();
-	}
+		public static void EarlyJobInit<T>() where T : struct, IJobParticleSystem
+		{
+			ParticleSystemJobStruct<T>.Initialize();
+		}
 
-	internal static IntPtr GetReflectionData<T>() where T : struct, IJobParticleSystem
-	{
-		ParticleSystemJobStruct<T>.Initialize();
-		return ParticleSystemJobStruct<T>.jobReflectionData.Data;
+		internal static IntPtr GetReflectionData<T>() where T : struct, IJobParticleSystem
+		{
+			ParticleSystemJobStruct<T>.Initialize();
+			return ParticleSystemJobStruct<T>.jobReflectionData.Data;
+		}
 	}
+}
+namespace UnityEngine
+{
 }

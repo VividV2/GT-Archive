@@ -2,6 +2,10 @@ using System;
 using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
 using UnityEngine.Playables;
+using System;
+using System.Runtime.CompilerServices;
+using UnityEngine.Bindings;
+using UnityEngine.Playables;
 
 namespace UnityEngine.Animations;
 
@@ -29,9 +33,11 @@ internal static class AnimationPlayableGraphExtensions
 		try
 		{
 			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
+			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
 			if (!StringMarshaller.TryMarshalEmptyOrNullString(name, ref managedSpanWrapper))
 			{
 				ReadOnlySpan<char> readOnlySpan = MemoryExtensions.AsSpan(name);
+				ReadOnlySpan<char> readOnlySpan;
 				fixed (char* begin = readOnlySpan)
 				{
 					managedSpanWrapper = new ManagedSpanWrapper(begin, readOnlySpan.Length);
@@ -53,6 +59,7 @@ internal static class AnimationPlayableGraphExtensions
 			ThrowHelper.ThrowArgumentNullException(animator, "animator");
 		}
 		IntPtr intPtr = Object.MarshalledUnityObject.MarshalNotNull(animator);
+		IntPtr intPtr;
 		if (intPtr == (IntPtr)0)
 		{
 			ThrowHelper.ThrowArgumentNullException(animator, "animator");

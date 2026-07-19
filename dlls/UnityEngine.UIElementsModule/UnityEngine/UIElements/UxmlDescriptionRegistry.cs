@@ -1,25 +1,11 @@
-using System;
-using System.Collections.Generic;
+using UnityEngine.Bindings;
 
 namespace UnityEngine.UIElements;
 
-internal static class UxmlDescriptionRegistry
+[NativeType(Header = "Modules/UIElements/VisualNodeTextData.h")]
+internal struct VisualNodeTextData
 {
-	private static readonly Dictionary<Type, UxmlTypeDescription> s_UxmlDescriptions = new Dictionary<Type, UxmlTypeDescription>();
+	internal LanguageDirection LanguageDirection;
 
-	public static UxmlTypeDescription GetDescription(Type type)
-	{
-		if (!s_UxmlDescriptions.TryGetValue(type, out var value))
-		{
-			Dictionary<Type, UxmlTypeDescription> dictionary = s_UxmlDescriptions;
-			value = new UxmlTypeDescription(type);
-			dictionary.Add(type, value);
-		}
-		return value;
-	}
-
-	public static void Clear()
-	{
-		s_UxmlDescriptions.Clear();
-	}
+	internal LanguageDirection LocalLanguageDirection;
 }

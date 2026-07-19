@@ -1,11 +1,15 @@
-namespace System.Xml.Xsl.IlGen;
-
-internal enum ItemLocation
+namespace System.Xml.Serialization
 {
-	None,
-	Stack,
-	Parameter,
-	Local,
-	Current,
-	Global
+}
+namespace System.Xml.Xsl.IlGen
+{
+	internal enum ItemLocation
+	{
+		None,
+		Stack,
+		Parameter,
+		Local,
+		Current,
+		Global
+	}
 }

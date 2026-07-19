@@ -1,34 +1,29 @@
+using System;
+using UnityEngine;
+using System;
 using UnityEngine;
 
 namespace Oculus.Interaction.Input;
 
-public static class Constants
+public interface IController
 {
-	public const int NUM_HAND_JOINTS = 26;
+	Handedness Handedness { get; }
 
-	public const int NUM_FINGERS = 5;
+	float Scale { get; }
 
-	public static readonly Vector3 RightProximal = Vector3.back;
+	bool IsConnected { get; }
 
-	public static readonly Vector3 RightDistal = Vector3.forward;
+	bool IsPoseValid { get; }
 
-	public static readonly Vector3 RightPinkySide = Vector3.right;
+	ControllerInput ControllerInput { get; }
 
-	public static readonly Vector3 RightThumbSide = Vector3.left;
+	event Action WhenUpdated;
 
-	public static readonly Vector3 RightPalmar = Vector3.down;
+	bool TryGetPose(out Pose pose);
 
-	public static readonly Vector3 RightDorsal = Vector3.up;
+	bool TryGetPointerPose(out Pose pose);
 
-	public static readonly Vector3 LeftProximal = Vector3.back;
+	bool IsButtonUsageAnyActive(ControllerButtonUsage buttonUsage);
 
-	public static readonly Vector3 LeftDistal = Vector3.forward;
-
-	public static readonly Vector3 LeftPinkySide = Vector3.left;
-
-	public static readonly Vector3 LeftThumbSide = Vector3.right;
-
-	public static readonly Vector3 LeftPalmar = Vector3.down;
-
-	public static readonly Vector3 LeftDorsal = Vector3.up;
+	bool IsButtonUsageAllActive(ControllerButtonUsage buttonUsage);
 }

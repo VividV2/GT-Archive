@@ -1,10 +1,7 @@
-using System;
-using PlayFab.SharedModels;
+namespace Ionic.Zlib;
 
-namespace PlayFab.CloudScriptModels;
-
-[Serializable]
-public class TagModel : PlayFabBaseModel
+public enum CompressionMode
 {
-	public string TagValue;
+	Compress,
+	Decompress
 }

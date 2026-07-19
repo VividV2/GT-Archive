@@ -1,8 +1,6 @@
-namespace UnityEngine.UIElements;
-
-internal abstract class UxmlSerializableAdapterBase
+namespace UnityEngine.UIElements
 {
-	public abstract object dataBoxed { get; set; }
-
-	public abstract object CloneInstanceBoxed(object value);
+}
+namespace UnityEngine.UIElements
+{
 }

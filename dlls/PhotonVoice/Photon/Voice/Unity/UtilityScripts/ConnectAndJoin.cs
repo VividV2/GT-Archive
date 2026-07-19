@@ -2,136 +2,140 @@ using System.Collections.Generic;
 using Photon.Realtime;
 using UnityEngine;
 
-namespace Photon.Voice.Unity.UtilityScripts;
-
-[RequireComponent(typeof(VoiceConnection))]
-public class ConnectAndJoin : MonoBehaviour, IConnectionCallbacks, IMatchmakingCallbacks
+namespace Photon.Voice.Unity.UtilityScripts
 {
-	private VoiceConnection voiceConnection;
-
-	public bool RandomRoom = true;
-
-	[SerializeField]
-	private bool autoConnect = true;
-
-	[SerializeField]
-	private bool autoTransmit = true;
-
-	[SerializeField]
-	private bool publishUserId;
-
-	public string RoomName;
-
-	private readonly EnterRoomParams enterRoomParams = new EnterRoomParams
+}
+namespace Photon.Voice.Unity.UtilityScripts
+{
+	[RequireComponent(typeof(VoiceConnection))]
+	public class ConnectAndJoin : MonoBehaviour, IConnectionCallbacks, IMatchmakingCallbacks
 	{
-		RoomOptions = new RoomOptions()
-	};
+		private VoiceConnection voiceConnection;
 
-	public bool IsConnected => voiceConnection.Client.IsConnected;
+		public bool RandomRoom = true;
 
-	private void Awake()
-	{
-		voiceConnection = GetComponent<VoiceConnection>();
-	}
+		[SerializeField]
+		private bool autoConnect = true;
 
-	private void OnEnable()
-	{
-		voiceConnection.Client.AddCallbackTarget(this);
-		if (autoConnect)
+		[SerializeField]
+		private bool autoTransmit = true;
+
+		[SerializeField]
+		private bool publishUserId;
+
+		public string RoomName;
+
+		private readonly EnterRoomParams enterRoomParams = new EnterRoomParams
 		{
-			ConnectNow();
-		}
-	}
+			RoomOptions = new RoomOptions()
+		};
 
-	private void OnDisable()
-	{
-		voiceConnection.Client.RemoveCallbackTarget(this);
-	}
+		public bool IsConnected => voiceConnection.Client.IsConnected;
 
-	public void ConnectNow()
-	{
-		voiceConnection.ConnectUsingSettings();
-	}
-
-	public void OnCreatedRoom()
-	{
-	}
-
-	public void OnCreateRoomFailed(short returnCode, string message)
-	{
-		Debug.LogErrorFormat("OnCreateRoomFailed errorCode={0} errorMessage={1}", returnCode, message);
-	}
-
-	public void OnFriendListUpdate(List<FriendInfo> friendList)
-	{
-	}
-
-	public void OnJoinedRoom()
-	{
-		if (voiceConnection.PrimaryRecorder == null)
+		private void Awake()
 		{
-			voiceConnection.PrimaryRecorder = base.gameObject.AddComponent<Recorder>();
+			voiceConnection = GetComponent<VoiceConnection>();
 		}
-		if (autoTransmit)
+
+		private void OnEnable()
 		{
-			voiceConnection.PrimaryRecorder.TransmitEnabled = autoTransmit;
+			voiceConnection.Client.AddCallbackTarget(this);
+			if (autoConnect)
+			{
+				ConnectNow();
+			}
 		}
-	}
 
-	public void OnJoinRandomFailed(short returnCode, string message)
-	{
-		Debug.LogErrorFormat("OnJoinRandomFailed errorCode={0} errorMessage={1}", returnCode, message);
-	}
-
-	public void OnJoinRoomFailed(short returnCode, string message)
-	{
-		Debug.LogErrorFormat("OnJoinRoomFailed roomName={0} errorCode={1} errorMessage={2}", RoomName, returnCode, message);
-	}
-
-	public void OnLeftRoom()
-	{
-	}
-
-	public void OnPreLeavingRoom()
-	{
-	}
-
-	public void OnConnected()
-	{
-	}
-
-	public void OnConnectedToMaster()
-	{
-		enterRoomParams.RoomOptions.PublishUserId = publishUserId;
-		if (RandomRoom)
+		private void OnDisable()
 		{
-			enterRoomParams.RoomName = null;
-			voiceConnection.Client.OpJoinRandomOrCreateRoom(new OpJoinRandomRoomParams(), enterRoomParams);
+			voiceConnection.Client.RemoveCallbackTarget(this);
 		}
-		else
+
+		public void ConnectNow()
 		{
-			enterRoomParams.RoomName = RoomName;
-			voiceConnection.Client.OpJoinOrCreateRoom(enterRoomParams);
+			voiceConnection.ConnectUsingSettings();
 		}
-	}
 
-	public void OnDisconnected(DisconnectCause cause)
-	{
-		if (cause != DisconnectCause.None && cause != DisconnectCause.DisconnectByClientLogic)
+		public void OnCreatedRoom()
 		{
-			Debug.LogErrorFormat("OnDisconnected cause={0}", cause);
 		}
-	}
 
-	public void OnRegionListReceived(RegionHandler regionHandler)
-	{
-	}
+		public void OnCreateRoomFailed(short returnCode, string message)
+		{
+			Debug.LogErrorFormat("OnCreateRoomFailed errorCode={0} errorMessage={1}", returnCode, message);
+		}
 
-	public void OnCustomAuthenticationResponse(Dictionary<string, object> data)
-	{
-	}
+		public void OnFriendListUpdate(List<FriendInfo> friendList)
+		{
+		}
 
-	public void OnCustomAuthenticationFailed(string debugMessage)
-	{
+		public void OnJoinedRoom()
+		{
+			if (voiceConnection.PrimaryRecorder == null)
+			{
+				voiceConnection.PrimaryRecorder = base.gameObject.AddComponent<Recorder>();
+			}
+			if (autoTransmit)
+			{
+				voiceConnection.PrimaryRecorder.TransmitEnabled = autoTransmit;
+			}
+		}
+
+		public void OnJoinRandomFailed(short returnCode, string message)
+		{
+			Debug.LogErrorFormat("OnJoinRandomFailed errorCode={0} errorMessage={1}", returnCode, message);
+		}
+
+		public void OnJoinRoomFailed(short returnCode, string message)
+		{
+			Debug.LogErrorFormat("OnJoinRoomFailed roomName={0} errorCode={1} errorMessage={2}", RoomName, returnCode, message);
+		}
+
+		public void OnLeftRoom()
+		{
+		}
+
+		public void OnPreLeavingRoom()
+		{
+		}
+
+		public void OnConnected()
+		{
+		}
+
+		public void OnConnectedToMaster()
+		{
+			enterRoomParams.RoomOptions.PublishUserId = publishUserId;
+			if (RandomRoom)
+			{
+				enterRoomParams.RoomName = null;
+				voiceConnection.Client.OpJoinRandomOrCreateRoom(new OpJoinRandomRoomParams(), enterRoomParams);
+			}
+			else
+			{
+				enterRoomParams.RoomName = RoomName;
+				voiceConnection.Client.OpJoinOrCreateRoom(enterRoomParams);
+			}
+		}
+
+		public void OnDisconnected(DisconnectCause cause)
+		{
+			if (cause != DisconnectCause.None && cause != DisconnectCause.DisconnectByClientLogic)
+			{
+				Debug.LogErrorFormat("OnDisconnected cause={0}", cause);
+			}
+		}
+
+		public void OnRegionListReceived(RegionHandler regionHandler)
+		{
+		}
+
+		public void OnCustomAuthenticationResponse(Dictionary<string, object> data)
+		{
+		}
+
+		public void OnCustomAuthenticationFailed(string debugMessage)
+		{
+		}
 	}
 }

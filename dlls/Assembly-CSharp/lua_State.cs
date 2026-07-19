@@ -4,3 +4,5 @@ using System.Runtime.InteropServices;
 public struct lua_State
 {
 }
+namespace GorillaTag.Cosmetics;
+

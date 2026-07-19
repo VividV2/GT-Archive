@@ -1,12 +1,2 @@
-namespace System.Diagnostics.CodeAnalysis;
+namespace System.Collections.Concurrent;
 
-[AttributeUsage(AttributeTargets.Parameter, Inherited = false)]
-public sealed class NotNullWhenAttribute : Attribute
-{
-	public bool ReturnValue { get; }
-
-	public NotNullWhenAttribute(bool returnValue)
-	{
-		ReturnValue = returnValue;
-	}
-}

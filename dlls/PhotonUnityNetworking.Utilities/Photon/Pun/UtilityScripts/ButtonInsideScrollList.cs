@@ -2,31 +2,35 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Photon.Pun.UtilityScripts;
-
-public class ButtonInsideScrollList : MonoBehaviour, IPointerDownHandler, IEventSystemHandler, IPointerUpHandler
+namespace Photon.Pun.UtilityScripts
 {
-	private ScrollRect scrollRect;
-
-	private void Start()
+	public class ButtonInsideScrollList : MonoBehaviour, IPointerDownHandler, IEventSystemHandler, IPointerUpHandler
 	{
-		scrollRect = GetComponentInParent<ScrollRect>();
-	}
+		private ScrollRect scrollRect;
 
-	void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
-	{
-		if (scrollRect != null)
+		private void Start()
 		{
-			scrollRect.StopMovement();
-			scrollRect.enabled = false;
+			scrollRect = GetComponentInParent<ScrollRect>();
+		}
+
+		void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
+		{
+			if (scrollRect != null)
+			{
+				scrollRect.StopMovement();
+				scrollRect.enabled = false;
+			}
+		}
+
+		void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
+		{
+			if (scrollRect != null && !scrollRect.enabled)
+			{
+				scrollRect.enabled = true;
+			}
 		}
 	}
-
-	void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
-	{
-		if (scrollRect != null && !scrollRect.enabled)
-		{
-			scrollRect.enabled = true;
-		}
-	}
+}
+namespace Photon.Pun.UtilityScripts
+{
 }

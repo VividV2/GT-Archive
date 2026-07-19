@@ -1,32 +1,12 @@
 using System;
 using System.Diagnostics;
+using System;
+using System.Diagnostics;
 
 namespace Sirenix.OdinInspector;
 
-[AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = true)]
-[DontApplyToListElements]
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
 [Conditional("UNITY_EDITOR")]
-public class PropertySpaceAttribute : Attribute
+public class OptionalAttribute : Attribute
 {
-	public float SpaceBefore;
-
-	public float SpaceAfter;
-
-	public PropertySpaceAttribute()
-	{
-		SpaceBefore = 8f;
-		SpaceAfter = 0f;
-	}
-
-	public PropertySpaceAttribute(float spaceBefore)
-	{
-		SpaceBefore = spaceBefore;
-		SpaceAfter = 0f;
-	}
-
-	public PropertySpaceAttribute(float spaceBefore, float spaceAfter)
-	{
-		SpaceBefore = spaceBefore;
-		SpaceAfter = spaceAfter;
-	}
 }

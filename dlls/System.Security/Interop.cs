@@ -2,6 +2,8 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 
+namespace System.Security.Cryptography.X509Certificates;
+
 internal static class Interop
 {
 	internal class Kernel32

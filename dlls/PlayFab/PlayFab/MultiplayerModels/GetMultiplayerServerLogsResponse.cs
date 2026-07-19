@@ -1,10 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class GetMultiplayerServerLogsResponse : PlayFabResultCommon
+namespace PlayFab.MultiplayerModels
 {
-	public string LogDownloadUrl;
 }

@@ -1,12 +1,3 @@
-using System.IO;
-
-namespace System.CodeDom.Compiler;
-
-/// <summary>Defines an interface for parsing code into a <see cref="T:System.CodeDom.CodeCompileUnit" />.</summary>
-public interface ICodeParser
+namespace System.CodeDom
 {
-	/// <summary>When implemented in a derived class, compiles the specified text stream into a <see cref="T:System.CodeDom.CodeCompileUnit" />.</summary>
-	/// <param name="codeStream">A <see cref="T:System.IO.TextReader" /> that can be used to read the code to be compiled.</param>
-	/// <returns>A <see cref="T:System.CodeDom.CodeCompileUnit" /> that contains a representation of the parsed code.</returns>
-	CodeCompileUnit Parse(TextReader codeStream);
 }

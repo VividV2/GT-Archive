@@ -1,11 +1,3 @@
-using System;
-
-namespace Mono.Interop;
-
-[AttributeUsage(AttributeTargets.Method)]
-internal sealed class MonoPInvokeCallbackAttribute : Attribute
+namespace System
 {
-	public MonoPInvokeCallbackAttribute(Type t)
-	{
-	}
 }

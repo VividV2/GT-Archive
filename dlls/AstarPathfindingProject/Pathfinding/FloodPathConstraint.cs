@@ -1,26 +1,30 @@
 using UnityEngine;
 
-namespace Pathfinding;
-
-public class FloodPathConstraint : NNConstraint
+namespace Pathfinding
 {
-	private readonly FloodPath path;
-
-	public FloodPathConstraint(FloodPath path)
+	public class FloodPathConstraint : NNConstraint
 	{
-		if (path == null)
-		{
-			Debug.LogWarning("FloodPathConstraint should not be used with a NULL path");
-		}
-		this.path = path;
-	}
+		private readonly FloodPath path;
 
-	public override bool Suitable(GraphNode node)
-	{
-		if (base.Suitable(node))
+		public FloodPathConstraint(FloodPath path)
 		{
-			return path.HasPathTo(node);
+			if (path == null)
+			{
+				Debug.LogWarning("FloodPathConstraint should not be used with a NULL path");
+			}
+			this.path = path;
 		}
-		return false;
+
+		public override bool Suitable(GraphNode node)
+		{
+			if (base.Suitable(node))
+			{
+				return path.HasPathTo(node);
+			}
+			return false;
+		}
 	}
+}
+namespace Pathfinding
+{
 }

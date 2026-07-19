@@ -10,3 +10,6 @@ public enum LoadOption
 	/// <summary>The incoming values for this row will be written to the current version of each column. The original version of each column's data will not be changed.</summary>
 	Upsert
 }
+namespace Microsoft.SqlServer.Server
+{
+}

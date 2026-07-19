@@ -1,8 +1,3 @@
-namespace Valve.VR;
-
-public enum EVRFirmwareError
+namespace Valve.VR
 {
-	None,
-	Success,
-	Fail
 }

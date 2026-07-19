@@ -1,9 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace System.Net.Security;
 
-internal sealed class SafeFreeCredential_SECURITY : SafeFreeCredentials
-{
-	protected override bool ReleaseHandle()
-	{
-		return global::Interop.SspiCli.FreeCredentialsHandle(ref _handle) == 0;
-	}
-}
+internal delegate X509Certificate LocalCertSelectionCallback(string targetHost, X509CertificateCollection localCertificates, X509Certificate remoteCertificate, string[] acceptableIssuers);

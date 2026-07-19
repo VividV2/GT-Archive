@@ -1,25 +1,29 @@
-namespace System.Net;
-
-internal enum CookieToken
+namespace System.Net
 {
-	Nothing,
-	NameValuePair,
-	Attribute,
-	EndToken,
-	EndCookie,
-	End,
-	Equals,
-	Comment,
-	CommentUrl,
-	CookieName,
-	Discard,
-	Domain,
-	Expires,
-	MaxAge,
-	Path,
-	Port,
-	Secure,
-	HttpOnly,
-	Unknown,
-	Version
+	internal enum CookieToken
+	{
+		Nothing,
+		NameValuePair,
+		Attribute,
+		EndToken,
+		EndCookie,
+		End,
+		Equals,
+		Comment,
+		CommentUrl,
+		CookieName,
+		Discard,
+		Domain,
+		Expires,
+		MaxAge,
+		Path,
+		Port,
+		Secure,
+		HttpOnly,
+		Unknown,
+		Version
+	}
+}
+namespace System.Net.Configuration
+{
 }

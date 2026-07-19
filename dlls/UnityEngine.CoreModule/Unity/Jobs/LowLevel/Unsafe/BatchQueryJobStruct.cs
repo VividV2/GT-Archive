@@ -1,19 +1,23 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Unity.Jobs.LowLevel.Unsafe;
-
-[StructLayout(LayoutKind.Sequential, Size = 1)]
-public struct BatchQueryJobStruct<T> where T : struct
+namespace Unity.IO.LowLevel.Unsafe
 {
-	internal static IntPtr jobReflectionData;
-
-	public static IntPtr Initialize()
+}
+namespace Unity.Jobs.LowLevel.Unsafe
+{
+	[StructLayout(LayoutKind.Sequential, Size = 1)]
+	public struct BatchQueryJobStruct<T> where T : struct
 	{
-		if (jobReflectionData == IntPtr.Zero)
+		internal static IntPtr jobReflectionData;
+
+		public static IntPtr Initialize()
 		{
-			jobReflectionData = JobsUtility.CreateJobReflectionData(typeof(T), null);
+			if (jobReflectionData == IntPtr.Zero)
+			{
+				jobReflectionData = JobsUtility.CreateJobReflectionData(typeof(T), null);
+			}
+			return jobReflectionData;
 		}
-		return jobReflectionData;
 	}
 }

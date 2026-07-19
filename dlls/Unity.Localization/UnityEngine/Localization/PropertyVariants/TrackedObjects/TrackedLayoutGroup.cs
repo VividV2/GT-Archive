@@ -1,19 +1,9 @@
 using System;
-using UnityEngine.UI;
+using System;
 
-namespace UnityEngine.Localization.PropertyVariants.TrackedObjects;
+namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
 
 [Serializable]
-[DisplayName("Layout Group", null)]
-[CustomTrackedObject(typeof(LayoutGroup), true)]
-public class TrackedLayoutGroup : JsonSerializerTrackedObject
+public class ULongTrackedProperty : TrackedProperty<ulong>
 {
-	protected override void PostApplyTrackedProperties()
-	{
-		if (base.Target is LayoutGroup { transform: RectTransform transform })
-		{
-			LayoutRebuilder.MarkLayoutForRebuild(transform);
-		}
-		base.PostApplyTrackedProperties();
-	}
 }

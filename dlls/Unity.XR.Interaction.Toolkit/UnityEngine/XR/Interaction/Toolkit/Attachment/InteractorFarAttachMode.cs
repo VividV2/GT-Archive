@@ -1,7 +1,9 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Attachment;
-
-public enum InteractorFarAttachMode
+namespace UnityEngine.XR.Interaction.Toolkit
 {
-	Near,
-	Far
+}
+namespace UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme
+{
+}
+namespace UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives
+{
 }

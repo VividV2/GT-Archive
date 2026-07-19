@@ -1,12 +1,16 @@
 using System;
 using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
 
-namespace PlayFab.DataModels;
+namespace PlayFab.CloudScriptModels;
 
 [Serializable]
-public class EntityKey : PlayFabBaseModel
+public class ValueToDateModel : PlayFabBaseModel
 {
-	public string Id;
+	public string Currency;
 
-	public string Type;
+	public uint TotalValue;
+
+	public string TotalValueAsDecimal;
 }

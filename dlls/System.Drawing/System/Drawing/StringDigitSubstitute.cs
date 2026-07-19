@@ -1,14 +1,59 @@
-namespace System.Drawing;
+using System.Runtime.InteropServices;
 
-/// <summary>The <see cref="T:System.Drawing.StringDigitSubstitute" /> enumeration specifies how to substitute digits in a string according to a user's locale or language.</summary>
-public enum StringDigitSubstitute
+namespace System.Drawing.Imaging
 {
-	/// <summary>Specifies a user-defined substitution scheme.</summary>
-	User,
-	/// <summary>Specifies to disable substitutions.</summary>
-	None,
-	/// <summary>Specifies substitution digits that correspond with the official national language of the user's locale.</summary>
-	National,
-	/// <summary>Specifies substitution digits that correspond with the user's native script or language, which may be different from the official national language of the user's locale.</summary>
-	Traditional
+	[StructLayout(LayoutKind.Explicit)]
+	internal struct MonoMetafileHeader
+	{
+		[FieldOffset(0)]
+		public MetafileType type;
+
+		[FieldOffset(4)]
+		public int size;
+
+		[FieldOffset(8)]
+		public int version;
+
+		[FieldOffset(12)]
+		public int emf_plus_flags;
+
+		[FieldOffset(16)]
+		public float dpi_x;
+
+		[FieldOffset(20)]
+		public float dpi_y;
+
+		[FieldOffset(24)]
+		public int x;
+
+		[FieldOffset(28)]
+		public int y;
+
+		[FieldOffset(32)]
+		public int width;
+
+		[FieldOffset(36)]
+		public int height;
+
+		[FieldOffset(40)]
+		public WmfMetaHeader wmf_header;
+
+		[FieldOffset(40)]
+		public EnhMetafileHeader emf_header;
+
+		[FieldOffset(128)]
+		public int emfplus_header_size;
+
+		[FieldOffset(132)]
+		public int logical_dpi_x;
+
+		[FieldOffset(136)]
+		public int logical_dpi_y;
+	}
+}
+namespace System.Drawing
+{
+}
+namespace System.Drawing
+{
 }

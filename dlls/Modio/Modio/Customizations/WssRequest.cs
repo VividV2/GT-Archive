@@ -1,15 +1,22 @@
 using Newtonsoft.Json.Linq;
 
-namespace Modio.Customizations;
-
-internal static class WssRequest
+namespace Modio.Customizations
 {
-	public static WssMessage DeviceLogin()
+	internal static class WssRequest
 	{
-		return new WssMessage
+		public static WssMessage DeviceLogin()
 		{
-			operation = "device_login",
-			context = JToken.FromObject(default(WssDeviceLoginRequest))
-		};
+			return new WssMessage
+			{
+				operation = "device_login",
+				context = JToken.FromObject(default(WssDeviceLoginRequest))
+			};
+		}
 	}
+}
+namespace Modio.Errors
+{
+}
+namespace Modio.Mods
+{
 }

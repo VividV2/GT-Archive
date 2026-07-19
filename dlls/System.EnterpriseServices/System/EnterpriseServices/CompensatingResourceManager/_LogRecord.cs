@@ -1,10 +1,3 @@
-namespace System.EnterpriseServices.CompensatingResourceManager;
-
-internal struct _LogRecord
+namespace System.EnterpriseServices
 {
-	public int dwCrmFlags;
-
-	public int dwSequenceNumber;
-
-	public object blobUserData;
 }

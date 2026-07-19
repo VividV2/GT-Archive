@@ -1,20 +1,10 @@
-using System.Collections;
+namespace System.Net.NetworkInformation;
 
-namespace System.IO;
-
-internal class FAMData
+internal struct Win32_IP_ADAPTER_WINS_SERVER_ADDRESS
 {
-	public FileSystemWatcher FSW;
+	public Win32LengthFlagsUnion LengthFlags;
 
-	public string Directory;
+	public IntPtr Next;
 
-	public string FileMask;
-
-	public bool IncludeSubdirs;
-
-	public bool Enabled;
-
-	public FAMRequest Request;
-
-	public Hashtable SubDirs;
+	public Win32_SOCKET_ADDRESS Address;
 }

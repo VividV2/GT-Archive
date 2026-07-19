@@ -1,14 +1,18 @@
 using System;
 
-namespace UnityEngine.XR.Interaction.Toolkit;
-
-[AttributeUsage(AttributeTargets.Class)]
-public sealed class CanFocusMultipleAttribute : Attribute
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Readers
 {
-	public bool allowMultiple { get; }
-
-	public CanFocusMultipleAttribute(bool allowMultiple = true)
+}
+namespace UnityEngine.XR.Interaction.Toolkit
+{
+	[AttributeUsage(AttributeTargets.Class)]
+	public sealed class CanFocusMultipleAttribute : Attribute
 	{
-		this.allowMultiple = allowMultiple;
+		public bool allowMultiple { get; }
+
+		public CanFocusMultipleAttribute(bool allowMultiple = true)
+		{
+			this.allowMultiple = allowMultiple;
+		}
 	}
 }

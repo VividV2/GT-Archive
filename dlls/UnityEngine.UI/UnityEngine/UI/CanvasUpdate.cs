@@ -1,11 +1,15 @@
-namespace UnityEngine.UI;
-
-public enum CanvasUpdate
+namespace UnityEngine.UI
 {
-	Prelayout,
-	Layout,
-	PostLayout,
-	PreRender,
-	LatePreRender,
-	MaxUpdateValue
+	public enum CanvasUpdate
+	{
+		Prelayout,
+		Layout,
+		PostLayout,
+		PreRender,
+		LatePreRender,
+		MaxUpdateValue
+	}
+}
+namespace UnityEngine.UI
+{
 }

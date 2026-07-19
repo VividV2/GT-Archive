@@ -1,24 +1,28 @@
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
-namespace System.Drawing;
-
-internal struct GdipPropertyItem
+namespace System.Drawing
 {
-	internal int id;
-
-	internal int len;
-
-	internal short type;
-
-	internal IntPtr value;
-
-	internal static void MarshalTo(GdipPropertyItem gdipProp, PropertyItem prop)
+	internal struct GdipPropertyItem
 	{
-		prop.Id = gdipProp.id;
-		prop.Len = gdipProp.len;
-		prop.Type = gdipProp.type;
-		prop.Value = new byte[gdipProp.len];
-		Marshal.Copy(gdipProp.value, prop.Value, 0, gdipProp.len);
+		internal int id;
+
+		internal int len;
+
+		internal short type;
+
+		internal IntPtr value;
+
+		internal static void MarshalTo(GdipPropertyItem gdipProp, PropertyItem prop)
+		{
+			prop.Id = gdipProp.id;
+			prop.Len = gdipProp.len;
+			prop.Type = gdipProp.type;
+			prop.Value = new byte[gdipProp.len];
+			Marshal.Copy(gdipProp.value, prop.Value, 0, gdipProp.len);
+		}
 	}
+}
+namespace System.Drawing
+{
 }

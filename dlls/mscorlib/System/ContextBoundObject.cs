@@ -1,14 +1,14 @@
-using System.Runtime.InteropServices;
+namespace System.Threading.Tasks;
 
-namespace System;
-
-/// <summary>Defines the base class for all context-bound classes.</summary>
-[Serializable]
-[ComVisible(true)]
-public abstract class ContextBoundObject : MarshalByRefObject
+/// <summary>Specifies flags that control optional behavior for the creation and execution of tasks.</summary>
+[Flags]
+public enum TaskCreationOptions
 {
-	/// <summary>Instantiates an instance of the <see cref="T:System.ContextBoundObject" /> class.</summary>
-	protected ContextBoundObject()
-	{
-	}
+	None = 0,
+	PreferFairness = 1,
+	LongRunning = 2,
+	AttachedToParent = 4,
+	DenyChildAttach = 8,
+	HideScheduler = 0x10,
+	RunContinuationsAsynchronously = 0x40
 }

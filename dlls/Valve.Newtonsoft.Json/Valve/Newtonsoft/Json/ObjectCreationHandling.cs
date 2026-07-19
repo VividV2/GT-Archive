@@ -1,8 +1,12 @@
-namespace Valve.Newtonsoft.Json;
-
-public enum ObjectCreationHandling
+namespace Valve.Newtonsoft.Json.Utilities
 {
-	Auto,
-	Reuse,
-	Replace
+}
+namespace Valve.Newtonsoft.Json
+{
+	public enum ObjectCreationHandling
+	{
+		Auto,
+		Reuse,
+		Replace
+	}
 }

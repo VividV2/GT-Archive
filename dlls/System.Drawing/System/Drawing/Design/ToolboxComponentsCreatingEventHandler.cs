@@ -1,6 +1,21 @@
-namespace System.Drawing.Design;
+namespace System.Drawing;
 
-/// <summary>Represents the method that handles the <see cref="E:System.Drawing.Design.ToolboxItem.ComponentsCreating" /> event.</summary>
-/// <param name="sender">The source of the event.</param>
-/// <param name="e">A <see cref="T:System.Drawing.Design.ToolboxComponentsCreatingEventArgs" /> that provides data for the event.</param>
-public delegate void ToolboxComponentsCreatingEventHandler(object sender, ToolboxComponentsCreatingEventArgs e);
+public enum RotateFlipType
+{
+	RotateNoneFlipNone = 0,
+	Rotate90FlipNone = 1,
+	Rotate180FlipNone = 2,
+	Rotate270FlipNone = 3,
+	RotateNoneFlipX = 4,
+	Rotate90FlipX = 5,
+	Rotate180FlipX = 6,
+	Rotate270FlipX = 7,
+	RotateNoneFlipY = 6,
+	Rotate90FlipY = 7,
+	Rotate180FlipY = 4,
+	Rotate270FlipY = 5,
+	RotateNoneFlipXY = 2,
+	Rotate90FlipXY = 3,
+	Rotate180FlipXY = 0,
+	Rotate270FlipXY = 1
+}

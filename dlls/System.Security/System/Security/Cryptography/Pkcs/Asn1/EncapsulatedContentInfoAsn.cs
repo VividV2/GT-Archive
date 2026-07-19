@@ -1,14 +1,21 @@
 using System.Security.Cryptography.Asn1;
 
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-internal struct EncapsulatedContentInfoAsn
+namespace System.Security.Cryptography.Pkcs.Asn1
 {
-	[ObjectIdentifier]
-	public string ContentType;
+	internal struct EncapsulatedContentInfoAsn
+	{
+		[ObjectIdentifier]
+		public string ContentType;
 
-	[AnyValue]
-	[ExpectedTag(0, ExplicitTag = true)]
-	[OptionalValue]
-	public ReadOnlyMemory<byte>? Content;
+		[AnyValue]
+		[ExpectedTag(0, ExplicitTag = true)]
+		[OptionalValue]
+		public ReadOnlyMemory<byte>? Content;
+	}
+}
+namespace System.Security.Cryptography.Pkcs
+{
+}
+namespace System.Security.Cryptography.Xml
+{
 }

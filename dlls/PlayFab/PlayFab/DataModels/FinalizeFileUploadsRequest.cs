@@ -1,13 +1,6 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.DataModels;
-
-[Serializable]
-public class FinalizeFileUploadsRequest : PlayFabRequestCommon
+namespace PlayFab.CloudScriptModels
 {
-	public EntityKey Entity;
-
-	public List<string> FileNames;
+}
+namespace PlayFab.CloudScriptModels
+{
 }

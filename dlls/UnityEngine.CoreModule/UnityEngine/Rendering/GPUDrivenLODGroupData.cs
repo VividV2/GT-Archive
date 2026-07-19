@@ -1,32 +1,32 @@
-using Unity.Collections;
-
 namespace UnityEngine.Rendering;
 
-internal struct GPUDrivenLODGroupData
+public struct BatchDrawCommandProceduralIndirect
 {
-	public NativeArray<int> lodGroupID;
+	public BatchDrawCommandFlags flags;
 
-	public NativeArray<int> lodOffset;
+	public BatchID batchID;
 
-	public NativeArray<int> lodCount;
+	public BatchMaterialID materialID;
 
-	public NativeArray<LODFadeMode> fadeMode;
+	public ushort splitVisibilityMask;
 
-	public NativeArray<Vector3> worldSpaceReferencePoint;
+	public ushort lightmapIndex;
 
-	public NativeArray<float> worldSpaceSize;
+	public int sortingPosition;
 
-	public NativeArray<short> renderersCount;
+	public uint visibleOffset;
 
-	public NativeArray<bool> lastLODIsBillboard;
+	public MeshTopology topology;
 
-	public NativeArray<byte> forceLODMask;
+	public GraphicsBufferHandle indexBufferHandle;
 
-	public NativeArray<int> invalidLODGroupID;
+	public GraphicsBufferHandle visibleInstancesBufferHandle;
 
-	public NativeArray<short> lodRenderersCount;
+	public uint visibleInstancesBufferWindowOffset;
 
-	public NativeArray<float> lodScreenRelativeTransitionHeight;
+	public uint visibleInstancesBufferWindowSizeBytes;
 
-	public NativeArray<float> lodFadeTransitionWidth;
+	public GraphicsBufferHandle indirectArgsBufferHandle;
+
+	public uint indirectArgsBufferOffset;
 }

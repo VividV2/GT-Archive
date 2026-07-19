@@ -1,16 +1,7 @@
-using System;
+namespace Valve.Newtonsoft.Json;
 
-namespace Valve.Newtonsoft.Json.Serialization;
-
-public class ErrorEventArgs : EventArgs
+public enum NullValueHandling
 {
-	public object CurrentObject { get; private set; }
-
-	public ErrorContext ErrorContext { get; private set; }
-
-	public ErrorEventArgs(object currentObject, ErrorContext errorContext)
-	{
-		CurrentObject = currentObject;
-		ErrorContext = errorContext;
-	}
+	Include,
+	Ignore
 }

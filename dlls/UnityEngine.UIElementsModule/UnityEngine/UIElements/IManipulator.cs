@@ -1,6 +1,19 @@
-namespace UnityEngine.UIElements;
-
-public interface IManipulator
+namespace UnityEngine.UIElements
 {
-	VisualElement target { get; set; }
+	public enum PanelScaleMode
+	{
+		ConstantPixelSize,
+		ConstantPhysicalSize,
+		ScaleWithScreenSize
+	}
+}
+namespace UnityEngine.UIElements
+{
+	public interface IManipulator
+	{
+		VisualElement target { get; set; }
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

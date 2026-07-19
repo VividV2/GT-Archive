@@ -1,64 +1,31 @@
-using System.Globalization;
-using System.Xml;
-
-namespace System.Runtime.Serialization;
-
-[DataContract(Name = "DateTimeOffset", Namespace = "http://schemas.datacontract.org/2004/07/System")]
-internal struct DateTimeOffsetAdapter(DateTime dateTime, short offsetMinutes)
+namespace System.Runtime.Serialization
 {
-	private DateTime utcDateTime = dateTime;
-
-	private short offsetMinutes = offsetMinutes;
-
-	[DataMember(Name = "DateTime", IsRequired = true)]
-	public DateTime UtcDateTime
+	internal class TypeHandleRef
 	{
-		get
-		{
-			return utcDateTime;
-		}
-		set
-		{
-			utcDateTime = value;
-		}
-	}
+		private RuntimeTypeHandle value;
 
-	[DataMember(Name = "OffsetMinutes", IsRequired = true)]
-	public short OffsetMinutes
-	{
-		get
+		public RuntimeTypeHandle Value
 		{
-			return offsetMinutes;
-		}
-		set
-		{
-			offsetMinutes = value;
-		}
-	}
-
-	public static DateTimeOffset GetDateTimeOffset(DateTimeOffsetAdapter value)
-	{
-		try
-		{
-			if (value.UtcDateTime.Kind == DateTimeKind.Unspecified)
+			get
 			{
-				return new DateTimeOffset(value.UtcDateTime, new TimeSpan(0, value.OffsetMinutes, 0));
+				return value;
 			}
-			return new DateTimeOffset(value.UtcDateTime).ToOffset(new TimeSpan(0, value.OffsetMinutes, 0));
+			set
+			{
+				this.value = value;
+			}
 		}
-		catch (ArgumentException exception)
+
+		public TypeHandleRef()
 		{
-			throw DiagnosticUtility.ExceptionUtility.ThrowHelperError(XmlExceptionHelper.CreateConversionException(value.ToString(CultureInfo.InvariantCulture), "DateTimeOffset", exception));
+		}
+
+		public TypeHandleRef(RuntimeTypeHandle value)
+		{
+			this.value = value;
 		}
 	}
-
-	public static DateTimeOffsetAdapter GetDateTimeOffsetAdapter(DateTimeOffset value)
-	{
-		return new DateTimeOffsetAdapter(value.UtcDateTime, (short)value.Offset.TotalMinutes);
-	}
-
-	public string ToString(IFormatProvider provider)
-	{
-		return "DateTime: " + UtcDateTime.ToString() + ", Offset: " + OffsetMinutes;
-	}
+}
+namespace System.Runtime.Serialization
+{
 }

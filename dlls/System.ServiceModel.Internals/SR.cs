@@ -1,5 +1,11 @@
 using System.Globalization;
 
+namespace System.Runtime
+{
+}
+namespace System.Runtime
+{
+}
 internal static class SR
 {
 	internal static string GetString(string name, params object[] args)

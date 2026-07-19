@@ -1,15 +1,6 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class ListPartyQosServersResponse : PlayFabResultCommon
+namespace PlayFab.MultiplayerModels
 {
-	public int PageSize;
-
-	public List<QosServer> QosServers;
-
-	public string SkipToken;
+}
+namespace PlayFab.MultiplayerModels
+{
 }

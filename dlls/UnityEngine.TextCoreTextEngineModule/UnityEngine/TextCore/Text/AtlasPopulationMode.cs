@@ -1,8 +1,12 @@
-namespace UnityEngine.TextCore.Text;
-
-public enum AtlasPopulationMode
+namespace UnityEngine.TextCore.Text
 {
-	Static,
-	Dynamic,
-	DynamicOS
+}
+namespace UnityEngine.TextCore.Text
+{
+	public enum AtlasPopulationMode
+	{
+		Static,
+		Dynamic,
+		DynamicOS
+	}
 }

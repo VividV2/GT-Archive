@@ -1,11 +1,3 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class ListMatchmakingTicketsForPlayerResult : PlayFabResultCommon
+namespace PlayFab.MultiplayerModels
 {
-	public List<string> TicketIds;
 }

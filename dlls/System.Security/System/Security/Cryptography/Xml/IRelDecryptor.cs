@@ -12,3 +12,6 @@ public interface IRelDecryptor
 	/// <returns>A <see cref="T:System.IO.Stream" /> object that contains a decrypted <see langword="&lt;encryptedGrant&gt;" /> element.</returns>
 	Stream Decrypt(EncryptionMethod encryptionMethod, KeyInfo keyInfo, Stream toDecrypt);
 }
+namespace System.Security.Cryptography.Xml
+{
+}

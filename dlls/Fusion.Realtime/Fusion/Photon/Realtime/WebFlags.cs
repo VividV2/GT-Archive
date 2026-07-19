@@ -1,97 +1,34 @@
-namespace Fusion.Photon.Realtime;
-
-internal class WebFlags
+namespace Fusion.Photon.Realtime.Async
 {
-	public static readonly WebFlags Default = new WebFlags(0);
-
-	public byte WebhookFlags;
-
-	public const byte HttpForwardConst = 1;
-
-	public const byte SendAuthCookieConst = 2;
-
-	public const byte SendSyncConst = 4;
-
-	public const byte SendStateConst = 8;
-
-	public bool HttpForward
+	internal class OperationStartException : Exception
 	{
-		get
+		public OperationStartException(string message)
 		{
-			return (WebhookFlags & 1) != 0;
-		}
-		set
-		{
-			if (value)
-			{
-				WebhookFlags |= 1;
-			}
-			else
-			{
-				WebhookFlags = (byte)(WebhookFlags & -2);
-			}
+			base..ctor(message);
 		}
 	}
-
-	public bool SendAuthCookie
+}
+namespace Fusion.Photon.Realtime.Async
+{
+	internal class PhotonMatchmakingCallbacks
 	{
-		get
-		{
-			return (WebhookFlags & 2) != 0;
-		}
-		set
-		{
-			if (value)
-			{
-				WebhookFlags |= 2;
-			}
-			else
-			{
-				WebhookFlags = (byte)(WebhookFlags & -3);
-			}
-		}
-	}
+		public Action<List<FriendInfo>> FriendListUpdate;
 
-	public bool SendSync
-	{
-		get
-		{
-			return (WebhookFlags & 4) != 0;
-		}
-		set
-		{
-			if (value)
-			{
-				WebhookFlags |= 4;
-			}
-			else
-			{
-				WebhookFlags = (byte)(WebhookFlags & -5);
-			}
-		}
-	}
+		public Action JoinedRoom;
 
-	public bool SendState
-	{
-		get
-		{
-			return (WebhookFlags & 8) != 0;
-		}
-		set
-		{
-			if (value)
-			{
-				WebhookFlags |= 8;
-			}
-			else
-			{
-				WebhookFlags = (byte)(WebhookFlags & -9);
-			}
-		}
-	}
+		public Action CreatedRoom;
 
-	public WebFlags(byte webhookFlags)
-	{
-		WebhookFlags = webhookFlags;
+		public Action<short, string> JoinRoomFailed;
+
+		public Action<short, string> JoinRoomRandomFailed;
+
+		public Action<short, string> CreateRoomFailed;
+
+		public Action LeftRoom;
+
+		public PhotonMatchmakingCallbacks()
+		{
+			base..ctor();
+		}
 	}
 }

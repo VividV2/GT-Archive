@@ -1,16 +1,16 @@
-using System.Collections.Generic;
-
 namespace System.Runtime.Serialization;
 
-internal class TypeHandleRefEqualityComparer : IEqualityComparer<TypeHandleRef>
+/// <summary>Specifies how often to emit type information.</summary>
+/// <summary>Specifies how often to emit type information.</summary>
+public enum EmitTypeInformation
 {
-	public bool Equals(TypeHandleRef x, TypeHandleRef y)
-	{
-		return x.Value.Equals(y.Value);
-	}
-
-	public int GetHashCode(TypeHandleRef obj)
-	{
-		return obj.Value.GetHashCode();
-	}
+	/// <summary>As needed emit type information.</summary>
+	/// <summary>As needed emit type information.</summary>
+	AsNeeded,
+	/// <summary>Always to emit type information.</summary>
+	/// <summary>Always to emit type information.</summary>
+	Always,
+	/// <summary>Never to emit type information.</summary>
+	/// <summary>Never to emit type information.</summary>
+	Never
 }

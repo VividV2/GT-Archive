@@ -1,22 +1,18 @@
-using System.Xml;
+namespace System.Net;
 
-namespace System.Configuration;
-
-/// <summary>Provides a legacy section-handler definition for configuration sections that are not handled by the <see cref="N:System.Configuration" /> types.</summary>
-public class IgnoreSectionHandler : IConfigurationSectionHandler
+/// <summary>Provides the interface for retrieving credentials for a host, port, and authentication type.</summary>
+/// <summary>Provides the interface for retrieving credentials for a host, port, and authentication type.</summary>
+public interface ICredentialsByHost
 {
-	/// <summary>Creates a new configuration handler and adds the specified configuration object to the section-handler collection.</summary>
-	/// <param name="parent">The configuration settings in a corresponding parent configuration section.</param>
-	/// <param name="configContext">The virtual path for which the configuration section handler computes configuration values. Normally this parameter is reserved and is <see langword="null" />.</param>
-	/// <param name="section">An <see cref="T:System.Xml.XmlNode" /> that contains the configuration information to be handled. Provides direct access to the XML contents of the configuration section.</param>
-	/// <returns>The created configuration handler object.</returns>
-	public virtual object Create(object parent, object configContext, XmlNode section)
-	{
-		return null;
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.IgnoreSectionHandler" /> class.</summary>
-	public IgnoreSectionHandler()
-	{
-	}
+	/// <summary>Returns the credential for the specified host, port, and authentication protocol.</summary>
+	/// <param name="host">The host computer that is authenticating the client.</param>
+	/// <param name="port">The port on <paramref name="host" /> that the client will communicate with.</param>
+	/// <param name="authenticationType">The authentication protocol.</param>
+	/// <returns>A <see cref="T:System.Net.NetworkCredential" /> for the specified host, port, and authentication protocol, or <see langword="null" /> if there are no credentials available for the specified host, port, and authentication protocol.</returns>
+	/// <summary>Returns the credential for the specified host, port, and authentication protocol.</summary>
+	/// <param name="host">The host computer that is authenticating the client.</param>
+	/// <param name="port">The port on <paramref name="host" /> that the client will communicate with.</param>
+	/// <param name="authenticationType">The authentication protocol.</param>
+	/// <returns>A <see cref="T:System.Net.NetworkCredential" /> for the specified host, port, and authentication protocol, or <see langword="null" /> if there are no credentials available for the specified host, port, and authentication protocol.</returns>
+	NetworkCredential GetCredential(string host, int port, string authenticationType);
 }

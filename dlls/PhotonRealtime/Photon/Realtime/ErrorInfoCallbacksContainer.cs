@@ -1,23 +1,24 @@
-using System.Collections.Generic;
+using System;
+using System;
+using System;
 
 namespace Photon.Realtime;
 
-internal class ErrorInfoCallbacksContainer : List<IErrorInfoCallback>, IErrorInfoCallback
+public enum EventCaching : byte
 {
-	private LoadBalancingClient client;
-
-	public ErrorInfoCallbacksContainer(LoadBalancingClient client)
-	{
-		this.client = client;
-	}
-
-	public void OnErrorInfo(ErrorInfo errorInfo)
-	{
-		client.UpdateCallbackTargets();
-		using Enumerator enumerator = GetEnumerator();
-		while (enumerator.MoveNext())
-		{
-			enumerator.Current.OnErrorInfo(errorInfo);
-		}
-	}
+	DoNotCache = 0,
+	[Obsolete]
+	MergeCache = 1,
+	[Obsolete]
+	ReplaceCache = 2,
+	[Obsolete]
+	RemoveCache = 3,
+	AddToRoomCache = 4,
+	AddToRoomCacheGlobal = 5,
+	RemoveFromRoomCache = 6,
+	RemoveFromRoomCacheForActorsLeft = 7,
+	SliceIncreaseIndex = 10,
+	SliceSetIndex = 11,
+	SlicePurgeIndex = 12,
+	SlicePurgeUpToIndex = 13
 }

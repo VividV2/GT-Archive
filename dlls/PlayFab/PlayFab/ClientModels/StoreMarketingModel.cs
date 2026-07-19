@@ -1,14 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class StoreMarketingModel : PlayFabBaseModel
+namespace PlayFab.ClientModels
 {
-	public string Description;
-
-	public string DisplayName;
-
-	public object Metadata;
 }

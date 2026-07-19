@@ -1,11 +1,15 @@
 using System;
 using System.Diagnostics;
 
-namespace Sirenix.OdinInspector;
-
-[AttributeUsage(AttributeTargets.All, Inherited = false)]
-[Conditional("UNITY_EDITOR")]
-public class InlinePropertyAttribute : Attribute
+namespace Sirenix.OdinInspector
 {
-	public int LabelWidth;
+	[AttributeUsage(AttributeTargets.All, Inherited = false)]
+	[Conditional("UNITY_EDITOR")]
+	public class InlinePropertyAttribute : Attribute
+	{
+		public int LabelWidth;
+	}
+}
+namespace Sirenix.OdinInspector
+{
 }

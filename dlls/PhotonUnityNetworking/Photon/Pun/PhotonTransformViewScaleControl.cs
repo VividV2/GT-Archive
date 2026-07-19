@@ -1,46 +1,23 @@
-using UnityEngine;
+using System;
+using System;
 
 namespace Photon.Pun;
 
-public class PhotonTransformViewScaleControl
+[Serializable]
+public class PhotonTransformViewRotationModel
 {
-	private PhotonTransformViewScaleModel m_Model;
-
-	private Vector3 m_NetworkScale = Vector3.one;
-
-	public PhotonTransformViewScaleControl(PhotonTransformViewScaleModel model)
+	public enum InterpolateOptions
 	{
-		m_Model = model;
+		Disabled,
+		RotateTowards,
+		Lerp
 	}
 
-	public Vector3 GetNetworkScale()
-	{
-		return m_NetworkScale;
-	}
+	public bool SynchronizeEnabled;
 
-	public Vector3 GetScale(Vector3 currentScale)
-	{
-		return m_Model.InterpolateOption switch
-		{
-			PhotonTransformViewScaleModel.InterpolateOptions.MoveTowards => Vector3.MoveTowards(currentScale, m_NetworkScale, m_Model.InterpolateMoveTowardsSpeed * Time.deltaTime), 
-			PhotonTransformViewScaleModel.InterpolateOptions.Lerp => Vector3.Lerp(currentScale, m_NetworkScale, m_Model.InterpolateLerpSpeed * Time.deltaTime), 
-			_ => m_NetworkScale, 
-		};
-	}
+	public InterpolateOptions InterpolateOption = InterpolateOptions.RotateTowards;
 
-	public void OnPhotonSerializeView(Vector3 currentScale, PhotonStream stream, PhotonMessageInfo info)
-	{
-		if (m_Model.SynchronizeEnabled)
-		{
-			if (stream.IsWriting)
-			{
-				stream.SendNext(currentScale);
-				m_NetworkScale = currentScale;
-			}
-			else
-			{
-				m_NetworkScale = (Vector3)stream.ReceiveNext();
-			}
-		}
-	}
+	public float InterpolateRotateTowardsSpeed = 180f;
+
+	public float InterpolateLerpSpeed = 5f;
 }

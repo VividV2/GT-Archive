@@ -1,21 +1,23 @@
-using Meta.XR.MRUtilityKit.Extensions;
+using Meta.XR.Util;
+using UnityEngine;
 using Meta.XR.Util;
 using UnityEngine;
 
 namespace Meta.XR.MRUtilityKit.SceneDecorator;
 
 [Feature(Feature.Scene)]
-public class SimplexNoiseMask : Mask2D
+public class KeepUprightWithAnchorModifier : Modifier
 {
-	public override float SampleMask(Candidate c)
-	{
-		Vector3 vector = Float3X3.Multiply(Mask2D.GenerateAffineTransform(offsetX, offsetY, rotation, scaleX, scaleY, shearX, shearY), Vector3Extensions.FromVector2AndZ(c.localPos, 1f));
-		vector /= vector.z;
-		return Mathf.Abs(SimplexNoise.srdnoise(new Vector2(vector.x, vector.y), 0f).x);
-	}
+	[SerializeField]
+	public Vector3 uprightAxis = new Vector3(0f, 1f, 0f);
 
-	public override bool Check(Candidate c)
+	public override void ApplyModifier(GameObject decorationGO, MRUKAnchor sceneAnchor, SceneDecoration sceneDecoration, Candidate candidate)
 	{
-		return true;
+		Quaternion rotation = decorationGO.transform.rotation;
+		Quaternion rotation;
+		Vector3 fromDirection = rotation * uprightAxis;
+		Vector3 fromDirection;
+		rotation *= Quaternion.FromToRotation(fromDirection, sceneAnchor.transform.up);
+		decorationGO.transform.rotation = rotation;
 	}
 }

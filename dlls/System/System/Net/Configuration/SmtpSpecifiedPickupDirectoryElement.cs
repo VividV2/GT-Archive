@@ -1,40 +1,18 @@
-using System.Configuration;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace System.Net.Configuration;
+namespace System.Net;
 
-/// <summary>Represents an SMTP pickup directory configuration element.</summary>
-public sealed class SmtpSpecifiedPickupDirectoryElement : ConfigurationElement
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+internal struct hostent
 {
-	private static ConfigurationProperty pickupDirectoryLocationProp;
+	public IntPtr h_name;
 
-	private static ConfigurationPropertyCollection properties;
+	public IntPtr h_aliases;
 
-	/// <summary>Gets or sets the folder where applications save mail messages to be processed by the SMTP server.</summary>
-	/// <returns>A string that specifies the pickup directory for email messages.</returns>
-	[ConfigurationProperty("pickupDirectoryLocation")]
-	public string PickupDirectoryLocation
-	{
-		get
-		{
-			return (string)base[pickupDirectoryLocationProp];
-		}
-		set
-		{
-			base[pickupDirectoryLocationProp] = value;
-		}
-	}
+	public short h_addrtype;
 
-	protected override ConfigurationPropertyCollection Properties => properties;
+	public short h_length;
 
-	static SmtpSpecifiedPickupDirectoryElement()
-	{
-		pickupDirectoryLocationProp = new ConfigurationProperty("pickupDirectoryLocation", typeof(string));
-		properties = new ConfigurationPropertyCollection();
-		properties.Add(pickupDirectoryLocationProp);
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement" /> class.</summary>
-	public SmtpSpecifiedPickupDirectoryElement()
-	{
-	}
+	public IntPtr h_addr_list;
 }

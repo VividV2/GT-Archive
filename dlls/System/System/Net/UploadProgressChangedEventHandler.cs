@@ -1,6 +1,23 @@
-namespace System.Net;
+namespace System.Runtime.InteropServices.ComTypes
+{
+	[ComImport]
+	[Guid("0000010F-0000-0000-C000-000000000046")]
+	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+	public interface IAdviseSink
+	{
+		[PreserveSig]
+		void OnClose();
 
-/// <summary>Represents the method that will handle the <see cref="E:System.Net.WebClient.UploadProgressChanged" /> event of a <see cref="T:System.Net.WebClient" />.</summary>
-/// <param name="sender">The source of the event.</param>
-/// <param name="e">A <see cref="T:System.Net.UploadProgressChangedEventArgs" /> containing event data.</param>
-public delegate void UploadProgressChangedEventHandler(object sender, UploadProgressChangedEventArgs e);
+		[PreserveSig]
+		void OnDataChange([In] ref FORMATETC format, [In] ref STGMEDIUM stgmedium);
+
+		[PreserveSig]
+		void OnRename(IMoniker moniker);
+
+		[PreserveSig]
+		void OnSave();
+
+		[PreserveSig]
+		void OnViewChange(int aspect, int index);
+	}
+}

@@ -1,6 +1,7 @@
 namespace System.Diagnostics.Tracing;
 
 /// <summary>Specifies how the ETW manifest for the event source is generated.</summary>
+/// <summary>Specifies how the ETW manifest for the event source is generated.</summary>
 [Flags]
 public enum EventManifestOptions
 {

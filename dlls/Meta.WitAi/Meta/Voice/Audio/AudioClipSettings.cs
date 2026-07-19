@@ -1,12 +1,16 @@
-namespace Meta.Voice.Audio;
-
-public struct AudioClipSettings
+namespace Meta.Voice.Audio
 {
-	public int Channels;
+	public struct AudioClipSettings
+	{
+		public int Channels;
 
-	public int SampleRate;
+		public int SampleRate;
 
-	public float ReadyDuration;
+		public float ReadyDuration;
 
-	public float MaxDuration;
+		public float MaxDuration;
+	}
+}
+namespace Meta.Voice.Net.PubSub
+{
 }

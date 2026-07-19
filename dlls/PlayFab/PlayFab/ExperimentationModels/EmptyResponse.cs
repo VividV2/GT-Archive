@@ -1,9 +1,2 @@
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.DataModels;
 
-namespace PlayFab.ExperimentationModels;
-
-[Serializable]
-public class EmptyResponse : PlayFabResultCommon
-{
-}

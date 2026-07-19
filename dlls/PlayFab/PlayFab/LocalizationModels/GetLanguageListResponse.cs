@@ -1,11 +1,3 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.LocalizationModels;
-
-[Serializable]
-public class GetLanguageListResponse : PlayFabResultCommon
+namespace PlayFab.GroupsModels
 {
-	public List<string> LanguageList;
 }

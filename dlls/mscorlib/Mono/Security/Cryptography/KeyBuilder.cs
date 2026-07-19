@@ -1,38 +1,46 @@
-using System.Security.Cryptography;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization;
 
-namespace Mono.Security.Cryptography;
+namespace System;
 
-internal sealed class KeyBuilder
+/// <summary>The exception that is thrown when there is an internal error in the execution engine of the common language runtime. This class cannot be inherited.</summary>
+/// <summary>The exception that is thrown when there is an internal error in the execution engine of the common language runtime. This class cannot be inherited.</summary>
+[Serializable]
+[Obsolete("This type previously indicated an unspecified fatal error in the runtime. The runtime no longer raises this exception so this type is obsolete.")]
+public sealed class ExecutionEngineException : SystemException
 {
-	private static RandomNumberGenerator rng;
-
-	private static RandomNumberGenerator Rng
+	/// <summary>Initializes a new instance of the <see cref="T:System.ExecutionEngineException" /> class.</summary>
+	/// <summary>Initializes a new instance of the <see cref="T:System.ExecutionEngineException" /> class.</summary>
+	public ExecutionEngineException()
+		: base("Internal error in the runtime.")
 	{
-		get
-		{
-			if (rng == null)
-			{
-				rng = RandomNumberGenerator.Create();
-			}
-			return rng;
-		}
+		base.HResult = -2146233082;
 	}
 
-	private KeyBuilder()
+	/// <summary>Initializes a new instance of the <see cref="T:System.ExecutionEngineException" /> class with a specified error message.</summary>
+	/// <param name="message">The message that describes the error.</param>
+	/// <summary>Initializes a new instance of the <see cref="T:System.ExecutionEngineException" /> class with a specified error message.</summary>
+	/// <param name="message">The message that describes the error.</param>
+	public ExecutionEngineException(string message)
+		: base(message)
 	{
+		base.HResult = -2146233082;
 	}
 
-	public static byte[] Key(int size)
+	/// <summary>Initializes a new instance of the <see cref="T:System.ExecutionEngineException" /> class with a specified error message and a reference to the inner exception that is the cause of this exception.</summary>
+	/// <param name="message">The error message that explains the reason for the exception.</param>
+	/// <param name="innerException">The exception that is the cause of the current exception. If the <paramref name="innerException" /> parameter is not a null reference (<see langword="Nothing" /> in Visual Basic), the current exception is raised in a <see langword="catch" /> block that handles the inner exception.</param>
+	/// <summary>Initializes a new instance of the <see cref="T:System.ExecutionEngineException" /> class with a specified error message and a reference to the inner exception that is the cause of this exception.</summary>
+	/// <param name="message">The error message that explains the reason for the exception.</param>
+	/// <param name="innerException">The exception that is the cause of the current exception. If the <paramref name="innerException" /> parameter is not a null reference (<see langword="Nothing" /> in Visual Basic), the current exception is raised in a <see langword="catch" /> block that handles the inner exception.</param>
+	public ExecutionEngineException(string message, Exception innerException)
+		: base(message, innerException)
 	{
-		byte[] array = new byte[size];
-		Rng.GetBytes(array);
-		return array;
+		base.HResult = -2146233082;
 	}
 
-	public static byte[] IV(int size)
+	internal ExecutionEngineException(SerializationInfo info, StreamingContext context)
+		: base(info, context)
 	{
-		byte[] array = new byte[size];
-		Rng.GetBytes(array);
-		return array;
 	}
 }

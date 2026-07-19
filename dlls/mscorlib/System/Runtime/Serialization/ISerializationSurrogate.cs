@@ -1,21 +1,20 @@
-namespace System.Runtime.Serialization;
+using System.Reflection.Emit;
 
-/// <summary>Implements a serialization surrogate selector that allows one object to perform serialization and deserialization of another.</summary>
-public interface ISerializationSurrogate
+namespace System.Runtime.InteropServices
 {
-	/// <summary>Populates the provided <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with the data needed to serialize the object.</summary>
-	/// <param name="obj">The object to serialize.</param>
-	/// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> to populate with data.</param>
-	/// <param name="context">The destination (see <see cref="T:System.Runtime.Serialization.StreamingContext" />) for this serialization.</param>
-	/// <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
-	void GetObjectData(object obj, SerializationInfo info, StreamingContext context);
+	[TypeLibImportClass(typeof(MethodRental))]
+	[Guid("C2323C25-F57F-3880-8A4D-12EBEA7A5852")]
+	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+	[CLSCompliant(false)]
+	[ComVisible(true)]
+	public interface _MethodRental
+	{
+		void GetIDsOfNames([In] ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);
 
-	/// <summary>Populates the object using the information in the <see cref="T:System.Runtime.Serialization.SerializationInfo" />.</summary>
-	/// <param name="obj">The object to populate.</param>
-	/// <param name="info">The information to populate the object.</param>
-	/// <param name="context">The source from which the object is deserialized.</param>
-	/// <param name="selector">The surrogate selector where the search for a compatible surrogate begins.</param>
-	/// <returns>The populated deserialized object.</returns>
-	/// <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
-	object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector);
+		void GetTypeInfo(uint iTInfo, uint lcid, IntPtr ppTInfo);
+
+		void GetTypeInfoCount(out uint pcTInfo);
+
+		void Invoke(uint dispIdMember, [In] ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);
+	}
 }

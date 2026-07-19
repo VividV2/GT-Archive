@@ -1,6 +1,10 @@
-namespace UnityEngine.UIElements;
-
-public interface IUxmlAttributes
+namespace UnityEngine.UIElements
 {
-	bool TryGetAttributeValue(string attributeName, out string value);
+	public interface IUxmlAttributes
+	{
+		bool TryGetAttributeValue(string attributeName, out string value);
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

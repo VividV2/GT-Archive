@@ -1,8 +1,9 @@
 using System;
 
-namespace UnityEngine;
-
-internal interface ISubsystemDescriptorImpl : ISubsystemDescriptor
+namespace UnityEngine
 {
-	IntPtr ptr { get; set; }
+	internal interface ISubsystemDescriptorImpl : ISubsystemDescriptor
+	{
+		IntPtr ptr { get; set; }
+	}
 }

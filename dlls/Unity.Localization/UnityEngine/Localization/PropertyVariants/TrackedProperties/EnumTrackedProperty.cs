@@ -1,8 +1,2 @@
-using System;
+namespace UnityEngine.Localization.SmartFormat.Core.Formatting;
 
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
-
-[Serializable]
-public class EnumTrackedProperty : IntTrackedProperty
-{
-}

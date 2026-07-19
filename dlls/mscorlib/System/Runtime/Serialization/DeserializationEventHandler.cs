@@ -1,3 +1,3 @@
-namespace System.Runtime.Serialization;
-
-internal delegate void DeserializationEventHandler(object sender);
+namespace System.Runtime.Remoting.Messaging
+{
+}

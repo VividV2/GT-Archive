@@ -1,11 +1,6 @@
-namespace System.Globalization;
+namespace System.Collections;
 
-/// <summary>Defines the formatting options that customize string parsing for the <see cref="Overload:System.TimeSpan.ParseExact" /> and <see cref="Overload:System.TimeSpan.TryParseExact" /> methods.</summary>
-[Flags]
-public enum TimeSpanStyles
+public interface IStructuralComparable
 {
-	/// <summary>Indicates that input is interpreted as a negative time interval only if a negative sign is present.</summary>
-	None = 0,
-	/// <summary>Indicates that input is always interpreted as a negative time interval.</summary>
-	AssumeNegative = 1
+	int CompareTo(object other, IComparer comparer);
 }

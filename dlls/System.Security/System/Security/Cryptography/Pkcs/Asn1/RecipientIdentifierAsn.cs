@@ -1,13 +1,12 @@
 using System.Security.Cryptography.Asn1;
 
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-[Choice]
-internal struct RecipientIdentifierAsn
+namespace System.Security.Cryptography.Pkcs.Asn1
 {
-	internal IssuerAndSerialNumberAsn? IssuerAndSerialNumber;
+	internal struct EdiPartyName
+	{
+		[OptionalValue]
+		internal DirectoryString? NameAssigner;
 
-	[ExpectedTag(0)]
-	[OctetString]
-	internal ReadOnlyMemory<byte>? SubjectKeyIdentifier;
+		internal DirectoryString PartyName;
+	}
 }

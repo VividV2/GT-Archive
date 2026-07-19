@@ -1,245 +1,84 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+namespace System.Runtime.Diagnostics;
 
-namespace System.Runtime.Collections;
-
-internal class OrderedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable, IDictionary, ICollection
+internal enum EventLogEventId : uint
 {
-	private OrderedDictionary privateDictionary;
-
-	public int Count => privateDictionary.Count;
-
-	public bool IsReadOnly => false;
-
-	public TValue this[TKey key]
-	{
-		get
-		{
-			if (key == null)
-			{
-				throw Fx.Exception.ArgumentNull("key");
-			}
-			if (privateDictionary.Contains(key))
-			{
-				return (TValue)privateDictionary[key];
-			}
-			throw Fx.Exception.AsError(new KeyNotFoundException("Key Not Found In Dictionary"));
-		}
-		set
-		{
-			if (key == null)
-			{
-				throw Fx.Exception.ArgumentNull("key");
-			}
-			privateDictionary[key] = value;
-		}
-	}
-
-	public ICollection<TKey> Keys
-	{
-		get
-		{
-			List<TKey> list = new List<TKey>(privateDictionary.Count);
-			foreach (TKey key in privateDictionary.Keys)
-			{
-				list.Add(key);
-			}
-			return list;
-		}
-	}
-
-	public ICollection<TValue> Values
-	{
-		get
-		{
-			List<TValue> list = new List<TValue>(privateDictionary.Count);
-			foreach (TValue value in privateDictionary.Values)
-			{
-				list.Add(value);
-			}
-			return list;
-		}
-	}
-
-	bool IDictionary.IsFixedSize => ((IDictionary)privateDictionary).IsFixedSize;
-
-	bool IDictionary.IsReadOnly => privateDictionary.IsReadOnly;
-
-	ICollection IDictionary.Keys => privateDictionary.Keys;
-
-	ICollection IDictionary.Values => privateDictionary.Values;
-
-	object IDictionary.this[object key]
-	{
-		get
-		{
-			return privateDictionary[key];
-		}
-		set
-		{
-			privateDictionary[key] = value;
-		}
-	}
-
-	int ICollection.Count => privateDictionary.Count;
-
-	bool ICollection.IsSynchronized => ((ICollection)privateDictionary).IsSynchronized;
-
-	object ICollection.SyncRoot => ((ICollection)privateDictionary).SyncRoot;
-
-	public OrderedDictionary()
-	{
-		privateDictionary = new OrderedDictionary();
-	}
-
-	public OrderedDictionary(IDictionary<TKey, TValue> dictionary)
-	{
-		if (dictionary == null)
-		{
-			return;
-		}
-		privateDictionary = new OrderedDictionary();
-		foreach (KeyValuePair<TKey, TValue> item in dictionary)
-		{
-			privateDictionary.Add(item.Key, item.Value);
-		}
-	}
-
-	public void Add(KeyValuePair<TKey, TValue> item)
-	{
-		Add(item.Key, item.Value);
-	}
-
-	public void Add(TKey key, TValue value)
-	{
-		if (key == null)
-		{
-			throw Fx.Exception.ArgumentNull("key");
-		}
-		privateDictionary.Add(key, value);
-	}
-
-	public void Clear()
-	{
-		privateDictionary.Clear();
-	}
-
-	public bool Contains(KeyValuePair<TKey, TValue> item)
-	{
-		if (item.Key == null || !privateDictionary.Contains(item.Key))
-		{
-			return false;
-		}
-		return privateDictionary[item.Key].Equals(item.Value);
-	}
-
-	public bool ContainsKey(TKey key)
-	{
-		if (key == null)
-		{
-			throw Fx.Exception.ArgumentNull("key");
-		}
-		return privateDictionary.Contains(key);
-	}
-
-	public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
-	{
-		if (array == null)
-		{
-			throw Fx.Exception.ArgumentNull("array");
-		}
-		if (arrayIndex < 0)
-		{
-			throw Fx.Exception.AsError(new ArgumentOutOfRangeException("arrayIndex"));
-		}
-		if (array.Rank > 1 || arrayIndex >= array.Length || array.Length - arrayIndex < privateDictionary.Count)
-		{
-			throw Fx.Exception.Argument("array", "Bad Copy To Array");
-		}
-		int num = arrayIndex;
-		foreach (DictionaryEntry item in privateDictionary)
-		{
-			array[num] = new KeyValuePair<TKey, TValue>((TKey)item.Key, (TValue)item.Value);
-			num++;
-		}
-	}
-
-	public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
-	{
-		foreach (DictionaryEntry item in privateDictionary)
-		{
-			yield return new KeyValuePair<TKey, TValue>((TKey)item.Key, (TValue)item.Value);
-		}
-	}
-
-	IEnumerator IEnumerable.GetEnumerator()
-	{
-		return GetEnumerator();
-	}
-
-	public bool Remove(KeyValuePair<TKey, TValue> item)
-	{
-		if (Contains(item))
-		{
-			privateDictionary.Remove(item.Key);
-			return true;
-		}
-		return false;
-	}
-
-	public bool Remove(TKey key)
-	{
-		if (key == null)
-		{
-			throw Fx.Exception.ArgumentNull("key");
-		}
-		if (privateDictionary.Contains(key))
-		{
-			privateDictionary.Remove(key);
-			return true;
-		}
-		return false;
-	}
-
-	public bool TryGetValue(TKey key, out TValue value)
-	{
-		if (key == null)
-		{
-			throw Fx.Exception.ArgumentNull("key");
-		}
-		bool flag = privateDictionary.Contains(key);
-		value = (flag ? ((TValue)privateDictionary[key]) : default(TValue));
-		return flag;
-	}
-
-	void IDictionary.Add(object key, object value)
-	{
-		privateDictionary.Add(key, value);
-	}
-
-	void IDictionary.Clear()
-	{
-		privateDictionary.Clear();
-	}
-
-	bool IDictionary.Contains(object key)
-	{
-		return privateDictionary.Contains(key);
-	}
-
-	IDictionaryEnumerator IDictionary.GetEnumerator()
-	{
-		return privateDictionary.GetEnumerator();
-	}
-
-	void IDictionary.Remove(object key)
-	{
-		privateDictionary.Remove(key);
-	}
-
-	void ICollection.CopyTo(Array array, int index)
-	{
-		privateDictionary.CopyTo(array, index);
-	}
+	FailedToSetupTracing = 3221291108u,
+	FailedToInitializeTraceSource = 3221291109u,
+	FailFast = 3221291110u,
+	FailFastException = 3221291111u,
+	FailedToTraceEvent = 3221291112u,
+	FailedToTraceEventWithException = 3221291113u,
+	InvariantAssertionFailed = 3221291114u,
+	PiiLoggingOn = 3221291115u,
+	PiiLoggingNotAllowed = 3221291116u,
+	WebHostUnhandledException = 3221356545u,
+	WebHostHttpError = 3221356546u,
+	WebHostFailedToProcessRequest = 3221356547u,
+	WebHostFailedToListen = 3221356548u,
+	FailedToLogMessage = 3221356549u,
+	RemovedBadFilter = 3221356550u,
+	FailedToCreateMessageLoggingTraceSource = 3221356551u,
+	MessageLoggingOn = 3221356552u,
+	MessageLoggingOff = 3221356553u,
+	FailedToLoadPerformanceCounter = 3221356554u,
+	FailedToRemovePerformanceCounter = 3221356555u,
+	WmiGetObjectFailed = 3221356556u,
+	WmiPutInstanceFailed = 3221356557u,
+	WmiDeleteInstanceFailed = 3221356558u,
+	WmiCreateInstanceFailed = 3221356559u,
+	WmiExecQueryFailed = 3221356560u,
+	WmiExecMethodFailed = 3221356561u,
+	WmiRegistrationFailed = 3221356562u,
+	WmiUnregistrationFailed = 3221356563u,
+	WmiAdminTypeMismatch = 3221356564u,
+	WmiPropertyMissing = 3221356565u,
+	ComPlusServiceHostStartingServiceError = 3221356566u,
+	ComPlusDllHostInitializerStartingError = 3221356567u,
+	ComPlusTLBImportError = 3221356568u,
+	ComPlusInvokingMethodFailed = 3221356569u,
+	ComPlusInstanceCreationError = 3221356570u,
+	ComPlusInvokingMethodFailedMismatchedTransactions = 3221356571u,
+	WebHostNotLoggingInsufficientMemoryExceptionsOnActivationForNextTimeInterval = 2147614748u,
+	UnhandledStateMachineExceptionRecordDescription = 3221422081u,
+	FatalUnexpectedStateMachineEvent = 3221422082u,
+	ParticipantRecoveryLogEntryCorrupt = 3221422083u,
+	CoordinatorRecoveryLogEntryCorrupt = 3221422084u,
+	CoordinatorRecoveryLogEntryCreationFailure = 3221422085u,
+	ParticipantRecoveryLogEntryCreationFailure = 3221422086u,
+	ProtocolInitializationFailure = 3221422087u,
+	ProtocolStartFailure = 3221422088u,
+	ProtocolRecoveryBeginningFailure = 3221422089u,
+	ProtocolRecoveryCompleteFailure = 3221422090u,
+	TransactionBridgeRecoveryFailure = 3221422091u,
+	ProtocolStopFailure = 3221422092u,
+	NonFatalUnexpectedStateMachineEvent = 3221422093u,
+	PerformanceCounterInitializationFailure = 3221422094u,
+	ProtocolRecoveryComplete = 3221422095u,
+	ProtocolStopped = 3221422096u,
+	ThumbPrintNotFound = 3221422097u,
+	ThumbPrintNotValidated = 3221422098u,
+	SslNoPrivateKey = 3221422099u,
+	SslNoAccessiblePrivateKey = 3221422100u,
+	MissingNecessaryKeyUsage = 3221422101u,
+	MissingNecessaryEnhancedKeyUsage = 3221422102u,
+	StartErrorPublish = 3221487617u,
+	BindingError = 3221487618u,
+	LAFailedToListenForApp = 3221487619u,
+	UnknownListenerAdapterError = 3221487620u,
+	WasDisconnected = 3221487621u,
+	WasConnectionTimedout = 3221487622u,
+	ServiceStartFailed = 3221487623u,
+	MessageQueueDuplicatedSocketLeak = 3221487624u,
+	MessageQueueDuplicatedPipeLeak = 3221487625u,
+	SharingUnhandledException = 3221487626u,
+	ServiceAuthorizationSuccess = 1074135041u,
+	ServiceAuthorizationFailure = 3221618690u,
+	MessageAuthenticationSuccess = 1074135043u,
+	MessageAuthenticationFailure = 3221618692u,
+	SecurityNegotiationSuccess = 1074135045u,
+	SecurityNegotiationFailure = 3221618694u,
+	TransportAuthenticationSuccess = 1074135047u,
+	TransportAuthenticationFailure = 3221618696u,
+	ImpersonationSuccess = 1074135049u,
+	ImpersonationFailure = 3221618698u
 }

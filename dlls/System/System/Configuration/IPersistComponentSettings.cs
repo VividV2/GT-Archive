@@ -1,23 +1,23 @@
-namespace System.Configuration;
+namespace System.Net;
 
-/// <summary>Defines standard functionality for controls or libraries that store and retrieve application settings.</summary>
-public interface IPersistComponentSettings
+/// <summary>Provides the base authentication interface for Web client authentication modules.</summary>
+public interface IAuthenticationModule
 {
-	/// <summary>Gets or sets a value indicating whether the control should automatically persist its application settings properties.</summary>
+	/// <summary>Gets a value indicating whether the authentication module supports preauthentication.</summary>
 	/// <returns>
-	///   <see langword="true" /> if the control should automatically persist its state; otherwise, <see langword="false" />.</returns>
-	bool SaveSettings { get; set; }
+	///   <see langword="true" /> if the authorization module supports preauthentication; otherwise <see langword="false" />.</returns>
+	bool CanPreAuthenticate { get; }
 
-	/// <summary>Gets or sets the value of the application settings key for the current instance of the control.</summary>
-	/// <returns>A <see cref="T:System.String" /> containing the settings key for the current instance of the control.</returns>
-	string SettingsKey { get; set; }
+	/// <summary>Gets the authentication type provided by this authentication module.</summary>
+	/// <returns>A string indicating the authentication type provided by this authentication module.</returns>
+	string AuthenticationType { get; }
 
-	/// <summary>Reads the control's application settings into their corresponding properties and updates the control's state.</summary>
-	void LoadComponentSettings();
+	/// <summary>Returns an instance of the <see cref="T:System.Net.Authorization" /> class in response to an authentication challenge from a server.</summary>
+	/// <param name="challenge">The authentication challenge sent by the server.</param>
+	/// <param name="request">The <see cref="T:System.Net.WebRequest" /> instance associated with the challenge.</param>
+	/// <param name="credentials">The credentials associated with the challenge.</param>
+	/// <returns>An <see cref="T:System.Net.Authorization" /> instance containing the authorization message for the request, or <see langword="null" /> if the challenge cannot be handled.</returns>
+	Authorization Authenticate(string challenge, WebRequest request, ICredentials credentials);
 
-	/// <summary>Resets the control's application settings properties to their default values.</summary>
-	void ResetComponentSettings();
-
-	/// <summary>Persists the control's application settings properties.</summary>
-	void SaveComponentSettings();
+	Authorization PreAuthenticate(WebRequest request, ICredentials credentials);
 }

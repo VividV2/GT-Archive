@@ -1,62 +1,34 @@
-using System.Collections;
-using Unity;
+namespace Microsoft.Win32;
 
-namespace System.Security.Cryptography.X509Certificates;
-
-/// <summary>Supports a simple iteration over a <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> object. This class cannot be inherited.</summary>
-public sealed class X509Certificate2Enumerator : IEnumerator
+/// <summary>Defines identifiers used to represent the type of a session switch event.</summary>
+/// <summary>Defines identifiers used to represent the type of a session switch event.</summary>
+public enum SessionSwitchReason
 {
-	private IEnumerator enumerator;
-
-	/// <summary>Gets the current element in the <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> object.</summary>
-	/// <returns>The current element in the <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> object.</returns>
-	/// <exception cref="T:System.InvalidOperationException">The enumerator is positioned before the first element of the collection or after the last element.</exception>
-	public X509Certificate2 Current => (X509Certificate2)enumerator.Current;
-
-	/// <summary>For a description of this member, see <see cref="P:System.Collections.IEnumerator.Current" />.</summary>
-	/// <returns>The current element in the <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> object.</returns>
-	/// <exception cref="T:System.InvalidOperationException">The enumerator is positioned before the first element of the collection or after the last element.</exception>
-	object IEnumerator.Current => enumerator.Current;
-
-	internal X509Certificate2Enumerator(X509Certificate2Collection collection)
-	{
-		enumerator = ((IEnumerable)collection).GetEnumerator();
-	}
-
-	/// <summary>Advances the enumerator to the next element in the <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> object.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the enumerator was successfully advanced to the next element; <see langword="false" /> if the enumerator has passed the end of the collection.</returns>
-	/// <exception cref="T:System.InvalidOperationException">The collection was modified after the enumerator was created.</exception>
-	public bool MoveNext()
-	{
-		return enumerator.MoveNext();
-	}
-
-	/// <summary>Sets the enumerator to its initial position, which is before the first element in the <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> object.</summary>
-	/// <exception cref="T:System.InvalidOperationException">The collection was modified after the enumerator was created.</exception>
-	public void Reset()
-	{
-		enumerator.Reset();
-	}
-
-	/// <summary>For a description of this member, see <see cref="M:System.Collections.IEnumerator.MoveNext" />.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the enumerator was successfully advanced to the next element; <see langword="false" /> if the enumerator has passed the end of the collection.</returns>
-	/// <exception cref="T:System.InvalidOperationException">The collection was modified after the enumerator was created.</exception>
-	bool IEnumerator.MoveNext()
-	{
-		return enumerator.MoveNext();
-	}
-
-	/// <summary>For a description of this member, see <see cref="M:System.Collections.IEnumerator.Reset" />.</summary>
-	/// <exception cref="T:System.InvalidOperationException">The collection was modified after the enumerator was created.</exception>
-	void IEnumerator.Reset()
-	{
-		enumerator.Reset();
-	}
-
-	internal X509Certificate2Enumerator()
-	{
-		Unity.ThrowStub.ThrowNotSupportedException();
-	}
+	/// <summary>A session has been connected from the console.</summary>
+	/// <summary>A session has been connected from the console.</summary>
+	ConsoleConnect = 1,
+	/// <summary>A session has been disconnected from the console.</summary>
+	/// <summary>A session has been disconnected from the console.</summary>
+	ConsoleDisconnect,
+	/// <summary>A session has been connected from a remote connection.</summary>
+	/// <summary>A session has been connected from a remote connection.</summary>
+	RemoteConnect,
+	/// <summary>A session has been disconnected from a remote connection.</summary>
+	/// <summary>A session has been disconnected from a remote connection.</summary>
+	RemoteDisconnect,
+	/// <summary>A user has logged on to a session.</summary>
+	/// <summary>A user has logged on to a session.</summary>
+	SessionLogon,
+	/// <summary>A user has logged off from a session.</summary>
+	/// <summary>A user has logged off from a session.</summary>
+	SessionLogoff,
+	/// <summary>A session has been locked.</summary>
+	/// <summary>A session has been locked.</summary>
+	SessionLock,
+	/// <summary>A session has been unlocked.</summary>
+	/// <summary>A session has been unlocked.</summary>
+	SessionUnlock,
+	/// <summary>A session has changed its status to or from remote controlled mode.</summary>
+	/// <summary>A session has changed its status to or from remote controlled mode.</summary>
+	SessionRemoteControl
 }

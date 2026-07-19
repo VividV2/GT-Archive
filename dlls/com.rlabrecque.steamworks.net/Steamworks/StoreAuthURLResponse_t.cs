@@ -1,25 +1,13 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(165)]
-public struct StoreAuthURLResponse_t
+[CallbackIdentity(3418)]
+public struct UserSubscribedItemsListChanged_t
 {
-	public const int k_iCallback = 165;
+	public const int k_iCallback = 3418;
 
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 512)]
-	private byte[] m_szURL_;
-
-	public string m_szURL
-	{
-		get
-		{
-			return InteropHelp.ByteArrayToStringUTF8(m_szURL_);
-		}
-		set
-		{
-			InteropHelp.StringToByteArrayUTF8(value, m_szURL_, 512);
-		}
-	}
+	public AppId_t m_nAppID;
 }

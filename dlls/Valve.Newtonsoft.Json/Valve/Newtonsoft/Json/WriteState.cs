@@ -1,12 +1,6 @@
-namespace Valve.Newtonsoft.Json;
-
-public enum WriteState
+namespace Valve.Newtonsoft.Json.Bson
 {
-	Error,
-	Closed,
-	Object,
-	Array,
-	Constructor,
-	Property,
-	Start
+}
+namespace Valve.Newtonsoft.Json.Utilities
+{
 }

@@ -1,17 +1,38 @@
-namespace System.Runtime.InteropServices;
+namespace System.Reflection;
 
-/// <summary>Defines the types of connections to a class object.</summary>
 [Flags]
-public enum RegistrationConnectionType
+public enum TypeAttributes
 {
-	/// <summary>Once an application is connected to a class object with <see langword="CoGetClassObject" />, the class object is removed from public view so that no other applications can connect to it. This value is commonly used for single document interface (SDI) applications.</summary>
-	SingleUse = 0,
-	/// <summary>Multiple applications can connect to the class object through calls to <see langword="CoGetClassObject" />.</summary>
-	MultipleUse = 1,
-	/// <summary>Registers separate CLSCTX_LOCAL_SERVER and CLSCTX_INPROC_SERVER class factories.</summary>
-	MultiSeparate = 2,
-	/// <summary>Suspends registration and activation requests for the specified CLSID until there is a call to <see langword="CoResumeClassObjects" />.</summary>
-	Suspended = 4,
-	/// <summary>The class object is a surrogate process used to run DLL servers.</summary>
-	Surrogate = 8
+	VisibilityMask = 7,
+	NotPublic = 0,
+	Public = 1,
+	NestedPublic = 2,
+	NestedPrivate = 3,
+	NestedFamily = 4,
+	NestedAssembly = 5,
+	NestedFamANDAssem = 6,
+	NestedFamORAssem = 7,
+	LayoutMask = 0x18,
+	AutoLayout = 0,
+	SequentialLayout = 8,
+	ExplicitLayout = 0x10,
+	ClassSemanticsMask = 0x20,
+	Class = 0,
+	Interface = 0x20,
+	Abstract = 0x80,
+	Sealed = 0x100,
+	SpecialName = 0x400,
+	Import = 0x1000,
+	Serializable = 0x2000,
+	WindowsRuntime = 0x4000,
+	StringFormatMask = 0x30000,
+	AnsiClass = 0,
+	UnicodeClass = 0x10000,
+	AutoClass = 0x20000,
+	CustomFormatClass = 0x30000,
+	CustomFormatMask = 0xC00000,
+	BeforeFieldInit = 0x100000,
+	RTSpecialName = 0x800,
+	HasSecurity = 0x40000,
+	ReservedMask = 0x40800
 }

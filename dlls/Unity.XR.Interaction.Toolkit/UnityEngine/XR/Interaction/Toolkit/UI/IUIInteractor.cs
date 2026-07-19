@@ -1,8 +1,3 @@
-namespace UnityEngine.XR.Interaction.Toolkit.UI;
-
-public interface IUIInteractor
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation
 {
-	void UpdateUIModel(ref TrackedDeviceModel model);
-
-	bool TryGetUIModel(out TrackedDeviceModel model);
 }

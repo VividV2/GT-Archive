@@ -1,24 +1,28 @@
-namespace System.Drawing;
-
-internal struct XVisualInfo
+namespace System.Drawing
 {
-	internal IntPtr visual;
+	internal struct XVisualInfo
+	{
+		internal IntPtr visual;
 
-	internal IntPtr visualid;
+		internal IntPtr visualid;
 
-	internal int screen;
+		internal int screen;
 
-	internal uint depth;
+		internal uint depth;
 
-	internal int klass;
+		internal int klass;
 
-	internal IntPtr red_mask;
+		internal IntPtr red_mask;
 
-	internal IntPtr green_mask;
+		internal IntPtr green_mask;
 
-	internal IntPtr blue_mask;
+		internal IntPtr blue_mask;
 
-	internal int colormap_size;
+		internal int colormap_size;
 
-	internal int bits_per_rgb;
+		internal int bits_per_rgb;
+	}
+}
+namespace System.Drawing
+{
 }

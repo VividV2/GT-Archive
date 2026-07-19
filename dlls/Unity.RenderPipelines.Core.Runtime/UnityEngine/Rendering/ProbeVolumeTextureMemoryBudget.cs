@@ -1,11 +1,15 @@
 using System;
 
-namespace UnityEngine.Rendering;
-
-[Serializable]
-public enum ProbeVolumeTextureMemoryBudget
+namespace UnityEngine.Rendering
 {
-	MemoryBudgetLow = 0x200,
-	MemoryBudgetMedium = 0x400,
-	MemoryBudgetHigh = 0x800
+	[Serializable]
+	public enum ProbeVolumeTextureMemoryBudget
+	{
+		MemoryBudgetLow = 0x200,
+		MemoryBudgetMedium = 0x400,
+		MemoryBudgetHigh = 0x800
+	}
+}
+namespace UnityEngine.Rendering
+{
 }

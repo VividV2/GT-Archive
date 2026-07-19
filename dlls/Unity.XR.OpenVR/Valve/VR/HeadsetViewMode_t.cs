@@ -1,8 +1,11 @@
-namespace Valve.VR;
-
-public enum HeadsetViewMode_t
+namespace Valve.VR
 {
-	HeadsetViewMode_Left,
-	HeadsetViewMode_Right,
-	HeadsetViewMode_Both
+	public enum EVRSceneApplicationState
+	{
+		None,
+		Starting,
+		Quitting,
+		Running,
+		Waiting
+	}
 }

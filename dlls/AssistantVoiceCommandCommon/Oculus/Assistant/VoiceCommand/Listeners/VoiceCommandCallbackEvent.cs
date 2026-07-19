@@ -1,10 +1,9 @@
-using System;
 using Oculus.Assistant.VoiceCommand.Data;
-using UnityEngine.Events;
+using Oculus.Assistant.VoiceCommand.Data;
 
 namespace Oculus.Assistant.VoiceCommand.Listeners;
 
-[Serializable]
-public class VoiceCommandCallbackEvent : UnityEvent<VoiceCommandResult>
+public interface VoiceCommandListener
 {
+	void OnCallback(VoiceCommandResult result);
 }

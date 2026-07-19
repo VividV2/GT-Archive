@@ -1,12 +1,25 @@
-using System;
-using PlayFab.SharedModels;
-
 namespace PlayFab.ClientModels;
 
-[Serializable]
-public class TwitchPlayFabIdPair : PlayFabBaseModel
+public enum TransactionStatus
 {
-	public string PlayFabId;
-
-	public string TwitchId;
+	CreateCart,
+	Init,
+	Approved,
+	Succeeded,
+	FailedByProvider,
+	DisputePending,
+	RefundPending,
+	Refunded,
+	RefundFailed,
+	ChargedBack,
+	FailedByUber,
+	FailedByPlayFab,
+	Revoked,
+	TradePending,
+	Traded,
+	Upgraded,
+	StackPending,
+	Stacked,
+	Other,
+	Failed
 }

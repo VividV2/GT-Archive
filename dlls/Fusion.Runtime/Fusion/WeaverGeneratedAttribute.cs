@@ -1,7 +1,9 @@
-using System;
-
 namespace Fusion;
 
-public class WeaverGeneratedAttribute : Attribute
+public enum RenderSource
 {
+	Interpolated,
+	From,
+	To,
+	Latest
 }

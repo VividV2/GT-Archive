@@ -1,61 +1,21 @@
-using System;
-using System.Runtime.InteropServices;
-
 namespace Valve.VR;
 
-public class CVRChaperone
+public struct VRControllerAxis_t
 {
-	private IVRChaperone FnTable;
+	public float x;
 
-	internal CVRChaperone(IntPtr pInterface)
+	public float y;
+}
+namespace Valve.VR
+{
+	public struct VROverlayIntersectionResults_t
 	{
-		FnTable = (IVRChaperone)Marshal.PtrToStructure(pInterface, typeof(IVRChaperone));
-	}
+		public HmdVector3_t vPoint;
 
-	public ChaperoneCalibrationState GetCalibrationState()
-	{
-		return FnTable.GetCalibrationState();
-	}
+		public HmdVector3_t vNormal;
 
-	public bool GetPlayAreaSize(ref float pSizeX, ref float pSizeZ)
-	{
-		pSizeX = 0f;
-		pSizeZ = 0f;
-		return FnTable.GetPlayAreaSize(ref pSizeX, ref pSizeZ);
-	}
+		public HmdVector2_t vUVs;
 
-	public bool GetPlayAreaRect(ref HmdQuad_t rect)
-	{
-		return FnTable.GetPlayAreaRect(ref rect);
-	}
-
-	public void ReloadInfo()
-	{
-		FnTable.ReloadInfo();
-	}
-
-	public void SetSceneColor(HmdColor_t color)
-	{
-		FnTable.SetSceneColor(color);
-	}
-
-	public void GetBoundsColor(ref HmdColor_t pOutputColorArray, int nNumOutputColors, float flCollisionBoundsFadeDistance, ref HmdColor_t pOutputCameraColor)
-	{
-		FnTable.GetBoundsColor(ref pOutputColorArray, nNumOutputColors, flCollisionBoundsFadeDistance, ref pOutputCameraColor);
-	}
-
-	public bool AreBoundsVisible()
-	{
-		return FnTable.AreBoundsVisible();
-	}
-
-	public void ForceBoundsVisible(bool bForce)
-	{
-		FnTable.ForceBoundsVisible(bForce);
-	}
-
-	public void ResetZeroPose(ETrackingUniverseOrigin eTrackingUniverseOrigin)
-	{
-		FnTable.ResetZeroPose(eTrackingUniverseOrigin);
+		public float fDistance;
 	}
 }

@@ -1,41 +1,21 @@
-using System.Reflection.Emit;
+namespace System.Runtime.Serialization;
 
-namespace System.Runtime.InteropServices;
-
-/// <summary>Exposes the <see cref="T:System.Reflection.Emit.MethodBuilder" /> class to unmanaged code.</summary>
-[TypeLibImportClass(typeof(MethodBuilder))]
-[Guid("007D8A14-FDF3-363E-9A0B-FEC0618260A2")]
-[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-[CLSCompliant(false)]
-[ComVisible(true)]
-public interface _MethodBuilder
+/// <summary>Implements a serialization surrogate selector that allows one object to perform serialization and deserialization of another.</summary>
+public interface ISerializationSurrogate
 {
-	/// <summary>Maps a set of names to a corresponding set of dispatch identifiers.</summary>
-	/// <param name="riid">Reserved for future use. Must be IID_NULL.</param>
-	/// <param name="rgszNames">An array of names to be mapped.</param>
-	/// <param name="cNames">The count of the names to be mapped.</param>
-	/// <param name="lcid">The locale context in which to interpret the names.</param>
-	/// <param name="rgDispId">An array allocated by the caller that receives the identifiers corresponding to the names.</param>
-	void GetIDsOfNames([In] ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);
+	/// <summary>Populates the provided <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with the data needed to serialize the object.</summary>
+	/// <param name="obj">The object to serialize.</param>
+	/// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> to populate with data.</param>
+	/// <param name="context">The destination (see <see cref="T:System.Runtime.Serialization.StreamingContext" />) for this serialization.</param>
+	/// <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+	void GetObjectData(object obj, SerializationInfo info, StreamingContext context);
 
-	/// <summary>Retrieves the type information for an object, which can be used to get the type information for an interface.</summary>
-	/// <param name="iTInfo">The type information to return.</param>
-	/// <param name="lcid">The locale identifier for the type information.</param>
-	/// <param name="ppTInfo">A pointer to the requested type information object.</param>
-	void GetTypeInfo(uint iTInfo, uint lcid, IntPtr ppTInfo);
-
-	/// <summary>Retrieves the number of type information interfaces that an object provides (either 0 or 1).</summary>
-	/// <param name="pcTInfo">When this method returns, contains a pointer to a location that receives the number of type information interfaces provided by the object. This parameter is passed uninitialized.</param>
-	void GetTypeInfoCount(out uint pcTInfo);
-
-	/// <summary>Provides access to properties and methods exposed by an object.</summary>
-	/// <param name="dispIdMember">An identifier of a member.</param>
-	/// <param name="riid">Reserved for future use. Must be IID_NULL.</param>
-	/// <param name="lcid">The locale context in which to interpret arguments.</param>
-	/// <param name="wFlags">Flags describing the context of the call.</param>
-	/// <param name="pDispParams">A pointer to a structure containing an array of arguments, an array of argument DISPIDs for named arguments, and counts for the number of elements in the arrays.</param>
-	/// <param name="pVarResult">A pointer to the location where the result will be stored.</param>
-	/// <param name="pExcepInfo">A pointer to a structure that contains exception information.</param>
-	/// <param name="puArgErr">The index of the first argument that has an error.</param>
-	void Invoke(uint dispIdMember, [In] ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);
+	/// <summary>Populates the object using the information in the <see cref="T:System.Runtime.Serialization.SerializationInfo" />.</summary>
+	/// <param name="obj">The object to populate.</param>
+	/// <param name="info">The information to populate the object.</param>
+	/// <param name="context">The source from which the object is deserialized.</param>
+	/// <param name="selector">The surrogate selector where the search for a compatible surrogate begins.</param>
+	/// <returns>The populated deserialized object.</returns>
+	/// <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+	object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector);
 }

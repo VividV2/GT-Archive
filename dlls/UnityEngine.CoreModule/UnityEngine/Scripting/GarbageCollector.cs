@@ -1,64 +1,13 @@
 using System;
-using System.Runtime.CompilerServices;
-using UnityEngine.Bindings;
+using System;
 
-namespace UnityEngine.Scripting;
-
-[NativeHeader("Runtime/Scripting/GarbageCollector.h")]
-public static class GarbageCollector
+namespace UnityEngine.Scripting
 {
-	public enum Mode
+	[AttributeUsage(AttributeTargets.Interface, AllowMultiple = false)]
+	public class RequireImplementorsAttribute : Attribute
 	{
-		Disabled,
-		Enabled,
-		Manual
 	}
-
-	public static Mode GCMode
-	{
-		get
-		{
-			return GetMode();
-		}
-		set
-		{
-			if (value != GetMode())
-			{
-				SetMode(value);
-				if (GarbageCollector.GCModeChanged != null)
-				{
-					GarbageCollector.GCModeChanged(value);
-				}
-			}
-		}
-	}
-
-	public static extern bool isIncremental
-	{
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[NativeMethod("GetIncrementalEnabled")]
-		get;
-	}
-
-	public static extern ulong incrementalTimeSliceNanoseconds
-	{
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		get;
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		set;
-	}
-
-	public static event Action<Mode> GCModeChanged;
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[NativeThrows]
-	private static extern void SetMode(Mode mode);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern Mode GetMode();
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[NativeThrows]
-	[NativeMethod("CollectIncrementalWrapper")]
-	public static extern bool CollectIncremental(ulong nanoseconds = 0uL);
+}
+namespace UnityEngine.Events
+{
 }

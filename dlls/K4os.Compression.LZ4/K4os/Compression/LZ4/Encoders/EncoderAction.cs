@@ -7,3 +7,6 @@ public enum EncoderAction
 	Copied,
 	Encoded
 }
+namespace K4os.Compression.LZ4.Engine
+{
+}

@@ -1,35 +1,23 @@
-using Oculus.Interaction.Surfaces;
+using UnityEngine;
 using UnityEngine;
 
 namespace Oculus.Interaction;
 
-[RequireComponent(typeof(RectTransform))]
-[ExecuteInEditMode]
-public class RectTransformBoundsClipperDriver : MonoBehaviour
+public class Cylinder : MonoBehaviour
 {
+	[Tooltip("The radius of the cylinder.")]
 	[SerializeField]
-	private BoundsClipper _boundsClipper;
+	private float _radius = 1f;
 
-	protected virtual void Awake()
+	public float Radius
 	{
-		Resize();
-	}
-
-	protected virtual void Start()
-	{
-	}
-
-	private void OnRectTransformDimensionsChange()
-	{
-		Resize();
-	}
-
-	private void Resize()
-	{
-		if (!(_boundsClipper == null))
+		get
 		{
-			RectTransform rectTransform = base.transform as RectTransform;
-			_boundsClipper.Size = new Vector3(rectTransform.rect.width, rectTransform.rect.height, 0.01f);
+			return _radius;
+		}
+		set
+		{
+			_radius = value;
 		}
 	}
 }

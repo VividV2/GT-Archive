@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.DataModels;
 
-namespace PlayFab.CloudScriptModels;
-
-[Serializable]
-public class UnregisterFunctionRequest : PlayFabRequestCommon
-{
-	public string FunctionName;
-}

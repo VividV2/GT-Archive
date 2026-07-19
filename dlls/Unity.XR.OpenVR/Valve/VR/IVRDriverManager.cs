@@ -1,32 +1,34 @@
-using System;
-using System.Runtime.InteropServices;
-using System.Text;
-
 namespace Valve.VR;
 
-public struct IVRDriverManager
+public struct Compositor_CumulativeStats
 {
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate uint _GetDriverCount();
+	public uint m_nPid;
 
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate uint _GetDriverName(uint nDriver, StringBuilder pchValue, uint unBufferSize);
+	public uint m_nNumFramePresents;
 
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate ulong _GetDriverHandle(IntPtr pchDriverName);
+	public uint m_nNumDroppedFrames;
 
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate bool _IsEnabled(uint nDriver);
+	public uint m_nNumReprojectedFrames;
 
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetDriverCount GetDriverCount;
+	public uint m_nNumFramePresentsOnStartup;
 
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetDriverName GetDriverName;
+	public uint m_nNumDroppedFramesOnStartup;
 
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetDriverHandle GetDriverHandle;
+	public uint m_nNumReprojectedFramesOnStartup;
 
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _IsEnabled IsEnabled;
+	public uint m_nNumLoading;
+
+	public uint m_nNumFramePresentsLoading;
+
+	public uint m_nNumDroppedFramesLoading;
+
+	public uint m_nNumReprojectedFramesLoading;
+
+	public uint m_nNumTimedOut;
+
+	public uint m_nNumFramePresentsTimedOut;
+
+	public uint m_nNumDroppedFramesTimedOut;
+
+	public uint m_nNumReprojectedFramesTimedOut;
 }

@@ -1,9 +1,3 @@
-using UnityEngine.Bindings;
-
-namespace Unity.Audio;
-
-[VisibleToOtherModules]
-internal interface IValidatable
+namespace UnityEngine.Audio
 {
-	bool Valid { get; }
 }

@@ -1,9 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class UnlinkPSNAccountRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
+{
+}
+namespace PlayFab.ClientModels
 {
 }

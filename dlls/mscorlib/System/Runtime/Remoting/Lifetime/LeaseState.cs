@@ -1,20 +1,12 @@
 using System.Runtime.InteropServices;
 
-namespace System.Runtime.Remoting.Lifetime;
+namespace System.Runtime.Remoting.Metadata.W3cXsd2001;
 
-/// <summary>Indicates the possible lease states of a lifetime lease.</summary>
-[Serializable]
+/// <summary>Provides access to the XML Schema definition language (XSD) of a SOAP type.</summary>
 [ComVisible(true)]
-public enum LeaseState
+public interface ISoapXsd
 {
-	/// <summary>The lease is not initialized.</summary>
-	Null,
-	/// <summary>The lease has been created, but is not yet active.</summary>
-	Initial,
-	/// <summary>The lease is active and has not expired.</summary>
-	Active,
-	/// <summary>The lease has expired and is seeking sponsorship.</summary>
-	Renewing,
-	/// <summary>The lease has expired and cannot be renewed.</summary>
-	Expired
+	/// <summary>Returns the XML Schema definition language (XSD) of the current SOAP type.</summary>
+	/// <returns>A <see cref="T:System.String" /> that indicates the XSD of the current SOAP type.</returns>
+	string GetXsdType();
 }

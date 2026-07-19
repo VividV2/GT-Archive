@@ -1,10 +1,8 @@
-namespace Newtonsoft.Json.Converters;
-
-internal interface IXmlDeclaration : IXmlNode
+namespace Newtonsoft.Json
 {
-	string? Version { get; }
-
-	string? Encoding { get; set; }
-
-	string? Standalone { get; set; }
+	public enum ConstructorHandling
+	{
+		Default,
+		AllowNonPublicDefaultConstructor
+	}
 }

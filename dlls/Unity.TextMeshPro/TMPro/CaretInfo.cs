@@ -1,8 +1,12 @@
-namespace TMPro;
-
-public struct CaretInfo(int index, CaretPosition position)
+namespace TMPro
 {
-	public int index = index;
+	public struct CaretInfo(int index, CaretPosition position)
+	{
+		public int index = index;
 
-	public CaretPosition position = position;
+		public CaretPosition position = position;
+	}
+}
+namespace TMPro
+{
 }

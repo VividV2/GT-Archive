@@ -1,26 +1,24 @@
+using System;
+using System;
+using System;
+
 namespace Photon.Realtime;
 
-public class GamePropertyKey
+public enum EventCaching : byte
 {
-	public const byte MaxPlayers = byte.MaxValue;
-
-	public const byte IsVisible = 254;
-
-	public const byte IsOpen = 253;
-
-	public const byte PlayerCount = 252;
-
-	public const byte Removed = 251;
-
-	public const byte PropsListedInLobby = 250;
-
-	public const byte CleanupCacheOnLeave = 249;
-
-	public const byte MasterClientId = 248;
-
-	public const byte ExpectedUsers = 247;
-
-	public const byte PlayerTtl = 246;
-
-	public const byte EmptyRoomTtl = 245;
+	DoNotCache = 0,
+	[Obsolete]
+	MergeCache = 1,
+	[Obsolete]
+	ReplaceCache = 2,
+	[Obsolete]
+	RemoveCache = 3,
+	AddToRoomCache = 4,
+	AddToRoomCacheGlobal = 5,
+	RemoveFromRoomCache = 6,
+	RemoveFromRoomCacheForActorsLeft = 7,
+	SliceIncreaseIndex = 10,
+	SliceSetIndex = 11,
+	SlicePurgeIndex = 12,
+	SlicePurgeUpToIndex = 13
 }

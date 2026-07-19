@@ -7,3 +7,6 @@ public class SendChallengeEmailRequest : KIDRequestData
 
 	public string Locale;
 }
+namespace GorillaNetworking
+{
+}

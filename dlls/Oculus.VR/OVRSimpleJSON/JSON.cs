@@ -1,9 +1,13 @@
-namespace OVRSimpleJSON;
-
-public static class JSON
+namespace OVRSimpleJSON
 {
-	public static JSONNode Parse(string aJSON)
+	public static class JSON
 	{
-		return JSONNode.Parse(aJSON);
+		public static JSONNode Parse(string aJSON)
+		{
+			return JSONNode.Parse(aJSON);
+		}
 	}
+}
+namespace OVR.OpenVR
+{
 }

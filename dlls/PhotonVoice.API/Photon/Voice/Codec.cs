@@ -1,7 +1,15 @@
-namespace Photon.Voice;
-
-public enum Codec
+namespace Photon.Voice
 {
-	Raw = 1,
-	AudioOpus = 11
+	public enum Codec
+	{
+		Raw = 1,
+		AudioOpus = 11
+	}
+}
+namespace Photon.Voice
+{
+	public interface IEncoderDirect<B> : IEncoder, IDisposable
+	{
+		void Input(B buf);
+	}
 }

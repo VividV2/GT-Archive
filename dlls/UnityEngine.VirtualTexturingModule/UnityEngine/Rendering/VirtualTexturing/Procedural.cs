@@ -376,7 +376,7 @@ public static class Procedural
 			{
 				throw new ArgumentException($"Array sizes do not match ({requestHandles.Length} handles, {status.Length} requests)");
 			}
-			Binding.UpdateRequestState((IntPtr)requestHandles.GetUnsafePtr(), (IntPtr)status.GetUnsafePtr(), requestHandles.Length);
+			Binding.UpdateRequestState((IntPtr)NativeSliceUnsafeUtility.GetUnsafePtr(requestHandles), (IntPtr)NativeSliceUnsafeUtility.GetUnsafePtr(status), requestHandles.Length);
 		}
 
 		public unsafe static void CompleteRequests(NativeSlice<TextureStackRequestHandle<T>> requestHandles, NativeSlice<RequestStatus> status, CommandBuffer fenceBuffer)
@@ -390,7 +390,7 @@ public static class Procedural
 			{
 				throw new ArgumentException($"Array sizes do not match ({requestHandles.Length} handles, {status.Length} requests)");
 			}
-			Binding.UpdateRequestStateWithCommandBuffer((IntPtr)requestHandles.GetUnsafePtr(), (IntPtr)status.GetUnsafePtr(), requestHandles.Length, fenceBuffer);
+			Binding.UpdateRequestStateWithCommandBuffer((IntPtr)NativeSliceUnsafeUtility.GetUnsafePtr(requestHandles), (IntPtr)NativeSliceUnsafeUtility.GetUnsafePtr(status), requestHandles.Length, fenceBuffer);
 		}
 
 		public unsafe T GetRequestParameters()
@@ -411,7 +411,7 @@ public static class Procedural
 			{
 				throw new ArgumentException($"Array sizes do not match ({handles.Length} handles, {requests.Length} requests)");
 			}
-			Binding.GetRequestParameters((IntPtr)handles.GetUnsafePtr(), (IntPtr)requests.GetUnsafePtr(), handles.Length);
+			Binding.GetRequestParameters((IntPtr)NativeSliceUnsafeUtility.GetUnsafePtr(handles), (IntPtr)NativeSliceUnsafeUtility.GetUnsafePtr(requests), handles.Length);
 		}
 	}
 
@@ -576,7 +576,7 @@ public static class Procedural
 				throw new InvalidOperationException("Invalid ProceduralTextureStack " + name);
 			}
 			bool flag = false;
-			return Binding.PopRequests(handle, (IntPtr)requestHandles.GetUnsafePtr(), requestHandles.Length);
+			return Binding.PopRequests(handle, (IntPtr)NativeSliceUnsafeUtility.GetUnsafePtr(requestHandles), requestHandles.Length);
 		}
 
 		public bool IsValid()

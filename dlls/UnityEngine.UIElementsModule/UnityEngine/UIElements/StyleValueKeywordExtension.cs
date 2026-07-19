@@ -1,25 +1,48 @@
 using System;
-using UnityEngine.Bindings;
+using System;
+using System;
 
-namespace UnityEngine.UIElements;
-
-[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
-internal static class StyleValueKeywordExtension
+namespace UnityEngine.UIElements
 {
-	public static string ToUssString(this StyleValueKeyword svk)
+	public interface ITextSelection
 	{
-		return svk switch
-		{
-			StyleValueKeyword.Inherit => "inherit", 
-			StyleValueKeyword.Initial => "initial", 
-			StyleValueKeyword.Auto => "auto", 
-			StyleValueKeyword.Unset => "unset", 
-			StyleValueKeyword.True => "true", 
-			StyleValueKeyword.False => "false", 
-			StyleValueKeyword.None => "none", 
-			StyleValueKeyword.Cover => "cover", 
-			StyleValueKeyword.Contain => "contain", 
-			_ => throw new ArgumentOutOfRangeException("svk", svk, "Unknown StyleValueKeyword"), 
-		};
+		bool isSelectable { get; set; }
+
+		[Obsolete("cursorColor is deprecated. Please use the corresponding USS property (--unity-cursor-color) instead.")]
+		Color cursorColor { get; set; }
+
+		[Obsolete("selectionColor is deprecated. Please use the corresponding USS property (--unity-selection-color) instead.")]
+		Color selectionColor { get; set; }
+
+		int cursorIndex { get; set; }
+
+		bool doubleClickSelectsWord { get; set; }
+
+		int selectIndex { get; set; }
+
+		bool tripleClickSelectsLine { get; set; }
+
+		bool selectAllOnFocus { get; set; }
+
+		bool selectAllOnMouseUp { get; set; }
+
+		Vector2 cursorPosition { get; }
+
+		internal float lineHeightAtCursorPosition { get; }
+
+		internal float cursorWidth { get; set; }
+
+		bool HasSelection();
+
+		void SelectAll();
+
+		void SelectNone();
+
+		void SelectRange(int cursorIndex, int selectionIndex);
+
+		internal void MoveTextEnd();
 	}
+}
+namespace UnityEngine.UIElements
+{
 }

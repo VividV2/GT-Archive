@@ -1,5 +1,2 @@
-namespace Unity.Scripting.LifecycleManagement;
+namespace JetBrains.Annotations;
 
-internal abstract class LifecycleAttributeBase : RequiredMemberAttribute
-{
-}

@@ -1,11 +1,6 @@
-using Newtonsoft.Json;
-
-namespace Modio.API.SchemaDefinitions;
-
-[JsonObject]
-internal readonly struct UserDelegationTokenObject(string entity, string token)
+namespace Modio.API.SchemaDefinitions
 {
-	internal readonly string Entity = entity;
-
-	internal readonly string Token = token;
+}
+namespace Modio.API.HttpClient
+{
 }

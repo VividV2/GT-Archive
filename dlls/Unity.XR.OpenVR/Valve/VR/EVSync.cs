@@ -1,8 +1,15 @@
-namespace Valve.VR;
-
-public enum EVSync
+namespace Valve.VR
 {
-	None,
-	WaitRender,
-	NoWaitRender
+}
+namespace Valve.VR
+{
+	public enum EVSync
+	{
+		None,
+		WaitRender,
+		NoWaitRender
+	}
+}
+namespace Valve.VR
+{
 }

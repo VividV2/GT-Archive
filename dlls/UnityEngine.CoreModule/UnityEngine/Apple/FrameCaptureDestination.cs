@@ -1,10 +1,3 @@
-using UnityEngine.Bindings;
-
-namespace UnityEngine.Apple;
-
-[NativeHeader("Runtime/Export/Apple/FrameCaptureMetalScriptBindings.h")]
-public enum FrameCaptureDestination
+namespace UnityEngine.Rendering
 {
-	DevTools = 1,
-	GPUTraceDocument
 }

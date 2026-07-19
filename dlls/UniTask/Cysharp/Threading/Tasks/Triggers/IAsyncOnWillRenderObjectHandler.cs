@@ -1,6 +1,3 @@
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnWillRenderObjectHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask OnWillRenderObjectAsync();
 }

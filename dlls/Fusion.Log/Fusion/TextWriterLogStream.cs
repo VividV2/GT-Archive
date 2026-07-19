@@ -2,89 +2,93 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace Fusion;
-
-public class TextWriterLogStream : LogStream
+namespace Fusion
 {
-	private StringBuilder _builder = new StringBuilder();
-
-	private TextWriter _writer;
-
-	private bool _disposeWriter;
-
-	private string _prefix;
-
-	public TextWriterLogStream(TextWriter writer, bool disposeWriter, string prefix = null)
+	public class TextWriterLogStream : LogStream
 	{
-		_writer = writer ?? throw new ArgumentNullException("writer");
-		_disposeWriter = disposeWriter;
-		_prefix = prefix;
-	}
+		private StringBuilder _builder = new StringBuilder();
 
-	public override void Log(ILogSource source, string message)
-	{
-		Log(message);
-	}
+		private TextWriter _writer;
 
-	public override void Log(string message)
-	{
-		try
+		private bool _disposeWriter;
+
+		private string _prefix;
+
+		public TextWriterLogStream(TextWriter writer, bool disposeWriter, string prefix = null)
 		{
-			if (!string.IsNullOrEmpty(_prefix))
-			{
-				_builder.Append(_prefix);
-				_builder.Append(" ");
-			}
-			_builder.Append(message);
-			_writer.WriteLine(_builder.ToString());
+			_writer = writer ?? throw new ArgumentNullException("writer");
+			_disposeWriter = disposeWriter;
+			_prefix = prefix;
 		}
-		finally
+
+		public override void Log(ILogSource source, string message)
 		{
-			_builder.Clear();
+			Log(message);
 		}
-	}
 
-	public override void Log(ILogSource source, string message, Exception error)
-	{
-		Log(message, error);
-	}
-
-	public override void Log(string message, Exception error)
-	{
-		try
+		public override void Log(string message)
 		{
-			if (!string.IsNullOrEmpty(_prefix))
+			try
 			{
-				_builder.Append(_prefix);
-				_builder.Append(" ");
-			}
-			if (!string.IsNullOrEmpty(message))
-			{
+				if (!string.IsNullOrEmpty(_prefix))
+				{
+					_builder.Append(_prefix);
+					_builder.Append(" ");
+				}
 				_builder.Append(message);
-				_builder.Append(" ");
+				_writer.WriteLine(_builder.ToString());
 			}
-			_builder.Append(error.Message);
-			_writer.WriteLine(_builder.ToString());
-			_writer.WriteLine(error.StackTrace);
+			finally
+			{
+				_builder.Clear();
+			}
 		}
-		finally
-		{
-			_builder.Clear();
-		}
-	}
 
-	public override void Log(Exception error)
-	{
-		Log((string)null, error);
-	}
-
-	public override void Dispose()
-	{
-		if (_disposeWriter && _writer != null)
+		public override void Log(ILogSource source, string message, Exception error)
 		{
-			TextWriter writer = _writer;
-			_writer = null;
-			writer.Dispose();
+			Log(message, error);
+		}
+
+		public override void Log(string message, Exception error)
+		{
+			try
+			{
+				if (!string.IsNullOrEmpty(_prefix))
+				{
+					_builder.Append(_prefix);
+					_builder.Append(" ");
+				}
+				if (!string.IsNullOrEmpty(message))
+				{
+					_builder.Append(message);
+					_builder.Append(" ");
+				}
+				_builder.Append(error.Message);
+				_writer.WriteLine(_builder.ToString());
+				_writer.WriteLine(error.StackTrace);
+			}
+			finally
+			{
+				_builder.Clear();
+			}
+		}
+
+		public override void Log(Exception error)
+		{
+			Log((string)null, error);
+		}
+
+		public override void Dispose()
+		{
+			if (_disposeWriter && _writer != null)
+			{
+				TextWriter writer = _writer;
+				_writer = null;
+				writer.Dispose();
+			}
 		}
 	}
+}
+namespace Fusion
+{
 }

@@ -1,15 +1,25 @@
-using System.Collections;
+using UnityEngine;
 using UnityEngine;
 
-namespace DigitalOpus.MB.Core;
-
-internal interface MB_ITextureCombinerPacker
+namespace DigitalOpus.MB.Core
 {
-	bool Validate(MB3_TextureCombinerPipeline.TexturePipelineData data);
+	public interface MB_IMeshBakerSettingsHolder
+	{
+		MB_IMeshBakerSettings GetMeshBakerSettings();
 
-	IEnumerator ConvertTexturesToReadableFormats(ProgressUpdateDelegate progressInfo, MB3_TextureCombiner.CombineTexturesIntoAtlasesCoroutineResult result, MB3_TextureCombinerPipeline.TexturePipelineData data, MB3_TextureCombiner combiner, MB2_EditorMethodsInterface textureEditorMethods, MB2_LogLevel LOG_LEVEL);
+		void GetMeshBakerSettingsAsSerializedProperty(out string propertyName, out Object targetObj);
+	}
+}
+namespace DigitalOpus.MB.Core
+{
+	internal interface MB_ITextureCombinerPacker
+	{
+		bool Validate(MB3_TextureCombinerPipeline.TexturePipelineData data);
 
-	AtlasPackingResult[] CalculateAtlasRectangles(MB3_TextureCombinerPipeline.TexturePipelineData data, bool doMultiAtlas, MB2_LogLevel LOG_LEVEL);
+		System.Collections.IEnumerator ConvertTexturesToReadableFormats(ProgressUpdateDelegate progressInfo, MB3_TextureCombiner.CombineTexturesIntoAtlasesCoroutineResult result, MB3_TextureCombinerPipeline.TexturePipelineData data, MB3_TextureCombiner combiner, MB2_EditorMethodsInterface textureEditorMethods, MB2_LogLevel LOG_LEVEL);
 
-	IEnumerator CreateAtlases(ProgressUpdateDelegate progressInfo, MB3_TextureCombinerPipeline.TexturePipelineData data, MB3_TextureCombiner combiner, AtlasPackingResult packedAtlasRects, Texture2D[] atlases, MB2_EditorMethodsInterface textureEditorMethods, MB2_LogLevel LOG_LEVEL);
+		AtlasPackingResult[] CalculateAtlasRectangles(MB3_TextureCombinerPipeline.TexturePipelineData data, bool doMultiAtlas, MB2_LogLevel LOG_LEVEL);
+
+		System.Collections.IEnumerator CreateAtlases(ProgressUpdateDelegate progressInfo, MB3_TextureCombinerPipeline.TexturePipelineData data, MB3_TextureCombiner combiner, AtlasPackingResult packedAtlasRects, Texture2D[] atlases, MB2_EditorMethodsInterface textureEditorMethods, MB2_LogLevel LOG_LEVEL);
+	}
 }

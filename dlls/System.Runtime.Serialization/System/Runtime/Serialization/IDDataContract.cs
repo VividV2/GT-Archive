@@ -1,9 +1,9 @@
-namespace System.Runtime.Serialization;
-
-internal class IDDataContract : StringDataContract
+namespace System.Runtime.Serialization
 {
-	internal IDDataContract()
-		: base(DictionaryGlobals.XSDIDLocalName, DictionaryGlobals.SchemaNamespace)
-	{
-	}
+}
+namespace System.Runtime.Serialization
+{
+}
+namespace System.Runtime.Serialization
+{
 }

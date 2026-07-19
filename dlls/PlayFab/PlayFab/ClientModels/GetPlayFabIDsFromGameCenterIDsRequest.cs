@@ -5,7 +5,7 @@ using PlayFab.SharedModels;
 namespace PlayFab.ClientModels;
 
 [Serializable]
-public class GetPlayFabIDsFromGameCenterIDsRequest : PlayFabRequestCommon
+public class GetPlayFabIDsFromGoogleIDsResult : PlayFabResultCommon
 {
-	public List<string> GameCenterIDs;
+	public List<GooglePlayFabIdPair> Data;
 }

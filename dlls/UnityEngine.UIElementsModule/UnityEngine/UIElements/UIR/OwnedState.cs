@@ -1,7 +1,12 @@
-namespace UnityEngine.UIElements.UIR;
-
-internal enum OwnedState : byte
+#define UNITY_ASSERTIONS
+namespace UnityEngine.UIElements.UIR
 {
-	Inherited,
-	Owned
+}
+namespace UnityEngine.UIElements.UIR
+{
+	internal enum OwnedState : byte
+	{
+		Inherited,
+		Owned
+	}
 }

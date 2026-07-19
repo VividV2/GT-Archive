@@ -1,14 +1,11 @@
-using System;
-using PlayFab.SharedModels;
-
 namespace PlayFab.MultiplayerModels;
 
 [Serializable]
-public class RolloverContainerRegistryCredentialsResponse : PlayFabResultCommon
+public class ShutdownMultiplayerServerRequest : PlayFabRequestCommon
 {
-	public string DnsName;
+	public string BuildId;
 
-	public string Password;
+	public string Region;
 
-	public string Username;
+	public string SessionId;
 }

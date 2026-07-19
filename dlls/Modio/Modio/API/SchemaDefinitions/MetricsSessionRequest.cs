@@ -1,38 +1,42 @@
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
-namespace Modio.API.SchemaDefinitions;
+namespace Modio.API.Interfaces;
 
-[JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-internal readonly struct MetricsSessionRequest(string sessionId, long sessionTs, string sessionHash, string sessionNonce, long sessionOrderId, long[] ids) : IApiRequest
+public interface IModioAPIInterface : IDisposable
 {
-	private static readonly Dictionary<string, object> _bodyParameters = new Dictionary<string, object>();
+	void SetBasePath(string value);
 
-	internal readonly string SessionId = sessionId;
+	void SetDefaultHeader(string name, string value);
 
-	internal readonly long SessionTs = sessionTs;
+	void AddDefaultPathParameter(string key, string value);
 
-	internal readonly string SessionHash = sessionHash;
+	void RemoveDefaultPathParameter(string key);
 
-	internal readonly string SessionNonce = sessionNonce;
+	void RemoveDefaultHeader(string name);
 
-	internal readonly long SessionOrderId = sessionOrderId;
+	void AddDefaultParameter(string value);
 
-	internal readonly long[] Ids = ids;
+	void RemoveDefaultParameter(string value);
 
-	public IReadOnlyDictionary<string, object> GetBodyParameters()
-	{
-		_bodyParameters.Clear();
-		_bodyParameters.Add("session_id", SessionId);
-		_bodyParameters.Add("session_ts", SessionTs);
-		_bodyParameters.Add("session_hash", SessionHash);
-		_bodyParameters.Add("session_nonce", SessionNonce);
-		_bodyParameters.Add("session_order_id", SessionOrderId);
-		if (Ids != null)
-		{
-			_bodyParameters.Add("ids", Ids);
-		}
-		return _bodyParameters;
-	}
+	void ResetConfiguration();
+
+	Task<(Error, Stream)> DownloadFile(string url, CancellationToken token = default(CancellationToken));
+
+	Task<(Error error, T? result)> GetJson<T>(ModioAPIRequest request) where T : struct;
+
+	Task<(Error error, JToken)> GetJson(ModioAPIRequest request);
 }

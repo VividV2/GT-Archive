@@ -1,17 +1,8 @@
 namespace System.Net;
 
-internal readonly struct SecurityStatusPal(SecurityStatusPalErrorCode errorCode, Exception exception = null)
+internal struct WebParseError
 {
-	public readonly SecurityStatusPalErrorCode ErrorCode = errorCode;
+	public WebParseErrorSection Section;
 
-	public readonly Exception Exception = exception;
-
-	public override string ToString()
-	{
-		if (Exception != null)
-		{
-			return string.Format("{0}={1}, {2}={3}", "ErrorCode", ErrorCode, "Exception", Exception);
-		}
-		return string.Format("{0}={1}", "ErrorCode", ErrorCode);
-	}
+	public WebParseErrorCode Code;
 }

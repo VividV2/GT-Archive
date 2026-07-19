@@ -1,12 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetCharacterInventoryRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string CatalogVersion;
-
-	public string CharacterId;
 }

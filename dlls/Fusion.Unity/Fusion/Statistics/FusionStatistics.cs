@@ -189,7 +189,7 @@ public class FusionStatistics : SimulationBehaviour, ISpawned, IPublicFacingInte
 
 	public void DestroyStatisticsPanel()
 	{
-		FusionNetworkObjectStatistics[] array = _objectStatsGraphCombines?.Keys.ToArray();
+		FusionNetworkObjectStatistics[] array = Enumerable.ToArray(_objectStatsGraphCombines?.Keys);
 		if (array != null)
 		{
 			FusionNetworkObjectStatistics[] array2 = array;

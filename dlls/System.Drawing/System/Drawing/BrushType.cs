@@ -1,10 +1,3 @@
-namespace System.Drawing;
-
-internal enum BrushType
+namespace System.Drawing
 {
-	BrushTypeSolidColor,
-	BrushTypeHatchFill,
-	BrushTypeTextureFill,
-	BrushTypePathGradient,
-	BrushTypeLinearGradient
 }

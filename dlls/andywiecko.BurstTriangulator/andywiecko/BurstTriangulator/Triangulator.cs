@@ -2,11 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using andywiecko.BurstTriangulator;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 using Unity.Mathematics;
+using UnityEngine;
+using System;
+using andywiecko.BurstTriangulator;
+using Unity.Jobs;
 using UnityEngine;
 
 namespace andywiecko.BurstTriangulator;
@@ -723,7 +728,7 @@ public class Triangulator : IDisposable
 										{
 											dists[m] = math.distancesq(c, positions[m]);
 										}
-										ids.Sort(new DistComparer(dists));
+										NativeSortExtension.Sort(ids, new DistComparer(dists));
 										hullStart = num2;
 										ref NativeArray<int> reference = ref hullNext;
 										int index = num2;
@@ -1397,7 +1402,7 @@ public class Triangulator : IDisposable
 										for (int m = 0; m < halfedges.Length; m++)
 										{
 											Edge value = new Edge(triangles[m], triangles[NextHalfedge(m)]);
-											if (halfedges[m] == -1 && !constraints.Contains(value))
+											if (halfedges[m] == -1 && !NativeListExtensions.Contains(constraints, value))
 											{
 												constraints.Add(in value);
 											}
@@ -1752,7 +1757,7 @@ public class Triangulator : IDisposable
 					break;
 				}
 				int value = halfedges[num];
-				if (value == -1 || !badTriangles.Contains(value / 3))
+				if (value == -1 || !NativeListExtensions.Contains(badTriangles, value / 3))
 				{
 					pathPoints.Add(triangles[num]);
 					pathHalfedges.Add(in value);
@@ -1776,7 +1781,7 @@ public class Triangulator : IDisposable
 				{
 					int num3 = 3 * num2 + j;
 					int value = halfedges[num3];
-					if (value == -1 || !badTriangles.Contains(value / 3))
+					if (value == -1 || !NativeListExtensions.Contains(badTriangles, value / 3))
 					{
 						pathPoints.Add(triangles[num3]);
 						pathHalfedges.Add(in value);
@@ -1797,7 +1802,7 @@ public class Triangulator : IDisposable
 				if (triangles[num4] != num5)
 				{
 					int value2 = halfedges[num4];
-					if (value2 == -1 || !badTriangles.Contains(value2 / 3))
+					if (value2 == -1 || !NativeListExtensions.Contains(badTriangles, value2 / 3))
 					{
 						pathPoints.Add(triangles[num4]);
 						pathHalfedges.Add(in value2);
@@ -1814,7 +1819,7 @@ public class Triangulator : IDisposable
 
 		private void ProcessBadTriangles(NativeList<int> heQueue, NativeList<int> tQueue)
 		{
-			badTriangles.Sort();
+			NativeSortExtension.Sort(badTriangles);
 			for (int num = badTriangles.Length - 1; num >= 0; num--)
 			{
 				int num2 = badTriangles[num];
@@ -2146,7 +2151,7 @@ public class Triangulator : IDisposable
 			{
 				for (int i = 0; i < halfedges.Length; i++)
 				{
-					if (halfedges[i] == -1 && !visitedTriangles[i / 3] && !constraintEdges.Contains(new Edge(triangles[i], triangles[NextHalfedge(i)])))
+					if (halfedges[i] == -1 && !visitedTriangles[i / 3] && !NativeListExtensions.Contains(constraintEdges, new Edge(triangles[i], triangles[NextHalfedge(i)])))
 					{
 						PlantSeed(i / 3, visitedTriangles, badTriangles, trianglesQueue);
 					}
@@ -2189,7 +2194,7 @@ public class Triangulator : IDisposable
 			void TryEnqueue(Edge e, int he, NativeList<Edge> constraintEdges, NativeList<int> halfedges)
 			{
 				int num7 = halfedges[he];
-				if (!constraintEdges.Contains(e) && num7 != -1)
+				if (!NativeListExtensions.Contains(constraintEdges, e) && num7 != -1)
 				{
 					int value = num7 / 3;
 					if (!visitedTriangles[value])
@@ -2243,7 +2248,7 @@ public class Triangulator : IDisposable
 
 		private void RemoveBadTriangles(NativeList<int> badTriangles)
 		{
-			badTriangles.Sort();
+			NativeSortExtension.Sort(badTriangles);
 			for (int num = badTriangles.Length - 1; num >= 0; num--)
 			{
 				int num2 = badTriangles[num];
@@ -2289,7 +2294,7 @@ public class Triangulator : IDisposable
 				nativeArray[triangles[j]] = j;
 			}
 			using NativeArray<int> array = potentialPointsToRemove.ToNativeArray(Allocator.Temp);
-			array.Sort();
+			NativeSortExtension.Sort(array);
 			for (int num = array.Length - 1; num >= 0; num--)
 			{
 				int num2 = array[num];
@@ -2641,5 +2646,41 @@ public class Triangulator : IDisposable
 			return CCW(b, d, a) != CCW(b, d, c);
 		}
 		return false;
+	}
+}
+[Unity.Jobs.DOTSCompilerGenerated]
+internal class __JobReflectionRegistrationOutput__7274761993000005315
+{
+	public static void CreateJobReflectionData()
+	{
+		try
+		{
+			IJobExtensions.EarlyJobInit<Triangulator.ValidateInputPositionsJob>();
+			IJobExtensions.EarlyJobInit<Triangulator.PCATransformationJob>();
+			IJobExtensions.EarlyJobInit<Triangulator.PCATransformationHolesJob>();
+			IJobParallelForDeferExtensions.EarlyJobInit<Triangulator.PCAInverseTransformationJob>();
+			IJobExtensions.EarlyJobInit<Triangulator.InitialLocalTransformationJob>();
+			IJobExtensions.EarlyJobInit<Triangulator.CalculateLocalHoleSeedsJob>();
+			IJobParallelForDeferExtensions.EarlyJobInit<Triangulator.CalculateLocalPositionsJob>();
+			IJobParallelForDeferExtensions.EarlyJobInit<Triangulator.LocalToWorldTransformationJob>();
+			IJobExtensions.EarlyJobInit<Triangulator.ClearDataJob>();
+			IJobExtensions.EarlyJobInit<Triangulator.DelaunayTriangulationJob>();
+			IJobExtensions.EarlyJobInit<Triangulator.ValidateInputConstraintEdges>();
+			IJobExtensions.EarlyJobInit<Triangulator.ConstrainEdgesJob>();
+			IJobExtensions.EarlyJobInit<Triangulator.RefineMeshJob>();
+			IJobExtensions.EarlyJobInit<Triangulator.PlantingSeedsJob<Triangulator.PlantBoundary>>();
+			IJobExtensions.EarlyJobInit<Triangulator.PlantingSeedsJob<Triangulator.PlantBoundaryAndHoles>>();
+			IJobExtensions.EarlyJobInit<Triangulator.PlantingSeedsJob<Triangulator.PlantHoles>>();
+		}
+		catch (Exception ex)
+		{
+			EarlyInitHelpers.JobReflectionDataCreationFailed(ex);
+		}
+	}
+
+	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
+	public static void EarlyInit()
+	{
+		CreateJobReflectionData();
 	}
 }

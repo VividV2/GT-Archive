@@ -1,23 +1,8 @@
-using System;
-using System.Threading.Tasks;
+namespace Meta.Voice.Audio.Decoding;
 
-namespace Meta.Voice.Net.WebSockets;
-
-public interface IWebSocket
+public interface IAudioDecoder
 {
-	WitWebSocketConnectionState State { get; }
+	bool WillDecodeInBackground { get; }
 
-	event Action OnOpen;
-
-	event Action<byte[], int, int> OnMessage;
-
-	event Action<string> OnError;
-
-	event Action<WebSocketCloseCode> OnClose;
-
-	Task Connect();
-
-	Task Send(byte[] data);
-
-	Task Close();
+	void Decode(byte[] buffer, int bufferOffset, int bufferLength, AudioSampleDecodeDelegate onSamplesDecoded);
 }

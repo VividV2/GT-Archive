@@ -1,88 +1,13 @@
-using System.Globalization;
-
 namespace System;
 
-[Serializable]
-public class OrdinalComparer : StringComparer
+/// <summary>Indicates that a class can be serialized. This class cannot be inherited.</summary>
+/// <summary>Indicates that a class can be serialized. This class cannot be inherited.</summary>
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Delegate, Inherited = false)]
+public sealed class SerializableAttribute : Attribute
 {
-	private readonly bool _ignoreCase;
-
-	internal OrdinalComparer(bool ignoreCase)
+	/// <summary>Initializes a new instance of the <see cref="T:System.SerializableAttribute" /> class.</summary>
+	/// <summary>Initializes a new instance of the <see cref="T:System.SerializableAttribute" /> class.</summary>
+	public SerializableAttribute()
 	{
-		_ignoreCase = ignoreCase;
-	}
-
-	public override int Compare(string x, string y)
-	{
-		if ((object)x == y)
-		{
-			return 0;
-		}
-		if (x == null)
-		{
-			return -1;
-		}
-		if (y == null)
-		{
-			return 1;
-		}
-		if (_ignoreCase)
-		{
-			return string.Compare(x, y, StringComparison.OrdinalIgnoreCase);
-		}
-		return string.CompareOrdinal(x, y);
-	}
-
-	public override bool Equals(string x, string y)
-	{
-		if ((object)x == y)
-		{
-			return true;
-		}
-		if (x == null || y == null)
-		{
-			return false;
-		}
-		if (_ignoreCase)
-		{
-			if (x.Length != y.Length)
-			{
-				return false;
-			}
-			return string.Compare(x, y, StringComparison.OrdinalIgnoreCase) == 0;
-		}
-		return x.Equals(y);
-	}
-
-	public override int GetHashCode(string obj)
-	{
-		if (obj == null)
-		{
-			ThrowHelper.ThrowArgumentNullException(ExceptionArgument.obj);
-		}
-		if (_ignoreCase)
-		{
-			return CompareInfo.GetIgnoreCaseHash(obj);
-		}
-		return obj.GetHashCode();
-	}
-
-	public override bool Equals(object obj)
-	{
-		if (!(obj is OrdinalComparer ordinalComparer))
-		{
-			return false;
-		}
-		return _ignoreCase == ordinalComparer._ignoreCase;
-	}
-
-	public override int GetHashCode()
-	{
-		int hashCode = "OrdinalComparer".GetHashCode();
-		if (!_ignoreCase)
-		{
-			return hashCode;
-		}
-		return ~hashCode;
 	}
 }

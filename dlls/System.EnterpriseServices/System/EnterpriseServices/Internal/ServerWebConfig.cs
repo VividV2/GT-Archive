@@ -1,35 +1,16 @@
+using System.Runtime.InteropServices;
+
 namespace System.EnterpriseServices.Internal;
 
-/// <summary>Creates a Web.config file for a SOAP-enabled COM+ application. Can also add component entries to the file for COM interfaces being published in the application.</summary>
-public class ServerWebConfig : IServerWebConfig
+[Guid("5AC4CB7E-F89F-429b-926B-C7F940936BF4")]
+public interface ISoapUtility
 {
-	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.Internal.ServerWebConfig" /> class.</summary>
-	[System.MonoTODO]
-	public ServerWebConfig()
-	{
-		throw new NotImplementedException();
-	}
+	[DispId(2)]
+	void GetServerBinPath([MarshalAs(UnmanagedType.BStr)] string rootWebServer, [MarshalAs(UnmanagedType.BStr)] string inBaseUrl, [MarshalAs(UnmanagedType.BStr)] string inVirtualRoot, [MarshalAs(UnmanagedType.BStr)] out string binPath);
 
-	/// <summary>Adds XML elements to a Web.config file for a COM interface being published in a SOAP-enabled COM+ application.</summary>
-	/// <param name="FilePath">The path of the existing Web.config file.</param>
-	/// <param name="AssemblyName">The name of the assembly that contains the type being added.</param>
-	/// <param name="TypeName">The name of the type being added.</param>
-	/// <param name="ProgId">The programmatic identifier for the type being added.</param>
-	/// <param name="WkoMode">A string constant that corresponds to the name of a member from the <see cref="T:System.Runtime.Remoting.WellKnownObjectMode" /> enumeration, which indicates how a well-known object is activated.</param>
-	/// <param name="Error">A string to which an error message can be written.</param>
-	[System.MonoTODO]
-	public void AddElement(string FilePath, string AssemblyName, string TypeName, string ProgId, string WkoMode, out string Error)
-	{
-		throw new NotImplementedException();
-	}
+	[DispId(1)]
+	void GetServerPhysicalPath([MarshalAs(UnmanagedType.BStr)] string rootWebServer, [MarshalAs(UnmanagedType.BStr)] string inBaseUrl, [MarshalAs(UnmanagedType.BStr)] string inVirtualRoot, [MarshalAs(UnmanagedType.BStr)] out string physicalPath);
 
-	/// <summary>Creates a Web.config file for a SOAP-enabled COM+ application so that the file is ready to have XML elements added for COM interfaces being published.</summary>
-	/// <param name="FilePath">The folder in which the configuration file should be created.</param>
-	/// <param name="FilePrefix">The string value "Web", to which a config extension is added.</param>
-	/// <param name="Error">A string to which an error message can be written.</param>
-	[System.MonoTODO]
-	public void Create(string FilePath, string FilePrefix, out string Error)
-	{
-		throw new NotImplementedException();
-	}
+	[DispId(3)]
+	void Present();
 }

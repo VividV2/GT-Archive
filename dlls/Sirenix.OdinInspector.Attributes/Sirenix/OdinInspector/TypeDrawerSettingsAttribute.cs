@@ -1,11 +1,3 @@
-using System;
-
-namespace Sirenix.OdinInspector;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
-public class TypeDrawerSettingsAttribute : Attribute
+namespace Sirenix.OdinInspector
 {
-	public Type BaseType;
-
-	public TypeInclusionFilter Filter = TypeInclusionFilter.IncludeAll;
 }

@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
+namespace PlayFab.GroupsModels;
 
-namespace PlayFab.EventsModels;
-
-[Serializable]
-public class WriteEventsRequest : PlayFabRequestCommon
+public enum OperationTypes
 {
-	public List<EventContents> Events;
+	Created,
+	Updated,
+	Deleted,
+	None
 }

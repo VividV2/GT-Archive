@@ -1,5 +1,2 @@
-using UnityEngine;
+namespace FastSurfaceNets;
 
-public class DisconnectFromRoom : MonoBehaviour
-{
-}

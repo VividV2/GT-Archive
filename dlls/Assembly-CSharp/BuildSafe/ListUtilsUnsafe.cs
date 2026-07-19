@@ -1,11 +1,15 @@
 using System.Collections.Generic;
 
-namespace BuildSafe;
-
-public static class ListUtilsUnsafe<T>
+namespace BuildSafe
 {
-	public static T[] GetInternalArray(List<T> list)
+	public static class ListUtilsUnsafe<T>
 	{
-		return null;
+		public static T[] GetInternalArray(List<T> list)
+		{
+			return null;
+		}
 	}
+}
+namespace GorillaTagScripts.Subscription.AlarmClocks
+{
 }

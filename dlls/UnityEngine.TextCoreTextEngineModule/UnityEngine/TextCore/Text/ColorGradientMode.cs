@@ -1,9 +1,13 @@
-namespace UnityEngine.TextCore.Text;
-
-public enum ColorGradientMode
+namespace UnityEngine.TextCore.Text
 {
-	Single,
-	HorizontalGradient,
-	VerticalGradient,
-	FourCornersGradient
+	public enum ColorGradientMode
+	{
+		Single,
+		HorizontalGradient,
+		VerticalGradient,
+		FourCornersGradient
+	}
+}
+namespace UnityEngine.TextCore.Text
+{
 }

@@ -1,26 +1,30 @@
 using UnityEngine;
 
-namespace Photon.Voice.Unity;
-
-public class Logger : ILogger
+namespace Photon.Voice
 {
-	public void LogError(string fmt, params object[] args)
+}
+namespace Photon.Voice.Unity
+{
+	public class Logger : ILogger
 	{
-		Debug.LogErrorFormat(fmt, args);
-	}
+		public void LogError(string fmt, params object[] args)
+		{
+			Debug.LogErrorFormat(fmt, args);
+		}
 
-	public void LogWarning(string fmt, params object[] args)
-	{
-		Debug.LogWarningFormat(fmt, args);
-	}
+		public void LogWarning(string fmt, params object[] args)
+		{
+			Debug.LogWarningFormat(fmt, args);
+		}
 
-	public void LogInfo(string fmt, params object[] args)
-	{
-		Debug.LogFormat(fmt, args);
-	}
+		public void LogInfo(string fmt, params object[] args)
+		{
+			Debug.LogFormat(fmt, args);
+		}
 
-	public void LogDebug(string fmt, params object[] args)
-	{
-		Debug.LogFormat(fmt, args);
+		public void LogDebug(string fmt, params object[] args)
+		{
+			Debug.LogFormat(fmt, args);
+		}
 	}
 }

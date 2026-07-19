@@ -1,6 +1,16 @@
-namespace Drawing;
-
-public interface IDrawGizmos
+namespace Drawing
 {
-	void DrawGizmos();
+}
+namespace Drawing
+{
+}
+namespace Drawing
+{
+	public interface IDrawGizmos
+	{
+		void DrawGizmos();
+	}
+}
+namespace Drawing
+{
 }

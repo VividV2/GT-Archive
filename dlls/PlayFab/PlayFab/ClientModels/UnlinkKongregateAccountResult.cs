@@ -1,9 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class UnlinkKongregateAccountResult : PlayFabResultCommon
+namespace PlayFab
+{
+}
+namespace PlayFab.ClientModels
 {
 }

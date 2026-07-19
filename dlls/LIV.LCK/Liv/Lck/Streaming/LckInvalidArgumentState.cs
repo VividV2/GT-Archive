@@ -14,10 +14,12 @@ public class LckInvalidArgumentState : LckStreamingBaseState
 
 	private async Task SwitchStateAfterDelay(LckStreamingController controller, CancellationToken cancellationToken)
 	{
-		while (!cancellationToken.IsCancellationRequested)
+		CancellationToken cancellationToken2 = default(CancellationToken);
+		LckStreamingController lckStreamingController = default(LckStreamingController);
+		while (!cancellationToken2.IsCancellationRequested)
 		{
-			await Task.Delay(7000, cancellationToken);
-			controller.SwitchState(controller.GetCurrentState);
+			await Task.Delay(7000, cancellationToken2);
+			lckStreamingController.SwitchState(lckStreamingController.GetCurrentState);
 		}
 	}
 }

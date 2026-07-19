@@ -34,8 +34,10 @@ internal abstract class SubManagerForAddon : IDebugManager
 		{
 			Id = memberAttribute.Category
 		}).RegisterMember(memberInfo, memberAttribute);
+		IMember member;
 		if (RegisterSpecialisedWidget(member, memberInfo, memberAttribute, handle))
 		{
+			List<MemberInfo> value;
 			if (!_dictionary.TryGetValue(type, out var value))
 			{
 				value = new List<MemberInfo>();
@@ -51,11 +53,16 @@ internal abstract class SubManagerForAddon : IDebugManager
 	public void ProcessTypeFromHierarchy(Item item, MemberInfo memberInfo)
 	{
 		InstanceHandle handle = item.Handle;
+		InstanceHandle handle;
 		IInspector inspector = _uiPanel.RegisterInspector(handle, item.Category);
 		DebugMember debugMember = new DebugMember();
+		IInspector inspector;
+		DebugMember debugMember;
 		IMember member = inspector.RegisterMember(memberInfo, debugMember);
+		IMember member;
 		if (RegisterSpecialisedWidget(member, memberInfo, debugMember, handle))
 		{
+			List<MemberInfo> value;
 			if (!_dictionary.TryGetValue(handle.Type, out var value))
 			{
 				value = new List<MemberInfo>();
@@ -73,6 +80,7 @@ internal abstract class SubManagerForAddon : IDebugManager
 	public int GetCountPerType(Type type)
 	{
 		_dictionary.TryGetValue(type, out var value);
+		List<MemberInfo> value;
 		return value?.Count ?? 0;
 	}
 }

@@ -1,14 +1,18 @@
 using System.Collections.Generic;
 
-namespace UnityEngine.UIElements;
-
-internal interface IDragAndDropData
+namespace UnityEngine.UIElements
 {
-	object userData { get; }
+}
+namespace UnityEngine.UIElements
+{
+	internal interface IDragAndDropData
+	{
+		object userData { get; }
 
-	IEnumerable<Object> unityObjectReferences { get; }
+		IEnumerable<Object> unityObjectReferences { get; }
 
-	string[] paths { get; set; }
+		string[] paths { get; set; }
 
-	object GetGenericData(string key);
+		object GetGenericData(string key);
+	}
 }

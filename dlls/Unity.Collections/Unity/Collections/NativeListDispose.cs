@@ -1,17 +1,21 @@
 using Unity.Collections.LowLevel.Unsafe;
 
-namespace Unity.Collections;
-
-[NativeContainer]
-[GenerateTestsForBurstCompatibility]
-internal struct NativeListDispose
+namespace Unity.Collections
 {
-	[NativeDisableUnsafePtrRestriction]
-	public unsafe UntypedUnsafeList* m_ListData;
-
-	public unsafe void Dispose()
+	[NativeContainer]
+	[GenerateTestsForBurstCompatibility]
+	internal struct NativeListDispose
 	{
-		UnsafeList<int>* listData = (UnsafeList<int>*)m_ListData;
-		UnsafeList<int>.Destroy(listData);
+		[NativeDisableUnsafePtrRestriction]
+		public unsafe UntypedUnsafeList* m_ListData;
+
+		public unsafe void Dispose()
+		{
+			UnsafeList<int>* listData = (UnsafeList<int>*)m_ListData;
+			UnsafeList<int>.Destroy(listData);
+		}
 	}
+}
+namespace Unity.Collections
+{
 }

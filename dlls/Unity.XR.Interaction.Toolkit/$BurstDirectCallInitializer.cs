@@ -1,11 +1,2 @@
-using Unity.Burst;
-using UnityEngine;
+namespace UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Receiver;
 
-internal static class $BurstDirectCallInitializer
-{
-	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
-	private static void Initialize()
-	{
-		BurstCompilerOptions options = BurstCompiler.Options;
-	}
-}

@@ -1,3 +1,4 @@
+#define DEBUG
 namespace Fusion;
 
 public enum HitboxTypes

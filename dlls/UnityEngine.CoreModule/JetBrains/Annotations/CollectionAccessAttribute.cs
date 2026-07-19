@@ -1,14 +1,18 @@
 using System;
 
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property)]
-public sealed class CollectionAccessAttribute : Attribute
+namespace JetBrains.Annotations
 {
-	public CollectionAccessType CollectionAccessType { get; }
-
-	public CollectionAccessAttribute(CollectionAccessType collectionAccessType)
+	[AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property)]
+	public sealed class CollectionAccessAttribute : Attribute
 	{
-		CollectionAccessType = collectionAccessType;
+		public CollectionAccessType CollectionAccessType { get; }
+
+		public CollectionAccessAttribute(CollectionAccessType collectionAccessType)
+		{
+			CollectionAccessType = collectionAccessType;
+		}
 	}
+}
+namespace Unity.Jobs
+{
 }

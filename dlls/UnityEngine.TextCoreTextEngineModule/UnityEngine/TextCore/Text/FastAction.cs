@@ -1,36 +1,17 @@
-using System;
-using System.Collections.Generic;
+using UnityEngine.Bindings;
+using UnityEngine.Bindings;
 
 namespace UnityEngine.TextCore.Text;
 
-public class FastAction
+[VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule", "UnityEngine.IMGUIModule" })]
+[NativeHeader("Modules/TextCoreTextEngine/Native/TextInfo.h")]
+internal struct NativeTextInfo
 {
-	private LinkedList<Action> delegates = new LinkedList<Action>();
+	public ATGMeshInfo[] meshInfos;
 
-	private Dictionary<Action, LinkedListNode<Action>> lookup = new Dictionary<Action, LinkedListNode<Action>>();
+	public int totalWidth;
 
-	public void Add(Action rhs)
-	{
-		if (!lookup.ContainsKey(rhs))
-		{
-			lookup[rhs] = delegates.AddLast(rhs);
-		}
-	}
+	public int totalHeight;
 
-	public void Remove(Action rhs)
-	{
-		if (lookup.TryGetValue(rhs, out var value))
-		{
-			lookup.Remove(rhs);
-			delegates.Remove(value);
-		}
-	}
-
-	public void Call()
-	{
-		for (LinkedListNode<Action> linkedListNode = delegates.First; linkedListNode != null; linkedListNode = linkedListNode.Next)
-		{
-			linkedListNode.Value();
-		}
-	}
+	public bool isElided;
 }

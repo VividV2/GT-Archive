@@ -1,3 +1,4 @@
+#define UNITY_ASSERTIONS
 using System;
 
 namespace UnityEngine.Rendering;

@@ -1,8 +1,12 @@
-namespace Viveport.Internal;
-
-internal enum ELeaderboardUploadScoreMethod
+namespace UnityEngine.XR.Interaction.Toolkit
 {
-	k_ELeaderboardUploadScoreMethodNone,
-	k_ELeaderboardUploadScoreMethodKeepBest,
-	k_ELeaderboardUploadScoreMethodForceUpdate
+}
+namespace Viveport.Internal
+{
+	internal enum ELeaderboardUploadScoreMethod
+	{
+		k_ELeaderboardUploadScoreMethodNone,
+		k_ELeaderboardUploadScoreMethodKeepBest,
+		k_ELeaderboardUploadScoreMethodForceUpdate
+	}
 }

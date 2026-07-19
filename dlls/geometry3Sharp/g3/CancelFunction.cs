@@ -1,18 +1,22 @@
 using System;
 
-namespace g3;
-
-public class CancelFunction : ICancelSource
+namespace g3
 {
-	public Func<bool> CancelF;
-
-	public CancelFunction(Func<bool> cancelF)
+	public class CancelFunction : ICancelSource
 	{
-		CancelF = cancelF;
-	}
+		public Func<bool> CancelF;
 
-	public bool Cancelled()
-	{
-		return CancelF();
+		public CancelFunction(Func<bool> cancelF)
+		{
+			CancelF = cancelF;
+		}
+
+		public bool Cancelled()
+		{
+			return CancelF();
+		}
 	}
+}
+namespace g3
+{
 }

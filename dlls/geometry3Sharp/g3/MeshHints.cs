@@ -1,10 +1,14 @@
 using System;
 
-namespace g3;
-
-[Flags]
-public enum MeshHints
+namespace g3
 {
-	None = 0,
-	IsCompact = 1
+	[Flags]
+	public enum MeshHints
+	{
+		None = 0,
+		IsCompact = 1
+	}
+}
+namespace g3
+{
 }

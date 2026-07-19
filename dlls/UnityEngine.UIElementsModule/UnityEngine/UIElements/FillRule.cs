@@ -1,7 +1,11 @@
-namespace UnityEngine.UIElements;
-
-public enum FillRule
+namespace UnityEngine.UIElements
 {
-	NonZero,
-	OddEven
+}
+namespace UnityEngine.UIElements
+{
+	public enum FillRule
+	{
+		NonZero,
+		OddEven
+	}
 }

@@ -1,7 +1,11 @@
-namespace System.Security.Cryptography.Asn1;
-
-[AttributeUsage(AttributeTargets.Field)]
-internal sealed class ObjectIdentifierAttribute : AsnTypeAttribute
+namespace System.Security.Cryptography.Asn1
 {
-	public bool PopulateFriendlyName { get; set; }
+	[AttributeUsage(AttributeTargets.Field)]
+	internal sealed class ObjectIdentifierAttribute : AsnTypeAttribute
+	{
+		public bool PopulateFriendlyName { get; set; }
+	}
+}
+namespace System.Security.Cryptography.Asn1
+{
 }

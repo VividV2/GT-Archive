@@ -1,12 +1,16 @@
 using System;
 
-namespace Valve.VR;
-
-public struct Texture_t
+namespace Valve.VR
 {
-	public IntPtr handle;
+	public struct Texture_t
+	{
+		public IntPtr handle;
 
-	public ETextureType eType;
+		public ETextureType eType;
 
-	public EColorSpace eColorSpace;
+		public EColorSpace eColorSpace;
+	}
+}
+namespace Valve.VR
+{
 }

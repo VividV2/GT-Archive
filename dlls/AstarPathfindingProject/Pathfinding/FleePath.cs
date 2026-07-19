@@ -1,19 +1,23 @@
 using UnityEngine;
 
-namespace Pathfinding;
-
-public class FleePath : RandomPath
+namespace Pathfinding
 {
-	public static FleePath Construct(Vector3 start, Vector3 avoid, int searchLength, OnPathDelegate callback = null)
+	public class FleePath : RandomPath
 	{
-		FleePath fleePath = PathPool.GetPath<FleePath>();
-		fleePath.Setup(start, avoid, searchLength, callback);
-		return fleePath;
-	}
+		public static FleePath Construct(Vector3 start, Vector3 avoid, int searchLength, OnPathDelegate callback = null)
+		{
+			FleePath fleePath = PathPool.GetPath<FleePath>();
+			fleePath.Setup(start, avoid, searchLength, callback);
+			return fleePath;
+		}
 
-	protected void Setup(Vector3 start, Vector3 avoid, int searchLength, OnPathDelegate callback)
-	{
-		Setup(start, searchLength, callback);
-		aim = start - (avoid - start) * 10f;
+		protected void Setup(Vector3 start, Vector3 avoid, int searchLength, OnPathDelegate callback)
+		{
+			Setup(start, searchLength, callback);
+			aim = start - (avoid - start) * 10f;
+		}
 	}
+}
+namespace Pathfinding
+{
 }

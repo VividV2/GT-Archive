@@ -2,10 +2,14 @@ using System;
 using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetFriendsListResult : PlayFabResultCommon
+namespace PlayFab.ClientModels
 {
-	public List<FriendInfo> Friends;
+	[Serializable]
+	public class GetFriendsListResult : PlayFabResultCommon
+	{
+		public List<FriendInfo> Friends;
+	}
+}
+namespace Ionic.Zlib
+{
 }

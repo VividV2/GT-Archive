@@ -1,15 +1,14 @@
-using System;
-
-namespace UnityEngine.Rendering;
-
-public interface IDebugDisplaySettings
+namespace UnityEngine.Rendering
 {
-	void Reset();
-
-	void ForEach(Action<IDebugDisplaySettingsData> onExecute);
-
-	IDebugDisplaySettingsData Add(IDebugDisplaySettingsData newData)
+}
+namespace UnityEngine.Rendering.RenderGraphModule
+{
+	public struct ImportResourceParams
 	{
-		return null;
+		public bool clearOnFirstUse;
+
+		public Color clearColor;
+
+		public bool discardOnLastUse;
 	}
 }

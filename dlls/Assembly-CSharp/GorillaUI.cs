@@ -1,12 +1,2 @@
-using UnityEngine;
+namespace GorillaTag.Cosmetics;
 
-public class GorillaUI : MonoBehaviour
-{
-	private void Start()
-	{
-	}
-
-	private void Update()
-	{
-	}
-}

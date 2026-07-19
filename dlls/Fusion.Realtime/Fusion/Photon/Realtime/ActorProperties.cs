@@ -1,10 +1,14 @@
-namespace Fusion.Photon.Realtime;
-
-internal class ActorProperties
+namespace Fusion.Photon.Realtime
 {
-	public const byte PlayerName = byte.MaxValue;
+	internal class ActorProperties
+	{
+		public const byte PlayerName = byte.MaxValue;
 
-	public const byte IsInactive = 254;
+		public const byte IsInactive = 254;
 
-	public const byte UserId = 253;
+		public const byte UserId = 253;
+	}
+}
+namespace Fusion.Photon.Realtime
+{
 }

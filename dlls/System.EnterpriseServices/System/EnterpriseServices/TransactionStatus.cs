@@ -1,20 +1,56 @@
 using System.Runtime.InteropServices;
 
-namespace System.EnterpriseServices;
+namespace System.EnterpriseServices.Internal;
 
-/// <summary>Indicates the transaction status.</summary>
-[Serializable]
-[ComVisible(false)]
-public enum TransactionStatus
+/// <summary>Publishes authenticated, encrypted SOAP virtual roots on servers. This class cannot be inherited.</summary>
+[Guid("CAA817CC-0C04-4d22-A05C-2B7E162F4E8F")]
+public sealed class SoapServerVRoot : ISoapServerVRoot
 {
-	/// <summary>The transaction has committed.</summary>
-	Commited,
-	/// <summary>The transaction has neither committed nor aborted.</summary>
-	LocallyOk,
-	/// <summary>No transactions are being used through <see cref="M:System.EnterpriseServices.ServiceDomain.Enter(System.EnterpriseServices.ServiceConfig)" />.</summary>
-	NoTransaction,
-	/// <summary>The transaction is in the process of aborting.</summary>
-	Aborting,
-	/// <summary>The transaction is aborted.</summary>
-	Aborted
+	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.Internal.SoapServerVRoot" /> class.</summary>
+	[System.MonoTODO]
+	public SoapServerVRoot()
+	{
+		throw new NotImplementedException();
+	}
+
+	/// <summary>Creates a SOAP virtual root with security options.</summary>
+	/// <param name="rootWebServer">The root Web server. The default is "IIS://localhost/W3SVC/1/ROOT".</param>
+	/// <param name="inBaseUrl">The base URL that contains the virtual root.</param>
+	/// <param name="inVirtualRoot">The name of the virtual root.</param>
+	/// <param name="homePage">The URL of the home page.</param>
+	/// <param name="discoFile">
+	///   <see langword="true" /> if a default discovery file is to be created; <see langword="false" /> if there is to be no discovery file. If <see langword="false" /> and a Default.disco file exists, the file is deleted.</param>
+	/// <param name="secureSockets">
+	///   <see langword="true" /> if SSL encryption is required; otherwise, <see langword="false" />.</param>
+	/// <param name="authentication">Specify "anonymous" if no authentication is to be used (anonymous user). Otherwise, specify an empty string.</param>
+	/// <param name="operation">Not used. Specify <see langword="null" /> for this parameter.</param>
+	/// <param name="baseUrl">When this method returns, this parameter contains the base URL.</param>
+	/// <param name="virtualRoot">When this method returns, this parameter contains the name of the virtual root.</param>
+	/// <param name="physicalPath">When this method returns, this parameter contains the disk address of the Virtual Root directory.</param>
+	/// <exception cref="T:System.Security.SecurityException">A caller in the call chain does not have permission to access unmanaged code.</exception>
+	/// <exception cref="T:System.PlatformNotSupportedException">The SOAP utility is not available.</exception>
+	[System.MonoTODO]
+	public void CreateVirtualRootEx(string rootWebServer, string inBaseUrl, string inVirtualRoot, string homePage, string discoFile, string secureSockets, string authentication, string operation, out string baseUrl, out string virtualRoot, out string physicalPath)
+	{
+		throw new NotImplementedException();
+	}
+
+	/// <summary>Deletes a virtual root. Not fully implemented.</summary>
+	/// <param name="rootWebServer">The root Web server. The default is "IIS://localhost/W3SVC/1/ROOT".</param>
+	/// <param name="inBaseUrl">The base URL that contains the virtual root.</param>
+	/// <param name="inVirtualRoot">The name of the virtual root.</param>
+	/// <exception cref="T:System.Security.SecurityException">A caller in the call chain does not have permission to access unmanaged code.</exception>
+	/// <exception cref="T:System.PlatformNotSupportedException">The SOAP utility is not available.</exception>
+	/// <exception cref="T:System.EnterpriseServices.ServicedComponentException">The call to get the system directory failed.</exception>
+	[System.MonoTODO]
+	public void DeleteVirtualRootEx(string rootWebServer, string inBaseUrl, string inVirtualRoot)
+	{
+		throw new NotImplementedException();
+	}
+
+	[System.MonoTODO]
+	public void GetVirtualRootStatus(string RootWebServer, string inBaseUrl, string inVirtualRoot, out string Exists, out string SSL, out string WindowsAuth, out string Anonymous, out string HomePage, out string DiscoFile, out string PhysicalPath, out string BaseUrl, out string VirtualRoot)
+	{
+		throw new NotImplementedException();
+	}
 }

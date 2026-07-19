@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetPlayerSegmentsResult : PlayFabResultCommon
+namespace PlayFab.ClientModels
 {
-	public List<GetSegmentResult> Segments;
+}
+namespace PlayFab.Internal
+{
+}
+namespace PlayFab.ClientModels
+{
 }

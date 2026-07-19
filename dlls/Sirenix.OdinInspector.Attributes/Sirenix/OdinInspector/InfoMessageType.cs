@@ -1,9 +1,20 @@
-namespace Sirenix.OdinInspector;
-
-public enum InfoMessageType
+namespace Sirenix.OdinInspector
 {
-	None,
-	Info,
-	Warning,
-	Error
+	public interface ISelfValidator
+	{
+		void Validate(SelfValidationResult result);
+	}
+}
+namespace Sirenix.OdinInspector
+{
+}
+namespace Sirenix.OdinInspector
+{
+	public enum InfoMessageType
+	{
+		None,
+		Info,
+		Warning,
+		Error
+	}
 }

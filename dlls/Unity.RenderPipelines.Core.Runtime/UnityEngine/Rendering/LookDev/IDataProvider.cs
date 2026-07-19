@@ -20,3 +20,6 @@ public interface IDataProvider
 
 	void Cleanup(StageRuntimeInterface SRI);
 }
+namespace UnityEngine.Rendering
+{
+}

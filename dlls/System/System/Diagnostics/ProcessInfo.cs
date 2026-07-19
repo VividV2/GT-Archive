@@ -1,5 +1,3 @@
-namespace System.Diagnostics;
-
-internal class ProcessInfo
+namespace System.CodeDom
 {
 }

@@ -25,3 +25,6 @@ internal interface IXPathBuilder<Node>
 
 	Node Function(string prefix, string name, IList<Node> args);
 }
+namespace System.Xml.Xsl.Runtime
+{
+}

@@ -1,7 +1,16 @@
-namespace UnityEngine.UIElements;
-
-public enum SliceType
+namespace UnityEngine.UIElements
 {
-	Sliced,
-	Tiled
+	public enum SliceType
+	{
+		Sliced,
+		Tiled
+	}
+}
+namespace UnityEngine.UIElements
+{
+	public enum DisplayStyle
+	{
+		Flex,
+		None
+	}
 }

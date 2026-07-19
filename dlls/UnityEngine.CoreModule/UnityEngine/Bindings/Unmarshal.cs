@@ -3,25 +3,29 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Unity.Collections.LowLevel.Unsafe;
 
-namespace UnityEngine.Bindings;
-
-[StructLayout(LayoutKind.Sequential, Size = 1)]
-[VisibleToOtherModules]
-internal struct Unmarshal
+namespace UnityEngine.Bindings
 {
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static T UnmarshalUnityObject<T>(IntPtr gcHandlePtr) where T : Object
+	[StructLayout(LayoutKind.Sequential, Size = 1)]
+	[VisibleToOtherModules]
+	internal struct Unmarshal
 	{
-		if (gcHandlePtr == IntPtr.Zero)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static T UnmarshalUnityObject<T>(IntPtr gcHandlePtr) where T : Object
 		{
-			return null;
+			if (gcHandlePtr == IntPtr.Zero)
+			{
+				return null;
+			}
+			return (T)FromIntPtrUnsafe(gcHandlePtr).Target;
 		}
-		return (T)FromIntPtrUnsafe(gcHandlePtr).Target;
-	}
 
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static GCHandle FromIntPtrUnsafe(IntPtr gcHandle)
-	{
-		return UnsafeUtility.As<IntPtr, GCHandle>(ref gcHandle);
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static GCHandle FromIntPtrUnsafe(IntPtr gcHandle)
+		{
+			return UnsafeUtility.As<IntPtr, GCHandle>(ref gcHandle);
+		}
 	}
+}
+namespace UnityEngine.Windows.WebCam
+{
 }

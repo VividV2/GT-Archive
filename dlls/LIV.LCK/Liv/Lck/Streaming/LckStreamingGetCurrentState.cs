@@ -13,51 +13,53 @@ public class LckStreamingGetCurrentState : LckStreamingBaseState
 
 	private async Task GetCurrentState(LckStreamingController controller, CancellationToken cancellationToken)
 	{
-		while (!cancellationToken.IsCancellationRequested)
+		LckStreamingController lckStreamingController = default(LckStreamingController);
+		CancellationToken cancellationToken2 = default(CancellationToken);
+		while (!cancellationToken2.IsCancellationRequested)
 		{
-			controller.Log("currently waiting for get current state");
-			Result<bool> result = await controller.LckCore.HasUserConfiguredStreaming();
+			lckStreamingController.Log("currently waiting for get current state");
+			Result<bool> result = await lckStreamingController.LckCore.HasUserConfiguredStreaming();
 			if (!result.IsOk)
 			{
 				switch (result.Err)
 				{
 				case CoreError.UserNotLoggedIn:
-					controller.SwitchState(controller.ShowCodeState);
+					lckStreamingController.SwitchState(lckStreamingController.ShowCodeState);
 					return;
 				case CoreError.InternalError:
-					controller.LogError($"Internal error checking if user is Configured: {result.Err} - {result.Message}");
-					controller.SwitchState(controller.InternalErrorState);
+					lckStreamingController.LogError($"Internal error checking if user is Configured: {result.Err} - {result.Message}");
+					lckStreamingController.SwitchState(lckStreamingController.InternalErrorState);
 					return;
 				case CoreError.InvalidArgument:
-					controller.LogError($"Invalid Argument error checking if user is Configured: {result.Err} - {result.Message}");
-					controller.SwitchState(controller.InvalidArgumentState);
+					lckStreamingController.LogError($"Invalid Argument error checking if user is Configured: {result.Err} - {result.Message}");
+					lckStreamingController.SwitchState(lckStreamingController.InvalidArgumentState);
 					return;
 				case CoreError.MissingTrackingId:
-					controller.LogError($"MissingTrackingId error please make sure Tracking ID is setup correctly in LCK Settings: {result.Err} - {result.Message}");
-					controller.SwitchState(controller.MissingTrackingIdState);
+					lckStreamingController.LogError($"MissingTrackingId error please make sure Tracking ID is setup correctly in LCK Settings: {result.Err} - {result.Message}");
+					lckStreamingController.SwitchState(lckStreamingController.MissingTrackingIdState);
 					return;
 				case CoreError.RateLimiterBackoff:
-					controller.LogError($"Too many requests sent to our backend error: {result.Err} - {result.Message}");
-					controller.SwitchState(controller.RateLimiterBackoffState);
+					lckStreamingController.LogError($"Too many requests sent to our backend error: {result.Err} - {result.Message}");
+					lckStreamingController.SwitchState(lckStreamingController.RateLimiterBackoffState);
 					return;
 				case CoreError.ServiceUnavailable:
-					controller.LogError($"Unable to reach our backend error: {result.Err} - {result.Message}");
-					controller.SwitchState(controller.ServiceUnavailableState);
+					lckStreamingController.LogError($"Unable to reach our backend error: {result.Err} - {result.Message}");
+					lckStreamingController.SwitchState(lckStreamingController.ServiceUnavailableState);
 					return;
 				default:
-					controller.LogError("Tried to check an LCKCore Error missing from this switch statement");
-					await Task.Delay(5000, cancellationToken);
+					lckStreamingController.LogError("Tried to check an LCKCore Error missing from this switch statement");
+					await Task.Delay(5000, cancellationToken2);
 					break;
 				}
 				continue;
 			}
 			if (result.Ok)
 			{
-				controller.SwitchState(controller.ConfiguredCorrectlyState);
+				lckStreamingController.SwitchState(lckStreamingController.ConfiguredCorrectlyState);
 			}
 			else
 			{
-				controller.SwitchState(controller.WaitingForConfigureState);
+				lckStreamingController.SwitchState(lckStreamingController.WaitingForConfigureState);
 			}
 			break;
 		}

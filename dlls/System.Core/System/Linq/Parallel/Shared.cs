@@ -1,11 +1,15 @@
-namespace System.Linq.Parallel;
-
-internal class Shared<T>
+namespace System.Linq.Parallel
 {
-	internal T Value;
-
-	internal Shared(T value)
+	internal class Shared<T>
 	{
-		Value = value;
+		internal T Value;
+
+		internal Shared(T value)
+		{
+			Value = value;
+		}
 	}
+}
+namespace System.Linq.Parallel
+{
 }

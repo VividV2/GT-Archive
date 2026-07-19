@@ -1,10 +1,2 @@
-using System;
-using KID.Model;
+namespace GorillaTag.Cosmetics;
 
-[Serializable]
-public class UpgradeSessionResponse
-{
-	public SessionStatus status;
-
-	public Session session;
-}

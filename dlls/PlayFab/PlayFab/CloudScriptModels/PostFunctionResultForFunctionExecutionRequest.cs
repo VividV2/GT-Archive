@@ -1,12 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.CloudScriptModels;
-
-[Serializable]
-public class PostFunctionResultForFunctionExecutionRequest : PlayFabRequestCommon
+namespace PlayFab.CloudScriptModels
 {
-	public EntityKey Entity;
-
-	public ExecuteFunctionResult FunctionResult;
+}
+namespace PlayFab.Internal
+{
 }

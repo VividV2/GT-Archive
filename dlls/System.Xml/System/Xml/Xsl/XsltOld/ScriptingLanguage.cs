@@ -1,8 +1,12 @@
-namespace System.Xml.Xsl.XsltOld;
-
-internal enum ScriptingLanguage
+namespace System.Xml.Xsl.XsltOld
 {
-	JScript,
-	VisualBasic,
-	CSharp
+	internal enum ScriptingLanguage
+	{
+		JScript,
+		VisualBasic,
+		CSharp
+	}
+}
+namespace System.Xml.Xsl.Xslt
+{
 }

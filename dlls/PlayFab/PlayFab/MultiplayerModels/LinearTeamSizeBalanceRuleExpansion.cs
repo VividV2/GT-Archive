@@ -1,14 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class LinearTeamSizeBalanceRuleExpansion : PlayFabBaseModel
+namespace PlayFab.MultiplayerModels
 {
-	public uint Delta;
-
-	public uint? Limit;
-
-	public uint SecondsBetweenExpansions;
+}
+namespace PlayFab.MultiplayerModels
+{
 }

@@ -1,8 +1,12 @@
-namespace UnityEngine;
-
-public struct TextureMipmapLimitSettings
+namespace UnityEngine
 {
-	public TextureMipmapLimitBiasMode limitBiasMode { get; set; }
+	public struct TextureMipmapLimitSettings
+	{
+		public TextureMipmapLimitBiasMode limitBiasMode { get; set; }
 
-	public int limitBias { get; set; }
+		public int limitBias { get; set; }
+	}
+}
+namespace UnityEngine
+{
 }

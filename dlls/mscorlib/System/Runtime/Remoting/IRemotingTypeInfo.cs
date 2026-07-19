@@ -1,21 +1,27 @@
 using System.Runtime.InteropServices;
 
-namespace System.Runtime.Remoting;
+namespace System.Security.Permissions;
 
-/// <summary>Provides type information for an object.</summary>
+/// <summary>Specifies access flags for the security permission object.</summary>
+[Serializable]
+[Flags]
 [ComVisible(true)]
-public interface IRemotingTypeInfo
+public enum SecurityPermissionFlag
 {
-	/// <summary>Gets or sets the fully qualified type name of the server object in a <see cref="T:System.Runtime.Remoting.ObjRef" />.</summary>
-	/// <returns>The fully qualified type name of the server object in a <see cref="T:System.Runtime.Remoting.ObjRef" />.</returns>
-	/// <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
-	string TypeName { get; set; }
-
-	/// <summary>Checks whether the proxy that represents the specified object type can be cast to the type represented by the <see cref="T:System.Runtime.Remoting.IRemotingTypeInfo" /> interface.</summary>
-	/// <param name="fromType">The type to cast to.</param>
-	/// <param name="o">The object for which to check casting.</param>
-	/// <returns>
-	///   <see langword="true" /> if cast will succeed; otherwise, <see langword="false" />.</returns>
-	/// <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
-	bool CanCastTo(Type fromType, object o);
+	NoFlags = 0,
+	Assertion = 1,
+	UnmanagedCode = 2,
+	SkipVerification = 4,
+	Execution = 8,
+	ControlThread = 0x10,
+	ControlEvidence = 0x20,
+	ControlPolicy = 0x40,
+	SerializationFormatter = 0x80,
+	ControlDomainPolicy = 0x100,
+	ControlPrincipal = 0x200,
+	ControlAppDomain = 0x400,
+	RemotingConfiguration = 0x800,
+	Infrastructure = 0x1000,
+	BindingRedirects = 0x2000,
+	AllFlags = 0x3FFF
 }

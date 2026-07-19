@@ -10,3 +10,6 @@ public enum ChannelBindingKind
 	/// <summary>A channel binding unique to a given endpoint (a TLS server certificate, for example).</summary>
 	Endpoint = 26
 }
+namespace System.Security.Permissions
+{
+}

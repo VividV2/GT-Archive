@@ -1,13 +1,17 @@
 using System;
 using UnityEngine;
 
-namespace Liv.NativeAudioBridge;
-
-public interface INativeAudioPlayer : IDisposable
+namespace Liv.NativeAudioBridge
 {
-	void PreloadAudioClip(AudioClip audioClip, float volume, bool forceReload = false);
+}
+namespace Liv.NativeAudioBridge
+{
+	public interface INativeAudioPlayer : IDisposable
+	{
+		void PreloadAudioClip(AudioClip audioClip, float volume, bool forceReload = false);
 
-	void PlayAudioClip(AudioClip audioClip, float volume);
+		void PlayAudioClip(AudioClip audioClip, float volume);
 
-	void StopAllAudio();
+		void StopAllAudio();
+	}
 }

@@ -1,12 +1,34 @@
-namespace System.Runtime.InteropServices.ComTypes;
-
-/// <summary>Describes the type of a variable, return type of a function, or the type of a function parameter.</summary>
-[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-public struct TYPEDESC
+namespace System.Runtime.InteropServices.ComTypes
 {
-	/// <summary>If the variable is <see langword="VT_SAFEARRAY" /> or <see langword="VT_PTR" />, the <see langword="lpValue" /> field contains a pointer to a <see langword="TYPEDESC" /> that specifies the element type.</summary>
-	public IntPtr lpValue;
+	[Serializable]
+	public enum TYPEKIND
+	{
+		TKIND_ENUM,
+		TKIND_RECORD,
+		TKIND_MODULE,
+		TKIND_INTERFACE,
+		TKIND_DISPATCH,
+		TKIND_COCLASS,
+		TKIND_ALIAS,
+		TKIND_UNION,
+		TKIND_MAX
+	}
+}
+namespace System.Runtime.InteropServices.ComTypes
+{
+	[ComImport]
+	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+	[Guid("B196B286-BAB4-101A-B69C-00AA00341D07")]
+	public interface IConnectionPoint
+	{
+		void GetConnectionInterface(out Guid pIID);
 
-	/// <summary>Indicates the variant type for the item described by this <see langword="TYPEDESC" />.</summary>
-	public short vt;
+		void GetConnectionPointContainer(out IConnectionPointContainer ppCPC);
+
+		void Advise([MarshalAs(UnmanagedType.Interface)] object pUnkSink, out int pdwCookie);
+
+		void Unadvise(int dwCookie);
+
+		void EnumConnections(out IEnumConnections ppEnum);
+	}
 }

@@ -1,13 +1,9 @@
-namespace System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
-/// <summary>Specifies the preferred default binding for a dependent assembly.</summary>
-[Serializable]
-public enum LoadHint
+namespace System.Diagnostics.SymbolStore;
+
+[ComVisible(true)]
+public interface ISymbolBinder1
 {
-	/// <summary>No preference specified.</summary>
-	Default,
-	/// <summary>The dependency is always loaded.</summary>
-	Always,
-	/// <summary>The dependency is sometimes loaded.</summary>
-	Sometimes
+	ISymbolReader GetReader(IntPtr importer, string filename, string searchPath);
 }

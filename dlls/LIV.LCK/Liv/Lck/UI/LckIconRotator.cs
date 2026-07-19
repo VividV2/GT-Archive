@@ -1,18 +1,8 @@
-using UnityEngine;
+namespace Liv.Lck.Recorder;
 
-namespace Liv.Lck.UI;
-
-public class LckIconRotator : MonoBehaviour
+public struct RecordingData
 {
-	[SerializeField]
-	private float _rotationOffset;
+	public string RecordingFilePath;
 
-	[SerializeField]
-	private Transform _iconTransform;
-
-	public void Rotate()
-	{
-		float z = _iconTransform.localEulerAngles.z + _rotationOffset;
-		_iconTransform.localEulerAngles = new Vector3(0f, 0f, z);
-	}
+	public float RecordingDuration;
 }

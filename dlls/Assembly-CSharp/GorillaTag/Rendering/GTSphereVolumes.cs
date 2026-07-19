@@ -1,5 +1,2 @@
-namespace GorillaTag.Rendering;
+namespace GorillaLocomotion.Gameplay;
 
-public class GTSphereVolumes
-{
-}

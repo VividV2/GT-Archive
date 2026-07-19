@@ -1,16 +1,23 @@
 using System;
 
-namespace VYaml.Annotations;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
-public sealed class YamlMemberAttribute : Attribute
+namespace VYaml.Annotations
 {
-	public string? Name { get; }
-
-	public int Order { get; set; }
-
-	public YamlMemberAttribute(string? name = null)
+	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
+	public sealed class YamlMemberAttribute : Attribute
 	{
-		Name = name;
+		public string? Name { get; }
+
+		public int Order { get; set; }
+
+		public YamlMemberAttribute(string? name = null)
+		{
+			Name = name;
+		}
 	}
+}
+namespace VYaml.Serialization
+{
+}
+namespace VYaml.Emitter
+{
 }

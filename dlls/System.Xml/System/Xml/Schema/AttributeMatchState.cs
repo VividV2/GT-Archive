@@ -1,15 +1,19 @@
-namespace System.Xml.Schema;
-
-internal enum AttributeMatchState
+namespace System.Xml.Schema
 {
-	AttributeFound,
-	AnyIdAttributeFound,
-	UndeclaredElementAndAttribute,
-	UndeclaredAttribute,
-	AnyAttributeLax,
-	AnyAttributeSkip,
-	ProhibitedAnyAttribute,
-	ProhibitedAttribute,
-	AttributeNameMismatch,
-	ValidateAttributeInvalidCall
+}
+namespace System.Xml.Schema
+{
+	internal enum AttributeMatchState
+	{
+		AttributeFound,
+		AnyIdAttributeFound,
+		UndeclaredElementAndAttribute,
+		UndeclaredAttribute,
+		AnyAttributeLax,
+		AnyAttributeSkip,
+		ProhibitedAnyAttribute,
+		ProhibitedAttribute,
+		AttributeNameMismatch,
+		ValidateAttributeInvalidCall
+	}
 }

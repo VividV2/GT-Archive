@@ -1,13 +1,21 @@
 using System;
+using System;
 
-namespace Oculus.Platform.Models;
-
-public class PartyID
+namespace Oculus.Platform.Models
 {
-	public readonly ulong ID;
-
-	public PartyID(IntPtr o)
+	public class NetSyncSession(IntPtr o)
 	{
-		ID = CAPI.ovr_PartyID_GetID(o);
+		public readonly long ConnectionId = CAPI.ovr_NetSyncSession_GetConnectionId(o);
+
+		public readonly bool Muted = CAPI.ovr_NetSyncSession_GetMuted(o);
+
+		public readonly ulong SessionId = CAPI.ovr_NetSyncSession_GetSessionId(o);
+
+		public readonly ulong UserId = CAPI.ovr_NetSyncSession_GetUserId(o);
+
+		public readonly string VoipGroup = CAPI.ovr_NetSyncSession_GetVoipGroup(o);
 	}
+}
+namespace Oculus.Platform.Models
+{
 }

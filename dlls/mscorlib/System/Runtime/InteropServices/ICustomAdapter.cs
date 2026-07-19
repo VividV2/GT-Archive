@@ -1,10 +1,18 @@
-namespace System.Runtime.InteropServices;
-
-/// <summary>Provides a way for clients to access the actual object, rather than the adapter object handed out by a custom marshaler.</summary>
-public interface ICustomAdapter
+namespace System.Runtime.InteropServices
 {
-	/// <summary>Provides access to the underlying object wrapped by a custom marshaler.</summary>
-	/// <returns>The object contained by the adapter object.</returns>
-	[return: MarshalAs(UnmanagedType.IUnknown)]
-	object GetUnderlyingObject();
+	public enum LayoutKind
+	{
+		Sequential = 0,
+		Explicit = 2,
+		Auto = 3
+	}
+}
+namespace System.Runtime.Serialization.Formatters
+{
+	public enum FormatterTypeStyle
+	{
+		TypesWhenNeeded,
+		TypesAlways,
+		XsdString
+	}
 }

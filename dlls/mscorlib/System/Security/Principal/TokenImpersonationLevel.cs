@@ -14,3 +14,6 @@ public enum TokenImpersonationLevel
 	/// <summary>The server process can impersonate the client's security context on remote systems.</summary>
 	Delegation
 }
+namespace System.Security.Cryptography
+{
+}

@@ -1,9 +1,9 @@
 namespace System.Runtime.Serialization;
 
-internal class NCNameDataContract : StringDataContract
+internal class ENTITIESDataContract : StringDataContract
 {
-	internal NCNameDataContract()
-		: base(DictionaryGlobals.NCNameLocalName, DictionaryGlobals.SchemaNamespace)
+	internal ENTITIESDataContract()
 	{
+		base..ctor(DictionaryGlobals.ENTITIESLocalName, DictionaryGlobals.SchemaNamespace);
 	}
 }

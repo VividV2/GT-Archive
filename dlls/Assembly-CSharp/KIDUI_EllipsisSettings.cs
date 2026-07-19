@@ -1,7 +1,6 @@
-using System;
-
-[Serializable]
-public struct KIDUI_EllipsisSettings
+public enum EHandedness : byte
 {
-	public float startingSize;
+	None,
+	Left,
+	Right
 }

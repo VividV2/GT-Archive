@@ -1,18 +1,22 @@
-namespace UnityEngine.Animations;
-
-internal static class DiscreteEvaluationAttributeUtilities
+namespace UnityEngine.Experimental.Animations
 {
-	public unsafe static int ConvertFloatToDiscreteInt(float f)
+}
+namespace UnityEngine.Animations
+{
+	internal static class DiscreteEvaluationAttributeUtilities
 	{
-		float* ptr = &f;
-		int* ptr2 = (int*)ptr;
-		return *ptr2;
-	}
+		public unsafe static int ConvertFloatToDiscreteInt(float f)
+		{
+			float* ptr = &f;
+			int* ptr2 = (int*)ptr;
+			return *ptr2;
+		}
 
-	public unsafe static float ConvertDiscreteIntToFloat(int f)
-	{
-		int* ptr = &f;
-		float* ptr2 = (float*)ptr;
-		return *ptr2;
+		public unsafe static float ConvertDiscreteIntToFloat(int f)
+		{
+			int* ptr = &f;
+			float* ptr2 = (float*)ptr;
+			return *ptr2;
+		}
 	}
 }

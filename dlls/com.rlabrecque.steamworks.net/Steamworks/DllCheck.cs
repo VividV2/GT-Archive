@@ -1,9 +1,13 @@
-namespace Steamworks;
-
-public class DllCheck
+namespace Steamworks
 {
-	public static bool Test()
+	public class DllCheck
 	{
-		return true;
+		public static bool Test()
+		{
+			return true;
+		}
 	}
+}
+namespace Steamworks
+{
 }

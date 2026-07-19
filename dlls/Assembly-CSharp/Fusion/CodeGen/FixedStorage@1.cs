@@ -1,15 +1,19 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Fusion.CodeGen;
-
-[Serializable]
-[StructLayout(LayoutKind.Explicit)]
-[WeaverGenerated]
-[NetworkStructWeaved(1)]
-internal struct FixedStorage@1 : INetworkStruct
+namespace Fusion.CodeGen
 {
-	[FieldOffset(0)]
+	[Serializable]
+	[StructLayout(LayoutKind.Explicit)]
 	[WeaverGenerated]
-	public unsafe fixed int Data[1];
+	[NetworkStructWeaved(1)]
+	internal struct FixedStorage@1 : INetworkStruct
+	{
+		[FieldOffset(0)]
+		[WeaverGenerated]
+		public unsafe fixed int Data[1];
+	}
+}
+namespace GorillaTag.Cosmetics
+{
 }

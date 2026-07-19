@@ -1,77 +1,41 @@
-using System.Collections;
-using GorillaLocomotion;
-using GorillaTagScripts;
+using System.IO;
 using UnityEngine;
-using UnityEngine.Events;
+using System.IO;
+using UnityEngine;
 
-public class TeleportNode : GorillaTriggerBox
+public interface IGameEntityZoneComponent
 {
-	[SerializeField]
-	private XSceneRef teleportFromRef;
+	void OnZoneCreate();
 
-	[SerializeField]
-	private XSceneRef teleportToRef;
+	void OnZoneInit();
 
-	[SerializeField]
-	private GTZone teleportToZone = GTZone.none;
+	void OnZoneClear(ZoneClearReason reason);
 
-	[SerializeField]
-	private bool seamless = true;
+	void OnCreateGameEntity(GameEntity entity);
 
-	[SerializeField]
-	private bool keepVelocity = true;
+	void SerializeZoneData(BinaryWriter writer);
 
-	[SerializeField]
-	private bool subsOnly;
+	void DeserializeZoneData(BinaryReader reader);
 
-	[SerializeField]
-	private UnityEvent onTeleport;
+	void SerializeZoneEntityData(BinaryWriter writer, GameEntity entity);
 
-	private float teleportTime;
+	void DeserializeZoneEntityData(BinaryReader reader, GameEntity entity);
 
-	public override void OnBoxTriggered()
-	{
-		if ((subsOnly && !SubscriptionManager.IsLocalSubscribed()) || Time.time - teleportTime < 0.1f)
-		{
-			return;
-		}
-		base.OnBoxTriggered();
-		if (!teleportFromRef.TryResolve(out Transform result))
-		{
-			Debug.LogError("[TeleportNode] Failed to resolve teleportFromRef.");
-			return;
-		}
-		if (!teleportToRef.TryResolve(out Transform result2))
-		{
-			Debug.LogError("[TeleportNode] Failed to resolve teleportToRef.");
-			return;
-		}
-		GTPlayer instance = GTPlayer.Instance;
-		if (instance == null)
-		{
-			Debug.LogError("[TeleportNode] GTPlayer.Instance is null.");
-			return;
-		}
-		Physics.SyncTransforms();
-		Vector3 position = result2.transform.position;
-		if (seamless)
-		{
-			position = result2.TransformPoint(result.InverseTransformPoint(instance.transform.position));
-		}
-		Quaternion quaternion = Quaternion.Inverse(result.rotation) * instance.transform.rotation;
-		Quaternion rotation = result2.rotation * quaternion;
-		StartCoroutine(DelayedTeleport(instance, position, rotation));
-		teleportTime = Time.time;
-	}
+	void SerializeZonePlayerData(BinaryWriter writer, int actorNumber);
 
-	private IEnumerator DelayedTeleport(GTPlayer p, Vector3 position, Quaternion rotation)
-	{
-		yield return null;
-		p.TeleportTo(position, rotation, keepVelocity, !seamless);
-		if (teleportToZone != GTZone.none)
-		{
-			ZoneManagement.SetActiveZone(teleportToZone);
-		}
-		onTeleport.Invoke();
-	}
+	void DeserializeZonePlayerData(BinaryReader reader, int actorNumber);
+
+	bool IsZoneReady();
+
+	bool ShouldClearZone();
+
+	long ProcessMigratedGameEntityCreateData(GameEntity entity, long createData);
+
+	bool ValidateMigratedGameEntity(int netId, int entityTypeId, Vector3 position, Quaternion rotation, long createData, int actorNr);
+
+	bool ValidateCreateMultipleItems(int zoneId, byte[] compressedStateData, int EntityCount);
+
+	bool ValidateCreateItem(int nedId, int entityTypeId, Vector3 position, Quaternion rotation, long createData, int createdByEntityNetId);
+
+	bool ValidateCreateItemBatchSize(int size);
 }

@@ -1,8 +1,33 @@
-namespace gs;
-
-public interface IFalloffFunction
+namespace g3
 {
-	double FalloffT(double t);
+}
+namespace g3
+{
+}
+namespace g3
+{
+}
+namespace g3
+{
+}
+namespace g3
+{
+}
+namespace g3
+{
+}
+namespace g3
+{
+}
+namespace gs
+{
+	public interface IFalloffFunction
+	{
+		double FalloffT(double t);
 
-	IFalloffFunction Duplicate();
+		IFalloffFunction Duplicate();
+	}
+}
+namespace g3
+{
 }

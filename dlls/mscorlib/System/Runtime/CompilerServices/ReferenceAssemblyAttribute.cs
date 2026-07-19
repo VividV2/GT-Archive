@@ -1,23 +1,26 @@
-namespace System.Runtime.CompilerServices;
+namespace System.Reflection.Emit;
 
-/// <summary>Identifies an assembly as a reference assembly, which contains metadata but no executable code.</summary>
-[Serializable]
-[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = false)]
-public sealed class ReferenceAssemblyAttribute : Attribute
+/// <summary>Describes the types of the Microsoft intermediate language (MSIL) instructions.</summary>
+/// <summary>Describes the types of the Microsoft intermediate language (MSIL) instructions.</summary>
+public enum OpCodeType
 {
-	/// <summary>Gets the description of the reference assembly.</summary>
-	/// <returns>The description of the reference assembly.</returns>
-	public string Description { get; }
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.ReferenceAssemblyAttribute" /> class.</summary>
-	public ReferenceAssemblyAttribute()
-	{
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.ReferenceAssemblyAttribute" /> class by using the specified description.</summary>
-	/// <param name="description">The description of the reference assembly.</param>
-	public ReferenceAssemblyAttribute(string description)
-	{
-		Description = description;
-	}
+	/// <summary>This enumerator value is reserved and should not be used.</summary>
+	/// <summary>This enumerator value is reserved and should not be used.</summary>
+	[Obsolete("This API has been deprecated. http://go.microsoft.com/fwlink/?linkid=14202")]
+	Annotation,
+	/// <summary>These are Microsoft intermediate language (MSIL) instructions that are used as a synonym for other MSIL instructions. For example, <see langword="ldarg.0" /> represents the <see langword="ldarg" /> instruction with an argument of 0.</summary>
+	/// <summary>These are Microsoft intermediate language (MSIL) instructions that are used as a synonym for other MSIL instructions. For example, <see langword="ldarg.0" /> represents the <see langword="ldarg" /> instruction with an argument of 0.</summary>
+	Macro,
+	/// <summary>Describes a reserved Microsoft intermediate language (MSIL) instruction.</summary>
+	/// <summary>Describes a reserved Microsoft intermediate language (MSIL) instruction.</summary>
+	Nternal,
+	/// <summary>Describes a Microsoft intermediate language (MSIL) instruction that applies to objects.</summary>
+	/// <summary>Describes a Microsoft intermediate language (MSIL) instruction that applies to objects.</summary>
+	Objmodel,
+	/// <summary>Describes a prefix instruction that modifies the behavior of the following instruction.</summary>
+	/// <summary>Describes a prefix instruction that modifies the behavior of the following instruction.</summary>
+	Prefix,
+	/// <summary>Describes a built-in instruction.</summary>
+	/// <summary>Describes a built-in instruction.</summary>
+	Primitive
 }

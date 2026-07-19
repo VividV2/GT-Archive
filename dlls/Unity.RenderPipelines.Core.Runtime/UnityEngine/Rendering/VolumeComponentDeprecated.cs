@@ -1,9 +1,13 @@
 using System;
 
-namespace UnityEngine.Rendering;
-
-[AttributeUsage(AttributeTargets.Class)]
-[Obsolete("VolumeComponentDeprecated has been deprecated (UnityUpgradable) -> [UnityEngine] UnityEngine.HideInInspector #from(2023.1)", false)]
-public sealed class VolumeComponentDeprecated : Attribute
+namespace UnityEngine.Rendering
+{
+	[AttributeUsage(AttributeTargets.Class)]
+	[Obsolete("VolumeComponentDeprecated has been deprecated (UnityUpgradable) -> [UnityEngine] UnityEngine.HideInInspector #from(2023.1)", false)]
+	public sealed class VolumeComponentDeprecated : Attribute
+	{
+	}
+}
+namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler
 {
 }

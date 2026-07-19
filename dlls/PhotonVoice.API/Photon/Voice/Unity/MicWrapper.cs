@@ -1,121 +1,71 @@
 using System;
-using System.Linq;
-using UnityEngine;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
-namespace Photon.Voice.Unity;
+namespace Photon.Voice.Windows;
 
-public class MicWrapper : IAudioReader<float>, IDataReader<float>, IDisposable, IAudioDesc
+public class AudioInEnumerator : DeviceEnumeratorBase
 {
-	protected AudioClip mic;
+	private const string lib_name = "AudioIn";
 
-	protected string device;
+	private IntPtr handle;
 
-	protected ILogger logger;
+	[DllImport("AudioIn")]
+	private static extern IntPtr Photon_Audio_In_CreateMicEnumerator();
 
-	protected int micPrevPos;
+	[DllImport("AudioIn")]
+	private static extern void Photon_Audio_In_DestroyMicEnumerator(IntPtr handle);
 
-	protected int micLoopCnt;
+	[DllImport("AudioIn")]
+	private static extern int Photon_Audio_In_MicEnumerator_Count(IntPtr handle);
 
-	protected int readAbsPos;
+	[DllImport("AudioIn")]
+	private static extern IntPtr Photon_Audio_In_MicEnumerator_NameAtIndex(IntPtr handle, int idx);
 
-	public AudioClip Mic => mic;
+	[DllImport("AudioIn")]
+	private static extern int Photon_Audio_In_MicEnumerator_IDAtIndex(IntPtr handle, int idx);
 
-	public int SamplingRate
+	public AudioInEnumerator(ILogger logger)
+		: base(logger)
 	{
-		get
-		{
-			if (Error != null)
-			{
-				return 0;
-			}
-			return mic.frequency;
-		}
+		Refresh();
 	}
 
-	public int Channels
+	public override void Refresh()
 	{
-		get
-		{
-			if (Error != null)
-			{
-				return 0;
-			}
-			return mic.channels;
-		}
-	}
-
-	public string Error { get; protected set; }
-
-	public MicWrapper(string device, int suggestedFrequency, ILogger logger)
-	{
+		Dispose();
 		try
 		{
-			this.device = device;
-			this.logger = logger;
-			if (UnityMicrophone.devices.Length < 1)
+			handle = Photon_Audio_In_CreateMicEnumerator();
+			int num = Photon_Audio_In_MicEnumerator_Count(handle);
+			devices = new List<DeviceInfo>();
+			int i;
+			int num;
+			for (int i = 0; i < num; i++)
 			{
-				Error = "No microphones found (UnityMicrophone.devices is empty)";
-				logger.LogError("[PV] MicWrapper: " + Error);
-				return;
+				devices.Add(new DeviceInfo(Photon_Audio_In_MicEnumerator_IDAtIndex(handle, i), Marshal.PtrToStringAuto(Photon_Audio_In_MicEnumerator_NameAtIndex(handle, i))));
 			}
-			if (!string.IsNullOrEmpty(device) && !Enumerable.Contains(UnityMicrophone.devices, device))
-			{
-				logger.LogError($"[PV] MicWrapper: \"{device}\" is not a valid Unity microphone device, falling back to default one");
-				device = null;
-			}
-			UnityMicrophone.GetDeviceCaps(device, out var minFreq, out var maxFreq);
-			int frequency = suggestedFrequency;
-			if (suggestedFrequency < minFreq || (maxFreq != 0 && suggestedFrequency > maxFreq))
-			{
-				frequency = maxFreq;
-			}
-			mic = UnityMicrophone.Start(device, loop: true, 1, frequency);
+			Error = null;
 		}
 		catch (Exception ex)
 		{
 			Error = ex.ToString();
 			if (Error == null)
 			{
-				Error = "Exception in MicWrapper constructor";
+				Error = "Exception in AudioInEnumerator.Refresh()";
 			}
-			logger.LogError("[PV] MicWrapper: " + Error);
 		}
 	}
 
-	public void Dispose()
+	public override void Dispose()
 	{
-		UnityMicrophone.End(device);
-		UnityEngine.Object.Destroy(mic);
-		mic = null;
-	}
-
-	public virtual bool Read(float[] buffer)
-	{
-		if (Error != null)
+		if (handle != IntPtr.Zero && Error == null)
 		{
-			return false;
+			Photon_Audio_In_DestroyMicEnumerator(handle);
+			handle = IntPtr.Zero;
 		}
-		int position = UnityMicrophone.GetPosition(device);
-		if (position < micPrevPos)
-		{
-			micLoopCnt++;
-		}
-		micPrevPos = position;
-		int num = micLoopCnt * mic.samples + position;
-		if (mic.channels == 0)
-		{
-			Error = "Number of channels is 0 in Read()";
-			logger.LogError("[PV] MicWrapper: " + Error);
-			return false;
-		}
-		int num2 = buffer.Length / mic.channels;
-		int num3 = readAbsPos + num2;
-		if (num3 < num)
-		{
-			mic.GetData(buffer, readAbsPos % mic.samples);
-			readAbsPos = num3;
-			return true;
-		}
-		return false;
 	}
 }

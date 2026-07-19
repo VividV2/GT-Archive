@@ -1,19 +1,28 @@
-using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json;
 
 namespace Modio.API.SchemaDefinitions;
 
 [JsonObject]
-internal readonly struct AdminEditModPriceRequest(long price) : IApiRequest
+public readonly struct GameTokenPackObject(long id, long token_pack_id, long price, long amount, string portal, string sku, string name, string description, long date_added, long date_updated)
 {
-	private static readonly Dictionary<string, object> _bodyParameters = new Dictionary<string, object>();
+	public readonly long Id = id;
 
-	internal readonly long Price = price;
+	public readonly long TokenPackId = token_pack_id;
 
-	public IReadOnlyDictionary<string, object> GetBodyParameters()
-	{
-		_bodyParameters.Clear();
-		_bodyParameters.Add("price", Price);
-		return _bodyParameters;
-	}
+	public readonly long Price = price;
+
+	public readonly long Amount = amount;
+
+	public readonly string Portal = portal;
+
+	public readonly string Sku = sku;
+
+	public readonly string Name = name;
+
+	public readonly string Description = description;
+
+	public readonly long DateAdded = date_added;
+
+	public readonly long DateUpdated = date_updated;
 }

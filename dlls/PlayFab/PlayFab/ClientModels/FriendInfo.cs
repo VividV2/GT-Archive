@@ -1,29 +1,12 @@
 using System;
-using System.Collections.Generic;
+using PlayFab.SharedModels;
+using System;
 using PlayFab.SharedModels;
 
 namespace PlayFab.ClientModels;
 
 [Serializable]
-public class FriendInfo : PlayFabBaseModel
+public class GetAccountInfoResult : PlayFabResultCommon
 {
-	public UserFacebookInfo FacebookInfo;
-
-	public string FriendPlayFabId;
-
-	public UserGameCenterInfo GameCenterInfo;
-
-	public PlayerProfileModel Profile;
-
-	public UserPsnInfo PSNInfo;
-
-	public UserSteamInfo SteamInfo;
-
-	public List<string> Tags;
-
-	public string TitleDisplayName;
-
-	public string Username;
-
-	public UserXboxInfo XboxInfo;
+	public UserAccountInfo AccountInfo;
 }

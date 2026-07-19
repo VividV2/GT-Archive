@@ -1,12 +1,12 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class RestoreIOSPurchasesRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string CatalogVersion;
-
-	public string ReceiptData;
-}
+	public enum TradeStatus
+	{
+		Invalid,
+		Opening,
+		Open,
+		Accepting,
+		Accepted,
+		Filled,
+		Cancelled
+	}

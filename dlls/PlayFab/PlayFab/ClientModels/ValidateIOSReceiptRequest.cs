@@ -1,16 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class ValidateIOSReceiptRequest : PlayFabRequestCommon
+namespace PlayFab
 {
-	public string CatalogVersion;
-
-	public string CurrencyCode;
-
-	public int PurchasePrice;
-
-	public string ReceiptData;
+}
+namespace PlayFab.ClientModels
+{
 }

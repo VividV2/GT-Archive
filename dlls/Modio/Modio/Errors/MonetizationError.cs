@@ -1,13 +1,12 @@
-namespace Modio.Errors;
+using Newtonsoft.Json;
+using Newtonsoft.Json;
 
-public class MonetizationError : Error
+namespace Modio.API.SchemaDefinitions;
+
+[JsonObject]
+internal readonly struct EmailRequestResponse(long code, string message)
 {
-	public new static readonly MonetizationError None = new MonetizationError(MonetizationErrorCode.NONE);
+	internal readonly long Code = code;
 
-	public new MonetizationErrorCode Code => (MonetizationErrorCode)base.Code;
-
-	public MonetizationError(MonetizationErrorCode code)
-		: base((ErrorCode)code)
-	{
-	}
+	internal readonly string Message = message;
 }

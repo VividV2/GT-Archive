@@ -2,45 +2,21 @@ using System;
 
 namespace Oculus.Platform.Models;
 
-public class LaunchDetails
+public class AssetFileDeleteResult
 {
-	public readonly string DeeplinkMessage;
+	public readonly ulong AssetFileId;
 
-	public readonly string DestinationApiName;
+	public readonly ulong AssetId;
 
-	public readonly string LaunchSource;
+	public readonly string Filepath;
 
-	public readonly LaunchType LaunchType;
+	public readonly bool Success;
 
-	public readonly string LobbySessionID;
-
-	public readonly string MatchSessionID;
-
-	public readonly string TrackingID;
-
-	public readonly UserList UsersOptional;
-
-	[Obsolete("Deprecated in favor of UsersOptional")]
-	public readonly UserList Users;
-
-	public LaunchDetails(IntPtr o)
+	public AssetFileDeleteResult(IntPtr o)
 	{
-		DeeplinkMessage = CAPI.ovr_LaunchDetails_GetDeeplinkMessage(o);
-		DestinationApiName = CAPI.ovr_LaunchDetails_GetDestinationApiName(o);
-		LaunchSource = CAPI.ovr_LaunchDetails_GetLaunchSource(o);
-		LaunchType = CAPI.ovr_LaunchDetails_GetLaunchType(o);
-		LobbySessionID = CAPI.ovr_LaunchDetails_GetLobbySessionID(o);
-		MatchSessionID = CAPI.ovr_LaunchDetails_GetMatchSessionID(o);
-		TrackingID = CAPI.ovr_LaunchDetails_GetTrackingID(o);
-		IntPtr intPtr = CAPI.ovr_LaunchDetails_GetUsers(o);
-		Users = new UserList(intPtr);
-		if (intPtr == IntPtr.Zero)
-		{
-			UsersOptional = null;
-		}
-		else
-		{
-			UsersOptional = Users;
-		}
+		AssetFileId = CAPI.ovr_AssetFileDeleteResult_GetAssetFileId(o);
+		AssetId = CAPI.ovr_AssetFileDeleteResult_GetAssetId(o);
+		Filepath = CAPI.ovr_AssetFileDeleteResult_GetFilepath(o);
+		Success = CAPI.ovr_AssetFileDeleteResult_GetSuccess(o);
 	}
 }

@@ -1,156 +1,282 @@
-using System.Collections;
-using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
 
-namespace System.Drawing.Design;
+namespace System.Drawing.Drawing2D;
 
-/// <summary>Provides methods and properties to manage and query the toolbox in the development environment.</summary>
-[ComImport]
-[Guid("4BACD258-DE64-4048-BC4E-FEDBEF9ACB76")]
-[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-public interface IToolboxService
+/// <summary>Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inherited.</summary>
+public sealed class Matrix : MarshalByRefObject, IDisposable
 {
-	/// <summary>Gets the names of all the tool categories currently on the toolbox.</summary>
-	/// <returns>A <see cref="T:System.Drawing.Design.CategoryNameCollection" /> containing the tool categories.</returns>
-	CategoryNameCollection CategoryNames { get; }
+	internal IntPtr nativeMatrix;
 
-	/// <summary>Gets or sets the name of the currently selected tool category from the toolbox.</summary>
-	/// <returns>The name of the currently selected category.</returns>
-	string SelectedCategory { get; set; }
+	/// <summary>Gets an array of floating-point values that represents the elements of this <see cref="T:System.Drawing.Drawing2D.Matrix" />.</summary>
+	/// <returns>An array of floating-point values that represents the elements of this <see cref="T:System.Drawing.Drawing2D.Matrix" />.</returns>
+	public float[] Elements
+	{
+		get
+		{
+			float[] array = new float[6];
+			IntPtr intPtr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(float)) * 6);
+			try
+			{
+				GDIPlus.CheckStatus(GDIPlus.GdipGetMatrixElements(nativeMatrix, intPtr));
+				Marshal.Copy(intPtr, array, 0, 6);
+				return array;
+			}
+			finally
+			{
+				Marshal.FreeHGlobal(intPtr);
+			}
+		}
+	}
 
-	/// <summary>Adds a new toolbox item creator for a specified data format.</summary>
-	/// <param name="creator">A <see cref="T:System.Drawing.Design.ToolboxItemCreatorCallback" /> that can create a component when the toolbox item is invoked.</param>
-	/// <param name="format">The data format that the creator handles.</param>
-	void AddCreator(ToolboxItemCreatorCallback creator, string format);
+	/// <summary>Gets a value indicating whether this <see cref="T:System.Drawing.Drawing2D.Matrix" /> is the identity matrix.</summary>
+	/// <returns>This property is <see langword="true" /> if this <see cref="T:System.Drawing.Drawing2D.Matrix" /> is identity; otherwise, <see langword="false" />.</returns>
+	public bool IsIdentity
+	{
+		get
+		{
+			GDIPlus.CheckStatus(GDIPlus.GdipIsMatrixIdentity(nativeMatrix, out var result));
+			return result;
+		}
+	}
 
-	/// <summary>Adds a new toolbox item creator for a specified data format and designer host.</summary>
-	/// <param name="creator">A <see cref="T:System.Drawing.Design.ToolboxItemCreatorCallback" /> that can create a component when the toolbox item is invoked.</param>
-	/// <param name="format">The data format that the creator handles.</param>
-	/// <param name="host">The <see cref="T:System.ComponentModel.Design.IDesignerHost" /> that represents the designer host to associate with the creator.</param>
-	void AddCreator(ToolboxItemCreatorCallback creator, string format, IDesignerHost host);
+	/// <summary>Gets a value indicating whether this <see cref="T:System.Drawing.Drawing2D.Matrix" /> is invertible.</summary>
+	/// <returns>This property is <see langword="true" /> if this <see cref="T:System.Drawing.Drawing2D.Matrix" /> is invertible; otherwise, <see langword="false" />.</returns>
+	public bool IsInvertible
+	{
+		get
+		{
+			GDIPlus.CheckStatus(GDIPlus.GdipIsMatrixInvertible(nativeMatrix, out var result));
+			return result;
+		}
+	}
 
-	/// <summary>Adds the specified project-linked toolbox item to the toolbox.</summary>
-	/// <param name="toolboxItem">The linked <see cref="T:System.Drawing.Design.ToolboxItem" /> to add to the toolbox.</param>
-	/// <param name="host">The <see cref="T:System.ComponentModel.Design.IDesignerHost" /> for the current design document.</param>
-	void AddLinkedToolboxItem(ToolboxItem toolboxItem, IDesignerHost host);
+	/// <summary>Gets the x translation value (the dx value, or the element in the third row and first column) of this <see cref="T:System.Drawing.Drawing2D.Matrix" />.</summary>
+	/// <returns>The x translation value of this <see cref="T:System.Drawing.Drawing2D.Matrix" />.</returns>
+	public float OffsetX => Elements[4];
 
-	/// <summary>Adds the specified project-linked toolbox item to the toolbox in the specified category.</summary>
-	/// <param name="toolboxItem">The linked <see cref="T:System.Drawing.Design.ToolboxItem" /> to add to the toolbox.</param>
-	/// <param name="category">The toolbox item category to add the toolbox item to.</param>
-	/// <param name="host">The <see cref="T:System.ComponentModel.Design.IDesignerHost" /> for the current design document.</param>
-	void AddLinkedToolboxItem(ToolboxItem toolboxItem, string category, IDesignerHost host);
+	/// <summary>Gets the y translation value (the dy value, or the element in the third row and second column) of this <see cref="T:System.Drawing.Drawing2D.Matrix" />.</summary>
+	/// <returns>The y translation value of this <see cref="T:System.Drawing.Drawing2D.Matrix" />.</returns>
+	public float OffsetY => Elements[5];
 
-	/// <summary>Adds the specified toolbox item to the toolbox.</summary>
-	/// <param name="toolboxItem">The <see cref="T:System.Drawing.Design.ToolboxItem" /> to add to the toolbox.</param>
-	void AddToolboxItem(ToolboxItem toolboxItem);
+	internal IntPtr NativeObject
+	{
+		get
+		{
+			return nativeMatrix;
+		}
+		set
+		{
+			nativeMatrix = value;
+		}
+	}
 
-	/// <summary>Adds the specified toolbox item to the toolbox in the specified category.</summary>
-	/// <param name="toolboxItem">The <see cref="T:System.Drawing.Design.ToolboxItem" /> to add to the toolbox.</param>
-	/// <param name="category">The toolbox item category to add the <see cref="T:System.Drawing.Design.ToolboxItem" /> to.</param>
-	void AddToolboxItem(ToolboxItem toolboxItem, string category);
+	internal Matrix(IntPtr ptr)
+	{
+		nativeMatrix = ptr;
+	}
 
-	/// <summary>Gets a toolbox item from the specified object that represents a toolbox item in serialized form.</summary>
-	/// <param name="serializedObject">The object that contains the <see cref="T:System.Drawing.Design.ToolboxItem" /> to retrieve.</param>
-	/// <returns>The <see cref="T:System.Drawing.Design.ToolboxItem" /> created from the serialized object.</returns>
-	ToolboxItem DeserializeToolboxItem(object serializedObject);
+	/// <summary>Initializes a new instance of the <see cref="T:System.Drawing.Drawing2D.Matrix" /> class as the identity matrix.</summary>
+	public Matrix()
+	{
+		GDIPlus.CheckStatus(GDIPlus.GdipCreateMatrix(out nativeMatrix));
+	}
 
-	/// <summary>Gets a toolbox item from the specified object that represents a toolbox item in serialized form, using the specified designer host.</summary>
-	/// <param name="serializedObject">The object that contains the <see cref="T:System.Drawing.Design.ToolboxItem" /> to retrieve.</param>
-	/// <param name="host">The <see cref="T:System.ComponentModel.Design.IDesignerHost" /> to associate with this <see cref="T:System.Drawing.Design.ToolboxItem" />.</param>
-	/// <returns>The <see cref="T:System.Drawing.Design.ToolboxItem" /> created from deserialization.</returns>
-	ToolboxItem DeserializeToolboxItem(object serializedObject, IDesignerHost host);
+	/// <summary>Initializes a new instance of the <see cref="T:System.Drawing.Drawing2D.Matrix" /> class to the geometric transform defined by the specified rectangle and array of points.</summary>
+	/// <param name="rect">A <see cref="T:System.Drawing.Rectangle" /> structure that represents the rectangle to be transformed.</param>
+	/// <param name="plgpts">An array of three <see cref="T:System.Drawing.Point" /> structures that represents the points of a parallelogram to which the upper-left, upper-right, and lower-left corners of the rectangle is to be transformed. The lower-right corner of the parallelogram is implied by the first three corners.</param>
+	public Matrix(Rectangle rect, Point[] plgpts)
+	{
+		if (plgpts == null)
+		{
+			throw new ArgumentNullException("plgpts");
+		}
+		if (plgpts.Length != 3)
+		{
+			throw new ArgumentException("plgpts");
+		}
+		GDIPlus.CheckStatus(GDIPlus.GdipCreateMatrix3I(ref rect, plgpts, out nativeMatrix));
+	}
 
-	/// <summary>Gets the currently selected toolbox item.</summary>
-	/// <returns>The <see cref="T:System.Drawing.Design.ToolboxItem" /> that is currently selected, or <see langword="null" /> if no toolbox item has been selected.</returns>
-	ToolboxItem GetSelectedToolboxItem();
+	/// <summary>Initializes a new instance of the <see cref="T:System.Drawing.Drawing2D.Matrix" /> class to the geometric transform defined by the specified rectangle and array of points.</summary>
+	/// <param name="rect">A <see cref="T:System.Drawing.RectangleF" /> structure that represents the rectangle to be transformed.</param>
+	/// <param name="plgpts">An array of three <see cref="T:System.Drawing.PointF" /> structures that represents the points of a parallelogram to which the upper-left, upper-right, and lower-left corners of the rectangle is to be transformed. The lower-right corner of the parallelogram is implied by the first three corners.</param>
+	public Matrix(RectangleF rect, PointF[] plgpts)
+	{
+		if (plgpts == null)
+		{
+			throw new ArgumentNullException("plgpts");
+		}
+		if (plgpts.Length != 3)
+		{
+			throw new ArgumentException("plgpts");
+		}
+		GDIPlus.CheckStatus(GDIPlus.GdipCreateMatrix3(ref rect, plgpts, out nativeMatrix));
+	}
 
-	/// <summary>Gets the currently selected toolbox item if it is available to all designers, or if it supports the specified designer.</summary>
-	/// <param name="host">The <see cref="T:System.ComponentModel.Design.IDesignerHost" /> that the selected tool must be associated with for it to be returned.</param>
-	/// <returns>The <see cref="T:System.Drawing.Design.ToolboxItem" /> that is currently selected, or <see langword="null" /> if no toolbox item is currently selected.</returns>
-	ToolboxItem GetSelectedToolboxItem(IDesignerHost host);
+	public Matrix(float m11, float m12, float m21, float m22, float dx, float dy)
+	{
+		GDIPlus.CheckStatus(GDIPlus.GdipCreateMatrix2(m11, m12, m21, m22, dx, dy, out nativeMatrix));
+	}
 
-	/// <summary>Gets the entire collection of toolbox items from the toolbox.</summary>
-	/// <returns>A <see cref="T:System.Drawing.Design.ToolboxItemCollection" /> that contains the current toolbox items.</returns>
-	ToolboxItemCollection GetToolboxItems();
+	public Matrix Clone()
+	{
+		GDIPlus.CheckStatus(GDIPlus.GdipCloneMatrix(nativeMatrix, out var cloneMatrix));
+		return new Matrix(cloneMatrix);
+	}
 
-	/// <summary>Gets the collection of toolbox items that are associated with the specified designer host from the toolbox.</summary>
-	/// <param name="host">The <see cref="T:System.ComponentModel.Design.IDesignerHost" /> that is associated with the toolbox items to retrieve.</param>
-	/// <returns>A <see cref="T:System.Drawing.Design.ToolboxItemCollection" /> that contains the current toolbox items that are associated with the specified designer host.</returns>
-	ToolboxItemCollection GetToolboxItems(IDesignerHost host);
+	public void Dispose()
+	{
+		if (nativeMatrix != IntPtr.Zero)
+		{
+			GDIPlus.CheckStatus(GDIPlus.GdipDeleteMatrix(nativeMatrix));
+			nativeMatrix = IntPtr.Zero;
+		}
+		GC.SuppressFinalize(this);
+	}
 
-	/// <summary>Gets a collection of toolbox items from the toolbox that match the specified category.</summary>
-	/// <param name="category">The toolbox item category to retrieve all the toolbox items from.</param>
-	/// <returns>A <see cref="T:System.Drawing.Design.ToolboxItemCollection" /> that contains the current toolbox items that are associated with the specified category.</returns>
-	ToolboxItemCollection GetToolboxItems(string category);
+	public override bool Equals(object obj)
+	{
+		if (obj is Matrix matrix)
+		{
+			GDIPlus.CheckStatus(GDIPlus.GdipIsMatrixEqual(nativeMatrix, matrix.nativeMatrix, out var result));
+			return result;
+		}
+		return false;
+	}
 
-	/// <summary>Gets the collection of toolbox items that are associated with the specified designer host and category from the toolbox.</summary>
-	/// <param name="category">The toolbox item category to retrieve the toolbox items from.</param>
-	/// <param name="host">The <see cref="T:System.ComponentModel.Design.IDesignerHost" /> that is associated with the toolbox items to retrieve.</param>
-	/// <returns>A <see cref="T:System.Drawing.Design.ToolboxItemCollection" /> that contains the current toolbox items that are associated with the specified category and designer host.</returns>
-	ToolboxItemCollection GetToolboxItems(string category, IDesignerHost host);
+	~Matrix()
+	{
+		Dispose();
+	}
 
-	/// <summary>Gets a value indicating whether the specified object which represents a serialized toolbox item can be used by the specified designer host.</summary>
-	/// <param name="serializedObject">The object that contains the <see cref="T:System.Drawing.Design.ToolboxItem" /> to retrieve.</param>
-	/// <param name="host">The <see cref="T:System.ComponentModel.Design.IDesignerHost" /> to test for support for the <see cref="T:System.Drawing.Design.ToolboxItem" />.</param>
-	/// <returns>
-	///   <see langword="true" /> if the specified object is compatible with the specified designer host; otherwise, <see langword="false" />.</returns>
-	bool IsSupported(object serializedObject, IDesignerHost host);
+	public override int GetHashCode()
+	{
+		return base.GetHashCode();
+	}
 
-	/// <summary>Gets a value indicating whether the specified object which represents a serialized toolbox item matches the specified attributes.</summary>
-	/// <param name="serializedObject">The object that contains the <see cref="T:System.Drawing.Design.ToolboxItem" /> to retrieve.</param>
-	/// <param name="filterAttributes">An <see cref="T:System.Collections.ICollection" /> that contains the attributes to test the serialized object for.</param>
-	/// <returns>
-	///   <see langword="true" /> if the object matches the specified attributes; otherwise, <see langword="false" />.</returns>
-	bool IsSupported(object serializedObject, ICollection filterAttributes);
+	public void Invert()
+	{
+		GDIPlus.CheckStatus(GDIPlus.GdipInvertMatrix(nativeMatrix));
+	}
 
-	/// <summary>Gets a value indicating whether the specified object is a serialized toolbox item.</summary>
-	/// <param name="serializedObject">The object to inspect.</param>
-	/// <returns>
-	///   <see langword="true" /> if the object contains a toolbox item object; otherwise, <see langword="false" />.</returns>
-	bool IsToolboxItem(object serializedObject);
+	public void Multiply(Matrix matrix)
+	{
+		Multiply(matrix, MatrixOrder.Prepend);
+	}
 
-	/// <summary>Gets a value indicating whether the specified object is a serialized toolbox item, using the specified designer host.</summary>
-	/// <param name="serializedObject">The object to inspect.</param>
-	/// <param name="host">The <see cref="T:System.ComponentModel.Design.IDesignerHost" /> that is making this request.</param>
-	/// <returns>
-	///   <see langword="true" /> if the object contains a toolbox item object; otherwise, <see langword="false" />.</returns>
-	bool IsToolboxItem(object serializedObject, IDesignerHost host);
+	public void Multiply(Matrix matrix, MatrixOrder order)
+	{
+		if (matrix == null)
+		{
+			throw new ArgumentNullException("matrix");
+		}
+		GDIPlus.CheckStatus(GDIPlus.GdipMultiplyMatrix(nativeMatrix, matrix.nativeMatrix, order));
+	}
 
-	/// <summary>Refreshes the state of the toolbox items.</summary>
-	void Refresh();
+	public void Reset()
+	{
+		GDIPlus.CheckStatus(GDIPlus.GdipSetMatrixElements(nativeMatrix, 1f, 0f, 0f, 1f, 0f, 0f));
+	}
 
-	/// <summary>Removes a previously added toolbox item creator of the specified data format.</summary>
-	/// <param name="format">The data format of the creator to remove.</param>
-	void RemoveCreator(string format);
+	public void Rotate(float angle)
+	{
+		Rotate(angle, MatrixOrder.Prepend);
+	}
 
-	/// <summary>Removes a previously added toolbox creator that is associated with the specified data format and the specified designer host.</summary>
-	/// <param name="format">The data format of the creator to remove.</param>
-	/// <param name="host">The <see cref="T:System.ComponentModel.Design.IDesignerHost" /> that is associated with the creator to remove.</param>
-	void RemoveCreator(string format, IDesignerHost host);
+	public void Rotate(float angle, MatrixOrder order)
+	{
+		GDIPlus.CheckStatus(GDIPlus.GdipRotateMatrix(nativeMatrix, angle, order));
+	}
 
-	/// <summary>Removes the specified toolbox item from the toolbox.</summary>
-	/// <param name="toolboxItem">The <see cref="T:System.Drawing.Design.ToolboxItem" /> to remove from the toolbox.</param>
-	void RemoveToolboxItem(ToolboxItem toolboxItem);
+	public void RotateAt(float angle, PointF point)
+	{
+		RotateAt(angle, point, MatrixOrder.Prepend);
+	}
 
-	/// <summary>Removes the specified toolbox item from the toolbox.</summary>
-	/// <param name="toolboxItem">The <see cref="T:System.Drawing.Design.ToolboxItem" /> to remove from the toolbox.</param>
-	/// <param name="category">The toolbox item category to remove the <see cref="T:System.Drawing.Design.ToolboxItem" /> from.</param>
-	void RemoveToolboxItem(ToolboxItem toolboxItem, string category);
+	public void RotateAt(float angle, PointF point, MatrixOrder order)
+	{
+		if (order < MatrixOrder.Prepend || order > MatrixOrder.Append)
+		{
+			throw new ArgumentException("order");
+		}
+		angle *= MathF.PI / 180f;
+		float num = (float)Math.Cos(angle);
+		float num2 = (float)Math.Sin(angle);
+		float num3 = 0f - point.X * num + point.Y * num2 + point.X;
+		float num4 = 0f - point.X * num2 - point.Y * num + point.Y;
+		float[] elements = Elements;
+		Status status = order != MatrixOrder.Prepend ? GDIPlus.GdipSetMatrixElements(nativeMatrix, elements[0] * num + elements[1] * 0f - num2, elements[0] * num2 + elements[1] * num, elements[2] * num + elements[3] * 0f - num2, elements[2] * num2 + elements[3] * num, elements[4] * num + elements[5] * 0f - num2 + num3, elements[4] * num2 + elements[5] * num + num4) : GDIPlus.GdipSetMatrixElements(nativeMatrix, num * elements[0] + num2 * elements[2], num * elements[1] + num2 * elements[3], 0f - num2 * elements[0] + num * elements[2], 0f - num2 * elements[1] + num * elements[3], num3 * elements[0] + num4 * elements[2] + elements[4], num3 * elements[1] + num4 * elements[3] + elements[5]);
+		GDIPlus.CheckStatus(status);
+	}
 
-	/// <summary>Notifies the toolbox service that the selected tool has been used.</summary>
-	void SelectedToolboxItemUsed();
+	public void Scale(float scaleX, float scaleY)
+	{
+		Scale(scaleX, scaleY, MatrixOrder.Prepend);
+	}
 
-	/// <summary>Gets a serializable object that represents the specified toolbox item.</summary>
-	/// <param name="toolboxItem">The <see cref="T:System.Drawing.Design.ToolboxItem" /> to serialize.</param>
-	/// <returns>An object that represents the specified <see cref="T:System.Drawing.Design.ToolboxItem" />.</returns>
-	object SerializeToolboxItem(ToolboxItem toolboxItem);
+	public void Scale(float scaleX, float scaleY, MatrixOrder order)
+	{
+		GDIPlus.CheckStatus(GDIPlus.GdipScaleMatrix(nativeMatrix, scaleX, scaleY, order));
+	}
 
-	/// <summary>Sets the current application's cursor to a cursor that represents the currently selected tool.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the cursor is set by the currently selected tool, <see langword="false" /> if there is no tool selected and the cursor is set to the standard windows cursor.</returns>
-	bool SetCursor();
+	public void Shear(float shearX, float shearY)
+	{
+		Shear(shearX, shearY, MatrixOrder.Prepend);
+	}
 
-	/// <summary>Selects the specified toolbox item.</summary>
-	/// <param name="toolboxItem">The <see cref="T:System.Drawing.Design.ToolboxItem" /> to select.</param>
-	void SetSelectedToolboxItem(ToolboxItem toolboxItem);
+	public void Shear(float shearX, float shearY, MatrixOrder order)
+	{
+		GDIPlus.CheckStatus(GDIPlus.GdipShearMatrix(nativeMatrix, shearX, shearY, order));
+	}
+
+	public void TransformPoints(Point[] pts)
+	{
+		if (pts == null)
+		{
+			throw new ArgumentNullException("pts");
+		}
+		GDIPlus.CheckStatus(GDIPlus.GdipTransformMatrixPointsI(nativeMatrix, pts, pts.Length));
+	}
+
+	public void TransformPoints(PointF[] pts)
+	{
+		if (pts == null)
+		{
+			throw new ArgumentNullException("pts");
+		}
+		GDIPlus.CheckStatus(GDIPlus.GdipTransformMatrixPoints(nativeMatrix, pts, pts.Length));
+	}
+
+	public void TransformVectors(Point[] pts)
+	{
+		if (pts == null)
+		{
+			throw new ArgumentNullException("pts");
+		}
+		GDIPlus.CheckStatus(GDIPlus.GdipVectorTransformMatrixPointsI(nativeMatrix, pts, pts.Length));
+	}
+
+	public void TransformVectors(PointF[] pts)
+	{
+		if (pts == null)
+		{
+			throw new ArgumentNullException("pts");
+		}
+		GDIPlus.CheckStatus(GDIPlus.GdipVectorTransformMatrixPoints(nativeMatrix, pts, pts.Length));
+	}
+
+	public void Translate(float offsetX, float offsetY)
+	{
+		Translate(offsetX, offsetY, MatrixOrder.Prepend);
+	}
+
+	public void Translate(float offsetX, float offsetY, MatrixOrder order)
+	{
+		GDIPlus.CheckStatus(GDIPlus.GdipTranslateMatrix(nativeMatrix, offsetX, offsetY, order));
+	}
+
+	public void VectorTransformPoints(Point[] pts)
+	{
+		TransformVectors(pts);
+	}
 }

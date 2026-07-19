@@ -1,11 +1,15 @@
 using UnityEngine.Bindings;
 using UnityEngine.Internal;
 
-namespace UnityEngine;
-
-[ExcludeFromDocs]
-[NativeHeader("Modules/Marshalling/MarshallingTests.h")]
-internal struct StructFixedBuffer
+namespace UnityEngine
 {
-	public unsafe fixed int SomeInts[4];
+}
+namespace UnityEngine
+{
+	[ExcludeFromDocs]
+	[NativeHeader("Modules/Marshalling/MarshallingTests.h")]
+	internal struct StructFixedBuffer
+	{
+		public unsafe fixed int SomeInts[4];
+	}
 }

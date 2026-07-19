@@ -16,3 +16,6 @@ public enum MetafileFrameUnit
 	/// <summary>The unit of measurement is 0.01 millimeter. Provided for compatibility with GDI.</summary>
 	GdiCompatible
 }
+namespace System.Drawing.Imaging
+{
+}

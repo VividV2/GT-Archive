@@ -1,14 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class RegisterForIOSPushNotificationRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string ConfirmationMessage;
-
-	public string DeviceToken;
-
-	public bool? SendPushNotificationConfirmation;
 }

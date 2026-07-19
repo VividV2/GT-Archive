@@ -1,4 +1,5 @@
 using System;
+using System;
 
 namespace UnityEngine.Localization.Metadata;
 
@@ -41,6 +42,7 @@ public class FallbackLocale : IMetadata
 			return false;
 		}
 		FallbackLocale fallbackLocale = locale.Metadata?.GetMetadata<FallbackLocale>();
+		FallbackLocale fallbackLocale;
 		while (fallbackLocale != null && fallbackLocale.Locale != null)
 		{
 			if (fallbackLocale.Locale == locale)

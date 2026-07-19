@@ -1,15 +1,10 @@
-using UnityEngine.Scripting.APIUpdating;
+namespace UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals;
 
-namespace UnityEngine.XR.Interaction.Toolkit.Interactables;
-
-[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
-public interface IXRActivateInteractable : IXRInteractable
+public enum EndPointType
 {
-	ActivateEvent activated { get; }
-
-	DeactivateEvent deactivated { get; }
-
-	void OnActivated(ActivateEventArgs args);
-
-	void OnDeactivated(DeactivateEventArgs args);
+	None,
+	EmptyCastHit,
+	ValidCastHit,
+	AttachPoint,
+	UI
 }

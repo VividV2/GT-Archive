@@ -1,23 +1,10 @@
-using UnityEngine.InputSystem.Layouts;
-using UnityEngine.InputSystem.LowLevel;
+namespace UnityEngine.InputSystem.LowLevel;
 
-namespace UnityEngine.InputSystem.Controls;
-
-[InputControlLayout(hideInUI = true)]
-public class AnyKeyControl : ButtonControl
+public interface IInputStateCallbackReceiver
 {
-	public AnyKeyControl()
-	{
-		m_StateBlock.sizeInBits = 1u;
-		m_StateBlock.format = InputStateBlock.FormatBit;
-	}
+	void OnNextUpdate();
 
-	public unsafe override float ReadUnprocessedValueFromState(void* statePtr)
-	{
-		if (!this.CheckStateIsAtDefault(statePtr, null))
-		{
-			return 1f;
-		}
-		return 0f;
-	}
+	void OnStateEvent(InputEventPtr eventPtr);
+
+	bool GetStateOffsetForEvent(InputControl control, InputEventPtr eventPtr, ref uint offset);
 }

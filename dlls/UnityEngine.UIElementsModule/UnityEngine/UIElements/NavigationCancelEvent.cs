@@ -1,9 +1,13 @@
-namespace UnityEngine.UIElements;
-
-public class NavigationCancelEvent : NavigationEventBase<NavigationCancelEvent>
+namespace UnityEngine.UIElements
 {
-	static NavigationCancelEvent()
+	public class NavigationCancelEvent : NavigationEventBase<NavigationCancelEvent>
 	{
-		EventBase<NavigationCancelEvent>.SetCreateFunction(() => new NavigationCancelEvent());
+		static NavigationCancelEvent()
+		{
+			EventBase<NavigationCancelEvent>.SetCreateFunction(() => new NavigationCancelEvent());
+		}
 	}
+}
+namespace UnityEngine.UIElements
+{
 }

@@ -1,16 +1,23 @@
-namespace Unity.Collections.LowLevel.Unsafe;
-
-[NativeContainer]
-[GenerateTestsForBurstCompatibility]
-internal struct UnsafeParallelHashMapDataDispose
+namespace Unity.Collections.LowLevel.Unsafe
 {
-	[NativeDisableUnsafePtrRestriction]
-	internal unsafe UnsafeParallelHashMapData* m_Buffer;
-
-	internal AllocatorManager.AllocatorHandle m_AllocatorLabel;
-
-	public unsafe void Dispose()
+	[NativeContainer]
+	[GenerateTestsForBurstCompatibility]
+	internal struct UnsafeParallelHashMapDataDispose
 	{
-		UnsafeParallelHashMapData.DeallocateHashMap(m_Buffer, m_AllocatorLabel);
+		[NativeDisableUnsafePtrRestriction]
+		internal unsafe UnsafeParallelHashMapData* m_Buffer;
+
+		internal AllocatorManager.AllocatorHandle m_AllocatorLabel;
+
+		public unsafe void Dispose()
+		{
+			UnsafeParallelHashMapData.DeallocateHashMap(m_Buffer, m_AllocatorLabel);
+		}
 	}
+}
+namespace Unity.Collections.LowLevel.Unsafe
+{
+}
+namespace Unity.Collections.LowLevel.Unsafe
+{
 }

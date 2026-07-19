@@ -2,6 +2,17 @@ using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
+namespace NexusSDK;
+
+namespace NexusSDK
+{
+}
+namespace NexusSDK
+{
+}
+namespace NexusSDK
+{
+}
 [CompilerGenerated]
 [EditorBrowsable(EditorBrowsableState.Never)]
 [GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]

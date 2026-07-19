@@ -1,41 +1,14 @@
-using System.Diagnostics;
-
 namespace System.Xml;
 
-[DebuggerDisplay("{ToString()}")]
-internal struct DebuggerDisplayXmlNodeProxy(XmlNode node)
+/// <summary>Specifies whether to remove duplicate namespace declarations in the <see cref="T:System.Xml.XmlWriter" />. </summary>
+/// <summary>Specifies whether to remove duplicate namespace declarations in the <see cref="T:System.Xml.XmlWriter" />. </summary>
+[Flags]
+public enum NamespaceHandling
 {
-	private XmlNode node = node;
-
-	public override string ToString()
-	{
-		XmlNodeType nodeType = node.NodeType;
-		string text = nodeType.ToString();
-		switch (nodeType)
-		{
-		case XmlNodeType.Element:
-		case XmlNodeType.EntityReference:
-			text = text + ", Name=\"" + node.Name + "\"";
-			break;
-		case XmlNodeType.Attribute:
-		case XmlNodeType.ProcessingInstruction:
-			text = text + ", Name=\"" + node.Name + "\", Value=\"" + XmlConvert.EscapeValueForDebuggerDisplay(node.Value) + "\"";
-			break;
-		case XmlNodeType.Text:
-		case XmlNodeType.CDATA:
-		case XmlNodeType.Comment:
-		case XmlNodeType.Whitespace:
-		case XmlNodeType.SignificantWhitespace:
-		case XmlNodeType.XmlDeclaration:
-			text = text + ", Value=\"" + XmlConvert.EscapeValueForDebuggerDisplay(node.Value) + "\"";
-			break;
-		case XmlNodeType.DocumentType:
-		{
-			XmlDocumentType xmlDocumentType = (XmlDocumentType)node;
-			text = text + ", Name=\"" + xmlDocumentType.Name + "\", SYSTEM=\"" + xmlDocumentType.SystemId + "\", PUBLIC=\"" + xmlDocumentType.PublicId + "\", Value=\"" + XmlConvert.EscapeValueForDebuggerDisplay(xmlDocumentType.InternalSubset) + "\"";
-			break;
-		}
-		}
-		return text;
-	}
+	/// <summary>Specifies that duplicate namespace declarations will not be removed.</summary>
+	/// <summary>Specifies that duplicate namespace declarations will not be removed.</summary>
+	Default = 0,
+	/// <summary>Specifies that duplicate namespace declarations will be removed. For the duplicate namespace to be removed, the prefix and the namespace must match.</summary>
+	/// <summary>Specifies that duplicate namespace declarations will be removed. For the duplicate namespace to be removed, the prefix and the namespace must match.</summary>
+	OmitDuplicates = 1
 }

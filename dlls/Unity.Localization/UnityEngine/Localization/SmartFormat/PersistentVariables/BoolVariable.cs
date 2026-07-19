@@ -3,27 +3,31 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine.UIElements;
 
-namespace UnityEngine.Localization.SmartFormat.PersistentVariables;
-
-[Serializable]
-[UxmlObject]
-[DisplayName("Boolean", null)]
-public class BoolVariable : Variable<bool>
+namespace UnityEngine.Localization.SmartFormat.PersistentVariables
 {
 	[Serializable]
-	[CompilerGenerated]
+	[UxmlObject]
 	[DisplayName("Boolean", null)]
-	public new class UxmlSerializedData : Variable<bool>.UxmlSerializedData
+	public class BoolVariable : Variable<bool>
 	{
-		[RegisterUxmlCache]
-		[Conditional("UNITY_EDITOR")]
-		public new static void Register()
+		[Serializable]
+		[CompilerGenerated]
+		[DisplayName("Boolean", null)]
+		public new class UxmlSerializedData : Variable<bool>.UxmlSerializedData
 		{
-		}
+			[RegisterUxmlCache]
+			[Conditional("UNITY_EDITOR")]
+			public new static void Register()
+			{
+			}
 
-		public override object CreateInstance()
-		{
-			return new BoolVariable();
+			public override object CreateInstance()
+			{
+				return new BoolVariable();
+			}
 		}
 	}
+}
+namespace UnityEngine.Localization.SmartFormat.PersistentVariables
+{
 }

@@ -1,10 +1,14 @@
-namespace OVR.OpenVR;
-
-public enum EVRNotificationError
+namespace OVR.OpenVR
 {
-	OK = 0,
-	InvalidNotificationId = 100,
-	NotificationQueueFull = 101,
-	InvalidOverlayHandle = 102,
-	SystemWithUserValueAlreadyExists = 103
+	public enum EVRNotificationError
+	{
+		OK = 0,
+		InvalidNotificationId = 100,
+		NotificationQueueFull = 101,
+		InvalidOverlayHandle = 102,
+		SystemWithUserValueAlreadyExists = 103
+	}
+}
+namespace OVR.OpenVR
+{
 }

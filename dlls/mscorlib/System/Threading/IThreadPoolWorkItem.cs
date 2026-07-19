@@ -1,12 +1,16 @@
 using System.Security;
 
-namespace System.Threading;
-
-internal interface IThreadPoolWorkItem
+namespace System.Threading
 {
-	[SecurityCritical]
-	void ExecuteWorkItem();
+}
+namespace System.Threading
+{
+	internal interface IThreadPoolWorkItem
+	{
+		[SecurityCritical]
+		void ExecuteWorkItem();
 
-	[SecurityCritical]
-	void MarkAborted(ThreadAbortException tae);
+		[SecurityCritical]
+		void MarkAborted(ThreadAbortException tae);
+	}
 }

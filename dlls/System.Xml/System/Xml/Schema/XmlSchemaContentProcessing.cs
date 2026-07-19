@@ -18,3 +18,6 @@ public enum XmlSchemaContentProcessing
 	[XmlEnum("strict")]
 	Strict
 }
+namespace System.Xml.Schema
+{
+}

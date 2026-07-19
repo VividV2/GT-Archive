@@ -1,8 +1,12 @@
-namespace UnityEngine.Animations.Rigging;
-
-internal struct PropertyDescriptor
+namespace UnityEngine.Animations.Rigging
 {
-	public int size;
+	internal struct PropertyDescriptor
+	{
+		public int size;
 
-	public PropertyType type;
+		public PropertyType type;
+	}
+}
+namespace UnityEngine.Animations.Rigging
+{
 }

@@ -9,3 +9,6 @@ public enum Axes
 	Y = 2,
 	Z = 4
 }
+namespace Meta.XR.MRUtilityKit.BuildingBlocks
+{
+}

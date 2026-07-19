@@ -1,20 +1,24 @@
 using System;
 
-namespace UnityEngine.UIElements.UIR;
-
-internal struct CopyMeshJobData
+namespace UnityEngine.UIElements.UIR
 {
-	public IntPtr vertSrc;
+	internal struct CopyMeshJobData
+	{
+		public IntPtr vertSrc;
 
-	public IntPtr vertDst;
+		public IntPtr vertDst;
 
-	public int vertCount;
+		public int vertCount;
 
-	public IntPtr indexSrc;
+		public IntPtr indexSrc;
 
-	public IntPtr indexDst;
+		public IntPtr indexDst;
 
-	public int indexCount;
+		public int indexCount;
 
-	public int indexOffset;
+		public int indexOffset;
+	}
+}
+namespace UnityEngine.UIElements.UIR
+{
 }

@@ -1,5 +1,6 @@
-using UnityEngine;
-
-public class ModIOAccountLinkingTerminal : MonoBehaviour
+namespace CjLib
+{
+}
+namespace Cosmetics
 {
 }

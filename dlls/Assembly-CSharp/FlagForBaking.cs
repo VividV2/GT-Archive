@@ -1,6 +1,2 @@
-using UnityEngine;
+namespace GorillaTag;
 
-public class FlagForBaking : MonoBehaviour
-{
-	public bool enableForBaking;
-}

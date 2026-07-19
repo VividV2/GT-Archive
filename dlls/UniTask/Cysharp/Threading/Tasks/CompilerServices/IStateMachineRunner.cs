@@ -1,10 +1,14 @@
 using System;
 
-namespace Cysharp.Threading.Tasks.CompilerServices;
-
-internal interface IStateMachineRunner
+namespace Cysharp.Threading.Tasks.CompilerServices
 {
-	Action MoveNext { get; }
+	internal interface IStateMachineRunner
+	{
+		Action MoveNext { get; }
 
-	void Return();
+		void Return();
+	}
+}
+namespace Cysharp.Threading.Tasks.Internal
+{
 }

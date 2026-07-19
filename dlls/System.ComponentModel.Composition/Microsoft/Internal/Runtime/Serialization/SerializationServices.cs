@@ -1,12 +1,16 @@
 using System.Runtime.Serialization;
 
-namespace Microsoft.Internal.Runtime.Serialization;
-
-internal static class SerializationServices
+namespace System.ComponentModel.Composition
 {
-	public static T GetValue<T>(this SerializationInfo info, string name)
+}
+namespace Microsoft.Internal.Runtime.Serialization
+{
+	internal static class SerializationServices
 	{
-		Assumes.NotNull(info, name);
-		return (T)info.GetValue(name, typeof(T));
+		public static T GetValue<T>(this SerializationInfo info, string name)
+		{
+			Assumes.NotNull(info, name);
+			return (T)info.GetValue(name, typeof(T));
+		}
 	}
 }

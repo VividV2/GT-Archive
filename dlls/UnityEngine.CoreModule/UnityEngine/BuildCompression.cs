@@ -1,73 +1,42 @@
-using System;
 using UnityEngine.Bindings;
-using UnityEngine.Scripting;
+using UnityEngine.Bindings;
 
 namespace UnityEngine;
 
-[Serializable]
-[UsedByNativeCode]
-public struct BuildCompression
+[VisibleToOtherModules(new string[] { "UnityEngine.IMGUIModule" })]
+internal struct Internal_DrawTextureArguments
 {
-	public static readonly BuildCompression Uncompressed = new BuildCompression(CompressionType.None, CompressionLevel.Maximum, 131072u);
+	public Rect screenRect;
 
-	public static readonly BuildCompression LZ4 = new BuildCompression(CompressionType.Lz4HC, CompressionLevel.Maximum, 131072u);
+	public Rect sourceRect;
 
-	public static readonly BuildCompression LZMA = new BuildCompression(CompressionType.Lzma, CompressionLevel.Maximum, 131072u);
+	public int leftBorder;
 
-	public static readonly BuildCompression UncompressedRuntime = Uncompressed;
+	public int rightBorder;
 
-	public static readonly BuildCompression LZ4Runtime = new BuildCompression(CompressionType.Lz4, CompressionLevel.Maximum, 131072u);
+	public int topBorder;
 
-	[NativeName("compression")]
-	private CompressionType _compression;
+	public int bottomBorder;
 
-	[NativeName("level")]
-	private CompressionLevel _level;
+	public Color leftBorderColor;
 
-	[NativeName("blockSize")]
-	private uint _blockSize;
+	public Color rightBorderColor;
 
-	public CompressionType compression
-	{
-		get
-		{
-			return _compression;
-		}
-		private set
-		{
-			_compression = value;
-		}
-	}
+	public Color topBorderColor;
 
-	public CompressionLevel level
-	{
-		get
-		{
-			return _level;
-		}
-		private set
-		{
-			_level = value;
-		}
-	}
+	public Color bottomBorderColor;
 
-	public uint blockSize
-	{
-		get
-		{
-			return _blockSize;
-		}
-		private set
-		{
-			_blockSize = value;
-		}
-	}
+	public Color color;
 
-	private BuildCompression(CompressionType in_compression, CompressionLevel in_level, uint in_blockSize)
-	{
-		this = default(BuildCompression);
-		compression = in_compression;
-		level = in_level;
-		blockSize = in_blockSize;
-	}
+	public Vector4 borderWidths;
+
+	public Vector4 cornerRadiuses;
+
+	public bool smoothCorners;
+
+	public int pass;
+
+	public Texture texture;
+
+	public Material mat;
 }

@@ -1,50 +1,54 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace Cysharp.Threading.Tasks.Internal;
-
-internal sealed class PooledDelegate<T> : ITaskPoolNode<PooledDelegate<T>>
+namespace Cysharp.Threading.Tasks.Internal
 {
-	private static TaskPool<PooledDelegate<T>> pool;
-
-	private PooledDelegate<T> nextNode;
-
-	private readonly Action<T> runDelegate;
-
-	private Action continuation;
-
-	public ref PooledDelegate<T> NextNode => ref nextNode;
-
-	static PooledDelegate()
+}
+namespace Cysharp.Threading.Tasks.Internal
+{
+	internal sealed class PooledDelegate<T> : ITaskPoolNode<PooledDelegate<T>>
 	{
-		TaskPool.RegisterSizeGetter(typeof(PooledDelegate<T>), () => pool.Size);
-	}
+		private static TaskPool<PooledDelegate<T>> pool;
 
-	private PooledDelegate()
-	{
-		runDelegate = Run;
-	}
+		private PooledDelegate<T> nextNode;
 
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static Action<T> Create(Action continuation)
-	{
-		if (!pool.TryPop(out var result))
+		private readonly Action<T> runDelegate;
+
+		private Action continuation;
+
+		public ref PooledDelegate<T> NextNode => ref nextNode;
+
+		static PooledDelegate()
 		{
-			result = new PooledDelegate<T>();
+			TaskPool.RegisterSizeGetter(typeof(PooledDelegate<T>), () => pool.Size);
 		}
-		result.continuation = continuation;
-		return result.runDelegate;
-	}
 
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private void Run(T _)
-	{
-		Action action = continuation;
-		continuation = null;
-		if (action != null)
+		private PooledDelegate()
 		{
-			pool.TryPush(this);
-			action();
+			runDelegate = Run;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static Action<T> Create(Action continuation)
+		{
+			if (!pool.TryPop(out var result))
+			{
+				result = new PooledDelegate<T>();
+			}
+			result.continuation = continuation;
+			return result.runDelegate;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		private void Run(T _)
+		{
+			Action action = continuation;
+			continuation = null;
+			if (action != null)
+			{
+				pool.TryPush(this);
+				action();
+			}
 		}
 	}
 }

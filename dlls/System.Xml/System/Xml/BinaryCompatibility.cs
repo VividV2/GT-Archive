@@ -1,6 +1,6 @@
-namespace System.Xml;
-
-internal static class BinaryCompatibility
+namespace System.Xml
 {
-	public static bool TargetsAtLeast_Desktop_V4_5_2 => true;
+}
+namespace System.Xml
+{
 }

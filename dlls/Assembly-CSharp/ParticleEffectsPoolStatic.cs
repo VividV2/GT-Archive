@@ -1,20 +1,12 @@
-using UnityEngine;
-
-public class ParticleEffectsPoolStatic<T> : ParticleEffectsPool where T : ParticleEffectsPool
+public interface SIGadgetBlasterType
 {
-	protected static T gInstance;
+	void OnUpdateAuthority(float dt);
 
-	public static T Instance => gInstance;
+	void OnUpdateRemote(float dt);
 
-	protected override void OnPoolAwake()
-	{
-		if ((bool)gInstance && gInstance != this)
-		{
-			Object.Destroy(this);
-		}
-		else
-		{
-			gInstance = this as T;
-		}
-	}
+	void SetStateShared();
+
+	void NetworkFireProjectile(object[] data);
+
+	void ApplyUpgradeNodes(SIUpgradeSet withUpgrades);
 }

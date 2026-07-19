@@ -1,16 +1,14 @@
 using System.Runtime.InteropServices;
 
-namespace System.Runtime.Remoting.Metadata;
+namespace System.Runtime.Remoting.Lifetime;
 
-/// <summary>You should not use this enumeration; it is not used by the .NET Framework remoting infrastructure.</summary>
 [Serializable]
 [ComVisible(true)]
-public enum XmlFieldOrderOption
+public enum LeaseState
 {
-	/// <summary>You should not use the XmlFieldOrderOption enumeration; it is not used by the .NET Framework's remoting infrastructure.</summary>
-	All,
-	/// <summary>You should not use the XmlFieldOrderOption enumeration; it is not used by the .NET Framework's remoting infrastructure.</summary>
-	Sequence,
-	/// <summary>You should not use the XmlFieldOrderOption enumeration; it is not used by the .NET Framework's remoting infrastructure.</summary>
-	Choice
+	Null,
+	Initial,
+	Active,
+	Renewing,
+	Expired
 }

@@ -1,10 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class AddFriendResult : PlayFabResultCommon
+namespace PlayFab.ClientModels
 {
-	public bool Created;
 }

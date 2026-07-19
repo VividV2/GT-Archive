@@ -1,6 +1,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
+using System;
+using System.Runtime.CompilerServices;
+using UnityEngine.Bindings;
 
 namespace Unity.IO.LowLevel.Unsafe;
 
@@ -13,12 +16,15 @@ public static class VirtualFileSystem
 	{
 		//The blocks IL_0029 are reachable both inside and outside the pinned region starting at IL_0018. ILSpy has duplicated these blocks in order to place them both within and outside the `fixed` statement.
 		ManagedSpanWrapper localFileName2 = default(ManagedSpanWrapper);
+		ManagedSpanWrapper localFileName2 = default(ManagedSpanWrapper);
 		try
 		{
+			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
 			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
 			if (!StringMarshaller.TryMarshalEmptyOrNullString(vfsFileName, ref managedSpanWrapper))
 			{
 				ReadOnlySpan<char> readOnlySpan = MemoryExtensions.AsSpan(vfsFileName);
+				ReadOnlySpan<char> readOnlySpan;
 				fixed (char* begin = readOnlySpan)
 				{
 					managedSpanWrapper = new ManagedSpanWrapper(begin, readOnlySpan.Length);
@@ -38,12 +44,16 @@ public static class VirtualFileSystem
 		//The blocks IL_0029 are reachable both inside and outside the pinned region starting at IL_0018. ILSpy has duplicated these blocks in order to place them both within and outside the `fixed` statement.
 		ManagedSpanWrapper ret = default(ManagedSpanWrapper);
 		string stringAndDispose;
+		ManagedSpanWrapper ret = default(ManagedSpanWrapper);
+		string stringAndDispose;
 		try
 		{
+			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
 			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
 			if (!StringMarshaller.TryMarshalEmptyOrNullString(physicalPath, ref managedSpanWrapper))
 			{
 				ReadOnlySpan<char> readOnlySpan = MemoryExtensions.AsSpan(physicalPath);
+				ReadOnlySpan<char> readOnlySpan;
 				fixed (char* begin = readOnlySpan)
 				{
 					managedSpanWrapper = new ManagedSpanWrapper(begin, readOnlySpan.Length);

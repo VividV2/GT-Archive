@@ -1,5 +1,2 @@
-using UnityEngine;
+namespace GorillaTagScripts;
 
-public class TrailRendererScalerLocal : MonoBehaviour
-{
-}

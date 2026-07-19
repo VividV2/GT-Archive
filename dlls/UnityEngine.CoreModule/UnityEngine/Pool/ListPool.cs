@@ -1,7 +1,14 @@
-using System.Collections.Generic;
+using System;
+using UnityEngine.Scripting.APIUpdating;
+using System;
+using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.Pool;
+namespace UnityEngine.Networking.PlayerConnection;
 
-public class ListPool<T> : CollectionPool<List<T>, T>
+[MovedFrom("UnityEngine.Experimental.Networking.PlayerConnection")]
+public interface IConnectionState : IDisposable
 {
+	ConnectionTarget connectedToTarget { get; }
+
+	string connectionName { get; }
 }

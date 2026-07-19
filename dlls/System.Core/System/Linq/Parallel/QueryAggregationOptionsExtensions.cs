@@ -1,13 +1,17 @@
-namespace System.Linq.Parallel;
-
-internal static class QueryAggregationOptionsExtensions
+namespace System.Linq.Parallel
 {
-	public static bool IsValidQueryAggregationOption(this QueryAggregationOptions value)
+	internal static class QueryAggregationOptionsExtensions
 	{
-		if (value != QueryAggregationOptions.None && value != QueryAggregationOptions.Associative && value != QueryAggregationOptions.Commutative)
+		public static bool IsValidQueryAggregationOption(this QueryAggregationOptions value)
 		{
-			return value == QueryAggregationOptions.AssociativeCommutative;
+			if (value != QueryAggregationOptions.None && value != QueryAggregationOptions.Associative && value != QueryAggregationOptions.Commutative)
+			{
+				return value == QueryAggregationOptions.AssociativeCommutative;
+			}
+			return true;
 		}
-		return true;
 	}
+}
+namespace System.Linq
+{
 }

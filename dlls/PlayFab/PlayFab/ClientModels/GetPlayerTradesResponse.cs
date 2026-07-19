@@ -2,12 +2,16 @@ using System;
 using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetPlayerTradesResponse : PlayFabResultCommon
+namespace PlayFab.ClientModels
 {
-	public List<TradeInfo> AcceptedTrades;
+	[Serializable]
+	public class GetPlayerTradesResponse : PlayFabResultCommon
+	{
+		public List<TradeInfo> AcceptedTrades;
 
-	public List<TradeInfo> OpenedTrades;
+		public List<TradeInfo> OpenedTrades;
+	}
+}
+namespace Ionic.Zlib
+{
 }

@@ -1,12 +1,18 @@
 using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+using System;
+using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.CloudScriptModels;
+namespace PlayFab.DataModels;
 
 [Serializable]
-public class EntityKey : PlayFabBaseModel
+public class SetObjectsRequest : PlayFabRequestCommon
 {
-	public string Id;
+	public EntityKey Entity;
 
-	public string Type;
+	public int? ExpectedProfileVersion;
+
+	public List<SetObject> Objects;
 }

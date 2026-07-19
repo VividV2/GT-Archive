@@ -1,12 +1,13 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4114)]
-public struct MusicPlayerWantsPlayingRepeatStatus_t
+namespace Steamworks
 {
-	public const int k_iCallback = 4114;
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(350)]
+	public struct EquippedProfileItemsChanged_t
+	{
+		public const int k_iCallback = 350;
 
-	public int m_nPlayingRepeatStatus;
+		public CSteamID m_steamID;
+	}
 }

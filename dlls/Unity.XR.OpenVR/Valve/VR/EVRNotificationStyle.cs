@@ -1,10 +1,12 @@
 namespace Valve.VR;
 
-public enum EVRNotificationStyle
+public enum EHiddenAreaMeshType
 {
-	None = 0,
-	Application = 100,
-	Contact_Disabled = 200,
-	Contact_Enabled = 201,
-	Contact_Active = 202
+	k_eHiddenAreaMesh_Standard,
+	k_eHiddenAreaMesh_Inverse,
+	k_eHiddenAreaMesh_LineLoop,
+	k_eHiddenAreaMesh_Max
+}
+namespace Valve.VR
+{
 }

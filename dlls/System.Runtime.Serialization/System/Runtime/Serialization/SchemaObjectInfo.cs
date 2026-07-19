@@ -21,3 +21,6 @@ internal class SchemaObjectInfo
 		this.knownTypes = knownTypes;
 	}
 }
+namespace System.Runtime.Serialization.Json
+{
+}

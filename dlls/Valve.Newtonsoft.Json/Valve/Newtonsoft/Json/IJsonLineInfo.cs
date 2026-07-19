@@ -1,10 +1,8 @@
 namespace Valve.Newtonsoft.Json;
 
-public interface IJsonLineInfo
+public enum ReferenceLoopHandling
 {
-	int LineNumber { get; }
-
-	int LinePosition { get; }
-
-	bool HasLineInfo();
+	Error,
+	Ignore,
+	Serialize
 }

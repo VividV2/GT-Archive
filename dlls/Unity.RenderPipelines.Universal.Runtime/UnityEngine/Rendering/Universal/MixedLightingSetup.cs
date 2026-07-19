@@ -1,8 +1,12 @@
-namespace UnityEngine.Rendering.Universal;
-
-public enum MixedLightingSetup
+namespace UnityEngine.Rendering.Universal.Internal
 {
-	None,
-	ShadowMask,
-	Subtractive
+}
+namespace UnityEngine.Rendering.Universal
+{
+	public enum MixedLightingSetup
+	{
+		None,
+		ShadowMask,
+		Subtractive
+	}
 }

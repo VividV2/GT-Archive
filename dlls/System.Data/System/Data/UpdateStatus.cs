@@ -12,3 +12,6 @@ public enum UpdateStatus
 	/// <summary>The current row and all remaining rows are not to be updated.</summary>
 	SkipAllRemainingRows
 }
+namespace System.Data.OleDb
+{
+}

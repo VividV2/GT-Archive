@@ -1,15 +1,8 @@
-using Unity.Collections.LowLevel.Unsafe;
-
-namespace Unity.Collections;
-
-[NativeContainer]
-[GenerateTestsForBurstCompatibility]
-internal struct NativeStreamDispose
+namespace Unity.Collections
 {
-	public UnsafeStream m_StreamData;
-
-	public void Dispose()
+	internal struct UnsafeQueueBlockHeader
 	{
-		m_StreamData.Dispose();
+		public unsafe UnsafeQueueBlockHeader* m_NextBlock;
+
+		public int m_NumItems;
 	}
-}

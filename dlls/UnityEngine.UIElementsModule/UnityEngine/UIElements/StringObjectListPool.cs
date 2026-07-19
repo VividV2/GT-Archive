@@ -1,5 +1,6 @@
-namespace UnityEngine.UIElements;
-
-internal class StringObjectListPool : ObjectListPool<string>
+namespace UnityEngine.UIElements.UIR
+{
+}
+namespace UnityEngine.UIElements.UIR
 {
 }

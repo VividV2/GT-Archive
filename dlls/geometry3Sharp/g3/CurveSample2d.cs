@@ -1,8 +1,12 @@
-namespace g3;
-
-public struct CurveSample2d(Vector2d p, Vector2d t)
+namespace g3
 {
-	public Vector2d position = p;
+}
+namespace g3
+{
+	public struct CurveSample2d(Vector2d p, Vector2d t)
+	{
+		public Vector2d position = p;
 
-	public Vector2d tangent = t;
+		public Vector2d tangent = t;
+	}
 }

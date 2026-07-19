@@ -1,54 +1,40 @@
-using System.Runtime.Remoting.Messaging;
-
-namespace System.Runtime.Remoting.Activation;
-
-internal class AppDomainLevelActivator : IActivator
+namespace System.Runtime.InteropServices.ComTypes
 {
-	private string _activationUrl;
-
-	private IActivator _next;
-
-	public ActivatorLevel Level => ActivatorLevel.AppDomain;
-
-	public IActivator NextActivator
+	[ComImport]
+	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+	[Guid("00020411-0000-0000-C000-000000000046")]
+	public interface ITypeLib2 : ITypeLib
 	{
-		get
-		{
-			return _next;
-		}
-		set
-		{
-			_next = value;
-		}
-	}
+		[PreserveSig]
+		new int GetTypeInfoCount();
 
-	public AppDomainLevelActivator(string activationUrl, IActivator next)
-	{
-		_activationUrl = activationUrl;
-		_next = next;
-	}
+		new void GetTypeInfo(int index, out ITypeInfo ppTI);
 
-	public IConstructionReturnMessage Activate(IConstructionCallMessage ctorCall)
-	{
-		IActivator activator = (IActivator)RemotingServices.Connect(typeof(IActivator), _activationUrl);
-		ctorCall.Activator = ctorCall.Activator.NextActivator;
-		IConstructionReturnMessage constructionReturnMessage;
-		try
-		{
-			constructionReturnMessage = activator.Activate(ctorCall);
-		}
-		catch (Exception e)
-		{
-			return new ConstructionResponse(e, ctorCall);
-		}
-		ObjRef obj = (ObjRef)constructionReturnMessage.ReturnValue;
-		if (RemotingServices.GetIdentityForUri(obj.URI) != null)
-		{
-			throw new RemotingException("Inconsistent state during activation; there may be two proxies for the same object");
-		}
-		object clientProxy;
-		Identity orCreateClientIdentity = RemotingServices.GetOrCreateClientIdentity(obj, null, out clientProxy);
-		RemotingServices.SetMessageTargetIdentity(ctorCall, orCreateClientIdentity);
-		return constructionReturnMessage;
+		new void GetTypeInfoType(int index, out TYPEKIND pTKind);
+
+		new void GetTypeInfoOfGuid(ref Guid guid, out ITypeInfo ppTInfo);
+
+		new void GetLibAttr(out IntPtr ppTLibAttr);
+
+		new void GetTypeComp(out ITypeComp ppTComp);
+
+		new void GetDocumentation(int index, out string strName, out string strDocString, out int dwHelpContext, out string strHelpFile);
+
+		[return: MarshalAs(UnmanagedType.Bool)]
+		new bool IsName([MarshalAs(UnmanagedType.LPWStr)] string szNameBuf, int lHashVal);
+
+		new void FindName([MarshalAs(UnmanagedType.LPWStr)] string szNameBuf, int lHashVal, [Out][MarshalAs(UnmanagedType.LPArray)] ITypeInfo[] ppTInfo, [Out][MarshalAs(UnmanagedType.LPArray)] int[] rgMemId, ref short pcFound);
+
+		[PreserveSig]
+		new void ReleaseTLibAttr(IntPtr pTLibAttr);
+
+		void GetCustData(ref Guid guid, out object pVarVal);
+
+		[LCIDConversion(1)]
+		void GetDocumentation2(int index, out string pbstrHelpString, out int pdwHelpStringContext, out string pbstrHelpStringDll);
+
+		void GetLibStatistics(IntPtr pcUniqueNames, out int pcchUniqueNames);
+
+		void GetAllCustData(IntPtr pCustData);
 	}
 }

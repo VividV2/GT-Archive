@@ -1,27 +1,2 @@
-namespace System.Security.Cryptography.Pkcs;
+namespace System.Security.Cryptography.Pkcs.Asn1;
 
-public sealed class Pkcs9LocalKeyId : Pkcs9AttributeObject
-{
-	public ReadOnlyMemory<byte> KeyId
-	{
-		get
-		{
-			throw new PlatformNotSupportedException();
-		}
-	}
-
-	public Pkcs9LocalKeyId()
-	{
-		throw new PlatformNotSupportedException();
-	}
-
-	public Pkcs9LocalKeyId(byte[] keyId)
-	{
-		throw new PlatformNotSupportedException();
-	}
-
-	public Pkcs9LocalKeyId(ReadOnlySpan<byte> keyId)
-	{
-		throw new PlatformNotSupportedException();
-	}
-}

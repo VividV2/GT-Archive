@@ -1,8 +1,12 @@
-namespace UnityEngine.Rendering.Universal;
-
-public enum DepthOfFieldMode
+namespace UnityEngine.Rendering.Universal
 {
-	Off,
-	Gaussian,
-	Bokeh
+}
+namespace UnityEngine.Rendering.Universal
+{
+	public enum DepthOfFieldMode
+	{
+		Off,
+		Gaussian,
+		Bokeh
+	}
 }

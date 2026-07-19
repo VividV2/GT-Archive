@@ -1,8 +1,9 @@
 using System;
+using System;
 
-namespace JetBrains.Annotations;
+namespace Unity.Scripting.LifecycleManagement;
 
-[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Delegate)]
-public sealed class ItemNotNullAttribute : Attribute
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
+internal sealed class ClearCacheBetweenCodeLoadsAttribute : LifecycleAttributeBase
 {
 }

@@ -1,27 +1,31 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-public struct InputMotionData_t
+namespace Steamworks
 {
-	public float rotQuatX;
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	public struct InputMotionData_t
+	{
+		public float rotQuatX;
 
-	public float rotQuatY;
+		public float rotQuatY;
 
-	public float rotQuatZ;
+		public float rotQuatZ;
 
-	public float rotQuatW;
+		public float rotQuatW;
 
-	public float posAccelX;
+		public float posAccelX;
 
-	public float posAccelY;
+		public float posAccelY;
 
-	public float posAccelZ;
+		public float posAccelZ;
 
-	public float rotVelX;
+		public float rotVelX;
 
-	public float rotVelY;
+		public float rotVelY;
 
-	public float rotVelZ;
+		public float rotVelZ;
+	}
 }

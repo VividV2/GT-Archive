@@ -1,13 +1,17 @@
 using System;
 
-namespace Oculus.Interaction;
-
-[Obsolete("Use HandDebugGizmos instead.")]
-public class HandDebugVisual : HandDebugGizmos
+namespace Oculus.Interaction
 {
-	[Obsolete("This method has been deprecated.", true)]
-	public void UpdateSkeleton()
+	[Obsolete("Use HandDebugGizmos instead.")]
+	public class HandDebugVisual : HandDebugGizmos
 	{
-		throw new NotImplementedException();
+		[Obsolete("This method has been deprecated.", true)]
+		public void UpdateSkeleton()
+		{
+			throw new NotImplementedException();
+		}
 	}
+}
+namespace Oculus.Interaction
+{
 }

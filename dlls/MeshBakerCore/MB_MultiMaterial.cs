@@ -2,6 +2,30 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
 [Serializable]
 public class MB_MultiMaterial
 {

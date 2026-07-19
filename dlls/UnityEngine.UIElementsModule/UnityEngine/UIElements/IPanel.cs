@@ -1,25 +1,42 @@
 using System;
 using System.Collections.Generic;
 
-namespace UnityEngine.UIElements;
-
-public interface IPanel : IDisposable
+namespace UnityEngine.UIElements
 {
-	VisualElement visualTree { get; }
+	public enum PanelScaleMode
+	{
+		ConstantPixelSize,
+		ConstantPhysicalSize,
+		ScaleWithScreenSize
+	}
+}
+namespace UnityEngine.UIElements
+{
+	public interface IManipulator
+	{
+		VisualElement target { get; set; }
+	}
+}
+namespace UnityEngine.UIElements
+{
+	public interface IPanel : IDisposable
+	{
+		VisualElement visualTree { get; }
 
-	EventDispatcher dispatcher { get; }
+		EventDispatcher dispatcher { get; }
 
-	ContextType contextType { get; }
+		ContextType contextType { get; }
 
-	FocusController focusController { get; }
+		FocusController focusController { get; }
 
-	ContextualMenuManager contextualMenuManager { get; }
+		ContextualMenuManager contextualMenuManager { get; }
 
-	bool isDirty { get; }
+		bool isDirty { get; }
 
-	float scaledPixelsPerPoint { get; }
+		float scaledPixelsPerPoint { get; }
 
-	VisualElement Pick(Vector2 point);
+		VisualElement Pick(Vector2 point);
 
-	VisualElement PickAll(Vector2 point, List<VisualElement> picked);
+		VisualElement PickAll(Vector2 point, List<VisualElement> picked);
+	}
 }

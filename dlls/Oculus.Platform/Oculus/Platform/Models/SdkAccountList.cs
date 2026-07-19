@@ -1,17 +1,13 @@
 using System;
-using System.Collections.Generic;
 
 namespace Oculus.Platform.Models;
 
-public class SdkAccountList : DeserializableList<SdkAccount>
+public class UserDataStoreUpdateResponse
 {
-	public SdkAccountList(IntPtr a)
+	public readonly bool Success;
+
+	public UserDataStoreUpdateResponse(IntPtr o)
 	{
-		int num = (int)(uint)CAPI.ovr_SdkAccountArray_GetSize(a);
-		_Data = new List<SdkAccount>(num);
-		for (int i = 0; i < num; i++)
-		{
-			_Data.Add(new SdkAccount(CAPI.ovr_SdkAccountArray_GetElement(a, (UIntPtr)(ulong)i)));
-		}
+		Success = CAPI.ovr_UserDataStoreUpdateResponse_GetSuccess(o);
 	}
 }

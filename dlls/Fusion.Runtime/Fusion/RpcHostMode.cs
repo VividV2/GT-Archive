@@ -1,7 +1,27 @@
-namespace Fusion;
+using UnityEngine;
+using UnityEngine;
 
-public enum RpcHostMode
+namespace Fusion
 {
-	SourceIsServer,
-	SourceIsHostPlayer
+}
+namespace Fusion
+{
+	public enum RpcHostMode
+	{
+		SourceIsServer,
+		SourceIsHostPlayer
+	}
+}
+namespace Fusion
+{
+	public interface INetworkTRSPTeleport
+	{
+		void Teleport(Vector3? position = null, Quaternion? rotation = null);
+	}
+}
+namespace Fusion
+{
+}
+namespace Fusion
+{
 }

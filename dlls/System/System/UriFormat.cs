@@ -1,12 +1,8 @@
-namespace System;
+namespace System.Diagnostics;
 
-/// <summary>Controls how URI information is escaped.</summary>
-public enum UriFormat
+internal enum InitState
 {
-	/// <summary>Escaping is performed according to the rules in RFC 2396.</summary>
-	UriEscaped = 1,
-	/// <summary>No escaping is performed.</summary>
-	Unescaped,
-	/// <summary>Characters that have a reserved meaning in the requested URI components remain escaped. All others are not escaped.</summary>
-	SafeUnescaped
+	NotInitialized,
+	Initializing,
+	Initialized
 }

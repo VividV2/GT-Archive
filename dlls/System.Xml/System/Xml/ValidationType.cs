@@ -16,3 +16,6 @@ public enum ValidationType
 	/// <summary>Validate according to XML Schema definition language (XSD) schemas, including inline XML Schemas. XML Schemas are associated with namespace URIs either by using the <see langword="schemaLocation" /> attribute or the provided <see langword="Schemas" /> property.</summary>
 	Schema
 }
+namespace System.Xml.Xsl.XsltOld
+{
+}

@@ -1,8 +1,12 @@
-namespace UnityEngine.UIElements.Layout;
-
-internal enum LayoutDirection
+namespace UnityEngine.UIElements.UIR
 {
-	Inherit,
-	LTR,
-	RTL
+}
+namespace UnityEngine.UIElements.Layout
+{
+	internal enum LayoutDirection
+	{
+		Inherit,
+		LTR,
+		RTL
+	}
 }

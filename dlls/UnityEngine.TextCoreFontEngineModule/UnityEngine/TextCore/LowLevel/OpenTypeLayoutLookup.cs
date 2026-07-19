@@ -1,34 +1,38 @@
 using System;
 using System.Collections.Generic;
 
-namespace UnityEngine.TextCore.LowLevel;
-
-[Serializable]
-internal abstract class OpenTypeLayoutLookup
+namespace UnityEngine.TextCore.LowLevel
 {
-	public uint lookupType;
-
-	public uint lookupFlag;
-
-	public uint markFilteringSet;
-
-	public abstract void InitializeLookupDictionary();
-
-	public virtual void UpdateRecords(int lookupIndex, uint glyphIndex)
+}
+namespace UnityEngine.TextCore.LowLevel
+{
+	[Serializable]
+	internal abstract class OpenTypeLayoutLookup
 	{
-	}
+		public uint lookupType;
 
-	public virtual void UpdateRecords(int lookupIndex, uint glyphIndex, float emScale)
-	{
-	}
+		public uint lookupFlag;
 
-	public virtual void UpdateRecords(int lookupIndex, List<uint> glyphIndexes)
-	{
-	}
+		public uint markFilteringSet;
 
-	public virtual void UpdateRecords(int lookupIndex, List<uint> glyphIndexes, float emScale)
-	{
-	}
+		public abstract void InitializeLookupDictionary();
 
-	public abstract void ClearRecords();
+		public virtual void UpdateRecords(int lookupIndex, uint glyphIndex)
+		{
+		}
+
+		public virtual void UpdateRecords(int lookupIndex, uint glyphIndex, float emScale)
+		{
+		}
+
+		public virtual void UpdateRecords(int lookupIndex, List<uint> glyphIndexes)
+		{
+		}
+
+		public virtual void UpdateRecords(int lookupIndex, List<uint> glyphIndexes, float emScale)
+		{
+		}
+
+		public abstract void ClearRecords();
+	}
 }

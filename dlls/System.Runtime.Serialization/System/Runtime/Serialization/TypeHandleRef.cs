@@ -1,27 +1,31 @@
-namespace System.Runtime.Serialization;
-
-internal class TypeHandleRef
+namespace System.Runtime.Serialization
 {
-	private RuntimeTypeHandle value;
-
-	public RuntimeTypeHandle Value
+	internal class TypeHandleRef
 	{
-		get
+		private RuntimeTypeHandle value;
+
+		public RuntimeTypeHandle Value
 		{
-			return value;
+			get
+			{
+				return value;
+			}
+			set
+			{
+				this.value = value;
+			}
 		}
-		set
+
+		public TypeHandleRef()
+		{
+		}
+
+		public TypeHandleRef(RuntimeTypeHandle value)
 		{
 			this.value = value;
 		}
 	}
-
-	public TypeHandleRef()
-	{
-	}
-
-	public TypeHandleRef(RuntimeTypeHandle value)
-	{
-		this.value = value;
-	}
+}
+namespace System.Runtime.Serialization
+{
 }

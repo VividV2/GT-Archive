@@ -1,19 +1,47 @@
 using System;
-using System.Collections.Generic;
+using System;
 
-namespace UnityEngine.UIElements;
-
-public static class UxmlDescriptionCache
+namespace UnityEngine.UIElements
 {
-	private static readonly Dictionary<Type, UxmlAttributeNames[]> s_NamesPerType = new Dictionary<Type, UxmlAttributeNames[]>();
-
-	public static void RegisterType(Type type, UxmlAttributeNames[] attributeNames)
+	public interface ITextSelection
 	{
-		s_NamesPerType[type] = attributeNames;
-	}
+		bool isSelectable { get; set; }
 
-	internal static bool TryGetCachedDescription(Type type, out UxmlAttributeNames[] attributes)
-	{
-		return s_NamesPerType.TryGetValue(type, out attributes);
+		[Obsolete("cursorColor is deprecated. Please use the corresponding USS property (--unity-cursor-color) instead.")]
+		Color cursorColor { get; set; }
+
+		[Obsolete("selectionColor is deprecated. Please use the corresponding USS property (--unity-selection-color) instead.")]
+		Color selectionColor { get; set; }
+
+		int cursorIndex { get; set; }
+
+		bool doubleClickSelectsWord { get; set; }
+
+		int selectIndex { get; set; }
+
+		bool tripleClickSelectsLine { get; set; }
+
+		bool selectAllOnFocus { get; set; }
+
+		bool selectAllOnMouseUp { get; set; }
+
+		Vector2 cursorPosition { get; }
+
+		internal float lineHeightAtCursorPosition { get; }
+
+		internal float cursorWidth { get; set; }
+
+		bool HasSelection();
+
+		void SelectAll();
+
+		void SelectNone();
+
+		void SelectRange(int cursorIndex, int selectionIndex);
+
+		internal void MoveTextEnd();
 	}
+}
+namespace UnityEngine.UIElements
+{
 }

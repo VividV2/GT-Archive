@@ -1,14 +1,6 @@
-namespace System.Runtime.CompilerServices;
-
-/// <summary>Represents the values of run-time variables.</summary>
-public interface IRuntimeVariables
+namespace System.Management.Instrumentation
 {
-	/// <summary>Gets a count of the run-time variables.</summary>
-	/// <returns>The number of run-time variables.</returns>
-	int Count { get; }
-
-	/// <summary>Gets the value of the run-time variable at the specified index.</summary>
-	/// <param name="index">The zero-based index of the run-time variable whose value is to be returned.</param>
-	/// <returns>The value of the run-time variable.</returns>
-	object this[int index] { get; set; }
+}
+namespace System.IO.Pipes
+{
 }

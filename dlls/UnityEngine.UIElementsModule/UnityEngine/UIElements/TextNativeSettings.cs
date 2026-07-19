@@ -1,24 +1,28 @@
-namespace UnityEngine.UIElements;
-
-internal struct TextNativeSettings
+namespace UnityEngine.UIElements
 {
-	public string text;
+	internal struct TextNativeSettings
+	{
+		public string text;
 
-	public Font font;
+		public Font font;
 
-	public int size;
+		public int size;
 
-	public float scaling;
+		public float scaling;
 
-	public FontStyle style;
+		public FontStyle style;
 
-	public Color color;
+		public Color color;
 
-	public TextAnchor anchor;
+		public TextAnchor anchor;
 
-	public bool wordWrap;
+		public bool wordWrap;
 
-	public float wordWrapWidth;
+		public float wordWrapWidth;
 
-	public bool richText;
+		public bool richText;
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

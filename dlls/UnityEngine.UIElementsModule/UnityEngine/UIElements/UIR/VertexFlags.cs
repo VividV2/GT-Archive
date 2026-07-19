@@ -1,10 +1,17 @@
-namespace UnityEngine.UIElements.UIR;
-
-internal enum VertexFlags
+namespace UnityEngine.UIElements.Layout
 {
-	IsSolid,
-	IsText,
-	IsTextured,
-	IsDynamic,
-	IsSvgGradients
+}
+namespace UnityEngine.UIElements.UIR
+{
+	internal enum VertexFlags
+	{
+		IsSolid,
+		IsText,
+		IsTextured,
+		IsDynamic,
+		IsSvgGradients
+	}
+}
+namespace UnityEngine.UIElements.UIR
+{
 }

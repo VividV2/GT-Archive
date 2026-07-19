@@ -1,8 +1,12 @@
 using System.Threading.Tasks;
 
-namespace Modio.Monetization;
-
-public interface IModioStorefrontService
+namespace Modio.Monetization
 {
-	Task<Error> OpenPlatformPurchaseFlow();
+	public interface IModioStorefrontService
+	{
+		Task<Error> OpenPlatformPurchaseFlow();
+	}
+}
+namespace Modio.Mods
+{
 }

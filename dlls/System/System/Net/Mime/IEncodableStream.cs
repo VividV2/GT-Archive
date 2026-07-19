@@ -1,14 +1,8 @@
-using System.IO;
+namespace System.Diagnostics;
 
-namespace System.Net.Mime;
-
-internal interface IEncodableStream
+public enum PerformanceCounterCategoryType
 {
-	int DecodeBytes(byte[] buffer, int offset, int count);
-
-	int EncodeBytes(byte[] buffer, int offset, int count);
-
-	string GetEncodedString();
-
-	Stream GetStream();
+	SingleInstance = 0,
+	MultiInstance = 1,
+	Unknown = -1
 }

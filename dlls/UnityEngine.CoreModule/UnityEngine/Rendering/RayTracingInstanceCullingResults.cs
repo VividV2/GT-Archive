@@ -1,11 +1,15 @@
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.Rendering;
-
-[MovedFrom("UnityEngine.Experimental.Rendering")]
-public struct RayTracingInstanceCullingResults
+namespace UnityEngine.Diagnostics
 {
-	public RayTracingInstanceMaterialCRC[] materialsCRC;
+}
+namespace UnityEngine.Rendering
+{
+	[MovedFrom("UnityEngine.Experimental.Rendering")]
+	public struct RayTracingInstanceCullingResults
+	{
+		public RayTracingInstanceMaterialCRC[] materialsCRC;
 
-	public bool transformsChanged;
+		public bool transformsChanged;
+	}
 }

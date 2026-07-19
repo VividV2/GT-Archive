@@ -1,11 +1,15 @@
-namespace System.Xml;
-
-internal enum ValueHandleConstStringType
+namespace System.Xml
 {
-	String,
-	Number,
-	Array,
-	Object,
-	Boolean,
-	Null
+	internal enum ValueHandleConstStringType
+	{
+		String,
+		Number,
+		Array,
+		Object,
+		Boolean,
+		Null
+	}
+}
+namespace System.Xml
+{
 }

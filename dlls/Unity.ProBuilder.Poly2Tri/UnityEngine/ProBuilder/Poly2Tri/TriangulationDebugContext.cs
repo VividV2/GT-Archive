@@ -1,13 +1,3 @@
-namespace UnityEngine.ProBuilder.Poly2Tri;
-
-internal abstract class TriangulationDebugContext
+namespace UnityEngine.ProBuilder.Poly2Tri
 {
-	protected TriangulationContext _tcx;
-
-	public TriangulationDebugContext(TriangulationContext tcx)
-	{
-		_tcx = tcx;
-	}
-
-	public abstract void Clear();
 }

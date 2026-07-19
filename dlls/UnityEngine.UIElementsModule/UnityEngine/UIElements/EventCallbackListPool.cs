@@ -1,32 +1,36 @@
 using System.Collections.Generic;
 
-namespace UnityEngine.UIElements;
-
-internal class EventCallbackListPool
+namespace UnityEngine.UIElements
 {
-	private readonly Stack<EventCallbackList> m_Stack = new Stack<EventCallbackList>();
-
-	public EventCallbackList Get(EventCallbackList initializer)
+	internal class EventCallbackListPool
 	{
-		EventCallbackList eventCallbackList;
-		if (m_Stack.Count == 0)
+		private readonly Stack<EventCallbackList> m_Stack = new Stack<EventCallbackList>();
+
+		public EventCallbackList Get(EventCallbackList initializer)
 		{
-			eventCallbackList = ((initializer == null) ? new EventCallbackList() : new EventCallbackList(initializer));
-		}
-		else
-		{
-			eventCallbackList = m_Stack.Pop();
-			if (initializer != null)
+			EventCallbackList eventCallbackList;
+			if (m_Stack.Count == 0)
 			{
-				eventCallbackList.AddRange(initializer);
+				eventCallbackList = ((initializer == null) ? new EventCallbackList() : new EventCallbackList(initializer));
 			}
+			else
+			{
+				eventCallbackList = m_Stack.Pop();
+				if (initializer != null)
+				{
+					eventCallbackList.AddRange(initializer);
+				}
+			}
+			return eventCallbackList;
 		}
-		return eventCallbackList;
-	}
 
-	public void Release(EventCallbackList element)
-	{
-		element.Clear();
-		m_Stack.Push(element);
+		public void Release(EventCallbackList element)
+		{
+			element.Clear();
+			m_Stack.Push(element);
+		}
 	}
+}
+namespace UnityEngine.UIElements
+{
 }

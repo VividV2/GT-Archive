@@ -1,13 +1,8 @@
-namespace System.Drawing.Imaging;
+namespace System.Drawing;
 
-/// <summary>Specifies the type of color data in the system palette. The data can be color data with alpha, grayscale data only, or halftone data.</summary>
-[Flags]
-public enum PaletteFlags
+internal struct CGSize64
 {
-	/// <summary>Alpha data.</summary>
-	HasAlpha = 1,
-	/// <summary>Grayscale data.</summary>
-	GrayScale = 2,
-	/// <summary>Halftone data.</summary>
-	Halftone = 4
+	public double width;
+
+	public double height;
 }

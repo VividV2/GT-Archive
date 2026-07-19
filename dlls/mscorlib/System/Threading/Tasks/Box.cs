@@ -1,11 +1,2 @@
-namespace System.Threading.Tasks;
+namespace System.Text;
 
-internal class Box<T>
-{
-	internal T Value;
-
-	internal Box(T value)
-	{
-		Value = value;
-	}
-}

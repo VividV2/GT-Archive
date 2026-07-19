@@ -1,39 +1,29 @@
 using System;
+using System.Runtime.InteropServices;
+using UnityEngine.Scripting;
+using System;
+using System.Runtime.InteropServices;
+using UnityEngine.Scripting;
 
-namespace UnityEngine.Internal;
+namespace UnityEngine.Analytics;
 
 [Serializable]
-[AttributeUsage(AttributeTargets.Parameter | AttributeTargets.GenericParameter)]
-public class DefaultValueAttribute : Attribute
+[StructLayout(LayoutKind.Sequential)]
+[RequiredByNativeCode(GenerateProxy = true)]
+internal class UaaLApplicationLaunchAnalytic : AnalyticsEventBase
 {
-	private object DefaultValue;
+	public int launch_type;
 
-	public object Value => DefaultValue;
+	public int launch_process_type;
 
-	public DefaultValueAttribute(string value)
+	public UaaLApplicationLaunchAnalytic()
+		: base("UaaLApplicationLaunch", 1)
 	{
-		DefaultValue = value;
 	}
 
-	public override bool Equals(object obj)
+	[RequiredByNativeCode]
+	public static UaaLApplicationLaunchAnalytic CreateUaaLApplicationLaunchAnalytic()
 	{
-		if (!(obj is DefaultValueAttribute defaultValueAttribute))
-		{
-			return false;
-		}
-		if (DefaultValue == null)
-		{
-			return defaultValueAttribute.Value == null;
-		}
-		return DefaultValue.Equals(defaultValueAttribute.Value);
-	}
-
-	public override int GetHashCode()
-	{
-		if (DefaultValue == null)
-		{
-			return base.GetHashCode();
-		}
-		return DefaultValue.GetHashCode();
+		return new UaaLApplicationLaunchAnalytic();
 	}
 }

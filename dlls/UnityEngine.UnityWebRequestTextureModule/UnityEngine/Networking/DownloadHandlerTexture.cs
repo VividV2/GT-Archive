@@ -1,84 +1,37 @@
 using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using Unity.Collections;
-using UnityEngine.Bindings;
+using System;
 
 namespace UnityEngine.Networking;
 
-[StructLayout(LayoutKind.Sequential)]
-[NativeHeader("Modules/UnityWebRequestTexture/Public/DownloadHandlerTexture.h")]
-public sealed class DownloadHandlerTexture : DownloadHandler
+public static class UnityWebRequestTexture
 {
-	internal new static class BindingsMarshaller
+	public static UnityWebRequest GetTexture(string uri)
 	{
-		public static IntPtr ConvertToNative(DownloadHandlerTexture handler)
-		{
-			return handler.m_Ptr;
-		}
+		return GetTexture(uri, nonReadable: false);
 	}
 
-	private NativeArray<byte> m_NativeData;
-
-	public Texture2D texture => InternalGetTextureNative();
-
-	private static IntPtr Create([Unmarshalled] DownloadHandlerTexture obj, DownloadedTextureParams parameters)
+	public static UnityWebRequest GetTexture(Uri uri)
 	{
-		return Create_Injected(obj, ref parameters);
+		return GetTexture(uri, nonReadable: false);
 	}
 
-	private void InternalCreateTexture(DownloadedTextureParams parameters)
+	public static UnityWebRequest GetTexture(string uri, bool nonReadable)
 	{
-		m_Ptr = Create(this, parameters);
+		return new UnityWebRequest(uri, "GET", new DownloadHandlerTexture(!nonReadable), null);
 	}
 
-	public DownloadHandlerTexture()
-		: this(readable: true)
+	public static UnityWebRequest GetTexture(Uri uri, bool nonReadable)
 	{
+		return new UnityWebRequest(uri, "GET", new DownloadHandlerTexture(!nonReadable), null);
 	}
 
-	public DownloadHandlerTexture(bool readable)
+	public static UnityWebRequest GetTexture(string uri, DownloadedTextureParams parameters)
 	{
-		DownloadedTextureParams parameters = DownloadedTextureParams.Default;
-		parameters.readable = readable;
-		InternalCreateTexture(parameters);
+		return new UnityWebRequest(uri, "GET", new DownloadHandlerTexture(parameters), null);
 	}
 
-	public DownloadHandlerTexture(DownloadedTextureParams parameters)
+	public static UnityWebRequest GetTexture(Uri uri, DownloadedTextureParams parameters)
 	{
-		InternalCreateTexture(parameters);
+		return new UnityWebRequest(uri, "GET", new DownloadHandlerTexture(parameters), null);
 	}
-
-	protected override NativeArray<byte> GetNativeData()
-	{
-		return DownloadHandler.InternalGetNativeArray(this, ref m_NativeData);
-	}
-
-	public override void Dispose()
-	{
-		DownloadHandler.DisposeNativeArray(ref m_NativeData);
-		base.Dispose();
-	}
-
-	[NativeThrows]
-	private Texture2D InternalGetTextureNative()
-	{
-		IntPtr intPtr = BindingsMarshaller.ConvertToNative(this);
-		if (intPtr == (IntPtr)0)
-		{
-			ThrowHelper.ThrowNullReferenceException(this);
-		}
-		return Unmarshal.UnmarshalUnityObject<Texture2D>(InternalGetTextureNative_Injected(intPtr));
-	}
-
-	public static Texture2D GetContent(UnityWebRequest www)
-	{
-		return DownloadHandler.GetCheckedDownloader<DownloadHandlerTexture>(www).texture;
-	}
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern IntPtr Create_Injected(DownloadHandlerTexture obj, [In] ref DownloadedTextureParams parameters);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern IntPtr InternalGetTextureNative_Injected(IntPtr _unity_self);
 }

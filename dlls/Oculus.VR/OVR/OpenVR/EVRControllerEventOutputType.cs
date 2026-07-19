@@ -1,7 +1,11 @@
-namespace OVR.OpenVR;
-
-public enum EVRControllerEventOutputType
+namespace OVR.OpenVR
 {
-	ControllerEventOutput_OSEvents,
-	ControllerEventOutput_VREvents
+	public enum EVRControllerEventOutputType
+	{
+		ControllerEventOutput_OSEvents,
+		ControllerEventOutput_VREvents
+	}
+}
+namespace OVR.OpenVR
+{
 }

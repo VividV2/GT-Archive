@@ -1,102 +1,84 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity;
+using System.Runtime.Serialization;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System;
 
-namespace System.Data;
-
-/// <summary>Represents a collection of <see cref="T:System.Data.DataRow" /> objects returned from a query.</summary>
-/// <typeparam name="TRow">The type of objects in the source sequence, typically <see cref="T:System.Data.DataRow" />.</typeparam>
-public class EnumerableRowCollection<TRow> : EnumerableRowCollection, IEnumerable<TRow>, IEnumerable
+namespace System.Data
 {
-	private readonly DataTable _table;
-
-	private readonly IEnumerable<TRow> _enumerableRows;
-
-	private readonly List<Func<TRow, bool>> _listOfPredicates;
-
-	private readonly SortExpressionBuilder<TRow> _sortExpression;
-
-	private readonly Func<TRow, TRow> _selector;
-
-	internal override Type ElementType => typeof(TRow);
-
-	internal IEnumerable<TRow> EnumerableRows => _enumerableRows;
-
-	internal override DataTable Table => _table;
-
-	internal EnumerableRowCollection(IEnumerable<TRow> enumerableRows, bool isDataViewable, DataTable table)
+	/// <summary>This type is used as a base class for typed-<see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool, and is not intended to be used directly from your code.</summary>
+	/// <typeparam name="T">The type of objects in the source sequence represented by the table, typically <see cref="T:System.Data.DataRow" />.</typeparam>
+	/// <summary>This type is used as a base class for typed-<see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool, and is not intended to be used directly from your code.</summary>
+	/// <typeparam name="T">The type of objects in the source sequence represented by the table, typically <see cref="T:System.Data.DataRow" />.</typeparam>
+	[Serializable]
+	public abstract class TypedTableBase<T> : DataTable, IEnumerable<T>, IEnumerable where T : DataRow
 	{
-		_enumerableRows = enumerableRows;
-		if (isDataViewable)
+		/// <summary>Initializes a new <see cref="T:System.Data.TypedTableBase`1" />. This method supports typed-<see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool. This type is not intended to be used directly from your code.</summary>
+		/// <summary>Initializes a new <see cref="T:System.Data.TypedTableBase`1" />. This method supports typed-<see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool. This type is not intended to be used directly from your code.</summary>
+		protected TypedTableBase()
 		{
-			_table = table;
 		}
-		_listOfPredicates = new List<Func<TRow, bool>>();
-		_sortExpression = new SortExpressionBuilder<TRow>();
-	}
 
-	internal EnumerableRowCollection(DataTable table)
-	{
-		_table = table;
-		_enumerableRows = table.Rows.Cast<TRow>();
-		_listOfPredicates = new List<Func<TRow, bool>>();
-		_sortExpression = new SortExpressionBuilder<TRow>();
-	}
-
-	internal EnumerableRowCollection(EnumerableRowCollection<TRow> source, IEnumerable<TRow> enumerableRows, Func<TRow, TRow> selector)
-	{
-		_enumerableRows = enumerableRows;
-		_selector = selector;
-		if (source != null)
+		/// <summary>Initializes a new <see cref="T:System.Data.TypedTableBase`1" />. This method supports typed-<see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool. This method is not intended to be used directly from your code.</summary>
+		/// <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that contains data to construct the object.</param>
+		/// <param name="context">The streaming context for the object being deserializad.</param>
+		/// <summary>Initializes a new <see cref="T:System.Data.TypedTableBase`1" />. This method supports typed-<see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool. This method is not intended to be used directly from your code.</summary>
+		/// <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that contains data to construct the object.</param>
+		/// <param name="context">The streaming context for the object being deserializad.</param>
+		protected TypedTableBase(SerializationInfo info, StreamingContext context)
+			: base(info, context)
 		{
-			if (source._selector == null)
-			{
-				_table = source._table;
-			}
-			_listOfPredicates = new List<Func<TRow, bool>>(source._listOfPredicates);
-			_sortExpression = source._sortExpression.Clone();
 		}
-		else
+
+		/// <summary>Returns an enumerator for the typed-<see cref="T:System.Data.DataRow" />. This method supports typed-<see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool. This method is not intended to be used directly from your code.</summary>
+		/// <returns>An object that implements the <see cref="T:System.Collections.Generic.IEnumerator`1" /> interface.</returns>
+		/// <summary>Returns an enumerator for the typed-<see cref="T:System.Data.DataRow" />. This method supports typed-<see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool. This method is not intended to be used directly from your code.</summary>
+		/// <returns>An object that implements the <see cref="T:System.Collections.Generic.IEnumerator`1" /> interface.</returns>
+		public IEnumerator<T> GetEnumerator()
 		{
-			_listOfPredicates = new List<Func<TRow, bool>>();
-			_sortExpression = new SortExpressionBuilder<TRow>();
+			return Enumerable.Cast<T>(base.Rows).GetEnumerator();
+		}
+
+		/// <summary>Returns an enumerator for the typed-<see cref="T:System.Data.DataRow" />. This method supports typed-<see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool. This method is not intended to be used directly from your code.</summary>
+		/// <returns>An object that implements the <see cref="T:System.Collections.Generic.IEnumerator`1" /> interface.</returns>
+		/// <summary>Returns an enumerator for the typed-<see cref="T:System.Data.DataRow" />. This method supports typed-<see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool. This method is not intended to be used directly from your code.</summary>
+		/// <returns>An object that implements the <see cref="T:System.Collections.Generic.IEnumerator`1" /> interface.</returns>
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return GetEnumerator();
+		}
+
+		/// <summary>Converts the elements of an <see cref="T:System.Data.TypedTableBase`1" /> to the specified type. This method supports typed <see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool. This method is not intended to be used directly from your code.</summary>
+		/// <typeparam name="TResult" />
+		/// <returns>An <see cref="T:System.Data.EnumerableRowCollection" /> that contains each element of the source sequence converted to the specified type.</returns>
+		/// <summary>Converts the elements of an <see cref="T:System.Data.TypedTableBase`1" /> to the specified type. This method supports typed <see cref="T:System.Data.DataTable" /> object generation by Visual Studio and the XSD.exe .NET Framework tool. This method is not intended to be used directly from your code.</summary>
+		/// <typeparam name="TResult" />
+		/// <returns>An <see cref="T:System.Data.EnumerableRowCollection" /> that contains each element of the source sequence converted to the specified type.</returns>
+		public EnumerableRowCollection<TResult> Cast<TResult>()
+		{
+			return new EnumerableRowCollection<T>(this).Cast<TResult>();
 		}
 	}
-
-	/// <summary>Returns an enumerator for the collection of <see cref="T:System.Data.DataRow" /> objects.</summary>
-	/// <returns>An <see cref="T:System.Collections.IEnumerator" /> that can be used to traverse the collection of <see cref="T:System.Data.DataRow" /> objects.</returns>
-	IEnumerator IEnumerable.GetEnumerator()
+}
+namespace Unity
+{
+	internal sealed class ThrowStub : ObjectDisposedException
 	{
-		return GetEnumerator();
+		public static void ThrowNotSupportedException()
+		{
+			throw new PlatformNotSupportedException();
+		}
 	}
-
-	/// <summary>Returns an enumerator for the collection of contained row objects.</summary>
-	/// <returns>A strongly-typed <see cref="T:System.Collections.Generic.IEnumerator`1" /> that can be used to traverse the collection of <paramref name="TRow" /> objects.</returns>
-	public IEnumerator<TRow> GetEnumerator()
-	{
-		return _enumerableRows.GetEnumerator();
-	}
-
-	internal void AddPredicate(Func<TRow, bool> pred)
-	{
-		_listOfPredicates.Add(pred);
-	}
-
-	internal void AddSortExpression<TKey>(Func<TRow, TKey> keySelector, bool isDescending, bool isOrderBy)
-	{
-		AddSortExpression(keySelector, Comparer<TKey>.Default, isDescending, isOrderBy);
-	}
-
-	internal void AddSortExpression<TKey>(Func<TRow, TKey> keySelector, IComparer<TKey> comparer, bool isDescending, bool isOrderBy)
-	{
-		DataSetUtil.CheckArgumentNull(keySelector, "keySelector");
-		DataSetUtil.CheckArgumentNull(comparer, "comparer");
-		_sortExpression.Add((TRow input) => keySelector(input), (object val1, object val2) => ((!isDescending) ? 1 : (-1)) * comparer.Compare((TKey)val1, (TKey)val2), isOrderBy);
-	}
-
-	internal EnumerableRowCollection()
-	{
-		Unity.ThrowStub.ThrowNotSupportedException();
-	}
+}
+namespace System.Data
+{
+}
+namespace System.Data
+{
 }

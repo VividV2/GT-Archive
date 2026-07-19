@@ -1,27 +1,23 @@
-using System.Runtime.InteropServices;
-using Fusion;
-using Fusion.CodeGen;
-using UnityEngine;
+using System.Collections.Generic;
+using System.Collections.Generic;
 
-[StructLayout(LayoutKind.Explicit, Size = 88)]
-[NetworkStructWeaved(22)]
-public struct TagData : INetworkStruct
+public interface IRequestableOwnershipGuardCallbacks
 {
-	[FieldOffset(4)]
-	public NetworkBool isCurrentlyTag;
+	void OnOwnershipTransferred(NetPlayer toPlayer, NetPlayer fromPlayer);
 
-	[FieldOffset(8)]
-	[FixedBufferProperty(typeof(NetworkArray<int>), typeof(UnityArraySurrogate@ElementReaderWriterInt32), 20, order = -2147483647)]
-	[WeaverGenerated]
-	[SerializeField]
-	private FixedStorage@20 _infectedPlayerList;
+	bool OnOwnershipRequest(NetPlayer fromPlayer);
 
-	[Networked]
-	[Capacity(20)]
-	[NetworkedWeavedArray(20, 1, typeof(Fusion.ElementReaderWriterInt32))]
-	[NetworkedWeaved(2, 20)]
-	public unsafe NetworkArray<int> infectedPlayerList => new NetworkArray<int>(Native.ReferenceToPointer(ref _infectedPlayerList), 20, Fusion.ElementReaderWriterInt32.GetInstance());
+	void OnMyOwnerLeft();
 
-	[field: FieldOffset(0)]
-	public int currentItID { get; set; }
+	bool OnMasterClientAssistedTakeoverRequest(NetPlayer fromPlayer, NetPlayer toPlayer);
+
+	void OnMyCreatorLeft();
+}
+public struct TelemetryData
+{
+	public string EventName;
+
+	public string[] CustomTags;
+
+	public Dictionary<string, string> BodyData;
 }

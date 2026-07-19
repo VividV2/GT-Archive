@@ -1,25 +1,32 @@
 using System.ComponentModel;
 using System.Xml.XPath;
 
-namespace System.Xml.Xsl.Runtime;
-
-[EditorBrowsable(EditorBrowsableState.Never)]
-public struct PrecedingSiblingIterator
+namespace System.Xml
 {
-	private XmlNavigatorFilter filter;
-
-	private XPathNavigator navCurrent;
-
-	public XPathNavigator Current => navCurrent;
-
-	public void Create(XPathNavigator context, XmlNavigatorFilter filter)
+}
+namespace System.Xml.Xsl.Runtime
+{
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public struct PrecedingSiblingIterator
 	{
-		navCurrent = XmlQueryRuntime.SyncToNavigator(navCurrent, context);
-		this.filter = filter;
-	}
+		private XmlNavigatorFilter filter;
 
-	public bool MoveNext()
-	{
-		return filter.MoveToPreviousSibling(navCurrent);
+		private XPathNavigator navCurrent;
+
+		public XPathNavigator Current => navCurrent;
+
+		public void Create(XPathNavigator context, XmlNavigatorFilter filter)
+		{
+			navCurrent = XmlQueryRuntime.SyncToNavigator(navCurrent, context);
+			this.filter = filter;
+		}
+
+		public bool MoveNext()
+		{
+			return filter.MoveToPreviousSibling(navCurrent);
+		}
 	}
+}
+namespace System.Xml.Xsl
+{
 }

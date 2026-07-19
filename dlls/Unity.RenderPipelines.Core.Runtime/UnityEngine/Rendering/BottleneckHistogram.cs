@@ -1,12 +1,28 @@
-namespace UnityEngine.Rendering;
-
-internal struct BottleneckHistogram
+namespace UnityEngine.Rendering
 {
-	internal float PresentLimited;
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine.Rendering
+{
+	internal struct BottleneckHistogram
+	{
+		internal float PresentLimited;
 
-	internal float CPU;
+		internal float CPU;
 
-	internal float GPU;
+		internal float GPU;
 
-	internal float Balanced;
+		internal float Balanced;
+	}
+}
+namespace UnityEngine.Rendering.RenderGraphModule
+{
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine.Rendering.RenderGraphModule
+{
 }

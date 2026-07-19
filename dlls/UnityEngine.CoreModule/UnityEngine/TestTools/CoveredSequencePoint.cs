@@ -1,20 +1,42 @@
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using UnityEngine.Bindings;
+using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
 
-namespace UnityEngine.TestTools;
-
-[NativeType(CodegenOptions.Custom, "ManagedCoveredSequencePoint", Header = "Runtime/Scripting/ScriptingCoverage.bindings.h")]
-public struct CoveredSequencePoint
+namespace UnityEngine.Internal
 {
-	public MethodBase method;
+	[ExcludeFromDocs]
+	[NativeHeader("Runtime/GfxDevice/HDROutputSettings.h")]
+	internal static class InternalHDROutputFaking
+	{
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		[FreeFunction("HDROutputSettingsBindings::SetFakeHDROutputEnabled")]
+		[ExcludeFromDocs]
+		internal static extern void SetEnabled(bool enabled);
+	}
+}
+namespace UnityEngine.TestTools
+{
+	[NativeType(CodegenOptions.Custom, "ManagedCoveredSequencePoint", Header = "Runtime/Scripting/ScriptingCoverage.bindings.h")]
+	public struct CoveredSequencePoint
+	{
+		public System.Reflection.MethodBase method;
 
-	public uint ilOffset;
+		public uint ilOffset;
 
-	public uint hitCount;
+		public uint hitCount;
 
-	public string filename;
+		public string filename;
 
-	public uint line;
+		public uint line;
 
-	public uint column;
+		public uint column;
+	}
+}
+namespace UnityEngine.Analytics
+{
+}
+namespace UnityEngine.Playables
+{
 }

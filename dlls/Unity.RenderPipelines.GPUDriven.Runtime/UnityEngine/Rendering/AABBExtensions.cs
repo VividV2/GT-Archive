@@ -1,22 +1,26 @@
-namespace UnityEngine.Rendering;
-
-internal static class AABBExtensions
+namespace UnityEngine.Rendering
 {
-	public static AABB ToAABB(this Bounds bounds)
+}
+namespace UnityEngine.Rendering
+{
+	internal static class AABBExtensions
 	{
-		return new AABB
+		public static AABB ToAABB(this Bounds bounds)
 		{
-			center = bounds.center,
-			extents = bounds.extents
-		};
-	}
+			return new AABB
+			{
+				center = bounds.center,
+				extents = bounds.extents
+			};
+		}
 
-	public static Bounds ToBounds(this AABB aabb)
-	{
-		return new Bounds
+		public static Bounds ToBounds(this AABB aabb)
 		{
-			center = aabb.center,
-			extents = aabb.extents
-		};
+			return new Bounds
+			{
+				center = aabb.center,
+				extents = aabb.extents
+			};
+		}
 	}
 }

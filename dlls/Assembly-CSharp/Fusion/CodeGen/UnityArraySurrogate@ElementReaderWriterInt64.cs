@@ -1,32 +1,11 @@
-using System;
-using Fusion.Internal;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Fusion.CodeGen;
-
-[Serializable]
-[WeaverGenerated]
-internal class UnityArraySurrogate@ElementReaderWriterInt64 : UnityArraySurrogate<long, Fusion.ElementReaderWriterInt64>
+namespace Viveport.Internal
 {
-	[WeaverGenerated]
-	public long[] Data = Array.Empty<long>();
-
-	[WeaverGenerated]
-	public override long[] DataProperty
-	{
-		[WeaverGenerated]
-		get
-		{
-			return Data;
-		}
-		[WeaverGenerated]
-		set
-		{
-			Data = value;
-		}
-	}
-
-	[WeaverGenerated]
-	public UnityArraySurrogate@ElementReaderWriterInt64()
-	{
-	}
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+	internal delegate void IAPurchaseCallback(int code, [MarshalAs(UnmanagedType.LPStr)] string message);
+}
+namespace GorillaTag.Cosmetics
+{
 }

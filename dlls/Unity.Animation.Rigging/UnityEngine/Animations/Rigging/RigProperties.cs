@@ -1,8 +1,8 @@
 namespace UnityEngine.Animations.Rigging;
 
-internal struct RigProperties
+internal struct Property
 {
-	public static string s_Weight = "m_Weight";
+	public string name;
 
-	public Component component;
+	public PropertyDescriptor descriptor;
 }

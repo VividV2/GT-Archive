@@ -1,12 +1,2 @@
-using UnityEngine;
+namespace Docking;
 
-public interface IGameProjectileLauncher
-{
-	void OnProjectileInit(GRRangedEnemyProjectile projectile)
-	{
-	}
-
-	void OnProjectileHit(GRRangedEnemyProjectile projectile, Collision collision)
-	{
-	}
-}

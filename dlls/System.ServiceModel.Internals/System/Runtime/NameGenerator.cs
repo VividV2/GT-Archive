@@ -1,24 +1,28 @@
 using System.Globalization;
 using System.Threading;
 
-namespace System.Runtime;
-
-internal class NameGenerator
+namespace System.Runtime
 {
-	private static NameGenerator nameGenerator = new NameGenerator();
-
-	private long id;
-
-	private string prefix;
-
-	private NameGenerator()
+	internal class NameGenerator
 	{
-		prefix = "_" + Guid.NewGuid().ToString().Replace('-', '_') + "_";
-	}
+		private static NameGenerator nameGenerator = new NameGenerator();
 
-	public static string Next()
-	{
-		long num = Interlocked.Increment(ref nameGenerator.id);
-		return nameGenerator.prefix + num.ToString(CultureInfo.InvariantCulture);
+		private long id;
+
+		private string prefix;
+
+		private NameGenerator()
+		{
+			prefix = "_" + Guid.NewGuid().ToString().Replace('-', '_') + "_";
+		}
+
+		public static string Next()
+		{
+			long num = Interlocked.Increment(ref nameGenerator.id);
+			return nameGenerator.prefix + num.ToString(CultureInfo.InvariantCulture);
+		}
 	}
+}
+namespace System.Runtime
+{
 }

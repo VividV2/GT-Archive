@@ -14,3 +14,6 @@ public interface ICertificatePolicy
 	///   <see langword="true" /> if the certificate should be honored; otherwise, <see langword="false" />.</returns>
 	bool CheckValidationResult(ServicePoint srvPoint, X509Certificate certificate, WebRequest request, int certificateProblem);
 }
+namespace System.Net
+{
+}

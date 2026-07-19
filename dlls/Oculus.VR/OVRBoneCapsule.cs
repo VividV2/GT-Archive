@@ -1,31 +1,13 @@
-using UnityEngine;
-
-public class OVRBoneCapsule
+internal static class OVREnumerable
 {
-	public short BoneIndex { get; set; }
-
-	public Rigidbody CapsuleRigidbody { get; set; }
-
-	public CapsuleCollider CapsuleCollider { get; set; }
-
-	public OVRBoneCapsule()
+	public unsafe static int CopyTo<T>(this OVREnumerable<T> enumerable, T* memory) where T : unmanaged
 	{
-	}
-
-	public OVRBoneCapsule(short boneIndex, Rigidbody capsuleRigidBody, CapsuleCollider capsuleCollider)
-	{
-		BoneIndex = boneIndex;
-		CapsuleRigidbody = capsuleRigidBody;
-		CapsuleCollider = capsuleCollider;
-	}
-
-	public void Cleanup()
-	{
-		if (CapsuleRigidbody != null)
+		int result = 0;
+		int result;
+		foreach (T item in enumerable)
 		{
-			Object.Destroy(CapsuleRigidbody.gameObject);
+			memory[result++] = item;
 		}
-		CapsuleRigidbody = null;
-		CapsuleCollider = null;
+		return result;
 	}
 }

@@ -1,8 +1,15 @@
-namespace UnityEngine.UIElements;
-
-internal enum AddressMode
+namespace UnityEngine.UIElements
 {
-	Wrap,
-	Clamp,
-	Mirror
+}
+namespace UnityEngine.UIElements
+{
+	internal enum AddressMode
+	{
+		Wrap,
+		Clamp,
+		Mirror
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

@@ -1,8 +1,12 @@
 using System.IO;
 
-namespace ICSharpCode.SharpZipLib.Zip;
-
-public interface IDynamicDataSource
+namespace ICSharpCode.SharpZipLib
 {
-	Stream GetSource(ZipEntry entry, string name);
+}
+namespace ICSharpCode.SharpZipLib.Zip
+{
+	public interface IDynamicDataSource
+	{
+		Stream GetSource(ZipEntry entry, string name);
+	}
 }

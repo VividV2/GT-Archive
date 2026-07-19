@@ -1,12 +1,3 @@
-namespace UnityEngine.UIElements.UIR;
-
-internal struct DrawBufferRange
+namespace UnityEngine.UIElements
 {
-	public int firstIndex;
-
-	public int indexCount;
-
-	public int minIndexVal;
-
-	public int vertsReferenced;
 }

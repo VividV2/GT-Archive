@@ -1,12 +1,9 @@
-namespace System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
-/// <summary>Represents state machines that are generated for asynchronous methods. This type is intended for compiler use only.</summary>
-public interface IAsyncStateMachine
+namespace System.Diagnostics.SymbolStore;
+
+[ComVisible(true)]
+public interface ISymbolBinder1
 {
-	/// <summary>Moves the state machine to its next state.</summary>
-	void MoveNext();
-
-	/// <summary>Configures the state machine with a heap-allocated replica.</summary>
-	/// <param name="stateMachine">The heap-allocated replica.</param>
-	void SetStateMachine(IAsyncStateMachine stateMachine);
+	ISymbolReader GetReader(IntPtr importer, string filename, string searchPath);
 }

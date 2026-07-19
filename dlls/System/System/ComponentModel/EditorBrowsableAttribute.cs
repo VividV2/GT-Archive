@@ -1,49 +1,142 @@
-namespace System.ComponentModel;
+namespace System.Collections.Generic;
 
-/// <summary>Specifies that a property or method is viewable in an editor. This class cannot be inherited.</summary>
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Interface | AttributeTargets.Delegate)]
-public sealed class EditorBrowsableAttribute : Attribute
+/// <summary>Provides the base interface for the abstraction of sets.</summary>
+/// <typeparam name="T">The type of elements in the set.</typeparam>
+/// <summary>Provides the base interface for the abstraction of sets.</summary>
+/// <typeparam name="T">The type of elements in the set.</typeparam>
+public interface ISet<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 {
-	private EditorBrowsableState browsableState;
-
-	/// <summary>Gets the browsable state of the property or method.</summary>
-	/// <returns>An <see cref="T:System.ComponentModel.EditorBrowsableState" /> that is the browsable state of the property or method.</returns>
-	public EditorBrowsableState State => browsableState;
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.EditorBrowsableAttribute" /> class with an <see cref="T:System.ComponentModel.EditorBrowsableState" />.</summary>
-	/// <param name="state">The <see cref="T:System.ComponentModel.EditorBrowsableState" /> to set <see cref="P:System.ComponentModel.EditorBrowsableAttribute.State" /> to.</param>
-	public EditorBrowsableAttribute(EditorBrowsableState state)
-	{
-		browsableState = state;
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.EditorBrowsableAttribute" /> class with <see cref="P:System.ComponentModel.EditorBrowsableAttribute.State" /> set to the default state.</summary>
-	public EditorBrowsableAttribute()
-		: this(EditorBrowsableState.Always)
-	{
-	}
-
-	/// <summary>Returns whether the value of the given object is equal to the current <see cref="T:System.ComponentModel.EditorBrowsableAttribute" />.</summary>
-	/// <param name="obj">The object to test the value equality of.</param>
+	/// <summary>Adds an element to the current set and returns a value to indicate if the element was successfully added.</summary>
+	/// <param name="item">The element to add to the set.</param>
 	/// <returns>
-	///   <see langword="true" /> if the value of the given object is equal to that of the current; otherwise, <see langword="false" />.</returns>
-	public override bool Equals(object obj)
-	{
-		if (obj == this)
-		{
-			return true;
-		}
-		if (obj is EditorBrowsableAttribute editorBrowsableAttribute)
-		{
-			return editorBrowsableAttribute.browsableState == browsableState;
-		}
-		return false;
-	}
+	///   <see langword="true" /> if the element is added to the set; <see langword="false" /> if the element is already in the set.</returns>
+	/// <summary>Adds an element to the current set and returns a value to indicate if the element was successfully added.</summary>
+	/// <param name="item">The element to add to the set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the element is added to the set; <see langword="false" /> if the element is already in the set.</returns>
+	new bool Add(T item);
 
-	/// <summary>Returns the hash code for this instance.</summary>
-	/// <returns>A 32-bit signed integer hash code.</returns>
-	public override int GetHashCode()
-	{
-		return base.GetHashCode();
-	}
+	/// <summary>Modifies the current set so that it contains all elements that are present in the current set, in the specified collection, or in both.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	/// <summary>Modifies the current set so that it contains all elements that are present in the current set, in the specified collection, or in both.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	void UnionWith(IEnumerable<T> other);
+
+	/// <summary>Modifies the current set so that it contains only elements that are also in a specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	/// <summary>Modifies the current set so that it contains only elements that are also in a specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	void IntersectWith(IEnumerable<T> other);
+
+	/// <summary>Removes all elements in the specified collection from the current set.</summary>
+	/// <param name="other">The collection of items to remove from the set.</param>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	/// <summary>Removes all elements in the specified collection from the current set.</summary>
+	/// <param name="other">The collection of items to remove from the set.</param>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	void ExceptWith(IEnumerable<T> other);
+
+	/// <summary>Modifies the current set so that it contains only elements that are present either in the current set or in the specified collection, but not both.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	/// <summary>Modifies the current set so that it contains only elements that are present either in the current set or in the specified collection, but not both.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	void SymmetricExceptWith(IEnumerable<T> other);
+
+	/// <summary>Determines whether a set is a subset of a specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set is a subset of <paramref name="other" />; otherwise, <see langword="false" />.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	/// <summary>Determines whether a set is a subset of a specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set is a subset of <paramref name="other" />; otherwise, <see langword="false" />.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	bool IsSubsetOf(IEnumerable<T> other);
+
+	/// <summary>Determines whether the current set is a superset of a specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set is a superset of <paramref name="other" />; otherwise, <see langword="false" />.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	/// <summary>Determines whether the current set is a superset of a specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set is a superset of <paramref name="other" />; otherwise, <see langword="false" />.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	bool IsSupersetOf(IEnumerable<T> other);
+
+	/// <summary>Determines whether the current set is a proper (strict) superset of a specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set is a proper superset of <paramref name="other" />; otherwise, <see langword="false" />.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	/// <summary>Determines whether the current set is a proper (strict) superset of a specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set is a proper superset of <paramref name="other" />; otherwise, <see langword="false" />.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	bool IsProperSupersetOf(IEnumerable<T> other);
+
+	/// <summary>Determines whether the current set is a proper (strict) subset of a specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set is a proper subset of <paramref name="other" />; otherwise, <see langword="false" />.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	/// <summary>Determines whether the current set is a proper (strict) subset of a specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set is a proper subset of <paramref name="other" />; otherwise, <see langword="false" />.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	bool IsProperSubsetOf(IEnumerable<T> other);
+
+	/// <summary>Determines whether the current set overlaps with the specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set and <paramref name="other" /> share at least one common element; otherwise, <see langword="false" />.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	/// <summary>Determines whether the current set overlaps with the specified collection.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set and <paramref name="other" /> share at least one common element; otherwise, <see langword="false" />.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	bool Overlaps(IEnumerable<T> other);
+
+	/// <summary>Determines whether the current set and the specified collection contain the same elements.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set is equal to <paramref name="other" />; otherwise, false.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	/// <summary>Determines whether the current set and the specified collection contain the same elements.</summary>
+	/// <param name="other">The collection to compare to the current set.</param>
+	/// <returns>
+	///   <see langword="true" /> if the current set is equal to <paramref name="other" />; otherwise, false.</returns>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="other" /> is <see langword="null" />.</exception>
+	bool SetEquals(IEnumerable<T> other);
 }

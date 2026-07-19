@@ -1,8 +1,3 @@
-namespace System.Threading;
-
-internal struct CancellationCallbackCoreWorkArguments(SparselyPopulatedArrayFragment<CancellationCallbackInfo> currArrayFragment, int currArrayIndex)
+namespace System
 {
-	internal SparselyPopulatedArrayFragment<CancellationCallbackInfo> _currArrayFragment = currArrayFragment;
-
-	internal int _currArrayIndex = currArrayIndex;
 }

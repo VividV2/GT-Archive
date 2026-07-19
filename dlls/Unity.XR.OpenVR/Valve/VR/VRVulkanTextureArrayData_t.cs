@@ -1,8 +1,22 @@
+using System;
+using System;
+
 namespace Valve.VR;
 
-public struct VRVulkanTextureArrayData_t
+public struct VRTextureDepthInfo_t
 {
-	public uint m_unArrayIndex;
+	public IntPtr handle;
 
-	public uint m_unArraySize;
+	public HmdMatrix44_t mProjection;
+
+	public HmdVector2_t vRange;
+}
+namespace Valve.VR
+{
+	public struct VRVulkanTextureArrayData_t
+	{
+		public uint m_unArrayIndex;
+
+		public uint m_unArraySize;
+	}
 }

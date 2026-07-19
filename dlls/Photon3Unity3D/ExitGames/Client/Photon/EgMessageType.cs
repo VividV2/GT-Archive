@@ -1,15 +1,22 @@
-namespace ExitGames.Client.Photon;
-
-internal enum EgMessageType : byte
+namespace ExitGames.Client.Photon
 {
-	Init,
-	InitResponse,
-	Operation,
-	OperationResponse,
-	Event,
-	DisconnectReason,
-	InternalOperationRequest,
-	InternalOperationResponse,
-	Message,
-	RawMessage
+}
+namespace ExitGames.Client.Photon
+{
+}
+namespace ExitGames.Client.Photon
+{
+	internal enum EgMessageType : byte
+	{
+		Init,
+		InitResponse,
+		Operation,
+		OperationResponse,
+		Event,
+		DisconnectReason,
+		InternalOperationRequest,
+		InternalOperationResponse,
+		Message,
+		RawMessage
+	}
 }

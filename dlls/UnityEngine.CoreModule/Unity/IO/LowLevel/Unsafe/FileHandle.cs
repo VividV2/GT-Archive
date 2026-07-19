@@ -1,71 +1,20 @@
 using System;
-using System.Runtime.CompilerServices;
-using Unity.Collections.LowLevel.Unsafe;
-using Unity.Jobs;
-using UnityEngine.Bindings;
+using System;
 
-namespace Unity.IO.LowLevel.Unsafe;
+namespace JetBrains.Annotations;
 
-public readonly struct FileHandle
+[AttributeUsage(AttributeTargets.Method)]
+public sealed class MustUseReturnValueAttribute : Attribute
 {
-	[NativeDisableUnsafePtrRestriction]
-	internal readonly IntPtr fileCommandPtr;
+	[CanBeNull]
+	public string Justification { get; }
 
-	internal readonly int version;
-
-	public FileStatus Status
+	public MustUseReturnValueAttribute()
 	{
-		get
-		{
-			if (!IsFileHandleValid(this))
-			{
-				throw new InvalidOperationException("FileHandle.Status cannot be called on a closed FileHandle");
-			}
-			return GetFileStatus_Internal(this);
-		}
 	}
 
-	public JobHandle JobHandle
+	public MustUseReturnValueAttribute([NotNull] string justification)
 	{
-		get
-		{
-			if (!IsFileHandleValid(this))
-			{
-				throw new InvalidOperationException("FileHandle.JobHandle cannot be called on a closed FileHandle");
-			}
-			return GetJobHandle_Internal(this);
-		}
+		Justification = justification;
 	}
-
-	public bool IsValid()
-	{
-		return IsFileHandleValid(this);
-	}
-
-	public JobHandle Close(JobHandle dependency = default(JobHandle))
-	{
-		if (!IsFileHandleValid(this))
-		{
-			throw new InvalidOperationException("FileHandle.Close cannot be called twice on the same FileHandle");
-		}
-		return AsyncReadManager.CloseFileAsync(this, dependency);
-	}
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[FreeFunction("AsyncReadManagerManaged::IsFileHandleValid")]
-	private static extern bool IsFileHandleValid(in FileHandle handle);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[FreeFunction("AsyncReadManagerManaged::GetFileStatusFromManagedHandle")]
-	private static extern FileStatus GetFileStatus_Internal(in FileHandle handle);
-
-	[FreeFunction("AsyncReadManagerManaged::GetJobFenceFromManagedHandle")]
-	private static JobHandle GetJobHandle_Internal(in FileHandle handle)
-	{
-		GetJobHandle_Internal_Injected(in handle, out var ret);
-		return ret;
-	}
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void GetJobHandle_Internal_Injected(in FileHandle handle, out JobHandle ret);
 }

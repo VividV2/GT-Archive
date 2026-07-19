@@ -1,15 +1,19 @@
 using System.ComponentModel;
 
-namespace Oculus.Platform;
-
-public enum ChallengeVisibility
+namespace Oculus.Platform
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("INVITE_ONLY")]
-	InviteOnly,
-	[Description("PUBLIC")]
-	Public,
-	[Description("PRIVATE")]
-	Private
+	public enum ChallengeVisibility
+	{
+		[Description("UNKNOWN")]
+		Unknown,
+		[Description("INVITE_ONLY")]
+		InviteOnly,
+		[Description("PUBLIC")]
+		Public,
+		[Description("PRIVATE")]
+		Private
+	}
+}
+namespace Oculus.Platform
+{
 }

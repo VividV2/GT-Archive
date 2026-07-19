@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace System.Security.Permissions;
 
@@ -8,7 +9,7 @@ namespace System.Security.Permissions;
 [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method, AllowMultiple = true, Inherited = false)]
 public sealed class ZoneIdentityPermissionAttribute : CodeAccessSecurityAttribute
 {
-	private SecurityZone zone;
+	private SecurityZone zone = SecurityZone.NoZone;
 
 	/// <summary>Gets or sets membership in the content zone specified by the property value.</summary>
 	/// <returns>One of the <see cref="T:System.Security.SecurityZone" /> values.</returns>
@@ -29,7 +30,6 @@ public sealed class ZoneIdentityPermissionAttribute : CodeAccessSecurityAttribut
 	public ZoneIdentityPermissionAttribute(SecurityAction action)
 		: base(action)
 	{
-		zone = SecurityZone.NoZone;
 	}
 
 	/// <summary>Creates and returns a new <see cref="T:System.Security.Permissions.ZoneIdentityPermission" />.</summary>

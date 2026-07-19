@@ -1,44 +1,48 @@
 using System;
 
-namespace Mono;
-
-internal struct RuntimeEventHandle
+namespace System
 {
-	private IntPtr value;
-
-	public IntPtr Value => value;
-
-	internal RuntimeEventHandle(IntPtr v)
+}
+namespace Mono
+{
+	internal struct RuntimeEventHandle
 	{
-		value = v;
-	}
+		private IntPtr value;
 
-	public override bool Equals(object obj)
-	{
-		if (obj == null || GetType() != obj.GetType())
+		public IntPtr Value => value;
+
+		internal RuntimeEventHandle(IntPtr v)
 		{
-			return false;
+			value = v;
 		}
-		return value == ((RuntimeEventHandle)obj).Value;
-	}
 
-	public bool Equals(RuntimeEventHandle handle)
-	{
-		return value == handle.Value;
-	}
+		public override bool Equals(object obj)
+		{
+			if (obj == null || GetType() != obj.GetType())
+			{
+				return false;
+			}
+			return value == ((RuntimeEventHandle)obj).Value;
+		}
 
-	public override int GetHashCode()
-	{
-		return value.GetHashCode();
-	}
+		public bool Equals(RuntimeEventHandle handle)
+		{
+			return value == handle.Value;
+		}
 
-	public static bool operator ==(RuntimeEventHandle left, RuntimeEventHandle right)
-	{
-		return left.Equals(right);
-	}
+		public override int GetHashCode()
+		{
+			return value.GetHashCode();
+		}
 
-	public static bool operator !=(RuntimeEventHandle left, RuntimeEventHandle right)
-	{
-		return !left.Equals(right);
+		public static bool operator ==(RuntimeEventHandle left, RuntimeEventHandle right)
+		{
+			return left.Equals(right);
+		}
+
+		public static bool operator !=(RuntimeEventHandle left, RuntimeEventHandle right)
+		{
+			return !left.Equals(right);
+		}
 	}
 }

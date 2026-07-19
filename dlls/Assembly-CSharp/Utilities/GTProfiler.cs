@@ -1,19 +1,23 @@
 using System;
 
-namespace Utilities;
-
-public sealed class GTProfiler : IDisposable
+namespace Utilities
 {
-	private GTProfiler()
+	public sealed class GTProfiler : IDisposable
 	{
-	}
+		private GTProfiler()
+		{
+		}
 
-	public static GTProfiler BeginSample(string sampleName)
-	{
-		return null;
-	}
+		public static GTProfiler BeginSample(string sampleName)
+		{
+			return null;
+		}
 
-	public void Dispose()
-	{
+		public void Dispose()
+		{
+		}
 	}
+}
+namespace GorillaTagScripts
+{
 }

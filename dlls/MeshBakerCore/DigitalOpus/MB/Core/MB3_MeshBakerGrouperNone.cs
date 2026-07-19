@@ -1,32 +1,68 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DigitalOpus.MB.Core;
-
-public class MB3_MeshBakerGrouperNone : MB3_MeshBakerGrouperBehaviour
+namespace DigitalOpus.MB.Core
 {
-	public override Dictionary<string, List<Renderer>> FilterIntoGroups(List<GameObject> selection, GrouperData d)
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
+	public class MB3_MeshBakerGrouperNone : MB3_MeshBakerGrouperBehaviour
 	{
-		Debug.Log("Filtering into groups none");
-		Dictionary<string, List<Renderer>> dictionary = new Dictionary<string, List<Renderer>>();
-		List<Renderer> list = new List<Renderer>();
-		for (int i = 0; i < selection.Count; i++)
+		public override Dictionary<string, List<Renderer>> FilterIntoGroups(List<GameObject> selection, GrouperData d)
 		{
-			if (selection[i] != null)
+			Debug.Log("Filtering into groups none");
+			Dictionary<string, List<Renderer>> dictionary = new Dictionary<string, List<Renderer>>();
+			List<Renderer> list = new List<Renderer>();
+			for (int i = 0; i < selection.Count; i++)
 			{
-				list.Add(selection[i].GetComponent<Renderer>());
+				if (selection[i] != null)
+				{
+					list.Add(selection[i].GetComponent<Renderer>());
+				}
 			}
+			dictionary.Add("MeshBaker", list);
+			return dictionary;
 		}
-		dictionary.Add("MeshBaker", list);
-		return dictionary;
-	}
 
-	public override void DrawGizmos(Bounds sourceObjectBounds, GrouperData d)
-	{
-	}
+		public override void DrawGizmos(Bounds sourceObjectBounds, GrouperData d)
+		{
+		}
 
-	public override MB3_MeshBakerGrouper.ClusterType GetClusterType()
-	{
-		return MB3_MeshBakerGrouper.ClusterType.none;
+		public override MB3_MeshBakerGrouper.ClusterType GetClusterType()
+		{
+			return MB3_MeshBakerGrouper.ClusterType.none;
+		}
 	}
+}
+namespace DigitalOpus.MB.Core
+{
+}
+[Serializable]
+public class MB_MultiMaterial
+{
+	public Material combinedMaterial;
+
+	public bool considerMeshUVs;
+
+	[NonReorderable]
+	public List<Material> sourceMaterials = new List<Material>();
 }

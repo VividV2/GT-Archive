@@ -1,10 +1,14 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class ConnectedPlayer : PlayFabBaseModel
+namespace PlayFab.MultiplayerModels
 {
-	public string PlayerId;
+	[Serializable]
+	public class ConnectedPlayer : PlayFabBaseModel
+	{
+		public string PlayerId;
+	}
+}
+namespace PlayFab.Json
+{
 }

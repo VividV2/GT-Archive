@@ -1,8 +1,12 @@
-namespace Steamworks;
-
-public enum ESteamPartyBeaconLocationType
+namespace Steamworks
 {
-	k_ESteamPartyBeaconLocationType_Invalid,
-	k_ESteamPartyBeaconLocationType_ChatGroup,
-	k_ESteamPartyBeaconLocationType_Max
+	public enum ESteamPartyBeaconLocationType
+	{
+		k_ESteamPartyBeaconLocationType_Invalid,
+		k_ESteamPartyBeaconLocationType_ChatGroup,
+		k_ESteamPartyBeaconLocationType_Max
+	}
+}
+namespace Steamworks
+{
 }

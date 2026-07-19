@@ -1,10 +1,2 @@
-namespace System.Xml.Serialization;
+namespace System.Xml.Xsl.IlGen;
 
-internal class UrtTypes
-{
-	internal const string Namespace = "http://microsoft.com/wsdl/types/";
-
-	private UrtTypes()
-	{
-	}
-}

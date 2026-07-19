@@ -1,9 +1,10 @@
-namespace System.Runtime.Serialization;
-
-internal class IDREFSDataContract : StringDataContract
+namespace System.Runtime.Serialization
 {
-	internal IDREFSDataContract()
-		: base(DictionaryGlobals.IDREFSLocalName, DictionaryGlobals.SchemaNamespace)
+	internal class TimeDataContract : StringDataContract
 	{
+		internal TimeDataContract()
+			: base(DictionaryGlobals.timeLocalName, DictionaryGlobals.SchemaNamespace)
+		{
+		}
 	}
 }

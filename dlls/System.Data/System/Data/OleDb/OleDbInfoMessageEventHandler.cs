@@ -4,3 +4,6 @@ namespace System.Data.OleDb;
 /// <param name="sender">The source of the event.</param>
 /// <param name="e">An <see cref="T:System.Data.OleDb.OleDbInfoMessageEventArgs" /> object that contains the event data.</param>
 public delegate void OleDbInfoMessageEventHandler(object sender, OleDbInfoMessageEventArgs e);
+namespace System.Data
+{
+}

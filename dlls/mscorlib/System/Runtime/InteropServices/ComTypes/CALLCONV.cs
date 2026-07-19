@@ -1,27 +1,18 @@
-namespace System.Runtime.InteropServices.ComTypes;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-/// <summary>Identifies the calling convention used by a method described in a METHODDATA structure.</summary>
-[Serializable]
-public enum CALLCONV
+namespace System.Runtime.Remoting.Messaging;
+
+/// <summary>Provides a way to control asynchronous messages after they have dispatched using the <see cref="M:System.Runtime.Remoting.Messaging.IMessageSink.AsyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)" />.</summary>
+/// <summary>Provides a way to control asynchronous messages after they have dispatched using the <see cref="M:System.Runtime.Remoting.Messaging.IMessageSink.AsyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)" />.</summary>
+[ComVisible(true)]
+public interface IMessageCtrl
 {
-	/// <summary>Indicates that the C declaration (CDECL) calling convention is used for a method.</summary>
-	CC_CDECL = 1,
-	/// <summary>Indicates that the MSC Pascal (MSCPASCAL) calling convention is used for a method.</summary>
-	CC_MSCPASCAL = 2,
-	/// <summary>Indicates that the Pascal calling convention is used for a method.</summary>
-	CC_PASCAL = 2,
-	/// <summary>Indicates that the Macintosh Pascal (MACPASCAL) calling convention is used for a method.</summary>
-	CC_MACPASCAL = 3,
-	/// <summary>Indicates that the standard calling convention (STDCALL) is used for a method.</summary>
-	CC_STDCALL = 4,
-	/// <summary>This value is reserved for future use.</summary>
-	CC_RESERVED = 5,
-	/// <summary>Indicates that the standard SYSCALL calling convention is used for a method.</summary>
-	CC_SYSCALL = 6,
-	/// <summary>Indicates that the Macintosh Programmers' Workbench (MPW) CDECL calling convention is used for a method.</summary>
-	CC_MPWCDECL = 7,
-	/// <summary>Indicates that the Macintosh Programmers' Workbench (MPW) PASCAL calling convention is used for a method.</summary>
-	CC_MPWPASCAL = 8,
-	/// <summary>Indicates the end of the <see cref="T:System.Runtime.InteropServices.ComTypes.CALLCONV" /> enumeration.</summary>
-	CC_MAX = 9
+	/// <summary>Cancels an asynchronous call.</summary>
+	/// <param name="msToCancel">The number of milliseconds after which to cancel the message.</param>
+	/// <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
+	/// <summary>Cancels an asynchronous call.</summary>
+	/// <param name="msToCancel">The number of milliseconds after which to cancel the message.</param>
+	/// <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
+	void Cancel(int msToCancel);
 }

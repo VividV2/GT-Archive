@@ -1,8 +1,12 @@
-namespace g3;
-
-public interface IArcLengthParam2d
+namespace g3
 {
-	double ArcLength { get; }
+	public interface IArcLengthParam2d
+	{
+		double ArcLength { get; }
 
-	CurveSample2d Sample(double fArcLen);
+		CurveSample2d Sample(double fArcLen);
+	}
+}
+namespace g3
+{
 }

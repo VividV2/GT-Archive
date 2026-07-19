@@ -1,444 +1,80 @@
 using System;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using UnityEngine.Bindings;
-using UnityEngine.Events;
-using UnityEngine.Scripting;
+using System;
+using System.Runtime.CompilerServices;
+using UnityEngine.Bindings;
 
-namespace UnityEngine;
+namespace Unity.IO.LowLevel.Unsafe;
 
-[NativeType("Runtime/Graphics/Mesh/SpriteRenderer.h")]
-[RequireComponent(typeof(Transform))]
-public sealed class SpriteRenderer : Renderer
+[StaticAccessor("GetFileSystem()", StaticAccessorType.Dot)]
+[NativeHeader("Runtime/VirtualFileSystem/VirtualFileSystem.h")]
+public static class VirtualFileSystem
 {
-	private UnityEvent<SpriteRenderer> m_SpriteChangeEvent;
-
-	internal bool shouldSupportTiling
+	[FreeFunction(IsThreadSafe = true)]
+	public unsafe static bool GetLocalFileSystemName(string vfsFileName, out string localFileName, out ulong localFileOffset, out ulong localFileSize)
 	{
-		[NativeMethod("ShouldSupportTiling")]
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return get_shouldSupportTiling_Injected(intPtr);
-		}
-	}
-
-	internal bool hasSpriteChangeEvents
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return get_hasSpriteChangeEvents_Injected(intPtr);
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_hasSpriteChangeEvents_Injected(intPtr, value);
-		}
-	}
-
-	public Sprite sprite
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return Unmarshal.UnmarshalUnityObject<Sprite>(get_sprite_Injected(intPtr));
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_sprite_Injected(intPtr, MarshalledUnityObject.Marshal(value));
-		}
-	}
-
-	public SpriteDrawMode drawMode
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return get_drawMode_Injected(intPtr);
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_drawMode_Injected(intPtr, value);
-		}
-	}
-
-	public Vector2 size
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			get_size_Injected(intPtr, out var ret);
-			return ret;
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_size_Injected(intPtr, ref value);
-		}
-	}
-
-	public float adaptiveModeThreshold
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return get_adaptiveModeThreshold_Injected(intPtr);
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_adaptiveModeThreshold_Injected(intPtr, value);
-		}
-	}
-
-	public SpriteTileMode tileMode
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return get_tileMode_Injected(intPtr);
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_tileMode_Injected(intPtr, value);
-		}
-	}
-
-	public Color color
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			get_color_Injected(intPtr, out var ret);
-			return ret;
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_color_Injected(intPtr, ref value);
-		}
-	}
-
-	public SpriteMaskInteraction maskInteraction
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return get_maskInteraction_Injected(intPtr);
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_maskInteraction_Injected(intPtr, value);
-		}
-	}
-
-	public bool flipX
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return get_flipX_Injected(intPtr);
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_flipX_Injected(intPtr, value);
-		}
-	}
-
-	public bool flipY
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return get_flipY_Injected(intPtr);
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_flipY_Injected(intPtr, value);
-		}
-	}
-
-	public SpriteSortPoint spriteSortPoint
-	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return get_spriteSortPoint_Injected(intPtr);
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_spriteSortPoint_Injected(intPtr, value);
-		}
-	}
-
-	public void RegisterSpriteChangeCallback(UnityAction<SpriteRenderer> callback)
-	{
-		if (m_SpriteChangeEvent == null)
-		{
-			m_SpriteChangeEvent = new UnityEvent<SpriteRenderer>();
-		}
-		m_SpriteChangeEvent.AddListener(callback);
-		hasSpriteChangeEvents = true;
-	}
-
-	public void UnregisterSpriteChangeCallback(UnityAction<SpriteRenderer> callback)
-	{
-		if (m_SpriteChangeEvent != null)
-		{
-			m_SpriteChangeEvent.RemoveListener(callback);
-			if (m_SpriteChangeEvent.GetCallsCount() == 0)
-			{
-				hasSpriteChangeEvents = false;
-			}
-		}
-	}
-
-	[RequiredByNativeCode]
-	private void InvokeSpriteChanged()
-	{
+		//The blocks IL_0029 are reachable both inside and outside the pinned region starting at IL_0018. ILSpy has duplicated these blocks in order to place them both within and outside the `fixed` statement.
+		ManagedSpanWrapper localFileName2 = default(ManagedSpanWrapper);
+		ManagedSpanWrapper localFileName2 = default(ManagedSpanWrapper);
 		try
 		{
-			m_SpriteChangeEvent?.Invoke(this);
+			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
+			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
+			if (!StringMarshaller.TryMarshalEmptyOrNullString(vfsFileName, ref managedSpanWrapper))
+			{
+				ReadOnlySpan<char> readOnlySpan = MemoryExtensions.AsSpan(vfsFileName);
+				ReadOnlySpan<char> readOnlySpan;
+				fixed (char* begin = readOnlySpan)
+				{
+					managedSpanWrapper = new ManagedSpanWrapper(begin, readOnlySpan.Length);
+					return GetLocalFileSystemName_Injected(ref managedSpanWrapper, out localFileName2, out localFileOffset, out localFileSize);
+				}
+			}
+			return GetLocalFileSystemName_Injected(ref managedSpanWrapper, out localFileName2, out localFileOffset, out localFileSize);
 		}
-		catch (Exception exception)
+		finally
 		{
-			Debug.LogException(exception, this);
+			localFileName = OutStringMarshaller.GetStringAndDispose(localFileName2);
 		}
 	}
 
-	private IntPtr GetCurrentMeshDataPtr()
+	internal unsafe static string ToLogicalPath(string physicalPath)
 	{
-		IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-		if (intPtr == (IntPtr)0)
+		//The blocks IL_0029 are reachable both inside and outside the pinned region starting at IL_0018. ILSpy has duplicated these blocks in order to place them both within and outside the `fixed` statement.
+		ManagedSpanWrapper ret = default(ManagedSpanWrapper);
+		string stringAndDispose;
+		ManagedSpanWrapper ret = default(ManagedSpanWrapper);
+		string stringAndDispose;
+		try
 		{
-			ThrowHelper.ThrowNullReferenceException(this);
+			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
+			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
+			if (!StringMarshaller.TryMarshalEmptyOrNullString(physicalPath, ref managedSpanWrapper))
+			{
+				ReadOnlySpan<char> readOnlySpan = MemoryExtensions.AsSpan(physicalPath);
+				ReadOnlySpan<char> readOnlySpan;
+				fixed (char* begin = readOnlySpan)
+				{
+					managedSpanWrapper = new ManagedSpanWrapper(begin, readOnlySpan.Length);
+					ToLogicalPath_Injected(ref managedSpanWrapper, out ret);
+				}
+			}
+			else
+			{
+				ToLogicalPath_Injected(ref managedSpanWrapper, out ret);
+			}
 		}
-		return GetCurrentMeshDataPtr_Injected(intPtr);
-	}
-
-	internal unsafe Mesh.MeshDataArray GetCurrentMeshData()
-	{
-		IntPtr currentMeshDataPtr = GetCurrentMeshDataPtr();
-		if (currentMeshDataPtr == IntPtr.Zero)
+		finally
 		{
-			return new Mesh.MeshDataArray(0);
+			stringAndDispose = OutStringMarshaller.GetStringAndDispose(ret);
 		}
-		Mesh.MeshDataArray result = new Mesh.MeshDataArray(1);
-		*result.m_Ptrs = currentMeshDataPtr;
-		return result;
-	}
-
-	[NativeMethod(Name = "GetSpriteBounds")]
-	internal Bounds Internal_GetSpriteBounds(SpriteDrawMode mode)
-	{
-		IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-		if (intPtr == (IntPtr)0)
-		{
-			ThrowHelper.ThrowNullReferenceException(this);
-		}
-		Internal_GetSpriteBounds_Injected(intPtr, mode, out var ret);
-		return ret;
-	}
-
-	internal void GetSecondaryTextureProperties([NotNull] MaterialPropertyBlock mbp)
-	{
-		if (mbp == null)
-		{
-			ThrowHelper.ThrowArgumentNullException(mbp, "mbp");
-		}
-		IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-		if (intPtr == (IntPtr)0)
-		{
-			ThrowHelper.ThrowNullReferenceException(this);
-		}
-		IntPtr intPtr2 = MaterialPropertyBlock.BindingsMarshaller.ConvertToNative(mbp);
-		if (intPtr2 == (IntPtr)0)
-		{
-			ThrowHelper.ThrowArgumentNullException(mbp, "mbp");
-		}
-		GetSecondaryTextureProperties_Injected(intPtr, intPtr2);
-	}
-
-	internal Bounds GetSpriteBounds()
-	{
-		return Internal_GetSpriteBounds(drawMode);
+		return stringAndDispose;
 	}
 
 	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern bool get_shouldSupportTiling_Injected(IntPtr _unity_self);
+	private static extern bool GetLocalFileSystemName_Injected(ref ManagedSpanWrapper vfsFileName, out ManagedSpanWrapper localFileName, out ulong localFileOffset, out ulong localFileSize);
 
 	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern bool get_hasSpriteChangeEvents_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_hasSpriteChangeEvents_Injected(IntPtr _unity_self, bool value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern IntPtr get_sprite_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_sprite_Injected(IntPtr _unity_self, IntPtr value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern SpriteDrawMode get_drawMode_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_drawMode_Injected(IntPtr _unity_self, SpriteDrawMode value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void get_size_Injected(IntPtr _unity_self, out Vector2 ret);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_size_Injected(IntPtr _unity_self, [In] ref Vector2 value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern float get_adaptiveModeThreshold_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_adaptiveModeThreshold_Injected(IntPtr _unity_self, float value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern SpriteTileMode get_tileMode_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_tileMode_Injected(IntPtr _unity_self, SpriteTileMode value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void get_color_Injected(IntPtr _unity_self, out Color ret);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_color_Injected(IntPtr _unity_self, [In] ref Color value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern SpriteMaskInteraction get_maskInteraction_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_maskInteraction_Injected(IntPtr _unity_self, SpriteMaskInteraction value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern bool get_flipX_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_flipX_Injected(IntPtr _unity_self, bool value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern bool get_flipY_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_flipY_Injected(IntPtr _unity_self, bool value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern SpriteSortPoint get_spriteSortPoint_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_spriteSortPoint_Injected(IntPtr _unity_self, SpriteSortPoint value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern IntPtr GetCurrentMeshDataPtr_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void Internal_GetSpriteBounds_Injected(IntPtr _unity_self, SpriteDrawMode mode, out Bounds ret);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void GetSecondaryTextureProperties_Injected(IntPtr _unity_self, IntPtr mbp);
+	private static extern void ToLogicalPath_Injected(ref ManagedSpanWrapper physicalPath, out ManagedSpanWrapper ret);
 }

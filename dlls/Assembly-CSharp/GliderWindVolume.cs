@@ -1,34 +1,3 @@
-using UnityEngine;
+public delegate void OnSignalReceived<in T1, in T2, in T3, in T4, in T5, in T6, in T7, in T8, in T9, in T10>(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, PhotonSignalInfo info);
+namespace GorillaTag.Cosmetics;
 
-public class GliderWindVolume : MonoBehaviour
-{
-	[SerializeField]
-	private float maxSpeed = 30f;
-
-	[SerializeField]
-	private float maxAccel = 15f;
-
-	[SerializeField]
-	private AnimationCurve speedVsAccelCurve = AnimationCurve.Linear(0f, 1f, 1f, 0f);
-
-	[SerializeField]
-	private Vector3 localWindDirection = Vector3.up;
-
-	public Vector3 WindDirection => base.transform.TransformDirection(localWindDirection);
-
-	public void SetProperties(float speed, float accel, AnimationCurve svaCurve, Vector3 windDirection)
-	{
-		maxSpeed = speed;
-		maxAccel = accel;
-		speedVsAccelCurve.CopyFrom(svaCurve);
-		localWindDirection = windDirection;
-	}
-
-	public Vector3 GetAccelFromVelocity(Vector3 velocity)
-	{
-		Vector3 windDirection = WindDirection;
-		float time = Mathf.Clamp(Vector3.Dot(velocity, windDirection), 0f - maxSpeed, maxSpeed) / maxSpeed;
-		float num = speedVsAccelCurve.Evaluate(time) * maxAccel;
-		return windDirection * num;
-	}
-}

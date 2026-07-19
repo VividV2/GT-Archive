@@ -1,107 +1,31 @@
-using System;
+using System.Collections;
+using System.Collections;
 
-namespace Mono.Net.Dns;
+namespace System.ComponentModel.Design.Serialization;
 
-internal enum DnsQType : ushort
+/// <summary>Provides an interface that can extend a designer loader to support asynchronous loading of external components.</summary>
+/// <summary>Provides an interface that can extend a designer loader to support asynchronous loading of external components.</summary>
+public interface IDesignerLoaderService
 {
-	A = 1,
-	NS = 2,
-	[Obsolete]
-	MD = 3,
-	[Obsolete]
-	MF = 4,
-	CNAME = 5,
-	SOA = 6,
-	[Obsolete]
-	MB = 7,
-	[Obsolete]
-	MG = 8,
-	[Obsolete]
-	MR = 9,
-	[Obsolete]
-	NULL = 10,
-	[Obsolete]
-	WKS = 11,
-	PTR = 12,
-	[Obsolete]
-	HINFO = 13,
-	[Obsolete]
-	MINFO = 14,
-	MX = 15,
-	TXT = 16,
-	[Obsolete]
-	RP = 17,
-	AFSDB = 18,
-	[Obsolete]
-	X25 = 19,
-	[Obsolete]
-	ISDN = 20,
-	[Obsolete]
-	RT = 21,
-	[Obsolete]
-	NSAP = 22,
-	[Obsolete]
-	NSAPPTR = 23,
-	SIG = 24,
-	KEY = 25,
-	[Obsolete]
-	PX = 26,
-	[Obsolete]
-	GPOS = 27,
-	AAAA = 28,
-	LOC = 29,
-	[Obsolete]
-	NXT = 30,
-	[Obsolete]
-	EID = 31,
-	[Obsolete]
-	NIMLOC = 32,
-	SRV = 33,
-	[Obsolete]
-	ATMA = 34,
-	NAPTR = 35,
-	KX = 36,
-	CERT = 37,
-	[Obsolete]
-	A6 = 38,
-	DNAME = 39,
-	[Obsolete]
-	SINK = 40,
-	OPT = 41,
-	[Obsolete]
-	APL = 42,
-	DS = 43,
-	SSHFP = 44,
-	IPSECKEY = 45,
-	RRSIG = 46,
-	NSEC = 47,
-	DNSKEY = 48,
-	DHCID = 49,
-	NSEC3 = 50,
-	NSEC3PARAM = 51,
-	HIP = 55,
-	NINFO = 56,
-	RKEY = 57,
-	TALINK = 58,
-	SPF = 99,
-	[Obsolete]
-	UINFO = 100,
-	[Obsolete]
-	UID = 101,
-	[Obsolete]
-	GID = 102,
-	[Obsolete]
-	UNSPEC = 103,
-	TKEY = 249,
-	TSIG = 250,
-	IXFR = 251,
-	AXFR = 252,
-	[Obsolete]
-	MAILB = 253,
-	[Obsolete]
-	MAILA = 254,
-	ALL = 255,
-	URI = 256,
-	TA = 32768,
-	DLV = 32769
+	/// <summary>Registers an external component as part of the load process managed by this interface.</summary>
+	/// <summary>Registers an external component as part of the load process managed by this interface.</summary>
+	void AddLoadDependency();
+
+	/// <summary>Signals that a dependent load has finished.</summary>
+	/// <param name="successful">
+	///   <see langword="true" /> if the load of the designer is successful; <see langword="false" /> if errors prevented the load from finishing.</param>
+	/// <param name="errorCollection">A collection of errors that occurred during the load, if any. If no errors occurred, pass either an empty collection or <see langword="null" />.</param>
+	/// <summary>Signals that a dependent load has finished.</summary>
+	/// <param name="successful">
+	///   <see langword="true" /> if the load of the designer is successful; <see langword="false" /> if errors prevented the load from finishing.</param>
+	/// <param name="errorCollection">A collection of errors that occurred during the load, if any. If no errors occurred, pass either an empty collection or <see langword="null" />.</param>
+	void DependentLoadComplete(bool successful, ICollection errorCollection);
+
+	/// <summary>Reloads the design document.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the reload request is accepted, or <see langword="false" /> if the loader does not allow the reload.</returns>
+	/// <summary>Reloads the design document.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the reload request is accepted, or <see langword="false" /> if the loader does not allow the reload.</returns>
+	bool Reload();
 }

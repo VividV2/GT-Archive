@@ -14,3 +14,6 @@ public enum SslPolicyErrors
 	///   <see cref="P:System.Security.Cryptography.X509Certificates.X509Chain.ChainStatus" /> has returned a non empty array.</summary>
 	RemoteCertificateChainErrors = 4
 }
+namespace System.Net
+{
+}

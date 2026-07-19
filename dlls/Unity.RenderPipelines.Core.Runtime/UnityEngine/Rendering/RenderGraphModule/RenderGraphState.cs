@@ -1,13 +1,17 @@
 using System;
 
-namespace UnityEngine.Rendering.RenderGraphModule;
-
-[Flags]
-internal enum RenderGraphState
+namespace UnityEngine.Rendering.RenderGraphModule
 {
-	Idle = 0,
-	RecordingGraph = 1,
-	RecordingPass = 2,
-	Executing = 4,
-	Active = 7
+	[Flags]
+	internal enum RenderGraphState
+	{
+		Idle = 0,
+		RecordingGraph = 1,
+		RecordingPass = 2,
+		Executing = 4,
+		Active = 7
+	}
+}
+namespace UnityEngine.Rendering
+{
 }

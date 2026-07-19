@@ -1,10 +1,14 @@
-namespace UnityEngine.UIElements.InputSystem;
-
-internal interface IKeyboardEventProcessor
+namespace UnityEngine.UIElements
 {
-	void OnEnable();
+}
+namespace UnityEngine.UIElements.InputSystem
+{
+	internal interface IKeyboardEventProcessor
+	{
+		void OnEnable();
 
-	void OnDisable();
+		void OnDisable();
 
-	void ProcessKeyboardEvents(InputSystemEventSystem eventSystem);
+		void ProcessKeyboardEvents(InputSystemEventSystem eventSystem);
+	}
 }

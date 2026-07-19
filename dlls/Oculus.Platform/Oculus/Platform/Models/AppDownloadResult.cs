@@ -1,16 +1,15 @@
 using System;
+using System;
 
-namespace Oculus.Platform.Models;
-
-public class AppDownloadResult
+namespace Oculus.Platform.Models
 {
-	public readonly AppInstallResult AppInstallResult;
-
-	public readonly long Timestamp;
-
-	public AppDownloadResult(IntPtr o)
+	public class AppDownloadResult(IntPtr o)
 	{
-		AppInstallResult = CAPI.ovr_AppDownloadResult_GetAppInstallResult(o);
-		Timestamp = CAPI.ovr_AppDownloadResult_GetTimestamp(o);
+		public readonly AppInstallResult AppInstallResult = CAPI.ovr_AppDownloadResult_GetAppInstallResult(o);
+
+		public readonly long Timestamp = CAPI.ovr_AppDownloadResult_GetTimestamp(o);
 	}
+}
+namespace Oculus.Platform.Models
+{
 }

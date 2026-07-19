@@ -1,17 +1,21 @@
 using System;
 
-namespace UnityEngine.Localization;
-
-[AttributeUsage(AttributeTargets.All, AllowMultiple = false)]
-public class DisplayNameAttribute : Attribute
+namespace UnityEngine.Localization.Pseudo
 {
-	public string Name { get; set; }
-
-	public string IconPath { get; set; }
-
-	public DisplayNameAttribute(string name, string iconPath = null)
+}
+namespace UnityEngine.Localization
+{
+	[AttributeUsage(AttributeTargets.All, AllowMultiple = false)]
+	public class DisplayNameAttribute : Attribute
 	{
-		Name = name;
-		IconPath = iconPath;
+		public string Name { get; set; }
+
+		public string IconPath { get; set; }
+
+		public DisplayNameAttribute(string name, string iconPath = null)
+		{
+			Name = name;
+			IconPath = iconPath;
+		}
 	}
 }

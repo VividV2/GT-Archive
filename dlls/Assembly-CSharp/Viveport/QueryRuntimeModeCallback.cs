@@ -1,3 +1,2 @@
-namespace Viveport;
+namespace GorillaTag.Shared.Scripts.Cosmetics.ActionRestrictions;
 
-public delegate void QueryRuntimeModeCallback(int nResult, int emu);

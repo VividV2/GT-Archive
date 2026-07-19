@@ -1,14 +1,18 @@
 using System.Threading.Tasks;
 
-namespace Meta.WitAi.Requests;
-
-internal interface IVRequestDownloadDecoder
+namespace Meta.WitAi.Requests
 {
-	TaskCompletionSource<bool> Completion { get; }
+	internal interface IVRequestDownloadDecoder
+	{
+		TaskCompletionSource<bool> Completion { get; }
 
-	event VRequestResponseDelegate OnFirstResponse;
+		event VRequestResponseDelegate OnFirstResponse;
 
-	event VRequestResponseDelegate OnResponse;
+		event VRequestResponseDelegate OnResponse;
 
-	event VRequestProgressDelegate OnProgress;
+		event VRequestProgressDelegate OnProgress;
+	}
+}
+namespace Meta.WitAi.Requests
+{
 }

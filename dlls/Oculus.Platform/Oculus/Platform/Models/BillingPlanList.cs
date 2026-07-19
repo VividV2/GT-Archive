@@ -1,17 +1,14 @@
-using System;
-using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel;
 
-namespace Oculus.Platform.Models;
+namespace Oculus.Platform;
 
-public class BillingPlanList : DeserializableList<BillingPlan>
+public enum VoipMuteState
 {
-	public BillingPlanList(IntPtr a)
-	{
-		int num = (int)(uint)CAPI.ovr_BillingPlanArray_GetSize(a);
-		_Data = new List<BillingPlan>(num);
-		for (int i = 0; i < num; i++)
-		{
-			_Data.Add(new BillingPlan(CAPI.ovr_BillingPlanArray_GetElement(a, (UIntPtr)(ulong)i)));
-		}
-	}
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("MUTED")]
+	Muted,
+	[Description("UNMUTED")]
+	Unmuted
 }

@@ -2,76 +2,80 @@ using System.Configuration.Internal;
 using System.Text;
 using System.Xml;
 
-namespace System.Configuration;
-
-internal abstract class ConfigInfo
+namespace System.Configuration
 {
-	public string Name;
-
-	public string TypeName;
-
-	protected Type Type;
-
-	private string streamName;
-
-	public ConfigInfo Parent;
-
-	public IInternalConfigHost ConfigHost;
-
-	public string XPath
+	internal abstract class ConfigInfo
 	{
-		get
+		public string Name;
+
+		public string TypeName;
+
+		protected Type Type;
+
+		private string streamName;
+
+		public ConfigInfo Parent;
+
+		public IInternalConfigHost ConfigHost;
+
+		public string XPath
 		{
-			StringBuilder stringBuilder = new StringBuilder(Name);
-			for (ConfigInfo parent = Parent; parent != null; parent = parent.Parent)
+			get
 			{
-				stringBuilder.Insert(0, parent.Name + "/");
+				StringBuilder stringBuilder = new StringBuilder(Name);
+				for (ConfigInfo parent = Parent; parent != null; parent = parent.Parent)
+				{
+					stringBuilder.Insert(0, parent.Name + "/");
+				}
+				return stringBuilder.ToString();
 			}
-			return stringBuilder.ToString();
 		}
-	}
 
-	public string StreamName
-	{
-		get
+		public string StreamName
 		{
-			return streamName;
+			get
+			{
+				return streamName;
+			}
+			set
+			{
+				streamName = value;
+			}
 		}
-		set
+
+		public virtual object CreateInstance()
 		{
-			streamName = value;
+			if (Type == null)
+			{
+				Type = ConfigHost.GetConfigType(TypeName, throwOnError: true);
+			}
+			return Activator.CreateInstance(Type, nonPublic: true);
 		}
-	}
 
-	public virtual object CreateInstance()
-	{
-		if (Type == null)
+		public abstract bool HasConfigContent(Configuration cfg);
+
+		public abstract bool HasDataContent(Configuration cfg);
+
+		protected void ThrowException(string text, XmlReader reader)
 		{
-			Type = ConfigHost.GetConfigType(TypeName, throwOnError: true);
+			throw new ConfigurationErrorsException(text, reader);
 		}
-		return Activator.CreateInstance(Type, nonPublic: true);
+
+		public abstract void ReadConfig(Configuration cfg, string streamName, XmlReader reader);
+
+		public abstract void WriteConfig(Configuration cfg, XmlWriter writer, ConfigurationSaveMode mode);
+
+		public abstract void ReadData(Configuration config, XmlReader reader, bool overrideAllowed);
+
+		public abstract void WriteData(Configuration config, XmlWriter writer, ConfigurationSaveMode mode);
+
+		internal abstract void Merge(ConfigInfo data);
+
+		internal abstract bool HasValues(Configuration config, ConfigurationSaveMode mode);
+
+		internal abstract void ResetModified(Configuration config);
 	}
-
-	public abstract bool HasConfigContent(Configuration cfg);
-
-	public abstract bool HasDataContent(Configuration cfg);
-
-	protected void ThrowException(string text, XmlReader reader)
-	{
-		throw new ConfigurationErrorsException(text, reader);
-	}
-
-	public abstract void ReadConfig(Configuration cfg, string streamName, XmlReader reader);
-
-	public abstract void WriteConfig(Configuration cfg, XmlWriter writer, ConfigurationSaveMode mode);
-
-	public abstract void ReadData(Configuration config, XmlReader reader, bool overrideAllowed);
-
-	public abstract void WriteData(Configuration config, XmlWriter writer, ConfigurationSaveMode mode);
-
-	internal abstract void Merge(ConfigInfo data);
-
-	internal abstract bool HasValues(Configuration config, ConfigurationSaveMode mode);
-
-	internal abstract void ResetModified(Configuration config);
+}
+namespace System.Configuration
+{
 }

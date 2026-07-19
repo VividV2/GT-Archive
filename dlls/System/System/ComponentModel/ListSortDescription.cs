@@ -1,22 +1,46 @@
-namespace System.ComponentModel;
+using System.Collections;
+using System.Collections;
+using System.Collections;
 
-/// <summary>Provides a description of the sort operation applied to a data source.</summary>
-public class ListSortDescription
+namespace System.ComponentModel.Design;
+
+/// <summary>Provides an interface to modify the set of member descriptors for a component in design mode.</summary>
+/// <summary>Provides an interface to modify the set of member descriptors for a component in design mode.</summary>
+public interface ITypeDescriptorFilterService
 {
-	/// <summary>Gets or sets the abstract description of a class property associated with this <see cref="T:System.ComponentModel.ListSortDescription" /></summary>
-	/// <returns>The <see cref="T:System.ComponentModel.PropertyDescriptor" /> associated with this <see cref="T:System.ComponentModel.ListSortDescription" />.</returns>
-	public PropertyDescriptor PropertyDescriptor { get; set; }
+	/// <summary>Filters the attributes that a component exposes through a <see cref="T:System.ComponentModel.TypeDescriptor" />.</summary>
+	/// <param name="component">The component to filter the attributes of.</param>
+	/// <param name="attributes">A dictionary of attributes that can be modified.</param>
+	/// <returns>
+	///   <see langword="true" /> if the set of filtered attributes is to be cached; <see langword="false" /> if the filter service must query again.</returns>
+	/// <summary>Filters the attributes that a component exposes through a <see cref="T:System.ComponentModel.TypeDescriptor" />.</summary>
+	/// <param name="component">The component to filter the attributes of.</param>
+	/// <param name="attributes">A dictionary of attributes that can be modified.</param>
+	/// <returns>
+	///   <see langword="true" /> if the set of filtered attributes is to be cached; <see langword="false" /> if the filter service must query again.</returns>
+	bool FilterAttributes(IComponent component, IDictionary attributes);
 
-	/// <summary>Gets or sets the direction of the sort operation associated with this <see cref="T:System.ComponentModel.ListSortDescription" />.</summary>
-	/// <returns>One of the <see cref="T:System.ComponentModel.ListSortDirection" /> values.</returns>
-	public ListSortDirection SortDirection { get; set; }
+	/// <summary>Filters the events that a component exposes through a <see cref="T:System.ComponentModel.TypeDescriptor" />.</summary>
+	/// <param name="component">The component to filter events for.</param>
+	/// <param name="events">A dictionary of events that can be modified.</param>
+	/// <returns>
+	///   <see langword="true" /> if the set of filtered events is to be cached; <see langword="false" /> if the filter service must query again.</returns>
+	/// <summary>Filters the events that a component exposes through a <see cref="T:System.ComponentModel.TypeDescriptor" />.</summary>
+	/// <param name="component">The component to filter events for.</param>
+	/// <param name="events">A dictionary of events that can be modified.</param>
+	/// <returns>
+	///   <see langword="true" /> if the set of filtered events is to be cached; <see langword="false" /> if the filter service must query again.</returns>
+	bool FilterEvents(IComponent component, IDictionary events);
 
-	/// <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.ListSortDescription" /> class with the specified property description and direction.</summary>
-	/// <param name="property">The <see cref="T:System.ComponentModel.PropertyDescriptor" /> that describes the property by which the data source is sorted.</param>
-	/// <param name="direction">One of the <see cref="T:System.ComponentModel.ListSortDescription" /> values.</param>
-	public ListSortDescription(PropertyDescriptor property, ListSortDirection direction)
-	{
-		PropertyDescriptor = property;
-		SortDirection = direction;
-	}
+	/// <summary>Filters the properties that a component exposes through a <see cref="T:System.ComponentModel.TypeDescriptor" />.</summary>
+	/// <param name="component">The component to filter properties for.</param>
+	/// <param name="properties">A dictionary of properties that can be modified.</param>
+	/// <returns>
+	///   <see langword="true" /> if the set of filtered properties is to be cached; <see langword="false" /> if the filter service must query again.</returns>
+	/// <summary>Filters the properties that a component exposes through a <see cref="T:System.ComponentModel.TypeDescriptor" />.</summary>
+	/// <param name="component">The component to filter properties for.</param>
+	/// <param name="properties">A dictionary of properties that can be modified.</param>
+	/// <returns>
+	///   <see langword="true" /> if the set of filtered properties is to be cached; <see langword="false" /> if the filter service must query again.</returns>
+	bool FilterProperties(IComponent component, IDictionary properties);
 }

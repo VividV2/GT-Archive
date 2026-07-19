@@ -1,10 +1,14 @@
-namespace UnityEngine;
-
-public struct ColliderHit
+namespace UnityEngine
 {
-	private int m_ColliderInstanceID;
+	public struct ColliderHit
+	{
+		private int m_ColliderInstanceID;
 
-	public int instanceID => m_ColliderInstanceID;
+		public int instanceID => m_ColliderInstanceID;
 
-	public Collider collider => Object.FindObjectFromInstanceID(instanceID) as Collider;
+		public Collider collider => Object.FindObjectFromInstanceID(instanceID) as Collider;
+	}
+}
+namespace UnityEngine
+{
 }

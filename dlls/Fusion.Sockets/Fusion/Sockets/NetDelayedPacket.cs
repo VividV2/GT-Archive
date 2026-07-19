@@ -1,3 +1,4 @@
+#define TRACE
 namespace Fusion.Sockets;
 
 internal struct NetDelayedPacket

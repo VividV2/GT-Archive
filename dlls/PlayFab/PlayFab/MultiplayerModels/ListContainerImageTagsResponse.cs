@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
 namespace PlayFab.MultiplayerModels;
 
-[Serializable]
-public class ListContainerImageTagsResponse : PlayFabResultCommon
+public enum ProtocolType
 {
-	public List<string> Tags;
+	TCP,
+	UDP
 }

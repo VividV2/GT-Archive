@@ -4,7 +4,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Filtering;
 
 public interface IXRTargetEvaluatorLinkable
 {
-	void OnLink(IXRInteractor interactor);
+	void OnLink(UnityEngine.XR.Interaction.Toolkit.Interactors.IXRInteractor interactor);
 
-	void OnUnlink(IXRInteractor interactor);
+	void OnUnlink(UnityEngine.XR.Interaction.Toolkit.Interactors.IXRInteractor interactor);
 }

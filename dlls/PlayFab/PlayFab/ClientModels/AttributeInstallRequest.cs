@@ -1,12 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class AttributeInstallRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string Adid;
-
-	public string Idfa;
 }

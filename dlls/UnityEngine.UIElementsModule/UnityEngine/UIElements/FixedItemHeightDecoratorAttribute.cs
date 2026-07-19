@@ -1,8 +1,7 @@
-using UnityEngine.Bindings;
-
 namespace UnityEngine.UIElements;
 
-[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
-internal class FixedItemHeightDecoratorAttribute : PropertyAttribute
+public enum TimeUnit
 {
+	Second,
+	Millisecond
 }

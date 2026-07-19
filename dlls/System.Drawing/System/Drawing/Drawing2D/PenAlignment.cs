@@ -1,16 +1,30 @@
-namespace System.Drawing.Drawing2D;
-
-/// <summary>Specifies the alignment of a <see cref="T:System.Drawing.Pen" /> object in relation to the theoretical, zero-width line.</summary>
-public enum PenAlignment
+namespace System.Drawing.Imaging
 {
-	/// <summary>Specifies that the <see cref="T:System.Drawing.Pen" /> object is centered over the theoretical line.</summary>
-	Center,
-	/// <summary>Specifies that the <see cref="T:System.Drawing.Pen" /> is positioned on the inside of the theoretical line.</summary>
-	Inset,
-	/// <summary>Specifies the <see cref="T:System.Drawing.Pen" /> is positioned on the outside of the theoretical line.</summary>
-	Outset,
-	/// <summary>Specifies the <see cref="T:System.Drawing.Pen" /> is positioned to the left of the theoretical line.</summary>
-	Left,
-	/// <summary>Specifies the <see cref="T:System.Drawing.Pen" /> is positioned to the right of the theoretical line.</summary>
-	Right
+	public enum ImageLockMode
+	{
+		ReadOnly = 1,
+		WriteOnly,
+		ReadWrite,
+		UserInputBuffer
+	}
+}
+namespace System.Drawing
+{
+	internal struct CGRect32
+	{
+		public CGPoint32 origin;
+
+		public CGSize32 size;
+
+		public CGRect32(float x, float y, float width, float height)
+		{
+			origin.x = x;
+			origin.y = y;
+			size.width = width;
+			size.height = height;
+		}
+	}
+}
+namespace System.Drawing.Design
+{
 }

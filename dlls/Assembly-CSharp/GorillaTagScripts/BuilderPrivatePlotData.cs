@@ -1,12 +1,8 @@
-namespace GorillaTagScripts;
+namespace GorillaTag;
 
-public struct BuilderPrivatePlotData(BuilderPiecePrivatePlot plot)
+public interface ObjectPoolEvents
 {
-	public BuilderPiecePrivatePlot.PlotState plotState = plot.plotState;
+	void OnTaken();
 
-	public int ownerActorNumber = plot.GetOwnerActorNumber();
-
-	public bool isUnderCapacityLeft = false;
-
-	public bool isUnderCapacityRight = false;
+	void OnReturned();
 }

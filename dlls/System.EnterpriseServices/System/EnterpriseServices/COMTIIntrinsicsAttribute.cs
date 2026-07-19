@@ -1,30 +1,31 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace System.EnterpriseServices;
 
-/// <summary>Enables you to pass context properties from the COM Transaction Integrator (COMTI) into the COM+ context.</summary>
-[ComVisible(false)]
-[AttributeUsage(AttributeTargets.Class)]
-public sealed class COMTIIntrinsicsAttribute : Attribute
+/// <summary>Installs and configures assemblies in the COM+ catalog.</summary>
+/// <summary>Installs and configures assemblies in the COM+ catalog.</summary>
+[Guid("55e3ea25-55cb-4650-8887-18e8d30bb4bc")]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+public interface IRegistrationHelper
 {
-	private bool val;
+	/// <summary>Installs the assembly into the COM+ catalog.</summary>
+	/// <param name="assembly">The assembly name as a file or the strong name of an assembly in the global assembly cache (GAC).</param>
+	/// <param name="application">The application parameter can be <see langword="null" />. If it is, the name of the application is automatically generated based on the name of the assembly or the <see langword="ApplicationName" /> attribute. If the application contains an <see langword="ApplicationID" /> attribute, the attribute takes precedence.</param>
+	/// <param name="tlb">The name of the output type library (TLB) file, or a string containing <see langword="null" /> if the registration helper is expected to generate the name. On call completion, the actual name used is placed in the parameter.</param>
+	/// <param name="installFlags">The installation options specified in the enumeration.</param>
+	/// <summary>Installs the assembly into the COM+ catalog.</summary>
+	/// <param name="assembly">The assembly name as a file or the strong name of an assembly in the global assembly cache (GAC).</param>
+	/// <param name="application">The application parameter can be <see langword="null" />. If it is, the name of the application is automatically generated based on the name of the assembly or the <see langword="ApplicationName" /> attribute. If the application contains an <see langword="ApplicationID" /> attribute, the attribute takes precedence.</param>
+	/// <param name="tlb">The name of the output type library (TLB) file, or a string containing <see langword="null" /> if the registration helper is expected to generate the name. On call completion, the actual name used is placed in the parameter.</param>
+	/// <param name="installFlags">The installation options specified in the enumeration.</param>
+	void InstallAssembly([In][MarshalAs(UnmanagedType.BStr)] string assembly, [In][Out][MarshalAs(UnmanagedType.BStr)] ref string application, [In][Out][MarshalAs(UnmanagedType.BStr)] ref string tlb, [In] InstallationFlags installFlags);
 
-	/// <summary>Gets a value indicating whether the COM Transaction Integrator (COMTI) context properties are passed into the COM+ context.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the COMTI context properties are passed into the COM+ context; otherwise, <see langword="false" />. The default is <see langword="true" />.</returns>
-	public bool Value => val;
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.COMTIIntrinsicsAttribute" /> class, setting the <see cref="P:System.EnterpriseServices.COMTIIntrinsicsAttribute.Value" /> property to <see langword="true" />.</summary>
-	public COMTIIntrinsicsAttribute()
-	{
-		val = false;
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.COMTIIntrinsicsAttribute" /> class, enabling the setting of the <see cref="P:System.EnterpriseServices.COMTIIntrinsicsAttribute.Value" /> property.</summary>
-	/// <param name="val">
-	///   <see langword="true" /> if the COMTI context properties are passed into the COM+ context; otherwise, <see langword="false" />.</param>
-	public COMTIIntrinsicsAttribute(bool val)
-	{
-		this.val = val;
-	}
+	/// <summary>Uninstalls the assembly from the COM+ catalog.</summary>
+	/// <param name="assembly">The assembly name as a file or the strong name of an assembly in the global assembly cache (GAC).</param>
+	/// <param name="application">The name of the COM+ application.</param>
+	/// <summary>Uninstalls the assembly from the COM+ catalog.</summary>
+	/// <param name="assembly">The assembly name as a file or the strong name of an assembly in the global assembly cache (GAC).</param>
+	/// <param name="application">The name of the COM+ application.</param>
+	void UninstallAssembly([In][MarshalAs(UnmanagedType.BStr)] string assembly, [In][MarshalAs(UnmanagedType.BStr)] string application);
 }

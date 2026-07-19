@@ -1,45 +1,56 @@
-using System.Runtime.CompilerServices;
+namespace System;
 
-namespace System.Threading.Tasks;
-
-internal sealed class SynchronizationContextAwaitTaskContinuation : AwaitTaskContinuation
+internal enum ExceptionArgument
 {
-	private static readonly SendOrPostCallback s_postCallback = delegate(object state)
-	{
-		((Action)state)();
-	};
-
-	private static ContextCallback s_postActionCallback;
-
-	private readonly SynchronizationContext m_syncContext;
-
-	internal SynchronizationContextAwaitTaskContinuation(SynchronizationContext context, Action action, bool flowExecutionContext)
-		: base(action, flowExecutionContext)
-	{
-		m_syncContext = context;
-	}
-
-	internal sealed override void Run(Task ignored, bool canInlineContinuationTask)
-	{
-		if (canInlineContinuationTask && m_syncContext == SynchronizationContext.Current)
-		{
-			RunCallback(AwaitTaskContinuation.GetInvokeActionCallback(), m_action, ref Task.t_currentTask);
-		}
-		else
-		{
-			RunCallback(GetPostActionCallback(), this, ref Task.t_currentTask);
-		}
-	}
-
-	private static void PostAction(object state)
-	{
-		SynchronizationContextAwaitTaskContinuation synchronizationContextAwaitTaskContinuation = (SynchronizationContextAwaitTaskContinuation)state;
-		synchronizationContextAwaitTaskContinuation.m_syncContext.Post(s_postCallback, synchronizationContextAwaitTaskContinuation.m_action);
-	}
-
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private static ContextCallback GetPostActionCallback()
-	{
-		return PostAction;
-	}
+	obj,
+	dictionary,
+	dictionaryCreationThreshold,
+	array,
+	info,
+	key,
+	collection,
+	list,
+	match,
+	converter,
+	queue,
+	stack,
+	capacity,
+	index,
+	startIndex,
+	value,
+	count,
+	arrayIndex,
+	name,
+	mode,
+	item,
+	options,
+	view,
+	sourceBytesToCopy,
+	start,
+	pointer,
+	ownedMemory,
+	text,
+	length,
+	comparer,
+	comparable,
+	exceptions,
+	exception,
+	action,
+	comparison,
+	startSegment,
+	endSegment,
+	endIndex,
+	task,
+	source,
+	state,
+	culture,
+	destination,
+	byteOffset,
+	minimumBufferSize,
+	offset,
+	values,
+	comparisonType,
+	s,
+	input,
+	format
 }

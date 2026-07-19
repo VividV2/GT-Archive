@@ -1,10 +1,7 @@
-namespace Valve.VR;
-
-public enum EVRRenderModelTextureFormat
+namespace Valve.VR
 {
-	RGBA8_SRGB,
-	BC2,
-	BC4,
-	BC7,
-	BC7_SRGB
+	public struct VREvent_Ipd_t
+	{
+		public float ipdMeters;
+	}
 }

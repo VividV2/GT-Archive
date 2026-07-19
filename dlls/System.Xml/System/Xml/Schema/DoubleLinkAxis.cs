@@ -1,41 +1,19 @@
-using MS.Internal.Xml.XPath;
+namespace System.Xml;
 
-namespace System.Xml.Schema;
-
-internal class DoubleLinkAxis : Axis
+/// <summary>Specifies the method used to serialize the <see cref="T:System.Xml.XmlWriter" /> output. </summary>
+/// <summary>Specifies the method used to serialize the <see cref="T:System.Xml.XmlWriter" /> output. </summary>
+public enum XmlOutputMethod
 {
-	internal Axis next;
-
-	internal Axis Next
-	{
-		get
-		{
-			return next;
-		}
-		set
-		{
-			next = value;
-		}
-	}
-
-	internal DoubleLinkAxis(Axis axis, DoubleLinkAxis inputaxis)
-		: base(axis.TypeOfAxis, inputaxis, axis.Prefix, axis.Name, axis.NodeType)
-	{
-		next = null;
-		base.Urn = axis.Urn;
-		abbrAxis = axis.AbbrAxis;
-		if (inputaxis != null)
-		{
-			inputaxis.Next = this;
-		}
-	}
-
-	internal static DoubleLinkAxis ConvertTree(Axis axis)
-	{
-		if (axis == null)
-		{
-			return null;
-		}
-		return new DoubleLinkAxis(axis, ConvertTree((Axis)axis.Input));
-	}
+	/// <summary>Serialize according to the XML 1.0 rules.</summary>
+	/// <summary>Serialize according to the XML 1.0 rules.</summary>
+	Xml,
+	/// <summary>Serialize according to the HTML rules specified by XSLT.</summary>
+	/// <summary>Serialize according to the HTML rules specified by XSLT.</summary>
+	Html,
+	/// <summary>Serialize text blocks only.</summary>
+	/// <summary>Serialize text blocks only.</summary>
+	Text,
+	/// <summary>Use the XSLT rules to choose between the <see cref="F:System.Xml.XmlOutputMethod.Xml" /> and <see cref="F:System.Xml.XmlOutputMethod.Html" /> output methods at runtime.</summary>
+	/// <summary>Use the XSLT rules to choose between the <see cref="F:System.Xml.XmlOutputMethod.Xml" /> and <see cref="F:System.Xml.XmlOutputMethod.Html" /> output methods at runtime.</summary>
+	AutoDetect
 }

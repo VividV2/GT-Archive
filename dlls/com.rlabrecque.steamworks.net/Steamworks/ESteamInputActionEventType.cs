@@ -1,7 +1,11 @@
-namespace Steamworks;
-
-public enum ESteamInputActionEventType
+namespace Steamworks
 {
-	ESteamInputActionEventType_DigitalAction,
-	ESteamInputActionEventType_AnalogAction
+	public enum ESteamInputActionEventType
+	{
+		ESteamInputActionEventType_DigitalAction,
+		ESteamInputActionEventType_AnalogAction
+	}
+}
+namespace Steamworks
+{
 }

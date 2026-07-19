@@ -1,13 +1,6 @@
-namespace Modio.Errors;
-
-public class TempModsError : Error
+namespace ICSharpCode.SharpZipLib.Core
 {
-	public new static readonly TempModsError None = new TempModsError(TempModsErrorCode.NONE);
-
-	public new TempModsErrorCode Code => (TempModsErrorCode)base.Code;
-
-	public TempModsError(TempModsErrorCode code)
-		: base((ErrorCode)code)
-	{
-	}
+}
+namespace Modio.Authentication
+{
 }

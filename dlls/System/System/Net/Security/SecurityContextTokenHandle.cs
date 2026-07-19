@@ -1,27 +1,16 @@
-using System.Threading;
-using Microsoft.Win32.SafeHandles;
-
 namespace System.Net.Security;
 
-internal sealed class SecurityContextTokenHandle : CriticalHandleZeroOrMinusOneIsInvalid
+/// <summary>Enumerates Secure Socket Layer (SSL) policy errors.</summary>
+[Flags]
+public enum SslPolicyErrors
 {
-	private int _disposed;
-
-	private SecurityContextTokenHandle()
-	{
-	}
-
-	internal IntPtr DangerousGetHandle()
-	{
-		return handle;
-	}
-
-	protected override bool ReleaseHandle()
-	{
-		if (!IsInvalid && Interlocked.Increment(ref _disposed) == 1)
-		{
-			return global::Interop.Kernel32.CloseHandle(handle);
-		}
-		return true;
-	}
+	/// <summary>No SSL policy errors.</summary>
+	None = 0,
+	/// <summary>Certificate not available.</summary>
+	RemoteCertificateNotAvailable = 1,
+	RemoteCertificateNameMismatch = 2,
+	RemoteCertificateChainErrors = 4
+}
+namespace System.Net
+{
 }

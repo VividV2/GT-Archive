@@ -3,6 +3,8 @@ using andywiecko.BurstTriangulator;
 using Unity.Jobs;
 using UnityEngine;
 
+namespace andywiecko.BurstTriangulator;
+
 [Unity.Jobs.DOTSCompilerGenerated]
 internal class __JobReflectionRegistrationOutput__7274761993000005315
 {

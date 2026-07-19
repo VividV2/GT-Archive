@@ -3,34 +3,38 @@ using System.Linq;
 using UnityEngine.Localization.Settings;
 using UnityEngine.Localization.SmartFormat;
 
-namespace UnityEngine.Localization.Tables;
-
-public class StringTable : DetailedLocalizationTable<StringTableEntry>
+namespace UnityEngine.Localization.Tables
 {
-	public string GenerateCharacterSet()
+	public class StringTable : DetailedLocalizationTable<StringTableEntry>
 	{
-		return string.Concat(from c in CollectLiteralCharacters().Distinct()
-			orderby c
-			select c);
-	}
-
-	internal IEnumerable<char> CollectLiteralCharacters()
-	{
-		IEnumerable<char> enumerable = "";
-		SmartFormatterLiteralCharacterExtractor smartFormatterLiteralCharacterExtractor = new SmartFormatterLiteralCharacterExtractor(LocalizationSettings.StringDatabase?.SmartFormatter);
-		foreach (StringTableEntry value in base.Values)
+		public string GenerateCharacterSet()
 		{
-			enumerable = ((!value.IsSmart) ? enumerable.Concat(value.LocalizedValue.AsEnumerable()) : enumerable.Concat(smartFormatterLiteralCharacterExtractor.ExtractLiteralsCharacters(value.LocalizedValue)));
+			return string.Concat(from c in CollectLiteralCharacters().Distinct()
+				orderby c
+				select c);
 		}
-		return enumerable;
-	}
 
-	public override StringTableEntry CreateTableEntry()
-	{
-		return new StringTableEntry
+		internal IEnumerable<char> CollectLiteralCharacters()
 		{
-			Table = this,
-			Data = new TableEntryData()
-		};
+			IEnumerable<char> enumerable = "";
+			SmartFormatterLiteralCharacterExtractor smartFormatterLiteralCharacterExtractor = new SmartFormatterLiteralCharacterExtractor(LocalizationSettings.StringDatabase?.SmartFormatter);
+			foreach (StringTableEntry value in base.Values)
+			{
+				enumerable = ((!value.IsSmart) ? enumerable.Concat(value.LocalizedValue.AsEnumerable()) : enumerable.Concat(smartFormatterLiteralCharacterExtractor.ExtractLiteralsCharacters(value.LocalizedValue)));
+			}
+			return enumerable;
+		}
+
+		public override StringTableEntry CreateTableEntry()
+		{
+			return new StringTableEntry
+			{
+				Table = this,
+				Data = new TableEntryData()
+			};
+		}
 	}
+}
+namespace UnityEngine.Localization.Settings
+{
 }

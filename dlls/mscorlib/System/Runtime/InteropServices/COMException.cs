@@ -1,75 +1,17 @@
-using System.Globalization;
-using System.Runtime.Serialization;
+namespace System.Reflection;
 
-namespace System.Runtime.InteropServices;
-
-/// <summary>The exception that is thrown when an unrecognized HRESULT is returned from a COM method call.</summary>
-[Serializable]
-public class COMException : ExternalException
+/// <summary>Defines the valid calling conventions for a method.</summary>
+[Flags]
+public enum CallingConventions
 {
-	internal COMException(int hr)
-	{
-		base.HResult = hr;
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.COMException" /> class with default values.</summary>
-	public COMException()
-	{
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.COMException" /> class with a specified message.</summary>
-	/// <param name="message">The message that indicates the reason for the exception.</param>
-	public COMException(string message)
-		: base(message)
-	{
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.COMException" /> class with a specified error message and a reference to the inner exception that is the cause of this exception.</summary>
-	/// <param name="message">The error message that explains the reason for the exception.</param>
-	/// <param name="inner">The exception that is the cause of the current exception. If the <paramref name="inner" /> parameter is not <see langword="null" />, the current exception is raised in a <see langword="catch" /> block that handles the inner exception.</param>
-	public COMException(string message, Exception inner)
-		: base(message, inner)
-	{
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.COMException" /> class with a specified message and error code.</summary>
-	/// <param name="message">The message that indicates the reason the exception occurred.</param>
-	/// <param name="errorCode">The error code (HRESULT) value associated with this exception.</param>
-	public COMException(string message, int errorCode)
-		: base(message)
-	{
-		base.HResult = errorCode;
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.COMException" /> class from serialization data.</summary>
-	/// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> object that holds the serialized object data.</param>
-	/// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> object that supplies the contextual information about the source or destination.</param>
-	/// <exception cref="T:System.ArgumentNullException">
-	///   <paramref name="info" /> is <see langword="null" />.</exception>
-	protected COMException(SerializationInfo info, StreamingContext context)
-		: base(info, context)
-	{
-	}
-
-	/// <summary>Converts the contents of the exception to a string.</summary>
-	/// <returns>A string containing the <see cref="P:System.Exception.HResult" />, <see cref="P:System.Exception.Message" />, <see cref="P:System.Exception.InnerException" />, and <see cref="P:System.Exception.StackTrace" /> properties of the exception.</returns>
-	public override string ToString()
-	{
-		string message = Message;
-		string text = GetType().ToString() + " (0x" + base.HResult.ToString("X8", CultureInfo.InvariantCulture) + ")";
-		if (message != null && message.Length > 0)
-		{
-			text = text + ": " + message;
-		}
-		Exception innerException = base.InnerException;
-		if (innerException != null)
-		{
-			text = text + " ---> " + innerException.ToString();
-		}
-		if (StackTrace != null)
-		{
-			text = text + Environment.NewLine + StackTrace;
-		}
-		return text;
-	}
+	/// <summary>Specifies the default calling convention as determined by the common language runtime. Use this calling convention for static methods. For instance or virtual methods use <see langword="HasThis" />.</summary>
+	Standard = 1,
+	/// <summary>Specifies the calling convention for methods with variable arguments.</summary>
+	VarArgs = 2,
+	/// <summary>Specifies that either the <see langword="Standard" /> or the <see langword="VarArgs" /> calling convention may be used.</summary>
+	Any = 3,
+	/// <summary>Specifies an instance or virtual method (not a static method). At run-time, the called method is passed a pointer to the target object as its first argument (the <see langword="this" /> pointer). The signature stored in metadata does not include the type of this first argument, because the method is known and its owner class can be discovered from metadata.</summary>
+	HasThis = 0x20,
+	/// <summary>Specifies that the signature is a function-pointer signature, representing a call to an instance or virtual method (not a static method). If <see langword="ExplicitThis" /> is set, <see langword="HasThis" /> must also be set. The first argument passed to the called method is still a <see langword="this" /> pointer, but the type of the first argument is now unknown. Therefore, a token that describes the type (or class) of the <see langword="this" /> pointer is explicitly stored into its metadata signature.</summary>
+	ExplicitThis = 0x40
 }

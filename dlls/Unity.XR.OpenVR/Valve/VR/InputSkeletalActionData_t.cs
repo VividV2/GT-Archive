@@ -1,11 +1,12 @@
-using System.Runtime.InteropServices;
-
 namespace Valve.VR;
 
-public struct InputSkeletalActionData_t
+public struct VRTextureBounds_t
 {
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bActive;
+	public float uMin;
 
-	public ulong activeOrigin;
+	public float vMin;
+
+	public float uMax;
+
+	public float vMax;
 }

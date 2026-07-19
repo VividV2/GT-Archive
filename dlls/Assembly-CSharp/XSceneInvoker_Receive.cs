@@ -1,13 +1,2 @@
-using UnityEngine;
-using UnityEngine.Events;
+namespace GorillaTag.DebugTools;
 
-public class XSceneInvoker_Receive : MonoBehaviour
-{
-	[SerializeField]
-	private UnityEvent evt;
-
-	public void Invoke()
-	{
-		evt.Invoke();
-	}
-}

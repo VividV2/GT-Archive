@@ -1,11 +1,18 @@
-namespace System;
+namespace System.Net.NetworkInformation;
 
-/// <summary>A customizable parser based on the File Transfer Protocol (FTP) scheme.</summary>
-public class FtpStyleUriParser : UriParser
+internal enum IcmpV4Type
 {
-	/// <summary>Creates a customizable parser based on the File Transfer Protocol (FTP) scheme.</summary>
-	public FtpStyleUriParser()
-		: base(UriParser.FtpUri.Flags)
-	{
-	}
+	ICMP4_ECHO_REPLY = 0,
+	ICMP4_DST_UNREACH = 3,
+	ICMP4_SOURCE_QUENCH = 4,
+	ICMP4_TIME_EXCEEDED = 11,
+	ICMP4_PARAM_PROB = 12,
+	ICMP4_REDIRECT = 5,
+	ICMP4_ECHO_REQUEST = 8,
+	ICMP4_ROUTER_ADVERT = 9,
+	ICMP4_ROUTER_SOLICIT = 10,
+	ICMP4_TIMESTAMP_REQUEST = 13,
+	ICMP4_TIMESTAMP_REPLY = 14,
+	ICMP4_MASK_REQUEST = 17,
+	ICMP4_MASK_REPLY = 18
 }

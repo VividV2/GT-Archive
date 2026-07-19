@@ -1,9 +1,2 @@
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.MultiplayerModels;
 
-namespace PlayFab.LocalizationModels;
-
-[Serializable]
-public class GetLanguageListRequest : PlayFabRequestCommon
-{
-}

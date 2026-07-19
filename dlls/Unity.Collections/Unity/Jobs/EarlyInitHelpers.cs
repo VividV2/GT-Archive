@@ -1,52 +1,57 @@
 using System;
-using System.Collections.Generic;
-using UnityEngine;
+using System.Runtime.InteropServices;
+using System;
+using System.Runtime.InteropServices;
 
-namespace Unity.Jobs;
+namespace Unity.Collections;
 
-public class EarlyInitHelpers
+[Serializable]
+[StructLayout(LayoutKind.Explicit, Size = 30)]
+[GenerateTestsForBurstCompatibility]
+public struct FixedBytes30
 {
-	public delegate void EarlyInitFunction();
+	[FieldOffset(0)]
+	public FixedBytes16 offset0000;
 
-	private static List<EarlyInitFunction> s_PendingDelegates;
+	[FieldOffset(16)]
+	public byte byte0016;
 
-	static EarlyInitHelpers()
-	{
-		FlushEarlyInits();
-	}
+	[FieldOffset(17)]
+	public byte byte0017;
 
-	public static void FlushEarlyInits()
-	{
-		while (s_PendingDelegates != null)
-		{
-			List<EarlyInitFunction> list = s_PendingDelegates;
-			s_PendingDelegates = null;
-			for (int i = 0; i < list.Count; i++)
-			{
-				try
-				{
-					list[i]();
-				}
-				catch (Exception exception)
-				{
-					Debug.LogException(exception);
-				}
-			}
-		}
-	}
+	[FieldOffset(18)]
+	public byte byte0018;
 
-	public static void AddEarlyInitFunction(EarlyInitFunction func)
-	{
-		if (s_PendingDelegates == null)
-		{
-			s_PendingDelegates = new List<EarlyInitFunction>();
-		}
-		s_PendingDelegates.Add(func);
-	}
+	[FieldOffset(19)]
+	public byte byte0019;
 
-	public static void JobReflectionDataCreationFailed(Exception ex)
-	{
-		Debug.LogError("Failed to create job reflection data. Please refer to callstack of exception for information on which job could not produce its reflection data.");
-		Debug.LogException(ex);
-	}
+	[FieldOffset(20)]
+	public byte byte0020;
+
+	[FieldOffset(21)]
+	public byte byte0021;
+
+	[FieldOffset(22)]
+	public byte byte0022;
+
+	[FieldOffset(23)]
+	public byte byte0023;
+
+	[FieldOffset(24)]
+	public byte byte0024;
+
+	[FieldOffset(25)]
+	public byte byte0025;
+
+	[FieldOffset(26)]
+	public byte byte0026;
+
+	[FieldOffset(27)]
+	public byte byte0027;
+
+	[FieldOffset(28)]
+	public byte byte0028;
+
+	[FieldOffset(29)]
+	public byte byte0029;
 }

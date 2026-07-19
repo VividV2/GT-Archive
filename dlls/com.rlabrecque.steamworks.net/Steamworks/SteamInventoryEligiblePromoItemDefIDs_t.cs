@@ -1,19 +1,40 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4703)]
-public struct SteamInventoryEligiblePromoItemDefIDs_t
+[CallbackIdentity(4503)]
+public struct HTML_StartRequest_t
 {
-	public const int k_iCallback = 4703;
+	public const int k_iCallback = 4503;
 
-	public EResult m_result;
+	public HHTMLBrowser unBrowserHandle;
 
-	public CSteamID m_steamID;
+	public string pchURL;
 
-	public int m_numEligiblePromoItemDefs;
+	public string pchTarget;
+
+	public string pchPostData;
 
 	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bCachedData;
+	public bool bIsRedirect;
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(4703)]
+	public struct SteamInventoryEligiblePromoItemDefIDs_t
+	{
+		public const int k_iCallback = 4703;
+
+		public EResult m_result;
+
+		public CSteamID m_steamID;
+
+		public int m_numEligiblePromoItemDefs;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bCachedData;
+	}
 }

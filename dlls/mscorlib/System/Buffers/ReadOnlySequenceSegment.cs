@@ -1,10 +1,12 @@
-namespace System.Buffers;
+using System.Security;
+using System.Security;
 
-public abstract class ReadOnlySequenceSegment<T>
+namespace System.Globalization;
+
+internal struct InternalEncodingDataItem
 {
-	public ReadOnlyMemory<T> Memory { get; protected set; }
+	[SecurityCritical]
+	internal string webName;
 
-	public ReadOnlySequenceSegment<T> Next { get; protected set; }
-
-	public long RunningIndex { get; protected set; }
+	internal ushort codePage;
 }

@@ -1,8 +1,2 @@
-using UnityEngine;
+namespace GorillaLocomotion.Swimming;
 
-public class GRCollector : MonoBehaviour
-{
-	private void Awake()
-	{
-	}
-}

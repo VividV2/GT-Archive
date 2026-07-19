@@ -39,6 +39,8 @@ public class AudioInEnumerator : DeviceEnumeratorBase
 			handle = Photon_Audio_In_CreateMicEnumerator();
 			int num = Photon_Audio_In_MicEnumerator_Count(handle);
 			devices = new List<DeviceInfo>();
+			int i;
+			int num;
 			for (int i = 0; i < num; i++)
 			{
 				devices.Add(new DeviceInfo(Photon_Audio_In_MicEnumerator_IDAtIndex(handle, i), Marshal.PtrToStringAuto(Photon_Audio_In_MicEnumerator_NameAtIndex(handle, i))));

@@ -1,40 +1,20 @@
-using System.Collections.ObjectModel;
+namespace System.ComponentModel;
 
-namespace System.Net.Mail;
-
-/// <summary>Stores attachments to be sent as part of an email message.</summary>
-public sealed class AttachmentCollection : Collection<Attachment>, IDisposable
+/// <summary>Provides the functionality to offer custom error information that a user interface can bind to.</summary>
+/// <summary>Provides the functionality to offer custom error information that a user interface can bind to.</summary>
+public interface IDataErrorInfo
 {
-	internal AttachmentCollection()
-	{
-	}
+	/// <summary>Gets the error message for the property with the given name.</summary>
+	/// <param name="columnName">The name of the property whose error message to get.</param>
+	/// <returns>The error message for the property. The default is an empty string ("").</returns>
+	/// <summary>Gets the error message for the property with the given name.</summary>
+	/// <param name="columnName">The name of the property whose error message to get.</param>
+	/// <returns>The error message for the property. The default is an empty string ("").</returns>
+	string this[string columnName] { get; }
 
-	/// <summary>Releases all resources used by the <see cref="T:System.Net.Mail.AttachmentCollection" />.</summary>
-	public void Dispose()
-	{
-		for (int i = 0; i < base.Count; i++)
-		{
-			base[i].Dispose();
-		}
-	}
-
-	protected override void ClearItems()
-	{
-		base.ClearItems();
-	}
-
-	protected override void InsertItem(int index, Attachment item)
-	{
-		base.InsertItem(index, item);
-	}
-
-	protected override void RemoveItem(int index)
-	{
-		base.RemoveItem(index);
-	}
-
-	protected override void SetItem(int index, Attachment item)
-	{
-		base.SetItem(index, item);
-	}
+	/// <summary>Gets an error message indicating what is wrong with this object.</summary>
+	/// <returns>An error message indicating what is wrong with this object. The default is an empty string ("").</returns>
+	/// <summary>Gets an error message indicating what is wrong with this object.</summary>
+	/// <returns>An error message indicating what is wrong with this object. The default is an empty string ("").</returns>
+	string Error { get; }
 }

@@ -1,13 +1,28 @@
-namespace Modio.Errors;
+using System;
+using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
-public class ModValidationError : Error
+namespace Modio.Users;
+
+[Serializable]
+public class UserSaveObject
 {
-	public new static readonly ModValidationError None = new ModValidationError(ModValidationErrorCode.NONE);
+	public string LocalUserId;
 
-	public new ModValidationErrorCode Code => (ModValidationErrorCode)base.Code;
+	public string Username;
 
-	public ModValidationError(ModValidationErrorCode code)
-		: base((ErrorCode)code)
-	{
-	}
+	public long UserId;
+
+	public string AuthToken;
+
+	public long AuthExpiration;
+
+	public List<long> SubscribedMods;
+
+	public List<long> DisabledMods;
+
+	public List<long> PurchasedMods;
 }

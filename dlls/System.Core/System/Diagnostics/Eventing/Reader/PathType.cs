@@ -8,3 +8,6 @@ public enum PathType
 	/// <summary>A path parameter contains the name of the event log.</summary>
 	LogName = 1
 }
+namespace System.Diagnostics.Eventing.Reader
+{
+}

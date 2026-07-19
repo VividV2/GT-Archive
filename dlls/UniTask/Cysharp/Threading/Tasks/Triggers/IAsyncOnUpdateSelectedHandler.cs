@@ -1,8 +1,12 @@
 using UnityEngine.EventSystems;
 
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnUpdateSelectedHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask<BaseEventData> OnUpdateSelectedAsync();
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+	public interface IAsyncOnCancelHandler
+	{
+		UniTask<UnityEngine.EventSystems.BaseEventData> OnCancelAsync();
+	}
 }

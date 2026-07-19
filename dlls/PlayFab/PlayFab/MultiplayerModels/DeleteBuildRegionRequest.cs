@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.ProfilesModels;
 
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class DeleteBuildRegionRequest : PlayFabRequestCommon
-{
-	public string BuildId;
-
-	public string Region;
-}

@@ -1,22 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class MatchTotalRule : PlayFabBaseModel
+namespace PlayFab.MultiplayerModels
 {
-	public QueueRuleAttribute Attribute;
-
-	public MatchTotalRuleExpansion Expansion;
-
-	public double Max;
-
-	public double Min;
-
-	public string Name;
-
-	public uint? SecondsUntilOptional;
-
-	public double Weight;
 }

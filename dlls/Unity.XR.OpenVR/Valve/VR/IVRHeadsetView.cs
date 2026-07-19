@@ -1,60 +1,45 @@
-using System.Runtime.InteropServices;
-
-namespace Valve.VR;
-
-public struct IVRHeadsetView
+namespace Valve.VR
 {
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate void _SetHeadsetViewSize(uint nWidth, uint nHeight);
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate void _GetHeadsetViewSize(ref uint pnWidth, ref uint pnHeight);
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate void _SetHeadsetViewMode(uint eHeadsetViewMode);
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate uint _GetHeadsetViewMode();
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate void _SetHeadsetViewCropped(bool bCropped);
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate bool _GetHeadsetViewCropped();
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate float _GetHeadsetViewAspectRatio();
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate void _SetHeadsetViewBlendRange(float flStartPct, float flEndPct);
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate void _GetHeadsetViewBlendRange(ref float pStartPct, ref float pEndPct);
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _SetHeadsetViewSize SetHeadsetViewSize;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetHeadsetViewSize GetHeadsetViewSize;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _SetHeadsetViewMode SetHeadsetViewMode;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetHeadsetViewMode GetHeadsetViewMode;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _SetHeadsetViewCropped SetHeadsetViewCropped;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetHeadsetViewCropped GetHeadsetViewCropped;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetHeadsetViewAspectRatio GetHeadsetViewAspectRatio;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _SetHeadsetViewBlendRange SetHeadsetViewBlendRange;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetHeadsetViewBlendRange GetHeadsetViewBlendRange;
+	public enum EVRButtonId
+	{
+		k_EButton_System = 0,
+		k_EButton_ApplicationMenu = 1,
+		k_EButton_Grip = 2,
+		k_EButton_DPad_Left = 3,
+		k_EButton_DPad_Up = 4,
+		k_EButton_DPad_Right = 5,
+		k_EButton_DPad_Down = 6,
+		k_EButton_A = 7,
+		k_EButton_ProximitySensor = 31,
+		k_EButton_Axis0 = 32,
+		k_EButton_Axis1 = 33,
+		k_EButton_Axis2 = 34,
+		k_EButton_Axis3 = 35,
+		k_EButton_Axis4 = 36,
+		k_EButton_SteamVR_Touchpad = 32,
+		k_EButton_SteamVR_Trigger = 33,
+		k_EButton_Dashboard_Back = 2,
+		k_EButton_IndexController_A = 2,
+		k_EButton_IndexController_B = 1,
+		k_EButton_IndexController_JoyStick = 35,
+		k_EButton_Max = 64
+	}
+}
+namespace Valve.VR
+{
+	public enum EVRState
+	{
+		Undefined = -1,
+		Off,
+		Searching,
+		Searching_Alert,
+		Ready,
+		Ready_Alert,
+		NotReady,
+		Standby,
+		Ready_Alert_Low
+	}
+}
+namespace Valve.VR
+{
 }

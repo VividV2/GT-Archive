@@ -8,3 +8,6 @@ public interface ILckResult
 
 	LckError? Error { get; }
 }
+namespace Liv.Lck.Streaming
+{
+}

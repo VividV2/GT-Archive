@@ -1,3 +1,7 @@
-namespace UnityEngine.UIElements;
-
-internal delegate void VisualNodeDelegate(VisualManager manager, in VisualNodeHandle handle);
+namespace UnityEngine.UIElements.UIR
+{
+}
+namespace UnityEngine.UIElements
+{
+	internal delegate void VisualNodeDelegate(VisualManager manager, in VisualNodeHandle handle);
+}

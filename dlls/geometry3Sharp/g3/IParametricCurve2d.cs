@@ -1,26 +1,30 @@
-namespace g3;
-
-public interface IParametricCurve2d
+namespace g3
 {
-	bool IsClosed { get; }
+	public interface IParametricCurve2d
+	{
+		bool IsClosed { get; }
 
-	double ParamLength { get; }
+		double ParamLength { get; }
 
-	bool HasArcLength { get; }
+		bool HasArcLength { get; }
 
-	double ArcLength { get; }
+		double ArcLength { get; }
 
-	bool IsTransformable { get; }
+		bool IsTransformable { get; }
 
-	Vector2d SampleT(double t);
+		Vector2d SampleT(double t);
 
-	Vector2d TangentT(double t);
+		Vector2d TangentT(double t);
 
-	Vector2d SampleArcLength(double a);
+		Vector2d SampleArcLength(double a);
 
-	void Reverse();
+		void Reverse();
 
-	void Transform(ITransform2 xform);
+		void Transform(ITransform2 xform);
 
-	IParametricCurve2d Clone();
+		IParametricCurve2d Clone();
+	}
+}
+namespace g3
+{
 }

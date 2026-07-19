@@ -8,3 +8,6 @@ public enum ApplicationVersionMatch
 	/// <summary>Match on the exact version.</summary>
 	MatchExactVersion = 0
 }
+namespace System.Runtime
+{
+}

@@ -1,9 +1,29 @@
-using System.Configuration;
-
-namespace System.Runtime.Serialization.Configuration;
-
-[AttributeUsage(AttributeTargets.Property)]
-internal sealed class DeclaredTypeValidatorAttribute : ConfigurationValidatorAttribute
+namespace System.Runtime.Serialization.Json
 {
-	public override ConfigurationValidatorBase ValidatorInstance => new DeclaredTypeValidator();
+	internal class JsonStringDataContract : JsonDataContract
+	{
+		public JsonStringDataContract(StringDataContract traditionalStringDataContract)
+		{
+			base..ctor(traditionalStringDataContract);
+		}
+
+		public override object ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+		{
+			if (context == null)
+			{
+				if (!JsonDataContract.TryReadNullAtTopLevel(jsonReader))
+				{
+					return jsonReader.ReadElementContentAsString();
+				}
+				return null;
+			}
+			return JsonDataContract.HandleReadValue(jsonReader.ReadElementContentAsString(), context);
+		}
+	}
+}
+namespace System.Runtime.Serialization.Configuration
+{
+}
+namespace System.Runtime.Serialization
+{
 }

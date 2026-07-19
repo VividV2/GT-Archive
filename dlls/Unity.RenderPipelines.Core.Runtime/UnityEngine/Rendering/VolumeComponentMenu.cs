@@ -1,14 +1,8 @@
-using System;
+namespace UnityEngine.Rendering.RenderGraphModule;
 
-namespace UnityEngine.Rendering;
-
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-public class VolumeComponentMenu : Attribute
+public enum TextureSizeMode
 {
-	public readonly string menu;
-
-	public VolumeComponentMenu(string menu)
-	{
-		this.menu = menu;
-	}
+	Explicit,
+	Scale,
+	Functor
 }

@@ -1,18 +1,15 @@
 using System;
-using System.Collections.Generic;
+using System;
 
 namespace Oculus.Platform.Models;
 
-public class PurchaseList : DeserializableList<Purchase>
+public class UserCapability(IntPtr o)
 {
-	public PurchaseList(IntPtr a)
-	{
-		int num = (int)(uint)CAPI.ovr_PurchaseArray_GetSize(a);
-		_Data = new List<Purchase>(num);
-		for (int i = 0; i < num; i++)
-		{
-			_Data.Add(new Purchase(CAPI.ovr_PurchaseArray_GetElement(a, (UIntPtr)(ulong)i)));
-		}
-		_NextUrl = CAPI.ovr_PurchaseArray_GetNextUrl(a);
-	}
+	public readonly string Description = CAPI.ovr_UserCapability_GetDescription(o);
+
+	public readonly bool IsEnabled = CAPI.ovr_UserCapability_GetIsEnabled(o);
+
+	public readonly string Name = CAPI.ovr_UserCapability_GetName(o);
+
+	public readonly string ReasonCode = CAPI.ovr_UserCapability_GetReasonCode(o);
 }

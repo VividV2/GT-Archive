@@ -7,3 +7,6 @@ internal static class UnixIPGlobalPropertiesFactoryPal
 		return null;
 	}
 }
+namespace System.Diagnostics
+{
+}

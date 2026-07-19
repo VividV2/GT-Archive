@@ -1,10 +1,17 @@
 using System;
 
-namespace UnityEngine.UIElements.UIR;
-
-[Flags]
-internal enum EntryFlags : ushort
+namespace UnityEngine.UIElements.UIR
 {
-	UsesTextCoreSettings = 1,
-	IsPremultiplied = 2
+	[Flags]
+	internal enum EntryFlags : ushort
+	{
+		UsesTextCoreSettings = 1,
+		IsPremultiplied = 2
+	}
+}
+namespace UnityEngine.UIElements.UIR
+{
+}
+namespace UnityEngine.UIElements.UIR
+{
 }

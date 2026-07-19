@@ -1,23 +1,27 @@
 using UnityEngine.InputSystem.Layouts;
 using UnityEngine.InputSystem.LowLevel;
 
-namespace UnityEngine.InputSystem.Controls;
-
-[InputControlLayout(hideInUI = true)]
-public class TouchPhaseControl : InputControl<TouchPhase>
+namespace UnityEngine.InputSystem.Controls
 {
-	public TouchPhaseControl()
+	[InputControlLayout(hideInUI = true)]
+	public class TouchPhaseControl : InputControl<TouchPhase>
 	{
-		m_StateBlock.format = InputStateBlock.FormatInt;
-	}
+		public TouchPhaseControl()
+		{
+			m_StateBlock.format = InputStateBlock.FormatInt;
+		}
 
-	public unsafe override TouchPhase ReadUnprocessedValueFromState(void* statePtr)
-	{
-		return (TouchPhase)base.stateBlock.ReadInt(statePtr);
-	}
+		public unsafe override TouchPhase ReadUnprocessedValueFromState(void* statePtr)
+		{
+			return (TouchPhase)base.stateBlock.ReadInt(statePtr);
+		}
 
-	public unsafe override void WriteValueIntoState(TouchPhase value, void* statePtr)
-	{
-		*(TouchPhase*)((byte*)statePtr + (int)m_StateBlock.byteOffset) = value;
+		public unsafe override void WriteValueIntoState(TouchPhase value, void* statePtr)
+		{
+			*(TouchPhase*)((byte*)statePtr + (int)m_StateBlock.byteOffset) = value;
+		}
 	}
+}
+namespace UnityEngine.InputSystem.Utilities
+{
 }

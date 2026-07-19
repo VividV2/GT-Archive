@@ -27,3 +27,6 @@ public class SelectedSolutionsData
 
 	public NetcodeSolution SelectedNetcodeSolution;
 }
+namespace Unity.Multiplayer.Center.Common
+{
+}

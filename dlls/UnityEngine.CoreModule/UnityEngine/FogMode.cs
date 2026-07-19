@@ -1,8 +1,18 @@
-namespace UnityEngine;
-
-public enum FogMode
+namespace UnityEngine
 {
-	Linear = 1,
-	Exponential,
-	ExponentialSquared
+	public enum D3D12GraphicsDeviceType
+	{
+		DoNotCare,
+		Discrete,
+		Integrated
+	}
+}
+namespace UnityEngine
+{
+	public enum FogMode
+	{
+		Linear = 1,
+		Exponential,
+		ExponentialSquared
+	}
 }

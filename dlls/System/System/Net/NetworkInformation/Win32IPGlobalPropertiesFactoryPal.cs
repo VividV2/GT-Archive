@@ -1,9 +1,26 @@
-namespace System.Net.NetworkInformation;
+using System.Collections;
+using System.Collections;
 
-internal static class Win32IPGlobalPropertiesFactoryPal
+namespace System.ComponentModel.Design
 {
-	public static IPGlobalProperties Create()
+	/// <summary>Enables enumeration of components at design time.</summary>
+	/// <summary>Enables enumeration of components at design time.</summary>
+	public interface IComponentDiscoveryService
 	{
-		return new Win32IPGlobalProperties();
+		/// <summary>Gets the list of available component types.</summary>
+		/// <param name="designerHost">The designer host providing design-time services. Can be <see langword="null" />.</param>
+		/// <param name="baseType">The base type specifying the components to retrieve. Can be <see langword="null" />.</param>
+		/// <returns>The list of available component types.</returns>
+		/// <summary>Gets the list of available component types.</summary>
+		/// <param name="designerHost">The designer host providing design-time services. Can be <see langword="null" />.</param>
+		/// <param name="baseType">The base type specifying the components to retrieve. Can be <see langword="null" />.</param>
+		/// <returns>The list of available component types.</returns>
+		ICollection GetComponentTypes(IDesignerHost designerHost, Type baseType);
 	}
+}
+namespace System.Net.Sockets
+{
+}
+namespace System.Net
+{
 }

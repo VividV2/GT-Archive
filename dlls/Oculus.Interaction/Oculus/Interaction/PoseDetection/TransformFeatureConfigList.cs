@@ -2,21 +2,25 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Oculus.Interaction.PoseDetection;
-
-[Serializable]
-public class TransformFeatureConfigList
+namespace Oculus.Interaction.PoseDetection
 {
-	[SerializeField]
-	private List<TransformFeatureConfig> _values;
-
-	public List<TransformFeatureConfig> Values => _values;
-
-	public static TransformFeatureConfigList Create(List<TransformFeatureConfig> values)
+}
+namespace Oculus.Interaction.PoseDetection
+{
+	[Serializable]
+	public class TransformFeatureConfigList
 	{
-		return new TransformFeatureConfigList
+		[SerializeField]
+		private List<TransformFeatureConfig> _values;
+
+		public List<TransformFeatureConfig> Values => _values;
+
+		public static TransformFeatureConfigList Create(List<TransformFeatureConfig> values)
 		{
-			_values = values
-		};
+			return new TransformFeatureConfigList
+			{
+				_values = values
+			};
+		}
 	}
 }

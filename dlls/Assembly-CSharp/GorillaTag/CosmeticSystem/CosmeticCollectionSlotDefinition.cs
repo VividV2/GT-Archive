@@ -1,11 +1,10 @@
-using System;
-using UnityEngine;
-
-namespace GorillaTag.CosmeticSystem;
-
-[Serializable]
-public struct CosmeticCollectionSlotDefinition
+public enum EBuildReleaseTier
 {
-	[Tooltip("Position, rotation and scale of this slot relative to the parent cosmetic's root transform. Edit visually using the Cosmetic Editor Stage.")]
-	public XformOffset offset;
+	PublicRC = 1,
+	PrivateRC,
+	PublicBeta,
+	PrivateBeta,
+	PublicAlpha,
+	PrivateAlpha,
+	Internal
 }

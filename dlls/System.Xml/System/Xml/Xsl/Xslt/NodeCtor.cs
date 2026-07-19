@@ -1,15 +1,22 @@
-namespace System.Xml.Xsl.Xslt;
-
-internal class NodeCtor : XslNode
+namespace System.Xml.Xsl.Runtime
 {
-	public readonly string NameAvt;
-
-	public readonly string NsAvt;
-
-	public NodeCtor(XslNodeType nt, string nameAvt, string nsAvt, XslVersion xslVer)
-		: base(nt, null, null, xslVer)
+}
+namespace System.Xml.Xsl.Xslt
+{
+	internal class NodeCtor : XslNode
 	{
-		NameAvt = nameAvt;
-		NsAvt = nsAvt;
+		public readonly string NameAvt;
+
+		public readonly string NsAvt;
+
+		public NodeCtor(XslNodeType nt, string nameAvt, string nsAvt, XslVersion xslVer)
+			: base(nt, null, null, xslVer)
+		{
+			NameAvt = nameAvt;
+			NsAvt = nsAvt;
+		}
 	}
+}
+namespace System.Xml
+{
 }

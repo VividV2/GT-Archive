@@ -1,12 +1,16 @@
 using System.Collections.Generic;
 
-namespace UnityEngine.UIElements.Collections;
-
-internal static class DictionaryExtensions
+namespace UnityEngine.UIElements.Collections
 {
-	public static TValue Get<TKey, TValue>(this IDictionary<TKey, TValue> dict, TKey key, TValue fallbackValue = default(TValue))
+	internal static class DictionaryExtensions
 	{
-		TValue value;
-		return dict.TryGetValue(key, out value) ? value : fallbackValue;
+		public static TValue Get<TKey, TValue>(this IDictionary<TKey, TValue> dict, TKey key, TValue fallbackValue = default(TValue))
+		{
+			TValue value;
+			return dict.TryGetValue(key, out value) ? value : fallbackValue;
+		}
 	}
+}
+namespace UnityEngine.UIElements.StyleSheets
+{
 }

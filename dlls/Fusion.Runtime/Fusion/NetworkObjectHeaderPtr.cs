@@ -1,14 +1,35 @@
-using System;
+using Fusion.Statistics;
+using Fusion.Statistics;
 
 namespace Fusion;
 
-public unsafe struct NetworkObjectHeaderPtr(NetworkObjectHeader* ptr)
+internal interface ITimeProvider
 {
-	public unsafe NetworkObjectHeader* Ptr = ptr;
+	bool IsRunning();
 
-	public unsafe NetworkObjectTypeId Type => Ptr->Type;
+	void Configure(SimulationRuntimeConfig src);
 
-	public unsafe NetworkId Id => Ptr->Id;
+	void Configure(TimeSyncConfiguration tsc);
 
-	public unsafe Span<int> Data => new Span<int>((byte*)Ptr + (nint)20 * (nint)4, Ptr->WordCount - 20);
+	void Reset(double roundTripTime, Tick snapshot);
+
+	void Snap();
+
+	void Update(double unscaledDeltaTime);
+
+	void OnSnapshotReceived(double roundTripTime, Tick snapshot);
+
+	void OnFeedbackReceived(Simulation.TimeFeedback feedback);
+
+	void ResetFeedback();
+
+	Instant Now();
+
+	void Log(FusionStatisticsManager stats);
+
+	void SetPlayerIndex(int index);
+
+	void StartTrace();
+
+	void StopTrace();
 }

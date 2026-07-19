@@ -1,8 +1,2 @@
-using UnityEngine;
+namespace GorillaTag.Cosmetics;
 
-namespace GorillaLocomotion.Gameplay;
-
-public class GorillaZiplineSegment : MonoBehaviour
-{
-	public float startT;
-}

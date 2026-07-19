@@ -1,16 +1,30 @@
 using System;
 using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class LinkIOSDeviceIDRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string DeviceId;
+	[Serializable]
+	public class GetPurchaseRequest : PlayFabRequestCommon
+	{
+		public string OrderId;
+	}
+}
+namespace PlayFab.ClientModels
+{
+	[Serializable]
+	public class LinkIOSDeviceIDRequest : PlayFabRequestCommon
+	{
+		public string DeviceId;
 
-	public string DeviceModel;
+		public string DeviceModel;
 
-	public bool? ForceLink;
+		public bool? ForceLink;
 
-	public string OS;
+		public string OS;
+	}
+}
+namespace PlayFab.ClientModels
+{
 }

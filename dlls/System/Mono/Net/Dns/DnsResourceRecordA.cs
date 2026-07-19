@@ -1,9 +1,10 @@
-namespace Mono.Net.Dns;
+namespace System.ComponentModel;
 
-internal class DnsResourceRecordA : DnsResourceRecordIPAddress
+/// <summary>Notifies clients that a property value is changing.</summary>
+/// <summary>Notifies clients that a property value is changing.</summary>
+public interface INotifyPropertyChanging
 {
-	internal DnsResourceRecordA(DnsResourceRecord rr)
-		: base(rr, 4)
-	{
-	}
+	/// <summary>Occurs when a property value is changing.</summary>
+	/// <summary>Occurs when a property value is changing.</summary>
+	event PropertyChangingEventHandler PropertyChanging;
 }

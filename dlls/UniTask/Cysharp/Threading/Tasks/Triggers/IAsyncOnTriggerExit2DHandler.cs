@@ -1,8 +1,12 @@
 using UnityEngine;
 
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnTriggerExit2DHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask<Collider2D> OnTriggerExit2DAsync();
+	public interface IAsyncOnTriggerExit2DHandler
+	{
+		UniTask<Collider2D> OnTriggerExit2DAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
 }

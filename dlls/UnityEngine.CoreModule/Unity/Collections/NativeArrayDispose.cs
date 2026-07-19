@@ -1,17 +1,21 @@
 using Unity.Collections.LowLevel.Unsafe;
 
-namespace Unity.Collections;
-
-[NativeContainer]
-internal struct NativeArrayDispose
+namespace Unity.Collections
 {
-	[NativeDisableUnsafePtrRestriction]
-	internal unsafe void* m_Buffer;
-
-	internal Allocator m_AllocatorLabel;
-
-	public unsafe void Dispose()
+	[NativeContainer]
+	internal struct NativeArrayDispose
 	{
-		UnsafeUtility.FreeTracked(m_Buffer, m_AllocatorLabel);
+		[NativeDisableUnsafePtrRestriction]
+		internal unsafe void* m_Buffer;
+
+		internal Allocator m_AllocatorLabel;
+
+		public unsafe void Dispose()
+		{
+			UnsafeUtility.FreeTracked(m_Buffer, m_AllocatorLabel);
+		}
 	}
+}
+namespace UnityEngine
+{
 }

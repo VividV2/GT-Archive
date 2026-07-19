@@ -3,24 +3,26 @@ using System;
 namespace Fusion;
 
 [Serializable]
-public class FieldsMask<T> : FieldsMask
+public abstract class FieldsMask
 {
-	public FieldsMask(Mask256 mask)
-		: base(mask)
+	public Mask256 Mask;
+
+	protected FieldsMask(Mask256 mask)
+	{
+		Mask = mask;
+	}
+
+	protected FieldsMask(long a, long b, long c, long d)
+	{
+		Mask = default(Mask256);
+	}
+
+	protected FieldsMask()
 	{
 	}
 
-	public FieldsMask(long maskA, long maskB = 0L, long maskC = 0L, long maskD = 0L)
-		: base(maskA, maskB, maskC, maskD)
+	public static implicit operator Mask256(FieldsMask mask)
 	{
-	}
-
-	public FieldsMask()
-	{
-	}
-
-	public FieldsMask(Func<Mask256> getDefaultsDelegate)
-	{
-		Mask = getDefaultsDelegate?.Invoke() ?? default(Mask256);
+		return mask.Mask;
 	}
 }

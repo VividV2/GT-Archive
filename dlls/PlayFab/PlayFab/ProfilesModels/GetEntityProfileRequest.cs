@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.MultiplayerModels;
 
-namespace PlayFab.ProfilesModels;
-
-[Serializable]
-public class GetEntityProfileRequest : PlayFabRequestCommon
-{
-	public bool? DataAsObject;
-
-	public EntityKey Entity;
-}

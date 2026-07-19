@@ -1,11 +1,14 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class UpdatePlayerStatisticsRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public List<StatisticUpdate> Statistics;
+}
+namespace PlayFab.ClientModels
+{
+	public enum TitleActivationStatus
+	{
+		None,
+		ActivatedTitleKey,
+		PendingSteam,
+		ActivatedSteam,
+		RevokedSteam
+	}
 }

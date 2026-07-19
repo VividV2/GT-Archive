@@ -1,25 +1,29 @@
-namespace UnityEngine.EventSystems;
-
-public class BaseEventData : AbstractEventData
+namespace UnityEngine.EventSystems
 {
-	private readonly EventSystem m_EventSystem;
-
-	public BaseInputModule currentInputModule => m_EventSystem.currentInputModule;
-
-	public GameObject selectedObject
+	public class BaseEventData : AbstractEventData
 	{
-		get
+		private readonly EventSystem m_EventSystem;
+
+		public BaseInputModule currentInputModule => m_EventSystem.currentInputModule;
+
+		public GameObject selectedObject
 		{
-			return m_EventSystem.currentSelectedGameObject;
+			get
+			{
+				return m_EventSystem.currentSelectedGameObject;
+			}
+			set
+			{
+				m_EventSystem.SetSelectedGameObject(value, this);
+			}
 		}
-		set
+
+		public BaseEventData(EventSystem eventSystem)
 		{
-			m_EventSystem.SetSelectedGameObject(value, this);
+			m_EventSystem = eventSystem;
 		}
 	}
-
-	public BaseEventData(EventSystem eventSystem)
-	{
-		m_EventSystem = eventSystem;
-	}
+}
+namespace UnityEngine.UI
+{
 }

@@ -1,8 +1,12 @@
-namespace OVR.OpenVR;
-
-public struct HmdVector2_t
+namespace OVR.OpenVR
 {
-	public float v0;
+	public struct HmdVector2_t
+	{
+		public float v0;
 
-	public float v1;
+		public float v1;
+	}
+}
+namespace OVR.OpenVR
+{
 }

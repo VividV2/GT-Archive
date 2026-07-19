@@ -1,512 +1,594 @@
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Photon.Pun;
 using Photon.Voice.Unity;
 using UnityEngine;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-namespace Photon.Voice.PUN;
-
-[AddComponentMenu("Photon Voice/Photon Voice View")]
-[RequireComponent(typeof(PhotonView))]
-[HelpURL("https://doc.photonengine.com/en-us/voice/v2/getting-started/voice-for-pun")]
-public class PhotonVoiceView : VoiceComponent
+namespace Photon.Voice.PUN.UtilityScripts
 {
-	private PhotonView photonView;
-
-	[SerializeField]
-	private Recorder recorderInUse;
-
-	[SerializeField]
-	private Speaker speakerInUse;
-
-	private bool onEnableCalledOnce;
-
-	public bool AutoCreateRecorderIfNotFound;
-
-	public bool UsePrimaryRecorder;
-
-	public bool SetupDebugSpeaker;
-
-	public Recorder RecorderInUse
+}
+namespace Photon.Voice.PUN
+{
+}
+namespace Photon.Voice.PUN
+{
+	[AddComponentMenu("Photon Voice/Photon Voice View")]
+	[RequireComponent(typeof(PhotonView))]
+	[HelpURL("https://doc.photonengine.com/en-us/voice/v2/getting-started/voice-for-pun")]
+	public class PhotonVoiceView : VoiceComponent
 	{
-		get
-		{
-			return recorderInUse;
-		}
-		set
-		{
-			if (value != recorderInUse)
-			{
-				recorderInUse = value;
-				IsRecorder = false;
-			}
-			if (RequiresRecorder)
-			{
-				SetupRecorderInUse();
-			}
-			else if (IsPhotonViewReady && base.Logger.IsWarningEnabled)
-			{
-				base.Logger.LogWarning("No need to set Recorder as the PhotonView does not belong to local player");
-			}
-		}
-	}
+		private PhotonView photonView;
 
-	public Speaker SpeakerInUse
-	{
-		get
-		{
-			return speakerInUse;
-		}
-		set
-		{
-			if (speakerInUse != value)
-			{
-				speakerInUse = value;
-				IsSpeaker = false;
-			}
-			if (RequiresSpeaker)
-			{
-				SetupSpeakerInUse();
-			}
-			else if (IsPhotonViewReady && base.Logger.IsWarningEnabled)
-			{
-				base.Logger.LogWarning("Speaker not set because the PhotonView does not belong to a remote player or SetupDebugSpeaker is disabled");
-			}
-		}
-	}
+		[SerializeField]
+		private Recorder recorderInUse;
 
-	public bool IsSetup
-	{
-		get
+		[SerializeField]
+		private Speaker speakerInUse;
+
+		private bool onEnableCalledOnce;
+
+		public bool AutoCreateRecorderIfNotFound;
+
+		public bool UsePrimaryRecorder;
+
+		public bool SetupDebugSpeaker;
+
+		public Recorder RecorderInUse
 		{
-			if (IsPhotonViewReady && (!RequiresRecorder || IsRecorder))
+			get
 			{
+				return recorderInUse;
+			}
+			set
+			{
+				if (value != recorderInUse)
+				{
+					recorderInUse = value;
+					IsRecorder = false;
+				}
+				if (RequiresRecorder)
+				{
+					SetupRecorderInUse();
+				}
+				else if (IsPhotonViewReady && base.Logger.IsWarningEnabled)
+				{
+					base.Logger.LogWarning("No need to set Recorder as the PhotonView does not belong to local player");
+				}
+			}
+		}
+
+		public Speaker SpeakerInUse
+		{
+			get
+			{
+				return speakerInUse;
+			}
+			set
+			{
+				if (speakerInUse != value)
+				{
+					speakerInUse = value;
+					IsSpeaker = false;
+				}
 				if (RequiresSpeaker)
 				{
-					return IsSpeaker;
+					SetupSpeakerInUse();
 				}
-				return true;
-			}
-			return false;
-		}
-	}
-
-	public bool IsSpeaker { get; private set; }
-
-	public bool IsSpeaking
-	{
-		get
-		{
-			if (IsSpeaker)
-			{
-				return SpeakerInUse.IsPlaying;
-			}
-			return false;
-		}
-	}
-
-	public bool IsRecorder { get; private set; }
-
-	public bool IsRecording
-	{
-		get
-		{
-			if (IsRecorder)
-			{
-				return RecorderInUse.IsCurrentlyTransmitting;
-			}
-			return false;
-		}
-	}
-
-	public bool IsSpeakerLinked
-	{
-		get
-		{
-			if (IsSpeaker)
-			{
-				return SpeakerInUse.IsLinked;
-			}
-			return false;
-		}
-	}
-
-	public bool IsPhotonViewReady
-	{
-		get
-		{
-			if ((object)photonView != null && (bool)photonView)
-			{
-				return photonView.ViewID > 0;
-			}
-			return false;
-		}
-	}
-
-	internal bool RequiresSpeaker
-	{
-		get
-		{
-			if (!SetupDebugSpeaker)
-			{
-				if (IsPhotonViewReady)
+				else if (IsPhotonViewReady && base.Logger.IsWarningEnabled)
 				{
-					return !photonView.IsMine;
+					base.Logger.LogWarning("Speaker not set because the PhotonView does not belong to a remote player or SetupDebugSpeaker is disabled");
+				}
+			}
+		}
+
+		public bool IsSetup
+		{
+			get
+			{
+				if (IsPhotonViewReady && (!RequiresRecorder || IsRecorder))
+				{
+					if (RequiresSpeaker)
+					{
+						return IsSpeaker;
+					}
+					return true;
 				}
 				return false;
 			}
-			return true;
 		}
-	}
 
-	internal bool RequiresRecorder
-	{
-		get
+		public bool IsSpeaker { get; private set; }
+
+		public bool IsSpeaking
 		{
-			if (IsPhotonViewReady)
+			get
 			{
-				return photonView.IsMine;
+				if (IsSpeaker)
+				{
+					return SpeakerInUse.IsPlaying;
+				}
+				return false;
 			}
-			return false;
 		}
-	}
 
-	protected override void Awake()
-	{
-		base.Awake();
-		photonView = GetComponent<PhotonView>();
-		Init();
-	}
+		public bool IsRecorder { get; private set; }
 
-	private void OnEnable()
-	{
-		if (onEnableCalledOnce)
+		public bool IsRecording
+		{
+			get
+			{
+				if (IsRecorder)
+				{
+					return RecorderInUse.IsCurrentlyTransmitting;
+				}
+				return false;
+			}
+		}
+
+		public bool IsSpeakerLinked
+		{
+			get
+			{
+				if (IsSpeaker)
+				{
+					return SpeakerInUse.IsLinked;
+				}
+				return false;
+			}
+		}
+
+		public bool IsPhotonViewReady
+		{
+			get
+			{
+				if ((object)photonView != null && (bool)photonView)
+				{
+					return photonView.ViewID > 0;
+				}
+				return false;
+			}
+		}
+
+		internal bool RequiresSpeaker
+		{
+			get
+			{
+				if (!SetupDebugSpeaker)
+				{
+					if (IsPhotonViewReady)
+					{
+						return !photonView.IsMine;
+					}
+					return false;
+				}
+				return true;
+			}
+		}
+
+		internal bool RequiresRecorder
+		{
+			get
+			{
+				if (IsPhotonViewReady)
+				{
+					return photonView.IsMine;
+				}
+				return false;
+			}
+		}
+
+		protected override void Awake()
+		{
+			base.Awake();
+			photonView = GetComponent<PhotonView>();
+			Init();
+		}
+
+		private void OnEnable()
+		{
+			if (onEnableCalledOnce)
+			{
+				Init();
+			}
+			else
+			{
+				onEnableCalledOnce = true;
+			}
+		}
+
+		private void Start()
 		{
 			Init();
 		}
-		else
-		{
-			onEnableCalledOnce = true;
-		}
-	}
 
-	private void Start()
-	{
-		Init();
-	}
-
-	private void CheckLateLinking()
-	{
-		if (PhotonVoiceNetwork.Instance.Client.InRoom)
+		private void CheckLateLinking()
 		{
-			if (IsSpeaker)
+			if (PhotonVoiceNetwork.Instance.Client.InRoom)
 			{
-				if (!IsSpeakerLinked)
+				if (IsSpeaker)
 				{
-					PhotonVoiceNetwork.Instance.CheckLateLinking(SpeakerInUse, photonView.ViewID);
+					if (!IsSpeakerLinked)
+					{
+						PhotonVoiceNetwork.Instance.CheckLateLinking(SpeakerInUse, photonView.ViewID);
+					}
+					else if (base.Logger.IsDebugEnabled)
+					{
+						base.Logger.LogDebug("Speaker already linked");
+					}
 				}
 				else if (base.Logger.IsDebugEnabled)
 				{
-					base.Logger.LogDebug("Speaker already linked");
+					base.Logger.LogDebug("PhotonVoiceView does not have a Speaker and may not need late linking check");
 				}
 			}
 			else if (base.Logger.IsDebugEnabled)
 			{
-				base.Logger.LogDebug("PhotonVoiceView does not have a Speaker and may not need late linking check");
+				base.Logger.LogDebug("Voice client is still not in a room, skipping late linking check");
 			}
 		}
-		else if (base.Logger.IsDebugEnabled)
-		{
-			base.Logger.LogDebug("Voice client is still not in a room, skipping late linking check");
-		}
-	}
 
-	internal void Setup()
-	{
-		if (IsSetup)
+		internal void Setup()
 		{
-			if (base.Logger.IsDebugEnabled)
+			if (IsSetup)
 			{
-				base.Logger.LogDebug("PhotonVoiceView already setup");
+				if (base.Logger.IsDebugEnabled)
+				{
+					base.Logger.LogDebug("PhotonVoiceView already setup");
+				}
+			}
+			else
+			{
+				SetupRecorderInUse();
+				SetupSpeakerInUse();
 			}
 		}
-		else
-		{
-			SetupRecorderInUse();
-			SetupSpeakerInUse();
-		}
-	}
 
-	private bool SetupRecorder()
-	{
-		if ((object)recorderInUse == null)
+		private bool SetupRecorder()
 		{
-			if (UsePrimaryRecorder)
+			if ((object)recorderInUse == null)
 			{
-				if ((object)PhotonVoiceNetwork.Instance.PrimaryRecorder != null && (bool)PhotonVoiceNetwork.Instance.PrimaryRecorder)
+				if (UsePrimaryRecorder)
 				{
-					recorderInUse = PhotonVoiceNetwork.Instance.PrimaryRecorder;
-					return SetupRecorder(recorderInUse);
+					if ((object)PhotonVoiceNetwork.Instance.PrimaryRecorder != null && (bool)PhotonVoiceNetwork.Instance.PrimaryRecorder)
+					{
+						recorderInUse = PhotonVoiceNetwork.Instance.PrimaryRecorder;
+						return SetupRecorder(recorderInUse);
+					}
+					if (base.Logger.IsErrorEnabled)
+					{
+						base.Logger.LogError("PrimaryRecorder is not set.");
+					}
 				}
-				if (base.Logger.IsErrorEnabled)
+				Recorder[] componentsInChildren = GetComponentsInChildren<Recorder>();
+				if (componentsInChildren.Length != 0)
 				{
-					base.Logger.LogError("PrimaryRecorder is not set.");
+					Recorder recorder = componentsInChildren[0];
+					if (componentsInChildren.Length > 1 && base.Logger.IsWarningEnabled)
+					{
+						base.Logger.LogWarning("Multiple Recorder components found attached to the GameObject or its children.");
+					}
+					if ((object)recorder != null && (bool)recorder)
+					{
+						recorderInUse = recorder;
+						return SetupRecorder(recorderInUse);
+					}
 				}
+				if (!AutoCreateRecorderIfNotFound)
+				{
+					if (base.Logger.IsWarningEnabled)
+					{
+						base.Logger.LogWarning("No Recorder found to be setup.");
+					}
+					return false;
+				}
+				recorderInUse = base.gameObject.AddComponent<Recorder>();
 			}
-			Recorder[] componentsInChildren = GetComponentsInChildren<Recorder>();
-			if (componentsInChildren.Length != 0)
-			{
-				Recorder recorder = componentsInChildren[0];
-				if (componentsInChildren.Length > 1 && base.Logger.IsWarningEnabled)
-				{
-					base.Logger.LogWarning("Multiple Recorder components found attached to the GameObject or its children.");
-				}
-				if ((object)recorder != null && (bool)recorder)
-				{
-					recorderInUse = recorder;
-					return SetupRecorder(recorderInUse);
-				}
-			}
-			if (!AutoCreateRecorderIfNotFound)
+			return SetupRecorder(recorderInUse);
+		}
+
+		private bool SetupRecorder(Recorder recorder)
+		{
+			if ((object)recorder == null)
 			{
 				if (base.Logger.IsWarningEnabled)
 				{
-					base.Logger.LogWarning("No Recorder found to be setup.");
+					base.Logger.LogWarning("Cannot setup a null Recorder.");
 				}
 				return false;
 			}
-			recorderInUse = base.gameObject.AddComponent<Recorder>();
-		}
-		return SetupRecorder(recorderInUse);
-	}
-
-	private bool SetupRecorder(Recorder recorder)
-	{
-		if ((object)recorder == null)
-		{
-			if (base.Logger.IsWarningEnabled)
+			if (!recorder)
 			{
-				base.Logger.LogWarning("Cannot setup a null Recorder.");
-			}
-			return false;
-		}
-		if (!recorder)
-		{
-			if (base.Logger.IsWarningEnabled)
-			{
-				base.Logger.LogWarning("Cannot setup a destroyed Recorder.");
-			}
-			return false;
-		}
-		if (!IsPhotonViewReady)
-		{
-			if (base.Logger.IsWarningEnabled)
-			{
-				base.Logger.LogWarning("Recorder setup cannot be done before assigning a valid ViewID to the PhotonView attached to the same GameObject as the PhotonVoiceView.");
-			}
-			return false;
-		}
-		recorder.UserData = photonView.ViewID;
-		if (!recorder.IsInitialized)
-		{
-			RecorderInUse.Init(PhotonVoiceNetwork.Instance);
-		}
-		if (recorder.RequiresRestart)
-		{
-			recorder.RestartRecording();
-		}
-		if (recorder.IsInitialized && recorder.UserData is int)
-		{
-			return photonView.ViewID == (int)recorder.UserData;
-		}
-		return false;
-	}
-
-	private bool SetupSpeaker()
-	{
-		if ((object)speakerInUse == null)
-		{
-			Speaker[] componentsInChildren = GetComponentsInChildren<Speaker>(includeInactive: true);
-			if (componentsInChildren.Length != 0)
-			{
-				speakerInUse = componentsInChildren[0];
-				if (componentsInChildren.Length > 1 && base.Logger.IsWarningEnabled)
+				if (base.Logger.IsWarningEnabled)
 				{
-					base.Logger.LogWarning("Multiple Speaker components found attached to the GameObject or its children. Using the first one we found.");
+					base.Logger.LogWarning("Cannot setup a destroyed Recorder.");
 				}
+				return false;
 			}
+			if (!IsPhotonViewReady)
+			{
+				if (base.Logger.IsWarningEnabled)
+				{
+					base.Logger.LogWarning("Recorder setup cannot be done before assigning a valid ViewID to the PhotonView attached to the same GameObject as the PhotonVoiceView.");
+				}
+				return false;
+			}
+			recorder.UserData = photonView.ViewID;
+			if (!recorder.IsInitialized)
+			{
+				RecorderInUse.Init(PhotonVoiceNetwork.Instance);
+			}
+			if (recorder.RequiresRestart)
+			{
+				recorder.RestartRecording();
+			}
+			if (recorder.IsInitialized && recorder.UserData is int)
+			{
+				return photonView.ViewID == (int)recorder.UserData;
+			}
+			return false;
+		}
+
+		private bool SetupSpeaker()
+		{
 			if ((object)speakerInUse == null)
 			{
-				bool flag = false;
-				if ((object)PhotonVoiceNetwork.Instance.SpeakerPrefab != null)
+				Speaker[] componentsInChildren = GetComponentsInChildren<Speaker>(includeInactive: true);
+				if (componentsInChildren.Length != 0)
 				{
-					GameObject gameObject = Object.Instantiate(PhotonVoiceNetwork.Instance.SpeakerPrefab, base.transform, worldPositionStays: false);
-					componentsInChildren = gameObject.GetComponentsInChildren<Speaker>(includeInactive: true);
-					if (componentsInChildren.Length != 0)
+					speakerInUse = componentsInChildren[0];
+					if (componentsInChildren.Length > 1 && base.Logger.IsWarningEnabled)
 					{
-						speakerInUse = componentsInChildren[0];
-						if (componentsInChildren.Length > 1 && base.Logger.IsWarningEnabled)
-						{
-							base.Logger.LogWarning("Multiple Speaker components found attached to the GameObject (PhotonVoiceNetwork.SpeakerPrefab) or its children. Using the first one we found.");
-						}
-					}
-					if ((object)speakerInUse == null)
-					{
-						if (base.Logger.IsErrorEnabled)
-						{
-							base.Logger.LogError("SpeakerPrefab does not have a component of type Speaker in its hierarchy.");
-						}
-						Object.Destroy(gameObject);
-					}
-					else
-					{
-						flag = true;
+						base.Logger.LogWarning("Multiple Speaker components found attached to the GameObject or its children. Using the first one we found.");
 					}
 				}
-				if (!flag)
+				if ((object)speakerInUse == null)
 				{
-					if (!PhotonVoiceNetwork.Instance.AutoCreateSpeakerIfNotFound)
+					bool flag = false;
+					if ((object)PhotonVoiceNetwork.Instance.SpeakerPrefab != null)
 					{
-						return false;
+						GameObject gameObject = Object.Instantiate(PhotonVoiceNetwork.Instance.SpeakerPrefab, base.transform, worldPositionStays: false);
+						componentsInChildren = gameObject.GetComponentsInChildren<Speaker>(includeInactive: true);
+						if (componentsInChildren.Length != 0)
+						{
+							speakerInUse = componentsInChildren[0];
+							if (componentsInChildren.Length > 1 && base.Logger.IsWarningEnabled)
+							{
+								base.Logger.LogWarning("Multiple Speaker components found attached to the GameObject (PhotonVoiceNetwork.SpeakerPrefab) or its children. Using the first one we found.");
+							}
+						}
+						if ((object)speakerInUse == null)
+						{
+							if (base.Logger.IsErrorEnabled)
+							{
+								base.Logger.LogError("SpeakerPrefab does not have a component of type Speaker in its hierarchy.");
+							}
+							Object.Destroy(gameObject);
+						}
+						else
+						{
+							flag = true;
+						}
 					}
-					speakerInUse = base.gameObject.AddComponent<Speaker>();
+					if (!flag)
+					{
+						if (!PhotonVoiceNetwork.Instance.AutoCreateSpeakerIfNotFound)
+						{
+							return false;
+						}
+						speakerInUse = base.gameObject.AddComponent<Speaker>();
+					}
 				}
 			}
+			return SetupSpeaker(speakerInUse);
 		}
-		return SetupSpeaker(speakerInUse);
+
+		private bool SetupSpeaker(Speaker speaker)
+		{
+			if ((object)speaker == null)
+			{
+				if (base.Logger.IsWarningEnabled)
+				{
+					base.Logger.LogWarning("Cannot setup a null Speaker");
+				}
+				return false;
+			}
+			if (!speaker)
+			{
+				if (base.Logger.IsWarningEnabled)
+				{
+					base.Logger.LogWarning("Cannot setup a destroyed Speaker");
+				}
+				return false;
+			}
+			AudioSource component = speaker.GetComponent<AudioSource>();
+			if ((object)component == null)
+			{
+				if (base.Logger.IsWarningEnabled)
+				{
+					base.Logger.LogWarning("Unexpected (null?): no AudioSource found attached to the same GameObject as the Speaker component");
+				}
+				return false;
+			}
+			if (!component)
+			{
+				if (base.Logger.IsWarningEnabled)
+				{
+					base.Logger.LogWarning("Unexpected (destroyed?): no AudioSource found attached to the same GameObject as the Speaker component");
+				}
+				return false;
+			}
+			if (component.mute && base.Logger.IsWarningEnabled)
+			{
+				base.Logger.LogWarning("audioSource.mute is true, playback may not work properly");
+			}
+			if (component.volume <= 0f && base.Logger.IsWarningEnabled)
+			{
+				base.Logger.LogWarning("audioSource.volume is zero, playback may not work properly");
+			}
+			if (!component.enabled && base.Logger.IsWarningEnabled)
+			{
+				base.Logger.LogWarning("audioSource.enabled is false, playback may not work properly");
+			}
+			return true;
+		}
+
+		internal void SetupRecorderInUse()
+		{
+			if (IsRecorder)
+			{
+				if (base.Logger.IsInfoEnabled)
+				{
+					base.Logger.LogInfo("Recorder already setup");
+				}
+				return;
+			}
+			if (!RequiresRecorder)
+			{
+				if (IsPhotonViewReady && base.Logger.IsInfoEnabled)
+				{
+					base.Logger.LogInfo("Recorder not needed");
+				}
+				return;
+			}
+			IsRecorder = SetupRecorder();
+			if (!IsRecorder)
+			{
+				if (base.Logger.IsWarningEnabled)
+				{
+					base.Logger.LogWarning("Recorder not setup for PhotonVoiceView: playback may not work properly.");
+				}
+				return;
+			}
+			if (!RecorderInUse.IsRecording && !RecorderInUse.AutoStart && base.Logger.IsWarningEnabled)
+			{
+				base.Logger.LogWarning("PhotonVoiceView.RecorderInUse.AutoStart is false, don't forget to start recording manually using recorder.StartRecording() or recorder.IsRecording = true.");
+			}
+			if (!RecorderInUse.TransmitEnabled && base.Logger.IsWarningEnabled)
+			{
+				base.Logger.LogWarning("PhotonVoiceView.RecorderInUse.TransmitEnabled is false, don't forget to set it to true to enable transmission.");
+			}
+			if (!RecorderInUse.isActiveAndEnabled && RecorderInUse.RecordOnlyWhenEnabled && base.Logger.IsWarningEnabled)
+			{
+				base.Logger.LogWarning("PhotonVoiceView.RecorderInUse may not work properly as RecordOnlyWhenEnabled is set to true and recorder is disabled or attached to an inactive GameObject.");
+			}
+		}
+
+		internal void SetupSpeakerInUse()
+		{
+			if (IsSpeaker)
+			{
+				if (base.Logger.IsInfoEnabled)
+				{
+					base.Logger.LogInfo("Speaker already setup");
+				}
+				return;
+			}
+			if (!RequiresSpeaker)
+			{
+				if (IsPhotonViewReady && base.Logger.IsInfoEnabled)
+				{
+					base.Logger.LogInfo("Speaker not needed");
+				}
+				return;
+			}
+			IsSpeaker = SetupSpeaker();
+			if (!IsSpeaker)
+			{
+				if (base.Logger.IsWarningEnabled)
+				{
+					base.Logger.LogWarning("Speaker not setup for PhotonVoiceView: voice chat will not work.");
+				}
+			}
+			else
+			{
+				CheckLateLinking();
+			}
+		}
+
+		public void Init()
+		{
+			if (IsPhotonViewReady)
+			{
+				Setup();
+				CheckLateLinking();
+			}
+			else if (base.Logger.IsDebugEnabled)
+			{
+				base.Logger.LogDebug("Tried to initialize PhotonVoiceView but PhotonView does not have a valid allocated ViewID yet.");
+			}
+		}
+	}
+}
+[CompilerGenerated]
+[EditorBrowsable(EditorBrowsableState.Never)]
+[GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]
+internal class UnitySourceGeneratedAssemblyMonoScriptTypes_v1
+{
+	private struct MonoScriptData
+	{
+		public byte[] FilePathsData;
+
+		public byte[] TypesData;
+
+		public int TotalTypes;
+
+		public int TotalFiles;
+
+		public bool IsEditorOnly;
 	}
 
-	private bool SetupSpeaker(Speaker speaker)
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	private static MonoScriptData Get()
 	{
-		if ((object)speaker == null)
+		return new MonoScriptData
 		{
-			if (base.Logger.IsWarningEnabled)
+			FilePathsData = new byte[205]
 			{
-				base.Logger.LogWarning("Cannot setup a null Speaker");
-			}
-			return false;
-		}
-		if (!speaker)
-		{
-			if (base.Logger.IsWarningEnabled)
+				0, 0, 0, 1, 0, 0, 0, 57, 92, 65,
+				115, 115, 101, 116, 115, 92, 80, 104, 111, 116,
+				111, 110, 92, 80, 104, 111, 116, 111, 110, 86,
+				111, 105, 99, 101, 92, 67, 111, 100, 101, 92,
+				80, 85, 78, 92, 80, 104, 111, 116, 111, 110,
+				86, 111, 105, 99, 101, 78, 101, 116, 119, 111,
+				114, 107, 46, 99, 115, 0, 0, 0, 1, 0,
+				0, 0, 54, 92, 65, 115, 115, 101, 116, 115,
+				92, 80, 104, 111, 116, 111, 110, 92, 80, 104,
+				111, 116, 111, 110, 86, 111, 105, 99, 101, 92,
+				67, 111, 100, 101, 92, 80, 85, 78, 92, 80,
+				104, 111, 116, 111, 110, 86, 111, 105, 99, 101,
+				86, 105, 101, 119, 46, 99, 115, 0, 0, 0,
+				1, 0, 0, 0, 70, 92, 65, 115, 115, 101,
+				116, 115, 92, 80, 104, 111, 116, 111, 110, 92,
+				80, 104, 111, 116, 111, 110, 86, 111, 105, 99,
+				101, 92, 67, 111, 100, 101, 92, 80, 85, 78,
+				92, 85, 116, 105, 108, 105, 116, 121, 83, 99,
+				114, 105, 112, 116, 115, 92, 86, 111, 105, 99,
+				101, 68, 101, 98, 117, 103, 83, 99, 114, 105,
+				112, 116, 46, 99, 115
+			},
+			TypesData = new byte[130]
 			{
-				base.Logger.LogWarning("Cannot setup a destroyed Speaker");
-			}
-			return false;
-		}
-		AudioSource component = speaker.GetComponent<AudioSource>();
-		if ((object)component == null)
-		{
-			if (base.Logger.IsWarningEnabled)
-			{
-				base.Logger.LogWarning("Unexpected (null?): no AudioSource found attached to the same GameObject as the Speaker component");
-			}
-			return false;
-		}
-		if (!component)
-		{
-			if (base.Logger.IsWarningEnabled)
-			{
-				base.Logger.LogWarning("Unexpected (destroyed?): no AudioSource found attached to the same GameObject as the Speaker component");
-			}
-			return false;
-		}
-		if (component.mute && base.Logger.IsWarningEnabled)
-		{
-			base.Logger.LogWarning("audioSource.mute is true, playback may not work properly");
-		}
-		if (component.volume <= 0f && base.Logger.IsWarningEnabled)
-		{
-			base.Logger.LogWarning("audioSource.volume is zero, playback may not work properly");
-		}
-		if (!component.enabled && base.Logger.IsWarningEnabled)
-		{
-			base.Logger.LogWarning("audioSource.enabled is false, playback may not work properly");
-		}
-		return true;
-	}
-
-	internal void SetupRecorderInUse()
-	{
-		if (IsRecorder)
-		{
-			if (base.Logger.IsInfoEnabled)
-			{
-				base.Logger.LogInfo("Recorder already setup");
-			}
-			return;
-		}
-		if (!RequiresRecorder)
-		{
-			if (IsPhotonViewReady && base.Logger.IsInfoEnabled)
-			{
-				base.Logger.LogInfo("Recorder not needed");
-			}
-			return;
-		}
-		IsRecorder = SetupRecorder();
-		if (!IsRecorder)
-		{
-			if (base.Logger.IsWarningEnabled)
-			{
-				base.Logger.LogWarning("Recorder not setup for PhotonVoiceView: playback may not work properly.");
-			}
-			return;
-		}
-		if (!RecorderInUse.IsRecording && !RecorderInUse.AutoStart && base.Logger.IsWarningEnabled)
-		{
-			base.Logger.LogWarning("PhotonVoiceView.RecorderInUse.AutoStart is false, don't forget to start recording manually using recorder.StartRecording() or recorder.IsRecording = true.");
-		}
-		if (!RecorderInUse.TransmitEnabled && base.Logger.IsWarningEnabled)
-		{
-			base.Logger.LogWarning("PhotonVoiceView.RecorderInUse.TransmitEnabled is false, don't forget to set it to true to enable transmission.");
-		}
-		if (!RecorderInUse.isActiveAndEnabled && RecorderInUse.RecordOnlyWhenEnabled && base.Logger.IsWarningEnabled)
-		{
-			base.Logger.LogWarning("PhotonVoiceView.RecorderInUse may not work properly as RecordOnlyWhenEnabled is set to true and recorder is disabled or attached to an inactive GameObject.");
-		}
-	}
-
-	internal void SetupSpeakerInUse()
-	{
-		if (IsSpeaker)
-		{
-			if (base.Logger.IsInfoEnabled)
-			{
-				base.Logger.LogInfo("Speaker already setup");
-			}
-			return;
-		}
-		if (!RequiresSpeaker)
-		{
-			if (IsPhotonViewReady && base.Logger.IsInfoEnabled)
-			{
-				base.Logger.LogInfo("Speaker not needed");
-			}
-			return;
-		}
-		IsSpeaker = SetupSpeaker();
-		if (!IsSpeaker)
-		{
-			if (base.Logger.IsWarningEnabled)
-			{
-				base.Logger.LogWarning("Speaker not setup for PhotonVoiceView: voice chat will not work.");
-			}
-		}
-		else
-		{
-			CheckLateLinking();
-		}
-	}
-
-	public void Init()
-	{
-		if (IsPhotonViewReady)
-		{
-			Setup();
-			CheckLateLinking();
-		}
-		else if (base.Logger.IsDebugEnabled)
-		{
-			base.Logger.LogDebug("Tried to initialize PhotonVoiceView but PhotonView does not have a valid allocated ViewID yet.");
-		}
+				0, 0, 0, 0, 35, 80, 104, 111, 116, 111,
+				110, 46, 86, 111, 105, 99, 101, 46, 80, 85,
+				78, 124, 80, 104, 111, 116, 111, 110, 86, 111,
+				105, 99, 101, 78, 101, 116, 119, 111, 114, 107,
+				0, 0, 0, 0, 32, 80, 104, 111, 116, 111,
+				110, 46, 86, 111, 105, 99, 101, 46, 80, 85,
+				78, 124, 80, 104, 111, 116, 111, 110, 86, 111,
+				105, 99, 101, 86, 105, 101, 119, 0, 0, 0,
+				0, 48, 80, 104, 111, 116, 111, 110, 46, 86,
+				111, 105, 99, 101, 46, 80, 85, 78, 46, 85,
+				116, 105, 108, 105, 116, 121, 83, 99, 114, 105,
+				112, 116, 115, 124, 86, 111, 105, 99, 101, 68,
+				101, 98, 117, 103, 83, 99, 114, 105, 112, 116
+			},
+			TotalFiles = 3,
+			TotalTypes = 3,
+			IsEditorOnly = false
+		};
 	}
 }

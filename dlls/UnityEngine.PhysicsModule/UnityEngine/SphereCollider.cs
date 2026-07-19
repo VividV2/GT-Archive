@@ -1,68 +1,53 @@
 using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using UnityEngine.Bindings;
+using Unity.Collections.LowLevel.Unsafe;
+using System;
+using Unity.Collections.LowLevel.Unsafe;
 
-namespace UnityEngine;
+namespace UnityEngine.LowLevelPhysics;
 
-[RequireComponent(typeof(Transform))]
-[NativeHeader("Modules/Physics/SphereCollider.h")]
-public class SphereCollider : Collider
+public struct GeometryHolder
 {
-	public Vector3 center
+	private int m_Type;
+
+	private uint m_DataStart;
+
+	private IntPtr m_FakePointer0;
+
+	private IntPtr m_FakePointer1;
+
+	private unsafe fixed uint m_Blob[6];
+
+	public GeometryType Type => (GeometryType)m_Type;
+
+	private unsafe void SetGeometry<T>(T geometry) where T : struct, IGeometry
 	{
-		get
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			get_center_Injected(intPtr, out var ret);
-			return ret;
-		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_center_Injected(intPtr, ref value);
-		}
+		m_Type = (int)geometry.GeometryType;
+		UnsafeUtility.CopyStructureToPtr(ref geometry, UnsafeUtility.AddressOf(ref m_DataStart));
 	}
 
-	public float radius
+	public unsafe T As<T>() where T : struct, IGeometry
 	{
-		get
+		T output = default(T);
+		T output;
+		if (output.GeometryType != (GeometryType)m_Type)
 		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			return get_radius_Injected(intPtr);
+			throw new InvalidOperationException($"Unable to get geometry of type {output.GeometryType} from a geometry holder that stores {m_Type}.");
 		}
-		set
-		{
-			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-			if (intPtr == (IntPtr)0)
-			{
-				ThrowHelper.ThrowNullReferenceException(this);
-			}
-			set_radius_Injected(intPtr, value);
-		}
+		UnsafeUtility.CopyPtrToStructure<T>(UnsafeUtility.AddressOf(ref m_DataStart), out output);
+		return output;
 	}
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void get_center_Injected(IntPtr _unity_self, out Vector3 ret);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_center_Injected(IntPtr _unity_self, [In] ref Vector3 value);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern float get_radius_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void set_radius_Injected(IntPtr _unity_self, float value);
+	public static GeometryHolder Create<T>(T geometry) where T : struct, IGeometry
+	{
+		GeometryHolder result = new GeometryHolder
+		{
+			m_DataStart = 0u,
+			m_Type = -1,
+			m_FakePointer0 = new IntPtr(3735928559L),
+			m_FakePointer1 = new IntPtr(3735928559L)
+		};
+		GeometryHolder result;
+		result.SetGeometry(geometry);
+		return result;
+	}
 }

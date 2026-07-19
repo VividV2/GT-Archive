@@ -1,15 +1,3 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetSharedGroupDataRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public bool? GetMembers;
-
-	public List<string> Keys;
-
-	public string SharedGroupId;
 }

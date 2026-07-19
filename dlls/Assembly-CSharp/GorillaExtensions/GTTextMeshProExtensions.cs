@@ -2,13 +2,17 @@ using System;
 using Cysharp.Text;
 using TMPro;
 
-namespace GorillaExtensions;
-
-public static class GTTextMeshProExtensions
+namespace GorillaExtensions
 {
-	public static void SetTextToZString(this TMP_Text textMono, Utf16ValueStringBuilder zStringBuilder)
+	public static class GTTextMeshProExtensions
 	{
-		ArraySegment<char> arraySegment = zStringBuilder.AsArraySegment();
-		textMono.SetCharArray(arraySegment.Array, arraySegment.Offset, arraySegment.Count);
+		public static void SetTextToZString(this TMP_Text textMono, Utf16ValueStringBuilder zStringBuilder)
+		{
+			ArraySegment<char> arraySegment = zStringBuilder.AsArraySegment();
+			textMono.SetCharArray(arraySegment.Array, arraySegment.Offset, arraySegment.Count);
+		}
 	}
+}
+namespace GorillaTag.Cosmetics
+{
 }

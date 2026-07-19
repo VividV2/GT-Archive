@@ -1,12 +1,21 @@
 namespace Valve.VR;
 
-public struct VROverlayIntersectionResults_t
+public struct VRControllerAxis_t
 {
-	public HmdVector3_t vPoint;
+	public float x;
 
-	public HmdVector3_t vNormal;
+	public float y;
+}
+namespace Valve.VR
+{
+	public struct VROverlayIntersectionResults_t
+	{
+		public HmdVector3_t vPoint;
 
-	public HmdVector2_t vUVs;
+		public HmdVector3_t vNormal;
 
-	public float fDistance;
+		public HmdVector2_t vUVs;
+
+		public float fDistance;
+	}
 }

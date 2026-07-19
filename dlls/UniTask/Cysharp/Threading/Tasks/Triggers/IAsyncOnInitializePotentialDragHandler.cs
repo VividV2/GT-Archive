@@ -1,8 +1,12 @@
 using UnityEngine.EventSystems;
 
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnInitializePotentialDragHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask<PointerEventData> OnInitializePotentialDragAsync();
+	public interface IAsyncOnInitializePotentialDragHandler
+	{
+		UniTask<PointerEventData> OnInitializePotentialDragAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
 }

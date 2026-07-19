@@ -1,18 +1,22 @@
-namespace System.Net.NetworkInformation;
-
-internal static class IPGlobalPropertiesFactoryPal
+namespace System.Net.NetworkInformation
 {
-	public static IPGlobalProperties Create()
+	internal static class IPGlobalPropertiesFactoryPal
 	{
-		IPGlobalProperties iPGlobalProperties = UnixIPGlobalPropertiesFactoryPal.Create();
-		if (iPGlobalProperties == null)
+		public static IPGlobalProperties Create()
 		{
-			iPGlobalProperties = Win32IPGlobalPropertiesFactoryPal.Create();
+			IPGlobalProperties iPGlobalProperties = UnixIPGlobalPropertiesFactoryPal.Create();
+			if (iPGlobalProperties == null)
+			{
+				iPGlobalProperties = Win32IPGlobalPropertiesFactoryPal.Create();
+			}
+			if (iPGlobalProperties == null)
+			{
+				throw new NotImplementedException();
+			}
+			return iPGlobalProperties;
 		}
-		if (iPGlobalProperties == null)
-		{
-			throw new NotImplementedException();
-		}
-		return iPGlobalProperties;
 	}
+}
+namespace System.IO
+{
 }

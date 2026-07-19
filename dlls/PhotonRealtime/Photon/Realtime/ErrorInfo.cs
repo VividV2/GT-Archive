@@ -1,18 +1,9 @@
-using ExitGames.Client.Photon;
-
-namespace Photon.Realtime;
-
-public class ErrorInfo
+namespace Photon.Realtime
 {
-	public readonly string Info;
-
-	public ErrorInfo(EventData eventData)
-	{
-		Info = eventData[218] as string;
-	}
-
-	public override string ToString()
-	{
-		return $"ErrorInfo: {Info}";
-	}
+}
+namespace Photon.Realtime
+{
+}
+namespace Photon.Realtime
+{
 }

@@ -1,9 +1,13 @@
-namespace UnityEngine.UIElements;
-
-public sealed class TransitionRunEvent : TransitionEventBase<TransitionRunEvent>
+namespace UnityEngine.UIElements
 {
-	static TransitionRunEvent()
+	public sealed class TransitionRunEvent : TransitionEventBase<TransitionRunEvent>
 	{
-		EventBase<TransitionRunEvent>.SetCreateFunction(() => new TransitionRunEvent());
+		static TransitionRunEvent()
+		{
+			EventBase<TransitionRunEvent>.SetCreateFunction(() => new TransitionRunEvent());
+		}
 	}
+}
+namespace UnityEngine.UIElements
+{
 }

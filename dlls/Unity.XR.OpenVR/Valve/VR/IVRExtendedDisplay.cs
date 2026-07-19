@@ -2,23 +2,36 @@ using System.Runtime.InteropServices;
 
 namespace Valve.VR;
 
-public struct IVRExtendedDisplay
+public enum EHiddenAreaMeshType
 {
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate void _GetWindowBounds(ref int pnX, ref int pnY, ref uint pnWidth, ref uint pnHeight);
+	k_eHiddenAreaMesh_Standard,
+	k_eHiddenAreaMesh_Inverse,
+	k_eHiddenAreaMesh_LineLoop,
+	k_eHiddenAreaMesh_Max
+}
+namespace Valve.VR
+{
+	public struct IVRExtendedDisplay
+	{
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate void _GetWindowBounds(ref int pnX, ref int pnY, ref uint pnWidth, ref uint pnHeight);
 
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate void _GetEyeOutputViewport(EVREye eEye, ref uint pnX, ref uint pnY, ref uint pnWidth, ref uint pnHeight);
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate void _GetEyeOutputViewport(EVREye eEye, ref uint pnX, ref uint pnY, ref uint pnWidth, ref uint pnHeight);
 
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate void _GetDXGIOutputInfo(ref int pnAdapterIndex, ref int pnAdapterOutputIndex);
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate void _GetDXGIOutputInfo(ref int pnAdapterIndex, ref int pnAdapterOutputIndex);
 
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetWindowBounds GetWindowBounds;
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _GetWindowBounds GetWindowBounds;
 
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetEyeOutputViewport GetEyeOutputViewport;
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _GetEyeOutputViewport GetEyeOutputViewport;
 
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _GetDXGIOutputInfo GetDXGIOutputInfo;
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _GetDXGIOutputInfo GetDXGIOutputInfo;
+	}
+}
+namespace Valve.VR
+{
 }

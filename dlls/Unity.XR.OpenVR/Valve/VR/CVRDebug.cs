@@ -1,45 +1,20 @@
-using System;
 using System.Runtime.InteropServices;
-using System.Text;
+using System.Runtime.InteropServices;
 
 namespace Valve.VR;
 
-public class CVRDebug
+public struct VREvent_TouchPadMove_t
 {
-	private IVRDebug FnTable;
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bFingerDown;
 
-	internal CVRDebug(IntPtr pInterface)
-	{
-		FnTable = (IVRDebug)Marshal.PtrToStructure(pInterface, typeof(IVRDebug));
-	}
+	public float flSecondsFingerDown;
 
-	public EVRDebugError EmitVrProfilerEvent(string pchMessage)
-	{
-		IntPtr intPtr = Utils.ToUtf8(pchMessage);
-		EVRDebugError result = FnTable.EmitVrProfilerEvent(intPtr);
-		Marshal.FreeHGlobal(intPtr);
-		return result;
-	}
+	public float fValueXFirst;
 
-	public EVRDebugError BeginVrProfilerEvent(ref ulong pHandleOut)
-	{
-		pHandleOut = 0uL;
-		return FnTable.BeginVrProfilerEvent(ref pHandleOut);
-	}
+	public float fValueYFirst;
 
-	public EVRDebugError FinishVrProfilerEvent(ulong hHandle, string pchMessage)
-	{
-		IntPtr intPtr = Utils.ToUtf8(pchMessage);
-		EVRDebugError result = FnTable.FinishVrProfilerEvent(hHandle, intPtr);
-		Marshal.FreeHGlobal(intPtr);
-		return result;
-	}
+	public float fValueXRaw;
 
-	public uint DriverDebugRequest(uint unDeviceIndex, string pchRequest, StringBuilder pchResponseBuffer, uint unResponseBufferSize)
-	{
-		IntPtr intPtr = Utils.ToUtf8(pchRequest);
-		uint result = FnTable.DriverDebugRequest(unDeviceIndex, intPtr, pchResponseBuffer, unResponseBufferSize);
-		Marshal.FreeHGlobal(intPtr);
-		return result;
-	}
+	public float fValueYRaw;
 }

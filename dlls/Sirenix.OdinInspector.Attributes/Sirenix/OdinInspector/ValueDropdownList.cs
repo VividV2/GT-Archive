@@ -1,16 +1,20 @@
-using System.Collections.Generic;
-
-namespace Sirenix.OdinInspector;
-
-public class ValueDropdownList<T> : List<ValueDropdownItem<T>>
+namespace Sirenix.OdinInspector
 {
-	public void Add(string text, T value)
+	public enum TableAxis
 	{
-		Add(new ValueDropdownItem<T>(text, value));
+		X,
+		Y
 	}
-
-	public void Add(T value)
+}
+namespace Sirenix.OdinInspector
+{
+}
+namespace Sirenix.OdinInspector
+{
+	public enum ObjectFieldAlignment
 	{
-		Add(new ValueDropdownItem<T>(value.ToString(), value));
+		Left,
+		Center,
+		Right
 	}
 }

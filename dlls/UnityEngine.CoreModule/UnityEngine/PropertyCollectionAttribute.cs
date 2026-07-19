@@ -1,13 +1,17 @@
 using System;
 
-namespace UnityEngine;
-
-[Obsolete("Derive collection attributes from 'PropertyAttribute' and set its 'applyToCollection' property to 'true'.", false)]
-[AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-public abstract class PropertyCollectionAttribute : PropertyAttribute
+namespace UnityEngine
 {
-	protected PropertyCollectionAttribute()
-		: base(applyToCollection: true)
+	[Obsolete("Derive collection attributes from 'PropertyAttribute' and set its 'applyToCollection' property to 'true'.", false)]
+	[AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
+	public abstract class PropertyCollectionAttribute : PropertyAttribute
 	{
+		protected PropertyCollectionAttribute()
+			: base(applyToCollection: true)
+		{
+		}
 	}
+}
+namespace UnityEngine
+{
 }

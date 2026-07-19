@@ -1,32 +1,21 @@
-using System;
-using System.Runtime.InteropServices;
-using System.Text;
-
 namespace Valve.VR;
 
-public struct IVRDebug
+public enum EVRSceneApplicationState
 {
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate EVRDebugError _EmitVrProfilerEvent(IntPtr pchMessage);
+	None,
+	Starting,
+	Quitting,
+	Running,
+	Waiting
+}
+namespace Valve.VR
+{
+	public struct IntersectionMaskCircle_t
+	{
+		public float m_flCenterX;
 
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate EVRDebugError _BeginVrProfilerEvent(ref ulong pHandleOut);
+		public float m_flCenterY;
 
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate EVRDebugError _FinishVrProfilerEvent(ulong hHandle, IntPtr pchMessage);
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate uint _DriverDebugRequest(uint unDeviceIndex, IntPtr pchRequest, StringBuilder pchResponseBuffer, uint unResponseBufferSize);
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _EmitVrProfilerEvent EmitVrProfilerEvent;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _BeginVrProfilerEvent BeginVrProfilerEvent;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _FinishVrProfilerEvent FinishVrProfilerEvent;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _DriverDebugRequest DriverDebugRequest;
+		public float m_flRadius;
+	}
 }

@@ -1,16 +1,20 @@
 using System;
 
-namespace Oculus.Platform.Models;
-
-public class AchievementUpdate
+namespace Oculus.Platform.Models
 {
-	public readonly bool JustUnlocked;
-
-	public readonly string Name;
-
-	public AchievementUpdate(IntPtr o)
+	public class AchievementUpdate
 	{
-		JustUnlocked = CAPI.ovr_AchievementUpdate_GetJustUnlocked(o);
-		Name = CAPI.ovr_AchievementUpdate_GetName(o);
+		public readonly bool JustUnlocked;
+
+		public readonly string Name;
+
+		public AchievementUpdate(IntPtr o)
+		{
+			JustUnlocked = CAPI.ovr_AchievementUpdate_GetJustUnlocked(o);
+			Name = CAPI.ovr_AchievementUpdate_GetName(o);
+		}
 	}
+}
+namespace Oculus.Platform.Models
+{
 }

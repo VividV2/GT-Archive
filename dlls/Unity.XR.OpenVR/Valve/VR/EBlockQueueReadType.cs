@@ -1,8 +1,3 @@
-namespace Valve.VR;
-
-public enum EBlockQueueReadType
+namespace Valve.VR
 {
-	BlockQueueRead_Latest,
-	BlockQueueRead_New,
-	BlockQueueRead_Next
 }

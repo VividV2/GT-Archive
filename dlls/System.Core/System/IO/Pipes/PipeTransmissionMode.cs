@@ -1,10 +1,14 @@
-namespace System.IO.Pipes;
-
-/// <summary>Specifies the transmission mode of the pipe.</summary>
-public enum PipeTransmissionMode
+namespace System.Diagnostics.Eventing.Reader
 {
-	/// <summary>Indicates that data in the pipe is transmitted and read as a stream of bytes.</summary>
-	Byte,
-	/// <summary>Indicates that data in the pipe is transmitted and read as a stream of messages.</summary>
-	Message
+}
+namespace System.IO.Pipes
+{
+	/// <summary>Specifies the transmission mode of the pipe.</summary>
+	public enum PipeTransmissionMode
+	{
+		/// <summary>Indicates that data in the pipe is transmitted and read as a stream of bytes.</summary>
+		Byte,
+		/// <summary>Indicates that data in the pipe is transmitted and read as a stream of messages.</summary>
+		Message
+	}
 }

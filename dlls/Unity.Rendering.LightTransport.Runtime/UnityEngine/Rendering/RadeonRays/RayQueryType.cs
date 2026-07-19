@@ -1,7 +1,11 @@
-namespace UnityEngine.Rendering.RadeonRays;
-
-internal enum RayQueryType
+namespace UnityEngine.Rendering.RadeonRays
 {
-	ClosestHit,
-	AnyHit
+	internal enum RayQueryType
+	{
+		ClosestHit,
+		AnyHit
+	}
+}
+namespace UnityEngine.Rendering.RadeonRays
+{
 }

@@ -2,20 +2,24 @@ using System;
 using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class RequestMultiplayerServerRequest : PlayFabRequestCommon
+namespace PlayFab.MultiplayerModels
 {
-	public BuildAliasParams BuildAliasParams;
+	[Serializable]
+	public class RequestMultiplayerServerRequest : PlayFabRequestCommon
+	{
+		public BuildAliasParams BuildAliasParams;
 
-	public string BuildId;
+		public string BuildId;
 
-	public List<string> InitialPlayers;
+		public List<string> InitialPlayers;
 
-	public List<string> PreferredRegions;
+		public List<string> PreferredRegions;
 
-	public string SessionCookie;
+		public string SessionCookie;
 
-	public string SessionId;
+		public string SessionId;
+	}
+}
+namespace PlayFab.MultiplayerModels
+{
 }

@@ -1,12 +1,8 @@
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.MultiplayerModels;
 
-namespace PlayFab.GroupsModels;
-
-[Serializable]
-public class GroupBlock : PlayFabBaseModel
+public enum TitleMultiplayerServerEnabledStatus
 {
-	public EntityWithLineage Entity;
-
-	public EntityKey Group;
+	Initializing,
+	Enabled,
+	Disabled
 }

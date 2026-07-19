@@ -1,7 +1,11 @@
-namespace UnityEngine.Rendering.RadeonRays;
-
-internal enum RayQueryOutputType
+namespace UnityEngine.Rendering.RadeonRays
 {
-	FullHitData,
-	InstanceID
+	internal enum RayQueryOutputType
+	{
+		FullHitData,
+		InstanceID
+	}
+}
+namespace UnityEngine.Rendering.RadeonRays
+{
 }

@@ -1,32 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Oculus.Interaction.Input;
+using UnityEngine;
+using Oculus.Interaction.Input;
+using UnityEngine;
 
-namespace Oculus.Interaction.PoseDetection.Debug;
+namespace Oculus.Interaction.Unity.Input;
 
-public abstract class ActiveStateModel<TActiveState> : IActiveStateModel where TActiveState : class, IActiveState
+public class InputMouseButton : MonoBehaviour, IButton
 {
-	public async Task<IEnumerable<IActiveState>> GetChildrenAsync(IActiveState activeState)
-	{
-		if (activeState is TActiveState instance)
-		{
-			return await GetChildrenAsync(instance);
-		}
-		return Enumerable.Empty<IActiveState>();
-	}
+	[SerializeField]
+	private int _button;
 
-	protected abstract Task<IEnumerable<IActiveState>> GetChildrenAsync(TActiveState instance);
-
-	[Obsolete("Use async version of this method", true)]
-	public IEnumerable<IActiveState> GetChildren(IActiveState activeState)
+	public bool Value()
 	{
-		throw new NotImplementedException();
-	}
-
-	[Obsolete("Use async version of this method", true)]
-	protected virtual IEnumerable<IActiveState> GetChildren(TActiveState activeState)
-	{
-		throw new NotImplementedException();
+		return UnityEngine.Input.GetMouseButton(_button);
 	}
 }

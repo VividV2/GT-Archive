@@ -1,12 +1,24 @@
-namespace Valve.VR;
-
-public struct VREvent_Scroll_t
+namespace Valve.VR
 {
-	public float xdelta;
+	public struct RenderModel_ComponentState_t
+	{
+		public HmdMatrix34_t mTrackingToComponentRenderModel;
 
-	public float ydelta;
+		public HmdMatrix34_t mTrackingToComponentLocal;
 
-	public uint unused;
+		public uint uProperties;
+	}
+}
+namespace Valve.VR
+{
+	public struct VREvent_Scroll_t
+	{
+		public float xdelta;
 
-	public float viewportscale;
+		public float ydelta;
+
+		public uint unused;
+
+		public float viewportscale;
+	}
 }

@@ -1,8 +1,12 @@
-namespace K4os.Compression.LZ4;
-
-internal class AssemblyHook
+namespace K4os.Compression.LZ4
 {
-	private AssemblyHook()
+	internal class AssemblyHook
 	{
+		private AssemblyHook()
+		{
+		}
 	}
+}
+namespace K4os.Compression.LZ4.Internal
+{
 }

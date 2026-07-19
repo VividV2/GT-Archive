@@ -1,15 +1,6 @@
-using System;
-using System.ComponentModel;
-
-namespace Fusion;
-
-[Flags]
-public enum SimulationModes
+namespace Fusion
 {
-	[Description("Server")]
-	Server = 1,
-	[Description("Host")]
-	Host = 2,
-	[Description("Client")]
-	Client = 4
+}
+namespace Fusion
+{
 }

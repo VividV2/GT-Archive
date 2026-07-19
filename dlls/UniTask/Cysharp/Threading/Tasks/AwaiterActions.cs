@@ -2,16 +2,20 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace Cysharp.Threading.Tasks;
-
-internal static class AwaiterActions
+namespace Cysharp.Threading.Tasks
 {
-	internal static readonly Action<object> InvokeContinuationDelegate = Continuation;
-
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[DebuggerHidden]
-	private static void Continuation(object state)
+	internal static class AwaiterActions
 	{
-		((Action)state)();
+		internal static readonly Action<object> InvokeContinuationDelegate = Continuation;
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[DebuggerHidden]
+		private static void Continuation(object state)
+		{
+			((Action)state)();
+		}
 	}
+}
+namespace Cysharp.Threading.Tasks
+{
 }

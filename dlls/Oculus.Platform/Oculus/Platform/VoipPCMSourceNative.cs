@@ -1,27 +1,15 @@
 using System;
+using System;
 
-namespace Oculus.Platform;
-
-public class VoipPCMSourceNative : IVoipPCMSource
+namespace Oculus.Platform.Models
 {
-	private ulong senderID;
-
-	public int GetPCM(float[] dest, int length)
+	public class AppDownloadResult(IntPtr o)
 	{
-		return (int)(uint)CAPI.ovr_Voip_GetPCMFloat(senderID, dest, (UIntPtr)(ulong)length);
-	}
+		public readonly AppInstallResult AppInstallResult = CAPI.ovr_AppDownloadResult_GetAppInstallResult(o);
 
-	public void SetSenderID(ulong senderID)
-	{
-		this.senderID = senderID;
+		public readonly long Timestamp = CAPI.ovr_AppDownloadResult_GetTimestamp(o);
 	}
-
-	public int PeekSizeElements()
-	{
-		return (int)(uint)CAPI.ovr_Voip_GetPCMSize(senderID);
-	}
-
-	public void Update()
-	{
-	}
+}
+namespace Oculus.Platform.Models
+{
 }

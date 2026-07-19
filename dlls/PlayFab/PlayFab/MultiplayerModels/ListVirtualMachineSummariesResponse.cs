@@ -1,15 +1,7 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
 namespace PlayFab.MultiplayerModels;
 
-[Serializable]
-public class ListVirtualMachineSummariesResponse : PlayFabResultCommon
+public enum ProtocolType
 {
-	public int PageSize;
-
-	public string SkipToken;
-
-	public List<VirtualMachineSummary> VirtualMachines;
+	TCP,
+	UDP
 }

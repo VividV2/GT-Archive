@@ -1,8 +1,20 @@
-namespace Sirenix.OdinInspector;
-
-public enum ObjectFieldAlignment
+namespace Sirenix.OdinInspector
 {
-	Left,
-	Center,
-	Right
+	public enum TableAxis
+	{
+		X,
+		Y
+	}
+}
+namespace Sirenix.OdinInspector
+{
+}
+namespace Sirenix.OdinInspector
+{
+	public enum ObjectFieldAlignment
+	{
+		Left,
+		Center,
+		Right
+	}
 }

@@ -1,48 +1,52 @@
 using System;
 using UnityEngine;
 
-namespace Meta.XR.MRUtilityKit;
-
-public struct DestructibleGlobalMesh
+namespace Meta.XR.MRUtilityKit
 {
-	public DestructibleMeshComponent DestructibleMeshComponent;
-
-	public int MaxPointsCount;
-
-	public float PointsPerUnitX;
-
-	public float PointsPerUnitY;
-
-	private bool Equals(DestructibleGlobalMesh other)
+	public struct DestructibleGlobalMesh
 	{
-		if (DestructibleMeshComponent == other.DestructibleMeshComponent && object.Equals(MaxPointsCount, other.MaxPointsCount) && Mathf.Approximately(PointsPerUnitX, other.PointsPerUnitX))
+		public DestructibleMeshComponent DestructibleMeshComponent;
+
+		public int MaxPointsCount;
+
+		public float PointsPerUnitX;
+
+		public float PointsPerUnitY;
+
+		private bool Equals(DestructibleGlobalMesh other)
 		{
-			return Mathf.Approximately(PointsPerUnitY, other.PointsPerUnitY);
+			if (DestructibleMeshComponent == other.DestructibleMeshComponent && object.Equals(MaxPointsCount, other.MaxPointsCount) && Mathf.Approximately(PointsPerUnitX, other.PointsPerUnitX))
+			{
+				return Mathf.Approximately(PointsPerUnitY, other.PointsPerUnitY);
+			}
+			return false;
 		}
-		return false;
-	}
 
-	public override bool Equals(object obj)
-	{
-		if (obj is DestructibleGlobalMesh other)
+		public override bool Equals(object obj)
 		{
-			return Equals(other);
+			if (obj is DestructibleGlobalMesh other)
+			{
+				return Equals(other);
+			}
+			return false;
 		}
-		return false;
-	}
 
-	public override int GetHashCode()
-	{
-		return HashCode.Combine(DestructibleMeshComponent, MaxPointsCount, PointsPerUnitX, PointsPerUnitY);
-	}
+		public override int GetHashCode()
+		{
+			return HashCode.Combine(DestructibleMeshComponent, MaxPointsCount, PointsPerUnitX, PointsPerUnitY);
+		}
 
-	public static bool operator ==(DestructibleGlobalMesh left, DestructibleGlobalMesh right)
-	{
-		return left.Equals(right);
-	}
+		public static bool operator ==(DestructibleGlobalMesh left, DestructibleGlobalMesh right)
+		{
+			return left.Equals(right);
+		}
 
-	public static bool operator !=(DestructibleGlobalMesh left, DestructibleGlobalMesh right)
-	{
-		return !left.Equals(right);
+		public static bool operator !=(DestructibleGlobalMesh left, DestructibleGlobalMesh right)
+		{
+			return !left.Equals(right);
+		}
 	}
+}
+namespace Meta.XR.MRUtilityKit
+{
 }

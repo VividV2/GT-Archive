@@ -1,3 +1,5 @@
+namespace GorillaTagScripts;
+
 public enum GRStoreItemType
 {
 	Pod,

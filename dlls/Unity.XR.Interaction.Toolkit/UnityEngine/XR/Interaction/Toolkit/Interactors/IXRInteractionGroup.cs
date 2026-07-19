@@ -1,54 +1,28 @@
-using System;
-using System.Collections.Generic;
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-
-namespace UnityEngine.XR.Interaction.Toolkit.Interactors;
-
-[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
-public interface IXRInteractionGroup
+namespace UnityEngine.XR.Interaction.Toolkit.Interactors
 {
-	string groupName { get; }
+	[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
+	public interface IXRHoverInteractor : IXRInteractor
+	{
+		HoverEnterEvent hoverEntered { get; }
 
-	IXRInteractor activeInteractor { get; }
+		HoverExitEvent hoverExited { get; }
 
-	IXRInteractor focusInteractor { get; }
+		List<IXRHoverInteractable> interactablesHovered { get; }
 
-	IXRFocusInteractable focusInteractable { get; }
+		bool hasHover { get; }
 
-	event Action<InteractionGroupRegisteredEventArgs> registered;
+		bool isHoverActive { get; }
 
-	event Action<InteractionGroupUnregisteredEventArgs> unregistered;
+		bool CanHover(IXRHoverInteractable interactable);
 
-	void OnRegistered(InteractionGroupRegisteredEventArgs args);
+		bool IsHovering(IXRHoverInteractable interactable);
 
-	void OnBeforeUnregistered();
+		void OnHoverEntering(HoverEnterEventArgs args);
 
-	void OnUnregistered(InteractionGroupUnregisteredEventArgs args);
+		void OnHoverEntered(HoverEnterEventArgs args);
 
-	void AddGroupMember(IXRGroupMember groupMember);
+		void OnHoverExiting(HoverExitEventArgs args);
 
-	void MoveGroupMemberTo(IXRGroupMember groupMember, int newIndex);
-
-	bool RemoveGroupMember(IXRGroupMember groupMember);
-
-	void ClearGroupMembers();
-
-	bool ContainsGroupMember(IXRGroupMember groupMember);
-
-	void GetGroupMembers(List<IXRGroupMember> results);
-
-	bool HasDependencyOnGroup(IXRInteractionGroup group);
-
-	void PreprocessGroupMembers(XRInteractionUpdateOrder.UpdatePhase updatePhase);
-
-	void ProcessGroupMembers(XRInteractionUpdateOrder.UpdatePhase updatePhase);
-
-	void UpdateGroupMemberInteractions();
-
-	void UpdateGroupMemberInteractions(IXRInteractor prePrioritizedInteractor, out IXRInteractor interactorThatPerformedInteraction);
-
-	void OnFocusEntering(FocusEnterEventArgs args);
-
-	void OnFocusExiting(FocusExitEventArgs args);
+		void OnHoverExited(HoverExitEventArgs args);
+	}
 }

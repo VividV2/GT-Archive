@@ -1,8 +1,3 @@
-namespace SouthPointe.Serialization.MessagePack;
-
-public interface ITypeHandler
+namespace SouthPointe.Serialization.MessagePack
 {
-	object Read(Format format, FormatReader reader);
-
-	void Write(object obj, FormatWriter writer);
 }

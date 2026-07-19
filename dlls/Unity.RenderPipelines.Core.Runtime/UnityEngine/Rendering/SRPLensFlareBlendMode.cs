@@ -1,12 +1,19 @@
 using System;
 
-namespace UnityEngine.Rendering;
-
-[Serializable]
-public enum SRPLensFlareBlendMode
+namespace UnityEngine.Rendering
 {
-	Additive,
-	Screen,
-	Premultiply,
-	Lerp
+	[Serializable]
+	public enum SRPLensFlareBlendMode
+	{
+		Additive,
+		Screen,
+		Premultiply,
+		Lerp
+	}
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine.Rendering
+{
 }

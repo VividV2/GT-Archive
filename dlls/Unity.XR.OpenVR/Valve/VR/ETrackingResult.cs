@@ -1,11 +1,17 @@
-namespace Valve.VR;
+using System;
+using System;
 
-public enum ETrackingResult
+namespace Valve.VR
 {
-	Uninitialized = 1,
-	Calibrating_InProgress = 100,
-	Calibrating_OutOfRange = 101,
-	Running_OK = 200,
-	Running_OutOfRange = 201,
-	Fallback_RotationOnly = 300
+	public struct Texture_t
+	{
+		public IntPtr handle;
+
+		public ETextureType eType;
+
+		public EColorSpace eColorSpace;
+	}
+}
+namespace Valve.VR
+{
 }

@@ -1,104 +1,142 @@
-using System.IO;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Security;
+namespace System.Security.Cryptography;
 
-namespace System.Runtime.InteropServices;
-
-/// <summary>Provides a collection of <see langword="static" /> methods that return information about the common language runtime environment.</summary>
-[ComVisible(true)]
-public class RuntimeEnvironment
+internal static class Constants
 {
-	/// <summary>Gets the path to the system configuration file.</summary>
-	/// <returns>The path to the system configuration file.</returns>
-	public static string SystemConfigurationFile
-	{
-		[SecuritySafeCritical]
-		get
-		{
-			return Environment.GetMachineConfigPath();
-		}
-	}
+	internal const int S_OK = 0;
 
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.RuntimeEnvironment" /> class.</summary>
-	[Obsolete("Do not create instances of the RuntimeEnvironment class.  Call the static methods directly on this type instead", true)]
-	public RuntimeEnvironment()
-	{
-	}
+	internal const int NTE_FILENOTFOUND = -2147024894;
 
-	/// <summary>Tests whether the specified assembly is loaded in the global assembly cache.</summary>
-	/// <param name="a">The assembly to test.</param>
-	/// <returns>
-	///   <see langword="true" /> if the assembly is loaded in the global assembly cache; otherwise, <see langword="false" />.</returns>
-	public static bool FromGlobalAccessCache(Assembly a)
-	{
-		return a.GlobalAssemblyCache;
-	}
+	internal const int NTE_NO_KEY = -2146893811;
 
-	/// <summary>Gets the version number of the common language runtime that is running the current process.</summary>
-	/// <returns>A string containing the version number of the common language runtime.</returns>
-	[MethodImpl(MethodImplOptions.NoInlining)]
-	[SecuritySafeCritical]
-	public static string GetSystemVersion()
-	{
-		return Assembly.GetExecutingAssembly().ImageRuntimeVersion;
-	}
+	internal const int NTE_BAD_KEYSET = -2146893802;
 
-	/// <summary>Returns the directory where the common language runtime is installed.</summary>
-	/// <returns>A string that contains the path to the directory where the common language runtime is installed.</returns>
-	[SecuritySafeCritical]
-	public static string GetRuntimeDirectory()
-	{
-		if (Environment.GetEnvironmentVariable("CSC_SDK_PATH_DISABLED") != null)
-		{
-			return null;
-		}
-		return GetRuntimeDirectoryImpl();
-	}
+	internal const int NTE_KEYSET_NOT_DEF = -2146893799;
 
-	private static string GetRuntimeDirectoryImpl()
-	{
-		return Path.GetDirectoryName(typeof(object).Assembly.Location);
-	}
+	internal const int KP_IV = 1;
 
-	private static IntPtr GetRuntimeInterfaceImpl(Guid clsid, Guid riid)
-	{
-		throw new NotSupportedException();
-	}
+	internal const int KP_MODE = 4;
 
-	/// <summary>Returns the specified interface on the specified class.</summary>
-	/// <param name="clsid">The identifier for the desired class.</param>
-	/// <param name="riid">The identifier for the desired interface.</param>
-	/// <returns>An unmanaged pointer to the requested interface.</returns>
-	/// <exception cref="T:System.Runtime.InteropServices.COMException">IUnknown::QueryInterface failure.</exception>
-	[ComVisible(false)]
-	[SecurityCritical]
-	public static IntPtr GetRuntimeInterfaceAsIntPtr(Guid clsid, Guid riid)
-	{
-		return GetRuntimeInterfaceImpl(clsid, riid);
-	}
+	internal const int KP_MODE_BITS = 5;
 
-	/// <summary>Returns an instance of a type that represents a COM object by a pointer to its <see langword="IUnknown" /> interface.</summary>
-	/// <param name="clsid">The identifier for the desired class.</param>
-	/// <param name="riid">The identifier for the desired interface.</param>
-	/// <returns>An object that represents the specified unmanaged COM object.</returns>
-	/// <exception cref="T:System.Runtime.InteropServices.COMException">IUnknown::QueryInterface failure.</exception>
-	[ComVisible(false)]
-	[SecurityCritical]
-	public static object GetRuntimeInterfaceAsObject(Guid clsid, Guid riid)
-	{
-		IntPtr intPtr = IntPtr.Zero;
-		try
-		{
-			intPtr = GetRuntimeInterfaceImpl(clsid, riid);
-			return Marshal.GetObjectForIUnknown(intPtr);
-		}
-		finally
-		{
-			if (intPtr != IntPtr.Zero)
-			{
-				Marshal.Release(intPtr);
-			}
-		}
-	}
+	internal const int KP_EFFECTIVE_KEYLEN = 19;
+
+	internal const int ALG_CLASS_SIGNATURE = 8192;
+
+	internal const int ALG_CLASS_DATA_ENCRYPT = 24576;
+
+	internal const int ALG_CLASS_HASH = 32768;
+
+	internal const int ALG_CLASS_KEY_EXCHANGE = 40960;
+
+	internal const int ALG_TYPE_DSS = 512;
+
+	internal const int ALG_TYPE_RSA = 1024;
+
+	internal const int ALG_TYPE_BLOCK = 1536;
+
+	internal const int ALG_TYPE_STREAM = 2048;
+
+	internal const int ALG_TYPE_ANY = 0;
+
+	internal const int CALG_MD5 = 32771;
+
+	internal const int CALG_SHA1 = 32772;
+
+	internal const int CALG_SHA_256 = 32780;
+
+	internal const int CALG_SHA_384 = 32781;
+
+	internal const int CALG_SHA_512 = 32782;
+
+	internal const int CALG_RSA_KEYX = 41984;
+
+	internal const int CALG_RSA_SIGN = 9216;
+
+	internal const int CALG_DSS_SIGN = 8704;
+
+	internal const int CALG_DES = 26113;
+
+	internal const int CALG_RC2 = 26114;
+
+	internal const int CALG_3DES = 26115;
+
+	internal const int CALG_3DES_112 = 26121;
+
+	internal const int CALG_AES_128 = 26126;
+
+	internal const int CALG_AES_192 = 26127;
+
+	internal const int CALG_AES_256 = 26128;
+
+	internal const int CALG_RC4 = 26625;
+
+	internal const int PROV_RSA_FULL = 1;
+
+	internal const int PROV_DSS_DH = 13;
+
+	internal const int PROV_RSA_AES = 24;
+
+	internal const int AT_KEYEXCHANGE = 1;
+
+	internal const int AT_SIGNATURE = 2;
+
+	internal const int PUBLICKEYBLOB = 6;
+
+	internal const int PRIVATEKEYBLOB = 7;
+
+	internal const int CRYPT_OAEP = 64;
+
+	internal const uint CRYPT_VERIFYCONTEXT = 4026531840u;
+
+	internal const uint CRYPT_NEWKEYSET = 8u;
+
+	internal const uint CRYPT_DELETEKEYSET = 16u;
+
+	internal const uint CRYPT_MACHINE_KEYSET = 32u;
+
+	internal const uint CRYPT_SILENT = 64u;
+
+	internal const uint CRYPT_EXPORTABLE = 1u;
+
+	internal const uint CLR_KEYLEN = 1u;
+
+	internal const uint CLR_PUBLICKEYONLY = 2u;
+
+	internal const uint CLR_EXPORTABLE = 3u;
+
+	internal const uint CLR_REMOVABLE = 4u;
+
+	internal const uint CLR_HARDWARE = 5u;
+
+	internal const uint CLR_ACCESSIBLE = 6u;
+
+	internal const uint CLR_PROTECTED = 7u;
+
+	internal const uint CLR_UNIQUE_CONTAINER = 8u;
+
+	internal const uint CLR_ALGID = 9u;
+
+	internal const uint CLR_PP_CLIENT_HWND = 10u;
+
+	internal const uint CLR_PP_PIN = 11u;
+
+	internal const string OID_RSA_SMIMEalgCMS3DESwrap = "1.2.840.113549.1.9.16.3.6";
+
+	internal const string OID_RSA_MD5 = "1.2.840.113549.2.5";
+
+	internal const string OID_RSA_RC2CBC = "1.2.840.113549.3.2";
+
+	internal const string OID_RSA_DES_EDE3_CBC = "1.2.840.113549.3.7";
+
+	internal const string OID_OIWSEC_desCBC = "1.3.14.3.2.7";
+
+	internal const string OID_OIWSEC_SHA1 = "1.3.14.3.2.26";
+
+	internal const string OID_OIWSEC_SHA256 = "2.16.840.1.101.3.4.2.1";
+
+	internal const string OID_OIWSEC_SHA384 = "2.16.840.1.101.3.4.2.2";
+
+	internal const string OID_OIWSEC_SHA512 = "2.16.840.1.101.3.4.2.3";
+
+	internal const string OID_OIWSEC_RIPEMD160 = "1.3.36.3.2.1";
 }

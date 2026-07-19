@@ -1,11 +1,6 @@
-using System.Collections.ObjectModel;
-
-namespace System.Xml.Xsl.Xslt;
-
-internal class DecimalFormats : KeyedCollection<XmlQualifiedName, DecimalFormatDecl>
+namespace System.Xml.Xsl.XsltOld
 {
-	protected override XmlQualifiedName GetKeyForItem(DecimalFormatDecl format)
-	{
-		return format.Name;
-	}
+}
+namespace System.Xml.Serialization.Configuration
+{
 }

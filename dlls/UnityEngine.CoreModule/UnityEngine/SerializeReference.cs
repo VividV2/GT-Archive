@@ -1,15 +1,13 @@
-using System;
-using UnityEngine.Internal;
-using UnityEngine.Scripting;
+namespace UnityEngine.Windows.Speech;
 
-namespace UnityEngine;
-
-[RequiredByNativeCode]
-[AttributeUsage(AttributeTargets.Field)]
-public sealed class SerializeReference : Attribute
+public enum DictationCompletionCause
 {
-	[ExcludeFromDocs]
-	public SerializeReference()
-	{
-	}
+	Complete,
+	AudioQualityFailure,
+	Canceled,
+	TimeoutExceeded,
+	PauseLimitExceeded,
+	NetworkFailure,
+	MicrophoneUnavailable,
+	UnknownError
 }

@@ -13,3 +13,15 @@ internal struct ServerTimeProviderSettings
 		};
 	}
 }
+namespace Fusion
+{
+}
+namespace Fusion
+{
+}
+namespace Fusion
+{
+}
+namespace Fusion
+{
+}

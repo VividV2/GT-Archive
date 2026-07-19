@@ -1,24 +1,28 @@
 using UnityEngine;
 
-namespace Cysharp.Threading.Tasks.Triggers;
-
-[DisallowMultipleComponent]
-public sealed class AsyncStartTrigger : AsyncTriggerBase<AsyncUnit>
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	private bool called;
-
-	private void Start()
+	[DisallowMultipleComponent]
+	public sealed class AsyncStartTrigger : AsyncTriggerBase<AsyncUnit>
 	{
-		called = true;
-		RaiseEvent(AsyncUnit.Default);
-	}
+		private bool called;
 
-	public UniTask StartAsync()
-	{
-		if (called)
+		private void Start()
 		{
-			return UniTask.CompletedTask;
+			called = true;
+			RaiseEvent(AsyncUnit.Default);
 		}
-		return ((IAsyncOneShotTrigger)new AsyncTriggerHandler<AsyncUnit>(this, callOnce: true)).OneShotAsync();
+
+		public UniTask StartAsync()
+		{
+			if (called)
+			{
+				return UniTask.CompletedTask;
+			}
+			return ((IAsyncOneShotTrigger)new AsyncTriggerHandler<AsyncUnit>(this, callOnce: true)).OneShotAsync();
+		}
 	}
+}
+namespace Cysharp.Threading.Tasks
+{
 }

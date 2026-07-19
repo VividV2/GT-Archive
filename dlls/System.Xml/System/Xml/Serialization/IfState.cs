@@ -1,34 +1,8 @@
-using System.Reflection.Emit;
+namespace System.Xml.Xsl;
 
-namespace System.Xml.Serialization;
-
-internal class IfState
+internal interface IErrorHelper
 {
-	private Label elseBegin;
+	void ReportError(string res, params string[] args);
 
-	private Label endIf;
-
-	internal Label EndIf
-	{
-		get
-		{
-			return endIf;
-		}
-		set
-		{
-			endIf = value;
-		}
-	}
-
-	internal Label ElseBegin
-	{
-		get
-		{
-			return elseBegin;
-		}
-		set
-		{
-			elseBegin = value;
-		}
-	}
+	void ReportWarning(string res, params string[] args);
 }

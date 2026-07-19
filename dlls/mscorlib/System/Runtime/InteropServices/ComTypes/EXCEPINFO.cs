@@ -1,36 +1,12 @@
-namespace System.Runtime.InteropServices.ComTypes;
+using System.Runtime.InteropServices;
 
-/// <summary>Describes the exceptions that occur during <see langword="IDispatch::Invoke" />.</summary>
-[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-public struct EXCEPINFO
+namespace System.Runtime.Remoting.Metadata.W3cXsd2001;
+
+/// <summary>Provides access to the XML Schema definition language (XSD) of a SOAP type.</summary>
+[ComVisible(true)]
+public interface ISoapXsd
 {
-	/// <summary>Represents an error code identifying the error.</summary>
-	public short wCode;
-
-	/// <summary>This field is reserved; it must be set to 0.</summary>
-	public short wReserved;
-
-	/// <summary>Indicates the name of the source of the exception. Typically, this is an application name.</summary>
-	[MarshalAs(UnmanagedType.BStr)]
-	public string bstrSource;
-
-	/// <summary>Describes the error intended for the customer.</summary>
-	[MarshalAs(UnmanagedType.BStr)]
-	public string bstrDescription;
-
-	/// <summary>Contains the fully-qualified drive, path, and file name of a Help file that contains more information about the error.</summary>
-	[MarshalAs(UnmanagedType.BStr)]
-	public string bstrHelpFile;
-
-	/// <summary>Indicates the Help context ID of the topic within the Help file.</summary>
-	public int dwHelpContext;
-
-	/// <summary>This field is reserved; it must be set to <see langword="null" />.</summary>
-	public IntPtr pvReserved;
-
-	/// <summary>Represents a pointer to a function that takes an <see cref="T:System.Runtime.InteropServices.EXCEPINFO" /> structure as an argument and returns an HRESULT value. If deferred fill-in is not desired, this field is set to <see langword="null" />.</summary>
-	public IntPtr pfnDeferredFillIn;
-
-	/// <summary>A return value describing the error.</summary>
-	public int scode;
+	/// <summary>Returns the XML Schema definition language (XSD) of the current SOAP type.</summary>
+	/// <returns>A <see cref="T:System.String" /> that indicates the XSD of the current SOAP type.</returns>
+	string GetXsdType();
 }

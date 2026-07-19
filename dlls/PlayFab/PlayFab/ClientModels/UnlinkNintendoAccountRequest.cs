@@ -1,9 +1,9 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class UnlinkNintendoAccountRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
+{
+}
+namespace PlayFab.ClientModels
+{
+}
+namespace PlayFab.ClientModels
 {
 }

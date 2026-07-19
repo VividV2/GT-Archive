@@ -1,32 +1,16 @@
-namespace System.Security.AccessControl;
+namespace System.Runtime.InteropServices;
 
-/// <summary>Specifies the defined native object types.</summary>
-public enum ResourceType
+[Serializable]
+[Flags]
+[Obsolete("Use System.Runtime.InteropServices.ComTypes.PARAMFLAG instead. http://go.microsoft.com/fwlink/?linkid=14202", false)]
+public enum PARAMFLAG : short
 {
-	/// <summary>An unknown object type.</summary>
-	Unknown,
-	/// <summary>A file or directory.</summary>
-	FileObject,
-	/// <summary>A Windows service.</summary>
-	Service,
-	/// <summary>A printer.</summary>
-	Printer,
-	/// <summary>A registry key.</summary>
-	RegistryKey,
-	/// <summary>A network share.</summary>
-	LMShare,
-	/// <summary>A local kernel object.</summary>
-	KernelObject,
-	/// <summary>A window station or desktop object on the local computer.</summary>
-	WindowObject,
-	/// <summary>A directory service (DS) object or a property set or property of a directory service object.</summary>
-	DSObject,
-	/// <summary>A directory service object and all of its property sets and properties.</summary>
-	DSObjectAll,
-	/// <summary>An object defined by a provider.</summary>
-	ProviderDefined,
-	/// <summary>A Windows Management Instrumentation (WMI) object.</summary>
-	WmiGuidObject,
-	/// <summary>An object for a registry entry under WOW64.</summary>
-	RegistryWow6432Key
+	PARAMFLAG_NONE = 0,
+	PARAMFLAG_FIN = 1,
+	PARAMFLAG_FOUT = 2,
+	PARAMFLAG_FLCID = 4,
+	PARAMFLAG_FRETVAL = 8,
+	PARAMFLAG_FOPT = 0x10,
+	PARAMFLAG_FHASDEFAULT = 0x20,
+	PARAMFLAG_FHASCUSTDATA = 0x40
 }

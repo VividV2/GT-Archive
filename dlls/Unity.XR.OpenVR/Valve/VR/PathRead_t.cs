@@ -1,20 +1,20 @@
-using System;
-
-namespace Valve.VR;
-
-public struct PathRead_t
+namespace Valve.VR
 {
-	public ulong ulPath;
+	public struct VROverlayView_t
+	{
+		public ulong overlayHandle;
 
-	public IntPtr pvBuffer;
+		public Texture_t texture;
 
-	public uint unBufferSize;
-
-	public uint unTag;
-
-	public uint unRequiredBufferSize;
-
-	public ETrackedPropertyError eError;
-
-	public IntPtr pszPath;
+		public VRTextureBounds_t textureBounds;
+	}
+}
+namespace Valve.VR
+{
+}
+namespace Valve.VR
+{
+}
+namespace Valve.VR
+{
 }

@@ -1,10 +1,2 @@
-using System;
-using UnityEngine.Scripting;
+namespace UnityEngine.Events;
 
-namespace UnityEngine;
-
-[AttributeUsage(AttributeTargets.Class)]
-[RequiredByNativeCode]
-public sealed class PreferBinarySerialization : Attribute
-{
-}

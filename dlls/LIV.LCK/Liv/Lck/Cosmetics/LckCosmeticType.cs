@@ -1,10 +1,24 @@
-using UnityEngine;
+using System;
+using System;
 
-namespace Liv.Lck.Cosmetics;
+namespace Liv.Lck.Tablet;
 
-[CreateAssetMenu(fileName = "NewLckCosmeticType", menuName = "LIV/LCK/LCK Cosmetics/Cosmetic Type")]
-public class LckCosmeticType : ScriptableObject
+[Serializable]
+public enum NotificationType
 {
-	[Tooltip("The string value for this cosmetic type (e.g 'Keychain', 'Skin').")]
-	public string TypeValue;
+	VideoSaved,
+	PhotoSaved,
+	EnterStreamCode,
+	ConfigureStream,
+	InternalError,
+	MissingTrackingId,
+	InvalidTrackingId,
+	InvalidArgument,
+	UnknownStreamingError,
+	ServiceUnavailable,
+	RateLimiterBackoff,
+	EchoInfo,
+	EchoLowStorage,
+	EchoError,
+	HeadsetView
 }

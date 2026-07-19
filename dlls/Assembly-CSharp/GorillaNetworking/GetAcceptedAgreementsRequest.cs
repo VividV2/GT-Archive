@@ -1,6 +1,2 @@
-namespace GorillaNetworking;
+namespace GorillaTagScripts;
 
-public class GetAcceptedAgreementsRequest
-{
-	public string[] AgreementKeys;
-}

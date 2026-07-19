@@ -1,57 +1,54 @@
 namespace System.Data;
 
-internal sealed class Function
+/// <summary>Provides a means of reading one or more forward-only streams of result sets obtained by executing a command at a data source, and is implemented by .NET Framework data providers that access relational databases.</summary>
+/// <summary>Provides a means of reading one or more forward-only streams of result sets obtained by executing a command at a data source, and is implemented by .NET Framework data providers that access relational databases.</summary>
+public interface IDataReader : IDisposable, IDataRecord
 {
-	internal readonly string _name;
+	/// <summary>Gets a value indicating the depth of nesting for the current row.</summary>
+	/// <returns>The level of nesting.</returns>
+	/// <summary>Gets a value indicating the depth of nesting for the current row.</summary>
+	/// <returns>The level of nesting.</returns>
+	int Depth { get; }
 
-	internal readonly FunctionId _id;
+	/// <summary>Gets a value indicating whether the data reader is closed.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the data reader is closed; otherwise, <see langword="false" />.</returns>
+	/// <summary>Gets a value indicating whether the data reader is closed.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the data reader is closed; otherwise, <see langword="false" />.</returns>
+	bool IsClosed { get; }
 
-	internal readonly Type _result;
+	/// <summary>Gets the number of rows changed, inserted, or deleted by execution of the SQL statement.</summary>
+	/// <returns>The number of rows changed, inserted, or deleted; 0 if no rows were affected or the statement failed; and -1 for SELECT statements.</returns>
+	/// <summary>Gets the number of rows changed, inserted, or deleted by execution of the SQL statement.</summary>
+	/// <returns>The number of rows changed, inserted, or deleted; 0 if no rows were affected or the statement failed; and -1 for SELECT statements.</returns>
+	int RecordsAffected { get; }
 
-	internal readonly bool _isValidateArguments;
+	/// <summary>Closes the <see cref="T:System.Data.IDataReader" /> Object.</summary>
+	/// <summary>Closes the <see cref="T:System.Data.IDataReader" /> Object.</summary>
+	void Close();
 
-	internal readonly bool _isVariantArgumentList;
+	/// <summary>Returns a <see cref="T:System.Data.DataTable" /> that describes the column metadata of the <see cref="T:System.Data.IDataReader" />.</summary>
+	/// <returns>A <see cref="T:System.Data.DataTable" /> that describes the column metadata.</returns>
+	/// <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Data.IDataReader" /> is closed.</exception>
+	/// <summary>Returns a <see cref="T:System.Data.DataTable" /> that describes the column metadata of the <see cref="T:System.Data.IDataReader" />.</summary>
+	/// <returns>A <see cref="T:System.Data.DataTable" /> that describes the column metadata.</returns>
+	/// <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Data.IDataReader" /> is closed.</exception>
+	DataTable GetSchemaTable();
 
-	internal readonly int _argumentCount;
+	/// <summary>Advances the data reader to the next result, when reading the results of batch SQL statements.</summary>
+	/// <returns>
+	///   <see langword="true" /> if there are more rows; otherwise, <see langword="false" />.</returns>
+	/// <summary>Advances the data reader to the next result, when reading the results of batch SQL statements.</summary>
+	/// <returns>
+	///   <see langword="true" /> if there are more rows; otherwise, <see langword="false" />.</returns>
+	bool NextResult();
 
-	internal readonly Type[] _parameters = new Type[3];
-
-	internal static string[] s_functionName = new string[39]
-	{
-		"Unknown", "Ascii", "Char", "CharIndex", "Difference", "Len", "Lower", "LTrim", "Patindex", "Replicate",
-		"Reverse", "Right", "RTrim", "Soundex", "Space", "Str", "Stuff", "Substring", "Upper", "IsNull",
-		"Iif", "Convert", "cInt", "cBool", "cDate", "cDbl", "cStr", "Abs", "Acos", "In",
-		"Trim", "Sum", "Avg", "Min", "Max", "Count", "StDev", "Var", "DateTimeOffset"
-	};
-
-	internal Function()
-	{
-		_name = null;
-		_id = FunctionId.none;
-		_result = null;
-		_isValidateArguments = false;
-		_argumentCount = 0;
-	}
-
-	internal Function(string name, FunctionId id, Type result, bool IsValidateArguments, bool IsVariantArgumentList, int argumentCount, Type a1, Type a2, Type a3)
-	{
-		_name = name;
-		_id = id;
-		_result = result;
-		_isValidateArguments = IsValidateArguments;
-		_isVariantArgumentList = IsVariantArgumentList;
-		_argumentCount = argumentCount;
-		if (a1 != null)
-		{
-			_parameters[0] = a1;
-		}
-		if (a2 != null)
-		{
-			_parameters[1] = a2;
-		}
-		if (a3 != null)
-		{
-			_parameters[2] = a3;
-		}
-	}
+	/// <summary>Advances the <see cref="T:System.Data.IDataReader" /> to the next record.</summary>
+	/// <returns>
+	///   <see langword="true" /> if there are more rows; otherwise, <see langword="false" />.</returns>
+	/// <summary>Advances the <see cref="T:System.Data.IDataReader" /> to the next record.</summary>
+	/// <returns>
+	///   <see langword="true" /> if there are more rows; otherwise, <see langword="false" />.</returns>
+	bool Read();
 }

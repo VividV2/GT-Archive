@@ -1,10 +1,14 @@
-namespace LitJson;
-
-internal enum Condition
+namespace LitJson
 {
-	InArray,
-	InObject,
-	NotAProperty,
-	Property,
-	Value
+	internal enum Condition
+	{
+		InArray,
+		InObject,
+		NotAProperty,
+		Property,
+		Value
+	}
+}
+namespace GorillaTagScripts.CustomMapSupport
+{
 }

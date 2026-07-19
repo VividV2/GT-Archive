@@ -1,16 +1,18 @@
 using System;
 using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
 
 namespace PlayFab.CloudScriptModels;
 
 [Serializable]
-public class ExecuteFunctionRequest : PlayFabRequestCommon
+public class ValueToDateModel : PlayFabBaseModel
 {
-	public EntityKey Entity;
+	public string Currency;
 
-	public string FunctionName;
+	public uint TotalValue;
 
-	public object FunctionParameter;
-
-	public bool? GeneratePlayStreamEvent;
+	public string TotalValueAsDecimal;
 }

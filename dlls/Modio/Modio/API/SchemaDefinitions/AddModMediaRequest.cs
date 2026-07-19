@@ -1,28 +1,10 @@
-using System.Collections.Generic;
-using Newtonsoft.Json;
+namespace Modio.Errors;
 
-namespace Modio.API.SchemaDefinitions;
-
-[JsonObject]
-internal readonly struct AddModMediaRequest : IApiRequest
+public enum ModValidationErrorCode : long
 {
-	private static readonly Dictionary<string, object> _bodyParameters = new Dictionary<string, object>();
-
-	internal readonly ModioAPIFileParameter _media;
-
-	public bool GallerySync { get; }
-
-	[JsonConstructor]
-	public AddModMediaRequest(ModioAPIFileParameter media, bool gallerySync)
-	{
-		_media = media;
-		GallerySync = gallerySync;
-	}
-
-	public IReadOnlyDictionary<string, object> GetBodyParameters()
-	{
-		_bodyParameters.Clear();
-		_bodyParameters.Add(_media.MediaType, _media);
-		return _bodyParameters;
-	}
+	NONE = 0L,
+	UNKNOWN = -2147483648L,
+	NO_FILES_FOUND_FOR_MOD = -2147483563L,
+	MOD_DIRECTORY_NOT_FOUND = -2147483562L,
+	MD5DOES_NOT_MATCH = -2147483561L
 }

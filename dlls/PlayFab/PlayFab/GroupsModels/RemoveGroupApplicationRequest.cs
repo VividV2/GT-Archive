@@ -1,12 +1,9 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.GroupsModels;
-
-[Serializable]
-public class RemoveGroupApplicationRequest : PlayFabRequestCommon
+namespace PlayFab.EventsModels
 {
-	public EntityKey Entity;
-
-	public EntityKey Group;
+}
+namespace PlayFab.GroupsModels
+{
+}
+namespace Ionic.Zlib
+{
 }

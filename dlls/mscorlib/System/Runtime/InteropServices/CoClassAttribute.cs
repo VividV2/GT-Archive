@@ -1,20 +1,15 @@
-namespace System.Runtime.InteropServices;
-
-/// <summary>Specifies the class identifier of a coclass imported from a type library.</summary>
-[ComVisible(true)]
-[AttributeUsage(AttributeTargets.Interface, Inherited = false)]
-public sealed class CoClassAttribute : Attribute
+namespace System.Runtime.InteropServices
 {
-	internal Type _CoClass;
-
-	/// <summary>Gets the class identifier of the original coclass.</summary>
-	/// <returns>A <see cref="T:System.Type" /> containing the class identifier of the original coclass.</returns>
-	public Type CoClass => _CoClass;
-
-	/// <summary>Initializes new instance of the <see cref="T:System.Runtime.InteropServices.CoClassAttribute" /> with the class identifier of the original coclass.</summary>
-	/// <param name="coClass">A <see cref="T:System.Type" /> that contains the class identifier of the original coclass.</param>
-	public CoClassAttribute(Type coClass)
+	/// <summary>Allows an unmanaged method to call a managed method.</summary>
+	[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+	public sealed class AllowReversePInvokeCallsAttribute : Attribute
 	{
-		_CoClass = coClass;
+		/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.AllowReversePInvokeCallsAttribute" /> class.</summary>
+		public AllowReversePInvokeCallsAttribute()
+		{
+		}
 	}
+}
+namespace System.Runtime.InteropServices.WindowsRuntime
+{
 }

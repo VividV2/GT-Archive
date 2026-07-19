@@ -1,8 +1,3 @@
-namespace Liv.Lck.GorillaTag;
-
-public enum ButtonInitializeType
+namespace Liv.Lck.GorillaTag
 {
-	Start,
-	Awake,
-	None
 }

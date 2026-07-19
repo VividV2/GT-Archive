@@ -1,22 +1,26 @@
 using System;
 
-namespace UnityEngine;
-
-internal interface IPlayerEditorConnectionNative
+namespace UnityEngine
 {
-	void Initialize();
+	internal interface IPlayerEditorConnectionNative
+	{
+		void Initialize();
 
-	void DisconnectAll();
+		void DisconnectAll();
 
-	void SendMessage(Guid messageId, byte[] data, int playerId);
+		void SendMessage(Guid messageId, byte[] data, int playerId);
 
-	bool TrySendMessage(Guid messageId, byte[] data, int playerId);
+		bool TrySendMessage(Guid messageId, byte[] data, int playerId);
 
-	void Poll();
+		void Poll();
 
-	void RegisterInternal(Guid messageId);
+		void RegisterInternal(Guid messageId);
 
-	void UnregisterInternal(Guid messageId);
+		void UnregisterInternal(Guid messageId);
 
-	bool IsConnected();
+		bool IsConnected();
+	}
+}
+namespace UnityEngine
+{
 }

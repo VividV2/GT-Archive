@@ -1,21 +1,8 @@
-using System;
-using System.Collections.Generic;
-
 namespace Unity.Properties;
 
-public interface IProperty
+public interface IProperty<TContainer> : IProperty, IPropertyAccept<TContainer>
 {
-	string Name { get; }
+	object GetValue(ref TContainer container);
 
-	bool IsReadOnly { get; }
-
-	Type DeclaredValueType();
-
-	bool HasAttribute<TAttribute>() where TAttribute : Attribute;
-
-	TAttribute GetAttribute<TAttribute>() where TAttribute : Attribute;
-
-	IEnumerable<TAttribute> GetAttributes<TAttribute>() where TAttribute : Attribute;
-
-	IEnumerable<Attribute> GetAttributes();
+	void SetValue(ref TContainer container, object value);
 }

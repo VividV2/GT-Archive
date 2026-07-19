@@ -1,30 +1,19 @@
-using System.Runtime.InteropServices;
+using System.Reflection;
 
-namespace System.Runtime.Remoting.Messaging;
+namespace System.Runtime.InteropServices;
 
-/// <summary>Defines the method call message interface.</summary>
+[Guid("B42B6AAC-317E-34D5-9FA9-093BB4160C50")]
+[TypeLibImportClass(typeof(AssemblyName))]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[CLSCompliant(false)]
 [ComVisible(true)]
-public interface IMethodCallMessage : IMethodMessage, IMessage
+public interface _AssemblyName
 {
-	/// <summary>Gets the number of arguments in the call that are not marked as <see langword="out" /> parameters.</summary>
-	/// <returns>The number of arguments in the call that are not marked as <see langword="out" /> parameters.</returns>
-	/// <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
-	int InArgCount { get; }
+	void GetIDsOfNames([In] ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);
 
-	/// <summary>Gets an array of arguments that are not marked as <see langword="out" /> parameters.</summary>
-	/// <returns>An array of arguments that are not marked as <see langword="out" /> parameters.</returns>
-	/// <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
-	object[] InArgs { get; }
+	void GetTypeInfo(uint iTInfo, uint lcid, IntPtr ppTInfo);
 
-	/// <summary>Returns the specified argument that is not marked as an <see langword="out" /> parameter.</summary>
-	/// <param name="argNum">The number of the requested <see langword="in" /> argument.</param>
-	/// <returns>The requested argument that is not marked as an <see langword="out" /> parameter.</returns>
-	/// <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
-	object GetInArg(int argNum);
+	void GetTypeInfoCount(out uint pcTInfo);
 
-	/// <summary>Returns the name of the specified argument that is not marked as an <see langword="out" /> parameter.</summary>
-	/// <param name="index">The number of the requested <see langword="in" /> argument.</param>
-	/// <returns>The name of a specific argument that is not marked as an <see langword="out" /> parameter.</returns>
-	/// <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
-	string GetInArgName(int index);
+	void Invoke(uint dispIdMember, [In] ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);
 }

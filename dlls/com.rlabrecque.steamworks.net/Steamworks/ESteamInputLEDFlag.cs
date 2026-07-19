@@ -1,7 +1,11 @@
-namespace Steamworks;
-
-public enum ESteamInputLEDFlag
+namespace Steamworks
 {
-	k_ESteamInputLEDFlag_SetColor,
-	k_ESteamInputLEDFlag_RestoreUserDefault
+	public enum ESteamInputLEDFlag
+	{
+		k_ESteamInputLEDFlag_SetColor,
+		k_ESteamInputLEDFlag_RestoreUserDefault
+	}
+}
+namespace Steamworks
+{
 }

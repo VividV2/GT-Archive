@@ -1,19 +1,2 @@
-namespace System.Runtime.Versioning;
+namespace System.Collections.Generic;
 
-public static class CompatibilitySwitch
-{
-	public static bool IsEnabled(string compatibilitySwitchName)
-	{
-		return false;
-	}
-
-	public static string GetValue(string compatibilitySwitchName)
-	{
-		return null;
-	}
-
-	internal static string GetValueInternal(string compatibilitySwitchName)
-	{
-		return null;
-	}
-}

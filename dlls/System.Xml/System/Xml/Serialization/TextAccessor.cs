@@ -1,5 +1,2 @@
-namespace System.Xml.Serialization;
+namespace System.Xml;
 
-internal class TextAccessor : Accessor
-{
-}

@@ -1,13 +1,10 @@
-namespace System.Net;
+namespace System.Net.NetworkInformation;
 
-internal class HttpRequestCreator : IWebRequestCreate
+internal struct Win32_IP_ADAPTER_WINS_SERVER_ADDRESS
 {
-	internal HttpRequestCreator()
-	{
-	}
+	public Win32LengthFlagsUnion LengthFlags;
 
-	public WebRequest Create(Uri uri)
-	{
-		return new HttpWebRequest(uri);
-	}
+	public IntPtr Next;
+
+	public Win32_SOCKET_ADDRESS Address;
 }

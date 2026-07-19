@@ -1,9 +1,13 @@
-namespace Fusion;
-
-internal enum JoinProcessStage
+namespace Microsoft.CodeAnalysis
 {
-	Idle,
-	Joining,
-	Done,
-	Fail
+}
+namespace Fusion
+{
+	internal enum JoinProcessStage
+	{
+		Idle,
+		Joining,
+		Done,
+		Fail
+	}
 }

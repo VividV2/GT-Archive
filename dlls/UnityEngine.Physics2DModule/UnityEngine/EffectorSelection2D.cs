@@ -1,7 +1,17 @@
-namespace UnityEngine;
-
-public enum EffectorSelection2D
+namespace UnityEngine
 {
-	Rigidbody,
-	Collider
+	public enum EffectorForceMode2D
+	{
+		Constant,
+		InverseLinear,
+		InverseSquared
+	}
+}
+namespace UnityEngine
+{
+	public enum EffectorSelection2D
+	{
+		Rigidbody,
+		Collider
+	}
 }

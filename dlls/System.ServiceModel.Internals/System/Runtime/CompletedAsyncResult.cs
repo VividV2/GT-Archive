@@ -1,19 +1,24 @@
 namespace System.Runtime;
 
-internal class CompletedAsyncResult<T> : AsyncResult
+internal class CompletedAsyncResult<TResult, TParameter> : AsyncResult
 {
-	private T data;
+	private TResult resultData;
 
-	public CompletedAsyncResult(T data, AsyncCallback callback, object state)
+	private TParameter parameter;
+
+	public CompletedAsyncResult(TResult resultData, TParameter parameter, AsyncCallback callback, object state)
 		: base(callback, state)
 	{
-		this.data = data;
+		this.resultData = resultData;
+		this.parameter = parameter;
 		Complete(completedSynchronously: true);
 	}
 
-	public static T End(IAsyncResult result)
+	public static TResult End(IAsyncResult result, out TParameter parameter)
 	{
 		Fx.AssertAndThrowFatal(result.IsCompleted, "CompletedAsyncResult<T> was not completed!");
-		return AsyncResult.End<CompletedAsyncResult<T>>(result).data;
+		CompletedAsyncResult<TResult, TParameter> completedAsyncResult = AsyncResult.End<CompletedAsyncResult<TResult, TParameter>>(result);
+		parameter = completedAsyncResult.parameter;
+		return completedAsyncResult.resultData;
 	}
 }

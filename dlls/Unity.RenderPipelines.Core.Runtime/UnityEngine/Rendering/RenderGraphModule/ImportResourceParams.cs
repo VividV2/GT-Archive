@@ -1,10 +1,14 @@
-namespace UnityEngine.Rendering.RenderGraphModule;
-
-public struct ImportResourceParams
+namespace UnityEngine.Rendering
 {
-	public bool clearOnFirstUse;
+}
+namespace UnityEngine.Rendering.RenderGraphModule
+{
+	public struct ImportResourceParams
+	{
+		public bool clearOnFirstUse;
 
-	public Color clearColor;
+		public Color clearColor;
 
-	public bool discardOnLastUse;
+		public bool discardOnLastUse;
+	}
 }

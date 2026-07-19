@@ -1,10 +1,20 @@
 namespace UnityEngine.Animations.Rigging;
 
-public interface IMultiReferentialConstraintData
+public struct CacheIndex
 {
-	int driverValue { get; }
+	internal int idx;
+}
+namespace UnityEngine.Animations.Rigging
+{
+	public interface IMultiReferentialConstraintData
+	{
+		int driverValue { get; }
 
-	string driverIntProperty { get; }
+		string driverIntProperty { get; }
 
-	Transform[] sourceObjects { get; }
+		Transform[] sourceObjects { get; }
+	}
+}
+namespace UnityEngine.Animations.Rigging
+{
 }

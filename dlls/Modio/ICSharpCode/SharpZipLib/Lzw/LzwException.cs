@@ -1,26 +1,28 @@
 using System;
 using System.Runtime.Serialization;
+using System;
+using System.Runtime.Serialization;
 
-namespace ICSharpCode.SharpZipLib.Lzw;
+namespace ICSharpCode.SharpZipLib.Tar;
 
 [Serializable]
-public class LzwException : SharpZipBaseException
+public class TarException : SharpZipBaseException
 {
-	public LzwException()
+	public TarException()
 	{
 	}
 
-	public LzwException(string message)
+	public TarException(string message)
 		: base(message)
 	{
 	}
 
-	public LzwException(string message, Exception innerException)
+	public TarException(string message, Exception innerException)
 		: base(message, innerException)
 	{
 	}
 
-	protected LzwException(SerializationInfo info, StreamingContext context)
+	protected TarException(SerializationInfo info, StreamingContext context)
 		: base(info, context)
 	{
 	}

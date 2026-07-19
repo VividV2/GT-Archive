@@ -1,15 +1,19 @@
 using System;
 
-namespace UnityEngine.Events;
-
-[Serializable]
-public enum PersistentListenerMode
+namespace UnityEngine.Events
 {
-	EventDefined,
-	Void,
-	Object,
-	Int,
-	Float,
-	String,
-	Bool
+	[Serializable]
+	public enum PersistentListenerMode
+	{
+		EventDefined,
+		Void,
+		Object,
+		Int,
+		Float,
+		String,
+		Bool
+	}
+}
+namespace UnityEngine.Pool
+{
 }

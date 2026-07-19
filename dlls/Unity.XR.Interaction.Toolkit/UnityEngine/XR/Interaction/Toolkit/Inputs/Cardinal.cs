@@ -1,9 +1,3 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs;
-
-public enum Cardinal
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics
 {
-	North,
-	South,
-	East,
-	West
 }

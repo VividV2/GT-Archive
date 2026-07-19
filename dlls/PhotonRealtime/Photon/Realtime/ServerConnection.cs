@@ -1,8 +1,12 @@
-namespace Photon.Realtime;
-
-public enum ServerConnection
+namespace Photon.Realtime
 {
-	MasterServer,
-	GameServer,
-	NameServer
+}
+namespace Photon.Realtime
+{
+	public enum ServerConnection
+	{
+		MasterServer,
+		GameServer,
+		NameServer
+	}
 }

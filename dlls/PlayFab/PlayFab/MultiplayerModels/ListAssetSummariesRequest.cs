@@ -1,12 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class ListAssetSummariesRequest : PlayFabRequestCommon
+namespace PlayFab.MultiplayerModels
 {
-	public int? PageSize;
-
-	public string SkipToken;
 }

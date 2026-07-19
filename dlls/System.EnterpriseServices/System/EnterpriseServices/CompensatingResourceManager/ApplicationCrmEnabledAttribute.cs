@@ -1,31 +1,14 @@
 using System.Runtime.InteropServices;
 
-namespace System.EnterpriseServices.CompensatingResourceManager;
-
-/// <summary>Enables Compensating Resource Manger (CRM) on the tagged application.</summary>
-[AttributeUsage(AttributeTargets.Assembly)]
-[ComVisible(false)]
-[ProgId("System.EnterpriseServices.Crm.ApplicationCrmEnabledAttribute")]
-public sealed class ApplicationCrmEnabledAttribute : Attribute
+namespace System.EnterpriseServices.Internal
 {
-	private bool val;
-
-	/// <summary>Enables or disables Compensating Resource Manager (CRM) on the tagged application.</summary>
-	/// <returns>
-	///   <see langword="true" /> if CRM is enabled; otherwise, <see langword="false" />. The default is <see langword="true" />.</returns>
-	public bool Value => val;
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.CompensatingResourceManager.ApplicationCrmEnabledAttribute" /> class, setting the <see cref="P:System.EnterpriseServices.CompensatingResourceManager.ApplicationCrmEnabledAttribute.Value" /> property to <see langword="true" />.</summary>
-	public ApplicationCrmEnabledAttribute()
+	[Guid("d8013ef0-730b-45e2-ba24-874b7242c425")]
+	public interface IComSoapIISVRoot
 	{
-		val = true;
-	}
+		[DispId(1)]
+		void Create([MarshalAs(UnmanagedType.BStr)] string RootWeb, [MarshalAs(UnmanagedType.BStr)] string PhysicalDirectory, [MarshalAs(UnmanagedType.BStr)] string VirtualDirectory, [MarshalAs(UnmanagedType.BStr)] out string Error);
 
-	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.CompensatingResourceManager.ApplicationCrmEnabledAttribute" /> class, optionally setting the <see cref="P:System.EnterpriseServices.CompensatingResourceManager.ApplicationCrmEnabledAttribute.Value" /> property to <see langword="false" />.</summary>
-	/// <param name="val">
-	///   <see langword="true" /> to enable Compensating Resource Manager (CRM); otherwise, <see langword="false" />.</param>
-	public ApplicationCrmEnabledAttribute(bool val)
-	{
-		this.val = val;
+		[DispId(2)]
+		void Delete([MarshalAs(UnmanagedType.BStr)] string RootWeb, [MarshalAs(UnmanagedType.BStr)] string PhysicalDirectory, [MarshalAs(UnmanagedType.BStr)] string VirtualDirectory, [MarshalAs(UnmanagedType.BStr)] out string Error);
 	}
 }

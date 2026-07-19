@@ -1,17 +1,10 @@
-namespace System.Runtime;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-/// <summary>Specifies patch band information for targeted patching of the .NET Framework.</summary>
-[AttributeUsage(AttributeTargets.Assembly, Inherited = false)]
-public sealed class AssemblyTargetedPatchBandAttribute : Attribute
+namespace System.Runtime.Remoting.Channels;
+
+/// <summary>Marks a server channel sink provider as a server formatter sink provider.</summary>
+[ComVisible(true)]
+public interface IServerFormatterSinkProvider : IServerChannelSinkProvider
 {
-	/// <summary>Gets the patch band.</summary>
-	/// <returns>The patch band information.</returns>
-	public string TargetedPatchBand { get; }
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.AssemblyTargetedPatchBandAttribute" /> class.</summary>
-	/// <param name="targetedPatchBand">The patch band.</param>
-	public AssemblyTargetedPatchBandAttribute(string targetedPatchBand)
-	{
-		TargetedPatchBand = targetedPatchBand;
-	}
 }

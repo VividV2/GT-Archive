@@ -1,9 +1,13 @@
-namespace UnityEngine.UIElements.Layout;
-
-internal enum LayoutUnit
+namespace UnityEngine.UIElements.Layout
 {
-	Undefined,
-	Point,
-	Percent,
-	Auto
+	internal enum LayoutUnit
+	{
+		Undefined,
+		Point,
+		Percent,
+		Auto
+	}
+}
+namespace UnityEngine.UIElements.StyleSheets
+{
 }

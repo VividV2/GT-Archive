@@ -1,17 +1,14 @@
-namespace System.Runtime.Remoting.Channels;
-
-internal class ChanelSinkStackEntry
+namespace System.Runtime.Remoting.Channels
 {
-	public IChannelSinkBase Sink;
-
-	public object State;
-
-	public ChanelSinkStackEntry Next;
-
-	public ChanelSinkStackEntry(IChannelSinkBase sink, object state, ChanelSinkStackEntry next)
+	internal class ChanelSinkStackEntry(IChannelSinkBase sink, object state, ChanelSinkStackEntry next)
 	{
-		Sink = sink;
-		State = state;
-		Next = next;
+		public IChannelSinkBase Sink = sink;
+
+		public object State = state;
+
+		public ChanelSinkStackEntry Next = next;
 	}
+}
+namespace System.Security.Claims
+{
 }

@@ -7,3 +7,6 @@ public enum ButtonSizes
 	Large = 31,
 	Gigantic = 62
 }
+namespace Sirenix.OdinInspector
+{
+}

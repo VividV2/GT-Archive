@@ -1,7 +1,2 @@
-using UnityEngine;
+namespace BoingKit;
 
-public class PersistentAssetReference : MonoBehaviour
-{
-	[SerializeField]
-	private Object[] m_assets;
-}

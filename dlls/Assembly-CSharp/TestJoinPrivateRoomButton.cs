@@ -1,5 +1,2 @@
-using UnityEngine;
+namespace GorillaNetworking.Store;
 
-public class TestJoinPrivateRoomButton : MonoBehaviour
-{
-}

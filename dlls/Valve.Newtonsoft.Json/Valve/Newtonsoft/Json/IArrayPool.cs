@@ -1,8 +1,12 @@
-namespace Valve.Newtonsoft.Json;
-
-public interface IArrayPool<T>
+namespace Valve.Newtonsoft.Json.Utilities
 {
-	T[] Rent(int minimumLength);
-
-	void Return(T[] array);
+}
+namespace Valve.Newtonsoft.Json
+{
+	public enum ObjectCreationHandling
+	{
+		Auto,
+		Reuse,
+		Replace
+	}
 }

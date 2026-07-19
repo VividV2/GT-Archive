@@ -1,14 +1,10 @@
-using System.Runtime.InteropServices;
-
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(1112)]
-public struct GlobalStatsReceived_t
+namespace Steamworks
 {
-	public const int k_iCallback = 1112;
-
-	public ulong m_nGameID;
-
-	public EResult m_eResult;
+	[Flags]
+	public enum EControllerHapticLocation
+	{
+		k_EControllerHapticLocation_Left = 1,
+		k_EControllerHapticLocation_Right = 2,
+		k_EControllerHapticLocation_Both = 3
+	}
 }

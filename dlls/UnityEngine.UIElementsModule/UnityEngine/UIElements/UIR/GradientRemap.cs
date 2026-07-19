@@ -1,22 +1,11 @@
-namespace UnityEngine.UIElements.UIR;
+namespace UnityEngine.UIElements.Layout;
 
-internal class GradientRemap : LinkedPoolItem<GradientRemap>
+internal enum LayoutLogLevel
 {
-	public int origIndex;
-
-	public int destIndex;
-
-	public RectInt location;
-
-	public GradientRemap next;
-
-	public TextureId atlas;
-
-	public void Reset()
-	{
-		origIndex = 0;
-		destIndex = 0;
-		location = default(RectInt);
-		atlas = TextureId.invalid;
-	}
+	Error,
+	Warn,
+	Info,
+	Debug,
+	Verbose,
+	Fatal
 }

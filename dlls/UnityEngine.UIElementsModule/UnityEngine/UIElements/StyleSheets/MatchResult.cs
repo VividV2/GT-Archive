@@ -1,10 +1,14 @@
-namespace UnityEngine.UIElements.StyleSheets;
-
-internal struct MatchResult
+namespace UnityEngine.UIElements.StyleSheets
 {
-	public MatchResultErrorCode errorCode;
+	internal struct MatchResult
+	{
+		public MatchResultErrorCode errorCode;
 
-	public string errorValue;
+		public string errorValue;
 
-	public bool success => errorCode == MatchResultErrorCode.None;
+		public bool success => errorCode == MatchResultErrorCode.None;
+	}
+}
+namespace UnityEngine.UIElements.Internal
+{
 }

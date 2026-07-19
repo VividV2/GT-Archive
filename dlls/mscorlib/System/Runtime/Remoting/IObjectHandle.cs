@@ -12,3 +12,6 @@ public interface IObjectHandle
 	/// <returns>The unwrapped object.</returns>
 	object Unwrap();
 }
+namespace System.Security.Cryptography
+{
+}

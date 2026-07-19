@@ -1,29 +1,14 @@
-using System;
-
-namespace UnityEngine.Localization.Metadata;
-
-[Serializable]
-[Metadata(AllowedTypes = (MetadataType.SharedTableData | MetadataType.AssetTable), MenuItem = "Preload Assets")]
-public class PreloadAssetTableMetadata : IMetadata
+namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
 {
-	public enum PreloadBehaviour
+	public interface ITrackedPropertyValue<T> : ITrackedProperty
 	{
-		NoPreload,
-		PreloadAll
-	}
+		bool GetValue(LocaleIdentifier localeIdentifier, out T foundValue);
 
-	[SerializeField]
-	private PreloadBehaviour m_PreloadBehaviour;
+		bool GetValue(LocaleIdentifier localeIdentifier, LocaleIdentifier fallback, out T foundValue);
 
-	public PreloadBehaviour Behaviour
-	{
-		get
-		{
-			return m_PreloadBehaviour;
-		}
-		set
-		{
-			m_PreloadBehaviour = value;
-		}
+		void SetValue(LocaleIdentifier localeIdentifier, T value);
 	}
+}
+namespace UnityEngine.Localization.SmartFormat.Core.Parsing
+{
 }

@@ -4,3 +4,6 @@ namespace System.Xml.Serialization;
 /// <param name="sender">The source of the event. </param>
 /// <param name="e">An <see cref="T:System.Xml.Serialization.UnreferencedObjectEventArgs" /> that contains the event data. </param>
 public delegate void UnreferencedObjectEventHandler(object sender, UnreferencedObjectEventArgs e);
+namespace System.Xml.Xsl.XsltOld
+{
+}

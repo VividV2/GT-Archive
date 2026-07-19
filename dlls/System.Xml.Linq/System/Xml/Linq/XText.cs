@@ -1,6 +1,9 @@
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace System.Xml.Linq;
 
@@ -29,6 +32,7 @@ public class XText : XNode
 			}
 			bool num = NotifyChanging(this, XObjectChangeEventArgs.Value);
 			text = value;
+			bool num;
 			if (num)
 			{
 				NotifyChanged(this, XObjectChangeEventArgs.Value);

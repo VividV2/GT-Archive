@@ -1,15 +1,22 @@
 using UnityEngine;
 
-namespace Valve.VR.InteractionSystem;
-
-public class SleepOnAwake : MonoBehaviour
+namespace Valve.VR.InteractionSystem
 {
-	private void Awake()
+	public class SleepOnAwake : MonoBehaviour
 	{
-		Rigidbody component = GetComponent<Rigidbody>();
-		if ((bool)component)
+		private void Awake()
 		{
-			component.Sleep();
+			Rigidbody component = GetComponent<Rigidbody>();
+			if ((bool)component)
+			{
+				component.Sleep();
+			}
 		}
 	}
+}
+namespace Valve.VR.InteractionSystem.Sample
+{
+}
+namespace Valve.VR.InteractionSystem
+{
 }

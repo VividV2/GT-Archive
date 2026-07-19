@@ -1,23 +1,20 @@
-using System;
+using Oculus.Platform.Models;
+using UnityEngine;
+using Oculus.Platform.Models;
+using UnityEngine;
 
 namespace Oculus.Platform;
 
-public class RichPresenceOptions
+public static class PushNotification
 {
-	private IntPtr Handle;
-
-	public RichPresenceOptions()
+	public static Request<PushNotificationResult> Register()
 	{
-		Handle = CAPI.ovr_RichPresenceOptions_Create();
-	}
-
-	public static explicit operator IntPtr(RichPresenceOptions options)
-	{
-		return options?.Handle ?? IntPtr.Zero;
-	}
-
-	~RichPresenceOptions()
-	{
-		CAPI.ovr_RichPresenceOptions_Destroy(Handle);
+		if (Core.IsInitialized())
+		{
+			EventManager.SendUnifiedEvent(isEssential: true, "platform_sdk", "PSDK_PushNotification_Register", "");
+			return new Request<PushNotificationResult>(CAPI.ovr_PushNotification_Register());
+		}
+		Debug.LogError(Core.PlatformUninitializedError);
+		return null;
 	}
 }

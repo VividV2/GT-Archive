@@ -1,16 +1,23 @@
-namespace System.Xml.Schema;
-
-internal class KSStruct
+namespace System.Xml.Schema
 {
-	public int depth;
-
-	public KeySequence ks;
-
-	public LocatedActiveAxis[] fields;
-
-	public KSStruct(KeySequence ks, int dim)
+	internal class KSStruct
 	{
-		this.ks = ks;
-		fields = new LocatedActiveAxis[dim];
+		public int depth;
+
+		public KeySequence ks;
+
+		public LocatedActiveAxis[] fields;
+
+		public KSStruct(KeySequence ks, int dim)
+		{
+			this.ks = ks;
+			fields = new LocatedActiveAxis[dim];
+		}
 	}
+}
+namespace System.Xml.Xsl.Qil
+{
+}
+namespace System.Xml.Xsl.Runtime
+{
 }

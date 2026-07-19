@@ -1,32 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace System.Linq.Parallel;
-
-internal abstract class MergeEnumerator<TInputOutput> : IEnumerator<TInputOutput>, IDisposable, IEnumerator
+namespace System.Linq.Parallel
 {
-	protected QueryTaskGroupState _taskGroupState;
-
-	public abstract TInputOutput Current { get; }
-
-	object IEnumerator.Current => ((IEnumerator<TInputOutput>)this).Current;
-
-	protected MergeEnumerator(QueryTaskGroupState taskGroupState)
+	internal abstract class MergeEnumerator<TInputOutput> : IEnumerator<TInputOutput>, IDisposable, IEnumerator
 	{
-		_taskGroupState = taskGroupState;
-	}
+		protected QueryTaskGroupState _taskGroupState;
 
-	public abstract bool MoveNext();
+		public abstract TInputOutput Current { get; }
 
-	public virtual void Reset()
-	{
-	}
+		object IEnumerator.Current => ((IEnumerator<TInputOutput>)this).Current;
 
-	public virtual void Dispose()
-	{
-		if (!_taskGroupState.IsAlreadyEnded)
+		protected MergeEnumerator(QueryTaskGroupState taskGroupState)
 		{
-			_taskGroupState.QueryEnd(userInitiatedDispose: true);
+			_taskGroupState = taskGroupState;
+		}
+
+		public abstract bool MoveNext();
+
+		public virtual void Reset()
+		{
+		}
+
+		public virtual void Dispose()
+		{
+			if (!_taskGroupState.IsAlreadyEnded)
+			{
+				_taskGroupState.QueryEnd(userInitiatedDispose: true);
+			}
 		}
 	}
+}
+namespace System.Linq.Parallel
+{
 }

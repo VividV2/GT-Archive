@@ -1,9 +1,19 @@
-namespace PlayFab.Internal;
-
-public enum HttpRequestState
+namespace PlayFab.Internal
 {
-	Sent,
-	Received,
-	Idle,
-	Error
+	public enum HttpRequestState
+	{
+		Sent,
+		Received,
+		Idle,
+		Error
+	}
+}
+namespace Ionic.Zlib
+{
+}
+namespace PlayFab.ClientModels
+{
+}
+namespace PlayFab.ClientModels
+{
 }

@@ -1,14 +1,21 @@
-namespace System.Data.SqlClient;
-
-internal sealed class _ColumnMapping
+namespace System.Data.SqlClient
 {
-	internal int _sourceColumnOrdinal;
-
-	internal _SqlMetaData _metadata;
-
-	internal _ColumnMapping(int columnId, _SqlMetaData metadata)
+	internal sealed class _ColumnMapping
 	{
-		_sourceColumnOrdinal = columnId;
-		_metadata = metadata;
+		internal int _sourceColumnOrdinal;
+
+		internal _SqlMetaData _metadata;
+
+		internal _ColumnMapping(int columnId, _SqlMetaData metadata)
+		{
+			_sourceColumnOrdinal = columnId;
+			_metadata = metadata;
+		}
 	}
+}
+namespace System.Data
+{
+}
+namespace System.Data
+{
 }

@@ -1,10 +1,8 @@
-using System;
-using System.Runtime.CompilerServices;
+namespace Fusion.Photon.Realtime;
 
-namespace Microsoft.CodeAnalysis;
-
-[CompilerGenerated]
-[Microsoft.CodeAnalysis.Embedded]
-internal sealed class EmbeddedAttribute : Attribute
+public enum ServerConnection
 {
+	MasterServer,
+	GameServer,
+	NameServer
 }

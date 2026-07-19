@@ -1,14 +1,2 @@
-namespace UnityEngine.UIElements.Layout;
+namespace UnityEngine.UIElements.StyleSheets;
 
-internal enum LayoutEdge
-{
-	Left,
-	Top,
-	Right,
-	Bottom,
-	Start,
-	End,
-	Horizontal,
-	Vertical,
-	All
-}

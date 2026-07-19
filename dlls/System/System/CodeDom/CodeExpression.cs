@@ -1,11 +1,18 @@
-namespace System.CodeDom;
+using System.Runtime.InteropServices;
 
-/// <summary>Represents a code expression. This is a base class for other code expression objects that is never instantiated.</summary>
-[Serializable]
-public class CodeExpression : CodeObject
+namespace System.Net
 {
-	/// <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeExpression" /> class.</summary>
-	public CodeExpression()
+	[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+	internal struct hostent
 	{
+		public IntPtr h_name;
+
+		public IntPtr h_aliases;
+
+		public short h_addrtype;
+
+		public short h_length;
+
+		public IntPtr h_addr_list;
 	}
 }

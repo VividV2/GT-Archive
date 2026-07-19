@@ -1,13 +1,17 @@
-namespace Unity.Collections;
-
-internal sealed class NativeSliceDebugView<T> where T : struct
+namespace Unity.Collections
 {
-	private NativeSlice<T> m_Array;
-
-	public T[] Items => m_Array.ToArray();
-
-	public NativeSliceDebugView(NativeSlice<T> array)
+	internal sealed class NativeSliceDebugView<T> where T : struct
 	{
-		m_Array = array;
+		private NativeSlice<T> m_Array;
+
+		public T[] Items => m_Array.ToArray();
+
+		public NativeSliceDebugView(NativeSlice<T> array)
+		{
+			m_Array = array;
+		}
 	}
+}
+namespace UnityEngine
+{
 }

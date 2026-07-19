@@ -1,8 +1,12 @@
-namespace Newtonsoft.Json;
-
-public enum DateParseHandling
+namespace Newtonsoft.Json
 {
-	None,
-	DateTime,
-	DateTimeOffset
+	public enum DateParseHandling
+	{
+		None,
+		DateTime,
+		DateTimeOffset
+	}
+}
+namespace Newtonsoft.Json.Utilities
+{
 }

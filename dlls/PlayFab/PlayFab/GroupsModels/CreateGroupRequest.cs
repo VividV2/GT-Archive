@@ -1,12 +1,9 @@
-using System;
-using PlayFab.SharedModels;
-
 namespace PlayFab.GroupsModels;
 
-[Serializable]
-public class CreateGroupRequest : PlayFabRequestCommon
+public enum OperationTypes
 {
-	public EntityKey Entity;
-
-	public string GroupName;
+	Created,
+	Updated,
+	Deleted,
+	None
 }

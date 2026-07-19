@@ -1,20 +1,24 @@
 using System;
 
-namespace JetBrains.Annotations;
-
-[MeansImplicitUse(ImplicitUseTargetFlags.WithMembers)]
-[AttributeUsage(AttributeTargets.All, Inherited = false)]
-public sealed class PublicAPIAttribute : Attribute
+namespace JetBrains.Annotations
 {
-	[CanBeNull]
-	public string Comment { get; }
-
-	public PublicAPIAttribute()
+	[MeansImplicitUse(ImplicitUseTargetFlags.WithMembers)]
+	[AttributeUsage(AttributeTargets.All, Inherited = false)]
+	public sealed class PublicAPIAttribute : Attribute
 	{
-	}
+		[CanBeNull]
+		public string Comment { get; }
 
-	public PublicAPIAttribute([NotNull] string comment)
-	{
-		Comment = comment;
+		public PublicAPIAttribute()
+		{
+		}
+
+		public PublicAPIAttribute([NotNull] string comment)
+		{
+			Comment = comment;
+		}
 	}
+}
+namespace Unity.IO.LowLevel.Unsafe
+{
 }

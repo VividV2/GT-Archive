@@ -1,20 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class LoginWithAppleRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public bool? CreateAccount;
-
-	public string EncryptedRequest;
-
-	public string IdentityToken;
-
-	public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
-
-	public string PlayerSecret;
-
-	public string TitleId;
 }

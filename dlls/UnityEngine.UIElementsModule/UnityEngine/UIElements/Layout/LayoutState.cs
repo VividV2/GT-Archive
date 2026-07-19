@@ -1,26 +1,9 @@
-using System;
-using System.Runtime.InteropServices;
-
-namespace UnityEngine.UIElements.Layout;
-
-internal struct LayoutState
+namespace UnityEngine.UIElements.UIR
 {
-	public IntPtr measureFunctionCallback;
-
-	public IntPtr baselineFunctionCallback;
-
-	public IntPtr unusedExceptionPointer;
-
-	public uint depth;
-
-	public uint currentGenerationCount;
-
-	[MarshalAs(UnmanagedType.U1)]
-	public bool error;
-
-	public static LayoutState Default => new LayoutState
-	{
-		measureFunctionCallback = LayoutDelegates.s_InvokeMeasureFunction,
-		baselineFunctionCallback = LayoutDelegates.s_InvokeBaselineFunction
-	};
+}
+namespace UnityEngine.UIElements.Layout
+{
+}
+namespace UnityEngine.UIElements.UIR
+{
 }

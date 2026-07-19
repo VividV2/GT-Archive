@@ -1,18 +1,20 @@
-using System;
-using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel;
 
-namespace Oculus.Platform.Models;
+namespace Oculus.Platform;
 
-public class AchievementDefinitionList : DeserializableList<AchievementDefinition>
+public enum ServiceProvider
 {
-	public AchievementDefinitionList(IntPtr a)
-	{
-		int num = (int)(uint)CAPI.ovr_AchievementDefinitionArray_GetSize(a);
-		_Data = new List<AchievementDefinition>(num);
-		for (int i = 0; i < num; i++)
-		{
-			_Data.Add(new AchievementDefinition(CAPI.ovr_AchievementDefinitionArray_GetElement(a, (UIntPtr)(ulong)i)));
-		}
-		_NextUrl = CAPI.ovr_AchievementDefinitionArray_GetNextUrl(a);
-	}
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("DROPBOX")]
+	Dropbox,
+	[Description("FACEBOOK")]
+	Facebook,
+	[Description("GOOGLE")]
+	Google,
+	[Description("INSTAGRAM")]
+	Instagram,
+	[Description("REMOTE_MEDIA")]
+	RemoteMedia
 }

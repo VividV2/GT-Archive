@@ -1,12 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class MatchmakingPlayer : PlayFabBaseModel
+namespace PlayFab.MultiplayerModels
 {
-	public MatchmakingPlayerAttributes Attributes;
-
-	public EntityKey Entity;
 }

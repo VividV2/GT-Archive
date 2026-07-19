@@ -1,16 +1,9 @@
-using System;
-
 namespace Valve.VR;
 
-public struct RenderModel_t
+public enum EHiddenAreaMeshType
 {
-	public IntPtr rVertexData;
-
-	public uint unVertexCount;
-
-	public IntPtr rIndexData;
-
-	public uint unTriangleCount;
-
-	public int diffuseTextureId;
+	k_eHiddenAreaMesh_Standard,
+	k_eHiddenAreaMesh_Inverse,
+	k_eHiddenAreaMesh_LineLoop,
+	k_eHiddenAreaMesh_Max
 }

@@ -1,3 +1,6 @@
-namespace Newtonsoft.Json.Utilities;
-
-internal delegate T Creator<T>();
+namespace Newtonsoft.Json.Serialization
+{
+}
+namespace Newtonsoft.Json.Linq.JsonPath
+{
+}

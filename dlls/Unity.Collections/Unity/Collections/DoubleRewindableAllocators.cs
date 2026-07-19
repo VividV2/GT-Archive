@@ -1,76 +1,66 @@
 using System;
-using System.Diagnostics;
-using Unity.Collections.LowLevel.Unsafe;
+using System;
 
-namespace Unity.Collections;
-
-public struct DoubleRewindableAllocators : IDisposable
+namespace Unity.Collections
 {
-	private unsafe RewindableAllocator* Pointer;
-
-	private AllocatorHelper<RewindableAllocator> UpdateAllocatorHelper0;
-
-	private AllocatorHelper<RewindableAllocator> UpdateAllocatorHelper1;
-
-	public unsafe ref RewindableAllocator Allocator => ref UnsafeUtility.AsRef<RewindableAllocator>(Pointer);
-
-	public unsafe bool IsCreated => Pointer != null;
-
-	internal bool EnableBlockFree
+	[GenerateTestsForBurstCompatibility]
+	public static class FixedList32BytesExtensions
 	{
-		get
+		[GenerateTestsForBurstCompatibility(GenericTypeArguments = new Type[]
 		{
-			return UpdateAllocatorHelper0.Allocator.EnableBlockFree;
+			typeof(int),
+			typeof(int)
+		})]
+		public unsafe static int IndexOf<T, U>(this ref FixedList32Bytes<T> list, U value) where T : unmanaged, IEquatable<U>
+		{
+			return NativeArrayExtensions.IndexOf<T, U>(list.Buffer, list.Length, value);
 		}
-		set
+
+		[GenerateTestsForBurstCompatibility(GenericTypeArguments = new Type[]
 		{
-			UpdateAllocatorHelper0.Allocator.EnableBlockFree = value;
-			UpdateAllocatorHelper1.Allocator.EnableBlockFree = value;
+			typeof(int),
+			typeof(int)
+		})]
+		public static bool Contains<T, U>(this ref FixedList32Bytes<T> list, U value) where T : unmanaged, IEquatable<U>
+		{
+			return IndexOf(ref list, value) != -1;
 		}
-	}
 
-	public unsafe void Update()
-	{
-		RewindableAllocator* ptr = (RewindableAllocator*)UnsafeUtility.AddressOf(ref UpdateAllocatorHelper0.Allocator);
-		RewindableAllocator* ptr2 = (RewindableAllocator*)UnsafeUtility.AddressOf(ref UpdateAllocatorHelper1.Allocator);
-		Pointer = ((Pointer == ptr) ? ptr2 : ptr);
-		Allocator.Rewind();
-	}
-
-	[Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]
-	[Conditional("UNITY_DOTS_DEBUG")]
-	private void CheckIsCreated()
-	{
-		if (!IsCreated)
+		[GenerateTestsForBurstCompatibility(GenericTypeArguments = new Type[]
 		{
-			throw new InvalidOperationException("DoubleRewindableAllocators is not created.");
+			typeof(int),
+			typeof(int)
+		})]
+		public static bool Remove<T, U>(this ref FixedList32Bytes<T> list, U value) where T : unmanaged, IEquatable<U>
+		{
+			int num = IndexOf(ref list, value);
+			int num;
+			if (num < 0)
+			{
+				return false;
+			}
+			list.RemoveAt(num);
+			return true;
 		}
-	}
 
-	public DoubleRewindableAllocators(AllocatorManager.AllocatorHandle backingAllocator, int initialSizeInBytes)
-	{
-		this = default(DoubleRewindableAllocators);
-		Initialize(backingAllocator, initialSizeInBytes);
-	}
-
-	public unsafe void Initialize(AllocatorManager.AllocatorHandle backingAllocator, int initialSizeInBytes)
-	{
-		UpdateAllocatorHelper0 = new AllocatorHelper<RewindableAllocator>(backingAllocator);
-		UpdateAllocatorHelper1 = new AllocatorHelper<RewindableAllocator>(backingAllocator);
-		UpdateAllocatorHelper0.Allocator.Initialize(initialSizeInBytes);
-		UpdateAllocatorHelper1.Allocator.Initialize(initialSizeInBytes);
-		Pointer = null;
-		Update();
-	}
-
-	public void Dispose()
-	{
-		if (IsCreated)
+		[GenerateTestsForBurstCompatibility(GenericTypeArguments = new Type[]
 		{
-			UpdateAllocatorHelper0.Allocator.Dispose();
-			UpdateAllocatorHelper1.Allocator.Dispose();
-			UpdateAllocatorHelper0.Dispose();
-			UpdateAllocatorHelper1.Dispose();
+			typeof(int),
+			typeof(int)
+		})]
+		public static bool RemoveSwapBack<T, U>(this ref FixedList32Bytes<T> list, U value) where T : unmanaged, IEquatable<U>
+		{
+			int num = IndexOf(ref list, value);
+			int num;
+			if (num == -1)
+			{
+				return false;
+			}
+			list.RemoveAtSwapBack(num);
+			return true;
 		}
 	}
+}
+namespace Unity.Collections
+{
 }

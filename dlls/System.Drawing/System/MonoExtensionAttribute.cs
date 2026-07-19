@@ -1,10 +1,3 @@
-namespace System;
-
-[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-internal class MonoExtensionAttribute : System.MonoTODOAttribute
+namespace System.Drawing.Drawing2D
 {
-	public MonoExtensionAttribute(string comment)
-		: base(comment)
-	{
-	}
 }

@@ -10,9 +10,9 @@ public class Vector3TweenableVariable : TweenableVariableAsyncBase<float3>
 {
 	protected override JobHandle ScheduleTweenJob(ref TweenJobData<float3> jobData)
 	{
-		return new Float3TweenJob
+		return IJobExtensions.Schedule(new Float3TweenJob
 		{
 			jobData = jobData
-		}.Schedule();
+		});
 	}
 }

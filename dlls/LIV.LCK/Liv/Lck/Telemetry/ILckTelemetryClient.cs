@@ -1,6 +1,10 @@
-namespace Liv.Lck.Telemetry;
-
-public interface ILckTelemetryClient
+namespace Liv.Lck.Telemetry
 {
-	void SendTelemetry(LckTelemetryEvent lckTelemetryEvent);
+	public interface ILckTelemetryClient
+	{
+		void SendTelemetry(LckTelemetryEvent lckTelemetryEvent);
+	}
+}
+namespace Liv.Lck.Cosmetics
+{
 }

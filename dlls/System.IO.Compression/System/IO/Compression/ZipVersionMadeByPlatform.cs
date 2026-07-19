@@ -1,7 +1,12 @@
-namespace System.IO.Compression;
-
-internal enum ZipVersionMadeByPlatform : byte
+namespace System.IO.Compression
 {
-	Windows = 0,
-	Unix = 3
+}
+namespace Microsoft.Win32.SafeHandles
+{
+}
+namespace System.IO.Compression
+{
+}
+namespace System.IO.Compression
+{
 }

@@ -1,13 +1,3 @@
-namespace Valve.VR;
-
-public enum ETextureType
+namespace Valve.VR
 {
-	Invalid = -1,
-	DirectX,
-	OpenGL,
-	Vulkan,
-	IOSurface,
-	DirectX12,
-	DXGISharedHandle,
-	Metal
 }

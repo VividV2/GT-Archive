@@ -1,10 +1,9 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class RemoveGenericIDRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public GenericServiceId GenericId;
+}
+namespace PlayFab.ClientModels
+{
+}
+namespace PlayFab.ClientModels
+{
 }

@@ -8,3 +8,6 @@ public enum ListSortDirection
 	/// <summary>Sorts in descending order.</summary>
 	Descending
 }
+namespace System.Net
+{
+}

@@ -1,10 +1,18 @@
-using System.Runtime.InteropServices;
-
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
-[CallbackIdentity(701)]
-public struct IPCountry_t
+namespace Steamworks
 {
-	public const int k_iCallback = 701;
+	[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
+	[CallbackIdentity(2302)]
+	public struct ScreenshotRequested_t
+	{
+		public const int k_iCallback = 2302;
+	}
+}
+namespace Steamworks
+{
+	public enum EControllerHapticType
+	{
+		k_EControllerHapticType_Off,
+		k_EControllerHapticType_Tick,
+		k_EControllerHapticType_Click
+	}
 }

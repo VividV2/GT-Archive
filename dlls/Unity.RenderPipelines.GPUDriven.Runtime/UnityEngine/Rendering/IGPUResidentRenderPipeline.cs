@@ -1,49 +1,53 @@
-namespace UnityEngine.Rendering;
-
-public interface IGPUResidentRenderPipeline
+namespace UnityEngine.Rendering
 {
-	GPUResidentDrawerSettings gpuResidentDrawerSettings { get; }
-
-	GPUResidentDrawerMode gpuResidentDrawerMode { get; set; }
-
-	static void ReinitializeGPUResidentDrawer()
+	public interface IGPUResidentRenderPipeline
 	{
-		GPUResidentDrawer.Reinitialize();
-	}
+		GPUResidentDrawerSettings gpuResidentDrawerSettings { get; }
 
-	bool IsGPUResidentDrawerSupportedBySRP(bool logReason = false)
-	{
-		string message;
-		LogType severity;
-		bool flag = IsGPUResidentDrawerSupportedBySRP(out message, out severity);
-		if (logReason && !flag)
+		GPUResidentDrawerMode gpuResidentDrawerMode { get; set; }
+
+		static void ReinitializeGPUResidentDrawer()
 		{
-			GPUResidentDrawer.LogMessage(message, severity);
+			GPUResidentDrawer.Reinitialize();
 		}
-		return flag;
-	}
 
-	bool IsGPUResidentDrawerSupportedBySRP(out string message, out LogType severity)
-	{
-		message = string.Empty;
-		severity = LogType.Log;
-		return true;
-	}
-
-	static bool IsGPUResidentDrawerSupportedByProjectConfiguration(bool logReason = false)
-	{
-		string message;
-		LogType severity;
-		bool result = GPUResidentDrawer.IsProjectSupported(out message, out severity);
-		if (logReason && !string.IsNullOrEmpty(message))
+		bool IsGPUResidentDrawerSupportedBySRP(bool logReason = false)
 		{
-			Debug.LogWarning(message);
+			string message;
+			LogType severity;
+			bool flag = IsGPUResidentDrawerSupportedBySRP(out message, out severity);
+			if (logReason && !flag)
+			{
+				GPUResidentDrawer.LogMessage(message, severity);
+			}
+			return flag;
 		}
-		return result;
-	}
 
-	static bool IsGPUResidentDrawerEnabled()
-	{
-		return GPUResidentDrawer.IsEnabled();
+		bool IsGPUResidentDrawerSupportedBySRP(out string message, out LogType severity)
+		{
+			message = string.Empty;
+			severity = LogType.Log;
+			return true;
+		}
+
+		static bool IsGPUResidentDrawerSupportedByProjectConfiguration(bool logReason = false)
+		{
+			string message;
+			LogType severity;
+			bool result = GPUResidentDrawer.IsProjectSupported(out message, out severity);
+			if (logReason && !string.IsNullOrEmpty(message))
+			{
+				Debug.LogWarning(message);
+			}
+			return result;
+		}
+
+		static bool IsGPUResidentDrawerEnabled()
+		{
+			return GPUResidentDrawer.IsEnabled();
+		}
 	}
+}
+namespace UnityEngine.Rendering
+{
 }

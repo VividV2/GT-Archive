@@ -1,9 +1,13 @@
-namespace System.Xml.Xsl.Xslt;
-
-internal class RootLevel : StylesheetLevel
+namespace System.Xml.Xsl.Xslt
 {
-	public RootLevel(Stylesheet principal)
+	internal class RootLevel : StylesheetLevel
 	{
-		Imports = new Stylesheet[1] { principal };
+		public RootLevel(Stylesheet principal)
+		{
+			Imports = new Stylesheet[1] { principal };
+		}
 	}
+}
+namespace System.Xml.Xsl.XsltOld
+{
 }

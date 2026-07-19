@@ -1,6 +1,7 @@
 namespace System.Xml;
 
 /// <summary>Specifies the method used to serialize the <see cref="T:System.Xml.XmlWriter" /> output. </summary>
+/// <summary>Specifies the method used to serialize the <see cref="T:System.Xml.XmlWriter" /> output. </summary>
 public enum XmlOutputMethod
 {
 	/// <summary>Serialize according to the XML 1.0 rules.</summary>

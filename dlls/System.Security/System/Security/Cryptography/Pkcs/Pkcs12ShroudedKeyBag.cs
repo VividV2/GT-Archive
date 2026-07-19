@@ -1,18 +1,27 @@
-namespace System.Security.Cryptography.Pkcs;
+using System.Security.Cryptography.Asn1;
+using System.Security.Cryptography.Asn1;
 
-public sealed class Pkcs12ShroudedKeyBag : Pkcs12SafeBag
+namespace System.Security.Cryptography.Pkcs.Asn1;
+
+internal struct SignedDataAsn
 {
-	public ReadOnlyMemory<byte> EncryptedPkcs8PrivateKey
-	{
-		get
-		{
-			throw new PlatformNotSupportedException();
-		}
-	}
+	public int Version;
 
-	public Pkcs12ShroudedKeyBag(ReadOnlyMemory<byte> encryptedPkcs8PrivateKey, bool skipCopy = false)
-		: base(null, default(ReadOnlyMemory<byte>))
-	{
-		throw new PlatformNotSupportedException();
-	}
+	[SetOf]
+	public AlgorithmIdentifierAsn[] DigestAlgorithms;
+
+	public EncapsulatedContentInfoAsn EncapContentInfo;
+
+	[ExpectedTag(0)]
+	[SetOf]
+	[OptionalValue]
+	public CertificateChoiceAsn[] CertificateSet;
+
+	[AnyValue]
+	[ExpectedTag(1)]
+	[OptionalValue]
+	public ReadOnlyMemory<byte>? RevocationInfoChoices;
+
+	[SetOf]
+	public SignerInfoAsn[] SignerInfos;
 }

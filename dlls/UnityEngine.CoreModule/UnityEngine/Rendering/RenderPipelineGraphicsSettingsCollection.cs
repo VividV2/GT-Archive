@@ -1,13 +1,12 @@
-using System;
-using System.Collections.Generic;
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Scripting.APIUpdating;
 
 namespace UnityEngine.Rendering;
 
-[Serializable]
-public class RenderPipelineGraphicsSettingsCollection
+[MovedFrom("UnityEngine.Experimental.Rendering")]
+public struct RayTracingInstanceCullingMaterialTest
 {
-	[SerializeReference]
-	private List<IRenderPipelineGraphicsSettings> m_List = new List<IRenderPipelineGraphicsSettings>();
+	public string[] deniedShaderPasses;
 
-	public List<IRenderPipelineGraphicsSettings> settingsList => m_List;
+	public RayTracingInstanceCullingShaderTagConfig[] requiredShaderTags;
 }

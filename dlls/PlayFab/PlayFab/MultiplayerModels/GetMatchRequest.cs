@@ -1,16 +1,20 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class GetMatchRequest : PlayFabRequestCommon
+namespace PlayFab.MultiplayerModels
 {
-	public bool EscapeObject;
+	[Serializable]
+	public class GetMatchRequest : PlayFabRequestCommon
+	{
+		public bool EscapeObject;
 
-	public string MatchId;
+		public string MatchId;
 
-	public string QueueName;
+		public string QueueName;
 
-	public bool ReturnMemberAttributes;
+		public bool ReturnMemberAttributes;
+	}
+}
+namespace PlayFab.MultiplayerModels
+{
 }

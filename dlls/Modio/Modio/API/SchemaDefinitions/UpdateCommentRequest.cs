@@ -1,19 +1,28 @@
-using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Modio.API.SchemaDefinitions;
 
-[JsonObject]
-internal readonly struct UpdateCommentRequest(string content) : IApiRequest
+[JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
+internal readonly struct GameEmhObject(long id, long status, long communityOptions, string ugcName, string name, string nameId, GameTagOptionLocalizedObject[] tagOptions, ThemeObject theme, GamePlatformsObject[] platforms)
 {
-	private static readonly Dictionary<string, object> _bodyParameters = new Dictionary<string, object>();
+	internal readonly long Id = id;
 
-	internal readonly string Content = content;
+	internal readonly long Status = status;
 
-	public IReadOnlyDictionary<string, object> GetBodyParameters()
-	{
-		_bodyParameters.Clear();
-		_bodyParameters.Add("content", Content);
-		return _bodyParameters;
-	}
+	internal readonly long CommunityOptions = communityOptions;
+
+	internal readonly string UgcName = ugcName;
+
+	internal readonly string Name = name;
+
+	internal readonly string NameId = nameId;
+
+	internal readonly GameTagOptionLocalizedObject[] TagOptions = tagOptions;
+
+	internal readonly ThemeObject Theme = theme;
+
+	internal readonly GamePlatformsObject[] Platforms = platforms;
 }

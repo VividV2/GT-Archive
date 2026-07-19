@@ -1,16 +1,14 @@
-namespace System.ComponentModel;
+namespace System.Runtime.InteropServices.ComTypes;
 
-/// <summary>Identifies the type of data operation performed by a method, as specified by the <see cref="T:System.ComponentModel.DataObjectMethodAttribute" /> applied to the method.</summary>
-public enum DataObjectMethodType
+[Flags]
+public enum TYMED
 {
-	/// <summary>Indicates that a method is used for a data operation that fills a <see cref="T:System.Data.DataSet" /> object.</summary>
-	Fill,
-	/// <summary>Indicates that a method is used for a data operation that retrieves data.</summary>
-	Select,
-	/// <summary>Indicates that a method is used for a data operation that updates data.</summary>
-	Update,
-	/// <summary>Indicates that a method is used for a data operation that inserts data.</summary>
-	Insert,
-	/// <summary>Indicates that a method is used for a data operation that deletes data.</summary>
-	Delete
+	TYMED_HGLOBAL = 1,
+	TYMED_FILE = 2,
+	TYMED_ISTREAM = 4,
+	TYMED_ISTORAGE = 8,
+	TYMED_GDI = 0x10,
+	TYMED_MFPICT = 0x20,
+	TYMED_ENHMF = 0x40,
+	TYMED_NULL = 0
 }

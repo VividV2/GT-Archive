@@ -4,3 +4,6 @@ public interface IAudioBufferProvider
 {
 	AudioBuffer InstantiateAudioBuffer();
 }
+namespace Meta.WitAi.Events
+{
+}

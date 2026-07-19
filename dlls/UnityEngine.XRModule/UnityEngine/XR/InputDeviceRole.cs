@@ -1,13 +1,3 @@
-namespace UnityEngine.XR;
-
-public enum InputDeviceRole : uint
+namespace UnityEngine.XR
 {
-	Unknown,
-	Generic,
-	LeftHanded,
-	RightHanded,
-	GameController,
-	TrackingReference,
-	HardwareTracker,
-	LegacyController
 }

@@ -1,51 +1,13 @@
-using System;
-using System.Runtime.InteropServices;
-using AOT;
-using Unity.Collections.LowLevel.Unsafe;
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.Bindings;
+namespace UnityEngine.Windows.WebCam;
 
-[VisibleToOtherModules]
-internal readonly struct ArrayHandleOnStack<TT> where TT : unmanaged
+[MovedFrom("UnityEngine.XR.WSA.WebCam")]
+public enum CapturePixelFormat
 {
-	private unsafe readonly void* _arrayRefPtr;
-
-	private readonly IntPtr _allocArrayCallbackPtr;
-
-	private static ArrayHandleOnStack.CreateArrayDelegate s_createArrayDelegate;
-
-	private static IntPtr s_createArrayFcnPtr;
-
-	unsafe static ArrayHandleOnStack()
-	{
-		s_createArrayDelegate = AllocArrayManagedCallback;
-		s_createArrayFcnPtr = Marshal.GetFunctionPointerForDelegate(s_createArrayDelegate);
-	}
-
-	public unsafe ArrayHandleOnStack(void* arrayRefPtr)
-	{
-		_arrayRefPtr = arrayRefPtr;
-		_allocArrayCallbackPtr = s_createArrayFcnPtr;
-	}
-
-	public unsafe ArrayHandleOnStack(void* arrayRefPtr, IntPtr allocArrayCallbackPtr)
-	{
-		_arrayRefPtr = arrayRefPtr;
-		_allocArrayCallbackPtr = allocArrayCallbackPtr;
-	}
-
-	[MonoPInvokeCallback(typeof(ArrayHandleOnStack.CreateArrayDelegate))]
-	public unsafe static void* AllocArrayManagedCallback(void* targetRef, int size)
-	{
-		TT[] array = new TT[size];
-		UnsafeUtility.ClassAsRef<TT[]>(targetRef) = array;
-		if (size < 1)
-		{
-			return null;
-		}
-		fixed (TT* result = array)
-		{
-			return result;
-		}
-	}
+	BGRA32,
+	NV12,
+	JPEG,
+	PNG
 }

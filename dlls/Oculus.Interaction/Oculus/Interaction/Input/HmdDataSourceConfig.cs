@@ -1,6 +1,6 @@
-namespace Oculus.Interaction.Input;
-
-public class HmdDataSourceConfig
+namespace Oculus.Interaction.DistanceReticles
 {
-	public ITrackingToWorldTransformer TrackingToWorldTransformer { get; set; }
+}
+namespace Oculus.Interaction.Input
+{
 }

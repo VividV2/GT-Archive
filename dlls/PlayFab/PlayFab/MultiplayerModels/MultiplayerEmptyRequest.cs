@@ -1,9 +1,13 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class MultiplayerEmptyRequest : PlayFabRequestCommon
+namespace PlayFab.MultiplayerModels
+{
+	[Serializable]
+	public class MultiplayerEmptyRequest : PlayFabRequestCommon
+	{
+	}
+}
+namespace PlayFab.MultiplayerModels
 {
 }

@@ -1,36 +1,17 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(3401)]
-public struct SteamUGCQueryCompleted_t
+[CallbackIdentity(703)]
+public struct SteamAPICallCompleted_t
 {
-	public const int k_iCallback = 3401;
+	public const int k_iCallback = 703;
 
-	public UGCQueryHandle_t m_handle;
+	public SteamAPICall_t m_hAsyncCall;
 
-	public EResult m_eResult;
+	public int m_iCallback;
 
-	public uint m_unNumResultsReturned;
-
-	public uint m_unTotalMatchingResults;
-
-	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bCachedData;
-
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)]
-	private byte[] m_rgchNextCursor_;
-
-	public string m_rgchNextCursor
-	{
-		get
-		{
-			return InteropHelp.ByteArrayToStringUTF8(m_rgchNextCursor_);
-		}
-		set
-		{
-			InteropHelp.StringToByteArrayUTF8(value, m_rgchNextCursor_, 256);
-		}
-	}
+	public uint m_cubParam;
 }

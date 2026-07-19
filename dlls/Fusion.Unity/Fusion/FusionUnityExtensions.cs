@@ -1,5 +1,9 @@
-namespace Fusion;
-
-public static class FusionUnityExtensions
+namespace Fusion
 {
+}
+namespace Fusion
+{
+	public static class FusionUnityExtensions
+	{
+	}
 }

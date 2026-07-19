@@ -1,9 +1,13 @@
-namespace Pathfinding.ClipperLib;
-
-public enum EndType
+namespace Pathfinding.ClipperLib
 {
-	etClosed,
-	etButt,
-	etSquare,
-	etRound
+}
+namespace Pathfinding.ClipperLib
+{
+	public enum EndType
+	{
+		etClosed,
+		etButt,
+		etSquare,
+		etRound
+	}
 }

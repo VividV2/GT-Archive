@@ -1,7 +1,3 @@
-namespace Valve.Newtonsoft.Json;
-
-public enum ConstructorHandling
+namespace Valve.Newtonsoft.Json
 {
-	Default,
-	AllowNonPublicDefaultConstructor
 }

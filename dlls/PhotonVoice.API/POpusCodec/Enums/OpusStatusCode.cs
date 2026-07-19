@@ -1,13 +1,16 @@
 namespace POpusCodec.Enums;
 
-public enum OpusStatusCode
+public enum Complexity
 {
-	OK = 0,
-	BadArguments = -1,
-	BufferTooSmall = -2,
-	InternalError = -3,
-	InvalidPacket = -4,
-	Unimplemented = -5,
-	InvalidState = -6,
-	AllocFail = -7
+	Complexity0,
+	Complexity1,
+	Complexity2,
+	Complexity3,
+	Complexity4,
+	Complexity5,
+	Complexity6,
+	Complexity7,
+	Complexity8,
+	Complexity9,
+	Complexity10
 }

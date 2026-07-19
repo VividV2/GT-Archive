@@ -1,10 +1,14 @@
+using System.ComponentModel;
+using System.ComponentModel;
+
 namespace Oculus.Platform;
 
-public static class Parties
+public enum UserPresenceStatus
 {
-	public static void SetPartyUpdateNotificationCallback(Message<Oculus.Platform.Models.PartyUpdateNotification>.Callback callback)
-	{
-		EventManager.SendUnifiedEvent(isEssential: true, "platform_sdk", "PSDK_Parties_PartyUpdateNotificationCallback", "");
-		Callback.SetNotificationCallback(Message.MessageType.Notification_Party_PartyUpdate, callback);
-	}
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("ONLINE")]
+	Online,
+	[Description("OFFLINE")]
+	Offline
 }

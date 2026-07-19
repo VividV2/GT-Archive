@@ -1,13 +1,17 @@
 using System;
 
-namespace Oculus.Platform.Models;
-
-public class PushNotificationResult
+namespace Oculus.Platform.Models
 {
-	public readonly string Id;
-
-	public PushNotificationResult(IntPtr o)
+	public class PushNotificationResult
 	{
-		Id = CAPI.ovr_PushNotificationResult_GetId(o);
+		public readonly string Id;
+
+		public PushNotificationResult(IntPtr o)
+		{
+			Id = CAPI.ovr_PushNotificationResult_GetId(o);
+		}
 	}
+}
+namespace Oculus.Platform.Models
+{
 }

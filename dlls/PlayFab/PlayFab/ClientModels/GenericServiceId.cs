@@ -1,12 +1,16 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GenericServiceId : PlayFabBaseModel
+namespace PlayFab.ClientModels
 {
-	public string ServiceName;
+	[Serializable]
+	public class GenericServiceId : PlayFabBaseModel
+	{
+		public string ServiceName;
 
-	public string UserId;
+		public string UserId;
+	}
+}
+namespace PlayFab.ClientModels
+{
 }

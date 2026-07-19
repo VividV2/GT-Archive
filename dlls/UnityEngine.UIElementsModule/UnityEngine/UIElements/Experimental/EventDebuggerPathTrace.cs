@@ -1,12 +1,19 @@
-namespace UnityEngine.UIElements.Experimental;
-
-internal class EventDebuggerPathTrace : EventDebuggerTrace
+namespace UnityEngine.UIElements.Experimental
 {
-	public PropagationPaths paths { get; }
-
-	public EventDebuggerPathTrace(IPanel panel, EventBase evt, PropagationPaths paths)
-		: base(panel, evt, -1L, null)
+	internal class EventDebuggerPathTrace : EventDebuggerTrace
 	{
-		this.paths = paths;
+		public PropagationPaths paths { get; }
+
+		public EventDebuggerPathTrace(IPanel panel, EventBase evt, PropagationPaths paths)
+			: base(panel, evt, -1L, null)
+		{
+			this.paths = paths;
+		}
 	}
+}
+namespace UnityEngine.UIElements.Internal
+{
+}
+namespace UnityEngine.UIElements.Internal
+{
 }

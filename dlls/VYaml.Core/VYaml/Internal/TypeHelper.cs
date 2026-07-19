@@ -1,16 +1,20 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace VYaml.Internal;
-
-internal static class TypeHelper
+namespace VYaml.Internal
 {
-	public static bool IsAnonymous(Type type)
+	internal static class TypeHelper
 	{
-		if (type.Namespace == null && type.IsSealed && (type.Name.StartsWith("<>f__AnonymousType", StringComparison.Ordinal) || type.Name.StartsWith("<>__AnonType", StringComparison.Ordinal) || type.Name.StartsWith("VB$AnonymousType_", StringComparison.Ordinal)))
+		public static bool IsAnonymous(Type type)
 		{
-			return type.IsDefined(typeof(CompilerGeneratedAttribute), inherit: false);
+			if (type.Namespace == null && type.IsSealed && (type.Name.StartsWith("<>f__AnonymousType", StringComparison.Ordinal) || type.Name.StartsWith("<>__AnonType", StringComparison.Ordinal) || type.Name.StartsWith("VB$AnonymousType_", StringComparison.Ordinal)))
+			{
+				return type.IsDefined(typeof(CompilerGeneratedAttribute), inherit: false);
+			}
+			return false;
 		}
-		return false;
 	}
+}
+namespace VYaml.Parser
+{
 }

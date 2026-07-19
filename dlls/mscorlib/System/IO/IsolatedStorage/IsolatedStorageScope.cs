@@ -19,3 +19,6 @@ public enum IsolatedStorageScope
 	/// <summary>Isolated storage scoped to the application.</summary>
 	Application = 0x20
 }
+namespace System.IO
+{
+}

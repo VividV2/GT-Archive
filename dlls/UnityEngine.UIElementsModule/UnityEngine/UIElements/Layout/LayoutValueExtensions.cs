@@ -1,24 +1,6 @@
-namespace UnityEngine.UIElements.Layout;
-
-internal static class LayoutValueExtensions
+namespace UnityEngine.UIElements.StyleSheets
 {
-	public static LayoutValue Percent(this float value)
-	{
-		return LayoutValue.Percent(value);
-	}
-
-	public static LayoutValue Pt(this float value)
-	{
-		return LayoutValue.Point(value);
-	}
-
-	public static LayoutValue Percent(this int value)
-	{
-		return LayoutValue.Percent(value);
-	}
-
-	public static LayoutValue Pt(this int value)
-	{
-		return LayoutValue.Point(value);
-	}
+}
+namespace UnityEngine.UIElements.Layout
+{
 }

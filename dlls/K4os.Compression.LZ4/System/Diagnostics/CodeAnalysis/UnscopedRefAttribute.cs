@@ -1,7 +1,7 @@
 namespace System.Diagnostics.CodeAnalysis;
 
-[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
+[AttributeUsage(AttributeTargets.Constructor, AllowMultiple = false, Inherited = false)]
 [ExcludeFromCodeCoverage]
-internal sealed class UnscopedRefAttribute : Attribute
+internal sealed class SetsRequiredMembersAttribute : Attribute
 {
 }

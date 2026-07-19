@@ -11,3 +11,6 @@ public interface IChangeTracking
 	/// <summary>Resets the object's state to unchanged by accepting the modifications.</summary>
 	void AcceptChanges();
 }
+namespace System.ComponentModel
+{
+}

@@ -1,22 +1,10 @@
-namespace System.Security.Permissions;
+namespace System.Security.Policy;
 
-internal enum BuiltInToken
+[Flags]
+public enum PolicyStatementAttribute
 {
-	Environment,
-	FileDialog,
-	FileIO,
-	IsolatedStorageFile,
-	Reflection,
-	Registry,
-	Security,
-	UI,
-	Principal,
-	HostProtection,
-	PublisherIdentity,
-	SiteIdentity,
-	StrongNameIdentity,
-	UrlIdentity,
-	ZoneIdentity,
-	GacIdentity,
-	KeyContainer
+	All = 3,
+	Exclusive = 1,
+	LevelFinal = 2,
+	Nothing = 0
 }

@@ -1,10 +1,8 @@
-using System;
-using System.Runtime.CompilerServices;
+namespace Newtonsoft.Json;
 
-namespace Microsoft.CodeAnalysis;
-
-[CompilerGenerated]
-[Microsoft.CodeAnalysis.Embedded]
-internal sealed class EmbeddedAttribute : Attribute
+public enum ObjectCreationHandling
 {
+	Auto,
+	Reuse,
+	Replace
 }

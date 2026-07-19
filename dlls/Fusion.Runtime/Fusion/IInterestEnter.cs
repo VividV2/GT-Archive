@@ -1,6 +1,6 @@
-namespace Fusion;
-
-public interface IInterestEnter : IPublicFacingInterface
+namespace Fusion
 {
-	void InterestEnter(PlayerRef player);
+}
+namespace Fusion
+{
 }

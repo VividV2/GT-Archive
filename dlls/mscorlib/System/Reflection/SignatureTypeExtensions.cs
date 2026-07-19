@@ -1,234 +1,97 @@
-namespace System.Reflection;
+namespace System.Collections;
 
-internal static class SignatureTypeExtensions
+/// <summary>Represents a non-generic collection of objects that can be individually accessed by index.</summary>
+/// <summary>Represents a non-generic collection of objects that can be individually accessed by index.</summary>
+public interface IList : ICollection, IEnumerable
 {
-	public static bool MatchesParameterTypeExactly(this Type pattern, ParameterInfo parameter)
-	{
-		if (pattern is SignatureType pattern2)
-		{
-			return pattern2.MatchesExactly(parameter.ParameterType);
-		}
-		return (object)pattern == parameter.ParameterType;
-	}
+	/// <summary>Gets or sets the element at the specified index.</summary>
+	/// <param name="index">The zero-based index of the element to get or set.</param>
+	/// <returns>The element at the specified index.</returns>
+	/// <exception cref="T:System.ArgumentOutOfRangeException">
+	///   <paramref name="index" /> is not a valid index in the <see cref="T:System.Collections.IList" />.</exception>
+	/// <exception cref="T:System.NotSupportedException">The property is set and the <see cref="T:System.Collections.IList" /> is read-only.</exception>
+	/// <summary>Gets or sets the element at the specified index.</summary>
+	/// <param name="index">The zero-based index of the element to get or set.</param>
+	/// <returns>The element at the specified index.</returns>
+	/// <exception cref="T:System.ArgumentOutOfRangeException">
+	///   <paramref name="index" /> is not a valid index in the <see cref="T:System.Collections.IList" />.</exception>
+	/// <exception cref="T:System.NotSupportedException">The property is set and the <see cref="T:System.Collections.IList" /> is read-only.</exception>
+	object this[int index] { get; set; }
 
-	internal static bool MatchesExactly(this SignatureType pattern, Type actual)
-	{
-		if (pattern.IsSZArray)
-		{
-			if (actual.IsSZArray)
-			{
-				return pattern.ElementType.MatchesExactly(actual.GetElementType());
-			}
-			return false;
-		}
-		if (pattern.IsVariableBoundArray)
-		{
-			if (actual.IsVariableBoundArray && pattern.GetArrayRank() == actual.GetArrayRank())
-			{
-				return pattern.ElementType.MatchesExactly(actual.GetElementType());
-			}
-			return false;
-		}
-		if (pattern.IsByRef)
-		{
-			if (actual.IsByRef)
-			{
-				return pattern.ElementType.MatchesExactly(actual.GetElementType());
-			}
-			return false;
-		}
-		if (pattern.IsPointer)
-		{
-			if (actual.IsPointer)
-			{
-				return pattern.ElementType.MatchesExactly(actual.GetElementType());
-			}
-			return false;
-		}
-		if (pattern.IsConstructedGenericType)
-		{
-			if (!actual.IsConstructedGenericType)
-			{
-				return false;
-			}
-			if (!(pattern.GetGenericTypeDefinition() == actual.GetGenericTypeDefinition()))
-			{
-				return false;
-			}
-			Type[] genericTypeArguments = pattern.GenericTypeArguments;
-			Type[] genericTypeArguments2 = actual.GenericTypeArguments;
-			int num = genericTypeArguments.Length;
-			if (num != genericTypeArguments2.Length)
-			{
-				return false;
-			}
-			for (int i = 0; i < num; i++)
-			{
-				Type type = genericTypeArguments[i];
-				if (type is SignatureType pattern2)
-				{
-					if (!pattern2.MatchesExactly(genericTypeArguments2[i]))
-					{
-						return false;
-					}
-				}
-				else if (type != genericTypeArguments2[i])
-				{
-					return false;
-				}
-			}
-			return true;
-		}
-		if (pattern.IsGenericMethodParameter)
-		{
-			if (!actual.IsGenericMethodParameter)
-			{
-				return false;
-			}
-			if (pattern.GenericParameterPosition != actual.GenericParameterPosition)
-			{
-				return false;
-			}
-			return true;
-		}
-		return false;
-	}
+	/// <summary>Gets a value indicating whether the <see cref="T:System.Collections.IList" /> is read-only.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the <see cref="T:System.Collections.IList" /> is read-only; otherwise, <see langword="false" />.</returns>
+	/// <summary>Gets a value indicating whether the <see cref="T:System.Collections.IList" /> is read-only.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the <see cref="T:System.Collections.IList" /> is read-only; otherwise, <see langword="false" />.</returns>
+	bool IsReadOnly { get; }
 
-	internal static Type TryResolveAgainstGenericMethod(this SignatureType signatureType, MethodInfo genericMethod)
-	{
-		return signatureType.TryResolve(genericMethod.GetGenericArguments());
-	}
+	/// <summary>Gets a value indicating whether the <see cref="T:System.Collections.IList" /> has a fixed size.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the <see cref="T:System.Collections.IList" /> has a fixed size; otherwise, <see langword="false" />.</returns>
+	/// <summary>Gets a value indicating whether the <see cref="T:System.Collections.IList" /> has a fixed size.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the <see cref="T:System.Collections.IList" /> has a fixed size; otherwise, <see langword="false" />.</returns>
+	bool IsFixedSize { get; }
 
-	private static Type TryResolve(this SignatureType signatureType, Type[] genericMethodParameters)
-	{
-		if (signatureType.IsSZArray)
-		{
-			Type type = signatureType.ElementType.TryResolve(genericMethodParameters);
-			if ((object)type == null)
-			{
-				return null;
-			}
-			return type.TryMakeArrayType();
-		}
-		if (signatureType.IsVariableBoundArray)
-		{
-			Type type2 = signatureType.ElementType.TryResolve(genericMethodParameters);
-			if ((object)type2 == null)
-			{
-				return null;
-			}
-			return type2.TryMakeArrayType(signatureType.GetArrayRank());
-		}
-		if (signatureType.IsByRef)
-		{
-			Type type3 = signatureType.ElementType.TryResolve(genericMethodParameters);
-			if ((object)type3 == null)
-			{
-				return null;
-			}
-			return type3.TryMakeByRefType();
-		}
-		if (signatureType.IsPointer)
-		{
-			Type type4 = signatureType.ElementType.TryResolve(genericMethodParameters);
-			if ((object)type4 == null)
-			{
-				return null;
-			}
-			return type4.TryMakePointerType();
-		}
-		if (signatureType.IsConstructedGenericType)
-		{
-			Type[] genericTypeArguments = signatureType.GenericTypeArguments;
-			int num = genericTypeArguments.Length;
-			Type[] array = new Type[num];
-			for (int i = 0; i < num; i++)
-			{
-				Type type5 = genericTypeArguments[i];
-				if (type5 is SignatureType signatureType2)
-				{
-					array[i] = signatureType2.TryResolve(genericMethodParameters);
-					if (array[i] == null)
-					{
-						return null;
-					}
-				}
-				else
-				{
-					array[i] = type5;
-				}
-			}
-			return signatureType.GetGenericTypeDefinition().TryMakeGenericType(array);
-		}
-		if (signatureType.IsGenericMethodParameter)
-		{
-			int genericParameterPosition = signatureType.GenericParameterPosition;
-			if (genericParameterPosition >= genericMethodParameters.Length)
-			{
-				return null;
-			}
-			return genericMethodParameters[genericParameterPosition];
-		}
-		return null;
-	}
+	/// <summary>Adds an item to the <see cref="T:System.Collections.IList" />.</summary>
+	/// <param name="value">The object to add to the <see cref="T:System.Collections.IList" />.</param>
+	/// <returns>The position into which the new element was inserted, or -1 to indicate that the item was not inserted into the collection.</returns>
+	/// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList" /> is read-only.  
+	///  -or-  
+	///  The <see cref="T:System.Collections.IList" /> has a fixed size.</exception>
+	/// <summary>Adds an item to the <see cref="T:System.Collections.IList" />.</summary>
+	/// <param name="value">The object to add to the <see cref="T:System.Collections.IList" />.</param>
+	/// <returns>The position into which the new element was inserted, or -1 to indicate that the item was not inserted into the collection.</returns>
+	/// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList" /> is read-only.  
+	///  -or-  
+	///  The <see cref="T:System.Collections.IList" /> has a fixed size.</exception>
+	int Add(object value);
 
-	private static Type TryMakeArrayType(this Type type)
-	{
-		try
-		{
-			return type.MakeArrayType();
-		}
-		catch
-		{
-			return null;
-		}
-	}
+	/// <summary>Determines whether the <see cref="T:System.Collections.IList" /> contains a specific value.</summary>
+	/// <param name="value">The object to locate in the <see cref="T:System.Collections.IList" />.</param>
+	/// <returns>
+	/// <summary>Determines whether the <see cref="T:System.Collections.IList" /> contains a specific value.</summary>
+	///   <see langword="true" /> if the <see cref="T:System.Object" /> is found in the <see cref="T:System.Collections.IList" />; otherwise, <see langword="false" />.</returns>
+	/// <param name="value">The object to locate in the <see cref="T:System.Collections.IList" />.</param>
+	/// <returns>
+	///   <see langword="true" /> if the <see cref="T:System.Object" /> is found in the <see cref="T:System.Collections.IList" />; otherwise, <see langword="false" />.</returns>
+	bool Contains(object value);
 
-	private static Type TryMakeArrayType(this Type type, int rank)
-	{
-		try
-		{
-			return type.MakeArrayType(rank);
-		}
-		catch
-		{
-			return null;
-		}
-	}
+	/// <summary>Removes all items from the <see cref="T:System.Collections.IList" />.</summary>
+	/// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList" /> is read-only.</exception>
+	void Clear();
 
-	private static Type TryMakeByRefType(this Type type)
-	{
-		try
-		{
-			return type.MakeByRefType();
-		}
-		catch
-		{
-			return null;
-		}
-	}
+	/// <summary>Determines the index of a specific item in the <see cref="T:System.Collections.IList" />.</summary>
+	/// <param name="value">The object to locate in the <see cref="T:System.Collections.IList" />.</param>
+	/// <returns>The index of <paramref name="value" /> if found in the list; otherwise, -1.</returns>
+	int IndexOf(object value);
 
-	private static Type TryMakePointerType(this Type type)
-	{
-		try
-		{
-			return type.MakePointerType();
-		}
-		catch
-		{
-			return null;
-		}
-	}
+	/// <summary>Inserts an item to the <see cref="T:System.Collections.IList" /> at the specified index.</summary>
+	/// <param name="index">The zero-based index at which <paramref name="value" /> should be inserted.</param>
+	/// <param name="value">The object to insert into the <see cref="T:System.Collections.IList" />.</param>
+	/// <exception cref="T:System.ArgumentOutOfRangeException">
+	///   <paramref name="index" /> is not a valid index in the <see cref="T:System.Collections.IList" />.</exception>
+	/// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList" /> is read-only.  
+	///  -or-  
+	///  The <see cref="T:System.Collections.IList" /> has a fixed size.</exception>
+	/// <exception cref="T:System.NullReferenceException">
+	///   <paramref name="value" /> is null reference in the <see cref="T:System.Collections.IList" />.</exception>
+	void Insert(int index, object value);
 
-	private static Type TryMakeGenericType(this Type type, Type[] instantiation)
-	{
-		try
-		{
-			return type.MakeGenericType(instantiation);
-		}
-		catch
-		{
-			return null;
-		}
-	}
+	/// <summary>Removes the first occurrence of a specific object from the <see cref="T:System.Collections.IList" />.</summary>
+	/// <param name="value">The object to remove from the <see cref="T:System.Collections.IList" />.</param>
+	/// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList" /> is read-only.  
+	///  -or-  
+	///  The <see cref="T:System.Collections.IList" /> has a fixed size.</exception>
+	void Remove(object value);
+
+	/// <summary>Removes the <see cref="T:System.Collections.IList" /> item at the specified index.</summary>
+	/// <param name="index">The zero-based index of the item to remove.</param>
+	/// <exception cref="T:System.ArgumentOutOfRangeException">
+	///   <paramref name="index" /> is not a valid index in the <see cref="T:System.Collections.IList" />.</exception>
+	/// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList" /> is read-only.  
+	///  -or-  
+	///  The <see cref="T:System.Collections.IList" /> has a fixed size.</exception>
+	void RemoveAt(int index);
 }

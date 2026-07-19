@@ -1185,7 +1185,7 @@ public static class SplineUtility
 		for (int j = 0; j < spline.Count; j++)
 		{
 			SplineKnotIndex knotIndex = new SplineKnotIndex(splineInfo.Index, j);
-			List<SplineKnotIndex> item = splineInfo.Container.KnotLinkCollection.GetKnotLinks(knotIndex).ToList();
+			List<SplineKnotIndex> item = Enumerable.ToList(splineInfo.Container.KnotLinkCollection.GetKnotLinks(knotIndex));
 			list.Add(item);
 		}
 		foreach (List<SplineKnotIndex> item2 in list)
@@ -1322,12 +1322,12 @@ public static class SplineUtility
 		for (int i = 0; i < count; i++)
 		{
 			SplineKnotIndex knotIndex = new SplineKnotIndex(mainKnot.Spline, i);
-			list.Add(container.KnotLinkCollection.GetKnotLinks(knotIndex).ToList());
+			list.Add(Enumerable.ToList(container.KnotLinkCollection.GetKnotLinks(knotIndex)));
 		}
 		for (int j = 0; j < count2; j++)
 		{
 			SplineKnotIndex knotIndex2 = new SplineKnotIndex(otherKnot.Spline, j);
-			list.Add(container.KnotLinkCollection.GetKnotLinks(knotIndex2).ToList());
+			list.Add(Enumerable.ToList(container.KnotLinkCollection.GetKnotLinks(knotIndex2)));
 		}
 		foreach (List<SplineKnotIndex> item in list)
 		{

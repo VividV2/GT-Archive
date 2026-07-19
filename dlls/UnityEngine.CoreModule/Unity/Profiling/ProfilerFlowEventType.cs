@@ -1,9 +1,13 @@
-namespace Unity.Profiling;
-
-public enum ProfilerFlowEventType : byte
+namespace Unity.Profiling
 {
-	Begin,
-	ParallelNext,
-	End,
-	Next
+	public enum ProfilerFlowEventType : byte
+	{
+		Begin,
+		ParallelNext,
+		End,
+		Next
+	}
+}
+namespace Unity.Collections
+{
 }

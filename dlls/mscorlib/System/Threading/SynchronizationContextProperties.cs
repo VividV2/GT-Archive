@@ -1,8 +1,3 @@
-namespace System.Threading;
-
-[Flags]
-internal enum SynchronizationContextProperties
+namespace System
 {
-	None = 0,
-	RequireWaitNotification = 1
 }

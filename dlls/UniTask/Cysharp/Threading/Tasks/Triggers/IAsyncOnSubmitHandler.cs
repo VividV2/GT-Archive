@@ -1,8 +1,6 @@
-using UnityEngine.EventSystems;
-
 namespace Cysharp.Threading.Tasks.Triggers;
 
-public interface IAsyncOnSubmitHandler
+public interface IAsyncOnDropHandler
 {
-	UniTask<BaseEventData> OnSubmitAsync();
+	UniTask<PointerEventData> OnDropAsync();
 }

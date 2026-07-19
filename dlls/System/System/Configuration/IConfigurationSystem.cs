@@ -1,16 +1,19 @@
 using System.Runtime.InteropServices;
 
-namespace System.Configuration;
+namespace System.Security.AccessControl;
 
-/// <summary>Provides standard configuration methods.</summary>
+[Flags]
 [ComVisible(false)]
-public interface IConfigurationSystem
+public enum SemaphoreRights
 {
-	/// <summary>Gets the specified configuration.</summary>
-	/// <param name="configKey">The configuration key.</param>
-	/// <returns>The object representing the configuration.</returns>
-	object GetConfig(string configKey);
-
-	/// <summary>Used for initialization.</summary>
-	void Init();
+	Modify = 2,
+	Delete = 0x10000,
+	ReadPermissions = 0x20000,
+	ChangePermissions = 0x40000,
+	TakeOwnership = 0x80000,
+	Synchronize = 0x100000,
+	FullControl = 0x1F0003
+}
+namespace System.ComponentModel
+{
 }

@@ -1,6 +1,2 @@
-namespace System.Diagnostics.CodeAnalysis;
+namespace System.Diagnostics;
 
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue, Inherited = false)]
-public sealed class NotNullAttribute : Attribute
-{
-}

@@ -1,5 +1,7 @@
 using System;
 using System.Diagnostics;
+using System;
+using System.Diagnostics;
 
 namespace Sirenix.OdinInspector;
 
@@ -8,12 +10,7 @@ namespace Sirenix.OdinInspector;
 [Conditional("UNITY_EDITOR")]
 [IncludeMyAttributes]
 [HideInTables]
-public sealed class OnStateUpdateAttribute : Attribute
+public sealed class OnStateUpdateAttribute(string action) : Attribute
 {
-	public string Action;
-
-	public OnStateUpdateAttribute(string action)
-	{
-		Action = action;
-	}
+	public string Action = action;
 }

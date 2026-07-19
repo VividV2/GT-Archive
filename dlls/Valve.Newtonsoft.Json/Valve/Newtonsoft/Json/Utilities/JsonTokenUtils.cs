@@ -1,31 +1,67 @@
-namespace Valve.Newtonsoft.Json.Utilities;
+using System;
+using System;
 
-internal static class JsonTokenUtils
+namespace Valve.Newtonsoft.Json
 {
-	internal static bool IsEndToken(JsonToken token)
+	public enum DateFormatHandling
 	{
-		if ((uint)(token - 13) <= 2u)
-		{
-			return true;
-		}
-		return false;
+		IsoDateFormat,
+		MicrosoftDateFormat
 	}
-
-	internal static bool IsStartToken(JsonToken token)
+}
+namespace Valve.Newtonsoft.Json
+{
+	[AttributeUsage(AttributeTargets.Constructor, AllowMultiple = false)]
+	public sealed class JsonConstructorAttribute : Attribute
 	{
-		if ((uint)(token - 1) <= 2u)
-		{
-			return true;
-		}
-		return false;
 	}
-
-	internal static bool IsPrimitiveToken(JsonToken token)
+}
+namespace Valve.Newtonsoft.Json
+{
+	public enum StringEscapeHandling
 	{
-		if ((uint)(token - 7) <= 5u || (uint)(token - 16) <= 1u)
-		{
-			return true;
-		}
-		return false;
+		Default,
+		EscapeNonAscii,
+		EscapeHtml
 	}
+}
+namespace Valve.Newtonsoft.Json.Utilities
+{
+}
+namespace Valve.Newtonsoft.Json
+{
+	public enum Required
+	{
+		Default,
+		AllowNull,
+		Always,
+		DisallowNull
+	}
+}
+namespace Valve.Newtonsoft.Json
+{
+	public enum JsonToken
+	{
+		None,
+		StartObject,
+		StartArray,
+		StartConstructor,
+		PropertyName,
+		Comment,
+		Raw,
+		Integer,
+		Float,
+		String,
+		Boolean,
+		Null,
+		Undefined,
+		EndObject,
+		EndArray,
+		EndConstructor,
+		Date,
+		Bytes
+	}
+}
+namespace Valve.Newtonsoft.Json
+{
 }

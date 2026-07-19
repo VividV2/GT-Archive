@@ -1,13 +1,3 @@
-using System.Runtime.InteropServices;
-
-namespace OVR.OpenVR;
-
-[StructLayout(LayoutKind.Explicit)]
-public struct VROverlayIntersectionMaskPrimitive_Data_t
+namespace OVR.OpenVR
 {
-	[FieldOffset(0)]
-	public IntersectionMaskRectangle_t m_Rectangle;
-
-	[FieldOffset(0)]
-	public IntersectionMaskCircle_t m_Circle;
 }

@@ -1,6 +1,12 @@
-namespace System.Security.Cryptography.Asn1;
+using System.Security.Cryptography.Asn1;
+using System.Security.Cryptography.Asn1;
 
-[AttributeUsage(AttributeTargets.Field)]
-internal sealed class UTF8StringAttribute : AsnTypeAttribute
+namespace System.Security.Cryptography.Pkcs.Asn1;
+
+internal struct SigningCertificateV2Asn
 {
+	public EssCertIdV2[] Certs;
+
+	[OptionalValue]
+	public PolicyInformation[] Policies;
 }

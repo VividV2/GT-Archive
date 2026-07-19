@@ -1,90 +1,9 @@
 using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
 
-namespace UnityEngine;
-
-[StructLayout(LayoutKind.Sequential)]
-[UsedByNativeCode]
-[NativeHeader("Modules/Subsystems/Subsystem.h")]
-public class IntegratedSubsystem : ISubsystem
+namespace UnityEngine
 {
-	internal static class BindingsMarshaller
+	internal interface ISubsystemDescriptorImpl : ISubsystemDescriptor
 	{
-		public static IntPtr ConvertToNative(IntegratedSubsystem integratedSubsystem)
-		{
-			return integratedSubsystem.m_Ptr;
-		}
+		IntPtr ptr { get; set; }
 	}
-
-	[VisibleToOtherModules(new string[] { "UnityEngine.XRModule" })]
-	internal IntPtr m_Ptr;
-
-	internal ISubsystemDescriptor m_SubsystemDescriptor;
-
-	public bool running => valid && IsRunning();
-
-	internal bool valid => m_Ptr != IntPtr.Zero;
-
-	internal void SetHandle([Unmarshalled] IntegratedSubsystem subsystem)
-	{
-		IntPtr intPtr = BindingsMarshaller.ConvertToNative(this);
-		if (intPtr == (IntPtr)0)
-		{
-			ThrowHelper.ThrowNullReferenceException(this);
-		}
-		SetHandle_Injected(intPtr, subsystem);
-	}
-
-	public void Start()
-	{
-		IntPtr intPtr = BindingsMarshaller.ConvertToNative(this);
-		if (intPtr == (IntPtr)0)
-		{
-			ThrowHelper.ThrowNullReferenceException(this);
-		}
-		Start_Injected(intPtr);
-	}
-
-	public void Stop()
-	{
-		IntPtr intPtr = BindingsMarshaller.ConvertToNative(this);
-		if (intPtr == (IntPtr)0)
-		{
-			ThrowHelper.ThrowNullReferenceException(this);
-		}
-		Stop_Injected(intPtr);
-	}
-
-	public void Destroy()
-	{
-		IntPtr ptr = m_Ptr;
-		SubsystemManager.RemoveIntegratedSubsystemByPtr(m_Ptr);
-		SubsystemBindings.DestroySubsystem(ptr);
-		m_Ptr = IntPtr.Zero;
-	}
-
-	internal bool IsRunning()
-	{
-		IntPtr intPtr = BindingsMarshaller.ConvertToNative(this);
-		if (intPtr == (IntPtr)0)
-		{
-			ThrowHelper.ThrowNullReferenceException(this);
-		}
-		return IsRunning_Injected(intPtr);
-	}
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void SetHandle_Injected(IntPtr _unity_self, IntegratedSubsystem subsystem);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void Start_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void Stop_Injected(IntPtr _unity_self);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern bool IsRunning_Injected(IntPtr _unity_self);
 }

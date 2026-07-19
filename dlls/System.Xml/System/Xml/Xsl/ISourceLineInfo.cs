@@ -1,12 +1,16 @@
-namespace System.Xml.Xsl;
-
-internal interface ISourceLineInfo
+namespace System.Xml.Xsl
 {
-	string Uri { get; }
+	internal interface ISourceLineInfo
+	{
+		string Uri { get; }
 
-	bool IsNoSource { get; }
+		bool IsNoSource { get; }
 
-	Location Start { get; }
+		Location Start { get; }
 
-	Location End { get; }
+		Location End { get; }
+	}
+}
+namespace System.Xml.Serialization
+{
 }

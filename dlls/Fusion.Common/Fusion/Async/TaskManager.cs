@@ -1,4 +1,5 @@
 #define DEBUG
+#define DEBUG
 using System;
 using System.Diagnostics;
 using System.Threading;
@@ -117,17 +118,19 @@ public static class TaskManager
 
 	public static async Task Delay(int delay, CancellationToken token = default(CancellationToken))
 	{
+		int num = default(int);
+		CancellationToken cancellationToken = default(CancellationToken);
 		if (RuntimeUnityFlagsSetup.IsUNITY_WEBGL)
 		{
-			float endTime = (float)Stopwatch.GetTimestamp() + (float)Stopwatch.Frequency * ((float)delay / 1000f);
-			while (!token.IsCancellationRequested && (float)Stopwatch.GetTimestamp() - endTime < 0f)
+			float endTime = (float)Stopwatch.GetTimestamp() + (float)Stopwatch.Frequency * ((float)num / 1000f);
+			while (!cancellationToken.IsCancellationRequested && (float)Stopwatch.GetTimestamp() - endTime < 0f)
 			{
 				await Task.Yield();
 			}
 		}
 		else
 		{
-			await Task.Delay(delay, token);
+			await Task.Delay(num, cancellationToken);
 		}
 	}
 }

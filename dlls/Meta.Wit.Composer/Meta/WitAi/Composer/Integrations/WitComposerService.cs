@@ -1,22 +1,26 @@
 using Meta.WitAi.Composer.Interfaces;
 
-namespace Meta.WitAi.Composer.Integrations;
-
-public class WitComposerService : ComposerService
+namespace Meta.WitAi.Composer.Integrations
 {
-	private WitComposerRequestHandler _requestHandler;
-
-	protected override IComposerRequestHandler GetRequestHandler()
+	public class WitComposerService : ComposerService
 	{
-		return _requestHandler;
-	}
+		private WitComposerRequestHandler _requestHandler;
 
-	protected override void OnEnable()
-	{
-		base.OnEnable();
-		if (_requestHandler == null)
+		protected override IComposerRequestHandler GetRequestHandler()
 		{
-			_requestHandler = new WitComposerRequestHandler(base.VoiceService.WitConfiguration);
+			return _requestHandler;
+		}
+
+		protected override void OnEnable()
+		{
+			base.OnEnable();
+			if (_requestHandler == null)
+			{
+				_requestHandler = new WitComposerRequestHandler(base.VoiceService.WitConfiguration);
+			}
 		}
 	}
+}
+namespace Meta.WitAi.Composer.Integrations
+{
 }

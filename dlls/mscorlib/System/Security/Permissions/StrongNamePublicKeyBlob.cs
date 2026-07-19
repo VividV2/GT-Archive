@@ -1,104 +1,40 @@
 using System.Runtime.InteropServices;
-using System.Text;
+using System.Runtime.InteropServices;
 
-namespace System.Security.Permissions;
+namespace System.Security.Cryptography;
 
-/// <summary>Represents the public key information (called a blob) for a strong name. This class cannot be inherited.</summary>
+/// <summary>Specifies flags that modify the behavior of the cryptographic service providers (CSP).</summary>
+/// <summary>Specifies flags that modify the behavior of the cryptographic service providers (CSP).</summary>
 [Serializable]
+[Flags]
 [ComVisible(true)]
-public sealed class StrongNamePublicKeyBlob
+public enum CspProviderFlags
 {
-	internal byte[] pubkey;
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Security.Permissions.StrongNamePublicKeyBlob" /> class with raw bytes of the public key blob.</summary>
-	/// <param name="publicKey">The array of bytes representing the raw public key data.</param>
-	/// <exception cref="T:System.ArgumentNullException">The <paramref name="publicKey" /> parameter is <see langword="null" />.</exception>
-	public StrongNamePublicKeyBlob(byte[] publicKey)
-	{
-		if (publicKey == null)
-		{
-			throw new ArgumentNullException("publicKey");
-		}
-		pubkey = publicKey;
-	}
-
-	internal static StrongNamePublicKeyBlob FromString(string s)
-	{
-		if (s == null || s.Length == 0)
-		{
-			return null;
-		}
-		byte[] array = new byte[s.Length / 2];
-		int num = 0;
-		int num2 = 0;
-		while (num < s.Length)
-		{
-			byte b = CharToByte(s[num]);
-			byte b2 = CharToByte(s[num + 1]);
-			array[num2] = Convert.ToByte(b * 16 + b2);
-			num += 2;
-			num2++;
-		}
-		return new StrongNamePublicKeyBlob(array);
-	}
-
-	private static byte CharToByte(char c)
-	{
-		char c2 = char.ToLowerInvariant(c);
-		if (char.IsDigit(c2))
-		{
-			return (byte)(c2 - 48);
-		}
-		return (byte)(c2 - 97 + 10);
-	}
-
-	/// <summary>Gets or sets a value indicating whether the current public key blob is equal to the specified public key blob.</summary>
-	/// <param name="obj">An object containing a public key blob.</param>
-	/// <returns>
-	///   <see langword="true" /> if the public key blob of the current object is equal to the public key blob of the <paramref name="o" /> parameter; otherwise, <see langword="false" />.</returns>
-	public override bool Equals(object obj)
-	{
-		if (!(obj is StrongNamePublicKeyBlob strongNamePublicKeyBlob))
-		{
-			return false;
-		}
-		bool flag = pubkey.Length == strongNamePublicKeyBlob.pubkey.Length;
-		if (flag)
-		{
-			for (int i = 0; i < pubkey.Length; i++)
-			{
-				if (pubkey[i] != strongNamePublicKeyBlob.pubkey[i])
-				{
-					return false;
-				}
-			}
-		}
-		return flag;
-	}
-
-	/// <summary>Returns a hash code based on the public key.</summary>
-	/// <returns>The hash code based on the public key.</returns>
-	public override int GetHashCode()
-	{
-		int num = 0;
-		int num2 = 0;
-		int num3 = Math.Min(pubkey.Length, 4);
-		while (num2 < num3)
-		{
-			num = (num << 8) + pubkey[num2++];
-		}
-		return num;
-	}
-
-	/// <summary>Creates and returns a string representation of the public key blob.</summary>
-	/// <returns>A hexadecimal version of the public key blob.</returns>
-	public override string ToString()
-	{
-		StringBuilder stringBuilder = new StringBuilder();
-		for (int i = 0; i < pubkey.Length; i++)
-		{
-			stringBuilder.Append(pubkey[i].ToString("X2"));
-		}
-		return stringBuilder.ToString();
-	}
+	/// <summary>Do not specify any settings.</summary>
+	/// <summary>Do not specify any settings.</summary>
+	NoFlags = 0,
+	/// <summary>Use key information from the computer's key store.</summary>
+	/// <summary>Use key information from the computer's key store.</summary>
+	UseMachineKeyStore = 1,
+	/// <summary>Use key information from the default key container.</summary>
+	/// <summary>Use key information from the default key container.</summary>
+	UseDefaultKeyContainer = 2,
+	/// <summary>Use key information that cannot be exported.</summary>
+	/// <summary>Use key information that cannot be exported.</summary>
+	UseNonExportableKey = 4,
+	/// <summary>Use key information from the current key.</summary>
+	/// <summary>Use key information from the current key.</summary>
+	UseExistingKey = 8,
+	/// <summary>Allow a key to be exported for archival or recovery.</summary>
+	/// <summary>Allow a key to be exported for archival or recovery.</summary>
+	UseArchivableKey = 0x10,
+	/// <summary>Notify the user through a dialog box or another method when certain actions are attempting to use a key.  This flag is not compatible with the <see cref="F:System.Security.Cryptography.CspProviderFlags.NoPrompt" /> flag.</summary>
+	/// <summary>Notify the user through a dialog box or another method when certain actions are attempting to use a key.  This flag is not compatible with the <see cref="F:System.Security.Cryptography.CspProviderFlags.NoPrompt" /> flag.</summary>
+	UseUserProtectedKey = 0x20,
+	/// <summary>Prevent the CSP from displaying any user interface (UI) for this context.</summary>
+	/// <summary>Prevent the CSP from displaying any user interface (UI) for this context.</summary>
+	NoPrompt = 0x40,
+	/// <summary>Create a temporary key that is released when the associated Rivest-Shamir-Adleman (RSA) object is closed. Do not use this flag if you want your key to be independent of the RSA object.</summary>
+	/// <summary>Create a temporary key that is released when the associated Rivest-Shamir-Adleman (RSA) object is closed. Do not use this flag if you want your key to be independent of the RSA object.</summary>
+	CreateEphemeralKey = 0x80
 }

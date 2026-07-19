@@ -22,3 +22,6 @@ public struct UnsafeParallelHashMapBucketData
 		bucketCapacityMask = bcm;
 	}
 }
+namespace Unity.Collections.LowLevel.Unsafe
+{
+}

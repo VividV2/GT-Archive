@@ -1,30 +1,9 @@
-using g3;
+using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 
-namespace gs;
+namespace g3;
 
-public class LinearFalloff : IFalloffFunction
+public interface IMultiCurve2d
 {
-	public double ConstantRange;
-
-	public double FalloffT(double t)
-	{
-		t = MathUtil.Clamp(t, 0.0, 1.0);
-		if (ConstantRange <= 0.0)
-		{
-			return 1.0 - t;
-		}
-		if (!(t < ConstantRange))
-		{
-			return 1.0 - (t - ConstantRange) / (1.0 - ConstantRange);
-		}
-		return 1.0;
-	}
-
-	public IFalloffFunction Duplicate()
-	{
-		return new WyvillFalloff
-		{
-			ConstantRange = ConstantRange
-		};
-	}
+	ReadOnlyCollection<IParametricCurve2d> Curves { get; }
 }

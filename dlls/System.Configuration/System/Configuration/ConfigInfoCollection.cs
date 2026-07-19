@@ -1,63 +1,20 @@
-using System.Collections;
-using System.Collections.Specialized;
+using System.Configuration.Internal;
+using System.Configuration.Internal;
 
 namespace System.Configuration;
 
-internal class ConfigInfoCollection : NameObjectCollectionBase
+internal class InternalConfigurationFactory : IInternalConfigConfigurationFactory
 {
-	public ICollection AllKeys => Keys;
-
-	public ConfigInfo this[string name]
+	public Configuration Create(Type typeConfigHost, params object[] hostInitConfigurationParams)
 	{
-		get
-		{
-			return (ConfigInfo)BaseGet(name);
-		}
-		set
-		{
-			BaseSet(name, value);
-		}
+		InternalConfigurationSystem internalConfigurationSystem = new InternalConfigurationSystem();
+		InternalConfigurationSystem internalConfigurationSystem;
+		internalConfigurationSystem.Init(typeConfigHost, hostInitConfigurationParams);
+		return new Configuration(internalConfigurationSystem, null);
 	}
 
-	public ConfigInfo this[int index]
+	public string NormalizeLocationSubPath(string subPath, IConfigErrorInfo errorInfo)
 	{
-		get
-		{
-			return (ConfigInfo)BaseGet(index);
-		}
-		set
-		{
-			BaseSet(index, value);
-		}
-	}
-
-	public ConfigInfoCollection()
-		: base(StringComparer.Ordinal)
-	{
-	}
-
-	public void Add(string name, ConfigInfo config)
-	{
-		BaseAdd(name, config);
-	}
-
-	public void Clear()
-	{
-		BaseClear();
-	}
-
-	public string GetKey(int index)
-	{
-		return BaseGetKey(index);
-	}
-
-	public void Remove(string name)
-	{
-		BaseRemove(name);
-	}
-
-	public void RemoveAt(int index)
-	{
-		BaseRemoveAt(index);
+		return subPath;
 	}
 }

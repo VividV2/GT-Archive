@@ -1,22 +1,26 @@
-namespace System.Drawing;
-
-internal struct CarbonContext(IntPtr port, IntPtr ctx, int width, int height) : IMacContext
+namespace System.Drawing
 {
-	public IntPtr port = port;
-
-	public IntPtr ctx = ctx;
-
-	public int width = width;
-
-	public int height = height;
-
-	public void Synchronize()
+	internal struct CarbonContext(IntPtr port, IntPtr ctx, int width, int height) : IMacContext
 	{
-		MacSupport.CGContextSynchronize(ctx);
-	}
+		public IntPtr port = port;
 
-	public void Release()
-	{
-		MacSupport.ReleaseContext(port, ctx);
+		public IntPtr ctx = ctx;
+
+		public int width = width;
+
+		public int height = height;
+
+		public void Synchronize()
+		{
+			MacSupport.CGContextSynchronize(ctx);
+		}
+
+		public void Release()
+		{
+			MacSupport.ReleaseContext(port, ctx);
+		}
 	}
+}
+namespace System.Drawing.Drawing2D
+{
 }

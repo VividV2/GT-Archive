@@ -1,44 +1,51 @@
-using System;
-using UnityEngine;
-
 namespace TMPro;
 
-[Serializable]
-public struct MarkPositionAdjustment
+public static class TMP_Compatibility
 {
-	[SerializeField]
-	private float m_XPositionAdjustment;
-
-	[SerializeField]
-	private float m_YPositionAdjustment;
-
-	public float xPositionAdjustment
+	public enum AnchorPositions
 	{
-		get
-		{
-			return m_XPositionAdjustment;
-		}
-		set
-		{
-			m_XPositionAdjustment = value;
-		}
+		TopLeft,
+		Top,
+		TopRight,
+		Left,
+		Center,
+		Right,
+		BottomLeft,
+		Bottom,
+		BottomRight,
+		BaseLine,
+		None
 	}
 
-	public float yPositionAdjustment
+	public static TextAlignmentOptions ConvertTextAlignmentEnumValues(TextAlignmentOptions oldValue)
 	{
-		get
+		return (int)oldValue switch
 		{
-			return m_YPositionAdjustment;
-		}
-		set
-		{
-			m_YPositionAdjustment = value;
-		}
-	}
-
-	public MarkPositionAdjustment(float x, float y)
-	{
-		m_XPositionAdjustment = x;
-		m_YPositionAdjustment = y;
+			0 => TextAlignmentOptions.TopLeft, 
+			1 => TextAlignmentOptions.Top, 
+			2 => TextAlignmentOptions.TopRight, 
+			3 => TextAlignmentOptions.TopJustified, 
+			4 => TextAlignmentOptions.Left, 
+			5 => TextAlignmentOptions.Center, 
+			6 => TextAlignmentOptions.Right, 
+			7 => TextAlignmentOptions.Justified, 
+			8 => TextAlignmentOptions.BottomLeft, 
+			9 => TextAlignmentOptions.Bottom, 
+			10 => TextAlignmentOptions.BottomRight, 
+			11 => TextAlignmentOptions.BottomJustified, 
+			12 => TextAlignmentOptions.BaselineLeft, 
+			13 => TextAlignmentOptions.Baseline, 
+			14 => TextAlignmentOptions.BaselineRight, 
+			15 => TextAlignmentOptions.BaselineJustified, 
+			16 => TextAlignmentOptions.MidlineLeft, 
+			17 => TextAlignmentOptions.Midline, 
+			18 => TextAlignmentOptions.MidlineRight, 
+			19 => TextAlignmentOptions.MidlineJustified, 
+			20 => TextAlignmentOptions.CaplineLeft, 
+			21 => TextAlignmentOptions.Capline, 
+			22 => TextAlignmentOptions.CaplineRight, 
+			23 => TextAlignmentOptions.CaplineJustified, 
+			_ => TextAlignmentOptions.TopLeft, 
+		};
 	}
 }

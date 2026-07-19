@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetTitleNewsResult : PlayFabResultCommon
+namespace PlayFab.ClientModels
 {
-	public List<TitleNewsItem> News;
+}
+namespace PlayFab.ClientModels
+{
 }

@@ -1,21 +1,29 @@
-using System.Runtime.InteropServices;
+namespace System.Runtime.InteropServices.ComTypes;
 
-namespace System.Reflection.Emit;
-
-/// <summary>Defines the access modes for a dynamic assembly.</summary>
-[Serializable]
-[ComVisible(true)]
-[Flags]
-public enum AssemblyBuilderAccess
+[ComImport]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[Guid("0000000c-0000-0000-C000-000000000046")]
+public interface IStream
 {
-	/// <summary>The dynamic assembly can be executed, but not saved.</summary>
-	Run = 1,
-	/// <summary>The dynamic assembly can be saved, but not executed.</summary>
-	Save = 2,
-	/// <summary>The dynamic assembly can be executed and saved.</summary>
-	RunAndSave = 3,
-	/// <summary>The dynamic assembly is loaded into the reflection-only context, and cannot be executed.</summary>
-	ReflectionOnly = 6,
-	/// <summary>The dynamic assembly will be automatically unloaded and its memory reclaimed, when it's no longer accessible.</summary>
-	RunAndCollect = 9
+	void Read([Out][MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pv, int cb, IntPtr pcbRead);
+
+	void Write([MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pv, int cb, IntPtr pcbWritten);
+
+	void Seek(long dlibMove, int dwOrigin, IntPtr plibNewPosition);
+
+	void SetSize(long libNewSize);
+
+	void CopyTo(IStream pstm, long cb, IntPtr pcbRead, IntPtr pcbWritten);
+
+	void Commit(int grfCommitFlags);
+
+	void Revert();
+
+	void LockRegion(long libOffset, long cb, int dwLockType);
+
+	void UnlockRegion(long libOffset, long cb, int dwLockType);
+
+	void Stat(out STATSTG pstatstg, int grfStatFlag);
+
+	void Clone(out IStream ppstm);
 }

@@ -34,22 +34,15 @@ public static class Progress
 		}
 	}
 
-	private sealed class OnlyValueChangedProgress<T> : IProgress<T>
+	private sealed class OnlyValueChangedProgress<T>(Action<T> action, IEqualityComparer<T> comparer) : IProgress<T>
 	{
-		private readonly Action<T> action;
+		private readonly Action<T> action = action;
 
-		private readonly IEqualityComparer<T> comparer;
+		private readonly IEqualityComparer<T> comparer = comparer;
 
-		private bool isFirstCall;
+		private bool isFirstCall = true;
 
 		private T latestValue;
-
-		public OnlyValueChangedProgress(Action<T> action, IEqualityComparer<T> comparer)
-		{
-			this.action = action;
-			this.comparer = comparer;
-			isFirstCall = true;
-		}
 
 		public void Report(T value)
 		{

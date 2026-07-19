@@ -5,169 +5,221 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.XR.Management;
 
-namespace Unity.XR.OpenVR;
-
-[Serializable]
-[XRConfigurationData("OpenVR", "Unity.XR.OpenVR.Settings")]
-public class OpenVRSettings : ScriptableObject
+namespace Unity.XR.OpenVR
 {
-	public enum StereoRenderingModes
+	[Serializable]
+	[XRConfigurationData("OpenVR", "Unity.XR.OpenVR.Settings")]
+	public class OpenVRSettings : ScriptableObject
 	{
-		MultiPass,
-		SinglePassInstanced
-	}
-
-	public enum InitializationTypes
-	{
-		Scene = 1,
-		Overlay
-	}
-
-	public enum MirrorViewModes
-	{
-		None,
-		Left,
-		Right,
-		OpenVR
-	}
-
-	[SerializeField]
-	[Tooltip("This will check the package version and the latest on github and prompt you to upgrade once per project load.")]
-	public bool PromptToUpgradePackage = true;
-
-	[SerializeField]
-	[Tooltip("This will check the package version and the latest on github and prompt you to upgrade once per project load.")]
-	public bool PromptToUpgradePreviewPackages = true;
-
-	[SerializeField]
-	[Tooltip("This allows developers to skip upgrade prompts for just this version.")]
-	public string SkipPromptForVersion;
-
-	[SerializeField]
-	[Tooltip("Set the Stereo Rendering Method")]
-	public StereoRenderingModes StereoRenderingMode = StereoRenderingModes.SinglePassInstanced;
-
-	[SerializeField]
-	[Tooltip("Most applications initialize as type Scene")]
-	public InitializationTypes InitializationType = InitializationTypes.Scene;
-
-	[SerializeField]
-	[Tooltip("A generated unique identifier for your application while in the editor")]
-	public string EditorAppKey;
-
-	[SerializeField]
-	[Tooltip("Internal value that tells the system what the relative path is to the manifest")]
-	public string ActionManifestFileRelativeFilePath;
-
-	[SerializeField]
-	[Tooltip("Which eye to use when rendering the headset view to the main window (none, left, right, or a composite of both + OpenVR overlays)")]
-	public MirrorViewModes MirrorView = MirrorViewModes.Right;
-
-	public const string StreamingAssetsFolderName = "SteamVR";
-
-	public const string ActionManifestFileName = "legacy_manifest.json";
-
-	[SerializeField]
-	[Tooltip("Internal value that tells the system if we have copied the default binding files yet.")]
-	public bool HasCopiedDefaults;
-
-	public static OpenVRSettings s_Settings;
-
-	public static string GetStreamingSteamVRPath(bool create = true)
-	{
-		string text = Path.Combine(Application.streamingAssetsPath, "SteamVR");
-		if (create)
+		public enum StereoRenderingModes
 		{
-			CreateDirectory(new DirectoryInfo(text));
+			MultiPass,
+			SinglePassInstanced
 		}
-		return text;
-	}
 
-	private static void CreateDirectory(DirectoryInfo directory)
-	{
-		if (!directory.Parent.Exists)
+		public enum InitializationTypes
 		{
-			CreateDirectory(directory.Parent);
+			Scene = 1,
+			Overlay
 		}
-		if (!directory.Exists)
+
+		public enum MirrorViewModes
 		{
-			directory.Create();
+			None,
+			Left,
+			Right,
+			OpenVR
 		}
-	}
 
-	public ushort GetStereoRenderingMode()
-	{
-		return (ushort)StereoRenderingMode;
-	}
+		[SerializeField]
+		[Tooltip("This will check the package version and the latest on github and prompt you to upgrade once per project load.")]
+		public bool PromptToUpgradePackage = true;
 
-	public ushort GetInitializationType()
-	{
-		return (ushort)InitializationType;
-	}
+		[SerializeField]
+		[Tooltip("This will check the package version and the latest on github and prompt you to upgrade once per project load.")]
+		public bool PromptToUpgradePreviewPackages = true;
 
-	public MirrorViewModes GetMirrorViewMode()
-	{
-		return MirrorView;
-	}
+		[SerializeField]
+		[Tooltip("This allows developers to skip upgrade prompts for just this version.")]
+		public string SkipPromptForVersion;
 
-	public void SetMirrorViewMode(MirrorViewModes newMode)
-	{
-		MirrorView = newMode;
-		SetMirrorViewMode((ushort)newMode);
-	}
+		[SerializeField]
+		[Tooltip("Set the Stereo Rendering Method")]
+		public StereoRenderingModes StereoRenderingMode = StereoRenderingModes.SinglePassInstanced;
 
-	public string GenerateEditorAppKey()
-	{
-		return $"application.generated.unity.{CleanProductName()}.{((int)(UnityEngine.Random.value * 2.1474836E+09f)).ToString()}.exe";
-	}
+		[SerializeField]
+		[Tooltip("Most applications initialize as type Scene")]
+		public InitializationTypes InitializationType = InitializationTypes.Scene;
 
-	private static string CleanProductName()
-	{
-		string productName = Application.productName;
-		if (string.IsNullOrEmpty(productName))
+		[SerializeField]
+		[Tooltip("A generated unique identifier for your application while in the editor")]
+		public string EditorAppKey;
+
+		[SerializeField]
+		[Tooltip("Internal value that tells the system what the relative path is to the manifest")]
+		public string ActionManifestFileRelativeFilePath;
+
+		[SerializeField]
+		[Tooltip("Which eye to use when rendering the headset view to the main window (none, left, right, or a composite of both + OpenVR overlays)")]
+		public MirrorViewModes MirrorView = MirrorViewModes.Right;
+
+		public const string StreamingAssetsFolderName = "SteamVR";
+
+		public const string ActionManifestFileName = "legacy_manifest.json";
+
+		[SerializeField]
+		[Tooltip("Internal value that tells the system if we have copied the default binding files yet.")]
+		public bool HasCopiedDefaults;
+
+		public static OpenVRSettings s_Settings;
+
+		public static string GetStreamingSteamVRPath(bool create = true)
 		{
-			return "unnamed_product";
-		}
-		productName = Regex.Replace(Application.productName, "[^\\w\\._]", "");
-		return productName.ToLower();
-	}
-
-	public static OpenVRSettings GetSettings(bool create = true)
-	{
-		OpenVRSettings openVRSettings = null;
-		openVRSettings = s_Settings;
-		if (openVRSettings == null && create)
-		{
-			openVRSettings = ScriptableObject.CreateInstance<OpenVRSettings>();
-		}
-		return openVRSettings;
-	}
-
-	[DllImport("XRSDKOpenVR", CharSet = CharSet.Auto)]
-	public static extern void SetMirrorViewMode(ushort mirrorViewMode);
-
-	public bool InitializeActionManifestFileRelativeFilePath()
-	{
-		_ = ActionManifestFileRelativeFilePath;
-		if (OpenVRHelpers.IsUsingSteamVRInput())
-		{
-			string text = Path.Combine(GetStreamingSteamVRPath(create: false), OpenVRHelpers.GetActionManifestNameFromPlugin());
-			string fullPath = Path.GetFullPath(".");
-			text = text.Remove(0, fullPath.Length + 1);
-			if (text.StartsWith("Assets"))
+			string text = Path.Combine(Application.streamingAssetsPath, "SteamVR");
+			if (create)
 			{
-				text = text.Remove(0, "Assets".Length + 1);
+				CreateDirectory(new DirectoryInfo(text));
+			}
+			return text;
+		}
+
+		private static void CreateDirectory(DirectoryInfo directory)
+		{
+			if (!directory.Parent.Exists)
+			{
+				CreateDirectory(directory.Parent);
+			}
+			if (!directory.Exists)
+			{
+				directory.Create();
 			}
 		}
-		else
-		{
-			string text = null;
-		}
-		return false;
-	}
 
-	public void Awake()
+		public ushort GetStereoRenderingMode()
+		{
+			return (ushort)StereoRenderingMode;
+		}
+
+		public ushort GetInitializationType()
+		{
+			return (ushort)InitializationType;
+		}
+
+		public MirrorViewModes GetMirrorViewMode()
+		{
+			return MirrorView;
+		}
+
+		public void SetMirrorViewMode(MirrorViewModes newMode)
+		{
+			MirrorView = newMode;
+			SetMirrorViewMode((ushort)newMode);
+		}
+
+		public string GenerateEditorAppKey()
+		{
+			return $"application.generated.unity.{CleanProductName()}.{((int)(UnityEngine.Random.value * 2.1474836E+09f)).ToString()}.exe";
+		}
+
+		private static string CleanProductName()
+		{
+			string productName = Application.productName;
+			if (string.IsNullOrEmpty(productName))
+			{
+				return "unnamed_product";
+			}
+			productName = Regex.Replace(Application.productName, "[^\\w\\._]", "");
+			return productName.ToLower();
+		}
+
+		public static OpenVRSettings GetSettings(bool create = true)
+		{
+			OpenVRSettings openVRSettings = null;
+			openVRSettings = s_Settings;
+			if (openVRSettings == null && create)
+			{
+				openVRSettings = ScriptableObject.CreateInstance<OpenVRSettings>();
+			}
+			return openVRSettings;
+		}
+
+		[DllImport("XRSDKOpenVR", CharSet = CharSet.Auto)]
+		public static extern void SetMirrorViewMode(ushort mirrorViewMode);
+
+		public bool InitializeActionManifestFileRelativeFilePath()
+		{
+			_ = ActionManifestFileRelativeFilePath;
+			if (OpenVRHelpers.IsUsingSteamVRInput())
+			{
+				string text = Path.Combine(GetStreamingSteamVRPath(create: false), OpenVRHelpers.GetActionManifestNameFromPlugin());
+				string fullPath = Path.GetFullPath(".");
+				text = text.Remove(0, fullPath.Length + 1);
+				if (text.StartsWith("Assets"))
+				{
+					text = text.Remove(0, "Assets".Length + 1);
+				}
+			}
+			else
+			{
+				string text = null;
+			}
+			return false;
+		}
+
+		public void Awake()
+		{
+			s_Settings = this;
+		}
+	}
+}
+namespace Unity.XR.OpenVR
+{
+	public class OpenVRHelpers
 	{
-		s_Settings = this;
+		public static bool IsUsingSteamVRInput()
+		{
+			return DoesTypeExist("SteamVR_Input");
+		}
+
+		public static bool DoesTypeExist(string className, bool fullname = false)
+		{
+			return Type.op_Inequality(GetType(className, fullname), null);
+		}
+
+		public static Type GetType(string className, bool fullname = false)
+		{
+			type = null;
+			if (fullname)
+				return Enumerable.FirstOrDefault(Enumerable.Select(Enumerable.Where(Enumerable.SelectMany(AppDomain.CurrentDomain.GetAssemblies(), (Assembly assembly) => assembly.GetTypes(), (Assembly assembly, Type type2) => new
+				{
+					assembly = assembly,
+					type = type2
+				}), <>h__TransparentIdentifier0 => <>h__TransparentIdentifier0.type.FullName == className), <>h__TransparentIdentifier0 => <>h__TransparentIdentifier0.type));
+			return Enumerable.FirstOrDefault(Enumerable.Select(Enumerable.Where(Enumerable.SelectMany(AppDomain.CurrentDomain.GetAssemblies(), (Assembly assembly) => assembly.GetTypes(), (Assembly assembly, Type type2) => new
+			{
+				assembly = assembly,
+				type = type2
+			}), <>h__TransparentIdentifier0 => <>h__TransparentIdentifier0.type.Name == className), <>h__TransparentIdentifier0 => <>h__TransparentIdentifier0.type));
+		}
+
+		public static string GetActionManifestPathFromPlugin()
+		{
+			return (string)GetType("SteamVR_Input").GetMethod("GetActionsFilePath").Invoke(null, new object[1] { false });
+		}
+
+		public static string GetActionManifestNameFromPlugin()
+		{
+			return (string)GetType("SteamVR_Input").GetMethod("GetActionsFileName").Invoke(null, null);
+		}
+
+		public static string GetEditorAppKeyFromPlugin()
+		{
+			return (string)GetType("SteamVR_Input").GetMethod("GetEditorAppKey").Invoke(null, null);
+		}
+
+		public OpenVRHelpers()
+		{
+			base..ctor();
+		}
 	}
 }

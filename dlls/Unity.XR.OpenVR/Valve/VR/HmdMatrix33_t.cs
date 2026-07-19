@@ -1,22 +1,39 @@
-namespace Valve.VR;
-
-public struct HmdMatrix33_t
+namespace Valve.VR
 {
-	public float m0;
+	public struct VREvent_InputBindingLoad_t
+	{
+		public ulong ulAppContainer;
 
-	public float m1;
+		public ulong pathMessage;
 
-	public float m2;
+		public ulong pathUrl;
 
-	public float m3;
+		public ulong pathControllerType;
+	}
+}
+namespace Valve.VR
+{
+	public struct HmdMatrix33_t
+	{
+		public float m0;
 
-	public float m4;
+		public float m1;
 
-	public float m5;
+		public float m2;
 
-	public float m6;
+		public float m3;
 
-	public float m7;
+		public float m4;
 
-	public float m8;
+		public float m5;
+
+		public float m6;
+
+		public float m7;
+
+		public float m8;
+	}
+}
+namespace Valve.VR
+{
 }

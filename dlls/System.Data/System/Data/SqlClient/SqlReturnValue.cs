@@ -1,13 +1,6 @@
-namespace System.Data.SqlClient;
-
-internal sealed class SqlReturnValue : SqlMetaDataPriv
+namespace System.Data.SqlClient.SNI
 {
-	internal string parameter;
-
-	internal readonly SqlBuffer value;
-
-	internal SqlReturnValue()
-	{
-		value = new SqlBuffer();
-	}
+}
+namespace System.Data.SqlClient
+{
 }

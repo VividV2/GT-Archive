@@ -1,12 +1,2 @@
-using UnityEngine;
+namespace GorillaTag.Sports;
 
-public class GhostHuntingController : MonoBehaviour
-{
-	private void Start()
-	{
-	}
-
-	private void Update()
-	{
-	}
-}

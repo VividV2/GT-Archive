@@ -1,24 +1,6 @@
-using System;
-using System.Runtime.InteropServices;
-
-namespace UnityEngine.Rendering;
-
-[StructLayout(LayoutKind.Sequential, Size = 1)]
-public struct ProfilingScope : IDisposable
+namespace UnityEngine.Experimental.Rendering
 {
-	public ProfilingScope(ProfilingSampler sampler)
-	{
-	}
-
-	public ProfilingScope(CommandBuffer cmd, ProfilingSampler sampler)
-	{
-	}
-
-	public ProfilingScope(BaseCommandBuffer cmd, ProfilingSampler sampler)
-	{
-	}
-
-	public void Dispose()
-	{
-	}
+}
+namespace UnityEngine.Rendering
+{
 }

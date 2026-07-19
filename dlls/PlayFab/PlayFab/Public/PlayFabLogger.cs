@@ -1,16 +1,20 @@
-namespace PlayFab.Public;
-
-public class PlayFabLogger : PlayFabLoggerBase
+namespace PlayFab.Public
 {
-	protected override void BeginUploadLog()
+	public class PlayFabLogger : PlayFabLoggerBase
 	{
-	}
+		protected override void BeginUploadLog()
+		{
+		}
 
-	protected override void UploadLog(string message)
-	{
-	}
+		protected override void UploadLog(string message)
+		{
+		}
 
-	protected override void EndUploadLog()
-	{
+		protected override void EndUploadLog()
+		{
+		}
 	}
+}
+namespace PlayFab.CloudScriptModels
+{
 }

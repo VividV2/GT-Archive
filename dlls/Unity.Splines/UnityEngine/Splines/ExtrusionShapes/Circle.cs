@@ -1,36 +1,40 @@
 using System;
-using Unity.Mathematics;
+using System;
 
 namespace UnityEngine.Splines.ExtrusionShapes;
 
-[Serializable]
-public sealed class Circle : IExtrudeShape
+internal static class ShapeTypeUtility
 {
-	[SerializeField]
-	[Min(2f)]
-	private int m_Sides = 8;
-
-	private float m_Rads;
-
-	public int SideCount
+	public static ShapeType GetShapeType(object obj)
 	{
-		get
+		if (!(obj is Circle))
 		{
-			return m_Sides;
+			if (!(obj is Square))
+			{
+				if (!(obj is Road))
+				{
+					if (obj is SplineShape)
+					{
+						return ShapeType.Spline;
+					}
+					throw new ArgumentException("obj is not a recognized shape", "obj");
+				}
+				return ShapeType.Road;
+			}
+			return ShapeType.Square;
 		}
-		set
-		{
-			m_Sides = value;
-		}
+		return ShapeType.Circle;
 	}
 
-	public void Setup(ISpline path, int segmentCount)
+	public static IExtrudeShape CreateShape(ShapeType type)
 	{
-		m_Rads = math.radians(360f / (float)SideCount);
-	}
-
-	public float2 GetPosition(float t, int index)
-	{
-		return new float2(math.cos((float)index * m_Rads), math.sin((float)index * m_Rads));
+		return type switch
+		{
+			ShapeType.Square => new Square(), 
+			ShapeType.Road => new Road(), 
+			ShapeType.Spline => new SplineShape(), 
+			ShapeType.Circle => new Circle(), 
+			_ => throw new ArgumentOutOfRangeException("type"), 
+		};
 	}
 }

@@ -1,11 +1,15 @@
 using System;
 
-namespace Fusion;
-
-[Flags]
-internal enum RuntimeFlagsBuildTypes
+namespace Fusion
 {
-	NONE = 0,
-	ENABLE_MONO = 2,
-	ENABLE_IL2CPP = 4
+}
+namespace Fusion
+{
+	[Flags]
+	internal enum RuntimeFlagsBuildTypes
+	{
+		NONE = 0,
+		ENABLE_MONO = 2,
+		ENABLE_IL2CPP = 4
+	}
 }

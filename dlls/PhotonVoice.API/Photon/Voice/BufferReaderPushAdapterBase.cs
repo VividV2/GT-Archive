@@ -1,18 +1,9 @@
+using System;
+using System;
+
 namespace Photon.Voice;
 
-public abstract class BufferReaderPushAdapterBase<T> : IServiceable
+public interface IProcessor<T> : IDisposable
 {
-	protected IDataReader<T> reader;
-
-	public abstract void Service(LocalVoice localVoice);
-
-	public BufferReaderPushAdapterBase(IDataReader<T> reader)
-	{
-		this.reader = reader;
-	}
-
-	public void Dispose()
-	{
-		reader.Dispose();
-	}
+	T[] Process(T[] buf);
 }

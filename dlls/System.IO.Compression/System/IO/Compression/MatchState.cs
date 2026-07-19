@@ -1,8 +1,3 @@
-namespace System.IO.Compression;
-
-internal enum MatchState
+namespace System.IO.Compression
 {
-	HasSymbol = 1,
-	HasMatch,
-	HasSymbolAndMatch
 }

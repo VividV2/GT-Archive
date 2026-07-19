@@ -1,12 +1,2 @@
-namespace System.Linq.Expressions;
+namespace System.Linq.Parallel;
 
-internal sealed class FullConditionalExpressionWithType : FullConditionalExpression
-{
-	public sealed override Type Type { get; }
-
-	internal FullConditionalExpressionWithType(Expression test, Expression ifTrue, Expression ifFalse, Type type)
-		: base(test, ifTrue, ifFalse)
-	{
-		Type = type;
-	}
-}

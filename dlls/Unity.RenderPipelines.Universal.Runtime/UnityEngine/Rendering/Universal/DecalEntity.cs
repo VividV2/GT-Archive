@@ -1,8 +1,12 @@
-namespace UnityEngine.Rendering.Universal;
-
-internal struct DecalEntity
+namespace UnityEngine.Rendering.Universal
 {
-	public int index;
+	internal struct DecalEntity
+	{
+		public int index;
 
-	public int version;
+		public int version;
+	}
+}
+namespace UnityEngine.Rendering.Universal
+{
 }

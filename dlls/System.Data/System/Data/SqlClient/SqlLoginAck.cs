@@ -1,12 +1,16 @@
-namespace System.Data.SqlClient;
-
-internal sealed class SqlLoginAck
+namespace System.Data.SqlClient
 {
-	internal byte majorVersion;
+	internal sealed class SqlLoginAck
+	{
+		internal byte majorVersion;
 
-	internal byte minorVersion;
+		internal byte minorVersion;
 
-	internal short buildNum;
+		internal short buildNum;
 
-	internal uint tdsVersion;
+		internal uint tdsVersion;
+	}
+}
+namespace System.Data.SqlClient
+{
 }

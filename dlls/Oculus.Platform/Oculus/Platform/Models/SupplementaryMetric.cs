@@ -1,16 +1,14 @@
-using System;
+using System.ComponentModel;
+using System.ComponentModel;
 
-namespace Oculus.Platform.Models;
+namespace Oculus.Platform;
 
-public class SupplementaryMetric
+public enum AbuseReportType
 {
-	public readonly ulong ID;
-
-	public readonly long Metric;
-
-	public SupplementaryMetric(IntPtr o)
-	{
-		ID = CAPI.ovr_SupplementaryMetric_GetID(o);
-		Metric = CAPI.ovr_SupplementaryMetric_GetMetric(o);
-	}
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("OBJECT")]
+	Object,
+	[Description("USER")]
+	User
 }

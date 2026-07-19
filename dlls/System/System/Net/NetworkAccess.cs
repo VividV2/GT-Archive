@@ -9,3 +9,6 @@ public enum NetworkAccess
 	/// <summary>Indicates that the application is allowed to connect to specific Internet resources. Notice that, in the case of remote host resource, no check is performed to see that Connect permissions exist. This is because the port of a connecting remote host is unknown and not suitable permissions can be built in advance. It is the application responsibility to check the permissions of the remote host trying to connect to a listening socket.</summary>
 	Connect = 0x40
 }
+namespace System.ComponentModel
+{
+}

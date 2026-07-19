@@ -1,6 +1,10 @@
-namespace UnityEngine.UIElements;
-
-internal interface ITextElement
+namespace UnityEngine.UIElements
 {
-	string text { get; set; }
+	internal interface ITextElement
+	{
+		string text { get; set; }
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

@@ -1,8 +1,3 @@
-namespace Newtonsoft.Json;
-
-public enum FloatFormatHandling
+namespace Newtonsoft.Json.Linq
 {
-	String,
-	Symbol,
-	DefaultValue
 }

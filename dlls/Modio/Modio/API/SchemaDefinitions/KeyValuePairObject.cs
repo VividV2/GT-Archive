@@ -1,11 +1,15 @@
 using Newtonsoft.Json;
 
-namespace Modio.API.SchemaDefinitions;
-
-[JsonObject]
-internal readonly struct KeyValuePairObject(string key, string value)
+namespace Modio.API.SchemaDefinitions
 {
-	internal readonly string Key = key;
+}
+namespace Modio.API.SchemaDefinitions
+{
+	[JsonObject]
+	internal readonly struct KeyValuePairObject(string key, string value)
+	{
+		internal readonly string Key = key;
 
-	internal readonly string Value = value;
+		internal readonly string Value = value;
+	}
 }

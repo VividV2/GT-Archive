@@ -1,17 +1,21 @@
 using System;
 
-namespace UnityEngine;
-
-public sealed class ExitGUIException : Exception
+namespace UnityEngine
 {
-	public ExitGUIException()
+	public sealed class ExitGUIException : Exception
 	{
-		GUIUtility.guiIsExiting = true;
-	}
+		public ExitGUIException()
+		{
+			GUIUtility.guiIsExiting = true;
+		}
 
-	internal ExitGUIException(string message)
-		: base(message)
-	{
-		GUIUtility.guiIsExiting = true;
+		internal ExitGUIException(string message)
+			: base(message)
+		{
+			GUIUtility.guiIsExiting = true;
+		}
 	}
+}
+namespace UnityEngine
+{
 }

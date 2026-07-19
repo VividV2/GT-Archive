@@ -1,14 +1,27 @@
 using System.Runtime.InteropServices;
 
-namespace System.Security.Policy;
+namespace System.Security.Permissions;
 
-/// <summary>Determines whether an application should be executed and which set of permissions should be granted to it.</summary>
+/// <summary>Specifies access flags for the security permission object.</summary>
+[Serializable]
+[Flags]
 [ComVisible(true)]
-public interface IApplicationTrustManager : ISecurityEncodable
+public enum SecurityPermissionFlag
 {
-	/// <summary>Determines whether an application should be executed and which set of permissions should be granted to it.</summary>
-	/// <param name="activationContext">The activation context for the application.</param>
-	/// <param name="context">The trust manager context for the application.</param>
-	/// <returns>An object that contains security decisions about the application.</returns>
-	ApplicationTrust DetermineApplicationTrust(ActivationContext activationContext, TrustManagerContext context);
+	NoFlags = 0,
+	Assertion = 1,
+	UnmanagedCode = 2,
+	SkipVerification = 4,
+	Execution = 8,
+	ControlThread = 0x10,
+	ControlEvidence = 0x20,
+	ControlPolicy = 0x40,
+	SerializationFormatter = 0x80,
+	ControlDomainPolicy = 0x100,
+	ControlPrincipal = 0x200,
+	ControlAppDomain = 0x400,
+	RemotingConfiguration = 0x800,
+	Infrastructure = 0x1000,
+	BindingRedirects = 0x2000,
+	AllFlags = 0x3FFF
 }

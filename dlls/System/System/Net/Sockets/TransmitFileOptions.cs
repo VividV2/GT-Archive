@@ -1,19 +1,56 @@
-namespace System.Net.Sockets;
-
-/// <summary>The <see cref="T:System.Net.Sockets.TransmitFileOptions" /> enumeration defines values used in file transfer requests.</summary>
-[Flags]
-public enum TransmitFileOptions
+namespace System.Net.Mime
 {
-	/// <summary>Use the default thread to process long file transfer requests.</summary>
-	UseDefaultWorkerThread = 0,
-	/// <summary>Start a transport-level disconnect after all the file data has been queued for transmission. When used with <see cref="F:System.Net.Sockets.TransmitFileOptions.ReuseSocket" />, these flags return the socket to a disconnected, reusable state after the file has been transmitted.</summary>
-	Disconnect = 1,
-	/// <summary>The socket handle may be reused when the request completes. This flag is valid only if <see cref="F:System.Net.Sockets.TransmitFileOptions.Disconnect" /> is also specified. When used with <see cref="F:System.Net.Sockets.TransmitFileOptions.Disconnect" />, these flags return the socket to a disconnected, reusable state after the file has been transmitted.</summary>
-	ReuseSocket = 2,
-	/// <summary>Complete the file transfer request immediately, without pending. If this flag is specified and the file transfer succeeds, the data has been accepted by the system but not necessarily acknowledged by the remote end. Do not use this flag with the <see cref="F:System.Net.Sockets.TransmitFileOptions.Disconnect" /> and <see cref="F:System.Net.Sockets.TransmitFileOptions.ReuseSocket" /> flags.</summary>
-	WriteBehind = 4,
-	/// <summary>Use system threads to process long file transfer requests.</summary>
-	UseSystemThread = 0x10,
-	/// <summary>Use kernel asynchronous procedure calls (APCs) instead of worker threads to process long file transfer requests. Long requests are defined as requests that require more than a single read from the file or a cache; the request therefore depends on the size of the file and the specified length of the send packet.</summary>
-	UseKernelApc = 0x20
+}
+namespace System.Net.Sockets
+{
+	public enum SocketError
+	{
+		Success = 0,
+		SocketError = -1,
+		Interrupted = 10004,
+		AccessDenied = 10013,
+		Fault = 10014,
+		InvalidArgument = 10022,
+		TooManyOpenSockets = 10024,
+		WouldBlock = 10035,
+		InProgress = 10036,
+		AlreadyInProgress = 10037,
+		NotSocket = 10038,
+		DestinationAddressRequired = 10039,
+		MessageSize = 10040,
+		ProtocolType = 10041,
+		ProtocolOption = 10042,
+		ProtocolNotSupported = 10043,
+		SocketNotSupported = 10044,
+		OperationNotSupported = 10045,
+		ProtocolFamilyNotSupported = 10046,
+		AddressFamilyNotSupported = 10047,
+		AddressAlreadyInUse = 10048,
+		AddressNotAvailable = 10049,
+		NetworkDown = 10050,
+		NetworkUnreachable = 10051,
+		NetworkReset = 10052,
+		ConnectionAborted = 10053,
+		ConnectionReset = 10054,
+		NoBufferSpaceAvailable = 10055,
+		IsConnected = 10056,
+		NotConnected = 10057,
+		Shutdown = 10058,
+		TimedOut = 10060,
+		ConnectionRefused = 10061,
+		HostDown = 10064,
+		HostUnreachable = 10065,
+		ProcessLimit = 10067,
+		SystemNotReady = 10091,
+		VersionNotSupported = 10092,
+		NotInitialized = 10093,
+		Disconnecting = 10101,
+		TypeNotFound = 10109,
+		HostNotFound = 11001,
+		TryAgain = 11002,
+		NoRecovery = 11003,
+		NoData = 11004,
+		IOPending = 997,
+		OperationAborted = 995
+	}
 }

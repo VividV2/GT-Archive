@@ -1,8 +1,12 @@
-namespace Pathfinding.Ionic.Zlib;
-
-internal enum ZlibStreamFlavor
+namespace Pathfinding.Ionic.Crc
 {
-	ZLIB = 1950,
-	DEFLATE,
-	GZIP
+}
+namespace Pathfinding.Ionic.Zlib
+{
+	internal enum ZlibStreamFlavor
+	{
+		ZLIB = 1950,
+		DEFLATE,
+		GZIP
+	}
 }

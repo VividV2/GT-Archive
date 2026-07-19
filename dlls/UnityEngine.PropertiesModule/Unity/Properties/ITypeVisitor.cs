@@ -1,6 +1,14 @@
-namespace Unity.Properties;
-
-public interface ITypeVisitor
+namespace Unity.Properties
 {
-	void Visit<TContainer>();
+	public interface ICollectionPropertyBagAccept<TContainer>
+	{
+		void Accept(ICollectionPropertyBagVisitor visitor, ref TContainer container);
+	}
+}
+namespace Unity.Properties
+{
+	public interface ITypeVisitor
+	{
+		void Visit<TContainer>();
+	}
 }

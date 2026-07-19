@@ -1,133 +1,87 @@
 using System;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine.Bindings;
 using UnityEngine.Playables;
-using UnityEngine.Scripting;
-using UnityEngine.Scripting.APIUpdating;
+using System;
+using System.Runtime.CompilerServices;
+using UnityEngine.Bindings;
+using UnityEngine.Playables;
 
 namespace UnityEngine.Animations;
 
-[RequiredByNativeCode]
-[MovedFrom("UnityEngine.Experimental.Animations")]
-[NativeHeader("Runtime/Director/Core/HPlayableGraph.h")]
-[NativeHeader("Modules/Animation/ScriptBindings/AnimationScriptPlayable.bindings.h")]
+[NativeHeader("Modules/Animation/ScriptBindings/AnimationPlayableGraphExtensions.bindings.h")]
+[NativeHeader("Modules/Animation/Animator.h")]
+[NativeHeader("Runtime/Director/Core/HPlayableOutput.h")]
 [NativeHeader("Runtime/Director/Core/HPlayable.h")]
-[StaticAccessor("AnimationScriptPlayableBindings", StaticAccessorType.DoubleColon)]
-public struct AnimationScriptPlayable : IAnimationJobPlayable, IPlayable, IEquatable<AnimationScriptPlayable>
+[StaticAccessor("AnimationPlayableGraphExtensionsBindings", StaticAccessorType.DoubleColon)]
+internal static class AnimationPlayableGraphExtensions
 {
-	private PlayableHandle m_Handle;
-
-	private static readonly AnimationScriptPlayable m_NullPlayable = new AnimationScriptPlayable(PlayableHandle.Null);
-
-	public static AnimationScriptPlayable Null => m_NullPlayable;
-
-	public static AnimationScriptPlayable Create<T>(PlayableGraph graph, T jobData, int inputCount = 0) where T : struct, IAnimationJob
+	internal static void SyncUpdateAndTimeMode(this PlayableGraph graph, Animator animator)
 	{
-		PlayableHandle handle = CreateHandle<T>(graph, inputCount);
-		AnimationScriptPlayable result = new AnimationScriptPlayable(handle);
-		result.SetJobData(jobData);
-		return result;
+		InternalSyncUpdateAndTimeMode(ref graph, animator);
 	}
 
-	private static PlayableHandle CreateHandle<T>(PlayableGraph graph, int inputCount) where T : struct, IAnimationJob
+	internal static void DestroyOutput(this PlayableGraph graph, PlayableOutputHandle handle)
 	{
-		IntPtr jobReflectionData = ProcessAnimationJobStruct<T>.GetJobReflectionData();
-		PlayableHandle handle = PlayableHandle.Null;
-		if (!CreateHandleInternal(graph, ref handle, jobReflectionData))
-		{
-			return PlayableHandle.Null;
-		}
-		handle.SetInputCount(inputCount);
-		return handle;
-	}
-
-	internal AnimationScriptPlayable(PlayableHandle handle)
-	{
-		if (handle.IsValid() && !handle.IsPlayableOfType<AnimationScriptPlayable>())
-		{
-			throw new InvalidCastException("Can't set handle: the playable is not an AnimationScriptPlayable.");
-		}
-		m_Handle = handle;
-	}
-
-	public PlayableHandle GetHandle()
-	{
-		return m_Handle;
-	}
-
-	private void CheckJobTypeValidity<T>()
-	{
-		Type jobType = GetHandle().GetJobType();
-		if (jobType != typeof(T))
-		{
-			throw new ArgumentException($"Wrong type: the given job type ({typeof(T).FullName}) is different from the creation job type ({jobType.FullName}).");
-		}
-	}
-
-	public unsafe T GetJobData<T>() where T : struct, IAnimationJob
-	{
-		CheckJobTypeValidity<T>();
-		UnsafeUtility.CopyPtrToStructure<T>((void*)GetHandle().GetJobData(), out var output);
-		return output;
-	}
-
-	public unsafe void SetJobData<T>(T jobData) where T : struct, IAnimationJob
-	{
-		CheckJobTypeValidity<T>();
-		UnsafeUtility.CopyStructureToPtr(ref jobData, (void*)GetHandle().GetJobData());
-	}
-
-	public static implicit operator Playable(AnimationScriptPlayable playable)
-	{
-		return new Playable(playable.GetHandle());
-	}
-
-	public static explicit operator AnimationScriptPlayable(Playable playable)
-	{
-		return new AnimationScriptPlayable(playable.GetHandle());
-	}
-
-	public bool Equals(AnimationScriptPlayable other)
-	{
-		return GetHandle() == other.GetHandle();
-	}
-
-	public void SetProcessInputs(bool value)
-	{
-		SetProcessInputsInternal(GetHandle(), value);
-	}
-
-	public bool GetProcessInputs()
-	{
-		return GetProcessInputsInternal(GetHandle());
+		InternalDestroyOutput(ref graph, ref handle);
 	}
 
 	[NativeThrows]
-	private static bool CreateHandleInternal(PlayableGraph graph, ref PlayableHandle handle, IntPtr jobReflectionData)
+	internal unsafe static bool InternalCreateAnimationOutput(ref PlayableGraph graph, string name, out PlayableOutputHandle handle)
 	{
-		return CreateHandleInternal_Injected(ref graph, ref handle, jobReflectionData);
+		//The blocks IL_002a are reachable both inside and outside the pinned region starting at IL_0019. ILSpy has duplicated these blocks in order to place them both within and outside the `fixed` statement.
+		try
+		{
+			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
+			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
+			if (!StringMarshaller.TryMarshalEmptyOrNullString(name, ref managedSpanWrapper))
+			{
+				ReadOnlySpan<char> readOnlySpan = MemoryExtensions.AsSpan(name);
+				ReadOnlySpan<char> readOnlySpan;
+				fixed (char* begin = readOnlySpan)
+				{
+					managedSpanWrapper = new ManagedSpanWrapper(begin, readOnlySpan.Length);
+					return InternalCreateAnimationOutput_Injected(ref graph, ref managedSpanWrapper, out handle);
+				}
+			}
+			return InternalCreateAnimationOutput_Injected(ref graph, ref managedSpanWrapper, out handle);
+		}
+		finally
+		{
+		}
 	}
 
 	[NativeThrows]
-	private static void SetProcessInputsInternal(PlayableHandle handle, bool value)
+	internal static void InternalSyncUpdateAndTimeMode(ref PlayableGraph graph, [NotNull] Animator animator)
 	{
-		SetProcessInputsInternal_Injected(ref handle, value);
+		if ((object)animator == null)
+		{
+			ThrowHelper.ThrowArgumentNullException(animator, "animator");
+		}
+		IntPtr intPtr = Object.MarshalledUnityObject.MarshalNotNull(animator);
+		IntPtr intPtr;
+		if (intPtr == (IntPtr)0)
+		{
+			ThrowHelper.ThrowArgumentNullException(animator, "animator");
+		}
+		InternalSyncUpdateAndTimeMode_Injected(ref graph, intPtr);
 	}
 
+	[MethodImpl(MethodImplOptions.InternalCall)]
 	[NativeThrows]
-	private static bool GetProcessInputsInternal(PlayableHandle handle)
-	{
-		return GetProcessInputsInternal_Injected(ref handle);
-	}
+	private static extern void InternalDestroyOutput(ref PlayableGraph graph, ref PlayableOutputHandle handle);
 
 	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern bool CreateHandleInternal_Injected([In] ref PlayableGraph graph, ref PlayableHandle handle, IntPtr jobReflectionData);
+	[NativeThrows]
+	private static extern int InternalAnimationOutputCount(ref PlayableGraph graph);
 
 	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void SetProcessInputsInternal_Injected([In] ref PlayableHandle handle, bool value);
+	[NativeThrows]
+	private static extern bool InternalGetAnimationOutput(ref PlayableGraph graph, int index, out PlayableOutputHandle handle);
 
 	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern bool GetProcessInputsInternal_Injected([In] ref PlayableHandle handle);
+	private static extern bool InternalCreateAnimationOutput_Injected(ref PlayableGraph graph, ref ManagedSpanWrapper name, out PlayableOutputHandle handle);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern void InternalSyncUpdateAndTimeMode_Injected(ref PlayableGraph graph, IntPtr animator);
 }

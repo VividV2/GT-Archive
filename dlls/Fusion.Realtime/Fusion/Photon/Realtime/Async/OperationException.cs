@@ -1,14 +1,19 @@
+#define DEBUG
 using System;
 
-namespace Fusion.Photon.Realtime.Async;
-
-internal class OperationException : Exception
+namespace Fusion.Photon.Realtime.Async
 {
-	public short ErrorCode;
-
-	public OperationException(short errorCode, string message)
-		: base($"{message} (ErrorCode: {errorCode})")
+	internal class OperationException : Exception
 	{
-		ErrorCode = errorCode;
+		public short ErrorCode;
+
+		public OperationException(short errorCode, string message)
+			: base($"{message} (ErrorCode: {errorCode})")
+		{
+			ErrorCode = errorCode;
+		}
 	}
+}
+namespace Fusion.Photon.Realtime.Async
+{
 }

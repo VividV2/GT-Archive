@@ -1,6 +1,10 @@
-namespace Fusion;
-
-public interface IAfterRender : IPublicFacingInterface
+namespace Fusion
 {
-	void AfterRender();
+}
+namespace Fusion
+{
+	public interface IAfterRender : IPublicFacingInterface
+	{
+		void AfterRender();
+	}
 }

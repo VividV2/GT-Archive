@@ -1,18 +1,22 @@
-namespace System.Xml.Schema;
-
-internal enum FacetType
+namespace System.Xml.Schema
 {
-	None,
-	Length,
-	MinLength,
-	MaxLength,
-	Pattern,
-	Whitespace,
-	Enumeration,
-	MinExclusive,
-	MinInclusive,
-	MaxExclusive,
-	MaxInclusive,
-	TotalDigits,
-	FractionDigits
+	internal enum FacetType
+	{
+		None,
+		Length,
+		MinLength,
+		MaxLength,
+		Pattern,
+		Whitespace,
+		Enumeration,
+		MinExclusive,
+		MinInclusive,
+		MaxExclusive,
+		MaxInclusive,
+		TotalDigits,
+		FractionDigits
+	}
+}
+namespace System.Xml.Schema
+{
 }

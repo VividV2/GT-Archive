@@ -1,32 +1,35 @@
 using System.Threading;
+using UnityEngine;
+using System.Threading;
+using UnityEngine;
 
-namespace Cysharp.Threading.Tasks;
+namespace Cysharp.Threading.Tasks.Triggers;
 
-public abstract class ChannelReader<T>
+[DisallowMultipleComponent]
+public sealed class AsyncAnimatorMoveTrigger : AsyncTriggerBase<AsyncUnit>
 {
-	public abstract UniTask Completion { get; }
-
-	public abstract bool TryRead(out T item);
-
-	public abstract UniTask<bool> WaitToReadAsync(CancellationToken cancellationToken = default(CancellationToken));
-
-	public virtual UniTask<T> ReadAsync(CancellationToken cancellationToken = default(CancellationToken))
+	private void OnAnimatorMove()
 	{
-		if (TryRead(out var item))
-		{
-			return UniTask.FromResult(item);
-		}
-		return ReadAsyncCore(cancellationToken);
+		RaiseEvent(AsyncUnit.Default);
 	}
 
-	private async UniTask<T> ReadAsyncCore(CancellationToken cancellationToken = default(CancellationToken))
+	public IAsyncOnAnimatorMoveHandler GetOnAnimatorMoveAsyncHandler()
 	{
-		if (await WaitToReadAsync(cancellationToken) && TryRead(out var item))
-		{
-			return item;
-		}
-		throw new ChannelClosedException();
+		return new AsyncTriggerHandler<AsyncUnit>(this, callOnce: false);
 	}
 
-	public abstract IUniTaskAsyncEnumerable<T> ReadAllAsync(CancellationToken cancellationToken = default(CancellationToken));
+	public IAsyncOnAnimatorMoveHandler GetOnAnimatorMoveAsyncHandler(CancellationToken cancellationToken)
+	{
+		return new AsyncTriggerHandler<AsyncUnit>(this, cancellationToken, callOnce: false);
+	}
+
+	public UniTask OnAnimatorMoveAsync()
+	{
+		return ((IAsyncOnAnimatorMoveHandler)new AsyncTriggerHandler<AsyncUnit>(this, callOnce: true)).OnAnimatorMoveAsync();
+	}
+
+	public UniTask OnAnimatorMoveAsync(CancellationToken cancellationToken)
+	{
+		return ((IAsyncOnAnimatorMoveHandler)new AsyncTriggerHandler<AsyncUnit>(this, cancellationToken, callOnce: true)).OnAnimatorMoveAsync();
+	}
 }

@@ -1,14 +1,19 @@
 using System.Runtime.InteropServices;
 
-namespace System.EnterpriseServices;
+namespace System.EnterpriseServices.Internal;
 
-/// <summary>Specifies the values allowed for transaction outcome voting.</summary>
-[Serializable]
-[ComVisible(false)]
-public enum TransactionVote
+[Guid("ef24f689-14f8-4d92-b4af-d7b1f0e70fd4")]
+public class AppDomainHelper
 {
-	/// <summary>Aborts the current transaction.</summary>
-	Abort = 1,
-	/// <summary>Commits the current transaction.</summary>
-	Commit = 0
+	[System.MonoTODO]
+	public AppDomainHelper()
+	{
+		throw new NotImplementedException();
+	}
+
+	[System.MonoTODO]
+	~AppDomainHelper()
+	{
+		throw new NotImplementedException();
+	}
 }

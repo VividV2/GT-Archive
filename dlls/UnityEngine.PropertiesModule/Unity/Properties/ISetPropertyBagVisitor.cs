@@ -1,8 +1,3 @@
-using System.Collections.Generic;
-
-namespace Unity.Properties;
-
-public interface ISetPropertyBagVisitor
+namespace Unity.Properties
 {
-	void Visit<TSet, TValue>(ISetPropertyBag<TSet, TValue> properties, ref TSet container) where TSet : ISet<TValue>;
 }

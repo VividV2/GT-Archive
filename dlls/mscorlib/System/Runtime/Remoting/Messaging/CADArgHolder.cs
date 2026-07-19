@@ -1,11 +1,3 @@
-namespace System.Runtime.Remoting.Messaging;
-
-internal class CADArgHolder
+namespace System.Runtime.Remoting.Channels
 {
-	public int index;
-
-	public CADArgHolder(int i)
-	{
-		index = i;
-	}
 }

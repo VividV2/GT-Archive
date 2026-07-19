@@ -1,19 +1,20 @@
-namespace System.Net;
-
-/// <summary>Provides the base interface for creating <see cref="T:System.Net.WebRequest" /> instances.</summary>
-public interface IWebRequestCreate
+namespace System.Security.Authentication
 {
-	/// <summary>Creates a <see cref="T:System.Net.WebRequest" /> instance.</summary>
-	/// <param name="uri">The uniform resource identifier (URI) of the Web resource.</param>
-	/// <returns>A <see cref="T:System.Net.WebRequest" /> instance.</returns>
-	/// <exception cref="T:System.NotSupportedException">The request scheme specified in <paramref name="uri" /> is not supported by this <see cref="T:System.Net.IWebRequestCreate" /> instance.</exception>
-	/// <exception cref="T:System.ArgumentNullException">
-	///   <paramref name="uri" /> is <see langword="null" />.</exception>
-	/// <exception cref="T:System.UriFormatException">In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception, <see cref="T:System.FormatException" />, instead.  
-	///
-	///
-	///
-	///
-	///  The URI specified in <paramref name="uri" /> is not a valid URI.</exception>
-	WebRequest Create(Uri uri);
+	[Flags]
+	public enum SslProtocols
+	{
+		None = 0,
+		Ssl2 = 0xC,
+		Ssl3 = 0x30,
+		Tls = 0xC0,
+		[System.MonoTODO("unsupported")]
+		Tls11 = 0x300,
+		[System.MonoTODO("unsupported")]
+		Tls12 = 0xC00,
+		Tls13 = 0x3000,
+		Default = 0xF0
+	}
+}
+namespace System.Diagnostics
+{
 }

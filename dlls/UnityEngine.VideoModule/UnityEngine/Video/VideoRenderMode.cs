@@ -1,13 +1,20 @@
 using UnityEngine.Scripting;
 
-namespace UnityEngine.Video;
-
-[RequiredByNativeCode]
-public enum VideoRenderMode
+namespace UnityEngine.Video
 {
-	CameraFarPlane,
-	CameraNearPlane,
-	RenderTexture,
-	MaterialOverride,
-	APIOnly
+	[RequiredByNativeCode]
+	public enum VideoRenderMode
+	{
+		CameraFarPlane,
+		CameraNearPlane,
+		RenderTexture,
+		MaterialOverride,
+		APIOnly
+	}
+}
+namespace UnityEngine.Experimental.Video
+{
+}
+namespace UnityEngine.Video
+{
 }

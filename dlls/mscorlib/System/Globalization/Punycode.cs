@@ -1,9 +1,8 @@
-namespace System.Globalization;
-
-internal class Punycode : Bootstring
+namespace System.Diagnostics.Tracing
 {
-	public Punycode()
-		: base('-', 36, 1, 26, 38, 700, 72, 128)
+	[Flags]
+	public enum EventFieldTags
 	{
+		None = 0
 	}
 }

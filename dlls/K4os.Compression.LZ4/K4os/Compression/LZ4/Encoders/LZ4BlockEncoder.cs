@@ -1,22 +1,26 @@
-namespace K4os.Compression.LZ4.Encoders;
-
-public class LZ4BlockEncoder : LZ4EncoderBase
+namespace K4os.Compression.LZ4.Encoders
 {
-	private readonly LZ4Level _level;
-
-	public LZ4BlockEncoder(LZ4Level level, int blockSize)
-		: base(chaining: false, blockSize, 0)
+	public class LZ4BlockEncoder : LZ4EncoderBase
 	{
-		_level = level;
-	}
+		private readonly LZ4Level _level;
 
-	protected unsafe override int EncodeBlock(byte* source, int sourceLength, byte* target, int targetLength)
-	{
-		return LZ4Codec.Encode(source, sourceLength, target, targetLength, _level);
-	}
+		public LZ4BlockEncoder(LZ4Level level, int blockSize)
+			: base(chaining: false, blockSize, 0)
+		{
+			_level = level;
+		}
 
-	protected unsafe override int CopyDict(byte* target, int dictionaryLength)
-	{
-		return 0;
+		protected unsafe override int EncodeBlock(byte* source, int sourceLength, byte* target, int targetLength)
+		{
+			return LZ4Codec.Encode(source, sourceLength, target, targetLength, _level);
+		}
+
+		protected unsafe override int CopyDict(byte* target, int dictionaryLength)
+		{
+			return 0;
+		}
 	}
+}
+namespace K4os.Compression.LZ4.Engine
+{
 }

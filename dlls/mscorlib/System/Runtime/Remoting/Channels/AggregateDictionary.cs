@@ -1,156 +1,28 @@
-using System.Collections;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices;
 
 namespace System.Runtime.Remoting.Channels;
 
+/// <summary>Stores channel data for the remoting channels.</summary>
+/// <summary>Stores channel data for the remoting channels.</summary>
 [ComVisible(true)]
-internal class AggregateDictionary : IDictionary, ICollection, IEnumerable
+public interface IChannelDataStore
 {
-	private IDictionary[] dictionaries;
+	/// <summary>Gets an array of channel URIs to which the current channel maps.</summary>
+	/// <returns>An array of channel URIs to which the current channel maps.</returns>
+	/// <exception cref="T:System.Security.SecurityException">The immediate caller does not have infrastructure permission.</exception>
+	/// <summary>Gets an array of channel URIs to which the current channel maps.</summary>
+	/// <returns>An array of channel URIs to which the current channel maps.</returns>
+	/// <exception cref="T:System.Security.SecurityException">The immediate caller does not have infrastructure permission.</exception>
+	string[] ChannelUris { get; }
 
-	private ArrayList _values;
-
-	private ArrayList _keys;
-
-	public bool IsFixedSize => true;
-
-	public bool IsReadOnly => true;
-
-	public object this[object key]
-	{
-		get
-		{
-			IDictionary[] array = dictionaries;
-			foreach (IDictionary dictionary in array)
-			{
-				if (dictionary.Contains(key))
-				{
-					return dictionary[key];
-				}
-			}
-			return null;
-		}
-		set
-		{
-			throw new NotSupportedException();
-		}
-	}
-
-	public ICollection Keys
-	{
-		get
-		{
-			if (_keys != null)
-			{
-				return _keys;
-			}
-			_keys = new ArrayList();
-			IDictionary[] array = dictionaries;
-			foreach (IDictionary dictionary in array)
-			{
-				_keys.AddRange(dictionary.Keys);
-			}
-			return _keys;
-		}
-	}
-
-	public ICollection Values
-	{
-		get
-		{
-			if (_values != null)
-			{
-				return _values;
-			}
-			_values = new ArrayList();
-			IDictionary[] array = dictionaries;
-			foreach (IDictionary dictionary in array)
-			{
-				_values.AddRange(dictionary.Values);
-			}
-			return _values;
-		}
-	}
-
-	public int Count
-	{
-		get
-		{
-			int num = 0;
-			IDictionary[] array = dictionaries;
-			foreach (IDictionary dictionary in array)
-			{
-				num += dictionary.Count;
-			}
-			return num;
-		}
-	}
-
-	public bool IsSynchronized => false;
-
-	public object SyncRoot => this;
-
-	public AggregateDictionary(IDictionary[] dics)
-	{
-		dictionaries = dics;
-	}
-
-	public void Add(object key, object value)
-	{
-		throw new NotSupportedException();
-	}
-
-	public void Clear()
-	{
-		throw new NotSupportedException();
-	}
-
-	public bool Contains(object ob)
-	{
-		IDictionary[] array = dictionaries;
-		for (int i = 0; i < array.Length; i++)
-		{
-			if (array[i].Contains(ob))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-
-	public IDictionaryEnumerator GetEnumerator()
-	{
-		return new AggregateEnumerator(dictionaries);
-	}
-
-	IEnumerator IEnumerable.GetEnumerator()
-	{
-		return new AggregateEnumerator(dictionaries);
-	}
-
-	public void Remove(object ob)
-	{
-		throw new NotSupportedException();
-	}
-
-	public void CopyTo(Array array, int index)
-	{
-		IDictionaryEnumerator dictionaryEnumerator = GetEnumerator();
-		try
-		{
-			while (dictionaryEnumerator.MoveNext())
-			{
-				object current = dictionaryEnumerator.Current;
-				array.SetValue(current, index++);
-			}
-		}
-		finally
-		{
-			IDisposable disposable = dictionaryEnumerator as IDisposable;
-			if (disposable != null)
-			{
-				disposable.Dispose();
-			}
-		}
-	}
+	/// <summary>Gets or sets the data object associated with the specified key for the implementing channel.</summary>
+	/// <param name="key">The key the data object is associated with.</param>
+	/// <returns>The specified data object for the implementing channel.</returns>
+	/// <exception cref="T:System.Security.SecurityException">The immediate caller does not have infrastructure permission.</exception>
+	/// <summary>Gets or sets the data object associated with the specified key for the implementing channel.</summary>
+	/// <param name="key">The key the data object is associated with.</param>
+	/// <returns>The specified data object for the implementing channel.</returns>
+	/// <exception cref="T:System.Security.SecurityException">The immediate caller does not have infrastructure permission.</exception>
+	object this[object key] { get; set; }
 }

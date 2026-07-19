@@ -1,44 +1,16 @@
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using UnityEngine;
+using System;
+using System;
 
-namespace Oculus.Interaction.GrabAPI;
+namespace Oculus.Interaction.Input.Compatibility.OVR;
 
-[StructLayout(LayoutKind.Sequential)]
-public class HandPinchData
+[Flags]
+public enum HandFingerFlags
 {
-	private const int NumHandJoints = 24;
-
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 72, ArraySubType = UnmanagedType.R4)]
-	private readonly float[] _jointPositions;
-
-	public HandPinchData()
-	{
-		int num = 72;
-		_jointPositions = new float[num];
-	}
-
-	public void SetJoints(IReadOnlyList<Pose> poses)
-	{
-		int num = 0;
-		for (int i = 0; i < 24; i++)
-		{
-			Vector3 position = poses[i].position;
-			_jointPositions[num++] = position.x;
-			_jointPositions[num++] = position.y;
-			_jointPositions[num++] = position.z;
-		}
-	}
-
-	public void SetJoints(IReadOnlyList<Vector3> positions)
-	{
-		int num = 0;
-		for (int i = 0; i < 24; i++)
-		{
-			Vector3 vector = positions[i];
-			_jointPositions[num++] = vector.x;
-			_jointPositions[num++] = vector.y;
-			_jointPositions[num++] = vector.z;
-		}
-	}
+	None = 0,
+	Thumb = 1,
+	Index = 2,
+	Middle = 4,
+	Ring = 8,
+	Pinky = 0x10,
+	All = 0x1F
 }

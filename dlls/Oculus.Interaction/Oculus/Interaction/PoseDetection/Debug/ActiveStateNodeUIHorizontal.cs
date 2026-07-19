@@ -4,64 +4,71 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Oculus.Interaction.PoseDetection.Debug;
-
-public class ActiveStateNodeUIHorizontal : MonoBehaviour, INodeUI<IActiveState>
+namespace Oculus.Interaction.Throw
 {
-	[SerializeField]
-	private RectTransform _childArea;
-
-	[SerializeField]
-	private RectTransform _connectingLine;
-
-	[SerializeField]
-	private TextMeshProUGUI _label;
-
-	[SerializeField]
-	private Image _activeImage;
-
-	[SerializeField]
-	private Color _activeColor = Color.green;
-
-	[SerializeField]
-	private Color _inactiveColor = Color.red;
-
-	private const string OBJNAME_FORMAT = "<color=#dddddd><size=85%>{0}</size></color>";
-
-	private ITreeNode<IActiveState> _boundNode;
-
-	private bool _isRoot;
-
-	private bool _isDuplicate;
-
-	public RectTransform ChildArea => _childArea;
-
-	public void Bind(ITreeNode<IActiveState> node, bool isRoot, bool isDuplicate)
+}
+namespace Oculus.Interaction.PoseDetection
+{
+}
+namespace Oculus.Interaction.PoseDetection.Debug
+{
+	public class ActiveStateNodeUIHorizontal : MonoBehaviour, INodeUI<IActiveState>
 	{
-		_isRoot = isRoot;
-		_isDuplicate = isDuplicate;
-		_boundNode = node;
-		_label.text = GetLabelText(node);
-	}
+		[SerializeField]
+		private RectTransform _childArea;
 
-	protected virtual void Start()
-	{
-	}
+		[SerializeField]
+		private RectTransform _connectingLine;
 
-	protected virtual void Update()
-	{
-		_activeImage.color = (_boundNode.Value.Active ? _activeColor : _inactiveColor);
-		_childArea.gameObject.SetActive(_childArea.childCount > 0);
-		_connectingLine.gameObject.SetActive(!_isRoot);
-	}
+		[SerializeField]
+		private TextMeshProUGUI _label;
 
-	private string GetLabelText(ITreeNode<IActiveState> node)
-	{
-		string text = (_isDuplicate ? "<i>" : "");
-		if (node.Value is UnityEngine.Object obj)
+		[SerializeField]
+		private Image _activeImage;
+
+		[SerializeField]
+		private Color _activeColor = Color.green;
+
+		[SerializeField]
+		private Color _inactiveColor = Color.red;
+
+		private const string OBJNAME_FORMAT = "<color=#dddddd><size=85%>{0}</size></color>";
+
+		private ITreeNode<IActiveState> _boundNode;
+
+		private bool _isRoot;
+
+		private bool _isDuplicate;
+
+		public RectTransform ChildArea => _childArea;
+
+		public void Bind(ITreeNode<IActiveState> node, bool isRoot, bool isDuplicate)
 		{
-			text = text + obj.name + Environment.NewLine;
+			_isRoot = isRoot;
+			_isDuplicate = isDuplicate;
+			_boundNode = node;
+			_label.text = GetLabelText(node);
 		}
-		return text + $"<color=#dddddd><size=85%>{node.Value.GetType().Name}</size></color>";
+
+		protected virtual void Start()
+		{
+		}
+
+		protected virtual void Update()
+		{
+			_activeImage.color = (_boundNode.Value.Active ? _activeColor : _inactiveColor);
+			_childArea.gameObject.SetActive(_childArea.childCount > 0);
+			_connectingLine.gameObject.SetActive(!_isRoot);
+		}
+
+		private string GetLabelText(ITreeNode<IActiveState> node)
+		{
+			string text = (_isDuplicate ? "<i>" : "");
+			if (node.Value is UnityEngine.Object obj)
+			{
+				text = text + obj.name + Environment.NewLine;
+			}
+			return text + $"<color=#dddddd><size=85%>{node.Value.GetType().Name}</size></color>";
+		}
 	}
 }

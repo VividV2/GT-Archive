@@ -1,8 +1,7 @@
-using System.Collections.Generic;
-
-namespace Unity.Properties;
-
-public interface IListPropertyVisitor
+namespace Unity.Properties
 {
-	void Visit<TContainer, TList, TElement>(Property<TContainer, TList> property, ref TContainer container, ref TList list) where TList : IList<TElement>;
+	public interface ICollectionPropertyBagVisitor
+	{
+		void Visit<TCollection, TElement>(ICollectionPropertyBag<TCollection, TElement> properties, ref TCollection container) where TCollection : ICollection<TElement>;
+	}
 }

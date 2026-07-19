@@ -1,15 +1,6 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class WriteClientPlayerEventRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public Dictionary<string, object> Body;
-
-	public string EventName;
-
-	public DateTime? Timestamp;
+}
+namespace PlayFab.ClientModels
+{
 }

@@ -1,22 +1,26 @@
 using System;
 
-namespace Oculus.Platform.Models;
-
-public class AchievementDefinition
+namespace Oculus.Platform.Models
 {
-	public readonly AchievementType Type;
-
-	public readonly string Name;
-
-	public readonly uint BitfieldLength;
-
-	public readonly ulong Target;
-
-	public AchievementDefinition(IntPtr o)
+	public class AchievementDefinition
 	{
-		Type = CAPI.ovr_AchievementDefinition_GetType(o);
-		Name = CAPI.ovr_AchievementDefinition_GetName(o);
-		BitfieldLength = CAPI.ovr_AchievementDefinition_GetBitfieldLength(o);
-		Target = CAPI.ovr_AchievementDefinition_GetTarget(o);
+		public readonly AchievementType Type;
+
+		public readonly string Name;
+
+		public readonly uint BitfieldLength;
+
+		public readonly ulong Target;
+
+		public AchievementDefinition(IntPtr o)
+		{
+			Type = CAPI.ovr_AchievementDefinition_GetType(o);
+			Name = CAPI.ovr_AchievementDefinition_GetName(o);
+			BitfieldLength = CAPI.ovr_AchievementDefinition_GetBitfieldLength(o);
+			Target = CAPI.ovr_AchievementDefinition_GetTarget(o);
+		}
 	}
+}
+namespace Oculus.Platform.Models
+{
 }

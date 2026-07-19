@@ -1,7 +1,11 @@
-namespace UnityEngine.Rendering.Universal;
-
-internal enum FramebufferFetchEvent
+namespace UnityEngine.Rendering.Universal
 {
-	None,
-	FetchGbufferInDeferred
+	internal enum FramebufferFetchEvent
+	{
+		None,
+		FetchGbufferInDeferred
+	}
+}
+namespace UnityEngine.Rendering.Universal
+{
 }

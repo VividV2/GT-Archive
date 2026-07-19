@@ -3,35 +3,39 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
 
-namespace VYaml.Serialization;
-
-public static class YamlFormatterResolverExtensions
+namespace VYaml.Serialization
 {
-	private static readonly Dictionary<Type, Func<IYamlFormatterResolver, IYamlFormatter>> FormatterGetters = new Dictionary<Type, Func<IYamlFormatterResolver, IYamlFormatter>>();
-
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static IYamlFormatter<T> GetFormatterWithVerify<T>(this IYamlFormatterResolver resolver)
+	public static class YamlFormatterResolverExtensions
 	{
-		IYamlFormatter<T> formatter;
-		try
+		private static readonly Dictionary<Type, Func<IYamlFormatterResolver, IYamlFormatter>> FormatterGetters = new Dictionary<Type, Func<IYamlFormatterResolver, IYamlFormatter>>();
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static IYamlFormatter<T> GetFormatterWithVerify<T>(this IYamlFormatterResolver resolver)
 		{
-			formatter = resolver.GetFormatter<T>();
-		}
-		catch (TypeInitializationException ex)
-		{
-			ExceptionDispatchInfo.Capture(ex.InnerException ?? ex).Throw();
+			IYamlFormatter<T> formatter;
+			try
+			{
+				formatter = resolver.GetFormatter<T>();
+			}
+			catch (TypeInitializationException ex)
+			{
+				ExceptionDispatchInfo.Capture(ex.InnerException ?? ex).Throw();
+				return null;
+			}
+			if (formatter != null)
+			{
+				return formatter;
+			}
+			Throw(typeof(T), resolver);
 			return null;
 		}
-		if (formatter != null)
-		{
-			return formatter;
-		}
-		Throw(typeof(T), resolver);
-		return null;
-	}
 
-	private static void Throw(Type t, IYamlFormatterResolver resolver)
-	{
-		throw new YamlSerializerException(t.FullName + $"{t} is not registered in resolver: {resolver.GetType()}");
+		private static void Throw(Type t, IYamlFormatterResolver resolver)
+		{
+			throw new YamlSerializerException(t.FullName + $"{t} is not registered in resolver: {resolver.GetType()}");
+		}
 	}
+}
+namespace VYaml.Serialization
+{
 }

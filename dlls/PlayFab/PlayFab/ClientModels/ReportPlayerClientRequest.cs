@@ -1,12 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class ReportPlayerClientRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string Comment;
-
-	public string ReporteeId;
+}
+namespace PlayFab.ClientModels
+{
 }

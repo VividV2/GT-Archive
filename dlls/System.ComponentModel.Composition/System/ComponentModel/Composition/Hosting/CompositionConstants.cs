@@ -41,3 +41,6 @@ public static class CompositionConstants
 
 	internal static readonly string PartCreatorTypeIdentity = AttributedModelServices.GetTypeIdentity(typeof(ComposablePartDefinition));
 }
+namespace System.ComponentModel.Composition.Hosting
+{
+}

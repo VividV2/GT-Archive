@@ -1,8 +1,12 @@
 using Oculus.Interaction.Input;
 
-namespace Oculus.Interaction;
-
-public interface IFingerUseAPI
+namespace Oculus.Interaction
 {
-	float GetFingerUseStrength(HandFinger finger);
+}
+namespace Oculus.Interaction
+{
+	public interface IFingerUseAPI
+	{
+		float GetFingerUseStrength(HandFinger finger);
+	}
 }

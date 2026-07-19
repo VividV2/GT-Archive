@@ -1,6 +1,10 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Locomotion;
-
-public sealed class ApplyBodyTransformationsEventArgs
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion
 {
-	public XRBodyTransformer bodyTransformer { get; set; }
+	public sealed class ApplyBodyTransformationsEventArgs
+	{
+		public XRBodyTransformer bodyTransformer { get; set; }
+	}
+}
+namespace UnityEngine.XR.Interaction.Toolkit.UI.BodyUI
+{
 }

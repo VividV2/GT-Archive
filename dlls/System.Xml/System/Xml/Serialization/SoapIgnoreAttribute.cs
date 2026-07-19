@@ -1,11 +1,9 @@
-namespace System.Xml.Serialization;
+namespace System.Xml.Xsl;
 
-/// <summary>Instructs the <see cref="T:System.Xml.Serialization.XmlSerializer" /> not to serialize the public field or public read/write property value.</summary>
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue)]
-public class SoapIgnoreAttribute : Attribute
-{
-	/// <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.SoapIgnoreAttribute" /> class.</summary>
-	public SoapIgnoreAttribute()
-	{
-	}
-}
+/// <summary>Represents the method that will handle the <see cref="E:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered" /> event.</summary>
+/// <param name="sender">The source of the event.</param>
+/// <summary>Represents the method that will handle the <see cref="E:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered" /> event.</summary>
+/// <param name="e">The <see cref="T:System.Xml.Xsl.XsltMessageEncounteredEventArgs" /> containing the event data.</param>
+/// <param name="sender">The source of the event.</param>
+/// <param name="e">The <see cref="T:System.Xml.Xsl.XsltMessageEncounteredEventArgs" /> containing the event data.</param>
+public delegate void XsltMessageEncounteredEventHandler(object sender, XsltMessageEncounteredEventArgs e);

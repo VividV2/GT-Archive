@@ -1,11 +1,15 @@
-namespace Valve.VR;
-
-public enum EVRFinger
+namespace Valve.VR
 {
-	Thumb,
-	Index,
-	Middle,
-	Ring,
-	Pinky,
-	Count
+	public enum EVRFinger
+	{
+		Thumb,
+		Index,
+		Middle,
+		Ring,
+		Pinky,
+		Count
+	}
+}
+namespace Valve.VR
+{
 }

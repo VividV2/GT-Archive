@@ -10,3 +10,6 @@ public class CodeTypeConstructor : CodeMemberMethod
 		base.Name = ".cctor";
 	}
 }
+namespace Mono.Net.Dns
+{
+}

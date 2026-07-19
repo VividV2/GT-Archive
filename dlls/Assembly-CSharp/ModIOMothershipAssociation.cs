@@ -1,5 +1,7 @@
 using System;
 
+namespace GorillaTag;
+
 [Serializable]
 public class ModIOMothershipAssociation
 {

@@ -1,12 +1,3 @@
-namespace System.Runtime.InteropServices;
-
-/// <summary>Use <see cref="T:System.Runtime.InteropServices.ComTypes.FILETIME" /> instead.</summary>
-[Obsolete]
-public struct FILETIME
+namespace System.Runtime.Remoting
 {
-	/// <summary>Specifies the low 32 bits of the <see langword="FILETIME" />.</summary>
-	public int dwLowDateTime;
-
-	/// <summary>Specifies the high 32 bits of the <see langword="FILETIME" />.</summary>
-	public int dwHighDateTime;
 }

@@ -1,10 +1,14 @@
-namespace System.Net.NetworkInformation;
-
-internal struct Win32_IP_ADAPTER_ANYCAST_ADDRESS
+namespace System.Net.NetworkInformation
 {
-	public Win32LengthFlagsUnion LengthFlags;
+	internal struct Win32_IP_ADAPTER_ANYCAST_ADDRESS
+	{
+		public Win32LengthFlagsUnion LengthFlags;
 
-	public IntPtr Next;
+		public IntPtr Next;
 
-	public Win32_SOCKET_ADDRESS Address;
+		public Win32_SOCKET_ADDRESS Address;
+	}
+}
+namespace System.Net
+{
 }

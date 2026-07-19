@@ -1,13 +1,17 @@
 using UnityEngine.Scripting;
 using UnityEngine.SubsystemsImplementation;
 
-namespace UnityEngine;
-
-internal static class Internal_SubsystemDescriptors
+namespace UnityEngine
 {
-	[RequiredByNativeCode]
-	internal static void Internal_AddDescriptor(SubsystemDescriptor descriptor)
+	internal static class Internal_SubsystemDescriptors
 	{
-		SubsystemDescriptorStore.RegisterDeprecatedDescriptor(descriptor);
+		[RequiredByNativeCode]
+		internal static void Internal_AddDescriptor(SubsystemDescriptor descriptor)
+		{
+			SubsystemDescriptorStore.RegisterDeprecatedDescriptor(descriptor);
+		}
 	}
+}
+namespace UnityEngine
+{
 }

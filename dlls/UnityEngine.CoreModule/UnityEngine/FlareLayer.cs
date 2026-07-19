@@ -1,9 +1,2 @@
-namespace UnityEngine;
+namespace Unity.Collections;
 
-[RequireComponent(typeof(Camera))]
-public class FlareLayer : Behaviour
-{
-	internal FlareLayer()
-	{
-	}
-}

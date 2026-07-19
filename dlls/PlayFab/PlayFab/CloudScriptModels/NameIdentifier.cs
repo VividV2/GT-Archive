@@ -1,12 +1,12 @@
-using System;
-using PlayFab.SharedModels;
-
 namespace PlayFab.CloudScriptModels;
 
-[Serializable]
-public class NameIdentifier : PlayFabBaseModel
+public enum ContinentCode
 {
-	public string Id;
-
-	public string Name;
+	AF,
+	AN,
+	AS,
+	EU,
+	NA,
+	OC,
+	SA
 }

@@ -1,6 +1,2 @@
-using System;
+namespace GorillaTag.Cosmetics;
 
-[Serializable]
-public class LimiterType : CallLimitType<CallLimiter>
-{
-}

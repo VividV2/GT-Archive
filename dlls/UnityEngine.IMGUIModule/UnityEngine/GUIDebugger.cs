@@ -1,101 +1,45 @@
 using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using UnityEngine.Bindings;
+using System.ComponentModel;
+using UnityEngine.Internal;
 
 namespace UnityEngine;
 
-[NativeHeader("Modules/IMGUI/GUIDebugger.bindings.h")]
-internal class GUIDebugger
+[Obsolete("GUIElement has been removed. Consider using https://docs.unity3d.com/ScriptReference/UIElements.Image.html, https://docs.unity3d.com/ScriptReference/UIElements.TextElement.html or TextMeshPro instead.", true)]
+[ExcludeFromPreset]
+[EditorBrowsable(EditorBrowsableState.Never)]
+[ExcludeFromObjectFactory]
+public sealed class GUIElement
 {
-	[NativeConditional("UNITY_EDITOR")]
-	public static extern bool active
+	private static void FeatureRemoved()
 	{
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		get;
+		throw new Exception("GUIElement has been removed from Unity. Consider using https://docs.unity3d.com/ScriptReference/UIElements.Image.html, https://docs.unity3d.com/ScriptReference/UIElements.TextElement.html or TextMeshPro instead.");
 	}
 
-	[NativeConditional("UNITY_EDITOR")]
-	public static void LogLayoutEntry(Rect rect, int left, int right, int top, int bottom, GUIStyle style)
+	[Obsolete("GUIElement has been removed. Consider using https://docs.unity3d.com/ScriptReference/UIElements.Image.html, https://docs.unity3d.com/ScriptReference/UIElements.TextElement.html or TextMeshPro instead.", true)]
+	public bool HitTest(Vector3 screenPosition)
 	{
-		LogLayoutEntry_Injected(ref rect, left, right, top, bottom, (style == null) ? ((IntPtr)0) : GUIStyle.BindingsMarshaller.ConvertToNative(style));
+		FeatureRemoved();
+		return false;
 	}
 
-	[NativeConditional("UNITY_EDITOR")]
-	public static void LogLayoutGroupEntry(Rect rect, int left, int right, int top, int bottom, GUIStyle style, bool isVertical)
+	[Obsolete("GUIElement has been removed. Consider using https://docs.unity3d.com/ScriptReference/UIElements.Image.html, https://docs.unity3d.com/ScriptReference/UIElements.TextElement.html or TextMeshPro instead.", true)]
+	public bool HitTest(Vector3 screenPosition, [UnityEngine.Internal.DefaultValue("null")] Camera camera)
 	{
-		LogLayoutGroupEntry_Injected(ref rect, left, right, top, bottom, (style == null) ? ((IntPtr)0) : GUIStyle.BindingsMarshaller.ConvertToNative(style), isVertical);
+		FeatureRemoved();
+		return false;
 	}
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[NativeMethod("LogEndGroup")]
-	[StaticAccessor("GetGUIDebuggerManager()", StaticAccessorType.Dot)]
-	[NativeConditional("UNITY_EDITOR")]
-	public static extern void LogLayoutEndGroup();
-
-	[StaticAccessor("GetGUIDebuggerManager()", StaticAccessorType.Dot)]
-	[NativeConditional("UNITY_EDITOR")]
-	public unsafe static void LogBeginProperty(string targetTypeAssemblyQualifiedName, string path, Rect position)
+	[Obsolete("GUIElement has been removed. Consider using https://docs.unity3d.com/ScriptReference/UIElements.Image.html, https://docs.unity3d.com/ScriptReference/UIElements.TextElement.html or TextMeshPro instead.", true)]
+	public Rect GetScreenRect([UnityEngine.Internal.DefaultValue("null")] Camera camera)
 	{
-		//The blocks IL_0029, IL_0036, IL_0044, IL_0052, IL_0057 are reachable both inside and outside the pinned region starting at IL_0018. ILSpy has duplicated these blocks in order to place them both within and outside the `fixed` statement.
-		//The blocks IL_0057 are reachable both inside and outside the pinned region starting at IL_0044. ILSpy has duplicated these blocks in order to place them both within and outside the `fixed` statement.
-		//The blocks IL_0057 are reachable both inside and outside the pinned region starting at IL_0044. ILSpy has duplicated these blocks in order to place them both within and outside the `fixed` statement.
-		try
-		{
-			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
-			ref ManagedSpanWrapper targetTypeAssemblyQualifiedName2;
-			ManagedSpanWrapper managedSpanWrapper2 = default(ManagedSpanWrapper);
-			ReadOnlySpan<char> readOnlySpan2;
-			if (!StringMarshaller.TryMarshalEmptyOrNullString(targetTypeAssemblyQualifiedName, ref managedSpanWrapper))
-			{
-				ReadOnlySpan<char> readOnlySpan = MemoryExtensions.AsSpan(targetTypeAssemblyQualifiedName);
-				fixed (char* begin = readOnlySpan)
-				{
-					managedSpanWrapper = new ManagedSpanWrapper(begin, readOnlySpan.Length);
-					targetTypeAssemblyQualifiedName2 = ref managedSpanWrapper;
-					if (!StringMarshaller.TryMarshalEmptyOrNullString(path, ref managedSpanWrapper2))
-					{
-						readOnlySpan2 = MemoryExtensions.AsSpan(path);
-						fixed (char* begin2 = readOnlySpan2)
-						{
-							managedSpanWrapper2 = new ManagedSpanWrapper(begin2, readOnlySpan2.Length);
-							LogBeginProperty_Injected(ref targetTypeAssemblyQualifiedName2, ref managedSpanWrapper2, ref position);
-							return;
-						}
-					}
-					LogBeginProperty_Injected(ref targetTypeAssemblyQualifiedName2, ref managedSpanWrapper2, ref position);
-					return;
-				}
-			}
-			targetTypeAssemblyQualifiedName2 = ref managedSpanWrapper;
-			if (!StringMarshaller.TryMarshalEmptyOrNullString(path, ref managedSpanWrapper2))
-			{
-				readOnlySpan2 = MemoryExtensions.AsSpan(path);
-				fixed (char* begin2 = readOnlySpan2)
-				{
-					managedSpanWrapper2 = new ManagedSpanWrapper(begin2, readOnlySpan2.Length);
-					LogBeginProperty_Injected(ref targetTypeAssemblyQualifiedName2, ref managedSpanWrapper2, ref position);
-					return;
-				}
-			}
-			LogBeginProperty_Injected(ref targetTypeAssemblyQualifiedName2, ref managedSpanWrapper2, ref position);
-		}
-		finally
-		{
-		}
+		FeatureRemoved();
+		return new Rect(0f, 0f, 0f, 0f);
 	}
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[StaticAccessor("GetGUIDebuggerManager()", StaticAccessorType.Dot)]
-	[NativeConditional("UNITY_EDITOR")]
-	public static extern void LogEndProperty();
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void LogLayoutEntry_Injected([In] ref Rect rect, int left, int right, int top, int bottom, IntPtr style);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void LogLayoutGroupEntry_Injected([In] ref Rect rect, int left, int right, int top, int bottom, IntPtr style, bool isVertical);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void LogBeginProperty_Injected(ref ManagedSpanWrapper targetTypeAssemblyQualifiedName, ref ManagedSpanWrapper path, [In] ref Rect position);
+	[Obsolete("GUIElement has been removed. Consider using https://docs.unity3d.com/ScriptReference/UIElements.Image.html, https://docs.unity3d.com/ScriptReference/UIElements.TextElement.html or TextMeshPro instead.", true)]
+	public Rect GetScreenRect()
+	{
+		FeatureRemoved();
+		return new Rect(0f, 0f, 0f, 0f);
+	}
 }

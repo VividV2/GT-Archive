@@ -1,8 +1,22 @@
-namespace Steamworks;
-
-public enum EUGCReadAction
+namespace Steamworks
 {
-	k_EUGCRead_ContinueReadingUntilFinished,
-	k_EUGCRead_ContinueReading,
-	k_EUGCRead_Close
+	public enum EUGCReadAction
+	{
+		k_EUGCRead_ContinueReadingUntilFinished,
+		k_EUGCRead_ContinueReading,
+		k_EUGCRead_Close
+	}
+}
+namespace Steamworks
+{
+	public enum EItemPreviewType
+	{
+		k_EItemPreviewType_Image = 0,
+		k_EItemPreviewType_YouTubeVideo = 1,
+		k_EItemPreviewType_Sketchfab = 2,
+		k_EItemPreviewType_EnvironmentMap_HorizontalCross = 3,
+		k_EItemPreviewType_EnvironmentMap_LatLong = 4,
+		k_EItemPreviewType_Clip = 5,
+		k_EItemPreviewType_ReservedMax = 255
+	}
 }

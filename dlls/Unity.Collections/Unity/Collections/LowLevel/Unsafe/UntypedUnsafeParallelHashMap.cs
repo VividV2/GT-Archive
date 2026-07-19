@@ -1,9 +1,16 @@
-namespace Unity.Collections.LowLevel.Unsafe;
-
-public struct UntypedUnsafeParallelHashMap
+namespace Unity.Collections.LowLevel.Unsafe
 {
-	[NativeDisableUnsafePtrRestriction]
-	private unsafe UnsafeParallelHashMapData* m_Buffer;
+	public struct UntypedUnsafeParallelHashMap
+	{
+		[NativeDisableUnsafePtrRestriction]
+		private unsafe UnsafeParallelHashMapData* m_Buffer;
 
-	private AllocatorManager.AllocatorHandle m_AllocatorLabel;
+		private AllocatorManager.AllocatorHandle m_AllocatorLabel;
+	}
+}
+namespace Unity.Collections.LowLevel.Unsafe
+{
+}
+namespace Unity.Collections.LowLevel.Unsafe
+{
 }

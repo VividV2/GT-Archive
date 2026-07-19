@@ -19,3 +19,6 @@ public enum ADVF
 	/// <summary>For data advisory connections, assures accessibility to data.</summary>
 	ADVF_DATAONSTOP = 0x40
 }
+namespace System.Text.RegularExpressions
+{
+}

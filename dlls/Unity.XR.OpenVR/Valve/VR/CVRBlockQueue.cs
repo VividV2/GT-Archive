@@ -1,71 +1,37 @@
-using System;
-using System.Runtime.InteropServices;
-
-namespace Valve.VR;
-
-public class CVRBlockQueue
+namespace Valve.VR
 {
-	private IVRBlockQueue FnTable;
-
-	internal CVRBlockQueue(IntPtr pInterface)
+	public struct PathWrite_t
 	{
-		FnTable = (IVRBlockQueue)Marshal.PtrToStructure(pInterface, typeof(IVRBlockQueue));
-	}
+		public ulong ulPath;
 
-	public EBlockQueueError Create(ref ulong pulQueueHandle, string pchPath, uint unBlockDataSize, uint unBlockHeaderSize, uint unBlockCount)
-	{
-		pulQueueHandle = 0uL;
-		IntPtr intPtr = Utils.ToUtf8(pchPath);
-		EBlockQueueError result = FnTable.Create(ref pulQueueHandle, intPtr, unBlockDataSize, unBlockHeaderSize, unBlockCount);
-		Marshal.FreeHGlobal(intPtr);
-		return result;
-	}
+		public EPropertyWriteType writeType;
 
-	public EBlockQueueError Connect(ref ulong pulQueueHandle, string pchPath)
-	{
-		pulQueueHandle = 0uL;
-		IntPtr intPtr = Utils.ToUtf8(pchPath);
-		EBlockQueueError result = FnTable.Connect(ref pulQueueHandle, intPtr);
-		Marshal.FreeHGlobal(intPtr);
-		return result;
-	}
+		public ETrackedPropertyError eSetError;
 
-	public EBlockQueueError Destroy(ulong ulQueueHandle)
-	{
-		return FnTable.Destroy(ulQueueHandle);
-	}
+		public IntPtr pvBuffer;
 
-	public EBlockQueueError AcquireWriteOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer)
-	{
-		pulBlockHandle = 0uL;
-		return FnTable.AcquireWriteOnlyBlock(ulQueueHandle, ref pulBlockHandle, ref ppvBuffer);
-	}
+		public uint unBufferSize;
 
-	public EBlockQueueError ReleaseWriteOnlyBlock(ulong ulQueueHandle, ulong ulBlockHandle)
-	{
-		return FnTable.ReleaseWriteOnlyBlock(ulQueueHandle, ulBlockHandle);
-	}
+		public uint unTag;
 
-	public EBlockQueueError WaitAndAcquireReadOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer, EBlockQueueReadType eReadType, uint unTimeoutMs)
-	{
-		pulBlockHandle = 0uL;
-		return FnTable.WaitAndAcquireReadOnlyBlock(ulQueueHandle, ref pulBlockHandle, ref ppvBuffer, eReadType, unTimeoutMs);
-	}
+		public ETrackedPropertyError eError;
 
-	public EBlockQueueError AcquireReadOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer, EBlockQueueReadType eReadType)
-	{
-		pulBlockHandle = 0uL;
-		return FnTable.AcquireReadOnlyBlock(ulQueueHandle, ref pulBlockHandle, ref ppvBuffer, eReadType);
+		public IntPtr pszPath;
 	}
-
-	public EBlockQueueError ReleaseReadOnlyBlock(ulong ulQueueHandle, ulong ulBlockHandle)
+}
+namespace Valve.VR
+{
+	public enum VRMessageOverlayResponse
 	{
-		return FnTable.ReleaseReadOnlyBlock(ulQueueHandle, ulBlockHandle);
+		ButtonPress_0,
+		ButtonPress_1,
+		ButtonPress_2,
+		ButtonPress_3,
+		CouldntFindSystemOverlay,
+		CouldntFindOrCreateClientOverlay,
+		ApplicationQuit
 	}
-
-	public EBlockQueueError QueueHasReader(ulong ulQueueHandle, ref bool pbHasReaders)
-	{
-		pbHasReaders = false;
-		return FnTable.QueueHasReader(ulQueueHandle, ref pbHasReaders);
-	}
+}
+namespace Valve.VR
+{
 }

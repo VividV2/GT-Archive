@@ -1,10 +1,13 @@
-using System.Threading.Tasks;
+namespace Modio.Reports;
 
-namespace Modio.Monetization;
-
-public interface IModioVirtualCurrencyProviderService
+public enum ReportType
 {
-	Task<(Error error, PortalSku[] skus)> GetCurrencyPackSkus();
-
-	Task<Error> OpenCheckoutFlow(PortalSku sku);
+	Generic,
+	DMCA,
+	NotWorking,
+	RudeContent,
+	IllegalContent,
+	StolenContent,
+	FalseInformation,
+	Other
 }

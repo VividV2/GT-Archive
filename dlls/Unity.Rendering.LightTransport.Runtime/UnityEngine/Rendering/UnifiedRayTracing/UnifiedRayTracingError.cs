@@ -1,7 +1,11 @@
-namespace UnityEngine.Rendering.UnifiedRayTracing;
-
-internal enum UnifiedRayTracingError
+namespace UnityEngine.Rendering.UnifiedRayTracing
 {
-	Unknown,
-	OutOfGraphicsBufferMemory
+}
+namespace UnityEngine.Rendering.UnifiedRayTracing
+{
+	internal enum UnifiedRayTracingError
+	{
+		Unknown,
+		OutOfGraphicsBufferMemory
+	}
 }

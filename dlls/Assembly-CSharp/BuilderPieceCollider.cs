@@ -1,6 +1,2 @@
-using UnityEngine;
+namespace emotitron.Compression;
 
-public class BuilderPieceCollider : MonoBehaviour
-{
-	public BuilderPiece piece;
-}

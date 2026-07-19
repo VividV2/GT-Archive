@@ -1,9 +1,24 @@
 using System;
 using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class AddSharedGroupMembersResult : PlayFabResultCommon
+namespace PlayFab.ClientModels
 {
+	[Serializable]
+	public class CatalogItemConsumableInfo : PlayFabBaseModel
+	{
+		public uint? UsageCount;
+
+		public uint? UsagePeriod;
+
+		public string UsagePeriodGroup;
+	}
+}
+namespace PlayFab.ClientModels
+{
+	[Serializable]
+	public class AddSharedGroupMembersResult : PlayFabResultCommon
+	{
+	}
 }

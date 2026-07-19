@@ -1,15 +1,10 @@
-using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-namespace UnityEngine.XR.Interaction.Toolkit.Gaze;
+namespace UnityEngine.XR.Interaction.Toolkit.Filtering;
 
-[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
-public interface IXROverridesGazeAutoSelect
+public interface IXRTargetEvaluatorLinkable
 {
-	bool overrideGazeTimeToSelect { get; }
+	void OnLink(UnityEngine.XR.Interaction.Toolkit.Interactors.IXRInteractor interactor);
 
-	float gazeTimeToSelect { get; }
-
-	bool overrideTimeToAutoDeselectGaze { get; }
-
-	float timeToAutoDeselectGaze { get; }
+	void OnUnlink(UnityEngine.XR.Interaction.Toolkit.Interactors.IXRInteractor interactor);
 }

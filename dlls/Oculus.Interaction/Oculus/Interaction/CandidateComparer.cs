@@ -1,19 +1,23 @@
 using UnityEngine;
 
-namespace Oculus.Interaction;
-
-public abstract class CandidateComparer<T> : MonoBehaviour, ICandidateComparer where T : class
+namespace Oculus.Interaction
 {
-	public int Compare(object a, object b)
+	public abstract class CandidateComparer<T> : MonoBehaviour, ICandidateComparer where T : class
 	{
-		T val = a as T;
-		T val2 = b as T;
-		if (val != null && val2 != null)
+		public int Compare(object a, object b)
 		{
-			return Compare(val, val2);
+			T val = a as T;
+			T val2 = b as T;
+			if (val != null && val2 != null)
+			{
+				return Compare(val, val2);
+			}
+			return 0;
 		}
-		return 0;
-	}
 
-	public abstract int Compare(T a, T b);
+		public abstract int Compare(T a, T b);
+	}
+}
+namespace Oculus.Interaction
+{
 }

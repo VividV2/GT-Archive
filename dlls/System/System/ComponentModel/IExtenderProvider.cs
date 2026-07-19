@@ -1,11 +1,11 @@
-namespace System.ComponentModel;
+namespace System.Net.Mail;
 
-/// <summary>Defines the interface for extending properties to other components in a container.</summary>
-public interface IExtenderProvider
+[Flags]
+public enum DeliveryNotificationOptions
 {
-	/// <summary>Specifies whether this object can provide its extender properties to the specified object.</summary>
-	/// <param name="extendee">The <see cref="T:System.Object" /> to receive the extender properties.</param>
-	/// <returns>
-	///   <see langword="true" /> if this object can provide extender properties to the specified object; otherwise, <see langword="false" />.</returns>
-	bool CanExtend(object extendee);
+	None = 0,
+	OnSuccess = 1,
+	OnFailure = 2,
+	Delay = 4,
+	Never = 0x8000000
 }

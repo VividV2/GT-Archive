@@ -24,3 +24,6 @@ public struct TYPELIBATTR
 	/// <summary>Represents library flags.</summary>
 	public LIBFLAGS wLibFlags;
 }
+namespace System.Security.Claims
+{
+}

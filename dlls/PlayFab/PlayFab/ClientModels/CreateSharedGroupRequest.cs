@@ -1,10 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class CreateSharedGroupRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string SharedGroupId;
+}
+namespace PlayFab.ClientModels
+{
 }

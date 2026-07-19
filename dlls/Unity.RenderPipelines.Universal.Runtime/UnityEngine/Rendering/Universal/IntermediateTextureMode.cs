@@ -1,7 +1,3 @@
-namespace UnityEngine.Rendering.Universal;
-
-public enum IntermediateTextureMode
+namespace UnityEngine.Rendering.Universal
 {
-	Auto,
-	Always
 }

@@ -1,18 +1,11 @@
-using System.Runtime.InteropServices;
-
 namespace OVR.OpenVR;
 
-public struct IVRNotifications
+public enum ECollisionBoundsStyle
 {
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate EVRNotificationError _CreateNotification(ulong ulOverlayHandle, ulong ulUserValue, EVRNotificationType type, string pchText, EVRNotificationStyle style, ref NotificationBitmap_t pImage, ref uint pNotificationId);
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate EVRNotificationError _RemoveNotification(uint notificationId);
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _CreateNotification CreateNotification;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _RemoveNotification RemoveNotification;
+	COLLISION_BOUNDS_STYLE_BEGINNER,
+	COLLISION_BOUNDS_STYLE_INTERMEDIATE,
+	COLLISION_BOUNDS_STYLE_SQUARES,
+	COLLISION_BOUNDS_STYLE_ADVANCED,
+	COLLISION_BOUNDS_STYLE_NONE,
+	COLLISION_BOUNDS_STYLE_COUNT
 }

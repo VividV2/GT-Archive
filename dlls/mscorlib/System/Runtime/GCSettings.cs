@@ -1,42 +1,38 @@
-using System.Runtime.ConstrainedExecution;
+namespace System.Security.Policy;
 
-namespace System.Runtime;
-
-/// <summary>Specifies the garbage collection settings for the current process.</summary>
-public static class GCSettings
+/// <summary>Defines the test to determine whether a code assembly is a member of a code group.</summary>
+/// <summary>Defines the test to determine whether a code assembly is a member of a code group.</summary>
+public interface IMembershipCondition : ISecurityEncodable, ISecurityPolicyEncodable
 {
-	/// <summary>Gets a value that indicates whether server garbage collection is enabled.</summary>
+	/// <summary>Determines whether the specified evidence satisfies the membership condition.</summary>
+	/// <param name="evidence">The evidence set against which to make the test.</param>
 	/// <returns>
-	///   <see langword="true" /> if server garbage collection is enabled; otherwise, <see langword="false" />.</returns>
-	[MonoTODO("Always returns false")]
-	public static bool IsServerGC => false;
+	///   <see langword="true" /> if the specified evidence satisfies the membership condition; otherwise, <see langword="false" />.</returns>
+	/// <summary>Determines whether the specified evidence satisfies the membership condition.</summary>
+	/// <param name="evidence">The evidence set against which to make the test.</param>
+	/// <returns>
+	///   <see langword="true" /> if the specified evidence satisfies the membership condition; otherwise, <see langword="false" />.</returns>
+	bool Check(Evidence evidence);
 
-	/// <summary>Gets or sets the current latency mode for garbage collection.</summary>
-	/// <returns>One of the enumeration values that specifies the latency mode.</returns>
-	/// <exception cref="T:System.ArgumentOutOfRangeException">The <see cref="P:System.Runtime.GCSettings.LatencyMode" /> property is being set to an invalid value.  
-	///  -or-  
-	///  The <see cref="P:System.Runtime.GCSettings.LatencyMode" /> property cannot be set to <see cref="F:System.Runtime.GCLatencyMode.NoGCRegion" />.</exception>
-	[MonoTODO("Always returns GCLatencyMode.Interactive and ignores set")]
-	public static GCLatencyMode LatencyMode
-	{
-		[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
-		get
-		{
-			return GCLatencyMode.Interactive;
-		}
-		[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
-		set
-		{
-		}
-	}
+	/// <summary>Creates an equivalent copy of the membership condition.</summary>
+	/// <returns>A new, identical copy of the current membership condition.</returns>
+	/// <summary>Creates an equivalent copy of the membership condition.</summary>
+	/// <returns>A new, identical copy of the current membership condition.</returns>
+	IMembershipCondition Copy();
 
-	/// <summary>Gets or sets a value that indicates whether a full blocking garbage collection compacts the large object heap (LOH).</summary>
-	/// <returns>One of the enumeration values that indicates whether a full blocking garbage collection compacts the LOH.</returns>
-	public static GCLargeObjectHeapCompactionMode LargeObjectHeapCompactionMode
-	{
-		[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
-		get;
-		[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
-		set;
-	}
+	/// <summary>Determines whether the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:System.Object" />.</summary>
+	/// <param name="obj">The <see cref="T:System.Object" /> to compare with the current <see cref="T:System.Object" />.</param>
+	/// <returns>
+	///   <see langword="true" /> if the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:System.Object" />; otherwise, <see langword="false" />.</returns>
+	/// <summary>Determines whether the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:System.Object" />.</summary>
+	/// <param name="obj">The <see cref="T:System.Object" /> to compare with the current <see cref="T:System.Object" />.</param>
+	/// <returns>
+	///   <see langword="true" /> if the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:System.Object" />; otherwise, <see langword="false" />.</returns>
+	new bool Equals(object obj);
+
+	/// <summary>Creates and returns a string representation of the membership condition.</summary>
+	/// <returns>A string representation of the state of the current membership condition.</returns>
+	/// <summary>Creates and returns a string representation of the membership condition.</summary>
+	/// <returns>A string representation of the state of the current membership condition.</returns>
+	new string ToString();
 }
