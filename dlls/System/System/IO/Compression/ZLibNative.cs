@@ -1,6 +1,10 @@
-namespace System.IO.Compression;
-
-internal class ZLibNative
+namespace System.IO.Compression
 {
-	public const int GZip_DefaultWindowBits = 31;
+	internal class ZLibNative
+	{
+		public const int GZip_DefaultWindowBits = 31;
+	}
+}
+namespace System.Text.RegularExpressions
+{
 }

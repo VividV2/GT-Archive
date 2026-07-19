@@ -1,18 +1,11 @@
 using System;
 
-namespace UnityEngine.Playables
+namespace UnityEngine.Playables;
+
+public enum PlayState
 {
-	public enum PlayState
-	{
-		Paused,
-		Playing,
-		[Obsolete("Delayed is obsolete; use a custom ScriptPlayable to implement this feature", false)]
-		Delayed
-	}
-}
-namespace UnityEngine.Scripting
-{
-}
-namespace UnityEngine.Rendering
-{
+	Paused,
+	Playing,
+	[Obsolete("Delayed is obsolete; use a custom ScriptPlayable to implement this feature", false)]
+	Delayed
 }

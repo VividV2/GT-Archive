@@ -1,11 +1,2 @@
-using System.Diagnostics;
-
-namespace System.Linq.Parallel;
-
-internal static class TraceHelpers
-{
-	[Conditional("PFXTRACE")]
-	internal static void TraceInfo(string msg, params object[] args)
-	{
-	}
-}
+// Could not decompile System.Linq.Parallel.TraceHelpers
+// This type uses unsupported IL or has too many generic parameters.

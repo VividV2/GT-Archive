@@ -1,15 +1,14 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class FacebookInstantGamesPlayFabIdPair : PlayFabBaseModel
 {
-	public enum CloudScriptRevisionOption
-	{
-		Live,
-		Latest,
-		Specific
-	}
-}
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.Internal
-{
+	public string FacebookInstantGamesId;
+
+	public string PlayFabId;
 }

@@ -1,9 +1,3 @@
-namespace System.Reflection;
-
-public enum AssemblyContentType
+namespace System.Reflection.Emit
 {
-	/// <summary>The assembly contains .NET Framework code.</summary>
-	Default,
-	/// <summary>The assembly contains Windows Runtime code.</summary>
-	WindowsRuntime
 }

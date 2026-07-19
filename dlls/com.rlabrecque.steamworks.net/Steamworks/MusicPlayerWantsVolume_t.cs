@@ -1,12 +1,12 @@
-using System.Runtime.InteropServices;
-
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4011)]
-public struct MusicPlayerWantsVolume_t
+namespace Steamworks
 {
-	public const int k_iCallback = 4011;
-
-	public float m_flNewVolume;
+	[Flags]
+	public enum EChatMemberStateChange
+	{
+		k_EChatMemberStateChangeEntered = 1,
+		k_EChatMemberStateChangeLeft = 2,
+		k_EChatMemberStateChangeDisconnected = 4,
+		k_EChatMemberStateChangeKicked = 8,
+		k_EChatMemberStateChangeBanned = 0x10
+	}
 }

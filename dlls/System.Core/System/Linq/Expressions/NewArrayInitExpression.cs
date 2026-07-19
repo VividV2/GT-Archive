@@ -1,2 +1,17 @@
-// Could not decompile System.Linq.Expressions.NewArrayInitExpression
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.ObjectModel;
+
+namespace System.Linq.Expressions
+{
+	internal sealed class NewArrayInitExpression : NewArrayExpression
+	{
+		public sealed override ExpressionType NodeType => ExpressionType.NewArrayInit;
+
+		internal NewArrayInitExpression(Type type, ReadOnlyCollection<Expression> expressions)
+			: base(type, expressions)
+		{
+		}
+	}
+}
+namespace System.Collections.Generic
+{
+}

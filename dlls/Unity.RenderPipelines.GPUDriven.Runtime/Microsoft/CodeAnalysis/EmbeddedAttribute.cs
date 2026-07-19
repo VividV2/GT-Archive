@@ -1,22 +1,10 @@
-namespace UnityEngine.Rendering;
+using System;
+using System.Runtime.CompilerServices;
 
-internal struct InstanceOcclusionEventStats
+namespace Microsoft.CodeAnalysis;
+
+[CompilerGenerated]
+[Microsoft.CodeAnalysis.Embedded]
+internal sealed class EmbeddedAttribute : Attribute
 {
-	public int viewInstanceID;
-
-	public InstanceOcclusionEventType eventType;
-
-	public int occluderVersion;
-
-	public int subviewMask;
-
-	public OcclusionTest occlusionTest;
-
-	public int visibleInstances;
-
-	public int culledInstances;
-
-	public int visiblePrimitives;
-
-	public int culledPrimitives;
 }

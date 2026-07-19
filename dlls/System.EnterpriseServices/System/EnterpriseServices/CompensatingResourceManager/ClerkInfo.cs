@@ -1,2 +1,12 @@
-// Could not decompile System.EnterpriseServices.CompensatingResourceManager.ClerkInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System;
+
+namespace Unity;
+
+internal sealed class ThrowStub : ObjectDisposedException
+{
+	public static void ThrowNotSupportedException()
+	{
+		throw new PlatformNotSupportedException();
+	}
+}

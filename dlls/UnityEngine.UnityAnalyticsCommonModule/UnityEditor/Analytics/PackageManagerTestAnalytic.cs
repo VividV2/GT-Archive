@@ -2,23 +2,60 @@ using System;
 using System.Runtime.InteropServices;
 using UnityEngine.Internal;
 using UnityEngine.Scripting;
+using System;
+using System.Runtime.InteropServices;
+using UnityEngine.Internal;
+using UnityEngine.Scripting;
 
-namespace UnityEditor.Analytics;
-
-[Serializable]
-[StructLayout(LayoutKind.Sequential)]
-[RequiredByNativeCode(GenerateProxy = true)]
-[ExcludeFromDocs]
-public class PackageManagerTestAnalytic : PackageManagerBaseAnalytic
+namespace UnityEditor.Analytics
 {
-	public PackageManagerTestAnalytic()
-		: base("PackageManager")
+	[Serializable]
+	[StructLayout(LayoutKind.Sequential)]
+	[RequiredByNativeCode(GenerateProxy = true)]
+	[ExcludeFromDocs]
+	public class PackageManagerTestAnalytic : PackageManagerBaseAnalytic
 	{
-	}
+		public PackageManagerTestAnalytic()
+			: base("PackageManager")
+		{
+		}
 
-	[RequiredByNativeCode]
-	internal static PackageManagerTestAnalytic CreatePackageManagerTestAnalytic()
+		[RequiredByNativeCode]
+		internal static PackageManagerTestAnalytic CreatePackageManagerTestAnalytic()
+		{
+			return new PackageManagerTestAnalytic();
+		}
+	}
+}
+namespace UnityEditor.Analytics
+{
+	[Serializable]
+	[StructLayout(LayoutKind.Sequential)]
+	[RequiredByNativeCode(GenerateProxy = true)]
+	[ExcludeFromDocs]
+	public class PackageManagerResolvePackageAnalytic : PackageManagerBaseAnalytic
 	{
-		return new PackageManagerTestAnalytic();
+		public string[] packages;
+
+		public string[] package_registries;
+
+		public string[] package_signatures;
+
+		public string[] package_sources;
+
+		public string[] package_types;
+
+		public string[] package_compliance_statuses;
+
+		public PackageManagerResolvePackageAnalytic()
+			: base("resolvePackages")
+		{
+		}
+
+		[RequiredByNativeCode]
+		internal static PackageManagerResolvePackageAnalytic CreatePackageManagerResolvePackageAnalytic()
+		{
+			return new PackageManagerResolvePackageAnalytic();
+		}
 	}
 }

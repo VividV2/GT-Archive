@@ -1,2 +1,6 @@
-// Could not decompile System.Data.Odbc.OdbcMetaDataCollectionNames
-// This type uses unsupported IL or has too many generic parameters.
+namespace Microsoft.SqlServer.Server
+{
+}
+namespace Microsoft.SqlServer.Server
+{
+}

@@ -1,10 +1,2 @@
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-internal struct IssuerAndSerialNumberAsn
-{
-	[AnyValue]
-	public ReadOnlyMemory<byte> Issuer;
-
-	[Integer]
-	public ReadOnlyMemory<byte> SerialNumber;
-}
+// Could not decompile System.Security.Cryptography.Pkcs.Asn1.Rfc3161TstInfo
+// This type uses unsupported IL or has too many generic parameters.

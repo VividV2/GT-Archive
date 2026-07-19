@@ -1,2 +1,3 @@
-namespace System.Diagnostics.Tracing;
-
+namespace System.Buffers
+{
+}

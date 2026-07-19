@@ -9,6 +9,3 @@ public sealed class TypeNTextSchemaImporterExtension : SqlTypesSchemaImporterExt
 	{
 	}
 }
-namespace System.Data.SqlTypes
-{
-}

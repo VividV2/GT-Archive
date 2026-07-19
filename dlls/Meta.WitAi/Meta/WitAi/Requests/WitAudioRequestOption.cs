@@ -1,16 +1,9 @@
-namespace Meta.WitAi.ServiceReferences
+namespace Meta.WitAi.Requests;
+
+public enum WitAudioRequestOption
 {
-}
-namespace Meta.WitAi
-{
-}
-namespace Meta.WitAi.Requests
-{
-	public enum WitAudioRequestOption
-	{
-		None,
-		Speech,
-		Transcribe,
-		Dictation
-	}
+	None,
+	Speech,
+	Transcribe,
+	Dictation
 }

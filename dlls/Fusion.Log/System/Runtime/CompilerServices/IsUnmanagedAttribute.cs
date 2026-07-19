@@ -1,17 +1,9 @@
 using Microsoft.CodeAnalysis;
 
-namespace System.Runtime.CompilerServices
-{
-	[CompilerGenerated]
-	[Embedded]
-	[AttributeUsage(AttributeTargets.Module, AllowMultiple = false, Inherited = false)]
-	internal sealed class RefSafetyRulesAttribute : Attribute
-	{
-		public readonly int Version;
+namespace System.Runtime.CompilerServices;
 
-		public RefSafetyRulesAttribute(int P_0)
-		{
-			Version = P_0;
-		}
-	}
+[CompilerGenerated]
+[Microsoft.CodeAnalysis.Embedded]
+internal sealed class IsUnmanagedAttribute : Attribute
+{
 }

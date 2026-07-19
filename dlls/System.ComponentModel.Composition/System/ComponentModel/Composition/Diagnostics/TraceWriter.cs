@@ -1,20 +1,2 @@
-namespace System.ComponentModel.Composition.Hosting
-{
-}
-namespace System.ComponentModel.Composition.Diagnostics
-{
-	internal abstract class TraceWriter
-	{
-		public abstract bool CanWriteInformation { get; }
-
-		public abstract bool CanWriteWarning { get; }
-
-		public abstract bool CanWriteError { get; }
-
-		public abstract void WriteInformation(CompositionTraceId traceId, string format, params object[] arguments);
-
-		public abstract void WriteWarning(CompositionTraceId traceId, string format, params object[] arguments);
-
-		public abstract void WriteError(CompositionTraceId traceId, string format, params object[] arguments);
-	}
-}
+// Could not decompile System.ComponentModel.Composition.Diagnostics.TraceWriter
+// This type uses unsupported IL or has too many generic parameters.

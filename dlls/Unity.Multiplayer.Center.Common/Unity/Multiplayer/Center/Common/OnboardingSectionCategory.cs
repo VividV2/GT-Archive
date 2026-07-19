@@ -1,15 +1,21 @@
-namespace Unity.Multiplayer.Center.Common
+using UnityEngine.UIElements;
+using UnityEngine.UIElements;
+
+namespace Unity.Multiplayer.Center.Common.Analytics
 {
-	public enum OnboardingSectionCategory
+	public interface IOnboardingSectionAnalyticsProvider
 	{
-		Intro,
-		Netcode,
-		ConnectingPlayers,
-		ServerInfrastructure,
-		Other,
-		LiveOps
+		void SendInteractionEvent(InteractionDataType type, string displayName);
 	}
 }
 namespace Unity.Multiplayer.Center.Common
 {
+	public interface IOnboardingSection
+	{
+		VisualElement Root { get; }
+
+		void Load();
+
+		void Unload();
+	}
 }

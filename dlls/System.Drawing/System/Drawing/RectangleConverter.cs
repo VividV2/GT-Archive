@@ -1,19 +1,38 @@
-namespace System.Drawing.Printing;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-/// <summary>Specifies the part of the document to print.</summary>
-/// <summary>Specifies the part of the document to print.</summary>
-public enum PrintRange
+namespace System.Drawing.Imaging;
+
+[StructLayout(LayoutKind.Sequential, Pack = 2)]
+internal struct EnhMetafileHeader
 {
-	/// <summary>All pages are printed.</summary>
-	/// <summary>All pages are printed.</summary>
-	AllPages = 0,
-	/// <summary>The pages between <see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" /> and <see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" /> are printed.</summary>
-	/// <summary>The pages between <see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" /> and <see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" /> are printed.</summary>
-	SomePages = 2,
-	/// <summary>The selected pages are printed.</summary>
-	/// <summary>The selected pages are printed.</summary>
-	Selection = 1,
-	/// <summary>The currently displayed page is printed</summary>
-	/// <summary>The currently displayed page is printed</summary>
-	CurrentPage = 4194304
+	public int type;
+
+	public int size;
+
+	public Rectangle bounds;
+
+	public Rectangle frame;
+
+	public int signature;
+
+	public int version;
+
+	public int bytes;
+
+	public int records;
+
+	public short handles;
+
+	public short reserved;
+
+	public int description;
+
+	public int off_description;
+
+	public int palette_entires;
+
+	public Size device;
+
+	public Size millimeters;
 }

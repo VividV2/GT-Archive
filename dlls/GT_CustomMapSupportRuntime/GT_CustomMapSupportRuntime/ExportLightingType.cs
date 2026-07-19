@@ -1,8 +1,6 @@
-namespace GT_CustomMapSupportRuntime;
-
-public enum ExportLightingType
+namespace GT_CustomMapSupportRuntime
 {
-	Default_Unity,
-	Alternative,
-	Off
+}
+namespace GT_CustomMapSupportRuntime
+{
 }

@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.UIElements.Layout.LayoutWrap
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements.Layout;
+
+internal enum LayoutWrap
+{
+	NoWrap,
+	Wrap,
+	WrapReverse
+}

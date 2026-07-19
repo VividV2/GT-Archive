@@ -1,6 +1,16 @@
-namespace PlayFab.DataModels
+namespace PlayFab.Public;
+
+public class PlayFabLogger : PlayFabLoggerBase
 {
-}
-namespace PlayFab.Json
-{
+	protected override void BeginUploadLog()
+	{
+	}
+
+	protected override void UploadLog(string message)
+	{
+	}
+
+	protected override void EndUploadLog()
+	{
+	}
 }

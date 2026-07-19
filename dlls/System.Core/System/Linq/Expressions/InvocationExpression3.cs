@@ -1,2 +1,6 @@
-// Could not decompile System.Linq.Expressions.InvocationExpression3
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq.Expressions
+{
+}
+namespace System.Linq.Expressions
+{
+}

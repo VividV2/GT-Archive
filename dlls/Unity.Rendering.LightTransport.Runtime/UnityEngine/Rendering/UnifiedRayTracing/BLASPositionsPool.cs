@@ -1,2 +1,2 @@
-// Could not decompile UnityEngine.Rendering.UnifiedRayTracing.BLASPositionsPool
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.UnifiedRayTracing;
+

@@ -1,6 +1,2 @@
-namespace PlayFab.DataModels
-{
-}
-namespace PlayFab.InsightsModels
-{
-}
+namespace PlayFab.InsightsModels;
+

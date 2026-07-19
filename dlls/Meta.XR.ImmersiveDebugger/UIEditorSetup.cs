@@ -1,2 +1,8 @@
-// Could not decompile UIEditorSetup
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine;
+
+namespace Meta.XR.ImmersiveDebugger.Utils;
+
+internal class Vector3Container : ValueContainer<Vector3>
+{
+}

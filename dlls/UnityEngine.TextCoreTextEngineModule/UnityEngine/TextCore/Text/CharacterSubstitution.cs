@@ -1,8 +1,2 @@
-namespace UnityEngine.TextCore.Text;
-
-internal struct CharacterSubstitution(int index, uint unicode)
-{
-	public int index = index;
-
-	public uint unicode = unicode;
-}
+// Could not decompile UnityEngine.TextCore.Text.CharacterSubstitution
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,6 +1,2 @@
-namespace System.Diagnostics;
-
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method, Inherited = false)]
-internal sealed class StackTraceHiddenAttribute : Attribute
-{
-}
+// Could not decompile System.Diagnostics.StackTraceHiddenAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,29 @@
-// Could not decompile PlayFab.MultiplayerModels.RequestMultiplayerServerResponse
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class RequestMultiplayerServerResponse : PlayFabResultCommon
+{
+	public List<ConnectedPlayer> ConnectedPlayers;
+
+	public string FQDN;
+
+	public string IPV4Address;
+
+	public DateTime? LastStateTransitionTime;
+
+	public List<Port> Ports;
+
+	public string Region;
+
+	public string ServerId;
+
+	public string SessionId;
+
+	public string State;
+
+	public string VmId;
+}

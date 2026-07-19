@@ -1,14 +1,2 @@
-namespace System.Security.Cryptography.Xml;
-
-internal class RSAPKCS1SHA384SignatureDescription : RSAPKCS1SignatureDescription
-{
-	public RSAPKCS1SHA384SignatureDescription()
-		: base("SHA384")
-	{
-	}
-
-	public sealed override HashAlgorithm CreateDigest()
-	{
-		return SHA384.Create();
-	}
-}
+// Could not decompile System.Security.Cryptography.Xml.RSAPKCS1SHA384SignatureDescription
+// This type uses unsupported IL or has too many generic parameters.

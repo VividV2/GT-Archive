@@ -1,2 +1,2 @@
-namespace System.ComponentModel.Composition.Hosting;
-
+// Could not decompile System.ComponentModel.Composition.Hosting.CompositionService
+// This type uses unsupported IL or has too many generic parameters.

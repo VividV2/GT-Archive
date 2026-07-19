@@ -1,2 +1,13 @@
-// Could not decompile VYaml.Annotations.NamingConvention
-// This type uses unsupported IL or has too many generic parameters.
+namespace VYaml.Annotations
+{
+}
+namespace VYaml.Annotations
+{
+	public enum NamingConvention
+	{
+		LowerCamelCase,
+		UpperCamelCase,
+		SnakeCase,
+		KebabCase
+	}
+}

@@ -1,6 +1,13 @@
-namespace Modio.Unity.UI.Components.ModProperties
+using System;
+using Modio.Mods;
+
+namespace Modio.Unity.UI.Components.ModProperties;
+
+[Serializable]
+public class ModPropertySubscribers : ModPropertyNumberBase
 {
-}
-namespace Modio.Unity.UI.Components.ModProperties
-{
+	protected override long GetValue(Mod mod)
+	{
+		return mod.Stats.Subscribers;
+	}
 }

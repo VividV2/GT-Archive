@@ -1,74 +1,122 @@
+using System.Configuration.Internal;
+
 namespace System.Configuration;
 
-/// <summary>Represents a configuration element that contains a key/value pair.</summary>
-/// <summary>Represents a configuration element that contains a key/value pair.</summary>
-public class KeyValueConfigurationElement : ConfigurationElement
+internal class ExeConfigurationHost : InternalConfigurationHost
 {
-	private static ConfigurationProperty keyProp;
+	private ExeConfigurationFileMap map;
 
-	private static ConfigurationProperty valueProp;
+	private ConfigurationUserLevel level;
 
-	private static ConfigurationPropertyCollection properties;
-
-	/// <summary>Gets the key of the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> object.</summary>
-	/// <returns>The key of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</returns>
-	/// <summary>Gets the key of the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> object.</summary>
-	/// <returns>The key of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</returns>
-	[ConfigurationProperty("key", DefaultValue = "", Options = ConfigurationPropertyOptions.IsKey)]
-	public string Key => (string)base[keyProp];
-
-	/// <summary>Gets or sets the value of the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> object.</summary>
-	/// <returns>The value of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</returns>
-	/// <summary>Gets or sets the value of the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> object.</summary>
-	/// <returns>The value of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</returns>
-	[ConfigurationProperty("value", DefaultValue = "")]
-	public string Value
+	public override void Init(IInternalConfigRoot root, params object[] hostInitParams)
 	{
-		get
+		map = (ExeConfigurationFileMap)hostInitParams[0];
+		level = (ConfigurationUserLevel)hostInitParams[1];
+		CheckFileMap(level, map);
+	}
+
+	private static void CheckFileMap(ConfigurationUserLevel level, ExeConfigurationFileMap map)
+	{
+		if (level != ConfigurationUserLevel.None)
 		{
-			return (string)base[valueProp];
+			switch (level)
+			{
+			default:
+				return;
+			case ConfigurationUserLevel.PerUserRoamingAndLocal:
+				if (string.IsNullOrEmpty(map.LocalUserConfigFilename))
+				{
+					throw new ArgumentException("The 'LocalUserConfigFilename' argument cannot be null.");
+				}
+				break;
+			case ConfigurationUserLevel.PerUserRoaming:
+				break;
+			}
+			if (string.IsNullOrEmpty(map.RoamingUserConfigFilename))
+			{
+				throw new ArgumentException("The 'RoamingUserConfigFilename' argument cannot be null.");
+			}
 		}
-		set
+		if (string.IsNullOrEmpty(map.ExeConfigFilename))
 		{
-			base[valueProp] = value;
+			throw new ArgumentException("The 'ExeConfigFilename' argument cannot be null.");
 		}
 	}
 
-	/// <summary>Gets the collection of properties.</summary>
-	/// <returns>The <see cref="T:System.Configuration.ConfigurationPropertyCollection" /> of properties for the element.</returns>
-	/// <summary>Gets the collection of properties.</summary>
-	/// <returns>The <see cref="T:System.Configuration.ConfigurationPropertyCollection" /> of properties for the element.</returns>
-	protected internal override ConfigurationPropertyCollection Properties => properties;
-
-	static KeyValueConfigurationElement()
+	public override string GetStreamName(string configPath)
 	{
-		keyProp = new ConfigurationProperty("key", typeof(string), "", ConfigurationPropertyOptions.IsKey);
-		valueProp = new ConfigurationProperty("value", typeof(string), "");
-		properties = new ConfigurationPropertyCollection();
-		properties.Add(keyProp);
-		properties.Add(valueProp);
+		return configPath switch
+		{
+			"exe" => map.ExeConfigFilename, 
+			"local" => map.LocalUserConfigFilename, 
+			"roaming" => map.RoamingUserConfigFilename, 
+			"machine" => map.MachineConfigFilename, 
+			_ => level switch
+			{
+				ConfigurationUserLevel.None => map.ExeConfigFilename, 
+				ConfigurationUserLevel.PerUserRoaming => map.RoamingUserConfigFilename, 
+				ConfigurationUserLevel.PerUserRoamingAndLocal => map.LocalUserConfigFilename, 
+				_ => map.MachineConfigFilename, 
+			}, 
+		};
 	}
 
-	internal KeyValueConfigurationElement()
+	public override void InitForConfiguration(ref string locationSubPath, out string configPath, out string locationConfigPath, IInternalConfigRoot root, params object[] hostInitConfigurationParams)
 	{
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> class based on the supplied parameters.</summary>
-	/// <param name="key">The key of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</param>
-	/// <param name="value">The value of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</param>
-	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> class based on the supplied parameters.</summary>
-	/// <param name="key">The key of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</param>
-	/// <param name="value">The value of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</param>
-	public KeyValueConfigurationElement(string key, string value)
-	{
-		base[keyProp] = key;
-		base[valueProp] = value;
-	}
-
-	/// <summary>Sets the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> object to its initial state.</summary>
-	/// <summary>Sets the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> object to its initial state.</summary>
-	[System.MonoTODO]
-	protected internal override void Init()
-	{
+		map = (ExeConfigurationFileMap)hostInitConfigurationParams[0];
+		if (hostInitConfigurationParams.Length > 1 && hostInitConfigurationParams[1] is ConfigurationUserLevel)
+		{
+			level = (ConfigurationUserLevel)hostInitConfigurationParams[1];
+		}
+		CheckFileMap(level, map);
+		if (locationSubPath == null)
+		{
+			switch (level)
+			{
+			case ConfigurationUserLevel.PerUserRoaming:
+				if (map.RoamingUserConfigFilename == null)
+				{
+					throw new ArgumentException("RoamingUserConfigFilename must be set correctly");
+				}
+				locationSubPath = "roaming";
+				break;
+			case ConfigurationUserLevel.PerUserRoamingAndLocal:
+				if (map.LocalUserConfigFilename == null)
+				{
+					throw new ArgumentException("LocalUserConfigFilename must be set correctly");
+				}
+				locationSubPath = "local";
+				break;
+			}
+		}
+		if (locationSubPath == "exe" || (locationSubPath == null && map.ExeConfigFilename != null))
+		{
+			configPath = "exe";
+			locationSubPath = "machine";
+			locationConfigPath = map.ExeConfigFilename;
+			return;
+		}
+		if (locationSubPath == "local" && map.LocalUserConfigFilename != null)
+		{
+			configPath = "local";
+			locationSubPath = "roaming";
+			locationConfigPath = map.LocalUserConfigFilename;
+			return;
+		}
+		if (locationSubPath == "roaming" && map.RoamingUserConfigFilename != null)
+		{
+			configPath = "roaming";
+			locationSubPath = "exe";
+			locationConfigPath = map.RoamingUserConfigFilename;
+			return;
+		}
+		if (locationSubPath == "machine" && map.MachineConfigFilename != null)
+		{
+			configPath = "machine";
+			locationSubPath = null;
+			locationConfigPath = null;
+			return;
+		}
+		throw new NotImplementedException();
 	}
 }

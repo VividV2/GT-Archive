@@ -1,8 +1,12 @@
-namespace UnityEngine.EventSystems;
-
-public enum NavigationDeviceType
+namespace UnityEngine.EventSystems
 {
-	Unknown,
-	Keyboard,
-	NonKeyboard
+	public enum NavigationDeviceType
+	{
+		Unknown,
+		Keyboard,
+		NonKeyboard
+	}
+}
+namespace UnityEngine.EventSystems
+{
 }

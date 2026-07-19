@@ -1,2 +1,2 @@
-// Could not decompile System.Linq.Parallel.NullableLongAverageAggregationOperator
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Dynamic;
+

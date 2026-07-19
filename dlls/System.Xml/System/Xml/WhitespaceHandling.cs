@@ -1,5 +1,16 @@
-namespace System.Xml.Serialization;
-
-/// <summary>Delegate used by the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class for deserialization of types from SOAP-encoded, non-root XML data. </summary>
-/// <returns>The object returned by the callback.</returns>
-public delegate object XmlSerializationReadCallback();
+namespace System.Xml
+{
+	/// <summary>Specifies how white space is handled.</summary>
+	public enum WhitespaceHandling
+	{
+		/// <summary>Return <see langword="Whitespace" /> and <see langword="SignificantWhitespace" /> nodes. This is the default.</summary>
+		All,
+		/// <summary>Return <see langword="SignificantWhitespace" /> nodes only.</summary>
+		Significant,
+		/// <summary>Return no <see langword="Whitespace" /> and no <see langword="SignificantWhitespace" /> nodes.</summary>
+		None
+	}
+}
+namespace System.Xml.Xsl.Runtime
+{
+}

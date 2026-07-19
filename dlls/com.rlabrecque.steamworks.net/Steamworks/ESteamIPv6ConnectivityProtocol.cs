@@ -1,25 +1,38 @@
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
 namespace Steamworks
 {
-	public enum ELeaderboardSortMethod
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(1316)]
+	public struct RemoteStorageUpdatePublishedFileResult_t
 	{
-		k_ELeaderboardSortMethodNone,
-		k_ELeaderboardSortMethodAscending,
-		k_ELeaderboardSortMethodDescending
+		public const int k_iCallback = 1316;
+
+		public EResult m_eResult;
+
+		public PublishedFileId_t m_nPublishedFileId;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bUserNeedsToAcceptWorkshopLegalAgreement;
 	}
 }
 namespace Steamworks
 {
-	public enum EFriendRelationship
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(504)]
+	public struct LobbyEnter_t
 	{
-		k_EFriendRelationshipNone,
-		k_EFriendRelationshipBlocked,
-		k_EFriendRelationshipRequestRecipient,
-		k_EFriendRelationshipFriend,
-		k_EFriendRelationshipRequestInitiator,
-		k_EFriendRelationshipIgnored,
-		k_EFriendRelationshipIgnoredFriend,
-		k_EFriendRelationshipSuggested_DEPRECATED,
-		k_EFriendRelationshipMax
+		public const int k_iCallback = 504;
+
+		public ulong m_ulSteamIDLobby;
+
+		public uint m_rgfChatPermissions;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bLocked;
+
+		public uint m_EChatRoomEnterResponse;
 	}
 }
 namespace Steamworks

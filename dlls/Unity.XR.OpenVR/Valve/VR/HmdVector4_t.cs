@@ -1,7 +1,12 @@
 namespace Valve.VR;
 
-public enum EVRSkeletalTransformSpace
+public struct HmdVector4_t
 {
-	Model,
-	Parent
+	public float v0;
+
+	public float v1;
+
+	public float v2;
+
+	public float v3;
 }

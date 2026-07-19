@@ -1,12 +1,2 @@
-using UnityEngine.Bindings;
-using UnityEngine.Bindings;
-using UnityEngine.Bindings;
-
-namespace UnityEngine.Apple;
-
-[NativeHeader("Runtime/Export/Apple/FrameCaptureMetalScriptBindings.h")]
-public enum FrameCaptureDestination
-{
-	DevTools = 1,
-	GPUTraceDocument
-}
+// Could not decompile UnityEngine.Categorization.CategoryInfoAttribute
+// This type uses unsupported IL or has too many generic parameters.

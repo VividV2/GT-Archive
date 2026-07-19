@@ -21,7 +21,7 @@ namespace Meta.XR.ImmersiveDebugger.Manager
 		int GetCountPerType(Type type);
 	}
 }
-namespace Meta.XR.ImmersiveDebugger
+namespace Meta.XR.ImmersiveDebugger.Manager
 {
 }
 namespace Meta.XR.ImmersiveDebugger.Manager

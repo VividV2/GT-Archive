@@ -1,31 +1,19 @@
-namespace System.Security.AccessControl
+namespace System.Security.Permissions
 {
+	/// <summary>Specifies the type of access to files allowed through the File dialog boxes.</summary>
 	[Flags]
-	public enum AccessControlSections
+	public enum FileDialogPermissionAccess
 	{
+		/// <summary>No access to files through the File dialog boxes.</summary>
 		None = 0,
-		Audit = 1,
-		Access = 2,
-		Owner = 4,
-		Group = 8,
-		All = 0xF
+		/// <summary>Ability to open files through the File dialog boxes.</summary>
+		Open = 1,
+		/// <summary>Ability to open and save files through the File dialog boxes.</summary>
+		OpenSave = 3,
+		/// <summary>Ability to save files through the File dialog boxes.</summary>
+		Save = 2
 	}
 }
-namespace System.Runtime.InteropServices
+namespace System.Security.Policy
 {
-	[ComVisible(true)]
-	[CLSCompliant(false)]
-	[TypeLibImportClass(typeof(LocalBuilder))]
-	[Guid("4E6350D1-A08B-3DEC-9A3E-C465F9AEEC0C")]
-	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-	public interface _LocalBuilder
-	{
-		void GetIDsOfNames([In] ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);
-
-		void GetTypeInfo(uint iTInfo, uint lcid, IntPtr ppTInfo);
-
-		void GetTypeInfoCount(out uint pcTInfo);
-
-		void Invoke(uint dispIdMember, [In] ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);
-	}
 }

@@ -1,10 +1,2 @@
-using System;
-using Meta.WitAi.TTS.Data;
-using UnityEngine.Events;
-
-namespace Meta.WitAi.TTS.Utilities;
-
-[Serializable]
-public class TTSSpeakerClipEvent : UnityEvent<TTSSpeaker, TTSClipData>
-{
-}
+// Could not decompile Meta.WitAi.TTS.Utilities.TTSSpeakerClipEvent
+// This type uses unsupported IL or has too many generic parameters.

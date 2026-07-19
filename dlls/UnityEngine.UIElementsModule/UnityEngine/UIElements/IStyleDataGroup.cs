@@ -1,9 +1,12 @@
-namespace UnityEngine.UIElements;
-
-public enum WhiteSpace
+namespace UnityEngine.UIElements
 {
-	Normal,
-	NoWrap,
-	Pre,
-	PreWrap
+	internal interface IStyleDataGroup<T>
+	{
+		T Copy();
+
+		void CopyFrom(ref T other);
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

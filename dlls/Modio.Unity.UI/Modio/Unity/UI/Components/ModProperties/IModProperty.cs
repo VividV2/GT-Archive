@@ -1,8 +1,12 @@
 using Modio.Mods;
 
-namespace Modio.Unity.UI.Components.ModProperties;
-
-public interface IModProperty
+namespace Modio.Unity.UI.Components.ModProperties
 {
-	void OnModUpdate(Mod mod);
+	public interface IModProperty
+	{
+		void OnModUpdate(Mod mod);
+	}
+}
+namespace Modio.Unity.UI.Components.Selectables.Transitions
+{
 }

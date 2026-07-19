@@ -1,12 +1,11 @@
-using System.Runtime.InteropServices;
-
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(3418)]
-public struct UserSubscribedItemsListChanged_t
+namespace Steamworks
 {
-	public const int k_iCallback = 3418;
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(2801)]
+	public struct SteamInputDeviceConnected_t
+	{
+		public const int k_iCallback = 2801;
 
-	public AppId_t m_nAppID;
+		public InputHandle_t m_ulConnectedDeviceHandle;
+	}
 }

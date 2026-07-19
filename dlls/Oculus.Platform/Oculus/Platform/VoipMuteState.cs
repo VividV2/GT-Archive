@@ -1,13 +1,17 @@
 using System.ComponentModel;
 
-namespace Oculus.Platform;
-
-public enum VoipMuteState
+namespace Oculus.Platform.Models
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("MUTED")]
-	Muted,
-	[Description("UNMUTED")]
-	Unmuted
+}
+namespace Oculus.Platform
+{
+	public enum VoipMuteState
+	{
+		[Description("UNKNOWN")]
+		Unknown,
+		[Description("MUTED")]
+		Muted,
+		[Description("UNMUTED")]
+		Unmuted
+	}
 }

@@ -1,3 +1,5 @@
+namespace BoingKit;
+
 public enum GRShuttleState
 {
 	Docking,

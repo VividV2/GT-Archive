@@ -1,14 +1,2 @@
-using System;
-using UnityEngine;
-
-namespace Meta.WitAi.Data.Info;
-
-[Serializable]
-public struct WitTraitValueInfo
-{
-	[SerializeField]
-	public string id;
-
-	[SerializeField]
-	public string value;
-}
+// Could not decompile Meta.WitAi.CoroutineUtility
+// This type uses unsupported IL or has too many generic parameters.

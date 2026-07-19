@@ -1,2 +1,8 @@
-// Could not decompile System.Diagnostics.CodeAnalysis.StringSyntaxAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace K4os.Compression.LZ4;
+
+internal class AssemblyHook
+{
+	private AssemblyHook()
+	{
+	}
+}

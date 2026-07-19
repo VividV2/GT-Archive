@@ -1,3 +1,8 @@
+using System;
+using System.Runtime.InteropServices;
+using System;
+using System.Runtime.InteropServices;
+
 namespace Steamworks
 {
 	public enum EDurationControlNotification
@@ -14,9 +19,11 @@ namespace Steamworks
 }
 namespace Steamworks
 {
-	public enum EWorkshopFileAction
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	public struct SteamParamStringArray_t
 	{
-		k_EWorkshopFileActionPlayed,
-		k_EWorkshopFileActionCompleted
+		public IntPtr m_ppStrings;
+
+		public int m_nNumStrings;
 	}
 }

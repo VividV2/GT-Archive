@@ -1,9 +1,2 @@
-using System.IO;
-using System.IO;
-
-public interface IGameEntitySerialize
-{
-	void OnGameEntitySerialize(BinaryWriter writer);
-
-	void OnGameEntityDeserialize(BinaryReader reader);
-}
+// Could not decompile DestroyIfNotQA
+// This type uses unsupported IL or has too many generic parameters.

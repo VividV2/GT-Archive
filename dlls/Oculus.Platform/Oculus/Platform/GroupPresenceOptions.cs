@@ -1,19 +1,2 @@
-using System.ComponentModel;
-
-namespace Oculus.Platform;
-
-public enum ServiceProvider
-{
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("DROPBOX")]
-	Dropbox,
-	[Description("FACEBOOK")]
-	Facebook,
-	[Description("GOOGLE")]
-	Google,
-	[Description("INSTAGRAM")]
-	Instagram,
-	[Description("REMOTE_MEDIA")]
-	RemoteMedia
-}
+// Could not decompile Oculus.Platform.GroupPresenceOptions
+// This type uses unsupported IL or has too many generic parameters.

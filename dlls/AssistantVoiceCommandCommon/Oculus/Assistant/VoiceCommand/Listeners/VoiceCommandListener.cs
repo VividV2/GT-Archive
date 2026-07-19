@@ -1,8 +1,9 @@
-using Oculus.Assistant.VoiceCommand.Data;
-
-namespace Oculus.Assistant.VoiceCommand.Listeners;
-
-public interface VoiceCommandListener
+namespace Oculus.Assistant.VoiceCommand.Listeners
 {
-	void OnCallback(VoiceCommandResult result);
+}
+namespace Oculus.Assistant.VoiceCommand.Configuration
+{
+}
+namespace Oculus.Assistant.VoiceCommand.Listeners
+{
 }

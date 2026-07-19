@@ -1,7 +1,11 @@
-namespace UnityEngine.Rendering.Universal;
-
-public enum BloomDownscaleMode
+namespace UnityEngine.Rendering.Universal
 {
-	Half,
-	Quarter
+}
+namespace UnityEngine.Rendering.Universal
+{
+	public enum BloomDownscaleMode
+	{
+		Half,
+		Quarter
+	}
 }

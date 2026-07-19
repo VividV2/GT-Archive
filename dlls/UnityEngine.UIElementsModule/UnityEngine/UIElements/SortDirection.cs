@@ -1,11 +1,7 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum SortDirection
 {
-	public enum SortDirection
-	{
-		Ascending,
-		Descending
-	}
-}
-namespace UnityEngine.UIElements
-{
+	Ascending,
+	Descending
 }

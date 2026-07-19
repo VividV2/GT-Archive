@@ -10,3 +10,6 @@ internal enum PInfo
 	DeclaringType = 0x10,
 	Name = 0x20
 }
+namespace System.Resources
+{
+}

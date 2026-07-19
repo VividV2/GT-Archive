@@ -1,6 +1,10 @@
-namespace Microsoft.VisualBasic
+namespace System.Net
 {
+	internal interface ICloseEx
+	{
+		void CloseEx(CloseExState closeState);
+	}
 }
-namespace System.Diagnostics
+namespace System.Net
 {
 }

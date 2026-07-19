@@ -1,11 +1,2 @@
-using Meta.XR.Util;
-
-[Feature(Feature.Scene)]
-public static class OVRScene
-{
-	public static OVRTask<bool> RequestSpaceSetup()
-	{
-		ulong requestId;
-		return OVRTask.Build(OVRPlugin.RequestSceneCapture(out requestId), requestId).ToTask(failureValue: false);
-	}
-}
+// Could not decompile OVRScene
+// This type uses unsupported IL or has too many generic parameters.

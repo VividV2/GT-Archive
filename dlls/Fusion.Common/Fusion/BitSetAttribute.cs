@@ -1,16 +1,14 @@
+using System;
+
 namespace Fusion;
 
-public abstract class DecoratingPropertyAttribute : PropertyAttribute
+[AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
+public sealed class BitSetAttribute : DrawerPropertyAttribute
 {
-	public const int DefaultOrder = -10000;
+	public int BitCount { get; }
 
-	protected DecoratingPropertyAttribute()
+	public BitSetAttribute(int bitCount)
 	{
-		base.order = -10000;
-	}
-
-	protected DecoratingPropertyAttribute(int order)
-	{
-		base.order = order;
+		BitCount = bitCount;
 	}
 }

@@ -1,2 +1,14 @@
-// Could not decompile Unity.Jobs.IJobParallelForExtensions
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine
+{
+	public enum UserAuthorization
+	{
+		WebCam = 1,
+		Microphone
+	}
+}
+namespace Unity.Collections.LowLevel.Unsafe
+{
+}
+namespace Unity.Profiling.LowLevel.Unsafe
+{
+}

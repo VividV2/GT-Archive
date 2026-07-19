@@ -1,14 +1,12 @@
-namespace System.Security.AccessControl;
+namespace System;
 
-/// <summary>Specifies the function of an access control entry (ACE).</summary>
-public enum AceQualifier
+/// <summary>Indicates that the value of a static field is unique for each thread.</summary>
+[Serializable]
+[AttributeUsage(AttributeTargets.Field, Inherited = false)]
+public class ThreadStaticAttribute : Attribute
 {
-	/// <summary>Allow access.</summary>
-	AccessAllowed,
-	/// <summary>Deny access.</summary>
-	AccessDenied,
-	/// <summary>Cause a system audit.</summary>
-	SystemAudit,
-	/// <summary>Cause a system alarm.</summary>
-	SystemAlarm
+	/// <summary>Initializes a new instance of the <see cref="T:System.ThreadStaticAttribute" /> class.</summary>
+	public ThreadStaticAttribute()
+	{
+	}
 }

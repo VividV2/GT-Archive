@@ -1,8 +1,11 @@
-namespace System.IO;
+using System.Security;
 
-internal enum SearchTarget
+namespace System.Globalization;
+
+internal struct InternalEncodingDataItem
 {
-	Files = 1,
-	Directories,
-	Both
+	[SecurityCritical]
+	internal string webName;
+
+	internal ushort codePage;
 }

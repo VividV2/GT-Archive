@@ -1,6 +1,30 @@
-using System.Collections.Generic;
 using Meta.WitAi.Json;
 
-namespace Meta.Voice.Audio.Decoding;
+namespace Meta.Voice.Audio
+{
+	public interface IAudioPlayer
+	{
+		IAudioClipStream ClipStream { get; }
 
-public delegate void AudioJsonDecodeDelegate(System.Collections.Generic.List<Meta.WitAi.Json.WitResponseNode> jsonNode);
+		bool IsPlaying { get; }
+
+		bool CanSetElapsedSamples { get; }
+
+		int ElapsedSamples { get; }
+
+		void Init();
+
+		string GetPlaybackErrors();
+
+		void Play(IAudioClipStream clipStream, int offsetSamples, WitResponseNode speechNode);
+
+		void Pause();
+
+		void Resume();
+
+		void Stop();
+	}
+}
+namespace Meta.Voice.Net.WebSockets
+{
+}

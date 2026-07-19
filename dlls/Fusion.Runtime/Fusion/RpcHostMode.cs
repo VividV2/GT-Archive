@@ -1,11 +1,7 @@
-namespace Fusion
+namespace Fusion;
+
+public enum RpcHostMode
 {
-}
-namespace Fusion
-{
-	public enum RpcHostMode
-	{
-		SourceIsServer,
-		SourceIsHostPlayer
-	}
+	SourceIsServer,
+	SourceIsHostPlayer
 }

@@ -1,13 +1,9 @@
-namespace Mono.Security.Interface
+namespace Mono.Security.Interface;
+
+public enum ExchangeAlgorithmType
 {
-}
-namespace Mono.Security.Interface
-{
-	public enum ExchangeAlgorithmType
-	{
-		None,
-		Dhe,
-		Rsa,
-		EcDhe
-	}
+	None,
+	Dhe,
+	Rsa,
+	EcDhe
 }

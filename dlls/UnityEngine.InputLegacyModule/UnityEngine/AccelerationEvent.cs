@@ -1,20 +1,16 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public struct AccelerationEvent
 {
-}
-namespace UnityEngine
-{
-	public struct AccelerationEvent
-	{
-		internal float x;
+	internal float x;
 
-		internal float y;
+	internal float y;
 
-		internal float z;
+	internal float z;
 
-		internal float m_TimeDelta;
+	internal float m_TimeDelta;
 
-		public Vector3 acceleration => new Vector3(x, y, z);
+	public Vector3 acceleration => new Vector3(x, y, z);
 
-		public float deltaTime => m_TimeDelta;
-	}
+	public float deltaTime => m_TimeDelta;
 }

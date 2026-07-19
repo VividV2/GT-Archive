@@ -1,27 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class UserPrivateAccountInfo : PlayFabBaseModel
-	{
-		public string Email;
-	}
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class ValidateIOSReceiptRequest : PlayFabRequestCommon
-	{
-		public string CatalogVersion;
-
-		public string CurrencyCode;
-
-		public int PurchasePrice;
-
-		public string ReceiptData;
-	}
-}
+// Could not decompile PlayFab.ClientModels.ValidateIOSReceiptRequest
+// This type uses unsupported IL or has too many generic parameters.

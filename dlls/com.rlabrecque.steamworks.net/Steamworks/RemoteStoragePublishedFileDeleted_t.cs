@@ -1,28 +1,8 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(3417)]
-public struct DeleteItemResult_t
-{
-	public const int k_iCallback = 3417;
-
-	public EResult m_eResult;
-
-	public PublishedFileId_t m_nPublishedFileId;
-}
 namespace Steamworks
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1323)]
-	public struct RemoteStoragePublishedFileDeleted_t
+	public enum ESteamControllerPad
 	{
-		public const int k_iCallback = 1323;
-
-		public PublishedFileId_t m_nPublishedFileId;
-
-		public AppId_t m_nAppID;
+		k_ESteamControllerPad_Left,
+		k_ESteamControllerPad_Right
 	}
 }

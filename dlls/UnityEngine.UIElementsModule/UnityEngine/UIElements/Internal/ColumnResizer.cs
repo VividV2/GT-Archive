@@ -1,2 +1,43 @@
-// Could not decompile UnityEngine.UIElements.Internal.ColumnResizer
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements.Experimental
+{
+}
+namespace UnityEngine.UIElements.Experimental
+{
+	[EventCategory(EventCategory.EnterLeave)]
+	public class PointerOverLinkTagEvent : PointerEventBase<PointerOverLinkTagEvent>
+	{
+		public string linkID { get; private set; }
+
+		public string linkText { get; private set; }
+
+		static PointerOverLinkTagEvent()
+		{
+			EventBase<PointerOverLinkTagEvent>.SetCreateFunction(() => new PointerOverLinkTagEvent());
+		}
+
+		protected override void Init()
+		{
+			base.Init();
+			LocalInit();
+		}
+
+		private void LocalInit()
+		{
+			base.propagation = EventPropagation.BubblesOrTricklesDown;
+		}
+
+		public static PointerOverLinkTagEvent GetPooled(IPointerEvent evt, string linkID, string linkText)
+		{
+			PointerOverLinkTagEvent pointerOverLinkTagEvent = PointerEventBase<PointerOverLinkTagEvent>.GetPooled(evt);
+			PointerOverLinkTagEvent pointerOverLinkTagEvent;
+			pointerOverLinkTagEvent.linkID = linkID;
+			pointerOverLinkTagEvent.linkText = linkText;
+			return pointerOverLinkTagEvent;
+		}
+
+		public PointerOverLinkTagEvent()
+		{
+			LocalInit();
+		}
+	}
+}

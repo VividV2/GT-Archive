@@ -1,17 +1,11 @@
-using Unity.Burst;
-using Unity.Jobs;
-using Unity.Burst;
-using Unity.Jobs;
-
-namespace Unity.Collections;
-
-[BurstCompile]
-internal struct NativeQueueDisposeJob : IJob
+namespace Unity.Collections
 {
-	public NativeQueueDispose Data;
-
-	public void Execute()
+	public enum CopyError
 	{
-		Data.Dispose();
+		None,
+		Truncation
 	}
+}
+namespace Unity.Collections
+{
 }

@@ -1,6 +1,8 @@
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+public enum EmailVerificationStatus
 {
-}
-namespace PlayFab.ClientModels
-{
+	Unverified,
+	Pending,
+	Confirmed
 }

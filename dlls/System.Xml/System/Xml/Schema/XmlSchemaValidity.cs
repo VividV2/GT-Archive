@@ -1,12 +1,2 @@
-namespace System.Xml.Schema;
+namespace System.Xml.Xsl.Runtime;
 
-/// <summary>Represents the validity of an XML item validated by the <see cref="T:System.Xml.Schema.XmlSchemaValidator" /> class.</summary>
-public enum XmlSchemaValidity
-{
-	/// <summary>The validity of the XML item is not known.</summary>
-	NotKnown,
-	/// <summary>The XML item is valid.</summary>
-	Valid,
-	/// <summary>The XML item is invalid.</summary>
-	Invalid
-}

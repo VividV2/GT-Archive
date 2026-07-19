@@ -1,28 +1,47 @@
 namespace Pathfinding.ClipperLib;
 
-public struct IntRect
+internal class OutRec
 {
-	public long left;
+	public int Idx;
 
-	public long top;
+	public bool IsHole;
 
-	public long right;
+	public bool IsOpen;
 
-	public long bottom;
+	public OutRec FirstLeft;
 
-	public IntRect(long l, long t, long r, long b)
+	public OutPt Pts;
+
+	public OutPt BottomPt;
+
+	public PolyNode PolyNode;
+}
+namespace Pathfinding.ClipperLib
+{
+	public struct IntRect
 	{
-		left = l;
-		top = t;
-		right = r;
-		bottom = b;
-	}
+		public long left;
 
-	public IntRect(IntRect ir)
-	{
-		left = ir.left;
-		top = ir.top;
-		right = ir.right;
-		bottom = ir.bottom;
+		public long top;
+
+		public long right;
+
+		public long bottom;
+
+		public IntRect(long l, long t, long r, long b)
+		{
+			left = l;
+			top = t;
+			right = r;
+			bottom = b;
+		}
+
+		public IntRect(IntRect ir)
+		{
+			left = ir.left;
+			top = ir.top;
+			right = ir.right;
+			bottom = ir.bottom;
+		}
 	}
 }

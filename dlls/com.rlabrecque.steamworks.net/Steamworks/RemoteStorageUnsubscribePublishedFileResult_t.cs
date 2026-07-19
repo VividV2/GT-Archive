@@ -1,31 +1,5 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(4013)]
-	public struct MusicPlayerSelectsPlaylistEntry_t
-	{
-		public const int k_iCallback = 4013;
-
-		public int nID;
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1311)]
-	public struct RemoteStorageDeletePublishedFileResult_t
-	{
-		public const int k_iCallback = 1311;
-
-		public EResult m_eResult;
-
-		public PublishedFileId_t m_nPublishedFileId;
-	}
-}
 namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
@@ -37,5 +11,16 @@ namespace Steamworks
 		public EResult m_eResult;
 
 		public PublishedFileId_t m_nPublishedFileId;
+	}
+}
+namespace Steamworks
+{
+	public enum EPlayerResult_t
+	{
+		k_EPlayerResultFailedToConnect = 1,
+		k_EPlayerResultAbandoned,
+		k_EPlayerResultKicked,
+		k_EPlayerResultIncomplete,
+		k_EPlayerResultCompleted
 	}
 }

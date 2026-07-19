@@ -1,2 +1,13 @@
-// Could not decompile Meta.WitAi.Utilities.StringEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace Meta.WitAi.Utilities
+{
+	[Serializable]
+	public class StringEvent : UnityEvent<string>
+	{
+	}
+}
+namespace Meta.WitAi
+{
+}

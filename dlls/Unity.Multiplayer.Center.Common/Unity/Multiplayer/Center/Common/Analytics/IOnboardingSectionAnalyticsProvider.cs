@@ -1,6 +1,2 @@
-namespace Unity.Multiplayer.Center.Common.Analytics;
-
-public interface IOnboardingSectionAnalyticsProvider
-{
-	void SendInteractionEvent(InteractionDataType type, string displayName);
-}
+// Could not decompile Unity.Multiplayer.Center.Common.Analytics.IOnboardingSectionAnalyticsProvider
+// This type uses unsupported IL or has too many generic parameters.

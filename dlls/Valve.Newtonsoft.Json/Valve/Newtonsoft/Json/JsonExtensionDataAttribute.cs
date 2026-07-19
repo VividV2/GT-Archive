@@ -1,2 +1,17 @@
-// Could not decompile Valve.Newtonsoft.Json.JsonExtensionDataAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Valve.Newtonsoft.Json;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
+public class JsonExtensionDataAttribute : Attribute
+{
+	public bool WriteData { get; set; }
+
+	public bool ReadData { get; set; }
+
+	public JsonExtensionDataAttribute()
+	{
+		WriteData = true;
+		ReadData = true;
+	}
+}

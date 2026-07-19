@@ -1,6 +1,20 @@
-namespace Fusion;
-
-public interface IBeforeUpdate : IPublicFacingInterface
+namespace Fusion
 {
-	void BeforeUpdate();
+	public interface ISpawned : IPublicFacingInterface
+	{
+		void Spawned();
+	}
+}
+namespace Fusion
+{
+}
+namespace Fusion
+{
+}
+namespace Fusion
+{
+	public interface IBeforeUpdate : IPublicFacingInterface
+	{
+		void BeforeUpdate();
+	}
 }

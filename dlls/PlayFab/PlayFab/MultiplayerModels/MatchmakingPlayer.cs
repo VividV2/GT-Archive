@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class MatchmakingPlayer : PlayFabBaseModel
-{
-	public MatchmakingPlayerAttributes Attributes;
-
-	public EntityKey Entity;
-}
+// Could not decompile PlayFab.MultiplayerModels.MatchmakingPlayer
+// This type uses unsupported IL or has too many generic parameters.

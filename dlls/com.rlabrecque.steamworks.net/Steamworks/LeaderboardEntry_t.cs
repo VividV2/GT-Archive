@@ -2,15 +2,6 @@ using System.Runtime.InteropServices;
 
 namespace Steamworks
 {
-}
-namespace Steamworks
-{
-}
-namespace Steamworks
-{
-}
-namespace Steamworks
-{
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
 	public struct LeaderboardEntry_t
 	{
@@ -24,4 +15,7 @@ namespace Steamworks
 
 		public UGCHandle_t m_hUGC;
 	}
+}
+namespace Steamworks
+{
 }

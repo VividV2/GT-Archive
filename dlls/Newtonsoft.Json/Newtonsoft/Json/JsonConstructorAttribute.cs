@@ -1,8 +1,2 @@
-using System;
+namespace System.Runtime.CompilerServices;
 
-namespace Newtonsoft.Json;
-
-[AttributeUsage(AttributeTargets.Constructor, AllowMultiple = false)]
-public sealed class JsonConstructorAttribute : Attribute
-{
-}

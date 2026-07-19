@@ -1,9 +1,13 @@
-namespace Unity.Collections;
-
-public enum ParseError
+namespace Unity.Collections
 {
-	None,
-	Syntax,
-	Overflow,
-	Underflow
+	public enum ParseError
+	{
+		None,
+		Syntax,
+		Overflow,
+		Underflow
+	}
+}
+namespace Unity.Collections
+{
 }

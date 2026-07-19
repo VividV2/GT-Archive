@@ -1,2 +1,9 @@
-// Could not decompile System.Runtime.CompilerServices.IsUnmanagedAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using Microsoft.CodeAnalysis;
+
+namespace System.Runtime.CompilerServices;
+
+[CompilerGenerated]
+[Microsoft.CodeAnalysis.Embedded]
+internal sealed class IsUnmanagedAttribute : Attribute
+{
+}

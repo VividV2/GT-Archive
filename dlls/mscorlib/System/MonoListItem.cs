@@ -1,2 +1,8 @@
-// Could not decompile System.MonoListItem
-// This type uses unsupported IL or has too many generic parameters.
+namespace System;
+
+internal sealed class MonoListItem
+{
+	private MonoListItem next;
+
+	private object data;
+}

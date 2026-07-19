@@ -1,29 +1,9 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
+using UnityEngine;
 
 namespace Unity.Cinemachine
 {
-	public interface IInputAxisOwner
+	public sealed class CinemachineImpulseChannelPropertyAttribute : PropertyAttribute
 	{
-		public struct AxisDescriptor
-		{
-			public delegate ref InputAxis AxisGetter();
-
-			public enum Hints
-			{
-				Default,
-				X,
-				Y
-			}
-
-			public AxisGetter DrivenAxis;
-
-			public string Name;
-
-			public Hints Hint;
-		}
-
-		void GetInputAxes(List<AxisDescriptor> axes);
 	}
 }
 namespace Unity.Cinemachine

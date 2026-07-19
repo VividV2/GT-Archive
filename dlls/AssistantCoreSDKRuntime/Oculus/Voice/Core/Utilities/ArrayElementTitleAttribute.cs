@@ -1,2 +1,16 @@
-// Could not decompile Oculus.Voice.Core.Utilities.ArrayElementTitleAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Oculus.Voice.Core.Utilities;
+
+public class ArrayElementTitleAttribute : PropertyAttribute
+{
+	public string varname;
+
+	public string fallbackName;
+
+	public ArrayElementTitleAttribute(string elementTitleVar = null, string fallbackName = null)
+	{
+		varname = elementTitleVar;
+		this.fallbackName = fallbackName;
+	}
+}

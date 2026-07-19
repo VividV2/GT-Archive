@@ -1,9 +1,5 @@
 using System.Xml;
 
-namespace System.Runtime.Serialization.Json
-{
-	internal delegate void JsonFormatClassWriterDelegate(XmlWriterDelegator xmlWriter, object obj, XmlObjectSerializerWriteContextComplexJson context, ClassDataContract dataContract, XmlDictionaryString[] memberNames);
-}
-namespace System.Runtime.Serialization.Configuration
-{
-}
+namespace System.Runtime.Serialization.Json;
+
+internal delegate void JsonFormatClassWriterDelegate(XmlWriterDelegator xmlWriter, object obj, XmlObjectSerializerWriteContextComplexJson context, ClassDataContract dataContract, XmlDictionaryString[] memberNames);

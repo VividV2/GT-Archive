@@ -1,15 +1,2 @@
-using System.Collections.Generic;
-using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Liv.Lck.Cosmetics;
-
-public interface ILckCosmeticDependant
-{
-	string PlayerId { get; }
-
-	string GetCosmeticType();
-
-	void OnCosmeticLoaded(List<Object> assets);
-}
+// Could not decompile Liv.Lck.Encoding.LckEncodedPacketCallback
+// This type uses unsupported IL or has too many generic parameters.

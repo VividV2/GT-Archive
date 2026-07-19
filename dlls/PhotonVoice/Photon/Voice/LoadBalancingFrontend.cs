@@ -1,2 +1,8 @@
-// Could not decompile Photon.Voice.LoadBalancingFrontend
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Photon.Voice;
+
+[Obsolete("Class renamed. Use LoadBalancingTransport instead.")]
+public class LoadBalancingFrontend : LoadBalancingTransport
+{
+}

@@ -1,8 +1,2 @@
-namespace System;
-
-internal static class Array_ReferenceSources
-{
-	internal const int MaxArrayLength = 2146435071;
-
-	internal const int MaxByteArrayLength = 2147483591;
-}
+// Could not decompile System.Runtime.CompilerServices.ReflectionBlockedAttribute
+// This type uses unsupported IL or has too many generic parameters.

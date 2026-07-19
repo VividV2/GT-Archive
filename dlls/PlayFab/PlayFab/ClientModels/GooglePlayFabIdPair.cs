@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GooglePlayFabIdPair : PlayFabBaseModel
-{
-	public string GoogleId;
-
-	public string PlayFabId;
-}
+// Could not decompile PlayFab.ClientModels.GooglePlayFabIdPair
+// This type uses unsupported IL or has too many generic parameters.

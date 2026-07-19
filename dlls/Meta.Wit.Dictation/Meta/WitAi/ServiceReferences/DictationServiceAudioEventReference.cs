@@ -1,13 +1,2 @@
-using Meta.WitAi.Interfaces;
-using Meta.WitAi.Utilities;
-using UnityEngine;
-
-namespace Meta.WitAi.ServiceReferences;
-
-public class DictationServiceAudioEventReference : AudioInputServiceReference
-{
-	[SerializeField]
-	private DictationServiceReference _dictationServiceReference;
-
-	public override IAudioInputEvents AudioEvents => _dictationServiceReference.DictationService.AudioEvents;
-}
+// Could not decompile Meta.WitAi.ServiceReferences.DictationServiceAudioEventReference
+// This type uses unsupported IL or has too many generic parameters.

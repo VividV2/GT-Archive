@@ -1,11 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class CancelAllMatchmakingTicketsForPlayerResult : PlayFabResultCommon
-{
-}
+// Could not decompile PlayFab.PlayFabSettingsRedirect
+// This type uses unsupported IL or has too many generic parameters.

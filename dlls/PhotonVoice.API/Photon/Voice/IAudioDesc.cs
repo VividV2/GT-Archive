@@ -1,15 +1,13 @@
-using System;
-
-namespace POpusCodec.Enums;
-
-public enum Channels
+namespace Photon.Voice
 {
-	Mono = 1,
-	Stereo
+	public interface IServiceable
+	{
+		void Service(LocalVoice localVoice);
+	}
 }
 namespace Photon.Voice
 {
-	public interface IAudioDesc : IDisposable
+	public interface IAudioDesc : System.IDisposable
 	{
 		int SamplingRate { get; }
 
@@ -18,6 +16,6 @@ namespace Photon.Voice
 		string Error { get; }
 	}
 }
-namespace POpusCodec
+namespace Photon.Voice
 {
 }

@@ -1,6 +1,2 @@
-namespace Fusion;
-
-public interface IInterestExit : IPublicFacingInterface
-{
-	void InterestExit(PlayerRef player);
-}
+// Could not decompile Fusion.IInterestExit
+// This type uses unsupported IL or has too many generic parameters.

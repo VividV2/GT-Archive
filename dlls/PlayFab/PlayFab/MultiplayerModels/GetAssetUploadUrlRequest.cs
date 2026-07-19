@@ -1,8 +1,10 @@
+using System;
+using PlayFab.SharedModels;
+
 namespace PlayFab.MultiplayerModels;
 
-public enum AttributeMergeFunction
+[Serializable]
+public class GetAssetUploadUrlRequest : PlayFabRequestCommon
 {
-	Min,
-	Max,
-	Average
+	public string FileName;
 }

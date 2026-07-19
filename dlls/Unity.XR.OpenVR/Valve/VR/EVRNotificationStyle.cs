@@ -1,5 +1,12 @@
 namespace Valve.VR
 {
+	public enum EChaperoneImportFlags
+	{
+		EChaperoneImport_BoundsOnly = 1
+	}
+}
+namespace Valve.VR
+{
 	public enum EVRNotificationStyle
 	{
 		None = 0,
@@ -8,20 +15,4 @@ namespace Valve.VR
 		Contact_Enabled = 201,
 		Contact_Active = 202
 	}
-}
-namespace Valve.VR
-{
-	public enum VRMessageOverlayResponse
-	{
-		ButtonPress_0,
-		ButtonPress_1,
-		ButtonPress_2,
-		ButtonPress_3,
-		CouldntFindSystemOverlay,
-		CouldntFindOrCreateClientOverlay,
-		ApplicationQuit
-	}
-}
-namespace Valve.VR
-{
 }

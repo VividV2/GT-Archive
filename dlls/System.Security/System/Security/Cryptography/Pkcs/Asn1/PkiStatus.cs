@@ -1,12 +1,16 @@
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-internal enum PkiStatus
+namespace System.Security.Cryptography.Pkcs.Asn1
 {
-	Granted,
-	GrantedWithMods,
-	Rejection,
-	Waiting,
-	RevocationWarning,
-	RevocationNotification,
-	KeyUpdateWarning
+	internal enum PkiStatus
+	{
+		Granted,
+		GrantedWithMods,
+		Rejection,
+		Waiting,
+		RevocationWarning,
+		RevocationNotification,
+		KeyUpdateWarning
+	}
+}
+namespace System.Security.Cryptography.Pkcs.Asn1
+{
 }

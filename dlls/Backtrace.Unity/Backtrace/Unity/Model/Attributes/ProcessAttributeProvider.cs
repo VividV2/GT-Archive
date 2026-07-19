@@ -1,29 +1,52 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using UnityEngine;
-using UnityEngine.Profiling;
+using Backtrace.Unity.Model;
+using Backtrace.Unity.Model.Database;
+using Backtrace.Unity.Types;
+using System;
+using System.Collections.Generic;
+using Backtrace.Unity.Model;
+using Backtrace.Unity.Model.Database;
+using Backtrace.Unity.Types;
 
-namespace Backtrace.Unity.Model.Attributes;
+namespace Backtrace.Unity.Interfaces;
 
-internal sealed class ProcessAttributeProvider : IDynamicAttributeProvider
+public interface IBacktraceDatabaseContext : IDisposable
 {
-	public void GetAttributes(IDictionary<string, string> attributes)
-	{
-		if (attributes != null)
-		{
-			attributes["gc.heap.used"] = GC.GetTotalMemory(forceFullCollection: false).ToString(CultureInfo.InvariantCulture);
-			attributes["process.age"] = Math.Round(Time.realtimeSinceStartup).ToString(CultureInfo.InvariantCulture);
-			attributes["system.memory.active"] = Profiler.GetTotalAllocatedMemoryLong().ToString(CultureInfo.InvariantCulture);
-			attributes["system.memory.reserved"] = Profiler.GetTotalReservedMemoryLong().ToString(CultureInfo.InvariantCulture);
-			attributes["system.memory.unused"] = Profiler.GetTotalUnusedReservedMemoryLong().ToString(CultureInfo.InvariantCulture);
-			attributes["system.memory.temp"] = Profiler.GetTempAllocatorSize().ToString(CultureInfo.InvariantCulture);
-			attributes["mono.heap"] = Profiler.GetMonoHeapSizeLong().ToString(CultureInfo.InvariantCulture);
-			attributes["mono.used"] = Profiler.GetMonoUsedSizeLong().ToString(CultureInfo.InvariantCulture);
-			attributes["application.playing"] = Application.isPlaying.ToString(CultureInfo.InvariantCulture);
-			attributes["application.focused"] = Application.isFocused.ToString(CultureInfo.InvariantCulture);
-			attributes["application.background"] = Application.runInBackground.ToString(CultureInfo.InvariantCulture);
-			attributes["application.internet_reachability"] = Application.internetReachability.ToString();
-		}
-	}
+	DeduplicationStrategy DeduplicationStrategy { get; set; }
+
+	BacktraceDatabaseRecord Add(BacktraceDatabaseRecord backtraceDatabaseRecord);
+
+	BacktraceDatabaseRecord FirstOrDefault();
+
+	BacktraceDatabaseRecord FirstOrDefault(Func<BacktraceDatabaseRecord, bool> predicate);
+
+	BacktraceDatabaseRecord LastOrDefault();
+
+	IEnumerable<BacktraceDatabaseRecord> Get();
+
+	void Delete(BacktraceDatabaseRecord record);
+
+	bool Any(BacktraceDatabaseRecord n);
+
+	bool Any();
+
+	int Count();
+
+	void Clear();
+
+	void IncrementBatchRetry();
+
+	long GetSize();
+
+	[Obsolete("Please use Count method instead")]
+	int GetTotalNumberOfRecords();
+
+	IEnumerable<BacktraceDatabaseRecord> GetRecordsToDelete();
+
+	string GetHash(BacktraceData backtraceData);
+
+	BacktraceDatabaseRecord GetRecordByHash(string hash);
+
+	void AddDuplicate(BacktraceDatabaseRecord record);
 }

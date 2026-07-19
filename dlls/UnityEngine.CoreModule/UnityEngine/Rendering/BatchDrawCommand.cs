@@ -1,33 +1,26 @@
-namespace UnityEngine.Categorization
+namespace UnityEngine.Rendering;
+
+public struct BatchDrawCommand
 {
-}
-namespace UnityEngine.Serialization
-{
-}
-namespace UnityEngine.Rendering
-{
-	public struct BatchDrawCommand
-	{
-		public BatchDrawCommandFlags flags;
+	public BatchDrawCommandFlags flags;
 
-		public BatchID batchID;
+	public BatchID batchID;
 
-		public BatchMaterialID materialID;
+	public BatchMaterialID materialID;
 
-		public ushort splitVisibilityMask;
+	public ushort splitVisibilityMask;
 
-		public ushort lightmapIndex;
+	public ushort lightmapIndex;
 
-		public int sortingPosition;
+	public int sortingPosition;
 
-		public uint visibleOffset;
+	public uint visibleOffset;
 
-		public uint visibleCount;
+	public uint visibleCount;
 
-		public BatchMeshID meshID;
+	public BatchMeshID meshID;
 
-		public ushort submeshIndex;
+	public ushort submeshIndex;
 
-		public ushort activeMeshLod;
-	}
+	public ushort activeMeshLod;
 }

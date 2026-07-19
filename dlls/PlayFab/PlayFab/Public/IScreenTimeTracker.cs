@@ -1,18 +1,22 @@
-namespace PlayFab.Public;
-
-public interface IScreenTimeTracker
+namespace PlayFab.ExperimentationModels
 {
-	void OnEnable();
+}
+namespace PlayFab.Public
+{
+	public interface IScreenTimeTracker
+	{
+		void OnEnable();
 
-	void OnDisable();
+		void OnDisable();
 
-	void OnDestroy();
+		void OnDestroy();
 
-	void OnApplicationQuit();
+		void OnApplicationQuit();
 
-	void OnApplicationFocus(bool isFocused);
+		void OnApplicationFocus(bool isFocused);
 
-	void ClientSessionStart(string entityId, string entityType, string playFabUserId);
+		void ClientSessionStart(string entityId, string entityType, string playFabUserId);
 
-	void Send();
+		void Send();
+	}
 }

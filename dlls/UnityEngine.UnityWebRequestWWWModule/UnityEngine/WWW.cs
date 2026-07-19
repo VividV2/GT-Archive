@@ -4,9 +4,6 @@ using UnityEngine.Bindings;
 using System;
 using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
-using System;
-using System.Runtime.CompilerServices;
-using UnityEngine.Bindings;
 
 namespace UnityEngine.Networking;
 
@@ -21,20 +18,15 @@ internal static class WebRequestWWW
 		AudioClip result;
 		IntPtr gcHandlePtr = default(IntPtr);
 		AudioClip result;
-		IntPtr gcHandlePtr = default(IntPtr);
-		AudioClip result;
 		try
 		{
 			IntPtr dh2 = ((dh == null) ? ((IntPtr)0) : DownloadHandler.BindingsMarshaller.ConvertToNative(dh));
 			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
 			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
 			IntPtr dh2;
-			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
-			IntPtr dh2;
 			if (!StringMarshaller.TryMarshalEmptyOrNullString(url, ref managedSpanWrapper))
 			{
 				ReadOnlySpan<char> readOnlySpan = MemoryExtensions.AsSpan(url);
-				ReadOnlySpan<char> readOnlySpan;
 				ReadOnlySpan<char> readOnlySpan;
 				fixed (char* begin = readOnlySpan)
 				{

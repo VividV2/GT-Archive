@@ -1,2 +1,3 @@
-namespace PlayFab.Internal;
-
+namespace PlayFab.GroupsModels
+{
+}

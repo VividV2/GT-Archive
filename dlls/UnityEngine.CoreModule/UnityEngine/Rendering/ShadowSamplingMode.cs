@@ -1,17 +1,8 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public enum ShadowSamplingMode
 {
-	public enum ShadowSamplingMode
-	{
-		CompareDepths,
-		RawDepth,
-		None
-	}
-}
-namespace UnityEngine.Rendering
-{
-	public enum ShadingRateCombinerStage
-	{
-		Primitive,
-		Fragment
-	}
+	CompareDepths,
+	RawDepth,
+	None
 }

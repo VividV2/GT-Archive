@@ -1,2 +1,7 @@
-// Could not decompile Newtonsoft.Json.MissingMemberHandling
-// This type uses unsupported IL or has too many generic parameters.
+namespace Newtonsoft.Json;
+
+public enum MissingMemberHandling
+{
+	Ignore,
+	Error
+}

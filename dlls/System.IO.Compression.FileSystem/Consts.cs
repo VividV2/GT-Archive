@@ -1,5 +1,12 @@
-namespace System.IO.Compression;
-
+namespace System.IO
+{
+}
+namespace System.IO.Compression
+{
+}
+namespace System.IO.Compression
+{
+}
 internal static class Consts
 {
 	public const string MonoCorlibVersion = "1A5E0066-58DC-428A-B21C-0AD6CDAE2789";

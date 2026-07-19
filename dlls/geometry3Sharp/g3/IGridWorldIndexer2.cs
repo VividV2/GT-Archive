@@ -9,6 +9,6 @@ namespace g3
 		Vector2d FromGrid(Vector2d gridpointf);
 	}
 }
-namespace gs
+namespace g3
 {
 }

@@ -1,18 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class ListQosServersForTitleResponse : PlayFabResultCommon
-{
-	public int PageSize;
-
-	public List<QosServer> QosServers;
-
-	public string SkipToken;
-}
+// Could not decompile PlayFab.PlayFabAuthenticationContext
+// This type uses unsupported IL or has too many generic parameters.

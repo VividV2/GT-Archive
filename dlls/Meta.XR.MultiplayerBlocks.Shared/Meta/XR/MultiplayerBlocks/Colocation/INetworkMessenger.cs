@@ -1,16 +1,26 @@
 using System;
 
-namespace Meta.XR.MultiplayerBlocks.Colocation;
-
-internal interface INetworkMessenger
+namespace Meta.XR.MultiplayerBlocks.Colocation
 {
-	event Action<ShareAndLocalizeParams> AnchorShareRequestReceived;
+}
+namespace Meta.XR.MultiplayerBlocks.Colocation
+{
+	internal interface INetworkMessenger
+	{
+		event Action<ShareAndLocalizeParams> AnchorShareRequestReceived;
 
-	event Action<ShareAndLocalizeParams> AnchorShareRequestCompleted;
+		event Action<ShareAndLocalizeParams> AnchorShareRequestCompleted;
 
-	void SendAnchorShareRequest(ulong targetPlayerId, ShareAndLocalizeParams shareAndLocalizeParams);
+		void SendAnchorShareRequest(ulong targetPlayerId, ShareAndLocalizeParams shareAndLocalizeParams);
 
-	void SendAnchorShareCompleted(ulong targetPlayerId, ShareAndLocalizeParams shareAndLocalizeParams);
+		void SendAnchorShareCompleted(ulong targetPlayerId, ShareAndLocalizeParams shareAndLocalizeParams);
 
-	void RegisterLocalPlayer(ulong localPlayerId);
+		void RegisterLocalPlayer(ulong localPlayerId);
+	}
+}
+namespace Meta.XR.MultiplayerBlocks.Colocation
+{
+}
+namespace Meta.XR.MultiplayerBlocks.Colocation
+{
 }

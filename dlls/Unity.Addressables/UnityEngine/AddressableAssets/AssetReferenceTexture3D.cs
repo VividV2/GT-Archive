@@ -1,12 +1,2 @@
-using System;
-
-namespace UnityEngine.AddressableAssets;
-
-[Serializable]
-public class AssetReferenceTexture3D : AssetReferenceT<Texture3D>
-{
-	public AssetReferenceTexture3D(string guid)
-		: base(guid)
-	{
-	}
-}
+// Could not decompile UnityEngine.AddressableAssets.AssetReferenceTexture3D
+// This type uses unsupported IL or has too many generic parameters.

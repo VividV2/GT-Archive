@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.MinAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
+public sealed class MinAttribute : PropertyAttribute
+{
+	public readonly float min;
+
+	public MinAttribute(float min)
+	{
+		this.min = min;
+	}
+}

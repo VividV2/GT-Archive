@@ -1,15 +1,14 @@
-namespace System.IO
+using System.Collections.Generic;
+
+namespace System.Collections.Concurrent;
+
+public interface IProducerConsumerCollection<T> : IEnumerable<T>, IEnumerable, ICollection
 {
-	public enum MatchCasing
-	{
-		PlatformDefault,
-		CaseSensitive,
-		CaseInsensitive
-	}
-}
-namespace System.IO
-{
-	internal sealed class __ConsoleStream
-	{
-	}
+	void CopyTo(T[] array, int index);
+
+	bool TryAdd(T item);
+
+	bool TryTake(out T item);
+
+	T[] ToArray();
 }

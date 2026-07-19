@@ -1,9 +1,2 @@
-namespace Fusion.Photon.Realtime;
-
-internal enum JoinMode : byte
-{
-	Default,
-	CreateIfNotExists,
-	JoinOrRejoin,
-	RejoinOnly
-}
+// Could not decompile Fusion.Photon.Realtime.InRoomCallbacksContainer
+// This type uses unsupported IL or has too many generic parameters.

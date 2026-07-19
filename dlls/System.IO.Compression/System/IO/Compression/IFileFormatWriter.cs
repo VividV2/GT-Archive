@@ -1,10 +1,6 @@
-namespace System.IO.Compression;
-
-internal interface IFileFormatWriter
+namespace System.IO.Compression
 {
-	byte[] GetHeader();
-
-	void UpdateWithBytesRead(byte[] buffer, int offset, int bytesToCopy);
-
-	byte[] GetFooter();
+}
+namespace System.IO.Compression
+{
 }

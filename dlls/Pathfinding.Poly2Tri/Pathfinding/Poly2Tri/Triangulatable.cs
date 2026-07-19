@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace Pathfinding.Poly2Tri
 {
+}
+namespace Pathfinding.Poly2Tri
+{
 	public interface Triangulatable
 	{
 		IList<TriangulationPoint> Points { get; }
@@ -18,7 +21,4 @@ namespace Pathfinding.Poly2Tri
 
 		void ClearTriangles();
 	}
-}
-namespace Pathfinding.Poly2Tri
-{
 }

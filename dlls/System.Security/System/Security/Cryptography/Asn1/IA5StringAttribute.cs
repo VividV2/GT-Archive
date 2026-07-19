@@ -1,10 +1,2 @@
-namespace System.Security.Cryptography.Asn1
-{
-	[AttributeUsage(AttributeTargets.Field)]
-	internal sealed class IA5StringAttribute : AsnTypeAttribute
-	{
-	}
-}
-namespace System.Security.Cryptography.Asn1
-{
-}
+// Could not decompile System.Security.Cryptography.Asn1.IA5StringAttribute
+// This type uses unsupported IL or has too many generic parameters.

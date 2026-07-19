@@ -1,10 +1,3 @@
-namespace Valve.VR;
-
-public enum EHDCPError
+namespace Valve.VR
 {
-	None,
-	LinkLost,
-	Tampered,
-	DeviceRevoked,
-	Unknown
 }

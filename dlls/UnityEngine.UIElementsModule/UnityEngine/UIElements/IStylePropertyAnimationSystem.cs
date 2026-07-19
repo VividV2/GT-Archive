@@ -1,6 +1,17 @@
-namespace UnityEngine.UIElements
+using UnityEngine.Bindings;
+using UnityEngine.Bindings;
+
+namespace UnityEngine.UIElements;
+
+[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
+internal enum StyleSelectorType
 {
-}
-namespace UnityEngine.UIElements
-{
+	Unknown,
+	Wildcard,
+	Type,
+	Class,
+	PseudoClass,
+	RecursivePseudoClass,
+	ID,
+	Predicate
 }

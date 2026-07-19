@@ -1,6 +1,13 @@
-namespace Photon.Voice;
-
-public interface IResettable
+namespace Photon.Voice
 {
-	void Reset();
+	public interface IResettable
+	{
+		void Reset();
+	}
+}
+namespace Photon.Voice
+{
+}
+namespace Photon.Voice
+{
 }

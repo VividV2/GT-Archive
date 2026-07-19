@@ -1,2 +1,18 @@
-// Could not decompile UnityEngine.UIElements.BaseFieldTraits`2
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.UIElements;
+
+[Obsolete("BaseFieldTraits<TValueType, TValueUxmlAttributeType> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+public class BaseFieldTraits<TValueType, TValueUxmlAttributeType> : BaseField<TValueType>.UxmlTraits where TValueUxmlAttributeType : TypedUxmlAttributeDescription<TValueType>, new()
+{
+	private TValueUxmlAttributeType m_Value = new TValueUxmlAttributeType
+	{
+		name = "value"
+	};
+
+	public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
+	{
+		base.Init(ve, bag, cc);
+		((INotifyValueChanged<TValueType>)ve).SetValueWithoutNotify(m_Value.GetValueFromBag(bag, cc));
+	}
+}

@@ -1,6 +1,6 @@
-namespace Meta.WitAi.Interfaces;
-
-public interface ITranscriptionEventProvider
+namespace Meta.WitAi
 {
-	ITranscriptionEvent TranscriptionEvents { get; }
+}
+namespace Meta.WitAi.Requests
+{
 }

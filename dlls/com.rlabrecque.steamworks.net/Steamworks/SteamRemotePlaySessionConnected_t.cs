@@ -1,32 +1,29 @@
-namespace Steamworks
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(3406)]
+public struct DownloadItemResult_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(3408)]
-	public struct SetUserItemVoteResult_t
-	{
-		public const int k_iCallback = 3408;
+	public const int k_iCallback = 3406;
 
-		public PublishedFileId_t m_nPublishedFileId;
+	public AppId_t m_unAppID;
 
-		public EResult m_eResult;
+	public PublishedFileId_t m_nPublishedFileId;
 
-		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bVoteUp;
-	}
+	public EResult m_eResult;
 }
 namespace Steamworks
 {
-}
-namespace Steamworks
-{
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(304)]
-	public struct PersonaStateChange_t
+	[CallbackIdentity(5701)]
+	public struct SteamRemotePlaySessionConnected_t
 	{
-		public const int k_iCallback = 304;
+		public const int k_iCallback = 5701;
 
-		public ulong m_ulSteamID;
-
-		public EPersonaChange m_nChangeFlags;
+		public RemotePlaySessionID_t m_unSessionID;
 	}
 }

@@ -1,10 +1,3 @@
-using System;
-
-namespace Mono;
-
-internal struct CFRange(int loc, int len)
+namespace System.IO
 {
-	public IntPtr Location = (IntPtr)loc;
-
-	public IntPtr Length = (IntPtr)len;
 }

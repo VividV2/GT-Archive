@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.UIElements.BlurEvent
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public class BlurEvent : FocusEventBase<BlurEvent>
+{
+	static BlurEvent()
+	{
+		EventBase<BlurEvent>.SetCreateFunction(() => new BlurEvent());
+	}
+}

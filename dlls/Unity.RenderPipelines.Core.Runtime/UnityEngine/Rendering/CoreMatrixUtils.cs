@@ -1,2 +1,27 @@
-// Could not decompile UnityEngine.Rendering.CoreMatrixUtils
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering
+{
+	public interface IBitArray
+	{
+		uint capacity { get; }
+
+		bool allFalse { get; }
+
+		bool allTrue { get; }
+
+		bool this[uint index] { get; set; }
+
+		string humanizedData { get; }
+
+		IBitArray BitAnd(IBitArray other);
+
+		IBitArray BitOr(IBitArray other);
+
+		IBitArray BitNot();
+	}
+}
+namespace UnityEngine.Experimental.Rendering
+{
+}
+namespace UnityEngine.Rendering
+{
+}

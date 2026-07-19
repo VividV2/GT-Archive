@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.AssemblyIsEditorAssembly
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Scripting;
+
+namespace UnityEngine
+{
+	[AttributeUsage(AttributeTargets.Assembly)]
+	[RequiredByNativeCode]
+	public class AssemblyIsEditorAssembly : Attribute
+	{
+	}
+}
+namespace UnityEngine
+{
+}

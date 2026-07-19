@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ExperimentationModels;
-
-[Serializable]
-public class StartExperimentRequest : PlayFabRequestCommon
-{
-	public string ExperimentId;
-}
+// Could not decompile PlayFab.ExperimentationModels.StartExperimentRequest
+// This type uses unsupported IL or has too many generic parameters.

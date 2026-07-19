@@ -1,8 +1,18 @@
-namespace OVR.OpenVR;
-
-public struct VRBoneTransform_t
+namespace OVR.OpenVR
 {
-	public HmdVector4_t position;
+	public enum EVRNotificationType
+	{
+		Transient,
+		Persistent,
+		Transient_SystemWithUserValue
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct VRBoneTransform_t
+	{
+		public HmdVector4_t position;
 
-	public HmdQuaternionf_t orientation;
+		public HmdQuaternionf_t orientation;
+	}
 }

@@ -1,14 +1,10 @@
-namespace PlayFab.GroupsModels
+namespace PlayFab.Internal;
+
+public enum AuthType
 {
-}
-namespace PlayFab.Internal
-{
-	public enum AuthType
-	{
-		None,
-		PreLoginSession,
-		LoginSession,
-		DevSecretKey,
-		EntityToken
-	}
+	None,
+	PreLoginSession,
+	LoginSession,
+	DevSecretKey,
+	EntityToken
 }

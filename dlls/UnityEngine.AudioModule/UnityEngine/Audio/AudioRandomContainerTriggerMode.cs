@@ -1,7 +1,11 @@
-namespace UnityEngine.Audio;
-
-internal enum AudioRandomContainerTriggerMode
+namespace UnityEngine.Audio
 {
-	Manual,
-	Automatic
+	internal enum AudioRandomContainerTriggerMode
+	{
+		Manual,
+		Automatic
+	}
+}
+namespace UnityEngine.Experimental.Audio
+{
 }

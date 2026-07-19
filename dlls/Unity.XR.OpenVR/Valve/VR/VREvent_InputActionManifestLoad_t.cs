@@ -1,12 +1,22 @@
-namespace Valve.VR;
-
-public struct VREvent_Scroll_t
+namespace Valve.VR
 {
-	public float xdelta;
+	public struct HmdRect2_t
+	{
+		public HmdVector2_t vTopLeft;
 
-	public float ydelta;
+		public HmdVector2_t vBottomRight;
+	}
+}
+namespace Valve.VR
+{
+	public struct VREvent_InputActionManifestLoad_t
+	{
+		public ulong pathAppKey;
 
-	public uint unused;
+		public ulong pathMessage;
 
-	public float viewportscale;
+		public ulong pathMessageParam;
+
+		public ulong pathManifestPath;
+	}
 }

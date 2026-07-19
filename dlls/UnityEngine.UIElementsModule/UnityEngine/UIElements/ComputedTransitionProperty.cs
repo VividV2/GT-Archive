@@ -1,21 +1,15 @@
 using System;
 using UnityEngine.UIElements.StyleSheets;
-using System;
-using UnityEngine.UIElements.StyleSheets;
 
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+internal struct ComputedTransitionProperty
 {
-	internal struct ComputedTransitionProperty
-	{
-		public StylePropertyId id;
+	public StylePropertyId id;
 
-		public int durationMs;
+	public int durationMs;
 
-		public int delayMs;
+	public int delayMs;
 
-		public Func<float, float> easingCurve;
-	}
-}
-namespace UnityEngine.UIElements
-{
+	public Func<float, float> easingCurve;
 }

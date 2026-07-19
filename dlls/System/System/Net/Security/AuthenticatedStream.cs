@@ -1,2 +1,6 @@
-// Could not decompile System.Net.Security.AuthenticatedStream
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net
+{
+}
+namespace System.Net.Security
+{
+}

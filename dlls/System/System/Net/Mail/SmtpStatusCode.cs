@@ -1,8 +1,9 @@
-namespace System.ComponentModel.Design;
+namespace System.ComponentModel;
 
-public interface IDesignerOptionService
+/// <summary>Specifies that this object supports a simple, transacted notification for batch initialization.</summary>
+public interface ISupportInitialize
 {
-	object GetOptionValue(string pageName, string valueName);
+	void BeginInit();
 
-	void SetOptionValue(string pageName, string valueName, object value);
+	void EndInit();
 }

@@ -1,6 +1,9 @@
 using System;
 using Meta.WitAi.Data.Configuration;
 
+namespace Meta.WitAi.Requests
+{
+}
 namespace Meta.WitAi.Interfaces
 {
 	public interface IWitConfigurationSetter
@@ -9,7 +12,4 @@ namespace Meta.WitAi.Interfaces
 
 		event Action<WitConfiguration> OnConfigurationUpdated;
 	}
-}
-namespace Meta.WitAi.CallbackHandlers
-{
 }

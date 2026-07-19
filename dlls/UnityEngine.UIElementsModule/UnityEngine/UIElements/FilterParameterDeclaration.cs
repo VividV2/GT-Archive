@@ -1,6 +1,11 @@
-namespace UnityEngine.UIElements
+using System;
+using System;
+
+namespace UnityEngine.UIElements;
+
+public interface IRuntimePanel : IPanel, IDisposable
 {
-}
-namespace UnityEngine.UIElements.UIR
-{
+	PanelSettings panelSettings { get; }
+
+	GameObject selectableGameObject { get; set; }
 }

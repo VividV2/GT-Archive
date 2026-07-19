@@ -1,12 +1,6 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+internal interface IRuntimePanelComponent
 {
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
+	IPanel panel { get; set; }
 }

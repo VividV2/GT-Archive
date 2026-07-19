@@ -1,10 +1,9 @@
-namespace System.Data;
-
-internal enum SchemaFormat
+namespace System.Data
 {
-	Public = 1,
-	Remoting,
-	WebService,
-	RemotingSkipSchema,
-	WebServiceSkipSchema
+}
+namespace System.Data.ProviderBase
+{
+}
+namespace System.Data.Odbc
+{
 }

@@ -9,25 +9,19 @@ namespace Steamworks
 }
 namespace Steamworks
 {
-	public enum EFriendRelationship
+	public enum ECommunityProfileItemProperty
 	{
-		k_EFriendRelationshipNone,
-		k_EFriendRelationshipBlocked,
-		k_EFriendRelationshipRequestRecipient,
-		k_EFriendRelationshipFriend,
-		k_EFriendRelationshipRequestInitiator,
-		k_EFriendRelationshipIgnored,
-		k_EFriendRelationshipIgnoredFriend,
-		k_EFriendRelationshipSuggested_DEPRECATED,
-		k_EFriendRelationshipMax
-	}
-}
-namespace Steamworks
-{
-	public enum ESteamIPv6ConnectivityProtocol
-	{
-		k_ESteamIPv6ConnectivityProtocol_Invalid,
-		k_ESteamIPv6ConnectivityProtocol_HTTP,
-		k_ESteamIPv6ConnectivityProtocol_UDP
+		k_ECommunityProfileItemProperty_ImageSmall,
+		k_ECommunityProfileItemProperty_ImageLarge,
+		k_ECommunityProfileItemProperty_InternalName,
+		k_ECommunityProfileItemProperty_Title,
+		k_ECommunityProfileItemProperty_Description,
+		k_ECommunityProfileItemProperty_AppID,
+		k_ECommunityProfileItemProperty_TypeID,
+		k_ECommunityProfileItemProperty_Class,
+		k_ECommunityProfileItemProperty_MovieWebM,
+		k_ECommunityProfileItemProperty_MovieMP4,
+		k_ECommunityProfileItemProperty_MovieWebMSmall,
+		k_ECommunityProfileItemProperty_MovieMP4Small
 	}
 }

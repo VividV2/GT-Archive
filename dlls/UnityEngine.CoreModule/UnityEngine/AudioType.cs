@@ -1,16 +1,3 @@
-using System;
-using UnityEngine.Scripting;
-using System;
-using UnityEngine.Scripting;
-
-namespace Unity.Collections.LowLevel.Unsafe
-{
-	[RequiredByNativeCode]
-	[AttributeUsage(AttributeTargets.Field)]
-	public sealed class NativeDisableContainerSafetyRestrictionAttribute : Attribute
-	{
-	}
-}
 namespace UnityEngine
 {
 	public enum AudioType
@@ -29,4 +16,7 @@ namespace UnityEngine
 		VAG = 23,
 		AUDIOQUEUE = 24
 	}
+}
+namespace Unity.Jobs
+{
 }

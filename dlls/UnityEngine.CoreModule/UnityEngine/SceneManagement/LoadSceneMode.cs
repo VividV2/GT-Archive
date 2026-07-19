@@ -1,2 +1,7 @@
-// Could not decompile UnityEngine.SceneManagement.LoadSceneMode
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.SceneManagement;
+
+public enum LoadSceneMode
+{
+	Single,
+	Additive
+}

@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.EnumButtonsAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine;
+
+public class EnumButtonsAttribute : PropertyAttribute
+{
+	public bool includeObsolete;
+
+	public EnumButtonsAttribute(bool includeObsolete = false)
+	{
+		this.includeObsolete = includeObsolete;
+	}
+}

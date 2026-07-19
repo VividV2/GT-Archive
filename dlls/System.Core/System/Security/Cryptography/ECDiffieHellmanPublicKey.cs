@@ -1,2 +1,17 @@
-// Could not decompile System.Security.Cryptography.ECDiffieHellmanPublicKey
-// This type uses unsupported IL or has too many generic parameters.
+namespace System
+{
+	[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+	internal class MonoExtensionAttribute : MonoTODOAttribute
+	{
+		public MonoExtensionAttribute(string comment)
+			: base(comment)
+		{
+		}
+	}
+}
+namespace System.Net.Sockets
+{
+}
+namespace System.Linq.Parallel
+{
+}

@@ -1,3 +1,6 @@
+namespace Photon.Voice
+{
+}
 namespace POpusCodec.Enums
 {
 	internal enum OpusCtlSetRequest
@@ -17,7 +20,4 @@ namespace POpusCodec.Enums
 		Gain = 4034,
 		LsbDepth = 4036
 	}
-}
-namespace Photon.Voice
-{
 }

@@ -1,12 +1,2 @@
-namespace Oculus.Platform;
-
-public interface IVoipPCMSource
-{
-	int GetPCM(float[] dest, int length);
-
-	void SetSenderID(ulong senderID);
-
-	void Update();
-
-	int PeekSizeElements();
-}
+// Could not decompile Oculus.Platform.VoipPCMSourceNative
+// This type uses unsupported IL or has too many generic parameters.

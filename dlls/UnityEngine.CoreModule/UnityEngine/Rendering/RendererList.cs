@@ -1,7 +1,14 @@
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Scripting.APIUpdating;
+
 namespace UnityEngine.Rendering;
 
-public enum ReflectionProbeClearFlags
+[MovedFrom("UnityEngine.Experimental.Rendering")]
+public struct RayTracingSubMeshFlagsConfig
 {
-	Skybox = 1,
-	SolidColor
+	public RayTracingSubMeshFlags opaqueMaterials;
+
+	public RayTracingSubMeshFlags transparentMaterials;
+
+	public RayTracingSubMeshFlags alphaTestedMaterials;
 }

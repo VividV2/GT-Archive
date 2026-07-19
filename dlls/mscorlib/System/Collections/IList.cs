@@ -1,3 +1,6 @@
-namespace System.Reflection.Emit
+namespace System.Diagnostics.SymbolStore
+{
+}
+namespace System.Diagnostics.Tracing
 {
 }

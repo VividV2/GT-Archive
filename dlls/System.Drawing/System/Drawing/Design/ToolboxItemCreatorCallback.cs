@@ -1,7 +1,3 @@
-namespace System.Drawing.Drawing2D;
-
-public enum FillMode
+namespace System
 {
-	Alternate,
-	Winding
 }

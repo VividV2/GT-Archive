@@ -1,5 +1,16 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
+namespace System
+{
+	public class FileStyleUriParser : UriParser
+	{
+		public FileStyleUriParser()
+			: base(UriParser.FileUri.Flags)
+		{
+		}
+	}
+}
 namespace System.Configuration
 {
 	/// <summary>Provides standard configuration methods.</summary>
@@ -14,10 +25,4 @@ namespace System.Configuration
 		/// <summary>Used for initialization.</summary>
 		void Init();
 	}
-}
-namespace System.Text.RegularExpressions
-{
-}
-namespace System.Security.Permissions
-{
 }

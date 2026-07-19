@@ -1,13 +1,9 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+internal enum InstanceCullerSplitDebugCounter
 {
-	internal enum InstanceCullerSplitDebugCounter
-	{
-		VisibleInstances,
-		VisiblePrimitives,
-		DrawCommands,
-		Count
-	}
-}
-namespace UnityEngine.Rendering
-{
+	VisibleInstances,
+	VisiblePrimitives,
+	DrawCommands,
+	Count
 }

@@ -1,12 +1,19 @@
-namespace System.Reflection.Emit;
-
-internal interface TokenGenerator
+namespace System.Reflection.Emit
 {
-	int GetToken(string str);
+	internal interface TokenGenerator
+	{
+		int GetToken(string str);
 
-	int GetToken(MemberInfo member, bool create_open_instance);
+		int GetToken(MemberInfo member, bool create_open_instance);
 
-	int GetToken(MethodBase method, Type[] opt_param_types);
+		int GetToken(MethodBase method, Type[] opt_param_types);
 
-	int GetToken(SignatureHelper helper);
+		int GetToken(SignatureHelper helper);
+	}
+}
+namespace System.Globalization
+{
+}
+namespace System.Reflection.Emit
+{
 }

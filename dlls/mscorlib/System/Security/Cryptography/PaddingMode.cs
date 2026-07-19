@@ -1,7 +1,3 @@
-namespace System.Security.Cryptography;
-
-public enum RSASignaturePaddingMode
+namespace System.Security.Permissions
 {
-	Pkcs1,
-	Pss
 }

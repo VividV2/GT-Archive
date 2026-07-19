@@ -1,6 +1,9 @@
-namespace System.Runtime.Serialization
+namespace System.Runtime.Serialization;
+
+internal class AsmxGuidDataContract : GuidDataContract
 {
-}
-namespace System.Runtime.Serialization
-{
+	internal AsmxGuidDataContract()
+		: base(DictionaryGlobals.GuidLocalName, DictionaryGlobals.AsmxTypesNamespace)
+	{
+	}
 }

@@ -1,15 +1,11 @@
 using UnityEngine.Scripting;
 
-namespace UnityEngine.Video
+namespace UnityEngine.Video;
+
+[RequiredByNativeCode]
+public enum Video3DLayout
 {
-	[RequiredByNativeCode]
-	public enum VideoAspectRatio
-	{
-		NoScaling,
-		FitVertically,
-		FitHorizontally,
-		FitInside,
-		FitOutside,
-		Stretch
-	}
+	No3D,
+	SideBySide3D,
+	OverUnder3D
 }

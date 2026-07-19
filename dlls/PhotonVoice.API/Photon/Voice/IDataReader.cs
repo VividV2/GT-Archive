@@ -1,12 +1,8 @@
 using System;
 
-namespace Photon.Voice
+namespace Photon.Voice;
+
+public interface IDataReader<T> : IDisposable
 {
-	public interface IDataReader<T> : IDisposable
-	{
-		bool Read(T[] buffer);
-	}
-}
-namespace Photon.Voice
-{
+	bool Read(T[] buffer);
 }

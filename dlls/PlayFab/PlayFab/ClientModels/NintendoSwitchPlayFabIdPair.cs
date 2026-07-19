@@ -1,14 +1,2 @@
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
-	public enum MatchmakeStatus
-	{
-		Complete,
-		Waiting,
-		GameNotFound,
-		NoAvailableSlots,
-		SessionClosed
-	}
-}
+// Could not decompile PlayFab.ClientModels.NintendoSwitchPlayFabIdPair
+// This type uses unsupported IL or has too many generic parameters.

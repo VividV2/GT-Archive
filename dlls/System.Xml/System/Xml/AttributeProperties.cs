@@ -1,9 +1,13 @@
-namespace System.Xml;
-
-internal enum AttributeProperties : uint
+namespace System.Xml
 {
-	DEFAULT = 0u,
-	URI = 1u,
-	BOOLEAN = 2u,
-	NAME = 4u
+	internal enum AttributeProperties : uint
+	{
+		DEFAULT = 0u,
+		URI = 1u,
+		BOOLEAN = 2u,
+		NAME = 4u
+	}
+}
+namespace System.Xml.Schema
+{
 }

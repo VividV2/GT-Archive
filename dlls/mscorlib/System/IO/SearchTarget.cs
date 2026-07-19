@@ -1,8 +1,12 @@
-namespace System.IO;
-
-internal enum SearchTarget
+namespace System.IO
 {
-	Files = 1,
-	Directories,
-	Both
+	internal enum SearchTarget
+	{
+		Files = 1,
+		Directories,
+		Both
+	}
+}
+namespace System.Collections.Generic
+{
 }

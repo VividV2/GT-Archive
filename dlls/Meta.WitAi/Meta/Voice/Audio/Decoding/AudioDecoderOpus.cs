@@ -1,2 +1,19 @@
-// Could not decompile Meta.Voice.Audio.Decoding.AudioDecoderOpus
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+using System;
+using UnityEngine.Events;
+
+namespace Meta.Voice.Net.PubSub;
+
+public interface IPubSubAdapter
+{
+	PubSubSettings Settings { get; set; }
+
+	PubSubSubscriptionState SubscriptionState { get; }
+
+	UnityEvent OnSubscribed { get; }
+
+	UnityEvent OnUnsubscribed { get; }
+
+	event Action<PubSubSubscriptionState> OnTopicSubscriptionStateChange;
+}

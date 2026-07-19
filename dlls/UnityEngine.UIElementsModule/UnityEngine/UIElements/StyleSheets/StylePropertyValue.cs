@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.UIElements.StyleSheets.StylePropertyValue
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Bindings;
+
+namespace UnityEngine.UIElements.StyleSheets;
+
+[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
+internal struct StylePropertyValue
+{
+	public StyleSheet sheet;
+
+	public StyleValueHandle handle;
+}

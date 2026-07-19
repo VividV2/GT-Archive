@@ -1,3 +1,7 @@
-namespace ExitGames.Client.Photon;
-
-public delegate object DeserializeStreamMethod(StreamBuffer inStream, short length);
+namespace ExitGames.Client.Photon
+{
+}
+namespace ExitGames.Client.Photon
+{
+	public delegate object DeserializeStreamMethod(StreamBuffer inStream, short length);
+}

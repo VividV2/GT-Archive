@@ -1,2 +1,16 @@
-// Could not decompile Valve.VR.SteamVR_Action_Vibration_Source_Map
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR
+{
+	public class SteamVR_Action_Vibration_Source_Map : SteamVR_Action_Source_Map<SteamVR_Action_Vibration_Source>
+	{
+		public bool IsUpdating(SteamVR_Input_Sources inputSource)
+		{
+			return sources[(int)inputSource].timeLastExecuted != 0f;
+		}
+	}
+}
+namespace Valve.VR.InteractionSystem
+{
+}
+namespace Valve.VR
+{
+}

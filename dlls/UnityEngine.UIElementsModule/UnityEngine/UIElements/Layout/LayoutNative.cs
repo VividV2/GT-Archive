@@ -1,9 +1,2 @@
-using System;
-using System;
-
-namespace UnityEngine.UIElements;
-
-public interface INotifyBindablePropertyChanged
-{
-	event EventHandler<BindablePropertyChangedEventArgs> propertyChanged;
-}
+// Could not decompile UnityEngine.UIElements.Layout.LayoutNative
+// This type uses unsupported IL or has too many generic parameters.

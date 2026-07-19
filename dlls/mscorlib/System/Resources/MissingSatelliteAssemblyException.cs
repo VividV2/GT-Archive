@@ -1,23 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace System.Threading.Tasks
-{
-}
-namespace System.Threading.Tasks
-{
-}
-namespace System.Threading.Tasks
-{
-	[StructLayout(LayoutKind.Auto)]
-	internal struct IndexRange
-	{
-		internal long _nFromInclusive;
-
-		internal long _nToExclusive;
-
-		internal volatile Box<long> _nSharedCurrentIndexOffset;
-
-		internal int _bRangeFinished;
-	}
-}
+// Could not decompile System.Resources.MissingSatelliteAssemblyException
+// This type uses unsupported IL or has too many generic parameters.

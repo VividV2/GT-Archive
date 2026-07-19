@@ -1,14 +1,7 @@
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+public enum PushNotificationPlatform
 {
-	public enum PushNotificationPlatform
-	{
-		ApplePushNotificationService,
-		GoogleCloudMessaging
-	}
-}
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
+	ApplePushNotificationService,
+	GoogleCloudMessaging
 }

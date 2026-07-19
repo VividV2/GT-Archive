@@ -11,9 +11,6 @@ namespace Pathfinding
 		void GetTileCoordinates(int tileIndex, out int x, out int z);
 	}
 }
-namespace Pathfinding.Legacy
-{
-}
-namespace Pathfinding.Examples
+namespace Pathfinding
 {
 }

@@ -1,5 +1,4 @@
 using System;
-using System;
 
 namespace UnityEngine.UIElements
 {
@@ -12,11 +11,6 @@ namespace UnityEngine.UIElements
 }
 namespace UnityEngine.UIElements
 {
-	public enum SliceType
-	{
-		Sliced,
-		Tiled
-	}
 }
 namespace UnityEngine.UIElements
 {

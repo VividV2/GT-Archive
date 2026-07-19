@@ -1,2 +1,14 @@
-// Could not decompile Fusion.DisplayNameAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Fusion;
+
+[AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
+public class DisplayNameAttribute : DecoratingPropertyAttribute
+{
+	public readonly string Name;
+
+	public DisplayNameAttribute(string name)
+	{
+		Name = name;
+	}
+}

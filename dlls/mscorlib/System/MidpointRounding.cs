@@ -1,3 +1,6 @@
-namespace System.Security.Principal
+namespace System
+{
+}
+namespace System.Threading
 {
 }

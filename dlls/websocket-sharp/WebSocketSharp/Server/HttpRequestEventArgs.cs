@@ -1,2 +1,2 @@
-namespace WebSocketSharp.Net;
+namespace WebSocketSharp.Server;
 

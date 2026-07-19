@@ -1,10 +1,6 @@
-namespace System.Data.Common;
-
-/// <summary>Indicates the position of the catalog name in a qualified table name in a text command.</summary>
-public enum CatalogLocation
+namespace System.Data
 {
-	/// <summary>Indicates that the position of the catalog name occurs before the schema portion of a fully qualified table name in a text command.</summary>
-	Start = 1,
-	/// <summary>Indicates that the position of the catalog name occurs after the schema portion of a fully qualified table name in a text command.</summary>
-	End
+}
+namespace System.Data
+{
 }

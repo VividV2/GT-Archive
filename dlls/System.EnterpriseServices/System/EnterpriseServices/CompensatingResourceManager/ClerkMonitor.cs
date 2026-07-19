@@ -1,2 +1,11 @@
-// Could not decompile System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.EnterpriseServices
+{
+	[AttributeUsage(AttributeTargets.Class)]
+	[ComVisible(false)]
+	public sealed class PrivateComponentAttribute : Attribute
+	{
+		public PrivateComponentAttribute()
+		{
+		}
+	}
+}

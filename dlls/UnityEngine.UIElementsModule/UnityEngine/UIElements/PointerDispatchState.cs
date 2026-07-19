@@ -1,2 +1,5 @@
-// Could not decompile UnityEngine.UIElements.PointerDispatchState
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+internal interface IGroupBox<T> : IGroupBox where T : IGroupManager
+{
+}

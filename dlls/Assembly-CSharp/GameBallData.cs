@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine;
 
 public struct GameBallData
 {
@@ -13,3 +12,5 @@ public struct GameBallData
 
 	public int grabbedByActorNumber;
 }
+namespace GorillaTagScripts;
+

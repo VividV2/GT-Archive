@@ -1,16 +1,12 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements.StyleSheets.Syntax;
+
+[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
+internal enum ExpressionType
 {
-}
-namespace UnityEngine.UIElements.StyleSheets.Syntax
-{
-	[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
-	internal enum ExpressionType
-	{
-		Unknown,
-		Data,
-		Keyword,
-		Combinator
-	}
+	Unknown,
+	Data,
+	Keyword,
+	Combinator
 }

@@ -1,14 +1,2 @@
-namespace UnityEngine.UIElements;
-
-public enum TextOverflowPosition
-{
-	End,
-	Start,
-	Middle
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
+// Could not decompile UnityEngine.UIElements.UIDocumentHierarchicalIndexComparer
+// This type uses unsupported IL or has too many generic parameters.

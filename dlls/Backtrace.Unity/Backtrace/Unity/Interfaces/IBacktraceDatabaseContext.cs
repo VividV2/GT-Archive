@@ -4,48 +4,44 @@ using Backtrace.Unity.Model;
 using Backtrace.Unity.Model.Database;
 using Backtrace.Unity.Types;
 
-namespace Backtrace.Unity.Interfaces
+namespace Backtrace.Unity.Interfaces;
+
+public interface IBacktraceDatabaseContext : IDisposable
 {
-	public interface IBacktraceDatabaseContext : IDisposable
-	{
-		DeduplicationStrategy DeduplicationStrategy { get; set; }
+	DeduplicationStrategy DeduplicationStrategy { get; set; }
 
-		BacktraceDatabaseRecord Add(BacktraceDatabaseRecord backtraceDatabaseRecord);
+	BacktraceDatabaseRecord Add(BacktraceDatabaseRecord backtraceDatabaseRecord);
 
-		BacktraceDatabaseRecord FirstOrDefault();
+	BacktraceDatabaseRecord FirstOrDefault();
 
-		BacktraceDatabaseRecord FirstOrDefault(Func<BacktraceDatabaseRecord, bool> predicate);
+	BacktraceDatabaseRecord FirstOrDefault(Func<BacktraceDatabaseRecord, bool> predicate);
 
-		BacktraceDatabaseRecord LastOrDefault();
+	BacktraceDatabaseRecord LastOrDefault();
 
-		IEnumerable<BacktraceDatabaseRecord> Get();
+	IEnumerable<BacktraceDatabaseRecord> Get();
 
-		void Delete(BacktraceDatabaseRecord record);
+	void Delete(BacktraceDatabaseRecord record);
 
-		bool Any(BacktraceDatabaseRecord n);
+	bool Any(BacktraceDatabaseRecord n);
 
-		bool Any();
+	bool Any();
 
-		int Count();
+	int Count();
 
-		void Clear();
+	void Clear();
 
-		void IncrementBatchRetry();
+	void IncrementBatchRetry();
 
-		long GetSize();
+	long GetSize();
 
-		[Obsolete("Please use Count method instead")]
-		int GetTotalNumberOfRecords();
+	[Obsolete("Please use Count method instead")]
+	int GetTotalNumberOfRecords();
 
-		IEnumerable<BacktraceDatabaseRecord> GetRecordsToDelete();
+	IEnumerable<BacktraceDatabaseRecord> GetRecordsToDelete();
 
-		string GetHash(BacktraceData backtraceData);
+	string GetHash(BacktraceData backtraceData);
 
-		BacktraceDatabaseRecord GetRecordByHash(string hash);
+	BacktraceDatabaseRecord GetRecordByHash(string hash);
 
-		void AddDuplicate(BacktraceDatabaseRecord record);
-	}
-}
-namespace Backtrace.Unity.Model.JsonData
-{
+	void AddDuplicate(BacktraceDatabaseRecord record);
 }

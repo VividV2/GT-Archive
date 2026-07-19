@@ -1,13 +1,2 @@
-namespace System.Runtime.Serialization
-{
-	internal class XsDurationDataContract : TimeSpanDataContract
-	{
-		internal XsDurationDataContract()
-			: base(DictionaryGlobals.TimeSpanLocalName, DictionaryGlobals.SchemaNamespace)
-		{
-		}
-	}
-}
-namespace System.Runtime.Serialization
-{
-}
+// Could not decompile System.Runtime.Serialization.XsDurationDataContract
+// This type uses unsupported IL or has too many generic parameters.

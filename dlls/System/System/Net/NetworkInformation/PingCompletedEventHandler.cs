@@ -1,3 +1,3 @@
-namespace System.Collections.ObjectModel
+namespace System.CodeDom
 {
 }

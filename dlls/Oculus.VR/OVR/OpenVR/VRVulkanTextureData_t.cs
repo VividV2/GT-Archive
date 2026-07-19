@@ -1,16 +1,35 @@
-namespace OVR.OpenVR
+using System;
+
+namespace OVR.OpenVR;
+
+public struct VREvent_Chaperone_t
 {
-	public struct VREvent_Ipd_t
-	{
-		public float ipdMeters;
-	}
+	public ulong m_nPreviousUniverse;
+
+	public ulong m_nCurrentUniverse;
 }
 namespace OVR.OpenVR
 {
-	public struct VREvent_ApplicationLaunch_t
+	public struct VRVulkanTextureData_t
 	{
-		public uint pid;
+		public ulong m_nImage;
 
-		public uint unArgsHandle;
+		public IntPtr m_pDevice;
+
+		public IntPtr m_pPhysicalDevice;
+
+		public IntPtr m_pInstance;
+
+		public IntPtr m_pQueue;
+
+		public uint m_nQueueFamilyIndex;
+
+		public uint m_nWidth;
+
+		public uint m_nHeight;
+
+		public uint m_nFormat;
+
+		public uint m_nSampleCount;
 	}
 }

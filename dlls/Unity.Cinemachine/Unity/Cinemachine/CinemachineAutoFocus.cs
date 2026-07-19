@@ -1,6 +1,6 @@
-namespace Unity.Cinemachine;
-
-public interface IInputAxisController
+namespace Unity.Cinemachine
 {
-	void SynchronizeControllers();
+}
+namespace Unity.Cinemachine
+{
 }

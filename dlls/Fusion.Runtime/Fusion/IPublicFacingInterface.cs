@@ -1,9 +1,5 @@
-namespace Fusion
+namespace Fusion;
+
+public interface IPublicFacingInterface
 {
-}
-namespace Fusion
-{
-	public interface IPublicFacingInterface
-	{
-	}
 }

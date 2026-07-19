@@ -1,9 +1,6 @@
-namespace System.ComponentModel
+namespace System.CodeDom
 {
 }
-namespace System.Net.Cache
-{
-}
-namespace System.IO.CoreFX
+namespace System.Net.NetworkInformation
 {
 }

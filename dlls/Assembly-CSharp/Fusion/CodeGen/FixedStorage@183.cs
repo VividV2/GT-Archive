@@ -1,0 +1,6 @@
+namespace BoingKit
+{
+}
+namespace CosmeticRoom
+{
+}

@@ -1,6 +1,2 @@
-namespace TMPro
-{
-}
-namespace TMPro
-{
-}
+// Could not decompile TMPro.TMP_DynamicFontAssetUtilities
+// This type uses unsupported IL or has too many generic parameters.

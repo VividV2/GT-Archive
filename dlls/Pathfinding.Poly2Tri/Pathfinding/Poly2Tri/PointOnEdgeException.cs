@@ -1,25 +1,2 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-
-namespace Pathfinding.Poly2Tri
-{
-	public interface Triangulatable
-	{
-		IList<TriangulationPoint> Points { get; }
-
-		IList<DelaunayTriangle> Triangles { get; }
-
-		TriangulationMode TriangulationMode { get; }
-
-		void Prepare(TriangulationContext tcx);
-
-		void AddTriangle(DelaunayTriangle t);
-
-		void AddTriangles(IEnumerable<DelaunayTriangle> list);
-
-		void ClearTriangles();
-	}
-}
-namespace Pathfinding.Poly2Tri
-{
-}
+// Could not decompile Pathfinding.Poly2Tri.PointOnEdgeException
+// This type uses unsupported IL or has too many generic parameters.

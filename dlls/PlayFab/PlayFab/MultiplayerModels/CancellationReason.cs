@@ -1,12 +1,8 @@
-namespace PlayFab.MultiplayerModels
+namespace PlayFab.MultiplayerModels;
+
+public enum CancellationReason
 {
-	public enum CancellationReason
-	{
-		Requested,
-		Internal,
-		Timeout
-	}
-}
-namespace PlayFab.MultiplayerModels
-{
+	Requested,
+	Internal,
+	Timeout
 }

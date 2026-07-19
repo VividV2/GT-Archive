@@ -1,10 +1,2 @@
-using System;
-using UnityEngine.Scripting;
-
-namespace Unity.Collections;
-
-[RequiredByNativeCode]
-[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue)]
-public sealed class WriteOnlyAttribute : Attribute
-{
-}
+// Could not decompile Unity.Collections.WriteOnlyAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,13 @@
-// Could not decompile System.Runtime.Remoting.Messaging.ArgInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
+
+namespace System.Runtime.Remoting.Activation;
+
+/// <summary>Identifies a <see cref="T:System.Runtime.Remoting.Messaging.IMethodReturnMessage" /> that is returned after attempting to activate a remote object.</summary>
+/// <summary>Identifies a <see cref="T:System.Runtime.Remoting.Messaging.IMethodReturnMessage" /> that is returned after attempting to activate a remote object.</summary>
+[ComVisible(true)]
+public interface IConstructionReturnMessage : IMethodReturnMessage, IMethodMessage, IMessage
+{
+}

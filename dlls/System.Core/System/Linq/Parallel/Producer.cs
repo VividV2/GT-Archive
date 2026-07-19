@@ -1,2 +1,18 @@
-// Could not decompile System.Linq.Parallel.Producer`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq.Parallel
+{
+	internal readonly struct Producer<TKey>
+	{
+		internal readonly TKey MaxKey;
+
+		internal readonly int ProducerIndex;
+
+		internal Producer(TKey maxKey, int producerIndex)
+		{
+			MaxKey = maxKey;
+			ProducerIndex = producerIndex;
+		}
+	}
+}
+namespace System.Linq.Parallel
+{
+}

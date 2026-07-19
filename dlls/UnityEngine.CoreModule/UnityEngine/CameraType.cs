@@ -1,13 +1,17 @@
 using System;
 
-namespace UnityEngine;
-
-[Flags]
-public enum CameraType
+namespace UnityEngine
 {
-	Game = 1,
-	SceneView = 2,
-	Preview = 4,
-	VR = 8,
-	Reflection = 0x10
+	[Flags]
+	public enum CameraType
+	{
+		Game = 1,
+		SceneView = 2,
+		Preview = 4,
+		VR = 8,
+		Reflection = 0x10
+	}
+}
+namespace UnityEngine
+{
 }

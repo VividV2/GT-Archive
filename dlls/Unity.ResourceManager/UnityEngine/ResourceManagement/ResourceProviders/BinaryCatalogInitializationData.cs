@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.ResourceManagement.ResourceProviders.BinaryCatalogInitializationData
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.ResourceManagement.ResourceProviders;
+
+[Serializable]
+internal class BinaryCatalogInitializationData
+{
+	[SerializeField]
+	public int m_BinaryStorageBufferCacheSize = BinaryCatalogInitialization.BinaryStorageBufferCacheSize;
+
+	[SerializeField]
+	public int m_CatalogLocationCacheSize = BinaryCatalogInitialization.CatalogLocationCacheSize;
+}

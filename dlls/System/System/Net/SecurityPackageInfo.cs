@@ -1,16 +1,23 @@
-namespace System.Net;
-
-internal struct SecurityPackageInfo
+namespace System.Net
 {
-	internal int Capabilities;
+	internal struct SecurityPackageInfo
+	{
+		internal int Capabilities;
 
-	internal short Version;
+		internal short Version;
 
-	internal short RPCID;
+		internal short RPCID;
 
-	internal int MaxToken;
+		internal int MaxToken;
 
-	internal IntPtr Name;
+		internal IntPtr Name;
 
-	internal IntPtr Comment;
+		internal IntPtr Comment;
+	}
+}
+namespace System.CodeDom
+{
+}
+namespace System.Net.NetworkInformation
+{
 }

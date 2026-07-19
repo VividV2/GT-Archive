@@ -1,14 +1,2 @@
-using System;
-using UnityEngine;
-using System;
-using UnityEngine;
-
-namespace Modio.Unity.UI;
-
-[AttributeUsage(AttributeTargets.Field)]
-public class ShowIfAttribute : PropertyAttribute
-{
-	public ShowIfAttribute(string predicateName)
-	{
-	}
-}
+// Could not decompile Modio.Unity.UI.Components.ModProperties.ModPropertyButtonBase`1
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,16 +1,10 @@
 namespace UnityEngine.UIElements;
 
-public interface IMouseCaptureEvent
+public enum Align
 {
-}
-namespace UnityEngine.UIElements
-{
-	public enum Align
-	{
-		Auto,
-		FlexStart,
-		Center,
-		FlexEnd,
-		Stretch
-	}
+	Auto,
+	FlexStart,
+	Center,
+	FlexEnd,
+	Stretch
 }

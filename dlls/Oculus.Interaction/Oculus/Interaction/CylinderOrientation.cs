@@ -1,7 +1,11 @@
-namespace Oculus.Interaction;
-
-public enum CylinderOrientation
+namespace Oculus.Interaction
 {
-	Vertical,
-	Horizontal
+	public enum CylinderOrientation
+	{
+		Vertical,
+		Horizontal
+	}
+}
+namespace Oculus.Interaction
+{
 }

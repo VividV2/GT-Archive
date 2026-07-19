@@ -12,6 +12,3 @@ internal struct InteractorHitData
 
 	public UIDocument hitDocument;
 }
-namespace UnityEngine.XR.Interaction.Toolkit.UI
-{
-}

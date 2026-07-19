@@ -1,9 +1,6 @@
-namespace UnityEngine.InputSystem.Controls
+namespace UnityEngine.InputSystem.LowLevel;
+
+public interface IInputUpdateCallbackReceiver
 {
-}
-namespace UnityEngine.InputSystem.Utilities
-{
-}
-namespace UnityEngine.InputSystem.Utilities
-{
+	void OnUpdate();
 }

@@ -1,13 +1,9 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
+using System;
+using UnityEngine.Events;
 
-namespace Meta.Conduit;
+namespace Meta.WitAi.Events;
 
-internal interface IManifestMethod
+[Serializable]
+public class WitErrorEvent : UnityEvent<string, string>
 {
-	string ID { get; set; }
-
-	List<ManifestParameter> Parameters { get; set; }
-
-	string Assembly { get; set; }
 }

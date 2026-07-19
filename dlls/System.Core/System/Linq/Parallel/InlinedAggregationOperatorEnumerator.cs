@@ -1,2 +1,3 @@
-namespace System;
-
+namespace System.Linq.Parallel
+{
+}

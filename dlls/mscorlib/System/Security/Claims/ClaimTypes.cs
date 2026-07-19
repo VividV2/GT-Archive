@@ -1,2 +1,6 @@
-namespace System.Runtime.InteropServices;
-
+namespace System.Security.Cryptography
+{
+}
+namespace System.Security.Cryptography
+{
+}

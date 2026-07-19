@@ -1,2 +1,18 @@
-// Could not decompile UnityEngine.ProBuilder.Shapes.ShapeAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.ProBuilder.Shapes
+{
+	[AttributeUsage(AttributeTargets.Class)]
+	public class ShapeAttribute : Attribute
+	{
+		public string name;
+
+		public ShapeAttribute(string n)
+		{
+			name = n;
+		}
+	}
+}
+namespace UnityEngine.ProBuilder
+{
+}

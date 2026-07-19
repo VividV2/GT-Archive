@@ -1,10 +1,19 @@
+using System.Runtime.CompilerServices;
+using UnityEngine.Bindings;
+
 namespace UnityEngine;
 
-public enum SpritePackingRotation
+public class ColorGamutUtility
 {
-	None = 0,
-	FlipHorizontal = 1,
-	FlipVertical = 2,
-	Rotate180 = 3,
-	Any = 15
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[FreeFunction(IsThreadSafe = true)]
+	public static extern ColorPrimaries GetColorPrimaries(ColorGamut gamut);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[FreeFunction(IsThreadSafe = true)]
+	public static extern WhitePoint GetWhitePoint(ColorGamut gamut);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[FreeFunction(IsThreadSafe = true)]
+	public static extern TransferFunction GetTransferFunction(ColorGamut gamut);
 }

@@ -1,16 +1,23 @@
-using System.Runtime.InteropServices;
+using System;
 
 namespace Steamworks;
 
-[StructLayout(LayoutKind.Sequential, Pack = 4)]
-[CallbackIdentity(344)]
-public struct FriendsGetFollowerCount_t
+[Flags]
+public enum EPersonaChange
 {
-	public const int k_iCallback = 344;
-
-	public EResult m_eResult;
-
-	public CSteamID m_steamID;
-
-	public int m_nCount;
+	k_EPersonaChangeName = 1,
+	k_EPersonaChangeStatus = 2,
+	k_EPersonaChangeComeOnline = 4,
+	k_EPersonaChangeGoneOffline = 8,
+	k_EPersonaChangeGamePlayed = 0x10,
+	k_EPersonaChangeGameServer = 0x20,
+	k_EPersonaChangeAvatar = 0x40,
+	k_EPersonaChangeJoinedSource = 0x80,
+	k_EPersonaChangeLeftSource = 0x100,
+	k_EPersonaChangeRelationshipChanged = 0x200,
+	k_EPersonaChangeNameFirstSet = 0x400,
+	k_EPersonaChangeBroadcast = 0x800,
+	k_EPersonaChangeNickname = 0x1000,
+	k_EPersonaChangeSteamLevel = 0x2000,
+	k_EPersonaChangeRichPresence = 0x4000
 }

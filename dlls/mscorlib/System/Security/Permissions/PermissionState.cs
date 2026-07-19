@@ -1,3 +1,6 @@
-namespace System.Text
+namespace System.Security.Policy
+{
+}
+namespace System.Security.Permissions
 {
 }

@@ -1,2 +1,8 @@
-// Could not decompile Unity.Mathematics.svd
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine;
+
+namespace Unity.Mathematics;
+
+public class DoNotNormalizeAttribute : PropertyAttribute
+{
+}

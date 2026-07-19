@@ -1,6 +1,17 @@
-using System;
-using System;
-
+namespace UnityEngine.Rendering
+{
+	public enum TextureDimension
+	{
+		Unknown = -1,
+		None,
+		Any,
+		Tex2D,
+		Tex3D,
+		Cube,
+		Tex2DArray,
+		CubeArray
+	}
+}
 namespace UnityEngine.Rendering
 {
 	public enum ShadingRateFragmentSize
@@ -24,26 +35,4 @@ namespace UnityEngine.Rendering
 		[InspectorName("FragmentSize 4x4")]
 		FragmentSize4x4
 	}
-}
-namespace UnityEngine.Rendering
-{
-	[Flags]
-	public enum PerObjectData
-	{
-		None = 0,
-		LightProbe = 1,
-		ReflectionProbes = 2,
-		LightProbeProxyVolume = 4,
-		Lightmaps = 8,
-		LightData = 0x10,
-		MotionVectors = 0x20,
-		LightIndices = 0x40,
-		ReflectionProbeData = 0x80,
-		OcclusionProbe = 0x100,
-		OcclusionProbeProxyVolume = 0x200,
-		ShadowMask = 0x400
-	}
-}
-namespace UnityEngine.Rendering
-{
 }

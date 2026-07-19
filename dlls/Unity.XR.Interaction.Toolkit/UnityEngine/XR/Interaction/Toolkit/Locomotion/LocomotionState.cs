@@ -1,9 +1,13 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Locomotion;
-
-public enum LocomotionState
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion
 {
-	Idle,
-	Preparing,
-	Moving,
-	Ended
+	public enum LocomotionState
+	{
+		Idle,
+		Preparing,
+		Moving,
+		Ended
+	}
+}
+namespace UnityEngine.XR.Interaction.Toolkit.Utilities
+{
 }

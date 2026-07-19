@@ -1,7 +1,10 @@
-namespace UnityEngine;
+using System;
+using UnityEngine.Scripting;
 
-public enum SendMessageOptions
+namespace Unity.Collections.LowLevel.Unsafe;
+
+[AttributeUsage(AttributeTargets.Field)]
+[RequiredByNativeCode]
+public sealed class NativeSetClassTypeToNullOnScheduleAttribute : Attribute
 {
-	RequireReceiver,
-	DontRequireReceiver
 }

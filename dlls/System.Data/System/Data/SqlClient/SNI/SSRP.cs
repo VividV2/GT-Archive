@@ -1,2 +1,6 @@
-// Could not decompile System.Data.SqlClient.SNI.SSRP
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data.SqlTypes
+{
+}
+namespace Microsoft.SqlServer.Server
+{
+}

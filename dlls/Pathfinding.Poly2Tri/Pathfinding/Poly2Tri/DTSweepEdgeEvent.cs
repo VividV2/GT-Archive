@@ -1,8 +1,2 @@
-namespace Pathfinding.Poly2Tri;
-
-public class DTSweepEdgeEvent
-{
-	public DTSweepConstraint ConstrainedEdge;
-
-	public bool Right;
-}
+// Could not decompile Pathfinding.Poly2Tri.DTSweepEdgeEvent
+// This type uses unsupported IL or has too many generic parameters.

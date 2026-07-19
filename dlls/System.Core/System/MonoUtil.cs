@@ -1,7 +1,2 @@
-namespace System.Security.Cryptography;
-
-internal enum DSAFIPSVERSION_ENUM
-{
-	DSA_FIPS186_2,
-	DSA_FIPS186_3
-}
+// Could not decompile System.MonoUtil
+// This type uses unsupported IL or has too many generic parameters.

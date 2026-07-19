@@ -1,20 +1,16 @@
 using System;
 
-namespace Unity.Scripting
+namespace Unity.Profiling;
+
+[Flags]
+public enum ProfilerRecorderOptions
 {
-}
-namespace Unity.Profiling
-{
-	[Flags]
-	public enum ProfilerRecorderOptions
-	{
-		None = 0,
-		StartImmediately = 1,
-		KeepAliveDuringDomainReload = 2,
-		CollectOnlyOnCurrentThread = 4,
-		WrapAroundWhenCapacityReached = 8,
-		SumAllSamplesInFrame = 0x10,
-		GpuRecorder = 0x40,
-		Default = 0x18
-	}
+	None = 0,
+	StartImmediately = 1,
+	KeepAliveDuringDomainReload = 2,
+	CollectOnlyOnCurrentThread = 4,
+	WrapAroundWhenCapacityReached = 8,
+	SumAllSamplesInFrame = 0x10,
+	GpuRecorder = 0x40,
+	Default = 0x18
 }

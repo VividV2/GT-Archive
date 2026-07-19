@@ -1,8 +1,12 @@
-namespace System.Configuration;
-
-internal interface IConfigXmlNode
+namespace System.Configuration
 {
-	string Filename { get; }
+	internal interface IConfigXmlNode
+	{
+		string Filename { get; }
 
-	int LineNumber { get; }
+		int LineNumber { get; }
+	}
+}
+namespace System.Configuration
+{
 }

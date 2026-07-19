@@ -1,12 +1,12 @@
-namespace Newtonsoft.Json.Utilities;
+namespace System.Diagnostics.CodeAnalysis;
 
-internal enum ParseResult
+[AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false)]
+internal sealed class NotNullWhenAttribute : Attribute
 {
-	None,
-	Success,
-	Overflow,
-	Invalid
-}
-namespace Newtonsoft.Json
-{
+	public bool ReturnValue { get; }
+
+	public NotNullWhenAttribute(bool returnValue)
+	{
+		ReturnValue = returnValue;
+	}
 }

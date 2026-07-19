@@ -1,14 +1,2 @@
-namespace System.ComponentModel.Composition.Hosting;
-
-/// <summary>Provides notifications when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> changes.</summary>
-/// <summary>Provides notifications when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> changes.</summary>
-public interface INotifyComposablePartCatalogChanged
-{
-	/// <summary>Occurs when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> has changed.</summary>
-	/// <summary>Occurs when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> has changed.</summary>
-	event EventHandler<ComposablePartCatalogChangeEventArgs> Changed;
-
-	/// <summary>Occurs when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> is changing.</summary>
-	/// <summary>Occurs when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> is changing.</summary>
-	event EventHandler<ComposablePartCatalogChangeEventArgs> Changing;
-}
+// Could not decompile System.ComponentModel.Composition.Diagnostics.CompositionTraceSource
+// This type uses unsupported IL or has too many generic parameters.

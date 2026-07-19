@@ -14,6 +14,3 @@ public enum ReadState
 	/// <summary>The <see cref="M:System.Xml.XmlReader.Close" /> method has been called.</summary>
 	Closed
 }
-namespace System.Xml.Serialization
-{
-}

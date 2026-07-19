@@ -1,18 +1,2 @@
-namespace System.Security.Cryptography.Asn1;
-
-internal class AsnSerializationConstraintException : CryptographicException
-{
-	public AsnSerializationConstraintException()
-	{
-	}
-
-	public AsnSerializationConstraintException(string message)
-		: base(message)
-	{
-	}
-
-	public AsnSerializationConstraintException(string message, Exception inner)
-		: base(message, inner)
-	{
-	}
-}
+// Could not decompile System.Security.Cryptography.Asn1.AsnSerializationConstraintException
+// This type uses unsupported IL or has too many generic parameters.

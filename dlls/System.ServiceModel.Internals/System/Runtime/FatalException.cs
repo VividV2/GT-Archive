@@ -1,2 +1,26 @@
-// Could not decompile System.Runtime.FatalException
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.Serialization;
+
+namespace System.Runtime;
+
+[Serializable]
+internal class FatalException : SystemException
+{
+	public FatalException()
+	{
+	}
+
+	public FatalException(string message)
+		: base(message)
+	{
+	}
+
+	public FatalException(string message, Exception innerException)
+		: base(message, innerException)
+	{
+	}
+
+	protected FatalException(SerializationInfo info, StreamingContext context)
+		: base(info, context)
+	{
+	}
+}

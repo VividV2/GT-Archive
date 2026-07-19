@@ -1,6 +1,3 @@
-namespace System.Net.Security
-{
-}
 namespace System.Net
 {
 	internal enum CertificateProblem
@@ -37,4 +34,10 @@ namespace System.Net
 		TrustBASICCONSTRAINTS = -2146869223,
 		TrustFINANCIALCRITERIA = -2146869218
 	}
+}
+namespace System.Net.Sockets
+{
+}
+namespace System.Net
+{
 }

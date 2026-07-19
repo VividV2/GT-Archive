@@ -1,9 +1,2 @@
-namespace System.Data.SqlClient
-{
-}
-namespace System.Data.OleDb
-{
-}
-namespace System.Data.SqlClient
-{
-}
+// Could not decompile System.Data.NameNode
+// This type uses unsupported IL or has too many generic parameters.

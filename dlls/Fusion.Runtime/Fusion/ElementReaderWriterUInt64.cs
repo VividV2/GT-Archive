@@ -1,2 +1,2 @@
-namespace Fusion;
-
+// Could not decompile Fusion.ElementReaderWriterUInt64
+// This type uses unsupported IL or has too many generic parameters.

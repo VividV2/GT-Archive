@@ -1,10 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ExperimentationModels;
-
-[Serializable]
-public class GetLatestScorecardResult : PlayFabResultCommon
+namespace PlayFab.GroupsModels
 {
-	public Scorecard Scorecard;
 }

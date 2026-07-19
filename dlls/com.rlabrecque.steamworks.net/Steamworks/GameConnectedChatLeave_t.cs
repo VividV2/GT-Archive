@@ -3,6 +3,15 @@ using System.Runtime.InteropServices;
 
 namespace Steamworks
 {
+	[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
+	[CallbackIdentity(2302)]
+	public struct ScreenshotRequested_t
+	{
+		public const int k_iCallback = 2302;
+	}
+}
+namespace Steamworks
+{
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	[CallbackIdentity(340)]
 	public struct GameConnectedChatLeave_t
@@ -23,18 +32,15 @@ namespace Steamworks
 namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1326)]
-	public struct RemoteStorageEnumerateUserSharedWorkshopFilesResult_t
+	[CallbackIdentity(152)]
+	public struct MicroTxnAuthorizationResponse_t
 	{
-		public const int k_iCallback = 1326;
+		public const int k_iCallback = 152;
 
-		public EResult m_eResult;
+		public uint m_unAppID;
 
-		public int m_nResultsReturned;
+		public ulong m_ulOrderID;
 
-		public int m_nTotalResultCount;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
-		public PublishedFileId_t[] m_rgPublishedFileId;
+		public byte m_bAuthorized;
 	}
 }

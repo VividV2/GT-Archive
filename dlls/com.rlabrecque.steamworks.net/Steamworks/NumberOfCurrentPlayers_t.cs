@@ -1,24 +1,25 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1320)]
-	public struct RemoteStorageGetPublishedItemVoteDetailsResult_t
+	[CallbackIdentity(5201)]
+	public struct SearchForGameProgressCallback_t
 	{
-		public const int k_iCallback = 1320;
+		public const int k_iCallback = 5201;
+
+		public ulong m_ullSearchID;
 
 		public EResult m_eResult;
 
-		public PublishedFileId_t m_unPublishedFileId;
+		public CSteamID m_lobbyID;
 
-		public int m_nVotesFor;
+		public CSteamID m_steamIDEndedSearch;
 
-		public int m_nVotesAgainst;
+		public int m_nSecondsRemainingEstimate;
 
-		public int m_nReports;
-
-		public float m_fScore;
+		public int m_cPlayersSearching;
 	}
 }
 namespace Steamworks
@@ -33,7 +34,4 @@ namespace Steamworks
 
 		public int m_cPlayers;
 	}
-}
-namespace Steamworks
-{
 }

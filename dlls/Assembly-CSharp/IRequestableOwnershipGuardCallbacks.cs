@@ -1,3 +1,5 @@
+namespace GorillaNetworking;
+
 public interface IRequestableOwnershipGuardCallbacks
 {
 	void OnOwnershipTransferred(NetPlayer toPlayer, NetPlayer fromPlayer);

@@ -1,16 +1,12 @@
 namespace Valve.Newtonsoft.Json;
 
-public enum StringEscapeHandling
+public enum WriteState
 {
-	Default,
-	EscapeNonAscii,
-	EscapeHtml
-}
-namespace Valve.Newtonsoft.Json
-{
-	public enum NullValueHandling
-	{
-		Include,
-		Ignore
-	}
+	Error,
+	Closed,
+	Object,
+	Array,
+	Constructor,
+	Property,
+	Start
 }

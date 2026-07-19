@@ -7,6 +7,6 @@ namespace UnityEngine.Rendering
 		Auto
 	}
 }
-namespace UnityEngine.Events
+namespace UnityEngine.Diagnostics
 {
 }

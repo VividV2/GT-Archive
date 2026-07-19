@@ -1,13 +1,9 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public static class IBindingExtensions
 {
-}
-namespace UnityEngine.UIElements.Layout
-{
-	internal enum LayoutMeasureMode
+	public static bool IsBound(this IBindable control)
 	{
-		Undefined = 0,
-		Exactly = 1,
-		AtMost = 2,
-		Invalid = -1
+		return control?.binding != null;
 	}
 }

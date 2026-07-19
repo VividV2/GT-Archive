@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.LightmapBakeType
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine;
+
+[Flags]
+public enum LightmapBakeType
+{
+	Realtime = 4,
+	Baked = 2,
+	Mixed = 1
+}

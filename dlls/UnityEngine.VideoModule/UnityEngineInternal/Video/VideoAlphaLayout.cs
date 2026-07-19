@@ -1,22 +1,10 @@
 using UnityEngine.Scripting;
-using UnityEngine.Scripting;
 
 namespace UnityEngineInternal.Video;
 
 [UsedByNativeCode]
-internal enum VideoPixelFormat
+internal enum VideoAlphaLayout
 {
-	RGB,
-	RGBA,
-	YUV,
-	YUVA
-}
-namespace UnityEngineInternal.Video
-{
-	[UsedByNativeCode]
-	internal enum VideoAlphaLayout
-	{
-		Native,
-		Split
-	}
+	Native,
+	Split
 }

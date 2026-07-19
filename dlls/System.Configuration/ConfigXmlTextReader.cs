@@ -3,6 +3,8 @@ using System.Configuration.Internal;
 using System.IO;
 using System.Xml;
 
+namespace System.Configuration;
+
 internal class ConfigXmlTextReader : XmlTextReader, IConfigErrorInfo
 {
 	private readonly string fileName;

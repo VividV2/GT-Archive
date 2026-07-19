@@ -1,2 +1,10 @@
-// Could not decompile Liv.Lck.Tablet.LckSaveEchoButton
-// This type uses unsupported IL or has too many generic parameters.
+namespace Liv.NGFX;
+
+public enum EventType
+{
+	GraphicsBufferCreate,
+	GraphicsBufferCopy,
+	TextureCreate,
+	RenderBufferCreate,
+	ResourceDestroy
+}

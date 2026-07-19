@@ -1,32 +1,8 @@
 using System;
 
-namespace Photon.Voice.Unity
-{
-}
-namespace POpusCodec.Enums
-{
-	public enum Bandwidth
-	{
-		Narrowband = 1101,
-		Mediumband,
-		Wideband,
-		SuperWideband,
-		Fullband
-	}
-}
-namespace Photon.Voice
-{
-	internal class VoiceEvent
-	{
-		public const byte Code = 202;
+namespace Photon.Voice;
 
-		public const byte FrameCode = 203;
-	}
-}
-namespace Photon.Voice
+public interface IProcessor<T> : IDisposable
 {
-	public interface IProcessor<T> : IDisposable
-	{
-		T[] Process(T[] buf);
-	}
+	T[] Process(T[] buf);
 }

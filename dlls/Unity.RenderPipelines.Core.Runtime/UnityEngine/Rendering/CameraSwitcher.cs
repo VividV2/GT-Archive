@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.Rendering.CameraSwitcher
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine.Rendering
+{
+}

@@ -1,6 +1,2 @@
-namespace PlayFab.GroupsModels
-{
-}
-namespace PlayFab.Internal
-{
-}
+namespace PlayFab.CloudScriptModels;
+

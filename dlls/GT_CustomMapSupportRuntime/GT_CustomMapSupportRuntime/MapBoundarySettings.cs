@@ -1,43 +1,23 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine;
+using UnityEngine;
 
-namespace GT_CustomMapSupportRuntime
+namespace GT_CustomMapSupportRuntime;
+
+[RequireComponent(typeof(Collider))]
+[DisallowMultipleComponent]
+public class ZoneShaderTriggerSettings : MonoBehaviour
 {
-	[DisallowMultipleComponent]
-	public class MapBoundarySettings : TriggerSettings
+	public enum ActivationType
 	{
-		[Tooltip("Should this Trigger sync to all players, or only be processed for the person who triggered it?\nMapBoundary triggers generally shouldn't need to do this, but doing so will sync it's internal TriggerCount to all players.")]
-		public bool syncedToAllPlayers = false;
-
-		[Tooltip("Teleport points used to return the player to the map. Chosen at random.")]
-		[SerializeField]
-		public List<Transform> TeleportPoints = new List<Transform>();
-
-		[Tooltip("Should the player get Tagged when they hit this Boundary?")]
-		public bool ShouldTagPlayer = true;
-
-		public override void PropagateProperties()
-		{
-			syncedToAllPlayers_private = syncedToAllPlayers;
-		}
+		ActivateSpecificSettings,
+		ActivateCustomMapDefaults
 	}
-}
-namespace GT_CustomMapSupportRuntime
-{
-}
-namespace GT_CustomMapSupportRuntime
-{
-	public class MapSpawnPoint : MonoBehaviour
-	{
-		public string spawnID = "";
 
-		public int spawnCount = 0;
-	}
-}
-namespace GT_CustomMapSupportRuntime
-{
-}
-namespace GT_CustomMapSupportRuntime
-{
+	public ActivationType activationType;
+
+	[Tooltip("If this is TRUE, these ZoneShaderSettings will be activated when this GameObject is activated")]
+	public bool activateOnEnable;
+
+	public GameObject? zoneShaderSettingsObject;
 }

@@ -1,9 +1,6 @@
-using System.Threading;
+namespace Cysharp.Threading.Tasks.Triggers;
 
-namespace Cysharp.Threading.Tasks
+public interface IAsyncOnMouseUpAsButtonHandler
 {
-	public interface ICancelPromise
-	{
-		bool TrySetCanceled(CancellationToken cancellationToken = default(CancellationToken));
-	}
+	UniTask OnMouseUpAsButtonAsync();
 }

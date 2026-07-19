@@ -1,2 +1,2 @@
-namespace MS.Internal.Xml.XPath;
-
+// Could not decompile MS.Internal.Xml.XPath.ResetableIterator
+// This type uses unsupported IL or has too many generic parameters.

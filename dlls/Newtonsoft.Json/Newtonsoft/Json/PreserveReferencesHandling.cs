@@ -1,8 +1,5 @@
 using System;
 
-namespace Newtonsoft.Json.Utilities
-{
-}
 namespace Newtonsoft.Json
 {
 	[Flags]
@@ -13,4 +10,7 @@ namespace Newtonsoft.Json
 		Arrays = 2,
 		All = 3
 	}
+}
+namespace Newtonsoft.Json
+{
 }

@@ -1,16 +1,35 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 4)]
-[CallbackIdentity(143)]
-public struct ValidateAuthTicketResponse_t
+namespace Steamworks
 {
-	public const int k_iCallback = 143;
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(339)]
+	public struct GameConnectedChatJoin_t
+	{
+		public const int k_iCallback = 339;
 
-	public CSteamID m_SteamID;
+		public CSteamID m_steamIDClanChat;
 
-	public EAuthSessionResponse m_eAuthSessionResponse;
+		public CSteamID m_steamIDUser;
+	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(2301)]
+	public struct ScreenshotReady_t
+	{
+		public const int k_iCallback = 2301;
 
-	public CSteamID m_OwnerSteamID;
+		public ScreenshotHandle m_hLocal;
+
+		public EResult m_eResult;
+	}
+}
+namespace Steamworks
+{
+}
+namespace Steamworks
+{
 }

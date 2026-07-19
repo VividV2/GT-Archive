@@ -1,8 +1,13 @@
-namespace System.Security.Cryptography.Asn1;
+using System.Security.Cryptography.Asn1;
+using System.Security.Cryptography.Asn1;
 
-internal abstract class AsnEncodingRuleAttribute : Attribute
+namespace System.Security.Cryptography.Pkcs.Asn1;
+
+internal struct PolicyInformation
 {
-	internal AsnEncodingRuleAttribute()
-	{
-	}
+	[ObjectIdentifier]
+	public string PolicyIdentifier;
+
+	[OptionalValue]
+	public PolicyQualifierInfo[] PolicyQualifiers;
 }

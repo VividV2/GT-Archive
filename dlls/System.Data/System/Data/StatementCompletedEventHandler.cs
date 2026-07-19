@@ -1,3 +1,6 @@
-namespace System.Data
+namespace System
+{
+}
+namespace System
 {
 }

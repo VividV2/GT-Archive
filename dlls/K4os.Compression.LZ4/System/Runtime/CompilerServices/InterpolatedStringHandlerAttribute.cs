@@ -1,2 +1,9 @@
-// Could not decompile System.Runtime.CompilerServices.InterpolatedStringHandlerAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics.CodeAnalysis;
+
+namespace System.Runtime.CompilerServices;
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = false, Inherited = false)]
+[ExcludeFromCodeCoverage]
+internal sealed class InterpolatedStringHandlerAttribute : Attribute
+{
+}

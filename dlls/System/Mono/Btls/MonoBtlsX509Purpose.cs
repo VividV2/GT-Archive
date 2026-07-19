@@ -1,14 +1,18 @@
-namespace Mono.Btls;
-
-internal enum MonoBtlsX509Purpose
+namespace System.Diagnostics
 {
-	SSL_CLIENT = 1,
-	SSL_SERVER,
-	NS_SSL_SERVER,
-	SMIME_SIGN,
-	SMIME_ENCRYPT,
-	CRL_SIGN,
-	ANY,
-	OCSP_HELPER,
-	TIMESTAMP_SIGN
+}
+namespace Mono.Btls
+{
+	internal enum MonoBtlsX509Purpose
+	{
+		SSL_CLIENT = 1,
+		SSL_SERVER,
+		NS_SSL_SERVER,
+		SMIME_SIGN,
+		SMIME_ENCRYPT,
+		CRL_SIGN,
+		ANY,
+		OCSP_HELPER,
+		TIMESTAMP_SIGN
+	}
 }

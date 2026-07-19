@@ -1,14 +1,18 @@
-namespace PlayFab;
-
-public interface ISerializerPlugin : IPlayFabPlugin
+namespace PlayFab
 {
-	T DeserializeObject<T>(string serialized);
+	public interface ISerializerPlugin : IPlayFabPlugin
+	{
+		T DeserializeObject<T>(string serialized);
 
-	T DeserializeObject<T>(string serialized, object serializerStrategy);
+		T DeserializeObject<T>(string serialized, object serializerStrategy);
 
-	object DeserializeObject(string serialized);
+		object DeserializeObject(string serialized);
 
-	string SerializeObject(object obj);
+		string SerializeObject(object obj);
 
-	string SerializeObject(object obj, object serializerStrategy);
+		string SerializeObject(object obj, object serializerStrategy);
+	}
+}
+namespace PlayFab.MultiplayerModels
+{
 }

@@ -1,10 +1,2 @@
-using System;
-using UnityEngine.Bindings;
-
-namespace Unity.Scripting.LifecycleManagement;
-
-[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
-[VisibleToOtherModules]
-internal sealed class BeforeAssemblyUnloadingAttribute : LifecycleAttributeBase
-{
-}
+// Could not decompile Unity.Scripting.LifecycleManagement.BeforeAssemblyUnloadingAttribute
+// This type uses unsupported IL or has too many generic parameters.

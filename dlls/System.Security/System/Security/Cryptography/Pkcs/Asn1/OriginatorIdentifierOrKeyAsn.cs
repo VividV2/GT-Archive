@@ -1,16 +1,3 @@
-using System.Security.Cryptography.Asn1;
-
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-[Choice]
-internal struct OriginatorIdentifierOrKeyAsn
+namespace System.Security.Cryptography.Pkcs.Asn1
 {
-	internal IssuerAndSerialNumberAsn? IssuerAndSerialNumber;
-
-	[OctetString]
-	[ExpectedTag(0)]
-	internal ReadOnlyMemory<byte>? SubjectKeyIdentifier;
-
-	[ExpectedTag(1)]
-	internal OriginatorPublicKeyAsn OriginatorKey;
 }

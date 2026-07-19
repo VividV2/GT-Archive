@@ -1,12 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class LinkFacebookAccountRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string AccessToken;
-
-	public bool? ForceLink;
 }

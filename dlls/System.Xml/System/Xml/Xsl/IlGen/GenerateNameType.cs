@@ -1,12 +1,16 @@
-namespace System.Xml.Xsl.IlGen;
-
-internal enum GenerateNameType
+namespace System.Xml.Xsl.IlGen
 {
-	LiteralLocalName,
-	LiteralName,
-	CopiedName,
-	TagNameAndMappings,
-	TagNameAndNamespace,
-	QName,
-	StackName
+	internal enum GenerateNameType
+	{
+		LiteralLocalName,
+		LiteralName,
+		CopiedName,
+		TagNameAndMappings,
+		TagNameAndNamespace,
+		QName,
+		StackName
+	}
+}
+namespace System.Xml.Serialization
+{
 }

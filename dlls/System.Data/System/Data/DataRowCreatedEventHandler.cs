@@ -1,3 +1,7 @@
-namespace System.Data;
-
-internal delegate void DataRowCreatedEventHandler(object sender, DataRow r);
+namespace System.Data
+{
+	internal delegate void DataRowCreatedEventHandler(object sender, DataRow r);
+}
+namespace Microsoft.SqlServer.Server
+{
+}

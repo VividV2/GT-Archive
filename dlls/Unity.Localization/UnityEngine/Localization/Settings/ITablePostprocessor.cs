@@ -1,8 +1,12 @@
 using UnityEngine.Localization.Tables;
 
-namespace UnityEngine.Localization.Settings;
-
-public interface ITablePostprocessor
+namespace UnityEngine.Localization.Settings
 {
-	void PostprocessTable(LocalizationTable table);
+	public interface ITablePostprocessor
+	{
+		void PostprocessTable(LocalizationTable table);
+	}
+}
+namespace UnityEngine.Localization.Tables
+{
 }

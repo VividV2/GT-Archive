@@ -1,5 +1,8 @@
 namespace UnityEngine.Rendering.Universal
 {
+}
+namespace UnityEngine.Rendering.Universal
+{
 	public enum RenderPassEvent
 	{
 		BeforeRendering = 0,
@@ -21,10 +24,4 @@ namespace UnityEngine.Rendering.Universal
 		AfterRenderingPostProcessing = 600,
 		AfterRendering = 1000
 	}
-}
-namespace UnityEngine.Rendering.Universal
-{
-}
-namespace UnityEngine.Rendering.Universal
-{
 }

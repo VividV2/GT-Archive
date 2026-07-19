@@ -1,2 +1,6 @@
-// Could not decompile Liv.Lck.GorillaTag.GtAudioButton
-// This type uses unsupported IL or has too many generic parameters.
+namespace Liv.Lck.GorillaTag
+{
+}
+namespace Liv.Lck.GorillaTag
+{
+}

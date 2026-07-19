@@ -1,18 +1,13 @@
-using System.Runtime.InteropServices;
-
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 4)]
-[CallbackIdentity(334)]
-public struct AvatarImageLoaded_t
+namespace Steamworks
 {
-	public const int k_iCallback = 334;
-
-	public CSteamID m_steamID;
-
-	public int m_iImage;
-
-	public int m_iWide;
-
-	public int m_iTall;
+	public enum EItemPreviewType
+	{
+		k_EItemPreviewType_Image = 0,
+		k_EItemPreviewType_YouTubeVideo = 1,
+		k_EItemPreviewType_Sketchfab = 2,
+		k_EItemPreviewType_EnvironmentMap_HorizontalCross = 3,
+		k_EItemPreviewType_EnvironmentMap_LatLong = 4,
+		k_EItemPreviewType_Clip = 5,
+		k_EItemPreviewType_ReservedMax = 255
+	}
 }

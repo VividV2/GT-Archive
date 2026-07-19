@@ -1,2 +1,18 @@
-// Could not decompile System.Xml.Serialization.Soap12
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Serialization
+{
+	internal class Soap12
+	{
+		internal const string Encoding = "http://www.w3.org/2003/05/soap-encoding";
+
+		internal const string RpcNamespace = "http://www.w3.org/2003/05/soap-rpc";
+
+		internal const string RpcResult = "result";
+
+		private Soap12()
+		{
+		}
+	}
+}
+namespace System.Xml.Schema
+{
+}

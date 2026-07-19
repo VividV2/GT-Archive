@@ -1,28 +1,24 @@
-namespace UnityEngine.Animations.Rigging
+namespace UnityEngine.Animations.Rigging;
+
+public interface ITwoBoneIKConstraintData
 {
-	public interface ITwoBoneIKConstraintData
-	{
-		Transform root { get; }
+	Transform root { get; }
 
-		Transform mid { get; }
+	Transform mid { get; }
 
-		Transform tip { get; }
+	Transform tip { get; }
 
-		Transform target { get; }
+	Transform target { get; }
 
-		Transform hint { get; }
+	Transform hint { get; }
 
-		bool maintainTargetPositionOffset { get; }
+	bool maintainTargetPositionOffset { get; }
 
-		bool maintainTargetRotationOffset { get; }
+	bool maintainTargetRotationOffset { get; }
 
-		string targetPositionWeightFloatProperty { get; }
+	string targetPositionWeightFloatProperty { get; }
 
-		string targetRotationWeightFloatProperty { get; }
+	string targetRotationWeightFloatProperty { get; }
 
-		string hintWeightFloatProperty { get; }
-	}
-}
-namespace UnityEngine.Animations.Rigging
-{
+	string hintWeightFloatProperty { get; }
 }

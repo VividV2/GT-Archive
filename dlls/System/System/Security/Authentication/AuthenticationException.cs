@@ -1,13 +1,2 @@
-namespace System;
+namespace Microsoft.Win32.SafeHandles;
 
-/// <summary>A customizable parser based on the HTTP scheme.</summary>
-/// <summary>A customizable parser based on the HTTP scheme.</summary>
-public class HttpStyleUriParser : UriParser
-{
-	/// <summary>Create a customizable parser based on the HTTP scheme.</summary>
-	/// <summary>Create a customizable parser based on the HTTP scheme.</summary>
-	public HttpStyleUriParser()
-		: base(UriParser.HttpUri.Flags)
-	{
-	}
-}

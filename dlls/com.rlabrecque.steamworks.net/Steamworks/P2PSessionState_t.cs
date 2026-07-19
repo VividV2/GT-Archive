@@ -1,13 +1,18 @@
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
 namespace Steamworks
 {
-	public enum EBeginAuthSessionResult
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(163)]
+	public struct GetAuthSessionTicketResponse_t
 	{
-		k_EBeginAuthSessionResultOK,
-		k_EBeginAuthSessionResultInvalidTicket,
-		k_EBeginAuthSessionResultDuplicateRequest,
-		k_EBeginAuthSessionResultInvalidVersion,
-		k_EBeginAuthSessionResultGameMismatch,
-		k_EBeginAuthSessionResultExpiredTicket
+		public const int k_iCallback = 163;
+
+		public HAuthTicket m_hAuthTicket;
+
+		public EResult m_eResult;
 	}
 }
 namespace Steamworks

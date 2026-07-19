@@ -1,11 +1,15 @@
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.Windows.WebCam;
-
-[MovedFrom("UnityEngine.XR.WSA.WebCam")]
-public enum WebCamMode
+namespace UnityEngine.Windows.WebCam
 {
-	None,
-	PhotoMode,
-	VideoMode
+	[MovedFrom("UnityEngine.XR.WSA.WebCam")]
+	public enum WebCamMode
+	{
+		None,
+		PhotoMode,
+		VideoMode
+	}
+}
+namespace UnityEngine.PlayerLoop
+{
 }

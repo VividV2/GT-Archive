@@ -1,2 +1,13 @@
-// Could not decompile Photon.Voice.Windows.MonoPInvokeCallbackAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Photon.Voice.Windows;
+
+public class MonoPInvokeCallbackAttribute : Attribute
+{
+	private Type type;
+
+	public MonoPInvokeCallbackAttribute(Type t)
+	{
+		type = t;
+	}
+}

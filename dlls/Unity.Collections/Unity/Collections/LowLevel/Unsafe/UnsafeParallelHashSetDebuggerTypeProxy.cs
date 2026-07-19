@@ -1,2 +1,12 @@
-namespace Unity.Collections.LowLevel.Unsafe;
+namespace Unity.Collections;
 
+public enum ConversionError
+{
+	None,
+	Overflow,
+	Encoding,
+	CodePoint
+}
+namespace Unity.Collections
+{
+}

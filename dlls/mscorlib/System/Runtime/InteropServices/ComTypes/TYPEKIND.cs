@@ -1,23 +1,25 @@
 namespace System.Runtime.InteropServices.ComTypes;
 
-/// <summary>Defines the kind of variable.</summary>
-/// <summary>Defines the kind of variable.</summary>
+/// <summary>Specifies various types of data and functions.</summary>
 [Serializable]
-public enum VARKIND
+public enum TYPEKIND
 {
-	/// <summary>The variable is a field or member of the type. It exists at a fixed offset within each instance of the type.</summary>
-	/// <summary>The variable is a field or member of the type. It exists at a fixed offset within each instance of the type.</summary>
-	VAR_PERINSTANCE,
-	/// <summary>There is only one instance of the variable.</summary>
-	/// <summary>There is only one instance of the variable.</summary>
-	VAR_STATIC,
-	/// <summary>The <see langword="VARDESC" /> structure describes a symbolic constant. There is no memory associated with it.</summary>
-	/// <summary>The <see langword="VARDESC" /> structure describes a symbolic constant. There is no memory associated with it.</summary>
-	VAR_CONST,
-	/// <summary>The variable can be accessed only through <see langword="IDispatch::Invoke" />.</summary>
-	/// <summary>The variable can be accessed only through <see langword="IDispatch::Invoke" />.</summary>
-	VAR_DISPATCH
-}
-namespace System
-{
+	/// <summary>A set of enumerators.</summary>
+	TKIND_ENUM,
+	/// <summary>A structure with no methods.</summary>
+	TKIND_RECORD,
+	/// <summary>A module that can have only static functions and data (for example, a DLL).</summary>
+	TKIND_MODULE,
+	/// <summary>A type that has virtual functions, all of which are pure.</summary>
+	TKIND_INTERFACE,
+	/// <summary>A set of methods and properties that are accessible through <see langword="IDispatch::Invoke" />. By default, dual interfaces return <see langword="TKIND_DISPATCH" />.</summary>
+	TKIND_DISPATCH,
+	/// <summary>A set of implemented components interfaces.</summary>
+	TKIND_COCLASS,
+	/// <summary>A type that is an alias for another type.</summary>
+	TKIND_ALIAS,
+	/// <summary>A union of all members that have an offset of zero.</summary>
+	TKIND_UNION,
+	/// <summary>End-of-enumeration marker.</summary>
+	TKIND_MAX
 }

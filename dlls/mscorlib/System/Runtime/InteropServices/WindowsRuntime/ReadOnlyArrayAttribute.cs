@@ -1,2 +1,11 @@
-// Could not decompile System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.InteropServices.WindowsRuntime;
+
+/// <summary>When applied to an array parameter in a Windows Runtime component, specifies that the contents of the array that is passed to that parameter are used only for input. The caller expects the array to be unchanged by the call.</summary>
+[AttributeUsage(AttributeTargets.Parameter, Inherited = false, AllowMultiple = false)]
+public sealed class ReadOnlyArrayAttribute : Attribute
+{
+	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute" /> class.</summary>
+	public ReadOnlyArrayAttribute()
+	{
+	}
+}

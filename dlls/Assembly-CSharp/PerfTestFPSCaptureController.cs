@@ -1,11 +1,2 @@
-using GorillaTag;
-using UnityEngine;
-using GorillaTag;
-using UnityEngine;
-
-[GTStripGameObjectFromBuild("!GT_AUTOMATED_PERF_TEST && !BETA")]
-public class PerfTestFPSCaptureController : MonoBehaviour
-{
-	[SerializeField]
-	private SerializablePerformanceReport<ScenePerformanceData> performanceSummary;
-}
+// Could not decompile PerfTestFPSCaptureController
+// This type uses unsupported IL or has too many generic parameters.

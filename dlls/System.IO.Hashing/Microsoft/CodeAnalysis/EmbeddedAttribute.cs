@@ -1,10 +1,6 @@
-using System;
-using System.Runtime.CompilerServices;
-
-namespace Microsoft.CodeAnalysis;
-
-[CompilerGenerated]
-[Microsoft.CodeAnalysis.Embedded]
-internal sealed class EmbeddedAttribute : Attribute
+namespace System.IO.Hashing
+{
+}
+namespace System.IO.Hashing
 {
 }

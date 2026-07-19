@@ -1,22 +1,2 @@
-using System;
-
-namespace SouthPointe.Serialization.MessagePack
-{
-	internal static class ArrayHelper
-	{
-		internal static void AdjustSize(ref byte[] bytes, int length)
-		{
-			if (bytes.Length < length)
-			{
-				int num;
-				for (num = bytes.Length; num < length; num *= 2)
-				{
-				}
-				Array.Resize(ref bytes, num);
-			}
-		}
-	}
-}
-namespace SouthPointe.Serialization.MessagePack
-{
-}
+// Could not decompile SouthPointe.Serialization.MessagePack.ArrayHelper
+// This type uses unsupported IL or has too many generic parameters.

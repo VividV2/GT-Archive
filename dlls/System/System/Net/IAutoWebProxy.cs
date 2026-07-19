@@ -1,10 +1,6 @@
-namespace System.Net
+namespace System.Net;
+
+internal interface IAutoWebProxy : IWebProxy
 {
-	internal interface IAutoWebProxy : IWebProxy
-	{
-		ProxyChain GetProxies(Uri destination);
-	}
-}
-namespace System.Net.Configuration
-{
+	ProxyChain GetProxies(Uri destination);
 }

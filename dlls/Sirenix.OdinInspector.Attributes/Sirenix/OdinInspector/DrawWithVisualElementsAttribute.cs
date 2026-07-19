@@ -1,8 +1,12 @@
 using System;
 
-namespace Sirenix.OdinInspector;
-
-public class DrawWithVisualElementsAttribute : Attribute
+namespace Sirenix.OdinInspector
 {
-	public bool DrawCollectionWithImGUI;
+	public class DrawWithVisualElementsAttribute : Attribute
+	{
+		public bool DrawCollectionWithImGUI;
+	}
+}
+namespace Sirenix.OdinInspector
+{
 }

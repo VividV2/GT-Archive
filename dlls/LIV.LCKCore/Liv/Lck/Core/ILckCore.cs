@@ -1,27 +1,16 @@
 using System.Threading.Tasks;
 
-namespace Liv.Lck.Core
+namespace Liv.Lck.Core;
+
+public interface ILckCore
 {
-	public enum LogType
-	{
-		Error,
-		Warning,
-		Info,
-		Trace
-	}
-}
-namespace Liv.Lck.Core
-{
-	public interface ILckCore
-	{
-		Task<Result<bool>> HasUserConfiguredStreaming();
+	Task<Result<bool>> HasUserConfiguredStreaming();
 
-		Task<Result<bool>> IsUserSubscribed();
+	Task<Result<bool>> IsUserSubscribed();
 
-		Task<Result<string>> StartLoginAttemptAsync();
+	Task<Result<string>> StartLoginAttemptAsync();
 
-		Task<Result<bool>> CheckLoginCompletedAsync();
+	Task<Result<bool>> CheckLoginCompletedAsync();
 
-		Task<Result<float>> GetRemainingBackoffTimeSeconds();
-	}
+	Task<Result<float>> GetRemainingBackoffTimeSeconds();
 }

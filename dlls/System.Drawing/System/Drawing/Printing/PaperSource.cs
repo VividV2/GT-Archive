@@ -1,11 +1,2 @@
-namespace System.Drawing.Drawing2D;
-
-public enum CombineMode
-{
-	Replace,
-	Intersect,
-	Union,
-	Xor,
-	Exclude,
-	Complement
-}
+// Could not decompile System.Drawing.Printing.PaperSource
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,12 +1,2 @@
-using UnityEngine.Bindings;
-using UnityEngine.Bindings;
-
-namespace UnityEngine.Audio;
-
-[NativeHeader("Modules/Audio/Public/AudioResource.h")]
-public abstract class AudioResource : Object
-{
-	protected internal AudioResource()
-	{
-	}
-}
+// Could not decompile UnityEngine.AudioEchoFilter
+// This type uses unsupported IL or has too many generic parameters.

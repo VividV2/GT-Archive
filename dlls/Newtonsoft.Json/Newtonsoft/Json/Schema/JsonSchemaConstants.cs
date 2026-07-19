@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Newtonsoft.Json.Bson
+namespace Newtonsoft.Json.Serialization
 {
 }
 namespace Newtonsoft.Json.Schema

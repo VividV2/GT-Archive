@@ -1,28 +1,24 @@
-namespace UnityEngine.Rendering.RadeonRays
+namespace UnityEngine.Rendering.RadeonRays;
+
+internal struct InstanceInfo
 {
-}
-namespace UnityEngine.Rendering.RadeonRays
-{
-	internal struct InstanceInfo
-	{
-		public int blasOffset;
+	public int blasOffset;
 
-		public int instanceMask;
+	public int instanceMask;
 
-		public int vertexOffset;
+	public int vertexOffset;
 
-		public int indexOffset;
+	public int indexOffset;
 
-		public int triangleCullingEnabled;
+	public int triangleCullingEnabled;
 
-		public int invertTriangleCulling;
+	public int invertTriangleCulling;
 
-		public uint userInstanceID;
+	public uint userInstanceID;
 
-		public int padding2;
+	public int padding2;
 
-		public Transform worldToLocalTransform;
+	public Transform worldToLocalTransform;
 
-		public Transform localToWorldTransform;
-	}
+	public Transform localToWorldTransform;
 }

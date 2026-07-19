@@ -1,2 +1,2 @@
-// Could not decompile System.Diagnostics.DebuggerStepperBoundaryAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Reflection.Emit;
+

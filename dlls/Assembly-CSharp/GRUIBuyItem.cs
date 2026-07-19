@@ -1,2 +1,10 @@
-// Could not decompile GRUIBuyItem
-// This type uses unsupported IL or has too many generic parameters.
+namespace GorillaNetworking;
+
+public class CheckForBadNameRequest
+{
+	public string name;
+
+	public bool forRoom;
+
+	public bool forTroop;
+}

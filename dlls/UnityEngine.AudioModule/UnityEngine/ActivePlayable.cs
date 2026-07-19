@@ -1,10 +1,6 @@
-using UnityEngine.Playables;
-
-namespace UnityEngine;
-
-internal struct ActivePlayable
+namespace UnityEngine
 {
-	public PlayableSettings settings { get; }
-
-	public PlayableHandle clipPlayableHandle { get; }
+}
+namespace UnityEngine
+{
 }

@@ -1,20 +1,24 @@
-namespace UnityEngine.Rendering;
-
-public interface IBitArray
+namespace UnityEngine.Rendering
 {
-	uint capacity { get; }
+	public interface IBitArray
+	{
+		uint capacity { get; }
 
-	bool allFalse { get; }
+		bool allFalse { get; }
 
-	bool allTrue { get; }
+		bool allTrue { get; }
 
-	bool this[uint index] { get; set; }
+		bool this[uint index] { get; set; }
 
-	string humanizedData { get; }
+		string humanizedData { get; }
 
-	IBitArray BitAnd(IBitArray other);
+		IBitArray BitAnd(IBitArray other);
 
-	IBitArray BitOr(IBitArray other);
+		IBitArray BitOr(IBitArray other);
 
-	IBitArray BitNot();
+		IBitArray BitNot();
+	}
+}
+namespace UnityEngine.Experimental.Rendering
+{
 }

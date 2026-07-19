@@ -1,14 +1,9 @@
-namespace UnityEngine.Rendering
-{
-	internal struct DebugOccluderStats
-	{
-		public int viewInstanceID;
+using Microsoft.CodeAnalysis;
 
-		public int subviewCount;
+namespace System.Runtime.CompilerServices;
 
-		public Vector2Int occluderMipLayoutSize;
-	}
-}
-namespace UnityEngine.Rendering
+[CompilerGenerated]
+[Microsoft.CodeAnalysis.Embedded]
+internal sealed class IsUnmanagedAttribute : Attribute
 {
 }

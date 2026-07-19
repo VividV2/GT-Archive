@@ -1,16 +1,7 @@
 using System;
-using System;
 
 namespace Steamworks
 {
-	public enum ENotificationPosition
-	{
-		k_EPositionInvalid = -1,
-		k_EPositionTopLeft,
-		k_EPositionTopRight,
-		k_EPositionBottomLeft,
-		k_EPositionBottomRight
-	}
 }
 namespace Steamworks
 {
@@ -27,7 +18,4 @@ namespace Steamworks
 		k_ERemoteStoragePlatformIOS = 0x40,
 		k_ERemoteStoragePlatformAll = -1
 	}
-}
-namespace Steamworks
-{
 }

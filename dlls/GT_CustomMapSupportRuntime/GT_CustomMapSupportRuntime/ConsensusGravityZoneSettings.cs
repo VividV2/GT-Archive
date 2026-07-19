@@ -1,21 +1,52 @@
+using System.Collections.Generic;
+using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace GT_CustomMapSupportRuntime;
-
-public class ConsensusGravityZoneSettings : BasicGravityZoneSettings
+namespace GT_CustomMapSupportRuntime
 {
-	[SerializeField]
-	public float weightForce = 0f;
+	[RequireComponent(typeof(Collider))]
+	[DisallowMultipleComponent]
+	public class TeleporterSettings : TriggerSettings
+	{
+		[Tooltip("Should this Trigger sync to all players, or only be processed for the person who triggered it?\nTeleporters generally shouldn't need to do this, but doing so will sync it's internal TriggerCount to all players.")]
+		public bool syncedToAllPlayers = false;
 
-	[SerializeField]
-	public float centeringForce = 0f;
+		[Tooltip("Teleport points used for this teleporter. Chosen at random.")]
+		[SerializeField]
+		public List<Transform> TeleportPoints = new List<Transform>();
 
-	[SerializeField]
-	public float drag = 0f;
+		[Tooltip("Should the teleporter change the players rotation to match the chosen Teleport Point's rotation?")]
+		[SerializeField]
+		public bool matchTeleportPointRotation = true;
 
-	[SerializeField]
-	public float rotMin = -45f;
+		[Tooltip("Should the teleporter maintain the players current velocity after teleporting?")]
+		[SerializeField]
+		public bool maintainVelocity = true;
 
-	[SerializeField]
-	public float rotMax = 45f;
+		public override void PropagateProperties()
+		{
+			syncedToAllPlayers_private = syncedToAllPlayers;
+		}
+	}
+}
+namespace GT_CustomMapSupportRuntime
+{
+	public class ConsensusGravityZoneSettings : BasicGravityZoneSettings
+	{
+		[SerializeField]
+		public float weightForce = 0f;
+
+		[SerializeField]
+		public float centeringForce = 0f;
+
+		[SerializeField]
+		public float drag = 0f;
+
+		[SerializeField]
+		public float rotMin = -45f;
+
+		[SerializeField]
+		public float rotMax = 45f;
+	}
 }

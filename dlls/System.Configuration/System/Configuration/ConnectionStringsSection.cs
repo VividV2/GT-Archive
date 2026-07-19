@@ -1,2 +1,12 @@
-// Could not decompile System.Configuration.ConnectionStringsSection
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Configuration
+{
+	internal interface IConfigXmlNode
+	{
+		string Filename { get; }
+
+		int LineNumber { get; }
+	}
+}
+namespace System.Configuration
+{
+}

@@ -1,14 +1,33 @@
-namespace OVR.OpenVR;
-
-public struct VRActiveActionSet_t
+namespace OVR.OpenVR
 {
-	public ulong ulActionSet;
+	public enum EVRNotificationType
+	{
+		Transient,
+		Persistent,
+		Transient_SystemWithUserValue
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct VRBoneTransform_t
+	{
+		public HmdVector4_t position;
 
-	public ulong ulRestrictedToDevice;
+		public HmdQuaternionf_t orientation;
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct VRActiveActionSet_t
+	{
+		public ulong ulActionSet;
 
-	public ulong ulSecondaryActionSet;
+		public ulong ulRestrictedToDevice;
 
-	public uint unPadding;
+		public ulong ulSecondaryActionSet;
 
-	public int nPriority;
+		public uint unPadding;
+
+		public int nPriority;
+	}
 }

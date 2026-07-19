@@ -1,6 +1,6 @@
 namespace UnityEngine.UIElements
 {
 }
-namespace UnityEngine.UIElements.InputSystem
+namespace UnityEngine.UIElements
 {
 }

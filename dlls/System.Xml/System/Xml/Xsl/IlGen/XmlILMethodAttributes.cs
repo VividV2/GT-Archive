@@ -1,8 +1,15 @@
-namespace System.Xml.Xsl.IlGen;
-
-internal enum XmlILMethodAttributes
+namespace System.Xml.Schema
 {
-	None,
-	NonUser,
-	Raw
+}
+namespace System.Xml
+{
+}
+namespace System.Xml.Xsl.IlGen
+{
+	internal enum XmlILMethodAttributes
+	{
+		None,
+		NonUser,
+		Raw
+	}
 }

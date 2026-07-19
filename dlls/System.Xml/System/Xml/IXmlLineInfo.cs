@@ -16,6 +16,3 @@ public interface IXmlLineInfo
 	///     <see langword="true" /> if <see cref="P:System.Xml.IXmlLineInfo.LineNumber" /> and <see cref="P:System.Xml.IXmlLineInfo.LinePosition" /> can be provided; otherwise, <see langword="false" />.</returns>
 	bool HasLineInfo();
 }
-namespace System.Xml.Serialization
-{
-}

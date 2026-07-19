@@ -1,2 +1,6 @@
-// Could not decompile System.Xml.Serialization.SoapCodeExporter
-// This type uses unsupported IL or has too many generic parameters.
+using System.Xml.Xsl.Runtime;
+using System.Xml.Xsl.Runtime;
+
+namespace System.Xml.Xsl;
+
+internal delegate void ExecuteDelegate(XmlQueryRuntime runtime);

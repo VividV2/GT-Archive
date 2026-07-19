@@ -1,13 +1,3 @@
-using System;
-using System.Diagnostics;
-
-namespace UnityEngine.TextCore.LowLevel;
-
-[Serializable]
-[DebuggerDisplay("Feature = {tag},  Lookup Count = {lookupIndexes.Length}")]
-internal struct OpenTypeLayoutFeature
+namespace UnityEngine.TextCore.LowLevel
 {
-	public string tag;
-
-	public uint[] lookupIndexes;
 }

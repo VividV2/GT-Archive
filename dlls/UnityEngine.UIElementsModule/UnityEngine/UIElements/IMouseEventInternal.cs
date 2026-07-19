@@ -1,2 +1,22 @@
-// Could not decompile UnityEngine.UIElements.IMouseEventInternal
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements
+{
+	internal interface IMouseEventInternal
+	{
+		IPointerEvent sourcePointerEvent { get; }
+
+		bool recomputeTopElementUnderMouse { get; }
+	}
+}
+namespace UnityEngine.UIElements
+{
+	public interface IEventHandler
+	{
+		void SendEvent(EventBase e);
+
+		void HandleEvent(EventBase evt);
+
+		bool HasTrickleDownHandlers();
+
+		bool HasBubbleUpHandlers();
+	}
+}

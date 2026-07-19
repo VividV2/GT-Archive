@@ -1,2 +1,2 @@
-namespace Backtrace.Unity.Model;
+namespace Backtrace.Unity.Model.Database;
 

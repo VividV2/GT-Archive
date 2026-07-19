@@ -1,33 +1,31 @@
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
+namespace UnityEngine.UIElements.Experimental;
 
-namespace UnityEngine.UIElements
+[EventCategory(EventCategory.EnterLeave)]
+public class PointerOutLinkTagEvent : PointerEventBase<PointerOutLinkTagEvent>
 {
-	[MovedFrom(true, "UnityEditor.UIElements", "UnityEditor.UIElementsModule", null)]
-	public interface IValueField<T>
+	static PointerOutLinkTagEvent()
 	{
-		T value { get; set; }
-
-		void ApplyInputDeviceDelta(Vector3 delta, DeltaSpeed speed, T startValue);
-
-		void StartDragging();
-
-		void StopDragging();
+		EventBase<PointerOutLinkTagEvent>.SetCreateFunction(() => new PointerOutLinkTagEvent());
 	}
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-	internal struct Hashes
-	{
-		public const int kSize = 4;
 
-		public unsafe fixed int hashes[4];
+	protected override void Init()
+	{
+		base.Init();
+		LocalInit();
+	}
+
+	private void LocalInit()
+	{
+		base.propagation = EventPropagation.BubblesOrTricklesDown;
+	}
+
+	public static PointerOutLinkTagEvent GetPooled(IPointerEvent evt, string linkID)
+	{
+		return PointerEventBase<PointerOutLinkTagEvent>.GetPooled(evt);
+	}
+
+	public PointerOutLinkTagEvent()
+	{
+		LocalInit();
 	}
 }

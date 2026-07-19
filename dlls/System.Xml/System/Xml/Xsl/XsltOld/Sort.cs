@@ -1,25 +1,2 @@
-using System.Xml.XPath;
-
-namespace System.Xml.Xsl.XsltOld;
-
-internal class Sort
-{
-	internal int select;
-
-	internal string lang;
-
-	internal XmlDataType dataType;
-
-	internal XmlSortOrder order;
-
-	internal XmlCaseOrder caseOrder;
-
-	public Sort(int sortkey, string xmllang, XmlDataType datatype, XmlSortOrder xmlorder, XmlCaseOrder xmlcaseorder)
-	{
-		select = sortkey;
-		lang = xmllang;
-		dataType = datatype;
-		order = xmlorder;
-		caseOrder = xmlcaseorder;
-	}
-}
+// Could not decompile System.Xml.Xsl.XsltOld.Sort
+// This type uses unsupported IL or has too many generic parameters.

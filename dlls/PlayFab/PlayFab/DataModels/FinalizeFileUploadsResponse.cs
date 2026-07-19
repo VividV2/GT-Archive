@@ -1,2 +1,2 @@
-namespace PlayFab.InsightsModels;
-
+// Could not decompile PlayFab.DataModels.FinalizeFileUploadsResponse
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,21 +1,17 @@
 using System;
 using UnityEngine.Events;
 
-namespace Meta.WitAi.Requests;
+namespace Meta.Voice.Net.PubSub;
 
-internal delegate void VRequestProgressDelegate(float progress);
-namespace Meta.Voice.Net.PubSub
+public interface IPubSubAdapter
 {
-	public interface IPubSubAdapter
-	{
-		PubSubSettings Settings { get; set; }
+	PubSubSettings Settings { get; set; }
 
-		PubSubSubscriptionState SubscriptionState { get; }
+	PubSubSubscriptionState SubscriptionState { get; }
 
-		UnityEvent OnSubscribed { get; }
+	UnityEvent OnSubscribed { get; }
 
-		UnityEvent OnUnsubscribed { get; }
+	UnityEvent OnUnsubscribed { get; }
 
-		event Action<PubSubSubscriptionState> OnTopicSubscriptionStateChange;
-	}
+	event Action<PubSubSubscriptionState> OnTopicSubscriptionStateChange;
 }

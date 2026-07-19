@@ -1,10 +1,2 @@
-namespace System.Collections.Specialized
-{
-}
-namespace System.ComponentModel.Design.Serialization
-{
-	public delegate void ResolveNameEventHandler(object sender, ResolveNameEventArgs e);
-}
-namespace System.Net.Mail
-{
-}
+// Could not decompile System.Net.NetworkInformation.NetworkInterfaceFactory
+// This type uses unsupported IL or has too many generic parameters.

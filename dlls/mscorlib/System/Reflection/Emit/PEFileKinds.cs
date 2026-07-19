@@ -1,8 +1,3 @@
-namespace System.Collections.Generic;
-
-internal enum InsertionBehavior : byte
+namespace System.Collections
 {
-	None,
-	OverwriteExisting,
-	ThrowOnExisting
 }

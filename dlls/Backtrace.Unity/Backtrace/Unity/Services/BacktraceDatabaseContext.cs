@@ -1,10 +1,2 @@
-namespace Backtrace.Unity.Runtime.Native.Android;
-
-internal enum UnwindingMode
-{
-	LOCAL,
-	REMOTE,
-	REMOTE_DUMPWITHOUTCRASH,
-	LOCAL_DUMPWITHOUTCRASH,
-	LOCAL_CONTEXT
-}
+// Could not decompile Backtrace.Unity.Services.BacktraceDatabaseContext
+// This type uses unsupported IL or has too many generic parameters.

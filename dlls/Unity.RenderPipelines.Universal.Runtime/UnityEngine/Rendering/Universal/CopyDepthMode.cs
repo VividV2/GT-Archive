@@ -6,3 +6,6 @@ public enum CopyDepthMode
 	AfterTransparents,
 	ForcePrepass
 }
+namespace UnityEngine.Rendering.Universal
+{
+}

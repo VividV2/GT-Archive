@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.ILogHandler
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine;
+
+public interface ILogHandler
+{
+	void LogFormat(LogType logType, Object context, string format, params object[] args);
+
+	void LogException(Exception exception, Object context);
+}

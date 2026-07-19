@@ -1,2 +1,14 @@
-// Could not decompile Photon.Voice.Unity.UtilityScripts.TestTone
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Photon.Voice.Unity.UtilityScripts;
+
+[RequireComponent(typeof(Recorder))]
+public class TestTone : MonoBehaviour
+{
+	private void Start()
+	{
+		Recorder component = base.gameObject.GetComponent<Recorder>();
+		component.SourceType = Recorder.InputSourceType.Factory;
+		component.InputFactory = () => new ToneAudioReader();
+	}
+}

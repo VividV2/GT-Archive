@@ -1,28 +1,12 @@
+using System;
+
 namespace Fusion;
 
-public enum Units
+public class SerializableTypeAttribute : PropertyAttribute
 {
-	None,
-	Ticks,
-	Seconds,
-	MilliSecs,
-	Kilobytes,
-	Megabytes,
-	Normalized,
-	Multiplier,
-	Percentage,
-	NormalizedPercentage,
-	Degrees,
-	PerSecond,
-	DegreesPerSecond,
-	Radians,
-	RadiansPerSecond,
-	TicksPerSecond,
-	Units,
-	Bytes,
-	Count,
-	Packets,
-	Frames,
-	FramesPerSecond,
-	SquareMagnitude
+	public Type BaseType { get; set; }
+
+	public bool UseFullAssemblyQualifiedName { get; set; }
+
+	public bool WarnIfNoPreserveAttribute { get; set; }
 }

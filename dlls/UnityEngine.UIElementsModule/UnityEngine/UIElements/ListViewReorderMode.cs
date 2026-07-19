@@ -1,11 +1,7 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum ListViewReorderMode
 {
-	public enum ListViewReorderMode
-	{
-		Simple,
-		Animated
-	}
-}
-namespace UnityEngine.UIElements
-{
+	Simple,
+	Animated
 }

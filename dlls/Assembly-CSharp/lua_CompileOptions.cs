@@ -4,5 +4,3 @@ using System.Runtime.InteropServices;
 public struct lua_CompileOptions
 {
 }
-namespace Voxels;
-

@@ -1,10 +1,2 @@
-namespace OVR.OpenVR;
-
-public struct VROverlayIntersectionParams_t
-{
-	public HmdVector3_t vSource;
-
-	public HmdVector3_t vDirection;
-
-	public ETrackingUniverseOrigin eOrigin;
-}
+// Could not decompile OVR.OpenVR.VROverlayIntersectionParams_t
+// This type uses unsupported IL or has too many generic parameters.

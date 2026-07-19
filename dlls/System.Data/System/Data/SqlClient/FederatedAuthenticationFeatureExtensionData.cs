@@ -1,10 +1,9 @@
-namespace System.Data.SqlClient;
-
-internal struct FederatedAuthenticationFeatureExtensionData
+namespace System.Data.Common
 {
-	internal TdsEnums.FedAuthLibrary libraryType;
-
-	internal bool fedAuthRequiredPreLoginResponse;
-
-	internal byte[] accessToken;
+	public enum IdentifierCase
+	{
+		Unknown,
+		Insensitive,
+		Sensitive
+	}
 }

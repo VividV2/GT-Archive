@@ -1,5 +1,9 @@
 namespace System.Runtime.CompilerServices;
 
-public static class CompilerMarshalOverride
+/// <summary>Indicates that a modified instance is pinned in memory. This class cannot be inherited.</summary>
+public static class IsPinned
+{
+}
+namespace System.Resources
 {
 }

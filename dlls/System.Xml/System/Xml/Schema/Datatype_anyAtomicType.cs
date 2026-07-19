@@ -1,2 +1,2 @@
-// Could not decompile System.Xml.Schema.Datatype_anyAtomicType
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Xsl.Qil;
+

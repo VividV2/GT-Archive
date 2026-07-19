@@ -1,25 +1,8 @@
-using System;
+namespace UnityEngine;
 
-namespace UnityEngine.Rendering;
-
-public struct BatchRendererGroupCreateInfo
+public enum LODFadeMode
 {
-	public BatchRendererGroup.OnPerformCulling cullingCallback;
-
-	public BatchRendererGroup.OnFinishedCulling finishedCullingCallback;
-
-	public IntPtr userContext;
-}
-namespace UnityEngine
-{
-	[Obsolete("See QualitySettings.names, QualitySettings.SetQualityLevel, and QualitySettings.GetQualityLevel")]
-	public enum QualityLevel
-	{
-		Fastest,
-		Fast,
-		Simple,
-		Good,
-		Beautiful,
-		Fantastic
-	}
+	None,
+	CrossFade,
+	SpeedTree
 }

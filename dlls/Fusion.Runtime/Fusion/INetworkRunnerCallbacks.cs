@@ -1,16 +1,46 @@
-using System.Runtime.InteropServices;
+using System;
+using System.Collections.Generic;
+using Fusion.Sockets;
 
-namespace Fusion
+namespace Fusion;
+
+public interface INetworkRunnerCallbacks : IPublicFacingInterface
 {
-	[StructLayout(LayoutKind.Explicit)]
-	[NetworkStructWeaved(10)]
-	public struct NetworkPhysicsInfo : INetworkStruct
-	{
-		public const int WORD_COUNT = 10;
+	void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player);
 
-		public const int SIZE = 40;
+	void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player);
 
-		[FieldOffset(0)]
-		public float TimeScale;
-	}
+	void OnPlayerJoined(NetworkRunner runner, PlayerRef player);
+
+	void OnPlayerLeft(NetworkRunner runner, PlayerRef player);
+
+	void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason);
+
+	void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason);
+
+	void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token);
+
+	void OnConnectFailed(NetworkRunner runner, NetAddress remoteAddress, NetConnectFailedReason reason);
+
+	void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message);
+
+	void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ArraySegment<byte> data);
+
+	void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress);
+
+	void OnInput(NetworkRunner runner, NetworkInput input);
+
+	void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input);
+
+	void OnConnectedToServer(NetworkRunner runner);
+
+	void OnSessionListUpdated(NetworkRunner runner, List<SessionInfo> sessionList);
+
+	void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary<string, object> data);
+
+	void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken);
+
+	void OnSceneLoadDone(NetworkRunner runner);
+
+	void OnSceneLoadStart(NetworkRunner runner);
 }

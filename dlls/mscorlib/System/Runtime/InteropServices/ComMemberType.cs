@@ -1,12 +1,38 @@
-namespace System.Runtime.InteropServices;
+using System.Reflection;
+using System.Security;
 
-/// <summary>Describes the type of a COM member.</summary>
-public enum ComMemberType
+namespace System.Runtime.InteropServices
 {
-	/// <summary>The member is a normal method.</summary>
-	Method,
-	/// <summary>The member gets properties.</summary>
-	PropGet,
-	/// <summary>The member sets properties.</summary>
-	PropSet
+}
+namespace System.Runtime.InteropServices
+{
+	[Guid("CCBD682C-73A5-4568-B8B0-C7007E11ABA2")]
+	[ComVisible(true)]
+	public interface IRegistrationServices
+	{
+		[SecurityCritical]
+		bool RegisterAssembly(Assembly assembly, AssemblyRegistrationFlags flags);
+
+		[SecurityCritical]
+		bool UnregisterAssembly(Assembly assembly);
+
+		[SecurityCritical]
+		Type[] GetRegistrableTypesInAssembly(Assembly assembly);
+
+		[SecurityCritical]
+		string GetProgIdForType(Type type);
+
+		[SecurityCritical]
+		void RegisterTypeForComClients(Type type, ref Guid g);
+
+		Guid GetManagedCategoryGuid();
+
+		[SecurityCritical]
+		bool TypeRequiresRegistration(Type type);
+
+		bool TypeRepresentsComType(Type type);
+	}
+}
+namespace System.Runtime.InteropServices
+{
 }

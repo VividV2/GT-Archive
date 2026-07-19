@@ -1,12 +1,29 @@
-namespace UnityEngine.UIElements.UIR;
-
-internal struct Transform3x4
+namespace UnityEngine.UIElements
 {
-	public Vector4 v0;
+	internal class TextEditorEventHandler
+	{
+		protected TextElement textElement;
 
-	public Vector4 v1;
+		protected TextEditingUtilities editingUtilities;
 
-	public Vector4 v2;
+		protected TextEditorEventHandler(TextElement textElement, TextEditingUtilities editingUtilities)
+		{
+			this.textElement = textElement;
+			this.editingUtilities = editingUtilities;
+		}
+
+		public virtual void RegisterCallbacksOnTarget(VisualElement target)
+		{
+		}
+
+		public virtual void UnregisterCallbacksFromTarget(VisualElement target)
+		{
+		}
+
+		public virtual void HandleEventBubbleUp(EventBase evt)
+		{
+		}
+	}
 }
 namespace UnityEngine.UIElements
 {

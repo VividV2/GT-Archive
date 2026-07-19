@@ -1,2 +1,10 @@
-// Could not decompile Valve.VR.InteractionSystem.AllowTeleportWhileAttachedToHand
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Valve.VR.InteractionSystem;
+
+public class AllowTeleportWhileAttachedToHand : MonoBehaviour
+{
+	public bool teleportAllowed = true;
+
+	public bool overrideHoverLock = true;
+}

@@ -1,0 +1,3 @@
+namespace UnityEngine.ResourceManagement.ResourceProviders
+{
+}

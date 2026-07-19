@@ -1,2 +1,8 @@
-// Could not decompile Unity.Properties.IListPropertyVisitor
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace Unity.Properties;
+
+public interface IListPropertyVisitor
+{
+	void Visit<TContainer, TList, TElement>(Property<TContainer, TList> property, ref TContainer container, ref TList list) where TList : IList<TElement>;
+}

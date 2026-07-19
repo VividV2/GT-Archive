@@ -1,16 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class GetWindowsHelloChallengeRequest : PlayFabRequestCommon
-	{
-		public string PublicKeyHint;
-
-		public string TitleId;
-	}
-}
-namespace PlayFab.ClientModels
-{
-}
+// Could not decompile PlayFab.ClientModels.GetWindowsHelloChallengeRequest
+// This type uses unsupported IL or has too many generic parameters.

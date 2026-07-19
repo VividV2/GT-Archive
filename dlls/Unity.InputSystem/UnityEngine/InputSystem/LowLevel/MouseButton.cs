@@ -1,14 +1,10 @@
-namespace UnityEngine.InputSystem.LowLevel
+namespace UnityEngine.InputSystem.LowLevel;
+
+public enum MouseButton
 {
-	public enum MouseButton
-	{
-		Left,
-		Right,
-		Middle,
-		Forward,
-		Back
-	}
-}
-namespace UnityEngine.InputSystem.LowLevel
-{
+	Left,
+	Right,
+	Middle,
+	Forward,
+	Back
 }

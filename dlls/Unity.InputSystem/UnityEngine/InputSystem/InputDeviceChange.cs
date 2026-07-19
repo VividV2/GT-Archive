@@ -1,8 +1,5 @@
 using System;
 
-namespace UnityEngine.InputSystem.LowLevel
-{
-}
 namespace UnityEngine.InputSystem
 {
 	public enum InputDeviceChange
@@ -20,4 +17,7 @@ namespace UnityEngine.InputSystem
 		[Obsolete("Destroyed enum has been deprecated.")]
 		Destroyed
 	}
+}
+namespace UnityEngine.InputSystem
+{
 }

@@ -1,16 +1,2 @@
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
-
-namespace UnityEngine.VFX
-{
-	[UsedByNativeCode]
-	[NativeHeader("Modules/VFX/Public/ScriptBindings/VisualEffectAssetBindings.h")]
-	[NativeHeader("Modules/VFX/Public/VisualEffectAsset.h")]
-	[NativeHeader("VFXScriptingClasses.h")]
-	public abstract class VisualEffectObject : Object
-	{
-	}
-}
-namespace UnityEngine.VFX
-{
-}
+// Could not decompile UnityEngine.VFX.VisualEffectObject
+// This type uses unsupported IL or has too many generic parameters.

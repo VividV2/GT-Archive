@@ -1,10 +1,6 @@
-namespace UnityEngine.Localization.SmartFormat.PersistentVariables
+namespace UnityEngine.Localization.SmartFormat.PersistentVariables;
+
+public interface IVariableGroup
 {
-	public interface IVariableGroup
-	{
-		bool TryGetValue(string key, out IVariable value);
-	}
-}
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
-{
+	bool TryGetValue(string key, out IVariable value);
 }

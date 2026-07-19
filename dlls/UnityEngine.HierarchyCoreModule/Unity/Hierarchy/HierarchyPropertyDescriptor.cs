@@ -1,2 +1,17 @@
-// Could not decompile Unity.Hierarchy.HierarchyPropertyDescriptor
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Bindings;
+using UnityEngine.Bindings;
+
+namespace Unity.Hierarchy;
+
+[NativeHeader("Modules/HierarchyCore/Public/HierarchySearch.h")]
+public enum HierarchySearchFilterOperator
+{
+	Equal,
+	Contains,
+	Greater,
+	GreaterOrEqual,
+	Lesser,
+	LesserOrEqual,
+	NotEqual,
+	Not
+}

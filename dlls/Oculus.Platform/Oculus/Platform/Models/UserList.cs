@@ -1,9 +1,2 @@
-using System;
-using System;
-
-namespace Oculus.Platform.Models;
-
-public class RejoinDialogResult(IntPtr o)
-{
-	public readonly bool RejoinSelected = CAPI.ovr_RejoinDialogResult_GetRejoinSelected(o);
-}
+// Could not decompile Oculus.Platform.Models.UserList
+// This type uses unsupported IL or has too many generic parameters.

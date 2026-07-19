@@ -1,2 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives;
-
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.SelectEnterEvent
+// This type uses unsupported IL or has too many generic parameters.

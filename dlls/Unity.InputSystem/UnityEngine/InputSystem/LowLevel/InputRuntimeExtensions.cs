@@ -1,9 +1,2 @@
-namespace UnityEngine.InputSystem.LowLevel;
+namespace UnityEngine.InputSystem.Composites;
 
-internal interface IEventPreProcessor
-{
-	bool PreProcessEvent(InputEventPtr currentEventPtr);
-}
-namespace UnityEngine.InputSystem.Utilities
-{
-}

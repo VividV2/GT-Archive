@@ -1,12 +1,8 @@
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+public enum CloudScriptRevisionOption
 {
-	public enum CloudScriptRevisionOption
-	{
-		Live,
-		Latest,
-		Specific
-	}
-}
-namespace PlayFab.ClientModels
-{
+	Live,
+	Latest,
+	Specific
 }

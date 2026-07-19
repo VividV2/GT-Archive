@@ -2,36 +2,21 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition.Primitives;
 using System.Reflection;
 
-namespace System.ComponentModel.Composition.ReflectionModel
+namespace System.ComponentModel.Composition.ReflectionModel;
+
+internal interface IReflectionPartCreationInfo : ICompositionElement
 {
-	internal abstract class ReflectionWritableMember : ReflectionMember
-	{
-		public abstract bool CanWrite { get; }
+	bool IsDisposalRequired { get; }
 
-		public abstract void SetValue(object instance, object value);
+	Type GetPartType();
 
-		protected ReflectionWritableMember()
-		{
-			base..ctor();
-		}
-	}
-}
-namespace System.ComponentModel.Composition.ReflectionModel
-{
-	internal interface IReflectionPartCreationInfo : ICompositionElement
-	{
-		bool IsDisposalRequired { get; }
+	Lazy<Type> GetLazyPartType();
 
-		Type GetPartType();
+	ConstructorInfo GetConstructor();
 
-		Lazy<Type> GetLazyPartType();
+	IDictionary<string, object> GetMetadata();
 
-		ConstructorInfo GetConstructor();
+	IEnumerable<ExportDefinition> GetExports();
 
-		IDictionary<string, object> GetMetadata();
-
-		IEnumerable<ExportDefinition> GetExports();
-
-		IEnumerable<ImportDefinition> GetImports();
-	}
+	IEnumerable<ImportDefinition> GetImports();
 }

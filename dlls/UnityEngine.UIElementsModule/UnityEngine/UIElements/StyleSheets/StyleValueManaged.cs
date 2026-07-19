@@ -1,17 +1,10 @@
-namespace UnityEngine.UIElements.StyleSheets
-{
-	internal struct StyleValueManaged
-	{
-		public StylePropertyId id;
+namespace UnityEngine.UIElements.StyleSheets;
 
-		public StyleKeyword keyword;
+internal struct StyleValueManaged
+{
+	public StylePropertyId id;
 
-		public object value;
-	}
-}
-namespace UnityEngine.UIElements.Layout
-{
-}
-namespace UnityEngine.UIElements.UIR
-{
+	public StyleKeyword keyword;
+
+	public object value;
 }

@@ -44,3 +44,6 @@ internal static class DbConnectionStringSynonyms
 
 	internal const string WSID = "wsid";
 }
+namespace System.Data.Common
+{
+}

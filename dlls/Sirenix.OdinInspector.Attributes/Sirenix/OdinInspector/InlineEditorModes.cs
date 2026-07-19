@@ -1,15 +1,11 @@
-namespace Sirenix.OdinInspector
+namespace Sirenix.OdinInspector;
+
+public enum InlineEditorModes
 {
-	public enum InlineEditorModes
-	{
-		GUIOnly,
-		GUIAndHeader,
-		GUIAndPreview,
-		SmallPreview,
-		LargePreview,
-		FullEditor
-	}
-}
-namespace Sirenix.OdinInspector
-{
+	GUIOnly,
+	GUIAndHeader,
+	GUIAndPreview,
+	SmallPreview,
+	LargePreview,
+	FullEditor
 }

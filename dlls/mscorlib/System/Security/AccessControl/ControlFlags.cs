@@ -1,3 +1,8 @@
-namespace System.Runtime.InteropServices.ComTypes
+namespace System.Security.Principal;
+
+public enum PrincipalPolicy
 {
+	UnauthenticatedPrincipal,
+	NoPrincipal,
+	WindowsPrincipal
 }

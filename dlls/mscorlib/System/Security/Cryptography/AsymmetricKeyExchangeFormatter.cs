@@ -1,32 +1,48 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace System.Security.Cryptography;
-
-/// <summary>Represents the base class from which all asymmetric key exchange formatters derive.</summary>
-[ComVisible(true)]
-public abstract class AsymmetricKeyExchangeFormatter
+namespace System.Security.Cryptography
 {
-	/// <summary>When overridden in a derived class, gets the parameters for the asymmetric key exchange.</summary>
-	/// <returns>A string in XML format containing the parameters of the asymmetric key exchange operation.</returns>
-	public abstract string Parameters { get; }
-
-	/// <summary>Initializes a new instance of <see cref="T:System.Security.Cryptography.AsymmetricKeyExchangeFormatter" />.</summary>
-	protected AsymmetricKeyExchangeFormatter()
+	/// <summary>Contains the typical parameters for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+	/// <summary>Contains the typical parameters for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+	[Serializable]
+	[ComVisible(true)]
+	public struct DSAParameters
 	{
+		/// <summary>Specifies the <see langword="P" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		/// <summary>Specifies the <see langword="P" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		public byte[] P;
+
+		/// <summary>Specifies the <see langword="Q" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		/// <summary>Specifies the <see langword="Q" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		public byte[] Q;
+
+		/// <summary>Specifies the <see langword="G" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		/// <summary>Specifies the <see langword="G" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		public byte[] G;
+
+		/// <summary>Specifies the <see langword="Y" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		/// <summary>Specifies the <see langword="Y" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		public byte[] Y;
+
+		/// <summary>Specifies the <see langword="J" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		/// <summary>Specifies the <see langword="J" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		public byte[] J;
+
+		/// <summary>Specifies the <see langword="X" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		/// <summary>Specifies the <see langword="X" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		[NonSerialized]
+		public byte[] X;
+
+		/// <summary>Specifies the seed for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		/// <summary>Specifies the seed for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		public byte[] Seed;
+
+		/// <summary>Specifies the counter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		/// <summary>Specifies the counter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+		public int Counter;
 	}
-
-	/// <summary>When overridden in a derived class, sets the public key to use for encrypting the secret information.</summary>
-	/// <param name="key">The instance of the implementation of <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> that holds the public key.</param>
-	public abstract void SetKey(AsymmetricAlgorithm key);
-
-	/// <summary>When overridden in a derived class, creates the encrypted key exchange data from the specified input data.</summary>
-	/// <param name="data">The secret information to be passed in the key exchange.</param>
-	/// <returns>The encrypted key exchange data to be sent to the intended recipient.</returns>
-	public abstract byte[] CreateKeyExchange(byte[] data);
-
-	/// <summary>When overridden in a derived class, creates the encrypted key exchange data from the specified input data.</summary>
-	/// <param name="data">The secret information to be passed in the key exchange.</param>
-	/// <param name="symAlgType">This parameter is not used in the current version.</param>
-	/// <returns>The encrypted key exchange data to be sent to the intended recipient.</returns>
-	public abstract byte[] CreateKeyExchange(byte[] data, Type symAlgType);
+}
+namespace System.Security.Cryptography
+{
 }

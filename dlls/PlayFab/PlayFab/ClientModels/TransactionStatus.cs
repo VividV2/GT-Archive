@@ -1,32 +1,25 @@
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+public enum TransactionStatus
 {
-}
-namespace PlayFab.ClientModels
-{
-	public enum TransactionStatus
-	{
-		CreateCart,
-		Init,
-		Approved,
-		Succeeded,
-		FailedByProvider,
-		DisputePending,
-		RefundPending,
-		Refunded,
-		RefundFailed,
-		ChargedBack,
-		FailedByUber,
-		FailedByPlayFab,
-		Revoked,
-		TradePending,
-		Traded,
-		Upgraded,
-		StackPending,
-		Stacked,
-		Other,
-		Failed
-	}
-}
-namespace PlayFab.ClientModels
-{
+	CreateCart,
+	Init,
+	Approved,
+	Succeeded,
+	FailedByProvider,
+	DisputePending,
+	RefundPending,
+	Refunded,
+	RefundFailed,
+	ChargedBack,
+	FailedByUber,
+	FailedByPlayFab,
+	Revoked,
+	TradePending,
+	Traded,
+	Upgraded,
+	StackPending,
+	Stacked,
+	Other,
+	Failed
 }

@@ -1,2 +1,2 @@
-namespace UnityEngine.ResourceManagement.Exceptions;
-
+// Could not decompile ListWithEvents`1
+// This type uses unsupported IL or has too many generic parameters.

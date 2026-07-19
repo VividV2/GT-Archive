@@ -1,2 +1,6 @@
-// Could not decompile Cysharp.Threading.Tasks.Triggers.IAsyncOnDrawGizmosHandler
-// This type uses unsupported IL or has too many generic parameters.
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnDrawGizmosHandler
+{
+	UniTask OnDrawGizmosAsync();
+}

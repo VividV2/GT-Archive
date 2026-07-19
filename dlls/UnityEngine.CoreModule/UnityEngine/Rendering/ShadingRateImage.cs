@@ -1,27 +1,2 @@
-namespace UnityEngine.Experimental.GlobalIllumination;
-
-public struct SpotLightBoxShape
-{
-	public int instanceID;
-
-	public bool shadow;
-
-	public LightMode mode;
-
-	public Vector3 position;
-
-	public Quaternion orientation;
-
-	public LinearColor color;
-
-	public LinearColor indirectColor;
-
-	public float range;
-
-	public float width;
-
-	public float height;
-}
-namespace UnityEngine.Rendering
-{
-}
+// Could not decompile UnityEngine.Rendering.ShadingRateImage
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,11 +1,2 @@
-using System;
-using UnityEngine.Events;
-using System;
-using UnityEngine.Events;
-
-namespace Unity.XR.CoreUtils;
-
-[Serializable]
-public class FloatUnityEvent : UnityEvent<float>
-{
-}
+// Could not decompile Unity.XR.CoreUtils.QuaternionExtensions
+// This type uses unsupported IL or has too many generic parameters.

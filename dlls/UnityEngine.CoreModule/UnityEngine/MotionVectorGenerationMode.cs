@@ -1,12 +1,8 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum MotionVectorGenerationMode
 {
-	public enum MotionVectorGenerationMode
-	{
-		Camera,
-		Object,
-		ForceNoMotion
-	}
-}
-namespace UnityEngine
-{
+	Camera,
+	Object,
+	ForceNoMotion
 }

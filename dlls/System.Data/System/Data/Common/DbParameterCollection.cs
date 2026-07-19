@@ -1,2 +1,9 @@
-// Could not decompile System.Data.Common.DbParameterCollection
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data.Common
+{
+}
+namespace System.Data.SqlClient.SNI
+{
+}
+namespace System.Data.Common
+{
+}

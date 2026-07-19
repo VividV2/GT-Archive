@@ -1,30 +1,18 @@
-namespace System.EnterpriseServices.CompensatingResourceManager;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-/// <summary>Describes the origin of a Compensating Resource Manager (CRM) log record.</summary>
-/// <summary>Describes the origin of a Compensating Resource Manager (CRM) log record.</summary>
+namespace System.EnterpriseServices;
+
+/// <summary>Specifies the values allowed for transaction outcome voting.</summary>
+/// <summary>Specifies the values allowed for transaction outcome voting.</summary>
 [Serializable]
-[Flags]
-public enum LogRecordFlags
+[ComVisible(false)]
+public enum TransactionVote
 {
-	/// <summary>Indicates the delivered record should be forgotten.</summary>
-	/// <summary>Indicates the delivered record should be forgotten.</summary>
-	ForgetTarget = 1,
-	/// <summary>Log record was written during prepare.</summary>
-	/// <summary>Log record was written during prepare.</summary>
-	WrittenDuringPrepare = 2,
-	/// <summary>Log record was written during commit.</summary>
-	/// <summary>Log record was written during commit.</summary>
-	WrittenDuringCommit = 4,
-	/// <summary>Log record was written during abort.</summary>
-	/// <summary>Log record was written during abort.</summary>
-	WrittenDuringAbort = 8,
-	/// <summary>Log record was written during recovery.</summary>
-	/// <summary>Log record was written during recovery.</summary>
-	WrittenDurringRecovery = 0x10,
-	/// <summary>Log record was written during replay.</summary>
-	/// <summary>Log record was written during replay.</summary>
-	WrittenDuringReplay = 0x20,
-	/// <summary>Log record was written when replay was in progress.</summary>
-	/// <summary>Log record was written when replay was in progress.</summary>
-	ReplayInProgress = 0x40
+	/// <summary>Aborts the current transaction.</summary>
+	/// <summary>Aborts the current transaction.</summary>
+	Abort = 1,
+	/// <summary>Commits the current transaction.</summary>
+	/// <summary>Commits the current transaction.</summary>
+	Commit = 0
 }

@@ -10,3 +10,6 @@ public struct HmdQuaternion_t
 
 	public double z;
 }
+namespace OVR.OpenVR
+{
+}

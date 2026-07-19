@@ -1,2 +1,6 @@
-namespace System.ComponentModel.Composition.Primitives;
-
+namespace System.ComponentModel.Composition
+{
+}
+namespace System.ComponentModel.Composition.Primitives
+{
+}

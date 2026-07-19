@@ -1,8 +1,2 @@
-namespace System.Xml.Xsl.IlGen;
-
-internal enum XmlILMethodAttributes
-{
-	None,
-	NonUser,
-	Raw
-}
+// Could not decompile System.Xml.Xsl.Runtime.XmlDoubleSortKey
+// This type uses unsupported IL or has too many generic parameters.

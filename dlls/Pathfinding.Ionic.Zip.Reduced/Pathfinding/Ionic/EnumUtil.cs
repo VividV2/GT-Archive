@@ -1,2 +1,0 @@
-namespace Pathfinding.Ionic;
-

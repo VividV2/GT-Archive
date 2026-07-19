@@ -2,25 +2,14 @@ using System;
 
 namespace UnityEngine.UIElements;
 
-internal enum HierarchyChangeType
+[Serializable]
+internal struct GradientSettings
 {
-	AddedToParent,
-	RemovedFromParent,
-	ChildrenReordered,
-	AttachedToPanel,
-	DetachedFromPanel
-}
-namespace UnityEngine.UIElements
-{
-	[Serializable]
-	internal struct GradientSettings
-	{
-		public GradientType gradientType;
+	public GradientType gradientType;
 
-		public AddressMode addressMode;
+	public AddressMode addressMode;
 
-		public Vector2 radialFocus;
+	public Vector2 radialFocus;
 
-		public RectInt location;
-	}
+	public RectInt location;
 }

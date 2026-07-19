@@ -1,22 +1,18 @@
-using System;
-using System.Collections.Generic;
-
-namespace Oculus.Platform.Models;
-
-public class ChallengeList : DeserializableList<Challenge>
+namespace Oculus.Platform.Models
 {
-	public readonly ulong TotalCount;
-
-	public ChallengeList(IntPtr a)
+	public class LanguagePackInfo
 	{
-		int num = (int)(uint)CAPI.ovr_ChallengeArray_GetSize(a);
-		_Data = new List<Challenge>(num);
-		for (int i = 0; i < num; i++)
+		public readonly string EnglishName;
+
+		public readonly string NativeName;
+
+		public readonly string Tag;
+
+		public LanguagePackInfo(IntPtr o)
 		{
-			_Data.Add(new Challenge(CAPI.ovr_ChallengeArray_GetElement(a, (UIntPtr)(ulong)i)));
+			EnglishName = CAPI.ovr_LanguagePackInfo_GetEnglishName(o);
+			NativeName = CAPI.ovr_LanguagePackInfo_GetNativeName(o);
+			Tag = CAPI.ovr_LanguagePackInfo_GetTag(o);
 		}
-		TotalCount = CAPI.ovr_ChallengeArray_GetTotalCount(a);
-		_PreviousUrl = CAPI.ovr_ChallengeArray_GetPreviousUrl(a);
-		_NextUrl = CAPI.ovr_ChallengeArray_GetNextUrl(a);
 	}
 }

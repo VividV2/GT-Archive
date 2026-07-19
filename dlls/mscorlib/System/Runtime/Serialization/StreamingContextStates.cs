@@ -1,8 +1,6 @@
-namespace Internal.Runtime.Augments;
-
-internal enum CausalitySource
+namespace System.Runtime.Serialization
 {
-	Application,
-	Library,
-	System
+}
+namespace System.Runtime.Serialization.Formatters.Binary
+{
 }

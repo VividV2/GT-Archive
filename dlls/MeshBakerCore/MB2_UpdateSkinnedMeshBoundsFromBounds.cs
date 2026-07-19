@@ -1,2 +1,12 @@
-// Could not decompile MB2_UpdateSkinnedMeshBoundsFromBounds
-// This type uses unsupported IL or has too many generic parameters.
+namespace DigitalOpus.MB.Core;
+
+public enum MB_OutputOptions
+{
+	bakeIntoPrefab,
+	bakeMeshsInPlace,
+	bakeTextureAtlasesOnly,
+	bakeIntoSceneObject
+}
+namespace DigitalOpus.MB.Core
+{
+}

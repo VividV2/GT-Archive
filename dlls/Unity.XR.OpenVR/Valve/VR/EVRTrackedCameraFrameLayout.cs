@@ -1,12 +1,2 @@
-namespace Valve.VR
-{
-	public enum ETrackingResult
-	{
-		Uninitialized = 1,
-		Calibrating_InProgress = 100,
-		Calibrating_OutOfRange = 101,
-		Running_OK = 200,
-		Running_OutOfRange = 201,
-		Fallback_RotationOnly = 300
-	}
-}
+// Could not decompile Valve.VR.EVRTrackedCameraFrameLayout
+// This type uses unsupported IL or has too many generic parameters.

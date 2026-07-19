@@ -1,16 +1,12 @@
 using System;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[Flags]
+public enum RenderTextureMemoryless
 {
-	[Flags]
-	public enum RenderTextureMemoryless
-	{
-		None = 0,
-		Color = 1,
-		Depth = 2,
-		MSAA = 4
-	}
-}
-namespace Unity.Jobs.LowLevel.Unsafe
-{
+	None = 0,
+	Color = 1,
+	Depth = 2,
+	MSAA = 4
 }

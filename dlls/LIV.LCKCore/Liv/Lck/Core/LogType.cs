@@ -1,25 +1,9 @@
-namespace Liv.Lck.Core
+namespace Liv.Lck.Core;
+
+public enum LogType
 {
-	public enum LogType
-	{
-		Error,
-		Warning,
-		Info,
-		Trace
-	}
-}
-namespace Liv.Lck.Core
-{
-	public interface ILckCore
-	{
-		Task<Result<bool>> HasUserConfiguredStreaming();
-
-		Task<Result<bool>> IsUserSubscribed();
-
-		Task<Result<string>> StartLoginAttemptAsync();
-
-		Task<Result<bool>> CheckLoginCompletedAsync();
-
-		Task<Result<float>> GetRemainingBackoffTimeSeconds();
-	}
+	Error,
+	Warning,
+	Info,
+	Trace
 }

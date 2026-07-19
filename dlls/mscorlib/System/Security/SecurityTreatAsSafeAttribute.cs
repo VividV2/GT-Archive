@@ -1,6 +1,2 @@
-namespace System
-{
-}
-namespace System.Security.Permissions
-{
-}
+namespace System.Text;
+

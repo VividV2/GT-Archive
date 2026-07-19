@@ -1,14 +1,2 @@
-using UnityEngine;
-
-namespace Modio.Unity.UI.Input;
-
-public class ModioUIActionSender : MonoBehaviour
-{
-	[SerializeField]
-	private ModioUIInput.ModioAction _action;
-
-	public void PressedAction()
-	{
-		ModioUIInput.PressedAction(_action);
-	}
-}
+// Could not decompile Modio.Unity.UI.Input.ModioUIActionSender
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,14 @@
-namespace System.Text.RegularExpressions;
+namespace Mono
+{
+}
+namespace System.IO
+{
+	internal class PathData
+	{
+		public string Path;
 
+		public bool IsDirectory;
+
+		public int Fd;
+	}
+}

@@ -1,12 +1,11 @@
-namespace UnityEngine.UIElements.UIR
+namespace UnityEngine.UIElements.UIR;
+
+internal enum SerializedCommandType
 {
-	internal enum SerializedCommandType
-	{
-		DrawRanges,
-		SetTexture,
-		ApplyBatchProps
-	}
+	DrawRanges,
+	SetTexture,
+	ApplyBatchProps
 }
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements.UIR
 {
 }

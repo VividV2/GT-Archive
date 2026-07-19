@@ -11,6 +11,6 @@ namespace Mono.Btls
 		IGNORE = 3
 	}
 }
-namespace Mono
+namespace System.Web
 {
 }

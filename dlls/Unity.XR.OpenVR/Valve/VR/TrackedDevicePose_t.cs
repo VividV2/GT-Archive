@@ -1,16 +1,20 @@
-namespace Valve.VR
-{
-	public struct VRVulkanTextureArrayData_t
-	{
-		public uint m_unArrayIndex;
+using System.Runtime.InteropServices;
 
-		public uint m_unArraySize;
-	}
-}
-namespace Valve.VR
+namespace Valve.VR;
+
+public struct TrackedDevicePose_t
 {
-	public struct VREvent_ScreenshotProgress_t
-	{
-		public float progress;
-	}
+	public HmdMatrix34_t mDeviceToAbsoluteTracking;
+
+	public HmdVector3_t vVelocity;
+
+	public HmdVector3_t vAngularVelocity;
+
+	public ETrackingResult eTrackingResult;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bPoseIsValid;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bDeviceIsConnected;
 }

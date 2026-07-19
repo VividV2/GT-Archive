@@ -1,16 +1,23 @@
 using UnityEngine.Scripting;
 
-namespace Unity.Collections;
-
-[UsedByNativeCode]
-public enum Allocator
+namespace JetBrains.Annotations
 {
-	Invalid = 0,
-	None = 1,
-	Temp = 2,
-	TempJob = 3,
-	Persistent = 4,
-	AudioKernel = 5,
-	Domain = 6,
-	FirstUserIndex = 64
+}
+namespace UnityEngine
+{
+}
+namespace Unity.Collections
+{
+	[UsedByNativeCode]
+	public enum Allocator
+	{
+		Invalid = 0,
+		None = 1,
+		Temp = 2,
+		TempJob = 3,
+		Persistent = 4,
+		AudioKernel = 5,
+		Domain = 6,
+		FirstUserIndex = 64
+	}
 }

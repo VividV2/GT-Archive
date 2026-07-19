@@ -1,6 +1,14 @@
-namespace Valve.VR;
+using System.Runtime.InteropServices;
 
-public struct VREvent_WebConsole_t
+namespace Valve.VR
 {
-	public ulong webConsoleHandle;
+	[StructLayout(LayoutKind.Explicit)]
+	public struct VROverlayIntersectionMaskPrimitive_Data_t
+	{
+		[FieldOffset(0)]
+		public IntersectionMaskRectangle_t m_Rectangle;
+
+		[FieldOffset(0)]
+		public IntersectionMaskCircle_t m_Circle;
+	}
 }

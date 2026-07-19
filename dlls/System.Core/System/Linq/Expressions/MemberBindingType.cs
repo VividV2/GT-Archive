@@ -1,6 +1,6 @@
-namespace System.Linq.Expressions.Compiler
+namespace System.Linq.Expressions
 {
 }
-namespace System.Linq.Expressions
+namespace System.Linq.Parallel
 {
 }

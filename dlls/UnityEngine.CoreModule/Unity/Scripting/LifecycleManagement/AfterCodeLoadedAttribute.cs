@@ -1,8 +1,2 @@
-using System;
-
-namespace Unity.Scripting.LifecycleManagement;
-
-[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
-internal sealed class AfterCodeLoadedAttribute : LifecycleAttributeBase
-{
-}
+// Could not decompile Unity.Scripting.LifecycleManagement.AfterCodeLoadedAttribute
+// This type uses unsupported IL or has too many generic parameters.

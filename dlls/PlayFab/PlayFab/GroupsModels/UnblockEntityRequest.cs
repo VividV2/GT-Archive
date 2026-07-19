@@ -1,2 +1,9 @@
-// Could not decompile PlayFab.GroupsModels.UnblockEntityRequest
-// This type uses unsupported IL or has too many generic parameters.
+namespace PlayFab.ExperimentationModels
+{
+}
+namespace PlayFab.GroupsModels
+{
+}
+namespace PlayFab.ExperimentationModels
+{
+}

@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.Rendering.Universal.ShadowEdge
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal.UTess;
+
+internal enum UEventType
+{
+	EVENT_POINT,
+	EVENT_END,
+	EVENT_START
+}
+namespace UnityEngine.Rendering.Universal
+{
+}

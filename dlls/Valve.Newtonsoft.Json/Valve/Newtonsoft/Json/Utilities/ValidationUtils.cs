@@ -1,14 +1,2 @@
-using System;
+namespace Valve.Newtonsoft.Json.Serialization;
 
-namespace Valve.Newtonsoft.Json.Utilities;
-
-internal static class ValidationUtils
-{
-	public static void ArgumentNotNull(object value, string parameterName)
-	{
-		if (value == null)
-		{
-			throw new ArgumentNullException(parameterName);
-		}
-	}
-}

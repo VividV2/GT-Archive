@@ -1,2 +1,15 @@
-// Could not decompile PlayFab.DataModels.SetObjectsRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.DataModels;
+
+[Serializable]
+public class SetObjectsRequest : PlayFabRequestCommon
+{
+	public EntityKey Entity;
+
+	public int? ExpectedProfileVersion;
+
+	public List<SetObject> Objects;
+}

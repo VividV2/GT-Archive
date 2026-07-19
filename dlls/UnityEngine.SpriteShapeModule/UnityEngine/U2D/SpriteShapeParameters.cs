@@ -1,33 +1,40 @@
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.U2D;
-
-[MovedFrom("UnityEngine.Experimental.U2D")]
-public struct SpriteShapeParameters
+namespace UnityEngine.U2D
 {
-	public Matrix4x4 transform;
+	[MovedFrom("UnityEngine.Experimental.U2D")]
+	public struct SpriteShapeParameters
+	{
+		public Matrix4x4 transform;
 
-	public Texture2D fillTexture;
+		public Texture2D fillTexture;
 
-	public uint fillScale;
+		public uint fillScale;
 
-	public uint splineDetail;
+		public uint splineDetail;
 
-	public float angleThreshold;
+		public float angleThreshold;
 
-	public float borderPivot;
+		public float borderPivot;
 
-	public float bevelCutoff;
+		public float bevelCutoff;
 
-	public float bevelSize;
+		public float bevelSize;
 
-	public bool carpet;
+		public bool carpet;
 
-	public bool smartSprite;
+		public bool smartSprite;
 
-	public bool adaptiveUV;
+		public bool adaptiveUV;
 
-	public bool spriteBorders;
+		public bool spriteBorders;
 
-	public bool stretchUV;
+		public bool stretchUV;
+	}
+}
+namespace UnityEngine.U2D
+{
+}
+namespace UnityEngine.U2D
+{
 }

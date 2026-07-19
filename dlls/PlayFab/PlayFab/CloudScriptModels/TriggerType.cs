@@ -1,10 +1,11 @@
-namespace PlayFab.CloudScriptModels;
-
-public enum TriggerType
+namespace PlayFab.CloudScriptModels
 {
-	HTTP,
-	Queue
+	public enum TriggerType
+	{
+		HTTP,
+		Queue
+	}
 }
-namespace PlayFab.MultiplayerModels
+namespace PlayFab.CloudScriptModels
 {
 }

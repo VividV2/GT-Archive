@@ -1,2 +1,27 @@
-// Could not decompile GorillaTag.Shared.Scripts.Utilities.GTBitArray
-// This type uses unsupported IL or has too many generic parameters.
+public enum SceneIndex
+{
+	GT,
+	Canyon,
+	Beach,
+	Cave,
+	Basement,
+	Mountain,
+	Skyjungle,
+	Rotating,
+	Metropolis,
+	Bayou,
+	TestBlank,
+	MonkeBlocks,
+	Arena,
+	Hoverboard,
+	Critters,
+	GhostReactor,
+	MonkeBlocksShared,
+	Ranked,
+	GhostReactorDrill,
+	City,
+	GTFC,
+	Rewind_2024_02_Forest,
+	VIMDig_Cave,
+	SpaceMap
+}

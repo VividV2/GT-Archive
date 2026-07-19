@@ -1,21 +1,8 @@
-namespace Modio.Platforms
+namespace Modio.Mods;
+
+public enum ModRating
 {
-	public enum ModioVirtualKeyboardType
-	{
-		Default,
-		Search,
-		EmailAddress
-	}
-}
-namespace Modio.Mods
-{
-	public enum ModRating
-	{
-		Positive = 1,
-		Negative = -1,
-		None = 0
-	}
-}
-namespace ICSharpCode.SharpZipLib.BZip2
-{
+	Positive = 1,
+	Negative = -1,
+	None = 0
 }

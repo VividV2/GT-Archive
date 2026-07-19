@@ -1,9 +1,20 @@
-namespace System.Net;
-
-internal static class ExceptionCheck
+namespace System.Net
 {
-	internal static bool IsFatal(Exception exception)
+}
+namespace System.Net
+{
+	internal enum DataParseStatus
 	{
-		return exception is OutOfMemoryException;
+		NeedMoreData,
+		ContinueParsing,
+		Done,
+		Invalid,
+		DataTooBig
 	}
+}
+namespace System.Net
+{
+}
+namespace System.Net
+{
 }

@@ -1,8 +1,12 @@
-namespace System.Xml.Xsl;
-
-internal interface IErrorHelper
+namespace System.Xml.Xsl
 {
-	void ReportError(string res, params string[] args);
+	internal interface IErrorHelper
+	{
+		void ReportError(string res, params string[] args);
 
-	void ReportWarning(string res, params string[] args);
+		void ReportWarning(string res, params string[] args);
+	}
+}
+namespace System.Xml.Schema
+{
 }

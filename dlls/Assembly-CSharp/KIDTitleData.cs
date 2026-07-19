@@ -1,11 +1,2 @@
-using System;
-
-[Serializable]
-public class KIDTitleData
-{
-	public string KIDEnabled;
-
-	public int KIDPhase;
-
-	public string KIDNewPlayerIsoTimestamp;
-}
+// Could not decompile KIDTitleData
+// This type uses unsupported IL or has too many generic parameters.

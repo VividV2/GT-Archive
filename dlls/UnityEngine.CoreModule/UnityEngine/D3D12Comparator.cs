@@ -1,15 +1,11 @@
-namespace UnityEngine.Events
+namespace UnityEngine;
+
+public enum D3D12Comparator
 {
-}
-namespace UnityEngine
-{
-	public enum D3D12Comparator
-	{
-		EqualTo,
-		NotEqualTo,
-		LessThan,
-		LessThanOrEqualTo,
-		GreaterThan,
-		GreaterThanOrEqualTo
-	}
+	EqualTo,
+	NotEqualTo,
+	LessThan,
+	LessThanOrEqualTo,
+	GreaterThan,
+	GreaterThanOrEqualTo
 }

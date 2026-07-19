@@ -1,2 +1,9 @@
-// Could not decompile Steamworks.ETextFilteringContext
-// This type uses unsupported IL or has too many generic parameters.
+namespace Steamworks;
+
+public enum ETextFilteringContext
+{
+	k_ETextFilteringContextUnknown,
+	k_ETextFilteringContextGameContent,
+	k_ETextFilteringContextChat,
+	k_ETextFilteringContextName
+}

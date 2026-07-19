@@ -9,6 +9,3 @@ internal enum ChainPolicyType
 	BasicConstraints,
 	NtAuth
 }
-namespace System.Net
-{
-}

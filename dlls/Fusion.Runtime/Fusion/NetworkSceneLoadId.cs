@@ -1,2 +1,8 @@
-// Could not decompile Fusion.NetworkSceneLoadId
-// This type uses unsupported IL or has too many generic parameters.
+#define DEBUG
+#define DEBUG
+namespace Fusion
+{
+}
+namespace Fusion
+{
+}

@@ -1,6 +1,2 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-
-namespace UnityEngine.Rendering;
-
-internal delegate void GPUDrivenRendererDataCallback(in GPUDrivenRendererGroupData rendererData, IList<Mesh> meshes, IList<Material> materials);
+// Could not decompile UnityEngine.Rendering.ResourcePathsBaseAttribute
+// This type uses unsupported IL or has too many generic parameters.

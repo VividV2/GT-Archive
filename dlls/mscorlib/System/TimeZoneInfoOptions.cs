@@ -1,15 +1,8 @@
-namespace System.Threading.Tasks
+namespace System;
+
+[Flags]
+internal enum TimeZoneInfoOptions
 {
-}
-namespace System.Runtime.Serialization.Formatters
-{
-}
-namespace System
-{
-	[Flags]
-	internal enum TimeZoneInfoOptions
-	{
-		None = 1,
-		NoThrowOnInvalidTime = 2
-	}
+	None = 1,
+	NoThrowOnInvalidTime = 2
 }

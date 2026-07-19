@@ -1,6 +1,3 @@
-namespace System.ComponentModel;
-
-public interface INotifyPropertyChanged
+namespace System.Diagnostics
 {
-	event PropertyChangedEventHandler PropertyChanged;
 }

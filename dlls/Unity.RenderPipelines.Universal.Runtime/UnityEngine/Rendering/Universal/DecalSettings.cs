@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.Rendering.Universal.DecalSettings
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering.Universal;
+
+[Serializable]
+internal class DecalSettings
+{
+	public DecalTechniqueOption technique;
+
+	public float maxDrawDistance = 1000f;
+
+	public bool decalLayers;
+
+	public DBufferSettings dBufferSettings;
+
+	public DecalScreenSpaceSettings screenSpaceSettings;
+}

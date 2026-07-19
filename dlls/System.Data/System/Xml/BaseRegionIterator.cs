@@ -1,9 +1,2 @@
-namespace System.Xml;
-
-internal abstract class BaseRegionIterator : BaseTreeIterator
-{
-	internal BaseRegionIterator(DataSetMapper mapper)
-		: base(mapper)
-	{
-	}
-}
+// Could not decompile System.Xml.BaseRegionIterator
+// This type uses unsupported IL or has too many generic parameters.

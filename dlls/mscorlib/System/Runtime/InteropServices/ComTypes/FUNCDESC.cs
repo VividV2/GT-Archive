@@ -1,8 +1,3 @@
-namespace System.Security
+namespace System.Runtime.CompilerServices
 {
-	public enum PartialTrustVisibilityLevel
-	{
-		VisibleToAllHosts,
-		NotVisibleByDefault
-	}
 }

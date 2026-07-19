@@ -1,13 +1,2 @@
-using System.Security;
-using System.Security;
-
-namespace System.Threading;
-
-internal interface IThreadPoolWorkItem
-{
-	[SecurityCritical]
-	void ExecuteWorkItem();
-
-	[SecurityCritical]
-	void MarkAborted(ThreadAbortException tae);
-}
+// Could not decompile System.Security.Cryptography.HMACSHA384
+// This type uses unsupported IL or has too many generic parameters.

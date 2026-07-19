@@ -1,8 +1,3 @@
-namespace System;
-
-internal interface TypeName : IEquatable<TypeName>
+namespace Mono
 {
-	string DisplayName { get; }
-
-	TypeName NestedName(TypeIdentifier innerName);
 }

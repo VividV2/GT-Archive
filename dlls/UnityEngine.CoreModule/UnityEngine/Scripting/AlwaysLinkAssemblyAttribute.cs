@@ -1,9 +1,2 @@
-namespace UnityEngine.Playables;
-
-public enum DirectorUpdateMode
-{
-	DSPClock,
-	GameTime,
-	UnscaledGameTime,
-	Manual
-}
+// Could not decompile UnityEngine.Scripting.AlwaysLinkAssemblyAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,14 @@
-// Could not decompile System.Net.UploadStringCompletedEventArgs
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.InteropServices;
+
+/// <summary>Replaces the standard common language runtime (CLR) free-threaded marshaler with the standard OLE STA marshaler.</summary>
+/// <summary>Replaces the standard common language runtime (CLR) free-threaded marshaler with the standard OLE STA marshaler.</summary>
+[ComVisible(true)]
+[System.MonoLimitation("The runtime does nothing special apart from what it already does with marshal-by-ref objects")]
+public class StandardOleMarshalObject : MarshalByRefObject
+{
+	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.StandardOleMarshalObject" /> class.</summary>
+	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.StandardOleMarshalObject" /> class.</summary>
+	protected StandardOleMarshalObject()
+	{
+	}
+}

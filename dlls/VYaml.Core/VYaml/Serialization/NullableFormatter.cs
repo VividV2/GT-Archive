@@ -1,13 +1,2 @@
-using VYaml.Emitter;
-using VYaml.Parser;
-using VYaml.Emitter;
-using VYaml.Parser;
-
-namespace VYaml.Serialization;
-
-public interface IYamlFormatter<T> : IYamlFormatter
-{
-	void Serialize(ref Utf8YamlEmitter emitter, T value, YamlSerializationContext context);
-
-	T Deserialize(ref YamlParser parser, YamlDeserializationContext context);
-}
+// Could not decompile VYaml.Serialization.NullableFormatter`1
+// This type uses unsupported IL or has too many generic parameters.

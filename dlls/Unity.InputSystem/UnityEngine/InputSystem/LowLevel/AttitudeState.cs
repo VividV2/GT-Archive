@@ -1,2 +1,3 @@
-// Could not decompile UnityEngine.InputSystem.LowLevel.AttitudeState
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.InputSystem.LowLevel;
+
+public delegate long InputDeviceExecuteCommandDelegate(ref InputDeviceCommand command);

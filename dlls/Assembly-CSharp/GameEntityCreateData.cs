@@ -1,2 +1,16 @@
-// Could not decompile GameEntityCreateData
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public struct GameEntityCreateData
+{
+	public int entityTypeId;
+
+	public Vector3 position;
+
+	public Quaternion rotation;
+
+	public long createData;
+
+	public int createdByEntityId;
+
+	public int slotIndex;
+}

@@ -1,2 +1,20 @@
-namespace Oculus.Platform;
+using System.ComponentModel;
+using System.ComponentModel;
 
+namespace Oculus.Platform
+{
+}
+namespace Oculus.Platform
+{
+	public enum ReportRequestResponse
+	{
+		[Description("UNKNOWN")]
+		Unknown,
+		[Description("HANDLED")]
+		Handled,
+		[Description("UNHANDLED")]
+		Unhandled,
+		[Description("UNAVAILABLE")]
+		Unavailable
+	}
+}

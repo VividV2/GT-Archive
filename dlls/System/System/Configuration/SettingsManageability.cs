@@ -1,8 +1,18 @@
-namespace System.Configuration;
+namespace Microsoft.Win32;
 
-/// <summary>Provides values to indicate which services should be made available to application settings.</summary>
-public enum SettingsManageability
+public delegate void UserPreferenceChangedEventHandler(object sender, UserPreferenceChangedEventArgs e);
+namespace System.Collections.Specialized
 {
-	/// <summary>Enables application settings to be stored in roaming user profiles. For more information about roaming user profiles, see Isolated Storage and Roaming.</summary>
-	Roaming
+}
+namespace System.Net.Mail
+{
+	[Flags]
+	public enum DeliveryNotificationOptions
+	{
+		None = 0,
+		OnSuccess = 1,
+		OnFailure = 2,
+		Delay = 4,
+		Never = 0x8000000
+	}
 }

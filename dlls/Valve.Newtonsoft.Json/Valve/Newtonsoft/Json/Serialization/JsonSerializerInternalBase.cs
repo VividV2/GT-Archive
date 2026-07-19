@@ -1,2 +1,16 @@
-// Could not decompile Valve.Newtonsoft.Json.Serialization.JsonSerializerInternalBase
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Valve.Newtonsoft.Json.Linq;
+
+public interface IJEnumerable<T> : IEnumerable<T>, IEnumerable where T : JToken
+{
+	IJEnumerable<JToken> this[object key] { get; }
+}
+namespace Valve.Newtonsoft.Json.Linq
+{
+}

@@ -1,19 +1,2 @@
-namespace Pathfinding.ClipperLib
-{
-	public enum JoinType
-	{
-		jtSquare,
-		jtRound,
-		jtMiter
-	}
-}
-namespace Pathfinding.ClipperLib
-{
-	public enum EndType
-	{
-		etClosed,
-		etButt,
-		etSquare,
-		etRound
-	}
-}
+// Could not decompile Pathfinding.ClipperLib.Int128
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,3 @@
-// Could not decompile Cysharp.Threading.Tasks.Internal.StateTuple`2
-// This type uses unsupported IL or has too many generic parameters.
+namespace Cysharp.Threading.Tasks.Internal
+{
+}

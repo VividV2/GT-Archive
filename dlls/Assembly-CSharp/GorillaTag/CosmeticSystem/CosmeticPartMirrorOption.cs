@@ -1,15 +1,6 @@
-using System;
-using UnityEngine;
-using System;
-using UnityEngine;
-
-namespace GorillaTag.CosmeticSystem;
-
-[Serializable]
-public struct CosmeticPartMirrorOption
+public enum MessageBoxResult
 {
-	public ECosmeticPartMirrorAxis axis;
-
-	[Tooltip("This will multiply the local scale for the selected axis by -1.")]
-	public bool negativeScale;
+	None,
+	Left,
+	Right
 }

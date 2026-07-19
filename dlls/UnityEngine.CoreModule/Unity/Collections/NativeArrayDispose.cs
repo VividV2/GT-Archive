@@ -1,2 +1,17 @@
-// Could not decompile Unity.Collections.NativeArrayDispose
-// This type uses unsupported IL or has too many generic parameters.
+using Unity.Collections.LowLevel.Unsafe;
+
+namespace Unity.Collections;
+
+[NativeContainer]
+internal struct NativeArrayDispose
+{
+	[NativeDisableUnsafePtrRestriction]
+	internal unsafe void* m_Buffer;
+
+	internal Allocator m_AllocatorLabel;
+
+	public unsafe void Dispose()
+	{
+		UnsafeUtility.FreeTracked(m_Buffer, m_AllocatorLabel);
+	}
+}

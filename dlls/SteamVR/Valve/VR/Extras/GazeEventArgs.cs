@@ -1,13 +1,6 @@
-namespace Valve.VR
+namespace Valve.VR.Extras;
+
+public struct GazeEventArgs
 {
-}
-namespace Valve.VR.Extras
-{
-	public struct GazeEventArgs
-	{
-		public float distance;
-	}
-}
-namespace Valve.VR.InteractionSystem
-{
+	public float distance;
 }

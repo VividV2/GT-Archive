@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace Unity.Cinemachine
 {
+}
+namespace Unity.Cinemachine
+{
 	public interface IInputAxisOwner
 	{
 		public struct AxisDescriptor
@@ -24,7 +27,4 @@ namespace Unity.Cinemachine
 
 		void GetInputAxes(List<AxisDescriptor> axes);
 	}
-}
-namespace Unity.Cinemachine
-{
 }

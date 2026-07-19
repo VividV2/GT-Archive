@@ -1,2 +1,6 @@
-// Could not decompile Meta.WitAi.Json.JsonPropertyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace Meta.WitAi.Json
+{
+}
+namespace Meta.WitAi.Json
+{
+}

@@ -1,28 +1,15 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(516)]
+public struct FavoritesListAccountsUpdated_t
 {
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1106)]
-	public struct LeaderboardScoreUploaded_t
-	{
-		public const int k_iCallback = 1106;
+	public const int k_iCallback = 516;
 
-		public byte m_bSuccess;
-
-		public SteamLeaderboard_t m_hSteamLeaderboard;
-
-		public int m_nScore;
-
-		public byte m_bScoreChanged;
-
-		public int m_nGlobalRankNew;
-
-		public int m_nGlobalRankPrevious;
-	}
+	public EResult m_eResult;
 }
 namespace Steamworks
 {

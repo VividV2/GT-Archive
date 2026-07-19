@@ -1,13 +1,2 @@
-namespace System.Runtime.Serialization
-{
-	internal class NegativeIntegerDataContract : LongDataContract
-	{
-		internal NegativeIntegerDataContract()
-			: base(DictionaryGlobals.negativeIntegerLocalName, DictionaryGlobals.SchemaNamespace)
-		{
-		}
-	}
-}
-namespace System.Runtime.Serialization
-{
-}
+// Could not decompile System.Runtime.Serialization.NegativeIntegerDataContract
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,7 +1,11 @@
-namespace Sirenix.OdinInspector;
-
-public enum TabLayouting
+namespace Sirenix.OdinInspector
 {
-	MultiRow,
-	Shrink
+	public enum TabLayouting
+	{
+		MultiRow,
+		Shrink
+	}
+}
+namespace Sirenix.OdinInspector
+{
 }

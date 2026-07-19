@@ -1,15 +1,26 @@
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
 namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(3403)]
-	public struct CreateItemResult_t
+	[CallbackIdentity(3410)]
+	public struct StartPlaytimeTrackingResult_t
 	{
-		public const int k_iCallback = 3403;
+		public const int k_iCallback = 3410;
 
 		public EResult m_eResult;
-
-		public PublishedFileId_t m_nPublishedFileId;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bUserNeedsToAcceptWorkshopLegalAgreement;
 	}
+}
+namespace Steamworks
+{
+	public enum EControllerHapticType
+	{
+		k_EControllerHapticType_Off,
+		k_EControllerHapticType_Tick,
+		k_EControllerHapticType_Click
+	}
+}
+namespace Steamworks
+{
+}

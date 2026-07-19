@@ -1,7 +1,11 @@
-namespace OVR.OpenVR;
-
-public enum EGamepadTextInputLineMode
+namespace OVR.OpenVR
 {
-	k_EGamepadTextInputLineModeSingleLine,
-	k_EGamepadTextInputLineModeMultipleLines
+	public enum EGamepadTextInputLineMode
+	{
+		k_EGamepadTextInputLineModeSingleLine,
+		k_EGamepadTextInputLineModeMultipleLines
+	}
+}
+namespace OVR.OpenVR
+{
 }

@@ -1,37 +1,114 @@
-using System.Threading;
-using UnityEngine;
-using System.Threading;
-using UnityEngine;
-using System.Threading;
-using UnityEngine;
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Security;
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Security;
 
-namespace Cysharp.Threading.Tasks.Triggers;
+namespace Cysharp.Threading.Tasks.CompilerServices;
 
-[DisallowMultipleComponent]
-public sealed class AsyncTriggerExit2DTrigger : AsyncTriggerBase<Collider2D>
+[StructLayout(LayoutKind.Auto)]
+public struct AsyncUniTaskMethodBuilder<T>
 {
-	private void OnTriggerExit2D(Collider2D other)
+	private IStateMachineRunnerPromise<T> runnerPromise;
+
+	private Exception ex;
+
+	private T result;
+
+	public UniTask<T> Task
 	{
-		RaiseEvent(other);
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[DebuggerHidden]
+		get
+		{
+			if (runnerPromise != null)
+			{
+				return runnerPromise.Task;
+			}
+			if (ex != null)
+			{
+				return UniTask.FromException<T>(ex);
+			}
+			return UniTask.FromResult(result);
+		}
 	}
 
-	public IAsyncOnTriggerExit2DHandler GetOnTriggerExit2DAsyncHandler()
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[DebuggerHidden]
+	public static AsyncUniTaskMethodBuilder<T> Create()
 	{
-		return new AsyncTriggerHandler<Collider2D>(this, callOnce: false);
+		return default(AsyncUniTaskMethodBuilder<T>);
 	}
 
-	public IAsyncOnTriggerExit2DHandler GetOnTriggerExit2DAsyncHandler(CancellationToken cancellationToken)
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[DebuggerHidden]
+	public void SetException(Exception exception)
 	{
-		return new AsyncTriggerHandler<Collider2D>(this, cancellationToken, callOnce: false);
+		if (runnerPromise == null)
+		{
+			ex = exception;
+		}
+		else
+		{
+			runnerPromise.SetException(exception);
+		}
 	}
 
-	public UniTask<Collider2D> OnTriggerExit2DAsync()
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[DebuggerHidden]
+	public void SetResult(T result)
 	{
-		return ((IAsyncOnTriggerExit2DHandler)new AsyncTriggerHandler<Collider2D>(this, callOnce: true)).OnTriggerExit2DAsync();
+		if (runnerPromise == null)
+		{
+			this.result = result;
+		}
+		else
+		{
+			runnerPromise.SetResult(result);
+		}
 	}
 
-	public UniTask<Collider2D> OnTriggerExit2DAsync(CancellationToken cancellationToken)
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[DebuggerHidden]
+	public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
 	{
-		return ((IAsyncOnTriggerExit2DHandler)new AsyncTriggerHandler<Collider2D>(this, cancellationToken, callOnce: true)).OnTriggerExit2DAsync();
+		if (runnerPromise == null)
+		{
+			AsyncUniTask<TStateMachine, T>.SetStateMachine(ref stateMachine, ref runnerPromise);
+		}
+		Action moveNext = runnerPromise.MoveNext;
+		Action moveNext;
+		awaiter.OnCompleted(moveNext);
+	}
+
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[DebuggerHidden]
+	[SecuritySafeCritical]
+	public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
+	{
+		if (runnerPromise == null)
+		{
+			AsyncUniTask<TStateMachine, T>.SetStateMachine(ref stateMachine, ref runnerPromise);
+		}
+		Action moveNext = runnerPromise.MoveNext;
+		Action moveNext;
+		awaiter.UnsafeOnCompleted(moveNext);
+	}
+
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[DebuggerHidden]
+	public void Start<TStateMachine>(ref TStateMachine stateMachine) where TStateMachine : IAsyncStateMachine
+	{
+		stateMachine.MoveNext();
+	}
+
+	[DebuggerHidden]
+	public void SetStateMachine(IAsyncStateMachine stateMachine)
+	{
 	}
 }

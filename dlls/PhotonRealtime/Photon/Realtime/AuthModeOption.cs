@@ -1,8 +1,12 @@
-namespace Photon.Realtime;
-
-public enum AuthModeOption
+namespace Photon.Realtime
 {
-	Auth,
-	AuthOnce,
-	AuthOnceWss
+	public enum AuthModeOption
+	{
+		Auth,
+		AuthOnce,
+		AuthOnceWss
+	}
+}
+namespace Photon.Realtime
+{
 }

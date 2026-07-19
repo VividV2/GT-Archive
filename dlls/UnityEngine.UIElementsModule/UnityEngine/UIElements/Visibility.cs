@@ -1,11 +1,7 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum Visibility
 {
-	public enum Visibility
-	{
-		Visible,
-		Hidden
-	}
-}
-namespace UnityEngine.UIElements
-{
+	Visible,
+	Hidden
 }

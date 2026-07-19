@@ -1,9 +1,6 @@
-namespace System.Diagnostics
+namespace System.IO.Compression
 {
-	internal class PerformanceCounterInstaller
-	{
-	}
 }
-namespace Microsoft.Win32
+namespace System.Text.RegularExpressions
 {
 }

@@ -1,2 +1,11 @@
-// Could not decompile Fusion.Photon.Realtime.Async.OperationTimeoutException
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Fusion.Photon.Realtime.Async;
+
+internal class OperationTimeoutException : Exception
+{
+	public OperationTimeoutException(string message)
+		: base(message)
+	{
+	}
+}

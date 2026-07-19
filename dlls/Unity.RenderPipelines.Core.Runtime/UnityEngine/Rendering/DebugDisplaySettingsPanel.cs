@@ -1,2 +1,2 @@
-// Could not decompile UnityEngine.Rendering.DebugDisplaySettingsPanel
+// Could not decompile UnityEngine.Rendering.DebugDisplaySettingsPanel`1
 // This type uses unsupported IL or has too many generic parameters.

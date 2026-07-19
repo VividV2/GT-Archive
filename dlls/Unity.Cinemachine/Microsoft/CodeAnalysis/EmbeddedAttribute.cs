@@ -1,6 +1,12 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Unity.Cinemachine
+{
+}
+namespace Unity.Cinemachine
+{
+}
 namespace Microsoft.CodeAnalysis
 {
 	[CompilerGenerated]
@@ -8,7 +14,4 @@ namespace Microsoft.CodeAnalysis
 	internal sealed class EmbeddedAttribute : Attribute
 	{
 	}
-}
-namespace Unity.Cinemachine
-{
 }

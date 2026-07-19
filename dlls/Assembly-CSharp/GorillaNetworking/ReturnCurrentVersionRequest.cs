@@ -1,2 +1,12 @@
-// Could not decompile GorillaNetworking.ReturnCurrentVersionRequest
-// This type uses unsupported IL or has too many generic parameters.
+namespace GorillaNetworking
+{
+	public class ReturnCurrentVersionRequest
+	{
+		public string CurrentVersion;
+
+		public int? UpdatedSynchTest;
+	}
+}
+namespace GorillaTag
+{
+}

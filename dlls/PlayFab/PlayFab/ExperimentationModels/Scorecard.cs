@@ -1,25 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ExperimentationModels;
-
-[Serializable]
-public class Scorecard : PlayFabBaseModel
-{
-	public string DateGenerated;
-
-	public string Duration;
-
-	public double EventsProcessed;
-
-	public string ExperimentId;
-
-	public string ExperimentName;
-
-	public AnalysisTaskState? LatestJobStatus;
-
-	public bool SampleRatioMismatch;
-
-	public List<ScorecardDataRow> ScorecardDataRows;
-}
+// Could not decompile PlayFab.ExperimentationModels.Scorecard
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,6 +1,2 @@
-namespace System.Xml.Serialization.Advanced
-{
-}
-namespace System.Xml.Xsl.XsltOld
-{
-}
+// Could not decompile System.Xml.Serialization.Configuration.RootedPathValidator
+// This type uses unsupported IL or has too many generic parameters.

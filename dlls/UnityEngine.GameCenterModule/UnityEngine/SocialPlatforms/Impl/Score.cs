@@ -1,3 +1,2 @@
-namespace UnityEngine.SocialPlatforms.Impl
-{
-}
+namespace UnityEngine.SocialPlatforms.Impl;
+

@@ -1,2 +1,11 @@
-namespace UnityEngine.UIElements.Experimental;
+namespace UnityEngine.UIElements;
 
+public enum Justify
+{
+	FlexStart,
+	Center,
+	FlexEnd,
+	SpaceBetween,
+	SpaceAround,
+	SpaceEvenly
+}

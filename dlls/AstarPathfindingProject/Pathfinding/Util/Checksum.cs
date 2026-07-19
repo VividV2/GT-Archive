@@ -1,8 +1,2 @@
-using System;
-using System;
-
-namespace Pathfinding.Util;
-
-public class PreserveAttribute : Attribute
-{
-}
+// Could not decompile Pathfinding.Util.Checksum
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,14 +1,2 @@
-namespace System.Runtime.CompilerServices
-{
-	[AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
-	public sealed class AsyncIteratorStateMachineAttribute : StateMachineAttribute
-	{
-		public AsyncIteratorStateMachineAttribute(Type stateMachineType)
-			: base(stateMachineType)
-		{
-		}
-	}
-}
-namespace System.Security
-{
-}
+// Could not decompile System.Runtime.CompilerServices.CallerMemberNameAttribute
+// This type uses unsupported IL or has too many generic parameters.

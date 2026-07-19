@@ -1,2 +1,15 @@
-// Could not decompile GorillaTag.GuidedRefs.GuidedRefIdBaseSO
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTag.GuidedRefs;
+
+public abstract class GuidedRefIdBaseSO : ScriptableObject, IGuidedRefObject
+{
+	public virtual void GuidedRefInitialize()
+	{
+	}
+
+	int IGuidedRefObject.GetInstanceID()
+	{
+		return GetInstanceID();
+	}
+}

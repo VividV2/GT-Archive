@@ -1,13 +1,9 @@
 using Unity.Jobs.LowLevel.Unsafe;
 
-namespace Unity.Jobs
+namespace Unity.Jobs;
+
+[JobProducerType(typeof(IJobParallelForBatchExtensions.JobParallelForBatchProducer<>))]
+public interface IJobParallelForBatch
 {
-	[JobProducerType(typeof(IJobParallelForBatchExtensions.JobParallelForBatchProducer<>))]
-	public interface IJobParallelForBatch
-	{
-		void Execute(int startIndex, int count);
-	}
-}
-namespace Unity.Collections.LowLevel.Unsafe
-{
+	void Execute(int startIndex, int count);
 }

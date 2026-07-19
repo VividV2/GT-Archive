@@ -1,3 +1,3 @@
-namespace System.Net.Sockets
+namespace System.ComponentModel.Design
 {
 }

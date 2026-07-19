@@ -1,6 +1,10 @@
-namespace ICSharpCode.SharpZipLib.Zip;
-
-internal interface ITaggedDataFactory
+namespace ICSharpCode.SharpZipLib.Zip.Compression
 {
-	ITaggedData Create(short tag, byte[] data, int offset, int count);
+}
+namespace ICSharpCode.SharpZipLib.Zip
+{
+	internal interface ITaggedDataFactory
+	{
+		ITaggedData Create(short tag, byte[] data, int offset, int count);
+	}
 }

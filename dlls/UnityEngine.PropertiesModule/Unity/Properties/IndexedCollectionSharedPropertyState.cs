@@ -1,15 +1,8 @@
-namespace Unity.Properties
-{
-}
-namespace Unity.Properties
-{
-}
-namespace Unity.Properties
-{
-	internal struct IndexedCollectionSharedPropertyState
-	{
-		public int Index;
+namespace Unity.Properties;
 
-		public bool IsReadOnly;
-	}
+internal struct IndexedCollectionSharedPropertyState
+{
+	public int Index;
+
+	public bool IsReadOnly;
 }

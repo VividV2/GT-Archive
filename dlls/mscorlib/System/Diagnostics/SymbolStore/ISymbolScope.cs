@@ -1,9 +1,3 @@
-using System.Runtime.InteropServices;
-
-namespace System.Diagnostics.SymbolStore;
-
-[ComVisible(true)]
-public interface ISymbolBinder1
+namespace System.Diagnostics.SymbolStore
 {
-	ISymbolReader GetReader(IntPtr importer, string filename, string searchPath);
 }

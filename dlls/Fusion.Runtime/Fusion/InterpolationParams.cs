@@ -1,2 +1,14 @@
-// Could not decompile Fusion.InterpolationParams
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+internal struct InterpolationParams
+{
+	public double Time;
+
+	public Tick From;
+
+	public Tick To;
+
+	public float Alpha;
+
+	public Status Status;
+}

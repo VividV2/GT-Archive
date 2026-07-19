@@ -1,2 +1,2 @@
-namespace System.Security.Cryptography;
+namespace Microsoft.Win32;
 

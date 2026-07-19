@@ -1,3 +1,2 @@
-internal interface ITickSystem : ITickSystemPre, ITickSystemTick, ITickSystemPost
-{
-}
+// Could not decompile EnableSkeletonOverlays
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,9 +1,2 @@
-namespace System.Linq.Parallel
-{
-}
-namespace System.Linq.Parallel
-{
-}
-namespace System.Linq.Parallel
-{
-}
+// Could not decompile System.Linq.Parallel.StopAndGoSpoolingTask`2
+// This type uses unsupported IL or has too many generic parameters.

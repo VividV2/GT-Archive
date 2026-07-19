@@ -1,12 +1,16 @@
-namespace PlayFab.ClientModels;
-
-public enum ContinentCode
+namespace PlayFab.ClientModels
 {
-	AF,
-	AN,
-	AS,
-	EU,
-	NA,
-	OC,
-	SA
+}
+namespace PlayFab.ClientModels
+{
+	public enum ContinentCode
+	{
+		AF,
+		AN,
+		AS,
+		EU,
+		NA,
+		OC,
+		SA
+	}
 }

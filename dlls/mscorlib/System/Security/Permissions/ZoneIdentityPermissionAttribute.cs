@@ -1,2 +1,2 @@
-namespace System.Security.Policy;
-
+// Could not decompile System.Security.Permissions.ZoneIdentityPermissionAttribute
+// This type uses unsupported IL or has too many generic parameters.

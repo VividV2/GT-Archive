@@ -1,13 +1,13 @@
-using Unity.XR.CoreUtils;
-using Unity.XR.CoreUtils;
+using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.XR.Interaction.Toolkit.Locomotion
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Comfort;
+
+[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
+public enum EaseState
 {
-	public interface IXRBodyPositionEvaluator
-	{
-		Vector3 GetBodyGroundLocalPosition(XROrigin xrOrigin);
-	}
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Transformers
-{
+	NotEasing,
+	EasingIn,
+	EasingInHoldBeforeEasingOut,
+	EasingOutDelay,
+	EasingOut
 }

@@ -1,3 +1,2 @@
-namespace System.ComponentModel
-{
-}
+// Could not decompile System.Diagnostics.SourceLevels
+// This type uses unsupported IL or has too many generic parameters.

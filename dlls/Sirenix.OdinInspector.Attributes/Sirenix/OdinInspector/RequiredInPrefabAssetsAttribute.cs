@@ -1,11 +1,2 @@
-using System;
-using System.Diagnostics;
-using System;
-using System.Diagnostics;
-
-namespace Sirenix.OdinInspector;
-
-[Conditional("UNITY_EDITOR")]
-public class ShowPropertyResolverAttribute : Attribute
-{
-}
+// Could not decompile Sirenix.OdinInspector.RequiredInPrefabAssetsAttribute
+// This type uses unsupported IL or has too many generic parameters.

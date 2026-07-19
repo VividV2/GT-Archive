@@ -1,7 +1,17 @@
+using System;
+
 namespace Fusion
 {
-	public interface IPlayerLeft : IPublicFacingInterface
+	[Flags]
+	internal enum ScheduledRequests : uint
 	{
-		void PlayerLeft(PlayerRef player);
+		None = 0u,
+		ReflexiveInfo = 2u
 	}
+}
+namespace Fusion
+{
+}
+namespace Fusion
+{
 }

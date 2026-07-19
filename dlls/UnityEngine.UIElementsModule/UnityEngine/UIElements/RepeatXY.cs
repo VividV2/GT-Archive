@@ -1,11 +1,7 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+internal enum RepeatXY
 {
-	internal enum RepeatXY
-	{
-		RepeatX,
-		RepeatY
-	}
-}
-namespace UnityEngine.UIElements.UIR
-{
+	RepeatX,
+	RepeatY
 }

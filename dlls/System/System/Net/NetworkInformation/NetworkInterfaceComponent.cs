@@ -8,9 +8,3 @@ public enum NetworkInterfaceComponent
 	/// <summary>Internet Protocol version 6.</summary>
 	IPv6
 }
-namespace System.Net.Configuration
-{
-}
-namespace System.Diagnostics
-{
-}

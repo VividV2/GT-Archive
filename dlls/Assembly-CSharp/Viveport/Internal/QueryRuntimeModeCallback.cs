@@ -1,10 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace Viveport.Internal
-{
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	internal delegate void QueryRuntimeModeCallback(int nResult, int nMode);
-}
-namespace GorillaLocomotion.Swimming
-{
-}
+// Could not decompile Viveport.Internal.QueryRuntimeModeCallback
+// This type uses unsupported IL or has too many generic parameters.

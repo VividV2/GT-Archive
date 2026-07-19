@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace UnityEngine.UIElements
 {
+}
+namespace UnityEngine.UIElements
+{
 	internal static class VisualElementListPool
 	{
 		private static ObjectPool<List<VisualElement>> pool = new ObjectPool<List<VisualElement>>(() => new List<VisualElement>(), 20);
@@ -29,10 +32,4 @@ namespace UnityEngine.UIElements
 			pool.Release(elements);
 		}
 	}
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
 }

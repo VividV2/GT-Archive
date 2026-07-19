@@ -3,9 +3,6 @@ namespace Valve.VR
 }
 namespace Valve.VR
 {
-}
-namespace Valve.VR
-{
 	public interface ISteamVR_ActionSet
 	{
 		SteamVR_Action[] allActions { get; }

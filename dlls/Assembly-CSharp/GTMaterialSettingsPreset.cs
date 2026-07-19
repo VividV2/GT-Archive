@@ -1,3 +1,5 @@
+namespace GorillaTag.Cosmetics;
+
 public enum GTMaterialSettingsPreset
 {
 	Default,

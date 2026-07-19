@@ -1,15 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-public struct GameBallData
-{
-	public Vector3 position;
-
-	public Quaternion rotation;
-
-	public Vector3 velocity;
-
-	public Vector3 angVelocity;
-
-	public int grabbedByActorNumber;
-}
+// Could not decompile RoomStateVisibility
+// This type uses unsupported IL or has too many generic parameters.

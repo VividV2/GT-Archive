@@ -1,7 +1,6 @@
-namespace System.Net;
-
-internal enum CertUsage
+namespace System.Net.Security
 {
-	MatchTypeAnd,
-	MatchTypeOr
+}
+namespace System.Net
+{
 }

@@ -4,6 +4,3 @@ namespace System.Net;
 /// <param name="httpRequest">The <see cref="T:System.Net.HttpListenerRequest" /> instance for which to select an authentication scheme.</param>
 /// <returns>One of the <see cref="T:System.Net.AuthenticationSchemes" /> values that indicates the method of authentication to use for the specified client request.</returns>
 public delegate AuthenticationSchemes AuthenticationSchemeSelector(HttpListenerRequest httpRequest);
-namespace System.Net.NetworkInformation
-{
-}

@@ -1,19 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace OVR.OpenVR;
-
-public struct InputDigitalActionData_t
-{
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bActive;
-
-	public ulong activeOrigin;
-
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bState;
-
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bChanged;
-
-	public float fUpdateTime;
-}
+// Could not decompile OVR.OpenVR.InputDigitalActionData_t
+// This type uses unsupported IL or has too many generic parameters.

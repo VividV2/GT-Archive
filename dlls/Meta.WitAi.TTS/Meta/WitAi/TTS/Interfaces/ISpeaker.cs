@@ -5,55 +5,51 @@ using Meta.WitAi.Json;
 using Meta.WitAi.TTS.Data;
 using Meta.WitAi.TTS.Utilities;
 
-namespace Meta.WitAi.TTS.Interfaces
+namespace Meta.WitAi.TTS.Interfaces;
+
+public interface ISpeaker
 {
-	public interface ISpeaker
-	{
-		bool IsSpeaking { get; }
+	bool IsSpeaking { get; }
 
-		bool IsPaused { get; }
+	bool IsPaused { get; }
 
-		TTSSpeakerEvents Events { get; }
+	TTSSpeakerEvents Events { get; }
 
-		TTSVoiceSettings VoiceSettings { get; }
+	TTSVoiceSettings VoiceSettings { get; }
 
-		IAudioPlayer AudioPlayer { get; }
+	IAudioPlayer AudioPlayer { get; }
 
-		void Speak(string textToSpeak, TTSSpeakerClipEvents playbackEvents);
+	void Speak(string textToSpeak, TTSSpeakerClipEvents playbackEvents);
 
-		void SpeakQueued(string textToSpeak, TTSSpeakerClipEvents playbackEvents);
+	void SpeakQueued(string textToSpeak, TTSSpeakerClipEvents playbackEvents);
 
-		IEnumerator SpeakAsync(string textToSpeak);
+	IEnumerator SpeakAsync(string textToSpeak);
 
-		Task SpeakTask(string textToSpeak);
+	Task SpeakTask(string textToSpeak);
 
-		Task SpeakTask(string textToSpeak, TTSSpeakerClipEvents playbackEvents);
+	Task SpeakTask(string textToSpeak, TTSSpeakerClipEvents playbackEvents);
 
-		Task SpeakTask(WitResponseNode responseNode, TTSSpeakerClipEvents playbackEvents);
+	Task SpeakTask(WitResponseNode responseNode, TTSSpeakerClipEvents playbackEvents);
 
-		bool Speak(WitResponseNode responseNode, TTSSpeakerClipEvents playbackEvents);
+	bool Speak(WitResponseNode responseNode, TTSSpeakerClipEvents playbackEvents);
 
-		IEnumerator SpeakQueuedAsync(WitResponseNode responseNode, TTSSpeakerClipEvents playbackEvents);
+	IEnumerator SpeakQueuedAsync(WitResponseNode responseNode, TTSSpeakerClipEvents playbackEvents);
 
-		Task SpeakQueuedTask(WitResponseNode responseNode, TTSSpeakerClipEvents playbackEvents);
+	Task SpeakQueuedTask(WitResponseNode responseNode, TTSSpeakerClipEvents playbackEvents);
 
-		IEnumerator SpeakQueuedAsync(string[] textsToSpeak, TTSSpeakerClipEvents playbackEvents);
+	IEnumerator SpeakQueuedAsync(string[] textsToSpeak, TTSSpeakerClipEvents playbackEvents);
 
-		Task SpeakQueuedTask(string[] textsToSpeak, TTSSpeakerClipEvents playbackEvents);
+	Task SpeakQueuedTask(string[] textsToSpeak, TTSSpeakerClipEvents playbackEvents);
 
-		void Stop();
+	void Stop();
 
-		void Pause();
+	void Pause();
 
-		void Resume();
+	void Resume();
 
-		void PrepareToSpeak();
+	void PrepareToSpeak();
 
-		void StartTextBlock();
+	void StartTextBlock();
 
-		void EndTextBlock();
-	}
-}
-namespace Meta.WitAi.TTS.UX
-{
+	void EndTextBlock();
 }

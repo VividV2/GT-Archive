@@ -1,14 +1,7 @@
 using System.Runtime.InteropServices;
 
-namespace OVR.OpenVR
-{
-	public struct VREvent_Notification_t
-	{
-		public ulong ulUserValue;
+namespace OVR.OpenVR;
 
-		public uint notificationId;
-	}
-}
 namespace OVR.OpenVR
 {
 	public struct TrackedDevicePose_t
@@ -27,7 +20,4 @@ namespace OVR.OpenVR
 		[MarshalAs(UnmanagedType.I1)]
 		public bool bDeviceIsConnected;
 	}
-}
-namespace OVR.OpenVR
-{
 }

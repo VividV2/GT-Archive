@@ -1,8 +1,2 @@
-namespace UnityEngine.Audio;
-
-internal enum AudioRandomContainerLoopMode
-{
-	Infinite,
-	Clips,
-	Cycles
-}
+// Could not decompile UnityEngine.Audio.AudioRandomContainer
+// This type uses unsupported IL or has too many generic parameters.

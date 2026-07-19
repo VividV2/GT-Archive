@@ -1,8 +1,12 @@
-namespace System.Data.SqlClient;
-
-internal enum SqlConnectionInternalSourceType
+namespace System.Data.SqlClient
 {
-	Principle,
-	Failover,
-	RoutingDestination
+	internal enum SqlConnectionInternalSourceType
+	{
+		Principle,
+		Failover,
+		RoutingDestination
+	}
+}
+namespace System.Data.SqlClient
+{
 }

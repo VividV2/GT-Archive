@@ -1,8 +1,5 @@
 namespace g3
 {
-}
-namespace g3
-{
 	public interface Query2
 	{
 		int ToLine(int i, int v0, int v1);
@@ -17,4 +14,7 @@ namespace g3
 
 		int ToCircumcircle(ref Vector2d test, int v0, int v1, int v2);
 	}
+}
+namespace g3
+{
 }

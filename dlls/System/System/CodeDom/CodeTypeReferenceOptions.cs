@@ -9,3 +9,6 @@ public enum CodeTypeReferenceOptions
 	/// <summary>Resolve the type from the type parameter.</summary>
 	GenericTypeParameter = 2
 }
+namespace Mono.Net.Security.Private
+{
+}

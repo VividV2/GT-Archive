@@ -1,9 +1,2 @@
-namespace Unity.IO.LowLevel.Unsafe;
-
-public enum FileStatus
-{
-	Closed,
-	Pending,
-	Open,
-	OpenFailed
-}
+// Could not decompile JetBrains.Annotations.MustUseReturnValueAttribute
+// This type uses unsupported IL or has too many generic parameters.

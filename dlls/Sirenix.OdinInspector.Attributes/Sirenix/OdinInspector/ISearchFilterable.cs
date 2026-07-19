@@ -1,10 +1,6 @@
-namespace Sirenix.OdinInspector
+namespace Sirenix.OdinInspector;
+
+public interface ISearchFilterable
 {
-	public interface ISearchFilterable
-	{
-		bool IsMatch(string searchString);
-	}
-}
-namespace Sirenix.OdinInspector
-{
+	bool IsMatch(string searchString);
 }

@@ -1,5 +1,20 @@
-using System.Runtime.InteropServices;
+using System;
 
+namespace Valve.VR
+{
+	public struct RenderModel_t
+	{
+		public IntPtr rVertexData;
+
+		public uint unVertexCount;
+
+		public IntPtr rIndexData;
+
+		public uint unTriangleCount;
+
+		public int diffuseTextureId;
+	}
+}
 namespace Valve.VR
 {
 	public struct VROverlayIntersectionResults_t
@@ -11,29 +26,5 @@ namespace Valve.VR
 		public HmdVector2_t vUVs;
 
 		public float fDistance;
-	}
-}
-namespace Unity.XR.OpenVR
-{
-}
-namespace Valve.VR
-{
-}
-namespace Valve.VR
-{
-	public struct InputDigitalActionData_t
-	{
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bActive;
-
-		public ulong activeOrigin;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bState;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bChanged;
-
-		public float fUpdateTime;
 	}
 }

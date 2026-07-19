@@ -1,24 +1,20 @@
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.Rendering.RenderGraphModule
+namespace UnityEngine.Rendering.RenderGraphModule;
+
+[MovedFrom(true, "UnityEngine.Experimental.Rendering.RenderGraphModule", "UnityEngine.Rendering.RenderGraphModule", null)]
+public struct RenderTargetInfo
 {
-	[MovedFrom(true, "UnityEngine.Experimental.Rendering.RenderGraphModule", "UnityEngine.Rendering.RenderGraphModule", null)]
-	public struct RenderTargetInfo
-	{
-		public int width;
+	public int width;
 
-		public int height;
+	public int height;
 
-		public int volumeDepth;
+	public int volumeDepth;
 
-		public int msaaSamples;
+	public int msaaSamples;
 
-		public GraphicsFormat format;
+	public GraphicsFormat format;
 
-		public bool bindMS;
-	}
-}
-namespace UnityEngine.Rendering.RenderGraphModule
-{
+	public bool bindMS;
 }

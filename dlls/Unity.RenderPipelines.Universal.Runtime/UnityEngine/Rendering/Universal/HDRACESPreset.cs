@@ -1,8 +1,12 @@
-namespace UnityEngine.Rendering.Universal;
-
-public enum HDRACESPreset
+namespace UnityEngine.Rendering.Universal
 {
-	ACES1000Nits = 3,
-	ACES2000Nits,
-	ACES4000Nits
+}
+namespace UnityEngine.Rendering.Universal
+{
+	public enum HDRACESPreset
+	{
+		ACES1000Nits = 3,
+		ACES2000Nits,
+		ACES4000Nits
+	}
 }

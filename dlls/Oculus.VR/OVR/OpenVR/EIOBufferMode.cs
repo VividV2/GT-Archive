@@ -1,8 +1,3 @@
-namespace OVR.OpenVR;
-
-public enum EIOBufferMode
+namespace OVR.OpenVR
 {
-	Read = 1,
-	Write = 2,
-	Create = 0x200
 }

@@ -1,2 +1,2 @@
-namespace UnityEngine.Experimental.Rendering;
+namespace UnityEngine.PlayerLoop;
 

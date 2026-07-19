@@ -1,2 +1,8 @@
-namespace Meta.WitAi.TTS.Events.EventHandlers;
+using System;
 
+namespace Meta.WitAi.TTS.Data;
+
+[Serializable]
+public class TTSEmoteEvent : TTSStringEvent
+{
+}

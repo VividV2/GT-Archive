@@ -1,2 +1,0 @@
-namespace GT_CustomMapSupportRuntime;
-

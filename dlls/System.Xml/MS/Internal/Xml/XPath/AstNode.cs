@@ -1,23 +1,30 @@
 using System.Xml.XPath;
 
-namespace MS.Internal.Xml.XPath;
-
-internal abstract class AstNode
+namespace System.Xml
 {
-	public enum AstType
+}
+namespace MS.Internal.Xml.XPath
+{
+	internal abstract class AstNode
 	{
-		Axis,
-		Operator,
-		Filter,
-		ConstantOperand,
-		Function,
-		Group,
-		Root,
-		Variable,
-		Error
+		public enum AstType
+		{
+			Axis,
+			Operator,
+			Filter,
+			ConstantOperand,
+			Function,
+			Group,
+			Root,
+			Variable,
+			Error
+		}
+
+		public abstract AstType Type { get; }
+
+		public abstract XPathResultType ReturnType { get; }
 	}
-
-	public abstract AstType Type { get; }
-
-	public abstract XPathResultType ReturnType { get; }
+}
+namespace System.Xml.Schema
+{
 }

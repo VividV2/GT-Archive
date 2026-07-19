@@ -1,9 +1,36 @@
-namespace System.ComponentModel.Design;
+namespace System.Collections.Generic
+{
+	/// <summary>Provides the base interface for the abstraction of sets.</summary>
+	/// <typeparam name="T">The type of elements in the set.</typeparam>
+	public interface ISet<T> : ICollection<T>, IEnumerable<T>, IEnumerable
+	{
+		/// <summary>Adds an element to the current set and returns a value to indicate if the element was successfully added.</summary>
+		/// <param name="item">The element to add to the set.</param>
+		/// <returns>
+		///   <see langword="true" /> if the element is added to the set; <see langword="false" /> if the element is already in the set.</returns>
+		new bool Add(T item);
 
-/// <summary>Represents the method that handles the <see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionClosed" /> and <see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionClosing" /> events of a designer.</summary>
-/// <param name="sender">The source of the event.</param>
-/// <param name="e">A <see cref="T:System.ComponentModel.Design.DesignerTransactionCloseEventArgs" /> that contains the event data.</param>
-/// <summary>Represents the method that handles the <see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionClosed" /> and <see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionClosing" /> events of a designer.</summary>
-/// <param name="sender">The source of the event.</param>
-/// <param name="e">A <see cref="T:System.ComponentModel.Design.DesignerTransactionCloseEventArgs" /> that contains the event data.</param>
-public delegate void DesignerTransactionCloseEventHandler(object sender, DesignerTransactionCloseEventArgs e);
+		void UnionWith(IEnumerable<T> other);
+
+		void IntersectWith(IEnumerable<T> other);
+
+		void ExceptWith(IEnumerable<T> other);
+
+		void SymmetricExceptWith(IEnumerable<T> other);
+
+		bool IsSubsetOf(IEnumerable<T> other);
+
+		bool IsSupersetOf(IEnumerable<T> other);
+
+		bool IsProperSupersetOf(IEnumerable<T> other);
+
+		bool IsProperSubsetOf(IEnumerable<T> other);
+
+		bool Overlaps(IEnumerable<T> other);
+
+		bool SetEquals(IEnumerable<T> other);
+	}
+}
+namespace System.Diagnostics
+{
+}

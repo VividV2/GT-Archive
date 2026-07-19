@@ -1,2 +1,13 @@
-// Could not decompile Unity.Properties.DictionaryPropertyBag`2
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace Unity.Properties;
+
+public class DictionaryPropertyBag<TKey, TValue> : KeyValueCollectionPropertyBag<Dictionary<TKey, TValue>, TKey, TValue>
+{
+	protected override InstantiationKind InstantiationKind => InstantiationKind.PropertyBagOverride;
+
+	protected override Dictionary<TKey, TValue> Instantiate()
+	{
+		return new Dictionary<TKey, TValue>();
+	}
+}

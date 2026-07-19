@@ -1,6 +1,3 @@
-namespace System.Linq.Expressions.Compiler
-{
-}
-namespace System.Diagnostics.Eventing
+namespace System.Diagnostics.Eventing.Reader
 {
 }

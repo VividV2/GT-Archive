@@ -1,12 +1,2 @@
-using UnityEngine;
-
-namespace Unity.XR.CoreUtils.Datums;
-
-[CreateAssetMenu(fileName = "IntDatum", menuName = "XR/Value Datums/Int Datum", order = 0)]
-public class IntDatum : Datum<int>
-{
-	public void SetValueRounded(float value)
-	{
-		base.Value = Mathf.RoundToInt(value);
-	}
-}
+// Could not decompile Unity.XR.CoreUtils.Datums.IntDatum
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,43 +1,31 @@
-using Unity.Collections;
 using UnityEngine.Scripting.APIUpdating;
-using Unity.Collections;
 
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+[MovedFrom("UnityEngine.Experimental.Rendering")]
+public struct RayTracingInstanceCullingConfig
 {
-	public struct ShadowCastersCullingInfos
-	{
-		public NativeArray<ShadowSplitData> splitBuffer;
+	public RayTracingInstanceCullingFlags flags;
 
-		public NativeArray<LightShadowCasterCullingInfo> perLightInfos;
-	}
-}
-namespace UnityEngine.Rendering
-{
-	[MovedFrom("UnityEngine.Experimental.Rendering")]
-	public struct RayTracingInstanceCullingConfig
-	{
-		public RayTracingInstanceCullingFlags flags;
+	public Vector3 sphereCenter;
 
-		public Vector3 sphereCenter;
+	public float sphereRadius;
 
-		public float sphereRadius;
+	public float minSolidAngle;
 
-		public float minSolidAngle;
+	public Plane[] planes;
 
-		public Plane[] planes;
+	public RayTracingInstanceCullingTest[] instanceTests;
 
-		public RayTracingInstanceCullingTest[] instanceTests;
+	public RayTracingInstanceCullingMaterialTest materialTest;
 
-		public RayTracingInstanceCullingMaterialTest materialTest;
+	public RayTracingInstanceMaterialConfig transparentMaterialConfig;
 
-		public RayTracingInstanceMaterialConfig transparentMaterialConfig;
+	public RayTracingInstanceMaterialConfig alphaTestedMaterialConfig;
 
-		public RayTracingInstanceMaterialConfig alphaTestedMaterialConfig;
+	public RayTracingSubMeshFlagsConfig subMeshFlagsConfig;
 
-		public RayTracingSubMeshFlagsConfig subMeshFlagsConfig;
+	public RayTracingInstanceTriangleCullingConfig triangleCullingConfig;
 
-		public RayTracingInstanceTriangleCullingConfig triangleCullingConfig;
-
-		public LODParameters lodParameters;
-	}
+	public LODParameters lodParameters;
 }

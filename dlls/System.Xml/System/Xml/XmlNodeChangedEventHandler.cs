@@ -4,3 +4,6 @@ namespace System.Xml;
 /// <param name="sender">The source of the event. </param>
 /// <param name="e">An <see cref="T:System.Xml.XmlNodeChangedEventArgs" /> containing the event data. </param>
 public delegate void XmlNodeChangedEventHandler(object sender, XmlNodeChangedEventArgs e);
+namespace System.Xml.Xsl
+{
+}

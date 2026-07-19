@@ -1,11 +1,2 @@
-namespace System.Data.ProviderBase;
-
-internal sealed class DbConnectionClosedNeverOpened : DbConnectionClosed
-{
-	internal static readonly DbConnectionInternal SingletonInstance = new DbConnectionClosedNeverOpened();
-
-	private DbConnectionClosedNeverOpened()
-		: base(ConnectionState.Closed, hidePassword: false, allowSetConnectionString: true)
-	{
-	}
-}
+// Could not decompile System.Data.ProviderBase.DbConnectionClosedNeverOpened
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,12 +1,2 @@
-using System;
-
-namespace Unity.Collections
-{
-	[Obsolete("Use GenerateTestsForBurstCompatibility (UnityUpgradable) -> GenerateTestsForBurstCompatibilityAttribute", true)]
-	public class BurstCompatibleAttribute : Attribute
-	{
-	}
-}
-namespace Unity.Collections
-{
-}
+// Could not decompile Unity.Collections.BurstCompatibleAttribute
+// This type uses unsupported IL or has too many generic parameters.

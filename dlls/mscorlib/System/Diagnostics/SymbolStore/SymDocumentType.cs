@@ -1,24 +1,27 @@
-namespace System.Collections
-{
-	/// <summary>Defines methods to support the comparison of objects for equality.</summary>
-	public interface IEqualityComparer
-	{
-		/// <summary>Determines whether the specified objects are equal.</summary>
-		/// <param name="x">The first object to compare.</param>
-		/// <param name="y">The second object to compare.</param>
-		/// <returns>
-		///   <see langword="true" /> if the specified objects are equal; otherwise, <see langword="false" />.</returns>
-		/// <exception cref="T:System.ArgumentException">
-		///   <paramref name="x" /> and <paramref name="y" /> are of different types and neither one can handle comparisons with the other.</exception>
-		new bool Equals(object x, object y);
+namespace System.Collections;
 
-		/// <summary>Returns a hash code for the specified object.</summary>
-		/// <param name="obj">The <see cref="T:System.Object" /> for which a hash code is to be returned.</param>
-		/// <returns>A hash code for the specified object.</returns>
-		/// <exception cref="T:System.ArgumentNullException">The type of <paramref name="obj" /> is a reference type and <paramref name="obj" /> is <see langword="null" />.</exception>
-		int GetHashCode(object obj);
-	}
-}
-namespace System.Collections
+/// <summary>Supports the structural comparison of collection objects.</summary>
+public interface IStructuralComparable
 {
+	/// <summary>Determines whether the current collection object precedes, occurs in the same position as, or follows another object in the sort order.</summary>
+	/// <param name="other">The object to compare with the current instance.</param>
+	/// <param name="comparer">An object that compares members of the current collection object with the corresponding members of <paramref name="other" />.</param>
+	/// <returns>A signed integer that indicates the relationship of the current collection object to <paramref name="other" /> in the sort order: - If less than 0, the current instance precedes <paramref name="other" />. - If 0, the current instance and <paramref name="other" /> are equal. - If greater than 0, the current instance follows <paramref name="other" />.  
+	///   Return value  
+	///
+	///   Description  
+	///
+	///   -1  
+	///
+	///   The current instance precedes <paramref name="other" />.  
+	///
+	///   0  
+	///
+	///   The current instance and <paramref name="other" /> are equal.  
+	///
+	///   1  
+	///
+	///   The current instance follows <paramref name="other" />.</returns>
+	/// <exception cref="T:System.ArgumentException">This instance and <paramref name="other" /> are not the same type.</exception>
+	int CompareTo(object other, IComparer comparer);
 }

@@ -82,5 +82,3 @@ internal static class Consts
 
 	public const string AssemblySystemServiceModel_3_0 = "System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089";
 }
-namespace System.Security.Cryptography;
-

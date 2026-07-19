@@ -1,18 +1,7 @@
 namespace UnityEngine.UIElements;
 
-public enum EditorTextRenderingMode
+public enum TextAutoSizeMode
 {
-	SDF,
-	Bitmap
-}
-namespace UnityEngine.UIElements.UIR
-{
-}
-namespace UnityEngine.UIElements
-{
-	public enum TextAutoSizeMode
-	{
-		None,
-		BestFit
-	}
+	None,
+	BestFit
 }

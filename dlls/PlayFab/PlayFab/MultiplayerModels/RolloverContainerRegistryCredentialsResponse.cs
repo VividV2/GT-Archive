@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.MultiplayerModels.RolloverContainerRegistryCredentialsResponse
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class RolloverContainerRegistryCredentialsResponse : PlayFabResultCommon
+{
+	public string DnsName;
+
+	public string Password;
+
+	public string Username;
+}

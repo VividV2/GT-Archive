@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.DisallowMultipleComponent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Scripting;
+
+namespace UnityEngine
+{
+	[RequiredByNativeCode]
+	[AttributeUsage(AttributeTargets.Class, Inherited = false)]
+	public sealed class DisallowMultipleComponent : Attribute
+	{
+	}
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine
+{
+}

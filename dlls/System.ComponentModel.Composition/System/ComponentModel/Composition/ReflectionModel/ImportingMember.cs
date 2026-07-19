@@ -1,2 +1,6 @@
-// Could not decompile System.ComponentModel.Composition.ReflectionModel.ImportingMember
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.ComponentModel.Composition.Hosting
+{
+}
+namespace System.ComponentModel.Composition.Diagnostics
+{
+}

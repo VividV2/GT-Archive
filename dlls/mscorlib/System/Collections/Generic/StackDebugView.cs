@@ -1,6 +1,14 @@
-namespace System.Buffers
+namespace System.IO;
+
+internal struct MonoIOStat
 {
-}
-namespace System.IO
-{
+	public FileAttributes fileAttributes;
+
+	public long Length;
+
+	public long CreationTime;
+
+	public long LastAccessTime;
+
+	public long LastWriteTime;
 }

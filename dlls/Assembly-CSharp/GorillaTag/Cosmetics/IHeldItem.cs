@@ -1,14 +1,10 @@
-namespace GorillaTag.Cosmetics
-{
-	public interface IHeldItem
-	{
-		bool InLeftHand();
+namespace GorillaTag.Cosmetics;
 
-		bool InHand();
-
-		bool IsMyItem();
-	}
-}
-namespace GorillaTag
+public interface IHeldItem
 {
+	bool InLeftHand();
+
+	bool InHand();
+
+	bool IsMyItem();
 }

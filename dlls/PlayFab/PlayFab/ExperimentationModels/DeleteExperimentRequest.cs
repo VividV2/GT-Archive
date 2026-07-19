@@ -1,12 +1,10 @@
-namespace PlayFab.MultiplayerModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ExperimentationModels;
+
+[Serializable]
+public class DeleteExperimentRequest : PlayFabRequestCommon
 {
-	public enum TitleMultiplayerServerEnabledStatus
-	{
-		Initializing,
-		Enabled,
-		Disabled
-	}
-}
-namespace PlayFab.MultiplayerModels
-{
+	public string ExperimentId;
 }

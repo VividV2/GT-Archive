@@ -1,13 +1,2 @@
-using System;
-
-namespace Oculus.Platform.Models;
-
-public class UserDataStoreUpdateResponse
-{
-	public readonly bool Success;
-
-	public UserDataStoreUpdateResponse(IntPtr o)
-	{
-		Success = CAPI.ovr_UserDataStoreUpdateResponse_GetSuccess(o);
-	}
-}
+// Could not decompile Oculus.Platform.Models.UserDataStoreUpdateResponse
+// This type uses unsupported IL or has too many generic parameters.

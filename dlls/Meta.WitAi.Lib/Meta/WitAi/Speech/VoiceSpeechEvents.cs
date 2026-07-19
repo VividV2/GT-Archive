@@ -1,6 +1,2 @@
-namespace Meta.WitAi.Speech;
-
-public interface ISpeechEventProvider
-{
-	VoiceSpeechEvents SpeechEvents { get; }
-}
+// Could not decompile Meta.WitAi.Speech.VoiceSpeechEvents
+// This type uses unsupported IL or has too many generic parameters.

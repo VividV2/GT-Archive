@@ -1,4 +1,4 @@
-namespace UnityEngine.Rendering.UnifiedRayTracing
+namespace UnityEngine.Rendering.Sampling
 {
 }
 namespace UnityEngine.Rendering.UnifiedRayTracing

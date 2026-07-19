@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Valve.VR.InteractionSystem
+namespace Valve.VR
 {
 }
 namespace Valve.VR
@@ -15,7 +15,4 @@ namespace Valve.VR
 
 		Vector2 lastDelta { get; }
 	}
-}
-namespace Valve.VR.InteractionSystem
-{
 }

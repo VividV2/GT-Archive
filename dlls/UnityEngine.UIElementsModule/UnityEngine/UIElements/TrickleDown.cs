@@ -1,11 +1,7 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum TrickleDown
 {
-}
-namespace UnityEngine.UIElements
-{
-	public enum TrickleDown
-	{
-		NoTrickleDown,
-		TrickleDown
-	}
+	NoTrickleDown,
+	TrickleDown
 }

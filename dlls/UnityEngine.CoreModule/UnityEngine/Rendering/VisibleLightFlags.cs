@@ -1,11 +1,15 @@
 using System;
 
-namespace UnityEngine.Rendering;
-
-[Flags]
-internal enum VisibleLightFlags
+namespace UnityEngine.Rendering
 {
-	IntersectsNearPlane = 1,
-	IntersectsFarPlane = 2,
-	ForcedVisible = 4
+	[Flags]
+	internal enum VisibleLightFlags
+	{
+		IntersectsNearPlane = 1,
+		IntersectsFarPlane = 2,
+		ForcedVisible = 4
+	}
+}
+namespace UnityEngine.Experimental.U2D
+{
 }

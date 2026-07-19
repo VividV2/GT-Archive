@@ -1,2 +1,2 @@
-namespace Modio.Unity.UI.Components.Selectables.Transitions;
+namespace Modio.Unity.UI.Components.ModProperties;
 

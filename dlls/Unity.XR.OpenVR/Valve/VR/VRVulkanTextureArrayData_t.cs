@@ -9,8 +9,15 @@ namespace Valve.VR
 }
 namespace Valve.VR
 {
-	public struct VREvent_ScreenshotProgress_t
+	public struct VROverlayView_t
 	{
-		public float progress;
+		public ulong overlayHandle;
+
+		public Texture_t texture;
+
+		public VRTextureBounds_t textureBounds;
 	}
+}
+namespace Valve.VR
+{
 }

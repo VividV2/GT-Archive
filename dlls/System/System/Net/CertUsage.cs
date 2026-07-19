@@ -1,7 +1,11 @@
-namespace System.Net;
-
-internal enum CertUsage
+namespace System.Net
 {
-	MatchTypeAnd,
-	MatchTypeOr
+	internal enum CertUsage
+	{
+		MatchTypeAnd,
+		MatchTypeOr
+	}
+}
+namespace System.Net
+{
 }

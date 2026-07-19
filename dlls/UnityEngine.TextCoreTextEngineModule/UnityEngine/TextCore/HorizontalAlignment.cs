@@ -1,12 +1,16 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine.TextCore;
-
-[VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule" })]
-internal enum HorizontalAlignment
+namespace UnityEngine.TextCore
 {
-	Left,
-	Center,
-	Right,
-	Justified
+}
+namespace UnityEngine.TextCore
+{
+	[VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule" })]
+	internal enum HorizontalAlignment
+	{
+		Left,
+		Center,
+		Right,
+		Justified
+	}
 }

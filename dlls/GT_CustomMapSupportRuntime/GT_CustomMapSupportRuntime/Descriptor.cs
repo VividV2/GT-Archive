@@ -3,23 +3,14 @@ using UnityEngine.Scripting;
 
 namespace GT_CustomMapSupportRuntime;
 
-public enum ExportLightingType
+[Preserve]
+public class Descriptor
 {
-	Default_Unity,
-	Alternative,
-	Off
-}
-namespace GT_CustomMapSupportRuntime
-{
-	[Preserve]
-	public class Descriptor
-	{
-		[JsonProperty(PropertyName = "objectName")]
-		public string objectName = "";
+	[JsonProperty(PropertyName = "objectName")]
+	public string objectName = "";
 
-		[JsonConstructor]
-		public Descriptor()
-		{
-		}
+	[JsonConstructor]
+	public Descriptor()
+	{
 	}
 }

@@ -1,2 +1,2 @@
-namespace Mono.Math.Prime;
+namespace Mono.Math;
 

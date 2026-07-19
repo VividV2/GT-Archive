@@ -1,7 +1,2 @@
-namespace System;
-
-internal enum IOOperation
-{
-	Read = 1,
-	Write
-}
+// Could not decompile System.Security.Cryptography.X509Certificates.GeneralNameEncoder
+// This type uses unsupported IL or has too many generic parameters.

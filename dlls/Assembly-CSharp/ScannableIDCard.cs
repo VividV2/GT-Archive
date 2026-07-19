@@ -1,8 +1,2 @@
-namespace GorillaTag.Cosmetics;
-
-internal interface IUserCosmeticsCallback
-{
-	bool PendingUpdate { get; set; }
-
-	bool OnGetUserCosmetics(string cosmetics);
-}
+// Could not decompile ScannableIDCard
+// This type uses unsupported IL or has too many generic parameters.

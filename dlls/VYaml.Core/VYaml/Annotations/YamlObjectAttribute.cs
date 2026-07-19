@@ -1,14 +1,18 @@
 using System;
 
-namespace VYaml.Annotations;
-
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface, Inherited = false)]
-public class YamlObjectAttribute : Attribute
+namespace VYaml.Annotations
 {
-	public NamingConvention NamingConvention { get; }
-
-	public YamlObjectAttribute(NamingConvention namingConvention = NamingConvention.LowerCamelCase)
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface, Inherited = false)]
+	public class YamlObjectAttribute : Attribute
 	{
-		NamingConvention = namingConvention;
+		public NamingConvention NamingConvention { get; }
+
+		public YamlObjectAttribute(NamingConvention namingConvention = NamingConvention.LowerCamelCase)
+		{
+			NamingConvention = namingConvention;
+		}
 	}
+}
+namespace VYaml.Internal
+{
 }

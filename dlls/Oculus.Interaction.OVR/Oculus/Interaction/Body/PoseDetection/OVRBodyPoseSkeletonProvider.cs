@@ -1,2 +1,2 @@
-namespace Oculus.Interaction.Input.Visuals;
+namespace Oculus.Interaction.Body.Input;
 

@@ -1,14 +1,2 @@
-using System;
-using System;
-using System;
-
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
-{
-	[Serializable]
-	public class UIntTrackedProperty : TrackedProperty<uint>
-	{
-	}
-}
-namespace UnityEngine.Localization.Metadata
-{
-}
+// Could not decompile UnityEngine.Localization.Operations.LocalizationGroupOperation
+// This type uses unsupported IL or has too many generic parameters.

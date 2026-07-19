@@ -1,8 +1,6 @@
-namespace Newtonsoft.Json;
-
-public enum ReferenceLoopHandling
+namespace Newtonsoft.Json
 {
-	Error,
-	Ignore,
-	Serialize
+}
+namespace Newtonsoft.Json.Serialization
+{
 }

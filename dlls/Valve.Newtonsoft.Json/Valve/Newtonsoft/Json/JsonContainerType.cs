@@ -1,13 +1,9 @@
-namespace Valve.Newtonsoft.Json
+namespace Valve.Newtonsoft.Json;
+
+internal enum JsonContainerType
 {
-}
-namespace Valve.Newtonsoft.Json
-{
-	internal enum JsonContainerType
-	{
-		None,
-		Object,
-		Array,
-		Constructor
-	}
+	None,
+	Object,
+	Array,
+	Constructor
 }

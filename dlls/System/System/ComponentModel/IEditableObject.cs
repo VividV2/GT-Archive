@@ -1,3 +1,2 @@
-namespace System.Net.Configuration
-{
-}
+namespace Mono.Net.Security;
+

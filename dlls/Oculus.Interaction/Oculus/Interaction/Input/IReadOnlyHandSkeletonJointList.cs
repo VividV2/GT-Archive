@@ -1,14 +1,6 @@
-namespace Oculus.Interaction
+namespace Oculus.Interaction.Input;
+
+public interface IReadOnlyHandSkeletonJointList
 {
-	public interface IMovementProvider
-	{
-		IMovement CreateMovement();
-	}
-}
-namespace Oculus.Interaction.Input
-{
-	public interface IReadOnlyHandSkeletonJointList
-	{
-		ref readonly HandSkeletonJoint this[int jointId] { get; }
-	}
+	ref readonly HandSkeletonJoint this[int jointId] { get; }
 }

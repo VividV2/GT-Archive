@@ -1,3 +1,2 @@
-namespace System.Data.SqlTypes
-{
-}
+// Could not decompile System.Data.Odbc.OdbcEnvironment
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,15 +1,2 @@
-namespace UnityEngine.Windows.Speech;
+namespace UnityEngine.SceneManagement;
 
-public enum SpeechError
-{
-	NoError,
-	TopicLanguageNotSupported,
-	GrammarLanguageMismatch,
-	GrammarCompilationFailure,
-	AudioQualityFailure,
-	PauseLimitExceeded,
-	TimeoutExceeded,
-	NetworkFailure,
-	MicrophoneUnavailable,
-	UnknownError
-}

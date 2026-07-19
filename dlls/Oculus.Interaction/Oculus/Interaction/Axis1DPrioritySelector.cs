@@ -1,9 +1,2 @@
-using Oculus.Interaction.Input;
-using Oculus.Interaction.Input;
-
-namespace Oculus.Interaction;
-
-public interface IFingerUseAPI
-{
-	float GetFingerUseStrength(HandFinger finger);
-}
+// Could not decompile Oculus.Interaction.Axis1DPrioritySelector
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,13 +1,17 @@
 using System;
 
-namespace UnityEngine.Rendering;
-
-public interface IProbeVolumeEnabledRenderPipeline
+namespace UnityEngine.Rendering
 {
-	bool supportProbeVolume { get; }
+}
+namespace UnityEngine.Rendering
+{
+	public interface IProbeVolumeEnabledRenderPipeline
+	{
+		bool supportProbeVolume { get; }
 
-	ProbeVolumeSHBands maxSHBands { get; }
+		ProbeVolumeSHBands maxSHBands { get; }
 
-	[Obsolete("This field is no longer necessary")]
-	ProbeVolumeSceneData probeVolumeSceneData { get; }
+		[Obsolete("This field is no longer necessary")]
+		ProbeVolumeSceneData probeVolumeSceneData { get; }
+	}
 }

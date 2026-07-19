@@ -1,2 +1,11 @@
-// Could not decompile Liv.Lck.Tablet.LckRecordButton
-// This type uses unsupported IL or has too many generic parameters.
+namespace Liv.Lck.NativeMicrophone;
+
+public enum LogLevel : uint
+{
+	Off,
+	Error,
+	Warn,
+	Info,
+	Debug,
+	Trace
+}

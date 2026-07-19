@@ -1,6 +1,2 @@
-namespace GorillaTagScripts
-{
-}
-namespace GorillaTag
-{
-}
+// Could not decompile MetroManager
+// This type uses unsupported IL or has too many generic parameters.

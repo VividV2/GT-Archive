@@ -1,26 +1,30 @@
 using System.Collections.Generic;
 
-namespace UnityEngine.Animations;
-
-public interface IConstraint
+namespace UnityEngine.Animations
 {
-	float weight { get; set; }
+}
+namespace UnityEngine.Animations
+{
+	public interface IConstraint
+	{
+		float weight { get; set; }
 
-	bool constraintActive { get; set; }
+		bool constraintActive { get; set; }
 
-	bool locked { get; set; }
+		bool locked { get; set; }
 
-	int sourceCount { get; }
+		int sourceCount { get; }
 
-	int AddSource(ConstraintSource source);
+		int AddSource(ConstraintSource source);
 
-	void RemoveSource(int index);
+		void RemoveSource(int index);
 
-	ConstraintSource GetSource(int index);
+		ConstraintSource GetSource(int index);
 
-	void SetSource(int index, ConstraintSource source);
+		void SetSource(int index, ConstraintSource source);
 
-	void GetSources(List<ConstraintSource> sources);
+		void GetSources(List<ConstraintSource> sources);
 
-	void SetSources(List<ConstraintSource> sources);
+		void SetSources(List<ConstraintSource> sources);
+	}
 }

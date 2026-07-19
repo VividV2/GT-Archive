@@ -1,2 +1,18 @@
-// Could not decompile PlayFab.MultiplayerModels.LinearTeamDifferenceRuleExpansion
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels
+{
+	[Serializable]
+	public class LinearTeamDifferenceRuleExpansion : PlayFabBaseModel
+	{
+		public double Delta;
+
+		public double? Limit;
+
+		public uint SecondsBetweenExpansions;
+	}
+}
+namespace Ionic.Zlib
+{
+}

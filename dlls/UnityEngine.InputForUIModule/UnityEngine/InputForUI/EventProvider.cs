@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.InputForUI.EventProvider
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.InputForUI
+{
+}
+namespace UnityEngine.InputForUI
+{
+}

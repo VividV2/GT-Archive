@@ -1,17 +1,16 @@
 using System;
 
-namespace Modio.Mods
+namespace Modio.Mods;
+
+[Flags]
+public enum ModMaturityOptions
 {
-	[Flags]
-	public enum ModMaturityOptions
-	{
-		None = 0,
-		Alcohol = 1,
-		Drugs = 2,
-		Violence = 4,
-		Explicit = 8
-	}
+	None = 0,
+	Alcohol = 1,
+	Drugs = 2,
+	Violence = 4,
+	Explicit = 8
 }
-namespace Modio.API.SchemaDefinitions
+namespace Modio.Mods
 {
 }

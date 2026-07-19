@@ -1,2 +1,16 @@
-// Could not decompile UnityEngine.Localization.Bridge.DrivenPropertyManagerBridge
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Localization.Bridge;
+
+internal class DrivenPropertyManagerBridge
+{
+	public static void RegisterProperty(Object driver, Object target, string propertyPath)
+	{
+	}
+
+	public static void UnregisterProperty(Object driver, Object target, string propertyPath)
+	{
+	}
+
+	public static void UnregisterProperties(Object driver)
+	{
+	}
+}

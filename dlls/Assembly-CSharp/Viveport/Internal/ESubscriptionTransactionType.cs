@@ -1,9 +1,2 @@
-namespace Viveport.Internal;
-
-internal enum ESubscriptionTransactionType
-{
-	UNKNOWN,
-	PAID,
-	REDEEM,
-	FREEE_TRIAL
-}
+// Could not decompile Viveport.Internal.ESubscriptionTransactionType
+// This type uses unsupported IL or has too many generic parameters.

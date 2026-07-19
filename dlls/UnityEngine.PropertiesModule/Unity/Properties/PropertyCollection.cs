@@ -1,9 +1,2 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-
-namespace Unity.Properties;
-
-public interface IListPropertyBagVisitor
-{
-	void Visit<TList, TElement>(IListPropertyBag<TList, TElement> properties, ref TList container) where TList : IList<TElement>;
-}
+// Could not decompile Unity.Properties.PropertyCollection`1
+// This type uses unsupported IL or has too many generic parameters.

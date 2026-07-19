@@ -1,2 +1,10 @@
-// Could not decompile System.IO.SearchPattern
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Globalization
+{
+}
+namespace System.IO
+{
+	internal class SearchPattern
+	{
+		internal static readonly char[] WildcardChars = new char[2] { '*', '?' };
+	}
+}

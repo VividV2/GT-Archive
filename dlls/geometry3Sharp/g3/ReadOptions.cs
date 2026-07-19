@@ -1,18 +1,2 @@
-namespace g3;
-
-public class ReadOptions
-{
-	public bool ReadMaterials;
-
-	public CommandArgumentSet CustomFlags = new CommandArgumentSet();
-
-	public static readonly ReadOptions Defaults = new ReadOptions
-	{
-		ReadMaterials = false
-	};
-
-	public ReadOptions()
-	{
-		ReadMaterials = false;
-	}
-}
+// Could not decompile g3.ReadOptions
+// This type uses unsupported IL or has too many generic parameters.

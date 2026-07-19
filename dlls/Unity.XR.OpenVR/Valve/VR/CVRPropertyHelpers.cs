@@ -1,8 +1,10 @@
-using System;
-
 namespace Valve.VR;
 
-public struct CVRPropertyHelpers
+public struct HmdVector3_t
 {
-	public IntPtr m_pProperties;
+	public float v0;
+
+	public float v1;
+
+	public float v2;
 }

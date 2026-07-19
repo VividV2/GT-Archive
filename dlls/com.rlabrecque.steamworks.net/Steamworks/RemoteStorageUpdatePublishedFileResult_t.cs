@@ -20,22 +20,27 @@ namespace Steamworks
 namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(3409)]
-	public struct GetUserItemVoteResult_t
+	[CallbackIdentity(504)]
+	public struct LobbyEnter_t
 	{
-		public const int k_iCallback = 3409;
+		public const int k_iCallback = 504;
 
-		public PublishedFileId_t m_nPublishedFileId;
+		public ulong m_ulSteamIDLobby;
 
-		public EResult m_eResult;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bVotedUp;
+		public uint m_rgfChatPermissions;
 
 		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bVotedDown;
+		public bool m_bLocked;
 
-		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bVoteSkipped;
+		public uint m_EChatRoomEnterResponse;
+	}
+}
+namespace Steamworks
+{
+	public enum ESteamIPv6ConnectivityProtocol
+	{
+		k_ESteamIPv6ConnectivityProtocol_Invalid,
+		k_ESteamIPv6ConnectivityProtocol_HTTP,
+		k_ESteamIPv6ConnectivityProtocol_UDP
 	}
 }

@@ -1,16 +1,20 @@
 using Microsoft.CodeAnalysis;
 
-namespace System.Runtime.CompilerServices;
-
-[CompilerGenerated]
-[Microsoft.CodeAnalysis.Embedded]
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Interface | AttributeTargets.Delegate, AllowMultiple = false, Inherited = false)]
-internal sealed class NullableContextAttribute : Attribute
+namespace System.Runtime.CompilerServices
 {
-	public readonly byte Flag;
-
-	public NullableContextAttribute(byte P_0)
+	[CompilerGenerated]
+	[Microsoft.CodeAnalysis.Embedded]
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Interface | AttributeTargets.Delegate, AllowMultiple = false, Inherited = false)]
+	internal sealed class NullableContextAttribute : Attribute
 	{
-		Flag = P_0;
+		public readonly byte Flag;
+
+		public NullableContextAttribute(byte P_0)
+		{
+			Flag = P_0;
+		}
 	}
+}
+namespace Cysharp.Text
+{
 }

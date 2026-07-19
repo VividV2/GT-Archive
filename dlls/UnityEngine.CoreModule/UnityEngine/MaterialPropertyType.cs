@@ -1,16 +1,12 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum MaterialPropertyType
 {
-	public enum MaterialPropertyType
-	{
-		Float,
-		Int,
-		Vector,
-		Matrix,
-		Texture,
-		ConstantBuffer,
-		ComputeBuffer
-	}
-}
-namespace UnityEngine.Pool
-{
+	Float,
+	Int,
+	Vector,
+	Matrix,
+	Texture,
+	ConstantBuffer,
+	ComputeBuffer
 }

@@ -1,70 +1,33 @@
 using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Scripting;
-using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[Flags]
+public enum DrivenTransformProperties
 {
-}
-namespace UnityEngine.PlayerLoop
-{
-	[StructLayout(LayoutKind.Sequential, Size = 1)]
-	[MovedFrom("UnityEngine.Experimental.PlayerLoop")]
-	[RequiredByNativeCode]
-	public struct Initialization
-	{
-		[StructLayout(LayoutKind.Sequential, Size = 1)]
-		[RequiredByNativeCode]
-		public struct ProfilerStartFrame
-		{
-		}
-
-		[StructLayout(LayoutKind.Sequential, Size = 1)]
-		[Obsolete("PlayerUpdateTime player loop component has been moved to its own category called TimeUpdate. (UnityUpgradable) -> UnityEngine.PlayerLoop.TimeUpdate/WaitForLastPresentationAndUpdateTime", true)]
-		public struct PlayerUpdateTime
-		{
-		}
-
-		[StructLayout(LayoutKind.Sequential, Size = 1)]
-		[RequiredByNativeCode]
-		public struct UpdateCameraMotionVectors
-		{
-		}
-
-		[StructLayout(LayoutKind.Sequential, Size = 1)]
-		[RequiredByNativeCode]
-		public struct DirectorSampleTime
-		{
-		}
-
-		[StructLayout(LayoutKind.Sequential, Size = 1)]
-		[RequiredByNativeCode]
-		public struct AsyncUploadTimeSlicedUpdate
-		{
-		}
-
-		[StructLayout(LayoutKind.Sequential, Size = 1)]
-		[RequiredByNativeCode]
-		public struct SynchronizeState
-		{
-		}
-
-		[StructLayout(LayoutKind.Sequential, Size = 1)]
-		[RequiredByNativeCode]
-		public struct SynchronizeInputs
-		{
-		}
-
-		[StructLayout(LayoutKind.Sequential, Size = 1)]
-		[RequiredByNativeCode]
-		public struct XREarlyUpdate
-		{
-		}
-	}
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
+	None = 0,
+	All = -1,
+	AnchoredPositionX = 2,
+	AnchoredPositionY = 4,
+	AnchoredPositionZ = 8,
+	Rotation = 0x10,
+	ScaleX = 0x20,
+	ScaleY = 0x40,
+	ScaleZ = 0x80,
+	AnchorMinX = 0x100,
+	AnchorMinY = 0x200,
+	AnchorMaxX = 0x400,
+	AnchorMaxY = 0x800,
+	SizeDeltaX = 0x1000,
+	SizeDeltaY = 0x2000,
+	PivotX = 0x4000,
+	PivotY = 0x8000,
+	AnchoredPosition = 6,
+	AnchoredPosition3D = 0xE,
+	Scale = 0xE0,
+	AnchorMin = 0x300,
+	AnchorMax = 0xC00,
+	Anchors = 0xF00,
+	SizeDelta = 0x3000,
+	Pivot = 0xC000
 }

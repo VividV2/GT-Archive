@@ -1,8 +1,12 @@
-namespace OVR.OpenVR;
-
-public struct HmdRect2_t
+namespace OVR.OpenVR
 {
-	public HmdVector2_t vTopLeft;
+	public struct HmdRect2_t
+	{
+		public HmdVector2_t vTopLeft;
 
-	public HmdVector2_t vBottomRight;
+		public HmdVector2_t vBottomRight;
+	}
+}
+namespace OVR.OpenVR
+{
 }

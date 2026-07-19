@@ -1,8 +1,12 @@
-namespace Fusion;
-
-public enum ConnectionType
+namespace Fusion
 {
-	None,
-	Relayed,
-	Direct
+	public enum ConnectionType
+	{
+		None,
+		Relayed,
+		Direct
+	}
+}
+namespace Fusion
+{
 }

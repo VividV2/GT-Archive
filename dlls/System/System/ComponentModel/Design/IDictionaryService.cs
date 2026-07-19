@@ -1,3 +1,3 @@
-namespace System.IO
+namespace System.ComponentModel
 {
 }

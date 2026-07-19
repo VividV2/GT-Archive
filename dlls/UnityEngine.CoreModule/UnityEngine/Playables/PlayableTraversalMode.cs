@@ -1,7 +1,11 @@
-namespace UnityEngine.Playables;
-
-public enum PlayableTraversalMode
+namespace UnityEngine.Playables
 {
-	Mix,
-	Passthrough
+	public enum PlayableTraversalMode
+	{
+		Mix,
+		Passthrough
+	}
+}
+namespace UnityEngine.IO
+{
 }

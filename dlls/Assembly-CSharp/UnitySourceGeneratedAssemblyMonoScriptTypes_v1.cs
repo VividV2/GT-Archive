@@ -1,2 +1,2 @@
-namespace GorillaTag;
+namespace GorillaTagScripts;
 

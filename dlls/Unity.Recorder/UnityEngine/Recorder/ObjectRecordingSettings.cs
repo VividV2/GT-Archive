@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Recorder.ObjectRecordingSettings
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Recorder;
+
+[AddComponentMenu("Recording/Object Recording Settings")]
+public class ObjectRecordingSettings : MonoBehaviour
+{
+	[Tooltip("Record localPosition curves for this object.")]
+	public bool recordPosition = true;
+
+	[Tooltip("Record localRotation curves for this object.")]
+	public bool recordRotation = true;
+
+	[Tooltip("Record localScale curves for this object.")]
+	public bool recordScale = true;
+}

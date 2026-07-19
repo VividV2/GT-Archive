@@ -1,2 +1,7 @@
-// Could not decompile Unity.Mathematics.PostNormalizeAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Unity.Mathematics;
+
+public class PostNormalizeAttribute : PropertyAttribute
+{
+}

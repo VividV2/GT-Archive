@@ -1,11 +1,7 @@
-namespace Liv.Lck
+namespace Liv.Lck;
+
+public enum EyeSelection
 {
-}
-namespace Liv.Lck
-{
-	public enum LckCameraOrientation
-	{
-		Portrait,
-		Landscape
-	}
+	Left,
+	Right
 }

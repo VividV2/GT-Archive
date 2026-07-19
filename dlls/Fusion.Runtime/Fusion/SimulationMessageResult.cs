@@ -1,8 +1,12 @@
-namespace Fusion;
-
-internal enum SimulationMessageResult
+namespace Fusion.LagCompensation
 {
-	Handled,
-	Ignored,
-	Retry
+}
+namespace Fusion
+{
+	internal enum SimulationMessageResult
+	{
+		Handled,
+		Ignored,
+		Retry
+	}
 }

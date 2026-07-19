@@ -1,6 +1,7 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum EVRInputFilterCancelType
 {
-}
-namespace Valve.VR
-{
+	VRInputFilterCancel_Timers,
+	VRInputFilterCancel_Momentum
 }

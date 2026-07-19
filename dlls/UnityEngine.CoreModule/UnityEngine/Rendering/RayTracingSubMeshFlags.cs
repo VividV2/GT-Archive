@@ -1,2 +1,26 @@
-// Could not decompile UnityEngine.Rendering.RayTracingSubMeshFlags
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Bindings;
+using UnityEngine.Scripting;
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.Rendering
+{
+	public interface IRenderPipelineResources : IRenderPipelineGraphicsSettings
+	{
+	}
+}
+namespace UnityEngine.Rendering
+{
+	[NativeHeader("Runtime/Graphics/RayTracing/RayTracingAccelerationStructure.h")]
+	[UsedByNativeCode]
+	[NativeHeader("Runtime/Export/Graphics/RayTracingAccelerationStructure.bindings.h")]
+	[MovedFrom("UnityEngine.Experimental.Rendering")]
+	[Flags]
+	public enum RayTracingSubMeshFlags
+	{
+		Disabled = 0,
+		Enabled = 1,
+		ClosestHitOnly = 2,
+		UniqueAnyHitCalls = 4
+	}
+}

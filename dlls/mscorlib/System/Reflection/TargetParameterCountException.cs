@@ -1,12 +1,2 @@
-namespace System.Reflection;
-
-[AttributeUsage(AttributeTargets.Assembly, Inherited = false)]
-public sealed class AssemblyCultureAttribute : Attribute
-{
-	public string Culture { get; }
-
-	public AssemblyCultureAttribute(string culture)
-	{
-		Culture = culture;
-	}
-}
+// Could not decompile System.Reflection.TargetParameterCountException
+// This type uses unsupported IL or has too many generic parameters.

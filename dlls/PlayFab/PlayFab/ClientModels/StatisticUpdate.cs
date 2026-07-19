@@ -3,15 +3,12 @@ using PlayFab.SharedModels;
 
 namespace PlayFab.ClientModels;
 
-namespace PlayFab.ClientModels
+[Serializable]
+public class StatisticUpdate : PlayFabBaseModel
 {
-	[Serializable]
-	public class StatisticUpdate : PlayFabBaseModel
-	{
-		public string StatisticName;
+	public string StatisticName;
 
-		public int Value;
+	public int Value;
 
-		public uint? Version;
-	}
+	public uint? Version;
 }

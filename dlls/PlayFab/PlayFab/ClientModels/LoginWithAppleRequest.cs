@@ -1,8 +1,2 @@
-namespace Ionic.Zlib;
-
-internal enum DeflateFlavor
-{
-	Store,
-	Fast,
-	Slow
-}
+// Could not decompile PlayFab.ClientModels.LoginWithAppleRequest
+// This type uses unsupported IL or has too many generic parameters.

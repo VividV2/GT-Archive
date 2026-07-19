@@ -1,8 +1,3 @@
-namespace Meta.WitAi.Composer.Interfaces;
-
-public interface IComposerSpeechHandler
+namespace Meta.WitAi.Composer.Integrations
 {
-	void SpeakPhrase(ComposerSessionData sessionData);
-
-	bool IsSpeaking(ComposerSessionData sessionData);
 }

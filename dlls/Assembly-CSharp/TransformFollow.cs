@@ -1,0 +1,6 @@
+namespace NetSynchrony
+{
+}
+namespace Voxels
+{
+}

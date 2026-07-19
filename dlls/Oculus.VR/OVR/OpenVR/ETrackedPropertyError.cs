@@ -1,18 +1,10 @@
 namespace OVR.OpenVR;
 
-public enum ETrackedPropertyError
+public struct VREvent_Mouse_t
 {
-	TrackedProp_Success,
-	TrackedProp_WrongDataType,
-	TrackedProp_WrongDeviceClass,
-	TrackedProp_BufferTooSmall,
-	TrackedProp_UnknownProperty,
-	TrackedProp_InvalidDevice,
-	TrackedProp_CouldNotContactServer,
-	TrackedProp_ValueNotProvidedByDevice,
-	TrackedProp_StringExceedsMaximumLength,
-	TrackedProp_NotYetAvailable,
-	TrackedProp_PermissionDenied,
-	TrackedProp_InvalidOperation,
-	TrackedProp_CannotWriteToWildcards
+	public float x;
+
+	public float y;
+
+	public uint button;
 }

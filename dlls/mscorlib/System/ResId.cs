@@ -1,11 +1,2 @@
-namespace System.Runtime.CompilerServices
-{
-	[Serializable]
-	[AttributeUsage(AttributeTargets.Class)]
-	public class CompilerGlobalScopeAttribute : Attribute
-	{
-		public CompilerGlobalScopeAttribute()
-		{
-		}
-	}
-}
+namespace System.Threading;
+

@@ -1,2 +1,6 @@
-// Could not decompile Unity.Properties.INamedProperties`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.Properties;
+
+public interface INamedProperties<TContainer>
+{
+	bool TryGetProperty(ref TContainer container, string name, out IProperty<TContainer> property);
+}

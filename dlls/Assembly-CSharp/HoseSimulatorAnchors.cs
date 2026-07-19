@@ -1,12 +1,2 @@
-using UnityEngine;
-
-public class HoseSimulatorAnchors : MonoBehaviour
-{
-	public Transform leftAnchorPoint;
-
-	public Transform rightAnchorPoint;
-
-	public Transform[] miscAnchorsLeft;
-
-	public Transform[] miscAnchorsRight;
-}
+// Could not decompile HoseSimulatorAnchors
+// This type uses unsupported IL or has too many generic parameters.

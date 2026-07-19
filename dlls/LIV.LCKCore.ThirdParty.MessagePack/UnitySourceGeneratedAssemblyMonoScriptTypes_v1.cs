@@ -1,2 +1,0 @@
-namespace SouthPointe.Serialization.MessagePack;
-

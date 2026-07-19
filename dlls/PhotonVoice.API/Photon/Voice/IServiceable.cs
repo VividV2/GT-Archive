@@ -7,6 +7,14 @@ namespace Photon.Voice
 }
 namespace Photon.Voice
 {
+	public interface IAudioDesc : System.IDisposable
+	{
+		int SamplingRate { get; }
+
+		int Channels { get; }
+
+		string Error { get; }
+	}
 }
 namespace Photon.Voice
 {

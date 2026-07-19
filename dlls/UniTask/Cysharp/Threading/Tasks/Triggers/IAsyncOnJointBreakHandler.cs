@@ -1,6 +1,10 @@
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnJointBreakHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask<float> OnJointBreakAsync();
+	public interface IAsyncOnJointBreakHandler
+	{
+		UniTask<float> OnJointBreakAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
 }

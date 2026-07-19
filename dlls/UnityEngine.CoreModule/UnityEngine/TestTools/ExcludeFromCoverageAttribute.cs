@@ -1,10 +1,2 @@
-using System;
-using UnityEngine.Scripting;
-
-namespace UnityEngine.TestTools;
-
-[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method)]
-[UsedByNativeCode]
-public class ExcludeFromCoverageAttribute : Attribute
-{
-}
+// Could not decompile UnityEngine.TestTools.ExcludeFromCoverageAttribute
+// This type uses unsupported IL or has too many generic parameters.

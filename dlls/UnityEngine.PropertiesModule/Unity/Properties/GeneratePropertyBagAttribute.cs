@@ -1,8 +1,2 @@
-using System;
-
-namespace Unity.Properties;
-
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited = false)]
-public class GeneratePropertyBagAttribute : Attribute
-{
-}
+// Could not decompile Unity.Properties.GeneratePropertyBagAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Rendering.BatchID
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.Rendering;
+
+[MovedFrom("UnityEngine.Experimental.Rendering")]
+public struct RayTracingInstanceCullingShaderTagConfig
+{
+	public ShaderTagId tagId;
+
+	public ShaderTagId tagValueId;
+}

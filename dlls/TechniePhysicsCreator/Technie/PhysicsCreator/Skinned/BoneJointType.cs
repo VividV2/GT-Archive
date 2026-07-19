@@ -1,13 +1,9 @@
-namespace Technie.PhysicsCreator
+namespace Technie.PhysicsCreator.Skinned;
+
+public enum BoneJointType
 {
-}
-namespace Technie.PhysicsCreator.Skinned
-{
-	public enum BoneJointType
-	{
-		Fixed,
-		Hinge,
-		BallAndSocket,
-		Tentacle
-	}
+	Fixed,
+	Hinge,
+	BallAndSocket,
+	Tentacle
 }

@@ -1,2 +1,2 @@
-namespace System.Runtime.InteropServices;
+namespace System.Runtime.Serialization.Formatters.Binary;
 

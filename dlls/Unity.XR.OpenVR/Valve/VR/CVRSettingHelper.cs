@@ -2,11 +2,17 @@ using System;
 
 namespace Valve.VR
 {
-	public struct CVRSettingHelper
+	public struct VRControllerAxis_t
 	{
-		public IntPtr m_pSettings;
+		public float x;
+
+		public float y;
 	}
 }
 namespace Valve.VR
 {
+	public struct CVRSettingHelper
+	{
+		public IntPtr m_pSettings;
+	}
 }

@@ -1,22 +1,28 @@
 namespace UnityEngine.UI;
 
-public interface ILayoutElement
+public interface ILayoutSelfController : ILayoutController
 {
-	float minWidth { get; }
+}
+namespace UnityEngine.UI
+{
+	public interface ILayoutElement
+	{
+		float minWidth { get; }
 
-	float preferredWidth { get; }
+		float preferredWidth { get; }
 
-	float flexibleWidth { get; }
+		float flexibleWidth { get; }
 
-	float minHeight { get; }
+		float minHeight { get; }
 
-	float preferredHeight { get; }
+		float preferredHeight { get; }
 
-	float flexibleHeight { get; }
+		float flexibleHeight { get; }
 
-	int layoutPriority { get; }
+		int layoutPriority { get; }
 
-	void CalculateLayoutInputHorizontal();
+		void CalculateLayoutInputHorizontal();
 
-	void CalculateLayoutInputVertical();
+		void CalculateLayoutInputVertical();
+	}
 }

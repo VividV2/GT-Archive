@@ -1,2 +1,15 @@
-// Could not decompile System.Net.GlobalSSPI
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net
+{
+	internal static class GlobalSSPI
+	{
+		internal static readonly SSPIInterface SSPIAuth = new SSPIAuthType();
+
+		internal static readonly SSPIInterface SSPISecureChannel = new SSPISecureChannelType();
+	}
+}
+namespace Internal.Cryptography
+{
+}
+namespace Mono.Net.Dns
+{
+}

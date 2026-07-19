@@ -1,31 +1,27 @@
 using Meta.WitAi.Data.Configuration;
 using Meta.WitAi.Data.Info;
 
-namespace Meta.WitAi
+namespace Meta.WitAi;
+
+public interface IWitRequestConfiguration
 {
-	public interface IWitRequestConfiguration
-	{
-		WitRequestType RequestType { get; }
+	WitRequestType RequestType { get; }
 
-		int RequestTimeoutMs { get; }
+	int RequestTimeoutMs { get; }
 
-		string GetConfigurationId();
+	string GetConfigurationId();
 
-		string GetVersionTag();
+	string GetVersionTag();
 
-		string GetApplicationId();
+	string GetApplicationId();
 
-		WitAppInfo GetApplicationInfo();
+	WitAppInfo GetApplicationInfo();
 
-		WitConfigurationAssetData[] GetConfigData();
+	WitConfigurationAssetData[] GetConfigData();
 
-		IWitRequestEndpointInfo GetEndpointInfo();
+	IWitRequestEndpointInfo GetEndpointInfo();
 
-		string GetClientAccessToken();
+	string GetClientAccessToken();
 
-		void UpdateDataAssets();
-	}
-}
-namespace Meta.Voice.Net.WebSockets.Requests
-{
+	void UpdateDataAssets();
 }

@@ -15,3 +15,6 @@ public enum XmlSchemaForm
 	[XmlEnum("unqualified")]
 	Unqualified
 }
+namespace System.Xml.Schema
+{
+}

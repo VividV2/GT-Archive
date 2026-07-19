@@ -1,6 +1,2 @@
-namespace System.Configuration;
-
-/// <summary>Represents a method to be called after the validation of an object.</summary>
-/// <param name="value">The callback method.</param>
-/// <param name="o">The callback method.</param>
-public delegate void ValidatorCallback(object value);
+// Could not decompile System.Configuration.ValidatorCallback
+// This type uses unsupported IL or has too many generic parameters.

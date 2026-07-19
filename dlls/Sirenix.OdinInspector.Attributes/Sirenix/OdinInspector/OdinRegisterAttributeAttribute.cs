@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Collections.Generic;
 
 namespace Sirenix.OdinInspector
 {
@@ -37,12 +35,6 @@ namespace Sirenix.OdinInspector
 		}
 	}
 }
-namespace Sirenix.OdinInspector.Internal
+namespace Sirenix.OdinInspector
 {
-	public interface ISubGroupProviderAttribute
-	{
-		IList<PropertyGroupAttribute> GetSubGroupAttributes();
-
-		string RepathMemberAttribute(PropertyGroupAttribute attr);
-	}
 }

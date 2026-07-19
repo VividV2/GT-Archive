@@ -2,22 +2,10 @@ using System;
 
 namespace UnityEngine.UIElements;
 
-internal enum NavigationDeviceType
+[Flags]
+internal enum InvokePolicy
 {
-	Unknown,
-	Keyboard,
-	NonKeyboard
-}
-namespace UnityEngine.UIElements
-{
-	[Flags]
-	internal enum InvokePolicy
-	{
-		Default = 0,
-		IncludeDisabled = 1,
-		Once = 2
-	}
-}
-namespace UnityEngine.UIElements
-{
+	Default = 0,
+	IncludeDisabled = 1,
+	Once = 2
 }

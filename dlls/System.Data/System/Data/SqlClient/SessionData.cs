@@ -1,14 +1,2 @@
-using System.IO;
-using System.IO;
-
-namespace System.Data.SqlClient;
-
-internal class StreamDataFeed : DataFeed
-{
-	internal Stream _source;
-
-	internal StreamDataFeed(Stream source)
-	{
-		_source = source;
-	}
-}
+// Could not decompile System.Data.SqlClient.SessionData
+// This type uses unsupported IL or has too many generic parameters.

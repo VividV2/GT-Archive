@@ -1,6 +1,10 @@
-namespace Modio;
-
-public interface IModioLogHandler
+namespace Modio
 {
-	void LogHandler(LogLevel logLevel, object message);
+}
+namespace Modio
+{
+	public interface IModioLogHandler
+	{
+		void LogHandler(LogLevel logLevel, object message);
+	}
 }

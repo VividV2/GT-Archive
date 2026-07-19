@@ -1,6 +1,2 @@
-namespace System.Reflection;
+namespace System.Resources;
 
-public delegate Module ModuleResolveEventHandler(object sender, ResolveEventArgs e);
-namespace System.Reflection
-{
-}

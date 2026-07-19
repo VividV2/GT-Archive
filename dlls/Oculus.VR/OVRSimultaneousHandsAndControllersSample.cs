@@ -1,5 +1,2 @@
-using UnityEngine;
-
-namespace Assets.OVR.Scripts;
-
-internal delegate void FixMethodDelegate(Object obj, bool isLastInSet, int selectedIndex);
+// Could not decompile OVRSimultaneousHandsAndControllersSample
+// This type uses unsupported IL or has too many generic parameters.

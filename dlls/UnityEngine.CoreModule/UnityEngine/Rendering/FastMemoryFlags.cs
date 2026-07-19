@@ -1,11 +1,2 @@
-using System;
-
-namespace UnityEngine.Rendering;
-
-[Flags]
-public enum FastMemoryFlags
-{
-	None = 0,
-	SpillTop = 1,
-	SpillBottom = 2
-}
+// Could not decompile UnityEngine.Rendering.FastMemoryFlags
+// This type uses unsupported IL or has too many generic parameters.

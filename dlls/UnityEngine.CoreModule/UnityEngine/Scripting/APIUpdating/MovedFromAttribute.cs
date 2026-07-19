@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.Scripting.APIUpdating.MovedFromAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Scripting
+{
+}
+namespace UnityEngine.Serialization
+{
+}

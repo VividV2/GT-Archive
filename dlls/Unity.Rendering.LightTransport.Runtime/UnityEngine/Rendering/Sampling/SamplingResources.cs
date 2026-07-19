@@ -1,3 +1,2 @@
-namespace UnityEngine.Rendering.UnifiedRayTracing
-{
-}
+namespace UnityEngine.Rendering.RadeonRays;
+

@@ -1,14 +1,2 @@
-using UnityEngine;
-
-namespace Unity.Cinemachine
-{
-	public sealed class TagFieldAttribute : PropertyAttribute
-	{
-	}
-}
-namespace Unity.Cinemachine
-{
-}
-namespace Unity.Cinemachine
-{
-}
+// Could not decompile Unity.Cinemachine.TagFieldAttribute
+// This type uses unsupported IL or has too many generic parameters.

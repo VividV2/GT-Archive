@@ -1,13 +1,23 @@
-namespace Cysharp.Threading.Tasks
+using UnityEngine.EventSystems;
+
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	public interface ITaskPoolNode<T>
+	public interface IAsyncOnRenderObjectHandler
 	{
-		ref T NextNode { get; }
+		UniTask OnRenderObjectAsync();
 	}
 }
 namespace Cysharp.Threading.Tasks.Triggers
 {
+	public interface IAsyncOnPointerClickHandler
+	{
+		UniTask<PointerEventData> OnPointerClickAsync();
+	}
 }
-namespace Cysharp.Threading.Tasks.Internal
+namespace Cysharp.Threading.Tasks.Triggers
 {
+	public interface IAsyncOnBeginDragHandler
+	{
+		UniTask<PointerEventData> OnBeginDragAsync();
+	}
 }

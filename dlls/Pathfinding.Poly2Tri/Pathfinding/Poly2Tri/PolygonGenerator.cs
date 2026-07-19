@@ -1,6 +1,2 @@
-namespace Pathfinding.Poly2Tri
-{
-}
-namespace Pathfinding.Poly2Tri
-{
-}
+// Could not decompile Pathfinding.Poly2Tri.PolygonGenerator
+// This type uses unsupported IL or has too many generic parameters.

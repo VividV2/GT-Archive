@@ -1,20 +1,16 @@
 using System.Collections.Generic;
 
-namespace Meta.Voice.TelemetryUtilities
+namespace Meta.Voice.TelemetryUtilities;
+
+public interface ITelemetryWriter
 {
-}
-namespace Meta.Voice.TelemetryUtilities
-{
-	public interface ITelemetryWriter
-	{
-		void StartEvent(OperationID operationId, RuntimeTelemetryEventType runtimeTelemetryEventType);
+	void StartEvent(OperationID operationId, RuntimeTelemetryEventType runtimeTelemetryEventType);
 
-		void LogEventTermination(OperationID operationId, TerminationReason reason = TerminationReason.Successful, string message = "");
+	void LogEventTermination(OperationID operationId, TerminationReason reason = TerminationReason.Successful, string message = "");
 
-		void LogInstantaneousEvent(OperationID operationId, RuntimeTelemetryEventType runtimeTelemetryEventType, Dictionary<string, string> annotations = null);
+	void LogInstantaneousEvent(OperationID operationId, RuntimeTelemetryEventType runtimeTelemetryEventType, Dictionary<string, string> annotations = null);
 
-		void LogPoint(OperationID operationId, RuntimeTelemetryPoint point);
+	void LogPoint(OperationID operationId, RuntimeTelemetryPoint point);
 
-		void AnnotateEvent(OperationID operationID, string annotationKey, string annotationValue);
-	}
+	void AnnotateEvent(OperationID operationID, string annotationKey, string annotationValue);
 }

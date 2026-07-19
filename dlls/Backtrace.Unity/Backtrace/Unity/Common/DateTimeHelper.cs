@@ -1,2 +1,6 @@
-namespace Backtrace.Unity.Model.Attributes;
-
+namespace Backtrace.Unity.Extensions
+{
+}
+namespace Backtrace.Unity.Common
+{
+}

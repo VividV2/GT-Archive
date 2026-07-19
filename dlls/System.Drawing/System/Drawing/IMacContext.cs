@@ -1,28 +1,10 @@
-using System.Drawing.Imaging;
-using System.Drawing.Imaging;
+namespace System.Drawing.Drawing2D;
 
-namespace System.Drawing
+/// <summary>Specifies whether commands in the graphics stack are terminated (flushed) immediately or executed as soon as possible.</summary>
+public enum FlushIntention
 {
-	internal interface IMacContext
-	{
-		void Synchronize();
-
-		void Release();
-	}
-}
-namespace System.Drawing
-{
-	internal struct GdipEncoderParameter
-	{
-		internal Guid guid;
-
-		internal uint numberOfValues;
-
-		internal EncoderParameterValueType type;
-
-		internal IntPtr value;
-	}
-}
-namespace System.Drawing
-{
+	/// <summary>Specifies that the stack of all graphics operations is flushed immediately.</summary>
+	Flush,
+	/// <summary>Specifies that all graphics operations on the stack are executed as soon as possible. This synchronizes the graphics state.</summary>
+	Sync
 }

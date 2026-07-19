@@ -1,21 +1,14 @@
-namespace System.Runtime.InteropServices.ComTypes
+using System.Runtime.InteropServices;
+
+namespace System.Security;
+
+/// <summary>Allows managed code to call into unmanaged code without a stack walk. This class cannot be inherited.</summary>
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Interface | AttributeTargets.Delegate, AllowMultiple = true, Inherited = false)]
+[ComVisible(true)]
+public sealed class SuppressUnmanagedCodeSecurityAttribute : Attribute
 {
-	[Serializable]
-	[Flags]
-	public enum VARFLAGS : short
+	/// <summary>Initializes a new instance of the <see cref="T:System.Security.SuppressUnmanagedCodeSecurityAttribute" /> class.</summary>
+	public SuppressUnmanagedCodeSecurityAttribute()
 	{
-		VARFLAG_FREADONLY = 1,
-		VARFLAG_FSOURCE = 2,
-		VARFLAG_FBINDABLE = 4,
-		VARFLAG_FREQUESTEDIT = 8,
-		VARFLAG_FDISPLAYBIND = 0x10,
-		VARFLAG_FDEFAULTBIND = 0x20,
-		VARFLAG_FHIDDEN = 0x40,
-		VARFLAG_FRESTRICTED = 0x80,
-		VARFLAG_FDEFAULTCOLLELEM = 0x100,
-		VARFLAG_FUIDEFAULT = 0x200,
-		VARFLAG_FNONBROWSABLE = 0x400,
-		VARFLAG_FREPLACEABLE = 0x800,
-		VARFLAG_FIMMEDIATEBIND = 0x1000
 	}
 }

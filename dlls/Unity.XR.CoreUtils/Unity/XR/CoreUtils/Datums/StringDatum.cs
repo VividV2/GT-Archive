@@ -1,12 +1,2 @@
-using UnityEngine;
-
-namespace Unity.XR.CoreUtils.Datums
-{
-	[CreateAssetMenu(fileName = "StringDatum", menuName = "XR/Value Datums/String Datum", order = 0)]
-	public class StringDatum : Datum<string>
-	{
-	}
-}
-namespace Unity.XR.CoreUtils
-{
-}
+// Could not decompile Unity.XR.CoreUtils.Datums.StringDatum
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,31 +1,59 @@
 namespace Valve.VR
 {
-	public enum VROverlayFlags
+	public struct IVRBlockQueue
 	{
-		NoDashboardTab = 8,
-		SendVRDiscreteScrollEvents = 0x40,
-		SendVRTouchpadEvents = 0x80,
-		ShowTouchPadScrollWheel = 0x100,
-		TransferOwnershipToInternalProcess = 0x200,
-		SideBySide_Parallel = 0x400,
-		SideBySide_Crossed = 0x800,
-		Panorama = 0x1000,
-		StereoPanorama = 0x2000,
-		SortWithNonSceneOverlays = 0x4000,
-		VisibleInDashboard = 0x8000,
-		MakeOverlaysInteractiveIfVisible = 0x10000,
-		SendVRSmoothScrollEvents = 0x20000,
-		ProtectedContent = 0x40000,
-		HideLaserIntersection = 0x80000,
-		WantsModalBehavior = 0x100000,
-		IsPremultiplied = 0x200000
-	}
-}
-namespace Valve.VR
-{
-	public enum VROverlayInputMethod
-	{
-		None,
-		Mouse
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate EBlockQueueError _Create(ref ulong pulQueueHandle, IntPtr pchPath, uint unBlockDataSize, uint unBlockHeaderSize, uint unBlockCount);
+
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate EBlockQueueError _Connect(ref ulong pulQueueHandle, IntPtr pchPath);
+
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate EBlockQueueError _Destroy(ulong ulQueueHandle);
+
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate EBlockQueueError _AcquireWriteOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer);
+
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate EBlockQueueError _ReleaseWriteOnlyBlock(ulong ulQueueHandle, ulong ulBlockHandle);
+
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate EBlockQueueError _WaitAndAcquireReadOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer, EBlockQueueReadType eReadType, uint unTimeoutMs);
+
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate EBlockQueueError _AcquireReadOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer, EBlockQueueReadType eReadType);
+
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate EBlockQueueError _ReleaseReadOnlyBlock(ulong ulQueueHandle, ulong ulBlockHandle);
+
+		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+		internal delegate EBlockQueueError _QueueHasReader(ulong ulQueueHandle, ref bool pbHasReaders);
+
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _Create Create;
+
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _Connect Connect;
+
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _Destroy Destroy;
+
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _AcquireWriteOnlyBlock AcquireWriteOnlyBlock;
+
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _ReleaseWriteOnlyBlock ReleaseWriteOnlyBlock;
+
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _WaitAndAcquireReadOnlyBlock WaitAndAcquireReadOnlyBlock;
+
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _AcquireReadOnlyBlock AcquireReadOnlyBlock;
+
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _ReleaseReadOnlyBlock ReleaseReadOnlyBlock;
+
+		[MarshalAs(UnmanagedType.FunctionPtr)]
+		internal _QueueHasReader QueueHasReader;
 	}
 }

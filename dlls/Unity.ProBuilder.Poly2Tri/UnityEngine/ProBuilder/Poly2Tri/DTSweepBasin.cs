@@ -1,2 +1,18 @@
-// Could not decompile UnityEngine.ProBuilder.Poly2Tri.DTSweepBasin
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.ProBuilder.Poly2Tri
+{
+	internal class DTSweepBasin
+	{
+		public AdvancingFrontNode leftNode;
+
+		public AdvancingFrontNode bottomNode;
+
+		public AdvancingFrontNode rightNode;
+
+		public double width;
+
+		public bool leftHighest;
+	}
+}
+namespace UnityEngine.ProBuilder.Poly2Tri
+{
+}

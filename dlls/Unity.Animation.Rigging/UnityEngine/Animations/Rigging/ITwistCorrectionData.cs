@@ -1,14 +1,5 @@
 namespace UnityEngine.Animations.Rigging
 {
-	internal struct SyncableProperties
-	{
-		public RigProperties rig;
-
-		public ConstraintProperties[] constraints;
-	}
-}
-namespace UnityEngine.Animations.Rigging
-{
 	public interface ITwistCorrectionData
 	{
 		Transform source { get; }
@@ -19,4 +10,7 @@ namespace UnityEngine.Animations.Rigging
 
 		string twistNodesProperty { get; }
 	}
+}
+namespace UnityEngine.Animations.Rigging
+{
 }

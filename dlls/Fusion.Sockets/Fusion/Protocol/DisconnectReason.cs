@@ -1,13 +1,17 @@
-namespace Fusion.Protocol;
-
-public enum DisconnectReason : byte
+namespace Fusion.Protocol
 {
-	None,
-	ServerLogic,
-	InvalidEventCode,
-	InvalidJoinMsgType,
-	InvalidJoinGameMode,
-	IncompatibleConfiguration,
-	ServerAlreadyInRoom,
-	Error
+	public enum DisconnectReason : byte
+	{
+		None,
+		ServerLogic,
+		InvalidEventCode,
+		InvalidJoinMsgType,
+		InvalidJoinGameMode,
+		IncompatibleConfiguration,
+		ServerAlreadyInRoom,
+		Error
+	}
+}
+namespace Fusion.Protocol
+{
 }

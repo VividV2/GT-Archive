@@ -1,13 +1,2 @@
-using System.Security.Policy;
+namespace System.Runtime.InteropServices.ComTypes;
 
-namespace System.Security;
-
-public interface ISecurityPolicyEncodable
-{
-	void FromXml(SecurityElement e, PolicyLevel level);
-
-	SecurityElement ToXml(PolicyLevel level);
-}
-namespace System
-{
-}

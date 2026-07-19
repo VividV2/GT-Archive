@@ -1,14 +1,16 @@
-namespace Valve.Newtonsoft.Json;
+using System.Collections.Generic;
+using Valve.Newtonsoft.Json.Utilities;
+using System.Collections.Generic;
+using Valve.Newtonsoft.Json.Utilities;
 
-internal enum ReadType
+namespace Valve.Newtonsoft.Json.Serialization;
+
+internal class DefaultContractResolverState
 {
-	Read,
-	ReadAsInt32,
-	ReadAsBytes,
-	ReadAsString,
-	ReadAsDecimal,
-	ReadAsDateTime,
-	ReadAsDateTimeOffset,
-	ReadAsDouble,
-	ReadAsBoolean
+	public Dictionary<ResolverContractKey, JsonContract> ContractCache;
+
+	public PropertyNameTable NameTable = new PropertyNameTable();
+}
+namespace Valve.Newtonsoft.Json.Utilities
+{
 }

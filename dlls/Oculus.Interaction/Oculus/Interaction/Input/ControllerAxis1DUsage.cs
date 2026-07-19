@@ -1,11 +1,18 @@
 using System;
 
-namespace Oculus.Interaction.Input;
-
-[Flags]
-public enum ControllerAxis1DUsage
+namespace Oculus.Interaction.Input
 {
-	None = 0,
-	Trigger = 1,
-	Grip = 2
+	[Flags]
+	public enum ControllerAxis1DUsage
+	{
+		None = 0,
+		Trigger = 1,
+		Grip = 2
+	}
+}
+namespace Oculus.Interaction.Input
+{
+}
+namespace Oculus.Interaction.Input
+{
 }

@@ -1,5 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering;
-
-public interface IXRPokeFilter : IXRSelectFilter, IXRInteractionStrengthFilter
-{
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Inputs.Composites.ButtonFallbackComposite
+// This type uses unsupported IL or has too many generic parameters.

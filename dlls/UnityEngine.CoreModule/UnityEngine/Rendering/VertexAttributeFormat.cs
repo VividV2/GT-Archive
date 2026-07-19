@@ -1,2 +1,21 @@
-// Could not decompile UnityEngine.Rendering.VertexAttributeFormat
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering
+{
+	public enum VertexAttributeFormat
+	{
+		Float32,
+		Float16,
+		UNorm8,
+		SNorm8,
+		UNorm16,
+		SNorm16,
+		UInt8,
+		SInt8,
+		UInt16,
+		SInt16,
+		UInt32,
+		SInt32
+	}
+}
+namespace UnityEngine.Search
+{
+}

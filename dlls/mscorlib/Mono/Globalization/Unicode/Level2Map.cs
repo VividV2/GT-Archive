@@ -1,18 +1,14 @@
-namespace Mono.Globalization.Unicode
+namespace Mono.Globalization.Unicode;
+
+internal class Level2Map
 {
-	internal class Level2Map
+	public byte Source;
+
+	public byte Replace;
+
+	public Level2Map(byte source, byte replace)
 	{
-		public byte Source;
-
-		public byte Replace;
-
-		public Level2Map(byte source, byte replace)
-		{
-			Source = source;
-			Replace = replace;
-		}
+		Source = source;
+		Replace = replace;
 	}
-}
-namespace System.Runtime.Remoting.Messaging
-{
 }

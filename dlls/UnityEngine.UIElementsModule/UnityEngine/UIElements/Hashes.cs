@@ -1,32 +1,8 @@
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
+namespace UnityEngine.UIElements;
 
-namespace UnityEngine.UIElements
+internal struct Hashes
 {
-	[MovedFrom(true, "UnityEditor.UIElements", "UnityEditor.UIElementsModule", null)]
-	public interface IValueField<T>
-	{
-		T value { get; set; }
+	public const int kSize = 4;
 
-		void ApplyInputDeviceDelta(Vector3 delta, DeltaSpeed speed, T startValue);
-
-		void StartDragging();
-
-		void StopDragging();
-	}
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-	internal struct Hashes
-	{
-		public const int kSize = 4;
-
-		public unsafe fixed int hashes[4];
-	}
+	public unsafe fixed int hashes[4];
 }

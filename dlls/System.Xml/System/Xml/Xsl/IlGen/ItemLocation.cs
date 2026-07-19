@@ -1,15 +1,11 @@
-namespace System.Xml.Schema
+namespace System.Xml.Xsl.IlGen;
+
+internal enum ItemLocation
 {
-}
-namespace System.Xml.Xsl.IlGen
-{
-	internal enum ItemLocation
-	{
-		None,
-		Stack,
-		Parameter,
-		Local,
-		Current,
-		Global
-	}
+	None,
+	Stack,
+	Parameter,
+	Local,
+	Current,
+	Global
 }

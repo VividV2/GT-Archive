@@ -1,8 +1,3 @@
-namespace Pathfinding.Ionic.Zlib;
-
-internal enum DeflateFlavor
+namespace Pathfinding.Ionic.Zip
 {
-	Store,
-	Fast,
-	Slow
 }

@@ -1,17 +1,13 @@
-namespace Modio.Reports
+namespace Modio.Reports;
+
+public enum ReportType
 {
-	public enum ReportType
-	{
-		Generic,
-		DMCA,
-		NotWorking,
-		RudeContent,
-		IllegalContent,
-		StolenContent,
-		FalseInformation,
-		Other
-	}
-}
-namespace ICSharpCode.SharpZipLib.BZip2
-{
+	Generic,
+	DMCA,
+	NotWorking,
+	RudeContent,
+	IllegalContent,
+	StolenContent,
+	FalseInformation,
+	Other
 }

@@ -1,17 +1,13 @@
 using System;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[Flags]
+public enum MaterialGlobalIlluminationFlags
 {
-	[Flags]
-	public enum MaterialGlobalIlluminationFlags
-	{
-		None = 0,
-		RealtimeEmissive = 1,
-		BakedEmissive = 2,
-		EmissiveIsBlack = 4,
-		AnyEmissive = 3
-	}
-}
-namespace UnityEngine
-{
+	None = 0,
+	RealtimeEmissive = 1,
+	BakedEmissive = 2,
+	EmissiveIsBlack = 4,
+	AnyEmissive = 3
 }

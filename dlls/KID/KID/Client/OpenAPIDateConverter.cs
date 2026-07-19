@@ -1,11 +1,17 @@
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace KID.Client;
+namespace KID.Model;
 
-public class OpenAPIDateConverter : IsoDateTimeConverter
+[JsonConverter(typeof(StringEnumConverter))]
+public enum AgeCategory
 {
-	public OpenAPIDateConverter()
-	{
-		base.DateTimeFormat = "yyyy-MM-dd";
-	}
+	[EnumMember(Value = "DIGITAL_YOUTH_OR_ADULT")]
+	DIGITALYOUTHORADULT = 1,
+	[EnumMember(Value = "ADULT")]
+	ADULT
 }

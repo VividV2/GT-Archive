@@ -1,2 +1,3 @@
-namespace System.CodeDom;
-
+namespace Mono.Net.Security
+{
+}

@@ -1,7 +1,6 @@
-namespace System.Collections.Specialized
+namespace System.ComponentModel
 {
 }
-namespace System.ComponentModel.Design.Serialization
+namespace System.ComponentModel
 {
-	public delegate void ResolveNameEventHandler(object sender, ResolveNameEventArgs e);
 }

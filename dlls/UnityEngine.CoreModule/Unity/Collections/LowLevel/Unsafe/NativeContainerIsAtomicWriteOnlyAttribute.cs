@@ -1,2 +1,10 @@
-// Could not decompile Unity.Collections.LowLevel.Unsafe.NativeContainerIsAtomicWriteOnlyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Scripting;
+
+namespace Unity.Collections.LowLevel.Unsafe;
+
+[RequiredByNativeCode]
+[AttributeUsage(AttributeTargets.Struct)]
+public sealed class NativeContainerIsAtomicWriteOnlyAttribute : Attribute
+{
+}

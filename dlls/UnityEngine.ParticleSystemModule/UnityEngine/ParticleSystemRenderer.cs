@@ -1,79 +1,47 @@
 using System;
-using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using Unity.Burst;
+using Unity.Collections.LowLevel.Unsafe;
+using Unity.Jobs.LowLevel.Unsafe;
 using System;
-using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using Unity.Burst;
+using Unity.Collections.LowLevel.Unsafe;
+using Unity.Jobs.LowLevel.Unsafe;
 
-namespace UnityEngine;
+namespace UnityEngine.ParticleSystemJobs;
 
-public static class ParticlePhysicsExtensions
+[StructLayout(LayoutKind.Sequential, Size = 1)]
+internal struct ParticleSystemParallelForBatchJobStruct<T> where T : struct, IJobParticleSystemParallelForBatch
 {
-	[Obsolete("GetCollisionEvents function using ParticleCollisionEvent[] is deprecated. Use List<ParticleCollisionEvent> instead.", false)]
-	public static int GetCollisionEvents(this ParticleSystem ps, GameObject go, ParticleCollisionEvent[] collisionEvents)
+	public delegate void ExecuteJobFunction(ref T data, IntPtr listDataPtr, IntPtr bufferRangePatchData, ref JobRanges ranges, int jobIndex);
+
+	public static readonly BurstLike.SharedStatic<IntPtr> jobReflectionData = BurstLike.SharedStatic<IntPtr>.GetOrCreate<ParticleSystemParallelForBatchJobStruct<T>>();
+
+	[BurstDiscard]
+	public static void Initialize()
 	{
-		if (go == null)
+		if (jobReflectionData.Data == IntPtr.Zero)
 		{
-			throw new ArgumentNullException("go");
-		}
-		if (collisionEvents == null)
-		{
-			throw new ArgumentNullException("collisionEvents");
-		}
-		return ParticleSystemExtensionsImpl.GetCollisionEventsDeprecated(ps, go, collisionEvents);
-	}
-
-	public static int GetSafeCollisionEventSize(this ParticleSystem ps)
-	{
-		return ParticleSystemExtensionsImpl.GetSafeCollisionEventSize(ps);
-	}
-
-	public static int GetCollisionEvents(this ParticleSystem ps, GameObject go, List<ParticleCollisionEvent> collisionEvents)
-	{
-		return ParticleSystemExtensionsImpl.GetCollisionEvents(ps, go, collisionEvents);
-	}
-
-	public static int GetSafeTriggerParticlesSize(this ParticleSystem ps, ParticleSystemTriggerEventType type)
-	{
-		return ParticleSystemExtensionsImpl.GetSafeTriggerParticlesSize(ps, (int)type);
-	}
-
-	public static int GetTriggerParticles(this ParticleSystem ps, ParticleSystemTriggerEventType type, List<ParticleSystem.Particle> particles)
-	{
-		return ParticleSystemExtensionsImpl.GetTriggerParticles(ps, (int)type, particles);
-	}
-
-	public static int GetTriggerParticles(this ParticleSystem ps, ParticleSystemTriggerEventType type, List<ParticleSystem.Particle> particles, out ParticleSystem.ColliderData colliderData)
-	{
-		switch (type)
-		{
-		case ParticleSystemTriggerEventType.Exit:
-			throw new InvalidOperationException("Querying the collider data for the Exit event is not currently supported.");
-		case ParticleSystemTriggerEventType.Outside:
-			throw new InvalidOperationException("Querying the collider data for the Outside event is not supported, because when a particle is outside the collision volume, it is always outside every collider.");
-		default:
-			colliderData = default(ParticleSystem.ColliderData);
-			return ParticleSystemExtensionsImpl.GetTriggerParticlesWithData(ps, (int)type, particles, ref colliderData);
+			jobReflectionData.Data = JobsUtility.CreateJobReflectionData(typeof(T), new ExecuteJobFunction(Execute));
 		}
 	}
 
-	public static void SetTriggerParticles(this ParticleSystem ps, ParticleSystemTriggerEventType type, List<ParticleSystem.Particle> particles, int offset, int count)
+	public unsafe static void Execute(ref T data, IntPtr listDataPtr, IntPtr bufferRangePatchData, ref JobRanges ranges, int jobIndex)
 	{
-		if (particles == null)
+		NativeListData* ptr = (NativeListData*)(void*)listDataPtr;
+		NativeListData* ptr;
+		ParticleSystem.CopyManagedJobData(ptr->system, out var particleData);
+		NativeParticleData particleData;
+		ParticleSystemJobData jobData = new ParticleSystemJobData(ref particleData);
+		int beginIndex;
+		int endIndex;
+		int beginIndex;
+		int endIndex;
+		while (JobsUtility.GetWorkStealingRange(ref ranges, jobIndex, out beginIndex, out endIndex))
 		{
-			throw new ArgumentNullException("particles");
+			ParticleSystemJobData jobData;
+			data.Execute(jobData, beginIndex, endIndex - beginIndex);
 		}
-		if (offset >= particles.Count)
-		{
-			throw new ArgumentOutOfRangeException("offset", "offset should be smaller than the size of the particles list.");
-		}
-		if (offset + count >= particles.Count)
-		{
-			throw new ArgumentOutOfRangeException("count", "offset+count should be smaller than the size of the particles list.");
-		}
-		ParticleSystemExtensionsImpl.SetTriggerParticles(ps, (int)type, particles, offset, count);
-	}
-
-	public static void SetTriggerParticles(this ParticleSystem ps, ParticleSystemTriggerEventType type, List<ParticleSystem.Particle> particles)
-	{
-		ParticleSystemExtensionsImpl.SetTriggerParticles(ps, (int)type, particles, 0, particles.Count);
 	}
 }

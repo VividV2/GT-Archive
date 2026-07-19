@@ -1,14 +1,10 @@
-namespace GorillaTagScripts.VirtualStumpCustomMaps
+namespace GorillaTagScripts.VirtualStumpCustomMaps;
+
+public enum MapLoadStatus
 {
-	public enum MapLoadStatus
-	{
-		None,
-		Downloading,
-		Loading,
-		Unloading,
-		Error
-	}
-}
-namespace GorillaTagScripts.GhostReactor
-{
+	None,
+	Downloading,
+	Loading,
+	Unloading,
+	Error
 }

@@ -1,15 +1,2 @@
-namespace g3;
-
-public interface IGrid3
-{
-	AxisAlignedBox3i BoundsInclusive { get; }
-}
-namespace g3
-{
-}
-namespace g3
-{
-}
-namespace g3
-{
-}
+// Could not decompile g3.TriangulatedPolygonGenerator
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,6 @@
-namespace System.Xml.Xsl.Xslt;
-
+namespace System.Xml.Schema
+{
+}
+namespace System.Xml.Schema
+{
+}

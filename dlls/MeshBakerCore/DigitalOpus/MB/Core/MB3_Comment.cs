@@ -1,2 +1,9 @@
-// Could not decompile DigitalOpus.MB.Core.MB3_Comment
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace DigitalOpus.MB.Core;
+
+public class MB3_Comment : MonoBehaviour
+{
+	[Multiline]
+	public string comment;
+}

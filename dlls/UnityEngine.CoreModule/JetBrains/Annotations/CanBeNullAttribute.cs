@@ -1,13 +1,2 @@
-namespace UnityEngine;
-
-public enum MeshTopology
-{
-	Triangles = 0,
-	Quads = 2,
-	Lines = 3,
-	LineStrip = 4,
-	Points = 5
-}
-namespace Unity.Profiling.Memory
-{
-}
+// Could not decompile JetBrains.Annotations.CanBeNullAttribute
+// This type uses unsupported IL or has too many generic parameters.

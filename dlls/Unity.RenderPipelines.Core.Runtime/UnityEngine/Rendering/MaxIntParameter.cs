@@ -1,30 +1,27 @@
 using System;
 using System.Diagnostics;
+using System;
+using System.Diagnostics;
 
 namespace UnityEngine.Rendering;
 
 [Serializable]
 [DebuggerDisplay("{m_Value} ({m_OverrideState})")]
-public class MaxIntParameter : IntParameter
+public class RenderTextureParameter : VolumeParameter<RenderTexture>
 {
-	[NonSerialized]
-	public int max;
-
-	public override int value
-	{
-		get
-		{
-			return m_Value;
-		}
-		set
-		{
-			m_Value = Mathf.Min(value, max);
-		}
-	}
-
-	public MaxIntParameter(int value, int max, bool overrideState = false)
+	public RenderTextureParameter(RenderTexture value, bool overrideState = false)
 		: base(value, overrideState)
 	{
-		this.max = max;
+	}
+
+	public override int GetHashCode()
+	{
+		int result = base.GetHashCode();
+		int result;
+		if (value != null)
+		{
+			result = 23 * CoreUtils.GetTextureHash(value);
+		}
+		return result;
 	}
 }

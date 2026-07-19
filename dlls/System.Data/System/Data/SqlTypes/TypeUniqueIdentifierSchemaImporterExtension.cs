@@ -10,9 +10,12 @@ namespace System.Data.SqlTypes
 		}
 	}
 }
-namespace System.Data.SqlTypes
+namespace System.Data.OleDb
 {
 }
-namespace System.Data.ProviderBase
+namespace System.Data
+{
+}
+namespace System.Data.SqlClient
 {
 }

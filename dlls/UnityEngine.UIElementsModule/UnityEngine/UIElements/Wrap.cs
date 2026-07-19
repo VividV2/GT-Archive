@@ -1,12 +1,8 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum Wrap
 {
-	public enum Wrap
-	{
-		NoWrap,
-		Wrap,
-		WrapReverse
-	}
-}
-namespace UnityEngine.UIElements
-{
+	NoWrap,
+	Wrap,
+	WrapReverse
 }

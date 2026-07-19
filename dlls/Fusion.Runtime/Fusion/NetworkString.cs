@@ -1,10 +1,13 @@
-namespace Fusion;
-
-internal struct NetworkObjectPacketData
+namespace Fusion
 {
-	public NetworkId Id;
-
-	public Tick ResetTick;
-
-	public NetworkObjectPacketFlags Flags;
+	public static class NetworkString
+	{
+		public unsafe static int GetCapacity<TSize>() where TSize : unmanaged, IFixedStorage
+		{
+			return sizeof(TSize) / 4;
+		}
+	}
+}
+namespace Fusion
+{
 }

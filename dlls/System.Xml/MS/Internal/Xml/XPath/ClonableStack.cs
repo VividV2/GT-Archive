@@ -1,0 +1,2 @@
+namespace System.Xml.Schema;
+

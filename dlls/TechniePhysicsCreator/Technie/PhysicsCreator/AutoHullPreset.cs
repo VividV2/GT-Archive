@@ -1,10 +1,28 @@
-namespace Technie.PhysicsCreator;
+using UnityEngine;
+using UnityEngine;
 
-public enum AutoHullPreset
+namespace Technie.PhysicsCreator
 {
-	Low,
-	Medium,
-	High,
-	Placebo,
-	Custom
+	public interface ICreatorComponent
+	{
+		GameObject GetGameObject();
+
+		bool HasEditorData();
+
+		IEditorData GetEditorData();
+	}
+}
+namespace Technie.PhysicsCreator
+{
+}
+namespace Technie.PhysicsCreator
+{
+	public enum AutoHullPreset
+	{
+		Low,
+		Medium,
+		High,
+		Placebo,
+		Custom
+	}
 }

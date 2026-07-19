@@ -1,2 +1,2 @@
-namespace System;
+namespace System.Configuration;
 

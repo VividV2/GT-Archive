@@ -1,12 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace System.EnterpriseServices;
-
-[Serializable]
-[ComVisible(false)]
-public enum SxsOption
-{
-	Ignore,
-	Inherit,
-	New
-}
+// Could not decompile System.EnterpriseServices.Internal.GenerateMetadata
+// This type uses unsupported IL or has too many generic parameters.

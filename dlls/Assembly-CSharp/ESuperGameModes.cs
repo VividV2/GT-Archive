@@ -1,2 +1,14 @@
-// Could not decompile ESuperGameModes
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace emotitron.Compression.HalfFloat
+{
+}
+namespace GorillaTag.Cosmetics
+{
+}
+[Flags]
+public enum ESuperGameModes
+{
+	SuperInfect = 0x800,
+	SuperCasual = 0x1000
+}

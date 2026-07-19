@@ -1,11 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
-[CallbackIdentity(1014)]
-public struct NewUrlLaunchParameters_t
-{
-	public const int k_iCallback = 1014;
-}
+// Could not decompile UnitySourceGeneratedAssemblyMonoScriptTypes_v1
+// This type uses unsupported IL or has too many generic parameters.

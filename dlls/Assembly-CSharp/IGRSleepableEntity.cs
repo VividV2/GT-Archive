@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace GorillaNetworking.Store;
+
 public interface IGRSleepableEntity
 {
 	Vector3 Position { get; }
@@ -11,4 +13,7 @@ public interface IGRSleepableEntity
 	void WakeUp();
 
 	void Sleep();
+}
+namespace Voxels
+{
 }

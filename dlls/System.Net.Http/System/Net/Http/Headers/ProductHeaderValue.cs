@@ -1,3 +1,2 @@
-namespace System.Net.Http.Headers;
-
-internal delegate bool TryParseDelegate<T>(string value, out T result);
+// Could not decompile System.Net.Http.Headers.ProductHeaderValue
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,30 @@
-namespace System.IO;
-
-internal struct FAMConnection
+namespace System.IO
 {
-	public int FD;
+	internal struct FAMConnection
+	{
+		public int FD;
 
-	public IntPtr opaque;
+		public IntPtr opaque;
+	}
+}
+namespace System.ComponentModel.Design
+{
+	public interface IEventBindingService
+	{
+		string CreateUniqueMethodName(IComponent component, EventDescriptor e);
+
+		ICollection GetCompatibleMethods(EventDescriptor e);
+
+		EventDescriptor GetEvent(PropertyDescriptor property);
+
+		PropertyDescriptorCollection GetEventProperties(EventDescriptorCollection events);
+
+		PropertyDescriptor GetEventProperty(EventDescriptor e);
+
+		bool ShowCode();
+
+		bool ShowCode(int lineNumber);
+
+		bool ShowCode(IComponent component, EventDescriptor e);
+	}
 }

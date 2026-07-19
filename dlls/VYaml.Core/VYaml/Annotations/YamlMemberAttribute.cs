@@ -1,2 +1,2 @@
-// Could not decompile VYaml.Annotations.YamlMemberAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace VYaml.Serialization;
+

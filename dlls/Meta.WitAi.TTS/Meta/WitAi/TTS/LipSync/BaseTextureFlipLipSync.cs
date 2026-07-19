@@ -1,2 +1,2 @@
-namespace Meta.WitAi.TTS.Utilities;
-
+// Could not decompile Meta.WitAi.TTS.LipSync.BaseTextureFlipLipSync
+// This type uses unsupported IL or has too many generic parameters.

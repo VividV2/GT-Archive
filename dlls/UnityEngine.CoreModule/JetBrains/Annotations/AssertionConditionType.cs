@@ -1,9 +1,13 @@
-namespace JetBrains.Annotations;
-
-public enum AssertionConditionType
+namespace JetBrains.Annotations
 {
-	IS_TRUE,
-	IS_FALSE,
-	IS_NULL,
-	IS_NOT_NULL
+	public enum AssertionConditionType
+	{
+		IS_TRUE,
+		IS_FALSE,
+		IS_NULL,
+		IS_NOT_NULL
+	}
+}
+namespace Unity.Collections
+{
 }

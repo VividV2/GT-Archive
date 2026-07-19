@@ -1,3 +1,3 @@
-namespace System.Collections.Generic
+namespace System.Diagnostics.Eventing.Reader
 {
 }

@@ -1,23 +1,16 @@
-using System.IO;
-using System.Text;
-using System.IO;
-using System.Text;
+using System.Collections.Generic;
 
-namespace System.Xml;
+namespace System.Runtime.Serialization;
 
-/// <summary>Specifies implementation requirements for XML text writers that derive from this interface.</summary>
-/// <summary>Specifies implementation requirements for XML text writers that derive from this interface.</summary>
-public interface IXmlTextWriterInitializer
+internal class TypeHandleRefEqualityComparer : IEqualityComparer<TypeHandleRef>
 {
-	/// <summary>Specifies initialization requirements for XML text writers that implement this method.</summary>
-	/// <param name="stream">The stream to write to.</param>
-	/// <param name="encoding">The character encoding of the stream.</param>
-	/// <param name="ownsStream">
-	///   <see langword="true" /> to indicate the stream is closed by the writer when done; otherwise, <see langword="false" />.</param>
-	/// <summary>Specifies initialization requirements for XML text writers that implement this method.</summary>
-	/// <param name="stream">The stream to write to.</param>
-	/// <param name="encoding">The character encoding of the stream.</param>
-	/// <param name="ownsStream">
-	///   <see langword="true" /> to indicate the stream is closed by the writer when done; otherwise, <see langword="false" />.</param>
-	void SetOutput(Stream stream, Encoding encoding, bool ownsStream);
+	public bool Equals(TypeHandleRef x, TypeHandleRef y)
+	{
+		return x.Value.Equals(y.Value);
+	}
+
+	public int GetHashCode(TypeHandleRef obj)
+	{
+		return obj.Value.GetHashCode();
+	}
 }

@@ -1,2 +1,6 @@
-// Could not decompile System.Data.Common.LoadAdapter
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data.SqlClient
+{
+}
+namespace System.Data.Common
+{
+}

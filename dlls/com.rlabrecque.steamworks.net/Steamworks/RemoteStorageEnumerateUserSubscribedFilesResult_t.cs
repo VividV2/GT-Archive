@@ -1,55 +1,16 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
+namespace Steamworks;
 
-namespace Steamworks
+public enum ESNetSocketState
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1102)]
-	public struct UserStatsStored_t
-	{
-		public const int k_iCallback = 1102;
-
-		public ulong m_nGameID;
-
-		public EResult m_eResult;
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1314)]
-	public struct RemoteStorageEnumerateUserSubscribedFilesResult_t
-	{
-		public const int k_iCallback = 1314;
-
-		public EResult m_eResult;
-
-		public int m_nResultsReturned;
-
-		public int m_nTotalResultCount;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
-		public PublishedFileId_t[] m_rgPublishedFileId;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
-		public uint[] m_rgRTimeSubscribed;
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1023)]
-	public struct FileDetailsResult_t
-	{
-		public const int k_iCallback = 1023;
-
-		public EResult m_eResult;
-
-		public ulong m_ulFileSize;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
-		public byte[] m_FileSHA;
-
-		public uint m_unFlags;
-	}
+	k_ESNetSocketStateInvalid = 0,
+	k_ESNetSocketStateConnected = 1,
+	k_ESNetSocketStateInitiated = 10,
+	k_ESNetSocketStateLocalCandidatesFound = 11,
+	k_ESNetSocketStateReceivedRemoteCandidates = 12,
+	k_ESNetSocketStateChallengeHandshake = 15,
+	k_ESNetSocketStateDisconnecting = 21,
+	k_ESNetSocketStateLocalDisconnect = 22,
+	k_ESNetSocketStateTimeoutDuringConnect = 23,
+	k_ESNetSocketStateRemoteEndDisconnected = 24,
+	k_ESNetSocketStateConnectionBroken = 25
 }

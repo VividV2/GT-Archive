@@ -1,2 +1,2 @@
-namespace PlayFab;
+namespace PlayFab.LocalizationModels;
 

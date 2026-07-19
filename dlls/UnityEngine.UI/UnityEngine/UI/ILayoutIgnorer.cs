@@ -1,6 +1,10 @@
-namespace UnityEngine.UI;
-
-public interface ILayoutIgnorer
+namespace UnityEngine.UI
 {
-	bool ignoreLayout { get; }
+}
+namespace UnityEngine.UI
+{
+	public interface ILayoutIgnorer
+	{
+		bool ignoreLayout { get; }
+	}
 }

@@ -1,10 +1,3 @@
-namespace System;
-
-[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-internal class MonoNotSupportedAttribute : System.MonoTODOAttribute
+namespace System.Data
 {
-	public MonoNotSupportedAttribute(string comment)
-		: base(comment)
-	{
-	}
 }

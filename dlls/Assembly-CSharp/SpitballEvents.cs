@@ -1,15 +1,2 @@
-using System;
-using UnityEngine;
-using System;
-using UnityEngine;
-
-namespace GorillaTag.CosmeticSystem;
-
-[Serializable]
-public struct CosmeticPartMirrorOption
-{
-	public ECosmeticPartMirrorAxis axis;
-
-	[Tooltip("This will multiply the local scale for the selected axis by -1.")]
-	public bool negativeScale;
-}
+// Could not decompile SpitballEvents
+// This type uses unsupported IL or has too many generic parameters.

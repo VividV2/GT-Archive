@@ -1,8 +1,12 @@
 using UnityEngine;
 
-namespace Meta.Voice.Audio;
-
-public interface IAudioClipProvider
+namespace Meta.Voice.Audio
 {
-	AudioClip Clip { get; }
+	public interface IAudioClipProvider
+	{
+		AudioClip Clip { get; }
+	}
+}
+namespace Meta.Conduit
+{
 }

@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.GroupsModels.IsMemberRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.GroupsModels;
+
+[Serializable]
+public class IsMemberRequest : PlayFabRequestCommon
+{
+	public EntityKey Entity;
+
+	public EntityKey Group;
+
+	public string RoleId;
+}

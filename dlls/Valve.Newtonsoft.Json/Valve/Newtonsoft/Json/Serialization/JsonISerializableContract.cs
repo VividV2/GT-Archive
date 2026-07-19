@@ -1,14 +1,2 @@
-using System;
-
-namespace Valve.Newtonsoft.Json.Serialization;
-
-public class JsonISerializableContract : JsonContainerContract
-{
-	public ObjectConstructor<object> ISerializableCreator { get; set; }
-
-	public JsonISerializableContract(Type underlyingType)
-		: base(underlyingType)
-	{
-		ContractType = JsonContractType.Serializable;
-	}
-}
+// Could not decompile Valve.Newtonsoft.Json.Serialization.JsonISerializableContract
+// This type uses unsupported IL or has too many generic parameters.

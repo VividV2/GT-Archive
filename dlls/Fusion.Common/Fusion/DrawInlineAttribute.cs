@@ -1,2 +1,8 @@
-// Could not decompile Fusion.DrawInlineAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Fusion;
+
+[AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
+public class DrawInlineAttribute : DrawerPropertyAttribute
+{
+}

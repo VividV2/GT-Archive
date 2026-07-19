@@ -2,6 +2,10 @@ using System.Collections.Generic;
 
 namespace ExitGames.Client.Photon
 {
+	public delegate short SerializeStreamMethod(StreamBuffer outStream, object customObject);
+}
+namespace ExitGames.Client.Photon
+{
 	public class DisconnectMessage
 	{
 		public short Code;
@@ -10,7 +14,4 @@ namespace ExitGames.Client.Photon
 
 		public Dictionary<byte, object> Parameters;
 	}
-}
-namespace ExitGames.Client.Photon
-{
 }

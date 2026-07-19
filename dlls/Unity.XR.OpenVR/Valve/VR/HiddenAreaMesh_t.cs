@@ -1,28 +1,10 @@
 using System;
 
-namespace Valve.VR
+namespace Valve.VR;
+
+public struct HiddenAreaMesh_t
 {
-	public struct VREvent_ProgressUpdate_t
-	{
-		public ulong ulApplicationPropertyContainer;
+	public IntPtr pVertexData;
 
-		public ulong pathDevice;
-
-		public ulong pathInputSource;
-
-		public ulong pathProgressAction;
-
-		public ulong pathIcon;
-
-		public float fProgress;
-	}
-}
-namespace Valve.VR
-{
-	public struct HiddenAreaMesh_t
-	{
-		public IntPtr pVertexData;
-
-		public uint unTriangleCount;
-	}
+	public uint unTriangleCount;
 }

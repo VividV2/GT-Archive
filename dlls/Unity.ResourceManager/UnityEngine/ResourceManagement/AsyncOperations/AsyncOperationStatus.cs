@@ -6,6 +6,3 @@ public enum AsyncOperationStatus
 	Succeeded,
 	Failed
 }
-namespace UnityEngine.ResourceManagement.ResourceLocations
-{
-}

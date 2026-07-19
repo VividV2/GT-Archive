@@ -1,13 +1,9 @@
-namespace PlayFab.Internal
+namespace PlayFab.Internal;
+
+public enum HttpRequestState
 {
-	public enum HttpRequestState
-	{
-		Sent,
-		Received,
-		Idle,
-		Error
-	}
-}
-namespace PlayFab.ClientModels
-{
+	Sent,
+	Received,
+	Idle,
+	Error
 }

@@ -1,18 +1,2 @@
-namespace UnityEngine.Rendering
-{
-	public enum SinglePassStereoMode
-	{
-		None,
-		SideBySide,
-		Instancing,
-		Multiview
-	}
-}
-namespace UnityEngine.Rendering
-{
-	public enum SynchronisationStage
-	{
-		VertexProcessing,
-		PixelProcessing
-	}
-}
+// Could not decompile UnityEngine.Rendering.SynchronisationStageFlags
+// This type uses unsupported IL or has too many generic parameters.

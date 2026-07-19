@@ -1,11 +1,15 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
-
-[Serializable]
-internal enum SoapAttributeType
+namespace System.Runtime.Serialization.Formatters.Binary
 {
-	None = 0,
-	SchemaType = 1,
-	Embedded = 2,
-	XmlElement = 4,
-	XmlAttribute = 8
+	[Serializable]
+	internal enum SoapAttributeType
+	{
+		None = 0,
+		SchemaType = 1,
+		Embedded = 2,
+		XmlElement = 4,
+		XmlAttribute = 8
+	}
+}
+namespace System.Runtime.InteropServices
+{
 }

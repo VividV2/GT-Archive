@@ -1,16 +1,9 @@
-using UnityEngine;
-using UnityEngine;
-
-public class GorillaModeSelector : MonoBehaviour
+namespace BuildSafe
 {
-	private void Start()
-	{
-	}
-
-	private void Update()
-	{
-	}
 }
 public static class LocalizationEditorManager
+{
+}
+namespace Fusion.CodeGen
 {
 }

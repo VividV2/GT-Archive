@@ -1,11 +1,16 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace System.EnterpriseServices;
 
-[ComImport]
-[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-[Guid("BD3E2E12-42DD-40f4-A09A-95A50C58304B")]
-public interface IServiceCall
+/// <summary>Specifies the values allowed for transaction outcome voting.</summary>
+/// <summary>Specifies the values allowed for transaction outcome voting.</summary>
+[Serializable]
+[ComVisible(false)]
+public enum TransactionVote
 {
-	void OnCall();
+	/// <summary>Aborts the current transaction.</summary>
+	Abort = 1,
+	/// <summary>Commits the current transaction.</summary>
+	Commit = 0
 }

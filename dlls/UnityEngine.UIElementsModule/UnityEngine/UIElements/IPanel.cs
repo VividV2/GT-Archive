@@ -1,38 +1,25 @@
 using System;
 using System.Collections.Generic;
 
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public interface IPanel : IDisposable
 {
-	public enum Wrap
-	{
-		NoWrap,
-		Wrap,
-		WrapReverse
-	}
-}
-namespace UnityEngine.UIElements
-{
-	public interface IPanel : IDisposable
-	{
-		VisualElement visualTree { get; }
+	VisualElement visualTree { get; }
 
-		EventDispatcher dispatcher { get; }
+	EventDispatcher dispatcher { get; }
 
-		ContextType contextType { get; }
+	ContextType contextType { get; }
 
-		FocusController focusController { get; }
+	FocusController focusController { get; }
 
-		ContextualMenuManager contextualMenuManager { get; }
+	ContextualMenuManager contextualMenuManager { get; }
 
-		bool isDirty { get; }
+	bool isDirty { get; }
 
-		float scaledPixelsPerPoint { get; }
+	float scaledPixelsPerPoint { get; }
 
-		VisualElement Pick(Vector2 point);
+	VisualElement Pick(Vector2 point);
 
-		VisualElement PickAll(Vector2 point, List<VisualElement> picked);
-	}
-}
-namespace UnityEngine.UIElements
-{
+	VisualElement PickAll(Vector2 point, List<VisualElement> picked);
 }

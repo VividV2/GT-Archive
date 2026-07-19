@@ -1,3 +1,17 @@
+using System.Xml.Xsl.Qil;
+using System.Xml.Xsl.Qil;
+
+namespace System.Xml.Xsl.XPath
+{
+	internal interface IFocus
+	{
+		QilNode GetCurrent();
+
+		QilNode GetPosition();
+
+		QilNode GetLast();
+	}
+}
 namespace System.Xml.Serialization
 {
 	internal enum TypeKind
@@ -15,7 +29,4 @@ namespace System.Xml.Serialization
 		Attribute,
 		Serializable
 	}
-}
-namespace System.Xml.Xsl.XsltOld
-{
 }

@@ -1,11 +1,2 @@
-using System;
-
-namespace Fusion;
-
-[AttributeUsage(AttributeTargets.Class)]
-internal class UnityPropertyAttributeProxyAttribute : Attribute
-{
-	public UnityPropertyAttributeProxyAttribute(Type type)
-	{
-	}
-}
+// Could not decompile Fusion.UnityPropertyAttributeProxyAttribute
+// This type uses unsupported IL or has too many generic parameters.

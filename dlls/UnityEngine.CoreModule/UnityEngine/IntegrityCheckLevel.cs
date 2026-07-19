@@ -1,15 +1,11 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[NativeHeader("Runtime/Diagnostics/IntegrityCheck.h")]
+public enum IntegrityCheckLevel
 {
-}
-namespace UnityEngine
-{
-	[NativeHeader("Runtime/Diagnostics/IntegrityCheck.h")]
-	public enum IntegrityCheckLevel
-	{
-		Low = 1,
-		Medium,
-		High
-	}
+	Low = 1,
+	Medium,
+	High
 }

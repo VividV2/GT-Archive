@@ -1,2 +1,8 @@
-// Could not decompile Fusion.LayerAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Fusion;
+
+[AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
+public class LayerAttribute : DrawerPropertyAttribute
+{
+}

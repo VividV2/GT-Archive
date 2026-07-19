@@ -1,14 +1,10 @@
-namespace System
+namespace System;
+
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+internal class MonoNotSupportedAttribute : MonoTODOAttribute
 {
-	[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-	internal class MonoNotSupportedAttribute : MonoTODOAttribute
+	public MonoNotSupportedAttribute(string comment)
+		: base(comment)
 	{
-		public MonoNotSupportedAttribute(string comment)
-			: base(comment)
-		{
-		}
 	}
-}
-namespace System.Security
-{
 }

@@ -1,6 +1,2 @@
-namespace System.Xml;
-
-internal static class BinaryCompatibility
-{
-	public static bool TargetsAtLeast_Desktop_V4_5_2 => true;
-}
+// Could not decompile System.Xml.BinaryCompatibility
+// This type uses unsupported IL or has too many generic parameters.

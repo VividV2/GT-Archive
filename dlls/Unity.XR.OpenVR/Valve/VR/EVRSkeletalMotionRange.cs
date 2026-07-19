@@ -1,7 +1,11 @@
-namespace Valve.VR;
-
-public enum EVRSkeletalMotionRange
+namespace Valve.VR
 {
-	WithController,
-	WithoutController
+	public enum EVRSceneApplicationState
+	{
+		None,
+		Starting,
+		Quitting,
+		Running,
+		Waiting
+	}
 }

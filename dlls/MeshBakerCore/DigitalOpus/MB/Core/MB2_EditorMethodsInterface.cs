@@ -1,8 +1,20 @@
-namespace DigitalOpus.MB.Core;
-
-public enum MB_TextureCompressionQuality
+namespace DigitalOpus.MB.Core
 {
-	fast = 0,
-	normal = 50,
-	best = 100
+	public enum MB_RenderType
+	{
+		meshRenderer,
+		skinnedMeshRenderer
+	}
+}
+namespace DigitalOpus.MB.Core
+{
+	public enum MB_TextureTilingTreatment
+	{
+		none,
+		considerUVs,
+		edgeToEdgeX,
+		edgeToEdgeY,
+		edgeToEdgeXY,
+		unknown
+	}
 }

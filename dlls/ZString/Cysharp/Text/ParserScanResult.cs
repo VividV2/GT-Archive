@@ -1,12 +1,8 @@
-namespace Cysharp.Text
+namespace Cysharp.Text;
+
+internal enum ParserScanResult
 {
-	internal enum ParserScanResult
-	{
-		BraceOpen,
-		EscapedChar,
-		NormalChar
-	}
-}
-namespace Cysharp.Text
-{
+	BraceOpen,
+	EscapedChar,
+	NormalChar
 }

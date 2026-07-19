@@ -1,2 +1,2 @@
-namespace System.Diagnostics;
-
+// Could not decompile System.Diagnostics.Tracing.IncrementingEventCounter
+// This type uses unsupported IL or has too many generic parameters.

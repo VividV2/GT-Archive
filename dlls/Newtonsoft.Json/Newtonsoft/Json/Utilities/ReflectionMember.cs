@@ -1,2 +1,9 @@
-// Could not decompile Newtonsoft.Json.Utilities.ReflectionMember
-// This type uses unsupported IL or has too many generic parameters.
+namespace Newtonsoft.Json.Schema
+{
+}
+namespace Newtonsoft.Json.Converters
+{
+}
+namespace Newtonsoft.Json.Linq.JsonPath
+{
+}

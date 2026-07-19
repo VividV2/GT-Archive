@@ -1,2 +1,6 @@
-// Could not decompile GenericCounter
-// This type uses unsupported IL or has too many generic parameters.
+public enum GameHitType
+{
+	Club,
+	Flash,
+	Shield
+}

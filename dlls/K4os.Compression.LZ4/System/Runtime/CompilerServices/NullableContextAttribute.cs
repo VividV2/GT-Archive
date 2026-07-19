@@ -1,2 +1,16 @@
-// Could not decompile System.Runtime.CompilerServices.NullableContextAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.CompilerServices;
+
+namespace Microsoft.CodeAnalysis
+{
+	[CompilerGenerated]
+	[Microsoft.CodeAnalysis.Embedded]
+	internal sealed class EmbeddedAttribute : Attribute
+	{
+	}
+}
+namespace System.Runtime.CompilerServices
+{
+}

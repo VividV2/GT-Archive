@@ -1,15 +1,2 @@
-using System;
-
-namespace Meta.WitAi.TTS.Data
-{
-}
-namespace Meta.WitAi.TTS.Data
-{
-	[Serializable]
-	public class TTSStringEvent : TTSEvent<string>
-	{
-	}
-}
-namespace Meta.WitAi.TTS.Data
-{
-}
+// Could not decompile Meta.WitAi.TTS.Data.TTSStringEvent
+// This type uses unsupported IL or has too many generic parameters.

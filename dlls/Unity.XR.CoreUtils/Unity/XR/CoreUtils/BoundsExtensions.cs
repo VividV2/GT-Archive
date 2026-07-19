@@ -1,19 +1,2 @@
-using System;
-using System;
-
-namespace Unity.XR.CoreUtils
-{
-	public static class GuidExtensions
-	{
-		public static void Decompose(this Guid guid, out ulong low, out ulong high)
-		{
-			byte[] value = guid.ToByteArray();
-			byte[] value;
-			low = BitConverter.ToUInt64(value, 0);
-			high = BitConverter.ToUInt64(value, 8);
-		}
-	}
-}
-namespace Unity.XR.CoreUtils
-{
-}
+// Could not decompile Unity.XR.CoreUtils.BoundsExtensions
+// This type uses unsupported IL or has too many generic parameters.

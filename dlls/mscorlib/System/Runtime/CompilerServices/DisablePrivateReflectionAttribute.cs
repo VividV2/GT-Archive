@@ -1,8 +1,3 @@
-namespace System.Runtime.CompilerServices
+namespace System.Runtime.InteropServices
 {
-	public interface ITuple
-	{
-		int Length { get; }
-
-		object this[int index] { get; }
-	}
+}

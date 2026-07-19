@@ -1,2 +1,9 @@
-// Could not decompile System.Data.ProviderBase.DbConnectionPoolGroupProviderInfo
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data.OleDb
+{
+}
+namespace System.Data
+{
+}
+namespace System.Data
+{
+}

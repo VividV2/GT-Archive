@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Oculus.Interaction.Throw
+namespace Oculus.Interaction
 {
 }
 namespace Oculus.Interaction

@@ -1,6 +1,2 @@
-namespace System.Xml.Xsl
-{
-}
-namespace System.Xml.Serialization
-{
-}
+namespace System.Xml.Serialization;
+

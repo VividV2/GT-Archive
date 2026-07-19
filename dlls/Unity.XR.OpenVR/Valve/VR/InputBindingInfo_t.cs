@@ -1,21 +1,8 @@
-using System;
-using System.Runtime.InteropServices;
-using System;
-using System.Runtime.InteropServices;
-
 namespace Valve.VR;
 
-public struct IVRNotifications
+public struct VREvent_Chaperone_t
 {
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate EVRNotificationError _CreateNotification(ulong ulOverlayHandle, ulong ulUserValue, EVRNotificationType type, IntPtr pchText, EVRNotificationStyle style, ref NotificationBitmap_t pImage, ref uint pNotificationId);
+	public ulong m_nPreviousUniverse;
 
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate EVRNotificationError _RemoveNotification(uint notificationId);
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _CreateNotification CreateNotification;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _RemoveNotification RemoveNotification;
+	public ulong m_nCurrentUniverse;
 }

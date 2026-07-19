@@ -1,9 +1,2 @@
-namespace Unity.Collections;
-
-public enum ConversionError
-{
-	None,
-	Overflow,
-	Encoding,
-	CodePoint
-}
+// Could not decompile Unity.Collections.SortJob`2
+// This type uses unsupported IL or has too many generic parameters.

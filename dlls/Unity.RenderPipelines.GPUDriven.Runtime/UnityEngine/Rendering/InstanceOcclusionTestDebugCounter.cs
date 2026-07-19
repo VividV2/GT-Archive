@@ -1,21 +1,11 @@
-namespace UnityEngine.Rendering
-{
-	internal struct IndirectBufferLimits
-	{
-		public int maxInstanceCount;
+namespace UnityEngine.Rendering;
 
-		public int maxDrawCount;
-	}
-}
-namespace UnityEngine.Rendering
+[GenerateHLSL(PackingRules.Exact, true, false, false, 1, false, false, false, -1, ".\\Library\\PackageCache\\com.unity.render-pipelines.core@04755ad51d99\\Runtime\\GPUDriven\\InstanceOcclusionCuller.cs", needAccessors = false)]
+internal enum InstanceOcclusionTestDebugCounter
 {
-	[GenerateHLSL(PackingRules.Exact, true, false, false, 1, false, false, false, -1, ".\\Library\\PackageCache\\com.unity.render-pipelines.core@04755ad51d99\\Runtime\\GPUDriven\\InstanceOcclusionCuller.cs", needAccessors = false)]
-	internal enum InstanceOcclusionTestDebugCounter
-	{
-		InstancesOccluded,
-		InstancesNotOccluded,
-		PrimitivesOccluded,
-		PrimitivesNotOccluded,
-		Count
-	}
+	InstancesOccluded,
+	InstancesNotOccluded,
+	PrimitivesOccluded,
+	PrimitivesNotOccluded,
+	Count
 }

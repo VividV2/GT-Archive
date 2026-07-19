@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.UIElements.UxmlGenericAttributeNames
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+internal class UxmlGenericAttributeNames
+{
+	internal const string k_NameAttributeName = "name";
+
+	internal const string k_PathAttributeName = "path";
+
+	internal const string k_SrcAttributeName = "src";
+}

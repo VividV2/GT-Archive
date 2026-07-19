@@ -1,11 +1,8 @@
-namespace UnityEngine;
+using System;
 
-public enum ApplicationInstallMode
+namespace Unity.Collections.LowLevel.Unsafe;
+
+[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property)]
+public class WriteAccessRequiredAttribute : Attribute
 {
-	Unknown,
-	Store,
-	DeveloperBuild,
-	Adhoc,
-	Enterprise,
-	Editor
 }

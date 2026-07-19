@@ -1,9 +1,13 @@
-namespace Pathfinding.Ionic.Zip;
-
-public enum ExtractExistingFileAction
+namespace Pathfinding.Ionic.Zip
 {
-	Throw,
-	OverwriteSilently,
-	DoNotOverwrite,
-	InvokeExtractProgressEvent
+}
+namespace Pathfinding.Ionic.Zip
+{
+	public enum ExtractExistingFileAction
+	{
+		Throw,
+		OverwriteSilently,
+		DoNotOverwrite,
+		InvokeExtractProgressEvent
+	}
 }

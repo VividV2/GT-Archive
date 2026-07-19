@@ -1,12 +1,2 @@
-using System;
-
-namespace Valve.Newtonsoft.Json.Serialization
-{
-	[AttributeUsage(AttributeTargets.Method, Inherited = false)]
-	public sealed class OnErrorAttribute : Attribute
-	{
-	}
-}
-namespace Valve.Newtonsoft.Json.Serialization
-{
-}
+// Could not decompile Valve.Newtonsoft.Json.Serialization.OnErrorAttribute
+// This type uses unsupported IL or has too many generic parameters.

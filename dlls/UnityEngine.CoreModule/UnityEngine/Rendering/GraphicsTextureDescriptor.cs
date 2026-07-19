@@ -1,2 +1,2 @@
-namespace UnityEngine.Windows.Speech;
+namespace UnityEngine.Assertions;
 

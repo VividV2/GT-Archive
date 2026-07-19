@@ -1,2 +1,2 @@
-namespace Oculus.Interaction.Input.UnityXR;
-
+// Could not decompile Oculus.Interaction.Input.DefaultHandSkeletonProvider
+// This type uses unsupported IL or has too many generic parameters.

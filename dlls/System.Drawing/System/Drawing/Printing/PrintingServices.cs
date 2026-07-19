@@ -1,19 +1,7 @@
-namespace System.Drawing.Printing;
+namespace System.Drawing.Drawing2D;
 
-/// <summary>Specifies the printer's duplex setting.</summary>
-/// <summary>Specifies the printer's duplex setting.</summary>
-public enum Duplex
+internal enum CustomLineCapType
 {
-	/// <summary>The printer's default duplex setting.</summary>
-	/// <summary>The printer's default duplex setting.</summary>
-	Default = -1,
-	/// <summary>Single-sided printing.</summary>
-	/// <summary>Single-sided printing.</summary>
-	Simplex = 1,
-	/// <summary>Double-sided, horizontal printing.</summary>
-	/// <summary>Double-sided, horizontal printing.</summary>
-	Horizontal = 3,
-	/// <summary>Double-sided, vertical printing.</summary>
-	/// <summary>Double-sided, vertical printing.</summary>
-	Vertical = 2
+	Default,
+	AdjustableArrowCap
 }

@@ -1,19 +1,14 @@
 using System.Runtime.InteropServices;
 
-namespace Valve.VR;
-
-public struct VREvent_TouchPadMove_t
+namespace Valve.VR
 {
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bFingerDown;
+	[StructLayout(LayoutKind.Explicit)]
+	public struct VROverlayIntersectionMaskPrimitive_Data_t
+	{
+		[FieldOffset(0)]
+		public IntersectionMaskRectangle_t m_Rectangle;
 
-	public float flSecondsFingerDown;
-
-	public float fValueXFirst;
-
-	public float fValueYFirst;
-
-	public float fValueXRaw;
-
-	public float fValueYRaw;
+		[FieldOffset(0)]
+		public IntersectionMaskCircle_t m_Circle;
+	}
 }

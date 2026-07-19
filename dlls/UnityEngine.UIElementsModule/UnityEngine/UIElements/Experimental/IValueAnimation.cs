@@ -1,18 +1,14 @@
-namespace UnityEngine.UIElements.UIR
+namespace UnityEngine.UIElements.Experimental;
+
+public interface IValueAnimation
 {
-}
-namespace UnityEngine.UIElements.Experimental
-{
-	public interface IValueAnimation
-	{
-		bool isRunning { get; }
+	bool isRunning { get; }
 
-		int durationMs { get; set; }
+	int durationMs { get; set; }
 
-		void Start();
+	void Start();
 
-		void Stop();
+	void Stop();
 
-		void Recycle();
-	}
+	void Recycle();
 }

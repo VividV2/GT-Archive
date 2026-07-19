@@ -1,18 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class GetSegmentResult : PlayFabBaseModel
-	{
-		public string ABTestParent;
-
-		public string Id;
-
-		public string Name;
-	}
-}
-namespace PlayFab.ClientModels
-{
-}
+// Could not decompile PlayFab.ClientModels.GetSegmentResult
+// This type uses unsupported IL or has too many generic parameters.

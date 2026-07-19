@@ -1,2 +1,6 @@
-// Could not decompile Meta.WitAi.ServiceReferences.VoiceServiceAudioEventReference
-// This type uses unsupported IL or has too many generic parameters.
+namespace Meta.WitAi.Interfaces;
+
+public interface IDataUploadHandler
+{
+	void Write(byte[] buffer, int offset, int length);
+}

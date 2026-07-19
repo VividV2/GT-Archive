@@ -1,9 +1,20 @@
-namespace System.Net;
-
-internal enum WebExceptionInternalStatus
+namespace System.Net
 {
-	RequestFatal,
-	ServicePointFatal,
-	Recoverable,
-	Isolated
+	internal enum WebExceptionInternalStatus
+	{
+		RequestFatal,
+		ServicePointFatal,
+		Recoverable,
+		Isolated
+	}
+}
+namespace System.Net
+{
+	internal enum WriteBufferState
+	{
+		Disabled,
+		Headers,
+		Buffer,
+		Playback
+	}
 }

@@ -1,2 +1,39 @@
-// Could not decompile Mono.RuntimePropertyHandle
-// This type uses unsupported IL or has too many generic parameters.
+namespace System;
+
+internal enum TermInfoNumbers
+{
+	Columns,
+	InitTabs,
+	Lines,
+	LinesOfMemory,
+	MagicCookieGlitch,
+	PaddingBaudRate,
+	VirtualTerminal,
+	WidthStatusLine,
+	NumLabels,
+	LabelHeight,
+	LabelWidth,
+	MaxAttributes,
+	MaximumWindows,
+	MaxColors,
+	MaxPairs,
+	NoColorVideo,
+	BufferCapacity,
+	DotVertSpacing,
+	DotHorzSpacing,
+	MaxMicroAddress,
+	MaxMicroJump,
+	MicroColSize,
+	MicroLineSize,
+	NumberOfPins,
+	OutputResChar,
+	OutputResLine,
+	OutputResHorzInch,
+	OutputResVertInch,
+	PrintRate,
+	WideCharSize,
+	Buttons,
+	BitImageEntwining,
+	BitImageType,
+	Last
+}

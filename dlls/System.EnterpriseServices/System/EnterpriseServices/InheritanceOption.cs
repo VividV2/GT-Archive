@@ -1,6 +1,3 @@
-namespace System.EnterpriseServices
-{
-}
-namespace System.EnterpriseServices
+namespace System.EnterpriseServices.Internal
 {
 }

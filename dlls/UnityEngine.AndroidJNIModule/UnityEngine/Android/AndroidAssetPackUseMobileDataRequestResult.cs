@@ -1,11 +1,2 @@
-namespace UnityEngine.Android;
-
-public class AndroidAssetPackUseMobileDataRequestResult
-{
-	public bool allowed { get; }
-
-	internal AndroidAssetPackUseMobileDataRequestResult(bool allowed)
-	{
-		this.allowed = allowed;
-	}
-}
+// Could not decompile UnityEngine.Android.AndroidAssetPackUseMobileDataRequestResult
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,14 +1,18 @@
-namespace Oculus.Interaction;
-
-public interface ICurvedPlane
+namespace Oculus.Interaction
 {
-	Cylinder Cylinder { get; }
+	public interface ICurvedPlane
+	{
+		Cylinder Cylinder { get; }
 
-	float ArcDegrees { get; }
+		float ArcDegrees { get; }
 
-	float Rotation { get; }
+		float Rotation { get; }
 
-	float Bottom { get; }
+		float Bottom { get; }
 
-	float Top { get; }
+		float Top { get; }
+	}
+}
+namespace Oculus.Interaction
+{
 }

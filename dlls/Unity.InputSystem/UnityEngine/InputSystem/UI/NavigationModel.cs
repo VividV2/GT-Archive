@@ -1,27 +1,2 @@
-using UnityEngine.EventSystems;
-
-namespace UnityEngine.InputSystem.UI
-{
-	internal struct NavigationModel
-	{
-		public Vector2 move;
-
-		public int consecutiveMoveCount;
-
-		public MoveDirection lastMoveDirection;
-
-		public float lastMoveTime;
-
-		public AxisEventData eventData;
-
-		public InputDevice device;
-
-		public void Reset()
-		{
-			move = Vector2.zero;
-		}
-	}
-}
-namespace UnityEngine.InputSystem
-{
-}
+// Could not decompile UnityEngine.InputSystem.UI.NavigationModel
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,31 +1,11 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum ETrackingResult
 {
-	public enum VROverlayFlags
-	{
-		NoDashboardTab = 8,
-		SendVRDiscreteScrollEvents = 0x40,
-		SendVRTouchpadEvents = 0x80,
-		ShowTouchPadScrollWheel = 0x100,
-		TransferOwnershipToInternalProcess = 0x200,
-		SideBySide_Parallel = 0x400,
-		SideBySide_Crossed = 0x800,
-		Panorama = 0x1000,
-		StereoPanorama = 0x2000,
-		SortWithNonSceneOverlays = 0x4000,
-		VisibleInDashboard = 0x8000,
-		MakeOverlaysInteractiveIfVisible = 0x10000,
-		SendVRSmoothScrollEvents = 0x20000,
-		ProtectedContent = 0x40000,
-		HideLaserIntersection = 0x80000,
-		WantsModalBehavior = 0x100000,
-		IsPremultiplied = 0x200000
-	}
-}
-namespace Valve.VR
-{
-	public enum VROverlayInputMethod
-	{
-		None,
-		Mouse
-	}
+	Uninitialized = 1,
+	Calibrating_InProgress = 100,
+	Calibrating_OutOfRange = 101,
+	Running_OK = 200,
+	Running_OutOfRange = 201,
+	Fallback_RotationOnly = 300
 }

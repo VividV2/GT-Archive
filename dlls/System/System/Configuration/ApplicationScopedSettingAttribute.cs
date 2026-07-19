@@ -1,2 +1,15 @@
-// Could not decompile System.Configuration.ApplicationScopedSettingAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Text.RegularExpressions
+{
+}
+namespace System.Configuration
+{
+	/// <summary>Specifies that an application settings property has a common value for all users of an application. This class cannot be inherited.</summary>
+	[AttributeUsage(AttributeTargets.Property)]
+	public sealed class ApplicationScopedSettingAttribute : SettingAttribute
+	{
+		/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.ApplicationScopedSettingAttribute" /> class.</summary>
+		public ApplicationScopedSettingAttribute()
+		{
+		}
+	}
+}

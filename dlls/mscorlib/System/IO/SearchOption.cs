@@ -1,26 +1,14 @@
-using System.Security;
-using System.Security;
-
-namespace System.Globalization
+namespace System.IO
 {
-	internal struct InternalEncodingDataItem
+	internal enum MonoFileType
 	{
-		[SecurityCritical]
-		internal string webName;
-
-		internal ushort codePage;
+		Unknown = 0,
+		Disk = 1,
+		Char = 2,
+		Pipe = 3,
+		Remote = 32768
 	}
 }
 namespace System.IO
 {
-	[Flags]
-	public enum FileShare
-	{
-		None = 0,
-		Read = 1,
-		Write = 2,
-		ReadWrite = 3,
-		Delete = 4,
-		Inheritable = 0x10
-	}
 }

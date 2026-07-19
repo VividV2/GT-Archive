@@ -1,11 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
-[CallbackIdentity(4104)]
-public struct MusicPlayerWillQuit_t
-{
-	public const int k_iCallback = 4104;
-}
+// Could not decompile Steamworks.JoinPartyCallback_t
+// This type uses unsupported IL or has too many generic parameters.

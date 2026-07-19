@@ -1,6 +1,7 @@
-namespace System.Collections.Specialized
+namespace System.ComponentModel;
+
+public enum BindingDirection
 {
-}
-namespace System.ComponentModel.Design.Serialization
-{
+	OneWay,
+	TwoWay
 }

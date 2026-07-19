@@ -1,10 +1,14 @@
-namespace TMPro;
-
-public struct KerningPairKey(uint ascii_left, uint ascii_right)
+namespace TMPro
 {
-	public uint ascii_Left = ascii_left;
+	public struct TMP_PageInfo
+	{
+		public int firstCharacterIndex;
 
-	public uint ascii_Right = ascii_right;
+		public int lastCharacterIndex;
 
-	public uint key = (ascii_right << 16) + ascii_left;
-}
+		public float ascender;
+
+		public float baseLine;
+
+		public float descender;
+	}

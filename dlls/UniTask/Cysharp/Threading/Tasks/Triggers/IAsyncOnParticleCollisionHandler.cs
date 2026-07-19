@@ -1,8 +1,12 @@
 using UnityEngine;
 
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnParticleCollisionHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask<GameObject> OnParticleCollisionAsync();
+	public interface IAsyncOnParticleCollisionHandler
+	{
+		UniTask<GameObject> OnParticleCollisionAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
 }

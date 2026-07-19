@@ -1,10 +1,49 @@
+using System;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
-[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
-[CallbackIdentity(125)]
-public struct LicensesUpdated_t
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(1319)]
+public struct RemoteStorageEnumerateWorkshopFilesResult_t
 {
-	public const int k_iCallback = 125;
+	public const int k_iCallback = 1319;
+
+	public EResult m_eResult;
+
+	public int m_nResultsReturned;
+
+	public int m_nTotalResultCount;
+
+	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
+	public PublishedFileId_t[] m_rgPublishedFileId;
+
+	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
+	public float[] m_rgScore;
+
+	public AppId_t m_nAppId;
+
+	public uint m_unStartIndex;
+}
+namespace Steamworks
+{
+	public enum ERemoteStoragePublishedFileVisibility
+	{
+		k_ERemoteStoragePublishedFileVisibilityPublic,
+		k_ERemoteStoragePublishedFileVisibilityFriendsOnly,
+		k_ERemoteStoragePublishedFileVisibilityPrivate,
+		k_ERemoteStoragePublishedFileVisibilityUnlisted
+	}
+}
+namespace Steamworks
+{
+	[System.Flags]
+	public enum EHTMLKeyModifiers
+	{
+		k_eHTMLKeyModifier_None = 0,
+		k_eHTMLKeyModifier_AltDown = 1,
+		k_eHTMLKeyModifier_CtrlDown = 2,
+		k_eHTMLKeyModifier_ShiftDown = 4
+	}
 }

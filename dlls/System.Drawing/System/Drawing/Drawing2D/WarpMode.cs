@@ -1,10 +1,8 @@
-namespace System.Drawing.Drawing2D;
+namespace System.Drawing.Text;
 
-/// <summary>Specifies the type of warp transformation applied in a <see cref="Overload:System.Drawing.Drawing2D.GraphicsPath.Warp" /> method.</summary>
-public enum WarpMode
+public enum GenericFontFamilies
 {
-	/// <summary>Specifies a perspective warp.</summary>
-	Perspective,
-	/// <summary>Specifies a bilinear warp.</summary>
-	Bilinear
+	Serif,
+	SansSerif,
+	Monospace
 }

@@ -1,18 +1,9 @@
-namespace Pathfinding.ClipperLib
+namespace Pathfinding.ClipperLib;
+
+public enum ClipType
 {
-	public enum PolyType
-	{
-		ptSubject,
-		ptClip
-	}
-}
-namespace Pathfinding.ClipperLib
-{
-	public enum ClipType
-	{
-		ctIntersection,
-		ctUnion,
-		ctDifference,
-		ctXor
-	}
+	ctIntersection,
+	ctUnion,
+	ctDifference,
+	ctXor
 }

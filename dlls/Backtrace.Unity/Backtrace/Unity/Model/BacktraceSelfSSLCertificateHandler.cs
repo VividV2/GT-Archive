@@ -1,9 +1,2 @@
-namespace Backtrace.Unity.Types;
-
-internal enum BacktraceStackFrameType
-{
-	Unknown,
-	Dotnet,
-	Android,
-	Native
-}
+// Could not decompile Backtrace.Unity.Model.BacktraceSelfSSLCertificateHandler
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,9 +1,6 @@
-namespace System.Diagnostics
+namespace System.Net
 {
 }
 namespace System.CodeDom
-{
-}
-namespace System.Runtime.InteropServices.ComTypes
 {
 }

@@ -1,12 +1,8 @@
-namespace UnityEngine.ProBuilder.KdTree
-{
-}
-namespace UnityEngine.ProBuilder.KdTree
-{
-	internal struct ItemPriority<TItem, TPriority>
-	{
-		public TItem Item;
+namespace UnityEngine.ProBuilder.KdTree;
 
-		public TPriority Priority;
-	}
+internal struct ItemPriority<TItem, TPriority>
+{
+	public TItem Item;
+
+	public TPriority Priority;
 }

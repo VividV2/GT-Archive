@@ -1,9 +1,2 @@
-namespace System.Reflection.Emit
-{
-}
-namespace System.Diagnostics.Tracing
-{
-}
-namespace System.Globalization
-{
-}
+// Could not decompile System.Diagnostics.Contracts.ContractClassForAttribute
+// This type uses unsupported IL or has too many generic parameters.

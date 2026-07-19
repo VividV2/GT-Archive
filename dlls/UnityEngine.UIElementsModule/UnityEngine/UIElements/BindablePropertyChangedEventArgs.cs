@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.UIElements.BindablePropertyChangedEventArgs
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public readonly struct BindablePropertyChangedEventArgs(in BindingId propertyName)
+{
+	private readonly BindingId m_PropertyName = propertyName;
+
+	public BindingId propertyName => m_PropertyName;
+}

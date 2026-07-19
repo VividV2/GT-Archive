@@ -1,9 +1,3 @@
-namespace System.Runtime.Remoting.Messaging;
-
-internal enum CallType
+namespace System.Runtime.Remoting.Messaging
 {
-	Sync,
-	BeginInvoke,
-	EndInvoke,
-	OneWay
 }

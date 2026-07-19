@@ -1,3 +1,6 @@
-namespace System.Net.NetworkInformation
+namespace System.Configuration
+{
+}
+namespace System.Collections.Specialized
 {
 }

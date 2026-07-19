@@ -1,6 +1,2 @@
-namespace Cysharp.Threading.Tasks.Linq
-{
-}
-namespace Cysharp.Threading.Tasks.Linq
-{
-}
+// Could not decompile Cysharp.Threading.Tasks.Linq.ToArray
+// This type uses unsupported IL or has too many generic parameters.

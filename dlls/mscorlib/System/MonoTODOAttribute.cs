@@ -1,17 +1,2 @@
-namespace System.Runtime.InteropServices.ComTypes
-{
-	[Serializable]
-	public enum CALLCONV
-	{
-		CC_CDECL = 1,
-		CC_MSCPASCAL = 2,
-		CC_PASCAL = 2,
-		CC_MACPASCAL = 3,
-		CC_STDCALL = 4,
-		CC_RESERVED = 5,
-		CC_SYSCALL = 6,
-		CC_MPWCDECL = 7,
-		CC_MPWPASCAL = 8,
-		CC_MAX = 9
-	}
-}
+// Could not decompile System.MonoTODOAttribute
+// This type uses unsupported IL or has too many generic parameters.

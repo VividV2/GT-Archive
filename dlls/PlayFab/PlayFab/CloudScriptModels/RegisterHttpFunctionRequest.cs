@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.CloudScriptModels;
-
-[Serializable]
-public class RegisterHttpFunctionRequest : PlayFabRequestCommon
-{
-	public string FunctionName;
-
-	public string FunctionUrl;
-}
+// Could not decompile PlayFab.CloudScriptModels.RegisterHttpFunctionRequest
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,18 +1,8 @@
-using Microsoft.CodeAnalysis;
+namespace UnityEngine.Animations.Rigging;
 
-namespace System.Runtime.CompilerServices;
-
-[CompilerGenerated]
-[Microsoft.CodeAnalysis.Embedded]
-internal sealed class IsUnmanagedAttribute : Attribute
+public interface IAnimatableProperty<T>
 {
-}
-namespace UnityEngine.Animations.Rigging
-{
-	public interface IAnimatableProperty<T>
-	{
-		T Get(AnimationStream stream);
+	T Get(AnimationStream stream);
 
-		void Set(AnimationStream stream, T value);
-	}
+	void Set(AnimationStream stream, T value);
 }

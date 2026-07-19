@@ -1,30 +1,10 @@
-namespace System.Net
+namespace System.Net;
+
+internal static class IPAddressParserStatics
 {
-	internal enum WriteBufferState
-	{
-		Disabled,
-		Headers,
-		Buffer,
-		Playback
-	}
-}
-namespace System.Net
-{
-	internal enum FtpOperation
-	{
-		DownloadFile,
-		ListDirectory,
-		ListDirectoryDetails,
-		UploadFile,
-		UploadFileUnique,
-		AppendFile,
-		DeleteFile,
-		GetDateTimestamp,
-		GetFileSize,
-		Rename,
-		MakeDirectory,
-		RemoveDirectory,
-		PrintWorkingDirectory,
-		Other
-	}
+	public const int IPv4AddressBytes = 4;
+
+	public const int IPv6AddressBytes = 16;
+
+	public const int IPv6AddressShorts = 8;
 }

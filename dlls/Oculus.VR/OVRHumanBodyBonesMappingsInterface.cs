@@ -16,5 +16,3 @@ public interface OVRHumanBodyBonesMappingsInterface
 
 	Dictionary<OVRSkeleton.BoneId, Tuple<OVRSkeleton.BoneId, OVRSkeleton.BoneId>> GetBoneIdToJointPair { get; }
 }
-namespace OVR.OpenVR;
-

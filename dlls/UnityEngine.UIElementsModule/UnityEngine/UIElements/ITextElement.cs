@@ -1,36 +1,6 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+internal interface ITextElement
 {
-	internal interface ITextElement
-	{
-		string text { get; set; }
-	}
-}
-namespace UnityEngine.UIElements
-{
-	public enum EasingMode
-	{
-		Ease,
-		EaseIn,
-		EaseOut,
-		EaseInOut,
-		Linear,
-		EaseInSine,
-		EaseOutSine,
-		EaseInOutSine,
-		EaseInCubic,
-		EaseOutCubic,
-		EaseInOutCubic,
-		EaseInCirc,
-		EaseOutCirc,
-		EaseInOutCirc,
-		EaseInElastic,
-		EaseOutElastic,
-		EaseInOutElastic,
-		EaseInBack,
-		EaseOutBack,
-		EaseInOutBack,
-		EaseInBounce,
-		EaseOutBounce,
-		EaseInOutBounce
-	}
+	string text { get; set; }
 }

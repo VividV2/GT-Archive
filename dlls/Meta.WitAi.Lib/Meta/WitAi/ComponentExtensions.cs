@@ -1,12 +1,2 @@
-namespace Meta.WitAi.Json;
-
-public enum JSONBinaryTag
-{
-	Array = 1,
-	Class,
-	Value,
-	IntValue,
-	DoubleValue,
-	BoolValue,
-	FloatValue
-}
+// Could not decompile Meta.WitAi.ComponentExtensions
+// This type uses unsupported IL or has too many generic parameters.

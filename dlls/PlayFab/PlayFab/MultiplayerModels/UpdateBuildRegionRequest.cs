@@ -1,7 +1,12 @@
-namespace PlayFab.ExperimentationModels;
+using System;
+using PlayFab.SharedModels;
 
-public enum ExperimentType
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class UpdateBuildRegionRequest : PlayFabRequestCommon
 {
-	Active,
-	Snapshot
+	public string BuildId;
+
+	public BuildRegionParams BuildRegion;
 }

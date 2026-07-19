@@ -1,8 +1,12 @@
-namespace Newtonsoft.Json;
-
-public interface IArrayPool<T>
+namespace Microsoft.CodeAnalysis
 {
-	T[] Rent(int minimumLength);
+}
+namespace Newtonsoft.Json
+{
+	public interface IArrayPool<T>
+	{
+		T[] Rent(int minimumLength);
 
-	void Return(T[]? array);
+		void Return(T[]? array);
+	}
 }

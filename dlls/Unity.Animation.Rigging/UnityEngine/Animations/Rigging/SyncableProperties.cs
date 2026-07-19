@@ -1,12 +1,8 @@
-namespace UnityEngine.Animations.Rigging
-{
-	internal struct SyncableProperties
-	{
-		public RigProperties rig;
+namespace UnityEngine.Animations.Rigging;
 
-		public ConstraintProperties[] constraints;
-	}
-}
-namespace UnityEngine.Animations.Rigging
+internal struct SyncableProperties
 {
+	public RigProperties rig;
+
+	public ConstraintProperties[] constraints;
 }

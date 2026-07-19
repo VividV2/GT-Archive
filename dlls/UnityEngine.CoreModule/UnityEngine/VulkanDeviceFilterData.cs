@@ -1,18 +1,22 @@
-namespace UnityEngine;
-
-public struct VulkanDeviceFilterData
+namespace UnityEngine
 {
-	public string vendorName;
+	public struct VulkanDeviceFilterData
+	{
+		public string vendorName;
 
-	public string deviceName;
+		public string deviceName;
 
-	public string brandName;
+		public string brandName;
 
-	public string productName;
+		public string productName;
 
-	public string androidOsVersionString;
+		public string androidOsVersionString;
 
-	public string vulkanApiVersionString;
+		public string vulkanApiVersionString;
 
-	public string driverVersionString;
+		public string driverVersionString;
+	}
+}
+namespace UnityEngine
+{
 }

@@ -1,10 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-using UnityEngine;
-
-public struct LuaCam
-{
-	public Vector3 position;
-
-	public Quaternion rotation;
-}
+// Could not decompile DevInspectorHide
+// This type uses unsupported IL or has too many generic parameters.

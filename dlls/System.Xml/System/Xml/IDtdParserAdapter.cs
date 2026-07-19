@@ -1,69 +1,104 @@
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Text;
+using System.Threading.Tasks;
+using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System.Xml;
-
-internal interface IDtdParserAdapter
+namespace System.Xml.Serialization
 {
-	XmlNameTable NameTable { get; }
+	internal class MethodBuilderInfo
+	{
+		public readonly MethodBuilder MethodBuilder;
 
-	IXmlNamespaceResolver NamespaceResolver { get; }
+		public readonly Type[] ParameterTypes;
 
-	Uri BaseUri { get; }
+		public MethodBuilderInfo(MethodBuilder methodBuilder, Type[] parameterTypes)
+		{
+			MethodBuilder = methodBuilder;
+			ParameterTypes = parameterTypes;
+		}
 
-	char[] ParsingBuffer { get; }
+		public void Validate(Type returnType, Type[] parameterTypes, MethodAttributes attributes)
+		{
+		}
+	}
+}
+namespace System.Xml.Schema
+{
+}
+namespace System.Xml
+{
+	internal interface IDtdParserAdapter
+	{
+		XmlNameTable NameTable { get; }
 
-	int ParsingBufferLength { get; }
+		IXmlNamespaceResolver NamespaceResolver { get; }
 
-	int CurrentPosition { get; set; }
+		Uri BaseUri { get; }
 
-	int LineNo { get; }
+		char[] ParsingBuffer { get; }
 
-	int LineStartPosition { get; }
+		int ParsingBufferLength { get; }
 
-	bool IsEof { get; }
+		int CurrentPosition { get; set; }
 
-	int EntityStackLength { get; }
+		int LineNo { get; }
 
-	bool IsEntityEolNormalized { get; }
+		int LineStartPosition { get; }
 
-	int ReadData();
+		bool IsEof { get; }
 
-	void OnNewLine(int pos);
+		int EntityStackLength { get; }
 
-	int ParseNumericCharRef(StringBuilder internalSubsetBuilder);
+		bool IsEntityEolNormalized { get; }
 
-	int ParseNamedCharRef(bool expand, StringBuilder internalSubsetBuilder);
+		int ReadData();
 
-	void ParsePI(StringBuilder sb);
+		void OnNewLine(int pos);
 
-	void ParseComment(StringBuilder sb);
+		int ParseNumericCharRef(StringBuilder internalSubsetBuilder);
 
-	bool PushEntity(IDtdEntityInfo entity, out int entityId);
+		int ParseNamedCharRef(bool expand, StringBuilder internalSubsetBuilder);
 
-	bool PopEntity(out IDtdEntityInfo oldEntity, out int newEntityId);
+		void ParsePI(StringBuilder sb);
 
-	bool PushExternalSubset(string systemId, string publicId);
+		void ParseComment(StringBuilder sb);
 
-	void PushInternalDtd(string baseUri, string internalDtd);
+		bool PushEntity(IDtdEntityInfo entity, out int entityId);
 
-	void OnSystemId(string systemId, LineInfo keywordLineInfo, LineInfo systemLiteralLineInfo);
+		bool PopEntity(out IDtdEntityInfo oldEntity, out int newEntityId);
 
-	void OnPublicId(string publicId, LineInfo keywordLineInfo, LineInfo publicLiteralLineInfo);
+		bool PushExternalSubset(string systemId, string publicId);
 
-	void Throw(Exception e);
+		void PushInternalDtd(string baseUri, string internalDtd);
 
-	Task<int> ReadDataAsync();
+		void OnSystemId(string systemId, LineInfo keywordLineInfo, LineInfo systemLiteralLineInfo);
 
-	Task<int> ParseNumericCharRefAsync(StringBuilder internalSubsetBuilder);
+		void OnPublicId(string publicId, LineInfo keywordLineInfo, LineInfo publicLiteralLineInfo);
 
-	Task<int> ParseNamedCharRefAsync(bool expand, StringBuilder internalSubsetBuilder);
+		void Throw(Exception e);
 
-	Task ParsePIAsync(StringBuilder sb);
+		Task<int> ReadDataAsync();
 
-	Task ParseCommentAsync(StringBuilder sb);
+		Task<int> ParseNumericCharRefAsync(StringBuilder internalSubsetBuilder);
 
-	Task<Tuple<int, bool>> PushEntityAsync(IDtdEntityInfo entity);
+		Task<int> ParseNamedCharRefAsync(bool expand, StringBuilder internalSubsetBuilder);
 
-	Task<bool> PushExternalSubsetAsync(string systemId, string publicId);
+		Task ParsePIAsync(StringBuilder sb);
+
+		Task ParseCommentAsync(StringBuilder sb);
+
+		Task<Tuple<int, bool>> PushEntityAsync(IDtdEntityInfo entity);
+
+		Task<bool> PushExternalSubsetAsync(string systemId, string publicId);
+	}
+}
+namespace System.Xml
+{
+}
+namespace System.Xml.Schema
+{
 }

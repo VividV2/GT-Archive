@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.Splines.Interpolators.LerpFloat3
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+using Unity.Mathematics;
+
+namespace UnityEngine.Splines.Interpolators;
+
+[StructLayout(LayoutKind.Sequential, Size = 1)]
+public struct LerpFloat3 : IInterpolator<float3>
+{
+	public float3 Interpolate(float3 a, float3 b, float t)
+	{
+		return math.lerp(a, b, t);
+	}
+}

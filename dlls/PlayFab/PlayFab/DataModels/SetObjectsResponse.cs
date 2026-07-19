@@ -1,2 +1,20 @@
-// Could not decompile PlayFab.DataModels.SetObjectsResponse
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.DataModels
+{
+	[Serializable]
+	public class SetObjectsResponse : PlayFabResultCommon
+	{
+		public int ProfileVersion;
+
+		public List<SetObjectInfo> SetResults;
+	}
+}
+namespace PlayFab
+{
+}
+namespace PlayFab.CloudScriptModels
+{
+}

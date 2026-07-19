@@ -1,10 +1,15 @@
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
 namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(5702)]
-	public struct SteamRemotePlaySessionDisconnected_t
+	[CallbackIdentity(4114)]
+	public struct MusicPlayerWantsPlayingRepeatStatus_t
 	{
-		public const int k_iCallback = 5702;
+		public const int k_iCallback = 4114;
 
-		public RemotePlaySessionID_t m_unSessionID;
+		public int m_nPlayingRepeatStatus;
 	}
+}

@@ -1,17 +1,15 @@
-namespace UnityEngine.Rendering
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.Rendering;
+
+[MovedFrom("UnityEngine.Experimental.Rendering")]
+public struct RayTracingSubMeshFlagsConfig
 {
-	public enum ShadowSamplingMode
-	{
-		CompareDepths,
-		RawDepth,
-		None
-	}
-}
-namespace UnityEngine.Rendering
-{
-	public enum ShadingRateCombinerStage
-	{
-		Primitive,
-		Fragment
-	}
+	public RayTracingSubMeshFlags opaqueMaterials;
+
+	public RayTracingSubMeshFlags transparentMaterials;
+
+	public RayTracingSubMeshFlags alphaTestedMaterials;
 }

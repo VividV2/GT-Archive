@@ -1,12 +1,8 @@
 using System;
 
-namespace Oculus.Interaction.Locomotion
+namespace Oculus.Interaction.Locomotion;
+
+public interface ILocomotionEventBroadcaster
 {
-	public interface ILocomotionEventBroadcaster
-	{
-		event Action<LocomotionEvent> WhenLocomotionPerformed;
-	}
-}
-namespace Oculus.Interaction
-{
+	event Action<LocomotionEvent> WhenLocomotionPerformed;
 }

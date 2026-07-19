@@ -1,8 +1,9 @@
-namespace UnityEngine.UIElements;
+namespace UnityEngine.UIElements.Layout;
 
-public enum ScrollViewMode
+internal enum LayoutFlexDirection
 {
-	Vertical,
-	Horizontal,
-	VerticalAndHorizontal
+	Column,
+	ColumnReverse,
+	Row,
+	RowReverse
 }

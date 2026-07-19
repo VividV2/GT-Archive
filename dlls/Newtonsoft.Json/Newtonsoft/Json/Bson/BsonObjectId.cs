@@ -1,12 +1,2 @@
-namespace Newtonsoft.Json.Linq;
+namespace Newtonsoft.Json.Linq.JsonPath;
 
-public enum MergeArrayHandling
-{
-	Concat,
-	Union,
-	Replace,
-	Merge
-}
-namespace Newtonsoft.Json.Converters
-{
-}

@@ -1,18 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.Asn1;
-
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-[StructLayout(LayoutKind.Sequential)]
-internal sealed class RecipientKeyIdentifier
-{
-	[OctetString]
-	internal ReadOnlyMemory<byte> SubjectKeyIdentifier;
-
-	[OptionalValue]
-	[GeneralizedTime]
-	internal DateTimeOffset? Date;
-
-	[OptionalValue]
-	internal OtherKeyAttributeAsn? Other;
-}
+// Could not decompile System.Security.Cryptography.Pkcs.Asn1.RecipientKeyIdentifier
+// This type uses unsupported IL or has too many generic parameters.

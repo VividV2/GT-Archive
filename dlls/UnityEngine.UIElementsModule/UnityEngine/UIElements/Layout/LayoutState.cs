@@ -1,12 +1,3 @@
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
+#define UNITY_ASSERTIONS
+namespace UnityEngine.UIElements.Layout;
+

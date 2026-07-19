@@ -1,11 +1,9 @@
 namespace UnityEngine;
 
-public enum CompressionLevel
+public enum FullScreenMode
 {
-	None,
-	Fastest,
-	Fast,
-	Normal,
-	High,
-	Maximum
+	ExclusiveFullScreen,
+	FullScreenWindow,
+	MaximizedWindow,
+	Windowed
 }

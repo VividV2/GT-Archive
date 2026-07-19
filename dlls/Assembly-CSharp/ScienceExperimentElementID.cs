@@ -1,3 +1,5 @@
+namespace GorillaNetworking;
+
 public enum ScienceExperimentElementID
 {
 	Platform1,

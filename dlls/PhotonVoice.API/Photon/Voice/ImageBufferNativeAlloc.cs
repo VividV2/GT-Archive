@@ -1,2 +1,2 @@
-// Could not decompile Photon.Voice.ImageBufferNativeAlloc
-// This type uses unsupported IL or has too many generic parameters.
+namespace Photon.Voice;
+

@@ -1,19 +1,2 @@
-using System;
-
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.All)]
-public sealed class LocalizationRequiredAttribute : Attribute
-{
-	public bool Required { get; }
-
-	public LocalizationRequiredAttribute()
-		: this(required: true)
-	{
-	}
-
-	public LocalizationRequiredAttribute(bool required)
-	{
-		Required = required;
-	}
-}
+// Could not decompile JetBrains.Annotations.LocalizationRequiredAttribute
+// This type uses unsupported IL or has too many generic parameters.

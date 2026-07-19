@@ -1,2 +1,8 @@
-// Could not decompile System.Configuration.ConfigurationValidatorAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Configuration
+{
+	public enum ConfigurationSaveMode
+	{
+		Minimal = 1,
+		Full = 2,
+		Modified = 0
+	}

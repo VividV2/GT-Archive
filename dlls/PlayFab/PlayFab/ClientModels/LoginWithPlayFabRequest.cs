@@ -1,2 +1,19 @@
-// Could not decompile PlayFab.ClientModels.LoginWithPlayFabRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class LoginWithPlayFabRequest : PlayFabRequestCommon
+{
+	public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
+
+	public string Password;
+
+	public string TitleId;
+
+	public string Username;
+}
+namespace PlayFab.ClientModels
+{
+}

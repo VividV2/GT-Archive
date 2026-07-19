@@ -1,7 +1,8 @@
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.Rendering;
-
+namespace UnityEngine.Rendering
+{
+}
 namespace UnityEngine.Rendering
 {
 	[MovedFrom("UnityEngine.Experimental.Rendering")]

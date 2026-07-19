@@ -1,2 +1,12 @@
-// Could not decompile CylinderAxisLockedInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Unity.Mathematics;
+
+[Serializable]
+public struct CylinderAxisLockedInfo
+{
+	public float3 center;
+
+	public float radius;
+
+	public float height;
+}

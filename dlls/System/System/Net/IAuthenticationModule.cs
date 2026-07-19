@@ -1,6 +1,3 @@
-namespace System.Net.NetworkInformation
-{
-}
-namespace System.Net
+namespace System.Security.Authentication.ExtendedProtection.Configuration
 {
 }

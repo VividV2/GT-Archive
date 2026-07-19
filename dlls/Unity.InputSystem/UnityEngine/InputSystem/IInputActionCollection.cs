@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem.Utilities;
 
-namespace UnityEngine.InputSystem.Composites
-{
-}
 namespace UnityEngine.InputSystem
 {
 	public interface IInputActionCollection : IEnumerable<InputAction>, IEnumerable
@@ -22,6 +19,9 @@ namespace UnityEngine.InputSystem
 		void Disable();
 	}
 }
-namespace UnityEngine.InputSystem.Composites
+namespace UnityEngine.InputSystem.Controls
+{
+}
+namespace Unity.XR.Oculus.Input
 {
 }

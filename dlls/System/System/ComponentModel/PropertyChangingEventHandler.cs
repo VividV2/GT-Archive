@@ -5,6 +5,6 @@ namespace System.ComponentModel
 	/// <param name="e">A <see cref="T:System.ComponentModel.PropertyChangingEventArgs" /> that contains the event data.</param>
 	public delegate void PropertyChangingEventHandler(object sender, PropertyChangingEventArgs e);
 }
-namespace System.IO.Ports
+namespace System.ComponentModel
 {
 }

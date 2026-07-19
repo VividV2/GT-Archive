@@ -1,7 +1,11 @@
-namespace Unity.Multiplayer.Center.Common.Analytics;
-
-public enum InteractionDataType
+namespace Unity.Multiplayer.Center.Common.Analytics
 {
-	CallToAction,
-	Link
+	public enum InteractionDataType
+	{
+		CallToAction,
+		Link
+	}
+}
+namespace Unity.Multiplayer.Center.Common
+{
 }

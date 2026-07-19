@@ -1,8 +1,12 @@
-namespace Pathfinding.Ionic.Zlib;
-
-public enum CompressionStrategy
+namespace Pathfinding.Ionic.Zlib
 {
-	Default,
-	Filtered,
-	HuffmanOnly
+	public enum CompressionStrategy
+	{
+		Default,
+		Filtered,
+		HuffmanOnly
+	}
+}
+namespace Pathfinding.Ionic.Zlib
+{
 }

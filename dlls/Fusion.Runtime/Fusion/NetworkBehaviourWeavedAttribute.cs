@@ -1,14 +1,2 @@
-using System;
-
-namespace Fusion;
-
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-public sealed class NetworkBehaviourWeavedAttribute : Attribute
-{
-	public int WordCount { get; }
-
-	public NetworkBehaviourWeavedAttribute(int wordCount)
-	{
-		WordCount = wordCount;
-	}
-}
+// Could not decompile Fusion.NetworkBehaviourWeavedAttribute
+// This type uses unsupported IL or has too many generic parameters.

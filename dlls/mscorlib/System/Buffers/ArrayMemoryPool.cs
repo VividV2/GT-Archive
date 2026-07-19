@@ -1,19 +1,2 @@
-using System.Security;
-using System.Security;
-
-namespace System.Globalization;
-
-internal struct InternalCodePageDataItem
-{
-	internal ushort codePage;
-
-	internal ushort uiFamilyCodePage;
-
-	internal uint flags;
-
-	[SecurityCritical]
-	internal string Names;
-}
-namespace System.Collections.Concurrent
-{
-}
+// Could not decompile System.Buffers.ArrayMemoryPool`1
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,10 +1,6 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public interface IManipulator
 {
-	public interface IManipulator
-	{
-		VisualElement target { get; set; }
-	}
-}
-namespace UnityEngine.UIElements
-{
+	VisualElement target { get; set; }
 }

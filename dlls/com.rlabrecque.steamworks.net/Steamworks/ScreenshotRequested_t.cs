@@ -1,16 +1,46 @@
-namespace Steamworks;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Sequential, Pack = 4)]
-[CallbackIdentity(334)]
-public struct AvatarImageLoaded_t
+namespace Steamworks
 {
-	public const int k_iCallback = 334;
+	[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
+	[CallbackIdentity(2302)]
+	public struct ScreenshotRequested_t
+	{
+		public const int k_iCallback = 2302;
+	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	[CallbackIdentity(340)]
+	public struct GameConnectedChatLeave_t
+	{
+		public const int k_iCallback = 340;
 
-	public CSteamID m_steamID;
+		public CSteamID m_steamIDClanChat;
 
-	public int m_iImage;
+		public CSteamID m_steamIDUser;
 
-	public int m_iWide;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bKicked;
 
-	public int m_iTall;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bDropped;
+	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(152)]
+	public struct MicroTxnAuthorizationResponse_t
+	{
+		public const int k_iCallback = 152;
+
+		public uint m_unAppID;
+
+		public ulong m_ulOrderID;
+
+		public byte m_bAuthorized;
+	}
 }

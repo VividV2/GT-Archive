@@ -1,17 +1,6 @@
-namespace Cysharp.Threading.Tasks.Triggers
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnAnimatorMoveHandler
 {
-	public interface IAsyncOnAnimatorMoveHandler
-	{
-		UniTask OnAnimatorMoveAsync();
-	}
-}
-namespace Cysharp.Threading.Tasks.Triggers
-{
-	public interface IAsyncOnDrawGizmosHandler
-	{
-		UniTask OnDrawGizmosAsync();
-	}
-}
-namespace Cysharp.Threading.Tasks
-{
+	UniTask OnAnimatorMoveAsync();
 }

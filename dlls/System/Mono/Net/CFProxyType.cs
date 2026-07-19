@@ -1,12 +1,16 @@
-namespace Mono.Net;
-
-internal enum CFProxyType
+namespace Mono.Net
 {
-	None,
-	AutoConfigurationUrl,
-	AutoConfigurationJavaScript,
-	FTP,
-	HTTP,
-	HTTPS,
-	SOCKS
+	internal enum CFProxyType
+	{
+		None,
+		AutoConfigurationUrl,
+		AutoConfigurationJavaScript,
+		FTP,
+		HTTP,
+		HTTPS,
+		SOCKS
+	}
+}
+namespace System.ComponentModel.Design
+{
 }

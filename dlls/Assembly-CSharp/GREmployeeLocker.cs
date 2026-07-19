@@ -1,11 +1,2 @@
-using UnityEngine;
-
-public enum GTShaderLightingType
-{
-	Unlit,
-	Lightmapped,
-	Specular
-}
-public class GREmployeeLocker : MonoBehaviour
-{
-}
+// Could not decompile GREmployeeLocker
+// This type uses unsupported IL or has too many generic parameters.

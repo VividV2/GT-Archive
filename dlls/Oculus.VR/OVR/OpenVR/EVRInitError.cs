@@ -1,23 +1,40 @@
 namespace OVR.OpenVR
 {
-	public struct IVRDriverManager
+	public struct COpenVRContext
 	{
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate uint _GetDriverCount();
+		public IntPtr m_pVRSystem;
 
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate uint _GetDriverName(uint nDriver, StringBuilder pchValue, uint unBufferSize);
+		public IntPtr m_pVRChaperone;
 
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate ulong _GetDriverHandle(string pchDriverName);
+		public IntPtr m_pVRChaperoneSetup;
 
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _GetDriverCount GetDriverCount;
+		public IntPtr m_pVRCompositor;
 
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _GetDriverName GetDriverName;
+		public IntPtr m_pVROverlay;
 
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _GetDriverHandle GetDriverHandle;
+		public IntPtr m_pVRResources;
+
+		public IntPtr m_pVRRenderModels;
+
+		public IntPtr m_pVRExtendedDisplay;
+
+		public IntPtr m_pVRSettings;
+
+		public IntPtr m_pVRApplications;
+
+		public IntPtr m_pVRTrackedCamera;
+
+		public IntPtr m_pVRScreenshots;
+
+		public IntPtr m_pVRDriverManager;
+
+		public IntPtr m_pVRInput;
+
+		public IntPtr m_pVRIOBuffer;
+
+		public IntPtr m_pVRSpatialAnchors;
 	}
+}
+namespace OVR.OpenVR
+{
 }

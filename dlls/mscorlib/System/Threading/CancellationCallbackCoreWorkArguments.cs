@@ -1,8 +1,2 @@
-namespace System.Threading;
-
-internal struct CancellationCallbackCoreWorkArguments(SparselyPopulatedArrayFragment<CancellationCallbackInfo> currArrayFragment, int currArrayIndex)
-{
-	internal SparselyPopulatedArrayFragment<CancellationCallbackInfo> _currArrayFragment = currArrayFragment;
-
-	internal int _currArrayIndex = currArrayIndex;
-}
+// Could not decompile System.Threading.CancellationCallbackCoreWorkArguments
+// This type uses unsupported IL or has too many generic parameters.

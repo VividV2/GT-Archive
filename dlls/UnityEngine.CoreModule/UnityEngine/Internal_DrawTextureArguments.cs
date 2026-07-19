@@ -2,9 +2,6 @@ using UnityEngine.Bindings;
 
 namespace UnityEngine
 {
-}
-namespace UnityEngine
-{
 	[VisibleToOtherModules(new string[] { "UnityEngine.IMGUIModule" })]
 	internal struct Internal_DrawTextureArguments
 	{
@@ -42,4 +39,7 @@ namespace UnityEngine
 
 		public Material mat;
 	}
+}
+namespace UnityEngine
+{
 }

@@ -1,16 +1,2 @@
-using System.Runtime.CompilerServices;
-
-namespace System.Runtime.Versioning;
-
-[System.Runtime.CompilerServices.FriendAccessAllowed]
-internal enum TargetFrameworkId
-{
-	NotYetChecked,
-	Unrecognized,
-	Unspecified,
-	NetFramework,
-	Portable,
-	NetCore,
-	Silverlight,
-	Phone
-}
+// Could not decompile Mono.Security.Cryptography.HMACAlgorithm
+// This type uses unsupported IL or has too many generic parameters.

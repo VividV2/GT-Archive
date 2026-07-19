@@ -1,11 +1,2 @@
-using System;
-using System;
-
-[Flags]
-internal enum GorillaSkinMaterials
-{
-	Body = 1,
-	Face = 2,
-	Chest = 4,
-	Scoreboard = 8
-}
+// Could not decompile CustomMapAccessDoor
+// This type uses unsupported IL or has too many generic parameters.

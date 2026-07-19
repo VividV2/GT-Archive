@@ -1,11 +1,9 @@
-namespace GorillaTagScripts
+public enum GetSessionResponseType
 {
-}
-namespace GorillaNetworking
-{
-}
-namespace GorillaTag
-{
+	OK = 200,
+	NOT_FOUND = 204,
+	LOST = 404,
+	ERROR = 0
 }
 public interface IFXEffectContext<T> where T : IFXEffectContextObject
 {

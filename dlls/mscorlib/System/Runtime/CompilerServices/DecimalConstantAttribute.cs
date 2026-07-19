@@ -1,2 +1,7 @@
-// Could not decompile System.Runtime.CompilerServices.DecimalConstantAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.CompilerServices;
+
+[FriendAccessAllowed]
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Interface, AllowMultiple = false, Inherited = false)]
+internal sealed class FriendAccessAllowedAttribute : Attribute
+{
+}

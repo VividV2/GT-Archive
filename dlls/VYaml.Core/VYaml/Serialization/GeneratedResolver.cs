@@ -1,2 +1,2 @@
-namespace VYaml.Parser;
+namespace VYaml.Internal;
 

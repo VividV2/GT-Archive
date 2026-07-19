@@ -1,45 +1,20 @@
-namespace POpusCodec.Enums;
+namespace Photon.Voice;
 
-internal enum OpusCtlGetRequest
+public interface IAudioOut<T>
 {
-	Application = 4001,
-	Bitrate = 4003,
-	MaxBandwidth = 4005,
-	VBR = 4007,
-	Bandwidth = 4009,
-	Complexity = 4011,
-	InbandFec = 4013,
-	PacketLossPercentage = 4015,
-	Dtx = 4017,
-	VBRConstraint = 4021,
-	ForceChannels = 4023,
-	Signal = 4025,
-	LookAhead = 4027,
-	SampleRate = 4029,
-	FinalRange = 4031,
-	Pitch = 4033,
-	Gain = 4035,
-	LsbDepth = 4037,
-	LastPacketDurationRequest = 4039
-}
-namespace Photon.Voice
-{
-	public interface IAudioOut<T>
-	{
-		bool IsPlaying { get; }
+	bool IsPlaying { get; }
 
-		int Lag { get; }
+	int Lag { get; }
 
-		void Start(int frequency, int channels, int frameSamplesPerChannel);
+	void Start(int frequency, int channels, int frameSamplesPerChannel);
 
-		void Flush();
+	void Flush();
 
-		void Stop();
+	void Stop();
 
-		void Push(T[] frame);
+	void Push(T[] frame);
 
-		void Service();
+	void Service();
 
-		void ToggleAudioSource(bool toggle);
-	}
+	void ToggleAudioSource(bool toggle);
 }

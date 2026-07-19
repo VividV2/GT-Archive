@@ -1,9 +1,2 @@
-using System.Runtime.Serialization;
-
-namespace Newtonsoft.Json.Serialization
-{
-}
-namespace Newtonsoft.Json.Serialization
-{
-	public delegate void SerializationCallback(object o, StreamingContext context);
-}
+// Could not decompile Newtonsoft.Json.Serialization.SerializationCallback
+// This type uses unsupported IL or has too many generic parameters.

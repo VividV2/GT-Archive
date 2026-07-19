@@ -1,9 +1,16 @@
-namespace Newtonsoft.Json.Utilities;
+using System.Runtime.Serialization;
 
-internal enum ParserTimeZone
+namespace Newtonsoft.Json.Utilities
 {
-	Unspecified,
-	Utc,
-	LocalWestOfUtc,
-	LocalEastOfUtc
+	internal enum ParserTimeZone
+	{
+		Unspecified,
+		Utc,
+		LocalWestOfUtc,
+		LocalEastOfUtc
+	}
+}
+namespace Newtonsoft.Json.Serialization
+{
+	public delegate void SerializationCallback(object o, StreamingContext context);
 }

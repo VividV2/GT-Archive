@@ -1,28 +1,54 @@
 namespace Pathfinding.ClipperLib;
 
-public struct IntRect
+public struct IntPoint
 {
-	public long left;
+	public long X;
 
-	public long top;
+	public long Y;
 
-	public long right;
-
-	public long bottom;
-
-	public IntRect(long l, long t, long r, long b)
+	public IntPoint(long X, long Y)
 	{
-		left = l;
-		top = t;
-		right = r;
-		bottom = b;
+		this.X = X;
+		this.Y = Y;
 	}
 
-	public IntRect(IntRect ir)
+	public IntPoint(double x, double y)
 	{
-		left = ir.left;
-		top = ir.top;
-		right = ir.right;
-		bottom = ir.bottom;
+		X = (long)x;
+		Y = (long)y;
+	}
+
+	public IntPoint(IntPoint pt)
+	{
+		X = pt.X;
+		Y = pt.Y;
+	}
+
+	public override bool Equals(object obj)
+	{
+		if (obj == null)
+		{
+			return false;
+		}
+		if (obj is IntPoint intPoint)
+		{
+			return X == intPoint.X && Y == intPoint.Y;
+		}
+		return false;
+	}
+
+	public override int GetHashCode()
+	{
+		return base.GetHashCode();
+	}
+
+	public static bool operator ==(IntPoint a, IntPoint b)
+	{
+		return a.X == b.X && a.Y == b.Y;
+	}
+
+	public static bool operator !=(IntPoint a, IntPoint b)
+	{
+		return a.X != b.X || a.Y != b.Y;
 	}
 }

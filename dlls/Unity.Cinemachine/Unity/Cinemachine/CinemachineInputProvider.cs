@@ -1,15 +1,2 @@
-using System;
-using System;
-
-namespace Unity.Cinemachine;
-
-[Flags]
-internal enum PointInPolygonResult
-{
-	IsOn = 0,
-	IsInside = 1,
-	IsOutside = 2
-}
-namespace Unity.Cinemachine
-{
-}
+// Could not decompile Unity.Cinemachine.CinemachineInputProvider
+// This type uses unsupported IL or has too many generic parameters.

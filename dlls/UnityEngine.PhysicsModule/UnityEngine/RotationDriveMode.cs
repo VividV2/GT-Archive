@@ -1,7 +1,11 @@
-namespace UnityEngine;
-
-public enum RotationDriveMode
+namespace UnityEngine
 {
-	XYAndZ,
-	Slerp
+	public enum RotationDriveMode
+	{
+		XYAndZ,
+		Slerp
+	}
+}
+namespace UnityEngine
+{
 }

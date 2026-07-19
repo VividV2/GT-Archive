@@ -1,6 +1,2 @@
-namespace System.Xml.Xsl.IlGen
-{
-}
-namespace System.Xml.Xsl.Runtime
-{
-}
+// Could not decompile System.Xml.Schema.PlusNode
+// This type uses unsupported IL or has too many generic parameters.

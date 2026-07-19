@@ -1,3 +1,9 @@
-namespace Liv.Lck.Cosmetics;
+namespace Liv.Lck.Core;
 
-public delegate void PlayerIdUpdatedEvent();
+public enum LogType
+{
+	Error,
+	Warning,
+	Info,
+	Trace
+}

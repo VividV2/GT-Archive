@@ -1,6 +1,2 @@
-namespace Fusion.Photon.Realtime
-{
-}
-namespace Fusion.Photon.Realtime.Async
-{
-}
+// Could not decompile Fusion.Photon.Realtime.RegionHandler
+// This type uses unsupported IL or has too many generic parameters.

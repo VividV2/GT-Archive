@@ -1,9 +1,10 @@
-namespace UnityEngine;
+namespace Unity.IO.LowLevel.Unsafe;
 
-public enum TextureWrapMode
+public enum ReadStatus
 {
-	Repeat,
-	Clamp,
-	Mirror,
-	MirrorOnce
+	Complete = 0,
+	InProgress = 1,
+	Failed = 2,
+	Truncated = 4,
+	Canceled = 5
 }

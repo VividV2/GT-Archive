@@ -1,7 +1,12 @@
+using System;
+using PlayFab.SharedModels;
+
 namespace PlayFab.MultiplayerModels;
 
-public enum AttributeSource
+[Serializable]
+public class GetAssetUploadUrlResponse : PlayFabResultCommon
 {
-	User,
-	PlayerEntity
+	public string AssetUploadUrl;
+
+	public string FileName;
 }

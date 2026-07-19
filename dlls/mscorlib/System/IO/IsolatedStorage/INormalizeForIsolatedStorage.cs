@@ -7,6 +7,3 @@ public interface INormalizeForIsolatedStorage
 	/// <returns>A normalized object that represents the instance on which this method was called. This instance can be a string, stream, or any serializable object.</returns>
 	object Normalize();
 }
-namespace System.IO
-{
-}

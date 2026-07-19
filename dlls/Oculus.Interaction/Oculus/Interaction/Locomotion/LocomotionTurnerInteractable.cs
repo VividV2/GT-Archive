@@ -1,9 +1,2 @@
-namespace Oculus.Interaction.Locomotion
-{
-	public class LocomotionTurnerInteractable : Interactable<LocomotionTurnerInteractor, LocomotionTurnerInteractable>
-	{
-	}
-}
-namespace Oculus.Interaction.Throw
-{
-}
+// Could not decompile Oculus.Interaction.Locomotion.LocomotionTurnerInteractable
+// This type uses unsupported IL or has too many generic parameters.

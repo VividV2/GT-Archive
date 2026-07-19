@@ -3,6 +3,13 @@ using VYaml.Parser;
 
 namespace VYaml.Serialization
 {
+	public interface IYamlFormatterResolver
+	{
+		IYamlFormatter<T>? GetFormatter<T>();
+	}
+}
+namespace VYaml.Serialization
+{
 	public class BooleanFormatter : IYamlFormatter<bool>, IYamlFormatter
 	{
 		public static readonly BooleanFormatter Instance = new BooleanFormatter();
@@ -20,6 +27,6 @@ namespace VYaml.Serialization
 		}
 	}
 }
-namespace VYaml.Parser
+namespace VYaml.Serialization
 {
 }

@@ -1,9 +1,8 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum SpriteDrawMode
 {
-	public enum SpriteDrawMode
-	{
-		Simple,
-		Sliced,
-		Tiled
-	}
+	Simple,
+	Sliced,
+	Tiled
 }

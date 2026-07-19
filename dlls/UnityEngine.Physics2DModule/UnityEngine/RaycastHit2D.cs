@@ -1,6 +1,0 @@
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-}

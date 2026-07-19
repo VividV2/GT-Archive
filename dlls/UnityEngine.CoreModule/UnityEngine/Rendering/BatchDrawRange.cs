@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Rendering.BatchDrawRange
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+public struct BatchDrawRange
+{
+	public BatchDrawCommandType drawCommandsType;
+
+	public uint drawCommandsBegin;
+
+	public uint drawCommandsCount;
+
+	public BatchFilterSettings filterSettings;
+}

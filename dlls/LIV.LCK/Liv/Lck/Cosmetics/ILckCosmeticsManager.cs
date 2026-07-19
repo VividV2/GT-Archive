@@ -1,14 +1,10 @@
 using System;
 
-namespace Liv.Lck.Cosmetics
-{
-	public interface ILckCosmeticsManager : IDisposable
-	{
-		void RegisterDependant(ILckCosmeticDependant dependant);
+namespace Liv.Lck.Cosmetics;
 
-		void UnregisterDependant(ILckCosmeticDependant dependant);
-	}
-}
-namespace Liv.Lck.Encoding
+public interface ILckCosmeticsManager : IDisposable
 {
+	void RegisterDependant(ILckCosmeticDependant dependant);
+
+	void UnregisterDependant(ILckCosmeticDependant dependant);
 }

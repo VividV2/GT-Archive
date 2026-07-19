@@ -1,9 +1,15 @@
-namespace Meta.Voice.Net.WebSockets;
+using System;
+using System.Threading.Tasks;
 
-public enum WitWebSocketConnectionState
+namespace Meta.Conduit;
+
+internal interface IConduitDispatcher
 {
-	Disconnected,
-	Connecting,
-	Connected,
-	Disconnecting
+	Manifest Manifest { get; }
+
+	Task Initialize(string manifestFilePath);
+
+	bool InvokeAction(IParameterProvider parameterProvider, string actionId, bool relaxed, float confidence = 1f, bool partial = false);
+
+	bool InvokeError(string actionId, Exception exception = null);
 }

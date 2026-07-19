@@ -1,32 +1,28 @@
-namespace System.Runtime.Serialization.Formatters.Binary
+namespace System.Runtime.Serialization.Formatters.Binary;
+
+internal enum BinaryHeaderEnum
 {
-	internal enum BinaryHeaderEnum
-	{
-		SerializedStreamHeader,
-		Object,
-		ObjectWithMap,
-		ObjectWithMapAssemId,
-		ObjectWithMapTyped,
-		ObjectWithMapTypedAssemId,
-		ObjectString,
-		Array,
-		MemberPrimitiveTyped,
-		MemberReference,
-		ObjectNull,
-		MessageEnd,
-		Assembly,
-		ObjectNullMultiple256,
-		ObjectNullMultiple,
-		ArraySinglePrimitive,
-		ArraySingleObject,
-		ArraySingleString,
-		CrossAppDomainMap,
-		CrossAppDomainString,
-		CrossAppDomainAssembly,
-		MethodCall,
-		MethodReturn
-	}
-}
-namespace System.Security.Policy
-{
+	SerializedStreamHeader,
+	Object,
+	ObjectWithMap,
+	ObjectWithMapAssemId,
+	ObjectWithMapTyped,
+	ObjectWithMapTypedAssemId,
+	ObjectString,
+	Array,
+	MemberPrimitiveTyped,
+	MemberReference,
+	ObjectNull,
+	MessageEnd,
+	Assembly,
+	ObjectNullMultiple256,
+	ObjectNullMultiple,
+	ArraySinglePrimitive,
+	ArraySingleObject,
+	ArraySingleString,
+	CrossAppDomainMap,
+	CrossAppDomainString,
+	CrossAppDomainAssembly,
+	MethodCall,
+	MethodReturn
 }

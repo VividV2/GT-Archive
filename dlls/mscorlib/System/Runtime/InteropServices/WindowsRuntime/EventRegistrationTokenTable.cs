@@ -1,2 +1,18 @@
-// Could not decompile System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.InteropServices
+{
+	[TypeLibImportClass(typeof(MethodRental))]
+	[Guid("C2323C25-F57F-3880-8A4D-12EBEA7A5852")]
+	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+	[CLSCompliant(false)]
+	[ComVisible(true)]
+	public interface _MethodRental
+	{
+		void GetIDsOfNames([In] ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);
+
+		void GetTypeInfo(uint iTInfo, uint lcid, IntPtr ppTInfo);
+
+		void GetTypeInfoCount(out uint pcTInfo);
+
+		void Invoke(uint dispIdMember, [In] ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);
+	}
+}

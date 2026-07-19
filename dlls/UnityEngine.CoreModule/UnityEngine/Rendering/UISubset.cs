@@ -9,3 +9,6 @@ public enum UISubset
 	LowLevel = 2,
 	All = -1
 }
+namespace UnityEngine.Experimental.Rendering
+{
+}

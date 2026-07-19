@@ -1,13 +1,15 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
+using System;
+using Meta.XR.Util;
+using UnityEngine;
 
-namespace OVR.OpenVR;
-
-public struct VREvent_SeatedZeroPoseReset_t
+[Obsolete]
+[ExecuteInEditMode]
+[HelpURL("https://developer.oculus.com/documentation/unity/VK-unity-IntegratePrefab/")]
+[Feature(Feature.VirtualKeyboard)]
+public class OVRVirtualKeyboardHandInputHandler : MonoBehaviour
 {
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bResetBySystemMenu;
-}
-namespace OVR.OpenVR
-{
+	private void Awake()
+	{
+		UnityEngine.Object.DestroyImmediate(this);
+	}
 }

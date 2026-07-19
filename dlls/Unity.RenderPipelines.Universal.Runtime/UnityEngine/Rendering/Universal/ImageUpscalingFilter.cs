@@ -1,9 +1,13 @@
-namespace UnityEngine.Rendering.Universal;
-
-internal enum ImageUpscalingFilter
+namespace UnityEngine.Rendering.Universal
 {
-	Linear,
-	Point,
-	FSR,
-	STP
+	internal enum ImageUpscalingFilter
+	{
+		Linear,
+		Point,
+		FSR,
+		STP
+	}
+}
+namespace UnityEngine.Rendering.Universal
+{
 }

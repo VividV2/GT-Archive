@@ -1,10 +1,6 @@
-namespace System.Net.Sockets;
+namespace System.IO;
 
-public enum SocketOptionLevel
-{
-	Socket = 65535,
-	IP = 0,
-	IPv6 = 41,
-	Tcp = 6,
-	Udp = 17
-}
+/// <summary>Represents the method that will handle the <see cref="E:System.IO.FileSystemWatcher.Renamed" /> event of a <see cref="T:System.IO.FileSystemWatcher" /> class.</summary>
+/// <param name="sender">The source of the event.</param>
+/// <param name="e">The <see cref="T:System.IO.RenamedEventArgs" /> that contains the event data.</param>
+public delegate void RenamedEventHandler(object sender, RenamedEventArgs e);

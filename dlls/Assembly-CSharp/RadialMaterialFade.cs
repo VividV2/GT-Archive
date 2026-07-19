@@ -1,12 +1,2 @@
-using System;
-using UnityEngine;
-using System;
-using UnityEngine;
-
-[Serializable]
-public struct GameHitFx
-{
-	public AbilitySound hitSound;
-
-	public ParticleSystem hitEffect;
-}
+// Could not decompile RadialMaterialFade
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,15 +1,2 @@
-using System;
-
-namespace Unity.Cinemachine
-{
-	internal class ClipperLibException : Exception
-	{
-		public ClipperLibException(string description)
-			: base(description)
-		{
-		}
-	}
-}
-namespace Unity.Cinemachine
-{
-}
+// Could not decompile Unity.Cinemachine.ClipperLibException
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,6 @@
-// Could not decompile Cysharp.Threading.Tasks.Triggers.IAsyncOnValidateHandler
-// This type uses unsupported IL or has too many generic parameters.
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnValidateHandler
+{
+	UniTask OnValidateAsync();
+}

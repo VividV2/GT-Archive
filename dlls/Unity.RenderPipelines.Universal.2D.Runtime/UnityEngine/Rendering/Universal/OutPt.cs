@@ -1,12 +1,16 @@
-namespace UnityEngine.Rendering.Universal;
-
-internal class OutPt
+namespace UnityEngine.Rendering.Universal
 {
-	internal int Idx;
+	internal class OutPt
+	{
+		internal int Idx;
 
-	internal IntPoint Pt;
+		internal IntPoint Pt;
 
-	internal OutPt Next;
+		internal OutPt Next;
 
-	internal OutPt Prev;
+		internal OutPt Prev;
+	}
+}
+namespace UnityEngine.Rendering.Universal
+{
 }

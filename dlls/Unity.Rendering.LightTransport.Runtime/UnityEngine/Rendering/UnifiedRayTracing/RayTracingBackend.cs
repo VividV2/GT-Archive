@@ -1,7 +1,11 @@
-namespace UnityEngine.Rendering.UnifiedRayTracing;
-
-internal enum RayTracingBackend
+namespace UnityEngine.Rendering.UnifiedRayTracing
 {
-	Hardware,
-	Compute
+	internal enum RayTracingBackend
+	{
+		Hardware,
+		Compute
+	}
+}
+namespace UnityEngine.Rendering.UnifiedRayTracing
+{
 }

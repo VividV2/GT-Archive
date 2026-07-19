@@ -1,2 +1,11 @@
-// Could not decompile ActiveWebSocket
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using NativeWebSocket;
+
+internal class ActiveWebSocket
+{
+	public WebSocket websocket;
+
+	public MothershipOpenWebSocketEventArgs requestData;
+
+	public Action<MothershipOpenWebSocketEventArgs> resetSocket;
+}

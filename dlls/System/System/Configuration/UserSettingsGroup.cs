@@ -1,10 +1,3 @@
-namespace System.Configuration;
+namespace System.Net;
 
-/// <summary>Represents a grouping of related user settings sections within a configuration file. This class cannot be inherited.</summary>
-public sealed class UserSettingsGroup : ConfigurationSectionGroup
-{
-	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.UserSettingsGroup" /> class.</summary>
-	public UserSettingsGroup()
-	{
-	}
-}
+public delegate void DownloadProgressChangedEventHandler(object sender, DownloadProgressChangedEventArgs e);

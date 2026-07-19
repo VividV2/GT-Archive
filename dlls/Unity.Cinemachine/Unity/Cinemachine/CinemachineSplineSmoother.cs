@@ -1,2 +1,13 @@
-namespace Unity.Cinemachine;
+using UnityEngine;
+using UnityEngine;
 
+namespace Unity.Cinemachine
+{
+}
+namespace Unity.Cinemachine
+{
+	public interface IInputAxisReader
+	{
+		float GetValue(Object context, IInputAxisOwner.AxisDescriptor.Hints hint);
+	}
+}

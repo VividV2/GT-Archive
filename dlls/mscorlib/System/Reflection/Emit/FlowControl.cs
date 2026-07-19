@@ -1,3 +1,3 @@
-namespace System.Numerics.Hashing
+namespace System.Reflection.Emit
 {
 }

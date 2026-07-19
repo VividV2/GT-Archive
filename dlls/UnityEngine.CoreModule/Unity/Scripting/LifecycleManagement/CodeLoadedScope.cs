@@ -1,5 +1,2 @@
-namespace Unity.Scripting.LifecycleManagement;
-
-internal sealed class CodeLoadedScope
-{
-}
+// Could not decompile Unity.Scripting.LifecycleManagement.CodeLoadedScope
+// This type uses unsupported IL or has too many generic parameters.

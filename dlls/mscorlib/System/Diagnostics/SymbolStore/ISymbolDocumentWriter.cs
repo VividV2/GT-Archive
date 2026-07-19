@@ -2,18 +2,6 @@ using System.Runtime.InteropServices;
 
 namespace System.Diagnostics.SymbolStore
 {
-	[ComVisible(true)]
-	public class SymDocumentType
-	{
-		public static readonly Guid Text;
-
-		public SymDocumentType()
-		{
-		}
-	}
-}
-namespace System.Diagnostics.SymbolStore
-{
 	/// <summary>Represents a document referenced by a symbol store.</summary>
 	[ComVisible(true)]
 	public interface ISymbolDocumentWriter
@@ -27,4 +15,7 @@ namespace System.Diagnostics.SymbolStore
 		/// <param name="source">The document source represented as unsigned bytes.</param>
 		void SetSource(byte[] source);
 	}
+}
+namespace System.Diagnostics.Contracts
+{
 }

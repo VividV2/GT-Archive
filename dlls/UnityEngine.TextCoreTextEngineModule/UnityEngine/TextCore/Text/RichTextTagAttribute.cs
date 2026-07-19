@@ -1,16 +1,20 @@
-namespace UnityEngine.TextCore.Text;
-
-internal struct RichTextTagAttribute
+namespace UnityEngine.TextCore.Text
 {
-	public int nameHashCode;
+}
+namespace UnityEngine.TextCore.Text
+{
+	internal struct RichTextTagAttribute
+	{
+		public int nameHashCode;
 
-	public int valueHashCode;
+		public int valueHashCode;
 
-	public TagValueType valueType;
+		public TagValueType valueType;
 
-	public int valueStartIndex;
+		public int valueStartIndex;
 
-	public int valueLength;
+		public int valueLength;
 
-	public TagUnitType unitType;
+		public TagUnitType unitType;
+	}
 }

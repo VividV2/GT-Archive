@@ -1,2 +1,6 @@
-// Could not decompile Unity.Properties.IVisitPropertyAdapter`2
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.Properties;
+
+public interface IVisitPropertyAdapter : IPropertyVisitorAdapter
+{
+	void Visit<TContainer, TValue>(in VisitContext<TContainer, TValue> context, ref TContainer container, ref TValue value);
+}

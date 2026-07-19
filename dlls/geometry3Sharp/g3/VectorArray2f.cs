@@ -1,2 +1,2 @@
-// Could not decompile g3.VectorArray2f
-// This type uses unsupported IL or has too many generic parameters.
+namespace g3;
+

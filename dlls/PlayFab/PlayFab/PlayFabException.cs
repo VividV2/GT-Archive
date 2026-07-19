@@ -1,14 +1,8 @@
-using System;
+namespace Ionic.Zlib;
 
-namespace PlayFab;
-
-public class PlayFabException : Exception
+public enum CompressionStrategy
 {
-	public readonly PlayFabExceptionCode Code;
-
-	public PlayFabException(PlayFabExceptionCode code, string message)
-		: base(message)
-	{
-		Code = code;
-	}
+	Default,
+	Filtered,
+	HuffmanOnly
 }

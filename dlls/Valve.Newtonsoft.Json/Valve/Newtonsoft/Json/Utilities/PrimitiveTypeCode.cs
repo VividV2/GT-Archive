@@ -1,8 +1,5 @@
 namespace Valve.Newtonsoft.Json.Utilities
 {
-}
-namespace Valve.Newtonsoft.Json.Utilities
-{
 	internal enum PrimitiveTypeCode
 	{
 		Empty,
@@ -48,4 +45,7 @@ namespace Valve.Newtonsoft.Json.Utilities
 		Bytes,
 		DBNull
 	}
+}
+namespace Valve.Newtonsoft.Json.Serialization
+{
 }

@@ -1,14 +1,15 @@
-using System.Runtime.InteropServices;
-
 namespace Steamworks;
 
-[StructLayout(LayoutKind.Sequential, Pack = 4)]
-[CallbackIdentity(1800)]
-public struct GSStatsReceived_t
+public enum EVoiceResult
 {
-	public const int k_iCallback = 1800;
-
-	public EResult m_eResult;
-
-	public CSteamID m_steamIDUser;
+	k_EVoiceResultOK,
+	k_EVoiceResultNotInitialized,
+	k_EVoiceResultNotRecording,
+	k_EVoiceResultNoData,
+	k_EVoiceResultBufferTooSmall,
+	k_EVoiceResultDataCorrupted,
+	k_EVoiceResultRestricted,
+	k_EVoiceResultUnsupportedCodec,
+	k_EVoiceResultReceiverOutOfDate,
+	k_EVoiceResultReceiverDidNotAnswer
 }

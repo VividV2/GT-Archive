@@ -1,22 +1,2 @@
-using System;
-using System;
-
-namespace UnityEngine.UIElements
-{
-	[Obsolete("UxmlObjectTraits<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-	internal abstract class UxmlObjectTraits<T> : BaseUxmlTraits
-	{
-		public virtual void Init(ref T obj, IUxmlAttributes bag, CreationContext cc)
-		{
-		}
-	}
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
+// Could not decompile UnityEngine.UIElements.UxmlObjectTraits`1
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,2 @@
-// Could not decompile MS.Internal.Xml.XPath.Root
-// This type uses unsupported IL or has too many generic parameters.
+namespace MS.Internal.Xml.XPath;
+

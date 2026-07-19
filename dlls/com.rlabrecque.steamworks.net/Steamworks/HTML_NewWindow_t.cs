@@ -1,24 +1,22 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4521)]
-public struct HTML_NewWindow_t
+namespace Steamworks
 {
-	public const int k_iCallback = 4521;
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(1108)]
+	public struct UserStatsUnloaded_t
+	{
+		public const int k_iCallback = 1108;
 
-	public HHTMLBrowser unBrowserHandle;
-
-	public string pchURL;
-
-	public uint unX;
-
-	public uint unY;
-
-	public uint unWide;
-
-	public uint unTall;
-
-	public HHTMLBrowser unNewWindow_BrowserHandle_IGNORE;
+		public CSteamID m_steamIDUser;
+	}
+}
+namespace Steamworks
+{
+	public enum EWorkshopVideoProvider
+	{
+		k_EWorkshopVideoProviderNone,
+		k_EWorkshopVideoProviderYoutube
+	}
 }

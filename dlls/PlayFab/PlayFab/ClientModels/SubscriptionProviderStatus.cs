@@ -1,13 +1,17 @@
-namespace PlayFab.ClientModels;
-
-public enum SubscriptionProviderStatus
+namespace PlayFab.ClientModels
 {
-	NoError,
-	Cancelled,
-	UnknownError,
-	BillingError,
-	ProductUnavailable,
-	CustomerDidNotAcceptPriceChange,
-	FreeTrial,
-	PaymentPending
+}
+namespace PlayFab.ClientModels
+{
+	public enum SubscriptionProviderStatus
+	{
+		NoError,
+		Cancelled,
+		UnknownError,
+		BillingError,
+		ProductUnavailable,
+		CustomerDidNotAcceptPriceChange,
+		FreeTrial,
+		PaymentPending
+	}
 }

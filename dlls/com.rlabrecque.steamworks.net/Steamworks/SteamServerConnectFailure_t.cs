@@ -1,11 +1,50 @@
-namespace Steamworks;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-public enum EVRScreenshotType
+namespace Steamworks
 {
-	k_EVRScreenshotType_None,
-	k_EVRScreenshotType_Mono,
-	k_EVRScreenshotType_Stereo,
-	k_EVRScreenshotType_MonoCubemap,
-	k_EVRScreenshotType_MonoPanorama,
-	k_EVRScreenshotType_StereoPanorama
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(102)]
+	public struct SteamServerConnectFailure_t
+	{
+		public const int k_iCallback = 102;
+
+		public EResult m_eResult;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bStillRetrying;
+	}
+}
+namespace Steamworks
+{
+	public enum EBroadcastUploadResult
+	{
+		k_EBroadcastUploadResultNone,
+		k_EBroadcastUploadResultOK,
+		k_EBroadcastUploadResultInitFailed,
+		k_EBroadcastUploadResultFrameFailed,
+		k_EBroadcastUploadResultTimeout,
+		k_EBroadcastUploadResultBandwidthExceeded,
+		k_EBroadcastUploadResultLowFPS,
+		k_EBroadcastUploadResultMissingKeyFrames,
+		k_EBroadcastUploadResultNoConnection,
+		k_EBroadcastUploadResultRelayFailed,
+		k_EBroadcastUploadResultSettingsChanged,
+		k_EBroadcastUploadResultMissingAudio,
+		k_EBroadcastUploadResultTooFarBehind,
+		k_EBroadcastUploadResultTranscodeBehind,
+		k_EBroadcastUploadResultNotAllowedToPlay,
+		k_EBroadcastUploadResultBusy,
+		k_EBroadcastUploadResultBanned,
+		k_EBroadcastUploadResultAlreadyActive,
+		k_EBroadcastUploadResultForcedOff,
+		k_EBroadcastUploadResultAudioBehind,
+		k_EBroadcastUploadResultShutdown,
+		k_EBroadcastUploadResultDisconnect,
+		k_EBroadcastUploadResultVideoInitFailed,
+		k_EBroadcastUploadResultAudioInitFailed
+	}
+}
+namespace Steamworks
+{
 }

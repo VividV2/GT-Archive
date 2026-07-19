@@ -1,23 +1,10 @@
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+public enum TitleActivationStatus
 {
-	public enum TitleActivationStatus
-	{
-		None,
-		ActivatedTitleKey,
-		PendingSteam,
-		ActivatedSteam,
-		RevokedSteam
-	}
-}
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
+	None,
+	ActivatedTitleKey,
+	PendingSteam,
+	ActivatedSteam,
+	RevokedSteam
 }

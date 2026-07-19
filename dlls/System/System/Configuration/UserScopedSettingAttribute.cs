@@ -1,11 +1,3 @@
-namespace System.Configuration;
-
-/// <summary>Specifies that an application settings group or property contains distinct values for each user of an application. This class cannot be inherited.</summary>
-[AttributeUsage(AttributeTargets.Property)]
-public sealed class UserScopedSettingAttribute : SettingAttribute
+namespace System
 {
-	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.UserScopedSettingAttribute" /> class.</summary>
-	public UserScopedSettingAttribute()
-	{
-	}
 }

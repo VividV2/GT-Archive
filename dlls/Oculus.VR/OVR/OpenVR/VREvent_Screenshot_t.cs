@@ -1,8 +1,12 @@
-namespace OVR.OpenVR;
-
-public struct VREvent_Screenshot_t
+namespace UnityEngine.EventSystems
 {
-	public uint handle;
+}
+namespace OVR.OpenVR
+{
+	public struct VREvent_Screenshot_t
+	{
+		public uint handle;
 
-	public uint type;
+		public uint type;
+	}
 }

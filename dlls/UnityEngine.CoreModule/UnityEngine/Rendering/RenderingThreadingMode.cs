@@ -1,22 +1,9 @@
-using UnityEngine.Scripting.APIUpdating;
+namespace UnityEngine.Rendering;
 
-namespace UnityEngine
+public enum AmbientMode
 {
-}
-namespace UnityEngine.Rendering
-{
-	[MovedFrom("UnityEngine.Experimental.Rendering")]
-	public enum RenderingThreadingMode
-	{
-		Direct,
-		SingleThreaded,
-		MultiThreaded,
-		LegacyJobified,
-		NativeGraphicsJobs,
-		NativeGraphicsJobsWithoutRenderThread,
-		NativeGraphicsJobsSplitThreading
-	}
-}
-namespace UnityEngine.Rendering
-{
+	Skybox = 0,
+	Trilight = 1,
+	Flat = 3,
+	Custom = 4
 }

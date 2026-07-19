@@ -72,3 +72,6 @@ internal static class DbConnectionStringKeywords
 
 	internal const string Dsn = "Dsn";
 }
+namespace System.Data.Common
+{
+}

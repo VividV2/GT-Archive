@@ -1,14 +1,2 @@
-namespace OVR.OpenVR
-{
-}
-namespace OVR.OpenVR
-{
-	public enum EVRComponentProperty
-	{
-		IsStatic = 1,
-		IsVisible = 2,
-		IsTouched = 4,
-		IsPressed = 8,
-		IsScrolled = 0x10
-	}
-}
+// Could not decompile OVR.OpenVR.EVRComponentProperty
+// This type uses unsupported IL or has too many generic parameters.

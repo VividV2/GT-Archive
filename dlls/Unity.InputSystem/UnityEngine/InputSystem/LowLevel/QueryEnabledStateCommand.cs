@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.InputSystem.LowLevel.QueryEnabledStateCommand
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.InputSystem.LowLevel;
+
+public interface IInputUpdateCallbackReceiver
+{
+	void OnUpdate();
+}

@@ -1,5 +1,4 @@
 using System.Security;
-using System.Security;
 
 namespace System.Runtime.InteropServices;
 
@@ -13,7 +12,4 @@ public interface ICustomQueryInterface
 	/// <returns>One of the enumeration values that indicates whether a custom implementation of IUnknown::QueryInterface was used.</returns>
 	[SecurityCritical]
 	CustomQueryInterfaceResult GetInterface([In] ref Guid iid, out IntPtr ppv);
-}
-namespace System.Threading.Tasks
-{
 }

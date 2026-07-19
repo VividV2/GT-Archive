@@ -1,6 +1,3 @@
-namespace System.Collections
-{
-}
-namespace System.Net
+namespace System.IO
 {
 }

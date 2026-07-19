@@ -1,3 +1,6 @@
+namespace System.CodeDom
+{
+}
 namespace System
 {
 	/// <summary>A customizable parser based on the news scheme using the Network News Transfer Protocol (NNTP).</summary>
@@ -10,6 +13,6 @@ namespace System
 		}
 	}
 }
-namespace System.Net.NetworkInformation
+namespace System.Security.Authentication.ExtendedProtection.Configuration
 {
 }

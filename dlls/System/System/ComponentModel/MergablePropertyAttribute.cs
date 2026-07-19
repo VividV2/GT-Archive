@@ -1,2 +1,3 @@
-// Could not decompile System.ComponentModel.MergablePropertyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.ComponentModel;
+
+public delegate void RefreshEventHandler(RefreshEventArgs e);

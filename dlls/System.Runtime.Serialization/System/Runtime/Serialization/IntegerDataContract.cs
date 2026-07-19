@@ -1,9 +1,2 @@
-namespace System.Runtime.Serialization;
-
-internal class IntegerDataContract : LongDataContract
-{
-	internal IntegerDataContract()
-		: base(DictionaryGlobals.integerLocalName, DictionaryGlobals.SchemaNamespace)
-	{
-	}
-}
+// Could not decompile System.Runtime.Serialization.IntegerDataContract
+// This type uses unsupported IL or has too many generic parameters.

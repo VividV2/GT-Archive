@@ -1,8 +1,2 @@
-namespace Photon.Voice.Unity;
-
-public class PhotonVoiceCreatedParams
-{
-	public LocalVoice Voice { get; set; }
-
-	public IAudioDesc AudioDesc { get; set; }
-}
+// Could not decompile Photon.Voice.AudioOutDelayControl`1
+// This type uses unsupported IL or has too many generic parameters.

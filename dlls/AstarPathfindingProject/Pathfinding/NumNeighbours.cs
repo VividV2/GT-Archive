@@ -1,2 +1,8 @@
-// Could not decompile Pathfinding.NumNeighbours
-// This type uses unsupported IL or has too many generic parameters.
+namespace Pathfinding;
+
+public enum NumNeighbours
+{
+	Four,
+	Eight,
+	Six
+}

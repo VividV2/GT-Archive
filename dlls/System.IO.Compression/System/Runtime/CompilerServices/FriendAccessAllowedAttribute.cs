@@ -1,5 +1,2 @@
-namespace System.Runtime.CompilerServices;
+namespace System.Threading.Tasks;
 
-internal class FriendAccessAllowedAttribute : Attribute
-{
-}

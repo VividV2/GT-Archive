@@ -9,6 +9,13 @@ namespace UnityEngine.InputSystem.XR
 		public const string InterfaceCurrent = "XRInputV1";
 	}
 }
-namespace UnityEngine.InputSystem.LowLevel
+namespace UnityEngine.InputSystem.UI
 {
+	public enum UIPointerType
+	{
+		None,
+		MouseOrPen,
+		Touch,
+		Tracked
+	}
 }

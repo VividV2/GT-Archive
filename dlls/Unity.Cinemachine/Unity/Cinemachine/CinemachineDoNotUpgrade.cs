@@ -1,8 +1,15 @@
-using UnityEngine;
-
 namespace Unity.Cinemachine;
 
-[AddComponentMenu("")]
-public class CinemachineDoNotUpgrade : MonoBehaviour
+internal enum FillRule
+{
+	EvenOdd,
+	NonZero,
+	Positive,
+	Negative
+}
+namespace Unity.Cinemachine
+{
+}
+namespace Unity.Cinemachine
 {
 }

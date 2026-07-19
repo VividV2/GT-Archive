@@ -1,8 +1,13 @@
 namespace Photon.Realtime;
 
-public enum ReceiverGroup : byte
+public class TypedLobbyInfo : TypedLobby
 {
-	Others,
-	All,
-	MasterClient
+	public int PlayerCount;
+
+	public int RoomCount;
+
+	public override string ToString()
+	{
+		return $"TypedLobbyInfo '{Name}'[{Type}] rooms: {RoomCount} players: {PlayerCount}";
+	}
 }

@@ -1,2 +1,10 @@
-// Could not decompile System.MonoExtensionAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System;
+
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+internal class MonoExtensionAttribute : MonoTODOAttribute
+{
+	public MonoExtensionAttribute(string comment)
+		: base(comment)
+	{
+	}
+}

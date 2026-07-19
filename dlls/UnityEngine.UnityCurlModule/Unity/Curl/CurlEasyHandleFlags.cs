@@ -2,11 +2,23 @@ using System;
 
 namespace Unity.Curl;
 
-[Flags]
-internal enum CurlEasyHandleFlags : uint
+internal enum BufferOwnership
 {
-	kSendBody = 1u,
-	kReceiveHeaders = 2u,
-	kReceiveBody = 4u,
-	kFollowRedirects = 8u
+	Copy,
+	Transfer,
+	External
+}
+namespace Unity.Curl
+{
+}
+namespace Unity.Curl
+{
+	[Flags]
+	internal enum CurlEasyHandleFlags : uint
+	{
+		kSendBody = 1u,
+		kReceiveHeaders = 2u,
+		kReceiveBody = 4u,
+		kFollowRedirects = 8u
+	}
 }

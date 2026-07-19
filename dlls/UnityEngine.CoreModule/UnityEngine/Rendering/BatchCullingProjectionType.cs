@@ -1,8 +1,15 @@
-namespace UnityEngine.Rendering;
-
-public enum BatchCullingProjectionType
+namespace UnityEngine.Rendering
 {
-	Unknown,
-	Perspective,
-	Orthographic
+	public enum BatchCullingProjectionType
+	{
+		Unknown,
+		Perspective,
+		Orthographic
+	}
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine.Rendering
+{
 }

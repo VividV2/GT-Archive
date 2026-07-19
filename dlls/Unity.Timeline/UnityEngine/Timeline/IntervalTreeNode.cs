@@ -1,18 +1,14 @@
-namespace UnityEngine.Timeline
+namespace UnityEngine.Timeline;
+
+internal struct IntervalTreeNode
 {
-	internal struct IntervalTreeNode
-	{
-		public long center;
+	public long center;
 
-		public int first;
+	public int first;
 
-		public int last;
+	public int last;
 
-		public int left;
+	public int left;
 
-		public int right;
-	}
-}
-namespace UnityEngine.Timeline
-{
+	public int right;
 }

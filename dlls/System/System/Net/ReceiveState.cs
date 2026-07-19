@@ -1,5 +1,14 @@
 namespace System.Net
 {
+	internal enum HttpProcessingResult
+	{
+		Continue,
+		ReadWait,
+		WriteWait
+	}
+}
+namespace System.Net
+{
 	internal class ReceiveState
 	{
 		private const int bufferSize = 1024;
@@ -21,6 +30,6 @@ namespace System.Net
 		}
 	}
 }
-namespace System.IO
+namespace System.Net
 {
 }

@@ -1,10 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.GroupsModels;
-
-[Serializable]
-public class ListGroupInvitationsRequest : PlayFabRequestCommon
+namespace PlayFab.InsightsModels
 {
-	public EntityKey Group;
 }

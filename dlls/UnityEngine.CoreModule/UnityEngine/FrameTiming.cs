@@ -1,51 +1,43 @@
 using UnityEngine.Bindings;
 
-namespace JetBrains.Annotations
+namespace UnityEngine;
+
+[NativeHeader("Runtime/GfxDevice/FrameTiming.h")]
+public struct FrameTiming
 {
-	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Interface | AttributeTargets.Parameter | AttributeTargets.GenericParameter)]
-	public sealed class ProvidesContextAttribute : Attribute
-	{
-	}
-}
-namespace UnityEngine
-{
-	[NativeHeader("Runtime/GfxDevice/FrameTiming.h")]
-	public struct FrameTiming
-	{
-		[NativeName("totalFrameTime")]
-		public double cpuFrameTime;
+	[NativeName("totalFrameTime")]
+	public double cpuFrameTime;
 
-		[NativeName("mainThreadActiveTime")]
-		public double cpuMainThreadFrameTime;
+	[NativeName("mainThreadActiveTime")]
+	public double cpuMainThreadFrameTime;
 
-		[NativeName("mainThreadPresentWaitTime")]
-		public double cpuMainThreadPresentWaitTime;
+	[NativeName("mainThreadPresentWaitTime")]
+	public double cpuMainThreadPresentWaitTime;
 
-		[NativeName("renderThreadActiveTime")]
-		public double cpuRenderThreadFrameTime;
+	[NativeName("renderThreadActiveTime")]
+	public double cpuRenderThreadFrameTime;
 
-		[NativeName("gpuFrameTime")]
-		public double gpuFrameTime;
+	[NativeName("gpuFrameTime")]
+	public double gpuFrameTime;
 
-		[NativeName("frameStartTimestamp")]
-		public ulong frameStartTimestamp;
+	[NativeName("frameStartTimestamp")]
+	public ulong frameStartTimestamp;
 
-		[NativeName("firstSubmitTimestamp")]
-		public ulong firstSubmitTimestamp;
+	[NativeName("firstSubmitTimestamp")]
+	public ulong firstSubmitTimestamp;
 
-		[NativeName("presentFrameTimestamp")]
-		public ulong cpuTimePresentCalled;
+	[NativeName("presentFrameTimestamp")]
+	public ulong cpuTimePresentCalled;
 
-		[NativeName("frameCompleteTimestamp")]
-		public ulong cpuTimeFrameComplete;
+	[NativeName("frameCompleteTimestamp")]
+	public ulong cpuTimeFrameComplete;
 
-		[NativeName("heightScale")]
-		public float heightScale;
+	[NativeName("heightScale")]
+	public float heightScale;
 
-		[NativeName("widthScale")]
-		public float widthScale;
+	[NativeName("widthScale")]
+	public float widthScale;
 
-		[NativeName("syncInterval")]
-		public uint syncInterval;
-	}
+	[NativeName("syncInterval")]
+	public uint syncInterval;
 }

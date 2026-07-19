@@ -1,7 +1,3 @@
-namespace UnityEngine.UIElements;
-
-internal enum BindingUpdateStage
+namespace UnityEngine.UIElements.StyleSheets
 {
-	UpdateUI,
-	UpdateSource
 }

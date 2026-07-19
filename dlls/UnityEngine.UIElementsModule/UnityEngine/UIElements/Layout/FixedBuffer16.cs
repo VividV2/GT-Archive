@@ -1,16 +1,2 @@
-namespace UnityEngine.UIElements;
-
-internal struct PanelClearSettings
-{
-	public bool clearDepthStencil;
-
-	public bool clearColor;
-
-	public Color color;
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
+// Could not decompile UnityEngine.UIElements.Layout.FixedBuffer16`1
+// This type uses unsupported IL or has too many generic parameters.

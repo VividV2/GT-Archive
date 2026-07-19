@@ -4,6 +4,6 @@ namespace System.Runtime.CompilerServices;
 public static class IsByValue
 {
 }
-namespace System.Security.Cryptography
+namespace System.Runtime.InteropServices.WindowsRuntime
 {
 }

@@ -1,26 +1,30 @@
-namespace System.Runtime.Serialization;
-
-internal interface IDataNode
+namespace System.Runtime.Serialization
 {
-	Type DataType { get; }
+}
+namespace System.Runtime.Serialization
+{
+	internal interface IDataNode
+	{
+		Type DataType { get; }
 
-	object Value { get; set; }
+		object Value { get; set; }
 
-	string DataContractName { get; set; }
+		string DataContractName { get; set; }
 
-	string DataContractNamespace { get; set; }
+		string DataContractNamespace { get; set; }
 
-	string ClrTypeName { get; set; }
+		string ClrTypeName { get; set; }
 
-	string ClrAssemblyName { get; set; }
+		string ClrAssemblyName { get; set; }
 
-	string Id { get; set; }
+		string Id { get; set; }
 
-	bool PreservesReferences { get; }
+		bool PreservesReferences { get; }
 
-	bool IsFinalValue { get; set; }
+		bool IsFinalValue { get; set; }
 
-	void GetData(ElementData element);
+		void GetData(ElementData element);
 
-	void Clear();
+		void Clear();
+	}
 }

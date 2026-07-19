@@ -1,19 +1,6 @@
-using System;
-using System;
+namespace UnityEngine.Playables;
 
-namespace UnityEngine.Internal
+public interface IPlayableOutput
 {
-	[Serializable]
-	public class ExcludeFromDocsAttribute : Attribute
-	{
-	}
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
+	PlayableOutputHandle GetHandle();
 }

@@ -1,2 +1,12 @@
-// Could not decompile System.Management.Instrumentation.ManagementCommitAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq.Expressions
+{
+}
+namespace System.IO.Pipes
+{
+}
+namespace System.Dynamic.Utils
+{
+}
+namespace System.Diagnostics.Eventing.Reader
+{
+}

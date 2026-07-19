@@ -1,6 +1,6 @@
 namespace Valve.VR;
 
-public struct VREvent_Status_t
+public struct VREvent_ShowUI_t
 {
-	public uint statusState;
+	public EShowUIType eType;
 }

@@ -13,3 +13,6 @@ public enum AssetLoadingSubsystem
 	FileInfo,
 	ContentLoading
 }
+namespace UnityEngine
+{
+}

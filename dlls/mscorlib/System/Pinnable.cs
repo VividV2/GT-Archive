@@ -1,13 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace System.Runtime.InteropServices.WindowsRuntime
-{
-}
-namespace System
-{
-	[StructLayout(LayoutKind.Sequential)]
-	internal sealed class Pinnable<T>
-	{
-		public T Data;
-	}
-}
+// Could not decompile System.Pinnable`1
+// This type uses unsupported IL or has too many generic parameters.

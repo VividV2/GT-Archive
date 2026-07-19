@@ -1,6 +1,10 @@
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnMouseDownHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask OnMouseDownAsync();
+	public interface IAsyncOnMouseDownHandler
+	{
+		UniTask OnMouseDownAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
 }

@@ -1,12 +1,22 @@
-namespace Pathfinding;
-
-public interface IUpdatableGraph
+namespace Pathfinding
 {
-	void UpdateArea(GraphUpdateObject o);
+	public interface ITraversalProvider
+	{
+		bool CanTraverse(Path path, GraphNode node);
 
-	void UpdateAreaInit(GraphUpdateObject o);
+		uint GetTraversalCost(Path path, GraphNode node);
+	}
+}
+namespace Pathfinding
+{
+	public interface IUpdatableGraph
+	{
+		void UpdateArea(GraphUpdateObject o);
 
-	void UpdateAreaPost(GraphUpdateObject o);
+		void UpdateAreaInit(GraphUpdateObject o);
 
-	GraphUpdateThreading CanUpdateAsync(GraphUpdateObject o);
+		void UpdateAreaPost(GraphUpdateObject o);
+
+		GraphUpdateThreading CanUpdateAsync(GraphUpdateObject o);
+	}
 }

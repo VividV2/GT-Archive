@@ -1,12 +1,6 @@
-using System;
-
-namespace UnityEngine.InputSystem.Users;
-
-[Flags]
-public enum InputUserPairingOptions
+namespace UnityEngine.InputSystem.XR
 {
-	None = 0,
-	ForcePlatformUserAccountSelection = 1,
-	ForceNoPlatformUserAccountSelection = 2,
-	UnpairCurrentDevicesFromUser = 8
+}
+namespace UnityEngine.InputSystem.UI
+{
 }

@@ -8,6 +8,3 @@ public interface ICameraHistoryWriteAccess
 
 	bool IsWritten<Type>() where Type : ContextItem;
 }
-namespace UnityEngine.Rendering
-{
-}

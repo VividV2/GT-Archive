@@ -1,10 +1,6 @@
-namespace Meta.WitAi.Composer.Data
+namespace Meta.WitAi.Composer.Data;
+
+public interface IContextMapReservedPathExtension
 {
-	public interface IContextMapReservedPathExtension
-	{
-		void AssignTo(ComposerService composer);
-	}
-}
-namespace Meta.WitAi.Composer.Data
-{
+	void AssignTo(ComposerService composer);
 }

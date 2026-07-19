@@ -1,2 +1,0 @@
-namespace Modio.Unity.Examples;
-

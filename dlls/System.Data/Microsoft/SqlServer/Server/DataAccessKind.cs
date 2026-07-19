@@ -1,11 +1,5 @@
 using System;
 
-namespace System.Data
-{
-}
-namespace Microsoft.SqlServer.Server
-{
-}
 namespace Microsoft.SqlServer.Server
 {
 	/// <summary>Describes the type of access to user data for a user-defined method or function.</summary>
@@ -17,4 +11,10 @@ namespace Microsoft.SqlServer.Server
 		/// <summary>The method or function reads user data.</summary>
 		Read
 	}
+}
+namespace System.Data
+{
+}
+namespace System.Data
+{
 }

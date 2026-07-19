@@ -1,17 +1,13 @@
 using System;
 
-namespace Photon.Voice.Unity
-{
-}
-namespace Photon.Voice.Unity
-{
-	[Serializable]
-	public struct NativeAndroidMicrophoneSettings
-	{
-		public bool AcousticEchoCancellation;
+namespace Photon.Voice.Unity;
 
-		public bool AutomaticGainControl;
+[Serializable]
+public struct NativeAndroidMicrophoneSettings
+{
+	public bool AcousticEchoCancellation;
 
-		public bool NoiseSuppression;
-	}
+	public bool AutomaticGainControl;
+
+	public bool NoiseSuppression;
 }

@@ -1,15 +1,13 @@
-namespace System.Drawing.Design
+namespace System.Drawing.Imaging;
+
+/// <summary>Specifies which GDI+ objects use color adjustment information.</summary>
+public enum ColorAdjustType
 {
-	public interface IPropertyValueUIService
-	{
-		event EventHandler PropertyUIValueItemsChanged;
-
-		void AddPropertyValueUIHandler(PropertyValueUIHandler newHandler);
-
-		PropertyValueUIItem[] GetPropertyUIValueItems(ITypeDescriptorContext context, PropertyDescriptor propDesc);
-
-		void NotifyPropertyValueUIItemsChanged();
-
-		void RemovePropertyValueUIHandler(PropertyValueUIHandler newHandler);
-	}
+	Default,
+	Bitmap,
+	Brush,
+	Pen,
+	Text,
+	Count,
+	Any
 }

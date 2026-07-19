@@ -1,8 +1,19 @@
-namespace Valve.VR;
-
-public struct VRControllerAxis_t
+namespace Valve.VR
 {
-	public float x;
+	public struct TrackedDevicePose_t
+	{
+		public HmdMatrix34_t mDeviceToAbsoluteTracking;
 
-	public float y;
+		public HmdVector3_t vVelocity;
+
+		public HmdVector3_t vAngularVelocity;
+
+		public ETrackingResult eTrackingResult;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bPoseIsValid;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bDeviceIsConnected;
+	}
 }

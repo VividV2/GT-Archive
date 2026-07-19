@@ -1,11 +1,7 @@
-namespace UnityEngine.ProBuilder.MeshOperations
+namespace UnityEngine.ProBuilder;
+
+internal enum BezierTangentDirection
 {
-}
-namespace UnityEngine.ProBuilder
-{
-	internal enum BezierTangentDirection
-	{
-		In,
-		Out
-	}
+	In,
+	Out
 }

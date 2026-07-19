@@ -13,6 +13,6 @@ namespace System.Runtime.Remoting.Messaging
 		IDictionary Properties { get; }
 	}
 }
-namespace Mono.Globalization.Unicode
+namespace System.Runtime.Remoting.Metadata.W3cXsd2001
 {
 }

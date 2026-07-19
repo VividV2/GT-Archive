@@ -1,17 +1,15 @@
-using System;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-internal class CallbackIdentities
+namespace Steamworks
 {
-	public static int GetCallbackIdentity(Type callbackStruct)
+	[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
+	[CallbackIdentity(1333)]
+	public struct RemoteStorageLocalFileChange_t
 	{
-		object[] customAttributes = callbackStruct.GetCustomAttributes(typeof(CallbackIdentityAttribute), inherit: false);
-		int num = 0;
-		if (num < customAttributes.Length)
-		{
-			return ((CallbackIdentityAttribute)customAttributes[num]).Identity;
-		}
-		throw new Exception("Callback number not found for struct " + callbackStruct);
+		public const int k_iCallback = 1333;
 	}
+}
+namespace Steamworks
+{
 }

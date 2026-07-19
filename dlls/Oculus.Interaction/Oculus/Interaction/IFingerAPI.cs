@@ -16,9 +16,6 @@ namespace Oculus.Interaction
 		void Update(IHand hand);
 	}
 }
-namespace Oculus.Interaction.Input.Filter
-{
-}
 namespace Oculus.Interaction
 {
 }

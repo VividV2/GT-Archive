@@ -1,14 +1,2 @@
-namespace GorillaTag.CosmeticSystem;
-
-public enum AntiIntersectOffsetType
-{
-	nameTag,
-	leftArm,
-	rightArm,
-	chest,
-	huntComputer,
-	badge,
-	builderWatch,
-	friendshipBraceletLeft,
-	friendshipBraceletRight
-}
+// Could not decompile Voxels.Voxel
+// This type uses unsupported IL or has too many generic parameters.

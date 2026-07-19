@@ -1,7 +1,5 @@
 using System;
 using Oculus.Platform.Models;
-using System;
-using Oculus.Platform.Models;
 
 namespace Oculus.Platform;
 

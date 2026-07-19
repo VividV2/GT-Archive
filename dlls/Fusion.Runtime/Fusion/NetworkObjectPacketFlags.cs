@@ -1,13 +1,9 @@
 using System;
 
-namespace Fusion
+namespace Fusion;
+
+[Flags]
+internal enum NetworkObjectPacketFlags
 {
-	[Flags]
-	internal enum NetworkObjectPacketFlags
-	{
-		Destroy = 1
-	}
-}
-namespace Fusion
-{
+	Destroy = 1
 }

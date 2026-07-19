@@ -1,18 +1,10 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetPurchaseRequest : PlayFabRequestCommon
 {
-	[Serializable]
-	public class GetPurchaseRequest : PlayFabRequestCommon
-	{
-		public string OrderId;
-	}
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class LinkWindowsHelloAccountResponse : PlayFabResultCommon
-	{
-	}
+	public string OrderId;
 }

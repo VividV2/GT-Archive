@@ -1,8 +1,2 @@
-namespace UnityEngine.Animations.Rigging;
-
-internal enum PropertyType : byte
-{
-	Bool,
-	Int,
-	Float
-}
+// Could not decompile UnityEngine.Animations.Rigging.RigTransform
+// This type uses unsupported IL or has too many generic parameters.

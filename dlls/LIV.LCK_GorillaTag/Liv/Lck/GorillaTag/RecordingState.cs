@@ -1,8 +1,12 @@
-namespace Liv.Lck.GorillaTag;
-
-public enum RecordingState
+namespace Liv.Lck.GorillaTag
 {
-	Idle,
-	Recording,
-	Saving
+	public enum RecordingState
+	{
+		Idle,
+		Recording,
+		Saving
+	}
+}
+namespace Liv.Lck.GorillaTag
+{
 }

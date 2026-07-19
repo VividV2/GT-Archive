@@ -1,11 +1,2 @@
-using System;
-using UnityEngine;
+namespace GorillaTagScripts;
 
-[Serializable]
-public struct KeyValueStringPair(string key, string value)
-{
-	public string Key = key;
-
-	[Multiline]
-	public string Value = value;
-}

@@ -1,66 +1,104 @@
 using UnityEngine;
 
-namespace Valve.VR;
-
-public interface ISteamVR_Action_Skeleton_Source
+namespace Valve.VR
 {
-	EVRSkeletalTrackingLevel skeletalTrackingLevel { get; }
+	public interface ISteamVR_Action_In_Source : ISteamVR_Action_Source
+	{
+		bool changed { get; }
 
-	Vector3[] bonePositions { get; }
+		bool lastChanged { get; }
 
-	Quaternion[] boneRotations { get; }
+		float changedTime { get; }
 
-	Vector3[] lastBonePositions { get; }
+		float updateTime { get; }
 
-	Quaternion[] lastBoneRotations { get; }
+		ulong activeOrigin { get; }
 
-	EVRSkeletalMotionRange rangeOfMotion { get; set; }
+		ulong lastActiveOrigin { get; }
 
-	EVRSkeletalTransformSpace skeletalTransformSpace { get; set; }
+		SteamVR_Input_Sources activeDevice { get; }
 
-	bool onlyUpdateSummaryData { get; set; }
+		uint trackedDeviceIndex { get; }
 
-	float thumbCurl { get; }
+		string renderModelComponentName { get; }
 
-	float indexCurl { get; }
+		string localizedOriginName { get; }
+	}
+}
+namespace Valve.VR
+{
+}
+namespace Valve.VR.InteractionSystem
+{
+}
+namespace Valve.VR
+{
+	public interface ISteamVR_Action_Skeleton_Source
+	{
+		EVRSkeletalTrackingLevel skeletalTrackingLevel { get; }
 
-	float middleCurl { get; }
+		Vector3[] bonePositions { get; }
 
-	float ringCurl { get; }
+		Quaternion[] boneRotations { get; }
 
-	float pinkyCurl { get; }
+		Vector3[] lastBonePositions { get; }
 
-	float thumbIndexSplay { get; }
+		Quaternion[] lastBoneRotations { get; }
 
-	float indexMiddleSplay { get; }
+		EVRSkeletalMotionRange rangeOfMotion { get; set; }
 
-	float middleRingSplay { get; }
+		EVRSkeletalTransformSpace skeletalTransformSpace { get; set; }
 
-	float ringPinkySplay { get; }
+		bool onlyUpdateSummaryData { get; set; }
 
-	float lastThumbCurl { get; }
+		float thumbCurl { get; }
 
-	float lastIndexCurl { get; }
+		float indexCurl { get; }
 
-	float lastMiddleCurl { get; }
+		float middleCurl { get; }
 
-	float lastRingCurl { get; }
+		float ringCurl { get; }
 
-	float lastPinkyCurl { get; }
+		float pinkyCurl { get; }
 
-	float lastThumbIndexSplay { get; }
+		float thumbIndexSplay { get; }
 
-	float lastIndexMiddleSplay { get; }
+		float indexMiddleSplay { get; }
 
-	float lastMiddleRingSplay { get; }
+		float middleRingSplay { get; }
 
-	float lastRingPinkySplay { get; }
+		float ringPinkySplay { get; }
 
-	float[] fingerCurls { get; }
+		float lastThumbCurl { get; }
 
-	float[] fingerSplays { get; }
+		float lastIndexCurl { get; }
 
-	float[] lastFingerCurls { get; }
+		float lastMiddleCurl { get; }
 
-	float[] lastFingerSplays { get; }
+		float lastRingCurl { get; }
+
+		float lastPinkyCurl { get; }
+
+		float lastThumbIndexSplay { get; }
+
+		float lastIndexMiddleSplay { get; }
+
+		float lastMiddleRingSplay { get; }
+
+		float lastRingPinkySplay { get; }
+
+		float[] fingerCurls { get; }
+
+		float[] fingerSplays { get; }
+
+		float[] lastFingerCurls { get; }
+
+		float[] lastFingerSplays { get; }
+	}
+}
+namespace Valve.VR
+{
+}
+namespace Valve.VR
+{
 }

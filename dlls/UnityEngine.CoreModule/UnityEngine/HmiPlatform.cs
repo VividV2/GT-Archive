@@ -1,11 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public enum RenderQueue
-{
-	Background = 1000,
-	Geometry = 2000,
-	AlphaTest = 2450,
-	GeometryLast = 2500,
-	Transparent = 3000,
-	Overlay = 4000
-}
+// Could not decompile UnityEngine.HmiPlatform
+// This type uses unsupported IL or has too many generic parameters.

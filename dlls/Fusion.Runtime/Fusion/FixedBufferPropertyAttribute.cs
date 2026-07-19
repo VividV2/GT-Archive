@@ -1,19 +1,2 @@
-using System;
-
-namespace Fusion;
-
-public class FixedBufferPropertyAttribute : PropertyAttribute
-{
-	public Type Type { get; }
-
-	public Type SurrogateType { get; }
-
-	public int Capacity { get; }
-
-	public FixedBufferPropertyAttribute(Type fieldType, Type surrogateType, int capacity)
-	{
-		Type = fieldType;
-		SurrogateType = surrogateType;
-		Capacity = capacity;
-	}
-}
+// Could not decompile Fusion.FixedBufferPropertyAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,12 +1,8 @@
 using UnityEngine.InputSystem.Utilities;
 
-namespace UnityEngine.InputSystem.LowLevel
+namespace UnityEngine.InputSystem.LowLevel;
+
+public interface IInputDeviceCommandInfo
 {
-	public interface IInputDeviceCommandInfo
-	{
-		FourCC typeStatic { get; }
-	}
-}
-namespace UnityEngine.InputSystem
-{
+	FourCC typeStatic { get; }
 }

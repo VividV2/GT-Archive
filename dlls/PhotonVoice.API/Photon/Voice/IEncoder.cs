@@ -1,7 +1,16 @@
-namespace POpusCodec.Enums;
+using System;
 
-public enum Channels
+namespace Photon.Voice;
+
+public interface IEncoder : IDisposable
 {
-	Mono = 1,
-	Stereo
+	string Error { get; }
+
+	Action<ArraySegment<byte>, FrameFlags> Output { set; }
+
+	ArraySegment<byte> DequeueOutput(out FrameFlags flags);
+
+	void EndOfStream();
+
+	I GetPlatformAPI<I>() where I : class;
 }

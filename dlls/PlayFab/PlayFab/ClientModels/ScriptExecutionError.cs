@@ -1,14 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class ScriptExecutionError : PlayFabBaseModel
-{
-	public string Error;
-
-	public string Message;
-
-	public string StackTrace;
-}
+// Could not decompile PlayFab.ClientModels.ScriptExecutionError
+// This type uses unsupported IL or has too many generic parameters.

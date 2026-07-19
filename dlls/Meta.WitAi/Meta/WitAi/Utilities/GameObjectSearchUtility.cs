@@ -1,2 +1,19 @@
-// Could not decompile Meta.WitAi.Utilities.GameObjectSearchUtility
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Meta.Conduit;
+using System;
+using Meta.Conduit;
+
+namespace Meta.Voice.Audio.Decoding;
+
+public delegate void AudioSampleDecodeDelegate(float[] samples, int offset, int length);
+namespace Meta.WitAi
+{
+	[AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
+	public class MatchIntent : ConduitActionAttribute
+	{
+		public MatchIntent(string intent, float minConfidence = 0.51f, float maxConfidence = 1f)
+			: base(intent, minConfidence, maxConfidence, false)
+		{
+		}
+	}
+}

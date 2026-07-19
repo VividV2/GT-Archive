@@ -1,2 +1,23 @@
-// Could not decompile System.Data.OrderedEnumerableRowCollection`1
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+using Unity;
+
+namespace System.Data
+{
+	/// <summary>Represents a collection of ordered <see cref="T:System.Data.DataRow" /> objects returned from a query.</summary>
+	/// <typeparam name="TRow">The type of objects in the source sequence, typically <see cref="T:System.Data.DataRow" />.</typeparam>
+	public sealed class OrderedEnumerableRowCollection<TRow> : EnumerableRowCollection<TRow>
+	{
+		internal OrderedEnumerableRowCollection(EnumerableRowCollection<TRow> enumerableTable, IEnumerable<TRow> enumerableRows)
+			: base(enumerableTable, enumerableRows, (Func<TRow, TRow>)null)
+		{
+		}
+
+		internal OrderedEnumerableRowCollection()
+		{
+			Unity.ThrowStub.ThrowNotSupportedException();
+		}
+	}
+}
+namespace System.Data
+{
+}

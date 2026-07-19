@@ -1,4 +1,4 @@
-namespace Mono
+namespace System.Security.Permissions
 {
 }
 namespace System.Security.Policy

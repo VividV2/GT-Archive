@@ -10,6 +10,6 @@ namespace UnityEngine.XR.Interaction.Toolkit.Filtering
 		float Process(IXRInteractor interactor, IXRInteractable interactable, float interactionStrength);
 	}
 }
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering
+namespace UnityEngine.XR.Interaction.Toolkit.Interactables
 {
 }

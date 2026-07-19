@@ -1,8 +1,9 @@
-namespace System.Xml;
-
-internal interface IDtdParserAdapterWithValidation : IDtdParserAdapter
+namespace System.Xml.Schema
 {
-	bool DtdValidation { get; }
-
-	IValidationEventHandling ValidationEventHandling { get; }
+}
+namespace System.Xml.Schema
+{
+}
+namespace System.Xml.Serialization
+{
 }

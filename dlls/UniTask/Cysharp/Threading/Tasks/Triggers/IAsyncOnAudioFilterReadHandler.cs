@@ -1,10 +1,6 @@
-namespace Cysharp.Threading.Tasks.Triggers
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnAudioFilterReadHandler
 {
-	public interface IAsyncOnAudioFilterReadHandler
-	{
-		UniTask<(float[] data, int channels)> OnAudioFilterReadAsync();
-	}
-}
-namespace Cysharp.Threading.Tasks.Internal
-{
+	UniTask<(float[] data, int channels)> OnAudioFilterReadAsync();
 }

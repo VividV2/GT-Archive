@@ -27,6 +27,3 @@ public enum VersionChangeType
 	DataSource = 0x80000,
 	Picking = 0x100000
 }
-namespace UnityEngine.UIElements
-{
-}

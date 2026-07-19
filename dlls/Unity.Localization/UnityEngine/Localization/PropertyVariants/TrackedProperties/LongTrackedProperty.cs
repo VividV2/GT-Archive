@@ -1,12 +1,8 @@
 using System;
 
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
-{
-	[Serializable]
-	public class LongTrackedProperty : TrackedProperty<long>
-	{
-	}
-}
-namespace UnityEngine.Localization.PropertyVariants
+namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
+
+[Serializable]
+public class LongTrackedProperty : TrackedProperty<long>
 {
 }

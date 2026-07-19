@@ -1,2 +1,8 @@
-// Could not decompile Unity.XR.OpenVR.OpenVREvent
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Events;
+using Valve.VR;
+
+namespace Unity.XR.OpenVR;
+
+public class OpenVREvent : UnityEvent<VREvent_t>
+{
+}

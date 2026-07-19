@@ -9,3 +9,6 @@ public enum ReaderOptions
 	/// <summary>Omit duplicate namespaces when loading the <see cref="T:System.Xml.Linq.XDocument" />.</summary>
 	OmitDuplicateNamespaces = 1
 }
+namespace System.Xml.Schema
+{
+}

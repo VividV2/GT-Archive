@@ -1,22 +1,49 @@
-namespace g3;
-
-public interface IParametricCurve3d
+namespace g3
 {
-	bool IsClosed { get; }
+	public enum IOCode
+	{
+		Ok = 0,
+		FileAccessError = 1,
+		UnknownFormatError = 2,
+		FormatNotSupportedError = 3,
+		InvalidFilenameError = 4,
+		FileParsingError = 100,
+		GarbageDataError = 101,
+		GenericReaderError = 102,
+		GenericReaderWarning = 103,
+		WriterError = 200,
+		ComputingInWorkerThread = 1000
+	}
+}
+namespace g3
+{
+	public interface IParametricCurve3d
+	{
+		bool IsClosed { get; }
 
-	double ParamLength { get; }
+		double ParamLength { get; }
 
-	bool HasArcLength { get; }
+		bool HasArcLength { get; }
 
-	double ArcLength { get; }
+		double ArcLength { get; }
 
-	Vector3d SampleT(double t);
+		Vector3d SampleT(double t);
 
-	Vector3d TangentT(double t);
+		Vector3d TangentT(double t);
 
-	Vector3d SampleArcLength(double a);
+		Vector3d SampleArcLength(double a);
 
-	void Reverse();
+		void Reverse();
 
-	IParametricCurve3d Clone();
+		IParametricCurve3d Clone();
+	}
+}
+namespace g3
+{
+}
+namespace g3
+{
+}
+namespace g3
+{
 }

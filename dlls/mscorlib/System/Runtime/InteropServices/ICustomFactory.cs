@@ -1,3 +1,0 @@
-namespace Microsoft.Win32
-{
-}

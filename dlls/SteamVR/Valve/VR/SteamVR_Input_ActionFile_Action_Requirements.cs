@@ -1,2 +1,15 @@
-// Could not decompile Valve.VR.SteamVR_Input_ActionFile_Action_Requirements
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR
+{
+	public enum SteamVR_Input_ActionFile_Action_Requirements
+	{
+		optional,
+		suggested,
+		mandatory
+	}
+}
+namespace Valve.VR.InteractionSystem
+{
+}
+namespace Valve.VR.InteractionSystem
+{
+}

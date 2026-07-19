@@ -1,12 +1,2 @@
-namespace UnityEngine.Rendering.RenderGraphModule;
-
-internal abstract class IRenderGraphResourcePool
-{
-	public abstract void PurgeUnusedResources(int currentFrameIndex);
-
-	public abstract void Cleanup();
-
-	public abstract void CheckFrameAllocation(bool onException, int frameIndex);
-
-	public abstract void LogResources(RenderGraphLogger logger);
-}
+// Could not decompile UnityEngine.Rendering.RenderGraphModule.IRenderGraphResourcePool
+// This type uses unsupported IL or has too many generic parameters.

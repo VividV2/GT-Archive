@@ -1,6 +1,10 @@
-namespace UnityEngine.Splines;
-
-public interface IInterpolator<T>
+namespace UnityEngine.Splines
 {
-	T Interpolate(T from, T to, float t);
+}
+namespace UnityEngine.Splines
+{
+	public interface IInterpolator<T>
+	{
+		T Interpolate(T from, T to, float t);
+	}
 }

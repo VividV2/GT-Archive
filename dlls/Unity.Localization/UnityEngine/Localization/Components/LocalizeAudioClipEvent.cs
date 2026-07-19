@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.Localization.Components.LocalizeAudioClipEvent
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Tables;
+
+namespace UnityEngine.Localization.Metadata;
+
+public interface IEntryOverride : IMetadata
+{
+	EntryOverrideType GetOverride(out TableReference tableReference, out TableEntryReference tableEntryReference);
+}

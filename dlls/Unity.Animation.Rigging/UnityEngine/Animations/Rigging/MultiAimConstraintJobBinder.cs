@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.Animations.Rigging.MultiAimConstraintJobBinder`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Animations.Rigging
+{
+}
+namespace UnityEngine.Animations.Rigging
+{
+}

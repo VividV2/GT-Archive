@@ -1,7 +1,2 @@
-namespace UnityEngine;
-
-public enum HDRDisplayBitDepth
-{
-	BitDepth10,
-	BitDepth16
-}
+// Could not decompile Unity.Jobs.LowLevel.Unsafe.JobProducerTypeAttribute
+// This type uses unsupported IL or has too many generic parameters.

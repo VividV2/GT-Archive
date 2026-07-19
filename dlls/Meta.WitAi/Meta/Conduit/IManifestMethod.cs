@@ -1,23 +1,12 @@
-using System;
+using System.Collections.Generic;
 
-namespace Meta.WitAi.Attributes;
+namespace Meta.Conduit;
 
-[AttributeUsage(AttributeTargets.Method)]
-public class ButtonAttribute : Attribute
+internal interface IManifestMethod
 {
-	public readonly string displayName;
+	string ID { get; set; }
 
-	public readonly string label;
+	List<ManifestParameter> Parameters { get; set; }
 
-	public readonly string tooltip;
-
-	public readonly bool isRuntimeOnly;
-
-	public ButtonAttribute(string displayName = null, string label = null, string tooltip = null, bool isRuntimeOnly = false)
-	{
-		this.displayName = displayName;
-		this.label = label;
-		this.tooltip = tooltip;
-		this.isRuntimeOnly = isRuntimeOnly;
-	}
+	string Assembly { get; set; }
 }

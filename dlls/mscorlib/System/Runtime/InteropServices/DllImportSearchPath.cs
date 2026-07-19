@@ -1,6 +1,57 @@
-namespace System;
+using System.Reflection;
+using System.Security;
 
-public delegate void Action<in T1, in T2, in T3, in T4, in T5, in T6, in T7, in T8>(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8);
 namespace System.Runtime.InteropServices
 {
+}
+namespace System.Runtime.InteropServices
+{
+	[Guid("CCBD682C-73A5-4568-B8B0-C7007E11ABA2")]
+	[ComVisible(true)]
+	public interface IRegistrationServices
+	{
+		[SecurityCritical]
+		bool RegisterAssembly(Assembly assembly, AssemblyRegistrationFlags flags);
+
+		[SecurityCritical]
+		bool UnregisterAssembly(Assembly assembly);
+
+		[SecurityCritical]
+		Type[] GetRegistrableTypesInAssembly(Assembly assembly);
+
+		[SecurityCritical]
+		string GetProgIdForType(Type type);
+
+		[SecurityCritical]
+		void RegisterTypeForComClients(Type type, ref Guid g);
+
+		Guid GetManagedCategoryGuid();
+
+		[SecurityCritical]
+		bool TypeRequiresRegistration(Type type);
+
+		bool TypeRepresentsComType(Type type);
+	}
+}
+namespace System.Runtime.InteropServices
+{
+	[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+	[Obsolete("Use System.Runtime.InteropServices.ComTypes.ELEMDESC instead. http://go.microsoft.com/fwlink/?linkid=14202", false)]
+	public struct ELEMDESC
+	{
+		[StructLayout(LayoutKind.Explicit, CharSet = CharSet.Unicode)]
+		[ComVisible(false)]
+		public struct DESCUNION
+		{
+			[FieldOffset(0)]
+			public IDLDESC idldesc;
+
+			[FieldOffset(0)]
+			public PARAMDESC paramdesc;
+		}
+
+		public TYPEDESC tdesc;
+
+		public DESCUNION desc;
+	}
 }

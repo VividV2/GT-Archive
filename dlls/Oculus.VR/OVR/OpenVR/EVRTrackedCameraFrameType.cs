@@ -1,9 +1,2 @@
-namespace OVR.OpenVR;
-
-public enum EVRTrackedCameraFrameType
-{
-	Distorted,
-	Undistorted,
-	MaximumUndistorted,
-	MAX_CAMERA_FRAME_TYPES
-}
+// Could not decompile OVR.OpenVR.EVRTrackedCameraFrameType
+// This type uses unsupported IL or has too many generic parameters.

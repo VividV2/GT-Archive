@@ -1,11 +1,15 @@
 using System;
 
-namespace Fusion.Protocol;
-
-[Flags]
-internal enum StartRequests : uint
+namespace Fusion.Protocol
 {
-	None = 0u,
-	ConnectToShared = 2u,
-	WaitForReflexiveInfo = 4u
+	[Flags]
+	internal enum StartRequests : uint
+	{
+		None = 0u,
+		ConnectToShared = 2u,
+		WaitForReflexiveInfo = 4u
+	}
+}
+namespace Fusion.Protocol
+{
 }

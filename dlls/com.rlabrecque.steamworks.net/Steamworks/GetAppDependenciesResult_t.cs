@@ -1,38 +1,21 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(3416)]
+public struct GetAppDependenciesResult_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(335)]
-	public struct ClanOfficerListResponse_t
-	{
-		public const int k_iCallback = 335;
+	public const int k_iCallback = 3416;
 
-		public CSteamID m_steamIDClan;
+	public EResult m_eResult;
 
-		public int m_cOfficers;
+	public PublishedFileId_t m_nPublishedFileId;
 
-		public byte m_bSuccess;
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(3416)]
-	public struct GetAppDependenciesResult_t
-	{
-		public const int k_iCallback = 3416;
+	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+	public AppId_t[] m_rgAppIDs;
 
-		public EResult m_eResult;
+	public uint m_nNumAppDependencies;
 
-		public PublishedFileId_t m_nPublishedFileId;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
-		public AppId_t[] m_rgAppIDs;
-
-		public uint m_nNumAppDependencies;
-
-		public uint m_nTotalNumAppDependencies;
-	}
+	public uint m_nTotalNumAppDependencies;
 }

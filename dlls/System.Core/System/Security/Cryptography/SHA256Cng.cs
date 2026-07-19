@@ -1,2 +1,12 @@
-// Could not decompile System.Security.Cryptography.SHA256Cng
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
+namespace System.Linq.Parallel;
+
+[StructLayout(LayoutKind.Sequential, Size = 1)]
+internal struct NoKeyMemoizationRequired
+{
+}
+namespace System.Linq
+{
+}

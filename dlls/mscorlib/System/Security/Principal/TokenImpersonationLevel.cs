@@ -1,3 +1,6 @@
-namespace System;
-
-public delegate int Comparison<in T>(T x, T y);
+namespace System.Security.AccessControl
+{
+}
+namespace System.Security.AccessControl
+{
+}

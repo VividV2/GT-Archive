@@ -1,10 +1,21 @@
-namespace Meta.XR.MultiplayerBlocks.Colocation;
-
-internal enum LogLevel
+namespace Meta.XR.MultiplayerBlocks.Colocation
 {
-	Verbose,
-	Info,
-	Warning,
-	Error,
-	SharedSpatialAnchorsError
+	internal enum ColocationFailedReason
+	{
+		AutomaticFailedToCreateAnchor,
+		AutomaticFailedToSaveAnchorToCloud,
+		AutomaticFailedToShareAnchor,
+		AutomaticFailedToLocalizeAnchor
+	}
+}
+namespace Meta.XR.MultiplayerBlocks.Colocation
+{
+	internal enum LogLevel
+	{
+		Verbose,
+		Info,
+		Warning,
+		Error,
+		SharedSpatialAnchorsError
+	}
 }

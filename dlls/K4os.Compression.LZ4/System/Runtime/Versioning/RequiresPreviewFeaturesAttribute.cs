@@ -1,22 +1,7 @@
-namespace K4os.Compression.LZ4
-{
-}
-namespace System.Diagnostics.CodeAnalysis
-{
-	[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property, Inherited = false, AllowMultiple = true)]
-	[ExcludeFromCodeCoverage]
-	internal sealed class MemberNotNullAttribute : Attribute
-	{
-		public string[] Members { get; }
+namespace System.Diagnostics.CodeAnalysis;
 
-		public MemberNotNullAttribute(string member)
-		{
-			Members = new string[1] { member };
-		}
-
-		public MemberNotNullAttribute(params string[] members)
-		{
-			Members = members;
-		}
-	}
+[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
+[ExcludeFromCodeCoverage]
+internal sealed class UnscopedRefAttribute : Attribute
+{
 }

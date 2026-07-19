@@ -1,19 +1,26 @@
-namespace System.Data;
-
-internal class ForeignKeyConstraintEnumerator : ConstraintEnumerator
+namespace System.Data
 {
-	public ForeignKeyConstraintEnumerator(DataSet dataSet)
-		: base(dataSet)
+	internal class ForeignKeyConstraintEnumerator : ConstraintEnumerator
 	{
-	}
+		public ForeignKeyConstraintEnumerator(DataSet dataSet)
+			: base(dataSet)
+		{
+		}
 
-	protected override bool IsValidCandidate(Constraint constraint)
-	{
-		return constraint is ForeignKeyConstraint;
-	}
+		protected override bool IsValidCandidate(Constraint constraint)
+		{
+			return constraint is ForeignKeyConstraint;
+		}
 
-	public ForeignKeyConstraint GetForeignKeyConstraint()
-	{
-		return (ForeignKeyConstraint)base.CurrentObject;
+		public ForeignKeyConstraint GetForeignKeyConstraint()
+		{
+			return (ForeignKeyConstraint)base.CurrentObject;
+		}
 	}
+}
+namespace System.Data
+{
+}
+namespace System.Data.Odbc
+{
 }

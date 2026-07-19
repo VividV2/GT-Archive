@@ -1,16 +1,35 @@
+using System;
+using System.ComponentModel;
+using System;
+using System.ComponentModel;
+
 namespace UnityEngine.UI;
 
-public interface IClippable
+[EditorBrowsable(EditorBrowsableState.Never)]
+[Obsolete("Not supported anymore.", true)]
+public interface IMask
 {
-	GameObject gameObject { get; }
-
 	RectTransform rectTransform { get; }
 
-	void RecalculateClipping();
+	bool Enabled();
+}
+namespace UnityEngine.UI
+{
+}
+namespace UnityEngine.UI
+{
+	public interface IClippable
+	{
+		GameObject gameObject { get; }
 
-	void Cull(Rect clipRect, bool validRect);
+		RectTransform rectTransform { get; }
 
-	void SetClipRect(Rect value, bool validRect);
+		void RecalculateClipping();
 
-	void SetClipSoftness(Vector2 clipSoftness);
+		void Cull(Rect clipRect, bool validRect);
+
+		void SetClipRect(Rect value, bool validRect);
+
+		void SetClipSoftness(Vector2 clipSoftness);
+	}
 }

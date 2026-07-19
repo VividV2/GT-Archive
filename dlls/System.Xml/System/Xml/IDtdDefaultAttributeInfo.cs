@@ -1,12 +1,16 @@
-namespace System.Xml;
-
-internal interface IDtdDefaultAttributeInfo : IDtdAttributeInfo
+namespace System.Xml
 {
-	string DefaultValueExpanded { get; }
+	internal interface IDtdDefaultAttributeInfo : IDtdAttributeInfo
+	{
+		string DefaultValueExpanded { get; }
 
-	object DefaultValueTyped { get; }
+		object DefaultValueTyped { get; }
 
-	int ValueLineNumber { get; }
+		int ValueLineNumber { get; }
 
-	int ValueLinePosition { get; }
+		int ValueLinePosition { get; }
+	}
+}
+namespace System.Xml.Xsl.XsltOld
+{
 }

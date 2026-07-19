@@ -1,11 +1,2 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-using System.Collections.Generic;
-using System.Collections.Generic;
-
-public interface IGameEntityDebugComponent
-{
-	void GetDebugTextLines(out List<string> strings);
-}
-namespace GorillaTagScripts;
-
+// Could not decompile GTOption`1
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,2 @@
-// Could not decompile Sirenix.OdinInspector.ShowIfAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace Sirenix.OdinInspector;
+

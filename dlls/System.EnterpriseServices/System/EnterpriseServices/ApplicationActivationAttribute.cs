@@ -1,11 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace System.EnterpriseServices;
-
-[Serializable]
-[ComVisible(false)]
-public enum InheritanceOption
-{
-	Inherit,
-	Ignore
-}
+// Could not decompile System.EnterpriseServices.ApplicationActivationAttribute
+// This type uses unsupported IL or has too many generic parameters.

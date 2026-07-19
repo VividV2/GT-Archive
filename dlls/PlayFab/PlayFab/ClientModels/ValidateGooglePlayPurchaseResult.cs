@@ -1,29 +1,11 @@
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
 namespace PlayFab.ClientModels;
 
-public enum UserOrigination
+[Serializable]
+public class ValidateGooglePlayPurchaseResult : PlayFabResultCommon
 {
-	Organic,
-	Steam,
-	Google,
-	Amazon,
-	Facebook,
-	Kongregate,
-	GamersFirst,
-	Unknown,
-	IOS,
-	LoadTest,
-	Android,
-	PSN,
-	GameCenter,
-	CustomId,
-	XboxLive,
-	Parse,
-	Twitch,
-	WindowsHello,
-	ServerCustomId,
-	NintendoSwitchDeviceId,
-	FacebookInstantGamesId,
-	OpenIdConnect,
-	Apple,
-	NintendoSwitchAccount
+	public List<PurchaseReceiptFulfillment> Fulfillments;
 }

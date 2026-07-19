@@ -1,15 +1,11 @@
-namespace UnityEngine
+namespace UnityEngine.Rendering;
+
+public enum LightEvent
 {
-}
-namespace UnityEngine.Rendering
-{
-	public enum LightEvent
-	{
-		BeforeShadowMap,
-		AfterShadowMap,
-		BeforeScreenspaceMask,
-		AfterScreenspaceMask,
-		BeforeShadowMapPass,
-		AfterShadowMapPass
-	}
+	BeforeShadowMap,
+	AfterShadowMap,
+	BeforeScreenspaceMask,
+	AfterScreenspaceMask,
+	BeforeShadowMapPass,
+	AfterShadowMapPass
 }

@@ -1,0 +1,2 @@
+namespace Liv.Lck.Tablet;
+

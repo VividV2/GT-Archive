@@ -1,10 +1,12 @@
-namespace System;
-
-[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-internal class MonoDocumentationNoteAttribute : System.MonoTODOAttribute
+namespace System.Drawing
 {
-	public MonoDocumentationNoteAttribute(string comment)
-		: base(comment)
-	{
-	}
+}
+namespace System.Drawing
+{
+}
+namespace System.Drawing.Imaging
+{
+}
+namespace System.Drawing
+{
 }

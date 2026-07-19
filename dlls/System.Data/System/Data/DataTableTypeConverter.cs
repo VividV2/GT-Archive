@@ -1,16 +1,2 @@
-using System.ComponentModel;
-
-namespace System.Data;
-
-internal sealed class DataTableTypeConverter : ReferenceConverter
-{
-	public DataTableTypeConverter()
-		: base(typeof(DataTable))
-	{
-	}
-
-	public override bool GetPropertiesSupported(ITypeDescriptorContext context)
-	{
-		return false;
-	}
-}
+// Could not decompile System.Data.DataTableTypeConverter
+// This type uses unsupported IL or has too many generic parameters.

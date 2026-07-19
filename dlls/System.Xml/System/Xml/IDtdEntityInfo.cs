@@ -1,9 +1,32 @@
-namespace System.Xml.Serialization
+namespace System.Xml
 {
-	public interface IXmlTextParser
+	internal interface IDtdEntityInfo
 	{
-		bool Normalized { get; set; }
+		string Name { get; }
 
-		WhitespaceHandling WhitespaceHandling { get; set; }
+		bool IsExternal { get; }
+
+		bool IsDeclaredInExternal { get; }
+
+		bool IsUnparsedEntity { get; }
+
+		bool IsParameterEntity { get; }
+
+		string BaseUriString { get; }
+
+		string DeclaredUriString { get; }
+
+		string SystemId { get; }
+
+		string PublicId { get; }
+
+		string Text { get; }
+
+		int LineNumber { get; }
+
+		int LinePosition { get; }
 	}
+}
+namespace System.Xml.Xsl.XsltOld
+{
 }

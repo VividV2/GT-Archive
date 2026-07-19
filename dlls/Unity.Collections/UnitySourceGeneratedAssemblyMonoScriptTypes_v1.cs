@@ -1,17 +1,23 @@
-using Unity.Burst;
-using Unity.Jobs;
-using Unity.Burst;
-using Unity.Jobs;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Unity.Collections.LowLevel.Unsafe;
+namespace Unity.Collections;
 
-[BurstCompile]
-internal struct UnsafeParallelHashMapDataDisposeJob : IJob
+[StructLayout(LayoutKind.Explicit)]
+internal struct UIntFloat
 {
-	internal UnsafeParallelHashMapDataDispose Data;
+	[FieldOffset(0)]
+	public float floatValue;
 
-	public void Execute()
-	{
-		Data.Dispose();
-	}
+	[FieldOffset(0)]
+	public uint intValue;
+
+	[FieldOffset(0)]
+	public double doubleValue;
+
+	[FieldOffset(0)]
+	public ulong longValue;
+}
+namespace Unity.Collections
+{
 }

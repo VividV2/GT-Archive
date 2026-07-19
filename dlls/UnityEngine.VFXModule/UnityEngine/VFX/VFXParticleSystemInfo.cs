@@ -1,21 +1,17 @@
 using UnityEngine.Bindings;
 using UnityEngine.Scripting;
 
-namespace UnityEngine.VFX
+namespace UnityEngine.VFX;
+
+[NativeHeader("Modules/VFX/Public/Systems/VFXParticleSystem.h")]
+[UsedByNativeCode]
+public struct VFXParticleSystemInfo(uint aliveCount, uint capacity, bool sleeping, Bounds bounds)
 {
-	[NativeHeader("Modules/VFX/Public/Systems/VFXParticleSystem.h")]
-	[UsedByNativeCode]
-	public struct VFXParticleSystemInfo(uint aliveCount, uint capacity, bool sleeping, Bounds bounds)
-	{
-		public uint aliveCount = aliveCount;
+	public uint aliveCount = aliveCount;
 
-		public uint capacity = capacity;
+	public uint capacity = capacity;
 
-		public bool sleeping = sleeping;
+	public bool sleeping = sleeping;
 
-		public Bounds bounds = bounds;
-	}
-}
-namespace UnityEngine.VFX
-{
+	public Bounds bounds = bounds;
 }

@@ -1,2 +1,20 @@
-// Could not decompile UnityEngine.FlareLayer
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine
+{
+	public enum StereoTargetEyeMask
+	{
+		None,
+		Left,
+		Right,
+		Both
+	}
+}
+namespace UnityEngine
+{
+	[RequireComponent(typeof(Camera))]
+	public class FlareLayer : Behaviour
+	{
+		internal FlareLayer()
+		{
+		}
+	}
+}

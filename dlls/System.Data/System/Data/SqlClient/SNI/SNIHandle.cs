@@ -1,6 +1,3 @@
-namespace System.Data.SqlClient
-{
-}
 namespace System.Data.SqlClient.SNI
 {
 	internal abstract class SNIHandle
@@ -29,4 +26,7 @@ namespace System.Data.SqlClient.SNI
 
 		public abstract uint CheckConnection();
 	}
+}
+namespace System.Data.OleDb
+{
 }

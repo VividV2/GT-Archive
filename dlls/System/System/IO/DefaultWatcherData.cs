@@ -1,2 +1,24 @@
-// Could not decompile System.IO.DefaultWatcherData
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace System.IO;
+
+internal class DefaultWatcherData
+{
+	public FileSystemWatcher FSW;
+
+	public string Directory;
+
+	public string FileMask;
+
+	public bool IncludeSubdirs;
+
+	public bool Enabled;
+
+	public bool NoWildcards;
+
+	public DateTime DisabledTime;
+
+	public object FilesLock = new object();
+
+	public Dictionary<string, FileData> Files;
+}

@@ -1,8 +1,3 @@
-namespace System.Data.SqlClient;
-
-internal struct TdsDateTime
+namespace System.Data.SqlClient.SNI
 {
-	public int days;
-
-	public int time;
 }

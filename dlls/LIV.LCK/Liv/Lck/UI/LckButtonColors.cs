@@ -1,17 +1,2 @@
-using UnityEngine;
-
-namespace Liv.Lck.UI;
-
-[CreateAssetMenu(fileName = "LckButtonColors", menuName = "LIV/LCK/LCK Button Colors", order = 0)]
-public class LckButtonColors : ScriptableObject
-{
-	public Color NormalColor;
-
-	public Color HighlightedColor;
-
-	public Color PressedColor;
-
-	public Color SelectedColor;
-
-	public Color DisabledColor;
-}
+// Could not decompile Liv.Lck.UI.LckButtonColors
+// This type uses unsupported IL or has too many generic parameters.

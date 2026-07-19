@@ -1,13 +1,6 @@
-namespace System.Net.NetworkInformation
+namespace System.CodeDom
 {
-	internal static class UnixIPGlobalPropertiesFactoryPal
-	{
-		public static IPGlobalProperties Create()
-		{
-			return null;
-		}
-	}
 }
-namespace System.Net
+namespace System.IO.Ports
 {
 }

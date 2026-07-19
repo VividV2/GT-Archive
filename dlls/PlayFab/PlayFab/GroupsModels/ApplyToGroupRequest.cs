@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.GroupsModels.ApplyToGroupRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.GroupsModels;
+
+[Serializable]
+public class ApplyToGroupRequest : PlayFabRequestCommon
+{
+	public bool? AutoAcceptOutstandingInvite;
+
+	public EntityKey Entity;
+
+	public EntityKey Group;
+}

@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ExperimentationModels;
-
-[Serializable]
-public class GetTreatmentAssignmentRequest : PlayFabRequestCommon
-{
-	public EntityKey Entity;
-}
+// Could not decompile PlayFab.ExperimentationModels.GetTreatmentAssignmentRequest
+// This type uses unsupported IL or has too many generic parameters.

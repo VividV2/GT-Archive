@@ -1,12 +1,9 @@
 namespace OVR.OpenVR;
 
-public struct VRTextureBounds_t
+public enum OVRTextureFormat
 {
-	public float uMin;
-
-	public float vMin;
-
-	public float uMax;
-
-	public float vMax;
+	NONE,
+	KTX2,
+	PNG,
+	JPEG
 }

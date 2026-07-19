@@ -1,20 +1,24 @@
 using System.Collections.Generic;
 
-namespace UnityEngine.ProBuilder.Poly2Tri;
-
-internal interface Triangulatable
+namespace UnityEngine.ProBuilder.Poly2Tri
 {
-	IList<TriangulationPoint> Points { get; }
+}
+namespace UnityEngine.ProBuilder.Poly2Tri
+{
+	internal interface Triangulatable
+	{
+		IList<TriangulationPoint> Points { get; }
 
-	IList<DelaunayTriangle> Triangles { get; }
+		IList<DelaunayTriangle> Triangles { get; }
 
-	TriangulationMode TriangulationMode { get; }
+		TriangulationMode TriangulationMode { get; }
 
-	void Prepare(TriangulationContext tcx);
+		void Prepare(TriangulationContext tcx);
 
-	void AddTriangle(DelaunayTriangle t);
+		void AddTriangle(DelaunayTriangle t);
 
-	void AddTriangles(IEnumerable<DelaunayTriangle> list);
+		void AddTriangles(IEnumerable<DelaunayTriangle> list);
 
-	void ClearTriangles();
+		void ClearTriangles();
+	}
 }

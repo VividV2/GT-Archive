@@ -1,20 +1,2 @@
-namespace System.Reflection
-{
-	public static class MethodInfoExtensions
-	{
-		public static MethodInfo GetBaseDefinition(MethodInfo method)
-		{
-			Requires.NotNull(method, "method");
-			return method.GetBaseDefinition();
-		}
-	}
-}
-namespace System.Reflection
-{
-}
-namespace System.Reflection
-{
-}
-namespace System.Reflection
-{
-}
+// Could not decompile System.Reflection.MethodInfoExtensions
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,31 +1,22 @@
 using System;
 
-namespace UnityEngine.Rendering
+namespace UnityEngine;
+
+internal interface IPlayerEditorConnectionNative
 {
-	public enum CameraHDRMode
-	{
-		FP16 = 1,
-		R11G11B10
-	}
-}
-namespace UnityEngine
-{
-	internal interface IPlayerEditorConnectionNative
-	{
-		void Initialize();
+	void Initialize();
 
-		void DisconnectAll();
+	void DisconnectAll();
 
-		void SendMessage(Guid messageId, byte[] data, int playerId);
+	void SendMessage(Guid messageId, byte[] data, int playerId);
 
-		bool TrySendMessage(Guid messageId, byte[] data, int playerId);
+	bool TrySendMessage(Guid messageId, byte[] data, int playerId);
 
-		void Poll();
+	void Poll();
 
-		void RegisterInternal(Guid messageId);
+	void RegisterInternal(Guid messageId);
 
-		void UnregisterInternal(Guid messageId);
+	void UnregisterInternal(Guid messageId);
 
-		bool IsConnected();
-	}
+	bool IsConnected();
 }

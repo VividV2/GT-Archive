@@ -1,8 +1,12 @@
 using System;
 
-namespace UnityEngine.Experimental.Rendering;
-
-public interface IScriptableRuntimeReflectionSystem : IDisposable
+namespace UnityEngine.Experimental.Rendering
 {
-	bool TickRealtimeProbes();
+	public interface IScriptableRuntimeReflectionSystem : IDisposable
+	{
+		bool TickRealtimeProbes();
+	}
+}
+namespace UnityEngine.Experimental.Rendering
+{
 }

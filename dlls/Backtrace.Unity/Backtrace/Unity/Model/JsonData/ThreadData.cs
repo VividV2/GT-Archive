@@ -14,7 +14,7 @@ public class ThreadData
 	internal ThreadData(IEnumerable<BacktraceStackFrame> exceptionStack, bool faultingThread)
 	{
 		Thread currentThread = Thread.CurrentThread;
-		string text = ThreadExtensions.GenerateValidThreadName(currentThread).ToLower();
+		string text = currentThread.GenerateValidThreadName().ToLower();
 		ThreadInformations[text] = new ThreadInformation(currentThread, exceptionStack, faultingThread);
 		MainThread = text;
 	}

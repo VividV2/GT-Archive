@@ -1,11 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.CloudScriptModels;
-
-[Serializable]
-public class ListQueuedFunctionsResult : PlayFabResultCommon
-{
-	public List<QueuedFunctionModel> Functions;
-}
+// Could not decompile PlayFab.CloudScriptModels.ListQueuedFunctionsResult
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,6 +1,14 @@
-namespace PlayFab.MultiplayerModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class Certificate : PlayFabBaseModel
 {
-}
-namespace PlayFab.MultiplayerModels
-{
+	public string Base64EncodedValue;
+
+	public string Name;
+
+	public string Password;
 }

@@ -18,6 +18,3 @@ public enum RegistryHive
 	/// <summary>Represents the HKEY_DYN_DATA base key on another computer. This value can be passed to the <see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" /> method, to open this node remotely.</summary>
 	DynData
 }
-namespace System.Runtime.InteropServices
-{
-}

@@ -1,7 +1,9 @@
-#define UNITY_ASSERTIONS
-namespace UnityEngine.UIElements.Layout
+namespace UnityEngine.UIElements.Layout;
+
+internal enum LayoutFlexDirection
 {
-}
-namespace UnityEngine.UIElements
-{
+	Column,
+	ColumnReverse,
+	Row,
+	RowReverse
 }

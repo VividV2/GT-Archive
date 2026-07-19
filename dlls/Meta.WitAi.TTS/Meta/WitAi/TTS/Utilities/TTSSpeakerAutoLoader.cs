@@ -1,13 +1,2 @@
-using System;
-using Meta.WitAi.TTS.Data;
-using UnityEngine.Events;
-using System;
-using Meta.WitAi.TTS.Data;
-using UnityEngine.Events;
-
-namespace Meta.WitAi.TTS.Events;
-
-[Serializable]
-public class TTSClipDownloadErrorEvent : UnityEvent<TTSClipData, string, string>
-{
-}
+// Could not decompile Meta.WitAi.TTS.Utilities.TTSSpeakerAutoLoader
+// This type uses unsupported IL or has too many generic parameters.

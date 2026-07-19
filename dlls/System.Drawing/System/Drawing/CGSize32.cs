@@ -1,8 +1,6 @@
-namespace System.Drawing;
-
-internal struct CGSize32
+namespace System.Drawing
 {
-	public float width;
-
-	public float height;
+}
+namespace System.Drawing
+{
 }

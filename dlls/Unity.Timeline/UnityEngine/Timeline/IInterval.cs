@@ -1,12 +1,8 @@
-namespace UnityEngine.Timeline
-{
-	internal interface IInterval
-	{
-		long intervalStart { get; }
+namespace UnityEngine.Timeline;
 
-		long intervalEnd { get; }
-	}
-}
-namespace UnityEngine.Timeline
+internal interface IInterval
 {
+	long intervalStart { get; }
+
+	long intervalEnd { get; }
 }

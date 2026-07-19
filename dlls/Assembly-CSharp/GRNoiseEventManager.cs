@@ -1,2 +1,2 @@
-namespace GorillaTag.Shared.Scripts;
-
+// Could not decompile GRNoiseEventManager
+// This type uses unsupported IL or has too many generic parameters.

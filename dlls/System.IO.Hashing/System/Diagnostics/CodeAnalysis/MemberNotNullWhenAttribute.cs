@@ -1,2 +1,3 @@
-namespace System.Numerics;
-
+namespace System.Diagnostics.CodeAnalysis
+{
+}

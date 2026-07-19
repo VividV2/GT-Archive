@@ -11,9 +11,6 @@ namespace Oculus.Interaction.Input
 		Max = 4
 	}
 }
-namespace Oculus.Interaction
-{
-}
-namespace Oculus.Interaction.Body.PoseDetection
+namespace Oculus.Interaction.Input
 {
 }

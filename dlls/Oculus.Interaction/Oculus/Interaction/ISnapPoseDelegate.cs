@@ -1,25 +1,18 @@
 using UnityEngine;
 
-namespace Oculus.Interaction
+namespace Oculus.Interaction;
+
+public interface ISnapPoseDelegate
 {
-	public interface ISnapPoseDelegate
-	{
-		void TrackElement(int id, Pose p);
+	void TrackElement(int id, Pose p);
 
-		void UntrackElement(int id);
+	void UntrackElement(int id);
 
-		void SnapElement(int id, Pose pose);
+	void SnapElement(int id, Pose pose);
 
-		void UnsnapElement(int id);
+	void UnsnapElement(int id);
 
-		void MoveTrackedElement(int id, Pose p);
+	void MoveTrackedElement(int id, Pose p);
 
-		bool SnapPoseForElement(int id, Pose pose, out Pose result);
-	}
-}
-namespace Oculus.Interaction.PoseDetection
-{
-}
-namespace Oculus.Interaction
-{
+	bool SnapPoseForElement(int id, Pose pose, out Pose result);
 }

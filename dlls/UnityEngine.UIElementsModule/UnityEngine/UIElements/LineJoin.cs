@@ -1,12 +1,8 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum LineJoin
 {
-	public enum LineJoin
-	{
-		Miter,
-		Bevel,
-		Round
-	}
-}
-namespace UnityEngine.UIElements
-{
+	Miter,
+	Bevel,
+	Round
 }

@@ -1,6 +1,10 @@
-namespace Fusion;
-
-public interface IAfterTick : IPublicFacingInterface
+namespace Fusion
 {
-	void AfterTick();
+}
+namespace Fusion
+{
+	public interface IAfterTick : IPublicFacingInterface
+	{
+		void AfterTick();
+	}
 }

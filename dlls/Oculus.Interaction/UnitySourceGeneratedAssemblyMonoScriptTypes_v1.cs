@@ -1,7 +1,6 @@
-namespace Oculus.Interaction;
+namespace Oculus.Interaction.Input.Compatibility.OVR;
 
-public enum CylinderOrientation
+public interface IReadOnlyHandSkeleton
 {
-	Vertical,
-	Horizontal
+	IReadOnlyHandSkeletonJointList Joints { get; }
 }

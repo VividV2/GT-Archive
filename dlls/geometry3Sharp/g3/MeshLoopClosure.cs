@@ -1,2 +1,8 @@
-// Could not decompile g3.MeshLoopClosure
-// This type uses unsupported IL or has too many generic parameters.
+namespace g3;
+
+public struct GridLevelIndex
+{
+	public Vector3i block_index;
+
+	public Vector3i local_index;
+}

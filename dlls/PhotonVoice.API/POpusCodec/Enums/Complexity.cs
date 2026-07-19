@@ -1,7 +1,16 @@
 namespace POpusCodec.Enums;
 
-public enum Channels
+public enum Complexity
 {
-	Mono = 1,
-	Stereo
+	Complexity0,
+	Complexity1,
+	Complexity2,
+	Complexity3,
+	Complexity4,
+	Complexity5,
+	Complexity6,
+	Complexity7,
+	Complexity8,
+	Complexity9,
+	Complexity10
 }

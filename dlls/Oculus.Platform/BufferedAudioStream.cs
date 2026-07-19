@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+namespace Oculus.Platform;
+
 public class BufferedAudioStream
 {
 	private const bool VerboseLogging = false;

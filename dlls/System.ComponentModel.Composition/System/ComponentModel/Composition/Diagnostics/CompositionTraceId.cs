@@ -1,3 +1,9 @@
-namespace System.ComponentModel.Composition.ReflectionModel
+namespace System.ComponentModel.Composition
+{
+}
+namespace Microsoft.Internal.Collections
+{
+}
+namespace System.ComponentModel.Composition
 {
 }

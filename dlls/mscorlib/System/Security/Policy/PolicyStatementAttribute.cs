@@ -1,3 +1,6 @@
-namespace System.Runtime.CompilerServices
+namespace System.Security.Permissions
+{
+}
+namespace System.Security.Permissions
 {
 }

@@ -1,5 +1,10 @@
-namespace PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
 
-public interface IPlayFabInstanceApi
+namespace PlayFab.ExperimentationModels;
+
+[Serializable]
+public class CreateExperimentResult : PlayFabResultCommon
 {
+	public string ExperimentId;
 }

@@ -1,10 +1,13 @@
-namespace Steamworks;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Runtime.InteropServices;
+using System.Text;
 
-public enum EPlayerResult_t
+namespace Steamworks
 {
-	k_EPlayerResultFailedToConnect = 1,
-	k_EPlayerResultAbandoned,
-	k_EPlayerResultKicked,
-	k_EPlayerResultIncomplete,
-	k_EPlayerResultCompleted
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+	public delegate void SteamAPIWarningMessageHook_t(int nSeverity, StringBuilder pchDebugText);
+}
+namespace Steamworks
+{
 }

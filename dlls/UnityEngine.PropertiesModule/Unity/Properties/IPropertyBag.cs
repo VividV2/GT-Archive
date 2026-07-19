@@ -1,18 +1,14 @@
-namespace Unity.Properties
+namespace Unity.Properties;
+
+public interface IPropertyBag<TContainer> : IPropertyBag
 {
-}
-namespace Unity.Properties
-{
-	public interface IPropertyBag<TContainer> : IPropertyBag
-	{
-		PropertyCollection<TContainer> GetProperties();
+	PropertyCollection<TContainer> GetProperties();
 
-		PropertyCollection<TContainer> GetProperties(ref TContainer container);
+	PropertyCollection<TContainer> GetProperties(ref TContainer container);
 
-		TContainer CreateInstance();
+	TContainer CreateInstance();
 
-		bool TryCreateInstance(out TContainer instance);
+	bool TryCreateInstance(out TContainer instance);
 
-		void Accept(IPropertyBagVisitor visitor, ref TContainer container);
-	}
+	void Accept(IPropertyBagVisitor visitor, ref TContainer container);
 }

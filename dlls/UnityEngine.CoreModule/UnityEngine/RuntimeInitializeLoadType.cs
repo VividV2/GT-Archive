@@ -1,14 +1,10 @@
-namespace UnityEngine.Pool
+namespace UnityEngine;
+
+public enum RuntimeInitializeLoadType
 {
-}
-namespace UnityEngine
-{
-	public enum RuntimeInitializeLoadType
-	{
-		AfterSceneLoad,
-		BeforeSceneLoad,
-		AfterAssembliesLoaded,
-		BeforeSplashScreen,
-		SubsystemRegistration
-	}
+	AfterSceneLoad,
+	BeforeSceneLoad,
+	AfterAssembliesLoaded,
+	BeforeSplashScreen,
+	SubsystemRegistration
 }

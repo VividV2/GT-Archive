@@ -1,19 +1,17 @@
 namespace System.Security.AccessControl;
 
 /// <summary>Specifies the function of an access control entry (ACE).</summary>
-/// <summary>Specifies the function of an access control entry (ACE).</summary>
 public enum AceQualifier
 {
 	/// <summary>Allow access.</summary>
-	/// <summary>Allow access.</summary>
 	AccessAllowed,
-	/// <summary>Deny access.</summary>
 	/// <summary>Deny access.</summary>
 	AccessDenied,
 	/// <summary>Cause a system audit.</summary>
-	/// <summary>Cause a system audit.</summary>
 	SystemAudit,
 	/// <summary>Cause a system alarm.</summary>
-	/// <summary>Cause a system alarm.</summary>
 	SystemAlarm
+}
+namespace System.Security.Cryptography
+{
 }

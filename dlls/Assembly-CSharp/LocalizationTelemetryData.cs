@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 
-namespace GorillaNetworking;
-
 public struct LocalizationTelemetryData
 {
 	public string EventName;

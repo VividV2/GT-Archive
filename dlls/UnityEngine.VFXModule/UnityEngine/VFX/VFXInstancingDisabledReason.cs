@@ -1,7 +1,8 @@
 namespace UnityEngine.VFX;
 
-internal enum VFXSkinnedMeshFrame
+internal enum VFXMainCameraBufferFallback
 {
-	Current,
-	Previous
+	NoFallback,
+	PreferMainCamera,
+	PreferSceneCamera
 }

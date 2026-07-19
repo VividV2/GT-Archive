@@ -1,13 +1,2 @@
-using UnityEngine;
-
-public enum GRShiftStatType
-{
-	EnemyDeaths,
-	PlayerDeaths,
-	CoresCollected,
-	SentientCoresCollected
-}
-public class GRLevelAnchor : MonoBehaviour
-{
-	public Transform navigablePoint;
-}
+// Could not decompile GRLevelAnchor
+// This type uses unsupported IL or has too many generic parameters.

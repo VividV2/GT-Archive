@@ -1,6 +1,2 @@
-namespace Newtonsoft.Json.Utilities
-{
-}
-namespace Newtonsoft.Json
-{
-}
+// Could not decompile Newtonsoft.Json.Utilities.EnumUtils
+// This type uses unsupported IL or has too many generic parameters.

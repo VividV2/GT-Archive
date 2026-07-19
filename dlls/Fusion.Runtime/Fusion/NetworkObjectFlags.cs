@@ -1,22 +1,15 @@
-#define DEBUG
-namespace Fusion
+using System;
+
+namespace Fusion;
+
+[Flags]
+public enum NetworkObjectFlags
 {
-}
-namespace Fusion
-{
-	public struct RpcInvokeData
-	{
-		public int Key;
-
-		public int Sources;
-
-		public int Targets;
-
-		public RpcInvokeDelegate Delegate;
-
-		public override string ToString()
-		{
-			return $"[{Key}, {Sources}, {Targets}, {Delegate}]";
-		}
-	}
+	None = 0,
+	MaskVersion = 0xFF,
+	V1 = 1,
+	Ignore = 0x10000,
+	MasterClientObject = 0x20000,
+	DestroyWhenStateAuthorityLeaves = 0x40000,
+	AllowStateAuthorityOverride = 0x80000
 }

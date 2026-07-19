@@ -1,3 +1,5 @@
-namespace Meta.XR.Samples
+namespace OVR.OpenVR;
+
+namespace OVR.OpenVR
 {
 }

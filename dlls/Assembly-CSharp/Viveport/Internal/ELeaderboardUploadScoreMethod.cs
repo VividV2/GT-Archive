@@ -1,12 +1,8 @@
-namespace Viveport.Internal
+namespace Viveport.Internal;
+
+internal enum ELeaderboardUploadScoreMethod
 {
-	internal enum ELeaderboardUploadScoreMethod
-	{
-		k_ELeaderboardUploadScoreMethodNone,
-		k_ELeaderboardUploadScoreMethodKeepBest,
-		k_ELeaderboardUploadScoreMethodForceUpdate
-	}
-}
-namespace GorillaLocomotion.Swimming
-{
+	k_ELeaderboardUploadScoreMethodNone,
+	k_ELeaderboardUploadScoreMethodKeepBest,
+	k_ELeaderboardUploadScoreMethodForceUpdate
 }

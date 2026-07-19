@@ -1,3 +1,2 @@
-namespace GorillaNetworking
-{
-}
+namespace GorillaNetworking.ScheduledEvents;
+

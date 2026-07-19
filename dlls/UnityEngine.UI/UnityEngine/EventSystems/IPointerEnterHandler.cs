@@ -1,10 +1,6 @@
-namespace UnityEngine.EventSystems
+namespace UnityEngine.EventSystems;
+
+public interface IPointerEnterHandler : IEventSystemHandler
 {
-	public interface IPointerEnterHandler : IEventSystemHandler
-	{
-		void OnPointerEnter(PointerEventData eventData);
-	}
-}
-namespace UnityEngine.EventSystems
-{
+	void OnPointerEnter(PointerEventData eventData);
 }

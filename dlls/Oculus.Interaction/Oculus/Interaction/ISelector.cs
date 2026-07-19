@@ -1,2 +1,10 @@
-// Could not decompile Oculus.Interaction.ISelector
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Oculus.Interaction;
+
+public interface ISelector
+{
+	event Action WhenSelected;
+
+	event Action WhenUnselected;
+}

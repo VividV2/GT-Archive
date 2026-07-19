@@ -1,10 +1,14 @@
 using UnityEngine.EventSystems;
 
-namespace UnityEngine.InputSystem.UI;
-
-internal struct SubmitCancelModel
+namespace UnityEngine.InputSystem.UI
 {
-	public BaseEventData eventData;
+	internal struct SubmitCancelModel
+	{
+		public BaseEventData eventData;
 
-	public InputDevice device;
+		public InputDevice device;
+	}
+}
+namespace UnityEngine.InputSystem.DualShock.LowLevel
+{
 }

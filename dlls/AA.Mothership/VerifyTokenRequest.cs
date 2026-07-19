@@ -1,12 +1,2 @@
-using System;
-using System;
-
-public class MothershipLogCallback(Action<MothershipLogLevel, string> logFunction) : MothershipLogDelegateWrapper
-{
-	private readonly Action<MothershipLogLevel, string> _logFunction = logFunction;
-
-	public override void OnLogCallback(MothershipLogLevel level, string message)
-	{
-		_logFunction?.Invoke(level, message);
-	}
-}
+// Could not decompile VerifyTokenRequest
+// This type uses unsupported IL or has too many generic parameters.

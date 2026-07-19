@@ -1,4 +1,2 @@
-public interface IGameEntityCustomStateChange
-{
-	bool CanChangeState(long newState, int playerId);
-}
+// Could not decompile OwnerRig
+// This type uses unsupported IL or has too many generic parameters.

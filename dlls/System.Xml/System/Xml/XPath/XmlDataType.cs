@@ -8,3 +8,6 @@ public enum XmlDataType
 	/// <summary>Values are sorted numerically.</summary>
 	Number
 }
+namespace System.Xml
+{
+}

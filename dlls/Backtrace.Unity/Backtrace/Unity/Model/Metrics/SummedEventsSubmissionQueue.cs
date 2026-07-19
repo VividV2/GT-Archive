@@ -1,2 +1,2 @@
-namespace Backtrace.Unity.Model.JsonData;
+namespace Backtrace.Unity.Model;
 

@@ -1,2 +1,3 @@
-namespace System.Security.Permissions;
-
+namespace System.CodeDom
+{
+}

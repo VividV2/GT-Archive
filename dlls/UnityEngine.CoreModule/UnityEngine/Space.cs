@@ -1,7 +1,9 @@
-namespace UnityEngine;
-
-public enum Space
+namespace Unity.IntegerTime
 {
-	World,
-	Self
+}
+namespace Unity.Burst.LowLevel
+{
+}
+namespace UnityEngine
+{
 }

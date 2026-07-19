@@ -1,12 +1,8 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum GradientMode
 {
-	public enum GradientMode
-	{
-		Blend,
-		Fixed,
-		PerceptualBlend
-	}
-}
-namespace UnityEngine
-{
+	Blend,
+	Fixed,
+	PerceptualBlend
 }

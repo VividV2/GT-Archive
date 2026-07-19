@@ -1,5 +1,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 
 namespace System.Runtime.Remoting.Contexts;
 
@@ -12,7 +14,4 @@ public interface IContributeObjectSink
 	/// <param name="nextSink">The chain of sinks composed so far.</param>
 	/// <returns>The composite sink chain.</returns>
 	IMessageSink GetObjectSink(MarshalByRefObject obj, IMessageSink nextSink);
-}
-namespace System.Security.Permissions
-{
 }

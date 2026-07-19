@@ -1,14 +1,35 @@
-namespace System.Security.Cryptography.X509Certificates;
+namespace System.Security.Cryptography;
 
-/// <summary>Identifies the level of trustworthiness that is assigned to the signature for a manifest.</summary>
-public enum TrustStatus
+internal static class BCryptNative
 {
-	/// <summary>The signature was created by an explicitly distrusted publisher.</summary>
-	Untrusted,
-	/// <summary>The identity is not known and the signature is invalid. Because there is no verified signature, an identity cannot be determined.</summary>
-	UnknownIdentity,
-	/// <summary>The identity is known and the signature is valid. A valid Authenticode signature provides an identity.</summary>
-	KnownIdentity,
-	/// <summary>The signature is valid and was created by an explicitly trusted publisher.</summary>
-	Trusted
+	internal static class AlgorithmName
+	{
+		public const string ECDH = "ECDH";
+
+		public const string ECDHP256 = "ECDH_P256";
+
+		public const string ECDHP384 = "ECDH_P384";
+
+		public const string ECDHP521 = "ECDH_P521";
+
+		public const string ECDsa = "ECDSA";
+
+		public const string ECDsaP256 = "ECDSA_P256";
+
+		public const string ECDsaP384 = "ECDSA_P384";
+
+		public const string ECDsaP521 = "ECDSA_P521";
+
+		public const string MD5 = "MD5";
+
+		public const string Sha1 = "SHA1";
+
+		public const string Sha256 = "SHA256";
+
+		public const string Sha384 = "SHA384";
+
+		public const string Sha512 = "SHA512";
+
+		internal const string Rsa = "RSA";
+	}
 }

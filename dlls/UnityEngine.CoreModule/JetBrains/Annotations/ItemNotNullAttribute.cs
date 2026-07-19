@@ -1,16 +1,2 @@
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
-
-namespace UnityEngine;
-
-[NativeHeader("Runtime/Graphics/ColorGamut.h")]
-[UsedByNativeCode]
-public enum ColorPrimaries
-{
-	Unknown = -1,
-	Rec709,
-	Rec2020,
-	P3
-}
+// Could not decompile JetBrains.Annotations.ItemNotNullAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,3 +1,5 @@
+namespace GorillaTagScripts.Subscription;
+
 public interface SIGadgetBlasterType
 {
 	void OnUpdateAuthority(float dt);

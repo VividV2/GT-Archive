@@ -1,12 +1,12 @@
 namespace UnityEngine;
 
-public enum WeightedMode
+public enum MaterialPropertyType
 {
-	None,
-	In,
-	Out,
-	Both
-}
-namespace UnityEngine
-{
+	Float,
+	Int,
+	Vector,
+	Matrix,
+	Texture,
+	ConstantBuffer,
+	ComputeBuffer
 }

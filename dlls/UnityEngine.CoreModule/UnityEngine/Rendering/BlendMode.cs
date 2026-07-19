@@ -1,36 +1,19 @@
-namespace UnityEngine.Windows.Speech
+using UnityEngine.Bindings;
+
+namespace UnityEngine.Rendering;
+
+[NativeHeader("Runtime/GfxDevice/GfxDeviceTypes.h")]
+public enum BlendMode
 {
-	public enum SpeechSystemStatus
-	{
-		Stopped,
-		Running,
-		Failed
-	}
-}
-namespace UnityEngine.Rendering
-{
-	[UnityEngine.Bindings.NativeHeader("Runtime/GfxDevice/GfxDeviceTypes.h")]
-	public enum BlendMode
-	{
-		Zero,
-		One,
-		DstColor,
-		SrcColor,
-		OneMinusDstColor,
-		SrcAlpha,
-		OneMinusSrcColor,
-		DstAlpha,
-		OneMinusDstAlpha,
-		SrcAlphaSaturate,
-		OneMinusSrcAlpha
-	}
-}
-namespace UnityEngine.Scripting
-{
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine
-{
+	Zero,
+	One,
+	DstColor,
+	SrcColor,
+	OneMinusDstColor,
+	SrcAlpha,
+	OneMinusSrcColor,
+	DstAlpha,
+	OneMinusDstAlpha,
+	SrcAlphaSaturate,
+	OneMinusSrcAlpha
 }

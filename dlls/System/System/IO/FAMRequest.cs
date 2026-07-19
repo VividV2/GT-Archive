@@ -1,6 +1,10 @@
-namespace System.IO;
-
-internal struct FAMRequest
+namespace System.IO
 {
-	public int ReqNum;
+	internal struct FAMRequest
+	{
+		public int ReqNum;
+	}
+}
+namespace System.ComponentModel
+{
 }

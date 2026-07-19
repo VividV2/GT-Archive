@@ -1,13 +1,3 @@
-namespace System.Linq.Parallel
+namespace System.Linq.Expressions
 {
-}
-namespace System.Linq.Parallel
-{
-	internal enum OrdinalIndexState : byte
-	{
-		Indexable,
-		Correct,
-		Increasing,
-		Shuffled
-	}
 }

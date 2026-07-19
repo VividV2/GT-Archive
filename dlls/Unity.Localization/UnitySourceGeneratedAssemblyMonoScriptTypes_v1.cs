@@ -1,10 +1,20 @@
 using System;
+using UnityEngine.UI;
 using System;
+using UnityEngine.UI;
 using System;
+using UnityEngine.UI;
 
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
+namespace UnityEngine.Localization.PropertyVariants.TrackedObjects;
 
 [Serializable]
-public class ULongTrackedProperty : TrackedProperty<ulong>
+[DisplayName("UI Dropdown", null)]
+[CustomTrackedObject(typeof(Dropdown), true)]
+public class TrackedUGuiDropdown : JsonSerializerTrackedObject
 {
+	protected override void PostApplyTrackedProperties()
+	{
+		((Dropdown)base.Target).RefreshShownValue();
+		base.PostApplyTrackedProperties();
+	}
 }

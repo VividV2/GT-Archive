@@ -1,2 +1,2 @@
-namespace UnityEngine.AddressableAssets.Utility;
-
+// Could not decompile UnityEngine.AddressableAssets.DynamicResourceLocator
+// This type uses unsupported IL or has too many generic parameters.

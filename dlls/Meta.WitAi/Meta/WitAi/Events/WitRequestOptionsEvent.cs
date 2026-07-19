@@ -1,2 +1,10 @@
-// Could not decompile Meta.WitAi.Events.WitRequestOptionsEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Meta.WitAi.Configuration;
+using UnityEngine.Events;
+
+namespace Meta.WitAi.Events;
+
+[Serializable]
+public class WitRequestOptionsEvent : UnityEvent<WitRequestOptions>
+{
+}

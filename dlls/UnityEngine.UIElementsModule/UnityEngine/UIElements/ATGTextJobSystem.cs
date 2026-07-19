@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.UIElements.ATGTextJobSystem
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Bindings;
+using UnityEngine.Bindings;
+
+namespace UnityEngine.UIElements;
+
+[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
+internal class BindingModeDrawerAttribute : PropertyAttribute
+{
+}

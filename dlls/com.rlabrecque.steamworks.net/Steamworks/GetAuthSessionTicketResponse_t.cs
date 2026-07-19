@@ -1,24 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace Steamworks
-{
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Explicit, Pack = 8)]
-	[CallbackIdentity(1101)]
-	public struct UserStatsReceived_t
-	{
-		public const int k_iCallback = 1101;
-
-		[FieldOffset(0)]
-		public ulong m_nGameID;
-
-		[FieldOffset(8)]
-		public EResult m_eResult;
-
-		[FieldOffset(12)]
-		public CSteamID m_steamIDUser;
-	}
-}
+// Could not decompile Steamworks.GetAuthSessionTicketResponse_t
+// This type uses unsupported IL or has too many generic parameters.

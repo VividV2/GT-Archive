@@ -1,6 +1,3 @@
 namespace Steamworks
 {
 }
-namespace Steamworks
-{
-}

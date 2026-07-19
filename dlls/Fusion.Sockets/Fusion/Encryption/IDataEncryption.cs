@@ -1,18 +1,27 @@
 using System;
 
-namespace Fusion.Encryption;
+namespace Fusion.Sockets;
 
-public interface IDataEncryption : IDisposable
+internal static class NetConstants
 {
-	void Setup(byte[] key);
+	public const int FALSE = 0;
 
-	byte[] GenerateKey();
+	public const int TRUE = 1;
+}
+namespace Fusion.Encryption
+{
+	public interface IDataEncryption : IDisposable
+	{
+		void Setup(byte[] key);
 
-	unsafe bool EncryptData(byte* buffer, ref int bufferLength, int capacity);
+		byte[] GenerateKey();
 
-	unsafe bool DecryptData(byte* buffer, ref int bufferLength, int capacity);
+		unsafe bool EncryptData(byte* buffer, ref int bufferLength, int capacity);
 
-	unsafe bool ComputeHash(byte* buffer, ref int bufferLength, int capacity);
+		unsafe bool DecryptData(byte* buffer, ref int bufferLength, int capacity);
 
-	unsafe bool VerifyHash(byte* buffer, ref int bufferLength, int capacity);
+		unsafe bool ComputeHash(byte* buffer, ref int bufferLength, int capacity);
+
+		unsafe bool VerifyHash(byte* buffer, ref int bufferLength, int capacity);
+	}
 }

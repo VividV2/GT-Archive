@@ -1,6 +1,12 @@
-namespace Fusion;
+using System;
 
-public interface IBeforeTick : IPublicFacingInterface
+namespace Fusion
 {
-	void BeforeTick();
+	[AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
+	public sealed class NetworkPrefabAttribute : PropertyAttribute
+	{
+	}
+}
+namespace Fusion
+{
 }

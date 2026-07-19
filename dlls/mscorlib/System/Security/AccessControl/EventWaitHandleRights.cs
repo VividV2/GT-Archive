@@ -1,7 +1,3 @@
-namespace System
+namespace System.Security.Principal
 {
-	public interface IServiceProvider
-	{
-		object GetService(Type serviceType);
-	}
 }

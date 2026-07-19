@@ -1,2 +1,2 @@
-// Could not decompile PlayFab.ClientModels.CartItem
-// This type uses unsupported IL or has too many generic parameters.
+namespace PlayFab.CloudScriptModels;
+

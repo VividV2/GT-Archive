@@ -1,5 +1,13 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 
+namespace System.Runtime.CompilerServices;
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
+[ExcludeFromCodeCoverage]
+internal sealed class RequiredMemberAttribute : Attribute
+{
+}
 namespace System.Runtime.CompilerServices
 {
 	[AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
@@ -18,10 +26,4 @@ namespace System.Runtime.CompilerServices
 			Arguments = arguments;
 		}
 	}
-}
-namespace K4os.Compression.LZ4.Internal
-{
-}
-namespace K4os.Compression.LZ4.Internal
-{
 }

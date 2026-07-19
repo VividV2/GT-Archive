@@ -1,8 +1,8 @@
-using UnityEngine.EventSystems;
+using UnityEngine;
 
 namespace Cysharp.Threading.Tasks.Triggers;
 
-public interface IAsyncOnPointerEnterHandler
+public interface IAsyncOnCollisionEnterHandler
 {
-	UniTask<PointerEventData> OnPointerEnterAsync();
+	UniTask<Collision> OnCollisionEnterAsync();
 }

@@ -5,6 +5,6 @@ namespace UnityEngine.Localization.SmartFormat.Core.Extensions
 		void WriteAllLiterals(IFormattingInfo formattingInfo);
 	}
 }
-namespace UnityEngine.Localization
+namespace UnityEngine.Localization.SmartFormat.Extensions
 {
 }

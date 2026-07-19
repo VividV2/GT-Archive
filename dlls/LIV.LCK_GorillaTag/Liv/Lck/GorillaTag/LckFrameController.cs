@@ -1,127 +1,99 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Liv.Lck.Rendering;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine;
+using UnityEngine.Events;
 
-namespace Liv.Lck.GorillaTag;
-
-public enum RecordingState
+namespace Liv.Lck.GorillaTag
 {
-	Idle,
-	Recording,
-	Saving
+	public enum RecordingState
+	{
+		Idle,
+		Recording,
+		Saving
+	}
 }
 namespace Liv.Lck.GorillaTag
 {
-	public class LckFrameController : MonoBehaviour
+	public class GtScreenButton : MonoBehaviour
 	{
 		[SerializeField]
-		private LckCompositionProfile _compositionProfile;
+		private Color _defaultColor;
 
 		[SerializeField]
-		private GTLckController _qckController;
+		private Color _activeColor;
 
 		[SerializeField]
-		private GtScreenButton _overlayButton;
-
-		[Header("Configuration")]
-		[Tooltip("The name of the Overlay Frame Layer as defined in the Composition Profile.")]
-		[SerializeField]
-		private string _overlayLayerName = "Overlay Frame";
+		private SpriteRenderer _iconRenderer;
 
 		[SerializeField]
-		private List<ScheduledDuration> _defaultOnSchedules;
+		private GtColliderTriggerProcessor _triggerProcessor;
 
-		[Header("Runtime Texture URLs (Optional)")]
-		[SerializeField]
-		private string _horizontalOverlayUrl;
+		[Header("Events")]
+		public UnityEvent onTapStarted;
 
-		[SerializeField]
-		private string _verticalOverlayUrl;
+		public UnityEvent onTapEnded;
 
-		private LckOverlayFrameLayer _overlayLayer;
+		private Color _currentDefaultColor;
 
-		private async void Start()
+		private Color _currentActiveColor;
+
+		private bool _isDisabled;
+
+		private bool _isActive;
+
+		public bool IsActive
 		{
-			if (_compositionProfile == null)
+			get
 			{
-				Debug.LogError("No CompositionProfile assigned!", this);
-				base.enabled = false;
-				return;
+				return _isActive;
 			}
-			_overlayLayer = _compositionProfile.GetLayer<LckOverlayFrameLayer>(_overlayLayerName);
-			if (_overlayLayer == null)
+			set
 			{
-				Debug.LogError("No OverlayFrameLayer named '" + _overlayLayerName + "' found in the profile " + _compositionProfile.name + "!", this);
-				base.enabled = false;
-				return;
-			}
-			await LoadAndApplyTextures();
-			bool overlayEnabled = false;
-			foreach (ScheduledDuration defaultOnSchedule in _defaultOnSchedules)
-			{
-				if (defaultOnSchedule.IsActive())
-				{
-					overlayEnabled = true;
-					break;
-				}
-			}
-			SetOverlayEnabled(overlayEnabled);
-			_overlayButton.onTapStarted.AddListener(ToggleOverlay);
-			_qckController.OnHorizontalModeChanged += OnHorizontalModeChanged;
-			OnHorizontalModeChanged(isHorizontal: true);
-		}
-
-		private void OnDisable()
-		{
-			if (_overlayButton != null)
-			{
-				_overlayButton.onTapStarted.RemoveListener(ToggleOverlay);
-			}
-			if (_qckController != null)
-			{
-				_qckController.OnHorizontalModeChanged -= OnHorizontalModeChanged;
+				_isActive = value;
+				_currentDefaultColor = (value ? _activeColor : _defaultColor);
+				_currentActiveColor = (value ? _activeColor : _defaultColor);
+				_iconRenderer.color = _currentDefaultColor;
 			}
 		}
 
-		private void OnHorizontalModeChanged(bool isHorizontal)
+		private void Start()
 		{
-			_compositionProfile.SetOrientation(isHorizontal);
+			_currentDefaultColor = _defaultColor;
+			_currentActiveColor = _activeColor;
 		}
 
-		private void SetOverlayEnabled(bool value)
+		public void OnTapStarted()
 		{
-			_compositionProfile.SetLayerActive(_overlayLayerName, value);
-			_qckController.SetOverlayEnabled(value);
-			_overlayButton.IsActive = value;
-		}
-
-		private void ToggleOverlay()
-		{
-			SetOverlayEnabled(!_overlayLayer.IsActive);
-		}
-
-		private async Task LoadAndApplyTextures()
-		{
-			if (!string.IsNullOrEmpty(_horizontalOverlayUrl) && !string.IsNullOrEmpty(_verticalOverlayUrl))
+			if (!_isDisabled)
 			{
-				Task<Texture> horizontalTask = LoadTexture(_horizontalOverlayUrl);
-				Task<Texture> verticalTask = LoadTexture(_verticalOverlayUrl);
-				await Task.WhenAll<Texture>(horizontalTask, verticalTask);
-				if (horizontalTask.Result != null)
-				{
-					_overlayLayer.HorizontalTexture = horizontalTask.Result;
-				}
-				if (verticalTask.Result != null)
-				{
-					_overlayLayer.VerticalTexture = verticalTask.Result;
-				}
+				onTapStarted?.Invoke();
+				_iconRenderer.color = _currentActiveColor;
 			}
 		}
 
-		private async Task<Texture> LoadTexture(string url)
+		public void OnTapEnded()
 		{
-			return null;
+			if (!_isDisabled)
+			{
+				onTapEnded?.Invoke();
+				_iconRenderer.color = _currentDefaultColor;
+			}
+		}
+
+		public void DisableForDuration(float duration)
+		{
+			_isDisabled = true;
+			_iconRenderer.enabled = false;
+			_triggerProcessor.BlockTapping();
+			Invoke("ReEnableButton", duration);
+		}
+
+		private void ReEnableButton()
+		{
+			_iconRenderer.color = _currentDefaultColor;
+			_iconRenderer.enabled = true;
+			_triggerProcessor.ResetToDefault();
+			_isDisabled = false;
 		}
 	}
 }

@@ -1,7 +1,11 @@
-namespace DigitalOpus.MB.Core;
-
-public enum MB_MeshCombineAPIType
+namespace DigitalOpus.MB.Core
 {
-	simpleMeshAPI,
-	betaNativeArrayAPI
+}
+namespace DigitalOpus.MB.Core
+{
+	public enum MB_MeshCombineAPIType
+	{
+		simpleMeshAPI,
+		betaNativeArrayAPI
+	}
 }

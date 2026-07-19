@@ -1,9 +1,9 @@
-namespace System.Xml.Xsl.Qil
+namespace System.Xml.Schema;
+
+internal class Datatype_timeTimeZone : Datatype_dateTimeBase
 {
-}
-namespace System.Xml.Schema
-{
-}
-namespace System.Xml.Xsl.Qil
-{
+	internal Datatype_timeTimeZone()
+		: base(XsdDateTimeFlags.Time)
+	{
+	}
 }

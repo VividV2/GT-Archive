@@ -1,11 +1,2 @@
-using System.Collections.Generic;
-
-namespace System.Linq.Parallel;
-
-internal class ProducerComparerInt : IComparer<Producer<int>>
-{
-	public int Compare(Producer<int> x, Producer<int> y)
-	{
-		return y.MaxKey - x.MaxKey;
-	}
-}
+// Could not decompile System.Linq.Parallel.ProducerComparerInt
+// This type uses unsupported IL or has too many generic parameters.

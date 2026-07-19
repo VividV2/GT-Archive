@@ -3,37 +3,41 @@ using System.Collections;
 using System.Threading;
 using UnityEngine;
 
-namespace Meta.Net.NativeWebSocket;
-
-public class MainThreadUtil : MonoBehaviour
+namespace Meta.Net.NativeWebSocket
 {
-	public static MainThreadUtil Instance { get; private set; }
-
-	public static SynchronizationContext synchronizationContext { get; private set; }
-
-	private void Awake()
+}
+namespace Meta.Net.NativeWebSocket
+{
+	public class MainThreadUtil : MonoBehaviour
 	{
-		base.gameObject.hideFlags = HideFlags.HideAndDontSave;
-		UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
-	}
+		public static MainThreadUtil Instance { get; private set; }
 
-	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-	public static void Setup()
-	{
-		Instance = new GameObject("MainThreadUtil").AddComponent<MainThreadUtil>();
-		synchronizationContext = SynchronizationContext.Current;
-	}
+		public static SynchronizationContext synchronizationContext { get; private set; }
 
-	public static void Run(IEnumerator waitForUpdate)
-	{
-		if (!Instance)
+		private void Awake()
 		{
-			Debug.LogWarning("Attempting to run on main thread after shutdown.");
-			throw new Exception("Attempting to run on main thread after shutdown.");
+			base.gameObject.hideFlags = HideFlags.HideAndDontSave;
+			UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
 		}
-		synchronizationContext.Post(delegate
+
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+		public static void Setup()
 		{
-			Instance.StartCoroutine(waitForUpdate);
-		}, null);
+			Instance = new GameObject("MainThreadUtil").AddComponent<MainThreadUtil>();
+			synchronizationContext = SynchronizationContext.Current;
+		}
+
+		public static void Run(IEnumerator waitForUpdate)
+		{
+			if (!Instance)
+			{
+				Debug.LogWarning("Attempting to run on main thread after shutdown.");
+				throw new Exception("Attempting to run on main thread after shutdown.");
+			}
+			synchronizationContext.Post(delegate
+			{
+				Instance.StartCoroutine(waitForUpdate);
+			}, null);
+		}
 	}
 }

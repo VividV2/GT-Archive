@@ -1,7 +1,2 @@
-namespace PlayFab.MultiplayerModels;
-
-public enum ServerType
-{
-	Container,
-	Process
-}
+// Could not decompile PlayFab.CloudScriptModels.PostFunctionResultForPlayerTriggeredActionRequest
+// This type uses unsupported IL or has too many generic parameters.

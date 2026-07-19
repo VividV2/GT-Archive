@@ -1,6 +1,14 @@
-namespace Pathfinding.Poly2Tri
+namespace Pathfinding.Poly2Tri;
+
+public class DTSweepBasin
 {
-}
-namespace Pathfinding.Poly2Tri
-{
+	public AdvancingFrontNode leftNode;
+
+	public AdvancingFrontNode bottomNode;
+
+	public AdvancingFrontNode rightNode;
+
+	public double width;
+
+	public bool leftHighest;
 }

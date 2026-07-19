@@ -1,9 +1,22 @@
-namespace Valve.VR;
-
-public enum EVRControllerAxisType
+namespace Valve.VR
 {
-	k_eControllerAxis_None,
-	k_eControllerAxis_TrackPad,
-	k_eControllerAxis_Joystick,
-	k_eControllerAxis_Trigger
+}
+namespace Valve.VR
+{
+	public enum EVRControllerAxisType
+	{
+		k_eControllerAxis_None,
+		k_eControllerAxis_TrackPad,
+		k_eControllerAxis_Joystick,
+		k_eControllerAxis_Trigger
+	}
+}
+namespace Valve.VR
+{
+}
+namespace Valve.VR
+{
+}
+namespace Valve.VR
+{
 }

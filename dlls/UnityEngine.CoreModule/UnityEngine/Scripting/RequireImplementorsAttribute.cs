@@ -1,2 +1,15 @@
-// Could not decompile UnityEngine.Scripting.RequireImplementorsAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Scripting
+{
+	[AttributeUsage(AttributeTargets.Interface, AllowMultiple = false)]
+	public class RequireImplementorsAttribute : Attribute
+	{
+	}
+}
+namespace UnityEngine.Bindings
+{
+}
+namespace UnityEngine.Windows
+{
+}

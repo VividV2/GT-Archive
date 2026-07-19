@@ -1,2 +1,30 @@
-// Could not decompile System.LocalDataStoreMgr
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.IO;
+using System.Security;
+using System;
+using System.IO;
+using System.Security;
+
+namespace Microsoft.Win32.SafeHandles;
+
+[SecurityCritical]
+internal class SafeFindHandle : SafeHandleZeroOrMinusOneIsInvalid
+{
+	[SecurityCritical]
+	internal SafeFindHandle()
+		: base(ownsHandle: true)
+	{
+	}
+
+	internal SafeFindHandle(IntPtr preexistingHandle)
+		: base(ownsHandle: true)
+	{
+		SetHandle(preexistingHandle);
+	}
+
+	[SecurityCritical]
+	protected override bool ReleaseHandle()
+	{
+		return MonoIO.FindCloseFile(handle);
+	}
+}

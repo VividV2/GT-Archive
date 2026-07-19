@@ -1,14 +1,2 @@
-namespace Steamworks
-{
-	public enum ESteamPartyBeaconLocationData
-	{
-		k_ESteamPartyBeaconLocationDataInvalid,
-		k_ESteamPartyBeaconLocationDataName,
-		k_ESteamPartyBeaconLocationDataIconURLSmall,
-		k_ESteamPartyBeaconLocationDataIconURLMedium,
-		k_ESteamPartyBeaconLocationDataIconURLLarge
-	}
-}
-namespace Steamworks
-{
-}
+// Could not decompile Steamworks.ECheckFileSignature
+// This type uses unsupported IL or has too many generic parameters.

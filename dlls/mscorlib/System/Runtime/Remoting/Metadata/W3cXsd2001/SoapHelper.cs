@@ -1,10 +1,3 @@
-namespace Mono
+namespace System.Runtime.Remoting.Metadata
 {
-	[Flags]
-	internal enum CertificateImportFlags
-	{
-		None = 0,
-		DisableNativeBackend = 1,
-		DisableAutomaticFallback = 2
-	}
 }

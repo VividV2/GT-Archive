@@ -10,6 +10,3 @@ public enum SelectMode
 	/// <summary>Error status mode.</summary>
 	SelectError
 }
-namespace System.Net
-{
-}

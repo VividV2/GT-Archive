@@ -1,13 +1,9 @@
-namespace Valve.Newtonsoft.Json
+namespace Valve.Newtonsoft.Json;
+
+public enum Required
 {
-}
-namespace Valve.Newtonsoft.Json
-{
-	public enum Required
-	{
-		Default,
-		AllowNull,
-		Always,
-		DisallowNull
-	}
+	Default,
+	AllowNull,
+	Always,
+	DisallowNull
 }

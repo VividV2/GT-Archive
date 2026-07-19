@@ -1,2 +1,5 @@
-// Could not decompile Fusion.LayerMatrixAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+public class LayerMatrixAttribute : DrawerPropertyAttribute
+{
+}

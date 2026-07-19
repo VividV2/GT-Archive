@@ -1,17 +1,7 @@
 using System.ComponentModel;
-using System.ComponentModel;
 
 namespace Oculus.Platform
 {
-	public enum OfferType
-	{
-		[Description("UNKNOWN")]
-		Unknown,
-		[Description("INTRO_OFFER")]
-		INTROOFFER,
-		[Description("FREE_TRIAL")]
-		FREETRIAL
-	}
 }
 namespace Oculus.Platform
 {
@@ -38,4 +28,7 @@ namespace Oculus.Platform
 		[Description("NOT_ENTITLED")]
 		NotEntitled = -9
 	}
+}
+namespace Oculus.Platform
+{
 }

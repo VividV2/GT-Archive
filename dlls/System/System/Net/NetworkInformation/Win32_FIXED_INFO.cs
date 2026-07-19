@@ -1,22 +1,26 @@
-namespace System.Net.NetworkInformation;
-
-internal struct Win32_FIXED_INFO
+namespace System.Net.NetworkInformation
 {
-	public string HostName;
+	internal struct Win32_FIXED_INFO
+	{
+		public string HostName;
 
-	public string DomainName;
+		public string DomainName;
 
-	public IntPtr CurrentDnsServer;
+		public IntPtr CurrentDnsServer;
 
-	public Win32_IP_ADDR_STRING DnsServerList;
+		public Win32_IP_ADDR_STRING DnsServerList;
 
-	public NetBiosNodeType NodeType;
+		public NetBiosNodeType NodeType;
 
-	public string ScopeId;
+		public string ScopeId;
 
-	public uint EnableRouting;
+		public uint EnableRouting;
 
-	public uint EnableProxy;
+		public uint EnableProxy;
 
-	public uint EnableDns;
+		public uint EnableDns;
+	}
+}
+namespace System.Net.Mime
+{
 }

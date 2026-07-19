@@ -1,3 +1,3 @@
-namespace System.Drawing.Design;
-
-public delegate void ToolboxComponentsCreatingEventHandler(object sender, ToolboxComponentsCreatingEventArgs e);
+namespace System.Drawing.Drawing2D
+{
+}

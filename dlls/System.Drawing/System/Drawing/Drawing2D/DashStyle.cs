@@ -1,11 +1,37 @@
-namespace System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 
-public enum SmoothingMode
+namespace System.Drawing.Imaging;
+
+[StructLayout(LayoutKind.Sequential, Pack = 2)]
+internal struct EnhMetafileHeader
 {
-	Invalid = -1,
-	Default,
-	HighSpeed,
-	HighQuality,
-	None,
-	AntiAlias
+	public int type;
+
+	public int size;
+
+	public Rectangle bounds;
+
+	public Rectangle frame;
+
+	public int signature;
+
+	public int version;
+
+	public int bytes;
+
+	public int records;
+
+	public short handles;
+
+	public short reserved;
+
+	public int description;
+
+	public int off_description;
+
+	public int palette_entires;
+
+	public Size device;
+
+	public Size millimeters;
 }

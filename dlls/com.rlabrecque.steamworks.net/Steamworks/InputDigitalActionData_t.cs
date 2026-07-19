@@ -1,2 +1,11 @@
-// Could not decompile Steamworks.InputDigitalActionData_t
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct InputDigitalActionData_t
+{
+	public byte bState;
+
+	public byte bActive;
+}

@@ -4,3 +4,6 @@ internal interface IUxmlSerializedDataDeserializeReference
 {
 	object DeserializeReference();
 }
+namespace UnityEngine.UIElements
+{
+}

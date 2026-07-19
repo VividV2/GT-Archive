@@ -1,7 +1,2 @@
-namespace System.Threading;
-
-/// <summary>Represents a method to be called when a message is to be dispatched to a synchronization context.</summary>
-/// <param name="state">The object passed to the delegate.</param>
-/// <summary>Represents a method to be called when a message is to be dispatched to a synchronization context.</summary>
-/// <param name="state">The object passed to the delegate.</param>
-public delegate void SendOrPostCallback(object state);
+// Could not decompile Mono.Globalization.Unicode.ContractionComparer
+// This type uses unsupported IL or has too many generic parameters.

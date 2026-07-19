@@ -1,2 +1,37 @@
-// Could not decompile UnityEngine.RuntimeInitializeOnLoadMethodAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Scripting;
+
+namespace UnityEngine
+{
+}
+namespace UnityEngine
+{
+	[RequiredByNativeCode]
+	[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
+	public class RuntimeInitializeOnLoadMethodAttribute : PreserveAttribute
+	{
+		private RuntimeInitializeLoadType m_LoadType;
+
+		public RuntimeInitializeLoadType loadType
+		{
+			get
+			{
+				return m_LoadType;
+			}
+			private set
+			{
+				m_LoadType = value;
+			}
+		}
+
+		public RuntimeInitializeOnLoadMethodAttribute()
+		{
+			loadType = RuntimeInitializeLoadType.AfterSceneLoad;
+		}
+
+		public RuntimeInitializeOnLoadMethodAttribute(RuntimeInitializeLoadType loadType)
+		{
+			this.loadType = loadType;
+		}
+	}
+}

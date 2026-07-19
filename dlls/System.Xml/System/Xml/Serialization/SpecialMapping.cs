@@ -1,18 +1,2 @@
-namespace System.Xml.Serialization;
-
-internal class SpecialMapping : TypeMapping
-{
-	private bool namedAny;
-
-	internal bool NamedAny
-	{
-		get
-		{
-			return namedAny;
-		}
-		set
-		{
-			namedAny = value;
-		}
-	}
-}
+// Could not decompile System.Xml.Serialization.SpecialMapping
+// This type uses unsupported IL or has too many generic parameters.

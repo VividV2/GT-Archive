@@ -1,25 +1,54 @@
+using System;
 using System.Runtime.InteropServices;
+using System;
+using System.Runtime.InteropServices;
+using System;
 
 namespace Valve.VR;
 
-public struct InputAnalogActionData_t
+public struct VRVulkanTextureData_t
 {
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bActive;
+	public ulong m_nImage;
 
-	public ulong activeOrigin;
+	public IntPtr m_pDevice;
 
-	public float x;
+	public IntPtr m_pPhysicalDevice;
 
-	public float y;
+	public IntPtr m_pInstance;
 
-	public float z;
+	public IntPtr m_pQueue;
 
-	public float deltaX;
+	public uint m_nQueueFamilyIndex;
 
-	public float deltaY;
+	public uint m_nWidth;
 
-	public float deltaZ;
+	public uint m_nHeight;
 
-	public float fUpdateTime;
+	public uint m_nFormat;
+
+	public uint m_nSampleCount;
+}
+namespace Valve.VR
+{
+	public struct InputAnalogActionData_t
+	{
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bActive;
+
+		public ulong activeOrigin;
+
+		public float x;
+
+		public float y;
+
+		public float z;
+
+		public float deltaX;
+
+		public float deltaY;
+
+		public float deltaZ;
+
+		public float fUpdateTime;
+	}
 }

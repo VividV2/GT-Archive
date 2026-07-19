@@ -1,25 +1,32 @@
-using System;
-using System;
+using UnityEngine;
 
-namespace Unity.Cinemachine;
-
-[Flags]
-public enum OutputChannels
+namespace Unity.Cinemachine
 {
-	Default = 1,
-	Channel01 = 2,
-	Channel02 = 4,
-	Channel03 = 8,
-	Channel04 = 0x10,
-	Channel05 = 0x20,
-	Channel06 = 0x40,
-	Channel07 = 0x80,
-	Channel08 = 0x100,
-	Channel09 = 0x200,
-	Channel10 = 0x400,
-	Channel11 = 0x800,
-	Channel12 = 0x1000,
-	Channel13 = 0x2000,
-	Channel14 = 0x4000,
-	Channel15 = 0x8000
+	internal class GaussianWindow1D_Vector3 : GaussianWindow1d<Vector3>
+	{
+		public GaussianWindow1D_Vector3(float sigma, int maxKernelRadius = 10)
+			: base(sigma, maxKernelRadius)
+		{
+		}
+
+		protected override Vector3 Compute(int windowPos)
+		{
+			Vector3 zero = Vector3.zero;
+			for (int i = 0; i < base.KernelSize; i++)
+			{
+				zero += m_Data[windowPos] * m_Kernel[i];
+				if (++windowPos == base.KernelSize)
+				{
+					windowPos = 0;
+				}
+			}
+			return zero;
+		}
+	}
+}
+namespace Unity.Cinemachine
+{
+}
+namespace Unity.Cinemachine
+{
 }

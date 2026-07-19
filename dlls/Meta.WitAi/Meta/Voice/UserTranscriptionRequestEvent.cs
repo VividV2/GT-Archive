@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Events;
-
-namespace Meta.Voice;
-
-[Serializable]
-public class UserTranscriptionRequestEvent : UnityEvent<string, string>
-{
-}
+// Could not decompile Meta.Voice.UserTranscriptionRequestEvent
+// This type uses unsupported IL or has too many generic parameters.

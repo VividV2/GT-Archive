@@ -1,21 +1,13 @@
-using System;
-using System.Runtime.InteropServices;
 using UnityEngine.Internal;
-using UnityEngine.Scripting;
+using UnityEngine.Internal;
 
 namespace UnityEngine.Analytics;
 
-[Serializable]
-[StructLayout(LayoutKind.Sequential)]
-[RequiredByNativeCode(GenerateProxy = true)]
 [ExcludeFromDocs]
-public class VRDeviceActiveControllersAnalytic : VRDeviceAnalyticBase
+public interface UGSAnalyticsInternalTools
 {
-	public string[] vr_active_controllers;
-
-	[RequiredByNativeCode]
-	internal static VRDeviceActiveControllersAnalytic CreateVRDeviceActiveControllersAnalytic()
+	static void SetPrivacyStatus(bool status)
 	{
-		return new VRDeviceActiveControllersAnalytic();
+		AnalyticsCommon.ugsAnalyticsEnabled = status;
 	}
 }

@@ -9,6 +9,6 @@ namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
 		void SetValueFromString(LocaleIdentifier localeIdentifier, string value);
 	}
 }
-namespace UnityEngine.Localization.SmartFormat.PersistentVariables
+namespace UnityEngine.Localization.PropertyVariants.TrackedObjects
 {
 }

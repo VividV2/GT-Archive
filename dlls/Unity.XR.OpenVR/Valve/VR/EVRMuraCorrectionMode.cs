@@ -1,7 +1,2 @@
-namespace Valve.VR;
-
-public enum EVRMuraCorrectionMode
-{
-	Default,
-	NoCorrection
-}
+// Could not decompile Valve.VR.EVRMuraCorrectionMode
+// This type uses unsupported IL or has too many generic parameters.

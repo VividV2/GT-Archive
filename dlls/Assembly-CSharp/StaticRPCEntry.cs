@@ -1,6 +1,2 @@
-namespace GorillaTag.Dev.Benchmarks
-{
-}
-namespace GorillaTagScripts
-{
-}
+// Could not decompile StaticRPCEntry
+// This type uses unsupported IL or has too many generic parameters.

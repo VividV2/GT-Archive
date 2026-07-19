@@ -1,13 +1,9 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum TransparencySortMode
 {
-	public enum TransparencySortMode
-	{
-		Default,
-		Perspective,
-		Orthographic,
-		CustomAxis
-	}
-}
-namespace UnityEngine.Rendering
-{
+	Default,
+	Perspective,
+	Orthographic,
+	CustomAxis
 }

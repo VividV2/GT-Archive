@@ -1,22 +1,38 @@
 using System;
-using Oculus.Platform.Models;
 
 namespace Oculus.Platform;
 
-public class MessageWithUserCapabilityList : Message<UserCapabilityList>
+public class NetSyncOptions
 {
-	public MessageWithUserCapabilityList(IntPtr c_message)
-		: base(c_message)
+	private IntPtr Handle;
+
+	public NetSyncOptions()
 	{
+		Handle = CAPI.ovr_NetSyncOptions_Create();
 	}
 
-	public override UserCapabilityList GetUserCapabilityList()
+	public void SetVoipGroup(string value)
 	{
-		return base.Data;
+		CAPI.ovr_NetSyncOptions_SetVoipGroup(Handle, value);
 	}
 
-	protected override UserCapabilityList GetDataFromMessage(IntPtr c_message)
+	public void SetVoipStreamDefault(NetSyncVoipStreamMode value)
 	{
-		return new UserCapabilityList(CAPI.ovr_Message_GetUserCapabilityArray(CAPI.ovr_Message_GetNativeMessage(c_message)));
+		CAPI.ovr_NetSyncOptions_SetVoipStreamDefault(Handle, value);
+	}
+
+	public void SetZoneId(string value)
+	{
+		CAPI.ovr_NetSyncOptions_SetZoneId(Handle, value);
+	}
+
+	public static explicit operator IntPtr(NetSyncOptions options)
+	{
+		return options?.Handle ?? IntPtr.Zero;
+	}
+
+	~NetSyncOptions()
+	{
+		CAPI.ovr_NetSyncOptions_Destroy(Handle);
 	}
 }

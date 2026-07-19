@@ -1,18 +1,9 @@
-namespace Technie.PhysicsCreator.Skinned
+namespace Technie.PhysicsCreator.Skinned;
+
+public enum AxisType
 {
-	public enum AxisType
-	{
-		XAxis,
-		YAxis,
-		ZAxis,
-		Custom
-	}
-}
-namespace Technie.PhysicsCreator.Skinned
-{
-	public enum HullType
-	{
-		Auto,
-		Manual
-	}
+	XAxis,
+	YAxis,
+	ZAxis,
+	Custom
 }

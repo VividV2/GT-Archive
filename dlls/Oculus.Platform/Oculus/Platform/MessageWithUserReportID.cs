@@ -1,24 +1,22 @@
-using System.ComponentModel;
-using System.ComponentModel;
+using System;
+using Oculus.Platform.Models;
 
 namespace Oculus.Platform;
 
-public enum OfferTerm
+public class MessageWithUserReportID : Message<UserReportID>
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("WEEKLY")]
-	WEEKLY,
-	[Description("BIWEEKLY")]
-	BIWEEKLY,
-	[Description("MONTHLY")]
-	MONTHLY,
-	[Description("QUARTERLY")]
-	QUARTERLY,
-	[Description("SEMIANNUAL")]
-	SEMIANNUAL,
-	[Description("ANNUAL")]
-	ANNUAL,
-	[Description("BIANNUAL")]
-	BIANNUAL
+	public MessageWithUserReportID(IntPtr c_message)
+		: base(c_message)
+	{
+	}
+
+	public override UserReportID GetUserReportID()
+	{
+		return base.Data;
+	}
+
+	protected override UserReportID GetDataFromMessage(IntPtr c_message)
+	{
+		return new UserReportID(CAPI.ovr_Message_GetUserReportID(CAPI.ovr_Message_GetNativeMessage(c_message)));
+	}
 }

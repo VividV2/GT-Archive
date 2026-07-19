@@ -1,8 +1,8 @@
-using UnityEngine;
+using UnityEngine.EventSystems;
 
-namespace Cysharp.Threading.Tasks.Triggers
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnEndDragHandler
 {
-	public interface IAsyncOnParticleCollisionHandler
-	{
-		UniTask<GameObject> OnParticleCollisionAsync();
-	}
+	UniTask<PointerEventData> OnEndDragAsync();
+}

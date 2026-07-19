@@ -1,3 +1,2 @@
-namespace UnityEngine.UIElements;
-
-internal delegate void SavePersistentViewData();
+// Could not decompile UnityEngine.UIElements.StyleSheets.ScalableImage
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,17 +1,2 @@
-namespace UnityEngine.UIElements.UIR;
+namespace UnityEngine.UIElements;
 
-internal enum CommandType
-{
-	Draw,
-	ImmediateCull,
-	Immediate,
-	PushView,
-	PopView,
-	PushScissor,
-	PopScissor,
-	PushDefaultMaterial,
-	PopDefaultMaterial,
-	BeginDisable,
-	EndDisable,
-	CutRenderChain
-}

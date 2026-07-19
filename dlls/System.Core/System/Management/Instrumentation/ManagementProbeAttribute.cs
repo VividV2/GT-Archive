@@ -1,2 +1,6 @@
-namespace System.Diagnostics.Eventing;
-
+namespace System.Linq.Expressions
+{
+}
+namespace System.Runtime.CompilerServices
+{
+}

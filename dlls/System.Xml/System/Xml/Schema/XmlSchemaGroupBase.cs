@@ -1,2 +1,2 @@
-namespace System.Xml.Xsl.Qil;
-
+// Could not decompile System.Xml.Schema.XmlSchemaGroupBase
+// This type uses unsupported IL or has too many generic parameters.

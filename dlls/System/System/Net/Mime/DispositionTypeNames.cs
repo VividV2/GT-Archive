@@ -1,9 +1,7 @@
-namespace System.Net.Configuration;
+namespace System.Configuration;
 
-public enum UnicodeDecodingConformance
+public enum SpecialSetting
 {
-	Auto,
-	Strict,
-	Compat,
-	Loose
+	ConnectionString,
+	WebServiceUrl
 }

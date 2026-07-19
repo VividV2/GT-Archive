@@ -1,3 +1,6 @@
-namespace System.ComponentModel.Design;
-
-public delegate void ComponentChangingEventHandler(object sender, ComponentChangingEventArgs e);
+namespace System.Net
+{
+}
+namespace System.Net
+{
+}

@@ -1,10 +1,6 @@
-namespace Cysharp.Threading.Tasks
+namespace Cysharp.Threading.Tasks;
+
+public interface ITaskPoolNode<T>
 {
-	public interface ITaskPoolNode<T>
-	{
-		ref T NextNode { get; }
-	}
-}
-namespace Cysharp.Threading.Tasks.Triggers
-{
+	ref T NextNode { get; }
 }

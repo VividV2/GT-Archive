@@ -1,9 +1,12 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class LinkNintendoSwitchDeviceIdRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
+	public bool? ForceLink;
+
+	public string NintendoSwitchDeviceId;
 }

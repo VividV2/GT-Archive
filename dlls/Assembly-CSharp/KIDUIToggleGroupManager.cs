@@ -1,2 +1,5 @@
-// Could not decompile KIDUIToggleGroupManager
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class KIDUIToggleGroupManager : MonoBehaviour
+{
+}

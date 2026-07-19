@@ -1,2 +1,7 @@
-// Could not decompile Valve.VR.CVRResources
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR;
+
+public enum EChaperoneConfigFile
+{
+	Live = 1,
+	Temp
+}

@@ -1,25 +1,19 @@
-using System;
-
-namespace UnityEngine.Experimental.GlobalIllumination;
-
-public struct DirectionalLight
+namespace UnityEngine.Rendering
 {
-	public int instanceID;
-
-	public bool shadow;
-
-	public LightMode mode;
-
-	public Vector3 position;
-
-	public Quaternion orientation;
-
-	public LinearColor color;
-
-	public LinearColor indirectColor;
-
-	public float penumbraWidthRadian;
-
-	[Obsolete("Directional lights support cookies now. In order to position the cookie projection in the world, a position and full orientation are necessary. Use the position and orientation members instead of the direction parameter.", true)]
-	public Vector3 direction;
+	[Flags]
+	public enum PerObjectData
+	{
+		None = 0,
+		LightProbe = 1,
+		ReflectionProbes = 2,
+		LightProbeProxyVolume = 4,
+		Lightmaps = 8,
+		LightData = 0x10,
+		MotionVectors = 0x20,
+		LightIndices = 0x40,
+		ReflectionProbeData = 0x80,
+		OcclusionProbe = 0x100,
+		OcclusionProbeProxyVolume = 0x200,
+		ShadowMask = 0x400
+	}
 }

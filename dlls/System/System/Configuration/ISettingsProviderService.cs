@@ -1,4 +1,4 @@
-namespace System.Text.RegularExpressions
+namespace System.ComponentModel
 {
 }
 namespace System.Configuration

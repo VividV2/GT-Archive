@@ -1,6 +1,3 @@
-namespace System.ComponentModel.Composition.Primitives;
-
-internal interface IPartCreatorImportDefinition
+namespace System.ComponentModel.Composition.ReflectionModel
 {
-	ContractBasedImportDefinition ProductImportDefinition { get; }
 }

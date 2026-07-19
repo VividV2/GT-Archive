@@ -1,2 +1,6 @@
-// Could not decompile Pathfinding.Ionic.Zlib.InternalConstants
-// This type uses unsupported IL or has too many generic parameters.
+namespace Pathfinding.Ionic.Zlib
+{
+}
+namespace Pathfinding.Ionic.Zlib
+{
+}

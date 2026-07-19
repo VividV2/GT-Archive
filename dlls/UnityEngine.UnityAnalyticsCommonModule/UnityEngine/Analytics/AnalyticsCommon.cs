@@ -3,33 +3,37 @@ using System.Runtime.InteropServices;
 using UnityEngine.Bindings;
 using UnityEngine.Internal;
 
-namespace UnityEngine.Analytics;
-
-[StructLayout(LayoutKind.Sequential)]
-[NativeHeader("Modules/UnityAnalyticsCommon/Public/UnityAnalyticsCommon.h")]
-[ExcludeFromDocs]
-public static class AnalyticsCommon
+namespace UnityEngine.Analytics
 {
-	[StaticAccessor("GetUnityAnalyticsCommon()", StaticAccessorType.Dot)]
-	private static extern bool ugsAnalyticsEnabledInternal
+	[StructLayout(LayoutKind.Sequential)]
+	[NativeHeader("Modules/UnityAnalyticsCommon/Public/UnityAnalyticsCommon.h")]
+	[ExcludeFromDocs]
+	public static class AnalyticsCommon
 	{
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[NativeMethod("UGSAnalyticsUserOptStatus")]
-		get;
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[NativeMethod("SetUGSAnalyticsUserOptStatus")]
-		set;
-	}
+		[StaticAccessor("GetUnityAnalyticsCommon()", StaticAccessorType.Dot)]
+		private static extern bool ugsAnalyticsEnabledInternal
+		{
+			[MethodImpl(MethodImplOptions.InternalCall)]
+			[NativeMethod("UGSAnalyticsUserOptStatus")]
+			get;
+			[MethodImpl(MethodImplOptions.InternalCall)]
+			[NativeMethod("SetUGSAnalyticsUserOptStatus")]
+			set;
+		}
 
-	public static bool ugsAnalyticsEnabled
-	{
-		get
+		public static bool ugsAnalyticsEnabled
 		{
-			return ugsAnalyticsEnabledInternal;
-		}
-		set
-		{
-			ugsAnalyticsEnabledInternal = value;
+			get
+			{
+				return ugsAnalyticsEnabledInternal;
+			}
+			set
+			{
+				ugsAnalyticsEnabledInternal = value;
+			}
 		}
 	}
+}
+namespace UnityEngine.Analytics
+{
 }

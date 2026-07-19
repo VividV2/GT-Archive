@@ -1,5 +1,2 @@
-namespace MS.Internal.Xml.XPath;
-
-namespace MS.Internal.Xml.XPath
-{
-}
+// Could not decompile System.Xml.Schema.XmlSchemaChoice
+// This type uses unsupported IL or has too many generic parameters.

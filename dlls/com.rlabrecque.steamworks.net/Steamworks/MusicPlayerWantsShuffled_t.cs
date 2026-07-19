@@ -1,13 +1,11 @@
-using System.Runtime.InteropServices;
-
 namespace Steamworks;
 
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4109)]
-public struct MusicPlayerWantsShuffled_t
+public enum ETimelineGameMode
 {
-	public const int k_iCallback = 4109;
-
-	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bShuffled;
+	k_ETimelineGameMode_Invalid,
+	k_ETimelineGameMode_Playing,
+	k_ETimelineGameMode_Staging,
+	k_ETimelineGameMode_Menus,
+	k_ETimelineGameMode_LoadingScreen,
+	k_ETimelineGameMode_Max
 }

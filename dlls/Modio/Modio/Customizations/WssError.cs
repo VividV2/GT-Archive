@@ -1,2 +1,16 @@
-// Could not decompile Modio.Customizations.WssError
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+
+namespace Modio.Customizations;
+
+[Serializable]
+public struct WssError
+{
+	public long code;
+
+	public long error_ref;
+
+	public string message;
+
+	public Dictionary<string, string> errors;
+}

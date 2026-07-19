@@ -26,6 +26,6 @@ namespace System.Xml
 		}
 	}
 }
-namespace System.Xml.Xsl.XsltOld
+namespace System.Xml.Schema
 {
 }

@@ -1,30 +1,26 @@
+using UnityEngine.Scripting.APIUpdating;
+
 namespace UnityEngine.Rendering
 {
-	public enum GraphicsFenceType
+	public enum ReflectionProbeSortingCriteria
 	{
-		AsyncQueueSynchronisation,
-		CPUSynchronisation
+		None,
+		Importance,
+		Size,
+		ImportanceThenSize
 	}
 }
 namespace UnityEngine.Rendering
 {
-	public enum ReflectionProbeUsage
+	[MovedFrom("UnityEngine.Experimental.Rendering")]
+	public struct RayTracingInstanceMaterialConfig
 	{
-		Off,
-		BlendProbes,
-		BlendProbesAndSkybox,
-		Simple
+		public int renderQueueLowerBound;
+
+		public int renderQueueUpperBound;
+
+		public RayTracingInstanceCullingShaderTagConfig[] optionalShaderTags;
+
+		public string[] optionalShaderKeywords;
 	}
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine.Rendering
-{
 }

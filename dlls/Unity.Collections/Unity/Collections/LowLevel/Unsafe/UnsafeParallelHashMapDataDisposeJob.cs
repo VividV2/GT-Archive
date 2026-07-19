@@ -1,3 +1,2 @@
-namespace Unity.Collections.LowLevel.Unsafe
-{
-}
+// Could not decompile Unity.Collections.LowLevel.Unsafe.UnsafeParallelHashMapDataDisposeJob
+// This type uses unsupported IL or has too many generic parameters.

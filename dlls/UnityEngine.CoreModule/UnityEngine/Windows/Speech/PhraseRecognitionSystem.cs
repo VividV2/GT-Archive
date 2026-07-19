@@ -1,6 +1,6 @@
-namespace UnityEngine
+namespace UnityEngine.Scripting
 {
 }
-namespace UnityEngine
+namespace UnityEngine.Serialization
 {
 }

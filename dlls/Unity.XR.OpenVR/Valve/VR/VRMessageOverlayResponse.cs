@@ -1,2 +1,26 @@
-// Could not decompile Valve.VR.VRMessageOverlayResponse
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR
+{
+	public enum VRMessageOverlayResponse
+	{
+		ButtonPress_0,
+		ButtonPress_1,
+		ButtonPress_2,
+		ButtonPress_3,
+		CouldntFindSystemOverlay,
+		CouldntFindOrCreateClientOverlay,
+		ApplicationQuit
+	}
+}
+namespace Valve.VR
+{
+	public enum ETrackedDeviceClass
+	{
+		Invalid,
+		HMD,
+		Controller,
+		GenericTracker,
+		TrackingReference,
+		DisplayRedirect,
+		Max
+	}
+}

@@ -1,2 +1,20 @@
-// Could not decompile System.Security.Permissions.StrongNameIdentityPermissionAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
+namespace System;
+
+[StructLayout(LayoutKind.Sequential)]
+internal class MonoAsyncCall
+{
+	private object msg;
+
+	private IntPtr cb_method;
+
+	private object cb_target;
+
+	private object state;
+
+	private object res;
+
+	private object out_args;
+}

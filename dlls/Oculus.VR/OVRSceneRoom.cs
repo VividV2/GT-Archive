@@ -1,5 +1,2 @@
-public enum OVRChunkType
-{
-	JSON = 1313821514,
-	BIN = 5130562
-}
+// Could not decompile OVRSceneRoom
+// This type uses unsupported IL or has too many generic parameters.

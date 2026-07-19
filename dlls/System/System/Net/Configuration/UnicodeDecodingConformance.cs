@@ -1,9 +1,10 @@
-namespace System.Net;
+namespace System.IO.Ports;
 
-[Flags]
-internal enum CloseExState
+public enum SerialData
 {
-	Normal = 0,
-	Abort = 1,
-	Silent = 2
+	Chars = 1,
+	Eof
+}
+namespace System.ComponentModel
+{
 }

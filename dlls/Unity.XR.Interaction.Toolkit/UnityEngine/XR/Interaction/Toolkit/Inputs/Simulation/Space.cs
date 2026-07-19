@@ -1,8 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
-
-public enum Space
-{
-	Local,
-	Parent,
-	Screen
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.Space
+// This type uses unsupported IL or has too many generic parameters.

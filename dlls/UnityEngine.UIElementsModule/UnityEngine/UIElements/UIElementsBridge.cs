@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.UIElements.UIElementsBridge
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements
+{
+	internal abstract class UIElementsBridge
+	{
+		public abstract void SetWantsMouseJumping(int value);
+	}
+}
+namespace UnityEngine.UIElements
+{
+}

@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.ApplicationMemoryUsageChange
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine;
+
+public struct ApplicationMemoryUsageChange
+{
+	public ApplicationMemoryUsage memoryUsage { get; private set; }
+
+	public ApplicationMemoryUsageChange(ApplicationMemoryUsage usage)
+	{
+		memoryUsage = usage;
+	}
+}

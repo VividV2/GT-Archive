@@ -1,15 +1,5 @@
-namespace System.IO
+namespace System.IO;
+
+internal sealed class __ConsoleStream
 {
-	public enum MatchCasing
-	{
-		PlatformDefault,
-		CaseSensitive,
-		CaseInsensitive
-	}
-}
-namespace System.IO
-{
-	internal sealed class __ConsoleStream
-	{
-	}
 }

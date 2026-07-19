@@ -1,6 +1,21 @@
-namespace UnityEngine.Events
+using UnityEngine.Scripting;
+
+namespace UnityEngine.Rendering;
+
+[UsedByNativeCode]
+internal struct GPUDrivenMaterialFilterEntry
 {
-}
-namespace UnityEngine.U2D
-{
+	public GPUDrivenBitOpType op;
+
+	public int minQueueValue;
+
+	public int maxQueueValue;
+
+	public ShaderTagId keyTag;
+
+	public ShaderTagId valueTag;
+
+	public int flags;
+
+	public string keyword;
 }

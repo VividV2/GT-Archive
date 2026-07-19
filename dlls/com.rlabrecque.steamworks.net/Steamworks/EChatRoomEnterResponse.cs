@@ -1,10 +1,24 @@
 namespace Steamworks
 {
-	public enum EMatchMakingServerResponse
+	[System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(4505)]
+	public struct HTML_URLChanged_t
 	{
-		eServerResponded,
-		eServerFailedToRespond,
-		eNoServersListedOnMasterServer
+		public const int k_iCallback = 4505;
+
+		public HHTMLBrowser unBrowserHandle;
+
+		public string pchURL;
+
+		public string pchPostData;
+
+		[System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.I1)]
+		public bool bIsRedirect;
+
+		public string pchPageTitle;
+
+		[System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.I1)]
+		public bool bNewNavigation;
 	}
 }
 namespace Steamworks

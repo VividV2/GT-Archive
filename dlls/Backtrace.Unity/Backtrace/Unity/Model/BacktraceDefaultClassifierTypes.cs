@@ -1,18 +1,2 @@
-namespace Backtrace.Unity.Model
-{
-	internal sealed class BacktraceDefaultClassifierTypes
-	{
-		internal const string MessageType = "Message";
-
-		internal const string ExceptionType = "Exception";
-
-		internal const string UnhandledExceptionType = "Unhandled exception";
-
-		internal const string OOMExceptionType = "OOMException";
-
-		internal const string AnrExceptionType = "Hang";
-	}
-}
-namespace Backtrace.Unity.Model
-{
-}
+// Could not decompile Backtrace.Unity.Model.BacktraceDefaultClassifierTypes
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,19 +1,12 @@
-namespace System.ComponentModel
+namespace System.Net.NetworkInformation
 {
-	/// <summary>Provides functionality to discover the schema for a bindable list, where the properties available for binding differ from the public properties of the object to bind to.</summary>
-	public interface ITypedList
-	{
-		/// <summary>Returns the name of the list.</summary>
-		/// <param name="listAccessors">An array of <see cref="T:System.ComponentModel.PropertyDescriptor" /> objects, for which the list name is returned. This can be <see langword="null" />.</param>
-		/// <returns>The name of the list.</returns>
-		string GetListName(PropertyDescriptor[] listAccessors);
-
-		/// <summary>Returns the <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> that represents the properties on each item used to bind data.</summary>
-		/// <param name="listAccessors">An array of <see cref="T:System.ComponentModel.PropertyDescriptor" /> objects to find in the collection as bindable. This can be <see langword="null" />.</param>
-		/// <returns>The <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> that represents the properties on each item used to bind data.</returns>
-		PropertyDescriptorCollection GetItemProperties(PropertyDescriptor[] listAccessors);
-	}
 }
-namespace System.ComponentModel
+namespace System.Net
 {
+	/// <summary>Represents the method that specifies a local Internet Protocol address and port number for a <see cref="T:System.Net.ServicePoint" />.</summary>
+	/// <param name="servicePoint">The <see cref="T:System.Net.ServicePoint" /> associated with the connection to be created.</param>
+	/// <param name="remoteEndPoint">The remote <see cref="T:System.Net.IPEndPoint" /> that specifies the remote host.</param>
+	/// <param name="retryCount">The number of times this delegate was called for a specified connection.</param>
+	/// <returns>The local <see cref="T:System.Net.IPEndPoint" /> to which the <see cref="T:System.Net.ServicePoint" /> is bound.</returns>
+	public delegate IPEndPoint BindIPEndPoint(ServicePoint servicePoint, IPEndPoint remoteEndPoint, int retryCount);
 }

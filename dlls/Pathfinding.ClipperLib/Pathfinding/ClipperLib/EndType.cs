@@ -1,19 +1,9 @@
-namespace Pathfinding.ClipperLib
+namespace Pathfinding.ClipperLib;
+
+public enum EndType
 {
-	public enum JoinType
-	{
-		jtSquare,
-		jtRound,
-		jtMiter
-	}
-}
-namespace Pathfinding.ClipperLib
-{
-	public enum EndType
-	{
-		etClosed,
-		etButt,
-		etSquare,
-		etRound
-	}
+	etClosed,
+	etButt,
+	etSquare,
+	etRound
 }

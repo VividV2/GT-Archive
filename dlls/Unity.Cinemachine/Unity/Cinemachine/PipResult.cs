@@ -1,12 +1,8 @@
-namespace Unity.Cinemachine
+namespace Unity.Cinemachine;
+
+internal enum PipResult
 {
-	internal enum PipResult
-	{
-		Inside,
-		Outside,
-		OnEdge
-	}
-}
-namespace Unity.Cinemachine
-{
+	Inside,
+	Outside,
+	OnEdge
 }

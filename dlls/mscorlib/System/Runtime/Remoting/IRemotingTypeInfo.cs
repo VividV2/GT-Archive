@@ -1,6 +1,8 @@
-namespace System.Threading.Tasks
+namespace System.Runtime;
+
+/// <summary>Indicates whether the next blocking garbage collection compacts the large object heap (LOH).</summary>
+public enum GCLargeObjectHeapCompactionMode
 {
-}
-namespace System
-{
+	Default = 1,
+	CompactOnce
 }

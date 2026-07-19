@@ -1,12 +1,20 @@
+using System.ComponentModel;
+using System.ComponentModel;
+
 namespace Oculus.Platform;
 
-public interface IVoipPCMSource
+public enum RichPresenceExtraContext
 {
-	int GetPCM(float[] dest, int length);
-
-	void SetSenderID(ulong senderID);
-
-	void Update();
-
-	int PeekSizeElements();
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("NONE")]
+	None,
+	[Description("CURRENT_CAPACITY")]
+	CurrentCapacity,
+	[Description("STARTED_AGO")]
+	StartedAgo,
+	[Description("ENDING_IN")]
+	EndingIn,
+	[Description("LOOKING_FOR_A_MATCH")]
+	LookingForAMatch
 }

@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.AuthenticationModels.ValidateEntityTokenResponse
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.AuthenticationModels;
+
+[Serializable]
+public class ValidateEntityTokenResponse : PlayFabResultCommon
+{
+	public EntityKey Entity;
+
+	public LoginIdentityProvider? IdentityProvider;
+
+	public EntityLineage Lineage;
+}

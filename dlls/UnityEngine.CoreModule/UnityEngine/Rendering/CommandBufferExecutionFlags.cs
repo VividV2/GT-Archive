@@ -1,7 +1,21 @@
-namespace UnityEngine.Rendering;
+using UnityEngine.Bindings;
+using UnityEngine.Bindings;
 
-public enum CommandBufferExecutionFlags
+namespace UnityEngine.Rendering
 {
-	None = 0,
-	AsyncCompute = 2
+	[NativeHeader("Runtime/GfxDevice/GfxDeviceTypes.h")]
+	public enum CullMode
+	{
+		Off,
+		Front,
+		Back
+	}
+}
+namespace UnityEngine.Rendering
+{
+	public enum CommandBufferExecutionFlags
+	{
+		None = 0,
+		AsyncCompute = 2
+	}
 }

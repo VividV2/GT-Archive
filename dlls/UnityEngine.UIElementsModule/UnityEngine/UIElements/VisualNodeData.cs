@@ -1,8 +1,27 @@
+using System.Runtime.InteropServices;
+using UnityEngine.Bindings;
+using UnityEngine.UIElements.Layout;
+
 namespace UnityEngine.UIElements;
 
-internal interface ICursorManager
+[NativeType(Header = "Modules/UIElements/VisualNodeData.h")]
+internal struct VisualNodeData
 {
-	void SetCursor(Cursor cursor);
+	public VisualPanelHandle Panel;
 
-	void ResetCursor();
+	public VisualNodeHandle LogicalParent;
+
+	public VisualElementFlags Flags;
+
+	public VisualNodeCallbackInterest CallbackInterest;
+
+	public LayoutNode LayoutNode;
+
+	public uint ControlId;
+
+	[MarshalAs(UnmanagedType.U1)]
+	public bool Enabled;
+
+	[MarshalAs(UnmanagedType.U1)]
+	public bool IsRootVisualContainer;
 }

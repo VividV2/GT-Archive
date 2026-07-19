@@ -1,15 +1,11 @@
 using UnityEngine.Scripting;
 
-namespace UnityEngine
-{
-	[UsedByNativeCode]
-	public struct UICharInfo
-	{
-		public Vector2 cursorPos;
+namespace UnityEngine;
 
-		public float charWidth;
-	}
-}
-namespace UnityEngine
+[UsedByNativeCode]
+public struct UICharInfo
 {
+	public Vector2 cursorPos;
+
+	public float charWidth;
 }

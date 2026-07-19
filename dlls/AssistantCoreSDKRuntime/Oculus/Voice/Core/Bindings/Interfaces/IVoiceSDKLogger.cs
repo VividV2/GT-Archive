@@ -1,5 +1,9 @@
-namespace Oculus.Voice.Core.Bindings.Android;
-
+namespace Oculus.Voice.Core.Bindings.Android
+{
+}
+namespace Oculus.Voice.Core.Bindings.Android
+{
+}
 namespace Oculus.Voice.Core.Bindings.Interfaces
 {
 	public interface IVoiceSDKLogger

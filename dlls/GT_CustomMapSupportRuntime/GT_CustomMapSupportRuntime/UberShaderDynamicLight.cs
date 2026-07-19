@@ -1,10 +1,3 @@
-namespace GT_CustomMapSupportRuntime;
-
-public enum TriggerSource
+namespace GT_CustomMapSupportRuntime
 {
-	None,
-	Hands,
-	Head,
-	Body,
-	HeadOrBody
 }

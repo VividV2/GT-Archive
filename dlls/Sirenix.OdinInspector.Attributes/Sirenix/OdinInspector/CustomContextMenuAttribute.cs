@@ -2,34 +2,38 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace Sirenix.OdinInspector;
-
-[DontApplyToListElements]
-[AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = true)]
-[Conditional("UNITY_EDITOR")]
-public sealed class CustomContextMenuAttribute : Attribute
+namespace Sirenix.OdinInspector
 {
-	public string MenuItem;
-
-	public string Action;
-
-	[Obsolete("Use the Action member instead.", false)]
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public string MethodName
+	[DontApplyToListElements]
+	[AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = true)]
+	[Conditional("UNITY_EDITOR")]
+	public sealed class CustomContextMenuAttribute : Attribute
 	{
-		get
+		public string MenuItem;
+
+		public string Action;
+
+		[Obsolete("Use the Action member instead.", false)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public string MethodName
 		{
-			return Action;
+			get
+			{
+				return Action;
+			}
+			set
+			{
+				Action = value;
+			}
 		}
-		set
+
+		public CustomContextMenuAttribute(string menuItem, string action)
 		{
-			Action = value;
+			MenuItem = menuItem;
+			Action = action;
 		}
 	}
-
-	public CustomContextMenuAttribute(string menuItem, string action)
-	{
-		MenuItem = menuItem;
-		Action = action;
-	}
+}
+namespace Sirenix.OdinInspector
+{
 }

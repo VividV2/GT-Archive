@@ -1,22 +1,18 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public struct GPUResidentDrawerSettings
 {
-	public struct GPUResidentDrawerSettings
-	{
-		public GPUResidentDrawerMode mode;
+	public GPUResidentDrawerMode mode;
 
-		public bool supportDitheringCrossFade;
+	public bool supportDitheringCrossFade;
 
-		public bool enableOcclusionCulling;
+	public bool enableOcclusionCulling;
 
-		public bool allowInEditMode;
+	public bool allowInEditMode;
 
-		public float smallMeshScreenPercentage;
+	public float smallMeshScreenPercentage;
 
-		public Shader errorShader;
+	public Shader errorShader;
 
-		public Shader loadingShader;
-	}
-}
-namespace UnityEngine.Rendering
-{
+	public Shader loadingShader;
 }

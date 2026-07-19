@@ -1,10 +1,13 @@
 using System;
-using UnityEngine.Scripting;
+using System;
 
-namespace Unity.Collections;
+namespace JetBrains.Annotations;
 
-[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue)]
-[RequiredByNativeCode]
-public sealed class ReadOnlyAttribute : Attribute
+[Flags]
+public enum CollectionAccessType
 {
+	None = 0,
+	Read = 1,
+	ModifyExistingContent = 2,
+	UpdatedContent = 6
 }

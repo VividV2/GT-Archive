@@ -1,2 +1,12 @@
-// Could not decompile OVR.OpenVR.VRTextureDepthInfo_t
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace OVR.OpenVR;
+
+public struct VRTextureDepthInfo_t
+{
+	public IntPtr handle;
+
+	public HmdMatrix44_t mProjection;
+
+	public HmdVector2_t vRange;
+}

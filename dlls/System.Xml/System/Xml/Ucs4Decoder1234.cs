@@ -1,9 +1,2 @@
-namespace System.Xml.Serialization.Configuration
-{
-}
-namespace System.Xml
-{
-}
-namespace System.Xml
-{
-}
+// Could not decompile System.Xml.Ucs4Decoder1234
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,2 @@
-namespace MaterialCycler;
-
+// Could not decompile TeleportStation
+// This type uses unsupported IL or has too many generic parameters.

@@ -14,3 +14,6 @@ internal enum Nodes
 	Paren,
 	Conv
 }
+namespace System.Data
+{
+}

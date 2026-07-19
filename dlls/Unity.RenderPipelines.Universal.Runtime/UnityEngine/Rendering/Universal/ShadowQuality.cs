@@ -1,8 +1,12 @@
-namespace UnityEngine.Rendering.Universal;
-
-public enum ShadowQuality
+namespace UnityEngine.Rendering.Universal
 {
-	Disabled,
-	HardShadows,
-	SoftShadows
+	public enum ShadowQuality
+	{
+		Disabled,
+		HardShadows,
+		SoftShadows
+	}
+}
+namespace UnityEngine.Rendering.Universal
+{
 }

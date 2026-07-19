@@ -2,6 +2,28 @@ using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
+namespace Unity.Multiplayer.PlayMode.Common.Runtime;
+
+internal static class MppmLog
+{
+	private const string k_ToolsPrefix = "[MultiplayerPlaymode]";
+
+	[Conditional("UNITY_MP_TOOLS_DEV")]
+	public static void Debug(object message)
+	{
+		Debug.Log(string.Format("{0}: {1}", "[MultiplayerPlaymode]", message));
+	}
+
+	public static void Warning(object message)
+	{
+		Debug.LogWarning(string.Format("{0}: {1}", "[MultiplayerPlaymode]", message));
+	}
+
+	public static void Error(object message)
+	{
+		Debug.LogError(string.Format("{0}: {1}", "[MultiplayerPlaymode]", message));
+	}
+}
 [CompilerGenerated]
 [EditorBrowsable(EditorBrowsableState.Never)]
 [GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]

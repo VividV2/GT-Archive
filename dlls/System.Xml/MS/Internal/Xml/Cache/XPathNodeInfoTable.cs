@@ -1,20 +1,2 @@
-namespace System.Xml.Schema;
-
-internal class IdRefNode
-{
-	internal string Id;
-
-	internal int LineNo;
-
-	internal int LinePos;
-
-	internal IdRefNode Next;
-
-	internal IdRefNode(IdRefNode next, string id, int lineNo, int linePos)
-	{
-		Id = id;
-		LineNo = lineNo;
-		LinePos = linePos;
-		Next = next;
-	}
-}
+// Could not decompile MS.Internal.Xml.Cache.XPathNodeInfoTable
+// This type uses unsupported IL or has too many generic parameters.

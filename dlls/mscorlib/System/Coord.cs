@@ -1,8 +1,12 @@
-namespace System;
-
-internal struct Coord(int x, int y)
+namespace System
 {
-	public short X = (short)x;
+	internal struct Coord(int x, int y)
+	{
+		public short X = (short)x;
 
-	public short Y = (short)y;
+		public short Y = (short)y;
+	}
+}
+namespace System
+{
 }

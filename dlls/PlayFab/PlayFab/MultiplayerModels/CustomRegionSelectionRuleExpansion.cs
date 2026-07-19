@@ -1,6 +1,13 @@
-namespace PlayFab.MultiplayerModels
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class CustomRegionSelectionRuleExpansion : PlayFabBaseModel
 {
-}
-namespace PlayFab.CloudScriptModels
-{
+	public List<OverrideUnsignedInt> MaxLatencyOverrides;
+
+	public uint SecondsBetweenExpansions;
 }

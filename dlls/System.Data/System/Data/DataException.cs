@@ -1,19 +1,2 @@
-namespace System.Data;
-
-/// <summary>Specifies how a <see cref="T:System.Data.DataColumn" /> is mapped.</summary>
-/// <summary>Specifies how a <see cref="T:System.Data.DataColumn" /> is mapped.</summary>
-public enum MappingType
-{
-	/// <summary>The column is mapped to an XML element.</summary>
-	/// <summary>The column is mapped to an XML element.</summary>
-	Element = 1,
-	/// <summary>The column is mapped to an XML attribute.</summary>
-	/// <summary>The column is mapped to an XML attribute.</summary>
-	Attribute,
-	/// <summary>The column is mapped to an <see cref="T:System.Xml.XmlText" /> node.</summary>
-	/// <summary>The column is mapped to an <see cref="T:System.Xml.XmlText" /> node.</summary>
-	SimpleContent,
-	/// <summary>The column is mapped to an internal structure.</summary>
-	/// <summary>The column is mapped to an internal structure.</summary>
-	Hidden
-}
+// Could not decompile System.Data.DataException
+// This type uses unsupported IL or has too many generic parameters.

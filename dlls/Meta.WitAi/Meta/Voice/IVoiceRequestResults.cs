@@ -1,12 +1,16 @@
-namespace Meta.Voice;
-
-public interface IVoiceRequestResults
+namespace Meta.Voice.Net.WebSockets.Requests
 {
-	int StatusCode { get; }
+}
+namespace Meta.Voice
+{
+	public interface IVoiceRequestResults
+	{
+		int StatusCode { get; }
 
-	string Message { get; }
+		string Message { get; }
 
-	void SetCancel(string reason);
+		void SetCancel(string reason);
 
-	void SetError(int errorStatusCode, string error);
+		void SetError(int errorStatusCode, string error);
+	}
 }

@@ -1,6 +1,2 @@
-namespace System.Runtime.CompilerServices
-{
-}
-namespace System.Runtime.CompilerServices
-{
-}
+// Could not decompile System.MonoTypeInfo
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,18 @@
-// Could not decompile GT_CustomMapSupportRuntime.CMSExtensions
-// This type uses unsupported IL or has too many generic parameters.
+using Newtonsoft.Json;
+using UnityEngine.Scripting;
+using Newtonsoft.Json;
+using UnityEngine.Scripting;
+
+namespace GT_CustomMapSupportRuntime;
+
+[Preserve]
+public class Descriptor
+{
+	[JsonProperty(PropertyName = "objectName")]
+	public string objectName = "";
+
+	[JsonConstructor]
+	public Descriptor()
+	{
+	}
+}

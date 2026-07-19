@@ -1,66 +1,38 @@
-using System;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
-[Serializable]
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-public struct SteamDatagramRelayAuthTicket
+public enum ESteamInputLEDFlag
+{
+	k_ESteamInputLEDFlag_SetColor,
+	k_ESteamInputLEDFlag_RestoreUserDefault
+}
+namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	private struct ExtraField
+	[CallbackIdentity(351)]
+	public struct EquippedProfileItems_t
 	{
-		private enum EType
-		{
-			k_EType_String,
-			k_EType_Int,
-			k_EType_Fixed64
-		}
+		public const int k_iCallback = 351;
 
-		[StructLayout(LayoutKind.Explicit)]
-		private struct OptionValue
-		{
-			[FieldOffset(0)]
-			[MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
-			private byte[] m_szStringValue;
+		public EResult m_eResult;
 
-			[FieldOffset(0)]
-			private long m_nIntValue;
+		public CSteamID m_steamID;
 
-			[FieldOffset(0)]
-			private ulong m_nFixed64Value;
-		}
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bHasAnimatedAvatar;
 
-		private EType m_eType;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bHasAvatarFrame;
 
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 28)]
-		private byte[] m_szName;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bHasProfileModifier;
 
-		private OptionValue m_val;
-	}
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bHasProfileBackground;
 
-	private SteamNetworkingIdentity m_identityGameserver;
-
-	private SteamNetworkingIdentity m_identityAuthorizedClient;
-
-	private uint m_unPublicIP;
-
-	private RTime32 m_rtimeTicketExpiry;
-
-	private SteamDatagramHostedAddress m_routing;
-
-	private uint m_nAppID;
-
-	private int m_nRestrictToVirtualPort;
-
-	private const int k_nMaxExtraFields = 16;
-
-	private int m_nExtraFields;
-
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
-	private ExtraField[] m_vecExtraFields;
-
-	public void Clear()
-	{
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bHasMiniProfileBackground;
 	}
 }

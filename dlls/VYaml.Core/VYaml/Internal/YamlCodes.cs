@@ -1,16 +1,2 @@
-using System;
-using System;
-using System;
-
-namespace VYaml.Annotations;
-
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface, Inherited = false)]
-public class YamlObjectAttribute : Attribute
-{
-	public NamingConvention NamingConvention { get; }
-
-	public YamlObjectAttribute(NamingConvention namingConvention = NamingConvention.LowerCamelCase)
-	{
-		NamingConvention = namingConvention;
-	}
-}
+// Could not decompile VYaml.Internal.YamlCodes
+// This type uses unsupported IL or has too many generic parameters.

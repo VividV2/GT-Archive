@@ -1,21 +1,21 @@
 namespace Steamworks
 {
-	public enum ELeaderboardSortMethod
+	public enum PlayerAcceptState_t
 	{
-		k_ELeaderboardSortMethodNone,
-		k_ELeaderboardSortMethodAscending,
-		k_ELeaderboardSortMethodDescending
+		k_EStateUnknown,
+		k_EStatePlayerAccepted,
+		k_EStatePlayerDeclined
 	}
 }
 namespace Steamworks
 {
-}
-namespace Steamworks
-{
-	public enum ESteamIPv6ConnectivityProtocol
+	public enum EItemUpdateStatus
 	{
-		k_ESteamIPv6ConnectivityProtocol_Invalid,
-		k_ESteamIPv6ConnectivityProtocol_HTTP,
-		k_ESteamIPv6ConnectivityProtocol_UDP
+		k_EItemUpdateStatusInvalid,
+		k_EItemUpdateStatusPreparingConfig,
+		k_EItemUpdateStatusPreparingContent,
+		k_EItemUpdateStatusUploadingContent,
+		k_EItemUpdateStatusUploadingPreviewFile,
+		k_EItemUpdateStatusCommittingChanges
 	}
 }

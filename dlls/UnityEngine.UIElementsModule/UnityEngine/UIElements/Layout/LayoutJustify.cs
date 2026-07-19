@@ -1,13 +1,3 @@
-namespace UnityEngine.UIElements;
-
-public interface IBinding
-{
-	void PreUpdate();
-
-	void Update();
-
-	void Release();
-}
 namespace UnityEngine.UIElements.Layout
 {
 	internal enum LayoutJustify
@@ -19,4 +9,7 @@ namespace UnityEngine.UIElements.Layout
 		SpaceAround,
 		SpaceEvenly
 	}
+}
+namespace UnityEngine.UIElements.Layout
+{
 }

@@ -1,8 +1,12 @@
-namespace Valve.VR;
-
-public enum ETrackingUniverseOrigin
+namespace Valve.VR
 {
-	TrackingUniverseSeated,
-	TrackingUniverseStanding,
-	TrackingUniverseRawAndUncalibrated
+	public enum ETrackingUniverseOrigin
+	{
+		TrackingUniverseSeated,
+		TrackingUniverseStanding,
+		TrackingUniverseRawAndUncalibrated
+	}
+}
+namespace Valve.VR
+{
 }

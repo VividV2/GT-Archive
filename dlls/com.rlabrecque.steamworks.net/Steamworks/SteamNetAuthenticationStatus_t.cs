@@ -1,13 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4011)]
-public struct MusicPlayerWantsVolume_t
-{
-	public const int k_iCallback = 4011;
-
-	public float m_flNewVolume;
-}
+// Could not decompile Steamworks.SteamNetAuthenticationStatus_t
+// This type uses unsupported IL or has too many generic parameters.

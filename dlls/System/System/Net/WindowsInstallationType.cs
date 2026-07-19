@@ -1,10 +1,14 @@
-namespace System.Net;
-
-internal enum WindowsInstallationType
+namespace System.Net.NetworkInformation
 {
-	Unknown,
-	Client,
-	Server,
-	ServerCore,
-	Embedded
+}
+namespace System.Net
+{
+	internal enum WindowsInstallationType
+	{
+		Unknown,
+		Client,
+		Server,
+		ServerCore,
+		Embedded
+	}
 }

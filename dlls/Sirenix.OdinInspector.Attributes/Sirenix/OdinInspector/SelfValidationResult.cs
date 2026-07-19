@@ -1,6 +1,2 @@
-namespace Sirenix.OdinInspector;
-
-public interface ISelfValidator
-{
-	void Validate(SelfValidationResult result);
-}
+// Could not decompile Sirenix.OdinInspector.SelfValidationResult
+// This type uses unsupported IL or has too many generic parameters.

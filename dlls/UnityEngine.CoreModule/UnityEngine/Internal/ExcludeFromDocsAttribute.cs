@@ -1,18 +1,2 @@
-using System;
-
-namespace UnityEngine.Internal
-{
-	[Serializable]
-	public class ExcludeFromDocsAttribute : Attribute
-	{
-	}
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-}
+// Could not decompile UnityEngine.Internal.ExcludeFromDocsAttribute
+// This type uses unsupported IL or has too many generic parameters.

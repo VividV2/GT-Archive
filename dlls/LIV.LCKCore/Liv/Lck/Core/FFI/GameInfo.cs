@@ -1,22 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+namespace Liv.Lck.Core.FFI;
 
-namespace Liv.Lck.Core.Cosmetics;
-
-public interface ILckCosmeticsCoordinator
+internal enum ReturnCode : uint
 {
-	event Action<LckAvailableCosmeticInfo> OnCosmeticAvailable;
-
-	Task InitializeLocalCosmeticsAsync();
-
-	Task<Result<bool>> GetUserCosmeticsForSessionAsync(IEnumerable<string> playerIds, string sessionId);
-
-	Task<Result<bool>> AnnouncePlayerPresenceForSessionAsync(string playerId, string sessionId);
-}
-namespace Liv.Lck.Core.Serialization
-{
+	Ok,
+	Error,
+	Panic,
+	InvalidArgument,
+	BackendUnavailable,
+	Uninitialized,
+	BackendDataParsingError,
+	BackendClientError,
+	UserNotLoggedIn,
+	NullPointer,
+	LoginAttemptExpired,
+	Fatal,
+	RateLimiterBackoff,
+	InvalidTrackingId
 }

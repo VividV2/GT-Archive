@@ -1,11 +1,27 @@
-namespace Valve.VR;
-
-public enum EVRScreenshotType
+namespace Valve.VR
 {
-	None,
-	Mono,
-	Stereo,
-	Cubemap,
-	MonoPanorama,
-	StereoPanorama
+	public enum VROverlayTransformType
+	{
+		VROverlayTransform_Invalid = -1,
+		VROverlayTransform_Absolute,
+		VROverlayTransform_TrackedDeviceRelative,
+		VROverlayTransform_SystemOverlay,
+		VROverlayTransform_TrackedComponent,
+		VROverlayTransform_Cursor,
+		VROverlayTransform_DashboardTab,
+		VROverlayTransform_DashboardThumb,
+		VROverlayTransform_Mountable
+	}
+}
+namespace Valve.VR
+{
+	public enum EVRScreenshotType
+	{
+		None,
+		Mono,
+		Stereo,
+		Cubemap,
+		MonoPanorama,
+		StereoPanorama
+	}
 }

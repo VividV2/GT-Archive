@@ -1,11 +1,2 @@
-namespace UnityEngine.UIElements;
-
-public enum PenButton
-{
-	PenContact = 0,
-	PenBarrel = 1,
-	PenEraser = 5
-}
-namespace UnityEngine.UIElements
-{
-}
+// Could not decompile UnityEngine.UIElements.EnumFieldValueDecoratorAttribute
+// This type uses unsupported IL or has too many generic parameters.

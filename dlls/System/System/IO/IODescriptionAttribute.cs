@@ -1,6 +1,3 @@
-namespace System.Net.Sockets
-{
-}
-namespace System.Net
+namespace System.ComponentModel.Design
 {
 }

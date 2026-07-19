@@ -70,6 +70,6 @@ namespace System.Xml
 		XSD_QNAME = 140
 	}
 }
-namespace System.Xml
+namespace System.Xml.Serialization
 {
 }

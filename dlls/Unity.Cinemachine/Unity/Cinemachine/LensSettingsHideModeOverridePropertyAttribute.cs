@@ -1,7 +1,11 @@
 using UnityEngine;
 
-namespace Unity.Cinemachine;
-
-public sealed class LensSettingsHideModeOverridePropertyAttribute : PropertyAttribute
+namespace Unity.Cinemachine
+{
+	public sealed class LensSettingsHideModeOverridePropertyAttribute : PropertyAttribute
+	{
+	}
+}
+namespace Unity.Cinemachine
 {
 }

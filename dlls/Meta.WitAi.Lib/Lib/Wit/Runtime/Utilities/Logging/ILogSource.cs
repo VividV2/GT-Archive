@@ -1,17 +1,8 @@
 using Meta.Voice.Logging;
 
-namespace Meta.Voice.Logging;
+namespace Lib.Wit.Runtime.Utilities.Logging;
 
-public interface IVLogger : ICoreLogger
+public interface ILogSource
 {
-	void Flush(CorrelationID correlationId);
-
-	void Flush();
-}
-namespace Lib.Wit.Runtime.Utilities.Logging
-{
-	public interface ILogSource
-	{
-		IVLogger Logger { get; }
-	}
+	IVLogger Logger { get; }
 }

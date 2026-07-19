@@ -1,8 +1,12 @@
-namespace UnityEngine;
-
-public struct VulkanGraphicsJobsDeviceFilterData
+namespace UnityEngine
 {
-	public GraphicsJobsFilterMode preferredMode;
+	public struct VulkanGraphicsJobsDeviceFilterData
+	{
+		public GraphicsJobsFilterMode preferredMode;
 
-	public VulkanDeviceFilterData filter;
+		public VulkanDeviceFilterData filter;
+	}
+}
+namespace UnityEngine
+{
 }

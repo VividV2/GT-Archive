@@ -1,12 +1,8 @@
-namespace UnityEngine;
+using System;
 
-public enum CubemapFace
+namespace JetBrains.Annotations;
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface)]
+public sealed class CannotApplyEqualityOperatorAttribute : Attribute
 {
-	Unknown = -1,
-	PositiveX,
-	NegativeX,
-	PositiveY,
-	NegativeY,
-	PositiveZ,
-	NegativeZ
 }

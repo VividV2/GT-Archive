@@ -1,5 +1,4 @@
 using System.Reflection;
-using System.Reflection;
 
 namespace System;
 
@@ -8,9 +7,3 @@ namespace System;
 /// <param name="args">The event data.</param>
 /// <returns>The assembly that resolves the type, assembly, or resource; or <see langword="null" /> if the assembly cannot be resolved.</returns>
 public delegate Assembly ResolveEventHandler(object sender, ResolveEventArgs args);
-namespace System.Text
-{
-}
-namespace System.Runtime.Remoting.Lifetime
-{
-}

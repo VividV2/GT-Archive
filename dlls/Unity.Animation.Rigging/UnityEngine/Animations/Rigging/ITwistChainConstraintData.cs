@@ -12,3 +12,6 @@ public interface ITwistChainConstraintData
 
 	AnimationCurve curve { get; }
 }
+namespace UnityEngine.Animations.Rigging
+{
+}

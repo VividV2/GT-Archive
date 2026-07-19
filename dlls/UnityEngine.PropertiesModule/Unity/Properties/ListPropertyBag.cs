@@ -16,6 +16,3 @@ public class ListPropertyBag<TElement> : IndexedCollectionPropertyBag<List<TElem
 		return new List<TElement>();
 	}
 }
-namespace Unity.Properties
-{
-}

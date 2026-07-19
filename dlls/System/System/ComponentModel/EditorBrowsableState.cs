@@ -1,6 +1,6 @@
-namespace System.Configuration
+namespace System.ComponentModel.Design
 {
 }
-namespace System.ComponentModel.Design
+namespace System.ComponentModel
 {
 }

@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.UIElements.BindingMode
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public enum BindingMode
+{
+	TwoWay,
+	ToSource,
+	ToTarget,
+	ToTargetOnce
+}

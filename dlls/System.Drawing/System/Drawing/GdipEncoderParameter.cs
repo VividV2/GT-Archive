@@ -1,28 +1,14 @@
 using System.Drawing.Imaging;
-using System.Drawing.Imaging;
 
-namespace System.Drawing
+namespace System.Drawing;
+
+internal struct GdipEncoderParameter
 {
-	internal interface IMacContext
-	{
-		void Synchronize();
+	internal Guid guid;
 
-		void Release();
-	}
-}
-namespace System.Drawing
-{
-	internal struct GdipEncoderParameter
-	{
-		internal Guid guid;
+	internal uint numberOfValues;
 
-		internal uint numberOfValues;
+	internal EncoderParameterValueType type;
 
-		internal EncoderParameterValueType type;
-
-		internal IntPtr value;
-	}
-}
-namespace System.Drawing
-{
+	internal IntPtr value;
 }

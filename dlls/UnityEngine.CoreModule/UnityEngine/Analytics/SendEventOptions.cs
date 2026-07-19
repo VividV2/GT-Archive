@@ -1,15 +1,11 @@
 using System;
 
-namespace UnityEngine.Analytics
+namespace UnityEngine.Analytics;
+
+[Flags]
+public enum SendEventOptions
 {
-	[Flags]
-	public enum SendEventOptions
-	{
-		kAppendNone = 0,
-		kAppendBuildGuid = 1,
-		kAppendBuildTarget = 2
-	}
-}
-namespace UnityEngine.Search
-{
+	kAppendNone = 0,
+	kAppendBuildGuid = 1,
+	kAppendBuildTarget = 2
 }

@@ -1,20 +1,2 @@
-using System.Configuration.Provider;
-using System.Reflection;
-using System.Configuration.Provider;
-using System.Reflection;
-using Unity;
-
-namespace System.Configuration;
-
-/// <summary>Maintains a collection of <see cref="T:System.Configuration.ConfigurationBuilder" /> objects by name.</summary>
-/// <summary>Maintains a collection of <see cref="T:System.Configuration.ConfigurationBuilder" /> objects by name.</summary>
-[DefaultMember("Item")]
-public class ConfigurationBuilderCollection : ProviderCollection
-{
-	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.ConfigurationBuilderCollection" /> class.</summary>
-	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.ConfigurationBuilderCollection" /> class.</summary>
-	public ConfigurationBuilderCollection()
-	{
-		Unity.ThrowStub.ThrowNotSupportedException();
-	}
-}
+// Could not decompile System.Configuration.ConfigInfoCollection
+// This type uses unsupported IL or has too many generic parameters.

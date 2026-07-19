@@ -1,2 +1,13 @@
-// Could not decompile Fusion.NetworkTransformSerializer
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System;
+
+namespace Fusion;
+
+[Flags]
+public enum RpcSources
+{
+	StateAuthority = 1,
+	InputAuthority = 2,
+	Proxies = 4,
+	All = 7
+}

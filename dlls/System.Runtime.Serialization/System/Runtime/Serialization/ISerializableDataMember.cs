@@ -1,9 +1,2 @@
-namespace System.Runtime.Serialization;
-
-internal class PositiveIntegerDataContract : LongDataContract
-{
-	internal PositiveIntegerDataContract()
-		: base(DictionaryGlobals.positiveIntegerLocalName, DictionaryGlobals.SchemaNamespace)
-	{
-	}
-}
+// Could not decompile System.Runtime.Serialization.ISerializableDataMember
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,19 +1,15 @@
-using UnityEngine.Bindings;
-using UnityEngine.Bindings;
+using System;
 
-namespace UnityEngine
+namespace UnityEngine.Pool;
+
+public struct PooledObject<T>(T value, IObjectPool<T> pool) : IDisposable where T : class
 {
-	[NativeHeader("Runtime/Graphics/D3D12/D3D12DeviceFilterLists.h")]
-	public sealed class D3D12DeviceFilterLists : Object
+	private readonly T m_ToReturn = value;
+
+	private readonly IObjectPool<T> m_Pool = pool;
+
+	void IDisposable.Dispose()
 	{
-		internal D3D12DeviceFilterLists()
-		{
-		}
+		m_Pool.Release(m_ToReturn);
 	}
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
 }

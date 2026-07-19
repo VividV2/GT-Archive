@@ -1,2 +1,6 @@
-// Could not decompile System.Drawing.CGRect64
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Drawing
+{
+}
+namespace System.Drawing
+{
+}

@@ -1,19 +1,11 @@
-using System;
-using System.Runtime.InteropServices;
-
 namespace Valve.VR;
 
-public struct IVRNotifications
+public enum EVRComponentProperty
 {
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate EVRNotificationError _CreateNotification(ulong ulOverlayHandle, ulong ulUserValue, EVRNotificationType type, IntPtr pchText, EVRNotificationStyle style, ref NotificationBitmap_t pImage, ref uint pNotificationId);
-
-	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate EVRNotificationError _RemoveNotification(uint notificationId);
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _CreateNotification CreateNotification;
-
-	[MarshalAs(UnmanagedType.FunctionPtr)]
-	internal _RemoveNotification RemoveNotification;
+	IsStatic = 1,
+	IsVisible = 2,
+	IsTouched = 4,
+	IsPressed = 8,
+	IsScrolled = 0x10,
+	IsHighlighted = 0x20
 }

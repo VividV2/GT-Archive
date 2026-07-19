@@ -1,16 +1,14 @@
 using System;
-using System.Collections.Generic;
 using PlayFab.SharedModels;
 using System;
-using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.EventsModels
+namespace PlayFab.MultiplayerModels
 {
 	[Serializable]
-	public class WriteEventsRequest : PlayFabRequestCommon
+	public class GetMultiplayerServerLogsResponse : PlayFabResultCommon
 	{
-		public List<EventContents> Events;
+		public string LogDownloadUrl;
 	}
 }
 namespace PlayFab.Json

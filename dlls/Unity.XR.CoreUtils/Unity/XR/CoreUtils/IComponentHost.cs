@@ -1,6 +1,5 @@
 namespace Unity.XR.CoreUtils;
 
-public interface IComponentHost<THostType> where THostType : class
+namespace Unity.XR.CoreUtils
 {
-	THostType[] HostedComponents { get; }
 }

@@ -1,2 +1,6 @@
-namespace PlayFab.CloudScriptModels;
-
+namespace PlayFab.MultiplayerModels
+{
+}
+namespace PlayFab.InsightsModels
+{
+}

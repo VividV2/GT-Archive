@@ -1,8 +1,3 @@
-#define UNITY_ASSERTIONS
-namespace UnityEngine;
-
-public enum InspectorSort
+namespace UnityEngine
 {
-	ByName,
-	ByValue
 }

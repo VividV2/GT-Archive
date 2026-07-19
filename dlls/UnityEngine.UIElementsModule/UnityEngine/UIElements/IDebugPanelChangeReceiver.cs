@@ -1,23 +1,6 @@
 namespace UnityEngine.UIElements;
 
-public interface IMouseCaptureEvent
+public interface IDebugPanelChangeReceiver
 {
-}
-namespace UnityEngine.UIElements
-{
-	public enum Align
-	{
-		Auto,
-		FlexStart,
-		Center,
-		FlexEnd,
-		Stretch
-	}
-}
-namespace UnityEngine.UIElements
-{
-	public interface IDebugPanelChangeReceiver
-	{
-		void OnVisualElementChange(VisualElement element, VersionChangeType changeType);
-	}
+	void OnVisualElementChange(VisualElement element, VersionChangeType changeType);
 }

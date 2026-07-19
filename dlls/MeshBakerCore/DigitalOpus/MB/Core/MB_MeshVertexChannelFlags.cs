@@ -1,5 +1,15 @@
 using System;
+using System;
 
+namespace DigitalOpus.MB.Core
+{
+	public enum MB_MeshPivotLocation
+	{
+		worldOrigin,
+		boundsCenter,
+		customLocation
+	}
+}
 namespace DigitalOpus.MB.Core
 {
 	[Flags]
@@ -25,13 +35,4 @@ namespace DigitalOpus.MB.Core
 }
 namespace DigitalOpus.MB.Core
 {
-	public enum MB2_LogLevel
-	{
-		none,
-		error,
-		warn,
-		info,
-		debug,
-		trace
-	}
 }

@@ -1,5 +1,2 @@
-namespace UnityEngine.InputSystem;
-
-public interface IInputInteraction<TValue> : IInputInteraction where TValue : struct
-{
-}
+// Could not decompile UnityEngine.InputSystem.InputInteractionContext
+// This type uses unsupported IL or has too many generic parameters.

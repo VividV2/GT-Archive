@@ -1,51 +1,39 @@
 using System;
 using System.Collections.Generic;
 using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetPlayerCombinedInfoRequestParams : PlayFabBaseModel
 {
-	[Serializable]
-	public class GrantCharacterToUserRequest : PlayFabRequestCommon
-	{
-		public string CatalogVersion;
+	public bool GetCharacterInventories;
 
-		public string CharacterName;
+	public bool GetCharacterList;
 
-		public string ItemId;
-	}
-}
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class LoginWithFacebookRequest : PlayFabRequestCommon
-	{
-		public string AccessToken;
+	public bool GetPlayerProfile;
 
-		public bool? CreateAccount;
+	public bool GetPlayerStatistics;
 
-		public string EncryptedRequest;
+	public bool GetTitleData;
 
-		public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
+	public bool GetUserAccountInfo;
 
-		public string PlayerSecret;
+	public bool GetUserData;
 
-		public string TitleId;
-	}
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class GetPlayFabIDsFromGameCenterIDsRequest : PlayFabRequestCommon
-	{
-		public List<string> GameCenterIDs;
-	}
+	public bool GetUserInventory;
+
+	public bool GetUserReadOnlyData;
+
+	public bool GetUserVirtualCurrency;
+
+	public List<string> PlayerStatisticNames;
+
+	public PlayerProfileViewConstraints ProfileConstraints;
+
+	public List<string> TitleDataKeys;
+
+	public List<string> UserDataKeys;
+
+	public List<string> UserReadOnlyDataKeys;
 }

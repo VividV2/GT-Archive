@@ -1,7 +1,11 @@
-namespace Modio.Authentication
+using System;
+
+namespace Modio.Customizations;
+
+[Serializable]
+internal struct WssErrorObject
 {
-	public interface IPotentialModioEmailAuthService
-	{
-		bool IsEmailPlatform { get; }
-	}
+	public WssError error;
+
+	public string operation;
 }

@@ -1,3 +1,5 @@
+namespace Steamworks;
+
 namespace Steamworks
 {
 	public enum ERemoteStoragePublishedFileVisibility
@@ -7,7 +9,4 @@ namespace Steamworks
 		k_ERemoteStoragePublishedFileVisibilityPrivate,
 		k_ERemoteStoragePublishedFileVisibilityUnlisted
 	}
-}
-namespace Steamworks
-{
 }

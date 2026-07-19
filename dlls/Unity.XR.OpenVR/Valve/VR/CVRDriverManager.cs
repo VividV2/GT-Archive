@@ -1,12 +1,7 @@
 namespace Valve.VR;
 
-public enum ETrackedDeviceClass
+public enum VROverlayInputMethod
 {
-	Invalid,
-	HMD,
-	Controller,
-	GenericTracker,
-	TrackingReference,
-	DisplayRedirect,
-	Max
+	None,
+	Mouse
 }

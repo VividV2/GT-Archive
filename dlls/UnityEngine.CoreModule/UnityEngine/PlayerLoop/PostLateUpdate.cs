@@ -1,6 +1,9 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Playables;
+
+public enum DirectorUpdateMode
 {
-}
-namespace UnityEngine.DedicatedServer
-{
+	DSPClock,
+	GameTime,
+	UnscaledGameTime,
+	Manual
 }

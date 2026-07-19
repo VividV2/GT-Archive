@@ -1,10 +1,16 @@
-namespace System.CodeDom
+using System.Runtime.InteropServices;
+
+namespace System.Security.AccessControl;
+
+[Flags]
+[ComVisible(false)]
+public enum SemaphoreRights
 {
-}
-namespace Microsoft.Win32
-{
-	/// <summary>Represents the method that will handle the <see cref="E:Microsoft.Win32.SystemEvents.UserPreferenceChanged" /> event.</summary>
-	/// <param name="sender">The source of the event. When this event is raised by the <see cref="T:Microsoft.Win32.SystemEvents" /> class, this object is always <see langword="null" />.</param>
-	/// <param name="e">A <see cref="T:Microsoft.Win32.UserPreferenceChangedEventArgs" /> that contains the event data.</param>
-	public delegate void UserPreferenceChangedEventHandler(object sender, UserPreferenceChangedEventArgs e);
+	Modify = 2,
+	Delete = 0x10000,
+	ReadPermissions = 0x20000,
+	ChangePermissions = 0x40000,
+	TakeOwnership = 0x80000,
+	Synchronize = 0x100000,
+	FullControl = 0x1F0003
 }

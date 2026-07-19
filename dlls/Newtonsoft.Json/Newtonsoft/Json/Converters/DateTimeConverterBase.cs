@@ -1,2 +1,6 @@
-namespace Newtonsoft.Json.Schema;
-
+namespace Newtonsoft.Json.Serialization
+{
+}
+namespace Newtonsoft.Json.Schema
+{
+}

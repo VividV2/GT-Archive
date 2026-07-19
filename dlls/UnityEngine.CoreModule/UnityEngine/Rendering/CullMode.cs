@@ -1,11 +1,20 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine.Rendering;
-
-[NativeHeader("Runtime/GfxDevice/GfxDeviceTypes.h")]
-public enum CullMode
+namespace UnityEngine.Rendering
 {
-	Off,
-	Front,
-	Back
+	[NativeHeader("Runtime/GfxDevice/GfxDeviceTypes.h")]
+	public enum CullMode
+	{
+		Off,
+		Front,
+		Back
+	}
+}
+namespace UnityEngine.Rendering
+{
+	public enum CommandBufferExecutionFlags
+	{
+		None = 0,
+		AsyncCompute = 2
+	}
 }

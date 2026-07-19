@@ -1,2 +1,298 @@
-// Could not decompile Cysharp.Threading.Tasks.Linq.Any
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.ExceptionServices;
+using System.Runtime.InteropServices;
+using System.Threading;
+using Cysharp.Threading.Tasks.CompilerServices;
+
+namespace Cysharp.Threading.Tasks.Linq;
+
+internal static class Any
+{
+	[StructLayout(LayoutKind.Auto)]
+	[CompilerGenerated]
+	private struct <AnyAsync>d__1<TSource> : IAsyncStateMachine
+	{
+		public int <>1__state;
+
+		public AsyncUniTaskMethodBuilder<bool> <>t__builder;
+
+		public IUniTaskAsyncEnumerable<TSource> source;
+
+		public CancellationToken cancellationToken;
+
+		public Func<TSource, bool> predicate;
+
+		private IUniTaskAsyncEnumerator<TSource> <e>5__2;
+
+		private object <>7__wrap2;
+
+		private int <>7__wrap3;
+
+		private bool <>7__wrap4;
+
+		private UniTask<bool>.Awaiter <>u__1;
+
+		private UniTask.Awaiter <>u__2;
+
+		private void MoveNext()
+		{
+			int num = <>1__state;
+			bool result = default(bool);
+			try
+			{
+				UniTask.Awaiter awaiter;
+				if (num != 0)
+				{
+					if (num == 1)
+					{
+						awaiter = <>u__2;
+						<>u__2 = default(UniTask.Awaiter);
+						num = (<>1__state = -1);
+						goto IL_0149;
+					}
+					<e>5__2 = source.GetAsyncEnumerator(cancellationToken);
+					<>7__wrap2 = null;
+					<>7__wrap3 = 0;
+				}
+				try
+				{
+					if (num != 0)
+					{
+						goto IL_005d;
+					}
+					UniTask<bool>.Awaiter awaiter2 = <>u__1;
+					<>u__1 = default(UniTask<bool>.Awaiter);
+					num = (<>1__state = -1);
+					goto IL_00b9;
+					IL_00b9:
+					if (awaiter2.GetResult())
+					{
+						if (!predicate(<e>5__2.Current))
+						{
+							goto IL_005d;
+						}
+						<>7__wrap4 = true;
+					}
+					else
+					{
+						<>7__wrap4 = false;
+					}
+					<>7__wrap3 = 1;
+					goto end_IL_0037;
+					IL_005d:
+					awaiter2 = <e>5__2.MoveNextAsync().GetAwaiter();
+					if (!awaiter2.IsCompleted)
+					{
+						num = (<>1__state = 0);
+						<>u__1 = awaiter2;
+						<>t__builder.AwaitUnsafeOnCompleted(ref awaiter2, ref this);
+						return;
+					}
+					goto IL_00b9;
+					end_IL_0037:;
+				}
+				catch (object obj)
+				{
+					<>7__wrap2 = obj;
+				}
+				if (<e>5__2 != null)
+				{
+					awaiter = <e>5__2.DisposeAsync().GetAwaiter();
+					if (!awaiter.IsCompleted)
+					{
+						num = (<>1__state = 1);
+						<>u__2 = awaiter;
+						<>t__builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);
+						return;
+					}
+					goto IL_0149;
+				}
+				goto IL_0150;
+				IL_0149:
+				awaiter.GetResult();
+				goto IL_0150;
+				IL_0150:
+				object obj2 = <>7__wrap2;
+				if (obj2 != null)
+				{
+					ExceptionDispatchInfo.Capture((obj2 as Exception) ?? throw obj2).Throw();
+				}
+				int num2 = <>7__wrap3;
+				if (num2 == 1)
+				{
+					result = <>7__wrap4;
+				}
+				else
+				{
+					<>7__wrap2 = null;
+					<e>5__2 = null;
+				}
+			}
+			catch (Exception exception)
+			{
+				<>1__state = -2;
+				<e>5__2 = null;
+				<>t__builder.SetException(exception);
+				return;
+			}
+			<>1__state = -2;
+			<e>5__2 = null;
+			<>t__builder.SetResult(result);
+		}
+
+		void IAsyncStateMachine.MoveNext()
+		{
+			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+			this.MoveNext();
+		}
+
+		[DebuggerHidden]
+		private void SetStateMachine(IAsyncStateMachine stateMachine)
+		{
+			<>t__builder.SetStateMachine(stateMachine);
+		}
+
+		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
+		{
+			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
+			this.SetStateMachine(stateMachine);
+		}
+	}
+
+	internal static async UniTask<bool> AnyAsync<TSource>(IUniTaskAsyncEnumerable<TSource> source, CancellationToken cancellationToken)
+	{
+		IUniTaskAsyncEnumerator<TSource> e = source.GetAsyncEnumerator(cancellationToken);
+		object obj = null;
+		int num = 0;
+		bool result = default(bool);
+		try
+		{
+			result = ((await e.MoveNextAsync()) ? true : false);
+			num = 1;
+		}
+		catch (object obj2)
+		{
+			obj = obj2;
+		}
+		if (e != null)
+		{
+			await e.DisposeAsync();
+		}
+		object obj3 = obj;
+		if (obj3 != null)
+		{
+			ExceptionDispatchInfo.Capture((obj3 as Exception) ?? throw obj3).Throw();
+		}
+		if (num == 1)
+		{
+			return result;
+		}
+		bool result2 = default(bool);
+		return result2;
+	}
+
+	[AsyncStateMachine(typeof(<AnyAsync>d__1<>))]
+	internal static UniTask<bool> AnyAsync<TSource>(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, bool> predicate, CancellationToken cancellationToken)
+	{
+		<AnyAsync>d__1<TSource> stateMachine = default(<AnyAsync>d__1<TSource>);
+		stateMachine.<>t__builder = AsyncUniTaskMethodBuilder<bool>.Create();
+		stateMachine.source = source;
+		stateMachine.predicate = predicate;
+		stateMachine.cancellationToken = cancellationToken;
+		stateMachine.<>1__state = -1;
+		stateMachine.<>t__builder.Start(ref stateMachine);
+		return stateMachine.<>t__builder.Task;
+	}
+
+	internal static async UniTask<bool> AnyAwaitAsync<TSource>(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, UniTask<bool>> predicate, CancellationToken cancellationToken)
+	{
+		IUniTaskAsyncEnumerator<TSource> e = source.GetAsyncEnumerator(cancellationToken);
+		object obj = null;
+		int num = 0;
+		bool result = default(bool);
+		try
+		{
+			while (true)
+			{
+				if (await e.MoveNextAsync())
+				{
+					if (await predicate(e.Current))
+					{
+						result = true;
+						break;
+					}
+					continue;
+				}
+				result = false;
+				break;
+			}
+			num = 1;
+		}
+		catch (object obj2)
+		{
+			obj = obj2;
+		}
+		if (e != null)
+		{
+			await e.DisposeAsync();
+		}
+		object obj3 = obj;
+		if (obj3 != null)
+		{
+			ExceptionDispatchInfo.Capture((obj3 as Exception) ?? throw obj3).Throw();
+		}
+		if (num == 1)
+		{
+			return result;
+		}
+		bool result2 = default(bool);
+		return result2;
+	}
+
+	internal static async UniTask<bool> AnyAwaitWithCancellationAsync<TSource>(IUniTaskAsyncEnumerable<TSource> source, Func<TSource, CancellationToken, UniTask<bool>> predicate, CancellationToken cancellationToken)
+	{
+		IUniTaskAsyncEnumerator<TSource> e = source.GetAsyncEnumerator(cancellationToken);
+		object obj = null;
+		int num = 0;
+		bool result = default(bool);
+		try
+		{
+			while (true)
+			{
+				if (await e.MoveNextAsync())
+				{
+					if (await predicate(e.Current, cancellationToken))
+					{
+						result = true;
+						break;
+					}
+					continue;
+				}
+				result = false;
+				break;
+			}
+			num = 1;
+		}
+		catch (object obj2)
+		{
+			obj = obj2;
+		}
+		if (e != null)
+		{
+			await e.DisposeAsync();
+		}
+		object obj3 = obj;
+		if (obj3 != null)
+		{
+			ExceptionDispatchInfo.Capture((obj3 as Exception) ?? throw obj3).Throw();
+		}
+		if (num == 1)
+		{
+			return result;
+		}
+		bool result2 = default(bool);
+		return result2;
+	}
+}

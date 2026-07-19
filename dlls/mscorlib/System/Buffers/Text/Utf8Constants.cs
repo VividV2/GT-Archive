@@ -1,8 +1,2 @@
-namespace System.IO;
-
-internal enum SearchTarget
-{
-	Files = 1,
-	Directories,
-	Both
-}
+// Could not decompile System.Buffers.Text.Utf8Constants
+// This type uses unsupported IL or has too many generic parameters.

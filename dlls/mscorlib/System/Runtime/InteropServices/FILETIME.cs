@@ -1,3 +1,3 @@
-namespace System.Security.Policy
+namespace System.Runtime.InteropServices
 {
 }

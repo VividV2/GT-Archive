@@ -1,20 +1,6 @@
-namespace System.ComponentModel
-{
-}
-namespace System.ComponentModel.Design
-{
-	public interface IDesignerEventService
-	{
-		IDesignerHost ActiveDesigner { get; }
+namespace System.ComponentModel.Design;
 
-		DesignerCollection Designers { get; }
-
-		event ActiveDesignerEventHandler ActiveDesignerChanged;
-
-		event DesignerEventHandler DesignerCreated;
-
-		event DesignerEventHandler DesignerDisposed;
-
-		event EventHandler SelectionChanged;
-	}
-}
+/// <summary>Represents the method that will handle the <see cref="E:System.ComponentModel.Design.IDesignerEventService.ActiveDesignerChanged" /> event.</summary>
+/// <param name="sender">The source of the event.</param>
+/// <param name="e">An <see cref="T:System.ComponentModel.Design.ActiveDesignerEventArgs" /> that contains the event data.</param>
+public delegate void ActiveDesignerEventHandler(object sender, ActiveDesignerEventArgs e);

@@ -1,24 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using WebSocketSharp.Net.WebSockets;
-using System;
-using WebSocketSharp.Net.WebSockets;
 
-namespace WebSocketSharp.Server;
-
-public interface IWebSocketSession
-{
-	WebSocketState ConnectionState { get; }
-
-	WebSocketContext Context { get; }
-
-	string ID { get; }
-
-	string Protocol { get; }
-
-	DateTime StartTime { get; }
-}
 namespace WebSocketSharp.Server
 {
 	public class WebSocketServiceManager
@@ -317,4 +300,7 @@ namespace WebSocketSharp.Server
 			return InternalTryGetServiceHost(path, out host);
 		}
 	}
+}
+namespace WebSocketSharp.Net
+{
 }

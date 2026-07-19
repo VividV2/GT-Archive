@@ -1,12 +1,3 @@
-namespace System.Runtime.Serialization.Json;
-
-internal enum JsonNodeType
+namespace System.Runtime.Serialization.Json
 {
-	None,
-	Object,
-	Element,
-	EndElement,
-	QuotedText,
-	StandaloneText,
-	Collection
 }

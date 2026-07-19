@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.Rendering.UnifiedRayTracing.HardwareRayTracingBackend
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Sampling
+{
+}
+namespace UnityEngine.Rendering.UnifiedRayTracing
+{
+}

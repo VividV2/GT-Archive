@@ -1,30 +1,13 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine;
+
+public enum RuntimeInitializeLoadType
 {
-	public enum GraphicsFenceType
-	{
-		AsyncQueueSynchronisation,
-		CPUSynchronisation
-	}
-}
-namespace UnityEngine.Rendering
-{
-	public enum ReflectionProbeUsage
-	{
-		Off,
-		BlendProbes,
-		BlendProbesAndSkybox,
-		Simple
-	}
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
+	AfterSceneLoad,
+	BeforeSceneLoad,
+	AfterAssembliesLoaded,
+	BeforeSplashScreen,
+	SubsystemRegistration
 }
 namespace UnityEngine
-{
-}
-namespace UnityEngine.Rendering
 {
 }

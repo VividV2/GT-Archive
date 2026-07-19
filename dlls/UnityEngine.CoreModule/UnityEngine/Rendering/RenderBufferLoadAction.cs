@@ -1,9 +1,17 @@
-namespace UnityEngine
+namespace UnityEngine.Rendering
 {
+	public enum RenderBufferLoadAction
+	{
+		Load,
+		Clear,
+		DontCare
+	}
 }
-namespace UnityEngine.Windows
+namespace UnityEngine.Rendering
 {
-}
-namespace UnityEngine
-{
+	public enum ReflectionProbeClearFlags
+	{
+		Skybox = 1,
+		SolidColor
+	}
 }

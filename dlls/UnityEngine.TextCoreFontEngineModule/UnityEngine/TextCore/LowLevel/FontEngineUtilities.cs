@@ -1,17 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace UnityEngine.TextCore.LowLevel;
-
-[StructLayout(LayoutKind.Sequential, Size = 1)]
-internal struct FontEngineUtilities
-{
-	internal static bool Approximately(float a, float b)
-	{
-		return Mathf.Abs(a - b) < 0.001f;
-	}
-
-	internal static int MaxValue(int a, int b, int c)
-	{
-		return (a >= b) ? ((a < c) ? c : a) : ((b < c) ? c : b);
-	}
-}
+// Could not decompile UnityEngine.TextCore.LowLevel.FontEngineUtilities
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,11 +1,15 @@
-namespace UnityEngine;
-
-public enum PrimitiveType
+namespace UnityEngine
 {
-	Sphere,
-	Capsule,
-	Cylinder,
-	Cube,
-	Plane,
-	Quad
+}
+namespace UnityEngine
+{
+	public enum PrimitiveType
+	{
+		Sphere,
+		Capsule,
+		Cylinder,
+		Cube,
+		Plane,
+		Quad
+	}
 }

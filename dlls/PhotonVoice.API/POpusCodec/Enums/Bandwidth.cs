@@ -1,14 +1,10 @@
-namespace Photon.Voice.Unity
+namespace POpusCodec.Enums;
+
+public enum Bandwidth
 {
-}
-namespace POpusCodec.Enums
-{
-	public enum Bandwidth
-	{
-		Narrowband = 1101,
-		Mediumband,
-		Wideband,
-		SuperWideband,
-		Fullband
-	}
+	Narrowband = 1101,
+	Mediumband,
+	Wideband,
+	SuperWideband,
+	Fullband
 }

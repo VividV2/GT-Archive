@@ -1,10 +1,2 @@
-namespace System.IO;
-
-internal interface IFileWatcher
-{
-	void StartDispatching(object fsw);
-
-	void StopDispatching(object fsw);
-
-	void Dispose(object fsw);
-}
+// Could not decompile System.IO.IFileWatcher
+// This type uses unsupported IL or has too many generic parameters.

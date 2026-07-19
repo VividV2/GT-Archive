@@ -1,22 +1,2 @@
-namespace g3
-{
-}
-namespace g3
-{
-	public interface IMultigridIndexer2
-	{
-		GridLevelIndex2 ToBlock(Vector2i outer_index);
-
-		Vector2i ToBlockIndex(Vector2i outer_index);
-
-		Vector2i ToBlockLocal(Vector2i outer_index);
-
-		Vector2i FromBlock(Vector2i block_idx);
-	}
-}
-namespace gs
-{
-}
-namespace g3
-{
-}
+// Could not decompile g3.GeneralPolygon2dBoxTree
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,10 @@
-// Could not decompile System.Security.Authentication.ExtendedProtection.Configuration.ConfigUtil
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net;
+
+internal enum CookieVariant
+{
+	Unknown = 0,
+	Plain = 1,
+	Rfc2109 = 2,
+	Rfc2965 = 3,
+	Default = 2
+}

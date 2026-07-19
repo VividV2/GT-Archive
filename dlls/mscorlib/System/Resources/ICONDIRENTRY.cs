@@ -1,2 +1,7 @@
-// Could not decompile System.Resources.ICONDIRENTRY
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Reflection
+{
+	internal delegate R Getter<T, R>(T _this);
+}
+namespace System.Reflection
+{
+}

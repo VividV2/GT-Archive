@@ -1,6 +1,2 @@
-namespace System.Reflection
-{
-}
-namespace System.Resources
-{
-}
+namespace System.Text;
+

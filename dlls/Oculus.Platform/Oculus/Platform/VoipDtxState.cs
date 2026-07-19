@@ -1,13 +1,17 @@
 using System.ComponentModel;
 
-namespace Oculus.Platform;
-
-public enum VoipDtxState
+namespace Oculus.Platform
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("ENABLED")]
-	Enabled,
-	[Description("DISABLED")]
-	Disabled
+	public enum VoipDtxState
+	{
+		[Description("UNKNOWN")]
+		Unknown,
+		[Description("ENABLED")]
+		Enabled,
+		[Description("DISABLED")]
+		Disabled
+	}
+}
+namespace Oculus.Platform.Models
+{
 }

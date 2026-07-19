@@ -1,9 +1,2 @@
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-}
+namespace UnityEngine.Bindings;
+

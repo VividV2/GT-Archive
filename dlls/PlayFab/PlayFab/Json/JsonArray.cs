@@ -1,18 +1,16 @@
-namespace PlayFab.Public
+using System;
+using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class GetRemoteLoginEndpointRequest : PlayFabRequestCommon
 {
-	public interface IScreenTimeTracker
-	{
-		void OnEnable();
+	public string BuildId;
 
-		void OnDisable();
+	public string Region;
 
-		void OnDestroy();
-
-		void OnApplicationQuit();
-
-		void OnApplicationFocus(bool isFocused);
-
-		void ClientSessionStart(string entityId, string entityType, string playFabUserId);
-
-		void Send();
-	}
+	public string VmId;
+}

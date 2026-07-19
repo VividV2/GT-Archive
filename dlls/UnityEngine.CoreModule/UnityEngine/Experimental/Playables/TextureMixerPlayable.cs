@@ -1,10 +1,2 @@
-namespace UnityEngine.Experimental.Rendering;
-
-public enum RayTracingMode
-{
-	Off,
-	Static,
-	DynamicTransform,
-	DynamicGeometry,
-	DynamicGeometryManualUpdate
-}
+// Could not decompile UnityEngine.Experimental.Playables.TextureMixerPlayable
+// This type uses unsupported IL or has too many generic parameters.

@@ -10,3 +10,6 @@ internal interface IXsltDebugger
 
 	void OnInstructionExecute(IXsltProcessor xsltProcessor);
 }
+namespace MS.Internal.Xml.XPath
+{
+}

@@ -1,12 +1,8 @@
-namespace UnityEngine.Rendering
-{
-	internal struct IndirectBufferLimits
-	{
-		public int maxInstanceCount;
+namespace UnityEngine.Rendering;
 
-		public int maxDrawCount;
-	}
-}
-namespace UnityEngine.Rendering
+internal struct IndirectBufferLimits
 {
+	public int maxInstanceCount;
+
+	public int maxDrawCount;
 }

@@ -1,20 +1,2 @@
-namespace UnityEngine.Rendering.RadeonRays;
-
-internal struct Instance
-{
-	public uint meshAccelStructOffset;
-
-	public uint instanceMask;
-
-	public uint vertexOffset;
-
-	public uint meshAccelStructLeavesOffset;
-
-	public bool triangleCullingEnabled;
-
-	public bool invertTriangleCulling;
-
-	public uint userInstanceID;
-
-	public Transform localToWorldTransform;
-}
+// Could not decompile UnityEngine.Rendering.RadeonRays.HlbvhBuilder
+// This type uses unsupported IL or has too many generic parameters.

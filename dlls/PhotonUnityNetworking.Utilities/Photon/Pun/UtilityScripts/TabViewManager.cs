@@ -1,2 +1,13 @@
-// Could not decompile Photon.Pun.UtilityScripts.TabViewManager
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine;
+using UnityEngine;
+
+namespace Photon.Pun.UtilityScripts;
+
+public class OnStartDelete : MonoBehaviour
+{
+	private void Start()
+	{
+		Object.Destroy(base.gameObject);
+	}
+}

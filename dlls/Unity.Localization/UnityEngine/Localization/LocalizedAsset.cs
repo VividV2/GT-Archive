@@ -1,2 +1,18 @@
-// Could not decompile UnityEngine.Localization.LocalizedAsset`1
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.UI;
+using System;
+using UnityEngine.UI;
+
+namespace UnityEngine.Localization.PropertyVariants.TrackedObjects;
+
+[Serializable]
+[DisplayName("UI Dropdown", null)]
+[CustomTrackedObject(typeof(Dropdown), true)]
+public class TrackedUGuiDropdown : JsonSerializerTrackedObject
+{
+	protected override void PostApplyTrackedProperties()
+	{
+		((Dropdown)base.Target).RefreshShownValue();
+		base.PostApplyTrackedProperties();
+	}
+}

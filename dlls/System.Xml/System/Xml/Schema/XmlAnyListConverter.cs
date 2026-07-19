@@ -1,2 +1,6 @@
-namespace MS.Internal.Xml.XPath;
-
+namespace System.Xml
+{
+}
+namespace System.Xml.Schema
+{
+}

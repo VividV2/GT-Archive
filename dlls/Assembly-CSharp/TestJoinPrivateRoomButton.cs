@@ -1,2 +1,2 @@
-namespace com.AnotherAxiom.MonkeArcade.Joust;
-
+// Could not decompile TestJoinPrivateRoomButton
+// This type uses unsupported IL or has too many generic parameters.

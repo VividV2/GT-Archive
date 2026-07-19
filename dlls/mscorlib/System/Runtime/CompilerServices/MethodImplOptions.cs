@@ -1,5 +1,3 @@
-namespace System.Runtime.CompilerServices;
-
-internal interface IConfiguredTaskAwaiter
+namespace System.Runtime.CompilerServices
 {
 }

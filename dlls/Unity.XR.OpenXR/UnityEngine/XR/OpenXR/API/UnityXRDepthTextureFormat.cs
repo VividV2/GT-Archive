@@ -1,9 +1,10 @@
-namespace UnityEngine.XR.OpenXR.API
+namespace UnityEngine.XR.OpenXR.NativeTypes
 {
-	public enum UnityXRShadingRateFormat
+	public enum XrEnvironmentBlendMode
 	{
-		kUnityXRShadingRateFormatNone,
-		kUnityXRShadingRateR8G8
+		Opaque = 1,
+		Additive,
+		AlphaBlend
 	}
 }
 namespace UnityEngine.XR.OpenXR.API
@@ -15,4 +16,7 @@ namespace UnityEngine.XR.OpenXR.API
 		kUnityXRDepthTextureFormatReference,
 		kUnityXRDepthTextureFormatNone
 	}
+}
+namespace UnityEngine.XR.OpenXR.Features.Interactions
+{
 }

@@ -1,8 +1,2 @@
-using System;
-
-namespace Fusion;
-
-[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-public sealed class NetworkDeserializeMethodAttribute : Attribute
-{
-}
+// Could not decompile Fusion.NetworkDeserializeMethodAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -2,9 +2,6 @@ using System.Collections.Generic;
 
 namespace UnityEngine.UIElements
 {
-}
-namespace UnityEngine.UIElements
-{
 	internal interface ILiveReloadAssetTracker<T> where T : ScriptableObject
 	{
 		int StartTrackingAsset(T asset);
@@ -23,9 +20,6 @@ namespace UnityEngine.UIElements
 
 		void OnTrackedAssetChanged();
 	}
-}
-namespace UnityEngine.UIElements
-{
 }
 namespace UnityEngine.UIElements
 {

@@ -1,2 +1,2 @@
-namespace MS.Internal.Xml.Cache;
+namespace System.Xml.Serialization;
 

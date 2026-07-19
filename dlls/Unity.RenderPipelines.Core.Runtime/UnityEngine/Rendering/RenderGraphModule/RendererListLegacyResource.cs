@@ -1,14 +1,2 @@
-namespace UnityEngine.Rendering.RenderGraphModule;
-
-internal struct RendererListLegacyResource
-{
-	public RendererList rendererList;
-
-	public bool isActive;
-
-	internal RendererListLegacyResource(in bool active = false)
-	{
-		rendererList = default(RendererList);
-		isActive = active;
-	}
-}
+// Could not decompile UnityEngine.Rendering.RenderGraphModule.RendererListLegacyResource
+// This type uses unsupported IL or has too many generic parameters.

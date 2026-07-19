@@ -1,28 +1,35 @@
 using System.Diagnostics;
 
-namespace System.Collections.Generic;
-
-internal sealed class CollectionDebugView<T>
+namespace System.Collections.Generic
 {
-	private readonly ICollection<T> _collection;
-
-	[DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
-	public T[] Items
+	internal sealed class CollectionDebugView<T>
 	{
-		get
+		private readonly ICollection<T> _collection;
+
+		[DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
+		public T[] Items
 		{
-			T[] array = new T[_collection.Count];
-			_collection.CopyTo(array, 0);
-			return array;
+			get
+			{
+				T[] array = new T[_collection.Count];
+				_collection.CopyTo(array, 0);
+				return array;
+			}
+		}
+
+		public CollectionDebugView(ICollection<T> collection)
+		{
+			if (collection == null)
+			{
+				throw new ArgumentNullException("collection");
+			}
+			_collection = collection;
 		}
 	}
-
-	public CollectionDebugView(ICollection<T> collection)
-	{
-		if (collection == null)
-		{
-			throw new ArgumentNullException("collection");
-		}
-		_collection = collection;
-	}
+}
+namespace System.Net.WebSockets
+{
+}
+namespace System.ComponentModel
+{
 }

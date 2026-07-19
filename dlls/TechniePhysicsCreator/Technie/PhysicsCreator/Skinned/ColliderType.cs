@@ -1,13 +1,9 @@
-namespace Technie.PhysicsCreator.Skinned
+namespace Technie.PhysicsCreator.Skinned;
+
+public enum ColliderType
 {
-	public enum ColliderType
-	{
-		Convex,
-		Capsule,
-		Box,
-		Sphere
-	}
-}
-namespace Technie.PhysicsCreator.Skinned
-{
+	Convex,
+	Capsule,
+	Box,
+	Sphere
 }

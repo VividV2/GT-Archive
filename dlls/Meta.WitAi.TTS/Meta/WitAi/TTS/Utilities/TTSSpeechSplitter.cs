@@ -1,11 +1,2 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-
-namespace Meta.WitAi.TTS.Utilities;
-
-public interface ITTSPhraseProvider
-{
-	List<string> GetVoiceIds();
-
-	List<string> GetVoicePhrases(string voiceId);
-}
+// Could not decompile Meta.WitAi.TTS.Utilities.TTSSpeechSplitter
+// This type uses unsupported IL or has too many generic parameters.

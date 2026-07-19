@@ -1,2 +1,6 @@
-namespace System.ComponentModel.Composition.Hosting;
-
+namespace System.ComponentModel.Composition
+{
+}
+namespace System.ComponentModel.Composition.ReflectionModel
+{
+}

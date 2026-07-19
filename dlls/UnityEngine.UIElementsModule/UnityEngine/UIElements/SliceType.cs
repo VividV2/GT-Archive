@@ -1,20 +1,7 @@
-using System;
-using System;
+namespace UnityEngine.UIElements;
 
-namespace UnityEngine.UIElements
+public enum SliceType
 {
-	public interface IVisualElementScheduler
-	{
-		IVisualElementScheduledItem Execute(Action<TimerState> timerUpdateEvent);
-
-		IVisualElementScheduledItem Execute(Action updateEvent);
-	}
-}
-namespace UnityEngine.UIElements
-{
-	public enum SliceType
-	{
-		Sliced,
-		Tiled
-	}
+	Sliced,
+	Tiled
 }

@@ -1,9 +1,21 @@
-namespace UnityEngine.InputSystem.UI;
-
-public enum UIPointerType
+namespace UnityEngine.InputSystem.XR
 {
-	None,
-	MouseOrPen,
-	Touch,
-	Tracked
+	public static class XRUtilities
+	{
+		public const string InterfaceMatchAnyVersion = "^(XRInput)";
+
+		public const string InterfaceV1 = "XRInput";
+
+		public const string InterfaceCurrent = "XRInputV1";
+	}
+}
+namespace UnityEngine.InputSystem.UI
+{
+	public enum UIPointerType
+	{
+		None,
+		MouseOrPen,
+		Touch,
+		Tracked
+	}
 }

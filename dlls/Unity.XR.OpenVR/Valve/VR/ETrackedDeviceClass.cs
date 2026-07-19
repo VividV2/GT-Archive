@@ -1,12 +1,26 @@
-namespace Valve.VR;
-
-public enum ETrackedDeviceClass
+namespace Valve.VR
 {
-	Invalid,
-	HMD,
-	Controller,
-	GenericTracker,
-	TrackingReference,
-	DisplayRedirect,
-	Max
+	public enum VRMessageOverlayResponse
+	{
+		ButtonPress_0,
+		ButtonPress_1,
+		ButtonPress_2,
+		ButtonPress_3,
+		CouldntFindSystemOverlay,
+		CouldntFindOrCreateClientOverlay,
+		ApplicationQuit
+	}
+}
+namespace Valve.VR
+{
+	public enum ETrackedDeviceClass
+	{
+		Invalid,
+		HMD,
+		Controller,
+		GenericTracker,
+		TrackingReference,
+		DisplayRedirect,
+		Max
+	}
 }

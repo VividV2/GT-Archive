@@ -1,16 +1,9 @@
-using System;
-using System;
+namespace Unity.Cinemachine;
 
-namespace Unity.Cinemachine
+internal enum FillRule
 {
-	internal class ClipperLibException : Exception
-	{
-		public ClipperLibException(string description)
-			: base(description)
-		{
-		}
-	}
-}
-namespace Unity.Cinemachine
-{
+	EvenOdd,
+	NonZero,
+	Positive,
+	Negative
 }

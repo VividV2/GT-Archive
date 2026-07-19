@@ -1,63 +1,91 @@
+using System.ComponentModel;
+using System.Globalization;
+using System.ComponentModel;
+using System.Globalization;
+
 namespace System.Configuration;
 
-/// <summary>Represents a configuration element that contains a key/value pair.</summary>
-public class KeyValueConfigurationElement : ConfigurationElement
+/// <summary>Specifies the level in the configuration hierarchy where a configuration property value originated.</summary>
+/// <summary>Specifies the level in the configuration hierarchy where a configuration property value originated.</summary>
+/// <summary>Specifies the level in the configuration hierarchy where a configuration property value originated.</summary>
+/// <summary>Specifies the level in the configuration hierarchy where a configuration property value originated.</summary>
+public enum PropertyValueOrigin
 {
-	private static ConfigurationProperty keyProp;
-
-	private static ConfigurationProperty valueProp;
-
-	private static ConfigurationPropertyCollection properties;
-
-	/// <summary>Gets the key of the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> object.</summary>
-	/// <returns>The key of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</returns>
-	[ConfigurationProperty("key", DefaultValue = "", Options = ConfigurationPropertyOptions.IsKey)]
-	public string Key => (string)base[keyProp];
-
-	/// <summary>Gets or sets the value of the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> object.</summary>
-	/// <returns>The value of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</returns>
-	[ConfigurationProperty("value", DefaultValue = "")]
-	public string Value
+	/// <summary>The configuration property value originates from the <see cref="P:System.Configuration.ConfigurationProperty.DefaultValue" /> property.</summary>
+	/// <summary>The configuration property value originates from the <see cref="P:System.Configuration.ConfigurationProperty.DefaultValue" /> property.</summary>
+	/// <summary>The configuration property value originates from the <see cref="P:System.Configuration.ConfigurationProperty.DefaultValue" /> property.</summary>
+	/// <summary>The configuration property value originates from the <see cref="P:System.Configuration.ConfigurationProperty.DefaultValue" /> property.</summary>
+	Default,
+	/// <summary>The configuration property value is inherited from a parent level in the configuration.</summary>
+	/// <summary>The configuration property value is inherited from a parent level in the configuration.</summary>
+	/// <summary>The configuration property value is inherited from a parent level in the configuration.</summary>
+	/// <summary>The configuration property value is inherited from a parent level in the configuration.</summary>
+	Inherited,
+	/// <summary>The configuration property value is defined at the current level of the hierarchy.</summary>
+	/// <summary>The configuration property value is defined at the current level of the hierarchy.</summary>
+	/// <summary>The configuration property value is defined at the current level of the hierarchy.</summary>
+	/// <summary>The configuration property value is defined at the current level of the hierarchy.</summary>
+	SetHere
+}
+namespace System.Configuration
+{
+	/// <summary>Converts a time span expressed in seconds.</summary>
+	/// <summary>Converts a time span expressed in seconds.</summary>
+	public class TimeSpanSecondsConverter : ConfigurationConverterBase
 	{
-		get
+		/// <summary>Converts a <see cref="T:System.String" /> to a <see cref="T:System.TimeSpan" />.</summary>
+		/// <param name="ctx">The <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> object used for type conversions.</param>
+		/// <param name="ci">The <see cref="T:System.Globalization.CultureInfo" /> object used during conversion.</param>
+		/// <param name="data">The <see cref="T:System.String" /> object to convert.</param>
+		/// <returns>The <see cref="T:System.TimeSpan" /> representing the <paramref name="data" /> parameter in seconds.</returns>
+		/// <exception cref="T:System.ArgumentException">
+		///   <paramref name="data" /> cannot be parsed as an integer value.</exception>
+		/// <summary>Converts a <see cref="T:System.String" /> to a <see cref="T:System.TimeSpan" />.</summary>
+		/// <param name="ctx">The <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> object used for type conversions.</param>
+		/// <param name="ci">The <see cref="T:System.Globalization.CultureInfo" /> object used during conversion.</param>
+		/// <param name="data">The <see cref="T:System.String" /> object to convert.</param>
+		/// <returns>The <see cref="T:System.TimeSpan" /> representing the <paramref name="data" /> parameter in seconds.</returns>
+		/// <exception cref="T:System.ArgumentException">
+		///   <paramref name="data" /> cannot be parsed as an integer value.</exception>
+		public override object ConvertFrom(ITypeDescriptorContext ctx, CultureInfo ci, object data)
 		{
-			return (string)base[valueProp];
+			if (!(data is string))
+			{
+				throw new ArgumentException("data");
+			}
+			if (!long.TryParse((string)data, out var result))
+			{
+				throw new ArgumentException("data");
+			}
+			long result;
+			return TimeSpan.FromSeconds(result);
 		}
-		set
+
+		/// <summary>Converts a <see cref="T:System.TimeSpan" /> to a <see cref="T:System.String" />.</summary>
+		/// <param name="ctx">The <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> object used for type conversions.</param>
+		/// <param name="ci">The <see cref="T:System.Globalization.CultureInfo" /> object used during conversion.</param>
+		/// <param name="value">The value to convert to.</param>
+		/// <param name="type">The type to convert to.</param>
+		/// <returns>The <see cref="T:System.String" /> that represents the <paramref name="value" /> parameter in minutes.</returns>
+		/// <summary>Converts a <see cref="T:System.TimeSpan" /> to a <see cref="T:System.String" />.</summary>
+		/// <param name="ctx">The <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> object used for type conversions.</param>
+		/// <param name="ci">The <see cref="T:System.Globalization.CultureInfo" /> object used during conversion.</param>
+		/// <param name="value">The value to convert to.</param>
+		/// <param name="type">The type to convert to.</param>
+		/// <returns>The <see cref="T:System.String" /> that represents the <paramref name="value" /> parameter in minutes.</returns>
+		public override object ConvertTo(ITypeDescriptorContext ctx, CultureInfo ci, object value, Type type)
 		{
-			base[valueProp] = value;
+			if (value.GetType() != typeof(TimeSpan))
+			{
+				throw new ArgumentException();
+			}
+			return ((long)((TimeSpan)value).TotalSeconds).ToString();
 		}
-	}
 
-	/// <summary>Gets the collection of properties.</summary>
-	/// <returns>The <see cref="T:System.Configuration.ConfigurationPropertyCollection" /> of properties for the element.</returns>
-	protected internal override ConfigurationPropertyCollection Properties => properties;
-
-	static KeyValueConfigurationElement()
-	{
-		keyProp = new ConfigurationProperty("key", typeof(string), "", ConfigurationPropertyOptions.IsKey);
-		valueProp = new ConfigurationProperty("value", typeof(string), "");
-		properties = new ConfigurationPropertyCollection();
-		properties.Add(keyProp);
-		properties.Add(valueProp);
-	}
-
-	internal KeyValueConfigurationElement()
-	{
-	}
-
-	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> class based on the supplied parameters.</summary>
-	/// <param name="key">The key of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</param>
-	/// <param name="value">The value of the <see cref="T:System.Configuration.KeyValueConfigurationElement" />.</param>
-	public KeyValueConfigurationElement(string key, string value)
-	{
-		base[keyProp] = key;
-		base[valueProp] = value;
-	}
-
-	/// <summary>Sets the <see cref="T:System.Configuration.KeyValueConfigurationElement" /> object to its initial state.</summary>
-	[System.MonoTODO]
-	protected internal override void Init()
-	{
+		/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.TimeSpanSecondsConverter" /> class.</summary>
+		/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.TimeSpanSecondsConverter" /> class.</summary>
+		public TimeSpanSecondsConverter()
+		{
+		}
 	}
 }

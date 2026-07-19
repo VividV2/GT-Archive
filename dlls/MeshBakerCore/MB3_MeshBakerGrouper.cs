@@ -1,3 +1,2 @@
-namespace DigitalOpus.MB.Core;
-
-public delegate void ProgressUpdateDelegate(string msg, float progress);
+// Could not decompile MB3_MeshBakerGrouper
+// This type uses unsupported IL or has too many generic parameters.

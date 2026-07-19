@@ -1,11 +1,3 @@
-using System.Runtime.InteropServices;
-
-namespace System.EnterpriseServices;
-
-[Serializable]
-[ComVisible(false)]
-public enum TransactionVote
+namespace System.EnterpriseServices.CompensatingResourceManager
 {
-	Abort = 1,
-	Commit = 0
 }

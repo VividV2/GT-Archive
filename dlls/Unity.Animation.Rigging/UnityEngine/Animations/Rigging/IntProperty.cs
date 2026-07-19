@@ -1,2 +1,26 @@
-// Could not decompile UnityEngine.Animations.Rigging.IntProperty
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Animations.Rigging
+{
+	public interface IChainIKConstraintData
+	{
+		Transform root { get; }
+
+		Transform tip { get; }
+
+		Transform target { get; }
+
+		int maxIterations { get; }
+
+		float tolerance { get; }
+
+		bool maintainTargetPositionOffset { get; }
+
+		bool maintainTargetRotationOffset { get; }
+
+		string chainRotationWeightFloatProperty { get; }
+
+		string tipRotationWeightFloatProperty { get; }
+	}
+}
+namespace UnityEngine.Animations.Rigging
+{
+}

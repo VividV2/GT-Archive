@@ -1,11 +1,2 @@
-using Unity.Burst;
-using UnityEngine;
-
-internal static class $BurstDirectCallInitializer
-{
-	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
-	private static void Initialize()
-	{
-		BurstCompilerOptions options = BurstCompiler.Options;
-	}
-}
+// Could not decompile $BurstDirectCallInitializer
+// This type uses unsupported IL or has too many generic parameters.

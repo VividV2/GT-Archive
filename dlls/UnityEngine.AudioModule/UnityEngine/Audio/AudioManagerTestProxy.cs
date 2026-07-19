@@ -1,16 +1,2 @@
-using System.Runtime.CompilerServices;
-using UnityEngine.Bindings;
-
-namespace UnityEngine.Audio
-{
-	[NativeHeader("Modules/Audio/Public/ScriptBindings/Audio.bindings.h")]
-	internal sealed class AudioManagerTestProxy
-	{
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[NativeMethod(Name = "AudioManagerTestProxy::ComputeAudibilityConsistency", IsFreeFunction = true)]
-		internal static extern bool ComputeAudibilityConsistency();
-	}
-}
-namespace UnityEngine
-{
-}
+// Could not decompile UnityEngine.Audio.AudioManagerTestProxy
+// This type uses unsupported IL or has too many generic parameters.

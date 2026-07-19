@@ -1,2 +1,2 @@
-namespace GorillaTag.MonkeFX;
-
+// Could not decompile GorillaActionButton
+// This type uses unsupported IL or has too many generic parameters.

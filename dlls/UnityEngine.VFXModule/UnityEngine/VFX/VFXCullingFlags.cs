@@ -1,8 +1,12 @@
+using System;
+
 namespace UnityEngine.VFX;
 
-public enum VFXSpace
+[Flags]
+internal enum VFXCullingFlags
 {
-	None = -1,
-	Local,
-	World
+	CullNone = 0,
+	CullSimulation = 1,
+	CullBoundsUpdate = 2,
+	CullDefault = 3
 }

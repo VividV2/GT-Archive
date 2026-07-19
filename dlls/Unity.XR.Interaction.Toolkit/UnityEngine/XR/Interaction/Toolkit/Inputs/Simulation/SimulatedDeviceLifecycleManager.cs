@@ -1,9 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Readers
-{
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Readers
-{
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Interactors
-{
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.SimulatedDeviceLifecycleManager
+// This type uses unsupported IL or has too many generic parameters.

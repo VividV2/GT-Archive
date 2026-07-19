@@ -1,14 +1,2 @@
-using System.Threading.Tasks;
-
-namespace Modio.Customizations;
-
-public interface IOculusCredentialProvider
-{
-	Task<(Error, string)> GetOculusUserId();
-
-	Task<string> GetOculusAccessToken();
-
-	Task<string> GetOculusUserProof();
-
-	string GetOculusDevice();
-}
+// Could not decompile Modio.Customizations.IOculusCredentialProvider
+// This type uses unsupported IL or has too many generic parameters.

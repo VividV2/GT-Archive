@@ -1,2 +1,14 @@
-// Could not decompile Liv.Lck.Core.InteropUtilities
-// This type uses unsupported IL or has too many generic parameters.
+namespace Liv.Lck.Core;
+
+internal enum CosmeticsReturnCode : uint
+{
+	Ok,
+	Panic,
+	FailedToRetrieveState,
+	InvalidArgument,
+	BackendError,
+	FailedToCacheCosmetics,
+	FailedToNotifyOnCosmeticAvailable,
+	MutexLockError,
+	Unauthorized
+}

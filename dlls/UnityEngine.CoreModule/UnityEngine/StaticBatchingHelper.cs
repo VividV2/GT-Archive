@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.StaticBatchingHelper
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System;
+
+namespace UnityEngine;
+
+public interface ILogHandler
+{
+	void LogFormat(LogType logType, Object context, string format, params object[] args);
+
+	void LogException(Exception exception, Object context);
+}

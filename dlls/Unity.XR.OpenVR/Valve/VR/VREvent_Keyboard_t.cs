@@ -1,26 +1,15 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
+using System;
+using System;
 
 namespace Valve.VR;
 
-public struct InputAnalogActionData_t
+public struct NotificationBitmap_t
 {
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bActive;
+	public IntPtr m_pImageData;
 
-	public ulong activeOrigin;
+	public int m_nWidth;
 
-	public float x;
+	public int m_nHeight;
 
-	public float y;
-
-	public float z;
-
-	public float deltaX;
-
-	public float deltaY;
-
-	public float deltaZ;
-
-	public float fUpdateTime;
+	public int m_nBytesPerPixel;
 }

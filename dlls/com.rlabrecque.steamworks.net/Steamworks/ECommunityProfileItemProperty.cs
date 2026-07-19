@@ -1,81 +1,10 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
 namespace Steamworks
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(3414)]
-	public struct AddAppDependencyResult_t
+	public enum ELeaderboardSortMethod
 	{
-		public const int k_iCallback = 3414;
-
-		public EResult m_eResult;
-
-		public PublishedFileId_t m_nPublishedFileId;
-
-		public AppId_t m_nAppID;
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(3406)]
-	public struct DownloadItemResult_t
-	{
-		public const int k_iCallback = 3406;
-
-		public AppId_t m_unAppID;
-
-		public PublishedFileId_t m_nPublishedFileId;
-
-		public EResult m_eResult;
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1109)]
-	public struct UserAchievementIconFetched_t
-	{
-		public const int k_iCallback = 1109;
-
-		public CGameID m_nGameID;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
-		private byte[] m_rgchAchievementName_;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bAchieved;
-
-		public int m_nIconHandle;
-
-		public string m_rgchAchievementName
-		{
-			get
-			{
-				return InteropHelp.ByteArrayToStringUTF8(m_rgchAchievementName_);
-			}
-			set
-			{
-				InteropHelp.StringToByteArrayUTF8(value, m_rgchAchievementName_, 128);
-			}
-		}
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 1)]
-	[CallbackIdentity(1203)]
-	public struct P2PSessionConnectFail_t
-	{
-		public const int k_iCallback = 1203;
-
-		public CSteamID m_steamIDRemote;
-
-		public byte m_eP2PSessionError;
+		k_ELeaderboardSortMethodNone,
+		k_ELeaderboardSortMethodAscending,
+		k_ELeaderboardSortMethodDescending
 	}
 }
 namespace Steamworks
@@ -95,4 +24,7 @@ namespace Steamworks
 		k_ECommunityProfileItemProperty_MovieWebMSmall,
 		k_ECommunityProfileItemProperty_MovieMP4Small
 	}
+}
+namespace Steamworks
+{
 }

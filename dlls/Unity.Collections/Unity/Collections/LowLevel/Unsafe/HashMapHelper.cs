@@ -1,15 +1,2 @@
-namespace Unity.Collections.LowLevel.Unsafe;
-
-[GenerateTestsForBurstCompatibility]
-internal struct UnsafeStreamRange
-{
-	internal unsafe UnsafeStreamBlock* Block;
-
-	internal int OffsetInFirstBlock;
-
-	internal int ElementCount;
-
-	internal int LastOffset;
-
-	internal int NumberOfBlocks;
-}
+// Could not decompile Unity.Collections.LowLevel.Unsafe.HashMapHelper`1
+// This type uses unsupported IL or has too many generic parameters.

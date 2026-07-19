@@ -1,8 +1,5 @@
 namespace WebSocketSharp.Net
 {
-}
-namespace WebSocketSharp.Net
-{
 	public enum HttpResponseHeader
 	{
 		CacheControl,
@@ -40,4 +37,7 @@ namespace WebSocketSharp.Net
 		SecWebSocketProtocol,
 		SecWebSocketVersion
 	}
+}
+namespace WebSocketSharp.Net
+{
 }

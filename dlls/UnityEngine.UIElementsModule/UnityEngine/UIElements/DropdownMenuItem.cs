@@ -1,21 +1,16 @@
-namespace UnityEngine.UIElements
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.UIElements;
+
+[MovedFrom(true, "UnityEditor.UIElements", "UnityEditor.UIElementsModule", null)]
+public interface IValueField<T>
 {
-	public abstract class DropdownMenuItem
-	{
-	}
-}
-namespace UnityEngine.UIElements
-{
-	public enum AlternatingRowBackground
-	{
-		None,
-		ContentOnly,
-		All
-	}
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements.Internal
-{
+	T value { get; set; }
+
+	void ApplyInputDeviceDelta(Vector3 delta, DeltaSpeed speed, T startValue);
+
+	void StartDragging();
+
+	void StopDragging();
 }

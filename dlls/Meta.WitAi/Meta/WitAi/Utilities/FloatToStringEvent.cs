@@ -1,2 +1,29 @@
-// Could not decompile Meta.WitAi.Utilities.FloatToStringEvent
-// This type uses unsupported IL or has too many generic parameters.
+using Meta.WitAi.Data.Configuration;
+using Meta.WitAi.Data.Info;
+using Meta.WitAi.Data.Configuration;
+using Meta.WitAi.Data.Info;
+
+namespace Meta.WitAi;
+
+public interface IWitRequestConfiguration
+{
+	WitRequestType RequestType { get; }
+
+	int RequestTimeoutMs { get; }
+
+	string GetConfigurationId();
+
+	string GetVersionTag();
+
+	string GetApplicationId();
+
+	WitAppInfo GetApplicationInfo();
+
+	WitConfigurationAssetData[] GetConfigData();
+
+	IWitRequestEndpointInfo GetEndpointInfo();
+
+	string GetClientAccessToken();
+
+	void UpdateDataAssets();
+}

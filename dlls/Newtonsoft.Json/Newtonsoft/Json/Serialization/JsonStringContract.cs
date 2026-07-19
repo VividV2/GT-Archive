@@ -1,12 +1,2 @@
-using System;
-
-namespace Newtonsoft.Json.Serialization;
-
-public class JsonStringContract : JsonPrimitiveContract
-{
-	public JsonStringContract(Type underlyingType)
-		: base(underlyingType)
-	{
-		ContractType = JsonContractType.String;
-	}
-}
+// Could not decompile Newtonsoft.Json.Serialization.JsonStringContract
+// This type uses unsupported IL or has too many generic parameters.

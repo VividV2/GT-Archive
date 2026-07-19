@@ -1,2 +1,3 @@
-namespace UnityEngine.UIElements;
+#define UNITY_ASSERTIONS
+namespace UnityEngine.UIElements.StyleSheets;
 

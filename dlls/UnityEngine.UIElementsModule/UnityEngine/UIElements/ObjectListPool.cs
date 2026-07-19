@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.UIElements.ObjectListPool`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+internal enum EventInterestOptionsInternal
+{
+	TriggeredByOS = 426094
+}
+namespace UnityEngine.UIElements
+{
+}

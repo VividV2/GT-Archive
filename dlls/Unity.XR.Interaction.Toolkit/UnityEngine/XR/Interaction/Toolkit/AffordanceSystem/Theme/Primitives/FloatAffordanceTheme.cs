@@ -1,6 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
-
-public interface IXRHapticImpulseProvider
-{
-	IXRHapticImpulseChannelGroup GetChannelGroup();
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives.FloatAffordanceTheme
+// This type uses unsupported IL or has too many generic parameters.

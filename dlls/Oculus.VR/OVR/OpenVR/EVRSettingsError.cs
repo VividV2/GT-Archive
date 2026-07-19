@@ -1,11 +1,10 @@
 namespace OVR.OpenVR;
 
-public enum EVRSettingsError
+public enum EVRNotificationError
 {
-	None,
-	IPCFailed,
-	WriteFailed,
-	ReadFailed,
-	JsonParseFailed,
-	UnsetSettingHasNoDefault
+	OK = 0,
+	InvalidNotificationId = 100,
+	NotificationQueueFull = 101,
+	InvalidOverlayHandle = 102,
+	SystemWithUserValueAlreadyExists = 103
 }

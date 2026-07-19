@@ -1,14 +1,2 @@
-using System;
-using UnityEngine;
-
-namespace Meta.WitAi.Data.Info;
-
-[Serializable]
-public struct WitContextMapInfo
-{
-	[SerializeField]
-	public string key;
-
-	[SerializeField]
-	public string value;
-}
+// Could not decompile Meta.WitAi.Data.Info.WitContextMapInfo
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,19 @@
-// Could not decompile System.Data.DataRowBuilder
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data;
+
+internal enum Nodes
+{
+	Noop,
+	Unop,
+	UnopSpec,
+	Binop,
+	BinopSpec,
+	Zop,
+	Call,
+	Const,
+	Name,
+	Paren,
+	Conv
+}
+namespace System.Data
+{
+}

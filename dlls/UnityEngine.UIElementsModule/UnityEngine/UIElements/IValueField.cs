@@ -1,25 +1,15 @@
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.UIElements
-{
-	[MovedFrom(true, "UnityEditor.UIElements", "UnityEditor.UIElementsModule", null)]
-	public interface IValueField<T>
-	{
-		T value { get; set; }
+namespace UnityEngine.UIElements;
 
-		void ApplyInputDeviceDelta(Vector3 delta, DeltaSpeed speed, T startValue);
+[MovedFrom(true, "UnityEditor.UIElements", "UnityEditor.UIElementsModule", null)]
+public interface IValueField<T>
+{
+	T value { get; set; }
 
-		void StartDragging();
+	void ApplyInputDeviceDelta(Vector3 delta, DeltaSpeed speed, T startValue);
 
-		void StopDragging();
-	}
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
-}
-namespace UnityEngine.UIElements
-{
+	void StartDragging();
+
+	void StopDragging();
 }

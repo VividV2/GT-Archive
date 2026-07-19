@@ -1,8 +1,15 @@
-namespace System.Xml.Xsl.Xslt;
-
-internal enum CycleCheck
+namespace System.Xml.Schema
 {
-	NotStarted,
-	Processing,
-	Completed
+}
+namespace System.Xml.Xsl.Xslt
+{
+	internal enum CycleCheck
+	{
+		NotStarted,
+		Processing,
+		Completed
+	}
+}
+namespace System.Xml.Serialization
+{
 }

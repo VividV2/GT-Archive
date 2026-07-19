@@ -1,10 +1,6 @@
-namespace g3
+namespace g3;
+
+public interface IProjectionTarget
 {
-	public interface IProjectionTarget
-	{
-		Vector3d Project(Vector3d vPoint, int identifier = -1);
-	}
-}
-namespace g3
-{
+	Vector3d Project(Vector3d vPoint, int identifier = -1);
 }

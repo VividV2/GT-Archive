@@ -1,8 +1,11 @@
-using Unity.Multiplayer.Center.Common.Analytics;
-
-namespace Unity.Multiplayer.Center.Common;
-
-public interface ISectionWithAnalytics
+namespace Unity.Multiplayer.Center.Common.Analytics
 {
-	IOnboardingSectionAnalyticsProvider AnalyticsProvider { get; set; }
+	public enum InteractionDataType
+	{
+		CallToAction,
+		Link
+	}
+}
+namespace Unity.Multiplayer.Center.Common
+{
 }

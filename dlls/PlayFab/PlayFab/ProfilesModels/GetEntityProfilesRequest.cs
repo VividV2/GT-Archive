@@ -1,2 +1,2 @@
-namespace PlayFab.InsightsModels;
+namespace PlayFab.MultiplayerModels;
 

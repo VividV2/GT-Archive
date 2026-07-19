@@ -1,15 +1,11 @@
 using UnityEngine;
 
-namespace Backtrace.Unity.Model.Waiter
+namespace Backtrace.Unity.Model.Waiter;
+
+public class BatchModeWaiter : IWaiter
 {
-	public class BatchModeWaiter : IWaiter
+	public YieldInstruction Wait()
 	{
-		public YieldInstruction Wait()
-		{
-			return null;
-		}
+		return null;
 	}
-}
-namespace Backtrace.Unity.Model
-{
 }

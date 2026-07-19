@@ -1,11 +1,6 @@
-using System.Security.Cryptography.Asn1;
-
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-internal struct RecipientEncryptedKeyAsn
+namespace System.Security.Cryptography.Pkcs
 {
-	internal KeyAgreeRecipientIdentifierAsn Rid;
-
-	[OctetString]
-	internal ReadOnlyMemory<byte> EncryptedKey;
+}
+namespace System.Security.Cryptography.Pkcs
+{
 }

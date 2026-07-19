@@ -1,4 +1,2 @@
-public interface iUpgadeableTool
-{
-	void UnlockPart(string ModId);
-}
+// Could not decompile MagicIngredientType
+// This type uses unsupported IL or has too many generic parameters.

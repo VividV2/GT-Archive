@@ -1,17 +1,7 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum FindObjectsSortMode
 {
-	public enum FindObjectsSortMode
-	{
-		None,
-		InstanceID
-	}
-}
-namespace UnityEngine.Playables
-{
-	[RequiredByNativeCode]
-	public interface INotificationReceiver
-	{
-		[RequiredByNativeCode]
-		void OnNotify(Playable origin, INotification notification, object context);
-	}
+	None,
+	InstanceID
 }

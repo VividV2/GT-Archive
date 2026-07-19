@@ -1,9 +1,24 @@
-namespace UnityEngine.VFX;
+using System;
+using System;
 
-internal enum VFXSystemType
+namespace UnityEngine.VFX
 {
-	Spawner,
-	Particle,
-	Mesh,
-	OutputEvent
+	internal enum VFXSystemType
+	{
+		Spawner,
+		Particle,
+		Mesh,
+		OutputEvent
+	}
+}
+namespace UnityEngine.VFX
+{
+	[Flags]
+	public enum VFXCameraBufferTypes
+	{
+		None = 0,
+		Depth = 1,
+		Color = 2,
+		Normal = 4
+	}
 }

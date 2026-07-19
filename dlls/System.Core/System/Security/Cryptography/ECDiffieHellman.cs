@@ -1,2 +1,9 @@
-// Could not decompile System.Security.Cryptography.ECDiffieHellman
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections;
+using System.Collections.Generic;
+
+namespace System.Linq;
+
+public interface IGrouping<out TKey, out TElement> : IEnumerable<TElement>, IEnumerable
+{
+	TKey Key { get; }
+}

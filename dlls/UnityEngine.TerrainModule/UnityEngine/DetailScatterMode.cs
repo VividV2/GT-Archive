@@ -1,7 +1,17 @@
-namespace UnityEngine;
-
-public enum DetailScatterMode
+namespace UnityEngine
 {
-	CoverageMode,
-	InstanceCountMode
+	public enum DetailRenderMode
+	{
+		GrassBillboard,
+		VertexLit,
+		Grass
+	}
+}
+namespace UnityEngine
+{
+	public enum DetailScatterMode
+	{
+		CoverageMode,
+		InstanceCountMode
+	}
 }

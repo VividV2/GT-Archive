@@ -1,2 +1,2 @@
-namespace BoingKit;
+namespace Fusion.CodeGen;
 

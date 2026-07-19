@@ -1,6 +1,2 @@
-namespace GorillaNetworking
-{
-}
-namespace GorillaTag
-{
-}
+// Could not decompile PartyInABox
+// This type uses unsupported IL or has too many generic parameters.

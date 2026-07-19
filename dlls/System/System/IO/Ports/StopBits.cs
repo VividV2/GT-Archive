@@ -1,14 +1,7 @@
-namespace System.IO.Ports;
+namespace Mono.Btls;
 
-/// <summary>Specifies the number of stop bits used on the <see cref="T:System.IO.Ports.SerialPort" /> object.</summary>
-public enum StopBits
+internal enum MonoBtlsX509Format
 {
-	/// <summary>No stop bits are used. This value is not supported by the <see cref="P:System.IO.Ports.SerialPort.StopBits" /> property.</summary>
-	None,
-	/// <summary>One stop bit is used.</summary>
-	One,
-	/// <summary>Two stop bits are used.</summary>
-	Two,
-	/// <summary>1.5 stop bits are used.</summary>
-	OnePointFive
+	DER = 1,
+	PEM
 }

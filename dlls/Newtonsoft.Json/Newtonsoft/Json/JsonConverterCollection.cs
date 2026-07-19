@@ -1,7 +1,2 @@
-using System.Collections.ObjectModel;
-
-namespace Newtonsoft.Json;
-
-public class JsonConverterCollection : Collection<JsonConverter>
-{
-}
+// Could not decompile Newtonsoft.Json.JsonConverterCollection
+// This type uses unsupported IL or has too many generic parameters.

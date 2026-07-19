@@ -1,8 +1,2 @@
-namespace UnityEngine;
-
-public enum DetailRenderMode
-{
-	GrassBillboard,
-	VertexLit,
-	Grass
-}
+// Could not decompile UnityEngine.DetailRenderMode
+// This type uses unsupported IL or has too many generic parameters.

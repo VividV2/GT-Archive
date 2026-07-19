@@ -1,2 +1,9 @@
-// Could not decompile g3.SafeListBuilder`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace g3
+{
+}
+namespace g3
+{
+}
+namespace g3
+{
+}

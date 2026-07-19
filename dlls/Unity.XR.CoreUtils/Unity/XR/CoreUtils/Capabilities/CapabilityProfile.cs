@@ -1,14 +1,2 @@
-using System;
-using UnityEngine;
-
-namespace Unity.XR.CoreUtils.Capabilities;
-
-public abstract class CapabilityProfile : ScriptableObject
-{
-	public static event Action<CapabilityProfile> CapabilityChanged;
-
-	public void ReportCapabilityChanged()
-	{
-		CapabilityProfile.CapabilityChanged?.Invoke(this);
-	}
-}
+// Could not decompile Unity.XR.CoreUtils.Capabilities.CapabilityProfile
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,6 +1,2 @@
-namespace Pathfinding
-{
-}
-namespace Pathfinding.Serialization
-{
-}
+// Could not decompile Pathfinding.Voxels.VoxelPolygonClipper
+// This type uses unsupported IL or has too many generic parameters.

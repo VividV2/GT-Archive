@@ -1,3 +1,2 @@
-namespace PlayFab.SharedModels
-{
-}
+namespace PlayFab.EventsModels;
+

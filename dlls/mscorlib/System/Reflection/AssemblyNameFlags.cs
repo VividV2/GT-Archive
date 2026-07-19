@@ -15,6 +15,3 @@ public enum AssemblyNameFlags
 	/// <summary>Specifies that the assembly can be retargeted at runtime to an assembly from a different publisher. This value supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
 	Retargetable = 0x100
 }
-namespace System.Reflection
-{
-}

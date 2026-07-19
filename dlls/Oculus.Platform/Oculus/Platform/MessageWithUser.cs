@@ -1,32 +1,22 @@
-using System.ComponentModel;
-using System.ComponentModel;
+using System;
+using Oculus.Platform.Models;
 
 namespace Oculus.Platform;
 
-public enum MultiplayerErrorErrorKey
+public class MessageWithUser : Message<User>
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("DESTINATION_UNAVAILABLE")]
-	DestinationUnavailable,
-	[Description("DLC_REQUIRED")]
-	DlcRequired,
-	[Description("GENERAL")]
-	General,
-	[Description("GROUP_FULL")]
-	GroupFull,
-	[Description("INVITER_NOT_JOINABLE")]
-	InviterNotJoinable,
-	[Description("LEVEL_NOT_HIGH_ENOUGH")]
-	LevelNotHighEnough,
-	[Description("LEVEL_NOT_UNLOCKED")]
-	LevelNotUnlocked,
-	[Description("NETWORK_TIMEOUT")]
-	NetworkTimeout,
-	[Description("NO_LONGER_AVAILABLE")]
-	NoLongerAvailable,
-	[Description("UPDATE_REQUIRED")]
-	UpdateRequired,
-	[Description("TUTORIAL_REQUIRED")]
-	TutorialRequired
+	public MessageWithUser(IntPtr c_message)
+		: base(c_message)
+	{
+	}
+
+	public override User GetUser()
+	{
+		return base.Data;
+	}
+
+	protected override User GetDataFromMessage(IntPtr c_message)
+	{
+		return new User(CAPI.ovr_Message_GetUser(CAPI.ovr_Message_GetNativeMessage(c_message)));
+	}
 }

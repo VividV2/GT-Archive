@@ -1,13 +1,22 @@
 using System;
 using System.Collections.Generic;
 using PlayFab.SharedModels;
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
 
-namespace PlayFab.ExperimentationModels;
-
-[Serializable]
-public class TreatmentAssignment : PlayFabBaseModel
+namespace PlayFab.DataModels
 {
-	public List<Variable> Variables;
+	[Serializable]
+	public class GetObjectsResponse : PlayFabResultCommon
+	{
+		public EntityKey Entity;
 
-	public List<string> Variants;
+		public Dictionary<string, ObjectResult> Objects;
+
+		public int ProfileVersion;
+	}
+}
+namespace PlayFab.Public
+{
 }

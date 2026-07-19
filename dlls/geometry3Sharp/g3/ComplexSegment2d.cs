@@ -1,10 +1,14 @@
-namespace g3;
-
-public struct ComplexSegment2d
+namespace g3
 {
-	public Segment2d seg;
+	public struct ComplexSegment2d
+	{
+		public Segment2d seg;
 
-	public bool isClosed;
+		public bool isClosed;
 
-	public PlanarComplex.Element element;
+		public PlanarComplex.Element element;
+	}
+}
+namespace g3
+{
 }

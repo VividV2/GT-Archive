@@ -1,9 +1,19 @@
 using System;
 using Unity.Jobs;
 
-namespace Unity.Collections;
-
-public interface INativeDisposable : IDisposable
+namespace Unity.Collections
 {
-	JobHandle Dispose(JobHandle inputDeps);
+}
+namespace Unity.Collections
+{
+}
+namespace Unity.Collections
+{
+}
+namespace Unity.Collections
+{
+	public interface INativeDisposable : IDisposable
+	{
+		JobHandle Dispose(JobHandle inputDeps);
+	}
 }

@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.UIElements.UxmlTraits
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.UIElements;
+
+[Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+public abstract class UxmlTraits : BaseUxmlTraits
+{
+	public virtual void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
+	{
+	}
+}

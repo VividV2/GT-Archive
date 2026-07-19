@@ -1,14 +1,12 @@
 namespace System.Runtime.CompilerServices;
 
-/// <summary>Indicates that a class should be treated as if it has global scope.</summary>
-/// <summary>Indicates that a class should be treated as if it has global scope.</summary>
-[Serializable]
-[AttributeUsage(AttributeTargets.Class)]
-public class CompilerGlobalScopeAttribute : Attribute
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface | AttributeTargets.Delegate, Inherited = false, AllowMultiple = false)]
+public sealed class AsyncMethodBuilderAttribute : Attribute
 {
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.CompilerGlobalScopeAttribute" /> class.</summary>
-	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.CompilerGlobalScopeAttribute" /> class.</summary>
-	public CompilerGlobalScopeAttribute()
+	public Type BuilderType { get; }
+
+	public AsyncMethodBuilderAttribute(Type builderType)
 	{
+		BuilderType = builderType;
 	}
 }

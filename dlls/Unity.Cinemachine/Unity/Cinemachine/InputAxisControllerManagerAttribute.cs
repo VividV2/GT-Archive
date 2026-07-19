@@ -1,10 +1,7 @@
+using UnityEngine;
+
 namespace Unity.Cinemachine;
 
-internal enum EndType
+internal class InputAxisControllerManagerAttribute : PropertyAttribute
 {
-	Polygon,
-	Joined,
-	Butt,
-	Square,
-	Round
 }

@@ -1,10 +1,6 @@
-namespace UnityEngine.Bindings
+namespace UnityEngine.Bindings;
+
+internal interface IBindingsGenerateMarshallingTypeAttribute : IBindingsAttribute
 {
-	internal interface IBindingsGenerateMarshallingTypeAttribute : IBindingsAttribute
-	{
-		CodegenOptions CodegenOptions { get; set; }
-	}
-}
-namespace UnityEngine.Bindings
-{
+	CodegenOptions CodegenOptions { get; set; }
 }

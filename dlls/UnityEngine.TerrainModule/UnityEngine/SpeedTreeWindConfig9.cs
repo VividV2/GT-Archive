@@ -1,3 +1,2 @@
-namespace UnityEngine
-{
-}
+namespace UnityEngine;
+

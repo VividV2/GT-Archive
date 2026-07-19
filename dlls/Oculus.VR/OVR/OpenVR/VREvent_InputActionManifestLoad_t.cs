@@ -1,12 +1,31 @@
-namespace OVR.OpenVR;
-
-public struct VREvent_InputActionManifestLoad_t
+namespace OVR.OpenVR
 {
-	public ulong pathAppKey;
+	public enum EColorSpace
+	{
+		Auto,
+		Gamma,
+		Linear
+	}
+}
+namespace OVR.OpenVR
+{
+	public enum EVRSkeletalTransformSpace
+	{
+		Model,
+		Parent,
+		Additive
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct VREvent_InputActionManifestLoad_t
+	{
+		public ulong pathAppKey;
 
-	public ulong pathMessage;
+		public ulong pathMessage;
 
-	public ulong pathMessageParam;
+		public ulong pathMessageParam;
 
-	public ulong pathManifestPath;
+		public ulong pathManifestPath;
+	}
 }

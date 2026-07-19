@@ -1,11 +1,2 @@
-namespace Mono.Net.Dns;
-
-internal enum ResolverAsyncOperation
-{
-	None,
-	GetHostEntry,
-	GetHostAddresses
-}
-namespace System.Text.RegularExpressions
-{
-}
+// Could not decompile System.Timers.Timer
+// This type uses unsupported IL or has too many generic parameters.

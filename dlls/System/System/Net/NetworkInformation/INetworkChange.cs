@@ -1,10 +1,14 @@
-namespace System.Net.NetworkInformation;
-
-internal interface INetworkChange : IDisposable
+namespace System.Net.NetworkInformation
 {
-	bool HasRegisteredEvents { get; }
+	internal interface INetworkChange : IDisposable
+	{
+		bool HasRegisteredEvents { get; }
 
-	event NetworkAddressChangedEventHandler NetworkAddressChanged;
+		event NetworkAddressChangedEventHandler NetworkAddressChanged;
 
-	event NetworkAvailabilityChangedEventHandler NetworkAvailabilityChanged;
+		event NetworkAvailabilityChangedEventHandler NetworkAvailabilityChanged;
+	}
+}
+namespace System.Net
+{
 }

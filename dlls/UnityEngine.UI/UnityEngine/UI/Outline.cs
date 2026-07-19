@@ -1,6 +1,2 @@
-namespace UnityEngine.UI
-{
-}
-namespace UnityEngine.UIElements
-{
-}
+namespace UnityEngine.EventSystems;
+

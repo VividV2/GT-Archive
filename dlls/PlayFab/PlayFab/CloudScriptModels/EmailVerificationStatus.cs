@@ -1,8 +1,12 @@
-namespace PlayFab.CloudScriptModels;
-
-public enum EmailVerificationStatus
+namespace PlayFab.CloudScriptModels
 {
-	Unverified,
-	Pending,
-	Confirmed
+	public enum EmailVerificationStatus
+	{
+		Unverified,
+		Pending,
+		Confirmed
+	}
+}
+namespace PlayFab.CloudScriptModels
+{
 }

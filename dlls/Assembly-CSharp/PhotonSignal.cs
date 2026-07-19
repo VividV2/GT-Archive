@@ -1,2 +1,2 @@
-// Could not decompile PhotonSignal`5
+// Could not decompile PhotonSignal
 // This type uses unsupported IL or has too many generic parameters.

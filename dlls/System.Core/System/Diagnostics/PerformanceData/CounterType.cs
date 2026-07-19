@@ -1,0 +1,3 @@
+namespace System.Management.Instrumentation
+{
+}

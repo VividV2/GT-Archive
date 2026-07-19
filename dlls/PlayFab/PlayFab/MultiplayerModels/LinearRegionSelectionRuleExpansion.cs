@@ -1,6 +1,14 @@
-namespace PlayFab.MultiplayerModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class LinearRegionSelectionRuleExpansion : PlayFabBaseModel
 {
-}
-namespace PlayFab.ExperimentationModels
-{
+	public uint Delta;
+
+	public uint Limit;
+
+	public uint SecondsBetweenExpansions;
 }

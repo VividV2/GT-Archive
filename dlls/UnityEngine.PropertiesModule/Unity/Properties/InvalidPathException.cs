@@ -1,17 +1,2 @@
-using System;
-
-namespace Unity.Properties;
-
-[Serializable]
-public class InvalidPathException : Exception
-{
-	public InvalidPathException(string message)
-		: base(message)
-	{
-	}
-
-	public InvalidPathException(string message, Exception inner)
-		: base(message, inner)
-	{
-	}
-}
+// Could not decompile Unity.Properties.InvalidPathException
+// This type uses unsupported IL or has too many generic parameters.

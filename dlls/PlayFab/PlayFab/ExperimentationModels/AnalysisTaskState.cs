@@ -1,12 +1,16 @@
-namespace PlayFab.ExperimentationModels;
-
-public enum AnalysisTaskState
+namespace PlayFab.ExperimentationModels
 {
-	Waiting,
-	ReadyForSubmission,
-	SubmittingToPipeline,
-	Running,
-	Completed,
-	Failed,
-	Canceled
+}
+namespace PlayFab.ExperimentationModels
+{
+	public enum AnalysisTaskState
+	{
+		Waiting,
+		ReadyForSubmission,
+		SubmittingToPipeline,
+		Running,
+		Completed,
+		Failed,
+		Canceled
+	}
 }

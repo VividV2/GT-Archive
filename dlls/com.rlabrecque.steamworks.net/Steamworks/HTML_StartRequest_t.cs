@@ -1,21 +1,53 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4503)]
-public struct HTML_StartRequest_t
+namespace Steamworks
 {
-	public const int k_iCallback = 4503;
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(1332)]
+	public struct RemoteStorageFileReadAsyncComplete_t
+	{
+		public const int k_iCallback = 1332;
 
-	public HHTMLBrowser unBrowserHandle;
+		public SteamAPICall_t m_hFileReadAsync;
 
-	public string pchURL;
+		public EResult m_eResult;
 
-	public string pchTarget;
+		public uint m_nOffset;
 
-	public string pchPostData;
+		public uint m_cubRead;
+	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(4503)]
+	public struct HTML_StartRequest_t
+	{
+		public const int k_iCallback = 4503;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bIsRedirect;
+		public HHTMLBrowser unBrowserHandle;
+
+		public string pchURL;
+
+		public string pchTarget;
+
+		public string pchPostData;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bIsRedirect;
+	}
+}
+namespace Steamworks
+{
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
+	[CallbackIdentity(125)]
+	public struct LicensesUpdated_t
+	{
+		public const int k_iCallback = 125;
+	}
 }

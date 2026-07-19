@@ -1,12 +1,8 @@
 using System.Collections.Generic;
 
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+internal interface IUxmlSerializedDataCustomAttributeHandler
 {
-	internal interface IUxmlSerializedDataCustomAttributeHandler
-	{
-		void SerializeCustomAttributes(IUxmlAttributes bag, HashSet<string> handledAttributes);
-	}
-}
-namespace UnityEngine.UIElements
-{
+	void SerializeCustomAttributes(IUxmlAttributes bag, HashSet<string> handledAttributes);
 }

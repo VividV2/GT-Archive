@@ -1,28 +1,14 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
+namespace System;
 
-namespace System
+internal struct ConsoleScreenBufferInfo
 {
-	internal struct ConsoleScreenBufferInfo
-	{
-		public Coord Size;
+	public Coord Size;
 
-		public Coord CursorPosition;
+	public Coord CursorPosition;
 
-		public short Attribute;
+	public short Attribute;
 
-		public SmallRect Window;
+	public SmallRect Window;
 
-		public Coord MaxWindowSize;
-	}
-}
-namespace Mono
-{
-	[StructLayout(LayoutKind.Sequential, Size = 1)]
-	internal struct ValueTuple
-	{
-	}
-}
-namespace System.Runtime.Serialization.Formatters.Binary
-{
+	public Coord MaxWindowSize;
 }

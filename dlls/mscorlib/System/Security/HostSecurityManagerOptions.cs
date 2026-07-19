@@ -23,3 +23,6 @@ public enum HostSecurityManagerOptions
 	/// <summary>Use all security policy components.</summary>
 	AllFlags = 0x1F
 }
+namespace System.Security.Util
+{
+}

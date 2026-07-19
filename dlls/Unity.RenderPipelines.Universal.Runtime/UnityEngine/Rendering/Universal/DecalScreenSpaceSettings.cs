@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.Rendering.Universal.DecalScreenSpaceSettings
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering.Universal;
+
+[Serializable]
+internal class DecalScreenSpaceSettings
+{
+	public DecalNormalBlend normalBlend;
+}

@@ -1,7 +1,14 @@
-namespace Oculus.Interaction.Input.Compatibility.OVR;
-
-public enum Handedness
+namespace Oculus.Interaction.Input
 {
-	Left,
-	Right
+}
+namespace Oculus.Interaction.Input
+{
+}
+namespace Oculus.Interaction.Input.Compatibility.OVR
+{
+	public enum Handedness
+	{
+		Left,
+		Right
+	}
 }

@@ -1,12 +1,8 @@
 using System;
 
-namespace Cysharp.Threading.Tasks
+namespace Cysharp.Threading.Tasks;
+
+public interface IAsyncDeselectEventHandler<T> : IDisposable
 {
-}
-namespace Cysharp.Threading.Tasks
-{
-	public interface IAsyncDeselectEventHandler<T> : IDisposable
-	{
-		UniTask<T> OnDeselectAsync();
-	}
+	UniTask<T> OnDeselectAsync();
 }

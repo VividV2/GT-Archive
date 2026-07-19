@@ -1,11 +1,7 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum EKeyboardFlags
 {
-}
-namespace Valve.VR
-{
-	public enum EKeyboardFlags
-	{
-		KeyboardFlag_Minimal = 1,
-		KeyboardFlag_Modal
-	}
+	KeyboardFlag_Minimal = 1,
+	KeyboardFlag_Modal
 }

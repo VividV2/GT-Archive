@@ -1,7 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace Mono.Btls;
-
-[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-internal delegate int MonoBtlsServerNameCallback();
+// Could not decompile Mono.CFData
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,14 +1,2 @@
-namespace System.Security.Permissions;
-
-/// <summary>Allows a permission to expose an unrestricted state.</summary>
-/// <summary>Allows a permission to expose an unrestricted state.</summary>
-public interface IUnrestrictedPermission
-{
-	/// <summary>Returns a value indicating whether unrestricted access to the resource protected by the permission is allowed.</summary>
-	/// <returns>
-	///   <see langword="true" /> if unrestricted use of the resource protected by the permission is allowed; otherwise, <see langword="false" />.</returns>
-	/// <summary>Returns a value indicating whether unrestricted access to the resource protected by the permission is allowed.</summary>
-	/// <returns>
-	///   <see langword="true" /> if unrestricted use of the resource protected by the permission is allowed; otherwise, <see langword="false" />.</returns>
-	bool IsUnrestricted();
-}
+// Could not decompile System.Security.AccessControl.AccessRule`1
+// This type uses unsupported IL or has too many generic parameters.

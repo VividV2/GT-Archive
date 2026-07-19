@@ -1,12 +1,8 @@
-namespace System
+namespace System;
+
+internal sealed class MonoType : RuntimeType
 {
-	internal sealed class MonoType : RuntimeType
+	private MonoType()
 	{
-		private MonoType()
-		{
-		}
 	}
-}
-namespace System
-{
 }

@@ -1,11 +1,2 @@
-namespace System.Net.NetworkInformation;
-
-internal struct Win32_MIBICMPINFO
-{
-	public Win32_MIBICMPSTATS InStats;
-
-	public Win32_MIBICMPSTATS OutStats;
-}
-namespace System.Collections.Generic
-{
-}
+// Could not decompile System.Net.Sockets.SafeSocketHandle
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,12 +1,16 @@
-namespace UnityEngine.Rendering.Universal;
-
-internal class LocalMinima
+namespace UnityEngine.Rendering.Universal
 {
-	internal long Y;
+}
+namespace UnityEngine.Rendering.Universal
+{
+	internal class LocalMinima
+	{
+		internal long Y;
 
-	internal TEdge LeftBound;
+		internal TEdge LeftBound;
 
-	internal TEdge RightBound;
+		internal TEdge RightBound;
 
-	internal LocalMinima Next;
+		internal LocalMinima Next;
+	}
 }

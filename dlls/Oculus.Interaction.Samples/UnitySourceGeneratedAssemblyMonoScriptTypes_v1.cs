@@ -1,2 +1,0 @@
-namespace Oculus.Interaction.Samples;
-

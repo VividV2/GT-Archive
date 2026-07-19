@@ -1,2 +1,2 @@
-namespace Oculus.Interaction.Samples;
+namespace Oculus.Interaction;
 

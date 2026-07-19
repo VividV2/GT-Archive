@@ -1,13 +1,9 @@
-namespace System.Drawing.Imaging;
-
-/// <summary>Specifies the types of color maps.</summary>
-public enum ColorMapType
+namespace System.Drawing.Drawing2D
 {
-	/// <summary>A default color map.</summary>
-	Default,
-	/// <summary>Specifies a color map for a <see cref="T:System.Drawing.Brush" />.</summary>
-	Brush
-}
-namespace System.Drawing.Imaging
-{
+	public enum CoordinateSpace
+	{
+		World,
+		Page,
+		Device
+	}
 }

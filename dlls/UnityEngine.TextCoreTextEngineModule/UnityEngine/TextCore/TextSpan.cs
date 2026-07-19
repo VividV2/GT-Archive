@@ -1,26 +1,32 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine.Bindings;
-using System.Collections.Generic;
-using UnityEngine.Bindings;
+using UnityEngine.TextCore.Text;
 
-namespace UnityEngine.TextCore.Text;
+namespace UnityEngine.TextCore;
 
-[NativeHeader("Modules/TextCoreTextEngine/Native/ATGMeshInfo.h")]
 [VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule" })]
-internal struct ATGMeshInfo
+internal struct TextSpan
 {
-	public NativeTextElementInfo[] textElementInfos;
+	public int startIndex;
 
-	public int fontAssetId;
+	public int length;
 
-	public int textElementCount;
+	public IntPtr fontAsset;
 
-	[Ignore]
-	public FontAsset fontAsset;
+	public int fontSize;
 
-	[Ignore]
-	public List<List<int>> textElementInfoIndicesByAtlas;
+	public Color32 color;
 
-	[Ignore]
-	public bool hasMultipleColors;
+	public FontStyles fontStyle;
+
+	public TextFontWeight fontWeight;
+
+	public int linkID;
+
+	public HorizontalAlignment alignment;
+
+	public override string ToString()
+	{
+		return string.Format("{0}: {1}\n", "color", color) + string.Format("{0}: {1}\n", "fontStyle", fontStyle) + string.Format("{0}: {1}\n", "fontWeight", fontWeight) + string.Format("{0}: {1}\n", "linkID", linkID) + string.Format("{0}: {1}\n", "fontSize", fontSize) + string.Format("{0}: {1}", "fontAsset", fontAsset) + string.Format("{0}: {1}\n", "startIndex", startIndex) + string.Format("{0}: {1}", "length", length);
+	}
 }

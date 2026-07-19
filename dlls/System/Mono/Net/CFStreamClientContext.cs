@@ -1,16 +1,20 @@
 using System;
 
-namespace Mono.Net;
-
-internal struct CFStreamClientContext
+namespace System.Text.RegularExpressions
 {
-	public IntPtr Version;
+}
+namespace Mono.Net
+{
+	internal struct CFStreamClientContext
+	{
+		public IntPtr Version;
 
-	public IntPtr Info;
+		public IntPtr Info;
 
-	public IntPtr Retain;
+		public IntPtr Retain;
 
-	public IntPtr Release;
+		public IntPtr Release;
 
-	public IntPtr CopyDescription;
+		public IntPtr CopyDescription;
+	}
 }

@@ -1,11 +1,2 @@
-using System.Collections.Generic;
-using Meta.WitAi.TTS.Utilities;
-using System.Collections.Generic;
-using Meta.WitAi.TTS.Utilities;
-
-namespace Meta.WitAi.TTS.Interfaces;
-
-public interface ISpeakerTextPreprocessor
-{
-	void OnPreprocessTTS(TTSSpeaker speaker, List<string> phrases);
-}
+// Could not decompile Meta.WitAi.TTS.LipSync.VisemeTextureFlipLipSync
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,11 +1,2 @@
-using System;
-
-namespace UnityEngine.UIElements;
-
-internal class ImmediateModeException : Exception
-{
-	public ImmediateModeException(Exception inner)
-		: base("", inner)
-	{
-	}
-}
+// Could not decompile UnityEngine.UIElements.ImmediateModeException
+// This type uses unsupported IL or has too many generic parameters.

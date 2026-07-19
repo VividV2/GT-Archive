@@ -1,16 +1,9 @@
-namespace System.Xml.XPath;
+namespace System.Xml.Serialization;
 
-/// <summary>Specifies the sort order for uppercase and lowercase letters.</summary>
-/// <summary>Specifies the sort order for uppercase and lowercase letters.</summary>
-public enum XmlCaseOrder
+internal class SpecialModel : TypeModel
 {
-	/// <summary>Ignore the case.</summary>
-	/// <summary>Ignore the case.</summary>
-	None,
-	/// <summary>Uppercase letters are sorted before lowercase letters.</summary>
-	/// <summary>Uppercase letters are sorted before lowercase letters.</summary>
-	UpperFirst,
-	/// <summary>Lowercase letters are sorted before uppercase letters.</summary>
-	/// <summary>Lowercase letters are sorted before uppercase letters.</summary>
-	LowerFirst
+	internal SpecialModel(Type type, TypeDesc typeDesc, ModelScope scope)
+		: base(type, typeDesc, scope)
+	{
+	}
 }
