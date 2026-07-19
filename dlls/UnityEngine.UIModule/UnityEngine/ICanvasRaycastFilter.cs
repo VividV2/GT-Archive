@@ -1,6 +1,10 @@
-namespace UnityEngine;
-
-public interface ICanvasRaycastFilter
+namespace UnityEngine
 {
-	bool IsRaycastLocationValid(Vector2 sp, Camera eventCamera);
+	public interface ICanvasRaycastFilter
+	{
+		bool IsRaycastLocationValid(Vector2 sp, Camera eventCamera);
+	}
+}
+namespace UnityEngine
+{
 }

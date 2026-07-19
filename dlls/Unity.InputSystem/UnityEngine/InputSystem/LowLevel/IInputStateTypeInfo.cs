@@ -6,6 +6,3 @@ public interface IInputStateTypeInfo
 {
 	FourCC format { get; }
 }
-namespace UnityEngine.InputSystem.Controls
-{
-}

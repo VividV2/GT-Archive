@@ -1,16 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.DataModels;
-
-[Serializable]
-public class SetObject : PlayFabBaseModel
-{
-	public object DataObject;
-
-	public bool? DeleteObject;
-
-	public string EscapedDataObject;
-
-	public string ObjectName;
-}
+// Could not decompile PlayFab.DataModels.SetObject
+// This type uses unsupported IL or has too many generic parameters.

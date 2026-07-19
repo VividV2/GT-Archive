@@ -1,10 +1,2 @@
-using System;
-using UnityEngine;
-
-namespace Unity.Cinemachine;
-
-[Obsolete("CinemachinePipeline has been deprecated.")]
-[AddComponentMenu("")]
-public sealed class CinemachinePipeline : MonoBehaviour
-{
-}
+// Could not decompile Unity.Cinemachine.CinemachinePipeline
+// This type uses unsupported IL or has too many generic parameters.

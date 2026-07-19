@@ -1,13 +1,17 @@
 using System;
 
-namespace Oculus.Platform.Models;
-
-public class LivestreamingApplicationStatus
+namespace Oculus.Platform.Models
 {
-	public readonly bool StreamingEnabled;
-
-	public LivestreamingApplicationStatus(IntPtr o)
+}
+namespace Oculus.Platform.Models
+{
+	public class LivestreamingApplicationStatus
 	{
-		StreamingEnabled = CAPI.ovr_LivestreamingApplicationStatus_GetStreamingEnabled(o);
+		public readonly bool StreamingEnabled;
+
+		public LivestreamingApplicationStatus(IntPtr o)
+		{
+			StreamingEnabled = CAPI.ovr_LivestreamingApplicationStatus_GetStreamingEnabled(o);
+		}
 	}
 }

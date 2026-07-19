@@ -1,10 +1,14 @@
-namespace UnityEngine;
-
-public enum LineTextureMode
+namespace UnityEngine
 {
-	Stretch,
-	Tile,
-	DistributePerSegment,
-	RepeatPerSegment,
-	Static
+	public enum LineTextureMode
+	{
+		Stretch,
+		Tile,
+		DistributePerSegment,
+		RepeatPerSegment,
+		Static
+	}
+}
+namespace UnityEngine
+{
 }

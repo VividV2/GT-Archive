@@ -1,9 +1,2 @@
-namespace Sirenix.OdinInspector;
-
-public enum TitleAlignments
-{
-	Left,
-	Centered,
-	Right,
-	Split
-}
+// Could not decompile Sirenix.OdinInspector.TypeRegistryItemAttribute
+// This type uses unsupported IL or has too many generic parameters.

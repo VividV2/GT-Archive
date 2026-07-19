@@ -2,63 +2,56 @@ using System;
 using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[NativeHeader("Modules/Terrain/Public/SpeedTreeWind.h")]
+[ExcludeFromPreset]
+public class SpeedTreeWindAsset : Object
 {
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-	[NativeHeader("Modules/Terrain/Public/SpeedTreeWind.h")]
-	[ExcludeFromPreset]
-	public class SpeedTreeWindAsset : Object
+	public int Version
 	{
-		public int Version
+		get
 		{
-			get
+			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
+			if (intPtr == (IntPtr)0)
 			{
-				IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-				if (intPtr == (IntPtr)0)
-				{
-					ThrowHelper.ThrowNullReferenceException(this);
-				}
-				return get_Version_Injected(intPtr);
+				ThrowHelper.ThrowNullReferenceException(this);
 			}
-			set
-			{
-				IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
-				if (intPtr == (IntPtr)0)
-				{
-					ThrowHelper.ThrowNullReferenceException(this);
-				}
-				set_Version_Injected(intPtr, value);
-			}
+			return get_Version_Injected(intPtr);
 		}
-
-		internal SpeedTreeWindAsset(int version, SpeedTreeWindConfig9 config)
+		set
 		{
-			Internal_Create(this, version, SpeedTreeWindConfig9.Serialize(config));
-		}
-
-		[NativeThrows]
-		private unsafe static void Internal_Create([Writable] SpeedTreeWindAsset notSelf, int version, byte[] data)
-		{
-			Span<byte> span = new Span<byte>(data);
-			fixed (byte* begin = span)
+			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
+			if (intPtr == (IntPtr)0)
 			{
-				ManagedSpanWrapper data2 = new ManagedSpanWrapper(begin, span.Length);
-				Internal_Create_Injected(notSelf, version, ref data2);
+				ThrowHelper.ThrowNullReferenceException(this);
 			}
+			set_Version_Injected(intPtr, value);
 		}
-
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		private static extern int get_Version_Injected(IntPtr _unity_self);
-
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		private static extern void set_Version_Injected(IntPtr _unity_self, int value);
-
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		private static extern void Internal_Create_Injected([Writable] SpeedTreeWindAsset notSelf, int version, ref ManagedSpanWrapper data);
 	}
+
+	internal SpeedTreeWindAsset(int version, SpeedTreeWindConfig9 config)
+	{
+		Internal_Create(this, version, SpeedTreeWindConfig9.Serialize(config));
+	}
+
+	[NativeThrows]
+	private unsafe static void Internal_Create([Writable] SpeedTreeWindAsset notSelf, int version, byte[] data)
+	{
+		Span<byte> span = new Span<byte>(data);
+		fixed (byte* begin = span)
+		{
+			ManagedSpanWrapper data2 = new ManagedSpanWrapper(begin, span.Length);
+			Internal_Create_Injected(notSelf, version, ref data2);
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern int get_Version_Injected(IntPtr _unity_self);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern void set_Version_Injected(IntPtr _unity_self, int value);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern void Internal_Create_Injected([Writable] SpeedTreeWindAsset notSelf, int version, ref ManagedSpanWrapper data);
 }

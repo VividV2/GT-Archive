@@ -1,2 +1,5 @@
-namespace Meta.XR.BuildingBlocks;
+using Meta.XR.BuildingBlocks;
 
+public class SharedSpatialAnchorCoreBuildingBlock : BuildingBlock
+{
+}

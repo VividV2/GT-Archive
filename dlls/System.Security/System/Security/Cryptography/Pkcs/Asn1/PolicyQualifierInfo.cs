@@ -1,13 +1,3 @@
-using System.Security.Cryptography.Asn1;
-using System.Security.Cryptography.Asn1;
-
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-internal struct PolicyQualifierInfo
+namespace System.Security.Cryptography.Asn1
 {
-	[ObjectIdentifier]
-	public string PolicyQualifierId;
-
-	[AnyValue]
-	public ReadOnlyMemory<byte> Qualifier;
 }

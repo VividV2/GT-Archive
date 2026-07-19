@@ -1,2 +1,2 @@
-namespace System.Diagnostics.Tracing;
-
+// Could not decompile System.Configuration.Assemblies.AssemblyHash
+// This type uses unsupported IL or has too many generic parameters.

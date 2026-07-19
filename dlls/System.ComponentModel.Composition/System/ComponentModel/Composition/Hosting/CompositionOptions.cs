@@ -13,3 +13,6 @@ public enum CompositionOptions
 	/// <summary>This provider is an export composition service.</summary>
 	ExportCompositionService = 4
 }
+namespace System.ComponentModel.Composition.Hosting
+{
+}

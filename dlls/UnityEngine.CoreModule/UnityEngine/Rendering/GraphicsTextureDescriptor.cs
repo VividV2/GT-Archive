@@ -1,2 +1,2 @@
-namespace UnityEngine.Diagnostics;
+namespace UnityEngine.Windows.Speech;
 

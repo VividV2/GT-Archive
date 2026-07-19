@@ -1,10 +1,2 @@
-using System;
-
-namespace Modio;
-
-public class ModioDebugMenuAttribute : Attribute
-{
-	public bool ShowInSettingsMenu = true;
-
-	public bool ShowInBrowserMenu = true;
-}
+// Could not decompile Modio.ModioDebugMenuAttribute
+// This type uses unsupported IL or has too many generic parameters.

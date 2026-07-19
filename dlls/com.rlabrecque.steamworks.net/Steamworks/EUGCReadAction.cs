@@ -1,22 +1,11 @@
-namespace Steamworks
+namespace Steamworks;
+
+public enum ESteamNetworkingGetConfigValueResult
 {
-	public enum EUGCReadAction
-	{
-		k_EUGCRead_ContinueReadingUntilFinished,
-		k_EUGCRead_ContinueReading,
-		k_EUGCRead_Close
-	}
-}
-namespace Steamworks
-{
-	public enum EItemPreviewType
-	{
-		k_EItemPreviewType_Image = 0,
-		k_EItemPreviewType_YouTubeVideo = 1,
-		k_EItemPreviewType_Sketchfab = 2,
-		k_EItemPreviewType_EnvironmentMap_HorizontalCross = 3,
-		k_EItemPreviewType_EnvironmentMap_LatLong = 4,
-		k_EItemPreviewType_Clip = 5,
-		k_EItemPreviewType_ReservedMax = 255
-	}
+	k_ESteamNetworkingGetConfigValue_BadValue = -1,
+	k_ESteamNetworkingGetConfigValue_BadScopeObj = -2,
+	k_ESteamNetworkingGetConfigValue_BufferTooSmall = -3,
+	k_ESteamNetworkingGetConfigValue_OK = 1,
+	k_ESteamNetworkingGetConfigValue_OKInherited = 2,
+	k_ESteamNetworkingGetConfigValueResult__Force32Bit = int.MaxValue
 }

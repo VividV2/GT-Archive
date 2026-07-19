@@ -1,6 +1,3 @@
-namespace UnityEngine.UIElements.UIR
-{
-}
 namespace UnityEngine.UIElements.Layout
 {
 	internal enum LayoutDirection
@@ -9,4 +6,7 @@ namespace UnityEngine.UIElements.Layout
 		LTR,
 		RTL
 	}
+}
+namespace UnityEngine.UIElements.UIR
+{
 }

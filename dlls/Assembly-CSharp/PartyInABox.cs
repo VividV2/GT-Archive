@@ -1,0 +1,6 @@
+namespace GorillaNetworking
+{
+}
+namespace GorillaTag
+{
+}

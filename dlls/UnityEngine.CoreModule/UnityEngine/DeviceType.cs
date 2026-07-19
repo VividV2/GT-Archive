@@ -1,9 +1,6 @@
-namespace UnityEngine;
-
-public enum DeviceType
+namespace UnityEngine
 {
-	Unknown,
-	Handheld,
-	Console,
-	Desktop
+}
+namespace UnityEngine.Rendering
+{
 }

@@ -1,0 +1,5 @@
+namespace GorillaTagScripts;
+
+namespace GorillaLocomotion
+{
+}

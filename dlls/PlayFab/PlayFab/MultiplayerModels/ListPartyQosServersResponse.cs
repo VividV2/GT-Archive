@@ -1,6 +1,2 @@
-namespace PlayFab.MultiplayerModels
-{
-}
-namespace PlayFab.MultiplayerModels
-{
-}
+namespace PlayFab;
+

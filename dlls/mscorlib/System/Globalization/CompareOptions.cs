@@ -24,9 +24,9 @@ namespace System.Globalization
 		Ordinal = 0x40000000
 	}
 }
-namespace System.Collections
+namespace System.Globalization
 {
 }
-namespace System.Buffers.Binary
+namespace System.Globalization
 {
 }

@@ -1,27 +1,27 @@
-using System;
-using UnityEngine.Scripting;
-
-namespace UnityEngine;
-
-internal class ScriptingUtility
+namespace UnityEngine.Rendering
 {
-	private struct TestClass
+	public enum GraphicsFenceType
 	{
-		public int value;
+		AsyncQueueSynchronisation,
+		CPUSynchronisation
 	}
-
-	[RequiredByNativeCode]
-	private static bool IsManagedCodeWorking()
+}
+namespace UnityEngine.Rendering
+{
+	public enum ReflectionProbeUsage
 	{
-		TestClass testClass = new TestClass
-		{
-			value = 42
-		};
-		return testClass.value == 42;
+		Off,
+		BlendProbes,
+		BlendProbesAndSkybox,
+		Simple
 	}
-
-	[RequiredByNativeCode]
-	private static void SetupCallbacks(IntPtr p)
-	{
-	}
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine
+{
 }

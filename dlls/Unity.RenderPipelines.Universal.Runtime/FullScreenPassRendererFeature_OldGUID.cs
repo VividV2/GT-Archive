@@ -1,18 +1,11 @@
-namespace UnityEngine.Rendering.Universal;
+using System;
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
-public enum UpscalingFilterSelection
+[Obsolete("Kept for migration purpose only. Do not use (see script for more info) #from(6000.0) (UnityUpgradable) -> FullScreenPassRendererFeature", true)]
+internal class FullScreenPassRendererFeature_OldGUID : FullScreenPassRendererFeature, ISerializationCallbackReceiver
 {
-	[InspectorName("Automatic")]
-	[Tooltip("Unity selects a filtering option automatically based on the Render Scale value and the current screen resolution.")]
-	Auto,
-	[InspectorName("Bilinear")]
-	Linear,
-	[InspectorName("Nearest-Neighbor")]
-	Point,
-	[InspectorName("FidelityFX Super Resolution 1.0")]
-	[Tooltip("If the target device does not support Unity shader model 4.5, Unity falls back to the Automatic option.")]
-	FSR,
-	[InspectorName("Spatial-Temporal Post-Processing")]
-	[Tooltip("If the target device does not support compute shaders or is running GLES, Unity falls back to the Automatic option.")]
-	STP
+	void ISerializationCallbackReceiver.OnAfterDeserialize()
+	{
+	}
 }

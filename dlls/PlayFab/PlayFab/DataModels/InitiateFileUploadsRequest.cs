@@ -1,8 +1,15 @@
-namespace PlayFab.CloudScriptModels
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.DataModels;
+
+[Serializable]
+public class InitiateFileUploadsRequest : PlayFabRequestCommon
 {
-	public enum EmailVerificationStatus
-	{
-		Unverified,
-		Pending,
-		Confirmed
-	}
+	public EntityKey Entity;
+
+	public List<string> FileNames;
+
+	public int? ProfileVersion;
+}

@@ -1,6 +1,3 @@
-namespace System.Collections.Generic
-{
-}
-namespace System.Net
+namespace System.CodeDom
 {
 }

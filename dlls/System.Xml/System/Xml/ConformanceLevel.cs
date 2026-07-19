@@ -10,3 +10,6 @@ public enum ConformanceLevel
 	/// <summary>The XML data complies with the rules for a well-formed XML 1.0 document, as defined by the W3C.</summary>
 	Document
 }
+namespace System.Xml.Serialization
+{
+}

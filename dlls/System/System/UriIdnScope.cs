@@ -1,10 +1,8 @@
 namespace System.Configuration;
 
-/// <summary>Provides an interface for defining an alternate application settings provider.</summary>
-public interface ISettingsProviderService
+/// <summary>Provides values to indicate which services should be made available to application settings.</summary>
+public enum SettingsManageability
 {
-	/// <summary>Returns the settings provider compatible with the specified settings property.</summary>
-	/// <param name="property">The <see cref="T:System.Configuration.SettingsProperty" /> that requires serialization.</param>
-	/// <returns>If found, the <see cref="T:System.Configuration.SettingsProvider" /> that can persist the specified settings property; otherwise, <see langword="null" />.</returns>
-	SettingsProvider GetSettingsProvider(SettingsProperty property);
+	/// <summary>Enables application settings to be stored in roaming user profiles. For more information about roaming user profiles, see Isolated Storage and Roaming.</summary>
+	Roaming
 }

@@ -1,10 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace System.Runtime.Remoting.Channels;
-
-/// <summary>Marks a server channel sink provider as a server formatter sink provider.</summary>
-[ComVisible(true)]
-public interface IServerFormatterSinkProvider : IServerChannelSinkProvider
-{
-}
+// Could not decompile System.Runtime.Remoting.Metadata.W3cXsd2001.SoapNormalizedString
+// This type uses unsupported IL or has too many generic parameters.

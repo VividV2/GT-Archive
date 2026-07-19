@@ -1,9 +1,12 @@
-namespace Ionic.Zlib;
+using System;
+using PlayFab.SharedModels;
 
-internal enum BlockState
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class CancelAllServerBackfillTicketsForPlayerRequest : PlayFabRequestCommon
 {
-	NeedMore,
-	BlockDone,
-	FinishStarted,
-	FinishDone
+	public EntityKey Entity;
+
+	public string QueueName;
 }

@@ -1,13 +1,8 @@
-namespace System.Xml.Serialization;
+namespace System.Xml;
 
-/// <summary>Specifies whether a mapping is read, write, or both.</summary>
-[Flags]
-public enum XmlMappingAccess
+public enum XmlSpace
 {
-	/// <summary>Both read and write methods are generated.</summary>
-	None = 0,
-	/// <summary>Read methods are generated.</summary>
-	Read = 1,
-	/// <summary>Write methods are generated.</summary>
-	Write = 2
+	None,
+	Default,
+	Preserve
 }

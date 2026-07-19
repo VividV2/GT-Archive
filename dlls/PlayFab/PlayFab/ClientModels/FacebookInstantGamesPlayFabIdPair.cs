@@ -1,19 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class FacebookInstantGamesPlayFabIdPair : PlayFabBaseModel
-	{
-		public string FacebookInstantGamesId;
-
-		public string PlayFabId;
-	}
-}
-namespace PlayFab.ClientModels
-{
-}
-namespace Ionic.Zlib
-{
-}
+// Could not decompile PlayFab.ClientModels.FacebookInstantGamesPlayFabIdPair
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,12 @@
 using System;
 
-namespace Oculus.Interaction;
-
-public interface ITimeConsumer
+namespace Oculus.Interaction.Input
 {
-	void SetTimeProvider(Func<float> timeProvider);
+}
+namespace Oculus.Interaction
+{
+	public interface ITimeConsumer
+	{
+		void SetTimeProvider(Func<float> timeProvider);
+	}
 }

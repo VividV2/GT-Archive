@@ -1,10 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetCatalogItemsRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string CatalogVersion;
+}
+namespace PlayFab.ClientModels
+{
 }

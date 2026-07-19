@@ -1,11 +1,15 @@
-namespace Meta.WitAi.CallbackHandlers;
-
-public enum MatchMethod
+namespace Meta.WitAi.CallbackHandlers
 {
-	None,
-	Text,
-	RegularExpression,
-	IntegerComparison,
-	FloatComparison,
-	DoubleComparison
+	public enum MatchMethod
+	{
+		None,
+		Text,
+		RegularExpression,
+		IntegerComparison,
+		FloatComparison,
+		DoubleComparison
+	}
+}
+namespace Meta.WitAi.Requests
+{
 }

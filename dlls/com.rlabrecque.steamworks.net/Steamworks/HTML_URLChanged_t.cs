@@ -1,24 +1,37 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4505)]
-public struct HTML_URLChanged_t
+namespace Steamworks
 {
-	public const int k_iCallback = 4505;
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(510)]
+	public struct LobbyMatchList_t
+	{
+		public const int k_iCallback = 510;
 
-	public HHTMLBrowser unBrowserHandle;
+		public uint m_nLobbiesMatching;
+	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(4505)]
+	public struct HTML_URLChanged_t
+	{
+		public const int k_iCallback = 4505;
 
-	public string pchURL;
+		public HHTMLBrowser unBrowserHandle;
 
-	public string pchPostData;
+		public string pchURL;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bIsRedirect;
+		public string pchPostData;
 
-	public string pchPageTitle;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bIsRedirect;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bNewNavigation;
+		public string pchPageTitle;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bNewNavigation;
+	}
 }

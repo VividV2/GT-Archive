@@ -1,7 +1,3 @@
-namespace System.Collections.Generic
-{
-	internal delegate bool TreeWalkPredicate<T>(SortedSet<T>.Node node);
-}
-namespace System.CodeDom.Compiler
+namespace System.Net.Sockets
 {
 }

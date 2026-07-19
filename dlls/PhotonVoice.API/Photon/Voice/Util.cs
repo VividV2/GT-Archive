@@ -1,15 +1,25 @@
 using System.Threading;
 
-namespace Photon.Voice;
-
-internal static class Util
+namespace Photon.Voice
 {
-	public static void SetThreadName(Thread t, string name)
+	internal static class Util
 	{
-		if (name.Length > 25)
+		public static void SetThreadName(Thread t, string name)
 		{
-			name = name.Substring(0, 25);
+			if (name.Length > 25)
+			{
+				name = name.Substring(0, 25);
+			}
+			t.Name = name;
 		}
-		t.Name = name;
 	}
+}
+namespace Photon.Voice.Unity
+{
+}
+namespace Photon.Voice
+{
+}
+namespace Photon.Voice.Unity
+{
 }

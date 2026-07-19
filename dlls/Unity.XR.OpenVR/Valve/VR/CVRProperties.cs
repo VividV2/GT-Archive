@@ -1,8 +1,2 @@
-namespace Valve.VR;
-
-public struct VREvent_Notification_t
-{
-	public ulong ulUserValue;
-
-	public uint notificationId;
-}
+// Could not decompile Valve.VR.CVRProperties
+// This type uses unsupported IL or has too many generic parameters.

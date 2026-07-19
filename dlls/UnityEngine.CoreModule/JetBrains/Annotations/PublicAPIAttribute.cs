@@ -1,24 +1,2 @@
-using System;
-
-namespace JetBrains.Annotations
-{
-	[MeansImplicitUse(ImplicitUseTargetFlags.WithMembers)]
-	[AttributeUsage(AttributeTargets.All, Inherited = false)]
-	public sealed class PublicAPIAttribute : Attribute
-	{
-		[CanBeNull]
-		public string Comment { get; }
-
-		public PublicAPIAttribute()
-		{
-		}
-
-		public PublicAPIAttribute([NotNull] string comment)
-		{
-			Comment = comment;
-		}
-	}
-}
-namespace Unity.IO.LowLevel.Unsafe
-{
-}
+// Could not decompile JetBrains.Annotations.PublicAPIAttribute
+// This type uses unsupported IL or has too many generic parameters.

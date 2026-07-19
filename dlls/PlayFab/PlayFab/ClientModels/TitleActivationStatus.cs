@@ -1,8 +1,5 @@
 namespace PlayFab.ClientModels
 {
-}
-namespace PlayFab.ClientModels
-{
 	public enum TitleActivationStatus
 	{
 		None,
@@ -11,4 +8,16 @@ namespace PlayFab.ClientModels
 		ActivatedSteam,
 		RevokedSteam
 	}
+}
+namespace PlayFab.ClientModels
+{
+}
+namespace PlayFab.ClientModels
+{
+}
+namespace PlayFab.ClientModels
+{
+}
+namespace PlayFab.ClientModels
+{
 }

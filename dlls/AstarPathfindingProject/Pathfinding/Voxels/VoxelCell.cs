@@ -1,2 +1,2 @@
-namespace Pathfinding;
+namespace Pathfinding.Voxels;
 

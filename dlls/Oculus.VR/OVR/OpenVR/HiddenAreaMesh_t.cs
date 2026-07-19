@@ -1,10 +1,3 @@
-using System;
-
-namespace OVR.OpenVR;
-
-public struct HiddenAreaMesh_t
+namespace OVR.OpenVR
 {
-	public IntPtr pVertexData;
-
-	public uint unTriangleCount;
 }

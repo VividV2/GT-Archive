@@ -1,6 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering
-{
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Interactables
-{
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Interactables.Visuals.XRTintInteractableVisual
+// This type uses unsupported IL or has too many generic parameters.

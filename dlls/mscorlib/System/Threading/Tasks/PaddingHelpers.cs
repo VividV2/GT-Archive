@@ -5,6 +5,6 @@ namespace System.Threading.Tasks
 		internal const int CACHE_LINE_SIZE = 128;
 	}
 }
-namespace System
+namespace System.Runtime.InteropServices
 {
 }

@@ -1,11 +1,2 @@
-using System;
-
-namespace Unity.Burst.CompilerServices;
-
-[AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-public class IgnoreWarningAttribute : Attribute
-{
-	public IgnoreWarningAttribute(int warning)
-	{
-	}
-}
+// Could not decompile Unity.Burst.CompilerServices.IgnoreWarningAttribute
+// This type uses unsupported IL or has too many generic parameters.

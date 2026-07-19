@@ -1,14 +1,18 @@
 using System;
 
-namespace Photon.Voice;
-
-public interface ILocalVoiceAudio
+namespace Photon.Voice
 {
-	AudioUtil.IVoiceDetector VoiceDetector { get; }
+}
+namespace Photon.Voice
+{
+	public interface ILocalVoiceAudio
+	{
+		AudioUtil.IVoiceDetector VoiceDetector { get; }
 
-	AudioUtil.ILevelMeter LevelMeter { get; }
+		AudioUtil.ILevelMeter LevelMeter { get; }
 
-	bool VoiceDetectorCalibrating { get; }
+		bool VoiceDetectorCalibrating { get; }
 
-	void VoiceDetectorCalibrate(int durationMs, Action<float> onCalibrated = null);
+		void VoiceDetectorCalibrate(int durationMs, Action<float> onCalibrated = null);
+	}
 }

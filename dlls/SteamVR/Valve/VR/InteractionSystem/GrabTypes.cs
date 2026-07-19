@@ -1,10 +1,6 @@
-namespace Valve.VR.InteractionSystem;
-
-public enum GrabTypes
+namespace Valve.VR.InteractionSystem
 {
-	None,
-	Trigger,
-	Pinch,
-	Grip,
-	Scripted
+}
+namespace Valve.VR
+{
 }

@@ -1,13 +1,2 @@
-using System;
-
-namespace Meta.XR.MultiplayerBlocks.Shared;
-
-[Serializable]
-internal struct MatchInfo(string roomId, string roomPassword, string extra = "")
-{
-	internal string RoomId = roomId;
-
-	internal string RoomPassword = roomPassword;
-
-	internal string Extra = extra;
-}
+// Could not decompile Meta.XR.MultiplayerBlocks.Shared.MatchInfo
+// This type uses unsupported IL or has too many generic parameters.

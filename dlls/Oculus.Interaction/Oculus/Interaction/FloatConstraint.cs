@@ -1,11 +1,2 @@
-using System;
-
-namespace Oculus.Interaction;
-
-[Serializable]
-public class FloatConstraint
-{
-	public bool Constrain;
-
-	public float Value;
-}
+// Could not decompile Oculus.Interaction.FloatConstraint
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,11 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-namespace GorillaTag.GuidedRefs;
-
-public interface IGuidedRefTargetMono : IGuidedRefMonoBehaviour, IGuidedRefObject
-{
-	GuidedRefBasicTargetInfo GRefTargetInfo { get; set; }
-
-	Object GuidedRefTargetObject { get; }
-}
+// Could not decompile VoiceLoudnessReactorRendererColorTarget
+// This type uses unsupported IL or has too many generic parameters.

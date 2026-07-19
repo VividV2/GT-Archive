@@ -1,9 +1,10 @@
 namespace UnityEngine.Experimental.Rendering;
 
-public enum GraphicsJobsSyncPoint
+public enum RayTracingMode
 {
-	EndOfFrame,
-	AfterScriptUpdate,
-	AfterScriptLateUpdate,
-	WaitForPresent
+	Off,
+	Static,
+	DynamicTransform,
+	DynamicGeometry,
+	DynamicGeometryManualUpdate
 }

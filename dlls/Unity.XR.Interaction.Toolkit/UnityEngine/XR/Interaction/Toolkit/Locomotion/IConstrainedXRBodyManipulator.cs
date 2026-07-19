@@ -1,16 +1,20 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Locomotion;
-
-public interface IConstrainedXRBodyManipulator
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion
 {
-	XRMovableBody linkedBody { get; }
+	public interface IConstrainedXRBodyManipulator
+	{
+		XRMovableBody linkedBody { get; }
 
-	CollisionFlags lastCollisionFlags { get; }
+		CollisionFlags lastCollisionFlags { get; }
 
-	bool isGrounded { get; }
+		bool isGrounded { get; }
 
-	void OnLinkedToBody(XRMovableBody body);
+		void OnLinkedToBody(XRMovableBody body);
 
-	void OnUnlinkedFromBody();
+		void OnUnlinkedFromBody();
 
-	CollisionFlags MoveBody(Vector3 motion);
+		CollisionFlags MoveBody(Vector3 motion);
+	}
+}
+namespace UnityEngine.XR.Interaction.Toolkit.Interactors
+{
 }

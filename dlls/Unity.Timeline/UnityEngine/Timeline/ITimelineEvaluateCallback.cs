@@ -1,6 +1,10 @@
-namespace UnityEngine.Timeline;
-
-internal interface ITimelineEvaluateCallback
+namespace UnityEngine.Timeline
 {
-	void Evaluate();
+}
+namespace UnityEngine.Timeline
+{
+	internal interface ITimelineEvaluateCallback
+	{
+		void Evaluate();
+	}
 }

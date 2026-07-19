@@ -1,12 +1,2 @@
-using UnityEngine;
-
-namespace Oculus.Interaction;
-
-public struct TubePoint
-{
-	public Vector3 position;
-
-	public Quaternion rotation;
-
-	public float relativeLength;
-}
+// Could not decompile Oculus.Interaction.TubePoint
+// This type uses unsupported IL or has too many generic parameters.

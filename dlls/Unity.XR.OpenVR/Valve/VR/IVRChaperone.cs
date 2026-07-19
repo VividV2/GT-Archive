@@ -1,10 +1,3 @@
-namespace Valve.VR;
-
-public struct VROverlayIntersectionParams_t
+namespace Valve.VR
 {
-	public HmdVector3_t vSource;
-
-	public HmdVector3_t vDirection;
-
-	public ETrackingUniverseOrigin eOrigin;
 }

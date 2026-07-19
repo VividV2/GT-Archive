@@ -1,12 +1,8 @@
 using System.Runtime.InteropServices;
 
-namespace System.Linq.Parallel
-{
-	[StructLayout(LayoutKind.Sequential, Size = 1)]
-	internal struct NoKeyMemoizationRequired
-	{
-	}
-}
-namespace System.Linq.Parallel
+namespace System.Linq.Parallel;
+
+[StructLayout(LayoutKind.Sequential, Size = 1)]
+internal struct NoKeyMemoizationRequired
 {
 }

@@ -1,2 +1,2 @@
-namespace System.Resources;
+namespace System;
 

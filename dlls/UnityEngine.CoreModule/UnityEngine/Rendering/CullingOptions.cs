@@ -1,5 +1,8 @@
 using System;
 
+namespace UnityEngine
+{
+}
 namespace UnityEngine.Rendering
 {
 	[Flags]
@@ -14,7 +17,4 @@ namespace UnityEngine.Rendering
 		DisablePerObjectCulling = 0x20,
 		ShadowCasters = 0x40
 	}
-}
-namespace UnityEngine.Rendering
-{
 }

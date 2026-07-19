@@ -1,12 +1,50 @@
-namespace System.Net.Sockets;
+namespace System.Net.NetworkInformation;
 
-/// <summary>Defines constants that are used by the <see cref="M:System.Net.Sockets.Socket.Shutdown(System.Net.Sockets.SocketShutdown)" /> method.</summary>
-public enum SocketShutdown
+internal struct Win32_MIB_IPSTATS
 {
-	/// <summary>Disables a <see cref="T:System.Net.Sockets.Socket" /> for receiving. This field is constant.</summary>
-	Receive,
-	/// <summary>Disables a <see cref="T:System.Net.Sockets.Socket" /> for sending. This field is constant.</summary>
-	Send,
-	/// <summary>Disables a <see cref="T:System.Net.Sockets.Socket" /> for both sending and receiving. This field is constant.</summary>
-	Both
+	public int Forwarding;
+
+	public int DefaultTTL;
+
+	public uint InReceives;
+
+	public uint InHdrErrors;
+
+	public uint InAddrErrors;
+
+	public uint ForwDatagrams;
+
+	public uint InUnknownProtos;
+
+	public uint InDiscards;
+
+	public uint InDelivers;
+
+	public uint OutRequests;
+
+	public uint RoutingDiscards;
+
+	public uint OutDiscards;
+
+	public uint OutNoRoutes;
+
+	public uint ReasmTimeout;
+
+	public uint ReasmReqds;
+
+	public uint ReasmOks;
+
+	public uint ReasmFails;
+
+	public uint FragOks;
+
+	public uint FragFails;
+
+	public uint FragCreates;
+
+	public int NumIf;
+
+	public int NumAddr;
+
+	public int NumRoutes;
 }

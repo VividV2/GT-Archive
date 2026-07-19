@@ -1,15 +1,2 @@
-using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Text;
-
-namespace System;
-
-internal interface ITupleInternal : ITuple
-{
-	string ToString(StringBuilder sb);
-
-	int GetHashCode(IEqualityComparer comparer);
-}
+// Could not decompile System.StackOverflowException
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,0 +1,2 @@
+namespace emotitron.Compression.Utilities;
+

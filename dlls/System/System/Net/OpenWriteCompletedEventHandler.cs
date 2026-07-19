@@ -1,6 +1,22 @@
-namespace System.Net;
+using System.Collections;
 
-/// <summary>Represents the method that will handle the <see cref="E:System.Net.WebClient.OpenWriteCompleted" /> event of a <see cref="T:System.Net.WebClient" />.</summary>
-/// <param name="sender">The source of the event.</param>
-/// <param name="e">A <see cref="T:System.Net.OpenWriteCompletedEventArgs" /> containing event data.</param>
-public delegate void OpenWriteCompletedEventHandler(object sender, OpenWriteCompletedEventArgs e);
+namespace System.ComponentModel.Design
+{
+	public interface IEventBindingService
+	{
+		string CreateUniqueMethodName(IComponent component, EventDescriptor e);
+
+		ICollection GetCompatibleMethods(EventDescriptor e);
+
+		EventDescriptor GetEvent(PropertyDescriptor property);
+
+		PropertyDescriptorCollection GetEventProperties(EventDescriptorCollection events);
+
+		PropertyDescriptor GetEventProperty(EventDescriptor e);
+
+		bool ShowCode();
+
+		bool ShowCode(int lineNumber);
+
+		bool ShowCode(IComponent component, EventDescriptor e);
+	}

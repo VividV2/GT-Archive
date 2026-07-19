@@ -1,14 +1,2 @@
-namespace System.Runtime.InteropServices
-{
-	[Obsolete]
-	public struct BIND_OPTS
-	{
-		public int cbStruct;
-
-		public int grfFlags;
-
-		public int grfMode;
-
-		public int dwTickCountDeadline;
-	}
-}
+// Could not decompile System.Security.AccessControl.GenericAcl
+// This type uses unsupported IL or has too many generic parameters.

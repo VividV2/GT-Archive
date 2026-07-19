@@ -1,2 +1,2 @@
-namespace Unity.Collections;
-
+// Could not decompile Unity.Collections.AllocatorHelper`1
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,5 @@
-namespace JetBrains.Annotations;
+namespace Unity.Scripting.LifecycleManagement;
 
+internal sealed class CodeLoadedScope
+{
+}

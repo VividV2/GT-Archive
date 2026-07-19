@@ -1,9 +1,14 @@
-namespace UnityEngine.XR.Interaction.Toolkit
+namespace UnityEngine.XR.Interaction.Toolkit.Attachment
+{
+	public enum InteractorFarAttachMode
+	{
+		Near,
+		Far
+	}
+}
+namespace UnityEngine.XR.Interaction.Toolkit.Filtering
 {
 }
-namespace UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme
-{
-}
-namespace UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation
 {
 }

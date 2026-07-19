@@ -1,48 +1,18 @@
-using System;
-
 namespace UnityEngine.NVIDIA;
 
-internal struct InitDeviceCmdData
+public struct DLSSTextureTable
 {
-	private IntPtr m_ProjectId;
+	public Texture colorInput { get; set; }
 
-	private IntPtr m_EngineVersion;
+	public Texture colorOutput { get; set; }
 
-	private IntPtr m_AppDir;
+	public Texture depth { get; set; }
 
-	public IntPtr projectId
-	{
-		get
-		{
-			return m_ProjectId;
-		}
-		set
-		{
-			m_ProjectId = value;
-		}
-	}
+	public Texture motionVectors { get; set; }
 
-	public IntPtr engineVersion
-	{
-		get
-		{
-			return m_EngineVersion;
-		}
-		set
-		{
-			m_EngineVersion = value;
-		}
-	}
+	public Texture transparencyMask { get; set; }
 
-	public IntPtr appDir
-	{
-		get
-		{
-			return m_AppDir;
-		}
-		set
-		{
-			m_AppDir = value;
-		}
-	}
+	public Texture exposureTexture { get; set; }
+
+	public Texture biasColorMask { get; set; }
 }

@@ -1,18 +1,14 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks
-{
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(4523)]
-	public struct HTML_StatusText_t
-	{
-		public const int k_iCallback = 4523;
+namespace Steamworks;
 
-		public HHTMLBrowser unBrowserHandle;
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(4523)]
+public struct HTML_StatusText_t
+{
+	public const int k_iCallback = 4523;
 
-		public string pchMsg;
-	}
+	public HHTMLBrowser unBrowserHandle;
+
+	public string pchMsg;
 }

@@ -1,59 +1,63 @@
 using System.Text;
 using System.Xml;
 
-namespace System.Security.Cryptography.Xml;
-
-internal class CanonicalizationDispatcher
+namespace System.Security.Cryptography.Xml
 {
-	private CanonicalizationDispatcher()
+	internal class CanonicalizationDispatcher
 	{
-	}
+		private CanonicalizationDispatcher()
+		{
+		}
 
-	public static void Write(XmlNode node, StringBuilder strBuilder, DocPosition docPos, AncestralNamespaceContextManager anc)
-	{
-		if (node is ICanonicalizableNode)
+		public static void Write(XmlNode node, StringBuilder strBuilder, DocPosition docPos, AncestralNamespaceContextManager anc)
 		{
-			((ICanonicalizableNode)node).Write(strBuilder, docPos, anc);
+			if (node is ICanonicalizableNode)
+			{
+				((ICanonicalizableNode)node).Write(strBuilder, docPos, anc);
+			}
+			else
+			{
+				WriteGenericNode(node, strBuilder, docPos, anc);
+			}
 		}
-		else
-		{
-			WriteGenericNode(node, strBuilder, docPos, anc);
-		}
-	}
 
-	public static void WriteGenericNode(XmlNode node, StringBuilder strBuilder, DocPosition docPos, AncestralNamespaceContextManager anc)
-	{
-		if (node == null)
+		public static void WriteGenericNode(XmlNode node, StringBuilder strBuilder, DocPosition docPos, AncestralNamespaceContextManager anc)
 		{
-			throw new ArgumentNullException("node");
+			if (node == null)
+			{
+				throw new ArgumentNullException("node");
+			}
+			foreach (XmlNode childNode in node.ChildNodes)
+			{
+				Write(childNode, strBuilder, docPos, anc);
+			}
 		}
-		foreach (XmlNode childNode in node.ChildNodes)
-		{
-			Write(childNode, strBuilder, docPos, anc);
-		}
-	}
 
-	public static void WriteHash(XmlNode node, HashAlgorithm hash, DocPosition docPos, AncestralNamespaceContextManager anc)
-	{
-		if (node is ICanonicalizableNode)
+		public static void WriteHash(XmlNode node, HashAlgorithm hash, DocPosition docPos, AncestralNamespaceContextManager anc)
 		{
-			((ICanonicalizableNode)node).WriteHash(hash, docPos, anc);
+			if (node is ICanonicalizableNode)
+			{
+				((ICanonicalizableNode)node).WriteHash(hash, docPos, anc);
+			}
+			else
+			{
+				WriteHashGenericNode(node, hash, docPos, anc);
+			}
 		}
-		else
-		{
-			WriteHashGenericNode(node, hash, docPos, anc);
-		}
-	}
 
-	public static void WriteHashGenericNode(XmlNode node, HashAlgorithm hash, DocPosition docPos, AncestralNamespaceContextManager anc)
-	{
-		if (node == null)
+		public static void WriteHashGenericNode(XmlNode node, HashAlgorithm hash, DocPosition docPos, AncestralNamespaceContextManager anc)
 		{
-			throw new ArgumentNullException("node");
-		}
-		foreach (XmlNode childNode in node.ChildNodes)
-		{
-			WriteHash(childNode, hash, docPos, anc);
+			if (node == null)
+			{
+				throw new ArgumentNullException("node");
+			}
+			foreach (XmlNode childNode in node.ChildNodes)
+			{
+				WriteHash(childNode, hash, docPos, anc);
+			}
 		}
 	}
+}
+namespace System.Security.Cryptography.Xml
+{
 }

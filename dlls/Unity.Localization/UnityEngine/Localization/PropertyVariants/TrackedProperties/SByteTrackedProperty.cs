@@ -1,6 +1,8 @@
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
-{
-}
-namespace UnityEngine.Localization.SmartFormat.Core.Formatting
+using System;
+
+namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
+
+[Serializable]
+public class SByteTrackedProperty : TrackedProperty<sbyte>
 {
 }

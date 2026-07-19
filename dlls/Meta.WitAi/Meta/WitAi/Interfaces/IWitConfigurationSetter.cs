@@ -1,11 +1,15 @@
 using System;
 using Meta.WitAi.Data.Configuration;
 
-namespace Meta.WitAi.Interfaces;
-
-public interface IWitConfigurationSetter
+namespace Meta.WitAi.Interfaces
 {
-	WitConfiguration Configuration { get; set; }
+	public interface IWitConfigurationSetter
+	{
+		WitConfiguration Configuration { get; set; }
 
-	event Action<WitConfiguration> OnConfigurationUpdated;
+		event Action<WitConfiguration> OnConfigurationUpdated;
+	}
+}
+namespace Meta.WitAi.CallbackHandlers
+{
 }

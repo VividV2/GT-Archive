@@ -1,12 +1,6 @@
-using System;
-using System.Reflection;
-
-namespace Internal.Runtime.Augments;
-
-internal class ReflectionExecutionDomainCallbacks
+namespace System.Runtime.Serialization
 {
-	internal Exception CreateMissingMetadataException(Type attributeType)
-	{
-		return new MissingMetadataException();
-	}
+}
+namespace System
+{
 }

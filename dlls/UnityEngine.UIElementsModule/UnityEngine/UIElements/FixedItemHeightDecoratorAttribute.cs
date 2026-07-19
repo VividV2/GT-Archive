@@ -1,7 +1,6 @@
-namespace UnityEngine.UIElements;
-
-public enum TimeUnit
+namespace UnityEngine.UIElements
 {
-	Second,
-	Millisecond
+}
+namespace UnityEngine.UIElements.InputSystem
+{
 }

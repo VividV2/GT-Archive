@@ -1,20 +1,35 @@
 using System;
 using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
 
-namespace PlayFab.ProfilesModels;
-
-[Serializable]
-public class EntityLineage : PlayFabBaseModel
+namespace PlayFab.CloudScriptModels
 {
-	public string CharacterId;
+	[Serializable]
+	public class ContactEmailInfoModel : PlayFabBaseModel
+	{
+		public string EmailAddress;
 
-	public string GroupId;
+		public string Name;
 
-	public string MasterPlayerAccountId;
+		public EmailVerificationStatus? VerificationStatus;
+	}
+}
+namespace PlayFab.ProfilesModels
+{
+	[Serializable]
+	public class EntityLineage : PlayFabBaseModel
+	{
+		public string CharacterId;
 
-	public string NamespaceId;
+		public string GroupId;
 
-	public string TitleId;
+		public string MasterPlayerAccountId;
 
-	public string TitlePlayerAccountId;
+		public string NamespaceId;
+
+		public string TitleId;
+
+		public string TitlePlayerAccountId;
+	}
 }

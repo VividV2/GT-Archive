@@ -1,14 +1,10 @@
-namespace Unity.Cinemachine
+namespace Unity.Cinemachine;
+
+internal enum VertexFlags
 {
-	internal enum VertexFlags
-	{
-		None = 0,
-		OpenStart = 1,
-		OpenEnd = 2,
-		LocalMax = 4,
-		LocalMin = 8
-	}
-}
-namespace Unity.Cinemachine
-{
+	None = 0,
+	OpenStart = 1,
+	OpenEnd = 2,
+	LocalMax = 4,
+	LocalMin = 8
 }

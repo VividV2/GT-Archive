@@ -1,3 +1,2 @@
-namespace GorillaTag.Cosmetics
-{
-}
+// Could not decompile HeightVolume
+// This type uses unsupported IL or has too many generic parameters.

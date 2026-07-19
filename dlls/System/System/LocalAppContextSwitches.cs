@@ -1,6 +1,3 @@
-namespace System;
-
-internal static class LocalAppContextSwitches
+namespace Mono.Audio
 {
-	public static readonly bool MemberDescriptorEqualsReturnsFalseIfEquivalent;
 }

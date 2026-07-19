@@ -1,10 +1,2 @@
-namespace System;
-
-[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-internal class MonoDocumentationNoteAttribute : System.MonoTODOAttribute
-{
-	public MonoDocumentationNoteAttribute(string comment)
-		: base(comment)
-	{
-	}
-}
+// Could not decompile System.MonoDocumentationNoteAttribute
+// This type uses unsupported IL or has too many generic parameters.

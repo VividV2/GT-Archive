@@ -2,17 +2,21 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine.Bindings;
 
-namespace Unity.Audio;
-
-[StructLayout(LayoutKind.Sequential, Size = 1)]
-[NativeType(Header = "Modules/DSPGraph/Public/AudioMemoryManager.bindings.h")]
-internal struct AudioMemoryManager
+namespace Unity.Audio
 {
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[NativeMethod(IsFreeFunction = true, ThrowsException = false)]
-	public unsafe static extern void* Internal_AllocateAudioMemory(int size, int alignment);
+	[StructLayout(LayoutKind.Sequential, Size = 1)]
+	[NativeType(Header = "Modules/DSPGraph/Public/AudioMemoryManager.bindings.h")]
+	internal struct AudioMemoryManager
+	{
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		[NativeMethod(IsFreeFunction = true, ThrowsException = false)]
+		public unsafe static extern void* Internal_AllocateAudioMemory(int size, int alignment);
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[NativeMethod(IsFreeFunction = true, ThrowsException = false)]
-	public unsafe static extern void Internal_FreeAudioMemory(void* memory);
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		[NativeMethod(IsFreeFunction = true, ThrowsException = false)]
+		public unsafe static extern void Internal_FreeAudioMemory(void* memory);
+	}
+}
+namespace Unity.Audio
+{
 }

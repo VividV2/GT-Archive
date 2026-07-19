@@ -25,6 +25,6 @@ namespace System.Xml.Xsl
 		object Evaluate(XsltContext xsltContext);
 	}
 }
-namespace System.Xml.Schema
+namespace System.Xml
 {
 }

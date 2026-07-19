@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-namespace UnityEngine.Internal;
-
+namespace UnityEngine
+{
+}
 namespace UnityEngine
 {
 	internal class SendMouseEvents
@@ -227,4 +228,7 @@ namespace UnityEngine
 			m_LastHit[i] = hit;
 		}
 	}
+}
+namespace UnityEngine.Internal
+{
 }

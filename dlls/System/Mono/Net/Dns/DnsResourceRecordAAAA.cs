@@ -1,9 +1,2 @@
-namespace Mono.Net.Dns;
-
-internal class DnsResourceRecordAAAA : DnsResourceRecordIPAddress
-{
-	internal DnsResourceRecordAAAA(DnsResourceRecord rr)
-		: base(rr, 16)
-	{
-	}
-}
+// Could not decompile Mono.Net.Dns.DnsResourceRecordAAAA
+// This type uses unsupported IL or has too many generic parameters.

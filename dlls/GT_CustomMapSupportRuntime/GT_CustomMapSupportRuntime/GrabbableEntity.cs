@@ -1,9 +1,2 @@
-namespace GT_CustomMapSupportRuntime;
-
-public enum AgentBehaviours
-{
-	Search,
-	Chase,
-	Attack,
-	Count
-}
+// Could not decompile GT_CustomMapSupportRuntime.GrabbableEntity
+// This type uses unsupported IL or has too many generic parameters.

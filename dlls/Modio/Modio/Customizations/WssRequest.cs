@@ -1,22 +1,2 @@
-using Newtonsoft.Json.Linq;
-
-namespace Modio.Customizations
-{
-	internal static class WssRequest
-	{
-		public static WssMessage DeviceLogin()
-		{
-			return new WssMessage
-			{
-				operation = "device_login",
-				context = JToken.FromObject(default(WssDeviceLoginRequest))
-			};
-		}
-	}
-}
-namespace Modio.Errors
-{
-}
-namespace Modio.Mods
-{
-}
+// Could not decompile Modio.Customizations.WssRequest
+// This type uses unsupported IL or has too many generic parameters.

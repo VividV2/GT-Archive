@@ -1,17 +1,3 @@
-using UnityEngine.Scripting;
+namespace UnityEngine.Rendering;
 
-namespace UnityEngine
-{
-	[UsedByNativeCode]
-	public struct LOD(float screenRelativeTransitionHeight, Renderer[] renderers)
-	{
-		public float screenRelativeTransitionHeight = screenRelativeTransitionHeight;
-
-		public float fadeTransitionWidth = 0f;
-
-		public Renderer[] renderers = renderers;
-	}
-}
-namespace UnityEngine
-{
-}
+internal delegate void GPUDrivenLODGroupDataNativeCallback(in GPUDrivenLODGroupDataNative lodGroupDataNative, GPUDrivenLODGroupDataCallback callback);

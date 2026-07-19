@@ -1,6 +1,10 @@
-namespace UnityEngine.Rendering;
-
-public struct RenderRequestBatcherContext
+namespace UnityEngine.Rendering
 {
-	public CommandBuffer commandBuffer;
+	public struct RenderRequestBatcherContext
+	{
+		public CommandBuffer commandBuffer;
+	}
+}
+namespace UnityEngine.Rendering
+{
 }

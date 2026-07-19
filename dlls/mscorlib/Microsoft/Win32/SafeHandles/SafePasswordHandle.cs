@@ -1,2 +1,6 @@
-namespace System;
-
+namespace System
+{
+}
+namespace System.Runtime.InteropServices
+{
+}

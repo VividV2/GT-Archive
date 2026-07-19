@@ -1,17 +1,21 @@
-namespace System.Xml.Serialization;
-
-internal enum TypeKind
+namespace System.Xml.Serialization
 {
-	Root,
-	Primitive,
-	Enum,
-	Struct,
-	Class,
-	Array,
-	Collection,
-	Enumerable,
-	Void,
-	Node,
-	Attribute,
-	Serializable
+	internal enum TypeKind
+	{
+		Root,
+		Primitive,
+		Enum,
+		Struct,
+		Class,
+		Array,
+		Collection,
+		Enumerable,
+		Void,
+		Node,
+		Attribute,
+		Serializable
+	}
+}
+namespace System.Xml.Xsl.XsltOld
+{
 }

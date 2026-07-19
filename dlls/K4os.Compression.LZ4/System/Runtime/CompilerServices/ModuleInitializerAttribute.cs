@@ -1,2 +1,9 @@
-namespace System.Runtime.CompilerServices;
-
+namespace K4os.Compression.LZ4.Encoders
+{
+}
+namespace K4os.Compression.LZ4.Encoders
+{
+}
+namespace K4os.Compression.LZ4.Encoders
+{
+}

@@ -1,12 +1,2 @@
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.Windows.WebCam;
-
-[MovedFrom("UnityEngine.XR.WSA.WebCam")]
-public enum WebCamMode
-{
-	None,
-	PhotoMode,
-	VideoMode
-}
+// Could not decompile UnityEngine.Serialization.UnitySurrogateSelector
+// This type uses unsupported IL or has too many generic parameters.

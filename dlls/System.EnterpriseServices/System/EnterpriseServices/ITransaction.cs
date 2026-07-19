@@ -1,14 +1,87 @@
-using System.Runtime.InteropServices;
-
 namespace System.EnterpriseServices;
 
-/// <summary>Indicates whether to create a new context based on the current context or on the information in <see cref="T:System.EnterpriseServices.ServiceConfig" />.</summary>
-[Serializable]
-[ComVisible(false)]
-public enum InheritanceOption
+public sealed class SecurityCallContext
 {
-	/// <summary>The new context is created from the existing context. <see cref="F:System.EnterpriseServices.InheritanceOption.Inherit" /> is the default value for <see cref="P:System.EnterpriseServices.ServiceConfig.Inheritance" />.</summary>
-	Inherit,
-	/// <summary>The new context is created from the default context.</summary>
-	Ignore
+	public SecurityCallers Callers
+	{
+		[System.MonoTODO]
+		get
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	public static SecurityCallContext CurrentCall
+	{
+		[System.MonoTODO]
+		get
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	public SecurityIdentity DirectCaller
+	{
+		[System.MonoTODO]
+		get
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	public bool IsSecurityEnabled
+	{
+		[System.MonoTODO]
+		get
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	public int MinAuthenticationLevel
+	{
+		[System.MonoTODO]
+		get
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	public int NumCallers
+	{
+		[System.MonoTODO]
+		get
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	public SecurityIdentity OriginalCaller
+	{
+		[System.MonoTODO]
+		get
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	internal SecurityCallContext()
+	{
+	}
+
+	internal SecurityCallContext(ISecurityCallContext context)
+	{
+	}
+
+	[System.MonoTODO]
+	public bool IsCallerInRole(string role)
+	{
+		throw new NotImplementedException();
+	}
+
+	[System.MonoTODO]
+	public bool IsUserInRole(string user, string role)
+	{
+		throw new NotImplementedException();
+	}
 }

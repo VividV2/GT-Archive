@@ -1,28 +1,3 @@
-namespace Meta.Voice.Logging;
-
-public enum LogCategory
+namespace Meta.Voice.Logging
 {
-	Global,
-	Conduit,
-	ManifestGenerator,
-	AssemblyMiner,
-	Logging,
-	ErrorMitigator,
-	ContextSystem,
-	Requests,
-	TextToSpeech,
-	Audio,
-	ActivationBlocker,
-	Listener,
-	Speaker,
-	ActivationSystem,
-	SpeechService,
-	Network,
-	Input,
-	Output,
-	Encoding,
-	WebSockets,
-	Editor,
-	Composer,
-	Telemetry
 }

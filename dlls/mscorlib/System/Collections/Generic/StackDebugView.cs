@@ -1,3 +1,6 @@
-namespace System.Reflection
+namespace System.Buffers
+{
+}
+namespace System.IO
 {
 }

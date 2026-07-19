@@ -1,23 +1,2 @@
-using System;
-using UnityEngine;
-
-namespace Oculus.Interaction.Grab.GrabSurfaces;
-
-[Serializable]
-public class SphereGrabSurfaceData : ICloneable
-{
-	public Vector3 centre = Vector3.zero;
-
-	public object Clone()
-	{
-		return new SphereGrabSurfaceData
-		{
-			centre = centre
-		};
-	}
-
-	public SphereGrabSurfaceData Mirror()
-	{
-		return Clone() as SphereGrabSurfaceData;
-	}
-}
+// Could not decompile Oculus.Interaction.Grab.GrabSurfaces.SphereGrabSurfaceData
+// This type uses unsupported IL or has too many generic parameters.

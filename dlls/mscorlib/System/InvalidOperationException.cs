@@ -1,8 +1,15 @@
-namespace Internal.Runtime.Augments;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-internal enum CausalitySynchronousWork
+namespace System.Runtime.Serialization;
+
+/// <summary>When applied to a method, specifies that the method is during serialization of an object in an object graph. The order of serialization relative to other objects in the graph is non-deterministic.</summary>
+[ComVisible(true)]
+[AttributeUsage(AttributeTargets.Method, Inherited = false)]
+public sealed class OnSerializingAttribute : Attribute
 {
-	CompletionNotification,
-	ProgressNotification,
-	Execution
+	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.Serialization.OnSerializingAttribute" /> class.</summary>
+	public OnSerializingAttribute()
+	{
+	}
 }

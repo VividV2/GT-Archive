@@ -1,15 +1,2 @@
-namespace UnityEngine.Rendering.Universal;
-
-internal struct ShadowEdge(int indexA, int indexB)
-{
-	public int v0 = indexA;
-
-	public int v1 = indexB;
-
-	public void Reverse()
-	{
-		int num = v0;
-		v0 = v1;
-		v1 = num;
-	}
-}
+// Could not decompile UnityEngine.Rendering.Universal.ShadowEdge
+// This type uses unsupported IL or has too many generic parameters.

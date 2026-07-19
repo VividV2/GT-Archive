@@ -1,9 +1,13 @@
-namespace System.Net;
-
-internal enum FtpLoginState : byte
+namespace System.Net
 {
-	NotLoggedIn,
-	LoggedIn,
-	LoggedInButNeedsRelogin,
-	ReloginFailed
+	internal enum FtpLoginState : byte
+	{
+		NotLoggedIn,
+		LoggedIn,
+		LoggedInButNeedsRelogin,
+		ReloginFailed
+	}
+}
+namespace System.Net
+{
 }

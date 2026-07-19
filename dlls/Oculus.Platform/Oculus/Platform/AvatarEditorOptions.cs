@@ -1,13 +1,28 @@
 using System;
-using System;
 
-namespace Oculus.Platform.Models
+namespace Oculus.Platform;
+
+public class AvatarEditorOptions
 {
-	public class PushNotificationResult(IntPtr o)
+	private IntPtr Handle;
+
+	public AvatarEditorOptions()
 	{
-		public readonly string Id = CAPI.ovr_PushNotificationResult_GetId(o);
+		Handle = CAPI.ovr_AvatarEditorOptions_Create();
 	}
-}
-namespace Oculus.Platform.Models
-{
+
+	public void SetSourceOverride(string value)
+	{
+		CAPI.ovr_AvatarEditorOptions_SetSourceOverride(Handle, value);
+	}
+
+	public static explicit operator IntPtr(AvatarEditorOptions options)
+	{
+		return options?.Handle ?? IntPtr.Zero;
+	}
+
+	~AvatarEditorOptions()
+	{
+		CAPI.ovr_AvatarEditorOptions_Destroy(Handle);
+	}
 }

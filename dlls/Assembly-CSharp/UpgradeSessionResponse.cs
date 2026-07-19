@@ -1,2 +1,0 @@
-namespace GorillaTag.Cosmetics;
-

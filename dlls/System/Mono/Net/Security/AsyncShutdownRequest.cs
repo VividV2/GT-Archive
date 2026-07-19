@@ -1,2 +1,2 @@
-namespace System.Diagnostics;
-
+// Could not decompile Mono.Net.Security.AsyncShutdownRequest
+// This type uses unsupported IL or has too many generic parameters.

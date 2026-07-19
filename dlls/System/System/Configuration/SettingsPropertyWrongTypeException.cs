@@ -1,9 +1,2 @@
-using System;
-using System;
-
-namespace ObjCRuntimeInternal;
-
-internal interface INativeObject
-{
-	IntPtr Handle { get; }
-}
+// Could not decompile System.Configuration.SettingsPropertyWrongTypeException
+// This type uses unsupported IL or has too many generic parameters.

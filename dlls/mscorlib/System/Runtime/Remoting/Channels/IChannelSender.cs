@@ -1,21 +1,17 @@
-namespace System.Security.AccessControl
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
+
+namespace System.Runtime.Remoting.Channels;
+
+/// <summary>Provides required functions and properties for the sender channels.</summary>
+[ComVisible(true)]
+public interface IChannelSender : IChannel
 {
-	[Flags]
-	public enum RegistryRights
-	{
-		QueryValues = 1,
-		SetValue = 2,
-		CreateSubKey = 4,
-		EnumerateSubKeys = 8,
-		Notify = 0x10,
-		CreateLink = 0x20,
-		Delete = 0x10000,
-		ReadPermissions = 0x20000,
-		WriteKey = 0x20006,
-		ReadKey = 0x20019,
-		ExecuteKey = 0x20019,
-		ChangePermissions = 0x40000,
-		TakeOwnership = 0x80000,
-		FullControl = 0xF003F
-	}
+	/// <summary>Returns a channel message sink that delivers messages to the specified URL or channel data object.</summary>
+	/// <param name="url">The URL to which the new sink will deliver messages. Can be <see langword="null" />.</param>
+	/// <param name="remoteChannelData">The channel data object of the remote host to which the new sink will deliver messages. Can be <see langword="null" />.</param>
+	/// <param name="objectURI">When this method returns, contains a URI of the new channel message sink that delivers messages to the specified URL or channel data object. This parameter is passed uninitialized.</param>
+	/// <returns>A channel message sink that delivers messages to the specified URL or channel data object, or <see langword="null" /> if the channel cannot connect to the given endpoint.</returns>
+	/// <exception cref="T:System.Security.SecurityException">The immediate caller does not have infrastructure permission.</exception>
+	IMessageSink CreateMessageSink(string url, object remoteChannelData, out string objectURI);
 }

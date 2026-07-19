@@ -1,9 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Transformers
-{
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Transformers
-{
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation
-{
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Transformers.XRSingleGrabFreeTransformer
+// This type uses unsupported IL or has too many generic parameters.

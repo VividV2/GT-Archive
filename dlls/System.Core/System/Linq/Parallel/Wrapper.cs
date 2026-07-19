@@ -1,6 +1,2 @@
-namespace System.Linq.Expressions
-{
-}
-namespace System.Linq.Parallel
-{
-}
+// Could not decompile System.Linq.Parallel.Wrapper`1
+// This type uses unsupported IL or has too many generic parameters.

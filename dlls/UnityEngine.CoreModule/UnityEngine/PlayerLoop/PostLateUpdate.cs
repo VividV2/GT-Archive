@@ -1,19 +1,6 @@
-using System;
-
-namespace UnityEngine.Events
+namespace UnityEngine.Rendering
 {
-	[Serializable]
-	public enum PersistentListenerMode
-	{
-		EventDefined,
-		Void,
-		Object,
-		Int,
-		Float,
-		String,
-		Bool
-	}
 }
-namespace UnityEngine.Pool
+namespace UnityEngine.DedicatedServer
 {
 }

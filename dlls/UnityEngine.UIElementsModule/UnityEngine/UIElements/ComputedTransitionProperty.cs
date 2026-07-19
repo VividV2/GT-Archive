@@ -1,9 +1,8 @@
 using System;
 using UnityEngine.UIElements.StyleSheets;
+using System;
+using UnityEngine.UIElements.StyleSheets;
 
-namespace UnityEngine.UIElements
-{
-}
 namespace UnityEngine.UIElements
 {
 	internal struct ComputedTransitionProperty
@@ -16,4 +15,7 @@ namespace UnityEngine.UIElements
 
 		public Func<float, float> easingCurve;
 	}
+}
+namespace UnityEngine.UIElements
+{
 }

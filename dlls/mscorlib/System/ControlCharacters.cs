@@ -1,13 +1,2 @@
-using System.Runtime.CompilerServices;
-using System.Runtime.CompilerServices;
-
-namespace System.Threading.Tasks;
-
-[FriendAccessAllowed]
-internal enum AsyncCausalityStatus
-{
-	Started,
-	Completed,
-	Canceled,
-	Error
-}
+// Could not decompile System.ControlCharacters
+// This type uses unsupported IL or has too many generic parameters.

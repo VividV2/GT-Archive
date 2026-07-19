@@ -1,15 +1,28 @@
-using System;
+using UnityEngine.Scripting;
+using UnityEngine.Scripting;
 
-namespace UnityEngine.SearchService;
-
-[Obsolete("ObjectSelectorHandlerWithTagsAttribute has been deprecated. Use SearchContextAttribute instead.", true)]
-[AttributeUsage(AttributeTargets.Field)]
-public class ObjectSelectorHandlerWithTagsAttribute : Attribute
+namespace UnityEngine.Rendering
 {
-	public string[] tags { get; }
-
-	public ObjectSelectorHandlerWithTagsAttribute(params string[] tags)
+}
+namespace UnityEngine
+{
+	internal class PreloadData : Object
 	{
-		this.tags = tags;
+		[RequiredByNativeCode]
+		internal void PreloadDataDontStripMe()
+		{
+		}
 	}
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine.Rendering
+{
 }

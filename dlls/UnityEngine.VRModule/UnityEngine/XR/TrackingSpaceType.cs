@@ -1,10 +1,17 @@
 using System;
 
-namespace UnityEngine.XR;
+namespace UnityEngine.Experimental.XR;
 
-[Obsolete("This is obsolete, and should no longer be used.  Please use InputTrackingModeFlags.")]
-public enum TrackingSpaceType
+internal enum DeleteMe
 {
-	Stationary,
-	RoomScale
+	Please
+}
+namespace UnityEngine.XR
+{
+	[Obsolete("This is obsolete, and should no longer be used.  Please use InputTrackingModeFlags.")]
+	public enum TrackingSpaceType
+	{
+		Stationary,
+		RoomScale
+	}
 }

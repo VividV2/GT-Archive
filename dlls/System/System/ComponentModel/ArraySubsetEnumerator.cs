@@ -1,48 +1,9 @@
-using System.Collections;
-using System.Security.Permissions;
+namespace System.IO.Ports;
 
-namespace System.ComponentModel;
-
-[HostProtection(SecurityAction.LinkDemand, SharedState = true)]
-internal class ArraySubsetEnumerator : IEnumerator
-{
-	private Array array;
-
-	private int total;
-
-	private int current;
-
-	public object Current
-	{
-		get
-		{
-			if (current == -1)
-			{
-				throw new InvalidOperationException();
-			}
-			return array.GetValue(current);
-		}
-	}
-
-	public ArraySubsetEnumerator(Array array, int count)
-	{
-		this.array = array;
-		total = count;
-		current = -1;
-	}
-
-	public bool MoveNext()
-	{
-		if (current < total - 1)
-		{
-			current++;
-			return true;
-		}
-		return false;
-	}
-
-	public void Reset()
-	{
-		current = -1;
-	}
-}
+/// <summary>Represents the method that will handle the <see cref="E:System.IO.Ports.SerialPort.DataReceived" /> event of a <see cref="T:System.IO.Ports.SerialPort" /> object.</summary>
+/// <param name="sender">The sender of the event, which is the <see cref="T:System.IO.Ports.SerialPort" /> object.</param>
+/// <param name="e">A <see cref="T:System.IO.Ports.SerialDataReceivedEventArgs" /> object that contains the event data.</param>
+/// <summary>Represents the method that will handle the <see cref="E:System.IO.Ports.SerialPort.DataReceived" /> event of a <see cref="T:System.IO.Ports.SerialPort" /> object.</summary>
+/// <param name="sender">The sender of the event, which is the <see cref="T:System.IO.Ports.SerialPort" /> object.</param>
+/// <param name="e">A <see cref="T:System.IO.Ports.SerialDataReceivedEventArgs" /> object that contains the event data.</param>
+public delegate void SerialDataReceivedEventHandler(object sender, SerialDataReceivedEventArgs e);

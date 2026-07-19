@@ -1,11 +1,2 @@
-namespace Technie.PhysicsCreator
-{
-	public struct BoxDef
-	{
-		public Bounds collisionBox;
-
-		public Vector3 boxPosition;
-
-		public Quaternion boxRotation;
-	}
-}
+// Could not decompile Technie.PhysicsCreator.QHullUtil
+// This type uses unsupported IL or has too many generic parameters.

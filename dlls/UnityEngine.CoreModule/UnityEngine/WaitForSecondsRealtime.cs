@@ -1,19 +1,2 @@
-namespace UnityEngine.Profiling;
+namespace UnityEngine.U2D;
 
-public enum ProfilerArea
-{
-	CPU,
-	GPU,
-	Rendering,
-	Memory,
-	Audio,
-	Video,
-	Physics,
-	Physics2D,
-	NetworkMessages,
-	NetworkOperations,
-	UI,
-	UIDetails,
-	GlobalIllumination,
-	VirtualTexturing
-}

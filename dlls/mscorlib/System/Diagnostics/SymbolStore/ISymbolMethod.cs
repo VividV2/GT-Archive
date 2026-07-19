@@ -1,3 +1,3 @@
-namespace System.Reflection
+namespace System.Diagnostics.Contracts.Internal
 {
 }

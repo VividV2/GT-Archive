@@ -1,6 +1,2 @@
-namespace GorillaTagScripts
-{
-}
-namespace GorillaTagScripts.VirtualStumpCustomMaps.UI
-{
-}
+// Could not decompile BuildSafe.Callbacks
+// This type uses unsupported IL or has too many generic parameters.

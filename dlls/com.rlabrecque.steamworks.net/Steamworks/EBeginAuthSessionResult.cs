@@ -1,11 +1,15 @@
-namespace Steamworks;
-
-public enum EBeginAuthSessionResult
+namespace Steamworks
 {
-	k_EBeginAuthSessionResultOK,
-	k_EBeginAuthSessionResultInvalidTicket,
-	k_EBeginAuthSessionResultDuplicateRequest,
-	k_EBeginAuthSessionResultInvalidVersion,
-	k_EBeginAuthSessionResultGameMismatch,
-	k_EBeginAuthSessionResultExpiredTicket
+	public enum EBeginAuthSessionResult
+	{
+		k_EBeginAuthSessionResultOK,
+		k_EBeginAuthSessionResultInvalidTicket,
+		k_EBeginAuthSessionResultDuplicateRequest,
+		k_EBeginAuthSessionResultInvalidVersion,
+		k_EBeginAuthSessionResultGameMismatch,
+		k_EBeginAuthSessionResultExpiredTicket
+	}
+}
+namespace Steamworks
+{
 }

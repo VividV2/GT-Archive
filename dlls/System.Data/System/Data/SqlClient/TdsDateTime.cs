@@ -1,12 +1,8 @@
-namespace System.Data.SqlClient
-{
-	internal struct TdsDateTime
-	{
-		public int days;
+namespace System.Data.SqlClient;
 
-		public int time;
-	}
-}
-namespace System.Data.OleDb
+internal struct TdsDateTime
 {
+	public int days;
+
+	public int time;
 }

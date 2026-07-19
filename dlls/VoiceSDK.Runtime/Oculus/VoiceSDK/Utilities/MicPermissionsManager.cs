@@ -1,16 +1,2 @@
-using System;
-
-namespace Oculus.VoiceSDK.Utilities;
-
-public static class MicPermissionsManager
-{
-	public static bool HasMicPermission()
-	{
-		return true;
-	}
-
-	public static void RequestMicPermission(Action<string> permissionGrantedCallback = null)
-	{
-		permissionGrantedCallback?.Invoke("android.permission.RECORD_AUDIO");
-	}
-}
+// Could not decompile Oculus.VoiceSDK.Utilities.MicPermissionsManager
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,6 @@
-using UnityEngine.Localization.Tables;
-
-namespace UnityEngine.Localization.Metadata;
-
-public interface IEntryOverride : IMetadata
+namespace UnityEngine.Localization.Metadata
 {
-	EntryOverrideType GetOverride(out TableReference tableReference, out TableEntryReference tableEntryReference);
+}
+namespace UnityEngine.Localization.SmartFormat.PersistentVariables
+{
 }

@@ -14,9 +14,10 @@ namespace Steamworks
 }
 namespace Steamworks
 {
-	public enum EGamepadTextInputMode
+	public enum ELeaderboardUploadScoreMethod
 	{
-		k_EGamepadTextInputModeNormal,
-		k_EGamepadTextInputModePassword
+		k_ELeaderboardUploadScoreMethodNone,
+		k_ELeaderboardUploadScoreMethodKeepBest,
+		k_ELeaderboardUploadScoreMethodForceUpdate
 	}
 }

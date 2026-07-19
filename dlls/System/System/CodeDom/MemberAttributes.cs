@@ -1,6 +1,3 @@
-namespace System.Net.Configuration
-{
-}
-namespace System.Configuration
+namespace System
 {
 }

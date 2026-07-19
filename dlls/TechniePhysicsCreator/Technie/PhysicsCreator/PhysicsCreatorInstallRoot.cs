@@ -1,7 +1,2 @@
-using UnityEngine;
-
-namespace Technie.PhysicsCreator;
-
-public class PhysicsCreatorInstallRoot : ScriptableObject
-{
-}
+// Could not decompile Technie.PhysicsCreator.PhysicsCreatorInstallRoot
+// This type uses unsupported IL or has too many generic parameters.

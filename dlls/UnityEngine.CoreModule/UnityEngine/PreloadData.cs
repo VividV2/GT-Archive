@@ -1,11 +1,24 @@
 using UnityEngine.Scripting;
 
-namespace UnityEngine;
-
-internal class PreloadData : Object
+namespace UnityEngine.Rendering
 {
-	[RequiredByNativeCode]
-	internal void PreloadDataDontStripMe()
+}
+namespace UnityEngine
+{
+	internal class PreloadData : Object
 	{
+		[RequiredByNativeCode]
+		internal void PreloadDataDontStripMe()
+		{
+		}
 	}
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine.Rendering
+{
 }

@@ -1,6 +1,10 @@
-namespace System.Runtime.Versioning;
-
-internal static class BinaryCompatibility
+namespace System.Runtime.Versioning
 {
-	public const bool TargetsAtLeast_Desktop_V4_5 = true;
+	internal static class BinaryCompatibility
+	{
+		public const bool TargetsAtLeast_Desktop_V4_5 = true;
+	}
+}
+namespace System.Diagnostics
+{
 }

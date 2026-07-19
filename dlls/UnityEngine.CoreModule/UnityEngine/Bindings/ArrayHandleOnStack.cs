@@ -1,13 +1,6 @@
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
+namespace UnityEngine.Playables;
 
-namespace UnityEngine.Windows.WebCam;
-
-[MovedFrom("UnityEngine.XR.WSA.WebCam")]
-public enum CapturePixelFormat
+public interface IPlayableOutput
 {
-	BGRA32,
-	NV12,
-	JPEG,
-	PNG
+	PlayableOutputHandle GetHandle();
 }

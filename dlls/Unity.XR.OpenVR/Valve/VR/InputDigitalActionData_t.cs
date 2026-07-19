@@ -1,19 +1,40 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Valve.VR;
-
-public struct InputDigitalActionData_t
+namespace Valve.VR
 {
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bActive;
+	public struct VROverlayIntersectionResults_t
+	{
+		public HmdVector3_t vPoint;
 
-	public ulong activeOrigin;
+		public HmdVector3_t vNormal;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bState;
+		public HmdVector2_t vUVs;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bChanged;
+		public float fDistance;
+	}
+}
+namespace Unity.XR.OpenVR
+{
+}
+namespace Valve.VR
+{
+}
+namespace Valve.VR
+{
+	public struct InputDigitalActionData_t
+	{
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bActive;
 
-	public float fUpdateTime;
+		public ulong activeOrigin;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bState;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bChanged;
+
+		public float fUpdateTime;
+	}
 }

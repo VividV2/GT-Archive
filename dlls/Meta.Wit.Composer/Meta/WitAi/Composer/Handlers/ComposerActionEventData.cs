@@ -1,26 +1,11 @@
 using System;
 
-namespace Meta.WitAi.Composer.Handlers
-{
-	[Serializable]
-	public struct ComposerActionEventData
-	{
-		public string actionID;
+namespace Meta.WitAi.Composer.Handlers;
 
-		public ComposerActionEvent actionEvent;
-	}
-}
-namespace Meta.WitAi.Composer.Handlers
+[Serializable]
+public struct ComposerActionEventData
 {
-	[Serializable]
-	public struct ComposerSpeakerData
-	{
-		[]
-		[FormerlySerializedAs("speakerName")]
-		public string SpeakerName;
+	public string actionID;
 
-		[]
-		[FormerlySerializedAs("speaker")]
-		public TTSSpeaker Speaker;
-	}
+	public ComposerActionEvent actionEvent;
 }

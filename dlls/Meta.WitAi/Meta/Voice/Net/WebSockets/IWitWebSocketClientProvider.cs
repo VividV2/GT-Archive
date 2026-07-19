@@ -1,6 +1,10 @@
-namespace Meta.Voice.Net.WebSockets;
-
-public interface IWitWebSocketClientProvider
+namespace Meta.Voice.Net.WebSockets.Requests
 {
-	IWitWebSocketClient WebSocketClient { get; }
+}
+namespace Meta.Voice.Net.WebSockets
+{
+	public interface IWitWebSocketClientProvider
+	{
+		IWitWebSocketClient WebSocketClient { get; }
+	}
 }

@@ -1,21 +1,2 @@
-namespace Valve.VR;
-
-public enum EVRSceneApplicationState
-{
-	None,
-	Starting,
-	Quitting,
-	Running,
-	Waiting
-}
-namespace Valve.VR
-{
-	public struct IntersectionMaskCircle_t
-	{
-		public float m_flCenterX;
-
-		public float m_flCenterY;
-
-		public float m_flRadius;
-	}
-}
+// Could not decompile Valve.VR.IntersectionMaskCircle_t
+// This type uses unsupported IL or has too many generic parameters.

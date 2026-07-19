@@ -1,6 +1,2 @@
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Experimental.Rendering
-{
-}
+// Could not decompile UnityEngine.Rendering.PackingAttribute
+// This type uses unsupported IL or has too many generic parameters.

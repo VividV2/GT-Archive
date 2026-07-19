@@ -1,2 +1,6 @@
-namespace UnityEngine.Android;
-
+namespace UnityEngine.Android
+{
+}
+namespace UnityEngine
+{
+}

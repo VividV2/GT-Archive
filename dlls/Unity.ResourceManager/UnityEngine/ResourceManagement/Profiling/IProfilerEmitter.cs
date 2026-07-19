@@ -1,12 +1,16 @@
 using System;
 
-namespace UnityEngine.ResourceManagement.Profiling;
-
-internal interface IProfilerEmitter
+namespace UnityEngine.ResourceManagement.Profiling
 {
-	bool IsEnabled { get; }
+	internal interface IProfilerEmitter
+	{
+		bool IsEnabled { get; }
 
-	void EmitFrameMetaData(Guid id, int tag, Array data);
+		void EmitFrameMetaData(Guid id, int tag, Array data);
 
-	void InitialiseCallbacks(Action<float> onLateUpdateDelegate);
+		void InitialiseCallbacks(Action<float> onLateUpdateDelegate);
+	}
+}
+namespace UnityEngine.ResourceManagement.Profiling
+{
 }

@@ -1,9 +1,9 @@
-namespace System.Runtime.Serialization;
-
-internal class GYearDataContract : StringDataContract
+namespace System.Runtime.Serialization
 {
-	internal GYearDataContract()
-		: base(DictionaryGlobals.gYearLocalName, DictionaryGlobals.SchemaNamespace)
-	{
-	}
+}
+namespace System.Runtime.Serialization
+{
+}
+namespace System.Runtime.Serialization
+{
 }

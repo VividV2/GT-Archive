@@ -1,9 +1,25 @@
-using System.Security.Permissions;
+namespace System.IO.Ports
+{
+	internal enum SerialSignal
+	{
+		None = 0,
+		Cd = 1,
+		Cts = 2,
+		Dsr = 4,
+		Dtr = 8,
+		Rts = 0x10
+	}
+}
+namespace System.ComponentModel
+{
+	public interface ISite : IServiceProvider
+	{
+		IComponent Component { get; }
 
-namespace System.ComponentModel;
+		IContainer Container { get; }
 
-/// <summary>Represents the method that will handle the MethodName<see langword="Completed" /> event of an asynchronous operation.</summary>
-/// <param name="sender">The source of the event.</param>
-/// <param name="e">An <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> that contains the event data.</param>
-[HostProtection(SecurityAction.LinkDemand, SharedState = true)]
-public delegate void AsyncCompletedEventHandler(object sender, AsyncCompletedEventArgs e);
+		bool DesignMode { get; }
+
+		string Name { get; set; }
+	}
+}

@@ -1,10 +1,14 @@
-namespace UnityEngine.Animations.Rigging;
-
-internal interface IRigSyncSceneToStreamData
+namespace UnityEngine.Animations.Rigging
 {
-	Transform[] syncableTransforms { get; }
+	internal interface IRigSyncSceneToStreamData
+	{
+		Transform[] syncableTransforms { get; }
 
-	SyncableProperties[] syncableProperties { get; }
+		SyncableProperties[] syncableProperties { get; }
 
-	bool[] rigStates { get; }
+		bool[] rigStates { get; }
+	}
+}
+namespace UnityEngine.Animations.Rigging
+{
 }

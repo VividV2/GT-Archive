@@ -1,6 +1,2 @@
-namespace System.Xml.Serialization
-{
-}
-namespace System.Xml.Xsl.Runtime
-{
-}
+// Could not decompile System.Xml.Xsl.Xslt.XslAstRewriter
+// This type uses unsupported IL or has too many generic parameters.

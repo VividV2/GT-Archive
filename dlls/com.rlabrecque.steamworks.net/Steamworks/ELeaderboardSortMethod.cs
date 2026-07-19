@@ -9,13 +9,25 @@ namespace Steamworks
 }
 namespace Steamworks
 {
-	public enum EDurationControlProgress
+	public enum EFriendRelationship
 	{
-		k_EDurationControlProgress_Full,
-		k_EDurationControlProgress_Half,
-		k_EDurationControlProgress_None,
-		k_EDurationControl_ExitSoon_3h,
-		k_EDurationControl_ExitSoon_5h,
-		k_EDurationControl_ExitSoon_Night
+		k_EFriendRelationshipNone,
+		k_EFriendRelationshipBlocked,
+		k_EFriendRelationshipRequestRecipient,
+		k_EFriendRelationshipFriend,
+		k_EFriendRelationshipRequestInitiator,
+		k_EFriendRelationshipIgnored,
+		k_EFriendRelationshipIgnoredFriend,
+		k_EFriendRelationshipSuggested_DEPRECATED,
+		k_EFriendRelationshipMax
+	}
+}
+namespace Steamworks
+{
+	public enum ESteamIPv6ConnectivityProtocol
+	{
+		k_ESteamIPv6ConnectivityProtocol_Invalid,
+		k_ESteamIPv6ConnectivityProtocol_HTTP,
+		k_ESteamIPv6ConnectivityProtocol_UDP
 	}
 }

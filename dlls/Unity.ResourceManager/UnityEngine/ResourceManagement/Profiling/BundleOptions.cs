@@ -1,18 +1,11 @@
-using UnityEngine.ResourceManagement.Util;
+using System;
 
 namespace UnityEngine.ResourceManagement.Profiling;
 
-internal struct BundleFrameData
+[Flags]
+internal enum BundleOptions : short
 {
-	public int BundleCode;
-
-	public int ReferenceCount;
-
-	public float PercentComplete;
-
-	public ContentStatus Status;
-
-	public BundleSource Source;
-
-	public BundleOptions LoadingOptions;
+	None = 0,
+	CachingEnabled = 1,
+	CheckSumEnabled = 2
 }

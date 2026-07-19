@@ -1,69 +1,31 @@
 namespace Valve.VR
 {
-	public enum EVRControllerAxisType
+	public enum VROverlayFlags
 	{
-		k_eControllerAxis_None,
-		k_eControllerAxis_TrackPad,
-		k_eControllerAxis_Joystick,
-		k_eControllerAxis_Trigger
+		NoDashboardTab = 8,
+		SendVRDiscreteScrollEvents = 0x40,
+		SendVRTouchpadEvents = 0x80,
+		ShowTouchPadScrollWheel = 0x100,
+		TransferOwnershipToInternalProcess = 0x200,
+		SideBySide_Parallel = 0x400,
+		SideBySide_Crossed = 0x800,
+		Panorama = 0x1000,
+		StereoPanorama = 0x2000,
+		SortWithNonSceneOverlays = 0x4000,
+		VisibleInDashboard = 0x8000,
+		MakeOverlaysInteractiveIfVisible = 0x10000,
+		SendVRSmoothScrollEvents = 0x20000,
+		ProtectedContent = 0x40000,
+		HideLaserIntersection = 0x80000,
+		WantsModalBehavior = 0x100000,
+		IsPremultiplied = 0x200000
 	}
 }
 namespace Valve.VR
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 4)]
-	public struct RenderModel_t_Packed
+	public enum VROverlayInputMethod
 	{
-		public IntPtr rVertexData;
-
-		public uint unVertexCount;
-
-		public IntPtr rIndexData;
-
-		public uint unTriangleCount;
-
-		public int diffuseTextureId;
-
-		public RenderModel_t_Packed(RenderModel_t unpacked)
-		{
-			rVertexData = unpacked.rVertexData;
-			unVertexCount = unpacked.unVertexCount;
-			rIndexData = unpacked.rIndexData;
-			unTriangleCount = unpacked.unTriangleCount;
-			diffuseTextureId = unpacked.diffuseTextureId;
-		}
-
-		public void Unpack(ref RenderModel_t unpacked)
-		{
-			unpacked.rVertexData = rVertexData;
-			unpacked.unVertexCount = unVertexCount;
-			unpacked.rIndexData = rIndexData;
-			unpacked.unTriangleCount = unTriangleCount;
-			unpacked.diffuseTextureId = diffuseTextureId;
-		}
+		None,
+		Mouse
 	}
-}
-namespace Valve.VR
-{
-	public enum ETrackedPropertyError
-	{
-		TrackedProp_Success,
-		TrackedProp_WrongDataType,
-		TrackedProp_WrongDeviceClass,
-		TrackedProp_BufferTooSmall,
-		TrackedProp_UnknownProperty,
-		TrackedProp_InvalidDevice,
-		TrackedProp_CouldNotContactServer,
-		TrackedProp_ValueNotProvidedByDevice,
-		TrackedProp_StringExceedsMaximumLength,
-		TrackedProp_NotYetAvailable,
-		TrackedProp_PermissionDenied,
-		TrackedProp_InvalidOperation,
-		TrackedProp_CannotWriteToWildcards,
-		TrackedProp_IPCReadFailure,
-		TrackedProp_OutOfMemory,
-		TrackedProp_InvalidContainer
-	}
-}
-namespace Valve.VR
-{
 }

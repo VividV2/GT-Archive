@@ -1,10 +1,2 @@
-namespace UnityEngine.InputSystem.LowLevel;
+namespace UnityEngine.InputSystem.Interactions;
 
-public interface IInputStateCallbackReceiver
-{
-	void OnNextUpdate();
-
-	void OnStateEvent(InputEventPtr eventPtr);
-
-	bool GetStateOffsetForEvent(InputControl control, InputEventPtr eventPtr, ref uint offset);
-}

@@ -7,3 +7,6 @@ internal enum AnalyzeTypeIsResult
 	KnownAssignable,
 	Unknown
 }
+namespace System.Linq.Expressions
+{
+}

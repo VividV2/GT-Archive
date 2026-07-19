@@ -1,8 +1,2 @@
-using UnityEngine;
-
-namespace GorillaLocomotion.Gameplay;
-
-public class CustomRopeNode : MonoBehaviour
-{
-	public Vector3 previousPos;
-}
+// Could not decompile GorillaLocomotion.Gameplay.CustomRopeNode
+// This type uses unsupported IL or has too many generic parameters.

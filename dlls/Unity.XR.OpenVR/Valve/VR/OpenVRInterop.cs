@@ -1,8 +1,2 @@
-namespace Valve.VR;
-
-public struct HmdVector2_t
-{
-	public float v0;
-
-	public float v1;
-}
+// Could not decompile Valve.VR.OpenVRInterop
+// This type uses unsupported IL or has too many generic parameters.

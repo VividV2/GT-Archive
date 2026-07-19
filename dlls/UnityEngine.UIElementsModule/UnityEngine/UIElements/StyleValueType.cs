@@ -2,6 +2,11 @@ using UnityEngine.Bindings;
 
 namespace UnityEngine.UIElements
 {
+	public enum FillRule
+	{
+		NonZero,
+		OddEven
+	}
 }
 namespace UnityEngine.UIElements
 {
@@ -23,7 +28,4 @@ namespace UnityEngine.UIElements
 		ScalableImage,
 		MissingAssetReference
 	}
-}
-namespace UnityEngine.UIElements
-{
 }

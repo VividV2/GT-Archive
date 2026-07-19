@@ -1,8 +1,15 @@
-namespace UnityEngine.UIElements;
-
-public enum LibraryVisibility
+namespace UnityEngine.UIElements
 {
-	Default,
-	Visible,
-	Hidden
+	public enum LibraryVisibility
+	{
+		Default,
+		Visible,
+		Hidden
+	}
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
 }

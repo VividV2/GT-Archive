@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
 
-namespace Liv.Lck;
-
-[Serializable]
-public struct QualityOptionOverride
+namespace Liv.Lck.Streaming
 {
-	public DeviceModel DeviceModel;
+}
+namespace Liv.Lck
+{
+	[Serializable]
+	public struct QualityOptionOverride
+	{
+		public DeviceModel DeviceModel;
 
-	public List<QualityOption> QualityOptions;
+		public List<QualityOption> QualityOptions;
+	}
 }

@@ -1,20 +1,33 @@
 using System.Runtime.InteropServices;
 
-namespace OVR.OpenVR;
-
-public struct TrackedDevicePose_t
+namespace OVR.OpenVR
 {
-	public HmdMatrix34_t mDeviceToAbsoluteTracking;
+	public struct VREvent_Notification_t
+	{
+		public ulong ulUserValue;
 
-	public HmdVector3_t vVelocity;
+		public uint notificationId;
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct TrackedDevicePose_t
+	{
+		public HmdMatrix34_t mDeviceToAbsoluteTracking;
 
-	public HmdVector3_t vAngularVelocity;
+		public HmdVector3_t vVelocity;
 
-	public ETrackingResult eTrackingResult;
+		public HmdVector3_t vAngularVelocity;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bPoseIsValid;
+		public ETrackingResult eTrackingResult;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bDeviceIsConnected;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bPoseIsValid;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bDeviceIsConnected;
+	}
+}
+namespace OVR.OpenVR
+{
 }

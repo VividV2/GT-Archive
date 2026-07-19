@@ -1,12 +1,3 @@
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.Rendering;
-
-[MovedFrom("UnityEngine.Rendering.RendererUtils")]
-public enum RendererListStatus
+namespace UnityEngine.Experimental.U2D
 {
-	kRendererListInvalid = -2,
-	kRendererListProcessing,
-	kRendererListEmpty,
-	kRendererListPopulated
 }

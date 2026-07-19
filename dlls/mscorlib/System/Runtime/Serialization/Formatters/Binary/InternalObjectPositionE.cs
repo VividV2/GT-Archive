@@ -1,9 +1,13 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
-
-internal enum InternalObjectPositionE
+namespace System.Runtime.Serialization.Formatters.Binary
 {
-	Empty,
-	Top,
-	Child,
-	Headers
+	internal enum InternalObjectPositionE
+	{
+		Empty,
+		Top,
+		Child,
+		Headers
+	}
+}
+namespace System.Security.Cryptography
+{
 }

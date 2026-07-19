@@ -1,13 +1,2 @@
-using System.Collections;
-using System.Collections;
-
-namespace System.EnterpriseServices;
-
-internal interface ISecurityCallersColl
-{
-	int Count { get; }
-
-	void GetEnumerator(out IEnumerator enumerator);
-
-	ISecurityIdentityColl GetItem(int idx);
-}
+// Could not decompile System.EnterpriseServices.EventClassAttribute
+// This type uses unsupported IL or has too many generic parameters.

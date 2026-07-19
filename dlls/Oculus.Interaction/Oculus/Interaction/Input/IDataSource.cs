@@ -1,6 +1,16 @@
-namespace Oculus.Interaction.Input;
+using System;
 
-public interface IDataSource<TData> : IDataSource
+namespace Oculus.Interaction.Input
 {
-	TData GetData();
+	public interface IDataSource
+	{
+		int CurrentDataVersion { get; }
+
+		event Action InputDataAvailable;
+
+		void MarkInputDataRequiresUpdate();
+	}
+}
+namespace Oculus.Interaction.PoseDetection
+{
 }

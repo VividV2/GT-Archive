@@ -1,0 +1,78 @@
+using System;
+using System;
+
+namespace Valve.VR
+{
+	[Serializable]
+	public class SteamVR_Input_ActionFile_DefaultBinding
+	{
+		public string controller_type;
+
+		public string binding_url;
+
+		public SteamVR_Input_ActionFile_DefaultBinding GetCopy()
+		{
+			return new SteamVR_Input_ActionFile_DefaultBinding
+			{
+				controller_type = controller_type,
+				binding_url = binding_url
+			};
+		}
+	}
+}
+namespace Valve.VR
+{
+	public class SteamVR_Skeleton_FingerIndexes
+	{
+		public const int thumb = 0;
+
+		public const int index = 1;
+
+		public const int middle = 2;
+
+		public const int ring = 3;
+
+		public const int pinky = 4;
+
+		public static SteamVR_Skeleton_FingerIndexEnum[] enumArray = (SteamVR_Skeleton_FingerIndexEnum[])Enum.GetValues(typeof(SteamVR_Skeleton_FingerIndexEnum));
+	}
+}
+namespace Valve.VR
+{
+	public interface ISteamVR_ActionSet
+	{
+		SteamVR_Action[] allActions { get; }
+
+		ISteamVR_Action_In[] nonVisualInActions { get; }
+
+		ISteamVR_Action_In[] visualActions { get; }
+
+		SteamVR_Action_Pose[] poseActions { get; }
+
+		SteamVR_Action_Skeleton[] skeletonActions { get; }
+
+		ISteamVR_Action_Out[] outActionArray { get; }
+
+		string fullPath { get; }
+
+		string usage { get; }
+
+		ulong handle { get; }
+
+		bool ReadRawSetActive(SteamVR_Input_Sources inputSource);
+
+		float ReadRawSetLastChanged(SteamVR_Input_Sources inputSource);
+
+		int ReadRawSetPriority(SteamVR_Input_Sources inputSource);
+
+		bool IsActive(SteamVR_Input_Sources source = SteamVR_Input_Sources.Any);
+
+		float GetTimeLastChanged(SteamVR_Input_Sources source = SteamVR_Input_Sources.Any);
+
+		void Activate(SteamVR_Input_Sources activateForSource = SteamVR_Input_Sources.Any, int priority = 0, bool disableAllOtherActionSets = false);
+
+		void Deactivate(SteamVR_Input_Sources forSource = SteamVR_Input_Sources.Any);
+
+		string GetShortName();
+	}
+}

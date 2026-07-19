@@ -2,18 +2,22 @@ using System;
 using UnityEngine.Scripting;
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.AI;
-
-[MovedFrom("UnityEngine")]
-[UsedByNativeCode]
-public struct NavMeshTriangulation
+namespace UnityEngine.AI
 {
-	public Vector3[] vertices;
+}
+namespace UnityEngine.AI
+{
+	[MovedFrom("UnityEngine")]
+	[UsedByNativeCode]
+	public struct NavMeshTriangulation
+	{
+		public Vector3[] vertices;
 
-	public int[] indices;
+		public int[] indices;
 
-	public int[] areas;
+		public int[] areas;
 
-	[Obsolete("Use areas instead.")]
-	public int[] layers => areas;
+		[Obsolete("Use areas instead.")]
+		public int[] layers => areas;
+	}
 }

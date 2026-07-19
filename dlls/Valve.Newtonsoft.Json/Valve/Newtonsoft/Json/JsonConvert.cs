@@ -1,0 +1,2 @@
+// Could not decompile Valve.Newtonsoft.Json.JsonConvert
+// This type uses unsupported IL or has too many generic parameters.

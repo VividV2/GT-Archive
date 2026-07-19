@@ -1,0 +1,2 @@
+// Could not decompile SIGadgetWristJet
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,11 +1,2 @@
-using System;
-using System;
-
-namespace UnityEngine.UIElements;
-
-public interface IRuntimePanel : IPanel, IDisposable
-{
-	PanelSettings panelSettings { get; }
-
-	GameObject selectableGameObject { get; set; }
-}
+// Could not decompile UnityEngine.UIElements.CursorManager
+// This type uses unsupported IL or has too many generic parameters.

@@ -3,18 +3,11 @@ using System.Collections.Generic;
 
 namespace UnityEngine.UIElements
 {
-	public enum PanelScaleMode
+	public enum Wrap
 	{
-		ConstantPixelSize,
-		ConstantPhysicalSize,
-		ScaleWithScreenSize
-	}
-}
-namespace UnityEngine.UIElements
-{
-	public interface IManipulator
-	{
-		VisualElement target { get; set; }
+		NoWrap,
+		Wrap,
+		WrapReverse
 	}
 }
 namespace UnityEngine.UIElements
@@ -39,4 +32,7 @@ namespace UnityEngine.UIElements
 
 		VisualElement PickAll(Vector2 point, List<VisualElement> picked);
 	}
+}
+namespace UnityEngine.UIElements
+{
 }

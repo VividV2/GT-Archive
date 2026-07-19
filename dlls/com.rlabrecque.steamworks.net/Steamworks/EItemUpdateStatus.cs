@@ -1,11 +1,2 @@
-namespace Steamworks;
-
-public enum EItemUpdateStatus
-{
-	k_EItemUpdateStatusInvalid,
-	k_EItemUpdateStatusPreparingConfig,
-	k_EItemUpdateStatusPreparingContent,
-	k_EItemUpdateStatusUploadingContent,
-	k_EItemUpdateStatusUploadingPreviewFile,
-	k_EItemUpdateStatusCommittingChanges
-}
+// Could not decompile Steamworks.EItemUpdateStatus
+// This type uses unsupported IL or has too many generic parameters.

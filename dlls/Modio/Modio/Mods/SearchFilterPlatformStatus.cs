@@ -1,8 +1,12 @@
-namespace Modio.Mods;
-
-public enum SearchFilterPlatformStatus
+namespace Modio.Mods
 {
-	None,
-	PendingOnly,
-	LiveAndPending
+	public enum SearchFilterPlatformStatus
+	{
+		None,
+		PendingOnly,
+		LiveAndPending
+	}
+}
+namespace Modio.Monetization
+{
 }

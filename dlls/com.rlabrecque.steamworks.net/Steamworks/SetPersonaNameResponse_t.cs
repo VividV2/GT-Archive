@@ -3,16 +3,12 @@ using System.Runtime.InteropServices;
 namespace Steamworks;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(347)]
-public struct SetPersonaNameResponse_t
+[CallbackIdentity(4514)]
+public struct HTML_JSAlert_t
 {
-	public const int k_iCallback = 347;
+	public const int k_iCallback = 4514;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bSuccess;
+	public HHTMLBrowser unBrowserHandle;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bLocalSuccess;
-
-	public EResult m_result;
+	public string pchMessage;
 }

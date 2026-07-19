@@ -1,18 +1,20 @@
-namespace System;
-
-/// <summary>Specifies the culture, case, and sort rules to be used by certain overloads of the <see cref="M:System.String.Compare(System.String,System.String)" /> and <see cref="M:System.String.Equals(System.Object)" /> methods.</summary>
-public enum StringComparison
+namespace System.Runtime.InteropServices
 {
-	/// <summary>Compare strings using culture-sensitive sort rules and the current culture.</summary>
-	CurrentCulture,
-	/// <summary>Compare strings using culture-sensitive sort rules, the current culture, and ignoring the case of the strings being compared.</summary>
-	CurrentCultureIgnoreCase,
-	/// <summary>Compare strings using culture-sensitive sort rules and the invariant culture.</summary>
-	InvariantCulture,
-	/// <summary>Compare strings using culture-sensitive sort rules, the invariant culture, and ignoring the case of the strings being compared.</summary>
-	InvariantCultureIgnoreCase,
-	/// <summary>Compare strings using ordinal (binary) sort rules.</summary>
-	Ordinal,
-	/// <summary>Compare strings using ordinal (binary) sort rules and ignoring the case of the strings being compared.</summary>
-	OrdinalIgnoreCase
+	[ComImport]
+	[Obsolete]
+	[Guid("b196b285-bab4-101a-b69c-00aa00341d07")]
+	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+	public interface UCOMIEnumConnectionPoints
+	{
+		[PreserveSig]
+		int Next(int celt, [Out][MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] UCOMIConnectionPoint[] rgelt, out int pceltFetched);
+
+		[PreserveSig]
+		int Skip(int celt);
+
+		[PreserveSig]
+		int Reset();
+
+		void Clone(out UCOMIEnumConnectionPoints ppenum);
+	}
 }

@@ -2,10 +2,12 @@ using System.Runtime.InteropServices;
 
 namespace Steamworks
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
-	[CallbackIdentity(4105)]
-	public struct MusicPlayerWantsPlay_t
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(210)]
+	public struct AssociateWithClanResult_t
 	{
-		public const int k_iCallback = 4105;
+		public const int k_iCallback = 210;
+
+		public EResult m_eResult;
 	}
 }

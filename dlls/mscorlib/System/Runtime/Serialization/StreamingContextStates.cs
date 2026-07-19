@@ -1,14 +1,8 @@
-namespace System.Runtime.InteropServices;
+namespace Internal.Runtime.Augments;
 
-public interface ICustomMarshaler
+internal enum CausalitySource
 {
-	object MarshalNativeToManaged(IntPtr pNativeData);
-
-	IntPtr MarshalManagedToNative(object ManagedObj);
-
-	void CleanUpNativeData(IntPtr pNativeData);
-
-	void CleanUpManagedData(object ManagedObj);
-
-	int GetNativeDataSize();
+	Application,
+	Library,
+	System
 }

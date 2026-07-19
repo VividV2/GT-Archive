@@ -1,9 +1,20 @@
 namespace UnityEngine.Rendering;
 
-public enum ReflectionProbeSortingCriteria
+public enum FoveatedRenderingMode
 {
-	None,
-	Importance,
-	Size,
-	ImportanceThenSize
+	Disabled,
+	Enabled
+}
+namespace UnityEngine.Rendering
+{
+	public enum ReflectionProbeSortingCriteria
+	{
+		None,
+		Importance,
+		Size,
+		ImportanceThenSize
+	}
+}
+namespace UnityEngine.Rendering
+{
 }

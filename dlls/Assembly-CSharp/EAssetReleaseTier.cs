@@ -1,11 +1,2 @@
-public enum EAssetReleaseTier
-{
-	Disabled,
-	PublicRC,
-	PrivateRC,
-	PublicBeta,
-	PrivateBeta,
-	PublicAlpha,
-	PrivateAlpha,
-	Internal
-}
+// Could not decompile EAssetReleaseTier
+// This type uses unsupported IL or has too many generic parameters.

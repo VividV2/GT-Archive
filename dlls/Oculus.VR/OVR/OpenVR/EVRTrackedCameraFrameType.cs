@@ -1,19 +1,9 @@
-namespace OVR.OpenVR
+namespace OVR.OpenVR;
+
+public enum EVRTrackedCameraFrameType
 {
-	public enum EVRTrackedCameraFrameType
-	{
-		Distorted,
-		Undistorted,
-		MaximumUndistorted,
-		MAX_CAMERA_FRAME_TYPES
-	}
-}
-namespace OVR.OpenVR
-{
-	public enum EVSync
-	{
-		None,
-		WaitRender,
-		NoWaitRender
-	}
+	Distorted,
+	Undistorted,
+	MaximumUndistorted,
+	MAX_CAMERA_FRAME_TYPES
 }

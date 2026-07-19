@@ -1,6 +1,10 @@
-namespace Unity.Cinemachine;
-
-public interface ISplineReferencer
+namespace Unity.Cinemachine
 {
-	ref SplineSettings SplineSettings { get; }
+	public interface ISplineReferencer
+	{
+		ref SplineSettings SplineSettings { get; }
+	}
+}
+namespace Unity.Cinemachine
+{
 }

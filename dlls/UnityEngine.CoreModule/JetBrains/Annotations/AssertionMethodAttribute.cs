@@ -1,8 +1,2 @@
-using System;
-
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.Method)]
-public sealed class AssertionMethodAttribute : Attribute
-{
-}
+// Could not decompile JetBrains.Annotations.AssertionMethodAttribute
+// This type uses unsupported IL or has too many generic parameters.

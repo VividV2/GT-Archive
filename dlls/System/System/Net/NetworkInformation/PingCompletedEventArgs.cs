@@ -1,10 +1,2 @@
-namespace System.IO;
+namespace System.Net.Sockets;
 
-internal enum FileAction
-{
-	Added = 1,
-	Removed,
-	Modified,
-	RenamedOldName,
-	RenamedNewName
-}

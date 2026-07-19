@@ -1,16 +1,6 @@
-namespace UnityEngine.ProBuilder
+namespace UnityEngine.ProBuilder;
+
+internal interface IHasDefault
 {
-	public enum HandleOrientation
-	{
-		World,
-		ActiveObject,
-		ActiveElement
-	}
-}
-namespace UnityEngine.ProBuilder
-{
-	internal interface IHasDefault
-	{
-		void SetDefaultValues();
-	}
+	void SetDefaultValues();
 }

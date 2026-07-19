@@ -1,10 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace System.Diagnostics.SymbolStore
-{
-	[ComVisible(true)]
-	public interface ISymbolBinder1
-	{
-		ISymbolReader GetReader(IntPtr importer, string filename, string searchPath);
-	}
-}
+// Could not decompile System.Reflection.Emit.PointerType
+// This type uses unsupported IL or has too many generic parameters.

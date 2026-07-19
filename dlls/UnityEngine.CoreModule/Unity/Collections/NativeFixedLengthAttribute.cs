@@ -1,16 +1,7 @@
-using System;
-using UnityEngine.Scripting;
+namespace UnityEngine;
 
-namespace Unity.Collections;
-
-[AttributeUsage(AttributeTargets.Field)]
-[RequiredByNativeCode]
-public sealed class NativeFixedLengthAttribute : Attribute
+public enum CustomRenderTextureUpdateZoneSpace
 {
-	public int FixedLength;
-
-	public NativeFixedLengthAttribute(int fixedLength)
-	{
-		FixedLength = fixedLength;
-	}
+	Normalized,
+	Pixel
 }

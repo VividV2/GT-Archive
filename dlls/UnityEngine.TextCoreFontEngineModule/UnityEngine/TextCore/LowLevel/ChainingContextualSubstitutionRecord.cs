@@ -9,37 +9,37 @@ namespace UnityEngine.TextCore.LowLevel;
 
 [Serializable]
 [UsedByNativeCode]
-internal struct AlternateSubstitutionRecord
+internal struct ContextualSubstitutionRecord
 {
-	[NativeName("targetGlyphID")]
 	[SerializeField]
-	private uint m_TargetGlyphID;
+	[NativeName("inputGlyphSequences")]
+	private GlyphIDSequence[] m_InputGlyphSequences;
 
-	[NativeName("substituteGlyphIDs")]
+	[NativeName("sequenceLookupRecords")]
 	[SerializeField]
-	private uint[] m_SubstituteGlyphIDs;
+	private SequenceLookupRecord[] m_SequenceLookupRecords;
 
-	public uint targetGlyphID
+	public GlyphIDSequence[] inputSequences
 	{
 		get
 		{
-			return m_TargetGlyphID;
+			return m_InputGlyphSequences;
 		}
 		set
 		{
-			m_TargetGlyphID = value;
+			m_InputGlyphSequences = value;
 		}
 	}
 
-	public uint[] substituteGlyphIDs
+	public SequenceLookupRecord[] sequenceLookupRecords
 	{
 		get
 		{
-			return m_SubstituteGlyphIDs;
+			return m_SequenceLookupRecords;
 		}
 		set
 		{
-			m_SubstituteGlyphIDs = value;
+			m_SequenceLookupRecords = value;
 		}
 	}
 }

@@ -1,6 +1,3 @@
-namespace System.Runtime.Remoting.Channels;
-
-public interface ISecurableChannel
+namespace System.Runtime.InteropServices
 {
-	bool IsSecured { get; set; }
 }

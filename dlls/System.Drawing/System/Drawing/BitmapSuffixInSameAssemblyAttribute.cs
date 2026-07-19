@@ -1,30 +1,11 @@
-namespace System.Drawing.Imaging
-{
-	public enum ImageLockMode
-	{
-		ReadOnly = 1,
-		WriteOnly,
-		ReadWrite,
-		UserInputBuffer
-	}
-}
-namespace System.Drawing
-{
-	internal struct CGRect32
-	{
-		public CGPoint32 origin;
+namespace System.Drawing;
 
-		public CGSize32 size;
-
-		public CGRect32(float x, float y, float width, float height)
-		{
-			origin.x = x;
-			origin.y = y;
-			size.width = width;
-			size.height = height;
-		}
-	}
-}
-namespace System.Drawing.Design
+/// <summary>Specifies that, when interpreting <see cref="T:System.Drawing.ToolboxBitmapAttribute" /> declarations, the assembly should look for the indicated resources in the same assembly, but with the <see cref="P:System.Drawing.Configuration.SystemDrawingSection.BitmapSuffix" /> configuration value appended to the declared file name.</summary>
+[AttributeUsage(AttributeTargets.Assembly)]
+public class BitmapSuffixInSameAssemblyAttribute : Attribute
 {
+	/// <summary>Initializes a new instance of the <see cref="T:System.Drawing.BitmapSuffixInSameAssemblyAttribute" /> class.</summary>
+	public BitmapSuffixInSameAssemblyAttribute()
+	{
+	}
 }

@@ -32,6 +32,3 @@ internal enum TextEditOp
 	ScrollPageUp,
 	ScrollPageDown
 }
-namespace UnityEngine
-{
-}

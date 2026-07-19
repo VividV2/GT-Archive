@@ -1,9 +1,2 @@
-namespace System.Diagnostics.Tracing;
-
-public class PollingCounter : DiagnosticCounter
-{
-	public PollingCounter(string name, EventSource eventSource, Func<double> metricProvider)
-		: base(name, eventSource)
-	{
-	}
-}
+// Could not decompile System.Collections.Generic.Comparer`1
+// This type uses unsupported IL or has too many generic parameters.

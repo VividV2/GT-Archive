@@ -1,31 +1,10 @@
-using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using Unity.Collections.LowLevel.Unsafe;
+namespace UnityEngine;
 
-namespace UnityEngine.Bindings
+public enum CursorMode
 {
-	[StructLayout(LayoutKind.Sequential, Size = 1)]
-	[VisibleToOtherModules]
-	internal struct Unmarshal
-	{
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static T UnmarshalUnityObject<T>(IntPtr gcHandlePtr) where T : Object
-		{
-			if (gcHandlePtr == IntPtr.Zero)
-			{
-				return null;
-			}
-			return (T)FromIntPtrUnsafe(gcHandlePtr).Target;
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static GCHandle FromIntPtrUnsafe(IntPtr gcHandle)
-		{
-			return UnsafeUtility.As<IntPtr, GCHandle>(ref gcHandle);
-		}
-	}
+	Auto,
+	ForceSoftware
 }
-namespace UnityEngine.Windows.WebCam
+namespace UnityEngine
 {
 }

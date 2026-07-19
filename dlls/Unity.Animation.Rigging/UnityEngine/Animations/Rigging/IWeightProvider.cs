@@ -1,6 +1,3 @@
-namespace UnityEngine.Animations.Rigging;
-
-public interface IWeightProvider
+namespace UnityEngine.Animations.Rigging
 {
-	float weight { get; set; }
 }

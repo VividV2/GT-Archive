@@ -1,18 +1,14 @@
-namespace UnityEngine.Rendering.RenderGraphModule
+namespace UnityEngine.Rendering.RenderGraphModule;
+
+internal struct RendererListLegacyResource
 {
-	internal struct RendererListLegacyResource
+	public RendererList rendererList;
+
+	public bool isActive;
+
+	internal RendererListLegacyResource(in bool active = false)
 	{
-		public RendererList rendererList;
-
-		public bool isActive;
-
-		internal RendererListLegacyResource(in bool active = false)
-		{
-			rendererList = default(RendererList);
-			isActive = active;
-		}
+		rendererList = default(RendererList);
+		isActive = active;
 	}
-}
-namespace UnityEngine.Rendering.UI
-{
 }

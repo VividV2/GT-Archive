@@ -1,20 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace Valve.VR;
-
-public struct VREvent_TouchPadMove_t
-{
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bFingerDown;
-
-	public float flSecondsFingerDown;
-
-	public float fValueXFirst;
-
-	public float fValueYFirst;
-
-	public float fValueXRaw;
-
-	public float fValueYRaw;
-}
+// Could not decompile Valve.VR.CVRDebug
+// This type uses unsupported IL or has too many generic parameters.

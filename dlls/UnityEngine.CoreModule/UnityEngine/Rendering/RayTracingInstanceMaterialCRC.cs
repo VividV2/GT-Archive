@@ -2,10 +2,13 @@ using UnityEngine.Scripting.APIUpdating;
 
 namespace UnityEngine.Rendering;
 
-[MovedFrom("UnityEngine.Experimental.Rendering")]
-public struct RayTracingInstanceMaterialCRC
+namespace UnityEngine.Rendering
 {
-	public int instanceID;
+	[MovedFrom("UnityEngine.Experimental.Rendering")]
+	public struct RayTracingInstanceMaterialCRC
+	{
+		public int instanceID;
 
-	public int crc;
+		public int crc;
+	}
 }

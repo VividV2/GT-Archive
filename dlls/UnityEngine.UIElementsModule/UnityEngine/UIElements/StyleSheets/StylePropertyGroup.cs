@@ -1,12 +1,16 @@
-namespace UnityEngine.UIElements.StyleSheets;
-
-internal enum StylePropertyGroup
+namespace UnityEngine.UIElements.StyleSheets
 {
-	Inherited = 1,
-	Layout,
-	Rare,
-	Shorthand,
-	Transform,
-	Transition,
-	Visual
+	internal enum StylePropertyGroup
+	{
+		Inherited = 1,
+		Layout,
+		Rare,
+		Shorthand,
+		Transform,
+		Transition,
+		Visual
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

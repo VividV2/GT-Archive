@@ -1,8 +1,12 @@
 using System;
 
-namespace Oculus.Interaction;
-
-public interface MAction<out T>
+namespace Oculus.Interaction.Surfaces
 {
-	event Action<T> Action;
+}
+namespace Oculus.Interaction
+{
+	public interface MAction<out T>
+	{
+		event Action<T> Action;
+	}
 }

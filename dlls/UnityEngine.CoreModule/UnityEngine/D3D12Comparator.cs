@@ -1,6 +1,6 @@
-using System;
-using System;
-
+namespace UnityEngine.Events
+{
+}
 namespace UnityEngine
 {
 	public enum D3D12Comparator
@@ -11,15 +11,5 @@ namespace UnityEngine
 		LessThanOrEqualTo,
 		GreaterThan,
 		GreaterThanOrEqualTo
-	}
-}
-namespace UnityEngine
-{
-	[Flags]
-	public enum LightmapBakeType
-	{
-		Realtime = 4,
-		Baked = 2,
-		Mixed = 1
 	}
 }

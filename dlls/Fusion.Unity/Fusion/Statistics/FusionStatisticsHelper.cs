@@ -1,3 +1,2 @@
-#define FUSION_LOGLEVEL_TRACE
-namespace Fusion;
+namespace Fusion.Statistics;
 

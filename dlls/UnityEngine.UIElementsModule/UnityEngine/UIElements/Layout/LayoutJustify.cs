@@ -1,11 +1,22 @@
-namespace UnityEngine.UIElements.Layout;
+namespace UnityEngine.UIElements;
 
-internal enum LayoutJustify
+public interface IBinding
 {
-	FlexStart,
-	Center,
-	FlexEnd,
-	SpaceBetween,
-	SpaceAround,
-	SpaceEvenly
+	void PreUpdate();
+
+	void Update();
+
+	void Release();
+}
+namespace UnityEngine.UIElements.Layout
+{
+	internal enum LayoutJustify
+	{
+		FlexStart,
+		Center,
+		FlexEnd,
+		SpaceBetween,
+		SpaceAround,
+		SpaceEvenly
+	}
 }

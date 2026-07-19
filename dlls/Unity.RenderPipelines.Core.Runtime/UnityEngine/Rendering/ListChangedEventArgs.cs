@@ -1,12 +1,2 @@
-using System;
-using System;
-
-namespace UnityEngine.Rendering;
-
-[Serializable]
-public enum SRPLensFlareDistribution
-{
-	Uniform,
-	Curve,
-	Random
-}
+// Could not decompile UnityEngine.Rendering.ListChangedEventArgs`1
+// This type uses unsupported IL or has too many generic parameters.

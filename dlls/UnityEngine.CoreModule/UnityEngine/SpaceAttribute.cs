@@ -1,22 +1,42 @@
-using System;
+using System.Runtime.InteropServices;
+using UnityEngine.Scripting;
+using UnityEngine.Scripting.APIUpdating;
+using System.Runtime.InteropServices;
+using UnityEngine.Scripting;
+using UnityEngine.Scripting.APIUpdating;
+using System.Runtime.InteropServices;
+using UnityEngine.Scripting;
+using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine
+namespace UnityEngine.PlayerLoop
 {
-	[AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = true)]
-	public class SpaceAttribute : PropertyAttribute
+	[StructLayout(LayoutKind.Sequential, Size = 1)]
+	[MovedFrom("UnityEngine.Experimental.PlayerLoop")]
+	[RequiredByNativeCode]
+	public struct Update
 	{
-		public readonly float height;
-
-		public SpaceAttribute()
-			: base(applyToCollection: true)
+		[StructLayout(LayoutKind.Sequential, Size = 1)]
+		[RequiredByNativeCode]
+		public struct ScriptRunBehaviourUpdate
 		{
-			height = 8f;
 		}
 
-		public SpaceAttribute(float height)
-			: base(applyToCollection: true)
+		[StructLayout(LayoutKind.Sequential, Size = 1)]
+		[RequiredByNativeCode]
+		public struct DirectorUpdate
 		{
-			this.height = height;
+		}
+
+		[StructLayout(LayoutKind.Sequential, Size = 1)]
+		[RequiredByNativeCode]
+		public struct ScriptRunDelayedDynamicFrameRate
+		{
+		}
+
+		[StructLayout(LayoutKind.Sequential, Size = 1)]
+		[RequiredByNativeCode]
+		public struct ScriptRunDelayedTasks
+		{
 		}
 	}
 }

@@ -1,14 +1,2 @@
-using System.Collections;
-using System.Collections;
-using System.Collections;
-
-namespace System.EnterpriseServices;
-
-internal interface IConfigurationAttribute
-{
-	bool AfterSaveChanges(Hashtable info);
-
-	bool Apply(Hashtable info);
-
-	bool IsValidTarget(string s);
-}
+// Could not decompile System.EnterpriseServices.ApplicationAccessControlAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,5 @@
 using System.ComponentModel;
 
-namespace Oculus.Platform.Models
-{
-}
 namespace Oculus.Platform
 {
 	public enum VoipBitrate
@@ -22,4 +19,7 @@ namespace Oculus.Platform
 		[Description("B128000")]
 		B128000
 	}
+}
+namespace Oculus.Platform
+{
 }

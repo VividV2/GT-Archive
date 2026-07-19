@@ -1,3 +1,2 @@
-#define FUSION_LOGLEVEL_TRACE
-namespace Fusion.Statistics;
-
+// Could not decompile Fusion.NetworkAssetSourceResource`1
+// This type uses unsupported IL or has too many generic parameters.

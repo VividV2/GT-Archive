@@ -1,10 +1,2 @@
-using UnityEngine;
-
-namespace Technie.PhysicsCreator;
-
-public class RigidColliderCreatorChild : MonoBehaviour
-{
-	public RigidColliderCreator parent;
-
-	public bool isAutoHull;
-}
+// Could not decompile Technie.PhysicsCreator.RigidColliderCreatorChild
+// This type uses unsupported IL or has too many generic parameters.

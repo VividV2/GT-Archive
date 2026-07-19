@@ -1,16 +1,21 @@
-using Microsoft.CodeAnalysis;
+using UnityEngine;
+using UnityEngine;
 
-namespace System.Runtime.CompilerServices;
+namespace Unity.Cinemachine;
 
-[CompilerGenerated]
-[Microsoft.CodeAnalysis.Embedded]
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Interface | AttributeTargets.Delegate, AllowMultiple = false, Inherited = false)]
-internal sealed class NullableContextAttribute : Attribute
+public interface ICinemachineTargetGroup
 {
-	public readonly byte Flag;
+	bool IsValid { get; }
 
-	public NullableContextAttribute(byte P_0)
-	{
-		Flag = P_0;
-	}
+	Transform Transform { get; }
+
+	Bounds BoundingBox { get; }
+
+	BoundingSphere Sphere { get; }
+
+	bool IsEmpty { get; }
+
+	Bounds GetViewSpaceBoundingBox(Matrix4x4 observer, bool includeBehind);
+
+	void GetViewSpaceAngularBounds(Matrix4x4 observer, out Vector2 minAngles, out Vector2 maxAngles, out Vector2 zRange);
 }

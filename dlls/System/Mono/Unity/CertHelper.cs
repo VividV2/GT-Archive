@@ -1,31 +1,23 @@
-using System;
-using System.Security.Cryptography.X509Certificates;
-
-namespace Mono.Unity;
-
-internal static class CertHelper
+namespace System.Security.Cryptography.X509Certificates
 {
-	public unsafe static void AddCertificatesToNativeChain(UnityTls.unitytls_x509list* nativeCertificateChain, X509CertificateCollection certificates, UnityTls.unitytls_errorstate* errorState)
+	/// <summary>Specifies which X509 certificates in the chain should be checked for revocation.</summary>
+	/// <summary>Specifies which X509 certificates in the chain should be checked for revocation.</summary>
+	public enum X509RevocationFlag
 	{
-		foreach (X509Certificate certificate in certificates)
-		{
-			AddCertificateToNativeChain(nativeCertificateChain, certificate, errorState);
-		}
+		/// <summary>Only the end certificate is checked for revocation.</summary>
+		/// <summary>Only the end certificate is checked for revocation.</summary>
+		EndCertificateOnly,
+		/// <summary>The entire chain of certificates is checked for revocation.</summary>
+		/// <summary>The entire chain of certificates is checked for revocation.</summary>
+		EntireChain,
+		/// <summary>The entire chain, except the root certificate, is checked for revocation.</summary>
+		/// <summary>The entire chain, except the root certificate, is checked for revocation.</summary>
+		ExcludeRoot
 	}
-
-	public unsafe static void AddCertificateToNativeChain(UnityTls.unitytls_x509list* nativeCertificateChain, X509Certificate certificate, UnityTls.unitytls_errorstate* errorState)
-	{
-		byte[] rawCertData = certificate.GetRawCertData();
-		fixed (byte* buffer = rawCertData)
-		{
-			UnityTls.NativeInterface.unitytls_x509list_append_der(nativeCertificateChain, buffer, (IntPtr)rawCertData.Length, errorState);
-		}
-		if (certificate.Impl is X509Certificate2Impl { IntermediateCertificates: { Count: >0 } intermediateCertificates })
-		{
-			for (int i = 0; i < intermediateCertificates.Count; i++)
-			{
-				AddCertificateToNativeChain(nativeCertificateChain, new X509Certificate(intermediateCertificates[i]), errorState);
-			}
-		}
-	}
+}
+namespace System
+{
+}
+namespace Mono.Btls
+{
 }

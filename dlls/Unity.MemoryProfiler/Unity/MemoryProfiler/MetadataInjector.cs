@@ -1,30 +1,37 @@
 using UnityEngine;
 
-namespace Unity.MemoryProfiler;
-
-internal static class MetadataInjector
+namespace Unity.MemoryProfiler
 {
-	public static DefaultMetadataCollect DefaultCollector;
-
-	public static long CollectorCount;
-
-	public static byte DefaultCollectorInjected;
-
-	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
-	private static void PlayerInitMetadata()
+}
+namespace Unity.MemoryProfiler
+{
+}
+namespace Unity.MemoryProfiler
+{
+	internal static class MetadataInjector
 	{
-		if (!Application.isEditor)
+		public static DefaultMetadataCollect DefaultCollector;
+
+		public static long CollectorCount;
+
+		public static byte DefaultCollectorInjected;
+
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
+		private static void PlayerInitMetadata()
 		{
-			DefaultCollector?.Dispose();
-			DefaultCollector = null;
-			DefaultCollectorInjected = 0;
-			CollectorCount = 0L;
+			if (!Application.isEditor)
+			{
+				DefaultCollector?.Dispose();
+				DefaultCollector = null;
+				DefaultCollectorInjected = 0;
+				CollectorCount = 0L;
+			}
+			InitializeMetadataCollection();
 		}
-		InitializeMetadataCollection();
-	}
 
-	private static void InitializeMetadataCollection()
-	{
-		DefaultCollector = new DefaultMetadataCollect();
+		private static void InitializeMetadataCollection()
+		{
+			DefaultCollector = new DefaultMetadataCollect();
+		}
 	}
 }

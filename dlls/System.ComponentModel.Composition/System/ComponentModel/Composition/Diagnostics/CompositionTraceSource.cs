@@ -1,37 +1,14 @@
-using Microsoft.Internal;
+namespace System.ComponentModel.Composition.Hosting;
 
-namespace System.ComponentModel.Composition.Diagnostics;
-
-internal static class CompositionTraceSource
+/// <summary>Provides notifications when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> changes.</summary>
+/// <summary>Provides notifications when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> changes.</summary>
+public interface INotifyComposablePartCatalogChanged
 {
-	private static readonly DebuggerTraceWriter Source = new DebuggerTraceWriter();
+	/// <summary>Occurs when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> has changed.</summary>
+	/// <summary>Occurs when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> has changed.</summary>
+	event EventHandler<ComposablePartCatalogChangeEventArgs> Changed;
 
-	public static bool CanWriteInformation => Source.CanWriteInformation;
-
-	public static bool CanWriteWarning => Source.CanWriteWarning;
-
-	public static bool CanWriteError => Source.CanWriteError;
-
-	public static void WriteInformation(CompositionTraceId traceId, string format, params object[] arguments)
-	{
-		EnsureEnabled(CanWriteInformation);
-		Source.WriteInformation(traceId, format, arguments);
-	}
-
-	public static void WriteWarning(CompositionTraceId traceId, string format, params object[] arguments)
-	{
-		EnsureEnabled(CanWriteWarning);
-		Source.WriteWarning(traceId, format, arguments);
-	}
-
-	public static void WriteError(CompositionTraceId traceId, string format, params object[] arguments)
-	{
-		EnsureEnabled(CanWriteError);
-		Source.WriteError(traceId, format, arguments);
-	}
-
-	private static void EnsureEnabled(bool condition)
-	{
-		Assumes.IsTrue(condition, "To avoid unnecessary work when a trace level has not been enabled, check CanWriteXXX before calling this method.");
-	}
+	/// <summary>Occurs when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> is changing.</summary>
+	/// <summary>Occurs when a <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> is changing.</summary>
+	event EventHandler<ComposablePartCatalogChangeEventArgs> Changing;
 }

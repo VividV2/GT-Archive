@@ -1,22 +1,18 @@
 using Backtrace.Unity.Model.Attributes;
 
-namespace Backtrace.Unity.Runtime.Native
+namespace Backtrace.Unity.Runtime.Native;
+
+internal interface INativeClient : IDynamicAttributeProvider
 {
-	internal interface INativeClient : IDynamicAttributeProvider
-	{
-		void HandleAnr();
+	void HandleAnr();
 
-		void SetAttribute(string key, string value);
+	void SetAttribute(string key, string value);
 
-		bool OnOOM();
+	bool OnOOM();
 
-		void Update(float time);
+	void Update(float time);
 
-		void Disable();
+	void Disable();
 
-		void PauseAnrThread(bool state);
-	}
-}
-namespace Backtrace.Unity.Model
-{
+	void PauseAnrThread(bool state);
 }

@@ -1,12 +1,2 @@
-namespace Steamworks
-{
-	public enum ESteamPartyBeaconLocationType
-	{
-		k_ESteamPartyBeaconLocationType_Invalid,
-		k_ESteamPartyBeaconLocationType_ChatGroup,
-		k_ESteamPartyBeaconLocationType_Max
-	}
-}
-namespace Steamworks
-{
-}
+// Could not decompile Steamworks.ESteamPartyBeaconLocationType
+// This type uses unsupported IL or has too many generic parameters.

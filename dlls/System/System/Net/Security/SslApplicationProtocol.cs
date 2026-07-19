@@ -1,9 +1,2 @@
-namespace System.Net;
-
-internal class WebCompletionSource : WebCompletionSource<object>
-{
-	public WebCompletionSource()
-		: base(true)
-	{
-	}
-}
+// Could not decompile System.Net.Security.SslApplicationProtocol
+// This type uses unsupported IL or has too many generic parameters.

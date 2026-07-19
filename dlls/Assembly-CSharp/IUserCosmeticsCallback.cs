@@ -1,6 +1,2 @@
-internal interface IUserCosmeticsCallback
-{
-	bool PendingUpdate { get; set; }
-
-	bool OnGetUserCosmetics(string cosmetics);
-}
+// Could not decompile IUserCosmeticsCallback
+// This type uses unsupported IL or has too many generic parameters.

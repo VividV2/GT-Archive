@@ -1,13 +1,2 @@
-using UnityEngine;
-
-namespace Oculus.Interaction;
-
-public class SectionAttribute : PropertyAttribute
-{
-	public string SectionName { get; private set; } = string.Empty;
-
-	public SectionAttribute(string sectionName)
-	{
-		SectionName = sectionName;
-	}
-}
+// Could not decompile Oculus.Interaction.SectionAttribute
+// This type uses unsupported IL or has too many generic parameters.

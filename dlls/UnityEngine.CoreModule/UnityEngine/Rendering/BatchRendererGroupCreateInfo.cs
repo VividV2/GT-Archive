@@ -1,12 +1,3 @@
-using System;
-
-namespace UnityEngine.Rendering;
-
-public struct BatchRendererGroupCreateInfo
+namespace UnityEngine
 {
-	public BatchRendererGroup.OnPerformCulling cullingCallback;
-
-	public BatchRendererGroup.OnFinishedCulling finishedCullingCallback;
-
-	public IntPtr userContext;
 }

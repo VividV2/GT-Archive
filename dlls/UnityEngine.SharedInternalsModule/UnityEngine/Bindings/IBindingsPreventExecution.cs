@@ -1,11 +1,15 @@
-namespace UnityEngine.Bindings;
-
-[VisibleToOtherModules]
-internal interface IBindingsPreventExecution
+namespace UnityEngine.Bindings
 {
-	object singleFlagValue { get; set; }
+}
+namespace UnityEngine.Bindings
+{
+	[VisibleToOtherModules]
+	internal interface IBindingsPreventExecution
+	{
+		object singleFlagValue { get; set; }
 
-	PreventExecutionSeverity severity { get; set; }
+		PreventExecutionSeverity severity { get; set; }
 
-	string howToFix { get; set; }
+		string howToFix { get; set; }
+	}
 }

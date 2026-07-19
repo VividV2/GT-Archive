@@ -1,2 +1,3 @@
-namespace UnityEngine.Localization.SmartFormat.Core.Parsing;
-
+namespace UnityEngine.Localization
+{
+}

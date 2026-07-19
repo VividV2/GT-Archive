@@ -1,14 +1,2 @@
-namespace Mono.Net.Dns;
-
-internal enum ResolverError
-{
-	NoError,
-	FormatError,
-	ServerFailure,
-	NameError,
-	NotImplemented,
-	Refused,
-	ResponseHeaderError,
-	ResponseFormatError,
-	Timeout
-}
+// Could not decompile System.CodeDom.CodeTryCatchFinallyStatement
+// This type uses unsupported IL or has too many generic parameters.

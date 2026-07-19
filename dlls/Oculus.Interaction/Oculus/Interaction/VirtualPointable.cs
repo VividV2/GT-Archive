@@ -1,6 +1,2 @@
-namespace Oculus.Interaction
-{
-}
-namespace Oculus.Interaction
-{
-}
+// Could not decompile Oculus.Interaction.VirtualPointable
+// This type uses unsupported IL or has too many generic parameters.

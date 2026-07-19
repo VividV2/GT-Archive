@@ -1,3 +1,2 @@
-namespace System.Reflection
-{
-}
+// Could not decompile System.Reflection.Emit.MethodRental
+// This type uses unsupported IL or has too many generic parameters.

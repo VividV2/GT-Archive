@@ -1,8 +1,6 @@
 namespace UnityEngine.UIElements
 {
-	public enum ScrollViewMode
-	{
-		Vertical,
-		Horizontal,
-		VerticalAndHorizontal
-	}
+}
+namespace UnityEngine.UIElements.UIR
+{
+}

@@ -1,10 +1,31 @@
 using System;
 using UnityEngine.Scripting;
+using System;
 
-namespace Unity.Collections.LowLevel.Unsafe;
-
-[RequiredByNativeCode]
-[AttributeUsage(AttributeTargets.Struct)]
-public sealed class NativeContainerAttribute : Attribute
+namespace UnityEngine
 {
+	[Flags]
+	public enum HideFlags
+	{
+		None = 0,
+		HideInHierarchy = 1,
+		HideInInspector = 2,
+		DontSaveInEditor = 4,
+		NotEditable = 8,
+		DontSaveInBuild = 0x10,
+		DontUnloadUnusedAsset = 0x20,
+		DontSave = 0x34,
+		HideAndDontSave = 0x3D
+	}
+}
+namespace UnityEngine.Playables
+{
+}
+namespace Unity.Collections.LowLevel.Unsafe
+{
+	[RequiredByNativeCode]
+	[AttributeUsage(AttributeTargets.Struct)]
+	public sealed class NativeContainerAttribute : Attribute
+	{
+	}
 }

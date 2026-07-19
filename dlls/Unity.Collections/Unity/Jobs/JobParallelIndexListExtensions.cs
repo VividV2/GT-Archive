@@ -1,6 +1,9 @@
 using System;
 using Unity.Collections;
 
+namespace Unity.Collections.LowLevel.Unsafe
+{
+}
 namespace Unity.Jobs
 {
 	[Obsolete("'JobParallelIndexListExtensions' has been deprecated; Use 'IJobFilterExtensions' instead.", false)]
@@ -18,7 +21,4 @@ namespace Unity.Jobs
 			return jobData.ScheduleFilter(indices, dependsOn);
 		}
 	}
-}
-namespace Unity.Collections
-{
 }

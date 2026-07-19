@@ -1,9 +1,2 @@
-namespace UnityEngine.Localization.Settings;
+namespace UnityEngine.Localization.Tables;
 
-public enum PreloadBehavior
-{
-	NoPreloading,
-	PreloadSelectedLocale,
-	PreloadSelectedLocaleAndFallbacks,
-	PreloadAllLocales
-}

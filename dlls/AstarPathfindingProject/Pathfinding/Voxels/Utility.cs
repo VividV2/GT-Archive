@@ -1,2 +1,2 @@
-namespace Pathfinding;
-
+// Could not decompile Pathfinding.Voxels.Utility
+// This type uses unsupported IL or has too many generic parameters.

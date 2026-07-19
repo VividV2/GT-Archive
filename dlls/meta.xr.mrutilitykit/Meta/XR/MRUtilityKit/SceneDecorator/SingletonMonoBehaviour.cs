@@ -1,13 +1,2 @@
-using System;
-using Meta.XR.Util;
-
-namespace Meta.XR.MRUtilityKit.SceneDecorator;
-
-[Feature(Feature.Scene)]
-public static class SingletonMonoBehaviour
-{
-	public class InstantiationSettings : Attribute
-	{
-		public bool dontDestroyOnLoad;
-	}
-}
+// Could not decompile Meta.XR.MRUtilityKit.SceneDecorator.SingletonMonoBehaviour`1
+// This type uses unsupported IL or has too many generic parameters.

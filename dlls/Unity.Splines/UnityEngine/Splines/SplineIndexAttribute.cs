@@ -1,11 +1,2 @@
-namespace UnityEngine.Splines;
-
-public class SplineIndexAttribute : PropertyAttribute
-{
-	public readonly string SplineContainerProperty;
-
-	public SplineIndexAttribute(string splineContainerProperty)
-	{
-		SplineContainerProperty = splineContainerProperty;
-	}
-}
+// Could not decompile UnityEngine.Splines.SplineIndexAttribute
+// This type uses unsupported IL or has too many generic parameters.

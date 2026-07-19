@@ -1,10 +1,2 @@
-namespace System.Net.NetworkInformation;
-
-internal struct Win32_IP_ADAPTER_WINS_SERVER_ADDRESS
-{
-	public Win32LengthFlagsUnion LengthFlags;
-
-	public IntPtr Next;
-
-	public Win32_SOCKET_ADDRESS Address;
-}
+// Could not decompile System.Net.HttpRequestCreator
+// This type uses unsupported IL or has too many generic parameters.

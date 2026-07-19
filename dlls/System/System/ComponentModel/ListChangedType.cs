@@ -1,10 +1,2 @@
-using System.Collections;
+namespace System.Net.Cache;
 
-namespace System.ComponentModel.Design;
-
-public interface ITreeDesigner : IDesigner, IDisposable
-{
-	ICollection Children { get; }
-
-	IDesigner Parent { get; }
-}

@@ -1,8 +1,24 @@
-namespace UnityEngine;
+using System;
+using System;
 
-public struct D3D12GraphicsJobsDeviceFilterData
+namespace UnityEngine
 {
-	public GraphicsJobsFilterMode preferredMode;
+	public struct D3D12GraphicsJobsDeviceFilterData
+	{
+		public GraphicsJobsFilterMode preferredMode;
 
-	public D3D12DeviceFilterData filter;
+		public D3D12DeviceFilterData filter;
+	}
+}
+namespace UnityEngine
+{
+	[Flags]
+	public enum SnapAxis : byte
+	{
+		None = 0,
+		X = 1,
+		Y = 2,
+		Z = 4,
+		All = 7
+	}
 }

@@ -1,15 +1,2 @@
-namespace Valve.Newtonsoft.Json.Linq.JsonPath;
-
-internal enum QueryOperator
-{
-	None,
-	Equals,
-	NotEquals,
-	Exists,
-	LessThan,
-	LessThanOrEquals,
-	GreaterThan,
-	GreaterThanOrEquals,
-	And,
-	Or
-}
+// Could not decompile Valve.Newtonsoft.Json.Converters.RegexConverter
+// This type uses unsupported IL or has too many generic parameters.

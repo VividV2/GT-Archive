@@ -1,13 +1,13 @@
 namespace System.Data;
 
-[Flags]
-public enum CommandBehavior
+/// <summary>Identifies a list of connection string parameters identified by the <see langword="KeyRestrictions" /> property that are either allowed or not allowed.</summary>
+public enum KeyRestrictionBehavior
 {
-	Default = 0,
-	SingleResult = 1,
-	SchemaOnly = 2,
-	KeyInfo = 4,
-	SingleRow = 8,
-	SequentialAccess = 0x10,
-	CloseConnection = 0x20
+	/// <summary>Default. Identifies the only additional connection string parameters that are allowed.</summary>
+	AllowOnly,
+	/// <summary>Identifies additional connection string parameters that are not allowed.</summary>
+	PreventUsage
+}
+namespace System.Data.OleDb
+{
 }

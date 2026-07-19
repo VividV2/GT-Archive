@@ -1,9 +1,16 @@
-using System;
-using System;
+using UnityEngine.Bindings;
+using UnityEngine.Scripting;
+using UnityEngine.Bindings;
+using UnityEngine.Scripting;
 
-namespace Unity.Scripting.LifecycleManagement;
+namespace UnityEngine;
 
-[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
-internal sealed class ClearCacheBetweenCodeLoadsAttribute : LifecycleAttributeBase
+[NativeHeader("Runtime/Graphics/ColorGamut.h")]
+[UsedByNativeCode]
+public enum ColorPrimaries
 {
+	Unknown = -1,
+	Rec709,
+	Rec2020,
+	P3
 }

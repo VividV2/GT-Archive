@@ -1,8 +1,2 @@
-using System;
-
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.Parameter)]
-public sealed class NoEnumerationAttribute : Attribute
-{
-}
+// Could not decompile JetBrains.Annotations.NoEnumerationAttribute
+// This type uses unsupported IL or has too many generic parameters.

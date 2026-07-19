@@ -1,11 +1,2 @@
-namespace System.Drawing;
-
-internal struct GdiColorPalette
-{
-	internal int Flags;
-
-	internal int Count;
-}
-namespace System.Drawing
-{
-}
+// Could not decompile System.Drawing.SolidBrush
+// This type uses unsupported IL or has too many generic parameters.

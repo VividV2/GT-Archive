@@ -1,8 +1,24 @@
-namespace Valve.VR;
-
-public struct VREvent_Notification_t
+namespace Valve.VR
 {
-	public ulong ulUserValue;
+	public struct VREvent_Notification_t
+	{
+		public ulong ulUserValue;
 
-	public uint notificationId;
+		public uint notificationId;
+	}
+}
+namespace Valve.VR
+{
+	public struct RenderModel_t
+	{
+		public System.IntPtr rVertexData;
+
+		public uint unVertexCount;
+
+		public System.IntPtr rIndexData;
+
+		public uint unTriangleCount;
+
+		public int diffuseTextureId;
+	}
 }

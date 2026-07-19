@@ -20,9 +20,9 @@ namespace Modio.Errors
 		INCOMPLETE_LENGTH_SET = -2147483572L
 	}
 }
-namespace Modio.FileIO
+namespace Modio.API.SchemaDefinitions
 {
 }
-namespace Modio.Images
+namespace Modio.API.SchemaDefinitions
 {
 }

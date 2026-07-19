@@ -1,20 +1,29 @@
+using System;
+
+namespace Valve.VR;
+
+public struct VREvent_Chaperone_t
+{
+	public ulong m_nPreviousUniverse;
+
+	public ulong m_nCurrentUniverse;
+}
 namespace Valve.VR
 {
-	public struct VROverlayView_t
+	public struct PathRead_t
 	{
-		public ulong overlayHandle;
+		public ulong ulPath;
 
-		public Texture_t texture;
+		public IntPtr pvBuffer;
 
-		public VRTextureBounds_t textureBounds;
+		public uint unBufferSize;
+
+		public uint unTag;
+
+		public uint unRequiredBufferSize;
+
+		public ETrackedPropertyError eError;
+
+		public IntPtr pszPath;
 	}
-}
-namespace Valve.VR
-{
-}
-namespace Valve.VR
-{
-}
-namespace Valve.VR
-{
 }

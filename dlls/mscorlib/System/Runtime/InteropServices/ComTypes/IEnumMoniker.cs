@@ -1,7 +1,3 @@
-namespace System.Runtime.Serialization
+namespace System.Security.AccessControl
 {
-	public interface ISafeSerializationData
-	{
-		void CompleteDeserialization(object deserialized);
-	}
 }

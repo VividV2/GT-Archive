@@ -1,2 +1,2 @@
-namespace UnityEngine.Experimental.XR.Interaction;
+namespace UnityEngine.SpatialTracking;
 

@@ -1,10 +1,14 @@
 using System;
 
-namespace UnityEngine;
-
-[Flags]
-public enum LightmapsMode
+namespace UnityEngine
 {
-	NonDirectional = 0,
-	CombinedDirectional = 1
+	[Flags]
+	public enum LightmapsMode
+	{
+		NonDirectional = 0,
+		CombinedDirectional = 1
+	}
+}
+namespace JetBrains.Annotations
+{
 }

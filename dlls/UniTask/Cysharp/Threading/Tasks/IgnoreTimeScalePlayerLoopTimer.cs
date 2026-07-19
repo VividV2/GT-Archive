@@ -1,2 +1,2 @@
-namespace Cysharp.Threading.Tasks;
-
+// Could not decompile Cysharp.Threading.Tasks.IgnoreTimeScalePlayerLoopTimer
+// This type uses unsupported IL or has too many generic parameters.

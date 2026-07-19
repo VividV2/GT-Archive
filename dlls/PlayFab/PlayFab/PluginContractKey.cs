@@ -1,8 +1,24 @@
-namespace PlayFab;
+using System;
+using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
 
-public struct PluginContractKey
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class StringEqualityRule : PlayFabBaseModel
 {
-	public PluginContract _pluginContract;
+	public QueueRuleAttribute Attribute;
 
-	public string _pluginName;
+	public AttributeNotSpecifiedBehavior AttributeNotSpecifiedBehavior;
+
+	public string DefaultAttributeValue;
+
+	public StringEqualityRuleExpansion Expansion;
+
+	public string Name;
+
+	public uint? SecondsUntilOptional;
+
+	public double Weight;
 }

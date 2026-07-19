@@ -1,8 +1,5 @@
 namespace UnityEngine.InputSystem
 {
-}
-namespace UnityEngine.InputSystem
-{
 	public enum PlayerNotifications
 	{
 		SendMessages,
@@ -10,4 +7,7 @@ namespace UnityEngine.InputSystem
 		InvokeUnityEvents,
 		InvokeCSharpEvents
 	}
+}
+namespace UnityEngine.InputSystem
+{
 }

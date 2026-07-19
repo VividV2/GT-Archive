@@ -1,9 +1,17 @@
-namespace UnityEngine.Rendering;
-
-public enum BatchBufferTarget
+namespace UnityEngine.Rendering
 {
-	Unknown = 0,
-	UnsupportedByUnderlyingGraphicsApi = -1,
-	RawBuffer = 1,
-	ConstantBuffer = 2
+}
+namespace UnityEngine.Rendering
+{
+	[MovedFrom("UnityEngine.Experimental.Rendering")]
+	public struct RayTracingInstanceMaterialConfig
+	{
+		public int renderQueueLowerBound;
+
+		public int renderQueueUpperBound;
+
+		public RayTracingInstanceCullingShaderTagConfig[] optionalShaderTags;
+
+		public string[] optionalShaderKeywords;
+	}
 }

@@ -1,10 +1,3 @@
-using System;
-
-namespace UnityEngine.Rendering;
-
-[Flags]
-public enum CustomMarkerCallbackFlags
+namespace UnityEngine.Experimental.GlobalIllumination
 {
-	CustomMarkerCallbackDefault = 0,
-	CustomMarkerCallbackForceInvalidateStateTracking = 4
 }

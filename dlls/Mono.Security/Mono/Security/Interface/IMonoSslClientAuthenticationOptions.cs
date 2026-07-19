@@ -1,13 +1,3 @@
-using System.Net.Security;
-using System.Security.Cryptography.X509Certificates;
-
-namespace Mono.Security.Interface;
-
-internal interface IMonoSslClientAuthenticationOptions : IMonoAuthenticationOptions
+namespace Mono.Security.Interface
 {
-	LocalCertificateSelectionCallback LocalCertificateSelectionCallback { get; set; }
-
-	string TargetHost { get; set; }
-
-	X509CertificateCollection ClientCertificates { get; set; }
 }

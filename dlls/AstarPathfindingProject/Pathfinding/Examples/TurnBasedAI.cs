@@ -1,29 +1,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Pathfinding.Examples;
-
-[HelpURL("http://arongranberg.com/astar/documentation/stable/class_pathfinding_1_1_examples_1_1_turn_based_a_i.php")]
-public class TurnBasedAI : VersionedMonoBehaviour
+namespace Pathfinding
 {
-	public int movementPoints = 2;
-
-	public BlockManager blockManager;
-
-	public SingleNodeBlocker blocker;
-
-	public GraphNode targetNode;
-
-	public BlockManager.TraversalProvider traversalProvider;
-
-	private void Start()
+}
+namespace Pathfinding.Examples
+{
+}
+namespace Pathfinding.Examples
+{
+	[HelpURL("http://arongranberg.com/astar/documentation/stable/class_pathfinding_1_1_examples_1_1_turn_based_a_i.php")]
+	public class TurnBasedAI : VersionedMonoBehaviour
 	{
-		blocker.BlockAtCurrentPosition();
-	}
+		public int movementPoints = 2;
 
-	protected override void Awake()
-	{
-		base.Awake();
-		traversalProvider = new BlockManager.TraversalProvider(blockManager, BlockManager.BlockMode.AllExceptSelector, new List<SingleNodeBlocker> { blocker });
+		public BlockManager blockManager;
+
+		public SingleNodeBlocker blocker;
+
+		public GraphNode targetNode;
+
+		public BlockManager.TraversalProvider traversalProvider;
+
+		private void Start()
+		{
+			blocker.BlockAtCurrentPosition();
+		}
+
+		protected override void Awake()
+		{
+			base.Awake();
+			traversalProvider = new BlockManager.TraversalProvider(blockManager, BlockManager.BlockMode.AllExceptSelector, new List<SingleNodeBlocker> { blocker });
+		}
 	}
+}
+namespace Pathfinding
+{
 }

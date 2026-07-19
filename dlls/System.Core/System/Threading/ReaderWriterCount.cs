@@ -1,14 +1,18 @@
-namespace System.Threading;
-
-internal class ReaderWriterCount
+namespace System.Threading
 {
-	public long lockID;
+	internal class ReaderWriterCount
+	{
+		public long lockID;
 
-	public int readercount;
+		public int readercount;
 
-	public int writercount;
+		public int writercount;
 
-	public int upgradecount;
+		public int upgradecount;
 
-	public ReaderWriterCount next;
+		public ReaderWriterCount next;
+	}
+}
+namespace System.IO.MemoryMappedFiles
+{
 }

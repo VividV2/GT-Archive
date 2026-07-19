@@ -1,6 +1,6 @@
-namespace System.Xml.XPath
+namespace System.Xml
 {
 }
-namespace System.Xml.Xsl
+namespace System.Xml.XPath
 {
 }

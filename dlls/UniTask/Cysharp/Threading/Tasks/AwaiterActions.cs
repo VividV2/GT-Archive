@@ -1,21 +1,2 @@
-using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-
-namespace Cysharp.Threading.Tasks
-{
-	internal static class AwaiterActions
-	{
-		internal static readonly Action<object> InvokeContinuationDelegate = Continuation;
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[DebuggerHidden]
-		private static void Continuation(object state)
-		{
-			((Action)state)();
-		}
-	}
-}
-namespace Cysharp.Threading.Tasks
-{
-}
+// Could not decompile Cysharp.Threading.Tasks.AwaiterActions
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,16 +1,12 @@
-namespace Mono.Btls
+namespace Mono.Btls;
+
+internal interface IMonoBtlsBioMono
 {
-	internal interface IMonoBtlsBioMono
-	{
-		int Read(byte[] buffer, int offset, int size, out bool wantMore);
+	int Read(byte[] buffer, int offset, int size, out bool wantMore);
 
-		bool Write(byte[] buffer, int offset, int size);
+	bool Write(byte[] buffer, int offset, int size);
 
-		void Flush();
+	void Flush();
 
-		void Close();
-	}
-}
-namespace System.ComponentModel
-{
+	void Close();
 }

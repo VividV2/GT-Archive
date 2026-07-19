@@ -1,13 +1,10 @@
-using System.Runtime.InteropServices;
-
 namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(350)]
-	public struct EquippedProfileItemsChanged_t
+	[CallbackIdentity(5702)]
+	public struct SteamRemotePlaySessionDisconnected_t
 	{
-		public const int k_iCallback = 350;
+		public const int k_iCallback = 5702;
 
-		public CSteamID m_steamID;
+		public RemotePlaySessionID_t m_unSessionID;
 	}
-}

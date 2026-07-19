@@ -1,5 +1,3 @@
-namespace System.Runtime.CompilerServices;
-
-public static class IsPinned
+namespace System.Diagnostics.SymbolStore
 {
 }

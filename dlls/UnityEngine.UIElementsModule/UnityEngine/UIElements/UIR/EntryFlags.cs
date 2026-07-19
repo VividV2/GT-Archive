@@ -9,9 +9,6 @@ namespace UnityEngine.UIElements.UIR
 		IsPremultiplied = 2
 	}
 }
-namespace UnityEngine.UIElements.UIR
-{
-}
-namespace UnityEngine.UIElements.UIR
+namespace UnityEngine.UIElements.Internal
 {
 }

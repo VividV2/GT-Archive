@@ -1,9 +1,10 @@
-namespace System.Security.Cryptography.Pkcs;
+namespace System.Security.Cryptography.Pkcs.Asn1;
 
-public enum Pkcs12ConfidentialityMode
+internal struct IssuerAndSerialNumberAsn
 {
-	None = 1,
-	Password = 2,
-	PublicKey = 3,
-	Unknown = 0
+	[AnyValue]
+	public ReadOnlyMemory<byte> Issuer;
+
+	[Integer]
+	public ReadOnlyMemory<byte> SerialNumber;
 }

@@ -1,9 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public sealed class ResourcePathsAttribute : ResourcePathsBaseAttribute
-{
-	public ResourcePathsAttribute(string[] paths, SearchType location = SearchType.ProjectPath)
-		: base(paths, isField: false, location)
-	{
-	}
-}
+// Could not decompile UnityEngine.Rendering.ResourcePathsAttribute
+// This type uses unsupported IL or has too many generic parameters.

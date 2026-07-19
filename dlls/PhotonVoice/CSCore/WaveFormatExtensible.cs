@@ -1,9 +1,2 @@
-using System;
-using System;
-
-namespace Photon.Voice;
-
-[Obsolete("Class renamed. Use LoadBalancingTransport instead.")]
-public class LoadBalancingFrontend : LoadBalancingTransport
-{
-}
+// Could not decompile CSCore.WaveFormatExtensible
+// This type uses unsupported IL or has too many generic parameters.

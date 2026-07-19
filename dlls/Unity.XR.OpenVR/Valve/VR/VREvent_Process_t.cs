@@ -1,16 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace Valve.VR;
-
-public struct VREvent_Process_t
-{
-	public uint pid;
-
-	public uint oldPid;
-
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bForced;
-
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bConnectionLost;
-}
+// Could not decompile Valve.VR.VREvent_Process_t
+// This type uses unsupported IL or has too many generic parameters.

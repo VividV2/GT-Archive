@@ -1,7 +1,11 @@
-namespace UnityEngine.Experimental.Animations;
-
-public enum AnimationStreamSource
+namespace UnityEngine.Experimental.Animations
 {
-	DefaultValues,
-	PreviousInputs
+	public enum AnimationStreamSource
+	{
+		DefaultValues,
+		PreviousInputs
+	}
+}
+namespace UnityEngine.Animations
+{
 }

@@ -1,8 +1,2 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
-
-internal enum InternalObjectTypeE
-{
-	Empty,
-	Object,
-	Array
-}
+// Could not decompile System.Security.AccessControl.FileSystemRights
+// This type uses unsupported IL or has too many generic parameters.

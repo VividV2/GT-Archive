@@ -1,11 +1,15 @@
 using System;
 using UnityEngine;
 
-namespace Oculus.Interaction.Locomotion;
-
-public interface ILocomotionEventHandler
+namespace Oculus.Interaction.Locomotion
 {
-	event Action<LocomotionEvent, Pose> WhenLocomotionEventHandled;
+	public interface ILocomotionEventHandler
+	{
+		event Action<LocomotionEvent, Pose> WhenLocomotionEventHandled;
 
-	void HandleLocomotionEvent(LocomotionEvent locomotionEvent);
+		void HandleLocomotionEvent(LocomotionEvent locomotionEvent);
+	}
+}
+namespace Oculus.Interaction.DistanceReticles
+{
 }

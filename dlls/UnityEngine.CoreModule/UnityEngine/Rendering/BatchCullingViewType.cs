@@ -1,11 +1,24 @@
 namespace UnityEngine.Rendering;
 
-public enum BatchCullingViewType
+public enum LightProbeOutsideHullStrategy
 {
-	Unknown,
-	Camera,
-	Light,
-	Picking,
-	SelectionOutline,
-	Filtering
+	[InspectorName("Find closest Light Probe")]
+	kLightProbeSearchTetrahedralHull,
+	[InspectorName("Use Ambient Probe")]
+	kLightProbeUseAmbientProbe
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine.Rendering
+{
+	public enum BatchCullingViewType
+	{
+		Unknown,
+		Camera,
+		Light,
+		Picking,
+		SelectionOutline,
+		Filtering
+	}
 }

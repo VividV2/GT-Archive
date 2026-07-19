@@ -1,2 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Receiver;
-
+// Could not decompile $BurstDirectCallInitializer
+// This type uses unsupported IL or has too many generic parameters.

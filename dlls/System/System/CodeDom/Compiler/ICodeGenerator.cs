@@ -67,6 +67,3 @@ public interface ICodeGenerator
 	/// <param name="o">A <see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" /> that indicates the options to use for generating code.</param>
 	void GenerateCodeFromType(CodeTypeDeclaration e, TextWriter w, CodeGeneratorOptions o);
 }
-namespace System.Diagnostics
-{
-}

@@ -1,8 +1,12 @@
-namespace Mono.Security;
-
-internal enum UriPartial
+namespace System.Runtime.Serialization.Formatters.Binary
 {
-	Scheme,
-	Authority,
-	Path
+}
+namespace Mono.Security
+{
+	internal enum UriPartial
+	{
+		Scheme,
+		Authority,
+		Path
+	}
 }

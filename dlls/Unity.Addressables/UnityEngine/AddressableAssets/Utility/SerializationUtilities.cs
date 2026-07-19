@@ -1,0 +1,2 @@
+namespace UnityEngine.AddressableAssets.ResourceLocators;
+

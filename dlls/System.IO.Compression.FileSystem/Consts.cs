@@ -1,4 +1,4 @@
-namespace System.IO;
+namespace System.IO.Compression;
 
 internal static class Consts
 {

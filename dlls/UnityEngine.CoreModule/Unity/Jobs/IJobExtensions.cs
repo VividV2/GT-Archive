@@ -1,2 +1,2 @@
-namespace Unity.IO.LowLevel.Unsafe;
-
+// Could not decompile Unity.Jobs.IJobExtensions
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,40 +1,19 @@
 using System.Runtime.InteropServices;
-using Unity;
 
+namespace System.EnterpriseServices;
+
+/// <summary>Indicates the context in which to run the COM+ partition.</summary>
+[Serializable]
+[ComVisible(false)]
+public enum PartitionOption
+{
+	/// <summary>The enclosed context runs in the Global Partition. <see cref="F:System.EnterpriseServices.PartitionOption.Ignore" /> is the default setting for <see cref="P:System.EnterpriseServices.ServiceConfig.PartitionOption" /> when <see cref="P:System.EnterpriseServices.ServiceConfig.Inheritance" /> is set to <see cref="F:System.EnterpriseServices.InheritanceOption.Ignore" />.</summary>
+	Ignore,
+	/// <summary>The enclosed context runs in the current containing COM+ partition. This is the default setting for <see cref="P:System.EnterpriseServices.ServiceConfig.PartitionOption" /> when <see cref="P:System.EnterpriseServices.ServiceConfig.Inheritance" /> is set to <see cref="F:System.EnterpriseServices.InheritanceOption.Inherit" />.</summary>
+	Inherit,
+	/// <summary>The enclosed context runs in a COM+ partition that is different from the current containing partition.</summary>
+	New
+}
 namespace System.EnterpriseServices
 {
-	[ComVisible(false)]
-	public sealed class SharedPropertyGroup
-	{
-		private ISharedPropertyGroup propertyGroup;
-
-		internal SharedPropertyGroup(ISharedPropertyGroup propertyGroup)
-		{
-			this.propertyGroup = propertyGroup;
-		}
-
-		public SharedProperty CreateProperty(string name, out bool fExists)
-		{
-			return new SharedProperty(propertyGroup.CreateProperty(name, out fExists));
-		}
-
-		public SharedProperty CreatePropertyByPosition(int position, out bool fExists)
-		{
-			return new SharedProperty(propertyGroup.CreatePropertyByPosition(position, out fExists));
-		}
-
-		public SharedProperty Property(string name)
-		{
-			return new SharedProperty(propertyGroup.Property(name));
-		}
-
-		public SharedProperty PropertyByPosition(int position)
-		{
-			return new SharedProperty(propertyGroup.PropertyByPosition(position));
-		}
-
-		internal SharedPropertyGroup()
-		{
-			Unity.ThrowStub.ThrowNotSupportedException();
-		}
-	}
+}

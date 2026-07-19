@@ -1,12 +1,13 @@
-namespace System.Net.NetworkInformation;
-
-internal static class UnixIPGlobalPropertiesFactoryPal
+namespace System.Net.NetworkInformation
 {
-	public static IPGlobalProperties Create()
+	internal static class UnixIPGlobalPropertiesFactoryPal
 	{
-		return null;
+		public static IPGlobalProperties Create()
+		{
+			return null;
+		}
 	}
 }
-namespace System.Diagnostics
+namespace System.Net
 {
 }

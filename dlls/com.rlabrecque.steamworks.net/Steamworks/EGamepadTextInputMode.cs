@@ -1,22 +1,7 @@
-namespace Steamworks
+namespace Steamworks;
+
+public enum EGamepadTextInputMode
 {
-	public enum EHTTPMethod
-	{
-		k_EHTTPMethodInvalid,
-		k_EHTTPMethodGET,
-		k_EHTTPMethodHEAD,
-		k_EHTTPMethodPOST,
-		k_EHTTPMethodPUT,
-		k_EHTTPMethodDELETE,
-		k_EHTTPMethodOPTIONS,
-		k_EHTTPMethodPATCH
-	}
-}
-namespace Steamworks
-{
-	public enum EGamepadTextInputMode
-	{
-		k_EGamepadTextInputModeNormal,
-		k_EGamepadTextInputModePassword
-	}
+	k_EGamepadTextInputModeNormal,
+	k_EGamepadTextInputModePassword
 }

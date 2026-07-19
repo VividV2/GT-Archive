@@ -1,13 +1,17 @@
 using System;
 using System.ComponentModel;
 
-namespace UnityEngine.UI;
-
-[EditorBrowsable(EditorBrowsableState.Never)]
-[Obsolete("Not supported anymore.", true)]
-public interface IMask
+namespace UnityEngine.UI
 {
-	RectTransform rectTransform { get; }
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	[Obsolete("Not supported anymore.", true)]
+	public interface IMask
+	{
+		RectTransform rectTransform { get; }
 
-	bool Enabled();
+		bool Enabled();
+	}
+}
+namespace UnityEngine.UI
+{
 }

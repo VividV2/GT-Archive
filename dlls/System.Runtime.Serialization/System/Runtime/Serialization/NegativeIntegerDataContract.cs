@@ -1,9 +1,13 @@
-namespace System.Runtime.Serialization;
-
-internal class NegativeIntegerDataContract : LongDataContract
+namespace System.Runtime.Serialization
 {
-	internal NegativeIntegerDataContract()
-		: base(DictionaryGlobals.negativeIntegerLocalName, DictionaryGlobals.SchemaNamespace)
+	internal class NegativeIntegerDataContract : LongDataContract
 	{
+		internal NegativeIntegerDataContract()
+			: base(DictionaryGlobals.negativeIntegerLocalName, DictionaryGlobals.SchemaNamespace)
+		{
+		}
 	}
+}
+namespace System.Runtime.Serialization
+{
 }

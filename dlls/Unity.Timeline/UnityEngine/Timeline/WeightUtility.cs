@@ -1,9 +1,2 @@
-using UnityEngine.Playables;
-using UnityEngine.Playables;
-
-namespace UnityEngine.Timeline;
-
-public interface IPropertyPreview
-{
-	void GatherProperties(PlayableDirector director, IPropertyCollector driver);
-}
+// Could not decompile UnityEngine.Timeline.WeightUtility
+// This type uses unsupported IL or has too many generic parameters.

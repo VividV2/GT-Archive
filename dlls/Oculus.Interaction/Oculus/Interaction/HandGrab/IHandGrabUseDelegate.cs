@@ -1,10 +1,6 @@
-namespace Oculus.Interaction.HandGrab;
-
-public interface IHandGrabUseDelegate
+namespace Oculus.Interaction
 {
-	void BeginUse();
-
-	void EndUse();
-
-	float ComputeUseStrength(float strength);
+}
+namespace Oculus.Interaction.Surfaces
+{
 }

@@ -1,11 +1,7 @@
-namespace Newtonsoft.Json
+namespace Newtonsoft.Json;
+
+public enum DateFormatHandling
 {
-	public enum DateFormatHandling
-	{
-		IsoDateFormat,
-		MicrosoftDateFormat
-	}
-}
-namespace Newtonsoft.Json.Utilities
-{
+	IsoDateFormat,
+	MicrosoftDateFormat
 }

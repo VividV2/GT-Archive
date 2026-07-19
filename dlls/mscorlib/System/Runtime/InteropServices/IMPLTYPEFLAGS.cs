@@ -1,24 +1,17 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
+namespace System.Runtime.InteropServices;
 
-internal enum InternalPrimitiveTypeE
+/// <summary>Use <see cref="T:System.Runtime.InteropServices.ComTypes.IMPLTYPEFLAGS" /> instead.</summary>
+[Serializable]
+[Obsolete("Use System.Runtime.InteropServices.ComTypes.IMPLTYPEFLAGS instead. http://go.microsoft.com/fwlink/?linkid=14202", false)]
+[Flags]
+public enum IMPLTYPEFLAGS
 {
-	Invalid,
-	Boolean,
-	Byte,
-	Char,
-	Currency,
-	Decimal,
-	Double,
-	Int16,
-	Int32,
-	Int64,
-	SByte,
-	Single,
-	TimeSpan,
-	DateTime,
-	UInt16,
-	UInt32,
-	UInt64,
-	Null,
-	String
+	/// <summary>The interface or dispinterface represents the default for the source or sink.</summary>
+	IMPLTYPEFLAG_FDEFAULT = 1,
+	/// <summary>This member of a coclass is called rather than implemented.</summary>
+	IMPLTYPEFLAG_FSOURCE = 2,
+	/// <summary>The member should not be displayed or programmable by users.</summary>
+	IMPLTYPEFLAG_FRESTRICTED = 4,
+	/// <summary>Sinks receive events through the virtual function table (VTBL).</summary>
+	IMPLTYPEFLAG_FDEFAULTVTABLE = 8
 }

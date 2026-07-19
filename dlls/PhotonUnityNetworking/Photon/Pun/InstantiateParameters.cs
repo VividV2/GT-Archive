@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Photon.Pun
 {
+}
+namespace Photon.Pun
+{
 	public struct InstantiateParameters(string prefabName, Vector3 position, Quaternion rotation, byte group, object[] data, byte objLevelPrefix, int[] viewIDs, Player creator, int timestamp)
 	{
 		public int[] viewIDs = viewIDs;

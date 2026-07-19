@@ -1,10 +1,2 @@
-namespace UnityEngine.Rendering.LookDev;
+namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler;
 
-public struct Sky
-{
-	public Cubemap cubemap;
-
-	public float longitudeOffset;
-
-	public float exposure;
-}

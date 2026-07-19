@@ -1,9 +1,2 @@
-namespace Cysharp.Threading.Tasks;
-
-public enum UniTaskStatus
-{
-	Pending,
-	Succeeded,
-	Faulted,
-	Canceled
-}
+// Could not decompile Cysharp.Threading.Tasks.UniTaskCancellationExtensions
+// This type uses unsupported IL or has too many generic parameters.

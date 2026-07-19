@@ -1,7 +1,11 @@
-namespace Valve.Newtonsoft.Json.Linq;
-
-public enum LineInfoHandling
+namespace Valve.Newtonsoft.Json.Linq
 {
-	Ignore,
-	Load
+	public enum LineInfoHandling
+	{
+		Ignore,
+		Load
+	}
+}
+namespace Valve.Newtonsoft.Json.Bson
+{
 }

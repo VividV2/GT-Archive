@@ -1,13 +1,2 @@
-using System.Runtime.InteropServices;
-using UnityEngine.Internal;
-using System.Runtime.InteropServices;
-using UnityEngine.Internal;
-
-namespace UnityEngine;
-
-[StructLayout(LayoutKind.Sequential)]
-[ExcludeFromDocs]
-internal class MyManagedObject
-{
-	public int value = 42;
-}
+// Could not decompile UnityEngine.MyManagedObject
+// This type uses unsupported IL or has too many generic parameters.

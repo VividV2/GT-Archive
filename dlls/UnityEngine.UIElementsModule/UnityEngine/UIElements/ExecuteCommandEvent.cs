@@ -1,9 +1,3 @@
-namespace UnityEngine.UIElements;
-
-public class ExecuteCommandEvent : CommandEventBase<ExecuteCommandEvent>
+namespace UnityEngine.UIElements.Layout
 {
-	static ExecuteCommandEvent()
-	{
-		EventBase<ExecuteCommandEvent>.SetCreateFunction(() => new ExecuteCommandEvent());
-	}
 }

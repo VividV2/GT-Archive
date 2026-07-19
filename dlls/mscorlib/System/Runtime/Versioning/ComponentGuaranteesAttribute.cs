@@ -1,48 +1,24 @@
-namespace System.Runtime.InteropServices.ComTypes;
-
-[ComImport]
-[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-[Guid("00020401-0000-0000-C000-000000000046")]
-public interface ITypeInfo
+namespace System.Runtime.Versioning
 {
-	void GetTypeAttr(out IntPtr ppTypeAttr);
+	/// <summary>Defines the compatibility guarantee of a component, type, or type member that may span multiple versions.</summary>
+	[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Module | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Event | AttributeTargets.Interface | AttributeTargets.Delegate, AllowMultiple = false, Inherited = false)]
+	public sealed class ComponentGuaranteesAttribute : Attribute
+	{
+		/// <summary>Gets a value that indicates the guaranteed level of compatibility of a library, type, or type member that spans multiple versions.</summary>
+		/// <returns>One of the enumeration values that specifies the level of compatibility that is guaranteed across multiple versions.</returns>
+		public ComponentGuaranteesOptions Guarantees { get; }
 
-	void GetTypeComp(out ITypeComp ppTComp);
-
-	void GetFuncDesc(int index, out IntPtr ppFuncDesc);
-
-	void GetVarDesc(int index, out IntPtr ppVarDesc);
-
-	void GetNames(int memid, [Out][MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] string[] rgBstrNames, int cMaxNames, out int pcNames);
-
-	void GetRefTypeOfImplType(int index, out int href);
-
-	void GetImplTypeFlags(int index, out IMPLTYPEFLAGS pImplTypeFlags);
-
-	void GetIDsOfNames([In][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPWStr, SizeParamIndex = 1)] string[] rgszNames, int cNames, [Out][MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] int[] pMemId);
-
-	void Invoke([MarshalAs(UnmanagedType.IUnknown)] object pvInstance, int memid, short wFlags, ref DISPPARAMS pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, out int puArgErr);
-
-	void GetDocumentation(int index, out string strName, out string strDocString, out int dwHelpContext, out string strHelpFile);
-
-	void GetDllEntry(int memid, INVOKEKIND invKind, IntPtr pBstrDllName, IntPtr pBstrName, IntPtr pwOrdinal);
-
-	void GetRefTypeInfo(int hRef, out ITypeInfo ppTI);
-
-	void AddressOfMember(int memid, INVOKEKIND invKind, out IntPtr ppv);
-
-	void CreateInstance([MarshalAs(UnmanagedType.IUnknown)] object pUnkOuter, [In] ref Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvObj);
-
-	void GetMops(int memid, out string pBstrMops);
-
-	void GetContainingTypeLib(out ITypeLib ppTLB, out int pIndex);
-
-	[PreserveSig]
-	void ReleaseTypeAttr(IntPtr pTypeAttr);
-
-	[PreserveSig]
-	void ReleaseFuncDesc(IntPtr pFuncDesc);
-
-	[PreserveSig]
-	void ReleaseVarDesc(IntPtr pVarDesc);
+		/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.Versioning.ComponentGuaranteesAttribute" /> class with a value that indicates a library, type, or member's guaranteed level of compatibility across multiple versions.</summary>
+		/// <param name="guarantees">One of the enumeration values that specifies the level of compatibility that is guaranteed across multiple versions.</param>
+		public ComponentGuaranteesAttribute(ComponentGuaranteesOptions guarantees)
+		{
+			Guarantees = guarantees;
+		}
+	}
+}
+namespace System.Runtime.Serialization.Formatters.Binary
+{
+}
+namespace System
+{
 }

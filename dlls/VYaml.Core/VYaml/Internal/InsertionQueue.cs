@@ -1,9 +1,2 @@
-using System.Text;
-using System.Text;
-
-namespace VYaml.Internal;
-
-internal static class StringEncoding
-{
-	public static readonly Encoding Utf8 = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
-}
+// Could not decompile VYaml.Internal.InsertionQueue`1
+// This type uses unsupported IL or has too many generic parameters.

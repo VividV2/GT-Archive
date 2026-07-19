@@ -7,6 +7,3 @@ public interface IHasXmlNode
 	/// <returns>The <see langword="XmlNode" /> for the current position.</returns>
 	XmlNode GetNode();
 }
-namespace System.Xml.Xsl.IlGen
-{
-}

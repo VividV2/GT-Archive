@@ -1,9 +1,6 @@
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using Mono.Security.Interface;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using Mono.Security.Interface;
 
 namespace Mono.Net.Security;
 

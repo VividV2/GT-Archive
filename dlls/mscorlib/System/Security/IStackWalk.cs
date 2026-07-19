@@ -1,21 +1,17 @@
-namespace System.Security;
-
-/// <summary>Manages the stack walk that determines whether all callers in the call stack have the required permissions to access a protected resource.</summary>
-public interface IStackWalk
+namespace System.Runtime.InteropServices.ComTypes
 {
-	/// <summary>Asserts that the calling code can access the resource identified by the current permission object, even if callers higher in the stack have not been granted permission to access the resource.</summary>
-	/// <exception cref="T:System.Security.SecurityException">The calling code does not have <see cref="F:System.Security.Permissions.SecurityPermissionFlag.Assertion" />.</exception>
-	void Assert();
-
-	/// <summary>Determines at run time whether all callers in the call stack have been granted the permission specified by the current permission object.</summary>
-	/// <exception cref="T:System.Security.SecurityException">A caller higher in the call stack does not have the permission specified by the current permission object.  
-	///  -or-  
-	///  A caller in the call stack has called <see cref="M:System.Security.IStackWalk.Deny" /> on the current permission object.</exception>
-	void Demand();
-
-	/// <summary>Causes every <see cref="M:System.Security.IStackWalk.Demand" /> for the current object that passes through the calling code to fail.</summary>
-	void Deny();
-
-	/// <summary>Causes every <see cref="M:System.Security.IStackWalk.Demand" /> for all objects except the current one that passes through the calling code to fail, even if code higher in the call stack has been granted permission to access other resources.</summary>
-	void PermitOnly();
+	[Serializable]
+	public enum CALLCONV
+	{
+		CC_CDECL = 1,
+		CC_MSCPASCAL = 2,
+		CC_PASCAL = 2,
+		CC_MACPASCAL = 3,
+		CC_STDCALL = 4,
+		CC_RESERVED = 5,
+		CC_SYSCALL = 6,
+		CC_MPWCDECL = 7,
+		CC_MPWPASCAL = 8,
+		CC_MAX = 9
+	}
 }

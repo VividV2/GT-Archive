@@ -1,8 +1,11 @@
-namespace Valve.VR;
-
-public struct HmdVector2_t
+namespace Valve.VR
 {
-	public float v0;
-
-	public float v1;
+}
+namespace Valve.VR
+{
+	public enum EKeyboardFlags
+	{
+		KeyboardFlag_Minimal = 1,
+		KeyboardFlag_Modal
+	}
 }

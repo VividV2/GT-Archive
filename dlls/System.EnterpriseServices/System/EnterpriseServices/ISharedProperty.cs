@@ -1,6 +1,10 @@
-namespace System.EnterpriseServices;
-
-internal interface ISharedProperty
+namespace System.EnterpriseServices.Internal
 {
-	object Value { get; set; }
+}
+namespace System.EnterpriseServices
+{
+	internal interface ISharedProperty
+	{
+		object Value { get; set; }
+	}
 }

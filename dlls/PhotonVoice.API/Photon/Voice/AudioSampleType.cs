@@ -1,8 +1,12 @@
-namespace Photon.Voice;
-
-public enum AudioSampleType
+namespace Photon.Voice
 {
-	Source,
-	Short,
-	Float
+	public enum AudioSampleType
+	{
+		Source,
+		Short,
+		Float
+	}
+}
+namespace Photon.Voice
+{
 }

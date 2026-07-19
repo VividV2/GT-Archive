@@ -1,0 +1,2 @@
+namespace UnityEngine.TextCore.Text;
+

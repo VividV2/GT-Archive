@@ -1,14 +1,2 @@
-using System;
-
-namespace UnityEngine.Timeline;
-
-[AttributeUsage(AttributeTargets.Class)]
-internal class MenuCategoryAttribute : Attribute
-{
-	public readonly string category;
-
-	public MenuCategoryAttribute(string category)
-	{
-		this.category = category ?? string.Empty;
-	}
-}
+// Could not decompile UnityEngine.Timeline.MenuCategoryAttribute
+// This type uses unsupported IL or has too many generic parameters.

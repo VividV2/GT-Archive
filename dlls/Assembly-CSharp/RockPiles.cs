@@ -1,11 +1,2 @@
-public enum JoinTriggerVisualState
-{
-	ConnectionError,
-	AlreadyInRoom,
-	InPrivateRoom,
-	NotConnectedSoloJoin,
-	LeaveRoomAndSoloJoin,
-	LeaveRoomAndPartyJoin,
-	AbandonPartyAndSoloJoin,
-	ChangingGameModeSoloJoin
-}
+// Could not decompile RockPiles
+// This type uses unsupported IL or has too many generic parameters.

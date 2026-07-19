@@ -1,8 +1,12 @@
 using System;
 
-namespace Fusion;
-
-[AttributeUsage(AttributeTargets.Field)]
-public sealed class UnityAssetGuidAttribute : DrawerPropertyAttribute
+namespace Fusion
+{
+	[AttributeUsage(AttributeTargets.Field)]
+	public sealed class UnityAssetGuidAttribute : DrawerPropertyAttribute
+	{
+	}
+}
+namespace Fusion
 {
 }

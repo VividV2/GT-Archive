@@ -3,16 +3,12 @@ using System.Runtime.InteropServices;
 namespace Steamworks;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(507)]
-public struct LobbyChatMsg_t
+[CallbackIdentity(201)]
+public struct GSClientApprove_t
 {
-	public const int k_iCallback = 507;
+	public const int k_iCallback = 201;
 
-	public ulong m_ulSteamIDLobby;
+	public CSteamID m_SteamID;
 
-	public ulong m_ulSteamIDUser;
-
-	public byte m_eChatEntryType;
-
-	public uint m_iChatID;
+	public CSteamID m_OwnerSteamID;
 }

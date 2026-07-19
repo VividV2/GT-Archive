@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Scripting;
-
-namespace UnityEngine;
-
-[UsedByNativeCode]
-public sealed class HideInInspector : Attribute
-{
-}
+// Could not decompile UnityEngine.HideInInspector
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,15 +1,19 @@
 using Unity.Burst;
 using Unity.Jobs;
 
-namespace Unity.Collections;
-
-[BurstCompile]
-internal struct NativeReferenceDisposeJob : IJob
+namespace Unity.Collections
 {
-	internal NativeReferenceDispose Data;
-
-	public void Execute()
+	[BurstCompile]
+	internal struct NativeReferenceDisposeJob : IJob
 	{
-		Data.Dispose();
+		internal NativeReferenceDispose Data;
+
+		public void Execute()
+		{
+			Data.Dispose();
+		}
 	}
+}
+namespace Unity.Collections
+{
 }

@@ -1,11 +1,2 @@
-namespace Fusion;
-
-public enum NetworkSpawnStatus
-{
-	Queued,
-	Spawned,
-	FailedToLoadPrefabSynchronously,
-	FailedToCreateInstance,
-	FailedClientCantSpawn,
-	FailedLocalPlayerNotYetSet
-}
+// Could not decompile Fusion._64
+// This type uses unsupported IL or has too many generic parameters.

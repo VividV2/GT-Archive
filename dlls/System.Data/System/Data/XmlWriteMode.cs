@@ -10,6 +10,3 @@ public enum XmlWriteMode
 	/// <summary>Writes the entire <see cref="T:System.Data.DataSet" /> as a DiffGram, including original and current values. To generate a DiffGram containing only changed values, call <see cref="M:System.Data.DataSet.GetChanges" />, and then call <see cref="M:System.Data.DataSet.WriteXml(System.IO.Stream)" /> as a DiffGram on the returned <see cref="T:System.Data.DataSet" />.</summary>
 	DiffGram
 }
-namespace System.Data
-{
-}

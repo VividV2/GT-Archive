@@ -1,4 +1,3 @@
-#define DEBUG
 using System;
 
 namespace Fusion

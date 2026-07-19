@@ -1,2 +1,7 @@
-namespace UnityEngine.UIElements.UIR;
+namespace UnityEngine.UIElements;
 
+internal enum BindingUpdateStage
+{
+	UpdateUI,
+	UpdateSource
+}

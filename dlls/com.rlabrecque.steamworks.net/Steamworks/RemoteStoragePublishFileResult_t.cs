@@ -1,17 +1,34 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(1309)]
-public struct RemoteStoragePublishFileResult_t
+namespace Steamworks
 {
-	public const int k_iCallback = 1309;
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(1030)]
+	public struct TimedTrialStatus_t
+	{
+		public const int k_iCallback = 1030;
 
-	public EResult m_eResult;
+		public AppId_t m_unAppID;
 
-	public PublishedFileId_t m_nPublishedFileId;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bIsOffline;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bUserNeedsToAcceptWorkshopLegalAgreement;
+		public uint m_unSecondsAllowed;
+
+		public uint m_unSecondsPlayed;
+	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(4012)]
+	public struct MusicPlayerSelectsQueueEntry_t
+	{
+		public const int k_iCallback = 4012;
+
+		public int nID;
+	}
+}
+namespace Steamworks
+{
 }

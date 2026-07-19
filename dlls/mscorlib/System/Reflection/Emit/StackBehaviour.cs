@@ -1,6 +1,2 @@
-namespace System.Reflection
-{
-}
-namespace System.Reflection
-{
-}
+namespace System.Globalization;
+

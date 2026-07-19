@@ -1,53 +1,22 @@
-namespace g3
-{
-}
-namespace g3
-{
-}
-namespace g3
-{
-}
-namespace g3
-{
-}
-namespace g3
-{
-}
-namespace g3
-{
-}
-namespace g3
-{
-}
-namespace gs
-{
-	public interface IFalloffFunction
-	{
-		double FalloffT(double t);
+namespace g3;
 
-		IFalloffFunction Duplicate();
-	}
-}
-namespace g3
+public interface IParametricCurve3d
 {
-	public interface IParametricCurve3d
-	{
-		bool IsClosed { get; }
+	bool IsClosed { get; }
 
-		double ParamLength { get; }
+	double ParamLength { get; }
 
-		bool HasArcLength { get; }
+	bool HasArcLength { get; }
 
-		double ArcLength { get; }
+	double ArcLength { get; }
 
-		Vector3d SampleT(double t);
+	Vector3d SampleT(double t);
 
-		Vector3d TangentT(double t);
+	Vector3d TangentT(double t);
 
-		Vector3d SampleArcLength(double a);
+	Vector3d SampleArcLength(double a);
 
-		void Reverse();
+	void Reverse();
 
-		IParametricCurve3d Clone();
-	}
+	IParametricCurve3d Clone();
 }

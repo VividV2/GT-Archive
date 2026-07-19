@@ -1,2 +1,2 @@
-namespace Liv.Lck.Utilities;
-
+// Could not decompile Liv.Lck.Tablet.LckLivHubButton
+// This type uses unsupported IL or has too many generic parameters.

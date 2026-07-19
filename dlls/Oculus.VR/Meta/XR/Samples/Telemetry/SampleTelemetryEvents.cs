@@ -28,6 +28,6 @@ namespace Meta.XR.Samples.Telemetry
 		}
 	}
 }
-namespace OVR.Input
+namespace OVR.OpenVR
 {
 }

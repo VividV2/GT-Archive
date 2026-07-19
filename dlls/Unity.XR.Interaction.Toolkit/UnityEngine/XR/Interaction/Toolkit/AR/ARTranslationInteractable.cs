@@ -1,8 +1,2 @@
-using System;
-
-namespace UnityEngine.XR.Interaction.Toolkit.AR;
-
-[Obsolete("ARTranslationInteractable has been replaced by the ARTransformer. Use the ARTransformer instead.")]
-public class ARTranslationInteractable
-{
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.AR.ARTranslationInteractable
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,17 @@
-namespace Liv.Lck.Recorder;
+using UnityEngine;
 
-public struct RecordingData
+namespace Liv.Lck.UI;
+
+[CreateAssetMenu(fileName = "LckButtonColors", menuName = "LIV/LCK/LCK Button Colors", order = 0)]
+public class LckButtonColors : ScriptableObject
 {
-	public string RecordingFilePath;
+	public Color NormalColor;
 
-	public float RecordingDuration;
+	public Color HighlightedColor;
+
+	public Color PressedColor;
+
+	public Color SelectedColor;
+
+	public Color DisabledColor;
 }

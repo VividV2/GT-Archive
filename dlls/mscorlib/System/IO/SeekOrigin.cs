@@ -1,12 +1,15 @@
-namespace System.IO;
-
-/// <summary>Specifies the position in a stream to use for seeking.</summary>
-public enum SeekOrigin
+namespace System.IO
 {
-	/// <summary>Specifies the beginning of a stream.</summary>
-	Begin,
-	/// <summary>Specifies the current position within a stream.</summary>
-	Current,
-	/// <summary>Specifies the end of a stream.</summary>
-	End
+	public enum MatchCasing
+	{
+		PlatformDefault,
+		CaseSensitive,
+		CaseInsensitive
+	}
+}
+namespace System.IO
+{
+	internal sealed class __ConsoleStream
+	{
+	}
 }

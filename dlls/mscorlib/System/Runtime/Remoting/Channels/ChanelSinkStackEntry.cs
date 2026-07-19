@@ -1,14 +1,2 @@
-namespace System.Runtime.Remoting.Channels
-{
-	internal class ChanelSinkStackEntry(IChannelSinkBase sink, object state, ChanelSinkStackEntry next)
-	{
-		public IChannelSinkBase Sink = sink;
-
-		public object State = state;
-
-		public ChanelSinkStackEntry Next = next;
-	}
-}
-namespace System.Security.Claims
-{
-}
+// Could not decompile System.Runtime.Remoting.Channels.ChanelSinkStackEntry
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,12 @@
-namespace System.Runtime.InteropServices;
-
-internal enum StringMarshalling
+namespace System.Runtime.InteropServices
 {
-	Custom,
-	Utf8,
-	Utf16
+	internal enum StringMarshalling
+	{
+		Custom,
+		Utf8,
+		Utf16
+	}
+}
+namespace System.Runtime.InteropServices
+{
 }

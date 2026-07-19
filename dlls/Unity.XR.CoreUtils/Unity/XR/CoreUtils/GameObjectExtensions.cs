@@ -1,57 +1,35 @@
+using System.Collections.Generic;
+using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Unity.XR.CoreUtils;
 
-public static class GameObjectExtensions
+public static class ComponentUtils<T>
 {
-	public static void SetHideFlagsRecursively(this GameObject gameObject, HideFlags hideFlags)
+	private static readonly List<T> k_RetrievalList = new List<T>();
+
+	public static T GetComponent(GameObject gameObject)
 	{
-		gameObject.hideFlags = hideFlags;
-		foreach (Transform item in gameObject.transform)
+		T result = default(T);
+		gameObject.GetComponents(k_RetrievalList);
+		if (k_RetrievalList.Count > 0)
 		{
-			item.gameObject.SetHideFlagsRecursively(hideFlags);
+			return k_RetrievalList[0];
 		}
+		T result;
+		return result;
 	}
 
-	public static void AddToHideFlagsRecursively(this GameObject gameObject, HideFlags hideFlags)
+	public static T GetComponentInChildren(GameObject gameObject)
 	{
-		gameObject.hideFlags |= hideFlags;
-		foreach (Transform item in gameObject.transform)
+		T result = default(T);
+		gameObject.GetComponentsInChildren(k_RetrievalList);
+		if (k_RetrievalList.Count > 0)
 		{
-			item.gameObject.AddToHideFlagsRecursively(hideFlags);
+			return k_RetrievalList[0];
 		}
-	}
-
-	public static void SetLayerRecursively(this GameObject gameObject, int layer)
-	{
-		gameObject.layer = layer;
-		foreach (Transform item in gameObject.transform)
-		{
-			item.gameObject.SetLayerRecursively(layer);
-		}
-	}
-
-	public static void SetLayerAndAddToHideFlagsRecursively(this GameObject gameObject, int layer, HideFlags hideFlags)
-	{
-		gameObject.layer = layer;
-		gameObject.hideFlags |= hideFlags;
-		foreach (Transform item in gameObject.transform)
-		{
-			item.gameObject.SetLayerAndAddToHideFlagsRecursively(layer, hideFlags);
-		}
-	}
-
-	public static void SetLayerAndHideFlagsRecursively(this GameObject gameObject, int layer, HideFlags hideFlags)
-	{
-		gameObject.layer = layer;
-		gameObject.hideFlags = hideFlags;
-		foreach (Transform item in gameObject.transform)
-		{
-			item.gameObject.SetLayerAndHideFlagsRecursively(layer, hideFlags);
-		}
-	}
-
-	public static void SetRunInEditModeRecursively(this GameObject gameObject, bool enabled)
-	{
+		T result;
+		return result;
 	}
 }

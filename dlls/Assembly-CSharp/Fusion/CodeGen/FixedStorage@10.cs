@@ -1,9 +1,3 @@
-namespace Viveport.Internal;
-
-internal enum ESubscriptionTransactionType
+namespace Fusion.CodeGen
 {
-	UNKNOWN,
-	PAID,
-	REDEEM,
-	FREEE_TRIAL
 }

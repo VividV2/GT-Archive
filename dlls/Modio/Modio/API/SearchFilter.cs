@@ -1,19 +1,2 @@
-using System.Collections.Generic;
-
-namespace Modio.API;
-
-public abstract class SearchFilter
-{
-	internal int PageIndex;
-
-	internal int PageSize;
-
-	internal readonly Dictionary<string, object> Parameters;
-
-	protected SearchFilter(int pageIndex, int pageSize)
-	{
-		Parameters = new Dictionary<string, object>();
-		PageIndex = pageIndex;
-		PageSize = pageSize;
-	}
-}
+// Could not decompile Modio.API.SearchFilter
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,2 @@
-namespace PlayFab.MultiplayerModels;
+namespace PlayFab.ClientModels;
 
-public enum TitleMultiplayerServerEnabledStatus
-{
-	Initializing,
-	Enabled,
-	Disabled
-}

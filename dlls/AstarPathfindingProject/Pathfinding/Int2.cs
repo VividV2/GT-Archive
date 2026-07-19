@@ -1,0 +1,6 @@
+namespace Pathfinding
+{
+}
+namespace Pathfinding
+{
+}

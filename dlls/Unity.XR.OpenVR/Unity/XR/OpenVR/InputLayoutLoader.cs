@@ -1,29 +1,70 @@
+using System;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Layouts;
 using UnityEngine.InputSystem.XR;
+using System;
 
-namespace Unity.XR.OpenVR;
-
-internal static class InputLayoutLoader
+namespace Unity.XR.OpenVR
 {
-	static InputLayoutLoader()
+	internal static class InputLayoutLoader
 	{
-		RegisterInputLayouts();
-	}
+		static InputLayoutLoader()
+		{
+			RegisterInputLayouts();
+		}
 
-	public static void RegisterInputLayouts()
+		public static void RegisterInputLayouts()
+		{
+			InputSystem.RegisterLayout<XRHMD>("OpenVRHMD", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithProduct("^(OpenVR Headset)|^(Vive Pro)"));
+			InputSystem.RegisterLayout<XRController>("OpenVRControllerWMR", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithProduct("^(OpenVR Controller\\(WindowsMR)"));
+			InputSystem.RegisterLayout<XRController>("ViveWand", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Controller\\(((Vive Controller)|(VIVE Controller)))"));
+			InputSystem.RegisterLayout<XRController>("OpenVRViveCosmosController", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Controller\\(((VIVE Cosmos Controller)|(Vive Cosmos Controller)|(vive_cosmos_controller)))"));
+			InputSystem.RegisterLayout<XRController>("OpenVRControllerIndex", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("Valve").WithProduct("^(OpenVR Controller\\(Knuckles)"));
+			InputSystem.RegisterLayout<XRController>("OpenVROculusTouchController", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("Oculus").WithProduct("^(OpenVR Controller\\(Oculus)"));
+			InputSystem.RegisterLayout<XRController>("HandedViveTracker", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Controller\\(((Vive Tracker)|(VIVE Tracker)).+ - ((Left)|(Right)))"));
+			InputSystem.RegisterLayout<XRController>("ViveTracker", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Controller\\(((Vive Tracker)|(VIVE Tracker)).+\\)(?! - Left| - Right))"));
+			InputSystem.RegisterLayout<XRController>("ViveTracker", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Tracked Device\\(((Vive Tracker)|(VIVE Tracker)).+\\)(?! - Left| - Right))"));
+			InputSystem.RegisterLayout<XRController>("LogitechStylus", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("Logitech").WithProduct("(OpenVR Controller\\(.+stylus)"));
+			InputSystem.RegisterLayout<TrackedDevice>("ViveLighthouse", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Tracking Reference\\()"));
+			InputSystem.RegisterLayout<TrackedDevice>("ValveLighthouse", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("Valve Corporation").WithProduct("^(OpenVR Tracking Reference\\()"));
+		}
+	}
+}
+namespace Valve.VR
+{
+	public struct VREvent_ShowDevTools_t
 	{
-		InputSystem.RegisterLayout<XRHMD>("OpenVRHMD", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithProduct("^(OpenVR Headset)|^(Vive Pro)"));
-		InputSystem.RegisterLayout<XRController>("OpenVRControllerWMR", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithProduct("^(OpenVR Controller\\(WindowsMR)"));
-		InputSystem.RegisterLayout<XRController>("ViveWand", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Controller\\(((Vive Controller)|(VIVE Controller)))"));
-		InputSystem.RegisterLayout<XRController>("OpenVRViveCosmosController", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Controller\\(((VIVE Cosmos Controller)|(Vive Cosmos Controller)|(vive_cosmos_controller)))"));
-		InputSystem.RegisterLayout<XRController>("OpenVRControllerIndex", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("Valve").WithProduct("^(OpenVR Controller\\(Knuckles)"));
-		InputSystem.RegisterLayout<XRController>("OpenVROculusTouchController", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("Oculus").WithProduct("^(OpenVR Controller\\(Oculus)"));
-		InputSystem.RegisterLayout<XRController>("HandedViveTracker", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Controller\\(((Vive Tracker)|(VIVE Tracker)).+ - ((Left)|(Right)))"));
-		InputSystem.RegisterLayout<XRController>("ViveTracker", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Controller\\(((Vive Tracker)|(VIVE Tracker)).+\\)(?! - Left| - Right))"));
-		InputSystem.RegisterLayout<XRController>("ViveTracker", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Tracked Device\\(((Vive Tracker)|(VIVE Tracker)).+\\)(?! - Left| - Right))"));
-		InputSystem.RegisterLayout<XRController>("LogitechStylus", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("Logitech").WithProduct("(OpenVR Controller\\(.+stylus)"));
-		InputSystem.RegisterLayout<TrackedDevice>("ViveLighthouse", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("HTC").WithProduct("^(OpenVR Tracking Reference\\()"));
-		InputSystem.RegisterLayout<TrackedDevice>("ValveLighthouse", default(InputDeviceMatcher).WithInterface("^(XRInput)").WithManufacturer("Valve Corporation").WithProduct("^(OpenVR Tracking Reference\\()"));
+		public int nBrowserIdentifier;
+	}
+}
+namespace Valve.VR
+{
+}
+namespace Valve.VR
+{
+	public struct PathWrite_t
+	{
+		public ulong ulPath;
+
+		public EPropertyWriteType writeType;
+
+		public ETrackedPropertyError eSetError;
+
+		public IntPtr pvBuffer;
+
+		public uint unBufferSize;
+
+		public uint unTag;
+
+		public ETrackedPropertyError eError;
+
+		public IntPtr pszPath;
+	}
+}
+namespace Valve.VR
+{
+	public struct VREvent_Ipd_t
+	{
+		public float ipdMeters;
 	}
 }

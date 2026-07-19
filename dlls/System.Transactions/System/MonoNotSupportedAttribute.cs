@@ -1,10 +1,7 @@
-namespace System;
+namespace System.Transactions;
 
-[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-internal class MonoNotSupportedAttribute : System.MonoTODOAttribute
-{
-	public MonoNotSupportedAttribute(string comment)
-		: base(comment)
-	{
-	}
-}
+/// <summary>Provides a mechanism for the hosting environment to supply its own default notion of <see cref="P:System.Transactions.Transaction.Current" />.</summary>
+/// <returns>A <see cref="T:System.Transactions.Transaction" /> object.</returns>
+/// <summary>Provides a mechanism for the hosting environment to supply its own default notion of <see cref="P:System.Transactions.Transaction.Current" />.</summary>
+/// <returns>A <see cref="T:System.Transactions.Transaction" /> object.</returns>
+public delegate Transaction HostCurrentTransactionCallback();

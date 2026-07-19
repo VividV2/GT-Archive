@@ -1,2 +1,21 @@
-namespace Fusion;
+using System;
 
+namespace Fusion.LagCompensation
+{
+	[Serializable]
+	public struct PositionRotationQueryParams(QueryParams queryParams, Hitbox hitbox)
+	{
+		public QueryParams QueryParams = queryParams;
+
+		public Hitbox Hitbox = hitbox;
+	}
+}
+namespace Fusion
+{
+}
+namespace Fusion.Internal
+{
+}
+namespace Fusion.LagCompensation
+{
+}

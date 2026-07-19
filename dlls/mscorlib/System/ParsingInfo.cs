@@ -1,30 +1,11 @@
-using System.Globalization;
+namespace System.Runtime.Serialization.Formatters.Binary;
 
-namespace System;
-
-internal struct ParsingInfo
+[Serializable]
+internal enum SoapAttributeType
 {
-	internal Calendar calendar;
-
-	internal int dayOfWeek;
-
-	internal DateTimeParse.TM timeMark;
-
-	internal bool fUseHour12;
-
-	internal bool fUseTwoDigitYear;
-
-	internal bool fAllowInnerWhite;
-
-	internal bool fAllowTrailingWhite;
-
-	internal bool fCustomNumberParser;
-
-	internal DateTimeParse.MatchNumberDelegate parseNumberDelegate;
-
-	internal void Init()
-	{
-		dayOfWeek = -1;
-		timeMark = DateTimeParse.TM.NotSet;
-	}
+	None = 0,
+	SchemaType = 1,
+	Embedded = 2,
+	XmlElement = 4,
+	XmlAttribute = 8
 }

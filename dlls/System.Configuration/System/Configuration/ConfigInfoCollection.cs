@@ -1,20 +1,20 @@
-using System.Configuration.Internal;
-using System.Configuration.Internal;
+using System.Configuration.Provider;
+using System.Reflection;
+using System.Configuration.Provider;
+using System.Reflection;
+using Unity;
 
 namespace System.Configuration;
 
-internal class InternalConfigurationFactory : IInternalConfigConfigurationFactory
+/// <summary>Maintains a collection of <see cref="T:System.Configuration.ConfigurationBuilder" /> objects by name.</summary>
+/// <summary>Maintains a collection of <see cref="T:System.Configuration.ConfigurationBuilder" /> objects by name.</summary>
+[DefaultMember("Item")]
+public class ConfigurationBuilderCollection : ProviderCollection
 {
-	public Configuration Create(Type typeConfigHost, params object[] hostInitConfigurationParams)
+	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.ConfigurationBuilderCollection" /> class.</summary>
+	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.ConfigurationBuilderCollection" /> class.</summary>
+	public ConfigurationBuilderCollection()
 	{
-		InternalConfigurationSystem internalConfigurationSystem = new InternalConfigurationSystem();
-		InternalConfigurationSystem internalConfigurationSystem;
-		internalConfigurationSystem.Init(typeConfigHost, hostInitConfigurationParams);
-		return new Configuration(internalConfigurationSystem, null);
-	}
-
-	public string NormalizeLocationSubPath(string subPath, IConfigErrorInfo errorInfo)
-	{
-		return subPath;
+		Unity.ThrowStub.ThrowNotSupportedException();
 	}
 }

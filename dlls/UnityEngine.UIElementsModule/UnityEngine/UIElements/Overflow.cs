@@ -1,7 +1,8 @@
 namespace UnityEngine.UIElements;
 
-public enum Overflow
+public interface IPointerCaptureEvent
 {
-	Visible,
-	Hidden
+}
+namespace UnityEngine.UIElements
+{
 }

@@ -1,17 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace System.EnterpriseServices
-{
-}
-namespace System.EnterpriseServices
-{
-	[Guid("6619a740-8154-43be-a186-0319578e02db")]
-	public interface IRemoteDispatch
-	{
-		[AutoComplete]
-		string RemoteDispatchAutoDone(string s);
-
-		[AutoComplete(false)]
-		string RemoteDispatchNotAutoDone(string s);
-	}
-}
+// Could not decompile System.EnterpriseServices.IPlaybackControl
+// This type uses unsupported IL or has too many generic parameters.

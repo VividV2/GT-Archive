@@ -1,14 +1,5 @@
 using System;
-using System;
 
-namespace Valve.Newtonsoft.Json
-{
-	public enum DateFormatHandling
-	{
-		IsoDateFormat,
-		MicrosoftDateFormat
-	}
-}
 namespace Valve.Newtonsoft.Json
 {
 	[AttributeUsage(AttributeTargets.Constructor, AllowMultiple = false)]
@@ -18,50 +9,11 @@ namespace Valve.Newtonsoft.Json
 }
 namespace Valve.Newtonsoft.Json
 {
-	public enum StringEscapeHandling
-	{
-		Default,
-		EscapeNonAscii,
-		EscapeHtml
-	}
-}
-namespace Valve.Newtonsoft.Json.Utilities
-{
-}
-namespace Valve.Newtonsoft.Json
-{
-	public enum Required
-	{
-		Default,
-		AllowNull,
-		Always,
-		DisallowNull
-	}
-}
-namespace Valve.Newtonsoft.Json
-{
-	public enum JsonToken
+	internal enum JsonContainerType
 	{
 		None,
-		StartObject,
-		StartArray,
-		StartConstructor,
-		PropertyName,
-		Comment,
-		Raw,
-		Integer,
-		Float,
-		String,
-		Boolean,
-		Null,
-		Undefined,
-		EndObject,
-		EndArray,
-		EndConstructor,
-		Date,
-		Bytes
+		Object,
+		Array,
+		Constructor
 	}
-}
-namespace Valve.Newtonsoft.Json
-{
 }

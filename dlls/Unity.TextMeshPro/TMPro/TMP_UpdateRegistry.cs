@@ -1,7 +1,2 @@
-namespace TMPro;
-
-public enum TextRenderFlags
-{
-	DontRender = 0,
-	Render = 255
-}
+// Could not decompile TMPro.TMP_UpdateRegistry
+// This type uses unsupported IL or has too many generic parameters.

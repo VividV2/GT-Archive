@@ -1,8 +1,2 @@
-using System;
-
-namespace Fusion;
-
-[AttributeUsage(AttributeTargets.Field)]
-public class ScenePathAttribute : DrawerPropertyAttribute
-{
-}
+// Could not decompile Fusion.ScenePathAttribute
+// This type uses unsupported IL or has too many generic parameters.

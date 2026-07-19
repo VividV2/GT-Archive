@@ -1,9 +1,5 @@
-namespace UnityEngine.EventSystems
-{
-	public interface IEventSystemHandler
-	{
-	}
-}
-namespace UnityEngine.UI
+namespace UnityEngine.EventSystems;
+
+public interface IEventSystemHandler
 {
 }

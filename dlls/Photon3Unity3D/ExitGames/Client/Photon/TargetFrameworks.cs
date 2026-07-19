@@ -1,10 +1,14 @@
-namespace ExitGames.Client.Photon;
-
-public enum TargetFrameworks
+namespace ExitGames.Client.Photon
 {
-	Unknown,
-	Net35,
-	NetStandard20,
-	Metro,
-	NetStandard21
+}
+namespace ExitGames.Client.Photon
+{
+	public enum TargetFrameworks
+	{
+		Unknown,
+		Net35,
+		NetStandard20,
+		Metro,
+		NetStandard21
+	}
 }

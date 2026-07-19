@@ -1,15 +1,11 @@
-namespace UnityEngine.ProBuilder
+namespace UnityEngine.ProBuilder;
+
+public enum Axis
 {
-}
-namespace UnityEngine.ProBuilder
-{
-	public enum Axis
-	{
-		Right,
-		Left,
-		Up,
-		Down,
-		Forward,
-		Backward
-	}
+	Right,
+	Left,
+	Up,
+	Down,
+	Forward,
+	Backward
 }

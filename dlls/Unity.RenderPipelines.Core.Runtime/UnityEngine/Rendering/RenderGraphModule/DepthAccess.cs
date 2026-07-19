@@ -1,50 +1,13 @@
 using System;
 using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.Rendering.RenderGraphModule
+namespace UnityEngine.Rendering.RenderGraphModule;
+
+[Flags]
+[MovedFrom(true, "UnityEngine.Experimental.Rendering.RenderGraphModule", "UnityEngine.Rendering.RenderGraphModule", null)]
+public enum DepthAccess
 {
-}
-namespace UnityEngine.Rendering.RenderGraphModule
-{
-	[MovedFrom(true, "UnityEngine.Experimental.Rendering.RenderGraphModule", "UnityEngine.Rendering.RenderGraphModule", null)]
-	public delegate void BaseRenderFunc<PassData, ContextType>(PassData data, ContextType renderGraphContext) where PassData : class, new();
-}
-namespace UnityEngine.Rendering
-{
-	internal enum PerformanceBottleneck
-	{
-		Indeterminate,
-		PresentLimited,
-		CPU,
-		GPU,
-		Balanced
-	}
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering.RenderGraphModule
-{
-	[Flags]
-	[MovedFrom(true, "UnityEngine.Experimental.Rendering.RenderGraphModule", "UnityEngine.Rendering.RenderGraphModule", null)]
-	public enum DepthAccess
-	{
-		Read = 1,
-		Write = 2,
-		ReadWrite = 3
-	}
-}
-namespace UnityEngine.Rendering.RenderGraphModule
-{
-}
-namespace UnityEngine.Rendering.RenderGraphModule
-{
-}
-namespace UnityEngine.Rendering.UI
-{
-}
-namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler
-{
+	Read = 1,
+	Write = 2,
+	ReadWrite = 3
 }

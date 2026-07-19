@@ -34,6 +34,12 @@ namespace Liv.Lck.GorillaTag
 		}
 	}
 }
-namespace Liv.Lck.Tablet
+namespace Liv.Lck.GorillaTag
+{
+}
+namespace Liv.Lck.GorillaTag
+{
+}
+namespace Liv.Lck.GorillaTag
 {
 }

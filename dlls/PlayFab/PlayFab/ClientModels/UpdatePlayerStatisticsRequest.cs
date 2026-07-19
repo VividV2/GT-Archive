@@ -1,14 +1,2 @@
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
-	public enum TitleActivationStatus
-	{
-		None,
-		ActivatedTitleKey,
-		PendingSteam,
-		ActivatedSteam,
-		RevokedSteam
-	}
-}
+// Could not decompile PlayFab.ClientModels.UpdatePlayerStatisticsRequest
+// This type uses unsupported IL or has too many generic parameters.

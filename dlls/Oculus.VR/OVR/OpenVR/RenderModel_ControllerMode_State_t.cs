@@ -1,9 +1,3 @@
-using System.Runtime.InteropServices;
-
-namespace OVR.OpenVR;
-
-public struct RenderModel_ControllerMode_State_t
+namespace OVR.OpenVR
 {
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bScrollWheelVisible;
 }

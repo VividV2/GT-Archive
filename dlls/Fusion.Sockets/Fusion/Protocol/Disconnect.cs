@@ -1,2 +1,2 @@
-namespace Fusion.Sockets;
+namespace Fusion.Protocol;
 

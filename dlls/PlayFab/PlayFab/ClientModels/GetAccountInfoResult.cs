@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetAccountInfoResult : PlayFabResultCommon
-{
-	public UserAccountInfo AccountInfo;
-}
+// Could not decompile PlayFab.ClientModels.GetAccountInfoResult
+// This type uses unsupported IL or has too many generic parameters.

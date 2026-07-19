@@ -1,6 +1,2 @@
-namespace Oculus.Interaction.Body.PoseDetection
-{
-}
-namespace Oculus.Interaction.Input
-{
-}
+// Could not decompile Oculus.Interaction.Input.TrackingToWorldTransformerOVR
+// This type uses unsupported IL or has too many generic parameters.

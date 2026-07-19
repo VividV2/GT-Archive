@@ -48,6 +48,3 @@ internal struct Win32_MIB_IPSTATS
 
 	public int NumRoutes;
 }
-namespace System.Net.NetworkInformation
-{
-}

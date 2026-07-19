@@ -1,9 +1,2 @@
-using System.Threading;
-using System.Threading;
-
-namespace Cysharp.Threading.Tasks;
-
-public interface IUniTaskAsyncEnumerable<out T>
-{
-	IUniTaskAsyncEnumerator<T> GetAsyncEnumerator(CancellationToken cancellationToken = default(CancellationToken));
-}
+// Could not decompile Cysharp.Threading.Tasks.TimeoutController
+// This type uses unsupported IL or has too many generic parameters.

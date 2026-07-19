@@ -1,12 +1,16 @@
 using System;
 
-namespace Newtonsoft.Json;
-
-[Flags]
-public enum PreserveReferencesHandling
+namespace Newtonsoft.Json.Utilities
 {
-	None = 0,
-	Objects = 1,
-	Arrays = 2,
-	All = 3
+}
+namespace Newtonsoft.Json
+{
+	[Flags]
+	public enum PreserveReferencesHandling
+	{
+		None = 0,
+		Objects = 1,
+		Arrays = 2,
+		All = 3
+	}
 }

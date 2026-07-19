@@ -1,15 +1,5 @@
-namespace Fusion
+namespace Fusion;
+
+public interface IRunnerVisibilityRecognizedType
 {
-}
-namespace Fusion
-{
-	public static class FusionUnityExtensions
-	{
-	}
-}
-namespace Fusion
-{
-	public interface IRunnerVisibilityRecognizedType
-	{
-	}
 }

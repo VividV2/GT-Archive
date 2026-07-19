@@ -1,18 +1,24 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace System.Runtime.Remoting.Messaging;
-
-/// <summary>Provides a way to control asynchronous messages after they have dispatched using the <see cref="M:System.Runtime.Remoting.Messaging.IMessageSink.AsyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)" />.</summary>
-/// <summary>Provides a way to control asynchronous messages after they have dispatched using the <see cref="M:System.Runtime.Remoting.Messaging.IMessageSink.AsyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)" />.</summary>
-[ComVisible(true)]
-public interface IMessageCtrl
+namespace System.Security
 {
-	/// <summary>Cancels an asynchronous call.</summary>
-	/// <param name="msToCancel">The number of milliseconds after which to cancel the message.</param>
-	/// <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
-	/// <summary>Cancels an asynchronous call.</summary>
-	/// <param name="msToCancel">The number of milliseconds after which to cancel the message.</param>
-	/// <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
-	void Cancel(int msToCancel);
+	/// <summary>Specifies the type of a managed code policy level.</summary>
+	public enum PolicyLevelType
+	{
+		/// <summary>Security policy for all managed code in an application.</summary>
+		AppDomain = 3,
+		/// <summary>Security policy for all managed code in an enterprise.</summary>
+		Enterprise = 2,
+		Machine = 1,
+		User = 0
+	}
+}
+namespace System
+{
+	[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+	internal class MonoDocumentationNoteAttribute : MonoTODOAttribute
+	{
+		public MonoDocumentationNoteAttribute(string comment)
+			: base(comment)
+		{
+		}
+	}
 }

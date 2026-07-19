@@ -1,20 +1,19 @@
 using System;
-using System;
 
 namespace NativeWebSocket;
 
-public class WebSocketInvalidStateException : WebSocketException
+public class WebSocketInvalidArgumentException : WebSocketException
 {
-	public WebSocketInvalidStateException()
+	public WebSocketInvalidArgumentException()
 	{
 	}
 
-	public WebSocketInvalidStateException(string message)
+	public WebSocketInvalidArgumentException(string message)
 		: base(message)
 	{
 	}
 
-	public WebSocketInvalidStateException(string message, Exception inner)
+	public WebSocketInvalidArgumentException(string message, Exception inner)
 		: base(message, inner)
 	{
 	}

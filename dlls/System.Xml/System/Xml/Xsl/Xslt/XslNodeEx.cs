@@ -1,22 +1,32 @@
 using System.Xml.Xsl.Qil;
 
-namespace System.Xml.Xsl.Xslt;
-
-internal class XslNodeEx : XslNode
+namespace System.Xml.Xsl.Runtime
 {
-	public readonly ISourceLineInfo ElemNameLi;
-
-	public readonly ISourceLineInfo EndTagLi;
-
-	public XslNodeEx(XslNodeType t, QilName name, object arg, XsltInput.ContextInfo ctxInfo, XslVersion xslVer)
-		: base(t, name, arg, xslVer)
+}
+namespace System.Xml.Xsl.Xslt
+{
+	internal class XslNodeEx : XslNode
 	{
-		ElemNameLi = ctxInfo.elemNameLi;
-		EndTagLi = ctxInfo.endTagLi;
-	}
+		public readonly ISourceLineInfo ElemNameLi;
 
-	public XslNodeEx(XslNodeType t, QilName name, object arg, XslVersion xslVer)
-		: base(t, name, arg, xslVer)
-	{
+		public readonly ISourceLineInfo EndTagLi;
+
+		public XslNodeEx(XslNodeType t, QilName name, object arg, XsltInput.ContextInfo ctxInfo, XslVersion xslVer)
+			: base(t, name, arg, xslVer)
+		{
+			ElemNameLi = ctxInfo.elemNameLi;
+			EndTagLi = ctxInfo.endTagLi;
+		}
+
+		public XslNodeEx(XslNodeType t, QilName name, object arg, XslVersion xslVer)
+			: base(t, name, arg, xslVer)
+		{
+		}
 	}
+}
+namespace System.Xml.Schema
+{
+}
+namespace System.Xml.Xsl.Runtime
+{
 }

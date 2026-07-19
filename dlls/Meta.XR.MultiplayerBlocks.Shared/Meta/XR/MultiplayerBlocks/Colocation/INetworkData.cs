@@ -1,32 +1,28 @@
 using System.Collections.Generic;
 
-namespace Meta.XR.MultiplayerBlocks.Colocation
+namespace Meta.XR.MultiplayerBlocks.Colocation;
+
+internal interface INetworkData
 {
-}
-namespace Meta.XR.MultiplayerBlocks.Colocation
-{
-	internal interface INetworkData
-	{
-		void AddPlayer(Player player);
+	void AddPlayer(Player player);
 
-		void RemovePlayer(Player player);
+	void RemovePlayer(Player player);
 
-		Player? GetPlayerWithPlayerId(ulong playerId);
+	Player? GetPlayerWithPlayerId(ulong playerId);
 
-		Player? GetPlayerWithOculusId(ulong oculusId);
+	Player? GetPlayerWithOculusId(ulong oculusId);
 
-		List<Player> GetAllPlayers();
+	List<Player> GetAllPlayers();
 
-		void AddAnchor(Anchor anchor);
+	void AddAnchor(Anchor anchor);
 
-		void RemoveAnchor(Anchor anchor);
+	void RemoveAnchor(Anchor anchor);
 
-		Anchor? GetAnchor(ulong ownerOculusId);
+	Anchor? GetAnchor(ulong ownerOculusId);
 
-		List<Anchor> GetAllAnchors();
+	List<Anchor> GetAllAnchors();
 
-		uint GetColocationGroupCount();
+	uint GetColocationGroupCount();
 
-		void IncrementColocationGroupCount();
-	}
+	void IncrementColocationGroupCount();
 }

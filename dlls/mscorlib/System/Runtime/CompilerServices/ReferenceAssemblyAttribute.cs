@@ -1,26 +1,11 @@
-namespace System.Reflection.Emit;
+namespace System.Runtime.CompilerServices;
 
-/// <summary>Describes the types of the Microsoft intermediate language (MSIL) instructions.</summary>
-/// <summary>Describes the types of the Microsoft intermediate language (MSIL) instructions.</summary>
-public enum OpCodeType
+/// <summary>Indicates that a method should use the <see langword="Cdecl" /> calling convention.</summary>
+[System.Runtime.InteropServices.ComVisible(true)]
+public class CallConvCdecl
 {
-	/// <summary>This enumerator value is reserved and should not be used.</summary>
-	/// <summary>This enumerator value is reserved and should not be used.</summary>
-	[Obsolete("This API has been deprecated. http://go.microsoft.com/fwlink/?linkid=14202")]
-	Annotation,
-	/// <summary>These are Microsoft intermediate language (MSIL) instructions that are used as a synonym for other MSIL instructions. For example, <see langword="ldarg.0" /> represents the <see langword="ldarg" /> instruction with an argument of 0.</summary>
-	/// <summary>These are Microsoft intermediate language (MSIL) instructions that are used as a synonym for other MSIL instructions. For example, <see langword="ldarg.0" /> represents the <see langword="ldarg" /> instruction with an argument of 0.</summary>
-	Macro,
-	/// <summary>Describes a reserved Microsoft intermediate language (MSIL) instruction.</summary>
-	/// <summary>Describes a reserved Microsoft intermediate language (MSIL) instruction.</summary>
-	Nternal,
-	/// <summary>Describes a Microsoft intermediate language (MSIL) instruction that applies to objects.</summary>
-	/// <summary>Describes a Microsoft intermediate language (MSIL) instruction that applies to objects.</summary>
-	Objmodel,
-	/// <summary>Describes a prefix instruction that modifies the behavior of the following instruction.</summary>
-	/// <summary>Describes a prefix instruction that modifies the behavior of the following instruction.</summary>
-	Prefix,
-	/// <summary>Describes a built-in instruction.</summary>
-	/// <summary>Describes a built-in instruction.</summary>
-	Primitive
+	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.CallConvCdecl" /> class.</summary>
+	public CallConvCdecl()
+	{
+	}
 }

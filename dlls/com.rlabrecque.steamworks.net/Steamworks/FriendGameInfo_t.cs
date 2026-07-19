@@ -1,8 +1,17 @@
+using System.Runtime.InteropServices;
+
 namespace Steamworks;
 
-public enum PlayerAcceptState_t
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+public struct FriendGameInfo_t
 {
-	k_EStateUnknown,
-	k_EStatePlayerAccepted,
-	k_EStatePlayerDeclined
+	public CGameID m_gameID;
+
+	public uint m_unGameIP;
+
+	public ushort m_usGamePort;
+
+	public ushort m_usQueryPort;
+
+	public CSteamID m_steamIDLobby;
 }

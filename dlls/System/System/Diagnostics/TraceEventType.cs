@@ -1,29 +1,9 @@
-namespace System.CodeDom
+namespace System.IO.Ports;
+
+public enum Handshake
 {
-	public enum CodeBinaryOperatorType
-	{
-		Add,
-		Subtract,
-		Multiply,
-		Divide,
-		Modulus,
-		Assign,
-		IdentityInequality,
-		IdentityEquality,
-		ValueEquality,
-		BitwiseOr,
-		BitwiseAnd,
-		BooleanOr,
-		BooleanAnd,
-		LessThan,
-		LessThanOrEqual,
-		GreaterThan,
-		GreaterThanOrEqual
-	}
-}
-namespace System.Net.Mail
-{
-}
-namespace System.Net
-{
+	None,
+	XOnXOff,
+	RequestToSend,
+	RequestToSendXOnXOff
 }

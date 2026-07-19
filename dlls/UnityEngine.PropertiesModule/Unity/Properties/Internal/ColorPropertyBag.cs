@@ -1,2 +1,8 @@
-namespace Unity.Properties.Internal;
+namespace Unity.Properties;
 
+public enum InstantiationKind
+{
+	Activator,
+	PropertyBagOverride,
+	NotInstantiatable
+}

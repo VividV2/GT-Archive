@@ -1,17 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class GetPlayerTradesResponse : PlayFabResultCommon
-	{
-		public List<TradeInfo> AcceptedTrades;
-
-		public List<TradeInfo> OpenedTrades;
-	}
-}
-namespace Ionic.Zlib
-{
-}
+// Could not decompile PlayFab.ClientModels.GetPlayerTradesResponse
+// This type uses unsupported IL or has too many generic parameters.

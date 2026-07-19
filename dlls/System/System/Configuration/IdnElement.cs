@@ -1,5 +1,2 @@
-namespace System.Net.Configuration;
-
-namespace System
-{
-}
+// Could not decompile System.Configuration.IdnElement
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,12 +1,2 @@
-namespace Modio.Errors;
-
-public class RateLimitError : Error
-{
-	public readonly int RetryAfterSeconds;
-
-	internal RateLimitError(RateLimitErrorCode code, int retryAfterSeconds)
-		: base((ErrorCode)code)
-	{
-		RetryAfterSeconds = retryAfterSeconds;
-	}
-}
+// Could not decompile Modio.Errors.RateLimitError
+// This type uses unsupported IL or has too many generic parameters.

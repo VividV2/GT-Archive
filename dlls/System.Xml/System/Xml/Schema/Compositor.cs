@@ -1,9 +1,13 @@
-namespace System.Xml.Schema;
-
-internal enum Compositor
+namespace System.Xml.Schema
 {
-	Root,
-	Include,
-	Import,
-	Redefine
+}
+namespace System.Xml.Schema
+{
+	internal enum Compositor
+	{
+		Root,
+		Include,
+		Import,
+		Redefine
+	}
 }

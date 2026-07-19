@@ -1,12 +1,2 @@
-using System;
-using Meta.WitAi.Data.Configuration;
-using UnityEngine;
-
-namespace Meta.WitAi.Composer.Data.Info;
-
-[Serializable]
-public class WitComposerData : WitConfigurationAssetData
-{
-	[Tooltip("Represents the canvas of the given name.")]
-	public ComposerGraph[] canvases;
-}
+// Could not decompile Meta.WitAi.Composer.Data.Info.WitComposerData
+// This type uses unsupported IL or has too many generic parameters.

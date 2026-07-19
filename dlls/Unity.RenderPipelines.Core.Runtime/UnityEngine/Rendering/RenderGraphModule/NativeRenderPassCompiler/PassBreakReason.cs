@@ -1,20 +1,24 @@
-namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler;
-
-internal enum PassBreakReason
+namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler
 {
-	NotOptimized,
-	TargetSizeMismatch,
-	NextPassReadsTexture,
-	NextPassTargetsTexture,
-	NonRasterPass,
-	DifferentDepthTextures,
-	AttachmentLimitReached,
-	SubPassLimitReached,
-	EndOfGraph,
-	FRStateMismatch,
-	DifferentShadingRateImages,
-	DifferentShadingRateStates,
-	PassMergingDisabled,
-	Merged,
-	Count
+	internal enum PassBreakReason
+	{
+		NotOptimized,
+		TargetSizeMismatch,
+		NextPassReadsTexture,
+		NextPassTargetsTexture,
+		NonRasterPass,
+		DifferentDepthTextures,
+		AttachmentLimitReached,
+		SubPassLimitReached,
+		EndOfGraph,
+		FRStateMismatch,
+		DifferentShadingRateImages,
+		DifferentShadingRateStates,
+		PassMergingDisabled,
+		Merged,
+		Count
+	}
+}
+namespace UnityEngine.Rendering.UI
+{
 }

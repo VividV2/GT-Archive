@@ -1,18 +1,22 @@
 using Oculus.Platform.Models;
 using UnityEngine;
 
-namespace Oculus.Platform;
-
-public static class PushNotification
+namespace Oculus.Platform
 {
-	public static Request<PushNotificationResult> Register()
+	public static class PushNotification
 	{
-		if (Core.IsInitialized())
+		public static Request<PushNotificationResult> Register()
 		{
-			EventManager.SendUnifiedEvent(isEssential: true, "platform_sdk", "PSDK_PushNotification_Register", "");
-			return new Request<PushNotificationResult>(CAPI.ovr_PushNotification_Register());
+			if (Core.IsInitialized())
+			{
+				EventManager.SendUnifiedEvent(isEssential: true, "platform_sdk", "PSDK_PushNotification_Register", "");
+				return new Request<PushNotificationResult>(CAPI.ovr_PushNotification_Register());
+			}
+			Debug.LogError(Core.PlatformUninitializedError);
+			return null;
 		}
-		Debug.LogError(Core.PlatformUninitializedError);
-		return null;
 	}
+}
+namespace Oculus.Platform
+{
 }

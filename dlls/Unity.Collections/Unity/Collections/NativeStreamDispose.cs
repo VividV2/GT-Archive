@@ -1,8 +1,2 @@
-namespace Unity.Collections
-{
-	internal struct UnsafeQueueBlockHeader
-	{
-		public unsafe UnsafeQueueBlockHeader* m_NextBlock;
-
-		public int m_NumItems;
-	}
+// Could not decompile Unity.Collections.NativeStreamDispose
+// This type uses unsupported IL or has too many generic parameters.

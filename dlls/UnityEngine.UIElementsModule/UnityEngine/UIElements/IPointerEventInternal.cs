@@ -1,10 +1,14 @@
-namespace UnityEngine.UIElements;
-
-internal interface IPointerEventInternal
+namespace UnityEngine.UIElements
 {
-	IMouseEvent compatibilityMouseEvent { get; }
+	internal interface IPointerEventInternal
+	{
+		IMouseEvent compatibilityMouseEvent { get; }
 
-	int displayIndex { get; }
+		int displayIndex { get; }
 
-	bool recomputeTopElementUnderPointer { get; }
+		bool recomputeTopElementUnderPointer { get; }
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

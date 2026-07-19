@@ -1,6 +1,3 @@
-namespace UnityEngine.XR.Interaction.Toolkit
-{
-}
 namespace Viveport.Internal
 {
 	internal enum ELeaderboardUploadScoreMethod
@@ -9,4 +6,7 @@ namespace Viveport.Internal
 		k_ELeaderboardUploadScoreMethodKeepBest,
 		k_ELeaderboardUploadScoreMethodForceUpdate
 	}
+}
+namespace GorillaLocomotion.Swimming
+{
 }

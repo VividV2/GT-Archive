@@ -1,2 +1,0 @@
-namespace DigitalOpus.MB.Core;
-

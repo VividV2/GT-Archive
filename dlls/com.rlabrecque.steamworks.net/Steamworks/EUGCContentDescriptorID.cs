@@ -1,10 +1,13 @@
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
 namespace Steamworks;
 
-public enum EUGCContentDescriptorID
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(1331)]
+public struct RemoteStorageFileWriteAsyncComplete_t
 {
-	k_EUGCContentDescriptor_NudityOrSexualContent = 1,
-	k_EUGCContentDescriptor_FrequentViolenceOrGore,
-	k_EUGCContentDescriptor_AdultOnlySexualContent,
-	k_EUGCContentDescriptor_GratuitousSexualContent,
-	k_EUGCContentDescriptor_AnyMatureContent
+	public const int k_iCallback = 1331;
+
+	public EResult m_eResult;
 }

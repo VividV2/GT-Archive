@@ -1,8 +1,2 @@
-namespace UnityEngine;
-
-public enum GradientMode
-{
-	Blend,
-	Fixed,
-	PerceptualBlend
-}
+// Could not decompile UnityEngine.SpookyHash
+// This type uses unsupported IL or has too many generic parameters.

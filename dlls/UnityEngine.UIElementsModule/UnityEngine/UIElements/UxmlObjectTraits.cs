@@ -1,6 +1,22 @@
-namespace UnityEngine.UIElements.UIR
+using System;
+using System;
+
+namespace UnityEngine.UIElements
+{
+	[Obsolete("UxmlObjectTraits<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+	internal abstract class UxmlObjectTraits<T> : BaseUxmlTraits
+	{
+		public virtual void Init(ref T obj, IUxmlAttributes bag, CreationContext cc)
+		{
+		}
+	}
+}
+namespace UnityEngine.UIElements
 {
 }
-namespace UnityEngine.UIElements.UIR
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
 {
 }

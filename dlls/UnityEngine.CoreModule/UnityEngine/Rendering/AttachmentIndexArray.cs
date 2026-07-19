@@ -1,12 +1,2 @@
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.Rendering;
-
-[MovedFrom("UnityEngine.Rendering.RendererUtils")]
-public enum RendererListStatus
-{
-	kRendererListInvalid = -2,
-	kRendererListProcessing,
-	kRendererListEmpty,
-	kRendererListPopulated
-}
+// Could not decompile UnityEngine.Rendering.AttachmentIndexArray
+// This type uses unsupported IL or has too many generic parameters.

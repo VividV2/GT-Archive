@@ -1,6 +1,7 @@
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnMouseDragHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask OnMouseDragAsync();
+	public interface IAsyncOnParticleCollisionHandler
+	{
+		UniTask<GameObject> OnParticleCollisionAsync();
+	}
 }

@@ -1,2 +1,2 @@
-namespace Meta.Voice.TelemetryUtilities;
+namespace Meta.Voice.TelemetryUtilities.PerformanceTracing;
 

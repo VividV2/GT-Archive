@@ -1,33 +1,16 @@
-using UnityEngine;
+namespace Pathfinding;
 
-namespace Pathfinding
+public enum ThreadCount
 {
-	public struct NNInfoInternal
-	{
-		public GraphNode node;
-
-		public GraphNode constrainedNode;
-
-		public Vector3 clampedPosition;
-
-		public Vector3 constClampedPosition;
-
-		public NNInfoInternal(GraphNode node)
-		{
-			this.node = node;
-			constrainedNode = null;
-			clampedPosition = Vector3.zero;
-			constClampedPosition = Vector3.zero;
-			UpdateInfo();
-		}
-
-		public void UpdateInfo()
-		{
-			clampedPosition = ((node != null) ? ((Vector3)node.position) : Vector3.zero);
-			constClampedPosition = ((constrainedNode != null) ? ((Vector3)constrainedNode.position) : Vector3.zero);
-		}
-	}
-}
-namespace Pathfinding
-{
+	AutomaticLowLoad = -1,
+	AutomaticHighLoad = -2,
+	None = 0,
+	One = 1,
+	Two = 2,
+	Three = 3,
+	Four = 4,
+	Five = 5,
+	Six = 6,
+	Seven = 7,
+	Eight = 8
 }

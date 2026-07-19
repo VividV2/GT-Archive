@@ -1,8 +1,2 @@
-using System;
-
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
-
-[Serializable]
-public class DoubleTrackedProperty : TrackedProperty<double>
-{
-}
+// Could not decompile UnityEngine.Localization.PropertyVariants.TrackedProperties.DoubleTrackedProperty
+// This type uses unsupported IL or has too many generic parameters.

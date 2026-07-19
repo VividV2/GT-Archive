@@ -1,8 +1,6 @@
-namespace System.ComponentModel;
-
-/// <summary>Notifies clients that a property value is changing.</summary>
-public interface INotifyPropertyChanging
+namespace System.Diagnostics
 {
-	/// <summary>Occurs when a property value is changing.</summary>
-	event PropertyChangingEventHandler PropertyChanging;
+}
+namespace System.Security.Cryptography
+{
 }

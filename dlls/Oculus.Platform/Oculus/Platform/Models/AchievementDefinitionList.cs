@@ -1,20 +1,24 @@
-using System.ComponentModel;
-using System.ComponentModel;
+using Oculus.Platform.Models;
+using UnityEngine;
+using Oculus.Platform.Models;
+using UnityEngine;
 
-namespace Oculus.Platform;
-
-public enum ServiceProvider
+namespace Oculus.Platform
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("DROPBOX")]
-	Dropbox,
-	[Description("FACEBOOK")]
-	Facebook,
-	[Description("GOOGLE")]
-	Google,
-	[Description("INSTAGRAM")]
-	Instagram,
-	[Description("REMOTE_MEDIA")]
-	RemoteMedia
+	public static class PushNotification
+	{
+		public static Request<PushNotificationResult> Register()
+		{
+			if (Core.IsInitialized())
+			{
+				EventManager.SendUnifiedEvent(isEssential: true, "platform_sdk", "PSDK_PushNotification_Register", "");
+				return new Request<PushNotificationResult>(CAPI.ovr_PushNotification_Register());
+			}
+			Debug.LogError(Core.PlatformUninitializedError);
+			return null;
+		}
+	}
+}
+namespace Oculus.Platform
+{
 }

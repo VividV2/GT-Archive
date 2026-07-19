@@ -1,22 +1,9 @@
 namespace Photon.Voice.IOS;
 
-public static class AudioSessionParametersPresets
+public enum AudioSessionCategoryOption
 {
-	public static AudioSessionParameters Game = new AudioSessionParameters
-	{
-		Category = AudioSessionCategory.PlayAndRecord,
-		Mode = AudioSessionMode.Default,
-		CategoryOptions = new AudioSessionCategoryOption[2]
-		{
-			AudioSessionCategoryOption.DefaultToSpeaker,
-			AudioSessionCategoryOption.AllowBluetooth
-		}
-	};
-
-	public static AudioSessionParameters VoIP = new AudioSessionParameters
-	{
-		Category = AudioSessionCategory.PlayAndRecord,
-		Mode = AudioSessionMode.VoiceChat,
-		CategoryOptions = new AudioSessionCategoryOption[1] { AudioSessionCategoryOption.AllowBluetooth }
-	};
+	MixWithOthers = 1,
+	DuckOthers = 2,
+	AllowBluetooth = 4,
+	DefaultToSpeaker = 8
 }

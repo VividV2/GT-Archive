@@ -1,8 +1,16 @@
-public static class SICreationBitMasks
+using Microsoft.CodeAnalysis;
+
+namespace System.Runtime.CompilerServices;
+
+[CompilerGenerated]
+[Microsoft.CodeAnalysis.Embedded]
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Interface | AttributeTargets.Delegate, AllowMultiple = false, Inherited = false)]
+internal sealed class NullableContextAttribute : Attribute
 {
-	internal const long isTryOn = long.MinValue;
+	public readonly byte Flag;
 
-	internal const long upgrade = 9223372032559808512L;
-
-	internal const long player = 4294967295L;
+	public NullableContextAttribute(byte P_0)
+	{
+		Flag = P_0;
+	}
 }

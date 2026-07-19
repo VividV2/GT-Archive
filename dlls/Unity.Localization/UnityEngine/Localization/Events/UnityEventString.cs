@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Events;
-
-namespace UnityEngine.Localization.Events;
-
-[Serializable]
-public class UnityEventString : UnityEvent<string>
-{
-}
+// Could not decompile UnityEngine.Localization.Events.UnityEventString
+// This type uses unsupported IL or has too many generic parameters.

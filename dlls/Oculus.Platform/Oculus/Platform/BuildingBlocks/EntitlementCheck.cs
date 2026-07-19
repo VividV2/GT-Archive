@@ -1,40 +1,79 @@
-using System.Runtime.InteropServices;
-using UnityEngine;
-using System.Runtime.InteropServices;
+using System;
+using Oculus.Platform.Models;
 using UnityEngine;
 
-namespace Oculus.Platform;
+namespace Oculus.Platform.BuildingBlocks;
 
-public class CallbackRunner : MonoBehaviour
+public class EntitlementCheck : MonoBehaviour
 {
-	public bool IsPersistantBetweenSceneLoads = true;
+	public bool quitAppOnNotEntitled;
 
-	[DllImport("LibOVRPlatformImpl64_1")]
-	private static extern void ovr_UnityResetTestPlatform();
+	public event Action UserFailedEntitlementCheck;
 
-	private void Awake()
+	public event Action UserPassedEntitlementCheck;
+
+	private void Start()
 	{
-		if (Object.FindObjectOfType<CallbackRunner>() != this)
+		if (quitAppOnNotEntitled)
 		{
-			Debug.LogWarning("You only need one instance of CallbackRunner");
+			UserFailedEntitlementCheck += QuitAppOnFailure;
 		}
-		if (IsPersistantBetweenSceneLoads)
+		PerformUserEntitlementCheck();
+	}
+
+	public void PerformUserEntitlementCheck()
+	{
+		if (!Core.IsInitialized())
 		{
-			Object.DontDestroyOnLoad(base.gameObject);
+			try
+			{
+				Core.AsyncInitialize().OnComplete(PlatformInitializeCallback);
+			}
+			catch (UnityException ex)
+			{
+				Debug.LogError("Exception occured during OvrPlatform init - " + ex.Message);
+				this.UserFailedEntitlementCheck?.Invoke();
+			}
 		}
 	}
 
-	private void Update()
+	public void PlatformInitializeCallback(Message<PlatformInitialize> msg)
 	{
-		Request.RunCallbacks();
+		PlatformInitialize data = msg.Data;
+		if (data == null || data.Result != PlatformInitializeResult.Success)
+		{
+			Debug.LogError($"OvrPlatform init resulted in failure. - {msg.Data.Result}\n{msg.GetError().Message}");
+			this.UserFailedEntitlementCheck?.Invoke();
+			return;
+		}
+		try
+		{
+			Entitlements.IsUserEntitledToApplication().OnComplete(EntitlementCheckCallback);
+		}
+		catch (Exception ex)
+		{
+			Debug.LogError("Exception occured during Entitlement Check - " + ex.Message);
+			this.UserFailedEntitlementCheck?.Invoke();
+		}
 	}
 
-	private void OnDestroy()
+	private void EntitlementCheckCallback(Message msg)
 	{
+		if (!msg.IsError)
+		{
+			Debug.Log("You are entitled to use this app.");
+			this.UserPassedEntitlementCheck?.Invoke();
+		}
+		else
+		{
+			Debug.LogError("You are NOT entitled to use this app.");
+			this.UserFailedEntitlementCheck?.Invoke();
+		}
 	}
 
-	private void OnApplicationQuit()
+	private void QuitAppOnFailure()
 	{
-		Callback.OnApplicationQuit();
+		Debug.LogError("Oculus user entitlement check failed. Exiting now...");
+		UnityEngine.Application.Quit();
 	}
 }

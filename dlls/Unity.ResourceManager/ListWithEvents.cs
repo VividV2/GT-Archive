@@ -1,0 +1,2 @@
+namespace UnityEngine.ResourceManagement.Exceptions;
+

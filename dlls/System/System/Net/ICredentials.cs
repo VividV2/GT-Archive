@@ -1,19 +1,11 @@
-using System.Collections;
+namespace System.Net;
 
-namespace System.ComponentModel;
-
-/// <summary>Extends the <see cref="T:System.ComponentModel.IBindingList" /> interface by providing advanced sorting and filtering capabilities.</summary>
-public interface IBindingListView : IBindingList, IList, ICollection, IEnumerable
+/// <summary>Provides the base authentication interface for retrieving credentials for Web client authentication.</summary>
+public interface ICredentials
 {
-	string Filter { get; set; }
-
-	ListSortDescriptionCollection SortDescriptions { get; }
-
-	bool SupportsAdvancedSorting { get; }
-
-	bool SupportsFiltering { get; }
-
-	void ApplySort(ListSortDescriptionCollection sorts);
-
-	void RemoveFilter();
+	/// <summary>Returns a <see cref="T:System.Net.NetworkCredential" /> object that is associated with the specified URI, and authentication type.</summary>
+	/// <param name="uri">The <see cref="T:System.Uri" /> that the client is providing authentication for.</param>
+	/// <param name="authType">The type of authentication, as defined in the <see cref="P:System.Net.IAuthenticationModule.AuthenticationType" /> property.</param>
+	/// <returns>The <see cref="T:System.Net.NetworkCredential" /> that is associated with the specified URI and authentication type, or, if no credentials are available, <see langword="null" />.</returns>
+	NetworkCredential GetCredential(Uri uri, string authType);
 }

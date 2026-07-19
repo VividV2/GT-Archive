@@ -1,48 +1,35 @@
-using System.IO;
+namespace System.Drawing.Imaging;
 
-namespace System.Drawing.Text;
-
-/// <summary>Provides a collection of font families built from font files that are provided by the client application.</summary>
-public sealed class PrivateFontCollection : FontCollection
+/// <summary>Provides attributes of an image encoder/decoder (codec).</summary>
+/// <summary>Provides attributes of an image encoder/decoder (codec).</summary>
+[Flags]
+public enum ImageCodecFlags
 {
-	/// <summary>Initializes a new instance of the <see cref="T:System.Drawing.Text.PrivateFontCollection" /> class.</summary>
-	public PrivateFontCollection()
-	{
-		GDIPlus.CheckStatus(GDIPlus.GdipNewPrivateFontCollection(out _nativeFontCollection));
-	}
-
-	/// <summary>Adds a font from the specified file to this <see cref="T:System.Drawing.Text.PrivateFontCollection" />.</summary>
-	/// <param name="filename">A <see cref="T:System.String" /> that contains the file name of the font to add.</param>
-	/// <exception cref="T:System.IO.FileNotFoundException">The specified font is not supported or the font file cannot be found.</exception>
-	public void AddFontFile(string filename)
-	{
-		if (filename == null)
-		{
-			throw new ArgumentNullException("filename");
-		}
-		string fullPath = Path.GetFullPath(filename);
-		if (!File.Exists(fullPath))
-		{
-			throw new FileNotFoundException();
-		}
-		GDIPlus.CheckStatus(GDIPlus.GdipPrivateAddFontFile(_nativeFontCollection, fullPath));
-	}
-
-	/// <summary>Adds a font contained in system memory to this <see cref="T:System.Drawing.Text.PrivateFontCollection" />.</summary>
-	/// <param name="memory">The memory address of the font to add.</param>
-	/// <param name="length">The memory length of the font to add.</param>
-	public void AddMemoryFont(IntPtr memory, int length)
-	{
-		GDIPlus.CheckStatus(GDIPlus.GdipPrivateAddMemoryFont(_nativeFontCollection, memory, length));
-	}
-
-	protected override void Dispose(bool disposing)
-	{
-		if (_nativeFontCollection != IntPtr.Zero)
-		{
-			GDIPlus.GdipDeletePrivateFontCollection(ref _nativeFontCollection);
-			_nativeFontCollection = IntPtr.Zero;
-		}
-		base.Dispose(disposing);
-	}
+	/// <summary>The codec supports encoding (saving).</summary>
+	/// <summary>The codec supports encoding (saving).</summary>
+	Encoder = 1,
+	/// <summary>The codec supports decoding (reading).</summary>
+	/// <summary>The codec supports decoding (reading).</summary>
+	Decoder = 2,
+	/// <summary>The codec supports raster images (bitmaps).</summary>
+	/// <summary>The codec supports raster images (bitmaps).</summary>
+	SupportBitmap = 4,
+	/// <summary>The codec supports vector images (metafiles).</summary>
+	/// <summary>The codec supports vector images (metafiles).</summary>
+	SupportVector = 8,
+	/// <summary>The encoder requires a seekable output stream.</summary>
+	/// <summary>The encoder requires a seekable output stream.</summary>
+	SeekableEncode = 0x10,
+	/// <summary>The decoder has blocking behavior during the decoding process.</summary>
+	/// <summary>The decoder has blocking behavior during the decoding process.</summary>
+	BlockingDecode = 0x20,
+	/// <summary>The codec is built into GDI+.</summary>
+	/// <summary>The codec is built into GDI+.</summary>
+	Builtin = 0x10000,
+	/// <summary>Not used.</summary>
+	/// <summary>Not used.</summary>
+	System = 0x20000,
+	/// <summary>Not used.</summary>
+	/// <summary>Not used.</summary>
+	User = 0x40000
 }

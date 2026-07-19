@@ -1,6 +1,2 @@
-namespace System.Globalization
-{
-}
-namespace System.Reflection.Emit
-{
-}
+// Could not decompile System.Reflection.AssemblyKeyFileAttribute
+// This type uses unsupported IL or has too many generic parameters.

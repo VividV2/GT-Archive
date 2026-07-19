@@ -1,13 +1,32 @@
-namespace System.Security;
+namespace System.Reflection;
 
-/// <summary>Specifies the default partial-trust visibility for code that is marked with the <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" /> (APTCA) attribute.</summary>
-/// <summary>Specifies the default partial-trust visibility for code that is marked with the <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" /> (APTCA) attribute.</summary>
-public enum PartialTrustVisibilityLevel
+[Serializable]
+internal enum MetadataTokenType
 {
-	/// <summary>The assembly can always be called by partial-trust code.</summary>
-	/// <summary>The assembly can always be called by partial-trust code.</summary>
-	VisibleToAllHosts,
-	/// <summary>The assembly has been audited for partial trust, but it is not visible to partial-trust code in all hosts. To make the assembly visible to partial-trust code, add it to the <see cref="P:System.AppDomainSetup.PartialTrustVisibleAssemblies" /> property.</summary>
-	/// <summary>The assembly has been audited for partial trust, but it is not visible to partial-trust code in all hosts. To make the assembly visible to partial-trust code, add it to the <see cref="P:System.AppDomainSetup.PartialTrustVisibleAssemblies" /> property.</summary>
-	NotVisibleByDefault
+	Module = 0,
+	TypeRef = 16777216,
+	TypeDef = 33554432,
+	FieldDef = 67108864,
+	MethodDef = 100663296,
+	ParamDef = 134217728,
+	InterfaceImpl = 150994944,
+	MemberRef = 167772160,
+	CustomAttribute = 201326592,
+	Permission = 234881024,
+	Signature = 285212672,
+	Event = 335544320,
+	Property = 385875968,
+	ModuleRef = 436207616,
+	TypeSpec = 452984832,
+	Assembly = 536870912,
+	AssemblyRef = 587202560,
+	File = 637534208,
+	ExportedType = 654311424,
+	ManifestResource = 671088640,
+	GenericPar = 704643072,
+	MethodSpec = 721420288,
+	String = 1879048192,
+	Name = 1895825408,
+	BaseType = 1912602624,
+	Invalid = int.MaxValue
 }

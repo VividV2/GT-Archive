@@ -1,12 +1,10 @@
-using System;
+using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
-[Flags]
-public enum EHTMLKeyModifiers
+[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
+[CallbackIdentity(125)]
+public struct LicensesUpdated_t
 {
-	k_eHTMLKeyModifier_None = 0,
-	k_eHTMLKeyModifier_AltDown = 1,
-	k_eHTMLKeyModifier_CtrlDown = 2,
-	k_eHTMLKeyModifier_ShiftDown = 4
+	public const int k_iCallback = 125;
 }

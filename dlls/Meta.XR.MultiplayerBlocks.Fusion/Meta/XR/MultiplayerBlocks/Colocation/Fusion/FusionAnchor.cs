@@ -1,6 +1,2 @@
-namespace Meta.XR.MultiplayerBlocks.Fusion
-{
-}
-namespace Meta.XR.MultiplayerBlocks.Colocation.Fusion
-{
-}
+// Could not decompile Meta.XR.MultiplayerBlocks.Colocation.Fusion.FusionAnchor
+// This type uses unsupported IL or has too many generic parameters.

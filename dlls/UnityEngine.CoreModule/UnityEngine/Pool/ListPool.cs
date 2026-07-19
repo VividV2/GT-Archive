@@ -1,14 +1,2 @@
-using System;
-using UnityEngine.Scripting.APIUpdating;
-using System;
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.Networking.PlayerConnection;
-
-[MovedFrom("UnityEngine.Experimental.Networking.PlayerConnection")]
-public interface IConnectionState : IDisposable
-{
-	ConnectionTarget connectedToTarget { get; }
-
-	string connectionName { get; }
-}
+// Could not decompile UnityEngine.Pool.ListPool`1
+// This type uses unsupported IL or has too many generic parameters.

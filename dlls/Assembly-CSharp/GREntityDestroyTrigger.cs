@@ -1,2 +1,0 @@
-namespace emotitron.Compression.HalfFloat;
-

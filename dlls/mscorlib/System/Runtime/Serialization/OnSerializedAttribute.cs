@@ -1,30 +1,14 @@
-namespace System.Runtime.InteropServices.ComTypes
+using System.Runtime.InteropServices;
+
+namespace System.Runtime.Serialization;
+
+/// <summary>When applied to a method, specifies that the method is called after serialization of an object in an object graph. The order of serialization relative to other objects in the graph is non-deterministic.</summary>
+[AttributeUsage(AttributeTargets.Method, Inherited = false)]
+[ComVisible(true)]
+public sealed class OnSerializedAttribute : Attribute
 {
-	[ComImport]
-	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-	[Guid("00020402-0000-0000-C000-000000000046")]
-	public interface ITypeLib
+	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.Serialization.OnSerializedAttribute" /> class.</summary>
+	public OnSerializedAttribute()
 	{
-		[PreserveSig]
-		int GetTypeInfoCount();
-
-		void GetTypeInfo(int index, out ITypeInfo ppTI);
-
-		void GetTypeInfoType(int index, out TYPEKIND pTKind);
-
-		void GetTypeInfoOfGuid(ref Guid guid, out ITypeInfo ppTInfo);
-
-		void GetLibAttr(out IntPtr ppTLibAttr);
-
-		void GetTypeComp(out ITypeComp ppTComp);
-
-		void GetDocumentation(int index, out string strName, out string strDocString, out int dwHelpContext, out string strHelpFile);
-
-		[return: MarshalAs(UnmanagedType.Bool)]
-		bool IsName([MarshalAs(UnmanagedType.LPWStr)] string szNameBuf, int lHashVal);
-
-		void FindName([MarshalAs(UnmanagedType.LPWStr)] string szNameBuf, int lHashVal, [Out][MarshalAs(UnmanagedType.LPArray)] ITypeInfo[] ppTInfo, [Out][MarshalAs(UnmanagedType.LPArray)] int[] rgMemId, ref short pcFound);
-
-		[PreserveSig]
-		void ReleaseTLibAttr(IntPtr pTLibAttr);
 	}
+}

@@ -1,6 +1,2 @@
-namespace System.Security.Cryptography.Asn1;
-
-[AttributeUsage(AttributeTargets.Field)]
-internal sealed class IntegerAttribute : AsnTypeAttribute
-{
-}
+// Could not decompile System.Security.Cryptography.Asn1.IntegerAttribute
+// This type uses unsupported IL or has too many generic parameters.

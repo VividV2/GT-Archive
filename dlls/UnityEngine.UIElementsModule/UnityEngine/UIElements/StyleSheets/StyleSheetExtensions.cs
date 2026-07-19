@@ -1,2 +1,2 @@
-namespace UnityEngine.UIElements.Internal;
+namespace UnityEngine.UIElements.Layout;
 

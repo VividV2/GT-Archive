@@ -1,12 +1,11 @@
+using System;
 using Meta.WitAi.TTS.Data;
+using UnityEngine.Events;
 
-namespace Meta.WitAi.TTS.LipSync;
-
-public interface ILipsyncAnimator
+namespace Meta.WitAi.TTS.LipSync
 {
-	void OnVisemeStarted(Viseme viseme);
-
-	void OnVisemeFinished(Viseme viseme);
-
-	void OnVisemeLerp(Viseme oldVieseme, Viseme newViseme, float percentage);
+	[Serializable]
+	public class VisemeChangedEvent : UnityEvent<Viseme>
+	{
+	}
 }

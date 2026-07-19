@@ -1,12 +1,8 @@
 using System.Collections;
 
-namespace Fusion
+namespace Fusion;
+
+public interface INetworkArray : IEnumerable
 {
-	public interface INetworkArray : IEnumerable
-	{
-		object this[int index] { get; set; }
-	}
-}
-namespace Fusion.LagCompensation
-{
+	object this[int index] { get; set; }
 }

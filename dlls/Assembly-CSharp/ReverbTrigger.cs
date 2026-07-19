@@ -1,12 +1,2 @@
-using System;
-using System.Diagnostics;
-using System;
-using System.Diagnostics;
-using System;
-using System.Diagnostics;
-
-[Conditional("UNITY_EDITOR")]
-[AttributeUsage(AttributeTargets.All)]
-public class InlineBoxAttribute : Attribute
-{
-}
+// Could not decompile ReverbTrigger
+// This type uses unsupported IL or has too many generic parameters.

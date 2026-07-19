@@ -1,8 +1,2 @@
-namespace System.ComponentModel.Design;
-
-public interface IExtenderProviderService
-{
-	void AddExtenderProvider(IExtenderProvider provider);
-
-	void RemoveExtenderProvider(IExtenderProvider provider);
-}
+// Could not decompile System.Net.WebSockets.WebSocketException
+// This type uses unsupported IL or has too many generic parameters.

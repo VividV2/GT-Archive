@@ -1,7 +1,2 @@
-namespace UnityEngine.Playables
-{
-	public interface IPlayable
-	{
-		PlayableHandle GetHandle();
-	}
-}
+// Could not decompile UnityEngine.Pool.DictionaryPool`2
+// This type uses unsupported IL or has too many generic parameters.

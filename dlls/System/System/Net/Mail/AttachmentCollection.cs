@@ -1,20 +1,2 @@
-namespace System.ComponentModel;
-
-/// <summary>Provides the functionality to offer custom error information that a user interface can bind to.</summary>
-/// <summary>Provides the functionality to offer custom error information that a user interface can bind to.</summary>
-public interface IDataErrorInfo
-{
-	/// <summary>Gets the error message for the property with the given name.</summary>
-	/// <param name="columnName">The name of the property whose error message to get.</param>
-	/// <returns>The error message for the property. The default is an empty string ("").</returns>
-	/// <summary>Gets the error message for the property with the given name.</summary>
-	/// <param name="columnName">The name of the property whose error message to get.</param>
-	/// <returns>The error message for the property. The default is an empty string ("").</returns>
-	string this[string columnName] { get; }
-
-	/// <summary>Gets an error message indicating what is wrong with this object.</summary>
-	/// <returns>An error message indicating what is wrong with this object. The default is an empty string ("").</returns>
-	/// <summary>Gets an error message indicating what is wrong with this object.</summary>
-	/// <returns>An error message indicating what is wrong with this object. The default is an empty string ("").</returns>
-	string Error { get; }
-}
+// Could not decompile System.Net.Mail.AttachmentCollection
+// This type uses unsupported IL or has too many generic parameters.

@@ -42,3 +42,6 @@ internal enum SecurityStatus
 	UnsupportedPreauth = -2146892989,
 	BadBinding = -2146892986
 }
+namespace System.Net
+{
+}

@@ -1,21 +1,8 @@
-using System.Collections;
-using System.Collections;
+namespace System.Net;
 
-namespace System.ComponentModel.Design
+internal enum HttpProcessingResult
 {
-	/// <summary>Enables enumeration of components at design time.</summary>
-	public interface IComponentDiscoveryService
-	{
-		/// <summary>Gets the list of available component types.</summary>
-		/// <param name="designerHost">The designer host providing design-time services. Can be <see langword="null" />.</param>
-		/// <param name="baseType">The base type specifying the components to retrieve. Can be <see langword="null" />.</param>
-		/// <returns>The list of available component types.</returns>
-		ICollection GetComponentTypes(IDesignerHost designerHost, Type baseType);
-	}
-}
-namespace System.Net.Sockets
-{
-}
-namespace System.Net
-{
+	Continue,
+	ReadWait,
+	WriteWait
 }

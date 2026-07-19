@@ -1,11 +1,15 @@
 using UnityEngine.Bindings;
 using UnityEngine.Internal;
 
-namespace UnityEngine;
-
-[NativeHeader("Modules/Marshalling/MarshallingTests.h")]
-[ExcludeFromDocs]
-internal struct StructInt
+namespace UnityEngine
 {
-	public int field;
+	[NativeHeader("Modules/Marshalling/MarshallingTests.h")]
+	[ExcludeFromDocs]
+	internal struct StructInt
+	{
+		public int field;
+	}
+}
+namespace UnityEngine
+{
 }

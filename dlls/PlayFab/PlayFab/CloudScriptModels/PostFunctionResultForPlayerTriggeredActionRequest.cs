@@ -1,2 +1,7 @@
-namespace PlayFab.CloudScriptModels;
+namespace PlayFab.MultiplayerModels;
 
+public enum ServerType
+{
+	Container,
+	Process
+}

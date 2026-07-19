@@ -1,13 +1,25 @@
-using System.Runtime.InteropServices;
-
-namespace OVR.OpenVR;
-
-public struct InputPoseActionData_t
+namespace OVR.OpenVR
 {
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bActive;
+	public struct VREvent_t
+	{
+		public uint eventType;
 
-	public ulong activeOrigin;
+		public uint trackedDeviceIndex;
 
-	public TrackedDevicePose_t pose;
+		public float eventAgeSeconds;
+
+		public VREvent_Data_t data;
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct InputPoseActionData_t
+	{
+		[System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.I1)]
+		public bool bActive;
+
+		public ulong activeOrigin;
+
+		public TrackedDevicePose_t pose;
+	}
 }

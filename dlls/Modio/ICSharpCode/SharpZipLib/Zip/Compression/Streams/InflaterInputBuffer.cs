@@ -1,11 +1,2 @@
-using System;
-
-namespace ICSharpCode.SharpZipLib.Core;
-
-internal static class Empty
-{
-	public static T[] Array<T>()
-	{
-		return System.Array.Empty<T>();
-	}
-}
+// Could not decompile ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputBuffer
+// This type uses unsupported IL or has too many generic parameters.

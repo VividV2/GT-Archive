@@ -1,8 +1,2 @@
-namespace System.Net;
-
-internal enum TriState
-{
-	Unspecified = -1,
-	False,
-	True
-}
+// Could not decompile System.Net.NetworkInformation.SystemMulticastIPAddressInformation
+// This type uses unsupported IL or has too many generic parameters.

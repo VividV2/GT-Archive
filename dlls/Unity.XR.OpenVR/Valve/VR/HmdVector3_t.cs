@@ -1,10 +1,19 @@
-namespace Valve.VR;
-
-public struct HmdVector3_t
+namespace Valve.VR
 {
-	public float v0;
+	public enum EGamepadTextInputLineMode
+	{
+		k_EGamepadTextInputLineModeSingleLine,
+		k_EGamepadTextInputLineModeMultipleLines
+	}
+}
+namespace Valve.VR
+{
+	public struct HmdVector3_t
+	{
+		public float v0;
 
-	public float v1;
+		public float v1;
 
-	public float v2;
+		public float v2;
+	}
 }

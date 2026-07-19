@@ -1,11 +1,9 @@
-namespace UnityEngine.Rendering;
+using UnityEngine.Bindings;
+using UnityEngine.Bindings;
 
-public enum FormatSwizzle
+namespace UnityEngine.Internal;
+
+[VisibleToOtherModules]
+internal interface ISubAssetNotDuplicatable
 {
-	FormatSwizzleR,
-	FormatSwizzleG,
-	FormatSwizzleB,
-	FormatSwizzleA,
-	FormatSwizzle0,
-	FormatSwizzle1
 }

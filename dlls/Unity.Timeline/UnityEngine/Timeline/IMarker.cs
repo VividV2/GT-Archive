@@ -1,10 +1,14 @@
-namespace UnityEngine.Timeline;
-
-public interface IMarker
+namespace UnityEngine.Timeline
 {
-	double time { get; set; }
+}
+namespace UnityEngine.Timeline
+{
+	public interface IMarker
+	{
+		double time { get; set; }
 
-	TrackAsset parent { get; }
+		TrackAsset parent { get; }
 
-	void Initialize(TrackAsset parent);
+		void Initialize(TrackAsset parent);
+	}
 }

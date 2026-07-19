@@ -1,9 +1,2 @@
-using Newtonsoft.Json;
-
-namespace Modio.API.SchemaDefinitions;
-
-[JsonObject]
-internal readonly struct ModerationRulesWebhookTestRequestObject(string url)
-{
-	internal readonly string Url = url;
-}
+// Could not decompile Modio.API.SchemaDefinitions.ModerationRulesWebhookTestRequestObject
+// This type uses unsupported IL or has too many generic parameters.

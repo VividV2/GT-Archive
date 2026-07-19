@@ -1,27 +1,23 @@
 using System;
 
-namespace TMPro
+namespace TMPro;
+
+[Serializable]
+public class TMP_Glyph : TMP_TextElement_Legacy
 {
-	[Serializable]
-	public class TMP_Glyph : TMP_TextElement_Legacy
+	public static TMP_Glyph Clone(TMP_Glyph source)
 	{
-		public static TMP_Glyph Clone(TMP_Glyph source)
+		return new TMP_Glyph
 		{
-			return new TMP_Glyph
-			{
-				id = source.id,
-				x = source.x,
-				y = source.y,
-				width = source.width,
-				height = source.height,
-				xOffset = source.xOffset,
-				yOffset = source.yOffset,
-				xAdvance = source.xAdvance,
-				scale = source.scale
-			};
-		}
+			id = source.id,
+			x = source.x,
+			y = source.y,
+			width = source.width,
+			height = source.height,
+			xOffset = source.xOffset,
+			yOffset = source.yOffset,
+			xAdvance = source.xAdvance,
+			scale = source.scale
+		};
 	}
-}
-namespace TMPro
-{
 }

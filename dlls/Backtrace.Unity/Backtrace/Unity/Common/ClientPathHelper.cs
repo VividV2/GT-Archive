@@ -1,2 +1,0 @@
-namespace Backtrace.Unity.Common;
-

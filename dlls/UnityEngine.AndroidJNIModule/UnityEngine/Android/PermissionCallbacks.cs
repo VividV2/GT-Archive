@@ -1,9 +1,2 @@
-namespace UnityEngine.Android;
-
-public enum AndroidKeyboard
-{
-	Undefined,
-	NoKeys,
-	Qwerty,
-	_12Key
-}
+// Could not decompile UnityEngine.Android.PermissionCallbacks
+// This type uses unsupported IL or has too many generic parameters.

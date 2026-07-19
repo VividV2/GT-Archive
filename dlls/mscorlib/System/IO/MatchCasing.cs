@@ -1,8 +1,12 @@
-namespace System.IO;
-
-public enum MatchCasing
+namespace System.IO
 {
-	PlatformDefault,
-	CaseSensitive,
-	CaseInsensitive
+	public enum MatchCasing
+	{
+		PlatformDefault,
+		CaseSensitive,
+		CaseInsensitive
+	}
+}
+namespace System.IO
+{
 }

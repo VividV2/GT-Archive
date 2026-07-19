@@ -1,14 +1,2 @@
-namespace UnityEngine.UIElements;
-
-public enum Pivot
-{
-	Center,
-	TopLeft,
-	TopCenter,
-	TopRight,
-	LeftCenter,
-	RightCenter,
-	BottomLeft,
-	BottomCenter,
-	BottomRight
-}
+// Could not decompile UnityEngine.UIElements.Pivot
+// This type uses unsupported IL or has too many generic parameters.

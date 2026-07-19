@@ -1,6 +1,13 @@
-namespace UnityEngine.UIElements;
-
-public interface IMixedValueSupport
+namespace UnityEngine.UIElements
 {
-	bool showMixedValue { get; set; }
+	public interface IMixedValueSupport
+	{
+		bool showMixedValue { get; set; }
+	}
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements.Experimental
+{
 }

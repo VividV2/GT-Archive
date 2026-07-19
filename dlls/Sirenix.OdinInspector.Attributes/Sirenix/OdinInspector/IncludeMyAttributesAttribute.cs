@@ -1,6 +1,8 @@
+using System;
+
 namespace Sirenix.OdinInspector;
 
-public interface ISearchFilterable
+[AttributeUsage(AttributeTargets.Class)]
+public class IncludeMyAttributesAttribute : Attribute
 {
-	bool IsMatch(string searchString);
 }

@@ -1,13 +1,2 @@
-namespace Unity.Collections;
-
-internal sealed class FixedList32BytesDebugView<T> where T : unmanaged
-{
-	private FixedList32Bytes<T> m_List;
-
-	public T[] Items => m_List.ToArray();
-
-	public FixedList32BytesDebugView(FixedList32Bytes<T> list)
-	{
-		m_List = list;
-	}
-}
+// Could not decompile Unity.Collections.FixedList32BytesDebugView`1
+// This type uses unsupported IL or has too many generic parameters.

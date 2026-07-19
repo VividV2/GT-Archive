@@ -1,9 +1,2 @@
-namespace System.Xml.Serialization;
-
-internal class PrimitiveModel : TypeModel
-{
-	internal PrimitiveModel(Type type, TypeDesc typeDesc, ModelScope scope)
-		: base(type, typeDesc, scope)
-	{
-	}
-}
+// Could not decompile System.Xml.Serialization.PrimitiveModel
+// This type uses unsupported IL or has too many generic parameters.

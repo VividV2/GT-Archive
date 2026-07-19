@@ -1,8 +1,30 @@
-namespace Cysharp.Threading.Tasks;
+using UnityEngine.EventSystems;
+using UnityEngine.EventSystems;
+using UnityEngine.EventSystems;
 
-public interface IUniTaskAsyncEnumerator<out T> : IUniTaskAsyncDisposable
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	T Current { get; }
+	public interface IAsyncOnBeforeTransformParentChangedHandler
+	{
+		UniTask OnBeforeTransformParentChangedAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+	public interface IAsyncOnUpdateSelectedHandler
+	{
+		UniTask<BaseEventData> OnUpdateSelectedAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks
+{
+	public interface IUniTaskAsyncEnumerator<out T> : IUniTaskAsyncDisposable
+	{
+		T Current { get; }
 
-	UniTask<bool> MoveNextAsync();
+		UniTask<bool> MoveNextAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
 }

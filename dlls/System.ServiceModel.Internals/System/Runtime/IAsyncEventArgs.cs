@@ -1,8 +1,12 @@
-namespace System.Runtime;
-
-internal interface IAsyncEventArgs
+namespace System.Runtime
 {
-	object AsyncState { get; }
+	internal interface IAsyncEventArgs
+	{
+		object AsyncState { get; }
 
-	Exception Exception { get; }
+		Exception Exception { get; }
+	}
+}
+namespace System.Runtime
+{
 }

@@ -1,5 +1,4 @@
 using System;
-using System;
 
 namespace GorillaTag.CosmeticSystem.Editor;
 

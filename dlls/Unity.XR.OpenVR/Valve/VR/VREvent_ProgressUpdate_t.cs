@@ -1,16 +1,2 @@
-namespace Valve.VR;
-
-public struct VREvent_ProgressUpdate_t
-{
-	public ulong ulApplicationPropertyContainer;
-
-	public ulong pathDevice;
-
-	public ulong pathInputSource;
-
-	public ulong pathProgressAction;
-
-	public ulong pathIcon;
-
-	public float fProgress;
-}
+// Could not decompile Valve.VR.VREvent_ProgressUpdate_t
+// This type uses unsupported IL or has too many generic parameters.

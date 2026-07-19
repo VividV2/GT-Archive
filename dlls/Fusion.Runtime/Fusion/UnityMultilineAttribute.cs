@@ -1,3 +1,0 @@
-#define DEBUG
-namespace Fusion;
-

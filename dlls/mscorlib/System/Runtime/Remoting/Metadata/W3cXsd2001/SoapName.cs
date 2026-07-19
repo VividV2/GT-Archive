@@ -1,2 +1,2 @@
-namespace System.Runtime.InteropServices;
-
+// Could not decompile System.Runtime.Remoting.Metadata.W3cXsd2001.SoapName
+// This type uses unsupported IL or has too many generic parameters.

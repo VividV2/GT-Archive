@@ -1,9 +1,19 @@
-namespace UnityEngine.UIElements;
-
-public enum FlexDirection
+namespace UnityEngine.UIElements
 {
-	Column,
-	ColumnReverse,
-	Row,
-	RowReverse
+	public enum FlexDirection
+	{
+		Column,
+		ColumnReverse,
+		Row,
+		RowReverse
+	}
+}
+namespace UnityEngine.UIElements.StyleSheets
+{
+	internal enum StyleValidationStatus
+	{
+		Ok,
+		Error,
+		Warning
+	}
 }

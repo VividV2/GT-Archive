@@ -1,8 +1,2 @@
-using System;
-
-namespace Oculus.Interaction.Deprecated;
-
-[Obsolete("Replaced by PointableDebugGizmos")]
-public class PointableDebugPolylineGizmos
-{
-}
+// Could not decompile Oculus.Interaction.Deprecated.PointableDebugPolylineGizmos
+// This type uses unsupported IL or has too many generic parameters.

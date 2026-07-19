@@ -1,10 +1,12 @@
-using System;
-
-namespace Valve.VR;
-
-public struct VRNativeDevice_t
+namespace Valve.VR
 {
-	public IntPtr handle;
-
-	public EDeviceType eType;
+}
+namespace Valve.VR
+{
+}
+namespace Valve.VR
+{
+}
+namespace Valve.VR
+{
 }

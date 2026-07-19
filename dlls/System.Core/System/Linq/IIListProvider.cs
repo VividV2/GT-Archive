@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace System.Linq;
-
-internal interface IIListProvider<TElement> : IEnumerable<TElement>, IEnumerable
+namespace System.Linq
 {
-	TElement[] ToArray();
+	internal interface IIListProvider<TElement> : IEnumerable<TElement>, IEnumerable
+	{
+		TElement[] ToArray();
 
-	List<TElement> ToList();
+		List<TElement> ToList();
 
-	int GetCount(bool onlyIfCheap);
+		int GetCount(bool onlyIfCheap);
+	}
+}
+namespace System.Linq
+{
 }

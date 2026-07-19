@@ -12,6 +12,3 @@ public struct GliderWindVolumeProperties
 
 	public Vector3 localWindDirection;
 }
-namespace GT_CustomMapSupportRuntime
-{
-}

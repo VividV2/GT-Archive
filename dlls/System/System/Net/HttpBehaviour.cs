@@ -1,9 +1,22 @@
-namespace System.Net;
+using System.Collections;
 
-internal enum HttpBehaviour : byte
+namespace System.ComponentModel.Design;
+
+public interface ISelectionService
 {
-	Unknown,
-	HTTP10,
-	HTTP11PartiallyCompliant,
-	HTTP11
+	object PrimarySelection { get; }
+
+	int SelectionCount { get; }
+
+	event EventHandler SelectionChanged;
+
+	event EventHandler SelectionChanging;
+
+	bool GetComponentSelected(object component);
+
+	ICollection GetSelectedComponents();
+
+	void SetSelectedComponents(ICollection components);
+
+	void SetSelectedComponents(ICollection components, SelectionTypes selectionType);
 }

@@ -1,8 +1,2 @@
-namespace UnityEngine.UIElements;
-
-internal interface IMouseEventInternal
-{
-	IPointerEvent sourcePointerEvent { get; }
-
-	bool recomputeTopElementUnderMouse { get; }
-}
+// Could not decompile UnityEngine.UIElements.IMouseEventInternal
+// This type uses unsupported IL or has too many generic parameters.

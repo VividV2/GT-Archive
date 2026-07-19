@@ -1,6 +1,10 @@
-namespace Fusion;
-
-public interface ISceneLoadDone : IPublicFacingInterface
+namespace Fusion
 {
-	void SceneLoadDone(in SceneLoadDoneArgs sceneInfo);
+	public interface ISceneLoadDone : IPublicFacingInterface
+	{
+		void SceneLoadDone(in SceneLoadDoneArgs sceneInfo);
+	}
+}
+namespace Fusion
+{
 }

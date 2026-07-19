@@ -1,13 +1,2 @@
-namespace UnityEngine.ProBuilder.Poly2Tri;
-
-internal class PolygonPoint : TriangulationPoint
-{
-	public PolygonPoint Next { get; set; }
-
-	public PolygonPoint Previous { get; set; }
-
-	public PolygonPoint(double x, double y, int index = -1)
-		: base(x, y, index)
-	{
-	}
-}
+// Could not decompile UnityEngine.ProBuilder.Poly2Tri.PolygonPoint
+// This type uses unsupported IL or has too many generic parameters.

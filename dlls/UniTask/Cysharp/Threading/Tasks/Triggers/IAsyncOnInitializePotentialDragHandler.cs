@@ -1,12 +1,6 @@
-using UnityEngine.EventSystems;
-
 namespace Cysharp.Threading.Tasks.Triggers
 {
-	public interface IAsyncOnInitializePotentialDragHandler
+	public interface IAsyncOnParticleSystemStoppedHandler
 	{
-		UniTask<PointerEventData> OnInitializePotentialDragAsync();
+		UniTask OnParticleSystemStoppedAsync();
 	}
-}
-namespace Cysharp.Threading.Tasks.Triggers
-{
-}

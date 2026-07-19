@@ -1,10 +1,2 @@
-using System;
-
-namespace Modio.FileIO;
-
-public class DefaultRootPathProvider : IModioRootPathProvider
-{
-	public virtual string Path => Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) ?? "";
-
-	public string UserPath => Path;
-}
+// Could not decompile Modio.FileIO.DefaultRootPathProvider
+// This type uses unsupported IL or has too many generic parameters.

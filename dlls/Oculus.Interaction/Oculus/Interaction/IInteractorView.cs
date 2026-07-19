@@ -1,28 +1,40 @@
 using System;
 
-namespace Oculus.Interaction;
+namespace Oculus.Interaction.PoseDetection;
 
-public interface IInteractorView
+public enum UpVectorType
 {
-	int Identifier { get; }
+	Head,
+	Tracking,
+	World
+}
+namespace Oculus.Interaction
+{
+	public interface IInteractorView
+	{
+		int Identifier { get; }
 
-	object Data { get; }
+		object Data { get; }
 
-	bool HasCandidate { get; }
+		bool HasCandidate { get; }
 
-	object CandidateProperties { get; }
+		object CandidateProperties { get; }
 
-	bool HasInteractable { get; }
+		bool HasInteractable { get; }
 
-	bool HasSelectedInteractable { get; }
+		bool HasSelectedInteractable { get; }
 
-	InteractorState State { get; }
+		InteractorState State { get; }
 
-	event Action<InteractorStateChangeArgs> WhenStateChanged;
+		event Action<InteractorStateChangeArgs> WhenStateChanged;
 
-	event Action WhenPreprocessed;
+		event Action WhenPreprocessed;
 
-	event Action WhenProcessed;
+		event Action WhenProcessed;
 
-	event Action WhenPostprocessed;
+		event Action WhenPostprocessed;
+	}
+}
+namespace Oculus.Interaction
+{
 }

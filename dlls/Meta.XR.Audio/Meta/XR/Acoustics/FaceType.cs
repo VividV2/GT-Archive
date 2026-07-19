@@ -1,7 +1,20 @@
-namespace Meta.XR.Acoustics;
-
-public enum FaceType : uint
+namespace Meta.XR.Acoustics
 {
-	TRIANGLES,
-	QUADS
+	public enum FaceType : uint
+	{
+		TRIANGLES,
+		QUADS
+	}
+}
+namespace Meta.XR.Acoustics
+{
+	public enum MaterialProperty : uint
+	{
+		ABSORPTION,
+		TRANSMISSION,
+		SCATTERING
+	}
+}
+namespace Meta.XR.Acoustics
+{
 }

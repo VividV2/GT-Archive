@@ -1,50 +1,76 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
-namespace System.EnterpriseServices.Internal;
+namespace System.EnterpriseServices;
 
-/// <summary>Creates and deletes Internet Information Services (IIS) 6.0 virtual roots.</summary>
-/// <summary>Creates and deletes Internet Information Services (IIS) 6.0 virtual roots.</summary>
-[Guid("d8013ef1-730b-45e2-ba24-874b7242c425")]
-public class IISVirtualRoot : IComSoapIISVRoot
+/// <summary>Configures a role for an application or component. This class cannot be inherited.</summary>
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Interface, AllowMultiple = true)]
+[ComVisible(false)]
+public sealed class SecurityRoleAttribute : Attribute
 {
-	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.Internal.IISVirtualRoot" /> class.</summary>
-	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.Internal.IISVirtualRoot" /> class.</summary>
-	[System.MonoTODO]
-	public IISVirtualRoot()
+	private string description;
+
+	private bool everyone;
+
+	private string role;
+
+	/// <summary>Gets or sets the role description.</summary>
+	/// <returns>The description for the role.</returns>
+	public string Description
 	{
-		throw new NotImplementedException();
+		get
+		{
+			return description;
+		}
+		set
+		{
+			description = value;
+		}
 	}
 
-	/// <summary>Creates an Internet Information Services (IIS) virtual root.</summary>
-	/// <param name="RootWeb">A string with the value <c>"IIS://localhost/W3SVC/1/ROOT"</c> representing the root Web server.</param>
-	/// <param name="inPhysicalDirectory">The physical path of the virtual root, which corresponds to <paramref name="PhysicalPath" /> from the <see cref="M:System.EnterpriseServices.Internal.Publish.CreateVirtualRoot(System.String,System.String,System.String@,System.String@,System.String@,System.String@)" /> method.</param>
-	/// <param name="VirtualDirectory">The name of the virtual root, which corresponds to <paramref name="VirtualRoot" /> from <see cref="M:System.EnterpriseServices.Internal.Publish.CreateVirtualRoot(System.String,System.String,System.String@,System.String@,System.String@,System.String@)" />.</param>
-	/// <param name="Error">A string to which an error message can be written.</param>
-	/// <summary>Creates an Internet Information Services (IIS) virtual root.</summary>
-	/// <param name="RootWeb">A string with the value <c>"IIS://localhost/W3SVC/1/ROOT"</c> representing the root Web server.</param>
-	/// <param name="inPhysicalDirectory">The physical path of the virtual root, which corresponds to <paramref name="PhysicalPath" /> from the <see cref="M:System.EnterpriseServices.Internal.Publish.CreateVirtualRoot(System.String,System.String,System.String@,System.String@,System.String@,System.String@)" /> method.</param>
-	/// <param name="VirtualDirectory">The name of the virtual root, which corresponds to <paramref name="VirtualRoot" /> from <see cref="M:System.EnterpriseServices.Internal.Publish.CreateVirtualRoot(System.String,System.String,System.String@,System.String@,System.String@,System.String@)" />.</param>
-	/// <param name="Error">A string to which an error message can be written.</param>
-	[System.MonoTODO]
-	public void Create(string RootWeb, string inPhysicalDirectory, string VirtualDirectory, out string Error)
+	/// <summary>Gets or sets the security role.</summary>
+	/// <returns>The security role applied to an application, component, interface, or method.</returns>
+	public string Role
 	{
-		throw new NotImplementedException();
+		get
+		{
+			return role;
+		}
+		set
+		{
+			role = value;
+		}
 	}
 
-	/// <summary>Deletes an Internet Information Services (IIS) virtual root.</summary>
-	/// <param name="RootWeb">The root Web server, as specified by <paramref name="RootWebServer" /> from the <see cref="M:System.EnterpriseServices.Internal.IComSoapPublisher.DeleteVirtualRoot(System.String,System.String,System.String@)" /> method.</param>
-	/// <param name="PhysicalDirectory">The physical path of the virtual root.</param>
-	/// <param name="VirtualDirectory">The name of the virtual root.</param>
-	/// <param name="Error">A string to which an error message can be written.</param>
-	/// <summary>Deletes an Internet Information Services (IIS) virtual root.</summary>
-	/// <param name="RootWeb">The root Web server, as specified by <paramref name="RootWebServer" /> from the <see cref="M:System.EnterpriseServices.Internal.IComSoapPublisher.DeleteVirtualRoot(System.String,System.String,System.String@)" /> method.</param>
-	/// <param name="PhysicalDirectory">The physical path of the virtual root.</param>
-	/// <param name="VirtualDirectory">The name of the virtual root.</param>
-	/// <param name="Error">A string to which an error message can be written.</param>
-	[System.MonoTODO]
-	public void Delete(string RootWeb, string PhysicalDirectory, string VirtualDirectory, out string Error)
+	/// <summary>Sets a value indicating whether to add the Everyone user group as a user.</summary>
+	/// <returns>
+	///   <see langword="true" /> to require that a newly created role have the Everyone user group added as a user (roles that already exist on the application are not modified); otherwise, <see langword="false" /> to suppress adding the Everyone user group as a user.</returns>
+	public bool SetEveryoneAccess
 	{
-		throw new NotImplementedException();
+		get
+		{
+			return everyone;
+		}
+		set
+		{
+			everyone = value;
+		}
+	}
+
+	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.SecurityRoleAttribute" /> class and sets the <see cref="P:System.EnterpriseServices.SecurityRoleAttribute.Role" /> property.</summary>
+	/// <param name="role">A security role for the application, component, interface, or method.</param>
+	public SecurityRoleAttribute(string role)
+		: this(role, everyone: false)
+	{
+	}
+
+	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.SecurityRoleAttribute" /> class and sets the <see cref="P:System.EnterpriseServices.SecurityRoleAttribute.Role" /> and <see cref="P:System.EnterpriseServices.SecurityRoleAttribute.SetEveryoneAccess" /> properties.</summary>
+	/// <param name="role">A security role for the application, component, interface, or method.</param>
+	/// <param name="everyone">
+	///   <see langword="true" /> to require that the newly created role have the Everyone user group added as a user; otherwise, <see langword="false" />.</param>
+	public SecurityRoleAttribute(string role, bool everyone)
+	{
+		description = string.Empty;
+		this.everyone = everyone;
+		this.role = role;
 	}
 }

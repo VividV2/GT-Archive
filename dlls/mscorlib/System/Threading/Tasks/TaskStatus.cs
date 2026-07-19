@@ -1,3 +1,2 @@
-namespace System
+namespace Internal.Runtime.Augments
 {
-}

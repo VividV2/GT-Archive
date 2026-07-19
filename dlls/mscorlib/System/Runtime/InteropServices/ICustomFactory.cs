@@ -1,3 +1,3 @@
-namespace System.Runtime.Remoting.Channels
+namespace Microsoft.Win32
 {
 }

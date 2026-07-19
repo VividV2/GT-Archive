@@ -1,9 +1,21 @@
-namespace UnityEngine.Rendering;
-
-public enum ReflectionProbeUsage
+namespace UnityEngine.Rendering
 {
-	Off,
-	BlendProbes,
-	BlendProbesAndSkybox,
-	Simple
+	public enum GraphicsFenceType
+	{
+		AsyncQueueSynchronisation,
+		CPUSynchronisation
+	}
+}
+namespace UnityEngine.Rendering
+{
+	public enum ReflectionProbeUsage
+	{
+		Off,
+		BlendProbes,
+		BlendProbesAndSkybox,
+		Simple
+	}
+}
+namespace UnityEngine.Rendering
+{
 }

@@ -1,9 +1,2 @@
-using System;
-using Sirenix.OdinInspector;
-
-namespace GorillaTag;
-
-[IncludeMyAttributes]
-public class SoundBankInfoAttribute : Attribute
-{
-}
+// Could not decompile GorillaTag.SoundBankInfoAttribute
+// This type uses unsupported IL or has too many generic parameters.

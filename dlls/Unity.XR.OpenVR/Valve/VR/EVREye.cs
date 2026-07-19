@@ -1,8 +1,7 @@
 namespace Valve.VR;
 
-public enum EColorSpace
+public enum EVREye
 {
-	Auto,
-	Gamma,
-	Linear
+	Eye_Left,
+	Eye_Right
 }

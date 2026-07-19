@@ -1,63 +1,56 @@
-using System;
-using System.Runtime.InteropServices;
-
 namespace Valve.VR
 {
-	public enum EVRControllerAxisType
+	public struct VRControllerState_t
 	{
-		k_eControllerAxis_None,
-		k_eControllerAxis_TrackPad,
-		k_eControllerAxis_Joystick,
-		k_eControllerAxis_Trigger
+		public uint unPacketNum;
+
+		public ulong ulButtonPressed;
+
+		public ulong ulButtonTouched;
+
+		public VRControllerAxis_t rAxis0;
+
+		public VRControllerAxis_t rAxis1;
+
+		public VRControllerAxis_t rAxis2;
+
+		public VRControllerAxis_t rAxis3;
+
+		public VRControllerAxis_t rAxis4;
 	}
 }
 namespace Valve.VR
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 4)]
-	public struct RenderModel_t_Packed(RenderModel_t unpacked)
+	public enum EIOBufferMode
 	{
-		public IntPtr rVertexData = unpacked.rVertexData;
-
-		public uint unVertexCount = unpacked.unVertexCount;
-
-		public IntPtr rIndexData = unpacked.rIndexData;
-
-		public uint unTriangleCount = unpacked.unTriangleCount;
-
-		public int diffuseTextureId = unpacked.diffuseTextureId;
-
-		public void Unpack(ref RenderModel_t unpacked)
-		{
-			unpacked.rVertexData = rVertexData;
-			unpacked.unVertexCount = unVertexCount;
-			unpacked.rIndexData = rIndexData;
-			unpacked.unTriangleCount = unTriangleCount;
-			unpacked.diffuseTextureId = diffuseTextureId;
-		}
+		Read = 1,
+		Write = 2,
+		Create = 0x200
 	}
 }
 namespace Valve.VR
 {
-	public enum ETrackedPropertyError
+	public struct VROverlayIntersectionParams_t
 	{
-		TrackedProp_Success,
-		TrackedProp_WrongDataType,
-		TrackedProp_WrongDeviceClass,
-		TrackedProp_BufferTooSmall,
-		TrackedProp_UnknownProperty,
-		TrackedProp_InvalidDevice,
-		TrackedProp_CouldNotContactServer,
-		TrackedProp_ValueNotProvidedByDevice,
-		TrackedProp_StringExceedsMaximumLength,
-		TrackedProp_NotYetAvailable,
-		TrackedProp_PermissionDenied,
-		TrackedProp_InvalidOperation,
-		TrackedProp_CannotWriteToWildcards,
-		TrackedProp_IPCReadFailure,
-		TrackedProp_OutOfMemory,
-		TrackedProp_InvalidContainer
+		public HmdVector3_t vSource;
+
+		public HmdVector3_t vDirection;
+
+		public ETrackingUniverseOrigin eOrigin;
 	}
 }
 namespace Valve.VR
 {
+	public struct VRActiveActionSet_t
+	{
+		public ulong ulActionSet;
+
+		public ulong ulRestrictedToDevice;
+
+		public ulong ulSecondaryActionSet;
+
+		public uint unPadding;
+
+		public int nPriority;
+	}
 }

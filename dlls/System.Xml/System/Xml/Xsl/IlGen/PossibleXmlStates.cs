@@ -1,13 +1,17 @@
-namespace System.Xml.Xsl.IlGen;
-
-internal enum PossibleXmlStates
+namespace System.Xml.Xsl.IlGen
 {
-	None,
-	WithinSequence,
-	EnumAttrs,
-	WithinContent,
-	WithinAttr,
-	WithinComment,
-	WithinPI,
-	Any
+	internal enum PossibleXmlStates
+	{
+		None,
+		WithinSequence,
+		EnumAttrs,
+		WithinContent,
+		WithinAttr,
+		WithinComment,
+		WithinPI,
+		Any
+	}
+}
+namespace System.Xml.Schema
+{
 }

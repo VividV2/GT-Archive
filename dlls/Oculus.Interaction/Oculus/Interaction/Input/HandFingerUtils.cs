@@ -1,9 +1,2 @@
-namespace Oculus.Interaction.Input;
-
-public static class HandFingerUtils
-{
-	public static HandFingerFlags ToFlags(HandFinger handFinger)
-	{
-		return (HandFingerFlags)(1 << (int)handFinger);
-	}
-}
+// Could not decompile Oculus.Interaction.Input.HandFingerUtils
+// This type uses unsupported IL or has too many generic parameters.

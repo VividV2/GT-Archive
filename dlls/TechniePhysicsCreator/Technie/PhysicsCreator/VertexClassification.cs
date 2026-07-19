@@ -1,12 +1,8 @@
-namespace Technie.PhysicsCreator
+namespace Technie.PhysicsCreator;
+
+public enum VertexClassification
 {
-}
-namespace Technie.PhysicsCreator
-{
-	public enum VertexClassification
-	{
-		Front = 1,
-		Back = 2,
-		OnPlane = 4
-	}
+	Front = 1,
+	Back = 2,
+	OnPlane = 4
 }

@@ -1,14 +1,2 @@
-namespace Fusion.LagCompensation;
-
-internal interface IHitboxColliderContainer
-{
-	ref HitboxCollider GetNextCollider(out int index);
-
-	ref HitboxCollider GetNextTempCollider(out int tmpIndex);
-
-	ref HitboxCollider GetCollider(int index);
-
-	void ReleaseCollider(int index);
-
-	void ReleaseTempColliders();
-}
+// Could not decompile Fusion.LagCompensation.IHitboxColliderContainer
+// This type uses unsupported IL or has too many generic parameters.

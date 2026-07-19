@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 
-namespace Oculus.Interaction.PoseDetection;
-
-public interface IFeatureThresholds<TFeature, TFeatureState>
+namespace Oculus.Interaction.PoseDetection
 {
-	IReadOnlyList<IFeatureStateThresholds<TFeature, TFeatureState>> FeatureStateThresholds { get; }
+	public interface IFeatureThresholds<TFeature, TFeatureState>
+	{
+		IReadOnlyList<IFeatureStateThresholds<TFeature, TFeatureState>> FeatureStateThresholds { get; }
 
-	double MinTimeInState { get; }
+		double MinTimeInState { get; }
+	}
+}
+namespace Oculus.Interaction.Input
+{
 }

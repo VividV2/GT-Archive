@@ -1,18 +1,22 @@
-namespace System.Data.SqlClient;
-
-internal struct SNIErrorDetails
+namespace System.Data.SqlClient
 {
-	public string errorMessage;
+	internal struct SNIErrorDetails
+	{
+		public string errorMessage;
 
-	public uint nativeError;
+		public uint nativeError;
 
-	public uint sniErrorNumber;
+		public uint sniErrorNumber;
 
-	public int provider;
+		public int provider;
 
-	public uint lineNumber;
+		public uint lineNumber;
 
-	public string function;
+		public string function;
 
-	public Exception exception;
+		public Exception exception;
+	}
+}
+namespace System.Data.SqlClient
+{
 }

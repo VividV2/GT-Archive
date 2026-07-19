@@ -1,8 +1,3 @@
-namespace System.Net;
-
-internal enum TriState
+namespace System.Net
 {
-	Unspecified = -1,
-	False,
-	True
 }

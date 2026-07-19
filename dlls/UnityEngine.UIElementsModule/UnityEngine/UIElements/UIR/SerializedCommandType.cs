@@ -7,6 +7,6 @@ namespace UnityEngine.UIElements.UIR
 		ApplyBatchProps
 	}
 }
-namespace UnityEngine.UIElements.UIR
+namespace UnityEngine.UIElements
 {
 }

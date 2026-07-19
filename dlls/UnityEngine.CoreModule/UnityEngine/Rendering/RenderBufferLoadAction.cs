@@ -1,8 +1,9 @@
-namespace UnityEngine.Rendering;
-
-public enum RenderBufferLoadAction
+namespace UnityEngine
 {
-	Load,
-	Clear,
-	DontCare
+}
+namespace UnityEngine.Windows
+{
+}
+namespace UnityEngine
+{
 }

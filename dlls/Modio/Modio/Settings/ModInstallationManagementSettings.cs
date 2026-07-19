@@ -1,11 +1,2 @@
-using System;
-
-namespace Modio.Settings;
-
-[Serializable]
-public class ModInstallationManagementSettings : IModioServiceSettings
-{
-	public bool AutoActivate = true;
-
-	public bool UninstallIfNoSubscriptions;
-}
+// Could not decompile Modio.Settings.ModInstallationManagementSettings
+// This type uses unsupported IL or has too many generic parameters.

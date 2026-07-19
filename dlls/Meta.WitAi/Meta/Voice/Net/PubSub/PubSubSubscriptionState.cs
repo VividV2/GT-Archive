@@ -1,15 +1,14 @@
-namespace Meta.Voice.Net.PubSub
+namespace Meta.Voice.Net.PubSub;
+
+public enum PubSubSubscriptionState
 {
-	public enum PubSubSubscriptionState
-	{
-		NotSubscribed,
-		Subscribing,
-		Subscribed,
-		Unsubscribing,
-		SubscribeError,
-		UnsubscribeError
-	}
+	NotSubscribed,
+	Subscribing,
+	Subscribed,
+	Unsubscribing,
+	SubscribeError,
+	UnsubscribeError
 }
-namespace Meta.WitAi
+namespace Meta.Conduit
 {
 }

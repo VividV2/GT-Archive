@@ -1,15 +1,19 @@
-namespace UnityEngine;
-
-public enum SpriteAlignment
+namespace UnityEngine
 {
-	Center,
-	TopLeft,
-	TopCenter,
-	TopRight,
-	LeftCenter,
-	RightCenter,
-	BottomLeft,
-	BottomCenter,
-	BottomRight,
-	Custom
+	public enum SpriteAlignment
+	{
+		Center,
+		TopLeft,
+		TopCenter,
+		TopRight,
+		LeftCenter,
+		RightCenter,
+		BottomLeft,
+		BottomCenter,
+		BottomRight,
+		Custom
+	}
+}
+namespace UnityEngine
+{
 }

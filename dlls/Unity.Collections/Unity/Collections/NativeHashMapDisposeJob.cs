@@ -13,3 +13,6 @@ internal struct NativeHashMapDisposeJob : IJob
 		Data.Dispose();
 	}
 }
+namespace Unity.Collections
+{
+}

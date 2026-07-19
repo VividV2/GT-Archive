@@ -1,31 +1,22 @@
 using Unity.Mathematics;
 
-namespace UnityEngine.Rendering.RadeonRays
+namespace UnityEngine.Rendering.RadeonRays;
+
+internal struct BvhHeader
 {
-	internal enum RayQueryOutputType
-	{
-		FullHitData,
-		InstanceID
-	}
-}
-namespace UnityEngine.Rendering.RadeonRays
-{
-	internal struct BvhHeader
-	{
-		public uint internalNodeCount;
+	public uint internalNodeCount;
 
-		public uint leafNodeCount;
+	public uint leafNodeCount;
 
-		public uint root;
+	public uint root;
 
-		public uint unused;
+	public uint unused;
 
-		public float3 globalAabbMin;
+	public float3 globalAabbMin;
 
-		public float3 globalAabbMax;
+	public float3 globalAabbMax;
 
-		public uint3 unused3;
+	public uint3 unused3;
 
-		public uint3 unused4;
-	}
+	public uint3 unused4;
 }

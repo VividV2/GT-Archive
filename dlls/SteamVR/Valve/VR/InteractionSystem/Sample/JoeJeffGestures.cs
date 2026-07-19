@@ -1,15 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-namespace Valve.VR.Extras;
-
-public struct PointerEventArgs
-{
-	public SteamVR_Input_Sources fromInputSource;
-
-	public uint flags;
-
-	public float distance;
-
-	public Transform target;
-}
+// Could not decompile Valve.VR.InteractionSystem.Sample.JoeJeffGestures
+// This type uses unsupported IL or has too many generic parameters.

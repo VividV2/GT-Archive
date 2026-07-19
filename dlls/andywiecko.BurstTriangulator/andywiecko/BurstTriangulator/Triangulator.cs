@@ -1,18 +1,18 @@
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using andywiecko.BurstTriangulator;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
-using System;
-using andywiecko.BurstTriangulator;
-using Unity.Jobs;
-using UnityEngine;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace andywiecko.BurstTriangulator;
 
@@ -252,7 +252,7 @@ public class Triangulator : IDisposable
 	[BurstCompile]
 	private struct ValidateInputPositionsJob(Triangulator triangulator) : IJob
 	{
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<float2> positions = triangulator.Input.Positions;
 
 		private NativeReference<Status> status = triangulator.status;
@@ -302,7 +302,7 @@ public class Triangulator : IDisposable
 	[BurstCompile]
 	private struct PCATransformationJob(Triangulator triangulator) : IJob
 	{
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<float2> positions = triangulator.tmpInputPositions;
 
 		private NativeReference<float2> scaleRef = triangulator.scale;
@@ -361,7 +361,7 @@ public class Triangulator : IDisposable
 	[BurstCompile]
 	private struct PCATransformationHolesJob(Triangulator triangulator) : IJob
 	{
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<float2> holeSeeds = triangulator.tmpInputHoleSeeds;
 
 		private NativeList<float2> localHoleSeeds = triangulator.localHoleSeeds;
@@ -404,7 +404,7 @@ public class Triangulator : IDisposable
 
 		public JobHandle Schedule(Triangulator triangulator, JobHandle dependencies)
 		{
-			return this.Schedule(triangulator.Output.Positions, triangulator.Settings.BatchCount, dependencies);
+			return IJobParallelForDeferExtensions.Schedule(this, triangulator.Output.Positions, triangulator.Settings.BatchCount, dependencies);
 		}
 
 		public void Execute(int i)
@@ -421,7 +421,7 @@ public class Triangulator : IDisposable
 	[BurstCompile]
 	private struct InitialLocalTransformationJob(Triangulator triangulator) : IJob
 	{
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<float2> positions = triangulator.tmpInputPositions;
 
 		private NativeReference<float2> comRef = triangulator.com;
@@ -451,7 +451,7 @@ public class Triangulator : IDisposable
 	[BurstCompile]
 	private struct CalculateLocalHoleSeedsJob(Triangulator triangulator) : IJob
 	{
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<float2> holeSeeds = triangulator.tmpInputHoleSeeds;
 
 		private NativeList<float2> localHoleSeeds = triangulator.localHoleSeeds;
@@ -481,12 +481,12 @@ public class Triangulator : IDisposable
 
 		private NativeArray<float2> localPositions = triangulator.localPositions.AsDeferredJobArray();
 
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<float2> positions = triangulator.tmpInputPositions;
 
 		public JobHandle Schedule(Triangulator triangulator, JobHandle dependencies)
 		{
-			return this.Schedule(triangulator.localPositions, triangulator.Settings.BatchCount, dependencies);
+			return IJobParallelForDeferExtensions.Schedule(this, triangulator.localPositions, triangulator.Settings.BatchCount, dependencies);
 		}
 
 		public void Execute(int i)
@@ -509,7 +509,7 @@ public class Triangulator : IDisposable
 
 		public JobHandle Schedule(Triangulator triangulator, JobHandle dependencies)
 		{
-			return this.Schedule(triangulator.Output.Positions, triangulator.Settings.BatchCount, dependencies);
+			return IJobParallelForDeferExtensions.Schedule(this, triangulator.Output.Positions, triangulator.Settings.BatchCount, dependencies);
 		}
 
 		public void Execute(int i)
@@ -574,7 +574,7 @@ public class Triangulator : IDisposable
 
 		private NativeReference<Status> status = triangulator.status;
 
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<float2> inputPositions = triangulator.Input.Positions;
 
 		private NativeList<float2> outputPositions = triangulator.outputPositions;
@@ -922,10 +922,10 @@ public class Triangulator : IDisposable
 	[BurstCompile]
 	private struct ValidateInputConstraintEdges(Triangulator triangulator) : IJob
 	{
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<int> constraints = triangulator.Input.ConstraintEdges;
 
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<float2> positions = triangulator.Input.Positions;
 
 		private NativeReference<Status> status = triangulator.status;
@@ -1051,12 +1051,12 @@ public class Triangulator : IDisposable
 	{
 		private NativeReference<Status> status = triangulator.status;
 
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<float2> outputPositions = triangulator.outputPositions.AsDeferredJobArray();
 
 		private NativeArray<int> triangles = triangulator.triangles.AsDeferredJobArray();
 
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<int> inputConstraintEdges = triangulator.Input.ConstraintEdges;
 
 		private NativeList<Edge> internalConstraints = triangulator.constraintEdges;
@@ -2098,7 +2098,7 @@ public class Triangulator : IDisposable
 	[BurstCompile]
 	private struct PlantingSeedsJob<T>(Triangulator triangulator) : IJob where T : struct, IPlantingSeedJobMode<T>
 	{
-		[ReadOnly]
+		[Unity.Collections.ReadOnly]
 		private NativeArray<float2> positions = triangulator.Input.Positions;
 
 		private readonly T mode = default(T).Create(triangulator);
@@ -2395,7 +2395,7 @@ public class Triangulator : IDisposable
 
 	public JobHandle Schedule(JobHandle dependencies = default(JobHandle))
 	{
-		dependencies = new ClearDataJob(this).Schedule(dependencies);
+		dependencies = IJobExtensions.Schedule(new ClearDataJob(this), dependencies);
 		dependencies = Settings.Preprocessor switch
 		{
 			Preprocessor.PCA => SchedulePCATransformation(dependencies), 
@@ -2405,21 +2405,21 @@ public class Triangulator : IDisposable
 		};
 		if (Settings.ValidateInput)
 		{
-			dependencies = new ValidateInputPositionsJob(this).Schedule(dependencies);
-			dependencies = (Settings.ConstrainEdges ? new ValidateInputConstraintEdges(this).Schedule(dependencies) : dependencies);
+			dependencies = IJobExtensions.Schedule(new ValidateInputPositionsJob(this), dependencies);
+			dependencies = (Settings.ConstrainEdges ? IJobExtensions.Schedule(new ValidateInputConstraintEdges(this), dependencies) : dependencies);
 		}
-		dependencies = new DelaunayTriangulationJob(this).Schedule(dependencies);
-		dependencies = (Settings.ConstrainEdges ? new ConstrainEdgesJob(this).Schedule(dependencies) : dependencies);
+		dependencies = IJobExtensions.Schedule(new DelaunayTriangulationJob(this), dependencies);
+		dependencies = (Settings.ConstrainEdges ? IJobExtensions.Schedule(new ConstrainEdgesJob(this), dependencies) : dependencies);
 		NativeArray<float2> holeSeeds = Input.HoleSeeds;
 		if (Settings.RestoreBoundary && Settings.ConstrainEdges)
 		{
-			dependencies = (holeSeeds.IsCreated ? new PlantingSeedsJob<PlantBoundaryAndHoles>(this).Schedule(dependencies) : new PlantingSeedsJob<PlantBoundary>(this).Schedule(dependencies));
+			dependencies = (holeSeeds.IsCreated ? IJobExtensions.Schedule(new PlantingSeedsJob<PlantBoundaryAndHoles>(this), dependencies) : IJobExtensions.Schedule(new PlantingSeedsJob<PlantBoundary>(this), dependencies));
 		}
 		else if (holeSeeds.IsCreated && Settings.ConstrainEdges)
 		{
-			dependencies = new PlantingSeedsJob<PlantHoles>(this).Schedule(dependencies);
+			dependencies = IJobExtensions.Schedule(new PlantingSeedsJob<PlantHoles>(this), dependencies);
 		}
-		dependencies = (Settings.RefineMesh ? new RefineMeshJob(this, Settings.ConstrainEdges ? constraintEdges : default(NativeList<Edge>)).Schedule(dependencies) : dependencies);
+		dependencies = (Settings.RefineMesh ? IJobExtensions.Schedule(new RefineMeshJob(this, Settings.ConstrainEdges ? constraintEdges : default(NativeList<Edge>)), dependencies) : dependencies);
 		dependencies = Settings.Preprocessor switch
 		{
 			Preprocessor.PCA => SchedulePCAInverseTransformation(dependencies), 
@@ -2439,10 +2439,10 @@ public class Triangulator : IDisposable
 			tmpInputHoleSeeds = Input.HoleSeeds;
 			Input.HoleSeeds = localHoleSeeds.AsDeferredJobArray();
 		}
-		dependencies = new PCATransformationJob(this).Schedule(dependencies);
+		dependencies = IJobExtensions.Schedule(new PCATransformationJob(this), dependencies);
 		if (tmpInputHoleSeeds.IsCreated)
 		{
-			dependencies = new PCATransformationHolesJob(this).Schedule(dependencies);
+			dependencies = IJobExtensions.Schedule(new PCATransformationHolesJob(this), dependencies);
 		}
 		return dependencies;
 	}
@@ -2469,10 +2469,10 @@ public class Triangulator : IDisposable
 			tmpInputHoleSeeds = Input.HoleSeeds;
 			Input.HoleSeeds = localHoleSeeds.AsDeferredJobArray();
 		}
-		dependencies = new InitialLocalTransformationJob(this).Schedule(dependencies);
+		dependencies = IJobExtensions.Schedule(new InitialLocalTransformationJob(this), dependencies);
 		if (tmpInputHoleSeeds.IsCreated)
 		{
-			dependencies = new CalculateLocalHoleSeedsJob(this).Schedule(dependencies);
+			dependencies = IJobExtensions.Schedule(new CalculateLocalHoleSeedsJob(this), dependencies);
 		}
 		dependencies = new CalculateLocalPositionsJob(this).Schedule(this, dependencies);
 		return dependencies;
@@ -2648,39 +2648,217 @@ public class Triangulator : IDisposable
 		return false;
 	}
 }
-[Unity.Jobs.DOTSCompilerGenerated]
-internal class __JobReflectionRegistrationOutput__7274761993000005315
+[CompilerGenerated]
+[EditorBrowsable(EditorBrowsableState.Never)]
+[GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]
+internal class UnitySourceGeneratedAssemblyMonoScriptTypes_v1
 {
-	public static void CreateJobReflectionData()
+	private struct MonoScriptData
 	{
-		try
-		{
-			IJobExtensions.EarlyJobInit<Triangulator.ValidateInputPositionsJob>();
-			IJobExtensions.EarlyJobInit<Triangulator.PCATransformationJob>();
-			IJobExtensions.EarlyJobInit<Triangulator.PCATransformationHolesJob>();
-			IJobParallelForDeferExtensions.EarlyJobInit<Triangulator.PCAInverseTransformationJob>();
-			IJobExtensions.EarlyJobInit<Triangulator.InitialLocalTransformationJob>();
-			IJobExtensions.EarlyJobInit<Triangulator.CalculateLocalHoleSeedsJob>();
-			IJobParallelForDeferExtensions.EarlyJobInit<Triangulator.CalculateLocalPositionsJob>();
-			IJobParallelForDeferExtensions.EarlyJobInit<Triangulator.LocalToWorldTransformationJob>();
-			IJobExtensions.EarlyJobInit<Triangulator.ClearDataJob>();
-			IJobExtensions.EarlyJobInit<Triangulator.DelaunayTriangulationJob>();
-			IJobExtensions.EarlyJobInit<Triangulator.ValidateInputConstraintEdges>();
-			IJobExtensions.EarlyJobInit<Triangulator.ConstrainEdgesJob>();
-			IJobExtensions.EarlyJobInit<Triangulator.RefineMeshJob>();
-			IJobExtensions.EarlyJobInit<Triangulator.PlantingSeedsJob<Triangulator.PlantBoundary>>();
-			IJobExtensions.EarlyJobInit<Triangulator.PlantingSeedsJob<Triangulator.PlantBoundaryAndHoles>>();
-			IJobExtensions.EarlyJobInit<Triangulator.PlantingSeedsJob<Triangulator.PlantHoles>>();
-		}
-		catch (Exception ex)
-		{
-			EarlyInitHelpers.JobReflectionDataCreationFailed(ex);
-		}
+		public byte[] FilePathsData;
+
+		public byte[] TypesData;
+
+		public int TotalTypes;
+
+		public int TotalFiles;
+
+		public bool IsEditorOnly;
 	}
 
-	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
-	public static void EarlyInit()
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	private static MonoScriptData Get()
 	{
-		CreateJobReflectionData();
+		return new MonoScriptData
+		{
+			FilePathsData = new byte[100]
+			{
+				0, 0, 0, 26, 0, 0, 0, 92, 92, 76,
+				105, 98, 114, 97, 114, 121, 92, 80, 97, 99,
+				107, 97, 103, 101, 67, 97, 99, 104, 101, 92,
+				99, 111, 109, 46, 97, 110, 100, 121, 119, 105,
+				101, 99, 107, 111, 46, 98, 117, 114, 115, 116,
+				46, 116, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 64, 102, 50, 48, 54, 52, 52,
+				49, 57, 49, 50, 100, 56, 92, 82, 117, 110,
+				116, 105, 109, 101, 92, 84, 114, 105, 97, 110,
+				103, 117, 108, 97, 116, 111, 114, 46, 99, 115
+			},
+			TypesData = new byte[1685]
+			{
+				0, 0, 0, 0, 41, 97, 110, 100, 121, 119,
+				105, 101, 99, 107, 111, 46, 66, 117, 114, 115,
+				116, 84, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 124, 84, 114, 105, 97, 110, 103,
+				117, 108, 97, 116, 111, 114, 0, 0, 0, 0,
+				48, 97, 110, 100, 121, 119, 105, 101, 99, 107,
+				111, 46, 66, 117, 114, 115, 116, 84, 114, 105,
+				97, 110, 103, 117, 108, 97, 116, 111, 114, 46,
+				84, 114, 105, 97, 110, 103, 117, 108, 97, 116,
+				111, 114, 124, 67, 105, 114, 99, 108, 101, 0,
+				0, 0, 0, 46, 97, 110, 100, 121, 119, 105,
+				101, 99, 107, 111, 46, 66, 117, 114, 115, 116,
+				84, 114, 105, 97, 110, 103, 117, 108, 97, 116,
+				111, 114, 46, 84, 114, 105, 97, 110, 103, 117,
+				108, 97, 116, 111, 114, 124, 69, 100, 103, 101,
+				0, 0, 0, 0, 62, 97, 110, 100, 121, 119,
+				105, 101, 99, 107, 111, 46, 66, 117, 114, 115,
+				116, 84, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 46, 84, 114, 105, 97, 110, 103,
+				117, 108, 97, 116, 111, 114, 124, 82, 101, 102,
+				105, 110, 101, 109, 101, 110, 116, 84, 104, 114,
+				101, 115, 104, 111, 108, 100, 115, 0, 0, 0,
+				0, 63, 97, 110, 100, 121, 119, 105, 101, 99,
+				107, 111, 46, 66, 117, 114, 115, 116, 84, 114,
+				105, 97, 110, 103, 117, 108, 97, 116, 111, 114,
+				46, 84, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 124, 84, 114, 105, 97, 110, 103,
+				117, 108, 97, 116, 105, 111, 110, 83, 101, 116,
+				116, 105, 110, 103, 115, 0, 0, 0, 0, 51,
+				97, 110, 100, 121, 119, 105, 101, 99, 107, 111,
+				46, 66, 117, 114, 115, 116, 84, 114, 105, 97,
+				110, 103, 117, 108, 97, 116, 111, 114, 46, 84,
+				114, 105, 97, 110, 103, 117, 108, 97, 116, 111,
+				114, 124, 73, 110, 112, 117, 116, 68, 97, 116,
+				97, 0, 0, 0, 0, 52, 97, 110, 100, 121,
+				119, 105, 101, 99, 107, 111, 46, 66, 117, 114,
+				115, 116, 84, 114, 105, 97, 110, 103, 117, 108,
+				97, 116, 111, 114, 46, 84, 114, 105, 97, 110,
+				103, 117, 108, 97, 116, 111, 114, 124, 79, 117,
+				116, 112, 117, 116, 68, 97, 116, 97, 0, 0,
+				0, 0, 67, 97, 110, 100, 121, 119, 105, 101,
+				99, 107, 111, 46, 66, 117, 114, 115, 116, 84,
+				114, 105, 97, 110, 103, 117, 108, 97, 116, 111,
+				114, 46, 84, 114, 105, 97, 110, 103, 117, 108,
+				97, 116, 111, 114, 124, 86, 97, 108, 105, 100,
+				97, 116, 101, 73, 110, 112, 117, 116, 80, 111,
+				115, 105, 116, 105, 111, 110, 115, 74, 111, 98,
+				0, 0, 0, 0, 62, 97, 110, 100, 121, 119,
+				105, 101, 99, 107, 111, 46, 66, 117, 114, 115,
+				116, 84, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 46, 84, 114, 105, 97, 110, 103,
+				117, 108, 97, 116, 111, 114, 124, 80, 67, 65,
+				84, 114, 97, 110, 115, 102, 111, 114, 109, 97,
+				116, 105, 111, 110, 74, 111, 98, 0, 0, 0,
+				0, 67, 97, 110, 100, 121, 119, 105, 101, 99,
+				107, 111, 46, 66, 117, 114, 115, 116, 84, 114,
+				105, 97, 110, 103, 117, 108, 97, 116, 111, 114,
+				46, 84, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 124, 80, 67, 65, 84, 114, 97,
+				110, 115, 102, 111, 114, 109, 97, 116, 105, 111,
+				110, 72, 111, 108, 101, 115, 74, 111, 98, 0,
+				0, 0, 0, 69, 97, 110, 100, 121, 119, 105,
+				101, 99, 107, 111, 46, 66, 117, 114, 115, 116,
+				84, 114, 105, 97, 110, 103, 117, 108, 97, 116,
+				111, 114, 46, 84, 114, 105, 97, 110, 103, 117,
+				108, 97, 116, 111, 114, 124, 80, 67, 65, 73,
+				110, 118, 101, 114, 115, 101, 84, 114, 97, 110,
+				115, 102, 111, 114, 109, 97, 116, 105, 111, 110,
+				74, 111, 98, 0, 0, 0, 0, 71, 97, 110,
+				100, 121, 119, 105, 101, 99, 107, 111, 46, 66,
+				117, 114, 115, 116, 84, 114, 105, 97, 110, 103,
+				117, 108, 97, 116, 111, 114, 46, 84, 114, 105,
+				97, 110, 103, 117, 108, 97, 116, 111, 114, 124,
+				73, 110, 105, 116, 105, 97, 108, 76, 111, 99,
+				97, 108, 84, 114, 97, 110, 115, 102, 111, 114,
+				109, 97, 116, 105, 111, 110, 74, 111, 98, 0,
+				0, 0, 0, 68, 97, 110, 100, 121, 119, 105,
+				101, 99, 107, 111, 46, 66, 117, 114, 115, 116,
+				84, 114, 105, 97, 110, 103, 117, 108, 97, 116,
+				111, 114, 46, 84, 114, 105, 97, 110, 103, 117,
+				108, 97, 116, 111, 114, 124, 67, 97, 108, 99,
+				117, 108, 97, 116, 101, 76, 111, 99, 97, 108,
+				72, 111, 108, 101, 83, 101, 101, 100, 115, 74,
+				111, 98, 0, 0, 0, 0, 68, 97, 110, 100,
+				121, 119, 105, 101, 99, 107, 111, 46, 66, 117,
+				114, 115, 116, 84, 114, 105, 97, 110, 103, 117,
+				108, 97, 116, 111, 114, 46, 84, 114, 105, 97,
+				110, 103, 117, 108, 97, 116, 111, 114, 124, 67,
+				97, 108, 99, 117, 108, 97, 116, 101, 76, 111,
+				99, 97, 108, 80, 111, 115, 105, 116, 105, 111,
+				110, 115, 74, 111, 98, 0, 0, 0, 0, 71,
+				97, 110, 100, 121, 119, 105, 101, 99, 107, 111,
+				46, 66, 117, 114, 115, 116, 84, 114, 105, 97,
+				110, 103, 117, 108, 97, 116, 111, 114, 46, 84,
+				114, 105, 97, 110, 103, 117, 108, 97, 116, 111,
+				114, 124, 76, 111, 99, 97, 108, 84, 111, 87,
+				111, 114, 108, 100, 84, 114, 97, 110, 115, 102,
+				111, 114, 109, 97, 116, 105, 111, 110, 74, 111,
+				98, 0, 0, 0, 0, 54, 97, 110, 100, 121,
+				119, 105, 101, 99, 107, 111, 46, 66, 117, 114,
+				115, 116, 84, 114, 105, 97, 110, 103, 117, 108,
+				97, 116, 111, 114, 46, 84, 114, 105, 97, 110,
+				103, 117, 108, 97, 116, 111, 114, 124, 67, 108,
+				101, 97, 114, 68, 97, 116, 97, 74, 111, 98,
+				0, 0, 0, 0, 66, 97, 110, 100, 121, 119,
+				105, 101, 99, 107, 111, 46, 66, 117, 114, 115,
+				116, 84, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 46, 84, 114, 105, 97, 110, 103,
+				117, 108, 97, 116, 111, 114, 124, 68, 101, 108,
+				97, 117, 110, 97, 121, 84, 114, 105, 97, 110,
+				103, 117, 108, 97, 116, 105, 111, 110, 74, 111,
+				98, 0, 0, 0, 0, 55, 97, 110, 100, 121,
+				119, 105, 101, 99, 107, 111, 46, 66, 117, 114,
+				115, 116, 84, 114, 105, 97, 110, 103, 117, 108,
+				97, 116, 111, 114, 46, 84, 114, 105, 97, 110,
+				103, 117, 108, 97, 116, 111, 114, 43, 124, 68,
+				105, 115, 116, 67, 111, 109, 112, 97, 114, 101,
+				114, 0, 0, 0, 0, 70, 97, 110, 100, 121,
+				119, 105, 101, 99, 107, 111, 46, 66, 117, 114,
+				115, 116, 84, 114, 105, 97, 110, 103, 117, 108,
+				97, 116, 111, 114, 46, 84, 114, 105, 97, 110,
+				103, 117, 108, 97, 116, 111, 114, 124, 86, 97,
+				108, 105, 100, 97, 116, 101, 73, 110, 112, 117,
+				116, 67, 111, 110, 115, 116, 114, 97, 105, 110,
+				116, 69, 100, 103, 101, 115, 0, 0, 0, 0,
+				59, 97, 110, 100, 121, 119, 105, 101, 99, 107,
+				111, 46, 66, 117, 114, 115, 116, 84, 114, 105,
+				97, 110, 103, 117, 108, 97, 116, 111, 114, 46,
+				84, 114, 105, 97, 110, 103, 117, 108, 97, 116,
+				111, 114, 124, 67, 111, 110, 115, 116, 114, 97,
+				105, 110, 69, 100, 103, 101, 115, 74, 111, 98,
+				0, 0, 0, 0, 55, 97, 110, 100, 121, 119,
+				105, 101, 99, 107, 111, 46, 66, 117, 114, 115,
+				116, 84, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 46, 84, 114, 105, 97, 110, 103,
+				117, 108, 97, 116, 111, 114, 124, 82, 101, 102,
+				105, 110, 101, 77, 101, 115, 104, 74, 111, 98,
+				0, 0, 0, 0, 62, 97, 110, 100, 121, 119,
+				105, 101, 99, 107, 111, 46, 66, 117, 114, 115,
+				116, 84, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 46, 84, 114, 105, 97, 110, 103,
+				117, 108, 97, 116, 111, 114, 124, 73, 80, 108,
+				97, 110, 116, 105, 110, 103, 83, 101, 101, 100,
+				74, 111, 98, 77, 111, 100, 101, 0, 0, 0,
+				0, 55, 97, 110, 100, 121, 119, 105, 101, 99,
+				107, 111, 46, 66, 117, 114, 115, 116, 84, 114,
+				105, 97, 110, 103, 117, 108, 97, 116, 111, 114,
+				46, 84, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 124, 80, 108, 97, 110, 116, 66,
+				111, 117, 110, 100, 97, 114, 121, 0, 0, 0,
+				0, 52, 97, 110, 100, 121, 119, 105, 101, 99,
+				107, 111, 46, 66, 117, 114, 115, 116, 84, 114,
+				105, 97, 110, 103, 117, 108, 97, 116, 111, 114,
+				46, 84, 114, 105, 97, 110, 103, 117, 108, 97,
+				116, 111, 114, 124, 80, 108, 97, 110, 116, 72,
+				111, 108, 101, 115, 0, 0, 0, 0, 63, 97,
+				110, 100, 121, 119, 105, 101, 99, 107, 111, 46,
+				66, 117, 114, 115, 116, 84, 114, 105, 97, 110,
+				103, 117, 108, 97, 116, 111, 114, 46, 84, 114,
+				105, 97, 110, 103, 117, 108, 97, 116, 111, 114,
+				124, 80, 108, 97, 110, 116, 66, 111, 117, 110,
+				100, 97, 114, 121, 65, 110, 100, 72, 111, 108,
+				101, 115, 0, 0, 0, 0, 58, 97, 110, 100,
+				121, 119, 105, 101, 99, 107, 111, 46, 66, 117,
+				114, 115, 116, 84, 114, 105, 97, 110, 103, 117,
+				108, 97, 116, 111, 114, 46, 84, 114, 105, 97,
+				110, 103, 117, 108, 97, 116, 111, 114, 124, 80,
+				108, 97, 110, 116, 105, 110, 103, 83, 101, 101,
+				100, 115, 74, 111, 98
+			},
+			TotalFiles = 1,
+			TotalTypes = 26,
+			IsEditorOnly = false
+		};
 	}
 }

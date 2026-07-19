@@ -1,3 +1,3 @@
-namespace System.Drawing.Text
+namespace System.Drawing
 {
 }

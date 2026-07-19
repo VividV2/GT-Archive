@@ -1,17 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(3408)]
-public struct SetUserItemVoteResult_t
-{
-	public const int k_iCallback = 3408;
-
-	public PublishedFileId_t m_nPublishedFileId;
-
-	public EResult m_eResult;
-
-	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bVoteUp;
-}
+// Could not decompile Steamworks.SetUserItemVoteResult_t
+// This type uses unsupported IL or has too many generic parameters.

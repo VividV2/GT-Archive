@@ -1,15 +1,19 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
 namespace System.EnterpriseServices;
 
-/// <summary>Indicates whether all work submitted by <see cref="T:System.EnterpriseServices.Activity" /> should be bound to only one single-threaded apartment (STA). This enumeration has no impact on the multithreaded apartment (MTA).</summary>
+/// <summary>Indicates the context in which to run the COM+ partition.</summary>
 [Serializable]
 [ComVisible(false)]
-public enum BindingOption
+public enum PartitionOption
 {
-	/// <summary>The work submitted by the activity is not bound to a single STA.</summary>
-	NoBinding,
-	/// <summary>The work submitted by the activity is bound to a single STA.</summary>
-	BindingToPoolThread
+	/// <summary>The enclosed context runs in the Global Partition. <see cref="F:System.EnterpriseServices.PartitionOption.Ignore" /> is the default setting for <see cref="P:System.EnterpriseServices.ServiceConfig.PartitionOption" /> when <see cref="P:System.EnterpriseServices.ServiceConfig.Inheritance" /> is set to <see cref="F:System.EnterpriseServices.InheritanceOption.Ignore" />.</summary>
+	Ignore,
+	/// <summary>The enclosed context runs in the current containing COM+ partition. This is the default setting for <see cref="P:System.EnterpriseServices.ServiceConfig.PartitionOption" /> when <see cref="P:System.EnterpriseServices.ServiceConfig.Inheritance" /> is set to <see cref="F:System.EnterpriseServices.InheritanceOption.Inherit" />.</summary>
+	Inherit,
+	/// <summary>The enclosed context runs in a COM+ partition that is different from the current containing partition.</summary>
+	New
+}
+namespace System.EnterpriseServices
+{
 }

@@ -1,14 +1,7 @@
 namespace OVR.OpenVR;
 
-public enum EVRState
+public enum EVRControllerEventOutputType
 {
-	Undefined = -1,
-	Off,
-	Searching,
-	Searching_Alert,
-	Ready,
-	Ready_Alert,
-	NotReady,
-	Standby,
-	Ready_Alert_Low
+	ControllerEventOutput_OSEvents,
+	ControllerEventOutput_VREvents
 }

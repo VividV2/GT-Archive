@@ -1,10 +1,2 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
-
-internal enum InternalArrayTypeE
-{
-	Empty,
-	Single,
-	Jagged,
-	Rectangular,
-	Base64
-}
+// Could not decompile System.Runtime.Remoting.TypeInfo
+// This type uses unsupported IL or has too many generic parameters.

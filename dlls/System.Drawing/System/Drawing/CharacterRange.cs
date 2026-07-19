@@ -1,16 +1,2 @@
-namespace System.Drawing
-{
-	internal struct QDRect
-	{
-		public short top;
-
-		public short left;
-
-		public short bottom;
-
-		public short right;
-	}
-}
-namespace System.Drawing
-{
-}
+// Could not decompile System.Drawing.CharacterRange
+// This type uses unsupported IL or has too many generic parameters.

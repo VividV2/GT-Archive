@@ -1,14 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ProfilesModels;
-
-[Serializable]
-public class EntityStatisticChildValue : PlayFabBaseModel
+namespace PlayFab.DataModels
 {
-	public string ChildName;
-
-	public string Metadata;
-
-	public int Value;
+}
+namespace PlayFab.InsightsModels
+{
 }

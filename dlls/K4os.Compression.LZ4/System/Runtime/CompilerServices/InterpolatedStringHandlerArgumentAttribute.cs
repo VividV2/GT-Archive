@@ -1,12 +1,27 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace System.Runtime.CompilerServices
 {
-	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = false, Inherited = false)]
+	[AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
 	[ExcludeFromCodeCoverage]
-	internal sealed class InterpolatedStringHandlerAttribute : Attribute
+	internal sealed class InterpolatedStringHandlerArgumentAttribute : Attribute
 	{
-		public InterpolatedStringHandlerAttribute()
+		public string[] Arguments { get; }
+
+		public InterpolatedStringHandlerArgumentAttribute(string argument)
 		{
-			base..ctor();
+			Arguments = new string[1] { argument };
+		}
+
+		public InterpolatedStringHandlerArgumentAttribute(params string[] arguments)
+		{
+			Arguments = arguments;
 		}
 	}
+}
+namespace K4os.Compression.LZ4.Internal
+{
+}
+namespace K4os.Compression.LZ4.Internal
+{
 }

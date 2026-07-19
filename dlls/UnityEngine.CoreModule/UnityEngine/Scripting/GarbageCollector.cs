@@ -1,13 +1,2 @@
-using System;
-using System;
-
-namespace UnityEngine.Scripting
-{
-	[AttributeUsage(AttributeTargets.Interface, AllowMultiple = false)]
-	public class RequireImplementorsAttribute : Attribute
-	{
-	}
-}
-namespace UnityEngine.Events
-{
-}
+// Could not decompile UnityEngine.Scripting.GarbageCollector
+// This type uses unsupported IL or has too many generic parameters.

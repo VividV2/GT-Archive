@@ -1,17 +1,7 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum EVRMuraCorrectionMode
 {
-	public enum EVRMuraCorrectionMode
-	{
-		Default,
-		NoCorrection
-	}
-}
-namespace Valve.VR
-{
-	public enum EVRMouseButton
-	{
-		Left = 1,
-		Right = 2,
-		Middle = 4
-	}
+	Default,
+	NoCorrection
 }

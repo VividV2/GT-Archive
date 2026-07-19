@@ -1,19 +1,9 @@
-using System;
+namespace Unity.IO.LowLevel.Unsafe;
 
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.Method)]
-public sealed class MustUseReturnValueAttribute : Attribute
+public enum FileStatus
 {
-	[CanBeNull]
-	public string Justification { get; }
-
-	public MustUseReturnValueAttribute()
-	{
-	}
-
-	public MustUseReturnValueAttribute([NotNull] string justification)
-	{
-		Justification = justification;
-	}
+	Closed,
+	Pending,
+	Open,
+	OpenFailed
 }

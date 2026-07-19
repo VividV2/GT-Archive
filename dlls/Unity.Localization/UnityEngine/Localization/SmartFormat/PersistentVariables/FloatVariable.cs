@@ -1,8 +1,2 @@
-namespace UnityEngine.Localization.SmartFormat.Core.Extensions;
-
-public interface IFormatter
-{
-	string[] Names { get; set; }
-
-	bool TryEvaluateFormat(IFormattingInfo formattingInfo);
-}
+// Could not decompile UnityEngine.Localization.SmartFormat.PersistentVariables.FloatVariable
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,4 +1,3 @@
-#define TRACE
 using System;
 
 namespace Fusion.Photon.Realtime;

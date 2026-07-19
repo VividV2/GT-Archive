@@ -1,19 +1,15 @@
 using System;
 using System.Diagnostics;
 
-namespace Sirenix.OdinInspector
-{
-}
-namespace Sirenix.OdinInspector
-{
-	[Conditional("UNITY_EDITOR")]
-	[DontApplyToListElements]
-	public class SearchableAttribute : Attribute
-	{
-		public bool FuzzySearch = true;
+namespace Sirenix.OdinInspector;
 
-		public SearchFilterOptions FilterOptions = SearchFilterOptions.All;
+[Conditional("UNITY_EDITOR")]
+[DontApplyToListElements]
+public class SearchableAttribute : Attribute
+{
+	public bool FuzzySearch = true;
 
-		public bool Recursive = true;
-	}
+	public SearchFilterOptions FilterOptions = SearchFilterOptions.All;
+
+	public bool Recursive = true;
 }

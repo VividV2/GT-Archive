@@ -1,17 +1,2 @@
-using Photon.Realtime;
-using Photon.Realtime;
-
-namespace Photon.Pun.UtilityScripts;
-
-public interface IPunTurnManagerCallbacks
-{
-	void OnTurnBegins(int turn);
-
-	void OnTurnCompleted(int turn);
-
-	void OnPlayerMove(Player player, int turn, object move);
-
-	void OnPlayerFinished(Player player, int turn, object move);
-
-	void OnTurnTimeEnds(int turn);
-}
+// Could not decompile Photon.Pun.UtilityScripts.CountdownTimer
+// This type uses unsupported IL or has too many generic parameters.

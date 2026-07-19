@@ -1,13 +1,14 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(4109)]
+public struct MusicPlayerWantsShuffled_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(4526)]
-	public struct HTML_HideToolTip_t
-	{
-		public const int k_iCallback = 4526;
+	public const int k_iCallback = 4109;
 
-		public HHTMLBrowser unBrowserHandle;
-	}
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bShuffled;
 }

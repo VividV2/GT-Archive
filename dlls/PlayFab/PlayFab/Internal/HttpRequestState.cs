@@ -8,12 +8,6 @@ namespace PlayFab.Internal
 		Error
 	}
 }
-namespace Ionic.Zlib
-{
-}
-namespace PlayFab.ClientModels
-{
-}
 namespace PlayFab.ClientModels
 {
 }

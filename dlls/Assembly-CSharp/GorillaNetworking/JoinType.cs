@@ -1,14 +1,18 @@
-namespace GorillaNetworking;
-
-public enum JoinType
+namespace GorillaTag.Cosmetics
 {
-	Solo,
-	JoinWithNearby,
-	JoinWithParty,
-	JoinWithElevator,
-	ForceJoinWithParty,
-	FollowingNearby,
-	FollowingParty,
-	FriendStationPublic,
-	FriendStationPrivate
+}
+namespace GorillaNetworking
+{
+	public enum JoinType
+	{
+		Solo,
+		JoinWithNearby,
+		JoinWithParty,
+		JoinWithElevator,
+		ForceJoinWithParty,
+		FollowingNearby,
+		FollowingParty,
+		FriendStationPublic,
+		FriendStationPrivate
+	}
 }

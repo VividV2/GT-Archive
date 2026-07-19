@@ -1,2 +1,2 @@
-namespace System.Runtime.CompilerServices;
+namespace Fusion;
 

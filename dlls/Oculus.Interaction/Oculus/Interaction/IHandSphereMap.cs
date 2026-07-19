@@ -1,10 +1,25 @@
 using System.Collections.Generic;
 using Oculus.Interaction.Input;
 using UnityEngine;
+using System.Collections.Generic;
+using Oculus.Interaction.Input;
+using UnityEngine;
 
-namespace Oculus.Interaction;
-
-public interface IHandSphereMap
+namespace Oculus.Interaction
 {
-	void GetSpheres(Handedness handedness, HandJointId joint, Pose pose, float scale, List<HandSphere> spheres);
+	public struct TubePoint
+	{
+		public Vector3 position;
+
+		public Quaternion rotation;
+
+		public float relativeLength;
+	}
+}
+namespace Oculus.Interaction
+{
+	public interface IHandSphereMap
+	{
+		void GetSpheres(Handedness handedness, HandJointId joint, Pose pose, float scale, List<HandSphere> spheres);
+	}
 }

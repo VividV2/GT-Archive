@@ -1,22 +1,2 @@
-namespace System.Xml.Xsl.Runtime
-{
-}
-namespace System.Xml.Xsl.Xslt
-{
-	internal class NodeCtor : XslNode
-	{
-		public readonly string NameAvt;
-
-		public readonly string NsAvt;
-
-		public NodeCtor(XslNodeType nt, string nameAvt, string nsAvt, XslVersion xslVer)
-			: base(nt, null, null, xslVer)
-		{
-			NameAvt = nameAvt;
-			NsAvt = nsAvt;
-		}
-	}
-}
-namespace System.Xml
-{
-}
+// Could not decompile System.Xml.Xsl.Xslt.NodeCtor
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,9 @@
 namespace Fusion.Photon.Realtime;
 
-internal enum ReceiverGroup : byte
+internal enum JoinMode : byte
 {
-	Others,
-	All,
-	MasterClient
+	Default,
+	CreateIfNotExists,
+	JoinOrRejoin,
+	RejoinOnly
 }

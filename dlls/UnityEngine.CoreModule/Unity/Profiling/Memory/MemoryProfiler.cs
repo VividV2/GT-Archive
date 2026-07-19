@@ -1,2 +1,0 @@
-namespace Unity.Scripting.LifecycleManagement;
-

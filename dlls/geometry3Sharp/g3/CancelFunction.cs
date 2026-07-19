@@ -1,22 +1,2 @@
-using System;
-
-namespace g3
-{
-	public class CancelFunction : ICancelSource
-	{
-		public Func<bool> CancelF;
-
-		public CancelFunction(Func<bool> cancelF)
-		{
-			CancelF = cancelF;
-		}
-
-		public bool Cancelled()
-		{
-			return CancelF();
-		}
-	}
-}
-namespace g3
-{
-}
+// Could not decompile g3.CancelFunction
+// This type uses unsupported IL or has too many generic parameters.

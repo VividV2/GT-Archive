@@ -1,49 +1,53 @@
 using System;
 
-namespace TMPro;
-
-[Serializable]
-public class FaceInfo_Legacy
+namespace TMPro
 {
-	public string Name;
+	[Serializable]
+	public class FaceInfo_Legacy
+	{
+		public string Name;
 
-	public float PointSize;
+		public float PointSize;
 
-	public float Scale;
+		public float Scale;
 
-	public int CharacterCount;
+		public int CharacterCount;
 
-	public float LineHeight;
+		public float LineHeight;
 
-	public float Baseline;
+		public float Baseline;
 
-	public float Ascender;
+		public float Ascender;
 
-	public float CapHeight;
+		public float CapHeight;
 
-	public float Descender;
+		public float Descender;
 
-	public float CenterLine;
+		public float CenterLine;
 
-	public float SuperscriptOffset;
+		public float SuperscriptOffset;
 
-	public float SubscriptOffset;
+		public float SubscriptOffset;
 
-	public float SubSize;
+		public float SubSize;
 
-	public float Underline;
+		public float Underline;
 
-	public float UnderlineThickness;
+		public float UnderlineThickness;
 
-	public float strikethrough;
+		public float strikethrough;
 
-	public float strikethroughThickness;
+		public float strikethroughThickness;
 
-	public float TabWidth;
+		public float TabWidth;
 
-	public float Padding;
+		public float Padding;
 
-	public float AtlasWidth;
+		public float AtlasWidth;
 
-	public float AtlasHeight;
+		public float AtlasHeight;
+	}
+}
+namespace TMPro
+{
 }

@@ -1,13 +1,9 @@
-namespace UnityEngine.AMD
+namespace UnityEngine.AMD;
+
+internal enum PluginEvent
 {
-}
-namespace UnityEngine.AMD
-{
-	internal enum PluginEvent
-	{
-		DestroyFeature,
-		FSR2Execute,
-		FSR2PostExecute,
-		FSR2Init
-	}
+	DestroyFeature,
+	FSR2Execute,
+	FSR2PostExecute,
+	FSR2Init
 }

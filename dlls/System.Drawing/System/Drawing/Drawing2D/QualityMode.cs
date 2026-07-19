@@ -1,3 +1,8 @@
-namespace System.Drawing.Design
+namespace System.Drawing.Imaging
 {
-}
+	public enum ColorMatrixFlag
+	{
+		Default,
+		SkipGrays,
+		AltGrays
+	}

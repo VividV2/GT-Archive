@@ -1,0 +1,7 @@
+namespace UnityEngine
+{
+}
+namespace UnityEngine.Rendering
+{
+	internal delegate void GPUDrivenLODGroupDataCallback(in GPUDrivenLODGroupData lodGroupData);
+}

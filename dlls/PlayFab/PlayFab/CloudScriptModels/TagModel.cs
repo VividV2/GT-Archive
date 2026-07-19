@@ -1,7 +1,2 @@
-namespace Ionic.Zlib;
+namespace PlayFab.ClientModels;
 
-public enum CompressionMode
-{
-	Compress,
-	Decompress
-}

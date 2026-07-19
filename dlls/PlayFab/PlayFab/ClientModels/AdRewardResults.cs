@@ -1,10 +1,2 @@
-namespace PlayFab.Internal;
+namespace PlayFab.MultiplayerModels;
 
-public enum AuthType
-{
-	None,
-	PreLoginSession,
-	LoginSession,
-	DevSecretKey,
-	EntityToken
-}

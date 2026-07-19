@@ -1,4 +1,4 @@
-namespace System.Net.NetworkInformation
+namespace System.Collections
 {
 }
 namespace System.Net

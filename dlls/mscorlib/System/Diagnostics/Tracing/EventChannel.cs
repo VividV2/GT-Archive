@@ -14,3 +14,12 @@ public enum EventChannel : byte
 	/// <summary>The debug channel.</summary>
 	Debug = 19
 }
+namespace System.Globalization
+{
+}
+namespace System.Reflection.Emit
+{
+}
+namespace System.Reflection.Emit
+{
+}

@@ -1,6 +1,3 @@
-namespace Fusion.CodeGen
-{
-}
 namespace LitJson
 {
 	public enum JsonType
@@ -14,4 +11,7 @@ namespace LitJson
 		Double,
 		Boolean
 	}
+}
+namespace CjLib
+{
 }

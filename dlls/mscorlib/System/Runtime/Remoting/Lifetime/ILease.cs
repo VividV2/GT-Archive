@@ -1,10 +1,3 @@
-namespace System.Runtime.InteropServices;
-
-[Serializable]
-[Obsolete]
-public enum SYSKIND
+namespace System.Security.Principal
 {
-	SYS_WIN16,
-	SYS_WIN32,
-	SYS_MAC
 }

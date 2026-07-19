@@ -1,14 +1,14 @@
 namespace UnityEngine.UIElements
 {
+	public enum LibraryVisibility
+	{
+		Default,
+		Visible,
+		Hidden
+	}
 }
 namespace UnityEngine.UIElements
 {
-	internal enum AddressMode
-	{
-		Wrap,
-		Clamp,
-		Mirror
-	}
 }
 namespace UnityEngine.UIElements
 {

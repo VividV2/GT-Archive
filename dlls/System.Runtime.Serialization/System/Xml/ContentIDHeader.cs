@@ -1,9 +1,2 @@
-namespace System.Xml;
-
-internal class ContentIDHeader : MimeHeader
-{
-	public ContentIDHeader(string name, string value)
-		: base(name, value)
-	{
-	}
-}
+// Could not decompile System.Xml.ContentIDHeader
+// This type uses unsupported IL or has too many generic parameters.

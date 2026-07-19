@@ -1,6 +1,16 @@
-using System.Collections.Generic;
+using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.Scripting.APIUpdating;
 
+namespace UnityEngine.Rendering
+{
+	public enum ShadingRateCombiner
+	{
+		Keep,
+		Override,
+		Min,
+		Max
+	}
+}
 namespace UnityEngine.Rendering
 {
 	[MovedFrom("UnityEngine.Experimental.Rendering")]
@@ -21,7 +31,6 @@ namespace UnityEngine.Rendering
 		public bool allowVisualEffects;
 	}
 }
-namespace UnityEngine.Rendering
+namespace UnityEngine
 {
-	internal delegate void GPUDrivenRendererDataCallback(in GPUDrivenRendererGroupData rendererData, IList<Mesh> meshes, IList<Material> materials);
 }

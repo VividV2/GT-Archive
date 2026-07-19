@@ -1,12 +1,8 @@
-namespace UnityEngine.XR
+namespace UnityEngine.XR;
+
+internal enum ConnectionChangeType : uint
 {
-}
-namespace UnityEngine.XR
-{
-	internal enum ConnectionChangeType : uint
-	{
-		Connected,
-		Disconnected,
-		ConfigChange
-	}
+	Connected,
+	Disconnected,
+	ConfigChange
 }

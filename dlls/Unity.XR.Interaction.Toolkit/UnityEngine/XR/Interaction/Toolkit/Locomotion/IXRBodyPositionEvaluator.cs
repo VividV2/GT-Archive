@@ -1,8 +1,12 @@
 using Unity.XR.CoreUtils;
 
-namespace UnityEngine.XR.Interaction.Toolkit.Locomotion;
-
-public interface IXRBodyPositionEvaluator
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion
 {
-	Vector3 GetBodyGroundLocalPosition(XROrigin xrOrigin);
+	public interface IXRBodyPositionEvaluator
+	{
+		Vector3 GetBodyGroundLocalPosition(XROrigin xrOrigin);
+	}
+}
+namespace UnityEngine.XR.Interaction.Toolkit.Transformers
+{
 }

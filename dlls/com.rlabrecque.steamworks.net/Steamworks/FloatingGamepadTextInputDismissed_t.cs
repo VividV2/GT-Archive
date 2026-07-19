@@ -1,10 +1,10 @@
-using System.Runtime.InteropServices;
-
 namespace Steamworks;
 
-[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
-[CallbackIdentity(738)]
-public struct FloatingGamepadTextInputDismissed_t
+public enum ESteamInputConfigurationEnableType
 {
-	public const int k_iCallback = 738;
+	k_ESteamInputConfigurationEnableType_None = 0,
+	k_ESteamInputConfigurationEnableType_Playstation = 1,
+	k_ESteamInputConfigurationEnableType_Xbox = 2,
+	k_ESteamInputConfigurationEnableType_Generic = 4,
+	k_ESteamInputConfigurationEnableType_Switch = 8
 }

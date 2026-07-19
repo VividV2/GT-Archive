@@ -2,19 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem.Utilities;
 
-namespace UnityEngine.InputSystem;
-
-public interface IInputActionCollection : IEnumerable<InputAction>, IEnumerable
+namespace UnityEngine.InputSystem.Composites
 {
-	InputBinding? bindingMask { get; set; }
+}
+namespace UnityEngine.InputSystem
+{
+	public interface IInputActionCollection : IEnumerable<InputAction>, IEnumerable
+	{
+		InputBinding? bindingMask { get; set; }
 
-	ReadOnlyArray<InputDevice>? devices { get; set; }
+		ReadOnlyArray<InputDevice>? devices { get; set; }
 
-	ReadOnlyArray<InputControlScheme> controlSchemes { get; }
+		ReadOnlyArray<InputControlScheme> controlSchemes { get; }
 
-	bool Contains(InputAction action);
+		bool Contains(InputAction action);
 
-	void Enable();
+		void Enable();
 
-	void Disable();
+		void Disable();
+	}
+}
+namespace UnityEngine.InputSystem.Composites
+{
 }

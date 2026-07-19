@@ -1,15 +1,8 @@
-namespace Sirenix.OdinInspector
+namespace Sirenix.OdinInspector;
+
+public enum LabelDirection
 {
-	public enum LabelDirection
-	{
-		LeftToRight,
-		TopToBottom,
-		BottomToTop
-	}
-}
-namespace Sirenix.OdinInspector
-{
-}
-namespace Sirenix.OdinInspector
-{
+	LeftToRight,
+	TopToBottom,
+	BottomToTop
 }

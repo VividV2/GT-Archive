@@ -1,5 +1,2 @@
-namespace UnityEngine.U2D;
+namespace UnityEngine.Events;
 
-public abstract class Light2DBase : MonoBehaviour
-{
-}

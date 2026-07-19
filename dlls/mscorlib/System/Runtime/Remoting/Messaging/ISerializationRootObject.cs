@@ -1,10 +1,8 @@
-namespace System.Runtime.Versioning;
+using System.Runtime.Serialization;
 
-[Flags]
-public enum ComponentGuaranteesOptions
+namespace System.Runtime.Remoting.Messaging;
+
+internal interface ISerializationRootObject
 {
-	None = 0,
-	Exchange = 1,
-	Stable = 2,
-	SideBySide = 4
+	void RootSetObjectData(SerializationInfo info, StreamingContext context);
 }

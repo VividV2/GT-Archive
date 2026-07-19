@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 
-namespace UnityEngine.UIElements;
-
-internal interface IScreenRaycaster
+namespace UnityEngine.UIElements
 {
-	void Update();
+	internal interface IScreenRaycaster
+	{
+		void Update();
 
-	IEnumerable<(Ray ray, Camera camera, bool isInsideCameraRect)> MakeRay(Vector2 mousePosition, int pointerId, int? targetDisplay);
+		IEnumerable<(Ray ray, Camera camera, bool isInsideCameraRect)> MakeRay(Vector2 mousePosition, int pointerId, int? targetDisplay);
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

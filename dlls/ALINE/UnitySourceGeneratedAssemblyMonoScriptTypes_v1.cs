@@ -1,2 +1,6 @@
-namespace Drawing;
-
+namespace Drawing
+{
+}
+namespace Drawing
+{
+}

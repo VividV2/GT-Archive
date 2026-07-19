@@ -1,22 +1,10 @@
-using System;
-using Unity.Collections;
-using System;
-using Unity.Collections;
+using UnityEngine.Bindings;
 
 namespace UnityEngine.Rendering
 {
-	public struct BatchCullingOutput
-	{
-		public NativeArray<BatchCullingOutputDrawCommands> drawCommands;
-
-		public NativeArray<IntPtr> customCullingResult;
-	}
-}
-namespace UnityEngine.Rendering
-{
-	[UnityEngine.Bindings.NativeHeader("Runtime/Graphics/MachineLearning/MachineLearningOperator.h")]
-	[UnityEngine.Bindings.NativeHeader("Runtime/Graphics/MachineLearning/MachineLearningContext.h")]
-	[UnityEngine.Bindings.NativeHeader("Runtime/Graphics/MachineLearning/MachineLearningOperatorAttributes.h")]
+	[NativeHeader("Runtime/Graphics/MachineLearning/MachineLearningOperator.h")]
+	[NativeHeader("Runtime/Graphics/MachineLearning/MachineLearningContext.h")]
+	[NativeHeader("Runtime/Graphics/MachineLearning/MachineLearningOperatorAttributes.h")]
 	public enum MachineLearningOperatorType : uint
 	{
 		None,
@@ -35,4 +23,7 @@ namespace UnityEngine.Rendering
 		ReduceLogSum,
 		ReduceLogSumExp
 	}
+}
+namespace UnityEngine
+{
 }

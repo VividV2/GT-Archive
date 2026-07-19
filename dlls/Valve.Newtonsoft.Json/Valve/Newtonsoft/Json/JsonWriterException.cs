@@ -1,12 +1,2 @@
-namespace Valve.Newtonsoft.Json.Utilities
-{
-}
-namespace Valve.Newtonsoft.Json
-{
-	public enum ObjectCreationHandling
-	{
-		Auto,
-		Reuse,
-		Replace
-	}
-}
+// Could not decompile Valve.Newtonsoft.Json.JsonWriterException
+// This type uses unsupported IL or has too many generic parameters.

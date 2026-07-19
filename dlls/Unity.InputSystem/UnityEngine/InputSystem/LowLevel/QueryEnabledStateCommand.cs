@@ -1,6 +1,2 @@
-namespace UnityEngine.InputSystem.DualShock
-{
-}
-namespace UnityEngine.InputSystem.UI
-{
-}
+// Could not decompile UnityEngine.InputSystem.LowLevel.QueryEnabledStateCommand
+// This type uses unsupported IL or has too many generic parameters.

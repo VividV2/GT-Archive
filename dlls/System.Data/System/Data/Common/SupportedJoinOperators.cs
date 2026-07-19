@@ -15,3 +15,6 @@ public enum SupportedJoinOperators
 	/// <summary>The data source supports full outer joins.</summary>
 	FullOuter = 8
 }
+namespace System.Data.Common
+{
+}

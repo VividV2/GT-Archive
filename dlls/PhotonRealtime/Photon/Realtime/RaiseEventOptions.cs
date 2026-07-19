@@ -1,9 +1,6 @@
-#define SUPPORTED_UNITY
-namespace Photon.Realtime;
-
-public enum AuthModeOption
+namespace Photon.Realtime
 {
-	Auth,
-	AuthOnce,
-	AuthOnceWss
+}
+namespace Photon.Realtime
+{
 }

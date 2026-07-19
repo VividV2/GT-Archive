@@ -1,9 +1,35 @@
-namespace Meta.XR.Acoustics;
+using System;
+using System.Runtime.InteropServices;
 
-public enum AcousticModel
+namespace Meta.XR.Acoustics
 {
-	Automatic = -1,
-	None = 0,
-	ShoeboxRoom = 1,
-	AcousticRayTracing = 3
+	public enum FaceType : uint
+	{
+		TRIANGLES,
+		QUADS
+	}
+}
+namespace Meta.XR.Acoustics
+{
+	public enum MaterialProperty : uint
+	{
+		ABSORPTION,
+		TRANSMISSION,
+		SCATTERING
+	}
+}
+namespace Meta.XR.Acoustics
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	public struct MeshGroup
+	{
+		public UIntPtr indexOffset;
+
+		public UIntPtr faceCount;
+
+		[MarshalAs(UnmanagedType.U4)]
+		public FaceType faceType;
+
+		public IntPtr material;
+	}
 }

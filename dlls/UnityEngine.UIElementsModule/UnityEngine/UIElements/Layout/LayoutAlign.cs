@@ -1,17 +1,13 @@
-namespace UnityEngine.UIElements.Layout
+namespace UnityEngine.UIElements.Layout;
+
+internal enum LayoutAlign
 {
-	internal enum LayoutAlign
-	{
-		Auto,
-		FlexStart,
-		Center,
-		FlexEnd,
-		Stretch,
-		Baseline,
-		SpaceBetween,
-		SpaceAround
-	}
-}
-namespace UnityEngine.UIElements.UIR
-{
+	Auto,
+	FlexStart,
+	Center,
+	FlexEnd,
+	Stretch,
+	Baseline,
+	SpaceBetween,
+	SpaceAround
 }

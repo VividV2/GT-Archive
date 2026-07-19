@@ -1,13 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ProfilesModels;
-
-[Serializable]
-public class GetTitlePlayersFromMasterPlayerAccountIdsResponse : PlayFabResultCommon
-{
-	public string TitleId;
-
-	public Dictionary<string, EntityKey> TitlePlayerAccounts;
-}
+// Could not decompile PlayFab.ProfilesModels.GetTitlePlayersFromMasterPlayerAccountIdsResponse
+// This type uses unsupported IL or has too many generic parameters.

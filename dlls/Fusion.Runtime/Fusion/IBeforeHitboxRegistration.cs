@@ -1,6 +1,10 @@
-namespace Fusion;
-
-public interface IBeforeHitboxRegistration : IPublicFacingInterface
+namespace Fusion
 {
-	void BeforeHitboxRegistration();
+	public interface IBeforeHitboxRegistration : IPublicFacingInterface
+	{
+		void BeforeHitboxRegistration();
+	}
+}
+namespace Fusion
+{
 }

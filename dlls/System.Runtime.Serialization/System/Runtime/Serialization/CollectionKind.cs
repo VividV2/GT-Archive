@@ -1,15 +1,19 @@
-namespace System.Runtime.Serialization;
-
-internal enum CollectionKind : byte
+namespace System.Runtime.Serialization
 {
-	None,
-	GenericDictionary,
-	Dictionary,
-	GenericList,
-	GenericCollection,
-	List,
-	GenericEnumerable,
-	Collection,
-	Enumerable,
-	Array
+}
+namespace System.Runtime.Serialization
+{
+	internal enum CollectionKind : byte
+	{
+		None,
+		GenericDictionary,
+		Dictionary,
+		GenericList,
+		GenericCollection,
+		List,
+		GenericEnumerable,
+		Collection,
+		Enumerable,
+		Array
+	}
 }

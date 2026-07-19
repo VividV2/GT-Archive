@@ -1,10 +1,3 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
-
-internal enum InternalArrayTypeE
+namespace System.Threading.Tasks.Sources
 {
-	Empty,
-	Single,
-	Jagged,
-	Rectangular,
-	Base64
 }

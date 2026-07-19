@@ -1,7 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public enum ShadingRateCombinerStage
-{
-	Primitive,
-	Fragment
-}
+// Could not decompile UnityEngine.Rendering.ShadingRateCombinerStage
+// This type uses unsupported IL or has too many generic parameters.

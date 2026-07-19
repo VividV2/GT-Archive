@@ -1,13 +1,2 @@
-using System.Diagnostics;
-using UnityEngine.Scripting;
-
-namespace UnityEngine.TextCore.LowLevel;
-
-[DebuggerDisplay("Script = {tag},  Language Count = {languages.Length}")]
-[UsedByNativeCode]
-internal struct OTL_Script
-{
-	public OTL_Tag tag;
-
-	public OTL_Language[] languages;
-}
+// Could not decompile UnityEngine.TextCore.LowLevel.OTL_Script
+// This type uses unsupported IL or has too many generic parameters.

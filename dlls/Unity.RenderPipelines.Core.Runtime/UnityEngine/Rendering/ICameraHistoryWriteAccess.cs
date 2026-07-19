@@ -1,13 +1,12 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public interface ICameraHistoryWriteAccess
 {
-	public interface ICameraHistoryWriteAccess
-	{
-		bool IsAccessRequested<Type>() where Type : ContextItem;
+	bool IsAccessRequested<Type>() where Type : ContextItem;
 
-		Type GetHistoryForWrite<Type>() where Type : ContextItem, new();
+	Type GetHistoryForWrite<Type>() where Type : ContextItem, new();
 
-		bool IsWritten<Type>() where Type : ContextItem;
-	}
+	bool IsWritten<Type>() where Type : ContextItem;
 }
 namespace UnityEngine.Rendering
 {

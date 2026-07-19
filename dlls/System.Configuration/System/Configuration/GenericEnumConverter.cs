@@ -1,102 +1,54 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
+using System.ComponentModel;
+using System.Globalization;
 
-namespace System.Configuration.Internal;
+namespace System.Configuration;
 
-/// <summary>Defines interfaces used by internal .NET structures to support a configuration root object.</summary>
-/// <summary>Defines interfaces used by internal .NET structures to support a configuration root object.</summary>
-/// <summary>Defines interfaces used by internal .NET structures to support a configuration root object.</summary>
-[ComVisible(false)]
-public interface IInternalConfigRoot
+/// <summary>Converts between a string and an enumeration type.</summary>
+public sealed class GenericEnumConverter : ConfigurationConverterBase
 {
-	/// <summary>Returns a value indicating whether the configuration is a design-time configuration.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the configuration is a design-time configuration; <see langword="false" /> if the configuration is not a design-time configuration.</returns>
-	/// <summary>Returns a value indicating whether the configuration is a design-time configuration.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the configuration is a design-time configuration; <see langword="false" /> if the configuration is not a design-time configuration.</returns>
-	/// <summary>Returns a value indicating whether the configuration is a design-time configuration.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the configuration is a design-time configuration; <see langword="false" /> if the configuration is not a design-time configuration.</returns>
-	bool IsDesignTime { get; }
+	private Type typeEnum;
 
-	/// <summary>Represents the method that handles the <see cref="E:System.Configuration.Internal.IInternalConfigRoot.ConfigChanged" /> event of an <see cref="T:System.Configuration.Internal.IInternalConfigRoot" /> object.</summary>
-	/// <summary>Represents the method that handles the <see cref="E:System.Configuration.Internal.IInternalConfigRoot.ConfigChanged" /> event of an <see cref="T:System.Configuration.Internal.IInternalConfigRoot" /> object.</summary>
-	/// <summary>Represents the method that handles the <see cref="E:System.Configuration.Internal.IInternalConfigRoot.ConfigChanged" /> event of an <see cref="T:System.Configuration.Internal.IInternalConfigRoot" /> object.</summary>
-	event InternalConfigEventHandler ConfigChanged;
+	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.GenericEnumConverter" /> class.</summary>
+	/// <param name="typeEnum">The enumeration type to convert.</param>
+	/// <exception cref="T:System.ArgumentNullException">
+	///   <paramref name="typeEnum" /> is <see langword="null" />.</exception>
+	public GenericEnumConverter(Type typeEnum)
+	{
+		if (typeEnum == null)
+		{
+			throw new ArgumentNullException("typeEnum");
+		}
+		this.typeEnum = typeEnum;
+	}
 
-	/// <summary>Represents the method that handles the <see cref="E:System.Configuration.Internal.IInternalConfigRoot.ConfigRemoved" /> event of a <see cref="T:System.Configuration.Internal.IInternalConfigRoot" /> object.</summary>
-	/// <summary>Represents the method that handles the <see cref="E:System.Configuration.Internal.IInternalConfigRoot.ConfigRemoved" /> event of a <see cref="T:System.Configuration.Internal.IInternalConfigRoot" /> object.</summary>
-	/// <summary>Represents the method that handles the <see cref="E:System.Configuration.Internal.IInternalConfigRoot.ConfigRemoved" /> event of a <see cref="T:System.Configuration.Internal.IInternalConfigRoot" /> object.</summary>
-	event InternalConfigEventHandler ConfigRemoved;
+	/// <summary>Converts a <see cref="T:System.String" /> to an <see cref="T:System.Enum" /> type.</summary>
+	/// <param name="ctx">The <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> object used for type conversions.</param>
+	/// <param name="ci">The <see cref="T:System.Globalization.CultureInfo" /> object used during conversion.</param>
+	/// <param name="data">The <see cref="T:System.String" /> object to convert.</param>
+	/// <returns>The <see cref="T:System.Enum" /> type that represents the <paramref name="data" /> parameter.</returns>
+	/// <exception cref="T:System.ArgumentException">
+	///   <paramref name="data" /> is null or an empty string ("").  
+	/// -or-
+	///  <paramref name="data" /> starts with a numeric character.  
+	/// -or-
+	///  <paramref name="data" /> includes white space.</exception>
+	public override object ConvertFrom(ITypeDescriptorContext ctx, CultureInfo ci, object data)
+	{
+		if (data == null)
+		{
+			throw new ArgumentException();
+		}
+		return Enum.Parse(typeEnum, (string)data);
+	}
 
-	/// <summary>Returns an <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a configuration specified by a configuration path.</summary>
-	/// <param name="configPath">A string representing the path to a configuration file.</param>
-	/// <returns>An <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a configuration specified by <paramref name="configPath" />.</returns>
-	/// <summary>Returns an <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a configuration specified by a configuration path.</summary>
-	/// <param name="configPath">A string representing the path to a configuration file.</param>
-	/// <returns>An <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a configuration specified by <paramref name="configPath" />.</returns>
-	/// <summary>Returns an <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a configuration specified by a configuration path.</summary>
-	/// <param name="configPath">A string representing the path to a configuration file.</param>
-	/// <returns>An <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a configuration specified by <paramref name="configPath" />.</returns>
-	IInternalConfigRecord GetConfigRecord(string configPath);
-
-	/// <summary>Returns an <see cref="T:System.Object" /> representing the data in a section of a configuration file.</summary>
-	/// <param name="section">A string representing a section of a configuration file.</param>
-	/// <param name="configPath">A string representing the path to a configuration file.</param>
-	/// <returns>An <see cref="T:System.Object" /> representing the data in a section of a configuration file.</returns>
-	/// <summary>Returns an <see cref="T:System.Object" /> representing the data in a section of a configuration file.</summary>
-	/// <param name="section">A string representing a section of a configuration file.</param>
-	/// <param name="configPath">A string representing the path to a configuration file.</param>
-	/// <returns>An <see cref="T:System.Object" /> representing the data in a section of a configuration file.</returns>
-	/// <summary>Returns an <see cref="T:System.Object" /> representing the data in a section of a configuration file.</summary>
-	/// <param name="section">A string representing a section of a configuration file.</param>
-	/// <param name="configPath">A string representing the path to a configuration file.</param>
-	/// <returns>An <see cref="T:System.Object" /> representing the data in a section of a configuration file.</returns>
-	object GetSection(string section, string configPath);
-
-	/// <summary>Returns a value representing the file path of the nearest configuration ancestor that has configuration data.</summary>
-	/// <param name="configPath">The path of configuration file.</param>
-	/// <returns>A string representing the file path of the nearest configuration ancestor that has configuration data.</returns>
-	/// <summary>Returns a value representing the file path of the nearest configuration ancestor that has configuration data.</summary>
-	/// <param name="configPath">The path of configuration file.</param>
-	/// <returns>A string representing the file path of the nearest configuration ancestor that has configuration data.</returns>
-	/// <summary>Returns a value representing the file path of the nearest configuration ancestor that has configuration data.</summary>
-	/// <param name="configPath">The path of configuration file.</param>
-	/// <returns>A string representing the file path of the nearest configuration ancestor that has configuration data.</returns>
-	string GetUniqueConfigPath(string configPath);
-
-	/// <summary>Returns an <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a unique configuration record for given configuration path.</summary>
-	/// <param name="configPath">The path of the configuration file.</param>
-	/// <returns>An <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a unique configuration record for a given configuration path.</returns>
-	/// <summary>Returns an <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a unique configuration record for given configuration path.</summary>
-	/// <param name="configPath">The path of the configuration file.</param>
-	/// <returns>An <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a unique configuration record for a given configuration path.</returns>
-	/// <summary>Returns an <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a unique configuration record for given configuration path.</summary>
-	/// <param name="configPath">The path of the configuration file.</param>
-	/// <returns>An <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object representing a unique configuration record for a given configuration path.</returns>
-	IInternalConfigRecord GetUniqueConfigRecord(string configPath);
-
-	/// <summary>Initializes a configuration object.</summary>
-	/// <param name="host">An <see cref="T:System.Configuration.Internal.IInternalConfigHost" /> object.</param>
-	/// <param name="isDesignTime">
-	///   <see langword="true" /> if design time; <see langword="false" /> if run time.</param>
-	/// <summary>Initializes a configuration object.</summary>
-	/// <param name="host">An <see cref="T:System.Configuration.Internal.IInternalConfigHost" /> object.</param>
-	/// <param name="isDesignTime">
-	///   <see langword="true" /> if design time; <see langword="false" /> if run time.</param>
-	/// <summary>Initializes a configuration object.</summary>
-	/// <param name="host">An <see cref="T:System.Configuration.Internal.IInternalConfigHost" /> object.</param>
-	/// <param name="isDesignTime">
-	///   <see langword="true" /> if design time; <see langword="false" /> if run time.</param>
-	void Init(IInternalConfigHost host, bool isDesignTime);
-
-	/// <summary>Finds and removes a configuration record and all its children for a given configuration path.</summary>
-	/// <param name="configPath">The path of the configuration file.</param>
-	/// <summary>Finds and removes a configuration record and all its children for a given configuration path.</summary>
-	/// <param name="configPath">The path of the configuration file.</param>
-	/// <summary>Finds and removes a configuration record and all its children for a given configuration path.</summary>
-	/// <param name="configPath">The path of the configuration file.</param>
-	void RemoveConfig(string configPath);
+	/// <summary>Converts an <see cref="T:System.Enum" /> type to a <see cref="T:System.String" /> value.</summary>
+	/// <param name="ctx">The <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> object used for type conversions.</param>
+	/// <param name="ci">The <see cref="T:System.Globalization.CultureInfo" /> object used during conversion.</param>
+	/// <param name="value">The value to convert to.</param>
+	/// <param name="type">The type to convert to.</param>
+	/// <returns>The <see cref="T:System.String" /> that represents the <paramref name="value" /> parameter.</returns>
+	public override object ConvertTo(ITypeDescriptorContext ctx, CultureInfo ci, object value, Type type)
+	{
+		return value.ToString();
+	}
 }

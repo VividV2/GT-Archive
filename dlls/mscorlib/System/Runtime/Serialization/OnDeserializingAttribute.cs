@@ -1,3 +1,3 @@
-namespace System.Runtime.Remoting.Activation
+namespace System
 {
 }

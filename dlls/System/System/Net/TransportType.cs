@@ -1,3 +1,3 @@
-namespace System.Net.WebSockets
+namespace System.Net
 {
 }

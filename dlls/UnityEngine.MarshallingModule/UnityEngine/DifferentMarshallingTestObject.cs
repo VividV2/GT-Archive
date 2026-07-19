@@ -1,12 +1,2 @@
-using System.Runtime.InteropServices;
-using UnityEngine.Bindings;
-using UnityEngine.Internal;
-
-namespace UnityEngine;
-
-[StructLayout(LayoutKind.Sequential)]
-[NativeHeader("Modules/Marshalling/MarshallingTests.h")]
-[ExcludeFromDocs]
-internal class DifferentMarshallingTestObject : Object
-{
-}
+// Could not decompile UnityEngine.DifferentMarshallingTestObject
+// This type uses unsupported IL or has too many generic parameters.

@@ -16,3 +16,6 @@ public static class OleDbMetaDataColumnNames
 	/// <summary>Used by the GetSchema method to create the NativeDataType column.</summary>
 	public static readonly string NativeDataType;
 }
+namespace System.Data
+{
+}

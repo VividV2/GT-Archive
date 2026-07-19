@@ -1,15 +1,11 @@
 using System;
 
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+[Flags]
+public enum UISubset
 {
-	[Flags]
-	public enum UISubset
-	{
-		UIToolkit_UGUI = 1,
-		LowLevel = 2,
-		All = -1
-	}
-}
-namespace UnityEngine.Rendering
-{
+	UIToolkit_UGUI = 1,
+	LowLevel = 2,
+	All = -1
 }

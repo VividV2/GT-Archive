@@ -1,5 +1,3 @@
-namespace System.Runtime.CompilerServices;
-
-public static class IsConst
+namespace System.Diagnostics.Contracts
 {
 }

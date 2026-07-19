@@ -1,12 +1,2 @@
-namespace System.Linq
-{
-}
-namespace System.Linq
-{
-	internal abstract class CachingComparer<TElement>
-	{
-		internal abstract int Compare(TElement element, bool cacheLower);
-
-		internal abstract void SetElement(TElement element);
-	}
-}
+// Could not decompile System.Linq.Parallel.LongAverageAggregationOperator
+// This type uses unsupported IL or has too many generic parameters.

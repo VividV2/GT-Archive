@@ -1,39 +1,32 @@
 using System;
 using System.Collections.Generic;
 
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+[Obsolete("This is not longer supported Please use DebugDisplaySettingsVolume. #from(6000.2)", false)]
+public interface IVolumeDebugSettings
 {
-	[Obsolete("This is not longer supported Please use DebugDisplaySettingsVolume. #from(6000.2)", false)]
-	public interface IVolumeDebugSettings
-	{
-		int selectedComponent { get; set; }
+	int selectedComponent { get; set; }
 
-		Camera selectedCamera { get; }
+	Camera selectedCamera { get; }
 
-		IEnumerable<Camera> cameras { get; }
+	IEnumerable<Camera> cameras { get; }
 
-		int selectedCameraIndex { get; set; }
+	int selectedCameraIndex { get; set; }
 
-		VolumeStack selectedCameraVolumeStack { get; }
+	VolumeStack selectedCameraVolumeStack { get; }
 
-		LayerMask selectedCameraLayerMask { get; }
+	LayerMask selectedCameraLayerMask { get; }
 
-		Vector3 selectedCameraPosition { get; }
+	Vector3 selectedCameraPosition { get; }
 
-		Type selectedComponentType { get; set; }
+	Type selectedComponentType { get; set; }
 
-		Volume[] GetVolumes();
+	Volume[] GetVolumes();
 
-		bool VolumeHasInfluence(Volume volume);
+	bool VolumeHasInfluence(Volume volume);
 
-		bool RefreshVolumes(Volume[] newVolumes);
+	bool RefreshVolumes(Volume[] newVolumes);
 
-		float GetVolumeWeight(Volume volume);
-	}
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
+	float GetVolumeWeight(Volume volume);
 }

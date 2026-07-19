@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using System.Threading.Tasks;
 
 namespace Modio.Authentication
 {
@@ -7,6 +8,20 @@ namespace Modio.Authentication
 		Task<string> GetActiveUserIdentifier();
 	}
 }
-namespace Modio.Users
+namespace Modio.Customizations
+{
+	[System.Serializable]
+	internal struct WssDeviceLoginResponse
+	{
+		public string code;
+
+		public long date_expires;
+
+		public string display_url;
+
+		public string login_url;
+	}
+}
+namespace Modio.Mods
 {
 }

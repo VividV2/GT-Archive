@@ -1,2 +1,2 @@
-namespace UnityEngine.Localization.Components;
-
+// Could not decompile UnityEngine.Localization.SmartFormat.Core.Parsing.Parser
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,11 +1,2 @@
-using Newtonsoft.Json;
-
-namespace Modio.API.SchemaDefinitions;
-
-[JsonObject(MemberSerialization.Fields)]
-internal readonly struct MetadataKvpObject(string metakey, string metavalue)
-{
-	internal readonly string Metakey = metakey;
-
-	internal readonly string Metavalue = metavalue;
-}
+// Could not decompile Modio.API.SchemaDefinitions.MetadataKvpObject
+// This type uses unsupported IL or has too many generic parameters.

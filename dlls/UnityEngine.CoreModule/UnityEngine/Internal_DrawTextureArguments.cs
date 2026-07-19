@@ -1,41 +1,45 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine;
-
-[VisibleToOtherModules(new string[] { "UnityEngine.IMGUIModule" })]
-internal struct Internal_DrawTextureArguments
+namespace UnityEngine
 {
-	public Rect screenRect;
+}
+namespace UnityEngine
+{
+	[VisibleToOtherModules(new string[] { "UnityEngine.IMGUIModule" })]
+	internal struct Internal_DrawTextureArguments
+	{
+		public Rect screenRect;
 
-	public Rect sourceRect;
+		public Rect sourceRect;
 
-	public int leftBorder;
+		public int leftBorder;
 
-	public int rightBorder;
+		public int rightBorder;
 
-	public int topBorder;
+		public int topBorder;
 
-	public int bottomBorder;
+		public int bottomBorder;
 
-	public Color leftBorderColor;
+		public Color leftBorderColor;
 
-	public Color rightBorderColor;
+		public Color rightBorderColor;
 
-	public Color topBorderColor;
+		public Color topBorderColor;
 
-	public Color bottomBorderColor;
+		public Color bottomBorderColor;
 
-	public Color color;
+		public Color color;
 
-	public Vector4 borderWidths;
+		public Vector4 borderWidths;
 
-	public Vector4 cornerRadiuses;
+		public Vector4 cornerRadiuses;
 
-	public bool smoothCorners;
+		public bool smoothCorners;
 
-	public int pass;
+		public int pass;
 
-	public Texture texture;
+		public Texture texture;
 
-	public Material mat;
+		public Material mat;
+	}
 }

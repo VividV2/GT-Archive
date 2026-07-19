@@ -1,27 +1,12 @@
-using System;
-using System;
+namespace OVR.OpenVR;
 
-namespace OVR.OpenVR
+public struct HmdQuaternion_t
 {
-	public struct VRTextureDepthInfo_t
-	{
-		public IntPtr handle;
+	public double w;
 
-		public HmdMatrix44_t mProjection;
+	public double x;
 
-		public HmdVector2_t vRange;
-	}
-}
-namespace OVR.OpenVR
-{
-	public struct HmdQuaternion_t
-	{
-		public double w;
+	public double y;
 
-		public double x;
-
-		public double y;
-
-		public double z;
-	}
+	public double z;
 }

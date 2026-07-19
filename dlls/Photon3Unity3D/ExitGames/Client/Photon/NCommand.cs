@@ -1,0 +1,2 @@
+namespace ExitGames.Client.Photon;
+

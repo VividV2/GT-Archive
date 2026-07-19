@@ -1,17 +1,24 @@
 using Oculus.Interaction.Input;
 using UnityEngine;
 
-namespace Oculus.Interaction;
-
-public interface IFingerAPI
+namespace Oculus.Interaction
 {
-	bool GetFingerIsGrabbing(HandFinger finger);
+	public interface IFingerAPI
+	{
+		bool GetFingerIsGrabbing(HandFinger finger);
 
-	bool GetFingerIsGrabbingChanged(HandFinger finger, bool targetPinchState);
+		bool GetFingerIsGrabbingChanged(HandFinger finger, bool targetPinchState);
 
-	float GetFingerGrabScore(HandFinger finger);
+		float GetFingerGrabScore(HandFinger finger);
 
-	Vector3 GetWristOffsetLocal();
+		Vector3 GetWristOffsetLocal();
 
-	void Update(IHand hand);
+		void Update(IHand hand);
+	}
+}
+namespace Oculus.Interaction.Input.Filter
+{
+}
+namespace Oculus.Interaction
+{
 }

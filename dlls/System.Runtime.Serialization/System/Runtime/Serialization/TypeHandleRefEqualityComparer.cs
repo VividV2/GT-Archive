@@ -1,16 +1,23 @@
-namespace System.Runtime.Serialization;
+using System.IO;
+using System.Text;
+using System.IO;
+using System.Text;
 
-/// <summary>Specifies how often to emit type information.</summary>
-/// <summary>Specifies how often to emit type information.</summary>
-public enum EmitTypeInformation
+namespace System.Xml;
+
+/// <summary>Specifies implementation requirements for XML text writers that derive from this interface.</summary>
+/// <summary>Specifies implementation requirements for XML text writers that derive from this interface.</summary>
+public interface IXmlTextWriterInitializer
 {
-	/// <summary>As needed emit type information.</summary>
-	/// <summary>As needed emit type information.</summary>
-	AsNeeded,
-	/// <summary>Always to emit type information.</summary>
-	/// <summary>Always to emit type information.</summary>
-	Always,
-	/// <summary>Never to emit type information.</summary>
-	/// <summary>Never to emit type information.</summary>
-	Never
+	/// <summary>Specifies initialization requirements for XML text writers that implement this method.</summary>
+	/// <param name="stream">The stream to write to.</param>
+	/// <param name="encoding">The character encoding of the stream.</param>
+	/// <param name="ownsStream">
+	///   <see langword="true" /> to indicate the stream is closed by the writer when done; otherwise, <see langword="false" />.</param>
+	/// <summary>Specifies initialization requirements for XML text writers that implement this method.</summary>
+	/// <param name="stream">The stream to write to.</param>
+	/// <param name="encoding">The character encoding of the stream.</param>
+	/// <param name="ownsStream">
+	///   <see langword="true" /> to indicate the stream is closed by the writer when done; otherwise, <see langword="false" />.</param>
+	void SetOutput(Stream stream, Encoding encoding, bool ownsStream);
 }

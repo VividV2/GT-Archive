@@ -1,8 +1,6 @@
-namespace UnityEngine.XR.OpenXR.Features.Extensions.PerformanceSettings;
-
-public enum PerformanceSubDomain
+namespace UnityEngine.XR.OpenXR.Features.Interactions
 {
-	Compositing = 1,
-	Rendering,
-	Thermal
+}
+namespace UnityEngine.XR.OpenXR.Features.Interactions
+{
 }

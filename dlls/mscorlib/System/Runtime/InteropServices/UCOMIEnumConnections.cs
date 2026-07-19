@@ -1,9 +1,2 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
+namespace System.Runtime.InteropServices;
 
-internal enum InternalObjectPositionE
-{
-	Empty,
-	Top,
-	Child,
-	Headers
-}

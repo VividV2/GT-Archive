@@ -1,11 +1,2 @@
-namespace UnityEngine;
-
-public enum LightShadows
-{
-	None,
-	Hard,
-	Soft
-}
-namespace UnityEngine
-{
-}
+// Could not decompile UnityEngine.CustomRenderTextureManager
+// This type uses unsupported IL or has too many generic parameters.

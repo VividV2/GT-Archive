@@ -1,16 +1,2 @@
-using System.IO;
-
-namespace ICSharpCode.SharpZipLib.Zip;
-
-public class DynamicDiskDataSource : IDynamicDataSource
-{
-	public Stream GetSource(ZipEntry entry, string name)
-	{
-		Stream result = null;
-		if (name != null)
-		{
-			result = File.Open(name, FileMode.Open, FileAccess.Read, FileShare.Read);
-		}
-		return result;
-	}
-}
+// Could not decompile ICSharpCode.SharpZipLib.Zip.DynamicDiskDataSource
+// This type uses unsupported IL or has too many generic parameters.

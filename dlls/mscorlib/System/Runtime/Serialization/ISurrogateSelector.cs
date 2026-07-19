@@ -1,3 +1,6 @@
-namespace System.Runtime.InteropServices
+namespace Mono.Math.Prime.Generator
+{
+}
+namespace System.Security.Cryptography
 {
 }

@@ -1,6 +1,2 @@
-namespace UnityEngine.InputSystem.DualShock.LowLevel
-{
-}
-namespace UnityEngine.InputSystem
-{
-}
+// Could not decompile UnityEngine.InputSystem.Users.InputUserAccountHandle
+// This type uses unsupported IL or has too many generic parameters.

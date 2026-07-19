@@ -1,19 +1,19 @@
-using UnityEngine;
+using System;
+using System;
 
-namespace Unity.XR.CoreUtils;
-
-public static class BoundsExtensions
+namespace Unity.XR.CoreUtils
 {
-	public static bool ContainsCompletely(this Bounds outerBounds, Bounds innerBounds)
+	public static class GuidExtensions
 	{
-		Vector3 max = outerBounds.max;
-		Vector3 min = outerBounds.min;
-		Vector3 max2 = innerBounds.max;
-		Vector3 min2 = innerBounds.min;
-		if (max.x >= max2.x && max.y >= max2.y && max.z >= max2.z && min.x <= min2.x && min.y <= min2.y)
+		public static void Decompose(this Guid guid, out ulong low, out ulong high)
 		{
-			return min.z <= min2.z;
+			byte[] value = guid.ToByteArray();
+			byte[] value;
+			low = BitConverter.ToUInt64(value, 0);
+			high = BitConverter.ToUInt64(value, 8);
 		}
-		return false;
 	}
+}
+namespace Unity.XR.CoreUtils
+{
 }

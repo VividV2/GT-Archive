@@ -1,6 +1,3 @@
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
-
-internal interface ITrackedPropertyRemoveVariant
+namespace UnityEngine.Localization.SmartFormat.PersistentVariables
 {
-	void RemoveVariant(LocaleIdentifier localeIdentifier);
 }

@@ -1,14 +1,25 @@
 using System.Collections.Generic;
 
-namespace System.Net;
-
-internal interface IWebProxyFinder : IDisposable
+namespace System.Net
 {
-	bool IsValid { get; }
+	internal enum FtpLoginState : byte
+	{
+		NotLoggedIn,
+		LoggedIn,
+		LoggedInButNeedsRelogin,
+		ReloginFailed
+	}
+}
+namespace System.Net
+{
+	internal interface IWebProxyFinder : IDisposable
+	{
+		bool IsValid { get; }
 
-	bool GetProxies(Uri destination, out IList<string> proxyList);
+		bool GetProxies(Uri destination, out IList<string> proxyList);
 
-	void Abort();
+		void Abort();
 
-	void Reset();
+		void Reset();
+	}
 }

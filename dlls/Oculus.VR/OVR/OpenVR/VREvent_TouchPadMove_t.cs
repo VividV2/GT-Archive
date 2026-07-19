@@ -1,10 +1,19 @@
+using System.Runtime.InteropServices;
+
 namespace OVR.OpenVR;
 
-public struct VREvent_Scroll_t
+public struct VREvent_TouchPadMove_t
 {
-	public float xdelta;
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bFingerDown;
 
-	public float ydelta;
+	public float flSecondsFingerDown;
 
-	public uint repeatCount;
+	public float fValueXFirst;
+
+	public float fValueYFirst;
+
+	public float fValueXRaw;
+
+	public float fValueYRaw;
 }

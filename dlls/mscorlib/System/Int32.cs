@@ -1,2 +1,2 @@
-namespace Microsoft.Win32.SafeHandles;
-
+// Could not decompile System.Int32
+// This type uses unsupported IL or has too many generic parameters.

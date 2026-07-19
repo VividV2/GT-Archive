@@ -1,2 +1,19 @@
-namespace PlayFab.ClientModels;
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
 
+namespace PlayFab.ClientModels
+{
+}
+namespace PlayFab.ClientModels
+{
+	[Serializable]
+	public class OpenTradeRequest : PlayFabRequestCommon
+	{
+		public List<string> AllowedPlayerIds;
+
+		public List<string> OfferedInventoryInstanceIds;
+
+		public List<string> RequestedCatalogItemIds;
+	}
+}

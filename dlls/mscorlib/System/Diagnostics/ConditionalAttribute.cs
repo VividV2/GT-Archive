@@ -1,11 +1,2 @@
-namespace System.Diagnostics.CodeAnalysis
-{
-	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue, Inherited = false)]
-	public sealed class MaybeNullAttribute : Attribute
-	{
-		public MaybeNullAttribute()
-		{
-			base..ctor();
-		}
-	}
-}
+// Could not decompile System.Diagnostics.ConditionalAttribute
+// This type uses unsupported IL or has too many generic parameters.

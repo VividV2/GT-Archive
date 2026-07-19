@@ -1,6 +1,2 @@
-public interface IGameHittable
-{
-	bool IsHitValid(GameHitData hit);
-
-	void OnHit(GameHitData hit);
-}
+// Could not decompile ShaderProps
+// This type uses unsupported IL or has too many generic parameters.

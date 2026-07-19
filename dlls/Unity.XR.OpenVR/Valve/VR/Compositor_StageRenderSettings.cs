@@ -1,6 +1,8 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public struct VRControllerAxis_t
 {
-}
-namespace Valve.VR
-{
+	public float x;
+
+	public float y;
 }

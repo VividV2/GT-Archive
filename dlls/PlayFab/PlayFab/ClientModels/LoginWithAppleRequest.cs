@@ -1,3 +1,8 @@
-namespace PlayFab.ClientModels
+namespace Ionic.Zlib;
+
+internal enum DeflateFlavor
 {
+	Store,
+	Fast,
+	Slow
 }

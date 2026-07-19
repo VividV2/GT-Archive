@@ -1,16 +1,2 @@
-namespace Newtonsoft.Json;
-
-public interface IArrayPool<T>
-{
-	T[] Rent(int minimumLength);
-
-	void Return(T[]? array);
-}
-namespace Newtonsoft.Json
-{
-	public enum MissingMemberHandling
-	{
-		Ignore,
-		Error
-	}
-}
+// Could not decompile Newtonsoft.Json.MissingMemberHandling
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,17 +1,15 @@
 using System.Security.Cryptography.Asn1;
-using System.Security.Cryptography.Asn1;
 
-namespace System.Security.Cryptography.Pkcs.Asn1
+namespace System.Security.Cryptography.Pkcs.Asn1;
+
+internal struct IssuerAndSerialNumberAsn
 {
-	internal struct IssuerAndSerialNumberAsn
-	{
-		[AnyValue]
-		public ReadOnlyMemory<byte> Issuer;
+	[AnyValue]
+	public ReadOnlyMemory<byte> Issuer;
 
-		[Integer]
-		public ReadOnlyMemory<byte> SerialNumber;
-	}
+	[Integer]
+	public ReadOnlyMemory<byte> SerialNumber;
 }
-namespace System.Security.Cryptography.Pkcs
+namespace System.Security.Cryptography.Pkcs.Asn1
 {
 }

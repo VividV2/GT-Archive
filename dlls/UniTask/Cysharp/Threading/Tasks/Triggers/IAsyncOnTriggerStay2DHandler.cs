@@ -1,8 +1,13 @@
-using UnityEngine;
-
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnTriggerStay2DHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask<Collider2D> OnTriggerStay2DAsync();
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+	public interface IAsyncOnSubmitHandler
+	{
+		UniTask<BaseEventData> OnSubmitAsync();
+	}
 }

@@ -1,12 +1,2 @@
-internal static class OVREnumerable
-{
-	public unsafe static int CopyTo<T>(this OVREnumerable<T> enumerable, T* memory) where T : unmanaged
-	{
-		int result = 0;
-		foreach (T item in enumerable)
-		{
-			memory[result++] = item;
-		}
-		return result;
-	}
-}
+// Could not decompile OVREnumerable
+// This type uses unsupported IL or has too many generic parameters.

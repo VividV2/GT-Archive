@@ -1,13 +1,9 @@
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.Rendering.RenderGraphModule
+namespace UnityEngine.Rendering.RenderGraphModule;
+
+[MovedFrom(true, "UnityEngine.Experimental.Rendering.RenderGraphModule", "UnityEngine.Rendering.RenderGraphModule", null)]
+public interface IRenderGraphRecorder
 {
-	[MovedFrom(true, "UnityEngine.Experimental.Rendering.RenderGraphModule", "UnityEngine.Rendering.RenderGraphModule", null)]
-	public interface IRenderGraphRecorder
-	{
-		void RecordRenderGraph(RenderGraph renderGraph, ContextContainer frameData);
-	}
-}
-namespace UnityEngine.Rendering
-{
+	void RecordRenderGraph(RenderGraph renderGraph, ContextContainer frameData);
 }

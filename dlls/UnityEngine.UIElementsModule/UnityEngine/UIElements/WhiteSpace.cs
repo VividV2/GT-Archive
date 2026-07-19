@@ -1,18 +1,9 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum WhiteSpace
 {
-	public enum WhiteSpace
-	{
-		Normal,
-		NoWrap,
-		Pre,
-		PreWrap
-	}
-}
-namespace UnityEngine.UIElements
-{
-	public enum EditorTextRenderingMode
-	{
-		SDF,
-		Bitmap
-	}
+	Normal,
+	NoWrap,
+	Pre,
+	PreWrap
 }

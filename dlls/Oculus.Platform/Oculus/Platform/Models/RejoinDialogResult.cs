@@ -1,17 +1,13 @@
 using System;
 
-namespace Oculus.Platform.Models
-{
-	public class RejoinDialogResult
-	{
-		public readonly bool RejoinSelected;
+namespace Oculus.Platform.Models;
 
-		public RejoinDialogResult(IntPtr o)
-		{
-			RejoinSelected = CAPI.ovr_RejoinDialogResult_GetRejoinSelected(o);
-		}
-	}
-}
-namespace Oculus.Platform
+public class RejoinDialogResult
 {
+	public readonly bool RejoinSelected;
+
+	public RejoinDialogResult(IntPtr o)
+	{
+		RejoinSelected = CAPI.ovr_RejoinDialogResult_GetRejoinSelected(o);
+	}
 }

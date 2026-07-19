@@ -4,9 +4,9 @@ using System;
 namespace Meta.XR.Acoustics;
 
 [Flags]
-public enum MeshFlags : uint
+public enum ObjectFlags : uint
 {
-	NONE = 0u,
-	ENABLE_SIMPLIFICATION = 1u,
-	ENABLE_DIFFRACTION = 2u
+	EMPTY = 0u,
+	ENABLED = 1u,
+	STATIC = 2u
 }

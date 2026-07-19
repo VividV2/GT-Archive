@@ -1,17 +1,41 @@
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 
 namespace KID.Model;
 
-[JsonConverter(typeof(StringEnumConverter))]
-public enum ChallengeType
+public abstract class AbstractOpenAPISchema
 {
-	[EnumMember(Value = "CHALLENGE_PARENTAL_CONSENT")]
-	PARENTALCONSENT = 1,
-	[EnumMember(Value = "CHALLENGE_SESSION_UPGRADE")]
-	SESSIONUPGRADE
+	public static readonly JsonSerializerSettings SerializerSettings = new JsonSerializerSettings
+	{
+		ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+		MissingMemberHandling = MissingMemberHandling.Error,
+		ContractResolver = new DefaultContractResolver
+		{
+			NamingStrategy = new CamelCaseNamingStrategy
+			{
+				OverrideSpecifiedNames = false
+			}
+		}
+	};
+
+	public static readonly JsonSerializerSettings AdditionalPropertiesSerializerSettings = new JsonSerializerSettings
+	{
+		ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+		MissingMemberHandling = MissingMemberHandling.Ignore,
+		ContractResolver = new DefaultContractResolver
+		{
+			NamingStrategy = new CamelCaseNamingStrategy
+			{
+				OverrideSpecifiedNames = false
+			}
+		}
+	};
+
+	public abstract object ActualInstance { get; set; }
+
+	public bool IsNullable { get; protected set; }
+
+	public string SchemaType { get; protected set; }
+
+	public abstract string ToJson();
 }

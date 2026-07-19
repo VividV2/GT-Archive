@@ -1,22 +1,26 @@
-namespace System.Net;
-
-internal class ReceiveState
+namespace System.Net
 {
-	private const int bufferSize = 1024;
-
-	internal ResponseDescription Resp;
-
-	internal int ValidThrough;
-
-	internal byte[] Buffer;
-
-	internal CommandStream Connection;
-
-	internal ReceiveState(CommandStream connection)
+	internal class ReceiveState
 	{
-		Connection = connection;
-		Resp = new ResponseDescription();
-		Buffer = new byte[1024];
-		ValidThrough = 0;
+		private const int bufferSize = 1024;
+
+		internal ResponseDescription Resp;
+
+		internal int ValidThrough;
+
+		internal byte[] Buffer;
+
+		internal CommandStream Connection;
+
+		internal ReceiveState(CommandStream connection)
+		{
+			Connection = connection;
+			Resp = new ResponseDescription();
+			Buffer = new byte[1024];
+			ValidThrough = 0;
+		}
 	}
+}
+namespace System.IO
+{
 }

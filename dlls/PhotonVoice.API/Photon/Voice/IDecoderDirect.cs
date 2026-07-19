@@ -1,8 +1,15 @@
 using System;
 
-namespace Photon.Voice;
-
-public interface IDecoderDirect<B> : IDecoder, IDisposable
+namespace Photon.Voice
 {
-	Action<B> Output { get; set; }
+}
+namespace Photon.Voice
+{
+}
+namespace Photon.Voice
+{
+	public interface IDecoderDirect<B> : IDecoder, IDisposable
+	{
+		Action<B> Output { get; set; }
+	}
 }

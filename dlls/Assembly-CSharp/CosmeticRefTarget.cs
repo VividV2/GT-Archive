@@ -1,6 +1,2 @@
-using UnityEngine;
-
-public class CosmeticRefTarget : MonoBehaviour
-{
-	public CosmeticRefID id;
-}
+// Could not decompile CosmeticRefTarget
+// This type uses unsupported IL or has too many generic parameters.

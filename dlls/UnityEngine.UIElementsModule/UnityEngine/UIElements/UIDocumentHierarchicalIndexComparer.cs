@@ -1,11 +1,14 @@
-using System.Collections.Generic;
-
 namespace UnityEngine.UIElements;
 
-internal class UIDocumentHierarchicalIndexComparer : IComparer<UIDocumentHierarchicalIndex>
+public enum TextOverflowPosition
 {
-	public int Compare(UIDocumentHierarchicalIndex x, UIDocumentHierarchicalIndex y)
-	{
-		return x.CompareTo(y);
-	}
+	End,
+	Start,
+	Middle
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
 }

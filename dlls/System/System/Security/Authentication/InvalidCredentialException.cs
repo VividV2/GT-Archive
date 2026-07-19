@@ -1,15 +1,2 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-
-namespace System.Net;
-
-internal interface IWebProxyFinder : IDisposable
-{
-	bool IsValid { get; }
-
-	bool GetProxies(Uri destination, out IList<string> proxyList);
-
-	void Abort();
-
-	void Reset();
-}
+// Could not decompile System.Security.Authentication.InvalidCredentialException
+// This type uses unsupported IL or has too many generic parameters.

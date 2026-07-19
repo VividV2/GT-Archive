@@ -1,25 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Oculus.Interaction.Collections;
-
-public interface IEnumerableHashSet<T> : IEnumerable<T>, IEnumerable
+namespace Oculus.Interaction
 {
-	int Count { get; }
+	[Serializable]
+	public struct MaterialPropertyColor
+	{
+		public string name;
 
-	new HashSet<T>.Enumerator GetEnumerator();
+		[ColorUsage(true, true)]
+		public Color value;
+	}
+}
+namespace Oculus.Interaction.Collections
+{
+	public interface IEnumerableHashSet<T> : IEnumerable<T>, IEnumerable
+	{
+		int Count { get; }
 
-	bool Contains(T item);
+		new HashSet<T>.Enumerator GetEnumerator();
 
-	bool IsProperSubsetOf(IEnumerable<T> other);
+		bool Contains(T item);
 
-	bool IsProperSupersetOf(IEnumerable<T> other);
+		bool IsProperSubsetOf(IEnumerable<T> other);
 
-	bool IsSubsetOf(IEnumerable<T> other);
+		bool IsProperSupersetOf(IEnumerable<T> other);
 
-	bool IsSupersetOf(IEnumerable<T> other);
+		bool IsSubsetOf(IEnumerable<T> other);
 
-	bool Overlaps(IEnumerable<T> other);
+		bool IsSupersetOf(IEnumerable<T> other);
 
-	bool SetEquals(IEnumerable<T> other);
+		bool Overlaps(IEnumerable<T> other);
+
+		bool SetEquals(IEnumerable<T> other);
+	}
+}
+namespace Oculus.Interaction.HandGrab
+{
 }

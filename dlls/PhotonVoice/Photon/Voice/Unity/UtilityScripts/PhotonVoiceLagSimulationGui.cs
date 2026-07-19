@@ -1,6 +1,2 @@
-namespace Photon.Voice.Unity.UtilityScripts
-{
-}
-namespace Photon.Voice.Unity.UtilityScripts
-{
-}
+// Could not decompile Photon.Voice.Unity.UtilityScripts.PhotonVoiceLagSimulationGui
+// This type uses unsupported IL or has too many generic parameters.

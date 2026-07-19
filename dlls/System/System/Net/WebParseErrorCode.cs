@@ -1,12 +1,16 @@
-namespace System.Net;
-
-internal enum WebParseErrorCode
+namespace System.Net
 {
-	Generic,
-	InvalidHeaderName,
-	InvalidContentLength,
-	IncompleteHeaderLine,
-	CrLfError,
-	InvalidChunkFormat,
-	UnexpectedServerResponse
+	internal enum WebParseErrorCode
+	{
+		Generic,
+		InvalidHeaderName,
+		InvalidContentLength,
+		IncompleteHeaderLine,
+		CrLfError,
+		InvalidChunkFormat,
+		UnexpectedServerResponse
+	}
+}
+namespace System.Net
+{
 }

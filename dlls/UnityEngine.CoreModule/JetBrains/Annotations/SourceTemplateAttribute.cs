@@ -1,8 +1,12 @@
 using System;
 
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.Method)]
-public sealed class SourceTemplateAttribute : Attribute
+namespace JetBrains.Annotations
+{
+	[AttributeUsage(AttributeTargets.Method)]
+	public sealed class SourceTemplateAttribute : Attribute
+	{
+	}
+}
+namespace Unity.IO.LowLevel.Unsafe
 {
 }

@@ -1,3 +1,6 @@
-namespace System.CodeDom
+namespace System.ComponentModel
+{
+}
+namespace System.Net.Cache
 {
 }

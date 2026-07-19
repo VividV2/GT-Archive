@@ -1,6 +1,2 @@
-using System;
-
-[Serializable]
-public class CooldownType : CallLimitType<CallLimiterWithCooldown>
-{
-}
+// Could not decompile CooldownType
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,22 +1,2 @@
-using System;
-using Unity.XR.CoreUtils.Datums;
-
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering
-{
-	[Serializable]
-	public class PokeThresholdDatumProperty : DatumProperty<PokeThresholdData, PokeThresholdDatum>
-	{
-		public PokeThresholdDatumProperty(PokeThresholdData value)
-			: base(value)
-		{
-		}
-
-		public PokeThresholdDatumProperty(PokeThresholdDatum datum)
-			: base(datum)
-		{
-		}
-	}
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs
-{
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Filtering.PokeThresholdDatumProperty
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,9 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-namespace GorillaTag.GuidedRefs;
-
-[CreateAssetMenu(fileName = "Unnamed_GuidedRefTargetIdSO", menuName = "Gorilla Tag/GuidedRefTargetIdSO")]
-public class GuidedRefTargetIdSO : GuidedRefIdBaseSO
-{
-}
+// Could not decompile GorillaTag.GuidedRefs.GuidedRefTargetIdSO
+// This type uses unsupported IL or has too many generic parameters.

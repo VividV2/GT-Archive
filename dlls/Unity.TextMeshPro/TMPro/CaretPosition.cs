@@ -1,8 +1,12 @@
-namespace TMPro;
-
-public enum CaretPosition
+namespace TMPro
 {
-	None,
-	Left,
-	Right
+	public enum CaretPosition
+	{
+		None,
+		Left,
+		Right
+	}
+}
+namespace TMPro
+{
 }

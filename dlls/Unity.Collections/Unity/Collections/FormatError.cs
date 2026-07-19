@@ -1,8 +1,12 @@
-namespace Unity.Collections;
-
-public enum FormatError
+namespace Unity.Collections
 {
-	None,
-	Overflow,
-	BadFormatSpecifier
+	public enum FormatError
+	{
+		None,
+		Overflow,
+		BadFormatSpecifier
+	}
+}
+namespace Unity.Collections
+{
 }

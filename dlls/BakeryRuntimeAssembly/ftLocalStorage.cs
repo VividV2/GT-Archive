@@ -1,11 +1,2 @@
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ftLocalStorage : ScriptableObject
-{
-	[SerializeField]
-	public List<string> modifiedAssetPathList = new List<string>();
-
-	[SerializeField]
-	public List<int> modifiedAssetPaddingHash = new List<int>();
-}
+// Could not decompile ftLocalStorage
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,6 @@
-namespace GorillaLocomotion.Gameplay;
-
+namespace GorillaTagScripts
+{
+}
+namespace Viveport
+{
+}

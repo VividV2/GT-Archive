@@ -1,9 +1,10 @@
-namespace Newtonsoft.Json
+using System;
+
+namespace Newtonsoft.Json.Linq;
+
+[Flags]
+public enum MergeNullValueHandling
 {
-	public enum MemberSerialization
-	{
-		OptOut,
-		OptIn,
-		Fields
-	}
+	Ignore = 0,
+	Merge = 1
 }

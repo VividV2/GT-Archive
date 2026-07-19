@@ -1,15 +1,16 @@
-using System.Runtime.InteropServices;
-
-namespace System.IO
+namespace System.Net
 {
-}
-namespace System.Net.NetworkInformation
-{
-	internal struct Win32_SOCKADDR
+	internal enum WebParseErrorCode
 	{
-		public ushort AddressFamily;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 28)]
-		public byte[] AddressData;
+		Generic,
+		InvalidHeaderName,
+		InvalidContentLength,
+		IncompleteHeaderLine,
+		CrLfError,
+		InvalidChunkFormat,
+		UnexpectedServerResponse
 	}
+}
+namespace System.Net
+{
 }

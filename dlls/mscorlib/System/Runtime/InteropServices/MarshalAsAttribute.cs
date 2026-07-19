@@ -1,9 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace System.Runtime.Remoting.Channels;
-
-[ComVisible(true)]
-public interface IServerFormatterSinkProvider : IServerChannelSinkProvider
-{
-}
+// Could not decompile System.Runtime.InteropServices.MarshalAsAttribute
+// This type uses unsupported IL or has too many generic parameters.

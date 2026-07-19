@@ -2,6 +2,9 @@ using System.Runtime.InteropServices;
 
 namespace System.Security.Cryptography
 {
+}
+namespace System.Security.Cryptography
+{
 	/// <summary>Specifies the block cipher mode to use for encryption.</summary>
 	[Serializable]
 	[ComVisible(true)]
@@ -18,7 +21,4 @@ namespace System.Security.Cryptography
 		/// <summary>The Cipher Text Stealing (<see langword="CTS" />) mode handles any length of plain text and produces cipher text whose length matches the plain text length. This mode behaves like the <see langword="CBC" /> mode for all but the last two blocks of the plain text.</summary>
 		CTS
 	}
-}
-namespace System.Security.Cryptography
-{
 }

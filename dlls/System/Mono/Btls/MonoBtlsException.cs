@@ -1,25 +1,9 @@
-using System;
+namespace System.ComponentModel;
 
-namespace Mono.Btls;
-
-internal class MonoBtlsException : Exception
-{
-	public MonoBtlsException()
-	{
-	}
-
-	public MonoBtlsException(MonoBtlsSslError error)
-		: base(error.ToString())
-	{
-	}
-
-	public MonoBtlsException(string message)
-		: base(message)
-	{
-	}
-
-	public MonoBtlsException(string format, params object[] args)
-		: base(string.Format(format, args))
-	{
-	}
-}
+/// <summary>Represents the method that handles the <see cref="E:System.Data.DataColumnCollection.CollectionChanged" /> event raised when adding elements to or removing elements from a collection.</summary>
+/// <param name="sender">The source of the event.</param>
+/// <param name="e">A <see cref="T:System.ComponentModel.CollectionChangeEventArgs" /> that contains the event data.</param>
+/// <summary>Represents the method that handles the <see cref="E:System.Data.DataColumnCollection.CollectionChanged" /> event raised when adding elements to or removing elements from a collection.</summary>
+/// <param name="sender">The source of the event.</param>
+/// <param name="e">A <see cref="T:System.ComponentModel.CollectionChangeEventArgs" /> that contains the event data.</param>
+public delegate void CollectionChangeEventHandler(object sender, CollectionChangeEventArgs e);

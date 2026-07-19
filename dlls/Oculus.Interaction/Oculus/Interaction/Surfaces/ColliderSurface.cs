@@ -1,11 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-namespace Oculus.Interaction.DebugTree;
-
-public interface INodeUI<TLeaf> where TLeaf : class
-{
-	RectTransform ChildArea { get; }
-
-	void Bind(ITreeNode<TLeaf> node, bool isRoot, bool isDuplicate);
-}
+// Could not decompile Oculus.Interaction.Surfaces.ColliderSurface
+// This type uses unsupported IL or has too many generic parameters.

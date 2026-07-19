@@ -1,28 +1,15 @@
-using System;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine;
 
-namespace Liv.Lck.Encoding;
+namespace Liv.Lck.Cosmetics;
 
-internal struct LckEncodedPacketCallback
+public interface ILckCosmeticDependant
 {
-	public IntPtr CallbackObjectPtr { get; set; }
+	string PlayerId { get; }
 
-	public IntPtr CallbackFunctionPtr { get; set; }
+	string GetCosmeticType();
 
-	public bool IsValid
-	{
-		get
-		{
-			if (CallbackObjectPtr != IntPtr.Zero)
-			{
-				return CallbackFunctionPtr != IntPtr.Zero;
-			}
-			return false;
-		}
-	}
-
-	public LckEncodedPacketCallback(IntPtr callbackObjectPtr, IntPtr callbackFunctionPtr)
-	{
-		CallbackObjectPtr = callbackObjectPtr;
-		CallbackFunctionPtr = callbackFunctionPtr;
-	}
+	void OnCosmeticLoaded(List<Object> assets);
 }

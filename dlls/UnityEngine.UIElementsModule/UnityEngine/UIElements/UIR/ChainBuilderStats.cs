@@ -1,18 +1,11 @@
-namespace UnityEngine.UIElements.Layout
+namespace UnityEngine.UIElements
 {
-	internal enum LayoutUnit
+	public enum Visibility
 	{
-		Undefined,
-		Point,
-		Percent,
-		Auto
+		Visible,
+		Hidden
 	}
 }
-namespace UnityEngine.UIElements.StyleSheets
+namespace UnityEngine.UIElements
 {
-}
-namespace UnityEngine.UIElements.Layout
-{
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	internal delegate void InvokeMeasureFunctionDelegate(ref LayoutNode node, float width, LayoutMeasureMode widthMode, float height, LayoutMeasureMode heightMode, ref IntPtr exception, out LayoutSize result);
 }

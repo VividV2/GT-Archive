@@ -1,2 +1,2 @@
-namespace Liv.Lck.Rendering;
-
+// Could not decompile Liv.Lck.DependencyInjection.LckDiRegistry
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,0 +1,2 @@
+// Could not decompile UnityEngine.InputSystem.DualShock.LowLevel.DualSenseHIDUSBOutputReport
+// This type uses unsupported IL or has too many generic parameters.

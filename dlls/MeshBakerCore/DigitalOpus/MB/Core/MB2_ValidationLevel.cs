@@ -1,8 +1,12 @@
-namespace DigitalOpus.MB.Core;
-
-public enum MB2_ValidationLevel
+namespace DigitalOpus.MB.Core
 {
-	none,
-	quick,
-	robust
+	public enum MB2_ValidationLevel
+	{
+		none,
+		quick,
+		robust
+	}
+}
+namespace DigitalOpus.MB.Core
+{
 }

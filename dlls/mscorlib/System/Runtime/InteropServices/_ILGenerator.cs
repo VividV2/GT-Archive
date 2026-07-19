@@ -1,3 +1,2 @@
-namespace System.Runtime.Serialization
-{
-}
+namespace System.Security.AccessControl;
+

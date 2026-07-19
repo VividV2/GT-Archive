@@ -1,8 +1,12 @@
 using UnityEngine;
 
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnCollisionStay2DHandler
+namespace Cysharp.Threading.Tasks.CompilerServices
 {
-	UniTask<Collision2D> OnCollisionStay2DAsync();
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+	public interface IAsyncOnCollisionStay2DHandler
+	{
+		UniTask<Collision2D> OnCollisionStay2DAsync();
+	}
 }

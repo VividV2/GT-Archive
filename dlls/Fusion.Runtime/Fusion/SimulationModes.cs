@@ -1,6 +1,3 @@
 namespace Fusion
 {
 }
-namespace Fusion
-{
-}

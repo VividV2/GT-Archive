@@ -1,3 +1,3 @@
-namespace System.Runtime.ExceptionServices
+namespace System.Security.Permissions
 {
 }

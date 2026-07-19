@@ -1,8 +1,12 @@
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
-
-public interface ITrackedProperty
+namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
 {
-	string PropertyPath { get; set; }
+	public interface ITrackedProperty
+	{
+		string PropertyPath { get; set; }
 
-	bool HasVariant(LocaleIdentifier localeIdentifier);
+		bool HasVariant(LocaleIdentifier localeIdentifier);
+	}
+}
+namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
+{
 }

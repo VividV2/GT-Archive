@@ -1,6 +1,10 @@
-namespace System;
-
-internal interface TypeIdentifier : TypeName, IEquatable<TypeName>
+namespace System
 {
-	string InternalName { get; }
+	internal interface TypeIdentifier : TypeName, IEquatable<TypeName>
+	{
+		string InternalName { get; }
+	}
+}
+namespace System.Runtime.Hosting
+{
 }

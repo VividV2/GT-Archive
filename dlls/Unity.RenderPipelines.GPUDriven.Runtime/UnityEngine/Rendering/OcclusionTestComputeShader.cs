@@ -1,14 +1,2 @@
-namespace UnityEngine.Rendering;
-
-internal struct OcclusionTestComputeShader
-{
-	public ComputeShader cs;
-
-	public LocalKeyword occlusionDebugKeyword;
-
-	public void Init(ComputeShader cs)
-	{
-		this.cs = cs;
-		occlusionDebugKeyword = new LocalKeyword(cs, "OCCLUSION_DEBUG");
-	}
-}
+// Could not decompile UnityEngine.Rendering.OcclusionTestComputeShader
+// This type uses unsupported IL or has too many generic parameters.

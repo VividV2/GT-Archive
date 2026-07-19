@@ -1,13 +1,2 @@
-using System.Runtime.InteropServices;
-using UnityEngine.Bindings;
-
-namespace UnityEngine.UIElements;
-
-[NativeType(Header = "Modules/UIElements/VisualNodeImguiData.h")]
-internal struct VisualNodeImguiData
-{
-	[MarshalAs(UnmanagedType.U1)]
-	public bool IsContainer;
-
-	public int DescendantCount;
-}
+// Could not decompile UnityEngine.UIElements.VisualNodeImguiData
+// This type uses unsupported IL or has too many generic parameters.

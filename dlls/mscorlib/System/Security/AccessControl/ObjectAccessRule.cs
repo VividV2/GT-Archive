@@ -1,6 +1,2 @@
-namespace System.Security.AccessControl;
-
-public enum CompoundAceType
-{
-	Impersonation = 1
-}
+// Could not decompile System.Security.AccessControl.ObjectAccessRule
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,16 +1,20 @@
 using System;
 
-namespace ICSharpCode.SharpZipLib.Checksum;
-
-public interface IChecksum
+namespace Modio.Users
 {
-	long Value { get; }
+}
+namespace ICSharpCode.SharpZipLib.Checksum
+{
+	public interface IChecksum
+	{
+		long Value { get; }
 
-	void Reset();
+		void Reset();
 
-	void Update(int bval);
+		void Update(int bval);
 
-	void Update(byte[] buffer);
+		void Update(byte[] buffer);
 
-	void Update(ArraySegment<byte> segment);
+		void Update(ArraySegment<byte> segment);
+	}
 }

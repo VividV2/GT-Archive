@@ -1,11 +1,2 @@
-using Newtonsoft.Json;
-
-namespace Modio.API.SchemaDefinitions;
-
-[JsonObject]
-internal readonly struct GameOtherUrlsObject(string label, string url)
-{
-	internal readonly string Label = label;
-
-	internal readonly string Url = url;
-}
+// Could not decompile Modio.API.SchemaDefinitions.GameOtherUrlsObject
+// This type uses unsupported IL or has too many generic parameters.

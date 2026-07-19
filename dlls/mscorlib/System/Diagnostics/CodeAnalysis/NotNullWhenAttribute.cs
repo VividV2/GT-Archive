@@ -1,2 +1,2 @@
-namespace System.Collections.Concurrent;
-
+// Could not decompile System.Diagnostics.CodeAnalysis.NotNullWhenAttribute
+// This type uses unsupported IL or has too many generic parameters.

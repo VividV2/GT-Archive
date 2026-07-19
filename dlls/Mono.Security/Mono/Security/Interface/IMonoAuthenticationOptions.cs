@@ -1,18 +1,10 @@
-using System.Net.Security;
-using System.Security.Authentication;
-using System.Security.Cryptography.X509Certificates;
-
 namespace Mono.Security.Interface;
 
-internal interface IMonoAuthenticationOptions
+[Flags]
+public enum MonoSslPolicyErrors
 {
-	bool AllowRenegotiation { get; set; }
-
-	RemoteCertificateValidationCallback RemoteCertificateValidationCallback { get; set; }
-
-	SslProtocols EnabledSslProtocols { get; set; }
-
-	EncryptionPolicy EncryptionPolicy { get; set; }
-
-	X509RevocationMode CertificateRevocationCheckMode { get; set; }
+	None = 0,
+	RemoteCertificateNotAvailable = 1,
+	RemoteCertificateNameMismatch = 2,
+	RemoteCertificateChainErrors = 4
 }

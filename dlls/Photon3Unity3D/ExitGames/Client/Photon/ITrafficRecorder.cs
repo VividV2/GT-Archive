@@ -1,8 +1,12 @@
-namespace ExitGames.Client.Photon;
-
-public interface ITrafficRecorder
+namespace ExitGames.Client.Photon
 {
-	bool Enabled { get; set; }
+	public interface ITrafficRecorder
+	{
+		bool Enabled { get; set; }
 
-	void Record(byte[] inBuffer, int length, bool incoming, short peerId, IPhotonSocket connection);
+		void Record(byte[] inBuffer, int length, bool incoming, short peerId, IPhotonSocket connection);
+	}
+}
+namespace ExitGames.Client.Photon
+{
 }

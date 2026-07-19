@@ -1,18 +1,20 @@
-using Unity.Collections;
+using System;
 
-namespace Unity.XR.CoreUtils;
-
-public static class NativeArrayUtils
+namespace Unity.XR.CoreUtils
 {
-	public static void EnsureCapacity<T>(ref NativeArray<T> array, int capacity, Allocator allocator, NativeArrayOptions options = NativeArrayOptions.ClearMemory) where T : struct
+	[AttributeUsage(AttributeTargets.Class)]
+	public class ScriptableSettingsPathAttribute : Attribute
 	{
-		if (array.Length < capacity)
+		private readonly string m_Path;
+
+		public string Path => m_Path;
+
+		public ScriptableSettingsPathAttribute(string path = "")
 		{
-			if (array.IsCreated)
-			{
-				array.Dispose();
-			}
-			array = new NativeArray<T>(capacity, allocator, options);
+			m_Path = path;
 		}
 	}
+}
+namespace Unity.XR.CoreUtils
+{
 }

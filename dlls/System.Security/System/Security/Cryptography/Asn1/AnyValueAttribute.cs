@@ -1,6 +1,2 @@
-namespace System.Security.Cryptography.Asn1;
+namespace Internal.Cryptography;
 
-[AttributeUsage(AttributeTargets.Field)]
-internal sealed class AnyValueAttribute : AsnTypeAttribute
-{
-}

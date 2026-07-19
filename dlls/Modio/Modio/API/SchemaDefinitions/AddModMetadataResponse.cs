@@ -1,11 +1,2 @@
-using Newtonsoft.Json;
-
-namespace Modio.API.SchemaDefinitions;
-
-[JsonObject]
-internal readonly struct AddModMetadataResponse(long code, string message)
-{
-	internal readonly long Code = code;
-
-	internal readonly string Message = message;
-}
+// Could not decompile Modio.API.SchemaDefinitions.AddModMetadataResponse
+// This type uses unsupported IL or has too many generic parameters.

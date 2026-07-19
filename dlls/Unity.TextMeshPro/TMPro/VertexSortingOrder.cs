@@ -1,11 +1,7 @@
-namespace TMPro
+namespace TMPro;
+
+public enum VertexSortingOrder
 {
-}
-namespace TMPro
-{
-	public enum VertexSortingOrder
-	{
-		Normal,
-		Reverse
-	}
+	Normal,
+	Reverse
 }

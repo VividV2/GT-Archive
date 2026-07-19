@@ -1,17 +1,27 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-public struct LeaderboardEntry_t
+namespace Steamworks
 {
-	public CSteamID m_steamIDUser;
+}
+namespace Steamworks
+{
+}
+namespace Steamworks
+{
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	public struct LeaderboardEntry_t
+	{
+		public CSteamID m_steamIDUser;
 
-	public int m_nGlobalRank;
+		public int m_nGlobalRank;
 
-	public int m_nScore;
+		public int m_nScore;
 
-	public int m_cDetails;
+		public int m_cDetails;
 
-	public UGCHandle_t m_hUGC;
+		public UGCHandle_t m_hUGC;
+	}
 }

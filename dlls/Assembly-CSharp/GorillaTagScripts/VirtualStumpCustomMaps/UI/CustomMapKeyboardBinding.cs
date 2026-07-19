@@ -1,3 +1,6 @@
+namespace BuildSafe
+{
+}
 namespace GorillaTagScripts.VirtualStumpCustomMaps.UI
 {
 	public enum CustomMapKeyboardBinding
@@ -74,7 +77,4 @@ namespace GorillaTagScripts.VirtualStumpCustomMaps.UI
 		tile8,
 		tile9
 	}
-}
-namespace GorillaTagScripts.Subscription
-{
 }

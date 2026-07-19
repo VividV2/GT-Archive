@@ -1,8 +1,12 @@
 using UnityEngine;
 
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnTriggerEnterHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask<Collider> OnTriggerEnterAsync();
+	public interface IAsyncOnTriggerEnterHandler
+	{
+		UniTask<Collider> OnTriggerEnterAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
 }

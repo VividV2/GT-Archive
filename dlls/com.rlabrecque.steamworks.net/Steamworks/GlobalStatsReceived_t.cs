@@ -1,10 +1,33 @@
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
 namespace Steamworks
 {
-	[Flags]
-	public enum EControllerHapticLocation
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(705)]
+	public struct CheckFileSignature_t
 	{
-		k_EControllerHapticLocation_Left = 1,
-		k_EControllerHapticLocation_Right = 2,
-		k_EControllerHapticLocation_Both = 3
+		public const int k_iCallback = 705;
+
+		public ECheckFileSignature m_eCheckFileSignature;
 	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(1112)]
+	public struct GlobalStatsReceived_t
+	{
+		public const int k_iCallback = 1112;
+
+		public ulong m_nGameID;
+
+		public EResult m_eResult;
+	}
+}
+namespace Steamworks
+{
+}
+namespace Steamworks
+{
 }

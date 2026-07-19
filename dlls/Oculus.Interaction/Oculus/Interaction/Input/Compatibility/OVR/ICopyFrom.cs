@@ -1,6 +1,10 @@
-namespace Oculus.Interaction.Input.Compatibility.OVR;
-
-public interface ICopyFrom<in TSelfType>
+namespace Oculus.Interaction.Input.Compatibility.OVR
 {
-	void CopyFrom(TSelfType source);
+	public interface ICopyFrom<in TSelfType>
+	{
+		void CopyFrom(TSelfType source);
+	}
+}
+namespace Oculus.Interaction.Input
+{
 }

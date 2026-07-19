@@ -1,11 +1,7 @@
-using System;
+namespace UnityEngine.UIElements;
 
-namespace UnityEngine.UIElements.Layout;
-
-[Flags]
-internal enum LayoutPrintOptions
+public enum Position
 {
-	Layout = 1,
-	Style = 2,
-	Children = 4
+	Relative,
+	Absolute
 }

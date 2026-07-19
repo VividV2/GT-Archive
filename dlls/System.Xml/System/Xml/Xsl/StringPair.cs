@@ -1,16 +1,2 @@
-namespace System.Xml.Xsl
-{
-	internal struct StringPair(string left, string right)
-	{
-		private string left = left;
-
-		private string right = right;
-
-		public string Left => left;
-
-		public string Right => right;
-	}
-}
-namespace System.Xml.Xsl.XsltOld
-{
-}
+// Could not decompile System.Xml.Xsl.StringPair
+// This type uses unsupported IL or has too many generic parameters.

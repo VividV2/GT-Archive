@@ -1,0 +1,72 @@
+using System;
+using System.Runtime.InteropServices;
+using System;
+using System.Runtime.InteropServices;
+
+namespace Valve.VR
+{
+	public struct SpatialAnchorPose_t
+	{
+		public HmdMatrix34_t mAnchorToAbsoluteTracking;
+	}
+}
+namespace Valve.VR
+{
+	public struct VREvent_Process_t
+	{
+		public uint pid;
+
+		public uint oldPid;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bForced;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool bConnectionLost;
+	}
+}
+namespace Valve.VR
+{
+	public struct COpenVRContext
+	{
+		public IntPtr m_pVRSystem;
+
+		public IntPtr m_pVRChaperone;
+
+		public IntPtr m_pVRChaperoneSetup;
+
+		public IntPtr m_pVRCompositor;
+
+		public IntPtr m_pVRHeadsetView;
+
+		public IntPtr m_pVROverlay;
+
+		public IntPtr m_pVROverlayView;
+
+		public IntPtr m_pVRResources;
+
+		public IntPtr m_pVRRenderModels;
+
+		public IntPtr m_pVRExtendedDisplay;
+
+		public IntPtr m_pVRSettings;
+
+		public IntPtr m_pVRApplications;
+
+		public IntPtr m_pVRTrackedCamera;
+
+		public IntPtr m_pVRScreenshots;
+
+		public IntPtr m_pVRDriverManager;
+
+		public IntPtr m_pVRInput;
+
+		public IntPtr m_pVRIOBuffer;
+
+		public IntPtr m_pVRSpatialAnchors;
+
+		public IntPtr m_pVRDebug;
+
+		public IntPtr m_pVRNotifications;
+	}
+}

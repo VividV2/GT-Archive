@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Events;
-
-namespace Meta.WitAi.Speech;
-
-[Serializable]
-public class VoiceTextEvent : UnityEvent<string>
-{
-}
+// Could not decompile Meta.WitAi.Speech.VoiceTextEvent
+// This type uses unsupported IL or has too many generic parameters.

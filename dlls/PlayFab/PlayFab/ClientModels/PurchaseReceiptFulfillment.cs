@@ -1,12 +1,13 @@
 namespace PlayFab.ClientModels;
 
-public enum SourceType
+public enum SubscriptionProviderStatus
 {
-	Admin,
-	BackEnd,
-	GameClient,
-	GameServer,
-	Partner,
-	Custom,
-	API
+	NoError,
+	Cancelled,
+	UnknownError,
+	BillingError,
+	ProductUnavailable,
+	CustomerDidNotAcceptPriceChange,
+	FreeTrial,
+	PaymentPending
 }

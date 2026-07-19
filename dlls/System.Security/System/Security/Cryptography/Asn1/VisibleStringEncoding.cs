@@ -1,13 +1,9 @@
-namespace System.Security.Cryptography.Asn1
+namespace System.Security.Cryptography.Asn1;
+
+internal class VisibleStringEncoding : RestrictedAsciiStringEncoding
 {
-	internal class VisibleStringEncoding : RestrictedAsciiStringEncoding
+	internal VisibleStringEncoding()
+		: base(32, 126)
 	{
-		internal VisibleStringEncoding()
-			: base(32, 126)
-		{
-		}
 	}
-}
-namespace System.Security.Cryptography.Asn1
-{
 }

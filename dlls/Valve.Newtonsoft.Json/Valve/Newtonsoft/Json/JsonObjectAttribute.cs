@@ -1,4 +1,4 @@
-namespace Valve.Newtonsoft.Json.Utilities
+namespace Valve.Newtonsoft.Json
 {
 }
 namespace Valve.Newtonsoft.Json

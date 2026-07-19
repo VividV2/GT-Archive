@@ -1,9 +1,13 @@
-namespace PlayFab.ClientModels;
-
-public enum AdActivity
+namespace PlayFab.ClientModels
 {
-	Opened,
-	Closed,
-	Start,
-	End
+	public enum AdActivity
+	{
+		Opened,
+		Closed,
+		Start,
+		End
+	}
+}
+namespace PlayFab.ClientModels
+{
 }

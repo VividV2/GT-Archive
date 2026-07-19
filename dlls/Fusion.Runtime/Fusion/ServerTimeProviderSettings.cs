@@ -1,27 +1,16 @@
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
 namespace Fusion;
 
-internal struct ServerTimeProviderSettings
+[StructLayout(LayoutKind.Explicit)]
+[NetworkStructWeaved(10)]
+public struct NetworkPhysicsInfo : INetworkStruct
 {
-	public double SimDeltaTime;
+	public const int WORD_COUNT = 10;
 
-	public static ServerTimeProviderSettings Default()
-	{
-		TickRate.Resolved resolved = TickRate.Resolve(TickRate.Default);
-		return new ServerTimeProviderSettings
-		{
-			SimDeltaTime = resolved.ClientTickDelta
-		};
-	}
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
+	public const int SIZE = 40;
+
+	[FieldOffset(0)]
+	public float TimeScale;
 }

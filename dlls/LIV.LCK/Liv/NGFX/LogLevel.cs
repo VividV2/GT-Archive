@@ -1,9 +1,32 @@
-namespace Liv.NGFX;
+using System;
+using UnityEngine;
+using System;
+using UnityEngine;
 
-public enum LogLevel
+namespace Liv.Lck.Cosmetics;
+
+[Serializable]
+public class RootCosmetic
 {
-	Log,
-	Warning,
-	Error,
-	Abort
+	[Tooltip("The asset (Prefab, Material, Texture, etc.) to be included as a root in the bundle.")]
+	public UnityEngine.Object Asset;
+}
+namespace Liv.Lck.Tablet
+{
+}
+namespace Liv.Lck.Tablet
+{
+}
+namespace Liv.NGFX
+{
+}
+namespace Liv.NGFX
+{
+	public enum LogLevel
+	{
+		Log,
+		Warning,
+		Error,
+		Abort
+	}
 }

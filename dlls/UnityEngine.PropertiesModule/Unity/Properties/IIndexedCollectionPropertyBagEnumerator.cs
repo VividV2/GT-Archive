@@ -1,12 +1,20 @@
-namespace Unity.Properties;
-
-internal interface IIndexedCollectionPropertyBagEnumerator<TContainer>
+namespace Unity.Properties
 {
-	int GetCount(ref TContainer container);
+	internal interface IIndexedCollectionPropertyBagEnumerator<TContainer>
+	{
+		int GetCount(ref TContainer container);
 
-	IProperty<TContainer> GetSharedProperty();
+		IProperty<TContainer> GetSharedProperty();
 
-	IndexedCollectionSharedPropertyState GetSharedPropertyState();
+		IndexedCollectionSharedPropertyState GetSharedPropertyState();
 
-	void SetSharedPropertyState(IndexedCollectionSharedPropertyState state);
+		void SetSharedPropertyState(IndexedCollectionSharedPropertyState state);
+	}
+}
+namespace Unity.Properties
+{
+	public interface INamedProperties<TContainer>
+	{
+		bool TryGetProperty(ref TContainer container, string name, out IProperty<TContainer> property);
+	}
 }

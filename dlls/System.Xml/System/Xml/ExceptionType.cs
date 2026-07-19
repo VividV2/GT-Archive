@@ -1,7 +1,2 @@
-namespace System.Xml;
-
-internal enum ExceptionType
-{
-	ArgumentException,
-	XmlException
-}
+// Could not decompile System.Xml.ExceptionType
+// This type uses unsupported IL or has too many generic parameters.

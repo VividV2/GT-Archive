@@ -1,25 +1,10 @@
 namespace System.IO.Compression;
 
-internal enum BlockType
+internal interface IFileFormatWriter
 {
-	Uncompressed,
-	Static,
-	Dynamic
-}
-namespace System.IO.Compression
-{
-	internal interface IFileFormatWriter
-	{
-		byte[] GetHeader();
+	byte[] GetHeader();
 
-		void UpdateWithBytesRead(byte[] buffer, int offset, int bytesToCopy);
+	void UpdateWithBytesRead(byte[] buffer, int offset, int bytesToCopy);
 
-		byte[] GetFooter();
-	}
-}
-namespace System.IO.Compression
-{
-}
-namespace System.IO.Compression
-{
+	byte[] GetFooter();
 }

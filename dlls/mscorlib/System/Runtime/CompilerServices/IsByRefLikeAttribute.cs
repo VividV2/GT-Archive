@@ -1,2 +1,2 @@
-namespace System.Diagnostics.SymbolStore;
+namespace System.Runtime.CompilerServices;
 

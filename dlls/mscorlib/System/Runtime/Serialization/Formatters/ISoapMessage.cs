@@ -1,2 +1,6 @@
-namespace System.Runtime.CompilerServices;
-
+namespace System.Runtime.InteropServices
+{
+}
+namespace System
+{
+}

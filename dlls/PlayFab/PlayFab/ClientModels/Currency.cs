@@ -1,12 +1,15 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetCatalogItemsRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string CatalogVersion;
+	public enum CloudScriptRevisionOption
+	{
+		Live,
+		Latest,
+		Specific
+	}
+}
+namespace PlayFab.ClientModels
+{
+}
+namespace PlayFab.Internal
+{
 }

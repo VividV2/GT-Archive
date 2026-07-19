@@ -1,4 +1,7 @@
 using System;
+using Oculus.Assistant.VoiceCommand.Data;
+using Oculus.Voice.Core.Utilities;
+using System;
 using Oculus.Assistant.VoiceCommand.Configuration;
 using Oculus.Assistant.VoiceCommand.Data;
 using Oculus.Voice.Core.Utilities;
@@ -17,16 +20,18 @@ public class VoiceCommandResultHandler : VoiceCommandListener
 
 	public void OnCallback(VoiceCommandResult result)
 	{
-		if (!(voiceCommand.actionId == result.ActionId))
+		if (voiceCommand.actionId != result.ActionId)
 		{
 			return;
 		}
 		onVoiceCommandReceived.Invoke(result);
 		SlotHandler[] array = slotHandlers;
+		SlotHandler[] array;
 		foreach (SlotHandler slotHandler in array)
 		{
 			if (result.TryGetSlot(slotHandler.slotName, out var slotValue))
 			{
+				string slotValue;
 				slotHandler.onCommandSlotReceived.Invoke(slotValue);
 			}
 		}

@@ -1,6 +1,2 @@
-namespace Oculus.Interaction;
+namespace Oculus.Interaction.GrabAPI;
 
-public interface ICandidateComparer
-{
-	int Compare(object a, object b);
-}

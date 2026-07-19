@@ -1,8 +1,2 @@
-using System.Globalization;
-
-namespace System.Web.Util;
-
-internal class Helpers
-{
-	public static readonly CultureInfo InvariantCulture = CultureInfo.InvariantCulture;
-}
+// Could not decompile System.Web.Util.Helpers
+// This type uses unsupported IL or has too many generic parameters.

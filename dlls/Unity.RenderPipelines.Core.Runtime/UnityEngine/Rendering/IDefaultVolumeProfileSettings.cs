@@ -1,8 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public interface IDefaultVolumeProfileSettings : IRenderPipelineGraphicsSettings
-{
-	bool IRenderPipelineGraphicsSettings.isAvailableInPlayerBuild => true;
-
-	VolumeProfile volumeProfile { get; set; }
-}
+// Could not decompile UnityEngine.Rendering.IDefaultVolumeProfileSettings
+// This type uses unsupported IL or has too many generic parameters.

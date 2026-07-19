@@ -2,33 +2,29 @@ using System;
 using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[Obsolete("This type is deprecated and will be removed in Unity 7.", false)]
+[NativeHeader("Modules/ClusterRenderer/ClusterNetwork.h")]
+public class ClusterNetwork
 {
-	[Obsolete("This type is deprecated and will be removed in Unity 7.", false)]
-	[NativeHeader("Modules/ClusterRenderer/ClusterNetwork.h")]
-	public class ClusterNetwork
+	public static extern bool isMasterOfCluster
 	{
-		public static extern bool isMasterOfCluster
-		{
-			[MethodImpl(MethodImplOptions.InternalCall)]
-			get;
-		}
-
-		public static extern bool isDisconnected
-		{
-			[MethodImpl(MethodImplOptions.InternalCall)]
-			get;
-		}
-
-		public static extern int nodeIndex
-		{
-			[MethodImpl(MethodImplOptions.InternalCall)]
-			get;
-			[MethodImpl(MethodImplOptions.InternalCall)]
-			set;
-		}
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		get;
 	}
-}
-namespace UnityEngine
-{
+
+	public static extern bool isDisconnected
+	{
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		get;
+	}
+
+	public static extern int nodeIndex
+	{
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		get;
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		set;
+	}
 }

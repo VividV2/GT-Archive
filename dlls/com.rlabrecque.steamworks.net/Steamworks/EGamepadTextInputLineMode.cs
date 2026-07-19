@@ -1,7 +1,3 @@
-namespace Steamworks;
-
-public enum EGamepadTextInputLineMode
+namespace Steamworks
 {
-	k_EGamepadTextInputLineModeSingleLine,
-	k_EGamepadTextInputLineModeMultipleLines
 }

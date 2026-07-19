@@ -1,16 +1,20 @@
-namespace VYaml.Parser;
-
-public enum ParseEventType : byte
+namespace VYaml.Parser
 {
-	Nothing,
-	StreamStart,
-	StreamEnd,
-	DocumentStart,
-	DocumentEnd,
-	Alias,
-	Scalar,
-	SequenceStart,
-	SequenceEnd,
-	MappingStart,
-	MappingEnd
+	public enum ParseEventType : byte
+	{
+		Nothing,
+		StreamStart,
+		StreamEnd,
+		DocumentStart,
+		DocumentEnd,
+		Alias,
+		Scalar,
+		SequenceStart,
+		SequenceEnd,
+		MappingStart,
+		MappingEnd
+	}
+}
+namespace VYaml.Parser
+{
 }

@@ -1,15 +1,2 @@
-namespace UnityEngine.UIElements;
-
-public class PointerCaptureEvent : PointerCaptureEventBase<PointerCaptureEvent>
-{
-	static PointerCaptureEvent()
-	{
-		EventBase<PointerCaptureEvent>.SetCreateFunction(() => new PointerCaptureEvent());
-	}
-
-	protected internal override void PreDispatch(IPanel panel)
-	{
-		base.PreDispatch(panel);
-		base.elementTarget.UpdateHoverPseudoStateAfterCaptureChange(base.pointerId);
-	}
-}
+// Could not decompile UnityEngine.UIElements.PointerCaptureEvent
+// This type uses unsupported IL or has too many generic parameters.

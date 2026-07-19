@@ -1,6 +1,2 @@
-namespace Unity.Cinemachine;
-
-internal class PolyTreeD : PolyPathD
-{
-	public new double Scale => base.Scale;
-}
+// Could not decompile Unity.Cinemachine.PolyTreeD
+// This type uses unsupported IL or has too many generic parameters.

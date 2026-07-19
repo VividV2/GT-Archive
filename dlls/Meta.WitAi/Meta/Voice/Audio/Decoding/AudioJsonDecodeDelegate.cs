@@ -1,10 +1,2 @@
-using System.Collections.Generic;
-using Meta.WitAi.Json;
-
-namespace Meta.Voice.Audio.Decoding
-{
-	public delegate void AudioJsonDecodeDelegate(List<WitResponseNode> jsonNode);
-}
-namespace Meta.Voice.Net.Encoding.Wit
-{
-}
+// Could not decompile Meta.Voice.Audio.Decoding.AudioJsonDecodeDelegate
+// This type uses unsupported IL or has too many generic parameters.

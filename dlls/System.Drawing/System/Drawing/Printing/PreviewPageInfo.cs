@@ -1,34 +1,26 @@
-using System.ComponentModel;
+namespace System.Drawing.Printing;
 
-namespace System.Drawing.Design;
-
-public class PaintValueEventArgs : EventArgs
+/// <summary>Specifies print preview information for a single page. This class cannot be inherited.</summary>
+public sealed class PreviewPageInfo
 {
-	private readonly ITypeDescriptorContext context;
+	private Image _image;
 
-	private readonly object valueToPaint;
+	private Size _physicalSize = Size.Empty;
 
-	private readonly Graphics graphics;
+	/// <summary>Gets the image of the printed page.</summary>
+	/// <returns>An <see cref="T:System.Drawing.Image" /> representing the printed page.</returns>
+	public Image Image => _image;
 
-	private readonly Rectangle bounds;
+	/// <summary>Gets the size of the printed page, in hundredths of an inch.</summary>
+	/// <returns>A <see cref="T:System.Drawing.Size" /> that specifies the size of the printed page, in hundredths of an inch.</returns>
+	public Size PhysicalSize => _physicalSize;
 
-	public Rectangle Bounds => bounds;
-
-	public ITypeDescriptorContext Context => context;
-
-	public Graphics Graphics => graphics;
-
-	public object Value => valueToPaint;
-
-	public PaintValueEventArgs(ITypeDescriptorContext context, object value, Graphics graphics, Rectangle bounds)
+	/// <summary>Initializes a new instance of the <see cref="T:System.Drawing.Printing.PreviewPageInfo" /> class.</summary>
+	/// <param name="image">The image of the printed page.</param>
+	/// <param name="physicalSize">The size of the printed page, in hundredths of an inch.</param>
+	public PreviewPageInfo(Image image, Size physicalSize)
 	{
-		this.context = context;
-		valueToPaint = value;
-		this.graphics = graphics;
-		if (graphics == null)
-		{
-			throw new ArgumentNullException("graphics");
-		}
-		this.bounds = bounds;
+		_image = image;
+		_physicalSize = physicalSize;
 	}
 }

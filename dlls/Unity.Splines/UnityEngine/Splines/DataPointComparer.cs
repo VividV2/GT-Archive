@@ -1,9 +1,2 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-
-namespace UnityEngine.Splines;
-
-public interface IHasEmptyCurves
-{
-	IReadOnlyList<int> EmptyCurves { get; }
-}
+// Could not decompile UnityEngine.Splines.DataPointComparer`1
+// This type uses unsupported IL or has too many generic parameters.

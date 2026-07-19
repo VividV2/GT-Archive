@@ -1,2 +1,2 @@
-namespace System;
-
+// Could not decompile Internal.IO.File
+// This type uses unsupported IL or has too many generic parameters.

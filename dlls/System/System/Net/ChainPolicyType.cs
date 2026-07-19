@@ -1,15 +1,14 @@
-namespace System.Net
+namespace System.Net;
+
+internal enum ChainPolicyType
 {
-	internal enum ChainPolicyType
-	{
-		Base = 1,
-		Authenticode,
-		Authenticode_TS,
-		SSL,
-		BasicConstraints,
-		NtAuth
-	}
+	Base = 1,
+	Authenticode,
+	Authenticode_TS,
+	SSL,
+	BasicConstraints,
+	NtAuth
 }
-namespace System.Net.Mail
+namespace System.Net
 {
 }

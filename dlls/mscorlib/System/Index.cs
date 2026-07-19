@@ -1,11 +1,2 @@
-using System;
-
-namespace Microsoft.Win32
-{
-	[Flags]
-	public enum RegistryValueOptions
-	{
-		None = 0,
-		DoNotExpandEnvironmentNames = 1
-	}
-}
+// Could not decompile System.Index
+// This type uses unsupported IL or has too many generic parameters.

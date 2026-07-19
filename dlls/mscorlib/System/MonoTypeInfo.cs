@@ -1,3 +1,6 @@
-namespace System.Threading.Tasks
+namespace System.Runtime.CompilerServices
+{
+}
+namespace System.Runtime.CompilerServices
 {
 }

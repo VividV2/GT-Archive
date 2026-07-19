@@ -1,8 +1,13 @@
-using UnityEngine.EventSystems;
-
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnPointerClickHandler
+namespace Cysharp.Threading.Tasks
 {
-	UniTask<PointerEventData> OnPointerClickAsync();
+	public interface ITaskPoolNode<T>
+	{
+		ref T NextNode { get; }
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+}
+namespace Cysharp.Threading.Tasks.Internal
+{
 }

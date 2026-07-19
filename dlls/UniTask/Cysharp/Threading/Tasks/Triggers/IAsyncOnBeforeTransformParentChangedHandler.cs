@@ -1,6 +1,17 @@
-namespace Cysharp.Threading.Tasks.Triggers;
+using UnityEngine.EventSystems;
+using UnityEngine.EventSystems;
 
-public interface IAsyncOnBeforeTransformParentChangedHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask OnBeforeTransformParentChangedAsync();
+	public interface IAsyncOnBeforeTransformParentChangedHandler
+	{
+		UniTask OnBeforeTransformParentChangedAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+	public interface IAsyncOnUpdateSelectedHandler
+	{
+		UniTask<BaseEventData> OnUpdateSelectedAsync();
+	}
 }

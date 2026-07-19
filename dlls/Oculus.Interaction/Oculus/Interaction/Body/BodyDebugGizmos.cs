@@ -1,8 +1,2 @@
-namespace Oculus.Interaction.GrabAPI;
-
-public enum FingerRequirement
-{
-	Ignored,
-	Optional,
-	Required
-}
+// Could not decompile Oculus.Interaction.Body.BodyDebugGizmos
+// This type uses unsupported IL or has too many generic parameters.

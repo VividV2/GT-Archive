@@ -1,6 +1,2 @@
-namespace Fusion;
-
-public interface IBeforeUpdateRemotePrefabs : IPublicFacingInterface
-{
-	void BeforeUpdateRemotePrefabs();
-}
+// Could not decompile Fusion.IBeforeUpdateRemotePrefabs
+// This type uses unsupported IL or has too many generic parameters.

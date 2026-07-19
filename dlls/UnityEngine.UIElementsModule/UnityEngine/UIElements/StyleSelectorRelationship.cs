@@ -1,11 +1,18 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine.UIElements;
-
-[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
-internal enum StyleSelectorRelationship
+namespace UnityEngine.UIElements
 {
-	None,
-	Child,
-	Descendent
+	[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
+	internal enum StyleSelectorRelationship
+	{
+		None,
+		Child,
+		Descendent
+	}
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
 }

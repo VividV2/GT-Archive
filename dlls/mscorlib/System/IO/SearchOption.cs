@@ -1,18 +1,26 @@
+using System.Security;
+using System.Security;
+
 namespace System.Globalization
 {
-	[Flags]
-	internal enum DateTimeFormatFlags
+	internal struct InternalEncodingDataItem
 	{
-		None = 0,
-		UseGenitiveMonth = 1,
-		UseLeapYearMonth = 2,
-		UseSpacesInMonthNames = 4,
-		UseHebrewRule = 8,
-		UseSpacesInDayNames = 0x10,
-		UseDigitPrefixInTokens = 0x20,
-		NotInitialized = -1
+		[SecurityCritical]
+		internal string webName;
+
+		internal ushort codePage;
 	}
 }
-namespace System.Collections.Generic
+namespace System.IO
 {
+	[Flags]
+	public enum FileShare
+	{
+		None = 0,
+		Read = 1,
+		Write = 2,
+		ReadWrite = 3,
+		Delete = 4,
+		Inheritable = 0x10
+	}
 }

@@ -1,10 +1,6 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public interface ISTPEnabledRenderPipeline
 {
-	public interface ISTPEnabledRenderPipeline
-	{
-		bool isStpUsed { get; }
-	}
-}
-namespace UnityEngine.Rendering
-{
+	bool isStpUsed { get; }
 }

@@ -1,7 +1,11 @@
-namespace Oculus.Interaction.GrabAPI;
-
-public enum FingerUnselectMode
+namespace Oculus.Interaction.GrabAPI
 {
-	AllReleased,
-	AnyReleased
+	public enum FingerUnselectMode
+	{
+		AllReleased,
+		AnyReleased
+	}
+}
+namespace Oculus.Interaction
+{
 }

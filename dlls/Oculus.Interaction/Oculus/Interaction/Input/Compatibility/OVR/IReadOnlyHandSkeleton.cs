@@ -1,6 +1,10 @@
-namespace Oculus.Interaction.Input.Compatibility.OVR;
-
-public interface IReadOnlyHandSkeleton
+namespace Oculus.Interaction.Input.Compatibility.OVR
 {
-	IReadOnlyHandSkeletonJointList Joints { get; }
+	public interface IReadOnlyHandSkeleton
+	{
+		IReadOnlyHandSkeletonJointList Joints { get; }
+	}
+}
+namespace Oculus.Interaction.Input
+{
 }

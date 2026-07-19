@@ -1,15 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
-using System;
-using UnityEngine.Bindings;
 
-namespace Unity.Audio;
-
-[VisibleToOtherModules]
-internal interface IHandle<HandleType> : IValidatable, IEquatable<HandleType> where HandleType : struct, IHandle<HandleType>
-{
-}
 namespace UnityEngine.Experimental.Audio
 {
 	[NativeHeader("AudioScriptingClasses.h")]
@@ -35,4 +27,7 @@ namespace UnityEngine.Experimental.Audio
 		[MethodImpl(MethodImplOptions.InternalCall)]
 		private static extern uint Internal_CreateAudioClipSampleProvider_Injected(IntPtr audioClip, ulong start, long end, bool loop, bool allowDrop, bool loopPointIsStart);
 	}
+}
+namespace UnityEngine.Experimental.Audio
+{
 }

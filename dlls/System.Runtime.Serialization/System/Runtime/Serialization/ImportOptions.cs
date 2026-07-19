@@ -1,9 +1,2 @@
-namespace System.Runtime.Serialization;
-
-internal class GYearDataContract : StringDataContract
-{
-	internal GYearDataContract()
-		: base(DictionaryGlobals.gYearLocalName, DictionaryGlobals.SchemaNamespace)
-	{
-	}
-}
+// Could not decompile System.Runtime.Serialization.ImportOptions
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,0 +1,2 @@
+namespace UnityEngine.Rendering.RenderGraphModule;
+

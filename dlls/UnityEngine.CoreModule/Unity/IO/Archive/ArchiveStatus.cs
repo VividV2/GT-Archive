@@ -1,11 +1,2 @@
-using UnityEngine.Scripting;
+namespace UnityEngine;
 
-namespace Unity.IO.Archive;
-
-[RequiredByNativeCode]
-public enum ArchiveStatus
-{
-	InProgress,
-	Complete,
-	Failed
-}

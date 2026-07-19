@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Events;
-
-namespace Unity.XR.CoreUtils;
-
-[Serializable]
-public class BoolUnityEvent : UnityEvent<bool>
-{
-}
+// Could not decompile Unity.XR.CoreUtils.BoolUnityEvent
+// This type uses unsupported IL or has too many generic parameters.

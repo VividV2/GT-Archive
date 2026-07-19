@@ -1,6 +1,13 @@
-namespace System.Xml;
-
-internal interface IRemovableWriter
+namespace System.Xml.Serialization
 {
-	OnRemoveWriter OnRemoveWriterEvent { get; set; }
+}
+namespace System.Xml.Xsl.XsltOld
+{
+}
+namespace System.Xml
+{
+	internal interface IRemovableWriter
+	{
+		OnRemoveWriter OnRemoveWriterEvent { get; set; }
+	}
 }

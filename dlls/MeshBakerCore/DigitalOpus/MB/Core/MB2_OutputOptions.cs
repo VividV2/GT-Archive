@@ -1,8 +1,12 @@
-namespace DigitalOpus.MB.Core;
-
-public enum MB2_OutputOptions
+namespace DigitalOpus.MB.Core
 {
-	bakeIntoSceneObject,
-	bakeMeshAssetsInPlace,
-	bakeIntoPrefab
+}
+namespace DigitalOpus.MB.Core
+{
+	public enum MB2_OutputOptions
+	{
+		bakeIntoSceneObject,
+		bakeMeshAssetsInPlace,
+		bakeIntoPrefab
+	}
 }

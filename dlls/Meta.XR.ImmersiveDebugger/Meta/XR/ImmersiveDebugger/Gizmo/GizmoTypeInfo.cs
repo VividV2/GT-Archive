@@ -1,8 +1,2 @@
-using System;
-
-namespace Meta.XR.ImmersiveDebugger.Gizmo;
-
-internal struct GizmoTypeInfo(Action<object> renderDelegate)
-{
-	public readonly Action<object> RenderDelegate = renderDelegate;
-}
+// Could not decompile Meta.XR.ImmersiveDebugger.Gizmo.GizmoTypeInfo
+// This type uses unsupported IL or has too many generic parameters.

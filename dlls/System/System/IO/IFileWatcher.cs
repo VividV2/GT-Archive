@@ -1,14 +1,10 @@
-namespace System.ComponentModel
-{
-}
-namespace System.IO
-{
-	internal interface IFileWatcher
-	{
-		void StartDispatching(object fsw);
+namespace System.IO;
 
-		void StopDispatching(object fsw);
+internal interface IFileWatcher
+{
+	void StartDispatching(object fsw);
 
-		void Dispose(object fsw);
-	}
+	void StopDispatching(object fsw);
+
+	void Dispose(object fsw);
 }

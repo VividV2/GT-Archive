@@ -3,9 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
-[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
-[CallbackIdentity(738)]
-public struct FloatingGamepadTextInputDismissed_t
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(3411)]
+public struct StopPlaytimeTrackingResult_t
 {
-	public const int k_iCallback = 738;
+	public const int k_iCallback = 3411;
+
+	public EResult m_eResult;
 }

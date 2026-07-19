@@ -1,16 +1,20 @@
-namespace OVR.OpenVR;
-
-public struct CameraVideoStreamFrameHeader_t
+namespace OVR.OpenVR
 {
-	public EVRTrackedCameraFrameType eFrameType;
+	public struct CameraVideoStreamFrameHeader_t
+	{
+		public EVRTrackedCameraFrameType eFrameType;
 
-	public uint nWidth;
+		public uint nWidth;
 
-	public uint nHeight;
+		public uint nHeight;
 
-	public uint nBytesPerPixel;
+		public uint nBytesPerPixel;
 
-	public uint nFrameSequence;
+		public uint nFrameSequence;
 
-	public TrackedDevicePose_t standingTrackedDevicePose;
+		public TrackedDevicePose_t standingTrackedDevicePose;
+	}
+}
+namespace OVR.OpenVR
+{
 }

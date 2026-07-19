@@ -1,17 +1,3 @@
-namespace System.ComponentModel
-{
-	public enum ListChangedType
-	{
-		Reset,
-		ItemAdded,
-		ItemDeleted,
-		ItemMoved,
-		ItemChanged,
-		PropertyDescriptorAdded,
-		PropertyDescriptorDeleted,
-		PropertyDescriptorChanged
-	}
-}
-namespace System.Net
+namespace System.Net.NetworkInformation
 {
 }

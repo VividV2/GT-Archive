@@ -1,7 +1,11 @@
-namespace UnityEngine.UIElements;
-
-public enum SliderDirection
+namespace UnityEngine.UIElements
 {
-	Horizontal,
-	Vertical
+}
+namespace UnityEngine.UIElements
+{
+	public enum SliderDirection
+	{
+		Horizontal,
+		Vertical
+	}
 }

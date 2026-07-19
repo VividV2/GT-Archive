@@ -1,11 +1,2 @@
-using System;
-
-namespace UnityEngine.ProBuilder.KdTree;
-
-internal class DuplicateNodeError : Exception
-{
-	public DuplicateNodeError()
-		: base("Cannot Add Node With Duplicate Coordinates")
-	{
-	}
-}
+// Could not decompile UnityEngine.ProBuilder.KdTree.DuplicateNodeError
+// This type uses unsupported IL or has too many generic parameters.

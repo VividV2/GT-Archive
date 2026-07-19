@@ -1,11 +1,15 @@
 using System;
 
-namespace Oculus.Interaction;
-
-[Serializable]
-public struct MaterialPropertyFloat
+namespace Oculus.Interaction
 {
-	public string name;
+	[Serializable]
+	public struct MaterialPropertyFloat
+	{
+		public string name;
 
-	public float value;
+		public float value;
+	}
+}
+namespace Oculus.Interaction.Locomotion
+{
 }

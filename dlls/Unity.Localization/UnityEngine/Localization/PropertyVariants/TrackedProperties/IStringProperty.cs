@@ -1,10 +1,14 @@
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
-
-public interface IStringProperty : ITrackedProperty
+namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
 {
-	string GetValueAsString(LocaleIdentifier localeIdentifier);
+	public interface IStringProperty : ITrackedProperty
+	{
+		string GetValueAsString(LocaleIdentifier localeIdentifier);
 
-	string GetValueAsString(LocaleIdentifier localeIdentifier, LocaleIdentifier fallback);
+		string GetValueAsString(LocaleIdentifier localeIdentifier, LocaleIdentifier fallback);
 
-	void SetValueFromString(LocaleIdentifier localeIdentifier, string value);
+		void SetValueFromString(LocaleIdentifier localeIdentifier, string value);
+	}
+}
+namespace UnityEngine.Localization.SmartFormat.PersistentVariables
+{
 }

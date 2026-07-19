@@ -1,18 +1,14 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class ValueToDateModel : PlayFabBaseModel
-	{
-		public string Currency;
+namespace PlayFab.ClientModels;
 
-		public uint TotalValue;
+[Serializable]
+public class ValueToDateModel : PlayFabBaseModel
+{
+	public string Currency;
 
-		public string TotalValueAsDecimal;
-	}
+	public uint TotalValue;
+
+	public string TotalValueAsDecimal;
 }

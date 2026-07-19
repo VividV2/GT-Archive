@@ -1,6 +1,3 @@
 namespace System.CodeDom
 {
 }
-namespace System.Security.Cryptography.X509Certificates
-{
-}

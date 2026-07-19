@@ -1,47 +1,11 @@
-using UnityEngine;
-using UnityEngine.Serialization;
+using System.Collections.Generic;
+using Meta.WitAi.TTS.Utilities;
+using System.Collections.Generic;
+using Meta.WitAi.TTS.Utilities;
 
-namespace Meta.WitAi.TTS.LipSync;
+namespace Meta.WitAi.TTS.Interfaces;
 
-public class VisemeTextureFlipLipSync : BaseTextureFlipLipSync
+public interface ISpeakerTextPreprocessor
 {
-	[FormerlySerializedAs("renderer")]
-	[SerializeField]
-	private Renderer visemeRenderer;
-
-	[SerializeField]
-	private VisemeLipSyncAnimator _lipSyncAnimator;
-
-	public override Renderer Renderer => visemeRenderer;
-
-	protected override void Awake()
-	{
-		base.Awake();
-		if (!_lipSyncAnimator)
-		{
-			_lipSyncAnimator = GetComponent<VisemeLipSyncAnimator>();
-		}
-		if (!visemeRenderer)
-		{
-			visemeRenderer = GetComponent<Renderer>();
-		}
-	}
-
-	protected virtual void OnEnable()
-	{
-		if (!visemeRenderer)
-		{
-			VLog.E("No renderer has been set on " + base.name + ". Viseme texture flipping will not be visible.");
-			base.enabled = false;
-		}
-		else
-		{
-			_lipSyncAnimator.OnVisemeStarted?.AddListener(OnVisemeStarted);
-		}
-	}
-
-	protected virtual void OnDisable()
-	{
-		_lipSyncAnimator.OnVisemeStarted?.RemoveListener(OnVisemeStarted);
-	}
+	void OnPreprocessTTS(TTSSpeaker speaker, List<string> phrases);
 }

@@ -1,12 +1,3 @@
-using UnityEngine;
-
-namespace Technie.PhysicsCreator;
-
-public interface ICreatorComponent
+namespace Technie.PhysicsCreator
 {
-	GameObject GetGameObject();
-
-	bool HasEditorData();
-
-	IEditorData GetEditorData();
 }

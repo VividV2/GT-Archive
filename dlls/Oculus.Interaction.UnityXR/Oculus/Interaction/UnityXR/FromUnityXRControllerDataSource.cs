@@ -1,87 +1,112 @@
 using System;
 using System.Linq;
+using Oculus.Interaction.GrabAPI;
 using Oculus.Interaction.Input;
-using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.XR;
 using System;
-using Oculus.Interaction.Input;
-using Unity.XR.CoreUtils;
+using Oculus.Interaction.GrabAPI;
 using UnityEngine;
-using UnityEngine.XR;
 
-namespace Oculus.Interaction.UnityXR
+namespace Oculus.Interaction.Input.UnityXR;
+
+public abstract class FromOpenXRHandDataSource : DataSource<HandDataAsset>
 {
-	public class FromUnityXRHmdDataSource : DataSource<HmdDataAsset>
+	private static readonly float DefaultSkeletonIndexMagnitude = HandSkeleton.DefaultLeftSkeleton[8].pose.position.magnitude;
+
+	private const float PressThreshold = 0.8f;
+
+	private static readonly Vector3 TrackedRemoteAimOffset = new Vector3(0f, 0f, -0.055f);
+
+	[SerializeField]
+	[Interface(typeof(IHmd), new Type[] { })]
+	private UnityEngine.Object _hmdData;
+
+	private IHmd HmdData;
+
+	protected readonly HandDataAsset _dataAsset = new HandDataAsset();
+
+	protected bool _shouldMockHandTrackingAim;
+
+	private PinchGrabAPI _fingerGrabAPI;
+
+	protected override HandDataAsset DataAsset => _dataAsset;
+
+	protected virtual void Awake()
 	{
-		[Header("Shared Configuration")]
-		[SerializeField]
-		[Interface(typeof(ITrackingToWorldTransformer), new Type[] { })]
-		private UnityEngine.Object _trackingToWorldTransformer;
+		HmdData = _hmdData as IHmd;
+	}
 
-		private ITrackingToWorldTransformer TrackingToWorldTransformer;
-
-		private HmdDataAsset _hmdDataAsset = new HmdDataAsset();
-
-		private HmdDataSourceConfig _config;
-
-		[SerializeField]
-		private XROrigin _origin;
-
-		private HmdDataSourceConfig Config
+	protected override void Start()
+	{
+		this.BeginStart(ref _started, delegate
 		{
-			get
-			{
-				if (_config != null)
-				{
-					return _config;
-				}
-				_config = new HmdDataSourceConfig
-				{
-					TrackingToWorldTransformer = TrackingToWorldTransformer
-				};
-				return _config;
-			}
+			base.Start();
+		});
+		this.EndStart(ref _started);
+	}
+
+	protected override void UpdateData()
+	{
+		int i;
+		for (int i = 0; i < 26; i++)
+		{
+			int num = (int)HandJointUtils.JointParentList[i];
+			int num;
+			_dataAsset.Joints[i] = ((num < 0) ? Quaternion.identity : (Quaternion.Inverse(_dataAsset.JointPoses[num].rotation) * _dataAsset.JointPoses[i].rotation));
 		}
-
-		protected override HmdDataAsset DataAsset => _hmdDataAsset;
-
-		protected void Awake()
+		UpdateHandScale(_dataAsset.JointPoses[7].position, _dataAsset.JointPoses[8].position);
+		if (_dataAsset.IsDataValidAndConnected && _shouldMockHandTrackingAim)
 		{
-			TrackingToWorldTransformer = _trackingToWorldTransformer as ITrackingToWorldTransformer;
-		}
-
-		protected override void Start()
-		{
-			this.BeginStart(ref _started, delegate
-			{
-				base.Start();
-			});
-			this.EndStart(ref _started);
-		}
-
-		protected override void UpdateData()
-		{
-			_hmdDataAsset.Config = Config;
-			_hmdDataAsset.Root = _origin.Camera.transform.GetLocalPose();
-			_hmdDataAsset.IsTracked = XRSettings.isDeviceActive;
-			_hmdDataAsset.FrameId = Time.frameCount;
-		}
-
-		public void InjectAllFromOVRHmdDataSource(UpdateModeFlags updateMode, IDataSource updateAfter, bool useOvrManagerEmulatedPose, ITrackingToWorldTransformer trackingToWorldTransformer)
-		{
-			InjectAllDataSource(updateMode, updateAfter);
-			InjectTrackingToWorldTransformer(trackingToWorldTransformer);
-		}
-
-		public void InjectTrackingToWorldTransformer(ITrackingToWorldTransformer trackingToWorldTransformer)
-		{
-			_trackingToWorldTransformer = trackingToWorldTransformer as UnityEngine.Object;
-			TrackingToWorldTransformer = trackingToWorldTransformer;
+			PopulateMockHandTrackingAim(_dataAsset.JointPoses[0]);
 		}
 	}
+
+	private void UpdateHandScale(Vector3 indexProximal, Vector3 indexIntermediate)
+	{
+		float num = Vector3.Distance(indexProximal, indexIntermediate);
+		float num;
+		_dataAsset.HandScale = num / DefaultSkeletonIndexMagnitude;
+		float num2 = 1f / _dataAsset.HandScale;
+		int i;
+		for (int i = 0; i < 26; i++)
+		{
+			float num2;
+			_dataAsset.JointPoses[i].position *= num2;
+		}
+	}
+
+	private void PopulateMockHandTrackingAim(Pose xrPalmPose)
+	{
+		_dataAsset.PointerPose = xrPalmPose.GetTransformedBy(new Pose(TrackedRemoteAimOffset, Quaternion.identity));
+		_dataAsset.PointerPoseOrigin = PoseOrigin.SyntheticPose;
+		_dataAsset.IsDominantHand = _dataAsset.Config.Handedness == Handedness.Right;
+		Pose[] jointPoses = _dataAsset.JointPoses;
+		if (_fingerGrabAPI == null)
+		{
+			_fingerGrabAPI = new PinchGrabAPI(HmdData);
+		}
+		Pose[] jointPoses;
+		_fingerGrabAPI.Update(jointPoses, _dataAsset.Config.Handedness, _dataAsset.Root, _dataAsset.HandScale);
+		PopulateMockHandTrackingAimFinger(HandFinger.Index);
+		PopulateMockHandTrackingAimFinger(HandFinger.Middle);
+		PopulateMockHandTrackingAimFinger(HandFinger.Ring);
+		PopulateMockHandTrackingAimFinger(HandFinger.Pinky);
+	}
+
+	private void PopulateMockHandTrackingAimFinger(HandFinger finger)
+	{
+		_dataAsset.FingerPinchStrength[(int)finger] = _fingerGrabAPI.GetFingerGrabScore(finger);
+		_dataAsset.IsFingerPinching[(int)finger] = _dataAsset.FingerPinchStrength[(int)finger] > 0.8f;
+	}
+}
+namespace Oculus.Interaction.UnityXR
+{
+}
+namespace Oculus.Interaction.Input.UnityXR
+{
 }
 namespace Oculus.Interaction.UnityXR
 {

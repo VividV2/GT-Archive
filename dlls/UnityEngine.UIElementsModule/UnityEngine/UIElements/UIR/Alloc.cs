@@ -1,16 +1,12 @@
-namespace UnityEngine.UIElements.UIR
+namespace UnityEngine.UIElements.UIR;
+
+internal struct Alloc
 {
-	internal struct Alloc
-	{
-		public uint start;
+	public uint start;
 
-		public uint size;
+	public uint size;
 
-		internal object handle;
+	internal object handle;
 
-		internal bool shortLived;
-	}
-}
-namespace UnityEngine.UIElements.UIR
-{
+	internal bool shortLived;
 }

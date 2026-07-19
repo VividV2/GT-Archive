@@ -1,8 +1,12 @@
-namespace UnityEngine.UIElements;
-
-public enum AlternatingRowBackground
+namespace UnityEngine.UIElements
 {
-	None,
-	ContentOnly,
-	All
+}
+namespace UnityEngine.UIElements
+{
+	public enum AlternatingRowBackground
+	{
+		None,
+		ContentOnly,
+		All
+	}
 }

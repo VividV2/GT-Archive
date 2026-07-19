@@ -1,9 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnCollisionStay2DHandler
-{
-	UniTask<Collision2D> OnCollisionStay2DAsync();
-}
+// Could not decompile Cysharp.Threading.Tasks.Triggers.AsyncMouseDownTrigger
+// This type uses unsupported IL or has too many generic parameters.

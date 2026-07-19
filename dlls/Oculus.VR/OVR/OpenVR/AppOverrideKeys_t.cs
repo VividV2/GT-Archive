@@ -1,10 +1,17 @@
 using System;
 
-namespace OVR.OpenVR;
-
-public struct AppOverrideKeys_t
+namespace OVR.OpenVR
 {
-	public IntPtr pchKey;
+	public struct AppOverrideKeys_t
+	{
+		public IntPtr pchKey;
 
-	public IntPtr pchValue;
+		public IntPtr pchValue;
+	}
+}
+namespace OVR.OpenVR
+{
+}
+namespace OVR.OpenVR
+{
 }

@@ -9,3 +9,6 @@ public enum CompressionLevel
 	High,
 	Maximum
 }
+namespace UnityEngine.Bindings
+{
+}

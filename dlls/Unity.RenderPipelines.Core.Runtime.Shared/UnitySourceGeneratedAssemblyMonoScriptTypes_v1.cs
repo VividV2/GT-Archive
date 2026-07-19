@@ -2,8 +2,6 @@ using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Unity.RenderPipelines.Core.Runtime.Shared;
-
 [CompilerGenerated]
 [EditorBrowsable(EditorBrowsableState.Never)]
 [GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]

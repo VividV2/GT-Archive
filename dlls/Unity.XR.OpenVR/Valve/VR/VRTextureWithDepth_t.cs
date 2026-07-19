@@ -1,14 +1,3 @@
-using System;
-
-namespace Valve.VR;
-
-public struct VRTextureWithDepth_t
+namespace Valve.VR
 {
-	public IntPtr handle;
-
-	public ETextureType eType;
-
-	public EColorSpace eColorSpace;
-
-	public VRTextureDepthInfo_t depth;
 }

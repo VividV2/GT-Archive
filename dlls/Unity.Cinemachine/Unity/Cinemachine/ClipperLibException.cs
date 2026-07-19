@@ -1,11 +1,15 @@
 using System;
 
-namespace Unity.Cinemachine;
-
-internal class ClipperLibException : Exception
+namespace Unity.Cinemachine
 {
-	public ClipperLibException(string description)
-		: base(description)
+	internal class ClipperLibException : Exception
 	{
+		public ClipperLibException(string description)
+			: base(description)
+		{
+		}
 	}
+}
+namespace Unity.Cinemachine
+{
 }

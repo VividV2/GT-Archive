@@ -1,5 +1,8 @@
+using System.Runtime.InteropServices;
+
 namespace VYaml.Serialization;
 
-public interface IYamlFormatter
+[StructLayout(LayoutKind.Sequential, Size = 1)]
+public readonly struct SequenceStyleScope
 {
 }

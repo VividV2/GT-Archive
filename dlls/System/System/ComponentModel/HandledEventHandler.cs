@@ -1,8 +1,9 @@
-namespace System.Diagnostics;
-
-internal enum InitState
+namespace System.ComponentModel
 {
-	NotInitialized,
-	Initializing,
-	Initialized
+}
+namespace System.Net.Cache
+{
+}
+namespace System.IO.CoreFX
+{
 }

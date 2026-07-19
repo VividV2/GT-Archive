@@ -1,3 +1,17 @@
+namespace System.EnterpriseServices;
+
+/// <summary>Specifies the level of access checking for an application, either at the process level only or at all levels, including component, interface, and method levels.</summary>
+/// <summary>Specifies the level of access checking for an application, either at the process level only or at all levels, including component, interface, and method levels.</summary>
+[Serializable]
+public enum AccessChecksLevelOption
+{
+	/// <summary>Enables access checks only at the process level. No access checks are made at the component, interface, or method level.</summary>
+	/// <summary>Enables access checks only at the process level. No access checks are made at the component, interface, or method level.</summary>
+	Application,
+	/// <summary>Enables access checks at every level on calls into the application.</summary>
+	/// <summary>Enables access checks at every level on calls into the application.</summary>
+	ApplicationComponent
+}
 internal static class Consts
 {
 	public const string MonoCorlibVersion = "1A5E0066-58DC-428A-B21C-0AD6CDAE2789";

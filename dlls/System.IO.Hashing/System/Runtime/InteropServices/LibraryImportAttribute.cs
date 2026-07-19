@@ -1,20 +1,2 @@
-namespace System.Runtime.InteropServices;
-
-[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-internal sealed class LibraryImportAttribute : Attribute
-{
-	public string LibraryName { get; }
-
-	public string EntryPoint { get; set; }
-
-	public StringMarshalling StringMarshalling { get; set; }
-
-	public Type StringMarshallingCustomType { get; set; }
-
-	public bool SetLastError { get; set; }
-
-	public LibraryImportAttribute(string libraryName)
-	{
-		LibraryName = libraryName;
-	}
-}
+// Could not decompile System.Runtime.InteropServices.LibraryImportAttribute
+// This type uses unsupported IL or has too many generic parameters.

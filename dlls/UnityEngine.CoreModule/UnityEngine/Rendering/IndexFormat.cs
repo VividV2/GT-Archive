@@ -1,7 +1,3 @@
-namespace UnityEngine.Rendering;
-
-public enum IndexFormat
+namespace UnityEngine.Rendering
 {
-	UInt16,
-	UInt32
 }

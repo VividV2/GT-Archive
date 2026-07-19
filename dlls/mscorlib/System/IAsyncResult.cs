@@ -1,25 +1,23 @@
-using System.Threading;
+namespace Microsoft.Win32;
 
-namespace System;
-
-/// <summary>Represents the status of an asynchronous operation.</summary>
-public interface IAsyncResult
+/// <summary>Represents the possible values for a top-level node on a foreign machine.</summary>
+public enum RegistryHive
 {
-	/// <summary>Gets a value that indicates whether the asynchronous operation has completed.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the operation is complete; otherwise, <see langword="false" />.</returns>
-	bool IsCompleted { get; }
-
-	/// <summary>Gets a <see cref="T:System.Threading.WaitHandle" /> that is used to wait for an asynchronous operation to complete.</summary>
-	/// <returns>A <see cref="T:System.Threading.WaitHandle" /> that is used to wait for an asynchronous operation to complete.</returns>
-	WaitHandle AsyncWaitHandle { get; }
-
-	/// <summary>Gets a user-defined object that qualifies or contains information about an asynchronous operation.</summary>
-	/// <returns>A user-defined object that qualifies or contains information about an asynchronous operation.</returns>
-	object AsyncState { get; }
-
-	/// <summary>Gets a value that indicates whether the asynchronous operation completed synchronously.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the asynchronous operation completed synchronously; otherwise, <see langword="false" />.</returns>
-	bool CompletedSynchronously { get; }
+	/// <summary>Represents the HKEY_CLASSES_ROOT base key on another computer. This value can be passed to the <see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" /> method, to open this node remotely.</summary>
+	ClassesRoot = int.MinValue,
+	/// <summary>Represents the HKEY_CURRENT_USER base key on another computer. This value can be passed to the <see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" /> method, to open this node remotely.</summary>
+	CurrentUser,
+	/// <summary>Represents the HKEY_LOCAL_MACHINE base key on another computer. This value can be passed to the <see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" /> method, to open this node remotely.</summary>
+	LocalMachine,
+	/// <summary>Represents the HKEY_USERS base key on another computer. This value can be passed to the <see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" /> method, to open this node remotely.</summary>
+	Users,
+	/// <summary>Represents the HKEY_PERFORMANCE_DATA base key on another computer. This value can be passed to the <see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" /> method, to open this node remotely.</summary>
+	PerformanceData,
+	/// <summary>Represents the HKEY_CURRENT_CONFIG base key on another computer. This value can be passed to the <see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" /> method, to open this node remotely.</summary>
+	CurrentConfig,
+	/// <summary>Represents the HKEY_DYN_DATA base key on another computer. This value can be passed to the <see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" /> method, to open this node remotely.</summary>
+	DynData
+}
+namespace System.Runtime.InteropServices
+{
 }

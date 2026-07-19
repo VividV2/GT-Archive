@@ -1,8 +1,9 @@
-using System;
+namespace UnityEngine.Playables;
 
-namespace UnityEngine.Scripting;
-
-[AttributeUsage(AttributeTargets.Assembly)]
-public class AlwaysLinkAssemblyAttribute : Attribute
+public enum DirectorUpdateMode
 {
+	DSPClock,
+	GameTime,
+	UnscaledGameTime,
+	Manual
 }

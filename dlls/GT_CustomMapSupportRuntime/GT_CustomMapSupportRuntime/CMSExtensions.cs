@@ -1,6 +1,2 @@
-namespace GT_CustomMapSupportRuntime
-{
-}
-namespace GT_CustomMapSupportRuntime
-{
-}
+// Could not decompile GT_CustomMapSupportRuntime.CMSExtensions
+// This type uses unsupported IL or has too many generic parameters.

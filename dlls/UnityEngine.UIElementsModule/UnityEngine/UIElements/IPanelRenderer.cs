@@ -10,3 +10,6 @@ internal interface IPanelRenderer
 
 	void Render();
 }
+namespace UnityEngine.UIElements
+{
+}

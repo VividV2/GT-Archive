@@ -1,38 +1,40 @@
 namespace Steamworks
 {
-	public enum EWorkshopFileType
+	public enum EVoiceResult
 	{
-		k_EWorkshopFileTypeFirst = 0,
-		k_EWorkshopFileTypeCommunity = 0,
-		k_EWorkshopFileTypeMicrotransaction = 1,
-		k_EWorkshopFileTypeCollection = 2,
-		k_EWorkshopFileTypeArt = 3,
-		k_EWorkshopFileTypeVideo = 4,
-		k_EWorkshopFileTypeScreenshot = 5,
-		k_EWorkshopFileTypeGame = 6,
-		k_EWorkshopFileTypeSoftware = 7,
-		k_EWorkshopFileTypeConcept = 8,
-		k_EWorkshopFileTypeWebGuide = 9,
-		k_EWorkshopFileTypeIntegratedGuide = 10,
-		k_EWorkshopFileTypeMerch = 11,
-		k_EWorkshopFileTypeControllerBinding = 12,
-		k_EWorkshopFileTypeSteamworksAccessInvite = 13,
-		k_EWorkshopFileTypeSteamVideo = 14,
-		k_EWorkshopFileTypeGameManagedItem = 15,
-		k_EWorkshopFileTypeClip = 16,
-		k_EWorkshopFileTypeMax = 17
+		k_EVoiceResultOK,
+		k_EVoiceResultNotInitialized,
+		k_EVoiceResultNotRecording,
+		k_EVoiceResultNoData,
+		k_EVoiceResultBufferTooSmall,
+		k_EVoiceResultDataCorrupted,
+		k_EVoiceResultRestricted,
+		k_EVoiceResultUnsupportedCodec,
+		k_EVoiceResultReceiverOutOfDate,
+		k_EVoiceResultReceiverDidNotAnswer
 	}
 }
 namespace Steamworks
 {
-	public enum EUserUGCListSortOrder
+	[Flags]
+	public enum EMarketNotAllowedReasonFlags
 	{
-		k_EUserUGCListSortOrder_CreationOrderDesc,
-		k_EUserUGCListSortOrder_CreationOrderAsc,
-		k_EUserUGCListSortOrder_TitleAsc,
-		k_EUserUGCListSortOrder_LastUpdatedDesc,
-		k_EUserUGCListSortOrder_SubscriptionDateDesc,
-		k_EUserUGCListSortOrder_VoteScoreDesc,
-		k_EUserUGCListSortOrder_ForModeration
+		k_EMarketNotAllowedReason_None = 0,
+		k_EMarketNotAllowedReason_TemporaryFailure = 1,
+		k_EMarketNotAllowedReason_AccountDisabled = 2,
+		k_EMarketNotAllowedReason_AccountLockedDown = 4,
+		k_EMarketNotAllowedReason_AccountLimited = 8,
+		k_EMarketNotAllowedReason_TradeBanned = 0x10,
+		k_EMarketNotAllowedReason_AccountNotTrusted = 0x20,
+		k_EMarketNotAllowedReason_SteamGuardNotEnabled = 0x40,
+		k_EMarketNotAllowedReason_SteamGuardOnlyRecentlyEnabled = 0x80,
+		k_EMarketNotAllowedReason_RecentPasswordReset = 0x100,
+		k_EMarketNotAllowedReason_NewPaymentMethod = 0x200,
+		k_EMarketNotAllowedReason_InvalidCookie = 0x400,
+		k_EMarketNotAllowedReason_UsingNewDevice = 0x800,
+		k_EMarketNotAllowedReason_RecentSelfRefund = 0x1000,
+		k_EMarketNotAllowedReason_NewPaymentMethodCannotBeVerified = 0x2000,
+		k_EMarketNotAllowedReason_NoRecentPurchases = 0x4000,
+		k_EMarketNotAllowedReason_AcceptedWalletGift = 0x8000
 	}
 }

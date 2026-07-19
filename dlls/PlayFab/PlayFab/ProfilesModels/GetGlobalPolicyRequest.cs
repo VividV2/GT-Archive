@@ -1,13 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace Ionic.Zlib
+namespace PlayFab.InsightsModels
 {
 }
-namespace PlayFab.ProfilesModels
+namespace PlayFab.CloudScriptModels
 {
-	[Serializable]
-	public class GetGlobalPolicyRequest : PlayFabRequestCommon
-	{
-	}
 }

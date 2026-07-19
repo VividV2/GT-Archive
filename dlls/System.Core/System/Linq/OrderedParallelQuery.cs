@@ -1,2 +1,2 @@
-namespace System.Security.Cryptography;
-
+// Could not decompile System.Linq.OrderedParallelQuery`1
+// This type uses unsupported IL or has too many generic parameters.

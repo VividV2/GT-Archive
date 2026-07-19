@@ -1,3 +1,3 @@
-namespace System.Net.Mime
+namespace System.CodeDom
 {
 }

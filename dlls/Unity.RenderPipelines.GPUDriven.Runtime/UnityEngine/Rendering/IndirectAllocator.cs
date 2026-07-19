@@ -1,8 +1,12 @@
-namespace UnityEngine.Rendering;
-
-internal enum IndirectAllocator
+namespace UnityEngine.Rendering
 {
-	NextInstanceIndex,
-	NextDrawIndex,
-	Count
+	internal enum IndirectAllocator
+	{
+		NextInstanceIndex,
+		NextDrawIndex,
+		Count
+	}
+}
+namespace UnityEngine.Rendering
+{
 }

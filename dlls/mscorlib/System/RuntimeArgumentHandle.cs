@@ -1,7 +1,5 @@
-namespace System;
+namespace System.Runtime.CompilerServices;
 
-/// <summary>References a variable-length argument list.</summary>
-public ref struct RuntimeArgumentHandle
+public static class CompilerMarshalOverride
 {
-	internal IntPtr args;
 }

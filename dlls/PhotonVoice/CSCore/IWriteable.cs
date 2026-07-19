@@ -1,6 +1,2 @@
-namespace CSCore;
-
-public interface IWriteable
-{
-	void Write(byte[] buffer, int offset, int count);
-}
+// Could not decompile CSCore.IWriteable
+// This type uses unsupported IL or has too many generic parameters.

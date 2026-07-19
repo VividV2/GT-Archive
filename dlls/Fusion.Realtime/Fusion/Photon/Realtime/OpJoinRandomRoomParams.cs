@@ -1,20 +1,2 @@
-using ExitGames.Client.Photon;
-
-namespace Fusion.Photon.Realtime;
-
-internal class OpJoinRandomRoomParams
-{
-	public Hashtable ExpectedCustomRoomProperties;
-
-	public int ExpectedMaxPlayers;
-
-	public MatchmakingMode MatchingType;
-
-	public TypedLobby TypedLobby;
-
-	public string SqlLobbyFilter;
-
-	public string[] ExpectedUsers;
-
-	public object Ticket;
-}
+// Could not decompile Fusion.Photon.Realtime.OpJoinRandomRoomParams
+// This type uses unsupported IL or has too many generic parameters.

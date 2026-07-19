@@ -1,8 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public struct MetadataValue
-{
-	public int NameID;
-
-	public uint Value;
-}
+// Could not decompile UnityEngine.Rendering.MetadataValue
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,12 +1,6 @@
-namespace System.Xml;
-
-/// <summary>Specifies the current <see langword="xml:space" /> scope.</summary>
-public enum XmlSpace
+namespace System.Xml.Serialization
 {
-	/// <summary>No <see langword="xml:space" /> scope.</summary>
-	None,
-	/// <summary>The <see langword="xml:space" /> scope equals <see langword="default" />.</summary>
-	Default,
-	/// <summary>The <see langword="xml:space" /> scope equals <see langword="preserve" />.</summary>
-	Preserve
+}
+namespace System.Xml
+{
 }

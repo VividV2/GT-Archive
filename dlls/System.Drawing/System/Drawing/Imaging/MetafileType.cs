@@ -1,10 +1,3 @@
-namespace System.Drawing.Drawing2D;
+namespace System.Drawing.Design;
 
-public enum PenType
-{
-	SolidColor,
-	HatchFill,
-	TextureFill,
-	PathGradient,
-	LinearGradient
-}
+public delegate void ToolboxComponentsCreatingEventHandler(object sender, ToolboxComponentsCreatingEventArgs e);

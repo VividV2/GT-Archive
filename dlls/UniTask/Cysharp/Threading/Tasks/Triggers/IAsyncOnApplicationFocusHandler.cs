@@ -1,6 +1,10 @@
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnApplicationFocusHandler
+namespace Cysharp.Threading.Tasks
 {
-	UniTask<bool> OnApplicationFocusAsync();
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+	public interface IAsyncOnApplicationFocusHandler
+	{
+		UniTask<bool> OnApplicationFocusAsync();
+	}
 }

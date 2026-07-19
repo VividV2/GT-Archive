@@ -1,10 +1,2 @@
-namespace System.Net.Http;
-
-/// <summary>Indicates if <see cref="T:System.Net.Http.HttpClient" /> operations should be considered completed either as soon as a response is available, or after reading the entire response message including the content.</summary>
-public enum HttpCompletionOption
-{
-	/// <summary>The operation should complete after reading the entire response including the content.</summary>
-	ResponseContentRead,
-	/// <summary>The operation should complete as soon as a response is available and headers are read. The content is not read yet.</summary>
-	ResponseHeadersRead
-}
+// Could not decompile System.Net.Http.HttpCompletionOption
+// This type uses unsupported IL or has too many generic parameters.

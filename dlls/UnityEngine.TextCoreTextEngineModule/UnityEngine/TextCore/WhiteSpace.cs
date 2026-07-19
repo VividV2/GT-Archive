@@ -1,16 +1,12 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine.TextCore
+namespace UnityEngine.TextCore;
+
+[VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule" })]
+internal enum WhiteSpace
 {
-	[VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule" })]
-	internal enum WhiteSpace
-	{
-		Normal,
-		NoWrap,
-		Pre,
-		PreWrap
-	}
-}
-namespace UnityEngine.TextCore
-{
+	Normal,
+	NoWrap,
+	Pre,
+	PreWrap
 }

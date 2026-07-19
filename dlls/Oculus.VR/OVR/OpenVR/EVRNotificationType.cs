@@ -1,8 +1,2 @@
-namespace OVR.OpenVR;
-
-public enum EVRNotificationType
-{
-	Transient,
-	Persistent,
-	Transient_SystemWithUserValue
-}
+// Could not decompile OVR.OpenVR.EVRNotificationType
+// This type uses unsupported IL or has too many generic parameters.

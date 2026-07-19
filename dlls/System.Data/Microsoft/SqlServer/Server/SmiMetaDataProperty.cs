@@ -1,11 +1,2 @@
-namespace System.Data;
-
-/// <summary>Determines the serialization format for a <see cref="T:System.Data.DataSet" />.</summary>
-/// <summary>Determines the serialization format for a <see cref="T:System.Data.DataSet" />.</summary>
-public enum SerializationFormat
-{
-	/// <summary>Serialize as XML content. The default.</summary>
-	Xml,
-	/// <summary>Serialize as binary content. Available in ADO.NET 2.0 only.</summary>
-	Binary
-}
+// Could not decompile Microsoft.SqlServer.Server.SmiMetaDataProperty
+// This type uses unsupported IL or has too many generic parameters.

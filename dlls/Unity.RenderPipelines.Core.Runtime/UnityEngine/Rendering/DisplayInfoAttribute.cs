@@ -1,11 +1,2 @@
-using System;
-
-namespace UnityEngine.Rendering;
-
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Field, AllowMultiple = false)]
-public class DisplayInfoAttribute : Attribute
-{
-	public string name;
-
-	public int order;
-}
+// Could not decompile UnityEngine.Rendering.DisplayInfoAttribute
+// This type uses unsupported IL or has too many generic parameters.

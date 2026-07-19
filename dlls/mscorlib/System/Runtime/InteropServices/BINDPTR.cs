@@ -17,3 +17,6 @@ public struct BINDPTR
 	[FieldOffset(0)]
 	public IntPtr lpvardesc;
 }
+namespace System.Text
+{
+}

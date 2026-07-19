@@ -1,11 +1,5 @@
 namespace Valve.VR
 {
-}
-namespace Valve.VR
-{
-}
-namespace Valve.VR
-{
 	public enum ETrackedPropertyError
 	{
 		TrackedProp_Success,
@@ -25,4 +19,7 @@ namespace Valve.VR
 		TrackedProp_OutOfMemory,
 		TrackedProp_InvalidContainer
 	}
+}
+namespace Valve.VR
+{
 }

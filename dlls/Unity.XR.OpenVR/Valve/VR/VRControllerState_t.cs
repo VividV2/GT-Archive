@@ -1,17 +1,2 @@
-namespace Valve.VR
-{
-	public enum EVRMuraCorrectionMode
-	{
-		Default,
-		NoCorrection
-	}
-}
-namespace Valve.VR
-{
-	public enum EVRMouseButton
-	{
-		Left = 1,
-		Right = 2,
-		Middle = 4
-	}
-}
+// Could not decompile Valve.VR.VRControllerState_t
+// This type uses unsupported IL or has too many generic parameters.

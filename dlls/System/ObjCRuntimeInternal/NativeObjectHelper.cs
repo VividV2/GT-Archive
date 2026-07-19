@@ -1,11 +1,2 @@
-using System;
-
-namespace ObjCRuntimeInternal;
-
-internal static class NativeObjectHelper
-{
-	public static IntPtr GetHandle(this INativeObject self)
-	{
-		return self?.Handle ?? IntPtr.Zero;
-	}
-}
+// Could not decompile ObjCRuntimeInternal.NativeObjectHelper
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,49 +1,17 @@
-using UnityEngine.Scripting;
+using System;
+using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace UnityEngine.TextCore.LowLevel;
 
-[UsedByNativeCode]
-internal struct GlyphMarshallingStruct
+[Serializable]
+internal struct OpenTypeLayoutTable
 {
-	public uint index;
+	public List<OpenTypeLayoutScript> scripts;
 
-	public GlyphMetrics metrics;
+	public List<OpenTypeLayoutFeature> features;
 
-	public GlyphRect glyphRect;
-
-	public float scale;
-
-	public int atlasIndex;
-
-	public GlyphClassDefinitionType classDefinitionType;
-
-	public GlyphMarshallingStruct(Glyph glyph)
-	{
-		index = glyph.index;
-		metrics = glyph.metrics;
-		glyphRect = glyph.glyphRect;
-		scale = glyph.scale;
-		atlasIndex = glyph.atlasIndex;
-		classDefinitionType = glyph.classDefinitionType;
-	}
-
-	public GlyphMarshallingStruct(uint index, GlyphMetrics metrics, GlyphRect glyphRect, float scale, int atlasIndex)
-	{
-		this.index = index;
-		this.metrics = metrics;
-		this.glyphRect = glyphRect;
-		this.scale = scale;
-		this.atlasIndex = atlasIndex;
-		classDefinitionType = GlyphClassDefinitionType.Undefined;
-	}
-
-	public GlyphMarshallingStruct(uint index, GlyphMetrics metrics, GlyphRect glyphRect, float scale, int atlasIndex, GlyphClassDefinitionType classDefinitionType)
-	{
-		this.index = index;
-		this.metrics = metrics;
-		this.glyphRect = glyphRect;
-		this.scale = scale;
-		this.atlasIndex = atlasIndex;
-		this.classDefinitionType = classDefinitionType;
-	}
+	[SerializeReference]
+	public List<OpenTypeLayoutLookup> lookups;
 }

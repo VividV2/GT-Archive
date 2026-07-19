@@ -1,8 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public enum ComputeQueueType
-{
-	Default,
-	Background,
-	Urgent
-}
+// Could not decompile UnityEngine.Playables.PlayableOutputExtensions
+// This type uses unsupported IL or has too many generic parameters.

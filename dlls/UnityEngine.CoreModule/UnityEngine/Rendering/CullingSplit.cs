@@ -1,23 +1,39 @@
 using UnityEngine.Bindings;
 using UnityEngine.Scripting;
 
-namespace UnityEngine.Rendering;
-
-[UsedByNativeCode]
-[NativeHeader("Runtime/Camera/BatchRendererGroup.h")]
-public struct CullingSplit
+namespace UnityEngine
 {
-	public Vector3 sphereCenter;
+	internal static class ScrollWaitDefinitions
+	{
+		public const int firstWait = 250;
 
-	public float sphereRadius;
+		public const int regularWait = 30;
+	}
+}
+namespace Unity.Collections
+{
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine.Rendering
+{
+	[UsedByNativeCode]
+	[NativeHeader("Runtime/Camera/BatchRendererGroup.h")]
+	public struct CullingSplit
+	{
+		public Vector3 sphereCenter;
 
-	public int cullingPlaneOffset;
+		public float sphereRadius;
 
-	public int cullingPlaneCount;
+		public int cullingPlaneOffset;
 
-	public float cascadeBlendCullingFactor;
+		public int cullingPlaneCount;
 
-	public float nearPlane;
+		public float cascadeBlendCullingFactor;
 
-	public Matrix4x4 cullingMatrix;
+		public float nearPlane;
+
+		public Matrix4x4 cullingMatrix;
+	}
 }

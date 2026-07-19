@@ -1,10 +1,3 @@
-namespace System.Reflection;
-
-[Flags]
-public enum EventAttributes
+namespace System.Collections.Generic
 {
-	None = 0,
-	SpecialName = 0x200,
-	RTSpecialName = 0x400,
-	ReservedMask = 0x400
 }

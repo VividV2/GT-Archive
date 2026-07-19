@@ -1,15 +1,19 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(331)]
+public struct GameOverlayActivated_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(163)]
-	public struct GetAuthSessionTicketResponse_t
-	{
-		public const int k_iCallback = 163;
+	public const int k_iCallback = 331;
 
-		public HAuthTicket m_hAuthTicket;
+	public byte m_bActive;
 
-		public EResult m_eResult;
-	}
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bUserInitiated;
+
+	public AppId_t m_nAppID;
+
+	public uint m_dwOverlayPID;
 }

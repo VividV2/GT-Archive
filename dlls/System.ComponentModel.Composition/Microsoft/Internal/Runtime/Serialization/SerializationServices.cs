@@ -1,8 +1,5 @@
 using System.Runtime.Serialization;
 
-namespace System.ComponentModel.Composition
-{
-}
 namespace Microsoft.Internal.Runtime.Serialization
 {
 	internal static class SerializationServices
@@ -13,4 +10,7 @@ namespace Microsoft.Internal.Runtime.Serialization
 			return (T)info.GetValue(name, typeof(T));
 		}
 	}
+}
+namespace System.ComponentModel.Composition
+{
 }

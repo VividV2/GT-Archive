@@ -1,10 +1,17 @@
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using Mono.Security.Interface;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using Mono.Security.Interface;
+using System.ComponentModel;
 
-namespace Mono.Net.Security;
+namespace System.Diagnostics;
 
-internal delegate bool ServerCertValidationCallbackWrapper(ServerCertValidationCallback callback, X509Certificate certificate, X509Chain chain, MonoSslPolicyErrors sslPolicyErrors);
+internal sealed class AlphabeticalEnumConverter : EnumConverter
+{
+	public AlphabeticalEnumConverter(Type type)
+		: base(type)
+	{
+	}
+
+	[System.MonoTODO("Create sorted standart values")]
+	public override StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+	{
+		return base.Values;
+	}
+}

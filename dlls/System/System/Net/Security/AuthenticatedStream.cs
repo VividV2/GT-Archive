@@ -1,16 +1,2 @@
-namespace System.Net.Sockets;
-
-/// <summary>Defines the polling modes for the <see cref="M:System.Net.Sockets.Socket.Poll(System.Int32,System.Net.Sockets.SelectMode)" /> method.</summary>
-/// <summary>Defines the polling modes for the <see cref="M:System.Net.Sockets.Socket.Poll(System.Int32,System.Net.Sockets.SelectMode)" /> method.</summary>
-public enum SelectMode
-{
-	/// <summary>Read status mode.</summary>
-	/// <summary>Read status mode.</summary>
-	SelectRead,
-	/// <summary>Write status mode.</summary>
-	/// <summary>Write status mode.</summary>
-	SelectWrite,
-	/// <summary>Error status mode.</summary>
-	/// <summary>Error status mode.</summary>
-	SelectError
-}
+// Could not decompile System.Net.Security.AuthenticatedStream
+// This type uses unsupported IL or has too many generic parameters.

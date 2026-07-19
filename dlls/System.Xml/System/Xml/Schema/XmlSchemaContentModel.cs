@@ -1,6 +1,2 @@
-namespace System.Xml.Schema
-{
-}
-namespace System.Xml.Schema
-{
-}
+// Could not decompile System.Xml.Schema.XmlSchemaContentModel
+// This type uses unsupported IL or has too many generic parameters.

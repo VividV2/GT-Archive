@@ -1,3 +1,2 @@
-namespace System.Drawing.Printing;
-
-public delegate void PrintEventHandler(object sender, PrintEventArgs e);
+// Could not decompile System.Drawing.Drawing2D.Matrix
+// This type uses unsupported IL or has too many generic parameters.

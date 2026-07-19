@@ -1,21 +1,2 @@
-namespace Valve.VR;
-
-public struct VRControllerAxis_t
-{
-	public float x;
-
-	public float y;
-}
-namespace Valve.VR
-{
-	public struct VROverlayIntersectionResults_t
-	{
-		public HmdVector3_t vPoint;
-
-		public HmdVector3_t vNormal;
-
-		public HmdVector2_t vUVs;
-
-		public float fDistance;
-	}
-}
+// Could not decompile Valve.VR.CVRChaperone
+// This type uses unsupported IL or has too many generic parameters.

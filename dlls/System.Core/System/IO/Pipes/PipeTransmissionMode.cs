@@ -1,6 +1,3 @@
-namespace System.Diagnostics.Eventing.Reader
-{
-}
 namespace System.IO.Pipes
 {
 	/// <summary>Specifies the transmission mode of the pipe.</summary>
@@ -11,4 +8,7 @@ namespace System.IO.Pipes
 		/// <summary>Indicates that data in the pipe is transmitted and read as a stream of messages.</summary>
 		Message
 	}
+}
+namespace System.Security.Cryptography.X509Certificates
+{
 }

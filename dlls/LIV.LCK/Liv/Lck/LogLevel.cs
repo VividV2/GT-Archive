@@ -1,9 +1,13 @@
-namespace Liv.Lck;
-
-public enum LogLevel
+namespace Liv.Lck.Streaming
 {
-	None,
-	Error,
-	Warning,
-	Info
+}
+namespace Liv.Lck
+{
+	public enum LogLevel
+	{
+		None,
+		Error,
+		Warning,
+		Info
+	}
 }

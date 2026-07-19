@@ -1,45 +1,32 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
 namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(5215)]
-	public struct EndGameResultCallback_t
+	[CallbackIdentity(3408)]
+	public struct SetUserItemVoteResult_t
 	{
-		public const int k_iCallback = 5215;
+		public const int k_iCallback = 3408;
+
+		public PublishedFileId_t m_nPublishedFileId;
 
 		public EResult m_eResult;
 
-		public ulong ullUniqueGameID;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bVoteUp;
 	}
 }
 namespace Steamworks
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1023)]
-	public struct FileDetailsResult_t
-	{
-		public const int k_iCallback = 1023;
-
-		public EResult m_eResult;
-
-		public ulong m_ulFileSize;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
-		public byte[] m_FileSHA;
-
-		public uint m_unFlags;
-	}
 }
 namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(5701)]
-	public struct SteamRemotePlaySessionConnected_t
+	[CallbackIdentity(304)]
+	public struct PersonaStateChange_t
 	{
-		public const int k_iCallback = 5701;
+		public const int k_iCallback = 304;
 
-		public RemotePlaySessionID_t m_unSessionID;
+		public ulong m_ulSteamID;
+
+		public EPersonaChange m_nChangeFlags;
 	}
 }

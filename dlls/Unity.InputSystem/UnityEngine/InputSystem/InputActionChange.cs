@@ -1,14 +1,18 @@
-namespace UnityEngine.InputSystem;
-
-public enum InputActionChange
+namespace UnityEngine.InputSystem
 {
-	ActionEnabled,
-	ActionDisabled,
-	ActionMapEnabled,
-	ActionMapDisabled,
-	ActionStarted,
-	ActionPerformed,
-	ActionCanceled,
-	BoundControlsAboutToChange,
-	BoundControlsChanged
+	public enum InputActionChange
+	{
+		ActionEnabled,
+		ActionDisabled,
+		ActionMapEnabled,
+		ActionMapDisabled,
+		ActionStarted,
+		ActionPerformed,
+		ActionCanceled,
+		BoundControlsAboutToChange,
+		BoundControlsChanged
+	}
+}
+namespace UnityEngine.InputSystem.XR
+{
 }

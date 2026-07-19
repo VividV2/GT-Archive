@@ -1,6 +1,10 @@
-namespace GorillaTag;
-
-public interface IDynamicFloat
+namespace GorillaTag
 {
-	float floatValue { get; }
+	public interface IDynamicFloat
+	{
+		float floatValue { get; }
+	}
+}
+namespace GorillaTagScripts.ScavengerHunt
+{
 }

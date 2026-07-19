@@ -1,21 +1,16 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
+namespace Steamworks;
 
-namespace Steamworks
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+[CallbackIdentity(334)]
+public struct AvatarImageLoaded_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
-	[CallbackIdentity(2302)]
-	public struct ScreenshotRequested_t
-	{
-		public const int k_iCallback = 2302;
-	}
-}
-namespace Steamworks
-{
-	public enum EControllerHapticType
-	{
-		k_EControllerHapticType_Off,
-		k_EControllerHapticType_Tick,
-		k_EControllerHapticType_Click
-	}
+	public const int k_iCallback = 334;
+
+	public CSteamID m_steamID;
+
+	public int m_iImage;
+
+	public int m_iWide;
+
+	public int m_iTall;
 }

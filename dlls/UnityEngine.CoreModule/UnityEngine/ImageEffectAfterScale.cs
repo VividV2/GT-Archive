@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Scripting;
-
-namespace UnityEngine;
-
-[UsedByNativeCode]
-public sealed class ImageEffectAfterScale : Attribute
-{
-}
+// Could not decompile UnityEngine.ImageEffectAfterScale
+// This type uses unsupported IL or has too many generic parameters.

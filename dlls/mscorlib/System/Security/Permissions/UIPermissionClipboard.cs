@@ -1,12 +1,18 @@
-namespace System.Security.Permissions;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Activation;
 
-/// <summary>Specifies the type of clipboard access that is allowed to the calling code.</summary>
-public enum UIPermissionClipboard
+namespace System.Runtime.Remoting.Contexts;
+
+[ComVisible(true)]
+public interface IContextPropertyActivator
 {
-	/// <summary>Clipboard can be used without restriction.</summary>
-	AllClipboard = 2,
-	/// <summary>Clipboard cannot be used.</summary>
-	NoClipboard = 0,
-	/// <summary>The ability to put data on the clipboard (<see langword="Copy" />, <see langword="Cut" />) is unrestricted. Intrinsic controls that accept <see langword="Paste" />, such as text box, can accept the clipboard data, but user controls that must programmatically read the clipboard cannot.</summary>
-	OwnClipboard = 1
+	void CollectFromClientContext(IConstructionCallMessage msg);
+
+	void CollectFromServerContext(IConstructionReturnMessage msg);
+
+	bool DeliverClientContextToServerContext(IConstructionCallMessage msg);
+
+	bool DeliverServerContextToClientContext(IConstructionReturnMessage msg);
+
+	bool IsOKToActivate(IConstructionCallMessage msg);
 }

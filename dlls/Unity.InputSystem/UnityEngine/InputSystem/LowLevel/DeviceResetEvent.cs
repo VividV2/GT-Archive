@@ -1,12 +1,2 @@
-using UnityEngine.InputSystem.Utilities;
-using UnityEngine.InputSystem.Utilities;
-
-namespace UnityEngine.InputSystem.LowLevel;
-
-public interface IInputStateTypeInfo
-{
-	FourCC format { get; }
-}
-namespace UnityEngine.InputSystem.Controls
-{
-}
+// Could not decompile UnityEngine.InputSystem.LowLevel.DeviceResetEvent
+// This type uses unsupported IL or has too many generic parameters.

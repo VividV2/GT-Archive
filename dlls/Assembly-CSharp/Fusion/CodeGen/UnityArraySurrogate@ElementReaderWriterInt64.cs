@@ -1,11 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace Viveport.Internal
-{
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	internal delegate void IAPurchaseCallback(int code, [MarshalAs(UnmanagedType.LPStr)] string message);
-}
-namespace GorillaTag.Cosmetics
-{
-}
+// Could not decompile Fusion.CodeGen.UnityArraySurrogate@ElementReaderWriterInt64
+// This type uses unsupported IL or has too many generic parameters.

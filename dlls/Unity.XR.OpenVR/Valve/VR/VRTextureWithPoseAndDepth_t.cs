@@ -1,0 +1,34 @@
+using System;
+
+namespace Valve.VR
+{
+	public struct DistortionCoordinates_t
+	{
+		public float rfRed0;
+
+		public float rfRed1;
+
+		public float rfGreen0;
+
+		public float rfGreen1;
+
+		public float rfBlue0;
+
+		public float rfBlue1;
+	}
+}
+namespace Valve.VR
+{
+	public struct VRTextureWithPoseAndDepth_t
+	{
+		public IntPtr handle;
+
+		public ETextureType eType;
+
+		public EColorSpace eColorSpace;
+
+		public HmdMatrix34_t mDeviceToAbsoluteTracking;
+
+		public VRTextureDepthInfo_t depth;
+	}
+}

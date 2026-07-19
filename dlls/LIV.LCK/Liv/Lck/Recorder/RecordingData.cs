@@ -1,8 +1,12 @@
-namespace Liv.Lck.Recorder;
-
-public struct RecordingData
+namespace Liv.Lck.Tablet
 {
-	public string RecordingFilePath;
+}
+namespace Liv.Lck.Recorder
+{
+	public struct RecordingData
+	{
+		public string RecordingFilePath;
 
-	public float RecordingDuration;
+		public float RecordingDuration;
+	}
 }

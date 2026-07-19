@@ -1,12 +1,2 @@
-namespace g3
-{
-}
-namespace g3
-{
-	public struct CurveSample2d(Vector2d p, Vector2d t)
-	{
-		public Vector2d position = p;
-
-		public Vector2d tangent = t;
-	}
-}
+// Could not decompile g3.CurveSample2d
+// This type uses unsupported IL or has too many generic parameters.

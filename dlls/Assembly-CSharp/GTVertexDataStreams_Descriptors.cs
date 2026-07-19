@@ -1,8 +1,2 @@
-using System.IO;
-
-public interface IGameEntitySerialize
-{
-	void OnGameEntitySerialize(System.IO.BinaryWriter writer);
-
-	void OnGameEntityDeserialize(System.IO.BinaryReader reader);
-}
+// Could not decompile GTVertexDataStreams_Descriptors
+// This type uses unsupported IL or has too many generic parameters.

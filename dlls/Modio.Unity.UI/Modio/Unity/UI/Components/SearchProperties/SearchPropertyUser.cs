@@ -1,2 +1,2 @@
-namespace Modio.Unity.UI.Components.SearchProperties;
+namespace Modio.Unity.UI.Components.ModProperties;
 

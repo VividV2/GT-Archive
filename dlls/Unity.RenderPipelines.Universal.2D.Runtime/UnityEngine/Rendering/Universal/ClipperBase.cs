@@ -1,6 +1,2 @@
-namespace UnityEngine.Rendering.Universal
-{
-}
-namespace UnityEngine.Rendering.Universal
-{
-}
+// Could not decompile UnityEngine.Rendering.Universal.ClipperBase
+// This type uses unsupported IL or has too many generic parameters.

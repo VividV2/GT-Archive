@@ -1,6 +1,3 @@
-namespace System.Numerics.Hashing
-{
-}
-namespace System.Drawing.Design
-{
-}
+namespace System.Internal;
+
+internal delegate void HandleChangeEventHandler(string handleType, IntPtr handleValue, int currentHandleCount);

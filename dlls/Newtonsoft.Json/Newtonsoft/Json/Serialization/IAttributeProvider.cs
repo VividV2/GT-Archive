@@ -1,18 +1,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace Newtonsoft.Json.Serialization
-{
-	public interface IAttributeProvider
-	{
-		IList<Attribute> GetAttributes(bool inherit);
+namespace Newtonsoft.Json.Serialization;
 
-		IList<Attribute> GetAttributes(Type attributeType, bool inherit);
-	}
-}
-namespace Newtonsoft.Json.Serialization
+public interface IAttributeProvider
 {
-}
-namespace Newtonsoft.Json.Utilities
-{
+	IList<Attribute> GetAttributes(bool inherit);
+
+	IList<Attribute> GetAttributes(Type attributeType, bool inherit);
 }

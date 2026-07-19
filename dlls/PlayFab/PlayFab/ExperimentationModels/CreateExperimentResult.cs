@@ -1,2 +1,5 @@
-namespace PlayFab.DataModels;
+namespace PlayFab.SharedModels;
 
+public interface IPlayFabInstanceApi
+{
+}

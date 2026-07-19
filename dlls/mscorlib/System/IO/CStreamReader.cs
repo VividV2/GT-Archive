@@ -1,2 +1,2 @@
-namespace System.Globalization;
-
+// Could not decompile System.IO.CStreamReader
+// This type uses unsupported IL or has too many generic parameters.

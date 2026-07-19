@@ -1,15 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class UpdateUserDataRequest : PlayFabRequestCommon
-{
-	public Dictionary<string, string> Data;
-
-	public List<string> KeysToRemove;
-
-	public UserDataPermission? Permission;
-}
+// Could not decompile PlayFab.ClientModels.UpdateUserDataRequest
+// This type uses unsupported IL or has too many generic parameters.

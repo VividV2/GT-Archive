@@ -1,6 +1,2 @@
-namespace Oculus.Platform.Models
-{
-}
-namespace Oculus.Platform
-{
-}
+namespace Oculus.Platform.Models;
+

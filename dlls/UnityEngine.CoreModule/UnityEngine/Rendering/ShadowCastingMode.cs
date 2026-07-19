@@ -1,18 +1,9 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public enum ShadowCastingMode
 {
-	public enum ReflectionProbeClearFlags
-	{
-		Skybox = 1,
-		SolidColor
-	}
-}
-namespace UnityEngine.Rendering
-{
-	public enum ShadowCastingMode
-	{
-		Off,
-		On,
-		TwoSided,
-		ShadowsOnly
-	}
+	Off,
+	On,
+	TwoSided,
+	ShadowsOnly
 }

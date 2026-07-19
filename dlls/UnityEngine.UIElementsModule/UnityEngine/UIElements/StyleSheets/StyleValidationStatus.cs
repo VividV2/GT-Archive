@@ -1,8 +1,19 @@
-namespace UnityEngine.UIElements.StyleSheets;
-
-internal enum StyleValidationStatus
+namespace UnityEngine.UIElements
 {
-	Ok,
-	Error,
-	Warning
+	public enum FlexDirection
+	{
+		Column,
+		ColumnReverse,
+		Row,
+		RowReverse
+	}
+}
+namespace UnityEngine.UIElements.StyleSheets
+{
+	internal enum StyleValidationStatus
+	{
+		Ok,
+		Error,
+		Warning
+	}
 }

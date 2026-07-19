@@ -1,2 +1,2 @@
-namespace VYaml.Serialization;
+namespace VYaml.Parser;
 

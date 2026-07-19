@@ -1,16 +1,12 @@
-namespace Fusion
+namespace Fusion;
+
+public enum RpcSendCullResult
 {
-	public enum RpcSendCullResult
-	{
-		NotCulled,
-		NotInvokableDuringResim,
-		InsufficientSourceAuthority,
-		NoActiveConnections,
-		TargetPlayerUnreachable,
-		TargetPlayerIsLocalButRpcIsNotInvokableLocally,
-		PayloadSizeExceeded
-	}
-}
-namespace Fusion
-{
+	NotCulled,
+	NotInvokableDuringResim,
+	InsufficientSourceAuthority,
+	NoActiveConnections,
+	TargetPlayerUnreachable,
+	TargetPlayerIsLocalButRpcIsNotInvokableLocally,
+	PayloadSizeExceeded
 }

@@ -1,14 +1,21 @@
 using Meta.WitAi.Json;
 
-namespace Meta.WitAi.Data.Info;
-
-public enum WitAppTrainingStatus
+namespace Meta.WitAi.Data.Info
 {
-	Unknown,
-	[JsonProperty("done")]
-	Done,
-	[JsonProperty("scheduled")]
-	Scheduled,
-	[JsonProperty("ongoing")]
-	Ongoing
+	public enum WitAppTrainingStatus
+	{
+		Unknown,
+		[JsonProperty("done")]
+		Done,
+		[JsonProperty("scheduled")]
+		Scheduled,
+		[JsonProperty("ongoing")]
+		Ongoing
+	}
+}
+namespace Meta.WitAi.Json
+{
+}
+namespace Meta.WitAi.Json
+{
 }

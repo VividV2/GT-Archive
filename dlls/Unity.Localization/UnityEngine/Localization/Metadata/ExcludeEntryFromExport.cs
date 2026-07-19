@@ -1,9 +1,2 @@
-using System;
-
-namespace UnityEngine.Localization.Metadata;
-
-[Serializable]
-[Metadata(AllowedTypes = MetadataType.AllSharedTableEntries)]
-public class ExcludeEntryFromExport : IMetadata
-{
-}
+// Could not decompile UnityEngine.Localization.Metadata.ExcludeEntryFromExport
+// This type uses unsupported IL or has too many generic parameters.

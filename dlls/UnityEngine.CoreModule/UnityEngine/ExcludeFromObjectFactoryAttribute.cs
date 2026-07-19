@@ -1,10 +1,2 @@
-using System;
-using UnityEngine.Scripting;
-
-namespace UnityEngine;
-
-[AttributeUsage(AttributeTargets.Class)]
-[UsedByNativeCode]
-public class ExcludeFromObjectFactoryAttribute : Attribute
-{
-}
+// Could not decompile UnityEngine.ExcludeFromObjectFactoryAttribute
+// This type uses unsupported IL or has too many generic parameters.

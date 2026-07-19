@@ -1,25 +1,29 @@
 using System.Collections.Generic;
 
-namespace UnityEngine.Rendering.LookDev;
-
-public interface IDataProvider
+namespace UnityEngine.Rendering.LookDev
 {
-	IEnumerable<string> supportedDebugModes { get; }
+	public interface IDataProvider
+	{
+		IEnumerable<string> supportedDebugModes { get; }
 
-	void FirstInitScene(StageRuntimeInterface stage);
+		void FirstInitScene(StageRuntimeInterface stage);
 
-	void UpdateSky(Camera camera, Sky sky, StageRuntimeInterface stage);
+		void UpdateSky(Camera camera, Sky sky, StageRuntimeInterface stage);
 
-	void UpdateDebugMode(int debugIndex);
+		void UpdateDebugMode(int debugIndex);
 
-	void GetShadowMask(ref RenderTexture output, StageRuntimeInterface stage);
+		void GetShadowMask(ref RenderTexture output, StageRuntimeInterface stage);
 
-	void OnBeginRendering(StageRuntimeInterface stage);
+		void OnBeginRendering(StageRuntimeInterface stage);
 
-	void OnEndRendering(StageRuntimeInterface stage);
+		void OnEndRendering(StageRuntimeInterface stage);
 
-	void Cleanup(StageRuntimeInterface SRI);
+		void Cleanup(StageRuntimeInterface SRI);
+	}
 }
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler
+{
+}
+namespace UnityEngine.Rendering.RenderGraphModule.Util
 {
 }

@@ -1,2 +1,2 @@
-namespace GorillaTag;
-
+// Could not decompile PlayFabAuthenticatorSettings
+// This type uses unsupported IL or has too many generic parameters.

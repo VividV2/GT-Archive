@@ -1,14 +1,2 @@
-using UnityEngine;
-
-namespace Oculus.Interaction.Input;
-
-public class JointsRadiusFeature : MonoBehaviour
-{
-	[SerializeField]
-	private Hand _hand;
-
-	public float GetJointRadius(HandJointId id)
-	{
-		return _hand.GetData().JointRadii[(int)id];
-	}
-}
+// Could not decompile Oculus.Interaction.Input.JointsRadiusFeature
+// This type uses unsupported IL or has too many generic parameters.

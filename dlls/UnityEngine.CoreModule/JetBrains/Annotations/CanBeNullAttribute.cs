@@ -1,8 +1,13 @@
-using System;
+namespace UnityEngine;
 
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Interface | AttributeTargets.Parameter | AttributeTargets.Delegate | AttributeTargets.GenericParameter)]
-public sealed class CanBeNullAttribute : Attribute
+public enum MeshTopology
+{
+	Triangles = 0,
+	Quads = 2,
+	Lines = 3,
+	LineStrip = 4,
+	Points = 5
+}
+namespace Unity.Profiling.Memory
 {
 }

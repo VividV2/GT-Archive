@@ -1,14 +1,43 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4515)]
-public struct HTML_JSConfirm_t
+[CallbackIdentity(351)]
+public struct EquippedProfileItems_t
 {
-	public const int k_iCallback = 4515;
+	public const int k_iCallback = 351;
 
-	public HHTMLBrowser unBrowserHandle;
+	public EResult m_eResult;
 
-	public string pchMessage;
+	public CSteamID m_steamID;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bHasAnimatedAvatar;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bHasAvatarFrame;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bHasProfileModifier;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bHasProfileBackground;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bHasMiniProfileBackground;
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(4515)]
+	public struct HTML_JSConfirm_t
+	{
+		public const int k_iCallback = 4515;
+
+		public HHTMLBrowser unBrowserHandle;
+
+		public string pchMessage;
+	}
 }

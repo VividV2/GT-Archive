@@ -1,12 +1,17 @@
 using UnityEngine.EventSystems;
+using UnityEngine.EventSystems;
 
 namespace Cysharp.Threading.Tasks.Triggers
 {
+	public interface IAsyncOnBeforeTransformParentChangedHandler
+	{
+		UniTask OnBeforeTransformParentChangedAsync();
+	}
 }
 namespace Cysharp.Threading.Tasks.Triggers
 {
-	public interface IAsyncOnCancelHandler
+	public interface IAsyncOnUpdateSelectedHandler
 	{
-		UniTask<UnityEngine.EventSystems.BaseEventData> OnCancelAsync();
+		UniTask<BaseEventData> OnUpdateSelectedAsync();
 	}
 }

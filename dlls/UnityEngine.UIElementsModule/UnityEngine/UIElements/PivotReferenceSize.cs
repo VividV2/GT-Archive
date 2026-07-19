@@ -1,7 +1,20 @@
+using UnityEngine.Bindings;
+using UnityEngine.Bindings;
+
 namespace UnityEngine.UIElements;
 
-public enum PivotReferenceSize
+[NativeType(Header = "Modules/UIElements/VisualNodePseudoStateData.h")]
+internal struct VisualNodePseudoStateData
 {
-	BoundingBox,
-	Layout
+	public PseudoStates States;
+
+	public PseudoStates TriggerMask;
+
+	public PseudoStates DependencyMask;
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
 }

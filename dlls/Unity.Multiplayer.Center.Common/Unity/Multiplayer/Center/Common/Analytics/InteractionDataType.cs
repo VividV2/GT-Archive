@@ -1,14 +1,7 @@
 namespace Unity.Multiplayer.Center.Common.Analytics;
 
-public interface IOnboardingSectionAnalyticsProvider
+public enum InteractionDataType
 {
-	void SendInteractionEvent(InteractionDataType type, string displayName);
-}
-namespace Unity.Multiplayer.Center.Common.Analytics
-{
-	public enum InteractionDataType
-	{
-		CallToAction,
-		Link
-	}
+	CallToAction,
+	Link
 }

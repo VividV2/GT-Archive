@@ -1,3 +1,9 @@
+namespace GorillaNetworking
+{
+}
+namespace GorillaTag.Cosmetics
+{
+}
 public enum FXType
 {
 	BalloonPop,

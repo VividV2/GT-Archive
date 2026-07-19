@@ -1,7 +1,12 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics
+using System;
+using Unity.Jobs;
+
+namespace UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Receiver;
+
+[Obsolete("The Affordance System namespace and all associated classes have been deprecated. The existing affordance system will be moved, replaced and updated with a new interaction feedback system in a future version of XRI.")]
+public interface IAsyncAffordanceStateReceiver : IAffordanceStateReceiver
 {
-	public interface IXRHapticImpulseProvider
-	{
-		IXRHapticImpulseChannelGroup GetChannelGroup();
-	}
+	JobHandle HandleTween(float tweenTarget);
+
+	void UpdateStateFromCompletedJob();
 }

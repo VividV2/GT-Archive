@@ -1,15 +1,2 @@
-namespace g3
-{
-	public class SculptCurveSmooth : StandardSculptCurveDeformation
-	{
-		public SculptCurveSmooth()
-		{
-			DeformF = null;
-			SmoothAlpha = 0.10000000149011612;
-			SmoothIterations = 3;
-		}
-	}
-}
-namespace g3
-{
-}
+// Could not decompile g3.SculptCurveSmooth
+// This type uses unsupported IL or has too many generic parameters.

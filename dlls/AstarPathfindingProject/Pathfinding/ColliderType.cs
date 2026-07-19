@@ -1,8 +1,12 @@
-namespace Pathfinding;
-
-public enum ColliderType
+namespace Pathfinding
 {
-	Sphere,
-	Capsule,
-	Ray
+}
+namespace Pathfinding
+{
+	public enum ColliderType
+	{
+		Sphere,
+		Capsule,
+		Ray
+	}
 }

@@ -2,18 +2,31 @@ using System.Runtime.InteropServices;
 
 namespace Steamworks
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 4)]
-	[CallbackIdentity(334)]
-	public struct AvatarImageLoaded_t
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(3414)]
+	public struct AddAppDependencyResult_t
 	{
-		public const int k_iCallback = 334;
+		public const int k_iCallback = 3414;
 
-		public CSteamID m_steamID;
+		public EResult m_eResult;
 
-		public int m_iImage;
+		public PublishedFileId_t m_nPublishedFileId;
 
-		public int m_iWide;
+		public AppId_t m_nAppID;
+	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(3406)]
+	public struct DownloadItemResult_t
+	{
+		public const int k_iCallback = 3406;
 
-		public int m_iTall;
+		public AppId_t m_unAppID;
+
+		public PublishedFileId_t m_nPublishedFileId;
+
+		public EResult m_eResult;
 	}
 }

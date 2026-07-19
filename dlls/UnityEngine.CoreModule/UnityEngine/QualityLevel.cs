@@ -1,14 +1,3 @@
-using System;
-
-namespace UnityEngine;
-
-[Obsolete("See QualitySettings.names, QualitySettings.SetQualityLevel, and QualitySettings.GetQualityLevel")]
-public enum QualityLevel
+namespace UnityEngine
 {
-	Fastest,
-	Fast,
-	Simple,
-	Good,
-	Beautiful,
-	Fantastic
 }

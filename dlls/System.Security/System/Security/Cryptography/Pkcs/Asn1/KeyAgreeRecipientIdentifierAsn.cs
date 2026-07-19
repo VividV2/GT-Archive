@@ -1,12 +1,3 @@
-using System.Security.Cryptography.Asn1;
-
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-[Choice]
-internal struct KeyAgreeRecipientIdentifierAsn
+namespace System.Security.Cryptography.Pkcs.Asn1
 {
-	internal IssuerAndSerialNumberAsn? IssuerAndSerialNumber;
-
-	[ExpectedTag(0)]
-	internal RecipientKeyIdentifier RKeyId;
 }

@@ -1,8 +1,3 @@
-using System;
-
-namespace Cysharp.Threading.Tasks;
-
-public interface IRejectPromise
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	bool TrySetException(Exception exception);
 }

@@ -1,14 +1,10 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace Microsoft.CodeAnalysis
-{
-	[CompilerGenerated]
-	[Embedded]
-	internal sealed class EmbeddedAttribute : Attribute
-	{
-	}
-}
-namespace System
+namespace Microsoft.CodeAnalysis;
+
+[CompilerGenerated]
+[Embedded]
+internal sealed class EmbeddedAttribute : Attribute
 {
 }

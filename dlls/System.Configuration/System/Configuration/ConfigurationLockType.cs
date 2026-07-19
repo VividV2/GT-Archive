@@ -1,9 +1,13 @@
-namespace System.Configuration;
-
-[Flags]
-internal enum ConfigurationLockType
+namespace System.Configuration
 {
-	Attribute = 1,
-	Element = 2,
-	Exclude = 0x10
+	[Flags]
+	internal enum ConfigurationLockType
+	{
+		Attribute = 1,
+		Element = 2,
+		Exclude = 0x10
+	}
+}
+namespace System.Configuration
+{
 }

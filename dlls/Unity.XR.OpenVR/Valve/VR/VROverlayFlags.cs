@@ -1,11 +1,5 @@
 namespace Valve.VR
 {
-}
-namespace Valve.VR
-{
-}
-namespace Valve.VR
-{
 	public enum VROverlayFlags
 	{
 		NoDashboardTab = 8,
@@ -25,5 +19,13 @@ namespace Valve.VR
 		HideLaserIntersection = 0x80000,
 		WantsModalBehavior = 0x100000,
 		IsPremultiplied = 0x200000
+	}
+}
+namespace Valve.VR
+{
+	public enum VROverlayInputMethod
+	{
+		None,
+		Mouse
 	}
 }

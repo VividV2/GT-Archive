@@ -1,8 +1,3 @@
-namespace System;
-
-public enum UriFormat
+namespace System.ComponentModel
 {
-	UriEscaped = 1,
-	Unescaped,
-	SafeUnescaped
 }

@@ -1,33 +1,37 @@
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.InputSystem.Layouts;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.InputSystem.Layouts;
-using UnityEngine.InputSystem.XR;
+using System.Runtime.InteropServices;
+using UnityEngine.InputSystem.Utilities;
+using System.Runtime.InteropServices;
+using UnityEngine.InputSystem.Utilities;
 
-namespace UnityEngine.XR.WindowsMR.Input;
-
-[InputControlLayout(displayName = "HoloLens Hand", commonUsages = new string[] { "LeftHand", "RightHand" }, hideInUI = true)]
-public class HololensHand : XRController
+namespace UnityEngine.InputSystem.LowLevel
 {
-	[InputControl(noisy = true, aliases = new string[] { "gripVelocity" })]
-	public Vector3Control deviceVelocity { get; protected set; }
-
-	[InputControl(aliases = new string[] { "triggerbutton" })]
-	public ButtonControl airTap { get; protected set; }
-
-	[InputControl(noisy = true)]
-	public AxisControl sourceLossRisk { get; protected set; }
-
-	[InputControl(noisy = true)]
-	public Vector3Control sourceLossMitigationDirection { get; protected set; }
-
-	protected override void FinishSetup()
+	[StructLayout(LayoutKind.Explicit, Size = 8)]
+	public struct RequestResetCommand : IInputDeviceCommandInfo
 	{
-		base.FinishSetup();
-		airTap = GetChildControl<ButtonControl>("airTap");
-		deviceVelocity = GetChildControl<Vector3Control>("deviceVelocity");
-		sourceLossRisk = GetChildControl<AxisControl>("sourceLossRisk");
-		sourceLossMitigationDirection = GetChildControl<Vector3Control>("sourceLossMitigationDirection");
+		internal const int kSize = 8;
+
+		[FieldOffset(0)]
+		public InputDeviceCommand baseCommand;
+
+		public static FourCC Type => new FourCC('R', 'S', 'E', 'T');
+
+		public FourCC typeStatic => Type;
+
+		public static RequestResetCommand Create()
+		{
+			return new RequestResetCommand
+			{
+				baseCommand = new InputDeviceCommand(Type)
+			};
+		}
 	}
+}
+namespace UnityEngine.InputSystem
+{
+}
+namespace UnityEngine.InputSystem
+{
+}
+namespace UnityEngine.InputSystem.LowLevel
+{
 }

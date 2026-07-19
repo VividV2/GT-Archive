@@ -1,5 +1,8 @@
 namespace UnityEngine.Rendering.UnifiedRayTracing
 {
+}
+namespace UnityEngine.Rendering.UnifiedRayTracing
+{
 	internal interface IRayTracingBackend
 	{
 		IRayTracingShader CreateRayTracingShader(Object shader, string kernelName, GraphicsBuffer dispatchBuffer);
@@ -8,7 +11,4 @@ namespace UnityEngine.Rendering.UnifiedRayTracing
 
 		ulong GetRequiredTraceScratchBufferSizeInBytes(uint width, uint height, uint depth);
 	}
-}
-namespace UnityEngine.Rendering.UnifiedRayTracing
-{
 }

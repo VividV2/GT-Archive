@@ -1,2 +1,2 @@
-namespace UnityEngine.Experimental.GlobalIllumination;
-
+// Could not decompile UnityEngine.Rendering.GlobalKeyword
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,6 +1,2 @@
-namespace Meta.XR.MultiplayerBlocks.Colocation
-{
-}
-namespace Meta.XR.MultiplayerBlocks.Colocation
-{
-}
+// Could not decompile Meta.XR.MultiplayerBlocks.Shared.PlayerNameTagSpawner
+// This type uses unsupported IL or has too many generic parameters.

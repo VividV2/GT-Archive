@@ -1,10 +1,2 @@
-using UnityEngine;
-
-public class DebugTooling : MonoBehaviour
-{
-	public enum DebugScreen
-	{
-		KID,
-		Localization
-	}
-}
+// Could not decompile DebugTooling
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,15 @@
-namespace Valve.Newtonsoft.Json.Serialization;
-
-public interface IValueProvider
+namespace Valve.Newtonsoft.Json.Serialization
 {
-	void SetValue(object target, object value);
+}
+namespace Valve.Newtonsoft.Json.Serialization
+{
+	public interface IValueProvider
+	{
+		void SetValue(object target, object value);
 
-	object GetValue(object target);
+		object GetValue(object target);
+	}
+}
+namespace Valve.Newtonsoft.Json.Serialization
+{
 }

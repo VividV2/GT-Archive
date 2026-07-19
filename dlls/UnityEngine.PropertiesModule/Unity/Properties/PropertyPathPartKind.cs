@@ -1,12 +1,8 @@
-namespace Unity.Properties
+namespace Unity.Properties;
+
+public enum PropertyPathPartKind
 {
-	public enum PropertyPathPartKind
-	{
-		Name,
-		Index,
-		Key
-	}
-}
-namespace Unity.Properties
-{
+	Name,
+	Index,
+	Key
 }

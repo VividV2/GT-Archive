@@ -1,13 +1,2 @@
-namespace UnityEngine.Windows.Speech;
-
-public enum DictationCompletionCause
-{
-	Complete,
-	AudioQualityFailure,
-	Canceled,
-	TimeoutExceeded,
-	PauseLimitExceeded,
-	NetworkFailure,
-	MicrophoneUnavailable,
-	UnknownError
-}
+// Could not decompile UnityEngine.SerializeReference
+// This type uses unsupported IL or has too many generic parameters.

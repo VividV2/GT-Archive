@@ -10,6 +10,3 @@ public enum Format
 	/// <summary>The <see langword="UserDefined" /> serialization format gives the developer full control over the binary format through the <see cref="T:Microsoft.SqlServer.Server.IBinarySerialize" /><see langword=".Write" /> and <see cref="T:Microsoft.SqlServer.Server.IBinarySerialize" /><see langword=".Read" /> methods.</summary>
 	UserDefined
 }
-namespace System.Data
-{
-}

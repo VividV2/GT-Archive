@@ -1,8 +1,6 @@
-namespace Oculus.Interaction;
-
-public interface IUpdateDriver
+namespace Oculus.Interaction
 {
-	bool IsRootDriver { get; set; }
-
-	void Drive();
+}
+namespace Oculus.Interaction.PoseDetection
+{
 }

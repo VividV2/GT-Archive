@@ -1,5 +1,15 @@
 namespace System.Net
 {
+	internal enum WriteBufferState
+	{
+		Disabled,
+		Headers,
+		Buffer,
+		Playback
+	}
+}
+namespace System.Net
+{
 	internal enum FtpOperation
 	{
 		DownloadFile,
@@ -17,7 +27,4 @@ namespace System.Net
 		PrintWorkingDirectory,
 		Other
 	}
-}
-namespace System.Net.Security
-{
 }

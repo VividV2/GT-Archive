@@ -1,2 +1,2 @@
-namespace UnityEngine.Events;
-
+// Could not decompile UnityEngine.Bindings.ManagedSpanWrapper
+// This type uses unsupported IL or has too many generic parameters.

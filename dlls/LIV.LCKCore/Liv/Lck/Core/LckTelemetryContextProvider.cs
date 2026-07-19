@@ -1,6 +1,2 @@
-namespace Liv.Lck.Cosmetics;
-
-public delegate void PlayerIdUpdatedEvent();
-namespace Liv.Lck.Core.Cosmetics
-{
-}
+// Could not decompile Liv.Lck.Core.LckTelemetryContextProvider
+// This type uses unsupported IL or has too many generic parameters.

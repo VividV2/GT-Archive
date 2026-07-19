@@ -1,9 +1,2 @@
-namespace System.ComponentModel
-{
-	public interface ITypedList
-	{
-		string GetListName(PropertyDescriptor[] listAccessors);
-
-		PropertyDescriptorCollection GetItemProperties(PropertyDescriptor[] listAccessors);
-	}
-}
+// Could not decompile System.Net.Mail.LinkedResourceCollection
+// This type uses unsupported IL or has too many generic parameters.

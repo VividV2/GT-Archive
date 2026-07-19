@@ -1,8 +1,11 @@
-namespace System.ComponentModel;
-
-/// <summary>Notifies clients that a property value has changed.</summary>
-public interface INotifyPropertyChanged
+namespace System.IO.Ports
 {
-	/// <summary>Occurs when a property value changes.</summary>
-	event PropertyChangedEventHandler PropertyChanged;
+	public enum SerialError
+	{
+		RXOver = 1,
+		Overrun = 2,
+		RXParity = 4,
+		Frame = 8,
+		TXFull = 0x100
+	}
 }

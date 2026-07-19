@@ -1,33 +1,37 @@
 using System;
 using UnityEngine.Scripting;
 
-namespace UnityEngine;
-
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
-[RequiredByNativeCode]
-public sealed class RequireComponent : Attribute
+namespace UnityEngine
 {
-	public Type m_Type0;
-
-	public Type m_Type1;
-
-	public Type m_Type2;
-
-	public RequireComponent(Type requiredComponent)
+	[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+	[RequiredByNativeCode]
+	public sealed class RequireComponent : Attribute
 	{
-		m_Type0 = requiredComponent;
-	}
+		public Type m_Type0;
 
-	public RequireComponent(Type requiredComponent, Type requiredComponent2)
-	{
-		m_Type0 = requiredComponent;
-		m_Type1 = requiredComponent2;
-	}
+		public Type m_Type1;
 
-	public RequireComponent(Type requiredComponent, Type requiredComponent2, Type requiredComponent3)
-	{
-		m_Type0 = requiredComponent;
-		m_Type1 = requiredComponent2;
-		m_Type2 = requiredComponent3;
+		public Type m_Type2;
+
+		public RequireComponent(Type requiredComponent)
+		{
+			m_Type0 = requiredComponent;
+		}
+
+		public RequireComponent(Type requiredComponent, Type requiredComponent2)
+		{
+			m_Type0 = requiredComponent;
+			m_Type1 = requiredComponent2;
+		}
+
+		public RequireComponent(Type requiredComponent, Type requiredComponent2, Type requiredComponent3)
+		{
+			m_Type0 = requiredComponent;
+			m_Type1 = requiredComponent2;
+			m_Type2 = requiredComponent3;
+		}
 	}
+}
+namespace UnityEngine.PlayerLoop
+{
 }

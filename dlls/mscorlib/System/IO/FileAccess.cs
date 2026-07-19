@@ -1,8 +1,12 @@
-namespace System.Reflection;
-
-internal enum ResolveTokenError
+namespace System.IO
 {
-	OutOfRange,
-	BadTable,
-	Other
+	public enum MatchCasing
+	{
+		PlatformDefault,
+		CaseSensitive,
+		CaseInsensitive
+	}
+}
+namespace System.IO
+{
 }

@@ -1,9 +1,13 @@
-namespace System.Linq.Parallel;
-
-internal enum OrdinalIndexState : byte
+namespace System.Linq.Parallel
 {
-	Indexable,
-	Correct,
-	Increasing,
-	Shuffled
+}
+namespace System.Linq.Parallel
+{
+	internal enum OrdinalIndexState : byte
+	{
+		Indexable,
+		Correct,
+		Increasing,
+		Shuffled
+	}
 }

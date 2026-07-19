@@ -1,6 +1,3 @@
-namespace System.Net
-{
-}
-namespace System.IO
+namespace System.ComponentModel
 {
 }

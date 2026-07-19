@@ -1,14 +1,10 @@
-namespace UnityEngine.Rendering.Universal
+namespace UnityEngine.Rendering.Universal;
+
+public enum LightCookieFormat
 {
-}
-namespace UnityEngine.Rendering.Universal
-{
-	public enum LightCookieFormat
-	{
-		GrayscaleLow,
-		GrayscaleHigh,
-		ColorLow,
-		ColorHigh,
-		ColorHDR
-	}
+	GrayscaleLow,
+	GrayscaleHigh,
+	ColorLow,
+	ColorHigh,
+	ColorHDR
 }

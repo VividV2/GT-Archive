@@ -16,3 +16,6 @@ public enum SecurityZone
 	/// <summary>The restricted sites zone is used for Web sites with content that could cause, or could have caused, problems when downloaded. The URLs of these untrusted Web sites need to be mapped into this zone by the user.</summary>
 	Untrusted = 4
 }
+namespace System.Security.Permissions
+{
+}

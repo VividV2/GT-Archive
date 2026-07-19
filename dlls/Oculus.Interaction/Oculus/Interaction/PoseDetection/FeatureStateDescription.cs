@@ -1,14 +1,2 @@
-namespace Oculus.Interaction.PoseDetection;
-
-public class FeatureStateDescription
-{
-	public string Id { get; }
-
-	public string Name { get; }
-
-	public FeatureStateDescription(string id, string name)
-	{
-		Id = id;
-		Name = name;
-	}
-}
+// Could not decompile Oculus.Interaction.PoseDetection.FeatureStateDescription
+// This type uses unsupported IL or has too many generic parameters.

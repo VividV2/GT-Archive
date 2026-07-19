@@ -1,8 +1,25 @@
+using System.Runtime.InteropServices;
+
 namespace Valve.VR;
 
-public struct VROverlayIntersectionMaskPrimitive_t
+public struct InputAnalogActionData_t
 {
-	public EVROverlayIntersectionMaskPrimitiveType m_nPrimitiveType;
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bActive;
 
-	public VROverlayIntersectionMaskPrimitive_Data_t m_Primitive;
+	public ulong activeOrigin;
+
+	public float x;
+
+	public float y;
+
+	public float z;
+
+	public float deltaX;
+
+	public float deltaY;
+
+	public float deltaZ;
+
+	public float fUpdateTime;
 }

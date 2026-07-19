@@ -1,2 +1,4 @@
-namespace MTAssets.EasyMeshCombiner;
-
+public enum GTKidEventType
+{
+	permission_update
+}

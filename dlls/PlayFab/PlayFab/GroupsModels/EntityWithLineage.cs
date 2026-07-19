@@ -1,2 +1,2 @@
-namespace PlayFab.DataModels;
+namespace PlayFab.CloudScriptModels;
 

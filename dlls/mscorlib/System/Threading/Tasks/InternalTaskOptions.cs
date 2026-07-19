@@ -12,9 +12,6 @@ namespace System.Threading.Tasks
 		DoNotDispose = 0x4000
 	}
 }
-namespace System.Threading
-{
-}
-namespace System
+namespace Internal.Cryptography
 {
 }

@@ -1,9 +1,22 @@
-namespace Steamworks;
+using System.Runtime.InteropServices;
 
-public enum EServerMode
+namespace Steamworks
 {
-	eServerModeInvalid,
-	eServerModeNoAuthentication,
-	eServerModeAuthentication,
-	eServerModeAuthenticationAndSecure
+	public enum EServerMode
+	{
+		eServerModeInvalid,
+		eServerModeNoAuthentication,
+		eServerModeAuthentication,
+		eServerModeAuthenticationAndSecure
+	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	public struct InputDigitalActionData_t
+	{
+		public byte bState;
+
+		public byte bActive;
+	}
 }

@@ -1,3 +1,2 @@
-namespace System.Runtime.Remoting.Metadata
-{
-}
+namespace System.Runtime.InteropServices;
+

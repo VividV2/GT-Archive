@@ -1,8 +1,2 @@
-namespace Valve.Newtonsoft.Json;
-
-public enum ReferenceLoopHandling
-{
-	Error,
-	Ignore,
-	Serialize
-}
+// Could not decompile Valve.Newtonsoft.Json.JsonException
+// This type uses unsupported IL or has too many generic parameters.

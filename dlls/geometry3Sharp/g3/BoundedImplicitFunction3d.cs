@@ -1,6 +1,10 @@
-namespace g3;
-
-public interface BoundedImplicitFunction3d : ImplicitFunction3d
+namespace g3
 {
-	AxisAlignedBox3d Bounds();
+}
+namespace g3
+{
+	public interface BoundedImplicitFunction3d : ImplicitFunction3d
+	{
+		AxisAlignedBox3d Bounds();
+	}
 }

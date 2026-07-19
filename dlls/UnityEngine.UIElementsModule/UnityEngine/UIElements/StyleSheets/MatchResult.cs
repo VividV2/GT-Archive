@@ -9,6 +9,6 @@ namespace UnityEngine.UIElements.StyleSheets
 		public bool success => errorCode == MatchResultErrorCode.None;
 	}
 }
-namespace UnityEngine.UIElements.Internal
+namespace UnityEngine.UIElements
 {
 }

@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Events;
-
-namespace UnityEngine.XR.Interaction.Toolkit.UI;
-
-[Serializable]
-public sealed class UIHoverExitEvent : UnityEvent<UIHoverEventArgs>
-{
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.UI.UIHoverExitEvent
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,2 @@
-using System;
+namespace UnityEngine.Rendering;
 
-namespace UnityEngine;
-
-[AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
-public class SelectionBaseAttribute : Attribute
-{
-}

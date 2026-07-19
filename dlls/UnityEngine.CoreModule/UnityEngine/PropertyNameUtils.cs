@@ -1,16 +1,2 @@
-using System;
-using System;
-
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-	[AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-	public sealed class NonReorderableAttribute : PropertyAttribute
-	{
-	}
-}
-namespace UnityEngine
-{
-}
+// Could not decompile UnityEngine.PropertyNameUtils
+// This type uses unsupported IL or has too many generic parameters.

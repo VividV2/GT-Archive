@@ -1,0 +1,2 @@
+// Could not decompile Valve.VR.SteamVR_Input_Generator_Names
+// This type uses unsupported IL or has too many generic parameters.

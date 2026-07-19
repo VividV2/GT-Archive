@@ -1,6 +1,2 @@
-namespace System.IO
-{
-}
-namespace System.Globalization
-{
-}
+namespace System.Diagnostics;
+

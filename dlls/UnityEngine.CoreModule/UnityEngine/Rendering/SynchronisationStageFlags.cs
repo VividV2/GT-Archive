@@ -1,9 +1,18 @@
-namespace UnityEngine.Rendering;
-
-public enum SynchronisationStageFlags
+namespace UnityEngine.Rendering
 {
-	VertexProcessing = 1,
-	PixelProcessing = 2,
-	ComputeProcessing = 4,
-	AllGPUOperations = 7
+	public enum SinglePassStereoMode
+	{
+		None,
+		SideBySide,
+		Instancing,
+		Multiview
+	}
+}
+namespace UnityEngine.Rendering
+{
+	public enum SynchronisationStage
+	{
+		VertexProcessing,
+		PixelProcessing
+	}
 }

@@ -1,3 +1,2 @@
-namespace ExitGames.Client.Photon;
+namespace Photon.SocketServer.Numeric;
 
-public delegate short SerializeStreamMethod(StreamBuffer outStream, object customObject);

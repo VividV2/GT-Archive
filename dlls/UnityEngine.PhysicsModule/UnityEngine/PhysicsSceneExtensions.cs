@@ -4,36 +4,32 @@ using System.Runtime.InteropServices;
 using UnityEngine.Bindings;
 using UnityEngine.SceneManagement;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+public static class PhysicsSceneExtensions
 {
-	public static class PhysicsSceneExtensions
+	public static PhysicsScene GetPhysicsScene(this Scene scene)
 	{
-		public static PhysicsScene GetPhysicsScene(this Scene scene)
+		if (!scene.IsValid())
 		{
-			if (!scene.IsValid())
-			{
-				throw new ArgumentException("Cannot get physics scene; Unity scene is invalid.", "scene");
-			}
-			PhysicsScene physicsScene_Internal = GetPhysicsScene_Internal(scene);
-			if (physicsScene_Internal.IsValid())
-			{
-				return physicsScene_Internal;
-			}
-			throw new Exception("The physics scene associated with the Unity scene is invalid.");
+			throw new ArgumentException("Cannot get physics scene; Unity scene is invalid.", "scene");
 		}
-
-		[StaticAccessor("GetPhysicsManager()", StaticAccessorType.Dot)]
-		[NativeMethod("GetPhysicsSceneFromUnityScene")]
-		private static PhysicsScene GetPhysicsScene_Internal(Scene scene)
+		PhysicsScene physicsScene_Internal = GetPhysicsScene_Internal(scene);
+		if (physicsScene_Internal.IsValid())
 		{
-			GetPhysicsScene_Internal_Injected(ref scene, out var ret);
-			return ret;
+			return physicsScene_Internal;
 		}
-
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		private static extern void GetPhysicsScene_Internal_Injected([In] ref Scene scene, out PhysicsScene ret);
+		throw new Exception("The physics scene associated with the Unity scene is invalid.");
 	}
-}
-namespace UnityEngine
-{
+
+	[StaticAccessor("GetPhysicsManager()", StaticAccessorType.Dot)]
+	[NativeMethod("GetPhysicsSceneFromUnityScene")]
+	private static PhysicsScene GetPhysicsScene_Internal(Scene scene)
+	{
+		GetPhysicsScene_Internal_Injected(ref scene, out var ret);
+		return ret;
+	}
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern void GetPhysicsScene_Internal_Injected([In] ref Scene scene, out PhysicsScene ret);
 }

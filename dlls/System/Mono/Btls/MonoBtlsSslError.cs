@@ -16,3 +16,6 @@ internal enum MonoBtlsSslError
 	PendingCertificate = 12,
 	WantPrivateKeyOperation = 13
 }
+namespace System.Diagnostics
+{
+}

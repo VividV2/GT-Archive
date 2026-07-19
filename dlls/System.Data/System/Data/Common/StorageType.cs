@@ -1,8 +1,5 @@
 namespace System.Data.Common
 {
-}
-namespace System.Data.Common
-{
 	internal enum StorageType
 	{
 		Empty,
@@ -47,4 +44,7 @@ namespace System.Data.Common
 		SqlSingle,
 		SqlString
 	}
+}
+namespace System.Data.Common
+{
 }

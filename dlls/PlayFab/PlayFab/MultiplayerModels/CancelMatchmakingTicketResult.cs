@@ -1,9 +1,9 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class CancelMatchmakingTicketResult : PlayFabResultCommon
+namespace PlayFab.MultiplayerModels
+{
+}
+namespace PlayFab.GroupsModels
+{
+}
+namespace PlayFab.MultiplayerModels
 {
 }

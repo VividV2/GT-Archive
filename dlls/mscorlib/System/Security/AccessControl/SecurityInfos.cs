@@ -1,3 +1,6 @@
-namespace System.Runtime.Remoting.Services
+namespace System
+{
+}
+namespace System.Runtime.CompilerServices
 {
 }

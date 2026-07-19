@@ -1,11 +1,10 @@
-namespace Steamworks
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
+[CallbackIdentity(704)]
+public struct SteamShutdown_t
 {
-	public enum ESteamInputLEDFlag
-	{
-		k_ESteamInputLEDFlag_SetColor,
-		k_ESteamInputLEDFlag_RestoreUserDefault
-	}
-}
-namespace Steamworks
-{
+	public const int k_iCallback = 704;
 }

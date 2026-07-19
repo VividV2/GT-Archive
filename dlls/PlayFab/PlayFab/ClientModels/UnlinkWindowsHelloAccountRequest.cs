@@ -1,0 +1,11 @@
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class WriteClientPlayerEventRequest : PlayFabRequestCommon
+{
+	public Dictionary<string, object> Body;
+
+	public string EventName;
+
+	public DateTime? Timestamp;
+}

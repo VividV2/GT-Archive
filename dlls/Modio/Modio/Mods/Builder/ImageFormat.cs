@@ -1,8 +1,3 @@
-namespace Modio.Mods.Builder;
-
-public enum ImageFormat
+namespace Modio.Errors
 {
-	Jpg,
-	Jpeg,
-	Png
 }

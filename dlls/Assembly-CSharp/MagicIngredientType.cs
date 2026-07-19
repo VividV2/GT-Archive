@@ -1,7 +1,4 @@
-using UnityEngine;
-
-[CreateAssetMenu(fileName = "IngredientTypeSO", menuName = "ScriptableObjects/Add New Magic Ingredient Type")]
-public class MagicIngredientType : ScriptableObject
+public interface iUpgadeableTool
 {
-	public Color color;
+	void UnlockPart(string ModId);
 }

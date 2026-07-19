@@ -1,6 +1,2 @@
-namespace System.CodeDom
-{
-}
-namespace System.Net
-{
-}
+namespace System.Net;
+

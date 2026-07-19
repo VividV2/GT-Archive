@@ -1,16 +1,2 @@
-using System.Collections.Generic;
-
-namespace UnityEngine.ProBuilder.MeshOperations;
-
-internal sealed class ConnectFaceRebuildData
-{
-	public FaceRebuildData faceRebuildData;
-
-	public List<int> newVertexIndexes;
-
-	public ConnectFaceRebuildData(FaceRebuildData faceRebuildData, List<int> newVertexIndexes)
-	{
-		this.faceRebuildData = faceRebuildData;
-		this.newVertexIndexes = newVertexIndexes;
-	}
-}
+// Could not decompile UnityEngine.ProBuilder.MeshOperations.ConnectFaceRebuildData
+// This type uses unsupported IL or has too many generic parameters.

@@ -7,6 +7,3 @@ public enum EVRDistortionFunctionType
 	Extended_FTheta,
 	MAX_DISTORTION_FUNCTION_TYPES
 }
-namespace Valve.VR
-{
-}

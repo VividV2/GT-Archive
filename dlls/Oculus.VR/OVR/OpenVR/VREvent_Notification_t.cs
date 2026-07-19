@@ -1,8 +1,12 @@
-namespace OVR.OpenVR;
-
-public struct VREvent_Notification_t
+namespace OVR.OpenVR
 {
-	public ulong ulUserValue;
+	public struct VREvent_Notification_t
+	{
+		public ulong ulUserValue;
 
-	public uint notificationId;
+		public uint notificationId;
+	}
+}
+namespace OVR.OpenVR
+{
 }

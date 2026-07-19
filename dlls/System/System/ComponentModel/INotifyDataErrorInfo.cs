@@ -1,6 +1,2 @@
-namespace System.Runtime.Versioning;
-
-internal static class BinaryCompatibility
-{
-	public const bool TargetsAtLeast_Desktop_V4_5 = true;
-}
+// Could not decompile System.ComponentModel.INotifyDataErrorInfo
+// This type uses unsupported IL or has too many generic parameters.

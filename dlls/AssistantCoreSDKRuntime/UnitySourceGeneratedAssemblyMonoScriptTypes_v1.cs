@@ -1,2 +1,2 @@
-namespace Oculus.Voice.Core.Bindings.Android.PlatformLogger;
+namespace Oculus.Voice.Core.Bindings.Android;
 

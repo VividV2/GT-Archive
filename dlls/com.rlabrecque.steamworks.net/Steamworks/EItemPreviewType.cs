@@ -1,10 +1,12 @@
 namespace Steamworks
 {
-	public enum EUGCReadAction
+	public enum ESteamPartyBeaconLocationData
 	{
-		k_EUGCRead_ContinueReadingUntilFinished,
-		k_EUGCRead_ContinueReading,
-		k_EUGCRead_Close
+		k_ESteamPartyBeaconLocationDataInvalid,
+		k_ESteamPartyBeaconLocationDataName,
+		k_ESteamPartyBeaconLocationDataIconURLSmall,
+		k_ESteamPartyBeaconLocationDataIconURLMedium,
+		k_ESteamPartyBeaconLocationDataIconURLLarge
 	}
 }
 namespace Steamworks

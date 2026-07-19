@@ -1,8 +1,21 @@
-using System.Collections;
+namespace System.Net.Security;
 
-namespace System.ComponentModel.Design;
-
-public interface ITypeDiscoveryService
+internal enum SecurityBufferType
 {
-	ICollection GetTypes(Type baseType, bool excludeGlobalTypes);
+	SECBUFFER_EMPTY = 0,
+	SECBUFFER_DATA = 1,
+	SECBUFFER_TOKEN = 2,
+	SECBUFFER_PKG_PARAMS = 3,
+	SECBUFFER_MISSING = 4,
+	SECBUFFER_EXTRA = 5,
+	SECBUFFER_STREAM_TRAILER = 6,
+	SECBUFFER_STREAM_HEADER = 7,
+	SECBUFFER_PADDING = 9,
+	SECBUFFER_STREAM = 10,
+	SECBUFFER_CHANNEL_BINDINGS = 14,
+	SECBUFFER_TARGET_HOST = 16,
+	SECBUFFER_ALERT = 17,
+	SECBUFFER_APPLICATION_PROTOCOLS = 18,
+	SECBUFFER_READONLY = int.MinValue,
+	SECBUFFER_READONLY_WITH_CHECKSUM = 268435456
 }

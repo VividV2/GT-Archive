@@ -1,2 +1,2 @@
-namespace Liv.Lck.ErrorHandling;
-
+// Could not decompile Liv.Lck.LckServiceInitializer
+// This type uses unsupported IL or has too many generic parameters.

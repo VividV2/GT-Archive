@@ -1,6 +1,2 @@
-namespace System.Xml.Xsl.Xslt
-{
-}
-namespace System.Xml.Xsl.Xslt
-{
-}
+// Could not decompile System.Xml.Xsl.Runtime.NamespaceIterator
+// This type uses unsupported IL or has too many generic parameters.

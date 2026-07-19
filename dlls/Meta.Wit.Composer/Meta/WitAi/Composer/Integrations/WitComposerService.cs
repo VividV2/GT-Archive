@@ -1,26 +1,2 @@
-using Meta.WitAi.Composer.Interfaces;
-
-namespace Meta.WitAi.Composer.Integrations
-{
-	public class WitComposerService : ComposerService
-	{
-		private WitComposerRequestHandler _requestHandler;
-
-		protected override IComposerRequestHandler GetRequestHandler()
-		{
-			return _requestHandler;
-		}
-
-		protected override void OnEnable()
-		{
-			base.OnEnable();
-			if (_requestHandler == null)
-			{
-				_requestHandler = new WitComposerRequestHandler(base.VoiceService.WitConfiguration);
-			}
-		}
-	}
-}
-namespace Meta.WitAi.Composer.Integrations
-{
-}
+// Could not decompile Meta.WitAi.Composer.Integrations.WitComposerService
+// This type uses unsupported IL or has too many generic parameters.

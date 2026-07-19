@@ -1,6 +1,9 @@
-namespace UnityEngine.InputSystem.LowLevel;
-
-internal interface IEventMerger
+namespace UnityEngine.InputSystem.LowLevel
 {
-	bool MergeForward(InputEventPtr currentEventPtr, InputEventPtr nextEventPtr);
+	internal static class InputRuntime
+	{
+		public static IInputRuntime s_Instance;
+
+		public static double s_CurrentTimeOffsetToRealtimeSinceStartup;
+	}
 }

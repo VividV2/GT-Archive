@@ -1,8 +1,15 @@
 using UnityEngine;
 
-namespace Oculus.Interaction;
-
-public interface ICollidersRef
+namespace Oculus.Interaction
 {
-	Collider[] Colliders { get; }
+}
+namespace Oculus.Interaction
+{
+	public interface ICollidersRef
+	{
+		Collider[] Colliders { get; }
+	}
+}
+namespace Oculus.Interaction.PoseDetection
+{
 }

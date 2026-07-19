@@ -1,10 +1,2 @@
-namespace OVR.OpenVR;
-
-public struct VREvent_Scroll_t
-{
-	public float xdelta;
-
-	public float ydelta;
-
-	public uint repeatCount;
-}
+// Could not decompile OVR.OpenVR.VREvent_Scroll_t
+// This type uses unsupported IL or has too many generic parameters.

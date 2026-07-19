@@ -1,2 +1,2 @@
-namespace Newtonsoft.Json.Linq;
+namespace Newtonsoft.Json.Linq.JsonPath;
 

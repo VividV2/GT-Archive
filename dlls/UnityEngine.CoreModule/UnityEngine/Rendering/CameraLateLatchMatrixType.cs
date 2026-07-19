@@ -1,9 +1,18 @@
-namespace UnityEngine.Rendering;
-
-public enum CameraLateLatchMatrixType
+namespace UnityEngine.Rendering
 {
-	View,
-	InverseView,
-	ViewProjection,
-	InverseViewProjection
+	public enum GizmoSubset
+	{
+		PreImageEffects,
+		PostImageEffects
+	}
+}
+namespace UnityEngine.Rendering
+{
+	public enum CameraLateLatchMatrixType
+	{
+		View,
+		InverseView,
+		ViewProjection,
+		InverseViewProjection
+	}
 }

@@ -1,13 +1,16 @@
-using UnityEngine.Bindings;
-using UnityEngine.Bindings;
+using Microsoft.CodeAnalysis;
 
-namespace UnityEngine.TextCore;
+namespace System.Runtime.CompilerServices;
 
-[VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule" })]
-internal enum HorizontalAlignment
+[CompilerGenerated]
+[Microsoft.CodeAnalysis.Embedded]
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Interface | AttributeTargets.Delegate, AllowMultiple = false, Inherited = false)]
+internal sealed class NullableContextAttribute : Attribute
 {
-	Left,
-	Center,
-	Right,
-	Justified
+	public readonly byte Flag;
+
+	public NullableContextAttribute(byte P_0)
+	{
+		Flag = P_0;
+	}
 }

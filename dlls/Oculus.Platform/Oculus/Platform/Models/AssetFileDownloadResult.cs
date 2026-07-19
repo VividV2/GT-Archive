@@ -1,16 +1,20 @@
 using System;
 
-namespace Oculus.Platform.Models;
-
-public class AssetFileDownloadResult
+namespace Oculus.Platform.Models
 {
-	public readonly ulong AssetId;
-
-	public readonly string Filepath;
-
-	public AssetFileDownloadResult(IntPtr o)
+	public class AssetFileDownloadResult
 	{
-		AssetId = CAPI.ovr_AssetFileDownloadResult_GetAssetId(o);
-		Filepath = CAPI.ovr_AssetFileDownloadResult_GetFilepath(o);
+		public readonly ulong AssetId;
+
+		public readonly string Filepath;
+
+		public AssetFileDownloadResult(IntPtr o)
+		{
+			AssetId = CAPI.ovr_AssetFileDownloadResult_GetAssetId(o);
+			Filepath = CAPI.ovr_AssetFileDownloadResult_GetFilepath(o);
+		}
 	}
+}
+namespace Oculus.Platform.Models
+{
 }

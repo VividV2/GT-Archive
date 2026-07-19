@@ -1,6 +1,10 @@
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnMouseOverHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask OnMouseOverAsync();
+	public interface IAsyncOnPointerExitHandler
+	{
+		UniTask<PointerEventData> OnPointerExitAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks
+{
 }

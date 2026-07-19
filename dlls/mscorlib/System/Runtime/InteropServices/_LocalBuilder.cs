@@ -1,2 +1,6 @@
-namespace System.Runtime.Remoting.Messaging;
-
+namespace System
+{
+}
+namespace System.Runtime.Remoting.Contexts
+{
+}

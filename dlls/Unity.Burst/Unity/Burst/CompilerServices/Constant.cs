@@ -1,14 +1,2 @@
-namespace Unity.Burst.CompilerServices;
-
-public static class Constant
-{
-	public static bool IsConstantExpression<T>(T t) where T : unmanaged
-	{
-		return false;
-	}
-
-	public unsafe static bool IsConstantExpression(void* t)
-	{
-		return false;
-	}
-}
+// Could not decompile Unity.Burst.CompilerServices.Constant
+// This type uses unsupported IL or has too many generic parameters.

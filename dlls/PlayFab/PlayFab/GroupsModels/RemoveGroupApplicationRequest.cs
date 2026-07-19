@@ -1,9 +1,2 @@
-namespace PlayFab.EventsModels
-{
-}
-namespace PlayFab.GroupsModels
-{
-}
-namespace Ionic.Zlib
-{
-}
+namespace PlayFab.MultiplayerModels;
+

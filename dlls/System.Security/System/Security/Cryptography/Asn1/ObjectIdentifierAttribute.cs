@@ -1,11 +1,2 @@
-namespace System.Security.Cryptography.Asn1
-{
-	[AttributeUsage(AttributeTargets.Field)]
-	internal sealed class ObjectIdentifierAttribute : AsnTypeAttribute
-	{
-		public bool PopulateFriendlyName { get; set; }
-	}
-}
-namespace System.Security.Cryptography.Asn1
-{
-}
+// Could not decompile System.Security.Cryptography.Asn1.ObjectIdentifierAttribute
+// This type uses unsupported IL or has too many generic parameters.

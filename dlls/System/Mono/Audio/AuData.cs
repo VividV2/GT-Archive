@@ -1,0 +1,12 @@
+namespace System.Configuration;
+
+/// <summary>Represents a grouping of related user settings sections within a configuration file. This class cannot be inherited.</summary>
+/// <summary>Represents a grouping of related user settings sections within a configuration file. This class cannot be inherited.</summary>
+public sealed class UserSettingsGroup : ConfigurationSectionGroup
+{
+	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.UserSettingsGroup" /> class.</summary>
+	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.UserSettingsGroup" /> class.</summary>
+	public UserSettingsGroup()
+	{
+	}
+}

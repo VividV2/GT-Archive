@@ -1,2 +1,3 @@
-namespace System.Configuration.Provider;
-
+namespace System.Configuration
+{
+}

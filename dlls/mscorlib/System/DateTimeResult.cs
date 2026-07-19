@@ -1,100 +1,37 @@
-using System.Globalization;
+namespace System.Runtime.Serialization;
 
-namespace System;
-
-internal ref struct DateTimeResult
+/// <summary>Holds the value, <see cref="T:System.Type" />, and name of a serialized object.</summary>
+/// <summary>Holds the value, <see cref="T:System.Type" />, and name of a serialized object.</summary>
+public readonly struct SerializationEntry
 {
-	internal int Year;
+	private readonly string _name;
 
-	internal int Month;
+	private readonly object _value;
 
-	internal int Day;
+	private readonly Type _type;
 
-	internal int Hour;
+	/// <summary>Gets the value contained in the object.</summary>
+	/// <returns>The value contained in the object.</returns>
+	/// <summary>Gets the value contained in the object.</summary>
+	/// <returns>The value contained in the object.</returns>
+	public object Value => _value;
 
-	internal int Minute;
+	/// <summary>Gets the name of the object.</summary>
+	/// <returns>The name of the object.</returns>
+	/// <summary>Gets the name of the object.</summary>
+	/// <returns>The name of the object.</returns>
+	public string Name => _name;
 
-	internal int Second;
+	/// <summary>Gets the <see cref="T:System.Type" /> of the object.</summary>
+	/// <returns>The <see cref="T:System.Type" /> of the object.</returns>
+	/// <summary>Gets the <see cref="T:System.Type" /> of the object.</summary>
+	/// <returns>The <see cref="T:System.Type" /> of the object.</returns>
+	public Type ObjectType => _type;
 
-	internal double fraction;
-
-	internal int era;
-
-	internal ParseFlags flags;
-
-	internal TimeSpan timeZoneOffset;
-
-	internal Calendar calendar;
-
-	internal DateTime parsedDate;
-
-	internal ParseFailureKind failure;
-
-	internal string failureMessageID;
-
-	internal object failureMessageFormatArgument;
-
-	internal string failureArgumentName;
-
-	internal ReadOnlySpan<char> originalDateTimeString;
-
-	internal ReadOnlySpan<char> failedFormatSpecifier;
-
-	internal void Init(ReadOnlySpan<char> originalDateTimeString)
+	internal SerializationEntry(string entryName, object entryValue, Type entryType)
 	{
-		this.originalDateTimeString = originalDateTimeString;
-		Year = -1;
-		Month = -1;
-		Day = -1;
-		fraction = -1.0;
-		era = -1;
-	}
-
-	internal void SetDate(int year, int month, int day)
-	{
-		Year = year;
-		Month = month;
-		Day = day;
-	}
-
-	internal void SetBadFormatSpecifierFailure()
-	{
-		SetBadFormatSpecifierFailure(ReadOnlySpan<char>.Empty);
-	}
-
-	internal void SetBadFormatSpecifierFailure(ReadOnlySpan<char> failedFormatSpecifier)
-	{
-		failure = ParseFailureKind.FormatWithFormatSpecifier;
-		failureMessageID = "Format specifier was invalid.";
-		this.failedFormatSpecifier = failedFormatSpecifier;
-	}
-
-	internal void SetBadDateTimeFailure()
-	{
-		failure = ParseFailureKind.FormatWithOriginalDateTime;
-		failureMessageID = "String was not recognized as a valid DateTime.";
-		failureMessageFormatArgument = null;
-	}
-
-	internal void SetFailure(ParseFailureKind failure, string failureMessageID)
-	{
-		this.failure = failure;
-		this.failureMessageID = failureMessageID;
-		failureMessageFormatArgument = null;
-	}
-
-	internal void SetFailure(ParseFailureKind failure, string failureMessageID, object failureMessageFormatArgument)
-	{
-		this.failure = failure;
-		this.failureMessageID = failureMessageID;
-		this.failureMessageFormatArgument = failureMessageFormatArgument;
-	}
-
-	internal void SetFailure(ParseFailureKind failure, string failureMessageID, object failureMessageFormatArgument, string failureArgumentName)
-	{
-		this.failure = failure;
-		this.failureMessageID = failureMessageID;
-		this.failureMessageFormatArgument = failureMessageFormatArgument;
-		this.failureArgumentName = failureArgumentName;
+		_name = entryName;
+		_value = entryValue;
+		_type = entryType;
 	}
 }

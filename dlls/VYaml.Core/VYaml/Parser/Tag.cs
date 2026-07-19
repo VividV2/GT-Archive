@@ -1,35 +1,45 @@
 using System;
 
-namespace VYaml.Parser;
-
-public class Tag : ITokenContent
+namespace VYaml.Parser
 {
-	public string Handle { get; }
-
-	public string Suffix { get; }
-
-	public Tag(string handle, string suffix)
+	public class Tag : ITokenContent
 	{
-		Handle = handle;
-		Suffix = suffix;
-	}
+		public string Handle { get; }
 
-	public override string ToString()
-	{
-		return Handle + Suffix;
-	}
+		public string Suffix { get; }
 
-	public bool Equals(string tagString)
-	{
-		if (tagString.Length != Handle.Length + Suffix.Length)
+		public Tag(string handle, string suffix)
 		{
-			return false;
+			Handle = handle;
+			Suffix = suffix;
 		}
-		int num = tagString.IndexOf(Handle, StringComparison.Ordinal);
-		if (num < 0)
+
+		public override string ToString()
 		{
-			return false;
+			return Handle + Suffix;
 		}
-		return tagString.IndexOf(Suffix, num, StringComparison.Ordinal) > 0;
+
+		public bool Equals(string tagString)
+		{
+			if (tagString.Length != Handle.Length + Suffix.Length)
+			{
+				return false;
+			}
+			int num = tagString.IndexOf(Handle, StringComparison.Ordinal);
+			if (num < 0)
+			{
+				return false;
+			}
+			return tagString.IndexOf(Suffix, num, StringComparison.Ordinal) > 0;
+		}
 	}
+}
+namespace VYaml.Parser
+{
+}
+namespace VYaml.Serialization
+{
+}
+namespace VYaml.Serialization
+{
 }

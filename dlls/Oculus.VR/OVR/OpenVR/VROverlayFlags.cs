@@ -1,9 +1,21 @@
 namespace OVR.OpenVR;
 
-public enum EVRApplicationTransitionState
+public enum VROverlayFlags
 {
-	VRApplicationTransition_None = 0,
-	VRApplicationTransition_OldAppQuitSent = 10,
-	VRApplicationTransition_WaitingForExternalLaunch = 11,
-	VRApplicationTransition_NewAppLaunched = 20
+	None,
+	Curved,
+	RGSS4X,
+	NoDashboardTab,
+	AcceptsGamepadEvents,
+	ShowGamepadFocus,
+	SendVRScrollEvents,
+	SendVRTouchpadEvents,
+	ShowTouchPadScrollWheel,
+	TransferOwnershipToInternalProcess,
+	SideBySide_Parallel,
+	SideBySide_Crossed,
+	Panorama,
+	StereoPanorama,
+	SortWithNonSceneOverlays,
+	VisibleInDashboard
 }

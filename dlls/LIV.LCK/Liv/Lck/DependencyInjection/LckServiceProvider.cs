@@ -1,9 +1,2 @@
-using System;
-using System;
-
-namespace Liv.Lck;
-
-internal interface ILckPreviewer : IDisposable
-{
-	bool IsPreviewActive { get; set; }
-}
+// Could not decompile Liv.Lck.DependencyInjection.LckServiceProvider
+// This type uses unsupported IL or has too many generic parameters.

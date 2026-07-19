@@ -14,6 +14,3 @@ namespace g3
 		Vector2i FromBlock(Vector2i block_idx);
 	}
 }
-namespace g3
-{
-}

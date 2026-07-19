@@ -1,6 +1,2 @@
-namespace Valve.VR;
-
-public enum EChaperoneImportFlags
-{
-	EChaperoneImport_BoundsOnly = 1
-}
+// Could not decompile Valve.VR.CVRScreenshots
+// This type uses unsupported IL or has too many generic parameters.

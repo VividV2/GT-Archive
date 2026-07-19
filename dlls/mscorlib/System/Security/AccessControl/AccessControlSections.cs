@@ -1,19 +1,17 @@
-namespace System.Security.AccessControl;
+namespace System.Security.Permissions;
 
-/// <summary>Specifies which sections of a security descriptor to save or load.</summary>
 [Flags]
-public enum AccessControlSections
+public enum HostProtectionResource
 {
-	/// <summary>No sections.</summary>
+	All = 0x1FF,
+	ExternalProcessMgmt = 4,
+	ExternalThreading = 0x10,
+	MayLeakOnAbort = 0x100,
 	None = 0,
-	/// <summary>The system access control list (SACL).</summary>
-	Audit = 1,
-	/// <summary>The discretionary access control list (DACL).</summary>
-	Access = 2,
-	/// <summary>The owner.</summary>
-	Owner = 4,
-	/// <summary>The primary group.</summary>
-	Group = 8,
-	/// <summary>The entire security descriptor.</summary>
-	All = 0xF
+	SecurityInfrastructure = 0x40,
+	SelfAffectingProcessMgmt = 8,
+	SelfAffectingThreading = 0x20,
+	SharedState = 2,
+	Synchronization = 1,
+	UI = 0x80
 }

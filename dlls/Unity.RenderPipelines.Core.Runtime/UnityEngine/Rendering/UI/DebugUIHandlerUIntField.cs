@@ -1,6 +1,2 @@
-namespace UnityEngine.Rendering.UI
-{
-}
-namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler
-{
-}
+// Could not decompile UnityEngine.Rendering.UI.DebugUIHandlerUIntField
+// This type uses unsupported IL or has too many generic parameters.

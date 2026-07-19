@@ -1,6 +1,21 @@
+using System.Collections.Generic;
+
 namespace Unity.Properties;
 
-public interface IVisitContravariantPropertyAdapter<TContainer, in TValue> : IPropertyVisitorAdapter
+public class ListPropertyBag<TElement> : IndexedCollectionPropertyBag<List<TElement>, TElement>
 {
-	void Visit(in VisitContext<TContainer> context, ref TContainer container, TValue value);
+	protected override InstantiationKind InstantiationKind => InstantiationKind.PropertyBagOverride;
+
+	protected override List<TElement> InstantiateWithCount(int count)
+	{
+		return new List<TElement>(count);
+	}
+
+	protected override List<TElement> Instantiate()
+	{
+		return new List<TElement>();
+	}
+}
+namespace Unity.Properties
+{
 }

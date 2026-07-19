@@ -1,22 +1,2 @@
-namespace System.Net.NetworkInformation
-{
-	internal static class IPGlobalPropertiesFactoryPal
-	{
-		public static IPGlobalProperties Create()
-		{
-			IPGlobalProperties iPGlobalProperties = UnixIPGlobalPropertiesFactoryPal.Create();
-			if (iPGlobalProperties == null)
-			{
-				iPGlobalProperties = Win32IPGlobalPropertiesFactoryPal.Create();
-			}
-			if (iPGlobalProperties == null)
-			{
-				throw new NotImplementedException();
-			}
-			return iPGlobalProperties;
-		}
-	}
-}
-namespace System.IO
-{
-}
+// Could not decompile System.Net.NetworkInformation.IPGlobalPropertiesFactoryPal
+// This type uses unsupported IL or has too many generic parameters.

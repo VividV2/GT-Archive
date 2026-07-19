@@ -1,6 +1,2 @@
-namespace Oculus.Interaction.Surfaces;
+namespace Oculus.Interaction.Throw;
 
-public interface ICylinderClipper
-{
-	bool GetCylinderSegment(out CylinderSegment segment);
-}

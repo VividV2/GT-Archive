@@ -1,10 +1,2 @@
-public enum EBuildReleaseTier
-{
-	PublicRC = 1,
-	PrivateRC,
-	PublicBeta,
-	PrivateBeta,
-	PublicAlpha,
-	PrivateAlpha,
-	Internal
-}
+// Could not decompile KIDUI_AgeAppealEmailError
+// This type uses unsupported IL or has too many generic parameters.

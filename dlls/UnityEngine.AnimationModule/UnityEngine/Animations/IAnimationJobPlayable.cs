@@ -1,7 +1,7 @@
 using UnityEngine.Playables;
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.Playables
+namespace UnityEngine.Experimental.Animations
 {
 }
 namespace UnityEngine.Animations

@@ -1,2 +1,2 @@
-namespace System.IO;
-
+// Could not decompile System.Buffers.StandardFormat
+// This type uses unsupported IL or has too many generic parameters.

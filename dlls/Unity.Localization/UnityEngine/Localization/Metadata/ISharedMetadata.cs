@@ -1,11 +1,21 @@
-namespace UnityEngine.Localization.Metadata;
-
-[HideInInspector]
-public interface ISharedMetadata : IMetadata
+namespace UnityEngine.Localization.Events
 {
-	bool Contains(long keyId);
+}
+namespace UnityEngine.Localization.Metadata
+{
+	[HideInInspector]
+	public interface ISharedMetadata : IMetadata
+	{
+		bool Contains(long keyId);
 
-	void AddEntry(long keyId);
+		void AddEntry(long keyId);
 
-	void RemoveEntry(long keyId);
+		void RemoveEntry(long keyId);
+	}
+}
+namespace UnityEngine.Localization.Platform.iOS
+{
+}
+namespace UnityEngine.Localization.Pseudo
+{
 }

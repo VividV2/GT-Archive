@@ -1,8 +1,2 @@
-namespace Unity.Profiling.Memory;
-
-public class MemorySnapshotMetadata
-{
-	public string Description { get; set; }
-
-	internal byte[] Data { get; set; }
-}
+// Could not decompile Unity.Profiling.Memory.MemorySnapshotMetadata
+// This type uses unsupported IL or has too many generic parameters.

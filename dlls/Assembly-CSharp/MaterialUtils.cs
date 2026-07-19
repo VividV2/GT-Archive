@@ -1,0 +1,2 @@
+namespace emotitron.CompressionTests;
+

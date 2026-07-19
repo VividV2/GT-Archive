@@ -1,2 +1,2 @@
-namespace Unity.Jobs;
-
+// Could not decompile Unity.Collections.Bitwise
+// This type uses unsupported IL or has too many generic parameters.

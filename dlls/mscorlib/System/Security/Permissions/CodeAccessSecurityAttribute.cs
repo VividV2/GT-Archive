@@ -1,21 +1,16 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace System.Security.Permissions
+namespace System.Runtime.Remoting.Contexts;
+
+/// <summary>Indicates that the implementing property will be registered at runtime through the <see cref="M:System.Runtime.Remoting.Contexts.Context.RegisterDynamicProperty(System.Runtime.Remoting.Contexts.IDynamicProperty,System.ContextBoundObject,System.Runtime.Remoting.Contexts.Context)" /> method.</summary>
+/// <summary>Indicates that the implementing property will be registered at runtime through the <see cref="M:System.Runtime.Remoting.Contexts.Context.RegisterDynamicProperty(System.Runtime.Remoting.Contexts.IDynamicProperty,System.ContextBoundObject,System.Runtime.Remoting.Contexts.Context)" /> method.</summary>
+[ComVisible(true)]
+public interface IContributeDynamicSink
 {
-	/// <summary>Specifies the base attribute class for code access security.</summary>
-	[Serializable]
-	[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method, AllowMultiple = true, Inherited = false)]
-	[ComVisible(true)]
-	public abstract class CodeAccessSecurityAttribute : SecurityAttribute
-	{
-		/// <summary>Initializes a new instance of <see cref="T:System.Security.Permissions.CodeAccessSecurityAttribute" /> with the specified <see cref="T:System.Security.Permissions.SecurityAction" />.</summary>
-		/// <param name="action">One of the <see cref="T:System.Security.Permissions.SecurityAction" /> values.</param>
-		protected CodeAccessSecurityAttribute(SecurityAction action)
-			: base(action)
-		{
-		}
-	}
-}
-namespace System.Security
-{
+	/// <summary>Returns the message sink that will be notified of call start and finish events through the <see cref="T:System.Runtime.Remoting.Contexts.IDynamicMessageSink" /> interface.</summary>
+	/// <returns>A dynamic sink that exposes the <see cref="T:System.Runtime.Remoting.Contexts.IDynamicMessageSink" /> interface.</returns>
+	/// <summary>Returns the message sink that will be notified of call start and finish events through the <see cref="T:System.Runtime.Remoting.Contexts.IDynamicMessageSink" /> interface.</summary>
+	/// <returns>A dynamic sink that exposes the <see cref="T:System.Runtime.Remoting.Contexts.IDynamicMessageSink" /> interface.</returns>
+	IDynamicMessageSink GetDynamicSink();
 }

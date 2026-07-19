@@ -1,12 +1,2 @@
-using System;
-using UnityEngine;
-using System;
-using UnityEngine;
-
-namespace Oculus.Interaction.Throw;
-
-[Obsolete("Use Grabbable instead")]
-public interface IThrowVelocityCalculator
-{
-	ReleaseVelocityInformation CalculateThrowVelocity(Transform objectThrown);
-}
+// Could not decompile Oculus.Interaction.PoseDetection.TransformFeatureStateThresholds
+// This type uses unsupported IL or has too many generic parameters.

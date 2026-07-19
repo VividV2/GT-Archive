@@ -1,16 +1,9 @@
-namespace Steamworks
+namespace Steamworks;
+
+public enum ELobbyDistanceFilter
 {
-}
-namespace Steamworks
-{
-	public enum ELobbyDistanceFilter
-	{
-		k_ELobbyDistanceFilterClose,
-		k_ELobbyDistanceFilterDefault,
-		k_ELobbyDistanceFilterFar,
-		k_ELobbyDistanceFilterWorldwide
-	}
-}
-namespace Steamworks
-{
+	k_ELobbyDistanceFilterClose,
+	k_ELobbyDistanceFilterDefault,
+	k_ELobbyDistanceFilterFar,
+	k_ELobbyDistanceFilterWorldwide
 }

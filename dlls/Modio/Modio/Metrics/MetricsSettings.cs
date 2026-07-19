@@ -1,10 +1,2 @@
-namespace Modio.Metrics
-{
-	public class MetricsSettings : IModioServiceSettings
-	{
-		public string Secret;
-	}
-}
-namespace Modio.Mods.Builder
-{
-}
+// Could not decompile Modio.Metrics.MetricsSettings
+// This type uses unsupported IL or has too many generic parameters.

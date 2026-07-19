@@ -1,0 +1,2 @@
+namespace Microsoft.Internal.Collections;
+

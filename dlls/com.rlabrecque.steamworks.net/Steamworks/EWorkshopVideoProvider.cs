@@ -1,11 +1,7 @@
-namespace Steamworks
+namespace Steamworks;
+
+public enum EWorkshopVideoProvider
 {
-	public enum EWorkshopVideoProvider
-	{
-		k_EWorkshopVideoProviderNone,
-		k_EWorkshopVideoProviderYoutube
-	}
-}
-namespace Steamworks
-{
+	k_EWorkshopVideoProviderNone,
+	k_EWorkshopVideoProviderYoutube
 }

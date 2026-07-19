@@ -1,11 +1,29 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
+namespace Sirenix.OdinInspector;
 
-namespace Sirenix.OdinInspector.Internal;
-
-public interface ISubGroupProviderAttribute
+public struct ValueDropdownItem<T>(string text, T value) : IValueDropdownItem
 {
-	IList<PropertyGroupAttribute> GetSubGroupAttributes();
+	public string Text = text;
 
-	string RepathMemberAttribute(PropertyGroupAttribute attr);
+	public T Value = value;
+
+	string IValueDropdownItem.GetText()
+	{
+		return Text;
+	}
+
+	object IValueDropdownItem.GetValue()
+	{
+		return Value;
+	}
+
+	public override string ToString()
+	{
+		object obj = Text;
+		if (obj == null)
+		{
+			T value = Value;
+			obj = value?.ToString() ?? "";
+		}
+		return (string)obj;
+	}
 }

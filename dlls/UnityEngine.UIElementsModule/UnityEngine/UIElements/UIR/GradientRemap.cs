@@ -1,11 +1,2 @@
-namespace UnityEngine.UIElements.Layout;
+namespace UnityEngine.UIElements;
 
-internal enum LayoutLogLevel
-{
-	Error,
-	Warn,
-	Info,
-	Debug,
-	Verbose,
-	Fatal
-}

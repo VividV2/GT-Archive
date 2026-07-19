@@ -1,8 +1,6 @@
-namespace System.ComponentModel.Design;
-
-public interface IExtenderProviderService
+namespace System.Collections.Specialized
 {
-	void AddExtenderProvider(IExtenderProvider provider);
-
-	void RemoveExtenderProvider(IExtenderProvider provider);
+}
+namespace System.ComponentModel.Design.Serialization
+{
 }

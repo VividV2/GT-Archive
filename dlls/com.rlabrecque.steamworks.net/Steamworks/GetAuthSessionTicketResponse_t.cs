@@ -1,14 +1,24 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(163)]
-public struct GetAuthSessionTicketResponse_t
+namespace Steamworks
 {
-	public const int k_iCallback = 163;
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Explicit, Pack = 8)]
+	[CallbackIdentity(1101)]
+	public struct UserStatsReceived_t
+	{
+		public const int k_iCallback = 1101;
 
-	public HAuthTicket m_hAuthTicket;
+		[FieldOffset(0)]
+		public ulong m_nGameID;
 
-	public EResult m_eResult;
+		[FieldOffset(8)]
+		public EResult m_eResult;
+
+		[FieldOffset(12)]
+		public CSteamID m_steamIDUser;
+	}
 }

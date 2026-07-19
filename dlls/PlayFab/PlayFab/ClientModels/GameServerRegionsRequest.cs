@@ -1,8 +1,12 @@
+using System;
+using PlayFab.SharedModels;
+
 namespace PlayFab.ClientModels;
 
-public enum EmailVerificationStatus
+[Serializable]
+public class GameServerRegionsRequest : PlayFabRequestCommon
 {
-	Unverified,
-	Pending,
-	Confirmed
+	public string BuildVersion;
+
+	public string TitleId;
 }

@@ -1,12 +1,3 @@
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
-
-namespace UnityEngine;
-
-[NativeHeader("Runtime/Graphics/ColorGamut.h")]
-[UsedByNativeCode]
-public enum WhitePoint
+namespace JetBrains.Annotations
 {
-	Unknown = -1,
-	D65
 }

@@ -1,6 +1,2 @@
-namespace Unity.Properties;
-
-public interface IPropertyAccept<TContainer>
-{
-	void Accept(IPropertyVisitor visitor, ref TContainer container);
-}
+// Could not decompile Unity.Properties.IPropertyAccept`1
+// This type uses unsupported IL or has too many generic parameters.

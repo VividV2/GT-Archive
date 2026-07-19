@@ -1,13 +1,10 @@
-namespace Modio.Reports;
+using System.Threading.Tasks;
 
-public enum ReportType
+namespace Modio.Monetization;
+
+public interface IModioVirtualCurrencyProviderService
 {
-	Generic,
-	DMCA,
-	NotWorking,
-	RudeContent,
-	IllegalContent,
-	StolenContent,
-	FalseInformation,
-	Other
+	Task<(Error error, PortalSku[] skus)> GetCurrencyPackSkus();
+
+	Task<Error> OpenCheckoutFlow(PortalSku sku);
 }

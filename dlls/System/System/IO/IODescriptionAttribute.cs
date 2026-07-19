@@ -1,8 +1,6 @@
-using System.Collections;
-
-namespace System.ComponentModel.Design;
-
-public interface ITypeDiscoveryService
+namespace System.Net.Sockets
 {
-	ICollection GetTypes(Type baseType, bool excludeGlobalTypes);
+}
+namespace System.Net
+{
 }

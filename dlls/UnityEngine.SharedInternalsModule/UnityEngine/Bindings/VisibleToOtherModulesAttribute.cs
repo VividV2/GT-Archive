@@ -1,16 +1,6 @@
-using System;
-
 namespace UnityEngine.Bindings;
 
-[VisibleToOtherModules]
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Interface | AttributeTargets.Delegate, Inherited = false)]
-internal class VisibleToOtherModulesAttribute : Attribute
+internal interface IBindingsIsThreadSafeProviderAttribute : IBindingsAttribute
 {
-	public VisibleToOtherModulesAttribute()
-	{
-	}
-
-	public VisibleToOtherModulesAttribute(params string[] modules)
-	{
-	}
+	bool IsThreadSafe { get; set; }
 }

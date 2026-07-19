@@ -1,13 +1,3 @@
-using System;
-
-namespace Modio.Customizations;
-
-[Serializable]
-public struct WssLoginSuccess
+namespace Modio.Mods
 {
-	public long code;
-
-	public string access_token;
-
-	public long date_expires;
 }

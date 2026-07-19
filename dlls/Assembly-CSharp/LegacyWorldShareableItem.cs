@@ -1,5 +1,2 @@
-using Photon.Pun;
-
-public class LegacyWorldShareableItem : MonoBehaviourPunCallbacks
-{
-}
+// Could not decompile LegacyWorldShareableItem
+// This type uses unsupported IL or has too many generic parameters.

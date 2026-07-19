@@ -1,12 +1,2 @@
-using System;
-
-namespace Newtonsoft.Json.Utilities;
-
-internal class ReflectionMember
-{
-	public Type? MemberType { get; set; }
-
-	public Func<object, object?>? Getter { get; set; }
-
-	public Action<object, object?>? Setter { get; set; }
-}
+// Could not decompile Newtonsoft.Json.Utilities.ReflectionMember
+// This type uses unsupported IL or has too many generic parameters.

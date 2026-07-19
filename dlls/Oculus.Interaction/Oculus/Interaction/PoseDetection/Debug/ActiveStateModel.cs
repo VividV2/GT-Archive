@@ -1,17 +1,2 @@
-using Oculus.Interaction.Input;
-using UnityEngine;
-using Oculus.Interaction.Input;
-using UnityEngine;
-
-namespace Oculus.Interaction.Unity.Input;
-
-public class InputMouseButton : MonoBehaviour, IButton
-{
-	[SerializeField]
-	private int _button;
-
-	public bool Value()
-	{
-		return UnityEngine.Input.GetMouseButton(_button);
-	}
-}
+// Could not decompile Oculus.Interaction.PoseDetection.Debug.ActiveStateModel`1
+// This type uses unsupported IL or has too many generic parameters.

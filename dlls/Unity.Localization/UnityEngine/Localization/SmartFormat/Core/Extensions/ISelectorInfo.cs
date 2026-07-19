@@ -23,6 +23,6 @@ namespace UnityEngine.Localization.SmartFormat.Core.Extensions
 		FormatDetails FormatDetails { get; }
 	}
 }
-namespace UnityEngine.Localization.SmartFormat.Core.Parsing
+namespace UnityEngine.Localization.SmartFormat.Extensions
 {
 }

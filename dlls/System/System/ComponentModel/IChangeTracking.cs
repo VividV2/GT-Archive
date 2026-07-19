@@ -1,16 +1,19 @@
-namespace System.ComponentModel;
+namespace System;
 
-/// <summary>Defines the mechanism for querying the object for changes and resetting of the changed status.</summary>
-public interface IChangeTracking
+internal enum ParsingError
 {
-	/// <summary>Gets the object's changed status.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the object's content has changed since the last call to <see cref="M:System.ComponentModel.IChangeTracking.AcceptChanges" />; otherwise, <see langword="false" />.</returns>
-	bool IsChanged { get; }
-
-	/// <summary>Resets the object's state to unchanged by accepting the modifications.</summary>
-	void AcceptChanges();
-}
-namespace System.ComponentModel
-{
+	None = 0,
+	BadFormat = 1,
+	BadScheme = 2,
+	BadAuthority = 3,
+	EmptyUriString = 4,
+	LastRelativeUriOkErrIndex = 4,
+	SchemeLimit = 5,
+	SizeLimit = 6,
+	MustRootedPath = 7,
+	BadHostName = 8,
+	NonEmptyHost = 9,
+	BadPort = 10,
+	BadAuthorityTerminator = 11,
+	CannotCreateRelative = 12
 }

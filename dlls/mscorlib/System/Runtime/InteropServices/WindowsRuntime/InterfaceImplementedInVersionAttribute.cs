@@ -1,6 +1,2 @@
-namespace System.Diagnostics.Contracts
-{
-}
-namespace System.Runtime.InteropServices.WindowsRuntime
-{
-}
+// Could not decompile System.Runtime.InteropServices.WindowsRuntime.InterfaceImplementedInVersionAttribute
+// This type uses unsupported IL or has too many generic parameters.

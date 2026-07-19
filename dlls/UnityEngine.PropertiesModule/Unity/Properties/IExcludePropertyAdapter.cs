@@ -1,6 +1,3 @@
-namespace Unity.Properties;
-
-public interface IExcludePropertyAdapter : IPropertyVisitorAdapter
+namespace Unity.Properties.Internal
 {
-	bool IsExcluded<TContainer, TValue>(in ExcludeContext<TContainer, TValue> context, ref TContainer container, ref TValue value);
 }

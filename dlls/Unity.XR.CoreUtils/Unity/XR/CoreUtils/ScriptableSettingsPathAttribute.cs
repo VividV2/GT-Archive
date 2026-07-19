@@ -1,16 +1,20 @@
 using System;
 
-namespace Unity.XR.CoreUtils;
-
-[AttributeUsage(AttributeTargets.Class)]
-public class ScriptableSettingsPathAttribute : Attribute
+namespace Unity.XR.CoreUtils
 {
-	private readonly string m_Path;
-
-	public string Path => m_Path;
-
-	public ScriptableSettingsPathAttribute(string path = "")
+	[AttributeUsage(AttributeTargets.Class)]
+	public class ScriptableSettingsPathAttribute : Attribute
 	{
-		m_Path = path;
+		private readonly string m_Path;
+
+		public string Path => m_Path;
+
+		public ScriptableSettingsPathAttribute(string path = "")
+		{
+			m_Path = path;
+		}
 	}
+}
+namespace Unity.XR.CoreUtils
+{
 }

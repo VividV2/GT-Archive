@@ -1,12 +1,19 @@
-namespace Pathfinding;
-
-public interface INavmeshHolder : ITransformedGraph, INavmesh
+namespace Pathfinding
 {
-	Int3 GetVertex(int i);
+	public interface INavmeshHolder : ITransformedGraph, INavmesh
+	{
+		Int3 GetVertex(int i);
 
-	Int3 GetVertexInGraphSpace(int i);
+		Int3 GetVertexInGraphSpace(int i);
 
-	int GetVertexArrayIndex(int index);
+		int GetVertexArrayIndex(int index);
 
-	void GetTileCoordinates(int tileIndex, out int x, out int z);
+		void GetTileCoordinates(int tileIndex, out int x, out int z);
+	}
+}
+namespace Pathfinding.Legacy
+{
+}
+namespace Pathfinding.Examples
+{
 }

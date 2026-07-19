@@ -1,17 +1,28 @@
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-namespace Steamworks;
-
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(714)]
-public struct GamepadTextInputDismissed_t
+namespace Steamworks
 {
-	public const int k_iCallback = 714;
+	public enum EHTMLMouseButton
+	{
+		eHTMLMouseButton_Left,
+		eHTMLMouseButton_Right,
+		eHTMLMouseButton_Middle
+	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(714)]
+	public struct GamepadTextInputDismissed_t
+	{
+		public const int k_iCallback = 714;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bSubmitted;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bSubmitted;
 
-	public uint m_unSubmittedText;
+		public uint m_unSubmittedText;
 
-	public AppId_t m_unAppID;
+		public AppId_t m_unAppID;
+	}
 }

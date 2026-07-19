@@ -1,18 +1,2 @@
-namespace System.Data.ProviderBase;
-
-internal class DbConnectionPoolGroupProviderInfo
-{
-	private DbConnectionPoolGroup _poolGroup;
-
-	internal DbConnectionPoolGroup PoolGroup
-	{
-		get
-		{
-			return _poolGroup;
-		}
-		set
-		{
-			_poolGroup = value;
-		}
-	}
-}
+// Could not decompile System.Data.ProviderBase.DbConnectionPoolGroupProviderInfo
+// This type uses unsupported IL or has too many generic parameters.

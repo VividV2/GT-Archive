@@ -1,8 +1,12 @@
 using UnityEngine;
 
-namespace Meta.Voice.Audio;
-
-public interface IAudioClipSetter
+namespace Meta.Voice.Audio
 {
-	bool SetClip(AudioClip clip);
+	public interface IAudioClipSetter
+	{
+		bool SetClip(AudioClip clip);
+	}
+}
+namespace Meta.WitAi
+{
 }

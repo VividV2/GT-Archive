@@ -1,11 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public enum ShaderParamType
-{
-	Float,
-	Int,
-	Bool,
-	Half,
-	Short,
-	UInt
-}
+// Could not decompile UnityEngine.Analytics.ShaderRuntimeInfoAnalytic
+// This type uses unsupported IL or has too many generic parameters.

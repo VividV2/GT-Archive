@@ -1,10 +1,14 @@
-namespace System.Security;
-
-internal struct RuntimeDeclSecurityEntry
+namespace System.Security
 {
-	public IntPtr blob;
+	internal struct RuntimeDeclSecurityEntry
+	{
+		public IntPtr blob;
 
-	public int size;
+		public int size;
 
-	public int index;
+		public int index;
+	}
+}
+namespace System.Runtime.CompilerServices
+{
 }

@@ -1,0 +1,2 @@
+// Could not decompile VRRigCollection
+// This type uses unsupported IL or has too many generic parameters.

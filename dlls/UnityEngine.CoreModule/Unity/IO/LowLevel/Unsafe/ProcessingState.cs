@@ -1,14 +1,3 @@
-using UnityEngine.Bindings;
-
-namespace Unity.IO.LowLevel.Unsafe;
-
-[NativeHeader("Runtime/File/AsyncReadManagerMetrics.h")]
-public enum ProcessingState
+namespace Unity.IO.LowLevel.Unsafe
 {
-	Unknown,
-	InQueue,
-	Reading,
-	Completed,
-	Failed,
-	Canceled
 }

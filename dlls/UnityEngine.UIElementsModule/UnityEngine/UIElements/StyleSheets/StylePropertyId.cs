@@ -1,6 +1,6 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine.UIElements.StyleSheets
+namespace UnityEngine.UIElements
 {
 }
 namespace UnityEngine.UIElements.StyleSheets
@@ -107,4 +107,10 @@ namespace UnityEngine.UIElements.StyleSheets
 		Width = 131104,
 		WordSpacing = 65551
 	}
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
 }

@@ -1,13 +1,29 @@
-using System.Collections;
+namespace System.Runtime.Versioning;
 
-namespace System.Runtime.InteropServices.ComTypes;
-
-[Guid("496B0ABE-CDEE-11d3-88E8-00902754C43A")]
-internal interface IEnumerable
+/// <summary>Identifies the scope of a sharable resource.</summary>
+/// <summary>Identifies the scope of a sharable resource.</summary>
+[Flags]
+public enum ResourceScope
 {
-	[DispId(-4)]
-	System.Collections.IEnumerator GetEnumerator();
-}
-namespace System.Reflection.Emit
-{
+	/// <summary>There is no shared state.</summary>
+	/// <summary>There is no shared state.</summary>
+	None = 0,
+	/// <summary>The state is shared by objects within the machine.</summary>
+	/// <summary>The state is shared by objects within the machine.</summary>
+	Machine = 1,
+	/// <summary>The state is shared within a process.</summary>
+	/// <summary>The state is shared within a process.</summary>
+	Process = 2,
+	/// <summary>The state is shared by objects within an <see cref="T:System.AppDomain" />.</summary>
+	/// <summary>The state is shared by objects within an <see cref="T:System.AppDomain" />.</summary>
+	AppDomain = 4,
+	/// <summary>The state is shared by objects within a library.</summary>
+	/// <summary>The state is shared by objects within a library.</summary>
+	Library = 8,
+	/// <summary>The resource is visible to only the type.</summary>
+	/// <summary>The resource is visible to only the type.</summary>
+	Private = 0x10,
+	/// <summary>The resource is visible at an assembly scope.</summary>
+	/// <summary>The resource is visible at an assembly scope.</summary>
+	Assembly = 0x20
 }

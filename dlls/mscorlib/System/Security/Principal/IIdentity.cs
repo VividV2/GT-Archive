@@ -1,18 +1,13 @@
-namespace System.Security.Principal;
-
-/// <summary>Defines the basic functionality of an identity object.</summary>
-public interface IIdentity
+namespace System.Threading.Tasks
 {
-	/// <summary>Gets the name of the current user.</summary>
-	/// <returns>The name of the user on whose behalf the code is running.</returns>
-	string Name { get; }
-
-	/// <summary>Gets the type of authentication used.</summary>
-	/// <returns>The type of authentication used to identify the user.</returns>
-	string AuthenticationType { get; }
-
-	/// <summary>Gets a value that indicates whether the user has been authenticated.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the user was authenticated; otherwise, <see langword="false" />.</returns>
-	bool IsAuthenticated { get; }
+	[FriendAccessAllowed]
+	internal enum CausalityTraceLevel
+	{
+		Required,
+		Important,
+		Verbose
+	}
+}
+namespace System.Runtime.Remoting
+{
 }

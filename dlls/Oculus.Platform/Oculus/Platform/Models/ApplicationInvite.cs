@@ -1,9 +1,2 @@
-using System;
-using System;
-
-namespace Oculus.Platform.Models;
-
-public class AbuseReportRecording(IntPtr o)
-{
-	public readonly string RecordingUuid = CAPI.ovr_AbuseReportRecording_GetRecordingUuid(o);
-}
+// Could not decompile Oculus.Platform.Models.ApplicationInvite
+// This type uses unsupported IL or has too many generic parameters.

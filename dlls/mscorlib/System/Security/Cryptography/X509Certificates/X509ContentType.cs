@@ -1,22 +1,32 @@
-namespace System.Security.Cryptography.X509Certificates;
+namespace System.Runtime.InteropServices;
 
-/// <summary>Specifies the format of an X.509 certificate.</summary>
-public enum X509ContentType
+/// <summary>Describes the original settings of the <see langword="FUNCFLAGS" /> in the COM type library from where this method was imported.</summary>
+[Serializable]
+[Flags]
+[ComVisible(true)]
+public enum TypeLibFuncFlags
 {
-	/// <summary>An unknown X.509 certificate.</summary>
-	Unknown = 0,
-	/// <summary>A single X.509 certificate.</summary>
-	Cert = 1,
-	/// <summary>A single serialized X.509 certificate.</summary>
-	SerializedCert = 2,
-	/// <summary>A PFX-formatted certificate. The <see langword="Pfx" /> value is identical to the <see langword="Pkcs12" /> value.</summary>
-	Pfx = 3,
-	/// <summary>A PKCS #12-formatted certificate. The <see langword="Pkcs12" /> value is identical to the <see langword="Pfx" /> value.</summary>
-	Pkcs12 = 3,
-	/// <summary>A serialized store.</summary>
-	SerializedStore = 4,
-	/// <summary>A PKCS #7-formatted certificate.</summary>
-	Pkcs7 = 5,
-	/// <summary>An Authenticode X.509 certificate.</summary>
-	Authenticode = 6
+	/// <summary>This flag is intended for system-level functions or functions that type browsers should not display.</summary>
+	FRestricted = 1,
+	/// <summary>The function returns an object that is a source of events.</summary>
+	FSource = 2,
+	/// <summary>The function that supports data binding.</summary>
+	FBindable = 4,
+	/// <summary>When set, any call to a method that sets the property results first in a call to <see langword="IPropertyNotifySink::OnRequestEdit" />.</summary>
+	FRequestEdit = 8,
+	/// <summary>The function that is displayed to the user as bindable. <see cref="F:System.Runtime.InteropServices.TypeLibFuncFlags.FBindable" /> must also be set.</summary>
+	FDisplayBind = 0x10,
+	/// <summary>The function that best represents the object. Only one function in a type information can have this attribute.</summary>
+	FDefaultBind = 0x20,
+	/// <summary>The function should not be displayed to the user, although it exists and is bindable.</summary>
+	FHidden = 0x40,
+	/// <summary>The function supports <see langword="GetLastError" />.</summary>
+	FUsesGetLastError = 0x80,
+	/// <summary>Permits an optimization in which the compiler looks for a member named "xyz" on the type "abc". If such a member is found and is flagged as an accessor function for an element of the default collection, then a call is generated to that member function.</summary>
+	FDefaultCollelem = 0x100,
+	/// <summary>The type information member is the default member for display in the user interface.</summary>
+	FUiDefault = 0x200,
+	FNonBrowsable = 0x400,
+	FReplaceable = 0x800,
+	FImmediateBind = 0x1000
 }

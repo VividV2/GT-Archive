@@ -1,8 +1,2 @@
-namespace Valve.VR;
+namespace Unity.XR.OpenVR;
 
-public struct VREvent_Overlay_t
-{
-	public ulong overlayHandle;
-
-	public ulong devicePath;
-}

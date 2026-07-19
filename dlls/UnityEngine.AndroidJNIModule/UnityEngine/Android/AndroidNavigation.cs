@@ -1,10 +1,14 @@
-namespace UnityEngine.Android;
-
-public enum AndroidNavigation
+namespace UnityEngine.Android
 {
-	Undefined,
-	NoNav,
-	Dpad,
-	TrackBall,
-	Wheel
+}
+namespace UnityEngine.Android
+{
+	public enum AndroidNavigation
+	{
+		Undefined,
+		NoNav,
+		Dpad,
+		TrackBall,
+		Wheel
+	}
 }

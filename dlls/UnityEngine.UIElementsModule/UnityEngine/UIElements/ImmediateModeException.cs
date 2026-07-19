@@ -1,15 +1,11 @@
 using System;
 
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+internal class ImmediateModeException : Exception
 {
-}
-namespace UnityEngine.UIElements
-{
-	internal class ImmediateModeException : Exception
+	public ImmediateModeException(Exception inner)
+		: base("", inner)
 	{
-		public ImmediateModeException(Exception inner)
-			: base("", inner)
-		{
-		}
 	}
 }

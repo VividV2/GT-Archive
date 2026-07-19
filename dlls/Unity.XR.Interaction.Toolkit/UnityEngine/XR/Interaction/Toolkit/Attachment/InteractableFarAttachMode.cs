@@ -1,6 +1,8 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering
+namespace UnityEngine.XR.Interaction.Toolkit.Attachment;
+
+public enum InteractableFarAttachMode
 {
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs
-{
+	DeferToInteractor,
+	Near,
+	Far
 }

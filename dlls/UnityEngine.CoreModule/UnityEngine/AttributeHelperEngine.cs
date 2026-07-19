@@ -1,14 +1,2 @@
-using UnityEngine.Scripting;
-using UnityEngine.Scripting;
-
-namespace UnityEngine;
-
-[RequiredByNativeCode]
-public interface ISerializationCallbackReceiver
-{
-	[RequiredByNativeCode]
-	void OnBeforeSerialize();
-
-	[RequiredByNativeCode]
-	void OnAfterDeserialize();
-}
+// Could not decompile UnityEngine.AttributeHelperEngine
+// This type uses unsupported IL or has too many generic parameters.

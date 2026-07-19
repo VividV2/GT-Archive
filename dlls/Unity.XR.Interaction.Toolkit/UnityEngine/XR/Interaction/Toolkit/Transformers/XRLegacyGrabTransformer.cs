@@ -1,14 +1,2 @@
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.XR.Interaction.Toolkit.Interactors;
-
-[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
-public interface IXRGroupMember
-{
-	IXRInteractionGroup containingGroup { get; }
-
-	void OnRegisteringAsGroupMember(IXRInteractionGroup group);
-
-	void OnRegisteringAsNonGroupMember();
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Transformers.XRLegacyGrabTransformer
+// This type uses unsupported IL or has too many generic parameters.

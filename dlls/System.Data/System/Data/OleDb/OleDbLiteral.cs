@@ -1,0 +1,3 @@
+namespace Microsoft.SqlServer.Server
+{
+}

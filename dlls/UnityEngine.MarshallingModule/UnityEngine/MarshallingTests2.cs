@@ -3,17 +3,21 @@ using System.Runtime.InteropServices;
 using UnityEngine.Bindings;
 using UnityEngine.Internal;
 
-namespace UnityEngine;
-
-[NativeHeader("Modules/Marshalling/MarshallingTests.h")]
-[ExcludeFromDocs]
-internal class MarshallingTests2
+namespace UnityEngine
 {
-	public static void ParameterNonBlittableStructReuse(StructCoreString param)
+	[NativeHeader("Modules/Marshalling/MarshallingTests.h")]
+	[ExcludeFromDocs]
+	internal class MarshallingTests2
 	{
-		ParameterNonBlittableStructReuse_Injected(ref param);
-	}
+		public static void ParameterNonBlittableStructReuse(StructCoreString param)
+		{
+			ParameterNonBlittableStructReuse_Injected(ref param);
+		}
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern void ParameterNonBlittableStructReuse_Injected([In] ref StructCoreString param);
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		private static extern void ParameterNonBlittableStructReuse_Injected([In] ref StructCoreString param);
+	}
+}
+namespace UnityEngine
+{
 }

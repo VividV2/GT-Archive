@@ -1,10 +1,26 @@
 using Unity.Properties;
 
-namespace UnityEngine.UIElements;
-
-public interface IDataSourceProvider
+namespace UnityEngine.UIElements
 {
-	object dataSource { get; }
+}
+namespace UnityEngine.UIElements.Layout
+{
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
+	public interface IDataSourceProvider
+	{
+		object dataSource { get; }
 
-	PropertyPath dataSourcePath { get; }
+		PropertyPath dataSourcePath { get; }
+	}
 }

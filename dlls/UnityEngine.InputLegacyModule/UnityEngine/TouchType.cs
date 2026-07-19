@@ -1,20 +1,8 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum TouchType
 {
-	public enum TouchType
-	{
-		Direct,
-		Indirect,
-		Stylus
-	}
-}
-namespace UnityEngine
-{
-	public enum TouchPhase
-	{
-		Began,
-		Moved,
-		Stationary,
-		Ended,
-		Canceled
-	}
+	Direct,
+	Indirect,
+	Stylus
 }

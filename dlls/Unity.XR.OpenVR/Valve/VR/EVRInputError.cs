@@ -1,5 +1,8 @@
 namespace Valve.VR
 {
+}
+namespace Valve.VR
+{
 	public enum EVRInputError
 	{
 		None,
@@ -23,13 +26,5 @@ namespace Valve.VR
 		InvalidPriority,
 		PermissionDenied,
 		InvalidRenderModel
-	}
-}
-namespace Valve.VR
-{
-	public enum EVRScreenshotPropertyFilenames
-	{
-		Preview,
-		VR
 	}
 }

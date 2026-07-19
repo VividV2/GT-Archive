@@ -15,3 +15,6 @@ public interface IDesignerSerializationService
 	/// <returns>An object that contains the serialized state of the specified collection of objects.</returns>
 	object Serialize(ICollection objects);
 }
+namespace System.Collections.Generic
+{
+}

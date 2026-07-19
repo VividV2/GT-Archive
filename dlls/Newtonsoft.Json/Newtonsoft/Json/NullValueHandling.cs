@@ -1,7 +1,14 @@
-namespace Newtonsoft.Json;
-
-public enum NullValueHandling
+namespace Newtonsoft.Json.Utilities
 {
-	Include,
-	Ignore
+}
+namespace Newtonsoft.Json
+{
+	public enum NullValueHandling
+	{
+		Include,
+		Ignore
+	}
+}
+namespace Newtonsoft.Json.Utilities
+{
 }

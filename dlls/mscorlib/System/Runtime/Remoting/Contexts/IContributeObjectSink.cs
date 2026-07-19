@@ -13,3 +13,6 @@ public interface IContributeObjectSink
 	/// <returns>The composite sink chain.</returns>
 	IMessageSink GetObjectSink(MarshalByRefObject obj, IMessageSink nextSink);
 }
+namespace System.Security.Permissions
+{
+}

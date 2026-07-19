@@ -1,6 +1,3 @@
-namespace System.Security.Cryptography
-{
-}
-namespace System.CodeDom
+namespace Mono.Net.Dns
 {
 }

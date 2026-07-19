@@ -1,13 +1,2 @@
-namespace UnityEngine.UIElements
-{
-	public class FocusEvent : FocusEventBase<FocusEvent>
-	{
-		static FocusEvent()
-		{
-			EventBase<FocusEvent>.SetCreateFunction(() => new FocusEvent());
-		}
-	}
-}
-namespace UnityEngine.UIElements
-{
-}
+// Could not decompile UnityEngine.UIElements.FocusEvent
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,14 +1,2 @@
-namespace Modio.API;
+namespace Modio.Customizations;
 
-public enum Filtering
-{
-	None,
-	Like,
-	Not,
-	NotLike,
-	In,
-	NotIn,
-	Max,
-	Min,
-	BitwiseAnd
-}

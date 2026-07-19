@@ -1,7 +1,2 @@
-namespace Fusion;
-
-public enum ScriptHeaderStyle
-{
-	Unity,
-	Photon
-}
+// Could not decompile Fusion.ScriptHeaderStyle
+// This type uses unsupported IL or has too many generic parameters.

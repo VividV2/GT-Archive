@@ -1,13 +1,28 @@
 using System.Runtime.InteropServices;
 
-namespace Valve.VR;
-
-public enum EHiddenAreaMeshType
+namespace Valve.VR
 {
-	k_eHiddenAreaMesh_Standard,
-	k_eHiddenAreaMesh_Inverse,
-	k_eHiddenAreaMesh_LineLoop,
-	k_eHiddenAreaMesh_Max
+	public enum EVRNotificationStyle
+	{
+		None = 0,
+		Application = 100,
+		Contact_Disabled = 200,
+		Contact_Enabled = 201,
+		Contact_Active = 202
+	}
+}
+namespace Valve.VR
+{
+	public enum VRMessageOverlayResponse
+	{
+		ButtonPress_0,
+		ButtonPress_1,
+		ButtonPress_2,
+		ButtonPress_3,
+		CouldntFindSystemOverlay,
+		CouldntFindOrCreateClientOverlay,
+		ApplicationQuit
+	}
 }
 namespace Valve.VR
 {
@@ -31,7 +46,4 @@ namespace Valve.VR
 		[MarshalAs(UnmanagedType.FunctionPtr)]
 		internal _GetDXGIOutputInfo GetDXGIOutputInfo;
 	}
-}
-namespace Valve.VR
-{
 }

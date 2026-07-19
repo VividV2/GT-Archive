@@ -1,11 +1,11 @@
-namespace System.Security;
+namespace System.Runtime.InteropServices.ComTypes;
 
-/// <summary>Identifies types or members as security-critical and safely accessible by transparent code.</summary>
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Field | AttributeTargets.Interface | AttributeTargets.Delegate, AllowMultiple = false, Inherited = false)]
-public sealed class SecuritySafeCriticalAttribute : Attribute
+/// <summary>Identifies the target operating system platform.</summary>
+[Serializable]
+public enum SYSKIND
 {
-	/// <summary>Initializes a new instance of the <see cref="T:System.Security.SecuritySafeCriticalAttribute" /> class.</summary>
-	public SecuritySafeCriticalAttribute()
-	{
-	}
+	SYS_WIN16,
+	SYS_WIN32,
+	SYS_MAC,
+	SYS_WIN64
 }

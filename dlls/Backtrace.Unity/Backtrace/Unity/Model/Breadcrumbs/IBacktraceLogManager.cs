@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using System.Collections.Generic;
 
-namespace Backtrace.Unity.Model.Attributes
+namespace Backtrace.Unity.Model.Breadcrumbs
 {
-	public interface IScopeAttributeProvider
+	internal interface IArchiveableBreadcrumbManager
 	{
-		void GetAttributes(IDictionary<string, string> attributes);
+		string Archive();
 	}
 }
 namespace Backtrace.Unity.Model.Breadcrumbs
@@ -24,4 +23,7 @@ namespace Backtrace.Unity.Model.Breadcrumbs
 
 		double BreadcrumbId();
 	}
+}
+namespace Backtrace.Unity.Model.JsonData
+{
 }

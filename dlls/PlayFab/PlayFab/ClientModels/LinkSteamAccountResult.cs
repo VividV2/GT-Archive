@@ -1,2 +1,13 @@
-namespace PlayFab.ClientModels;
+using System;
+using PlayFab.SharedModels;
 
+namespace PlayFab.ClientModels
+{
+	[Serializable]
+	public class LinkSteamAccountResult : PlayFabResultCommon
+	{
+	}
+}
+namespace PlayFab.ClientModels
+{
+}

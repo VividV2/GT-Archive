@@ -1,0 +1,2 @@
+namespace Microsoft.Win32;
+

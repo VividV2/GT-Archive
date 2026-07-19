@@ -1,30 +1,12 @@
-using System.ComponentModel;
-using System.Xml.Xsl.Qil;
 using System.Xml.Xsl.Qil;
 
-namespace System.Xml.Xsl.XPath
-{
-	internal interface IFocus
-	{
-		QilNode GetCurrent();
+namespace System.Xml.Xsl.XPath;
 
-		QilNode GetPosition();
+internal interface IFocus
+{
+	QilNode GetCurrent();
 
-		QilNode GetLast();
-	}
-}
-namespace System.Xml.Xsl.Runtime
-{
-	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-	public enum SetIteratorResult
-	{
-		NoMoreNodes,
-		InitRightIterator,
-		NeedLeftNode,
-		NeedRightNode,
-		HaveCurrentNode
-	}
-}
-namespace System.Xml.Xsl.Runtime
-{
+	QilNode GetPosition();
+
+	QilNode GetLast();
 }

@@ -1,11 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-using UnityEngine;
-
-namespace Liv.Lck.Rendering;
-
-[DisallowMultipleComponent]
-[RequireComponent(typeof(Camera))]
-public class LckCompositionTarget : MonoBehaviour
-{
-}
+// Could not decompile Liv.Lck.LckResultMessageBuilder
+// This type uses unsupported IL or has too many generic parameters.

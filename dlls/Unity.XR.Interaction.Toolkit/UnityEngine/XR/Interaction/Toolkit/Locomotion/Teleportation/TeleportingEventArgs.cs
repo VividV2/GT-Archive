@@ -1,2 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
-
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportingEventArgs
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,24 +1,28 @@
 using Unity;
 
-namespace System.Net.NetworkInformation;
-
-/// <summary>Provides data for the <see cref="E:System.Net.NetworkInformation.NetworkChange.NetworkAvailabilityChanged" /> event.</summary>
-public class NetworkAvailabilityEventArgs : EventArgs
+namespace System.Net.NetworkInformation
 {
-	private bool isAvailable;
-
-	/// <summary>Gets the current status of the network connection.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the network is available; otherwise, <see langword="false" />.</returns>
-	public bool IsAvailable => isAvailable;
-
-	internal NetworkAvailabilityEventArgs(bool isAvailable)
+	/// <summary>Provides data for the <see cref="E:System.Net.NetworkInformation.NetworkChange.NetworkAvailabilityChanged" /> event.</summary>
+	public class NetworkAvailabilityEventArgs : EventArgs
 	{
-		this.isAvailable = isAvailable;
-	}
+		private bool isAvailable;
 
-	internal NetworkAvailabilityEventArgs()
-	{
-		Unity.ThrowStub.ThrowNotSupportedException();
+		/// <summary>Gets the current status of the network connection.</summary>
+		/// <returns>
+		///   <see langword="true" /> if the network is available; otherwise, <see langword="false" />.</returns>
+		public bool IsAvailable => isAvailable;
+
+		internal NetworkAvailabilityEventArgs(bool isAvailable)
+		{
+			this.isAvailable = isAvailable;
+		}
+
+		internal NetworkAvailabilityEventArgs()
+		{
+			Unity.ThrowStub.ThrowNotSupportedException();
+		}
 	}
+}
+namespace System.Net.Mail
+{
 }

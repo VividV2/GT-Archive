@@ -1,13 +1,9 @@
-namespace System.Runtime.Serialization
+namespace System.Runtime.Serialization;
+
+internal class PositiveIntegerDataContract : LongDataContract
 {
-	internal class PositiveIntegerDataContract : LongDataContract
+	internal PositiveIntegerDataContract()
+		: base(DictionaryGlobals.positiveIntegerLocalName, DictionaryGlobals.SchemaNamespace)
 	{
-		internal PositiveIntegerDataContract()
-			: base(DictionaryGlobals.positiveIntegerLocalName, DictionaryGlobals.SchemaNamespace)
-		{
-		}
 	}
-}
-namespace System.Runtime.Serialization
-{
 }

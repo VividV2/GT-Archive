@@ -1,2 +1,0 @@
-namespace Mono.Net.Security;
-

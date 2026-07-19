@@ -1,12 +1,2 @@
-using System.Security;
-using System.Security;
-
-namespace System.Globalization;
-
-internal struct InternalEncodingDataItem
-{
-	[SecurityCritical]
-	internal string webName;
-
-	internal ushort codePage;
-}
+// Could not decompile System.Buffers.ReadOnlySequenceSegment`1
+// This type uses unsupported IL or has too many generic parameters.

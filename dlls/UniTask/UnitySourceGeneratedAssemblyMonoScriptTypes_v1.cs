@@ -1,9 +1,37 @@
 using System.Threading;
+using UnityEngine;
 using System.Threading;
+using UnityEngine;
+using System.Threading;
+using UnityEngine;
 
-namespace Cysharp.Threading.Tasks;
+namespace Cysharp.Threading.Tasks.Triggers;
 
-public interface ICancelPromise
+[DisallowMultipleComponent]
+public sealed class AsyncTriggerExit2DTrigger : AsyncTriggerBase<Collider2D>
 {
-	bool TrySetCanceled(CancellationToken cancellationToken = default(CancellationToken));
+	private void OnTriggerExit2D(Collider2D other)
+	{
+		RaiseEvent(other);
+	}
+
+	public IAsyncOnTriggerExit2DHandler GetOnTriggerExit2DAsyncHandler()
+	{
+		return new AsyncTriggerHandler<Collider2D>(this, callOnce: false);
+	}
+
+	public IAsyncOnTriggerExit2DHandler GetOnTriggerExit2DAsyncHandler(CancellationToken cancellationToken)
+	{
+		return new AsyncTriggerHandler<Collider2D>(this, cancellationToken, callOnce: false);
+	}
+
+	public UniTask<Collider2D> OnTriggerExit2DAsync()
+	{
+		return ((IAsyncOnTriggerExit2DHandler)new AsyncTriggerHandler<Collider2D>(this, callOnce: true)).OnTriggerExit2DAsync();
+	}
+
+	public UniTask<Collider2D> OnTriggerExit2DAsync(CancellationToken cancellationToken)
+	{
+		return ((IAsyncOnTriggerExit2DHandler)new AsyncTriggerHandler<Collider2D>(this, cancellationToken, callOnce: true)).OnTriggerExit2DAsync();
+	}
 }

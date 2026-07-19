@@ -1,2 +1,6 @@
-namespace KID.Model;
-
+namespace KID.Model
+{
+}
+namespace KID.Model
+{
+}

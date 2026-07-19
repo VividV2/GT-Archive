@@ -1,12 +1,9 @@
-using UnityEngine;
+using System.Collections.Generic;
+using System.Collections.Generic;
 
-public class GREntitySpawnPoint : MonoBehaviour
+public interface IGameEntityDebugComponent
 {
-	public GhostReactorSpawnConfig.SpawnPointType spawnPointType;
-
-	public GameEntity entity;
-
-	public GRPatrolPath patrolPath;
-
-	public bool applyScale;
+	void GetDebugTextLines(out List<string> strings);
 }
+namespace GorillaTagScripts;
+

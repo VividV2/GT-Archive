@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
 
-namespace System;
-
-internal interface IValueTupleInternal : ITuple
+namespace System.Runtime.InteropServices
 {
-	int GetHashCode(IEqualityComparer comparer);
+}
+namespace System
+{
+	internal interface IValueTupleInternal : ITuple
+	{
+		int GetHashCode(IEqualityComparer comparer);
 
-	string ToStringEnd();
+		string ToStringEnd();
+	}
 }

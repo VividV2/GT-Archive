@@ -1,17 +1,13 @@
 using System.IO;
 
-namespace System.Data.SqlClient
-{
-	internal class StreamDataFeed : DataFeed
-	{
-		internal Stream _source;
+namespace System.Data.SqlClient;
 
-		internal StreamDataFeed(Stream source)
-		{
-			_source = source;
-		}
-	}
-}
-namespace System.Data.SqlClient.SNI
+internal class StreamDataFeed : DataFeed
 {
+	internal Stream _source;
+
+	internal StreamDataFeed(Stream source)
+	{
+		_source = source;
+	}
 }

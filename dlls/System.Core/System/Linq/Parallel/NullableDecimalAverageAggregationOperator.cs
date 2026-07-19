@@ -1,13 +1,2 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-
-namespace System.Linq.Parallel;
-
-internal interface IMergeHelper<TInputOutput>
-{
-	void Execute();
-
-	IEnumerator<TInputOutput> GetEnumerator();
-
-	TInputOutput[] GetResultsAsArray();
-}
+// Could not decompile System.Linq.Parallel.NullableDecimalAverageAggregationOperator
+// This type uses unsupported IL or has too many generic parameters.

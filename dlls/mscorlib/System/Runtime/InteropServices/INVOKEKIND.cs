@@ -15,9 +15,6 @@ namespace System.Runtime.InteropServices
 		INVOKE_PROPERTYPUTREF = 8
 	}
 }
-namespace System.Security.AccessControl
-{
-}
-namespace System.Runtime.Remoting.Proxies
+namespace System.Security.Policy
 {
 }

@@ -1,2 +1,2 @@
-namespace System.CodeDom;
+namespace Mono.Net.Dns;
 

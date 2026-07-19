@@ -1,7 +1,14 @@
-namespace UnityEngine.UIElements;
-
-public enum CollectionVirtualizationMethod
+namespace UnityEngine.UIElements
 {
-	FixedHeight,
-	DynamicHeight
+	public enum CollectionVirtualizationMethod
+	{
+		FixedHeight,
+		DynamicHeight
+	}
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
 }

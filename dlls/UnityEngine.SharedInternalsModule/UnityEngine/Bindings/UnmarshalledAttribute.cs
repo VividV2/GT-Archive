@@ -1,9 +1,2 @@
-using System;
-
-namespace UnityEngine.Bindings;
-
-[VisibleToOtherModules]
-[AttributeUsage(AttributeTargets.Parameter | AttributeTargets.ReturnValue)]
-internal class UnmarshalledAttribute : Attribute, IBindingsAttribute
-{
-}
+// Could not decompile UnityEngine.Bindings.UnmarshalledAttribute
+// This type uses unsupported IL or has too many generic parameters.

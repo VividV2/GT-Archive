@@ -1,8 +1,12 @@
 using System.Collections.Generic;
 
-namespace UnityEngine.Splines;
-
-public interface IHasEmptyCurves
+namespace UnityEngine.Splines
 {
-	IReadOnlyList<int> EmptyCurves { get; }
+}
+namespace UnityEngine.Splines
+{
+	public interface IHasEmptyCurves
+	{
+		IReadOnlyList<int> EmptyCurves { get; }
+	}
 }

@@ -1,29 +1,19 @@
 using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Scripting;
 using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Scripting;
 
-namespace UnityEngine.Analytics;
-
-[Serializable]
-[StructLayout(LayoutKind.Sequential)]
-[RequiredByNativeCode(GenerateProxy = true)]
-internal class UaaLApplicationLaunchAnalytic : AnalyticsEventBase
+namespace UnityEngine.Internal
 {
-	public int launch_type;
-
-	public int launch_process_type;
-
-	public UaaLApplicationLaunchAnalytic()
-		: base("UaaLApplicationLaunch", 1)
+	[Serializable]
+	public class ExcludeFromDocsAttribute : Attribute
 	{
 	}
-
-	[RequiredByNativeCode]
-	public static UaaLApplicationLaunchAnalytic CreateUaaLApplicationLaunchAnalytic()
-	{
-		return new UaaLApplicationLaunchAnalytic();
-	}
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine
+{
 }

@@ -1,9 +1,2 @@
-namespace System.Diagnostics;
-
-internal class AssertWrapper
-{
-	public static void ShowAssert(string stackTrace, StackFrame frame, string message, string detailMessage)
-	{
-		new DefaultTraceListener().Fail(message, detailMessage);
-	}
-}
+// Could not decompile Mono.Net.Security.AsyncWriteRequest
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,11 +1,14 @@
 using System.Collections.Generic;
-using System.Collections.Generic;
 
-namespace Sirenix.OdinInspector.Internal;
-
-public interface ISubGroupProviderAttribute
+namespace Sirenix.OdinInspector
 {
-	IList<PropertyGroupAttribute> GetSubGroupAttributes();
+}
+namespace Sirenix.OdinInspector.Internal
+{
+	public interface ISubGroupProviderAttribute
+	{
+		IList<PropertyGroupAttribute> GetSubGroupAttributes();
 
-	string RepathMemberAttribute(PropertyGroupAttribute attr);
+		string RepathMemberAttribute(PropertyGroupAttribute attr);
+	}
 }

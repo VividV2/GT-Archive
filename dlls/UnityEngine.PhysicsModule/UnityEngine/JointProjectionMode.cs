@@ -1,17 +1,13 @@
 using System;
 using System.ComponentModel;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum JointProjectionMode
 {
-}
-namespace UnityEngine
-{
-	public enum JointProjectionMode
-	{
-		None,
-		PositionAndRotation,
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[Obsolete("JointProjectionMode.PositionOnly is no longer supported", true)]
-		PositionOnly
-	}
+	None,
+	PositionAndRotation,
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	[Obsolete("JointProjectionMode.PositionOnly is no longer supported", true)]
+	PositionOnly
 }

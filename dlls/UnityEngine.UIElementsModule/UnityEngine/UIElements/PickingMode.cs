@@ -1,19 +1,7 @@
-namespace UnityEngine.UIElements
-{
-	public enum PickingMode
-	{
-		Position,
-		Ignore
-	}
-}
-namespace UnityEngine.UIElements.UIR
-{
-	internal struct GfxUpdateBufferRange
-	{
-		public uint offsetFromWriteStart;
+namespace UnityEngine.UIElements;
 
-		public uint size;
-
-		public UIntPtr source;
-	}
+public enum PickingMode
+{
+	Position,
+	Ignore
 }

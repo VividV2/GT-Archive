@@ -1,17 +1,2 @@
-using System;
-
-namespace VYaml.Annotations;
-
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true, Inherited = false)]
-public class YamlObjectUnionAttribute : Attribute
-{
-	public string Tag { get; }
-
-	public Type SubType { get; }
-
-	public YamlObjectUnionAttribute(string tagString, Type subType)
-	{
-		Tag = tagString;
-		SubType = subType;
-	}
-}
+// Could not decompile VYaml.Annotations.YamlObjectUnionAttribute
+// This type uses unsupported IL or has too many generic parameters.

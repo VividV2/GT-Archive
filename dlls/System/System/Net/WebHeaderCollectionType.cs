@@ -1,16 +1,20 @@
-namespace System.Net;
-
-internal enum WebHeaderCollectionType : ushort
+namespace System.Net
 {
-	Unknown,
-	WebRequest,
-	WebResponse,
-	HttpWebRequest,
-	HttpWebResponse,
-	HttpListenerRequest,
-	HttpListenerResponse,
-	FtpWebRequest,
-	FtpWebResponse,
-	FileWebRequest,
-	FileWebResponse
+	internal enum WebHeaderCollectionType : ushort
+	{
+		Unknown,
+		WebRequest,
+		WebResponse,
+		HttpWebRequest,
+		HttpWebResponse,
+		HttpListenerRequest,
+		HttpListenerResponse,
+		FtpWebRequest,
+		FtpWebResponse,
+		FileWebRequest,
+		FileWebResponse
+	}
+}
+namespace System.Net
+{
 }

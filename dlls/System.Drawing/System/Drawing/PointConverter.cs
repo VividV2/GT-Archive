@@ -1,10 +1,2 @@
-namespace System;
-
-[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-internal class MonoInternalNoteAttribute : System.MonoTODOAttribute
-{
-	public MonoInternalNoteAttribute(string comment)
-		: base(comment)
-	{
-	}
-}
+// Could not decompile System.Drawing.PointConverter
+// This type uses unsupported IL or has too many generic parameters.

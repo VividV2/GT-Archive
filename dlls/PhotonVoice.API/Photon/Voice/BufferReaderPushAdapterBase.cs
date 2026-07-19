@@ -1,9 +1,2 @@
-using System;
-using System;
-
-namespace Photon.Voice;
-
-public interface IProcessor<T> : IDisposable
-{
-	T[] Process(T[] buf);
-}
+// Could not decompile Photon.Voice.BufferReaderPushAdapterBase`1
+// This type uses unsupported IL or has too many generic parameters.

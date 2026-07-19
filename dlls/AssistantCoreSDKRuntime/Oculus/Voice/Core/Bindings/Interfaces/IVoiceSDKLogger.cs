@@ -1,22 +1,25 @@
-namespace Oculus.Voice.Core.Bindings.Interfaces;
+namespace Oculus.Voice.Core.Bindings.Android;
 
-public interface IVoiceSDKLogger
+namespace Oculus.Voice.Core.Bindings.Interfaces
 {
-	bool IsUsingPlatformIntegration { get; set; }
+	public interface IVoiceSDKLogger
+	{
+		bool IsUsingPlatformIntegration { get; set; }
 
-	bool ShouldLogToConsole { get; set; }
+		bool ShouldLogToConsole { get; set; }
 
-	string WitApplication { get; set; }
+		string WitApplication { get; set; }
 
-	void LogInteractionStart(string requestId, string witApi);
+		void LogInteractionStart(string requestId, string witApi);
 
-	void LogInteractionEndSuccess();
+		void LogInteractionEndSuccess();
 
-	void LogInteractionEndFailure(string errorMessage);
+		void LogInteractionEndFailure(string errorMessage);
 
-	void LogInteractionPoint(string interactionPoint);
+		void LogInteractionPoint(string interactionPoint);
 
-	void LogAnnotation(string annotationKey, string annotationValue);
+		void LogAnnotation(string annotationKey, string annotationValue);
 
-	void LogFirstTranscriptionTime();
+		void LogFirstTranscriptionTime();
+	}
 }

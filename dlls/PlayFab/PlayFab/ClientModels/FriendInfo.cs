@@ -1,12 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetAccountInfoResult : PlayFabResultCommon
+namespace PlayFab.ClientModels
 {
-	public UserAccountInfo AccountInfo;
+}
+namespace PlayFab.CloudScriptModels
+{
 }

@@ -1,21 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace System.EnterpriseServices;
-
-[ComVisible(false)]
-public struct XACTTRANSINFO
-{
-	public int grfRMSupported;
-
-	public int grfRMSupportedRetaining;
-
-	public int grfTCSupported;
-
-	public int grfTCSupportedRetaining;
-
-	public int isoFlags;
-
-	public int isoLevel;
-
-	public BOID uow;
-}
+// Could not decompile System.EnterpriseServices.PrivateComponentAttribute
+// This type uses unsupported IL or has too many generic parameters.

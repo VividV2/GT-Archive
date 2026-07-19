@@ -1,7 +1,2 @@
-namespace System.Diagnostics.CodeAnalysis;
-
-[AttributeUsage(AttributeTargets.Constructor, AllowMultiple = false, Inherited = false)]
-[ExcludeFromCodeCoverage]
-internal sealed class SetsRequiredMembersAttribute : Attribute
-{
-}
+// Could not decompile System.Diagnostics.CodeAnalysis.StringSyntaxAttribute
+// This type uses unsupported IL or has too many generic parameters.

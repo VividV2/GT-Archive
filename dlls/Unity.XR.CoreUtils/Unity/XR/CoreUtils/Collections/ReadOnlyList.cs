@@ -1,3 +1,2 @@
-namespace Unity.XR.CoreUtils.Capabilities
-{
-}
+namespace Unity.XR.CoreUtils.Bindings;
+

@@ -1,8 +1,12 @@
-namespace System.Globalization;
-
-internal struct HebrewNumberParsingContext(int result)
+namespace System.Globalization
 {
-	internal HebrewNumber.HS state = HebrewNumber.HS.Start;
+	internal struct HebrewNumberParsingContext(int result)
+	{
+		internal HebrewNumber.HS state = HebrewNumber.HS.Start;
 
-	internal int result = result;
+		internal int result = result;
+	}
+}
+namespace System.Globalization
+{
 }

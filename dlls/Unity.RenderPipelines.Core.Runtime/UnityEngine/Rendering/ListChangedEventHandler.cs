@@ -1,7 +1,3 @@
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
-	public delegate void ListChangedEventHandler<T>(ObservableList<T> sender, ListChangedEventArgs<T> e);
-}
+namespace UnityEngine.Rendering;
+
+public delegate void ListChangedEventHandler<T>(ObservableList<T> sender, ListChangedEventArgs<T> e);

@@ -1,12 +1,16 @@
-namespace PlayFab.ClientModels;
-
-public enum SourceType
+namespace PlayFab.ClientModels
 {
-	Admin,
-	BackEnd,
-	GameClient,
-	GameServer,
-	Partner,
-	Custom,
-	API
+}
+namespace PlayFab.ClientModels
+{
+	public enum SourceType
+	{
+		Admin,
+		BackEnd,
+		GameClient,
+		GameServer,
+		Partner,
+		Custom,
+		API
+	}
 }

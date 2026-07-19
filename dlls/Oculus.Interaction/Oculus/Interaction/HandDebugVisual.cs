@@ -1,17 +1,2 @@
-using System;
-
-namespace Oculus.Interaction
-{
-	[Obsolete("Use HandDebugGizmos instead.")]
-	public class HandDebugVisual : HandDebugGizmos
-	{
-		[Obsolete("This method has been deprecated.", true)]
-		public void UpdateSkeleton()
-		{
-			throw new NotImplementedException();
-		}
-	}
-}
-namespace Oculus.Interaction
-{
-}
+// Could not decompile Oculus.Interaction.HandDebugVisual
+// This type uses unsupported IL or has too many generic parameters.

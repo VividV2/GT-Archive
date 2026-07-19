@@ -1,20 +1,16 @@
-namespace System.Reflection
+namespace System.Reflection;
+
+internal struct MonoPropertyInfo
 {
-	internal struct MonoPropertyInfo
-	{
-		public Type parent;
+	public Type parent;
 
-		public Type declaring_type;
+	public Type declaring_type;
 
-		public string name;
+	public string name;
 
-		public MethodInfo get_method;
+	public MethodInfo get_method;
 
-		public MethodInfo set_method;
+	public MethodInfo set_method;
 
-		public PropertyAttributes attrs;
-	}
-}
-namespace System.IO
-{
+	public PropertyAttributes attrs;
 }

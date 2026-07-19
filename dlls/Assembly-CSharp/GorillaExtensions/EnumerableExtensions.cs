@@ -1,2 +1,2 @@
-namespace CjLib;
-
+// Could not decompile GorillaExtensions.EnumerableExtensions
+// This type uses unsupported IL or has too many generic parameters.

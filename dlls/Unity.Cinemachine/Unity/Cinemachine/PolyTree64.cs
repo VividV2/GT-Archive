@@ -1,9 +1,10 @@
-namespace Unity.Cinemachine
+namespace Unity.Cinemachine;
+
+internal enum EndType
 {
-	internal class PolyTree64 : PolyPath64
-	{
-	}
-}
-namespace Unity.Cinemachine
-{
+	Polygon,
+	Joined,
+	Butt,
+	Square,
+	Round
 }

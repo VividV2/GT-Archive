@@ -1,9 +1,2 @@
-using System;
-using System;
-
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
-
-[Serializable]
-public class ULongTrackedProperty : TrackedProperty<ulong>
-{
-}
+// Could not decompile UnityEngine.Localization.PropertyVariants.TrackedObjects.TrackedLayoutGroup
+// This type uses unsupported IL or has too many generic parameters.

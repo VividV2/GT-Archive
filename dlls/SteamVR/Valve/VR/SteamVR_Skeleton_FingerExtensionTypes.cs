@@ -1,9 +1,13 @@
-namespace Valve.VR;
-
-public enum SteamVR_Skeleton_FingerExtensionTypes
+namespace Valve.VR
 {
-	Static,
-	Free,
-	Extend,
-	Contract
+	public enum SteamVR_Skeleton_FingerExtensionTypes
+	{
+		Static,
+		Free,
+		Extend,
+		Contract
+	}
+}
+namespace Valve.VR
+{
 }

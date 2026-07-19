@@ -1,33 +1,29 @@
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+public enum UserOrigination
 {
-	public enum UserOrigination
-	{
-		Organic,
-		Steam,
-		Google,
-		Amazon,
-		Facebook,
-		Kongregate,
-		GamersFirst,
-		Unknown,
-		IOS,
-		LoadTest,
-		Android,
-		PSN,
-		GameCenter,
-		CustomId,
-		XboxLive,
-		Parse,
-		Twitch,
-		WindowsHello,
-		ServerCustomId,
-		NintendoSwitchDeviceId,
-		FacebookInstantGamesId,
-		OpenIdConnect,
-		Apple,
-		NintendoSwitchAccount
-	}
-}
-namespace PlayFab.ClientModels
-{
+	Organic,
+	Steam,
+	Google,
+	Amazon,
+	Facebook,
+	Kongregate,
+	GamersFirst,
+	Unknown,
+	IOS,
+	LoadTest,
+	Android,
+	PSN,
+	GameCenter,
+	CustomId,
+	XboxLive,
+	Parse,
+	Twitch,
+	WindowsHello,
+	ServerCustomId,
+	NintendoSwitchDeviceId,
+	FacebookInstantGamesId,
+	OpenIdConnect,
+	Apple,
+	NintendoSwitchAccount
 }

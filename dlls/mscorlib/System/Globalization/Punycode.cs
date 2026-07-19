@@ -1,8 +1,2 @@
-namespace System.Diagnostics.Tracing
-{
-	[Flags]
-	public enum EventFieldTags
-	{
-		None = 0
-	}
-}
+// Could not decompile System.Globalization.Punycode
+// This type uses unsupported IL or has too many generic parameters.

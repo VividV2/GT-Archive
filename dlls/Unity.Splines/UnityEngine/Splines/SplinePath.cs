@@ -1,11 +1,2 @@
-using System.Collections.Generic;
-
-namespace UnityEngine.Splines;
-
-public class SplinePath : SplinePath<SplineSlice<Spline>>
-{
-	public SplinePath(IEnumerable<SplineSlice<Spline>> slices)
-		: base(slices)
-	{
-	}
-}
+// Could not decompile UnityEngine.Splines.SplinePath`1
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,9 +1,10 @@
-namespace System.Diagnostics;
-
-internal class ConfigurationManagerInternalFactory
+namespace System.Configuration
 {
-	public class Instance
+	public enum SettingsSerializeAs
 	{
-		public static bool SetConfigurationSystemInProgress;
+		String,
+		Xml,
+		Binary,
+		ProviderSpecific
 	}
 }

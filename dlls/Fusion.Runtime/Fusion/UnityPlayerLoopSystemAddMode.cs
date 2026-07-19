@@ -1,17 +1,9 @@
-#define DEBUG
-namespace Fusion
+namespace Fusion;
+
+public enum UnityPlayerLoopSystemAddMode
 {
-}
-namespace Fusion
-{
-	public enum UnityPlayerLoopSystemAddMode
-	{
-		FirstChild,
-		LastChild,
-		Before,
-		After
-	}
-}
-namespace Fusion
-{
+	FirstChild,
+	LastChild,
+	Before,
+	After
 }

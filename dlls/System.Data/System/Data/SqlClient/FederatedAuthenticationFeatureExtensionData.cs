@@ -8,6 +8,3 @@ internal struct FederatedAuthenticationFeatureExtensionData
 
 	internal byte[] accessToken;
 }
-namespace System.Data.SqlClient
-{
-}

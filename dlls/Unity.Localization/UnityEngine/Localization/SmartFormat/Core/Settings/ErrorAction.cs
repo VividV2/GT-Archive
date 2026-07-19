@@ -1,9 +1,2 @@
-namespace UnityEngine.Localization.SmartFormat.Core.Settings;
+namespace UnityEngine.Localization.Tables;
 
-public enum ErrorAction
-{
-	ThrowError,
-	OutputErrorInResult,
-	Ignore,
-	MaintainTokens
-}

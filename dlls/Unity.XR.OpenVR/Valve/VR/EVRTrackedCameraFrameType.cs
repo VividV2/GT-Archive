@@ -1,13 +1,9 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum EVRTrackedCameraFrameType
 {
-	public enum EVRTrackedCameraFrameType
-	{
-		Distorted,
-		Undistorted,
-		MaximumUndistorted,
-		MAX_CAMERA_FRAME_TYPES
-	}
-}
-namespace Valve.VR
-{
+	Distorted,
+	Undistorted,
+	MaximumUndistorted,
+	MAX_CAMERA_FRAME_TYPES
 }

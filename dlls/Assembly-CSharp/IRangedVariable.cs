@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine;
 
 public interface IRangedVariable<T> : IVariable<T>, IVariable
 {

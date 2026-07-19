@@ -1,9 +1,2 @@
-namespace System.Runtime.Serialization;
-
-internal class ENTITIESDataContract : StringDataContract
-{
-	internal ENTITIESDataContract()
-		: base(DictionaryGlobals.ENTITIESLocalName, DictionaryGlobals.SchemaNamespace)
-	{
-	}
-}
+// Could not decompile System.Runtime.Serialization.DateTimeDataContract
+// This type uses unsupported IL or has too many generic parameters.

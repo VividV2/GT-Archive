@@ -3,35 +3,42 @@ using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 
-namespace Cysharp.Threading.Tasks.Linq;
-
-internal static class ToHashSet
+namespace Cysharp.Threading.Tasks.Linq
 {
-	internal static async UniTask<HashSet<TSource>> ToHashSetAsync<TSource>(IUniTaskAsyncEnumerable<TSource> source, IEqualityComparer<TSource> comparer, CancellationToken cancellationToken)
+}
+namespace Cysharp.Threading.Tasks.Linq
+{
+	internal static class ToHashSet
 	{
-		HashSet<TSource> set = new HashSet<TSource>(comparer);
-		IUniTaskAsyncEnumerator<TSource> e = source.GetAsyncEnumerator(cancellationToken);
-		object obj = null;
-		try
+		internal static async UniTask<HashSet<TSource>> ToHashSetAsync<TSource>(IUniTaskAsyncEnumerable<TSource> source, IEqualityComparer<TSource> comparer, CancellationToken cancellationToken)
 		{
-			while (await e.MoveNextAsync())
+			IEqualityComparer<TSource> comparer2 = default(IEqualityComparer<TSource>);
+			HashSet<TSource> set = new HashSet<TSource>(comparer2);
+			IUniTaskAsyncEnumerable<TSource> uniTaskAsyncEnumerable = default(IUniTaskAsyncEnumerable<TSource>);
+			CancellationToken cancellationToken2 = default(CancellationToken);
+			IUniTaskAsyncEnumerator<TSource> e = uniTaskAsyncEnumerable.GetAsyncEnumerator(cancellationToken2);
+			object obj = null;
+			try
 			{
-				set.Add(e.Current);
+				while (await e.MoveNextAsync())
+				{
+					set.Add(e.Current);
+				}
 			}
+			catch (object obj2)
+			{
+				obj = obj2;
+			}
+			if (e != null)
+			{
+				await e.DisposeAsync();
+			}
+			object obj3 = obj;
+			if (obj3 != null)
+			{
+				ExceptionDispatchInfo.Capture((obj3 as Exception) ?? throw obj3).Throw();
+			}
+			return set;
 		}
-		catch (object obj2)
-		{
-			obj = obj2;
-		}
-		if (e != null)
-		{
-			await e.DisposeAsync();
-		}
-		object obj3 = obj;
-		if (obj3 != null)
-		{
-			ExceptionDispatchInfo.Capture((obj3 as Exception) ?? throw obj3).Throw();
-		}
-		return set;
 	}
 }

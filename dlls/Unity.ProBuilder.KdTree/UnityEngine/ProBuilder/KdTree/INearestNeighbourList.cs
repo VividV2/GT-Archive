@@ -1,14 +1,48 @@
-namespace UnityEngine.ProBuilder.KdTree;
-
-internal interface INearestNeighbourList<TItem, TDistance>
+namespace UnityEngine.ProBuilder.KdTree
 {
-	int MaxCapacity { get; }
+	internal interface ITypeMath<T>
+	{
+		T MinValue { get; }
 
-	int Count { get; }
+		T MaxValue { get; }
 
-	bool Add(TItem item, TDistance distance);
+		T Zero { get; }
 
-	TItem GetFurtherest();
+		T NegativeInfinity { get; }
 
-	TItem RemoveFurtherest();
+		T PositiveInfinity { get; }
+
+		int Compare(T a, T b);
+
+		T Min(T a, T b);
+
+		T Max(T a, T b);
+
+		bool AreEqual(T a, T b);
+
+		bool AreEqual(T[] a, T[] b);
+
+		T Add(T a, T b);
+
+		T Subtract(T a, T b);
+
+		T Multiply(T a, T b);
+
+		T DistanceSquaredBetweenPoints(T[] a, T[] b);
+	}
+}
+namespace UnityEngine.ProBuilder.KdTree
+{
+	internal interface INearestNeighbourList<TItem, TDistance>
+	{
+		int MaxCapacity { get; }
+
+		int Count { get; }
+
+		bool Add(TItem item, TDistance distance);
+
+		TItem GetFurtherest();
+
+		TItem RemoveFurtherest();
+	}
 }

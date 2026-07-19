@@ -1,20 +1,25 @@
-using System;
+using System.Collections.Generic;
+using System.Collections.Generic;
 
-namespace Pathfinding.Poly2Tri;
-
-public class PointOnEdgeException : NotImplementedException
+namespace Pathfinding.Poly2Tri
 {
-	public readonly TriangulationPoint A;
-
-	public readonly TriangulationPoint B;
-
-	public readonly TriangulationPoint C;
-
-	public PointOnEdgeException(string message, TriangulationPoint a, TriangulationPoint b, TriangulationPoint c)
-		: base(message + "\n" + a.ToString() + "\n" + b.ToString() + "\n" + c.ToString())
+	public interface Triangulatable
 	{
-		A = a;
-		B = b;
-		C = c;
+		IList<TriangulationPoint> Points { get; }
+
+		IList<DelaunayTriangle> Triangles { get; }
+
+		TriangulationMode TriangulationMode { get; }
+
+		void Prepare(TriangulationContext tcx);
+
+		void AddTriangle(DelaunayTriangle t);
+
+		void AddTriangles(IEnumerable<DelaunayTriangle> list);
+
+		void ClearTriangles();
 	}
+}
+namespace Pathfinding.Poly2Tri
+{
 }

@@ -1,32 +1,39 @@
 using System.Runtime.InteropServices;
 
-namespace System.Runtime.Remoting;
-
-/// <summary>Wraps marshal-by-value object references, allowing them to be returned through an indirection.</summary>
-[ClassInterface(ClassInterfaceType.AutoDual)]
-[ComVisible(true)]
-public class ObjectHandle : MarshalByRefObject, IObjectHandle
+namespace System.Runtime.Remoting.Metadata.W3cXsd2001
 {
-	private object _wrapped;
-
-	/// <summary>Initializes an instance of the <see cref="T:System.Runtime.Remoting.ObjectHandle" /> class, wrapping the given object <paramref name="o" />.</summary>
-	/// <param name="o">The object that is wrapped by the new <see cref="T:System.Runtime.Remoting.ObjectHandle" />.</param>
-	public ObjectHandle(object o)
+}
+namespace System.Runtime.Remoting
+{
+	/// <summary>Wraps marshal-by-value object references, allowing them to be returned through an indirection.</summary>
+	[ClassInterface(ClassInterfaceType.AutoDual)]
+	[ComVisible(true)]
+	public class ObjectHandle : MarshalByRefObject, IObjectHandle
 	{
-		_wrapped = o;
-	}
+		private object _wrapped;
 
-	/// <summary>Initializes the lifetime lease of the wrapped object.</summary>
-	/// <returns>An initialized <see cref="T:System.Runtime.Remoting.Lifetime.ILease" /> that allows you to control the lifetime of the wrapped object.</returns>
-	public override object InitializeLifetimeService()
-	{
-		return base.InitializeLifetimeService();
-	}
+		/// <summary>Initializes an instance of the <see cref="T:System.Runtime.Remoting.ObjectHandle" /> class, wrapping the given object <paramref name="o" />.</summary>
+		/// <param name="o">The object that is wrapped by the new <see cref="T:System.Runtime.Remoting.ObjectHandle" />.</param>
+		public ObjectHandle(object o)
+		{
+			_wrapped = o;
+		}
 
-	/// <summary>Returns the wrapped object.</summary>
-	/// <returns>The wrapped object.</returns>
-	public object Unwrap()
-	{
-		return _wrapped;
+		/// <summary>Initializes the lifetime lease of the wrapped object.</summary>
+		/// <returns>An initialized <see cref="T:System.Runtime.Remoting.Lifetime.ILease" /> that allows you to control the lifetime of the wrapped object.</returns>
+		public override object InitializeLifetimeService()
+		{
+			return base.InitializeLifetimeService();
+		}
+
+		/// <summary>Returns the wrapped object.</summary>
+		/// <returns>The wrapped object.</returns>
+		public object Unwrap()
+		{
+			return _wrapped;
+		}
 	}
+}
+namespace Mono
+{
 }

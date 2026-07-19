@@ -1,19 +1,23 @@
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.XR.Interaction.Toolkit.Interactors;
-
-[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
-public interface IXRRayProvider
+namespace UnityEngine.XR.Interaction.Toolkit.Interactors
 {
-	Vector3 rayEndPoint { get; }
+	[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
+	public interface IXRRayProvider
+	{
+		Vector3 rayEndPoint { get; }
 
-	Transform rayEndTransform { get; }
+		Transform rayEndTransform { get; }
 
-	Transform GetOrCreateRayOrigin();
+		Transform GetOrCreateRayOrigin();
 
-	Transform GetOrCreateAttachTransform();
+		Transform GetOrCreateAttachTransform();
 
-	void SetRayOrigin(Transform newOrigin);
+		void SetRayOrigin(Transform newOrigin);
 
-	void SetAttachTransform(Transform newAttach);
+		void SetAttachTransform(Transform newAttach);
+	}
+}
+namespace UnityEngine.XR.Interaction.Toolkit.Filtering
+{
 }

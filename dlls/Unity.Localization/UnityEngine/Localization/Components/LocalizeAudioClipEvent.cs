@@ -1,12 +1,2 @@
-using UnityEngine.Localization.Events;
-
-namespace UnityEngine.Localization.Components
-{
-	[AddComponentMenu("Localization/Asset/Localize Audio Clip Event")]
-	public class LocalizeAudioClipEvent : LocalizedAssetEvent<AudioClip, LocalizedAudioClip, UnityEventAudioClip>
-	{
-	}
-}
-namespace UnityEngine.Localization.Operations
-{
-}
+// Could not decompile UnityEngine.Localization.Components.LocalizeAudioClipEvent
+// This type uses unsupported IL or has too many generic parameters.

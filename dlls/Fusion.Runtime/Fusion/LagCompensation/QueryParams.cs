@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Fusion.LagCompensation
 {
+}
+namespace Fusion.LagCompensation
+{
 	[Serializable]
 	public struct QueryParams
 	{
@@ -30,7 +33,4 @@ namespace Fusion.LagCompensation
 		[NonSerialized]
 		public unsafe void* UserArgs;
 	}
-}
-namespace Fusion.LagCompensation
-{
 }

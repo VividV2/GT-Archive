@@ -1,18 +1,19 @@
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
 namespace Steamworks
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(5303)]
-	public struct ReservationNotificationCallback_t
+	[CallbackIdentity(335)]
+	public struct ClanOfficerListResponse_t
 	{
-		public const int k_iCallback = 5303;
+		public const int k_iCallback = 335;
 
-		public PartyBeaconID_t m_ulBeaconID;
+		public CSteamID m_steamIDClan;
 
-		public CSteamID m_steamIDJoiner;
+		public int m_cOfficers;
+
+		public byte m_bSuccess;
 	}
 }
 namespace Steamworks
@@ -33,16 +34,5 @@ namespace Steamworks
 		public uint m_nNumAppDependencies;
 
 		public uint m_nTotalNumAppDependencies;
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1331)]
-	public struct RemoteStorageFileWriteAsyncComplete_t
-	{
-		public const int k_iCallback = 1331;
-
-		public EResult m_eResult;
 	}
 }

@@ -1,15 +1,2 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
-
-internal enum InternalNameSpaceE
-{
-	None,
-	Soap,
-	XdrPrimitive,
-	XdrString,
-	UrtSystem,
-	UrtUser,
-	UserNameSpace,
-	MemberName,
-	Interop,
-	CallElement
-}
+// Could not decompile System.Security.Cryptography.Utils
+// This type uses unsupported IL or has too many generic parameters.

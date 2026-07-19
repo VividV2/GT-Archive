@@ -1,5 +1,8 @@
 using UnityEngine;
 
+namespace Valve.VR.InteractionSystem
+{
+}
 namespace Valve.VR
 {
 	public interface ISteamVR_Action_Vector2 : ISteamVR_Action_In_Source, ISteamVR_Action_Source
@@ -13,6 +16,6 @@ namespace Valve.VR
 		Vector2 lastDelta { get; }
 	}
 }
-namespace Valve.VR
+namespace Valve.VR.InteractionSystem
 {
 }

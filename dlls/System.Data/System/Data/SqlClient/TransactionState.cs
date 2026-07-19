@@ -8,3 +8,6 @@ internal enum TransactionState
 	Committed,
 	Unknown
 }
+namespace System.Data.SqlClient
+{
+}

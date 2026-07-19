@@ -1,10 +1,2 @@
-using UnityEngine;
-
-namespace GT_CustomMapSupportRuntime;
-
-public class RopeSwingSegment : MonoBehaviour
-{
-	public GameObject? ropeSwingParent;
-
-	public int boneIndex;
-}
+// Could not decompile GT_CustomMapSupportRuntime.RopeSwingSegment
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,6 +1,2 @@
-namespace Valve.VR.InteractionSystem
-{
-}
-namespace Valve.VR.InteractionSystem
-{
-}
+// Could not decompile Valve.VR.InteractionSystem.BalloonSpawner
+// This type uses unsupported IL or has too many generic parameters.

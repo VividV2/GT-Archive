@@ -1,12 +1,14 @@
-namespace Valve.VR
+using System;
+
+namespace Valve.VR;
+
+public struct NotificationBitmap_t
 {
-	public enum EVRComponentProperty
-	{
-		IsStatic = 1,
-		IsVisible = 2,
-		IsTouched = 4,
-		IsPressed = 8,
-		IsScrolled = 0x10,
-		IsHighlighted = 0x20
-	}
+	public IntPtr m_pImageData;
+
+	public int m_nWidth;
+
+	public int m_nHeight;
+
+	public int m_nBytesPerPixel;
 }

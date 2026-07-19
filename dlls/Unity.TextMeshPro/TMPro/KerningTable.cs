@@ -1,9 +1,2 @@
-namespace TMPro
-{
-}
-namespace TMPro
-{
-}
-namespace TMPro
-{
-}
+// Could not decompile TMPro.KerningTable
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,14 +1,10 @@
-namespace System.Drawing.Drawing2D
+namespace System.Drawing.Drawing2D;
+
+internal enum BrushType
 {
-	internal enum BrushType
-	{
-		SolidColor,
-		HatchFill,
-		TextureFill,
-		PathGradient,
-		LinearGradient
-	}
-}
-namespace System.Drawing.Printing
-{
+	SolidColor,
+	HatchFill,
+	TextureFill,
+	PathGradient,
+	LinearGradient
 }

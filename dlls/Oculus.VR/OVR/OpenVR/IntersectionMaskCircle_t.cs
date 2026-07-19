@@ -1,10 +1,14 @@
-namespace OVR.OpenVR;
-
-public struct IntersectionMaskCircle_t
+namespace OVR.OpenVR
 {
-	public float m_flCenterX;
+}
+namespace OVR.OpenVR
+{
+	public struct IntersectionMaskCircle_t
+	{
+		public float m_flCenterX;
 
-	public float m_flCenterY;
+		public float m_flCenterY;
 
-	public float m_flRadius;
+		public float m_flRadius;
+	}
 }

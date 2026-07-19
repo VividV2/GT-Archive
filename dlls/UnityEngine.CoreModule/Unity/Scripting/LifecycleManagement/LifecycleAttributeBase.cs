@@ -1,2 +1,2 @@
-namespace JetBrains.Annotations;
+namespace Unity.Burst;
 

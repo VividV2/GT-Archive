@@ -1,9 +1,2 @@
-using System;
-
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.Method)]
-[Obsolete("Use [ContractAnnotation('=> halt')] instead")]
-public sealed class TerminatesProgramAttribute : Attribute
-{
-}
+// Could not decompile JetBrains.Annotations.TerminatesProgramAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,8 +1,2 @@
-namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler;
-
-internal struct ResourceReaderData
-{
-	public int passId;
-
-	public int inputSlot;
-}
+// Could not decompile UnityEngine.Rendering.DelegateUtility
+// This type uses unsupported IL or has too many generic parameters.

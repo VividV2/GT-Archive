@@ -1,24 +1,28 @@
-namespace System.Data;
-
-internal enum Tokens
+namespace System.Data
 {
-	None,
-	Name,
-	Numeric,
-	Decimal,
-	Float,
-	BinaryConst,
-	StringConst,
-	Date,
-	ListSeparator,
-	LeftParen,
-	RightParen,
-	ZeroOp,
-	UnaryOp,
-	BinaryOp,
-	Child,
-	Parent,
-	Dot,
-	Unknown,
-	EOS
+	internal enum Tokens
+	{
+		None,
+		Name,
+		Numeric,
+		Decimal,
+		Float,
+		BinaryConst,
+		StringConst,
+		Date,
+		ListSeparator,
+		LeftParen,
+		RightParen,
+		ZeroOp,
+		UnaryOp,
+		BinaryOp,
+		Child,
+		Parent,
+		Dot,
+		Unknown,
+		EOS
+	}
+}
+namespace System.Data.SqlClient
+{
 }

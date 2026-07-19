@@ -1,0 +1,2 @@
+// Could not decompile Steamworks.SteamNetworkingIPAddr
+// This type uses unsupported IL or has too many generic parameters.

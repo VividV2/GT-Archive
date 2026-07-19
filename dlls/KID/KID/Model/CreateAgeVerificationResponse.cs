@@ -1,2 +1,2 @@
-namespace KID.Model;
-
+// Could not decompile KID.Model.CreateAgeVerificationResponse
+// This type uses unsupported IL or has too many generic parameters.

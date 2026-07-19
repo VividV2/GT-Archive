@@ -1,9 +1,11 @@
-namespace Fusion;
+using System;
 
-public enum RenderSource
+namespace Fusion
 {
-	Interpolated,
-	From,
-	To,
-	Latest
+	public class WeaverGeneratedAttribute : Attribute
+	{
+	}
+}
+namespace Fusion
+{
 }

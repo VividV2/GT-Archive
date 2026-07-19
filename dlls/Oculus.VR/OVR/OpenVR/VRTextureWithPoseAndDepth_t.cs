@@ -1,6 +1,16 @@
-namespace OVR.OpenVR;
-
-public struct VRTextureWithPoseAndDepth_t
+namespace OVR.OpenVR
 {
-	public VRTextureDepthInfo_t depth;
+	public enum EVRNotificationType
+	{
+		Transient,
+		Persistent,
+		Transient_SystemWithUserValue
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct VRTextureWithPoseAndDepth_t
+	{
+		public VRTextureDepthInfo_t depth;
+	}
 }

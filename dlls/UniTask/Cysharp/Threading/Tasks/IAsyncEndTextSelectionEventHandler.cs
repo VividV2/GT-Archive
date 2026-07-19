@@ -1,8 +1,3 @@
-using System;
-
-namespace Cysharp.Threading.Tasks;
-
-public interface IAsyncEndTextSelectionEventHandler<T> : IDisposable
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask<T> OnEndTextSelectionAsync();
 }

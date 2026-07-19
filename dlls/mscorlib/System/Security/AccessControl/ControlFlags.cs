@@ -1,3 +1,3 @@
-namespace System.Security.Cryptography
+namespace System.Runtime.InteropServices.ComTypes
 {
 }

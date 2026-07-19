@@ -1,10 +1,2 @@
-using System;
-
-namespace Fusion;
-
-[Obsolete("Use one of FusionGlobalScriptableObjectSourceAttribute-derived types instead", true)]
-[AttributeUsage(AttributeTargets.Method)]
-public class FusionGlobalScriptableObjectLoaderMethodAttribute : Attribute
-{
-	public int Order { get; set; }
-}
+// Could not decompile Fusion.FusionGlobalScriptableObjectLoaderMethodAttribute
+// This type uses unsupported IL or has too many generic parameters.

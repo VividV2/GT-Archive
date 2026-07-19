@@ -1,10 +1,14 @@
-namespace System.Security.Policy;
-
-internal interface IBuiltInEvidence
+namespace Mono
 {
-	int GetRequiredSize(bool verbose);
+}
+namespace System.Security.Policy
+{
+	internal interface IBuiltInEvidence
+	{
+		int GetRequiredSize(bool verbose);
 
-	int InitFromBuffer(char[] buffer, int position);
+		int InitFromBuffer(char[] buffer, int position);
 
-	int OutputToBuffer(char[] buffer, int position, bool verbose);
+		int OutputToBuffer(char[] buffer, int position, bool verbose);
+	}
 }

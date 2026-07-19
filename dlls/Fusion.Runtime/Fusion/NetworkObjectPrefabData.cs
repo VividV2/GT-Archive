@@ -1,2 +1,6 @@
-namespace Fusion.LagCompensation;
-
+namespace Fusion
+{
+}
+namespace Fusion
+{
+}

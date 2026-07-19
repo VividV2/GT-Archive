@@ -1,31 +1,20 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
 namespace System.EnterpriseServices;
 
-/// <summary>Represents a structure used in the <see cref="T:System.EnterpriseServices.ITransaction" /> interface.</summary>
+/// <summary>Specifies the release mode for the properties in the new shared property group.</summary>
+/// <summary>Specifies the release mode for the properties in the new shared property group.</summary>
+[Serializable]
 [ComVisible(false)]
-public struct XACTTRANSINFO
+public enum PropertyReleaseMode
 {
-	/// <summary>Specifies zero. This field is reserved.</summary>
-	public int grfRMSupported;
-
-	/// <summary>Specifies zero. This field is reserved.</summary>
-	public int grfRMSupportedRetaining;
-
-	/// <summary>Represents a bitmask that indicates which <see langword="grfTC" /> flags this transaction implementation supports.</summary>
-	public int grfTCSupported;
-
-	/// <summary>Specifies zero. This field is reserved.</summary>
-	public int grfTCSupportedRetaining;
-
-	/// <summary>Specifies zero. This field is reserved.</summary>
-	public int isoFlags;
-
-	/// <summary>Represents the isolation level associated with this transaction object. ISOLATIONLEVEL_UNSPECIFIED indicates that no isolation level was specified.</summary>
-	public int isoLevel;
-
-	/// <summary>Represents the unit of work associated with this transaction.</summary>
-	public BOID uow;
+	/// <summary>The property group is not destroyed until the process in which it was created has terminated.</summary>
+	/// <summary>The property group is not destroyed until the process in which it was created has terminated.</summary>
+	Process = 1,
+	/// <summary>When all clients have released their references on the property group, the property group is automatically destroyed. This is the default COM mode.</summary>
+	/// <summary>When all clients have released their references on the property group, the property group is automatically destroyed. This is the default COM mode.</summary>
+	Standard = 0
+}
+namespace System.EnterpriseServices
+{
 }

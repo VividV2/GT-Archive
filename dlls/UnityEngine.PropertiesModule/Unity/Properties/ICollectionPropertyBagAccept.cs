@@ -7,8 +7,11 @@ namespace Unity.Properties
 }
 namespace Unity.Properties
 {
-	public interface ITypeVisitor
+	public interface IPropertyAccept<TContainer>
 	{
-		void Visit<TContainer>();
+		void Accept(IPropertyVisitor visitor, ref TContainer container);
 	}
+}
+namespace Unity.Properties
+{
 }

@@ -1,35 +1,17 @@
-using System.Runtime.InteropServices;
-using System.Threading;
-
-namespace System;
-
-[StructLayout(LayoutKind.Sequential)]
-internal class IOSelectorJob : IThreadPoolWorkItem
+namespace System.Security.Cryptography.X509Certificates
 {
-	private IOOperation operation;
-
-	private IOAsyncCallback callback;
-
-	private IOAsyncResult state;
-
-	public IOSelectorJob(IOOperation operation, IOAsyncCallback callback, IOAsyncResult state)
+	[Flags]
+	public enum X509KeyUsageFlags
 	{
-		this.operation = operation;
-		this.callback = callback;
-		this.state = state;
-	}
-
-	void IThreadPoolWorkItem.ExecuteWorkItem()
-	{
-		callback(state);
-	}
-
-	void IThreadPoolWorkItem.MarkAborted(ThreadAbortException tae)
-	{
-	}
-
-	public void MarkDisposed()
-	{
-		state.CompleteDisposed();
+		None = 0,
+		EncipherOnly = 1,
+		CrlSign = 2,
+		KeyCertSign = 4,
+		KeyAgreement = 8,
+		DataEncipherment = 0x10,
+		KeyEncipherment = 0x20,
+		NonRepudiation = 0x40,
+		DigitalSignature = 0x80,
+		DecipherOnly = 0x8000
 	}
 }

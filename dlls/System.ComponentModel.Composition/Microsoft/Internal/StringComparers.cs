@@ -1,10 +1,2 @@
-using System;
-
-namespace Microsoft.Internal;
-
-internal static class StringComparers
-{
-	public static StringComparer ContractName => StringComparer.Ordinal;
-
-	public static StringComparer MetadataKeyNames => StringComparer.Ordinal;
-}
+// Could not decompile Microsoft.Internal.StringComparers
+// This type uses unsupported IL or has too many generic parameters.

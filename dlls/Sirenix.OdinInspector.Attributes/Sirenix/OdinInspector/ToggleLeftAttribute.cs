@@ -1,11 +1,2 @@
-namespace Sirenix.OdinInspector;
-
-public enum InlineEditorModes
-{
-	GUIOnly,
-	GUIAndHeader,
-	GUIAndPreview,
-	SmallPreview,
-	LargePreview,
-	FullEditor
-}
+// Could not decompile Sirenix.OdinInspector.ToggleLeftAttribute
+// This type uses unsupported IL or has too many generic parameters.

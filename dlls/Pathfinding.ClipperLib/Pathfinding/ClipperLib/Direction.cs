@@ -1,7 +1,9 @@
-namespace Pathfinding.ClipperLib;
-
-internal enum Direction
+namespace Pathfinding.ClipperLib
 {
-	dRightToLeft,
-	dLeftToRight
+}
+namespace Pathfinding.ClipperLib
+{
+}
+namespace Pathfinding.ClipperLib
+{
 }

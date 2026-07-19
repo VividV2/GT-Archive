@@ -1,2 +1,2 @@
-namespace Unity.Scripting.LifecycleManagement;
+namespace UnityEngine;
 

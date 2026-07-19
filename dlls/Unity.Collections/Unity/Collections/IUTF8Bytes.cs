@@ -1,14 +1,2 @@
-namespace Unity.Collections
-{
-}
-namespace Unity.Collections
-{
-	public interface IUTF8Bytes
-	{
-		bool IsEmpty { get; }
+namespace Unity.Collections;
 
-		unsafe byte* GetUnsafePtr();
-
-		bool TryResize(int newLength, NativeArrayOptions clearOptions = NativeArrayOptions.ClearMemory);
-	}
-}

@@ -1,12 +1,28 @@
-namespace Oculus.Interaction;
-
-public interface ITransformer
+namespace Oculus.Interaction.HandGrab
 {
-	void Initialize(IGrabbable grabbable);
+}
+namespace Oculus.Interaction.Throw
+{
+}
+namespace Oculus.Interaction.Locomotion
+{
+}
+namespace Oculus.Interaction
+{
+}
+namespace Oculus.Interaction.PoseDetection.Debug
+{
+}
+namespace Oculus.Interaction
+{
+	public interface ITransformer
+	{
+		void Initialize(IGrabbable grabbable);
 
-	void BeginTransform();
+		void BeginTransform();
 
-	void UpdateTransform();
+		void UpdateTransform();
 
-	void EndTransform();
+		void EndTransform();
+	}
 }

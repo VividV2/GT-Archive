@@ -1,30 +1,3 @@
-namespace System.Drawing.Imaging
-{
-	public enum ImageLockMode
-	{
-		ReadOnly = 1,
-		WriteOnly,
-		ReadWrite,
-		UserInputBuffer
-	}
-}
-namespace System.Drawing
-{
-	internal struct CGRect32
-	{
-		public CGPoint32 origin;
+namespace System.Drawing.Design;
 
-		public CGSize32 size;
-
-		public CGRect32(float x, float y, float width, float height)
-		{
-			origin.x = x;
-			origin.y = y;
-			size.width = width;
-			size.height = height;
-		}
-	}
-}
-namespace System.Drawing.Design
-{
-}
+public delegate void ToolboxComponentsCreatingEventHandler(object sender, ToolboxComponentsCreatingEventArgs e);

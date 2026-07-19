@@ -6,3 +6,6 @@ public interface IPartImportsSatisfiedNotification
 	/// <summary>Called when a part's imports have been satisfied and it is safe to use.</summary>
 	void OnImportsSatisfied();
 }
+namespace Microsoft.Internal
+{
+}

@@ -1,8 +1,22 @@
-namespace OVR.OpenVR;
+using System;
 
-public struct VREvent_Chaperone_t
+namespace OVR.OpenVR
 {
-	public ulong m_nPreviousUniverse;
+	public struct VRTextureDepthInfo_t
+	{
+		public IntPtr handle;
 
-	public ulong m_nCurrentUniverse;
+		public HmdMatrix44_t mProjection;
+
+		public HmdVector2_t vRange;
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct VREvent_Chaperone_t
+	{
+		public ulong m_nPreviousUniverse;
+
+		public ulong m_nCurrentUniverse;
+	}
 }

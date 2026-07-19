@@ -1,2 +1,2 @@
-namespace System.Collections.Generic;
-
+// Could not decompile System.Collections.StructuralComparer
+// This type uses unsupported IL or has too many generic parameters.

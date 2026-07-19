@@ -1,16 +1,20 @@
-namespace UnityEngine.UIElements;
-
-internal interface IListDragAndDropArgs
+namespace UnityEngine.UIElements
 {
-	object target { get; }
+	internal interface IListDragAndDropArgs
+	{
+		object target { get; }
 
-	int insertAtIndex { get; }
+		int insertAtIndex { get; }
 
-	int parentId { get; }
+		int parentId { get; }
 
-	int childIndex { get; }
+		int childIndex { get; }
 
-	DragAndDropData dragAndDropData { get; }
+		DragAndDropData dragAndDropData { get; }
 
-	DragAndDropPosition dragAndDropPosition { get; }
+		DragAndDropPosition dragAndDropPosition { get; }
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

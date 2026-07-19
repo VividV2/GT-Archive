@@ -1,5 +1,8 @@
 using UnityEngine.Bindings;
 
+namespace UnityEngine.UIElements
+{
+}
 namespace UnityEngine.UIElements.StyleSheets.Syntax
 {
 	[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
@@ -10,7 +13,4 @@ namespace UnityEngine.UIElements.StyleSheets.Syntax
 		Keyword,
 		Combinator
 	}
-}
-namespace UnityEngine.UIElements.Experimental
-{
 }

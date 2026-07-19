@@ -2,9 +2,6 @@ using System.Collections.Generic;
 
 namespace UnityEngine.UIElements
 {
-}
-namespace UnityEngine.UIElements
-{
 	internal interface IDragAndDropData
 	{
 		object userData { get; }
@@ -15,4 +12,10 @@ namespace UnityEngine.UIElements
 
 		object GetGenericData(string key);
 	}
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
 }

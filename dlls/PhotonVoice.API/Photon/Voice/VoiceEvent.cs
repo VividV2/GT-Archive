@@ -1,8 +1,23 @@
-namespace Photon.Voice;
-
-internal class VoiceEvent
+namespace Photon.Voice.Unity
 {
-	public const byte Code = 202;
+}
+namespace POpusCodec.Enums
+{
+	public enum Bandwidth
+	{
+		Narrowband = 1101,
+		Mediumband,
+		Wideband,
+		SuperWideband,
+		Fullband
+	}
+}
+namespace Photon.Voice
+{
+	internal class VoiceEvent
+	{
+		public const byte Code = 202;
 
-	public const byte FrameCode = 203;
+		public const byte FrameCode = 203;
+	}
 }

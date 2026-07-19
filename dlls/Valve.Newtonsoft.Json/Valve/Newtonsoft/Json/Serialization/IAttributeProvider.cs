@@ -1,6 +1,11 @@
-namespace Valve.Newtonsoft.Json
+using System;
+using System.Collections.Generic;
+
+namespace Valve.Newtonsoft.Json.Serialization;
+
+public interface IAttributeProvider
 {
-}
-namespace Valve.Newtonsoft.Json
-{
+	IList<Attribute> GetAttributes(bool inherit);
+
+	IList<Attribute> GetAttributes(Type attributeType, bool inherit);
 }

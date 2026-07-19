@@ -1,8 +1,22 @@
-namespace System.Drawing.Imaging;
+namespace System.Drawing.Drawing2D;
 
-/// <summary>This delegate is not used. For an example of enumerating the records of a metafile, see <see cref="M:System.Drawing.Graphics.EnumerateMetafile(System.Drawing.Imaging.Metafile,System.Drawing.Point,System.Drawing.Graphics.EnumerateMetafileProc)" />.</summary>
-/// <param name="recordType">Not used.</param>
-/// <param name="flags">Not used.</param>
-/// <param name="dataSize">Not used.</param>
-/// <param name="recordData">Not used.</param>
-public delegate void PlayRecordCallback(EmfPlusRecordType recordType, int flags, int dataSize, IntPtr recordData);
+/// <summary>Specifies the type of point in a <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> object.</summary>
+public enum PathPointType
+{
+	/// <summary>The starting point of a <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> object.</summary>
+	Start = 0,
+	/// <summary>A line segment.</summary>
+	Line = 1,
+	/// <summary>A default Bézier curve.</summary>
+	Bezier = 3,
+	/// <summary>A mask point.</summary>
+	PathTypeMask = 7,
+	/// <summary>The corresponding segment is dashed.</summary>
+	DashMode = 16,
+	/// <summary>A path marker.</summary>
+	PathMarker = 32,
+	/// <summary>The endpoint of a subpath.</summary>
+	CloseSubpath = 128,
+	/// <summary>A cubic Bézier curve.</summary>
+	Bezier3 = 3
+}

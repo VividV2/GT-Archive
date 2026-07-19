@@ -1,6 +1,13 @@
-namespace Photon.Voice;
-
-public interface IServiceable
+namespace Photon.Voice
 {
-	void Service(LocalVoice localVoice);
+	public interface IServiceable
+	{
+		void Service(LocalVoice localVoice);
+	}
+}
+namespace Photon.Voice
+{
+}
+namespace Photon.Voice
+{
 }

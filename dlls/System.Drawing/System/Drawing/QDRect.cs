@@ -1,16 +1,2 @@
-namespace System.Drawing
-{
-	internal struct QDRect
-	{
-		public short top;
+namespace System.Drawing.Text;
 
-		public short left;
-
-		public short bottom;
-
-		public short right;
-	}
-}
-namespace System.Drawing
-{
-}

@@ -1,7 +1,22 @@
-namespace OVRSimpleJSON;
+using System;
+using System;
 
-public enum JSONTextMode
+namespace OVRSimpleJSON
 {
-	Compact,
-	Indent
+	public enum JSONTextMode
+	{
+		Compact,
+		Indent
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct D3D12TextureData_t
+	{
+		public IntPtr m_pResource;
+
+		public IntPtr m_pCommandQueue;
+
+		public uint m_nNodeMask;
+	}
 }

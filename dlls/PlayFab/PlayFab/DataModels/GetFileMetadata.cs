@@ -1,9 +1,2 @@
-namespace PlayFab.CloudScriptModels
-{
-}
-namespace PlayFab.CloudScriptModels
-{
-}
-namespace Ionic.Zlib
-{
-}
+// Could not decompile PlayFab.DataModels.GetFileMetadata
+// This type uses unsupported IL or has too many generic parameters.

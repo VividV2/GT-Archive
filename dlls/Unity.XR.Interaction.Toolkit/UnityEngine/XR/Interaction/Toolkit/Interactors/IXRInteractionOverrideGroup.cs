@@ -1,3 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Interactors
-{
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Interactors.IXRInteractionOverrideGroup
+// This type uses unsupported IL or has too many generic parameters.

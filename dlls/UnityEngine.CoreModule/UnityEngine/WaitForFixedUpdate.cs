@@ -1,8 +1,2 @@
-using UnityEngine.Scripting;
-
-namespace UnityEngine;
-
-[RequiredByNativeCode]
-public sealed class WaitForFixedUpdate : YieldInstruction
-{
-}
+// Could not decompile UnityEngine.WaitForFixedUpdate
+// This type uses unsupported IL or has too many generic parameters.

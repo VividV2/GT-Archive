@@ -1,18 +1,22 @@
 using UnityEngine;
 
-namespace Oculus.Interaction;
-
-public interface IMovement
+namespace Oculus.Interaction
 {
-	Pose Pose { get; }
+	public interface IMovement
+	{
+		Pose Pose { get; }
 
-	bool Stopped { get; }
+		bool Stopped { get; }
 
-	void MoveTo(Pose target);
+		void MoveTo(Pose target);
 
-	void UpdateTarget(Pose target);
+		void UpdateTarget(Pose target);
 
-	void StopAndSetPose(Pose pose);
+		void StopAndSetPose(Pose pose);
 
-	void Tick();
+		void Tick();
+	}
+}
+namespace Oculus.Interaction.PoseDetection
+{
 }

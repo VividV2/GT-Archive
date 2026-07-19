@@ -1,5 +1,8 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+internal interface IUxmlSerializedDataDeserializeReference
 {
+	object DeserializeReference();
 }
 namespace UnityEngine.UIElements
 {

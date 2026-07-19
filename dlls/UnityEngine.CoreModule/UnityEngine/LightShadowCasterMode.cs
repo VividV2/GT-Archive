@@ -1,11 +1,15 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine;
-
-[NativeHeader("Runtime/Camera/SharedLightData.h")]
-public enum LightShadowCasterMode
+namespace UnityEngine
 {
-	Default,
-	NonLightmappedOnly,
-	Everything
+	[NativeHeader("Runtime/Camera/SharedLightData.h")]
+	public enum LightShadowCasterMode
+	{
+		Default,
+		NonLightmappedOnly,
+		Everything
+	}
+}
+namespace UnityEngine
+{
 }

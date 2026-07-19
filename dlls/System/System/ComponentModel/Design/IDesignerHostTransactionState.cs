@@ -8,3 +8,6 @@ public interface IDesignerHostTransactionState
 	///   <see langword="true" /> if the designer is closing a transaction; otherwise, <see langword="false" />.</returns>
 	bool IsClosingTransaction { get; }
 }
+namespace System.Collections.Concurrent
+{
+}

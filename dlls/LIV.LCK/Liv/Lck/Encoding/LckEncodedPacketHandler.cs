@@ -1,14 +1,27 @@
-namespace Liv.Lck.Encoding;
+using System;
+using System;
 
-internal struct LckEncodedPacketHandler
+namespace Liv.Lck.Cosmetics
 {
-	public ILckCaptureStateProvider CaptureStateProvider { get; }
-
-	public LckEncodedPacketCallback EncodedPacketCallback { get; }
-
-	public LckEncodedPacketHandler(ILckCaptureStateProvider captureStateProvider, LckEncodedPacketCallback encodedPacketCallback)
+	public interface ILckCosmeticsManager : IDisposable
 	{
-		CaptureStateProvider = captureStateProvider;
-		EncodedPacketCallback = encodedPacketCallback;
+		void RegisterDependant(ILckCosmeticDependant dependant);
+
+		void UnregisterDependant(ILckCosmeticDependant dependant);
+	}
+}
+namespace Liv.Lck.Encoding
+{
+	internal struct LckEncodedPacketHandler
+	{
+		public ILckCaptureStateProvider CaptureStateProvider { get; }
+
+		public LckEncodedPacketCallback EncodedPacketCallback { get; }
+
+		public LckEncodedPacketHandler(ILckCaptureStateProvider captureStateProvider, LckEncodedPacketCallback encodedPacketCallback)
+		{
+			CaptureStateProvider = captureStateProvider;
+			EncodedPacketCallback = encodedPacketCallback;
+		}
 	}
 }

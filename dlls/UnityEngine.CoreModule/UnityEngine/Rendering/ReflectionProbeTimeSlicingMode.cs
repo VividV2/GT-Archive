@@ -1,8 +1,3 @@
-namespace UnityEngine.Rendering;
-
-public enum ReflectionProbeTimeSlicingMode
+namespace UnityEngine.Rendering
 {
-	AllFacesAtOnce,
-	IndividualFaces,
-	NoTimeSlicing
 }

@@ -1,12 +1,2 @@
-using System;
-using UnityEngine.Scripting;
-using System;
-using UnityEngine.Scripting;
-
-namespace UnityEngine;
-
-[AttributeUsage(AttributeTargets.Class, Inherited = false)]
-[UsedByNativeCode]
-public class ExcludeFromPresetAttribute : Attribute
-{
-}
+// Could not decompile UnityEngine.ResourcesAPIInternal
+// This type uses unsupported IL or has too many generic parameters.

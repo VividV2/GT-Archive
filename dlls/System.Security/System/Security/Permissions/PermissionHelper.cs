@@ -1,2 +1,2 @@
-namespace System.Security.Cryptography.Xml;
+namespace System.Security.Cryptography.X509Certificates;
 

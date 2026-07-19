@@ -1,9 +1,16 @@
-namespace UnityEngine.Rendering;
-
-public enum RenderBufferStoreAction
+namespace UnityEngine.Rendering
 {
-	Store,
-	Resolve,
-	StoreAndResolve,
-	DontCare
+	public enum RenderBufferStoreAction
+	{
+		Store,
+		Resolve,
+		StoreAndResolve,
+		DontCare
+	}
+}
+namespace UnityEngine.Playables
+{
+}
+namespace UnityEngine.Bindings
+{
 }

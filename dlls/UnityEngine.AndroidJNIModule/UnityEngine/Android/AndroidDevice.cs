@@ -1,10 +1,2 @@
-namespace UnityEngine.Android;
-
-public class AndroidDevice
-{
-	public static AndroidHardwareType hardwareType => AndroidHardwareType.Generic;
-
-	public static void SetSustainedPerformanceMode(bool enabled)
-	{
-	}
-}
+// Could not decompile UnityEngine.Android.AndroidDevice
+// This type uses unsupported IL or has too many generic parameters.

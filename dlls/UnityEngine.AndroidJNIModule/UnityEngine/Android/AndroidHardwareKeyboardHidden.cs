@@ -1,8 +1,12 @@
-namespace UnityEngine.Android;
-
-public enum AndroidHardwareKeyboardHidden
+namespace UnityEngine.Android
 {
-	Undefined,
-	No,
-	Yes
+	public enum AndroidHardwareKeyboardHidden
+	{
+		Undefined,
+		No,
+		Yes
+	}
+}
+namespace UnityEngine.Android
+{
 }

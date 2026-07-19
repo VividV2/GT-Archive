@@ -1,2 +1,3 @@
-namespace Oculus.Assistant.VoiceCommand.Listeners;
-
+namespace Oculus.Assistant.VoiceCommand.Listeners
+{
+}

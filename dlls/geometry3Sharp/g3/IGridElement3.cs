@@ -1,6 +1,23 @@
-namespace g3;
-
-public interface IGridElement3
+namespace g3
 {
-	IGridElement3 CreateNewGridElement(bool bCopy);
+	public interface IGridElement3
+	{
+		IGridElement3 CreateNewGridElement(bool bCopy);
+	}
+}
+namespace g3
+{
+	public interface IMultigridIndexer3
+	{
+		GridLevelIndex ToBlock(Vector3i outer_index);
+
+		Vector3i ToBlockIndex(Vector3i outer_index);
+
+		Vector3i ToBlockLocal(Vector3i outer_index);
+
+		Vector3i FromBlock(Vector3i block_idx);
+	}
+}
+namespace g3
+{
 }

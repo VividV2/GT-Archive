@@ -52,8 +52,6 @@ internal static class UnityAdsSettings
 	{
 		ManagedSpanWrapper ret = default(ManagedSpanWrapper);
 		string stringAndDispose;
-		ManagedSpanWrapper ret = default(ManagedSpanWrapper);
-		string stringAndDispose;
 		try
 		{
 			GetGameId_Injected(platform, out ret);
@@ -72,11 +70,9 @@ internal static class UnityAdsSettings
 		try
 		{
 			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
-			ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
 			if (!StringMarshaller.TryMarshalEmptyOrNullString(gameId, ref managedSpanWrapper))
 			{
 				ReadOnlySpan<char> readOnlySpan = MemoryExtensions.AsSpan(gameId);
-				ReadOnlySpan<char> readOnlySpan;
 				fixed (char* begin = readOnlySpan)
 				{
 					managedSpanWrapper = new ManagedSpanWrapper(begin, readOnlySpan.Length);

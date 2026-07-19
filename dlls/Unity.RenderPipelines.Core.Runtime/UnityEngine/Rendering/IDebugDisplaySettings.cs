@@ -1,14 +1,2 @@
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering.RenderGraphModule
-{
-	public struct ImportResourceParams
-	{
-		public bool clearOnFirstUse;
-
-		public Color clearColor;
-
-		public bool discardOnLastUse;
-	}
-}
+// Could not decompile UnityEngine.Rendering.IDebugDisplaySettings
+// This type uses unsupported IL or has too many generic parameters.

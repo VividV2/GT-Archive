@@ -1,8 +1,12 @@
-namespace System.Xml;
-
-internal enum XmlStandalone
+namespace System.Xml
 {
-	Omit,
-	Yes,
-	No
+	internal enum XmlStandalone
+	{
+		Omit,
+		Yes,
+		No
+	}
+}
+namespace System.Xml
+{
 }

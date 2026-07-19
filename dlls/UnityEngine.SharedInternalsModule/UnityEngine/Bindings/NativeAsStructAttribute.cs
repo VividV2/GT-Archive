@@ -1,9 +1,2 @@
-using System;
-
-namespace UnityEngine.Bindings;
-
-[AttributeUsage(AttributeTargets.Class)]
-[VisibleToOtherModules]
-internal class NativeAsStructAttribute : Attribute, IBindingsAttribute
-{
-}
+// Could not decompile UnityEngine.Bindings.NativeAsStructAttribute
+// This type uses unsupported IL or has too many generic parameters.

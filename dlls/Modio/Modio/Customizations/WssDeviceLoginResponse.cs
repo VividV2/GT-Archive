@@ -1,15 +1,27 @@
-using System;
+using System.Threading.Tasks;
+using System.Threading.Tasks;
 
-namespace Modio.Customizations;
-
-[Serializable]
-internal struct WssDeviceLoginResponse
+namespace Modio.Authentication
 {
-	public string code;
+	public interface IGetActiveUserIdentifier
+	{
+		Task<string> GetActiveUserIdentifier();
+	}
+}
+namespace Modio.Customizations
+{
+	[System.Serializable]
+	internal struct WssDeviceLoginResponse
+	{
+		public string code;
 
-	public long date_expires;
+		public long date_expires;
 
-	public string display_url;
+		public string display_url;
 
-	public string login_url;
+		public string login_url;
+	}
+}
+namespace Modio.Mods
+{
 }

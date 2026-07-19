@@ -1,11 +1,15 @@
-namespace Unity.Multiplayer.Center.Common;
-
-public enum OnboardingSectionCategory
+namespace Unity.Multiplayer.Center.Common
 {
-	Intro,
-	Netcode,
-	ConnectingPlayers,
-	ServerInfrastructure,
-	Other,
-	LiveOps
+	public enum OnboardingSectionCategory
+	{
+		Intro,
+		Netcode,
+		ConnectingPlayers,
+		ServerInfrastructure,
+		Other,
+		LiveOps
+	}
+}
+namespace Unity.Multiplayer.Center.Common
+{
 }

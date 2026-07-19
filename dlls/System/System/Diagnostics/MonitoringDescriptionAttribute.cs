@@ -1,6 +1,2 @@
-namespace System.Net.Mime
-{
-}
-namespace System.ComponentModel
-{
-}
+// Could not decompile System.Diagnostics.MonitoringDescriptionAttribute
+// This type uses unsupported IL or has too many generic parameters.

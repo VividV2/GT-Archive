@@ -1,6 +1,2 @@
-namespace Oculus.Interaction.Locomotion
-{
-}
-namespace Oculus.Interaction.DistanceReticles
-{
-}
+// Could not decompile Oculus.Interaction.HandGrab.HandGrabUtils
+// This type uses unsupported IL or has too many generic parameters.

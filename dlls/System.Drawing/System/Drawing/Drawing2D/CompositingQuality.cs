@@ -1,3 +1,2 @@
-namespace System.Drawing
-{
-}
+namespace System.Drawing.Drawing2D;
+

@@ -1,9 +1,5 @@
-namespace System.Xml.Xsl.Xslt
+namespace System.Xml.Xsl.Xslt;
+
+internal class RootLevel(Stylesheet principal) : StylesheetLevel
 {
-	internal enum XslVersion
-	{
-		Version10 = 0,
-		ForwardsCompatible = 1,
-		Current = 0
-	}
 }
