@@ -1,3 +1,3 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Gaze
+namespace UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals
 {
 }

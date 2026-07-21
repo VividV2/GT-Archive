@@ -1,12 +1,8 @@
-namespace System.Net
+namespace System.Net;
+
+internal enum HttpProcessingResult
 {
-	internal enum HttpProcessingResult
-	{
-		Continue,
-		ReadWait,
-		WriteWait
-	}
-}
-namespace System.Net
-{
+	Continue,
+	ReadWait,
+	WriteWait
 }

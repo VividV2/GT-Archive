@@ -1,16 +1,2 @@
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(3404)]
-	public struct SubmitItemUpdateResult_t
-	{
-		public const int k_iCallback = 3404;
-
-		public EResult m_eResult;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bUserNeedsToAcceptWorkshopLegalAgreement;
-
-		public PublishedFileId_t m_nPublishedFileId;
-	}
-}
+// Could not decompile Steamworks.PartyBeaconID_t
+// This type uses unsupported IL or has too many generic parameters.

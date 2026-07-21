@@ -1,8 +1,2 @@
-using System;
-
-namespace VYaml.Annotations;
-
-[AttributeUsage(AttributeTargets.Constructor, AllowMultiple = false, Inherited = false)]
-public sealed class YamlConstructorAttribute : Attribute
-{
-}
+// Could not decompile VYaml.Annotations.YamlConstructorAttribute
+// This type uses unsupported IL or has too many generic parameters.

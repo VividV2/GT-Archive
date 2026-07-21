@@ -1,2 +1,2 @@
-namespace System.Runtime.CompilerServices;
-
+// Could not decompile System.Runtime.CompilerServices.RuntimeWrappedException
+// This type uses unsupported IL or has too many generic parameters.

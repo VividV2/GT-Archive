@@ -1,41 +1,39 @@
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
 namespace OVR.OpenVR
 {
-}
-namespace OVR.OpenVR
-{
-	public struct Compositor_CumulativeStats
+	[StructLayout(LayoutKind.Explicit)]
+	public struct VROverlayIntersectionMaskPrimitive_Data_t
 	{
-		public uint m_nPid;
+		[FieldOffset(0)]
+		public IntersectionMaskRectangle_t m_Rectangle;
 
-		public uint m_nNumFramePresents;
-
-		public uint m_nNumDroppedFrames;
-
-		public uint m_nNumReprojectedFrames;
-
-		public uint m_nNumFramePresentsOnStartup;
-
-		public uint m_nNumDroppedFramesOnStartup;
-
-		public uint m_nNumReprojectedFramesOnStartup;
-
-		public uint m_nNumLoading;
-
-		public uint m_nNumFramePresentsLoading;
-
-		public uint m_nNumDroppedFramesLoading;
-
-		public uint m_nNumReprojectedFramesLoading;
-
-		public uint m_nNumTimedOut;
-
-		public uint m_nNumFramePresentsTimedOut;
-
-		public uint m_nNumDroppedFramesTimedOut;
-
-		public uint m_nNumReprojectedFramesTimedOut;
+		[FieldOffset(0)]
+		public IntersectionMaskCircle_t m_Circle;
 	}
 }
 namespace OVR.OpenVR
 {
+	public struct HmdMatrix33_t
+	{
+		public float m0;
+
+		public float m1;
+
+		public float m2;
+
+		public float m3;
+
+		public float m4;
+
+		public float m5;
+
+		public float m6;
+
+		public float m7;
+
+		public float m8;
+	}
 }

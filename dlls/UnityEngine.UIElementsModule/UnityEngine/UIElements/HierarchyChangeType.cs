@@ -1,10 +1,14 @@
-namespace UnityEngine.UIElements;
-
-internal enum HierarchyChangeType
+namespace UnityEngine.UIElements
 {
-	AddedToParent,
-	RemovedFromParent,
-	ChildrenReordered,
-	AttachedToPanel,
-	DetachedFromPanel
+	internal enum HierarchyChangeType
+	{
+		AddedToParent,
+		RemovedFromParent,
+		ChildrenReordered,
+		AttachedToPanel,
+		DetachedFromPanel
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

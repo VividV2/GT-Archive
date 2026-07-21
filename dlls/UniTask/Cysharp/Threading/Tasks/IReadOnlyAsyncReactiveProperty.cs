@@ -1,12 +1,19 @@
 using System.Threading;
 
-namespace Cysharp.Threading.Tasks;
-
-public interface IReadOnlyAsyncReactiveProperty<T> : IUniTaskAsyncEnumerable<T>
+namespace Cysharp.Threading.Tasks.CompilerServices
 {
-	T Value { get; }
+}
+namespace Cysharp.Threading.Tasks
+{
+	public interface IReadOnlyAsyncReactiveProperty<T> : IUniTaskAsyncEnumerable<T>
+	{
+		T Value { get; }
 
-	IUniTaskAsyncEnumerable<T> WithoutCurrent();
+		IUniTaskAsyncEnumerable<T> WithoutCurrent();
 
-	UniTask<T> WaitAsync(CancellationToken cancellationToken = default(CancellationToken));
+		UniTask<T> WaitAsync(CancellationToken cancellationToken = default(CancellationToken));
+	}
+}
+namespace Cysharp.Threading.Tasks.Internal
+{
 }

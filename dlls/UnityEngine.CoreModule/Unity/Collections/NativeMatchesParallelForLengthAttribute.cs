@@ -1,14 +1,14 @@
-using UnityEngine.Bindings;
+using System;
 using UnityEngine.Scripting;
 
-namespace UnityEngine;
-
-[NativeHeader("Runtime/Graphics/ColorGamut.h")]
-[UsedByNativeCode]
-public enum ColorPrimaries
+namespace Unity.Collections
 {
-	Unknown = -1,
-	Rec709,
-	Rec2020,
-	P3
+	[AttributeUsage(AttributeTargets.Field)]
+	[RequiredByNativeCode]
+	public sealed class NativeMatchesParallelForLengthAttribute : Attribute
+	{
+	}
+}
+namespace UnityEngine.Events
+{
 }

@@ -1,6 +1,14 @@
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnValidateHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask OnValidateAsync();
+	public interface IAsyncOnValidateHandler
+	{
+		UniTask OnValidateAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+	public interface IAsyncOnRenderObjectHandler
+	{
+		UniTask OnRenderObjectAsync();
+	}
 }

@@ -1,9 +1,12 @@
 using System;
 using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
 
 namespace PlayFab.ClientModels;
 
 [Serializable]
-public class UpdateCharacterStatisticsResult : PlayFabResultCommon
+public class UserXboxInfo : PlayFabBaseModel
 {
+	public string XboxUserId;
 }

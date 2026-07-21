@@ -1,8 +1,2 @@
-using System;
-
-namespace Fusion.Photon.Realtime.Async;
-
-internal class PhotonLobbyCallbacks
-{
-	public Action JoinedLobby;
-}
+// Could not decompile Fusion.Photon.Realtime.Async.PhotonLobbyCallbacks
+// This type uses unsupported IL or has too many generic parameters.

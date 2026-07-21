@@ -1,8 +1,16 @@
-namespace System.Runtime.CompilerServices;
-
-public interface IAsyncStateMachine
+namespace System.Runtime.Serialization
 {
-	void MoveNext();
-
-	void SetStateMachine(IAsyncStateMachine stateMachine);
+}
+namespace System.Security
+{
+}
+namespace System.Security.AccessControl
+{
+	[Flags]
+	public enum AuditFlags
+	{
+		None = 0,
+		Success = 1,
+		Failure = 2
+	}
 }

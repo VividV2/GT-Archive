@@ -1,16 +1,12 @@
 using System;
 
-namespace Mono.Btls
+namespace Mono.Btls;
+
+[Flags]
+internal enum MonoBtlsSslRenegotiateMode
 {
-	[Flags]
-	internal enum MonoBtlsSslRenegotiateMode
-	{
-		NEVER = 0,
-		ONCE = 1,
-		FREELY = 2,
-		IGNORE = 3
-	}
-}
-namespace System.Web
-{
+	NEVER = 0,
+	ONCE = 1,
+	FREELY = 2,
+	IGNORE = 3
 }

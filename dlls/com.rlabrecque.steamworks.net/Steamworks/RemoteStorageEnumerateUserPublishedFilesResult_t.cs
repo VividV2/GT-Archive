@@ -1,2 +1,3 @@
-namespace Steamworks;
-
+namespace Steamworks
+{
+}

@@ -1,9 +1,2 @@
-namespace UnityEngine.EventSystems;
-
-public interface IPointerMoveHandler : IEventSystemHandler
-{
-	void OnPointerMove(PointerEventData eventData);
-}
-namespace UnityEngine.UIElements
-{
-}
+// Could not decompile UnityEngine.UI.MaskableGraphic
+// This type uses unsupported IL or has too many generic parameters.

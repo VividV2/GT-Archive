@@ -1,8 +1,18 @@
-namespace UnityEngine.UIElements;
-
-public interface IStyleValue<T>
+namespace UnityEngine.UIElements
 {
-	T value { get; set; }
+	public enum TextOverflowPosition
+	{
+		End,
+		Start,
+		Middle
+	}
+}
+namespace UnityEngine.UIElements
+{
+	public interface IStyleValue<T>
+	{
+		T value { get; set; }
 
-	StyleKeyword keyword { get; set; }
+		StyleKeyword keyword { get; set; }
+	}
 }

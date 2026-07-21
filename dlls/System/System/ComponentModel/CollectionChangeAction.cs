@@ -1,2 +1,12 @@
-// Could not decompile System.ComponentModel.CollectionChangeAction
-// This type uses unsupported IL or has too many generic parameters.
+namespace Mono.Btls;
+
+internal enum MonoBtlsX509StoreType
+{
+	Custom,
+	MachineTrustedRoots,
+	MachineIntermediateCA,
+	MachineUntrusted,
+	UserTrustedRoots,
+	UserIntermediateCA,
+	UserUntrusted
+}

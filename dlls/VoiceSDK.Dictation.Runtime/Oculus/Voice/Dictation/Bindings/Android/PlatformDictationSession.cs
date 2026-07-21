@@ -1,2 +1,8 @@
-// Could not decompile Oculus.Voice.Dictation.Bindings.Android.PlatformDictationSession
-// This type uses unsupported IL or has too many generic parameters.
+using Meta.WitAi.Dictation.Data;
+
+namespace Oculus.Voice.Dictation.Bindings.Android;
+
+public class PlatformDictationSession : DictationSession
+{
+	public string platformSessionId;
+}

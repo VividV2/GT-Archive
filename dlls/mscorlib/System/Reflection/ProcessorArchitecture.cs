@@ -16,6 +16,3 @@ public enum ProcessorArchitecture
 	/// <summary>An ARM processor.</summary>
 	Arm
 }
-namespace System.Reflection
-{
-}

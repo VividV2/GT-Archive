@@ -1,20 +1,7 @@
-using System.Runtime.CompilerServices;
-using UnityEngine.Bindings;
+namespace UnityEngine.XR.WSA;
 
-namespace UnityEngine.XR;
-
-[NativeConditional("ENABLE_VR")]
-public static class XRStats
+public enum RemoteDeviceVersion
 {
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[StaticAccessor("GetIVRDeviceScripting()", StaticAccessorType.ArrowWithDefaultReturnIfNull)]
-	public static extern bool TryGetGPUTimeLastFrame(out float gpuTimeLastFrame);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[StaticAccessor("GetIVRDeviceScripting()", StaticAccessorType.ArrowWithDefaultReturnIfNull)]
-	public static extern bool TryGetDroppedFrameCount(out int droppedFrameCount);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[StaticAccessor("GetIVRDeviceScripting()", StaticAccessorType.ArrowWithDefaultReturnIfNull)]
-	public static extern bool TryGetFramePresentCount(out int framePresentCount);
+	V1,
+	V2
 }

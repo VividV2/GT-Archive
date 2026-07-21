@@ -1,5 +1,16 @@
-namespace System.Xml.Serialization
+namespace System.Xml.Xsl.IlGen
 {
+	internal enum PossibleXmlStates
+	{
+		None,
+		WithinSequence,
+		EnumAttrs,
+		WithinContent,
+		WithinAttr,
+		WithinComment,
+		WithinPI,
+		Any
+	}
 }
 namespace System.Xml.Serialization
 {
@@ -26,4 +37,7 @@ namespace System.Xml.Serialization
 		GenericInterface = 0x80000,
 		Unsupported = 0x100000
 	}
+}
+namespace System.Xml.Xsl.Xslt
+{
 }

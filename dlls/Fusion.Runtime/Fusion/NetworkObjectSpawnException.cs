@@ -1,2 +1,9 @@
-// Could not decompile Fusion.NetworkObjectSpawnException
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+public unsafe delegate void RpcStaticInvokeDelegate(NetworkRunner runner, SimulationMessage* message);
+namespace Fusion
+{
+}
+namespace Fusion
+{
+}

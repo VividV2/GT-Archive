@@ -1,8 +1,18 @@
-namespace OVR.OpenVR;
-
-public struct VREvent_Property_t
+namespace OVR.OpenVR
 {
-	public ulong container;
+	public struct HmdRect2_t
+	{
+		public HmdVector2_t vTopLeft;
 
-	public ETrackedDeviceProperty prop;
+		public HmdVector2_t vBottomRight;
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct VREvent_Property_t
+	{
+		public ulong container;
+
+		public ETrackedDeviceProperty prop;
+	}
 }

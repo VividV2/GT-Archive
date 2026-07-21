@@ -1,9 +1,2 @@
-namespace UnityEngineInternal;
-
-public enum TypeInferenceRules
-{
-	TypeReferencedByFirstArgument,
-	TypeReferencedBySecondArgument,
-	ArrayOfTypeReferencedByFirstArgument,
-	TypeOfFirstArgument
-}
+// Could not decompile UnityEngineInternal.TypeInferenceRules
+// This type uses unsupported IL or has too many generic parameters.

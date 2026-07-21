@@ -1,26 +1,2 @@
-using System;
-
-namespace Photon.Pun.UtilityScripts
-{
-	[Serializable]
-	public class PhotonTeam
-	{
-		public string Name;
-
-		public byte Code;
-
-		public override string ToString()
-		{
-			return $"{Name} [{Code}]";
-		}
-	}
-}
-namespace Photon.Pun.UtilityScripts
-{
-}
-namespace Photon.Pun.UtilityScripts
-{
-}
-namespace Photon.Pun.UtilityScripts
-{
-}
+// Could not decompile Photon.Pun.UtilityScripts.PhotonTeam
+// This type uses unsupported IL or has too many generic parameters.

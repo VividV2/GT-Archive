@@ -1,8 +1,12 @@
-namespace Valve.VR;
-
-public struct VREvent_EditingCameraSurface_t
+namespace Valve.VR
 {
-	public ulong overlayHandle;
+	public struct VREvent_EditingCameraSurface_t
+	{
+		public ulong overlayHandle;
 
-	public uint nVisualMode;
+		public uint nVisualMode;
+	}
+}
+namespace Valve.VR
+{
 }

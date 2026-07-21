@@ -1,16 +1,2 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-
-namespace g3;
-
-public interface IBinaryVoxelGrid
-{
-	AxisAlignedBox3i GridBounds { get; }
-
-	bool Get(Vector3i i);
-
-	IEnumerable<Vector3i> NonZeros();
-}
-namespace g3
-{
-}
+// Could not decompile g3.MeshValidation
+// This type uses unsupported IL or has too many generic parameters.

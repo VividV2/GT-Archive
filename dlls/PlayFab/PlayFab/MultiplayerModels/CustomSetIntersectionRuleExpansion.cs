@@ -1,13 +1,3 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class CustomSetIntersectionRuleExpansion : PlayFabBaseModel
+namespace PlayFab.GroupsModels
 {
-	public List<OverrideUnsignedInt> MinIntersectionSizeOverrides;
-
-	public uint SecondsBetweenExpansions;
 }

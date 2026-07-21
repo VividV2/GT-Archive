@@ -1,13 +1,9 @@
 using System.Configuration;
 
-namespace System.Runtime.Serialization.Configuration
+namespace System.Runtime.Serialization.Configuration;
+
+[AttributeUsage(AttributeTargets.Property)]
+internal sealed class DeclaredTypeValidatorAttribute : ConfigurationValidatorAttribute
 {
-	[AttributeUsage(AttributeTargets.Property)]
-	internal sealed class DeclaredTypeValidatorAttribute : ConfigurationValidatorAttribute
-	{
-		public override ConfigurationValidatorBase ValidatorInstance => new DeclaredTypeValidator();
-	}
-}
-namespace System.Runtime.Serialization
-{
+	public override ConfigurationValidatorBase ValidatorInstance => new DeclaredTypeValidator();
 }

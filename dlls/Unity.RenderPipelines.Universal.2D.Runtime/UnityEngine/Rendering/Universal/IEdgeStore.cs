@@ -1,2 +1,8 @@
-namespace UnityEngine.Rendering.Universal.UTess;
+using Unity.Collections;
 
+namespace UnityEngine.Rendering.Universal;
+
+internal interface IEdgeStore
+{
+	NativeArray<ShadowEdge> GetOutsideEdges(NativeArray<Vector3> vertices, NativeArray<int> indices);
+}

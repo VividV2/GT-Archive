@@ -1,10 +1,16 @@
-namespace System.Security.Cryptography;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Activation;
 
-/// <summary>Specifies whether to create an asymmetric signature key or an asymmetric exchange key.</summary>
-public enum KeyNumber
+namespace System.Runtime.Serialization.Formatters.Binary
 {
-	/// <summary>An exchange key pair used to encrypt session keys so that they can be safely stored and exchanged with other users.</summary>
-	Exchange = 1,
-	/// <summary>A signature key pair used for authenticating digitally signed messages or files.</summary>
-	Signature
+}
+namespace System.Runtime.Remoting.Contexts
+{
+	[ComVisible(true)]
+	public interface IContextAttribute
+	{
+		void GetPropertiesForNewContext(IConstructionCallMessage msg);
+
+		bool IsContextOK(Context ctx, IConstructionCallMessage msg);
+	}
 }

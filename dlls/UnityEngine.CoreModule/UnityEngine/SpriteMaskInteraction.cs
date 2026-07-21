@@ -1,8 +1,12 @@
-namespace UnityEngine;
-
-public enum SpriteMaskInteraction
+namespace Unity.Scripting.LifecycleManagement
 {
-	None,
-	VisibleInsideMask,
-	VisibleOutsideMask
+}
+namespace UnityEngine
+{
+	public enum SpriteMaskInteraction
+	{
+		None,
+		VisibleInsideMask,
+		VisibleOutsideMask
+	}
 }

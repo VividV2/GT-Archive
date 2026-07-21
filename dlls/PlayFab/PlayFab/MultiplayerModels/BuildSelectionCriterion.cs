@@ -1,11 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class BuildSelectionCriterion : PlayFabBaseModel
-{
-	public Dictionary<string, uint> BuildWeightDistribution;
-}
+// Could not decompile PlayFab.MultiplayerModels.BuildSelectionCriterion
+// This type uses unsupported IL or has too many generic parameters.

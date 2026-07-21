@@ -1,10 +1,6 @@
-namespace VYaml.Serialization
+namespace VYaml.Serialization;
+
+public interface IYamlFormatterResolver
 {
-	public interface IYamlFormatterResolver
-	{
-		IYamlFormatter<T>? GetFormatter<T>();
-	}
-}
-namespace VYaml.Serialization
-{
+	IYamlFormatter<T>? GetFormatter<T>();
 }

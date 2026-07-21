@@ -1,2 +1,10 @@
-// Could not decompile System.Net.NetworkInformation.TcpStatistics
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net.NetworkInformation;
+
+internal struct Win32_IP_ADAPTER_MULTICAST_ADDRESS
+{
+	public Win32LengthFlagsUnion LengthFlags;
+
+	public IntPtr Next;
+
+	public Win32_SOCKET_ADDRESS Address;
+}

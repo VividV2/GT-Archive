@@ -1,2 +1,2 @@
-namespace System.Runtime.Remoting.Channels;
-
+// Could not decompile System.Runtime.Remoting.Lifetime.LeaseManager
+// This type uses unsupported IL or has too many generic parameters.

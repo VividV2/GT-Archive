@@ -1,3 +1,3 @@
-namespace UnityEngine.Localization
+namespace UnityEngine.Localization.SmartFormat.Core.Output
 {
 }

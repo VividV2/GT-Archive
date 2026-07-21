@@ -6,3 +6,6 @@ internal enum ProbeSamplingDebugUpdate
 	Once,
 	Always
 }
+namespace UnityEngine.Rendering
+{
+}

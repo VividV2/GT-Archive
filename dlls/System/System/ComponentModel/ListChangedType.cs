@@ -1,0 +1,6 @@
+namespace System.Net.NetworkInformation
+{
+}
+namespace System.Net.Configuration
+{
+}

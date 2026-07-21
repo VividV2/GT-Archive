@@ -1,9 +1,13 @@
-namespace Liv.Lck.GorillaTag;
-
-public enum GtTagType
+namespace Liv.Lck.GorillaTag
 {
-	Player,
-	HMD,
-	LeftHand,
-	RightHand
+	public enum GtTagType
+	{
+		Player,
+		HMD,
+		LeftHand,
+		RightHand
+	}
+}
+namespace Liv.Lck.GorillaTag
+{
 }

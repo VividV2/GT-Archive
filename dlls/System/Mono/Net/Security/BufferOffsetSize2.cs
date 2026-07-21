@@ -1,9 +1,2 @@
-namespace System.Diagnostics;
-
-/// <summary>Represents the method that will handle the <see cref="E:System.Diagnostics.EventLog.EntryWritten" /> event of an <see cref="T:System.Diagnostics.EventLog" />.</summary>
-/// <param name="sender">The source of the event.</param>
-/// <param name="e">An <see cref="T:System.Diagnostics.EntryWrittenEventArgs" /> that contains the event data.</param>
-/// <summary>Represents the method that will handle the <see cref="E:System.Diagnostics.EventLog.EntryWritten" /> event of an <see cref="T:System.Diagnostics.EventLog" />.</summary>
-/// <param name="sender">The source of the event.</param>
-/// <param name="e">An <see cref="T:System.Diagnostics.EntryWrittenEventArgs" /> that contains the event data.</param>
-public delegate void EntryWrittenEventHandler(object sender, EntryWrittenEventArgs e);
+// Could not decompile Mono.Net.Security.BufferOffsetSize2
+// This type uses unsupported IL or has too many generic parameters.

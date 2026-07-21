@@ -1,34 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
 
 namespace GT_CustomMapSupportRuntime;
 
-public struct GliderWindVolumeProperties
+[RequireComponent(typeof(BoxCollider))]
+[DisallowMultipleComponent]
+public class LoadZoneSettings : MonoBehaviour
 {
-	public float maxSpeed;
+	public bool useDynamicLighting = false;
 
-	public float maxAccel;
+	public Color UberShaderAmbientDynamicLight = Color.black;
 
-	public AnimationCurve speedVsAccelCurve;
+	public List<string> scenesToLoad = new List<string>();
 
-	public Vector3 localWindDirection;
-}
-namespace GT_CustomMapSupportRuntime
-{
-	[RequireComponent(typeof(BoxCollider))]
-	[DisallowMultipleComponent]
-	public class LoadZoneSettings : MonoBehaviour
-	{
-		public bool useDynamicLighting = false;
-
-		public Color UberShaderAmbientDynamicLight = Color.black;
-
-		public List<string> scenesToLoad = new List<string>();
-
-		public List<string> scenesToUnload = new List<string>();
-	}
-}
-namespace GT_CustomMapSupportRuntime
-{
+	public List<string> scenesToUnload = new List<string>();
 }

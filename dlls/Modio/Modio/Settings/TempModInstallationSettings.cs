@@ -1,2 +1,9 @@
-// Could not decompile Modio.Settings.TempModInstallationSettings
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Modio.Settings;
+
+[Serializable]
+public class TempModInstallationSettings : IModioServiceSettings
+{
+	public int LifeTimeDays;
+}

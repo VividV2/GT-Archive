@@ -1,11 +1,15 @@
-namespace System.Xml;
-
-internal enum DocumentXmlWriterType
+namespace System.Xml
 {
-	InsertSiblingAfter,
-	InsertSiblingBefore,
-	PrependChild,
-	AppendChild,
-	AppendAttribute,
-	ReplaceToFollowingSibling
+	internal enum DocumentXmlWriterType
+	{
+		InsertSiblingAfter,
+		InsertSiblingBefore,
+		PrependChild,
+		AppendChild,
+		AppendAttribute,
+		ReplaceToFollowingSibling
+	}
+}
+namespace System.Xml.Xsl.Runtime
+{
 }

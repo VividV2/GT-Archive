@@ -1,8 +1,2 @@
-using System;
-
-namespace Newtonsoft.Json;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
-public sealed class JsonIgnoreAttribute : Attribute
-{
-}
+// Could not decompile Newtonsoft.Json.JsonIgnoreAttribute
+// This type uses unsupported IL or has too many generic parameters.

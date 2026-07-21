@@ -1,3 +1,7 @@
-namespace LitJson;
-
-public delegate TValue ImporterFunc<TJson, TValue>(TJson input);
+namespace Utilities
+{
+}
+namespace LitJson
+{
+	public delegate TValue ImporterFunc<TJson, TValue>(TJson input);
+}

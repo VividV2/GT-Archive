@@ -1,10 +1,6 @@
-namespace System.Net
+namespace Microsoft.Win32
 {
 }
-namespace System.Net
+namespace System.Runtime.Versioning
 {
-	public interface IWebRequestCreate
-	{
-		WebRequest Create(Uri uri);
-	}
 }

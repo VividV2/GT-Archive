@@ -1,8 +1,2 @@
-namespace UnityEngine;
-
-public enum StackTraceLogType
-{
-	None,
-	ScriptOnly,
-	Full
-}
+// Could not decompile Unity.Collections.LowLevel.Unsafe.NativeDisableContainerSafetyRestrictionAttribute
+// This type uses unsupported IL or has too many generic parameters.

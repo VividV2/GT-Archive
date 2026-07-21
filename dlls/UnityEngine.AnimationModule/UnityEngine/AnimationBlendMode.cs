@@ -1,11 +1,7 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum AnimationBlendMode
 {
-	public enum AnimationBlendMode
-	{
-		Blend,
-		Additive
-	}
-}
-namespace Microsoft.CodeAnalysis
-{
+	Blend,
+	Additive
 }

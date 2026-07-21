@@ -1,2 +1,45 @@
-// Could not decompile System.Runtime.Serialization.KeyValue`2
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Serialization
+{
+	[DataContract(Namespace = "http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+	internal struct KeyValue<K, V>
+	{
+		private K key;
+
+		private V value;
+
+		[DataMember(IsRequired = true)]
+		public K Key
+		{
+			get
+			{
+				return key;
+			}
+			set
+			{
+				key = value;
+			}
+		}
+
+		[DataMember(IsRequired = true)]
+		public V Value
+		{
+			get
+			{
+				return value;
+			}
+			set
+			{
+				this.value = value;
+			}
+		}
+
+		internal KeyValue(K key, V value)
+		{
+			this.key = key;
+			this.value = value;
+		}
+	}
+}
+namespace System.Runtime.Serialization
+{
+}

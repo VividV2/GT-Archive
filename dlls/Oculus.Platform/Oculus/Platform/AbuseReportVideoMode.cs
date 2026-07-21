@@ -1,15 +1,19 @@
 using System.ComponentModel;
 
-namespace Oculus.Platform;
-
-public enum AbuseReportVideoMode
+namespace Oculus.Platform
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("COLLECT")]
-	Collect,
-	[Description("OPTIONAL")]
-	Optional,
-	[Description("SKIP")]
-	Skip
+	public enum AbuseReportVideoMode
+	{
+		[Description("UNKNOWN")]
+		Unknown,
+		[Description("COLLECT")]
+		Collect,
+		[Description("OPTIONAL")]
+		Optional,
+		[Description("SKIP")]
+		Skip
+	}
+}
+namespace Oculus.Platform
+{
 }

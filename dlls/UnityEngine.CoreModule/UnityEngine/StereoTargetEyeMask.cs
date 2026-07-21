@@ -1,13 +1,9 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum StereoTargetEyeMask
 {
-	public enum StereoTargetEyeMask
-	{
-		None,
-		Left,
-		Right,
-		Both
-	}
-}
-namespace UnityEngine
-{
+	None,
+	Left,
+	Right,
+	Both
 }

@@ -1,18 +1,2 @@
-namespace Valve.VR
-{
-	public struct VREvent_HDCPError_t
-	{
-		public EHDCPError eCode;
-	}
-}
-namespace Valve.VR
-{
-	public struct VREvent_Mouse_t
-	{
-		public float x;
-
-		public float y;
-
-		public uint button;
-	}
-}
+// Could not decompile Valve.VR.VREvent_HDCPError_t
+// This type uses unsupported IL or has too many generic parameters.

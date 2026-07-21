@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Events;
-
-namespace Meta.WitAi.Events;
-
-[Serializable]
-public class WitMicLevelChangedEvent : UnityEvent<float>
-{
-}
+// Could not decompile Meta.WitAi.Events.WitMicLevelChangedEvent
+// This type uses unsupported IL or has too many generic parameters.

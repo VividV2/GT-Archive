@@ -1,11 +1,7 @@
-namespace Unity.Collections
+namespace Unity.Collections;
+
+public enum CopyError
 {
-	public enum CopyError
-	{
-		None,
-		Truncation
-	}
-}
-namespace Unity.Collections
-{
+	None,
+	Truncation
 }

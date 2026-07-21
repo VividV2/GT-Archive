@@ -1,9 +1,2 @@
-namespace System.Runtime.CompilerServices;
+namespace System.Security.Claims;
 
-/// <summary>Indicates that a managed pointer represents a pointer parameter within a method signature. This class cannot be inherited.</summary>
-public static class IsExplicitlyDereferenced
-{
-}
-namespace System.Runtime.CompilerServices
-{
-}

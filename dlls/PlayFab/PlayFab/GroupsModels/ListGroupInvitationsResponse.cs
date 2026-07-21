@@ -1,9 +1,2 @@
-namespace PlayFab.ExperimentationModels;
+namespace PlayFab.ProfilesModels;
 
-public enum ExperimentState
-{
-	New,
-	Started,
-	Stopped,
-	Deleted
-}

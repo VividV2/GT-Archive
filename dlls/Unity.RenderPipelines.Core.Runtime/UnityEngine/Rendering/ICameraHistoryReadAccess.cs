@@ -1,10 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public interface ICameraHistoryReadAccess
-{
-	public delegate void HistoryRequestDelegate(IPerFrameHistoryAccessTracker historyAccess);
-
-	event HistoryRequestDelegate OnGatherHistoryRequests;
-
-	Type GetHistoryForRead<Type>() where Type : ContextItem;
-}
+// Could not decompile UnityEngine.Rendering.ICameraHistoryReadAccess
+// This type uses unsupported IL or has too many generic parameters.

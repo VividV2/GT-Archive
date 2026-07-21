@@ -1,14 +1,2 @@
-using Meta.WitAi.TTS.Data;
-
-namespace Meta.WitAi.TTS.Interfaces;
-
-public interface ITTSEventPlayer
-{
-	int ElapsedSamples { get; }
-
-	int TotalSamples { get; }
-
-	TTSEventSampleDelegate OnSampleUpdated { get; set; }
-
-	TTSEventContainer CurrentEvents { get; }
-}
+// Could not decompile Meta.WitAi.TTS.Interfaces.ITTSEventPlayer
+// This type uses unsupported IL or has too many generic parameters.

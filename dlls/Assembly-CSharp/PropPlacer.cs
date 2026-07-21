@@ -1,15 +1,2 @@
-public enum SITechTreePageId
-{
-	Thruster,
-	Stilt,
-	Grenades,
-	Dash,
-	Platform,
-	TapTeleport,
-	Tentacle,
-	AirControl,
-	Prototype,
-	Unused9,
-	Blaster,
-	Count
-}
+// Could not decompile PropPlacer
+// This type uses unsupported IL or has too many generic parameters.

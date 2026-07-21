@@ -1,10 +1,6 @@
-using UnityEngine.Localization.SmartFormat.Core.Extensions;
-
-namespace UnityEngine.Localization.SmartFormat.Core.Output;
-
-public interface IOutput
+namespace UnityEngine.Localization.Operations
 {
-	void Write(string text, IFormattingInfo formattingInfo);
-
-	void Write(string text, int startIndex, int length, IFormattingInfo formattingInfo);
+}
+namespace UnityEngine.Localization.Settings
+{
 }

@@ -1,9 +1,8 @@
-namespace Pathfinding.Ionic.Zip;
+namespace Pathfinding.Ionic.Zlib;
 
-public enum Zip64Option
+public enum CompressionStrategy
 {
-	Default = 0,
-	Never = 0,
-	AsNecessary = 1,
-	Always = 2
+	Default,
+	Filtered,
+	HuffmanOnly
 }

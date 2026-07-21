@@ -1,10 +1,12 @@
-namespace System.Xml.Serialization;
-
-internal class UrtTypes
+namespace System.Xml.Xsl.XsltOld
 {
-	internal const string Namespace = "http://microsoft.com/wsdl/types/";
-
-	private UrtTypes()
-	{
-	}
+}
+namespace System.Xml.Serialization
+{
+}
+namespace System.Xml.Schema
+{
+}
+namespace System.Xml.Schema
+{
 }

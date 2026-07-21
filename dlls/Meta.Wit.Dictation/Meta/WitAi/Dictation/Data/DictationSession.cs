@@ -1,14 +1,2 @@
-using System;
-using Meta.WitAi.Data;
-
-namespace Meta.WitAi.Dictation.Data;
-
-[Serializable]
-public class DictationSession : VoiceSession
-{
-	public IDictationService dictationService;
-
-	public string[] clientRequestId;
-
-	public string sessionId = WitConstants.GetUniqueId();
-}
+// Could not decompile Meta.WitAi.Dictation.Data.DictationSession
+// This type uses unsupported IL or has too many generic parameters.

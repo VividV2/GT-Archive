@@ -1,12 +1,16 @@
 using System.Runtime.CompilerServices;
 
-namespace System;
-
-internal static class IOSelector
+namespace System
 {
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	public static extern void Add(IntPtr handle, IOSelectorJob job);
+	internal static class IOSelector
+	{
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		public static extern void Add(IntPtr handle, IOSelectorJob job);
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	public static extern void Remove(IntPtr handle);
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		public static extern void Remove(IntPtr handle);
+	}
+}
+namespace System.Diagnostics
+{
 }

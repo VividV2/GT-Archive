@@ -1,24 +1,2 @@
-namespace System.Xml.Serialization
-{
-	internal class ArgBuilder
-	{
-		internal string Name;
-
-		internal int Index;
-
-		internal Type ArgType;
-
-		internal ArgBuilder(string name, int index, Type argType)
-		{
-			Name = name;
-			Index = index;
-			ArgType = argType;
-		}
-	}
-}
-namespace System.Xml.Serialization
-{
-}
-namespace System.Xml.Schema
-{
-}
+// Could not decompile System.Xml.Serialization.ArgBuilder
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,14 @@
-// Could not decompile Unity.XR.CoreUtils.Capabilities.CustomCapabilityKeyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.XR.CoreUtils.Capabilities;
+
+[AttributeUsage(AttributeTargets.Field)]
+public sealed class CustomCapabilityKeyAttribute : Attribute
+{
+	public readonly int Order;
+
+	public CustomCapabilityKeyAttribute(int order = 1000)
+	{
+		Order = order;
+	}
+}

@@ -1,10 +1,2 @@
-using System;
-using UnityEngine.Scripting;
+namespace UnityEngine;
 
-namespace Unity.Collections.LowLevel.Unsafe;
-
-[RequiredByNativeCode]
-[AttributeUsage(AttributeTargets.Struct)]
-public sealed class NativeContainerAttribute : Attribute
-{
-}

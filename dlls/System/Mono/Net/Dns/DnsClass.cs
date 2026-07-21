@@ -1,13 +1,10 @@
-namespace Mono.Net.Dns;
+namespace System.Net;
 
-internal enum DnsClass : ushort
+internal enum ContentTypeValues
 {
-	Internet = 1,
-	IN = 1,
-	CSNET = 2,
-	CS = 2,
-	CHAOS = 3,
-	CH = 3,
-	Hesiod = 4,
-	HS = 4
+	ChangeCipherSpec = 20,
+	Alert = 21,
+	HandShake = 22,
+	AppData = 23,
+	Unrecognized = 255
 }

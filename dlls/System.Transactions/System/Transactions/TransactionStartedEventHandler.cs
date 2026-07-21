@@ -1,6 +1,10 @@
 namespace System.Transactions;
 
-/// <summary>Represents the method that will handle the <see cref="E:System.Transactions.TransactionManager.DistributedTransactionStarted" /> event of a <see cref="T:System.Transactions.TransactionManager" /> class.</summary>
-/// <param name="sender">The source of the event.</param>
-/// <param name="e">The <see cref="T:System.Transactions.TransactionEventArgs" /> that contains the transaction from which transaction information can be retrieved.</param>
-public delegate void TransactionStartedEventHandler(object sender, TransactionEventArgs e);
+/// <summary>Specifies how distributed transactions interact with COM+ transactions.</summary>
+public enum EnterpriseServicesInteropOption
+{
+	/// <summary>There is no synchronization between <see cref="P:System.EnterpriseServices.ContextUtil.Transaction" /> and <see cref="P:System.Transactions.Transaction.Current" />.</summary>
+	None,
+	Automatic,
+	Full
+}

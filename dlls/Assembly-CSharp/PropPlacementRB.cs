@@ -1,25 +1,2 @@
-using System;
-using System;
-
-[Serializable]
-internal struct SIUpgradeBasedGeneric<T>
-{
-	public SIUpgradeBasedGenericEntry<T>[] entries;
-
-	public bool TryGetActiveValue(SIUpgradeSet withUpgrades, out T out_value)
-	{
-		out_value = default(T);
-		bool result = false;
-		int i;
-		bool result;
-		for (int i = 0; i < entries.Length; i++)
-		{
-			if (entries[i].IsActive(withUpgrades))
-			{
-				result = true;
-				out_value = entries[i].value;
-			}
-		}
-		return result;
-	}
-}
+// Could not decompile PropPlacementRB
+// This type uses unsupported IL or has too many generic parameters.

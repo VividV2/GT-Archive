@@ -1,3 +1,2 @@
-namespace UnityEditor.Analytics
-{
-}
+namespace UnityEngine.Analytics;
+

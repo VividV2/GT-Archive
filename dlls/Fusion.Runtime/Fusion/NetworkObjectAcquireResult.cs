@@ -1,13 +1,9 @@
-namespace Fusion
+namespace Fusion;
+
+public enum NetworkObjectAcquireResult
 {
-}
-namespace Fusion
-{
-	public enum NetworkObjectAcquireResult
-	{
-		Success,
-		Failed,
-		Retry,
-		Ignore
-	}
+	Success,
+	Failed,
+	Retry,
+	Ignore
 }

@@ -1,2 +1,2 @@
-// Could not decompile Newtonsoft.Json.Utilities.MiscellaneousUtils
-// This type uses unsupported IL or has too many generic parameters.
+namespace Newtonsoft.Json.Converters;
+

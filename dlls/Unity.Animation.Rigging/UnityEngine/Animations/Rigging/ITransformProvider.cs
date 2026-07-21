@@ -1,10 +1,6 @@
-namespace UnityEngine.Animations.Rigging
+namespace UnityEngine.Animations.Rigging;
+
+public interface ITransformProvider
 {
-	public interface ITransformProvider
-	{
-		Transform transform { get; set; }
-	}
-}
-namespace UnityEngine.Animations.Rigging
-{
+	Transform transform { get; set; }
 }

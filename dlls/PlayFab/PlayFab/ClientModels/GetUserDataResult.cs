@@ -1,13 +1,16 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
 namespace PlayFab.ClientModels;
 
 [Serializable]
-public class GetUserDataResult : PlayFabResultCommon
+public class GetSegmentResult : PlayFabBaseModel
 {
-	public Dictionary<string, UserDataRecord> Data;
+	public string ABTestParent;
 
-	public uint DataVersion;
+	public string Id;
+
+	public string Name;
+
+	public GetSegmentResult()
+	{
+		base..ctor();
+	}
 }

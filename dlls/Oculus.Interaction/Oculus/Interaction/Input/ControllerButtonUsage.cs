@@ -2,9 +2,6 @@ using System;
 
 namespace Oculus.Interaction.Input
 {
-}
-namespace Oculus.Interaction.Input
-{
 	[Flags]
 	public enum ControllerButtonUsage
 	{

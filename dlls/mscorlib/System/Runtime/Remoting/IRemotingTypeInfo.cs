@@ -1,8 +1,15 @@
-namespace System.Runtime;
+namespace System.Runtime.Serialization.Formatters.Binary;
 
-/// <summary>Indicates whether the next blocking garbage collection compacts the large object heap (LOH).</summary>
-public enum GCLargeObjectHeapCompactionMode
+internal enum InternalNameSpaceE
 {
-	Default = 1,
-	CompactOnce
+	None,
+	Soap,
+	XdrPrimitive,
+	XdrString,
+	UrtSystem,
+	UrtUser,
+	UserNameSpace,
+	MemberName,
+	Interop,
+	CallElement
 }

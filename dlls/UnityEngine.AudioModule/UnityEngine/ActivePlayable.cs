@@ -1,6 +1,2 @@
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-}
+// Could not decompile UnityEngine.ActivePlayable
+// This type uses unsupported IL or has too many generic parameters.

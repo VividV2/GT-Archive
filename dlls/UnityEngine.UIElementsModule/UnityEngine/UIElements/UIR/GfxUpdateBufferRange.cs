@@ -1,12 +1,16 @@
 using System;
 
-namespace UnityEngine.UIElements.UIR;
-
-internal struct GfxUpdateBufferRange
+namespace UnityEngine.UIElements.UIR
 {
-	public uint offsetFromWriteStart;
+	internal struct GfxUpdateBufferRange
+	{
+		public uint offsetFromWriteStart;
 
-	public uint size;
+		public uint size;
 
-	public UIntPtr source;
+		public UIntPtr source;
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

@@ -1,17 +1,3 @@
-using System;
-using System;
-using System;
-
-namespace UnityEngine.Rendering;
-
-[Flags]
-public enum FoveatedRenderingCaps
-{
-	None = 0,
-	FoveationImage = 1,
-	NonUniformRaster = 2,
-	ModeChangeOnlyBeforeRenderTargetSet = 4
-}
 namespace UnityEngine.Rendering
 {
 	public enum GraphicsTier
@@ -20,4 +6,7 @@ namespace UnityEngine.Rendering
 		Tier2,
 		Tier3
 	}
+}
+namespace UnityEngine.LowLevel
+{
 }

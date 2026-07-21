@@ -1,8 +1,2 @@
-using System;
-
-namespace Meta.WitAi.Attributes;
-
-[AttributeUsage(AttributeTargets.Method)]
-public class WitConfigurationAssetRefreshAttribute : Attribute
-{
-}
+// Could not decompile Meta.WitAi.Attributes.WitConfigurationAssetRefreshAttribute
+// This type uses unsupported IL or has too many generic parameters.

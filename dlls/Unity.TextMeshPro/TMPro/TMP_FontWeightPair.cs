@@ -1,11 +1,15 @@
 using System;
 
-namespace TMPro;
-
-[Serializable]
-public struct TMP_FontWeightPair
+namespace TMPro
 {
-	public TMP_FontAsset regularTypeface;
+}
+namespace TMPro
+{
+	[Serializable]
+	public struct TMP_FontWeightPair
+	{
+		public TMP_FontAsset regularTypeface;
 
-	public TMP_FontAsset italicTypeface;
+		public TMP_FontAsset italicTypeface;
+	}
 }

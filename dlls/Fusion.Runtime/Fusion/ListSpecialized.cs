@@ -1,10 +1,4 @@
-namespace Fusion
-{
-	internal enum NATPunchStage
-	{
-		None,
-		Local,
-		Public,
-		Relay
-	}
-}
+#define DEBUG
+#define DEBUG
+namespace Fusion;
+

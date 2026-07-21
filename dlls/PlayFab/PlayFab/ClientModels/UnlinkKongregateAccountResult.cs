@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class UserAppleIdInfo : PlayFabBaseModel
-{
-	public string AppleSubjectId;
-}
+// Could not decompile PlayFab.ClientModels.UnlinkKongregateAccountResult
+// This type uses unsupported IL or has too many generic parameters.

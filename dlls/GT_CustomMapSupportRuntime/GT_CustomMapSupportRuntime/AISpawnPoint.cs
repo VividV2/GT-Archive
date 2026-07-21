@@ -1,36 +1,10 @@
 using UnityEngine;
 
-namespace GT_CustomMapSupportRuntime
-{
-	public enum GTObject
-	{
-		LeafGlider,
-		GliderWindVolume,
-		WaterVolume,
-		ForceVolume,
-		ATM,
-		HoverboardArea,
-		HoverboardDispenser,
-		RopeSwing,
-		ZipLine,
-		Store_DisplayStand,
-		Store_TryOnArea,
-		Store_Checkout,
-		Store_TryOnConsole
-	}
-}
-namespace GT_CustomMapSupportRuntime
-{
-	public class AISpawnPoint : MonoBehaviour
-	{
-		public string spawnID = "";
+namespace GT_CustomMapSupportRuntime;
 
-		public int spawnCount = 0;
-	}
-}
-namespace GT_CustomMapSupportRuntime
+public class AISpawnPoint : MonoBehaviour
 {
-}
-namespace GT_CustomMapSupportRuntime
-{
+	public string spawnID = "";
+
+	public int spawnCount = 0;
 }

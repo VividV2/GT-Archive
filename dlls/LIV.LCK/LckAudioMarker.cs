@@ -1,5 +1,2 @@
-using UnityEngine;
+namespace Liv.Lck;
 
-public class LckAudioMarker : MonoBehaviour
-{
-}

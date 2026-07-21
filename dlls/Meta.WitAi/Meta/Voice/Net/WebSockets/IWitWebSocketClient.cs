@@ -1,83 +1,52 @@
 using System;
 using System.Collections.Generic;
 using Meta.Voice.Net.PubSub;
-using Meta.WitAi.Json;
-using Meta.WitAi.Json;
 
-namespace Meta.Voice.Audio
+namespace Meta.Voice.Net.WebSockets;
+
+public interface IWitWebSocketClient : IPubSubSubscriber
 {
-	public interface IAudioPlayer
-	{
-		IAudioClipStream ClipStream { get; }
+	WitWebSocketSettings Settings { get; }
 
-		bool IsPlaying { get; }
+	WitWebSocketConnectionState ConnectionState { get; }
 
-		bool CanSetElapsedSamples { get; }
+	bool IsAuthenticated { get; }
 
-		int ElapsedSamples { get; }
+	bool IsUploading { get; }
 
-		void Init();
+	bool IsDownloading { get; }
 
-		string GetPlaybackErrors();
+	bool IsReferenced { get; }
 
-		void Play(IAudioClipStream clipStream, int offsetSamples, WitResponseNode speechNode);
+	bool IsReconnecting { get; }
 
-		void Pause();
+	int ReferenceCount { get; }
 
-		void Resume();
+	int FailedConnectionAttempts { get; }
 
-		void Stop();
-	}
-}
-namespace Meta.Voice.Net.WebSockets
-{
-	public interface IWitWebSocketClient : IPubSubSubscriber
-	{
-		WitWebSocketSettings Settings { get; }
+	DateTime LastResponseTime { get; }
 
-		WitWebSocketConnectionState ConnectionState { get; }
+	Dictionary<string, IWitWebSocketRequest> Requests { get; }
 
-		bool IsAuthenticated { get; }
+	event Action<WitWebSocketConnectionState> OnConnectionStateChanged;
 
-		bool IsUploading { get; }
+	event WitWebSocketResponseProcessor OnProcessForwardedResponse;
 
-		bool IsDownloading { get; }
+	event Action<string, IWitWebSocketRequest> OnTopicRequestTracked;
 
-		bool IsReferenced { get; }
+	void Connect();
 
-		bool IsReconnecting { get; }
+	void Disconnect();
 
-		int ReferenceCount { get; }
+	void ForceDisconnect();
 
-		int FailedConnectionAttempts { get; }
+	bool SendRequest(IWitWebSocketRequest request);
 
-		DateTime LastResponseTime { get; }
+	bool TrackRequest(IWitWebSocketRequest request);
 
-		Dictionary<string, IWitWebSocketRequest> Requests { get; }
+	bool UntrackRequest(IWitWebSocketRequest request);
 
-		event Action<WitWebSocketConnectionState> OnConnectionStateChanged;
+	bool UntrackRequest(string requestId);
 
-		event WitWebSocketResponseProcessor OnProcessForwardedResponse;
-
-		event Action<string, IWitWebSocketRequest> OnTopicRequestTracked;
-
-		void Connect();
-
-		void Disconnect();
-
-		void ForceDisconnect();
-
-		bool SendRequest(IWitWebSocketRequest request);
-
-		bool TrackRequest(IWitWebSocketRequest request);
-
-		bool UntrackRequest(IWitWebSocketRequest request);
-
-		bool UntrackRequest(string requestId);
-
-		void Unsubscribe(string topicId, bool ignoreRefCount);
-	}
-}
-namespace Meta.Voice.Net.WebSockets
-{
+	void Unsubscribe(string topicId, bool ignoreRefCount);
 }

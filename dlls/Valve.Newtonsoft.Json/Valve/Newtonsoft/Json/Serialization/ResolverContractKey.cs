@@ -1,17 +1,2 @@
-using System;
-using System.Diagnostics;
-using System;
-using System.Diagnostics;
-
-namespace Valve.Newtonsoft.Json.Serialization
-{
-	public interface ITraceWriter
-	{
-		TraceLevel LevelFilter { get; }
-
-		void Trace(TraceLevel level, string message, Exception ex);
-	}
-}
-namespace Valve.Newtonsoft.Json.Utilities
-{
-}
+// Could not decompile Valve.Newtonsoft.Json.Serialization.ResolverContractKey
+// This type uses unsupported IL or has too many generic parameters.

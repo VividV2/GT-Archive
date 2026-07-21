@@ -1,10 +1,2 @@
-namespace System.ComponentModel;
-
-/// <summary>Notifies clients that a property value is changing.</summary>
-/// <summary>Notifies clients that a property value is changing.</summary>
-public interface INotifyPropertyChanging
-{
-	/// <summary>Occurs when a property value is changing.</summary>
-	/// <summary>Occurs when a property value is changing.</summary>
-	event PropertyChangingEventHandler PropertyChanging;
-}
+// Could not decompile System.Diagnostics.ListenerElementsCollection
+// This type uses unsupported IL or has too many generic parameters.

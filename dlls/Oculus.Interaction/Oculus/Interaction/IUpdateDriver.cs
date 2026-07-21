@@ -1,2 +1,15 @@
-// Could not decompile Oculus.Interaction.IUpdateDriver
-// This type uses unsupported IL or has too many generic parameters.
+namespace Oculus.Interaction
+{
+	public interface IUpdateDriver
+	{
+		bool IsRootDriver { get; set; }
+
+		void Drive();
+	}
+}
+namespace Oculus.Interaction
+{
+}
+namespace Oculus.Interaction
+{
+}

@@ -1,12 +1,22 @@
 using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+using System;
+using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GenericPlayFabIdPair : PlayFabBaseModel
+namespace PlayFab.ClientModels
 {
-	public GenericServiceId GenericId;
+}
+namespace PlayFab.ClientModels
+{
+	[Serializable]
+	public class GetCharacterDataResult : PlayFabResultCommon
+	{
+		public string CharacterId;
 
-	public string PlayFabId;
+		public Dictionary<string, UserDataRecord> Data;
+
+		public uint DataVersion;
+	}
 }

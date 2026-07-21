@@ -1,17 +1,2 @@
-using System;
-using System;
-
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-	[Flags]
-	public enum HDRDisplaySupportFlags
-	{
-		None = 0,
-		Supported = 1,
-		RuntimeSwitchable = 2,
-		AutomaticTonemapping = 4
-	}
-}
+// Could not decompile UnityEngine.HashUtilities
+// This type uses unsupported IL or has too many generic parameters.

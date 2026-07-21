@@ -1,6 +1,2 @@
-public enum KidAgeConfirmationResult
-{
-	None,
-	Confirm,
-	Back
-}
+// Could not decompile KidAgeConfirmationResult
+// This type uses unsupported IL or has too many generic parameters.

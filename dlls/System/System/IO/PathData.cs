@@ -1,14 +1,10 @@
-namespace Mono
-{
-}
-namespace System.IO
-{
-	internal class PathData
-	{
-		public string Path;
+namespace System.IO;
 
-		public bool IsDirectory;
+internal class PathData
+{
+	public string Path;
 
-		public int Fd;
-	}
+	public bool IsDirectory;
+
+	public int Fd;
 }

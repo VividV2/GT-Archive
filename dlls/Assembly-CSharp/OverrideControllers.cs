@@ -1,6 +1,6 @@
 using System;
 
-namespace GorillaTag;
+namespace CjLib;
 
 [Flags]
 internal enum OverrideControllers

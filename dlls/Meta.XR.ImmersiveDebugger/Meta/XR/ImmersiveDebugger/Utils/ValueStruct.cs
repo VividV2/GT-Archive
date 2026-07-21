@@ -1,22 +1,11 @@
 using System;
-using System.Reflection;
-using System.Reflection;
 
-namespace Meta.XR.ImmersiveDebugger.UserInterface;
+namespace Meta.XR.ImmersiveDebugger.Utils;
 
-internal interface IInspector
+[Serializable]
+internal struct ValueStruct<T>
 {
-	IMember RegisterMember(MemberInfo memberInfo, DebugMember attribute);
+	public string ValueName;
 
-	IMember GetMember(MemberInfo memberInfo);
-}
-namespace Meta.XR.ImmersiveDebugger.Utils
-{
-	[Serializable]
-	internal struct ValueStruct<T>
-	{
-		public string ValueName;
-
-		public T Value;
-	}
+	public T Value;
 }

@@ -1,6 +1,6 @@
-namespace UnityEngine.Windows.Speech
+namespace UnityEngine.Playables;
+
+public interface INotification
 {
-}
-namespace UnityEngine.Networking.PlayerConnection
-{
+	PropertyName id { get; }
 }

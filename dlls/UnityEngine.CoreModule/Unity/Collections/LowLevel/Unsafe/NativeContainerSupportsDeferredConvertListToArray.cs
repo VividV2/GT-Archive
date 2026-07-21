@@ -1,10 +1,21 @@
 using System;
 using UnityEngine.Scripting;
+using System;
+using UnityEngine.Scripting;
 
-namespace Unity.Collections.LowLevel.Unsafe;
+namespace UnityEngine;
 
-[AttributeUsage(AttributeTargets.Struct)]
-[RequiredByNativeCode]
-public sealed class NativeContainerSupportsDeferredConvertListToArray : Attribute
+[Serializable]
+[UsedByNativeCode]
+public struct CustomRenderTextureUpdateZone
 {
+	public Vector3 updateZoneCenter;
+
+	public Vector3 updateZoneSize;
+
+	public float rotation;
+
+	public int passIndex;
+
+	public bool needSwap;
 }

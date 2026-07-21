@@ -1,12 +1,2 @@
-namespace Valve.VR
-{
-	public enum EPropertyWriteType
-	{
-		PropertyWrite_Set,
-		PropertyWrite_Erase,
-		PropertyWrite_SetError
-	}
-}
-namespace Valve.VR
-{
-}
+// Could not decompile Valve.VR.EPropertyWriteType
+// This type uses unsupported IL or has too many generic parameters.

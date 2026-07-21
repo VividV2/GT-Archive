@@ -1,22 +1,12 @@
-namespace Steamworks
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(4002)]
+public struct VolumeHasChanged_t
 {
-	public enum EDenyReason
-	{
-		k_EDenyInvalid,
-		k_EDenyInvalidVersion,
-		k_EDenyGeneric,
-		k_EDenyNotLoggedOn,
-		k_EDenyNoLicense,
-		k_EDenyCheater,
-		k_EDenyLoggedInElseWhere,
-		k_EDenyUnknownText,
-		k_EDenyIncompatibleAnticheat,
-		k_EDenyMemoryCorruption,
-		k_EDenyIncompatibleSoftware,
-		k_EDenySteamConnectionLost,
-		k_EDenySteamConnectionError,
-		k_EDenySteamResponseTimedOut,
-		k_EDenySteamValidationStalled,
-		k_EDenySteamOwnerLeftGuestUser
-	}
+	public const int k_iCallback = 4002;
+
+	public float m_flNewVolume;
 }

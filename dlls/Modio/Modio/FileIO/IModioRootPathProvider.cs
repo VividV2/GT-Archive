@@ -1,12 +1,8 @@
-namespace Modio
-{
-}
-namespace Modio.FileIO
-{
-	public interface IModioRootPathProvider
-	{
-		string Path { get; }
+namespace Modio.FileIO;
 
-		string UserPath { get; }
-	}
+public interface IModioRootPathProvider
+{
+	string Path { get; }
+
+	string UserPath { get; }
 }

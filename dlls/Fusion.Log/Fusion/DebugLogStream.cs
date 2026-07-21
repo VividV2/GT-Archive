@@ -1,2 +1,14 @@
-// Could not decompile Fusion.DebugLogStream
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System;
+
+namespace Fusion;
+
+[Obsolete("Use LogLevel instead")]
+public enum LogType : byte
+{
+	Error,
+	Warn,
+	Info,
+	Debug,
+	Trace
+}

@@ -1,2 +1,17 @@
-// Could not decompile Modio.API.SchemaDefinitions.GameTagOptionLocalizedObject
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.API.SchemaDefinitions
+{
+}
+namespace Modio.API.SchemaDefinitions
+{
+	[JsonObject]
+	internal readonly struct ModerationRulesHistoryRequestObject
+	{
+		internal readonly string Timeframe;
+
+		[JsonConstructor]
+		public ModerationRulesHistoryRequestObject(string timeframe)
+		{
+			Timeframe = timeframe;
+		}
+	}
+}

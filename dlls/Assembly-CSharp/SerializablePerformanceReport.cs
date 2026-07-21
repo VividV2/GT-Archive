@@ -1,2 +1,2 @@
-namespace GorillaTagScripts.VirtualStumpCustomMaps;
-
+// Could not decompile SerializablePerformanceReport`1
+// This type uses unsupported IL or has too many generic parameters.

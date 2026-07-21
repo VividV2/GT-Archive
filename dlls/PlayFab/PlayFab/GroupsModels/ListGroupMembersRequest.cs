@@ -1,2 +1,2 @@
-namespace PlayFab.ExperimentationModels;
+namespace PlayFab.ProfilesModels;
 

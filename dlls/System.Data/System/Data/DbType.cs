@@ -1,3 +1,3 @@
-namespace System.Data.ProviderBase
+namespace System.Data.SqlClient
 {
 }

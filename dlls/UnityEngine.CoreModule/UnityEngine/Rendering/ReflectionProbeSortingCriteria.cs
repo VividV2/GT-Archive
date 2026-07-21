@@ -1,5 +1,8 @@
 namespace UnityEngine.Rendering
 {
+}
+namespace UnityEngine.Rendering
+{
 	public enum ReflectionProbeSortingCriteria
 	{
 		None,
@@ -8,17 +11,6 @@ namespace UnityEngine.Rendering
 		ImportanceThenSize
 	}
 }
-namespace UnityEngine.Rendering
+namespace UnityEngine
 {
-	[MovedFrom("UnityEngine.Experimental.Rendering")]
-	public struct RayTracingInstanceMaterialConfig
-	{
-		public int renderQueueLowerBound;
-
-		public int renderQueueUpperBound;
-
-		public RayTracingInstanceCullingShaderTagConfig[] optionalShaderTags;
-
-		public string[] optionalShaderKeywords;
-	}
 }

@@ -7,6 +7,12 @@ namespace UnityEngine.Rendering
 		Auto
 	}
 }
-namespace UnityEngine.Diagnostics
+namespace UnityEngineInternal
 {
+	internal struct GraphicsDeviceDebugSettings
+	{
+		public float sleepAtStartOfGraphicsJobs;
+
+		public float sleepBeforeTextureUpload;
+	}
 }

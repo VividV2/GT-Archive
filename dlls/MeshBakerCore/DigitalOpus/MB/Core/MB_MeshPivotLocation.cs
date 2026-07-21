@@ -1,12 +1,8 @@
-namespace DigitalOpus.MB.Core
+namespace DigitalOpus.MB.Core;
+
+public enum MB_MeshPivotLocation
 {
-	public enum MB_MeshPivotLocation
-	{
-		worldOrigin,
-		boundsCenter,
-		customLocation
-	}
-}
-namespace DigitalOpus.MB.Core
-{
+	worldOrigin,
+	boundsCenter,
+	customLocation
 }

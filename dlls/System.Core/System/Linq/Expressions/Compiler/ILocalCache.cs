@@ -1,6 +1,9 @@
 using System.Reflection.Emit;
 
-namespace System.Linq.Parallel
+namespace System.Security.Cryptography.X509Certificates
+{
+}
+namespace System.Diagnostics.Eventing.Reader
 {
 }
 namespace System.Linq.Expressions.Compiler

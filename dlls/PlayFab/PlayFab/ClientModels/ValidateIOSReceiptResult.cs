@@ -1,11 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class ValidateIOSReceiptResult : PlayFabResultCommon
-{
-	public List<PurchaseReceiptFulfillment> Fulfillments;
-}
+// Could not decompile PlayFab.ClientModels.ValidateIOSReceiptResult
+// This type uses unsupported IL or has too many generic parameters.

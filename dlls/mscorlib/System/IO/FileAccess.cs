@@ -11,9 +11,3 @@ public enum FileAccess
 	/// <summary>Read and write access to the file. Data can be written to and read from the file.</summary>
 	ReadWrite = 3
 }
-namespace System.IO
-{
-}
-namespace System.Globalization
-{
-}

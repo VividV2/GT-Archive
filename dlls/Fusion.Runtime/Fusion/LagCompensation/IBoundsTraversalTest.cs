@@ -1,6 +1,13 @@
-namespace Fusion.LagCompensation;
-
-internal interface IBoundsTraversalTest
+namespace Fusion.LagCompensation
 {
-	bool Check(ref AABB bounds);
+	internal interface IBoundsTraversalTest
+	{
+		bool Check(ref AABB bounds);
+	}
+}
+namespace Fusion.LagCompensation
+{
+}
+namespace Fusion
+{
 }

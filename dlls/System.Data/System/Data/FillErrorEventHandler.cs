@@ -1,5 +1,6 @@
-namespace Microsoft.SqlServer.Server;
-
+namespace System.Data.SqlTypes
+{
+}
 namespace System.Data
 {
 	/// <summary>Represents the method that will handle the <see cref="E:System.Data.Common.DataAdapter.FillError" /> event.</summary>

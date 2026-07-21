@@ -1,3 +1,6 @@
-namespace System.Resources
+namespace System
+{
+}
+namespace System
 {
 }

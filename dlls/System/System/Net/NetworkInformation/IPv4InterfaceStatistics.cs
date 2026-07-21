@@ -1,2 +1,3 @@
-// Could not decompile System.Net.NetworkInformation.IPv4InterfaceStatistics
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net;
+
+internal delegate bool HttpAbortDelegate(HttpWebRequest request, WebException webException);

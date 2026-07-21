@@ -1,10 +1,2 @@
-namespace System.IO.IsolatedStorage;
-
-/// <summary>Specifies options that affect security in isolated storage.</summary>
-/// <summary>Specifies options that affect security in isolated storage.</summary>
-public enum IsolatedStorageSecurityOptions
-{
-	/// <summary>The quota can be increased for isolated storage.</summary>
-	/// <summary>The quota can be increased for isolated storage.</summary>
-	IncreaseQuotaForApplication = 4
-}
+// Could not decompile System.Collections.Generic.QueueDebugView`1
+// This type uses unsupported IL or has too many generic parameters.

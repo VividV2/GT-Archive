@@ -6,6 +6,3 @@ internal enum ResolveTokenError
 	BadTable,
 	Other
 }
-namespace System.Reflection.Emit
-{
-}

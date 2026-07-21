@@ -1,10 +1,12 @@
-using System;
-
-namespace Valve.VR;
-
-public struct HiddenAreaMesh_t
+namespace Valve.VR
 {
-	public IntPtr pVertexData;
-
-	public uint unTriangleCount;
+	public enum ECollisionBoundsStyle
+	{
+		COLLISION_BOUNDS_STYLE_BEGINNER,
+		COLLISION_BOUNDS_STYLE_INTERMEDIATE,
+		COLLISION_BOUNDS_STYLE_SQUARES,
+		COLLISION_BOUNDS_STYLE_ADVANCED,
+		COLLISION_BOUNDS_STYLE_NONE,
+		COLLISION_BOUNDS_STYLE_COUNT
+	}
 }

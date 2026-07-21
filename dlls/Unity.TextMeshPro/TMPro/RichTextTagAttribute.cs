@@ -14,6 +14,3 @@ internal struct RichTextTagAttribute
 
 	public TagUnitType unitType;
 }
-namespace TMPro
-{
-}

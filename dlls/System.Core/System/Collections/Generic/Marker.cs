@@ -1,2 +1,2 @@
-namespace System.Linq.Expressions;
-
+// Could not decompile System.Collections.Generic.Marker
+// This type uses unsupported IL or has too many generic parameters.

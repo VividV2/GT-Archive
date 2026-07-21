@@ -1,7 +1,2 @@
-using System;
-
-namespace Unity.Properties.Internal;
-
-internal class ReflectedPropertyBagAttribute : Attribute
-{
-}
+// Could not decompile Unity.Properties.Internal.ReflectedPropertyBagAttribute
+// This type uses unsupported IL or has too many generic parameters.

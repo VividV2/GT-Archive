@@ -1,3 +1,9 @@
-namespace UnityEngine.Animations
+namespace UnityEngine;
+
+public enum AvatarIKHint
 {
+	LeftKnee,
+	RightKnee,
+	LeftElbow,
+	RightElbow
 }

@@ -1,9 +1,18 @@
 namespace Valve.Newtonsoft.Json;
 
-internal enum JsonContainerType
+public enum DateParseHandling
 {
 	None,
-	Object,
-	Array,
-	Constructor
+	DateTime,
+	DateTimeOffset
+}
+namespace Valve.Newtonsoft.Json
+{
+	internal enum JsonContainerType
+	{
+		None,
+		Object,
+		Array,
+		Constructor
+	}
 }

@@ -1,8 +1,2 @@
-using System;
-using System;
-
-[Serializable]
-public class SetOptInPermissionsRequest : KIDRequestData
-{
-	public string[] OptInPermissions;
-}
+// Could not decompile GorillaTag.Cosmetics.OnTriggerEventsCosmetic
+// This type uses unsupported IL or has too many generic parameters.

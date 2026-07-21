@@ -1,19 +1,17 @@
-namespace System.Security.Principal;
+namespace System.Runtime.InteropServices.ComTypes;
 
-[Flags]
-public enum TokenAccessLevels
+[ComImport]
+[Guid("00000102-0000-0000-C000-000000000046")]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+public interface IEnumMoniker
 {
-	AssignPrimary = 1,
-	Duplicate = 2,
-	Impersonate = 4,
-	Query = 8,
-	QuerySource = 0x10,
-	AdjustPrivileges = 0x20,
-	AdjustGroups = 0x40,
-	AdjustDefault = 0x80,
-	AdjustSessionId = 0x100,
-	Read = 0x20008,
-	Write = 0x200E0,
-	AllAccess = 0xF01FF,
-	MaximumAllowed = 0x2000000
+	[PreserveSig]
+	int Next(int celt, [Out][MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IMoniker[] rgelt, IntPtr pceltFetched);
+
+	[PreserveSig]
+	int Skip(int celt);
+
+	void Reset();
+
+	void Clone(out IEnumMoniker ppenum);
 }

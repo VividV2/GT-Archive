@@ -1,6 +1,10 @@
-namespace OVR.OpenVR;
-
-public struct VRTextureWithPoseAndDepth_t
+namespace OVR.OpenVR
 {
-	public VRTextureDepthInfo_t depth;
+	public struct VRTextureWithPoseAndDepth_t
+	{
+		public VRTextureDepthInfo_t depth;
+	}
+}
+namespace OVR.OpenVR
+{
 }

@@ -1,2 +1,23 @@
-// Could not decompile Oculus.Platform.Models.SupplementaryMetric
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Oculus.Platform.Models
+{
+}
+namespace Oculus.Platform.Models
+{
+	public class SupplementaryMetric
+	{
+		public readonly ulong ID;
+
+		public readonly long Metric;
+
+		public SupplementaryMetric(IntPtr o)
+		{
+			ID = CAPI.ovr_SupplementaryMetric_GetID(o);
+			Metric = CAPI.ovr_SupplementaryMetric_GetMetric(o);
+		}
+	}
+}
+namespace Oculus.Platform.Models
+{
+}

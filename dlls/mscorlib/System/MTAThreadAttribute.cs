@@ -1,11 +1,2 @@
-namespace System;
-
-/// <summary>Indicates that the COM threading model for an application is multithreaded apartment (MTA).</summary>
-[AttributeUsage(AttributeTargets.Method)]
-public sealed class MTAThreadAttribute : Attribute
-{
-	/// <summary>Initializes a new instance of the <see cref="T:System.MTAThreadAttribute" /> class.</summary>
-	public MTAThreadAttribute()
-	{
-	}
-}
+// Could not decompile System.MTAThreadAttribute
+// This type uses unsupported IL or has too many generic parameters.

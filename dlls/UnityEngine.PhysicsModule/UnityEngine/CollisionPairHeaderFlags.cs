@@ -1,11 +1,7 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+internal enum CollisionPairHeaderFlags : ushort
 {
-	internal enum CollisionPairHeaderFlags : ushort
-	{
-		RemovedActor = 1,
-		RemovedOtherActor
-	}
-}
-namespace UnityEngine
-{
+	RemovedActor = 1,
+	RemovedOtherActor
 }

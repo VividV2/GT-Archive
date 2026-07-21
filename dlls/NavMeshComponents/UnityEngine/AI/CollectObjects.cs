@@ -1,8 +1,15 @@
-namespace UnityEngine.AI;
-
-public enum CollectObjects
+namespace UnityEngine.AI
 {
-	All,
-	Volume,
-	Children
+}
+namespace UnityEngine.AI
+{
+}
+namespace UnityEngine.AI
+{
+	public enum CollectObjects
+	{
+		All,
+		Volume,
+		Children
+	}
 }

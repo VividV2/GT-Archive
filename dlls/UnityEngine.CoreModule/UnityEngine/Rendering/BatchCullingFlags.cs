@@ -1,10 +1,3 @@
-using System;
-
-namespace UnityEngine.Rendering;
-
-[Flags]
-public enum BatchCullingFlags
+namespace UnityEngine.Experimental.U2D
 {
-	None = 0,
-	CullLightmappedShadowCasters = 1
 }

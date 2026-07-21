@@ -1,22 +1,2 @@
-using Unity.Burst;
-using Unity.Jobs;
-
-namespace Unity.Collections.LowLevel.Unsafe
-{
-}
-namespace Unity.Collections.LowLevel.Unsafe
-{
-}
-namespace Unity.Collections
-{
-	[BurstCompile]
-	internal struct NativeHashMapDisposeJob : IJob
-	{
-		internal NativeHashMapDispose Data;
-
-		public void Execute()
-		{
-			Data.Dispose();
-		}
-	}
-}
+// Could not decompile Unity.Collections.NativeHashMapDisposeJob
+// This type uses unsupported IL or has too many generic parameters.

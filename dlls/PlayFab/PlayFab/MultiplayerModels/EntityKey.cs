@@ -1,2 +1,7 @@
-// Could not decompile PlayFab.MultiplayerModels.EntityKey
-// This type uses unsupported IL or has too many generic parameters.
+namespace PlayFab.ProfilesModels;
+
+public enum EffectType
+{
+	Allow,
+	Deny
+}

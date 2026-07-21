@@ -1,13 +1,2 @@
-using System;
-
-namespace Meta.WitAi.TTS.Data;
-
-[Serializable]
-public class TTSDiskCacheSettings
-{
-	public TTSDiskCacheLocation DiskCacheLocation;
-
-	public bool StreamFromDisk;
-
-	public float StreamBufferLength = 5f;
-}
+// Could not decompile Meta.WitAi.TTS.Data.TTSDiskCacheSettings
+// This type uses unsupported IL or has too many generic parameters.

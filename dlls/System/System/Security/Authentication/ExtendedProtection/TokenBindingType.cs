@@ -1,13 +1,6 @@
-namespace System.Security.Authentication.ExtendedProtection;
+namespace System.Net;
 
-/// <summary>Represents types of token binding.</summary>
-public enum TokenBindingType
+internal interface ICloseEx
 {
-	/// <summary>Used to establish a token binding when connecting to a server.</summary>
-	Provided,
-	/// <summary>Used when requesting tokens to be presented to a different server.</summary>
-	Referred
-}
-namespace System.Collections.Generic
-{
+	void CloseEx(CloseExState closeState);
 }

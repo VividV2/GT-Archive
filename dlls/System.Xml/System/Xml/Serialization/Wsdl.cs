@@ -1,12 +1,2 @@
-namespace System.Xml.Serialization;
-
-internal class Wsdl
-{
-	internal const string Namespace = "http://schemas.xmlsoap.org/wsdl/";
-
-	internal const string ArrayType = "arrayType";
-
-	private Wsdl()
-	{
-	}
-}
+// Could not decompile System.Xml.Serialization.Wsdl
+// This type uses unsupported IL or has too many generic parameters.

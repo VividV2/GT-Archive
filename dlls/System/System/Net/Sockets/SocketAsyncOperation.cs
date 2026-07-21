@@ -1,3 +1,6 @@
-namespace System.Net
+namespace System.Net.Security
+{
+}
+namespace System.Net.Mime
 {
 }

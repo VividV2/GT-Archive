@@ -1,10 +1,3 @@
-namespace UnityEngine;
-
-public enum CameraClearFlags
+namespace System.Runtime.CompilerServices
 {
-	Skybox = 1,
-	Color = 2,
-	SolidColor = 2,
-	Depth = 3,
-	Nothing = 4
 }

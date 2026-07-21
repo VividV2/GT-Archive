@@ -1,7 +1,11 @@
-namespace System.Runtime.Remoting.Messaging;
-
-internal enum ArgInfoType : byte
+namespace System.Runtime.Remoting.Messaging
 {
-	In,
-	Out
+	internal enum ArgInfoType : byte
+	{
+		In,
+		Out
+	}
+}
+namespace System.Threading
+{
 }

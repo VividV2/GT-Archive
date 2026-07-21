@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.UIElements.ExecuteCommandEvent
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public class ExecuteCommandEvent : CommandEventBase<ExecuteCommandEvent>
+{
+	static ExecuteCommandEvent()
+	{
+		EventBase<ExecuteCommandEvent>.SetCreateFunction(() => new ExecuteCommandEvent());
+	}
+}

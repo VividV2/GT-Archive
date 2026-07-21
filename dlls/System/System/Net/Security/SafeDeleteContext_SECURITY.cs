@@ -1,6 +1,2 @@
-namespace System.Net.Security
-{
-}
-namespace System.Net
-{
-}
+// Could not decompile System.Net.Security.SafeDeleteContext_SECURITY
+// This type uses unsupported IL or has too many generic parameters.

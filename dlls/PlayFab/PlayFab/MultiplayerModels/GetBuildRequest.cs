@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.ExperimentationModels;
 
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class GetBuildRequest : PlayFabRequestCommon
-{
-	public string BuildId;
-}

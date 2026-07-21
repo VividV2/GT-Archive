@@ -1,8 +1,10 @@
 namespace UnityEngine.Audio;
 
-internal enum AudioRandomContainerLoopMode
+internal enum AudioRandomContainerAutomaticTriggerMode
 {
-	Infinite,
-	Clips,
-	Cycles
+	Pulse,
+	Offset
+}
+namespace UnityEngine
+{
 }

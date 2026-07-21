@@ -1,6 +1,2 @@
-namespace System.Xml
-{
-}
-namespace System.Xml.Xsl.Xslt
-{
-}
+// Could not decompile System.Xml.Xsl.XsltOld.MessageAction
+// This type uses unsupported IL or has too many generic parameters.

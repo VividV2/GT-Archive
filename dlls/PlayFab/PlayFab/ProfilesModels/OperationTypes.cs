@@ -1,9 +1,2 @@
-namespace PlayFab.ProfilesModels;
-
-public enum OperationTypes
-{
-	Created,
-	Updated,
-	Deleted,
-	None
-}
+// Could not decompile PlayFab.ProfilesModels.OperationTypes
+// This type uses unsupported IL or has too many generic parameters.

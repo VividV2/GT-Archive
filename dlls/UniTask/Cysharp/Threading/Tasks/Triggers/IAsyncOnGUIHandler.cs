@@ -1,10 +1,6 @@
-namespace Cysharp.Threading.Tasks.Triggers
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnGUIHandler
 {
-	public interface IAsyncOnGUIHandler
-	{
-		UniTask OnGUIAsync();
-	}
-}
-namespace Cysharp.Threading.Tasks.Triggers
-{
+	UniTask OnGUIAsync();
 }

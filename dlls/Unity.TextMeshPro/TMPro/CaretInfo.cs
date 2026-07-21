@@ -1,8 +1,2 @@
-namespace TMPro;
-
-public struct CaretInfo(int index, CaretPosition position)
-{
-	public int index = index;
-
-	public CaretPosition position = position;
-}
+// Could not decompile TMPro.CaretInfo
+// This type uses unsupported IL or has too many generic parameters.

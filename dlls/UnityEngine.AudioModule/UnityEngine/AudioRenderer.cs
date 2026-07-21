@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.AudioRenderer
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Bindings;
+using System;
+using UnityEngine.Bindings;
+using System;
+using UnityEngine.Bindings;
+
+namespace Unity.Audio
+{
+	[VisibleToOtherModules]
+	internal interface IHandle<HandleType> : IValidatable, IEquatable<HandleType> where HandleType : struct, IHandle<HandleType>
+	{
+	}
+}
+namespace UnityEngine.Audio
+{
+}

@@ -1,12 +1,8 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+internal enum Axis
 {
-}
-namespace UnityEngine.UIElements
-{
-	internal enum Axis
-	{
-		X,
-		Y,
-		Z
-	}
+	X,
+	Y,
+	Z
 }

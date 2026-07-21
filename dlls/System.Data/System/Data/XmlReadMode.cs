@@ -1,2 +1,3 @@
-namespace System.Data.ProviderBase;
-
+namespace System.Data.Odbc
+{
+}

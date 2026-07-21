@@ -1,16 +1,6 @@
-namespace Oculus.Voice.Interfaces
-{
-	public interface IPlatformVoiceService : IVoiceService, IVoiceEventProvider, ITelemetryEventsProvider, IVoiceActivationHandler
-	{
-		bool PlatformSupportsWit { get; }
+namespace Oculus.Voice.Bindings.Android;
 
-		void SetRuntimeConfiguration(WitRuntimeConfiguration configuration);
-	}
-}
-namespace Oculus.Voice.Bindings.Android
+public interface IVCBindingEvents
 {
-	public interface IVCBindingEvents
-	{
-		void OnServiceNotAvailable(string error, string message);
-	}
+	void OnServiceNotAvailable(string error, string message);
 }

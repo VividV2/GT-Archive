@@ -1,11 +1,15 @@
 using UnityEngine.Scripting;
 
-namespace UnityEngine.Rendering;
-
-[UsedByNativeCode]
-internal struct GPUDrivenRendererMeshLodData
+namespace Unity.Profiling
 {
-	public int forceLod;
+}
+namespace UnityEngine.Rendering
+{
+	[UsedByNativeCode]
+	internal struct GPUDrivenRendererMeshLodData
+	{
+		public int forceLod;
 
-	public float lodSelectionBias;
+		public float lodSelectionBias;
+	}
 }

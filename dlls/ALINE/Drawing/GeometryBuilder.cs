@@ -1,19 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-namespace Drawing;
-
-public abstract class MonoBehaviourGizmos : MonoBehaviour, IDrawGizmos
-{
-	public MonoBehaviourGizmos()
-	{
-	}
-
-	private void OnDrawGizmosSelected()
-	{
-	}
-
-	public virtual void DrawGizmos()
-	{
-	}
-}
+// Could not decompile Drawing.GeometryBuilder
+// This type uses unsupported IL or has too many generic parameters.

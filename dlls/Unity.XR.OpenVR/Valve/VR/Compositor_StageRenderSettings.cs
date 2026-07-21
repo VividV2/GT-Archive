@@ -1,19 +1,25 @@
-namespace Valve.VR
+using System.Runtime.InteropServices;
+
+namespace Valve.VR;
+
+public struct Compositor_StageRenderSettings
 {
-	public struct TrackedDevicePose_t
-	{
-		public HmdMatrix34_t mDeviceToAbsoluteTracking;
+	public HmdColor_t m_PrimaryColor;
 
-		public HmdVector3_t vVelocity;
+	public HmdColor_t m_SecondaryColor;
 
-		public HmdVector3_t vAngularVelocity;
+	public float m_flVignetteInnerRadius;
 
-		public ETrackingResult eTrackingResult;
+	public float m_flVignetteOuterRadius;
 
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bPoseIsValid;
+	public float m_flFresnelStrength;
 
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bDeviceIsConnected;
-	}
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bBackfaceCulling;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bGreyscale;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bWireframe;
 }

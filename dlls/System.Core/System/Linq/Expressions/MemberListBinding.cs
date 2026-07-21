@@ -1,6 +1,2 @@
-namespace System.Linq.Expressions
-{
-}
-namespace System.Collections.Generic
-{
-}
+// Could not decompile System.Linq.Expressions.MemberListBinding
+// This type uses unsupported IL or has too many generic parameters.

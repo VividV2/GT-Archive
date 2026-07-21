@@ -1,21 +1,29 @@
-using UnityEngine.UIElements;
-using UnityEngine.UIElements;
+using System;
 
-namespace Unity.Multiplayer.Center.Common.Analytics
+namespace Unity.Multiplayer.Center.Common;
+
+[Serializable]
+public class SelectedSolutionsData
 {
-	public interface IOnboardingSectionAnalyticsProvider
+	public enum HostingModel
 	{
-		void SendInteractionEvent(InteractionDataType type, string displayName);
+		None,
+		ClientHosted,
+		DedicatedServer,
+		CloudCode,
+		DistributedAuthority
 	}
-}
-namespace Unity.Multiplayer.Center.Common
-{
-	public interface IOnboardingSection
+
+	public enum NetcodeSolution
 	{
-		VisualElement Root { get; }
-
-		void Load();
-
-		void Unload();
+		None,
+		NGO,
+		N4E,
+		CustomNetcode,
+		NoNetcode
 	}
+
+	public HostingModel SelectedHostingModel;
+
+	public NetcodeSolution SelectedNetcodeSolution;
 }

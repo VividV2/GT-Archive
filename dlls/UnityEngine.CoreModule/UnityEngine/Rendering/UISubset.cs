@@ -1,14 +1,27 @@
 using System;
+using System;
 
-namespace UnityEngine.Rendering;
+namespace UnityEngine;
 
-[Flags]
-public enum UISubset
+namespace UnityEngine.Rendering
 {
-	UIToolkit_UGUI = 1,
-	LowLevel = 2,
-	All = -1
+	[Flags]
+	public enum UISubset
+	{
+		UIToolkit_UGUI = 1,
+		LowLevel = 2,
+		All = -1
+	}
 }
-namespace UnityEngine.Experimental.Rendering
+namespace Unity.Profiling.Memory
 {
+	[Flags]
+	public enum CaptureFlags : uint
+	{
+		ManagedObjects = 1u,
+		NativeObjects = 2u,
+		NativeAllocations = 4u,
+		NativeAllocationSites = 8u,
+		NativeStackTraces = 0x10u
+	}
 }

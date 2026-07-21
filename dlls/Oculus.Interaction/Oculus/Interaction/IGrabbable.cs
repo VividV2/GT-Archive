@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Oculus.Interaction
 {
-}
-namespace Oculus.Interaction
-{
 	public interface IGrabbable
 	{
 		List<Pose> GrabPoints { get; }
 
 		Transform Transform { get; }
 	}
+}
+namespace Oculus.Interaction
+{
 }

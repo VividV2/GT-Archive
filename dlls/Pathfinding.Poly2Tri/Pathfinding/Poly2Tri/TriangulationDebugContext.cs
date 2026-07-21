@@ -1,17 +1,13 @@
-namespace Pathfinding.Poly2Tri
+namespace Pathfinding.Poly2Tri;
+
+public abstract class TriangulationDebugContext
 {
-	public abstract class TriangulationDebugContext
+	protected TriangulationContext _tcx;
+
+	public TriangulationDebugContext(TriangulationContext tcx)
 	{
-		protected TriangulationContext _tcx;
-
-		public TriangulationDebugContext(TriangulationContext tcx)
-		{
-			_tcx = tcx;
-		}
-
-		public abstract void Clear();
+		_tcx = tcx;
 	}
-}
-namespace Pathfinding.Poly2Tri
-{
+
+	public abstract void Clear();
 }

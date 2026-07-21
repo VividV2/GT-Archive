@@ -1,9 +1,16 @@
-namespace Modio.Unity.UI;
-
-public enum StringFormatBytes
+namespace Modio.Unity.UI
 {
-	Bytes,
-	BytesComma,
-	Suffix,
-	Custom
+	public enum StringFormatBytes
+	{
+		Bytes,
+		BytesComma,
+		Suffix,
+		Custom
+	}
+}
+namespace Modio.Unity.UI.Components.Selectables
+{
+}
+namespace Modio.Unity.UI.Components.ModProperties
+{
 }

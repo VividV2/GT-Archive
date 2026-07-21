@@ -1,10 +1,14 @@
-namespace TMPro;
+using System;
+using System.Runtime.InteropServices;
 
-internal struct TagAttribute
+namespace TMPro
 {
-	public int startIndex;
-
-	public int length;
-
-	public int hashCode;
+	[Serializable]
+	[StructLayout(LayoutKind.Sequential, Size = 1)]
+	public struct AlternateSubstitutionRecord
+	{
+	}
+}
+namespace TMPro
+{
 }

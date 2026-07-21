@@ -1,12 +1,3 @@
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.Windows.WebCam;
-
-[MovedFrom("UnityEngine.XR.WSA.WebCam")]
-public enum CapturePixelFormat
+namespace Unity.IO.Archive
 {
-	BGRA32,
-	NV12,
-	JPEG,
-	PNG
 }

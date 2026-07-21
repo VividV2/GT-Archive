@@ -1,9 +1,2 @@
-namespace Steamworks;
-
-public enum AudioPlayback_Status
-{
-	AudioPlayback_Undefined,
-	AudioPlayback_Playing,
-	AudioPlayback_Paused,
-	AudioPlayback_Idle
-}
+// Could not decompile Steamworks.AudioPlayback_Status
+// This type uses unsupported IL or has too many generic parameters.

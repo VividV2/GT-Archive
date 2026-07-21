@@ -1,16 +1,23 @@
-namespace Valve.VR;
-
-public interface ISteamVR_Action_Boolean : ISteamVR_Action_In_Source, ISteamVR_Action_Source
+namespace Valve.VR
 {
-	bool state { get; }
+}
+namespace Valve.VR
+{
+	public interface ISteamVR_Action_Boolean : ISteamVR_Action_In_Source, ISteamVR_Action_Source
+	{
+		bool state { get; }
 
-	bool stateDown { get; }
+		bool stateDown { get; }
 
-	bool stateUp { get; }
+		bool stateUp { get; }
 
-	bool lastState { get; }
+		bool lastState { get; }
 
-	bool lastStateDown { get; }
+		bool lastStateDown { get; }
 
-	bool lastStateUp { get; }
+		bool lastStateUp { get; }
+	}
+}
+namespace Valve.VR
+{
 }

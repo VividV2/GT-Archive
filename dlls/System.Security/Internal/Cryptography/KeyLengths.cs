@@ -18,6 +18,3 @@ internal static class KeyLengths
 
 	public const int DefaultKeyLengthForRc2AndRc4 = 128;
 }
-namespace System.Security.Cryptography.Pkcs
-{
-}

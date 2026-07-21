@@ -1,3 +1,6 @@
-namespace Microsoft.VisualBasic
+namespace System.ComponentModel
+{
+}
+namespace System.Threading
 {
 }

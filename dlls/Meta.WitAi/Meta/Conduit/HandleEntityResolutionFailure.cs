@@ -1,12 +1,2 @@
-using System;
-
-namespace Meta.Conduit
-{
-	[AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-	public class HandleEntityResolutionFailure : Attribute
-	{
-	}
-}
-namespace Meta.Voice.Net.WebSockets
-{
-}
+// Could not decompile Meta.Conduit.HandleEntityResolutionFailure
+// This type uses unsupported IL or has too many generic parameters.

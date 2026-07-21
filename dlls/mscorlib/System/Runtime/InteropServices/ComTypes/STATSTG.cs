@@ -1,26 +1,10 @@
-namespace System.Runtime.InteropServices.ComTypes;
+namespace System.Runtime.CompilerServices;
 
-[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-public struct EXCEPINFO
+[Serializable]
+[AttributeUsage(AttributeTargets.Class)]
+public class CompilerGlobalScopeAttribute : Attribute
 {
-	public short wCode;
-
-	public short wReserved;
-
-	[MarshalAs(UnmanagedType.BStr)]
-	public string bstrSource;
-
-	[MarshalAs(UnmanagedType.BStr)]
-	public string bstrDescription;
-
-	[MarshalAs(UnmanagedType.BStr)]
-	public string bstrHelpFile;
-
-	public int dwHelpContext;
-
-	public IntPtr pvReserved;
-
-	public IntPtr pfnDeferredFillIn;
-
-	public int scode;
+	public CompilerGlobalScopeAttribute()
+	{
+	}
 }

@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class CreateServerBackfillTicketResult : PlayFabResultCommon
-{
-	public string TicketId;
-}
+// Could not decompile PlayFab.MultiplayerModels.CreateServerBackfillTicketResult
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,26 +1,22 @@
-namespace UnityEngine.Animations.Rigging
+namespace UnityEngine.Animations.Rigging;
+
+public interface IChainIKConstraintData
 {
-	public interface IChainIKConstraintData
-	{
-		Transform root { get; }
+	Transform root { get; }
 
-		Transform tip { get; }
+	Transform tip { get; }
 
-		Transform target { get; }
+	Transform target { get; }
 
-		int maxIterations { get; }
+	int maxIterations { get; }
 
-		float tolerance { get; }
+	float tolerance { get; }
 
-		bool maintainTargetPositionOffset { get; }
+	bool maintainTargetPositionOffset { get; }
 
-		bool maintainTargetRotationOffset { get; }
+	bool maintainTargetRotationOffset { get; }
 
-		string chainRotationWeightFloatProperty { get; }
+	string chainRotationWeightFloatProperty { get; }
 
-		string tipRotationWeightFloatProperty { get; }
-	}
-}
-namespace UnityEngine.Animations.Rigging
-{
+	string tipRotationWeightFloatProperty { get; }
 }

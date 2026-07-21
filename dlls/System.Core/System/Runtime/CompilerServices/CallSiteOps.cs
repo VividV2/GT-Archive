@@ -1,2 +1,2 @@
-namespace System.Linq.Expressions;
-
+// Could not decompile System.Runtime.CompilerServices.CallSiteOps
+// This type uses unsupported IL or has too many generic parameters.

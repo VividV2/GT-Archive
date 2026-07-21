@@ -1,8 +1,12 @@
-namespace UnityEngine;
-
-public enum TouchType
+namespace UnityEngine
 {
-	Direct,
-	Indirect,
-	Stylus
+}
+namespace UnityEngine
+{
+	public enum TouchType
+	{
+		Direct,
+		Indirect,
+		Stylus
+	}
 }

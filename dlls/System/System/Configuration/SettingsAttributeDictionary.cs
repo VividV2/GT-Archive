@@ -1,3 +1,2 @@
-namespace System.Diagnostics;
+namespace System.ComponentModel.Design.Serialization;
 
-internal delegate void UserCallBack(string data);

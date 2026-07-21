@@ -1,8 +1,15 @@
-namespace UnityEngine.UIElements;
-
-internal interface ICursorManager
+namespace UnityEngine.UIElements
 {
-	void SetCursor(Cursor cursor);
+}
+namespace UnityEngine.UIElements
+{
+}
+namespace UnityEngine.UIElements
+{
+	internal interface ICursorManager
+	{
+		void SetCursor(Cursor cursor);
 
-	void ResetCursor();
+		void ResetCursor();
+	}
 }

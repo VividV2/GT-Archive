@@ -6,9 +6,6 @@ namespace Unity.Collections
 }
 namespace Unity.Collections
 {
-}
-namespace Unity.Collections
-{
 	[Serializable]
 	[StructLayout(LayoutKind.Explicit, Size = 510)]
 	[GenerateTestsForBurstCompatibility]

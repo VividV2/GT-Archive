@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.InputSystem.Utilities.InputArrayExtensions
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.InputSystem.Processors
+{
+}
+namespace UnityEngine.InputSystem.Utilities
+{
+}
+namespace UnityEngine.InputSystem.Controls
+{
+}
+namespace UnityEngine.InputSystem.Utilities
+{
+}

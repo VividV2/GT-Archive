@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Scripting;
+namespace Unity.Jobs.LowLevel.Unsafe;
 
-namespace UnityEngine;
-
-[UsedByNativeCode]
-public sealed class ImageEffectAfterScale : Attribute
-{
-}

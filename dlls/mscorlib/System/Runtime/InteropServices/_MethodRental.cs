@@ -1,6 +1,6 @@
-namespace System.Runtime.CompilerServices
+namespace System.Security.Claims
 {
-	public static class IsByValue
-	{
-	}
+}
+namespace System.Security.Permissions
+{
 }

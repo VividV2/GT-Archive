@@ -1,3 +1,6 @@
-namespace System.Security.AccessControl
+namespace System
+{
+}
+namespace System.Runtime.InteropServices
 {
 }

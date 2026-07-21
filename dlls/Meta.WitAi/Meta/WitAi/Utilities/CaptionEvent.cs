@@ -1,13 +1,2 @@
-using System;
-using UnityEngine.Events;
-
-namespace Meta.Voice.Audio.Decoding
-{
-}
-namespace Meta.WitAi.Utilities
-{
-	[Serializable]
-	public class CaptionEvent : UnityEvent<CaptionData>
-	{
-	}
-}
+// Could not decompile Meta.WitAi.Utilities.CaptionEvent
+// This type uses unsupported IL or has too many generic parameters.

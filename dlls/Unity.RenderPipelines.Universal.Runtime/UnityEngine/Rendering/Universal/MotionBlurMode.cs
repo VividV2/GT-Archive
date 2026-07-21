@@ -1,7 +1,11 @@
-namespace UnityEngine.Rendering.Universal;
-
-public enum MotionBlurMode
+namespace UnityEngine.Rendering.Universal
 {
-	CameraOnly,
-	CameraAndObjects
+	public enum MotionBlurMode
+	{
+		CameraOnly,
+		CameraAndObjects
+	}
+}
+namespace UnityEngine.Rendering.Universal
+{
 }

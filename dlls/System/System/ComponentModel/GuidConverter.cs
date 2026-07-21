@@ -1,8 +1,2 @@
-namespace System.Net;
-
-internal struct SecPkgContext_NegotiationInfoW
-{
-	internal IntPtr PackageInfo;
-
-	internal uint NegotiationState;
-}
+// Could not decompile System.ComponentModel.GuidConverter
+// This type uses unsupported IL or has too many generic parameters.

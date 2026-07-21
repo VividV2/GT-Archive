@@ -1,13 +1,2 @@
-namespace System.IO.Compression;
-
-internal enum ZipVersionNeededValues : ushort
-{
-	Default = 10,
-	ExplicitDirectory = 20,
-	Deflate = 20,
-	Deflate64 = 21,
-	Zip64 = 45
-}
-namespace System.IO.Compression
-{
-}
+// Could not decompile System.IO.Compression.Crc32Helper
+// This type uses unsupported IL or has too many generic parameters.

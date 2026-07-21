@@ -1,2 +1,2 @@
-// Could not decompile System.Data.Odbc.OdbcEnvironmentHandle
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data.ProviderBase;
+

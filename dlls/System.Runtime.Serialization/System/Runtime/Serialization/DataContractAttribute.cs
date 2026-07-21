@@ -1,2 +1,9 @@
-// Could not decompile System.Runtime.Serialization.DataContractAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Serialization
+{
+	public enum EmitTypeInformation
+	{
+		AsNeeded,
+		Always,
+		Never
+	}
+}

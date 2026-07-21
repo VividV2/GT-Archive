@@ -1,2 +1,2 @@
-namespace GorillaNetworking;
+namespace GorillaTag.Cosmetics;
 

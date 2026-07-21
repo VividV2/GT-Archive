@@ -1,8 +1,6 @@
-using System.Runtime.InteropServices;
-using Fusion;
-
-[StructLayout(LayoutKind.Explicit)]
-[NetworkStructWeaved(0)]
-public struct CasualData : INetworkStruct
+public interface IGameHittable
 {
+	bool IsHitValid(GameHitData hit);
+
+	void OnHit(GameHitData hit);
 }

@@ -1,2 +1,10 @@
-// Could not decompile System.Security.Cryptography.TripleDESTransform
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Remoting.Messaging;
+
+internal interface IInternalMessage
+{
+	Identity TargetIdentity { get; set; }
+
+	string Uri { get; set; }
+
+	bool HasProperties();
+}

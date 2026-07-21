@@ -1,10 +1,14 @@
 using System.Collections;
 
-namespace System.Runtime.InteropServices.ComTypes;
-
-[Guid("496B0ABE-CDEE-11d3-88E8-00902754C43A")]
-internal interface IEnumerable
+namespace System.Runtime.InteropServices.ComTypes
 {
-	[DispId(-4)]
-	System.Collections.IEnumerator GetEnumerator();
+	[Guid("496B0ABE-CDEE-11d3-88E8-00902754C43A")]
+	internal interface IEnumerable
+	{
+		[DispId(-4)]
+		System.Collections.IEnumerator GetEnumerator();
+	}
+}
+namespace System.Runtime.Serialization
+{
 }

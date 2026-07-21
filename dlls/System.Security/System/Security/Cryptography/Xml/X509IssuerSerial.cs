@@ -1,2 +1,8 @@
-// Could not decompile System.Security.Cryptography.Xml.X509IssuerSerial
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Security.Cryptography.Xml;
+
+internal enum ReferenceTargetType
+{
+	Stream,
+	XmlElement,
+	UriReference
+}

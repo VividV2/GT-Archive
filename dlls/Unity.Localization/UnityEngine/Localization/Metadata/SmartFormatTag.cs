@@ -1,13 +1,2 @@
-using System;
-
-namespace UnityEngine.Localization.Metadata
-{
-	[Serializable]
-	[HideInInspector]
-	public class SmartFormatTag : SharedTableEntryMetadata
-	{
-	}
-}
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
-{
-}
+// Could not decompile UnityEngine.Localization.Metadata.SmartFormatTag
+// This type uses unsupported IL or has too many generic parameters.

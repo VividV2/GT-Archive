@@ -1,3 +1,0 @@
-namespace UnityEngine.UIElements.StyleSheets
-{
-}

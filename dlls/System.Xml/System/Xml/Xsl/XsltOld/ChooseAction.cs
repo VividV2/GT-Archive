@@ -1,17 +1,2 @@
-namespace System.Xml.Schema;
-
-internal enum ValidatorState
-{
-	None,
-	Start,
-	TopLevelAttribute,
-	TopLevelTextOrWS,
-	Element,
-	Attribute,
-	EndOfAttributes,
-	Text,
-	Whitespace,
-	EndElement,
-	SkipToEndElement,
-	Finish
-}
+// Could not decompile System.Xml.Xsl.XsltOld.ChooseAction
+// This type uses unsupported IL or has too many generic parameters.

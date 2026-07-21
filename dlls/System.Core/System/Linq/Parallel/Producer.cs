@@ -1,18 +1,14 @@
-namespace System.Linq.Parallel
-{
-	internal readonly struct Producer<TKey>
-	{
-		internal readonly TKey MaxKey;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 
-		internal readonly int ProducerIndex;
+namespace System.Linq;
 
-		internal Producer(TKey maxKey, int producerIndex)
-		{
-			MaxKey = maxKey;
-			ProducerIndex = producerIndex;
-		}
-	}
-}
-namespace System.Linq.Parallel
+/// <summary>Provides functionality to evaluate queries against a specific data source wherein the type of the data is known.</summary>
+/// <typeparam name="T">The type of the data in the data source.</typeparam>
+/// <summary>Provides functionality to evaluate queries against a specific data source wherein the type of the data is known.</summary>
+/// <typeparam name="T">The type of the data in the data source.</typeparam>
+public interface IQueryable<out T> : IEnumerable<T>, IEnumerable, IQueryable
 {
 }

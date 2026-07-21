@@ -1,3 +1,3 @@
-namespace System.Security.AccessControl
+namespace Mono.Net.Security
 {
 }

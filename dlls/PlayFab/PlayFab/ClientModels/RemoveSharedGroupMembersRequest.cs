@@ -1,13 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class RemoveSharedGroupMembersRequest : PlayFabRequestCommon
-{
-	public List<string> PlayFabIds;
-
-	public string SharedGroupId;
-}
+// Could not decompile PlayFab.ClientModels.RemoveSharedGroupMembersRequest
+// This type uses unsupported IL or has too many generic parameters.

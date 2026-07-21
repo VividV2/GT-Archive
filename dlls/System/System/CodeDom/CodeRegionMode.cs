@@ -1,5 +1,3 @@
-namespace System.Web.Util;
-
-namespace System.Net
+namespace Internal.Cryptography.Pal
 {
 }

@@ -1,3 +1,6 @@
+namespace System.Reflection
+{
+}
 namespace System.Runtime.Serialization.Formatters.Binary
 {
 	[Serializable]
@@ -9,7 +12,4 @@ namespace System.Runtime.Serialization.Formatters.Binary
 		XmlElement = 4,
 		XmlAttribute = 8
 	}
-}
-namespace System.Runtime.InteropServices
-{
 }

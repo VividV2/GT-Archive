@@ -1,11 +1,7 @@
-namespace Steamworks
+namespace Steamworks;
+
+public enum EFailureType
 {
-	public enum EFailureType
-	{
-		k_EFailureFlushedCallbackQueue,
-		k_EFailurePipeFail
-	}
-}
-namespace Steamworks
-{
+	k_EFailureFlushedCallbackQueue,
+	k_EFailurePipeFail
 }

@@ -1,19 +1,25 @@
-#define DEBUG
 using System;
 
-namespace Fusion;
-
-[Serializable]
-public struct RpcInvokeInfo
+namespace Fusion
 {
-	public RpcLocalInvokeResult LocalInvokeResult;
-
-	public RpcSendCullResult SendCullResult;
-
-	public RpcSendResult SendResult;
-
-	public override string ToString()
+	[Serializable]
+	public struct RpcInvokeInfo
 	{
-		return $"[Local: {LocalInvokeResult}, SendCull: {SendCullResult}, Send: {SendResult}]";
+		public RpcLocalInvokeResult LocalInvokeResult;
+
+		public RpcSendCullResult SendCullResult;
+
+		public RpcSendResult SendResult;
+
+		public override string ToString()
+		{
+			return $"[Local: {LocalInvokeResult}, SendCull: {SendCullResult}, Send: {SendResult}]";
+		}
 	}
+}
+namespace Fusion
+{
+}
+namespace Fusion
+{
 }

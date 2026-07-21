@@ -1,3 +1,2 @@
-public class SlingshotTestScenario1 : SlingshotTestScenario
-{
-}
+// Could not decompile SlingshotTestScenario1
+// This type uses unsupported IL or has too many generic parameters.

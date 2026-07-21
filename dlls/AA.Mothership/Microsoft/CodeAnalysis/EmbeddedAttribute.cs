@@ -1,10 +1,2 @@
-using System;
-using System.Runtime.CompilerServices;
-
-namespace Microsoft.CodeAnalysis;
-
-[CompilerGenerated]
-[Microsoft.CodeAnalysis.Embedded]
-internal sealed class EmbeddedAttribute : Attribute
-{
-}
+// Could not decompile Microsoft.CodeAnalysis.EmbeddedAttribute
+// This type uses unsupported IL or has too many generic parameters.

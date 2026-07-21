@@ -1,6 +1,6 @@
-namespace System.Runtime.Serialization
+namespace System.Runtime.CompilerServices
 {
 }
-namespace System.Text
+namespace System.Runtime.Serialization
 {
 }

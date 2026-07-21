@@ -1,13 +1,2 @@
-using System;
-using UnityEngine;
-
-namespace Meta.WitAi.Data.Entities
-{
-}
-namespace Meta.WitAi.Attributes
-{
-	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
-	public class HideWhenSetAttribute : PropertyAttribute
-	{
-	}
-}
+// Could not decompile Meta.WitAi.Attributes.HideWhenSetAttribute
+// This type uses unsupported IL or has too many generic parameters.

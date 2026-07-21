@@ -1,13 +1,2 @@
-namespace ExitGames.Client.Photon;
-
-internal static class SerializationProtocolFactory
-{
-	internal static IProtocol Create(SerializationProtocol serializationProtocol)
-	{
-		if (serializationProtocol == SerializationProtocol.GpBinaryV18)
-		{
-			return new Protocol18();
-		}
-		return new Protocol16();
-	}
-}
+// Could not decompile ExitGames.Client.Photon.SerializationProtocolFactory
+// This type uses unsupported IL or has too many generic parameters.

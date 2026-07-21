@@ -1,14 +1,6 @@
-namespace Cysharp.Threading.Tasks.Triggers
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnRectTransformDimensionsChangeHandler
 {
-	public interface IAsyncOnRectTransformDimensionsChangeHandler
-	{
-		UniTask OnRectTransformDimensionsChangeAsync();
-	}
-}
-namespace Cysharp.Threading.Tasks.Triggers
-{
-	public interface IAsyncOnWillRenderObjectHandler
-	{
-		UniTask OnWillRenderObjectAsync();
-	}
+	UniTask OnRectTransformDimensionsChangeAsync();
 }

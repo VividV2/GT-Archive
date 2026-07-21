@@ -1,25 +1,14 @@
-namespace System.Data.OleDb
+namespace System.Data;
+
+internal enum AggregateType
 {
-}
-namespace System.Data.SqlClient
-{
-	internal enum SqlConnectionTimeoutErrorPhase
-	{
-		Undefined,
-		PreLoginBegin,
-		InitializeConnection,
-		SendPreLoginHandshake,
-		ConsumePreLoginHandshake,
-		LoginBegin,
-		ProcessConnectionAuth,
-		PostLogin,
-		Complete,
-		Count
-	}
-}
-namespace System.Data.SqlTypes
-{
-}
-namespace System.Data.SqlClient
-{
+	None = 0,
+	Sum = 4,
+	Mean = 5,
+	Min = 6,
+	Max = 7,
+	First = 8,
+	Count = 9,
+	Var = 10,
+	StDev = 11
 }

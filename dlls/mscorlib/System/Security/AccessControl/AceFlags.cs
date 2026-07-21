@@ -1,2 +1,6 @@
-namespace System.Security.Claims;
-
+namespace System.Security
+{
+}
+namespace System
+{
+}

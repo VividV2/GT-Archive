@@ -1,13 +1,2 @@
-using System.Xml;
-
-namespace System.Data.SqlClient;
-
-internal class XmlDataFeed : DataFeed
-{
-	internal XmlReader _source;
-
-	internal XmlDataFeed(XmlReader source)
-	{
-		_source = source;
-	}
-}
+// Could not decompile System.Data.SqlClient.XmlDataFeed
+// This type uses unsupported IL or has too many generic parameters.

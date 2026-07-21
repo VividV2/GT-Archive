@@ -1,16 +1,9 @@
 using System;
-using System;
+using System.Diagnostics;
 
-namespace Sirenix.OdinInspector
+namespace Sirenix.OdinInspector;
+
+[Conditional("UNITY_EDITOR")]
+public class EnumToggleButtonsAttribute : Attribute
 {
-	public class ExcludeInOdinDesignerAttribute : Attribute
-	{
-	}
-}
-namespace Sirenix.OdinInspector
-{
-	[System.Diagnostics.Conditional("UNITY_EDITOR")]
-	public class EnumToggleButtonsAttribute : Attribute
-	{
-	}
 }

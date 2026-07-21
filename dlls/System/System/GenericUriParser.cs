@@ -1,14 +1,2 @@
-namespace System.Configuration;
-
-public interface IPersistComponentSettings
-{
-	bool SaveSettings { get; set; }
-
-	string SettingsKey { get; set; }
-
-	void LoadComponentSettings();
-
-	void ResetComponentSettings();
-
-	void SaveComponentSettings();
-}
+// Could not decompile System.GenericUriParser
+// This type uses unsupported IL or has too many generic parameters.

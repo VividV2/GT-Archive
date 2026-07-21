@@ -1,2 +1,10 @@
-// Could not decompile Photon.Voice.Rotation
-// This type uses unsupported IL or has too many generic parameters.
+namespace Photon.Voice;
+
+public enum Rotation
+{
+	Undefined = -1,
+	Rotate0 = 0,
+	Rotate90 = 90,
+	Rotate180 = 180,
+	Rotate270 = 270
+}

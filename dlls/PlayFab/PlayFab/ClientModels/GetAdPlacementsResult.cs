@@ -1,2 +1,29 @@
-// Could not decompile PlayFab.ClientModels.GetAdPlacementsResult
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels
+{
+	[Serializable]
+	public class GetAdPlacementsResult : PlayFabResultCommon
+	{
+		public List<AdPlacementDetails> AdPlacements;
+	}
+}
+namespace PlayFab.ClientModels
+{
+	[Serializable]
+	public class CatalogItemContainerInfo : PlayFabBaseModel
+	{
+		public List<string> ItemContents;
+
+		public string KeyItemId;
+
+		public List<string> ResultTableContents;
+
+		public Dictionary<string, uint> VirtualCurrencyContents;
+	}
+}

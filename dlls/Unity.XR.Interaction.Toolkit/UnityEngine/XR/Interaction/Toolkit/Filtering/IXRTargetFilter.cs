@@ -1,6 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Locomotion;
-
-public interface IXRBodyTransformation
-{
-	void Apply(XRMovableBody body);
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Filtering.IXRTargetFilter
+// This type uses unsupported IL or has too many generic parameters.

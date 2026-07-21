@@ -1,8 +1,3 @@
-namespace System.Security.Principal;
-
-public enum PrincipalPolicy
+namespace System.Security.Policy
 {
-	UnauthenticatedPrincipal,
-	NoPrincipal,
-	WindowsPrincipal
 }

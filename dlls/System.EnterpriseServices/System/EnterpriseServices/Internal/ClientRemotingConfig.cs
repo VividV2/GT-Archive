@@ -1,2 +1,3 @@
-namespace System.EnterpriseServices.CompensatingResourceManager;
-
+namespace System.EnterpriseServices
+{
+}

@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class GetTitleEnabledForMultiplayerServersStatusResponse : PlayFabResultCommon
-{
-	public TitleMultiplayerServerEnabledStatus? Status;
-}
+// Could not decompile PlayFab.MultiplayerModels.GetTitleEnabledForMultiplayerServersStatusResponse
+// This type uses unsupported IL or has too many generic parameters.

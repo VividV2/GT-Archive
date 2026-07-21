@@ -1,9 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class UnlinkIOSDeviceIDResult : PlayFabResultCommon
-{
-}
+// Could not decompile PlayFab.ClientModels.UnlinkIOSDeviceIDResult
+// This type uses unsupported IL or has too many generic parameters.

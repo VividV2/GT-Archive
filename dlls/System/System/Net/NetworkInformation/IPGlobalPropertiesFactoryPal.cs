@@ -1,8 +1,6 @@
-namespace System.Net;
-
-internal struct SecPkgContext_NegotiationInfoW
+namespace System.Net.NetworkInformation
 {
-	internal IntPtr PackageInfo;
-
-	internal uint NegotiationState;
+}
+namespace System.Net.Configuration
+{
 }

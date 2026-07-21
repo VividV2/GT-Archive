@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.AuthenticationModels;
-
-[Serializable]
-public class EntityKey : PlayFabBaseModel
-{
-	public string Id;
-
-	public string Type;
-}
+// Could not decompile PlayFab.AuthenticationModels.EntityKey
+// This type uses unsupported IL or has too many generic parameters.

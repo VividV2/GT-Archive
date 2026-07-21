@@ -1,2 +1,9 @@
-namespace System.Threading.Tasks;
-
+namespace System.IO.Compression
+{
+}
+namespace System.IO.Compression
+{
+}
+namespace System.IO.Compression
+{
+}

@@ -1,14 +1,2 @@
-using System;
-
-namespace Unity.Cinemachine
-{
-	public sealed class SaveDuringPlayAttribute : Attribute
-	{
-	}
-}
-namespace Unity.Cinemachine
-{
-}
-namespace Unity.Cinemachine
-{
-}
+// Could not decompile Unity.Cinemachine.SaveDuringPlayAttribute
+// This type uses unsupported IL or has too many generic parameters.

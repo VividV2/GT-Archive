@@ -1,10 +1,28 @@
-namespace Newtonsoft.Json.Converters;
+using System;
+using System.Diagnostics;
+using System;
+using System.Diagnostics;
 
-internal interface IXmlElement : IXmlNode
+namespace Newtonsoft.Json.Serialization
 {
-	bool IsEmpty { get; }
+	public interface ITraceWriter
+	{
+		TraceLevel LevelFilter { get; }
 
-	void SetAttributeNode(IXmlNode attribute);
+		void Trace(TraceLevel level, string message, Exception? ex);
+	}
+}
+namespace Newtonsoft.Json.Converters
+{
+	internal interface IXmlElement : IXmlNode
+	{
+		bool IsEmpty { get; }
 
-	string? GetPrefixOfNamespace(string namespaceUri);
+		void SetAttributeNode(IXmlNode attribute);
+
+		string? GetPrefixOfNamespace(string namespaceUri);
+	}
+}
+namespace Newtonsoft.Json.Serialization
+{
 }

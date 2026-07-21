@@ -1,2 +1,16 @@
-// Could not decompile UnityEngine.VFX.VFXCameraBufferTypes
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.VFX
+{
+	[Flags]
+	public enum VFXCameraBufferTypes
+	{
+		None = 0,
+		Depth = 1,
+		Color = 2,
+		Normal = 4
+	}
+}
+namespace UnityEngine.VFX
+{
+}

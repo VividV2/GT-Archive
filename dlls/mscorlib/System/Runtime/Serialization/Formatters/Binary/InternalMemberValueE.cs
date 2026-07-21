@@ -1,10 +1,14 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
-
-internal enum InternalMemberValueE
+namespace System.Runtime.Serialization.Formatters.Binary
 {
-	Empty,
-	InlineValue,
-	Nested,
-	Reference,
-	Null
+	internal enum InternalMemberValueE
+	{
+		Empty,
+		InlineValue,
+		Nested,
+		Reference,
+		Null
+	}
+}
+namespace Mono
+{
 }

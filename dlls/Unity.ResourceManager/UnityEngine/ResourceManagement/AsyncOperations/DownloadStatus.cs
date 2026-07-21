@@ -1,26 +1,2 @@
-namespace UnityEngine.ResourceManagement.AsyncOperations;
+namespace UnityEngine.ResourceManagement.ResourceProviders;
 
-public struct DownloadStatus
-{
-	public long TotalBytes;
-
-	public long DownloadedBytes;
-
-	public bool IsDone;
-
-	public float Percent
-	{
-		get
-		{
-			if (TotalBytes <= 0)
-			{
-				if (!IsDone)
-				{
-					return 0f;
-				}
-				return 1f;
-			}
-			return (float)DownloadedBytes / (float)TotalBytes;
-		}
-	}
-}

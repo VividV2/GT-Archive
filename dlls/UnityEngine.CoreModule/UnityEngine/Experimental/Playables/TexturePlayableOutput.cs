@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.Experimental.Playables.TexturePlayableOutput
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine;
+
+public enum OperatingSystemFamily
+{
+	Other,
+	MacOSX,
+	Windows,
+	Linux
+}

@@ -6,6 +6,3 @@ public interface IExperimentalFeatures
 {
 	ITransitionAnimations animation { get; }
 }
-namespace UnityEngine.UIElements
-{
-}

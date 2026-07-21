@@ -1,15 +1,7 @@
-namespace System.Xml
+namespace System.Data.SqlTypes
 {
-	internal enum ElementState
-	{
-		None,
-		Defoliated,
-		WeakFoliation,
-		StrongFoliation,
-		Foliating,
-		Defoliating
-	}
 }
-namespace System.Xml
+namespace System.Data
 {
+	public delegate void FillErrorEventHandler(object sender, FillErrorEventArgs e);
 }

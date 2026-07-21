@@ -1,13 +1,10 @@
-namespace PlayFab.GroupsModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.GroupsModels;
+
+[Serializable]
+public class ListGroupBlocksRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.GroupsModels
-{
-	public enum OperationTypes
-	{
-		Created,
-		Updated,
-		Deleted,
-		None
-	}
+	public EntityKey Group;
 }

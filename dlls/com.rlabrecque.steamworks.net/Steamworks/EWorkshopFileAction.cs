@@ -1,11 +1,7 @@
-namespace Steamworks
+namespace Steamworks;
+
+public enum EWorkshopFileAction
 {
-}
-namespace Steamworks
-{
-	public enum EWorkshopFileAction
-	{
-		k_EWorkshopFileActionPlayed,
-		k_EWorkshopFileActionCompleted
-	}
+	k_EWorkshopFileActionPlayed,
+	k_EWorkshopFileActionCompleted
 }

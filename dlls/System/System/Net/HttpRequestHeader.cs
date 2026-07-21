@@ -1,11 +1,6 @@
-namespace System.Net.NetworkInformation;
-
+namespace System.Security.Cryptography
+{
+}
 namespace System.Net
-{
-}
-namespace System.CodeDom.Compiler
-{
-}
-namespace System.Configuration
 {
 }

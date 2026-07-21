@@ -1,10 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class CreateSharedGroupResult : PlayFabResultCommon
+namespace PlayFab.CloudScriptModels
 {
-	public string SharedGroupId;
+}
+namespace PlayFab.ClientModels
+{
 }

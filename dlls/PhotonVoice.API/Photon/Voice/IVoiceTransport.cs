@@ -1,16 +1,8 @@
 using System;
-using System;
+using System.Collections.Generic;
 
-namespace Photon.Voice
+namespace Photon.Voice.Unity
 {
-	public interface IDecoder : IDisposable
-	{
-		string Error { get; }
-
-		void Open(VoiceInfo info);
-
-		void Input(ref FrameBuffer buf);
-	}
 }
 namespace Photon.Voice
 {
@@ -18,7 +10,7 @@ namespace Photon.Voice
 	{
 		bool IsChannelJoined(int channelId);
 
-		void SendVoicesInfo(System.Collections.Generic.IEnumerable<LocalVoice> voices, int channelId, int targetPlayerId);
+		void SendVoicesInfo(IEnumerable<LocalVoice> voices, int channelId, int targetPlayerId);
 
 		void SendVoiceRemove(LocalVoice voice, int channelId, int targetPlayerId);
 
@@ -28,4 +20,10 @@ namespace Photon.Voice
 
 		string PlayerIdStr(int playerId);
 	}
+}
+namespace Photon.Voice
+{
+}
+namespace Photon.Voice.Unity
+{
 }

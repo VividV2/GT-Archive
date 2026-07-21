@@ -1,6 +1,6 @@
 namespace System.Security.Cryptography.Xml
 {
 }
-namespace System.Security.Cryptography.Pkcs
+namespace System.Security.Cryptography.Xml
 {
 }

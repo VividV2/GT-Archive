@@ -1,11 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetPlayerStatisticVersionsResult : PlayFabResultCommon
-{
-	public List<PlayerStatisticVersion> StatisticVersions;
-}
+// Could not decompile PlayFab.ClientModels.GetPlayerStatisticVersionsResult
+// This type uses unsupported IL or has too many generic parameters.

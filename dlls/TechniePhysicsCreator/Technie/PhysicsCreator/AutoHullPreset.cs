@@ -1,19 +1,14 @@
-using UnityEngine;
-using UnityEngine;
-
 namespace Technie.PhysicsCreator
 {
-	public interface ICreatorComponent
-	{
-		GameObject GetGameObject();
-
-		bool HasEditorData();
-
-		IEditorData GetEditorData();
-	}
 }
 namespace Technie.PhysicsCreator
 {
+	public enum VertexClassification
+	{
+		Front = 1,
+		Back = 2,
+		OnPlane = 4
+	}
 }
 namespace Technie.PhysicsCreator
 {

@@ -1,2 +1,15 @@
-// Could not decompile Steamworks.InputAnalogActionData_t
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct InputAnalogActionData_t
+{
+	public EInputSourceMode eMode;
+
+	public float x;
+
+	public float y;
+
+	public byte bActive;
+}

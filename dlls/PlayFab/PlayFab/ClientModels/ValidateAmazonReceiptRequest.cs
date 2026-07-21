@@ -1,18 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class ValidateAmazonReceiptRequest : PlayFabRequestCommon
-{
-	public string CatalogVersion;
-
-	public string CurrencyCode;
-
-	public int PurchasePrice;
-
-	public string ReceiptId;
-
-	public string UserId;
-}
+// Could not decompile PlayFab.ClientModels.ValidateAmazonReceiptRequest
+// This type uses unsupported IL or has too many generic parameters.

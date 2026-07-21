@@ -1,9 +1,2 @@
-namespace System.Xml.Schema;
-
-internal class Datatype_timeTimeZone : Datatype_dateTimeBase
-{
-	internal Datatype_timeTimeZone()
-		: base(XsdDateTimeFlags.Time)
-	{
-	}
-}
+// Could not decompile System.Xml.Schema.Datatype_timeTimeZone
+// This type uses unsupported IL or has too many generic parameters.

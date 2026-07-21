@@ -1,8 +1,2 @@
-using System;
-
-namespace Unity.Properties;
-
-[AttributeUsage(AttributeTargets.Field)]
-public class DontCreatePropertyAttribute : Attribute
-{
-}
+// Could not decompile Unity.Properties.DontCreatePropertyAttribute
+// This type uses unsupported IL or has too many generic parameters.

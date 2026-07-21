@@ -1,11 +1,9 @@
-namespace UnityEngine.XR.Interaction.Toolkit.UI.BodyUI;
+using UnityEngine.Scripting.APIUpdating;
 
-public enum FollowReferenceAxis
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
+
+[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
+public interface ITeleportationVolumeAnchorFilter
 {
-	Right,
-	Up,
-	Forward,
-	Left,
-	Down,
-	Back
+	int GetDestinationAnchorIndex(TeleportationMultiAnchorVolume teleportationVolume);
 }

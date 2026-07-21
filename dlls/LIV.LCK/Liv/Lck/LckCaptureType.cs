@@ -1,11 +1,7 @@
-namespace Liv.Lck
+namespace Liv.Lck;
+
+public enum LckCaptureType
 {
-	public enum LckCaptureType
-	{
-		Recording,
-		Streaming
-	}
-}
-namespace Liv.Lck
-{
+	Recording,
+	Streaming
 }

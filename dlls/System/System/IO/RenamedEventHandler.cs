@@ -4,3 +4,6 @@ namespace System.IO;
 /// <param name="sender">The source of the event.</param>
 /// <param name="e">The <see cref="T:System.IO.RenamedEventArgs" /> that contains the event data.</param>
 public delegate void RenamedEventHandler(object sender, RenamedEventArgs e);
+namespace System.Net.Http
+{
+}

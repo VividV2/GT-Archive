@@ -1,8 +1,15 @@
-namespace UnityEngine.NVIDIA;
-
-internal enum PluginEvent
+namespace UnityEngine.NVIDIA
 {
-	DestroyFeature,
-	DLSSExecute,
-	DLSSInit
+	internal enum PluginEvent
+	{
+		DestroyFeature,
+		DLSSExecute,
+		DLSSInit
+	}
+}
+namespace UnityEngine.NVIDIA
+{
+}
+namespace UnityEngine.NVIDIA
+{
 }

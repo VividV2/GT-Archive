@@ -1,11 +1,2 @@
-namespace Fusion.Sockets;
-
-public enum NetDisconnectReason : byte
-{
-	Unknown = 1,
-	Timeout,
-	Requested,
-	SequenceOutOfBounds,
-	SendWindowFull,
-	ByRemote
-}
+// Could not decompile Fusion.Sockets.NetBitBufferBlock
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class LinkNintendoSwitchDeviceIdRequest : PlayFabRequestCommon
-{
-	public bool? ForceLink;
-
-	public string NintendoSwitchDeviceId;
-}
+// Could not decompile PlayFab.ClientModels.LinkNintendoSwitchDeviceIdRequest
+// This type uses unsupported IL or has too many generic parameters.

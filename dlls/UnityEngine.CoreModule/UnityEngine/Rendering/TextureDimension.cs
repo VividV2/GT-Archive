@@ -1,5 +1,13 @@
 namespace UnityEngine.Rendering
 {
+	public enum IndexFormat
+	{
+		UInt16,
+		UInt32
+	}
+}
+namespace UnityEngine.Rendering
+{
 	public enum TextureDimension
 	{
 		Unknown = -1,
@@ -11,7 +19,4 @@ namespace UnityEngine.Rendering
 		Tex2DArray,
 		CubeArray
 	}
-}
-namespace UnityEngine.Rendering
-{
 }

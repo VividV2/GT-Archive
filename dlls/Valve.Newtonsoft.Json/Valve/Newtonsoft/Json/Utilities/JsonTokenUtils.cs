@@ -1,9 +1,2 @@
-using System;
-using System;
-
-namespace Valve.Newtonsoft.Json.Serialization;
-
-public interface IContractResolver
-{
-	JsonContract ResolveContract(Type type);
-}
+// Could not decompile Valve.Newtonsoft.Json.Utilities.JsonTokenUtils
+// This type uses unsupported IL or has too many generic parameters.

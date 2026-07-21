@@ -1,20 +1,22 @@
 namespace System.Transactions;
 
-/// <summary>Provides additional options for creating a transaction scope.</summary>
-/// <summary>Provides additional options for creating a transaction scope.</summary>
-/// <summary>Provides additional options for creating a transaction scope.</summary>
-public enum TransactionScopeOption
+/// <summary>Provides data for the following transaction events: <see cref="E:System.Transactions.TransactionManager.DistributedTransactionStarted" />, <see cref="E:System.Transactions.Transaction.TransactionCompleted" />.</summary>
+public class TransactionEventArgs : EventArgs
 {
-	/// <summary>A transaction is required by the scope. It uses an ambient transaction if one already exists. Otherwise, it creates a new transaction before entering the scope. This is the default value.</summary>
-	/// <summary>A transaction is required by the scope. It uses an ambient transaction if one already exists. Otherwise, it creates a new transaction before entering the scope. This is the default value.</summary>
-	/// <summary>A transaction is required by the scope. It uses an ambient transaction if one already exists. Otherwise, it creates a new transaction before entering the scope. This is the default value.</summary>
-	Required,
-	/// <summary>A new transaction is always created for the scope.</summary>
-	/// <summary>A new transaction is always created for the scope.</summary>
-	/// <summary>A new transaction is always created for the scope.</summary>
-	RequiresNew,
-	/// <summary>The ambient transaction context is suppressed when creating the scope. All operations within the scope are done without an ambient transaction context.</summary>
-	/// <summary>The ambient transaction context is suppressed when creating the scope. All operations within the scope are done without an ambient transaction context.</summary>
-	/// <summary>The ambient transaction context is suppressed when creating the scope. All operations within the scope are done without an ambient transaction context.</summary>
-	Suppress
+	private Transaction transaction;
+
+	/// <summary>Gets the transaction for which event status is provided.</summary>
+	/// <returns>A <see cref="T:System.Transactions.Transaction" /> for which event status is provided.</returns>
+	public Transaction Transaction => transaction;
+
+	/// <summary>Initializes a new instance of the <see cref="T:System.Transactions.TransactionEventArgs" /> class.</summary>
+	public TransactionEventArgs()
+	{
+	}
+
+	internal TransactionEventArgs(Transaction transaction)
+		: this()
+	{
+		this.transaction = transaction;
+	}
 }

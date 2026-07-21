@@ -1,10 +1,9 @@
-namespace System;
-
-[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-internal class MonoExtensionAttribute : System.MonoTODOAttribute
+namespace System.Transactions
 {
-	public MonoExtensionAttribute(string comment)
-		: base(comment)
+	[Flags]
+	public enum EnlistmentOptions
 	{
+		None = 0,
+		EnlistDuringPrepareRequired = 1
 	}
 }

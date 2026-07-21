@@ -1,8 +1,12 @@
+using System;
+using PlayFab.SharedModels;
+
 namespace PlayFab.CloudScriptModels;
 
-public enum CloudScriptRevisionOption
+[Serializable]
+public class NameIdentifier : PlayFabBaseModel
 {
-	Live,
-	Latest,
-	Specific
+	public string Id;
+
+	public string Name;
 }

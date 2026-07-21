@@ -1,7 +1,10 @@
-namespace System.ComponentModel
+namespace System.ComponentModel.Design;
+
+public interface IDictionaryService
 {
-	public interface IExtenderProvider
-	{
-		bool CanExtend(object extendee);
-	}
+	object GetKey(object value);
+
+	object GetValue(object key);
+
+	void SetValue(object key, object value);
 }

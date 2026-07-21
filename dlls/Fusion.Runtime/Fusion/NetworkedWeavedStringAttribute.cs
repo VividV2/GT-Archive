@@ -1,2 +1,12 @@
-// Could not decompile Fusion.NetworkedWeavedStringAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+internal enum NATPunchStage
+{
+	None,
+	Local,
+	Public,
+	Relay
+}
+namespace Fusion
+{
+}

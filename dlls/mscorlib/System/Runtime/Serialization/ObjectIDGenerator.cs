@@ -1,2 +1,2 @@
-namespace System.Runtime.Remoting.Messaging;
-
+// Could not decompile System.Runtime.Serialization.ObjectIDGenerator
+// This type uses unsupported IL or has too many generic parameters.

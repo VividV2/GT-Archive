@@ -1,8 +1,18 @@
-namespace Fusion.Protocol;
-
-internal enum PluginGameMode : byte
+namespace Fusion.Protocol
 {
-	Invalid,
-	ClientServer,
-	Shared
+	internal enum PluginGameMode : byte
+	{
+		Invalid,
+		ClientServer,
+		Shared
+	}
+}
+namespace Fusion.Protocol
+{
+	internal enum SnapshotType : byte
+	{
+		Invalid,
+		Data,
+		Confirmation
+	}
 }

@@ -1,3 +1,2 @@
-namespace PlayFab.InsightsModels
-{
-}
+namespace PlayFab.ProfilesModels;
+

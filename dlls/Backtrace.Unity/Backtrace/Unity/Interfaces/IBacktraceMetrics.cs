@@ -1,25 +1,21 @@
 using System.Collections.Generic;
 using Backtrace.Unity.Model.Attributes;
 
-namespace Backtrace.Unity.Interfaces
+namespace Backtrace.Unity.Interfaces;
+
+public interface IBacktraceMetrics : IScopeAttributeProvider
 {
-	public interface IBacktraceMetrics : IScopeAttributeProvider
-	{
-		uint MaximumSummedEvents { get; set; }
+	uint MaximumSummedEvents { get; set; }
 
-		uint MaximumUniqueEvents { get; set; }
+	uint MaximumUniqueEvents { get; set; }
 
-		string UniqueEventsSubmissionUrl { get; set; }
+	string UniqueEventsSubmissionUrl { get; set; }
 
-		string SummedEventsSubmissionUrl { get; set; }
+	string SummedEventsSubmissionUrl { get; set; }
 
-		void Send();
+	void Send();
 
-		bool AddSummedEvent(string metricsGroupName);
+	bool AddSummedEvent(string metricsGroupName);
 
-		bool AddSummedEvent(string metricsGroupName, IDictionary<string, string> attributes);
-	}
-}
-namespace Backtrace.Unity.Extensions
-{
+	bool AddSummedEvent(string metricsGroupName, IDictionary<string, string> attributes);
 }

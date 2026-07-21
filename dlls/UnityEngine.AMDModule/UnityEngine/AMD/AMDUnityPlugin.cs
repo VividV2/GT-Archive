@@ -1,14 +1,21 @@
 using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
 
-namespace UnityEngine.AMD;
-
-[NativeHeader("Modules/AMD/AMDPlugins.h")]
-public static class AMDUnityPlugin
+namespace UnityEngine.AMD
 {
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	public static extern bool Load();
+	[NativeHeader("Modules/AMD/AMDPlugins.h")]
+	public static class AMDUnityPlugin
+	{
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		public static extern bool Load();
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	public static extern bool IsLoaded();
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		public static extern bool IsLoaded();
+	}
+}
+namespace UnityEngine.AMD
+{
+}
+namespace UnityEngine.AMD
+{
 }

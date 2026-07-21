@@ -1,16 +1,20 @@
-namespace Valve.VR;
-
-public struct DistortionCoordinates_t
+namespace Valve.VR
 {
-	public float rfRed0;
+	public struct DistortionCoordinates_t
+	{
+		public float rfRed0;
 
-	public float rfRed1;
+		public float rfRed1;
 
-	public float rfGreen0;
+		public float rfGreen0;
 
-	public float rfGreen1;
+		public float rfGreen1;
 
-	public float rfBlue0;
+		public float rfBlue0;
 
-	public float rfBlue1;
+		public float rfBlue1;
+	}
+}
+namespace Valve.VR
+{
 }

@@ -1,16 +1,15 @@
-namespace System.Security.Authentication;
+namespace System;
 
-[Flags]
-public enum SslProtocols
+/// <summary>Defines the kinds of <see cref="T:System.Uri" />s for the <see cref="M:System.Uri.IsWellFormedUriString(System.String,System.UriKind)" /> and several <see cref="Overload:System.Uri.#ctor" /> methods.</summary>
+public enum UriKind
 {
-	None = 0,
-	Ssl2 = 0xC,
-	Ssl3 = 0x30,
-	Tls = 0xC0,
-	[System.MonoTODO("unsupported")]
-	Tls11 = 0x300,
-	[System.MonoTODO("unsupported")]
-	Tls12 = 0xC00,
-	Tls13 = 0x3000,
-	Default = 0xF0
+	/// <summary>The kind of the Uri is indeterminate.</summary>
+	RelativeOrAbsolute,
+	/// <summary>The Uri is an absolute Uri.</summary>
+	Absolute,
+	/// <summary>The Uri is a relative Uri.</summary>
+	Relative
+}
+namespace Mono.Unity
+{
 }

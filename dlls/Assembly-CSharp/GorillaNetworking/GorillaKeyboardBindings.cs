@@ -1,11 +1,3 @@
-public enum SessionStatus
-{
-	PASS,
-	PROHIBITED,
-	CHALLENGE,
-	CHALLENGE_SESSION_UPGRADE,
-	PENDING_AGE_APPEAL
-}
 namespace GorillaNetworking;
 
 public enum GorillaKeyboardBindings

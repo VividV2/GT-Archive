@@ -1,24 +1,2 @@
-using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Internal;
-using UnityEngine.Scripting;
-
-namespace UnityEditor.Analytics;
-
-[Serializable]
-[StructLayout(LayoutKind.Sequential)]
-[ExcludeFromDocs]
-[RequiredByNativeCode(GenerateProxy = true)]
-public class PackageManagerStartServerPackageAnalytic : PackageManagerBaseAnalytic
-{
-	public PackageManagerStartServerPackageAnalytic()
-		: base("startPackageManagerServer")
-	{
-	}
-
-	[RequiredByNativeCode]
-	internal static PackageManagerStartServerPackageAnalytic CreatePackageManagerStartServerPackageAnalytic()
-	{
-		return new PackageManagerStartServerPackageAnalytic();
-	}
-}
+// Could not decompile UnityEditor.Analytics.PackageManagerStartServerPackageAnalytic
+// This type uses unsupported IL or has too many generic parameters.

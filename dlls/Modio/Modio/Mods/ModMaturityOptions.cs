@@ -11,6 +11,3 @@ public enum ModMaturityOptions
 	Violence = 4,
 	Explicit = 8
 }
-namespace Modio.Mods
-{
-}

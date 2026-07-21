@@ -1,8 +1,2 @@
-namespace UnityEngine;
+namespace Unity.Collections.LowLevel.Unsafe;
 
-public enum StackTraceLogType
-{
-	None,
-	ScriptOnly,
-	Full
-}

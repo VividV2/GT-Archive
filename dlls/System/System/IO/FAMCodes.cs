@@ -1,18 +1,6 @@
 namespace System.ComponentModel
 {
 }
-namespace System.IO
+namespace System.Collections.Generic
 {
-	internal enum FAMCodes
-	{
-		Changed = 1,
-		Deleted,
-		StartExecuting,
-		StopExecuting,
-		Created,
-		Moved,
-		Acknowledge,
-		Exists,
-		EndExist
-	}
 }

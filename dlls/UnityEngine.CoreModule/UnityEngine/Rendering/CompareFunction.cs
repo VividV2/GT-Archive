@@ -1,17 +1,5 @@
-using UnityEngine.Bindings;
+namespace UnityEngine;
 
-namespace UnityEngine.Rendering;
-
-[NativeHeader("Runtime/GfxDevice/GfxDeviceTypes.h")]
-public enum CompareFunction
+namespace UnityEngine.Rendering
 {
-	Disabled,
-	Never,
-	Less,
-	Equal,
-	LessEqual,
-	Greater,
-	NotEqual,
-	GreaterEqual,
-	Always
 }

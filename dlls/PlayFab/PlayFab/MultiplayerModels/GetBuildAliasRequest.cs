@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class GetBuildAliasRequest : PlayFabRequestCommon
-{
-	public string AliasId;
-}
+// Could not decompile PlayFab.MultiplayerModels.GetBuildAliasRequest
+// This type uses unsupported IL or has too many generic parameters.

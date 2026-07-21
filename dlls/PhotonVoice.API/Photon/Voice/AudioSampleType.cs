@@ -1,2 +1,8 @@
-// Could not decompile Photon.Voice.AudioSampleType
-// This type uses unsupported IL or has too many generic parameters.
+namespace Photon.Voice;
+
+public enum AudioSampleType
+{
+	Source,
+	Short,
+	Float
+}

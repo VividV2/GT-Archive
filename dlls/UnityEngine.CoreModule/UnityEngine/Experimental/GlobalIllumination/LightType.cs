@@ -1,12 +1,16 @@
-namespace UnityEngine.Experimental.GlobalIllumination;
-
-public enum LightType : byte
+namespace UnityEngine.Experimental.GlobalIllumination
 {
-	Directional,
-	Point,
-	Spot,
-	Rectangle,
-	Disc,
-	SpotPyramidShape,
-	SpotBoxShape
+	public enum LightType : byte
+	{
+		Directional,
+		Point,
+		Spot,
+		Rectangle,
+		Disc,
+		SpotPyramidShape,
+		SpotBoxShape
+	}
+}
+namespace UnityEngine
+{
 }

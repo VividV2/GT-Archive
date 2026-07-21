@@ -1,11 +1,10 @@
-namespace DigitalOpus.MB.Core;
-
-public enum MB2_PackingAlgorithmEnum
+namespace DigitalOpus.MB.Core
 {
-	UnitysPackTextures,
-	MeshBakerTexturePacker,
-	MeshBakerTexturePacker_Fast,
-	MeshBakerTexturePacker_Horizontal,
-	MeshBakerTexturePacker_Vertical,
-	MeshBakerTexturePaker_Fast_V2_Beta
+	public delegate void ProgressUpdateDelegate(string msg, float progress);
+}
+namespace DigitalOpus.MB.Core
+{
+}
+namespace DigitalOpus.MB.Core
+{
 }

@@ -1,2 +1,9 @@
-// Could not decompile Oculus.Platform.BuildingBlocks.EntitlementCheck
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System;
+
+namespace Oculus.Platform.Models;
+
+public class SendInvitesResult(IntPtr o)
+{
+	public readonly ApplicationInviteList Invites = new ApplicationInviteList(CAPI.ovr_SendInvitesResult_GetInvites(o));
+}

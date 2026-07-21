@@ -1,8 +1,3 @@
-namespace System.Drawing;
-
-internal struct CGPoint32
+namespace System.Drawing.Internal
 {
-	public float x;
-
-	public float y;
 }

@@ -1,8 +1,2 @@
-namespace UnityEngine.Android;
-
-public enum AndroidKeyboardHidden
-{
-	Undefined,
-	No,
-	Yes
-}
+// Could not decompile UnityEngine.Android.AndroidKeyboardHidden
+// This type uses unsupported IL or has too many generic parameters.

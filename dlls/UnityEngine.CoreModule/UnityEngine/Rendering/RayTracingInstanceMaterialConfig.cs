@@ -2,16 +2,6 @@ using UnityEngine.Scripting.APIUpdating;
 
 namespace UnityEngine.Rendering
 {
-	public enum ReflectionProbeSortingCriteria
-	{
-		None,
-		Importance,
-		Size,
-		ImportanceThenSize
-	}
-}
-namespace UnityEngine.Rendering
-{
 	[MovedFrom("UnityEngine.Experimental.Rendering")]
 	public struct RayTracingInstanceMaterialConfig
 	{
@@ -23,4 +13,10 @@ namespace UnityEngine.Rendering
 
 		public string[] optionalShaderKeywords;
 	}
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine
+{
 }

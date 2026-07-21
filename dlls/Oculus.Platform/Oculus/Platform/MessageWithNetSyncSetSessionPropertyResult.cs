@@ -1,2 +1,12 @@
-// Could not decompile Oculus.Platform.MessageWithNetSyncSetSessionPropertyResult
-// This type uses unsupported IL or has too many generic parameters.
+namespace Oculus.Platform.Models;
+
+public class BlockedUser
+{
+	public readonly ulong Id;
+
+	public BlockedUser(IntPtr o)
+	{
+		base..ctor();
+		Id = CAPI.ovr_BlockedUser_GetId(o);
+	}
+}

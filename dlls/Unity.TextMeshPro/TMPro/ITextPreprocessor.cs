@@ -1,10 +1,6 @@
-namespace TMPro
+namespace TMPro;
+
+public interface ITextPreprocessor
 {
-	public interface ITextPreprocessor
-	{
-		string PreprocessText(string text);
-	}
-}
-namespace TMPro
-{
+	string PreprocessText(string text);
 }

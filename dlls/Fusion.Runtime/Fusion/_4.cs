@@ -1,7 +1,15 @@
-#define DEBUG
 using System;
 using System.Runtime.InteropServices;
 
+namespace Fusion;
+
+internal enum NATPunchStage
+{
+	None,
+	Local,
+	Public,
+	Relay
+}
 namespace Fusion
 {
 	[Serializable]
@@ -30,7 +38,4 @@ namespace Fusion
 		[NonSerialized]
 		private uint _data3;
 	}
-}
-namespace Fusion
-{
 }

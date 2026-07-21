@@ -1,12 +1,2 @@
-namespace Photon.Voice.IOS;
-
-public enum AudioSessionCategory
-{
-	Ambient,
-	SoloAmbient,
-	Playback,
-	Record,
-	PlayAndRecord,
-	AudioProcessing,
-	MultiRoute
-}
+// Could not decompile Photon.Voice.LocalVoiceFramed`1
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,56 +1,21 @@
-using System.Runtime.CompilerServices;
-using UnityEngine.Bindings;
+namespace UnityEngine;
 
-namespace UnityEngineInternal;
-
-[NativeHeader("Runtime/Export/GI/GIDebugVisualisation.bindings.h")]
-public static class GIDebugVisualisation
+public struct VulkanDeviceFilterData
 {
-	public static extern bool cycleMode
-	{
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[FreeFunction]
-		get;
-	}
+	public string vendorName;
 
-	public static extern bool pauseCycleMode
-	{
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[FreeFunction]
-		get;
-	}
+	public string deviceName;
 
-	public static extern GITextureType texType
-	{
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[FreeFunction]
-		get;
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[FreeFunction]
-		set;
-	}
+	public string brandName;
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[FreeFunction]
-	public static extern void ResetRuntimeInputTextures();
+	public string productName;
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[FreeFunction]
-	public static extern void PlayCycleMode();
+	public string androidOsVersionString;
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[FreeFunction]
-	public static extern void PauseCycleMode();
+	public string vulkanApiVersionString;
 
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[FreeFunction]
-	public static extern void StopCycleMode();
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[FreeFunction]
-	public static extern void CycleSkipSystems(int skip);
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[FreeFunction]
-	public static extern void CycleSkipInstances(int skip);
+	public string driverVersionString;
+}
+namespace UnityEngine.Rendering
+{
 }

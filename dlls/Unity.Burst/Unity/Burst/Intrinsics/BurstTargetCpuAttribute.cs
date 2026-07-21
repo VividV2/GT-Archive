@@ -1,2 +1,15 @@
-// Could not decompile Unity.Burst.Intrinsics.BurstTargetCpuAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.Burst.Intrinsics;
+
+[AttributeUsage(AttributeTargets.Method, Inherited = false)]
+[BurstRuntime.Preserve]
+internal sealed class BurstTargetCpuAttribute : Attribute
+{
+	public readonly BurstTargetCpu TargetCpu;
+
+	public BurstTargetCpuAttribute(BurstTargetCpu TargetCpu)
+	{
+		this.TargetCpu = TargetCpu;
+	}
+}

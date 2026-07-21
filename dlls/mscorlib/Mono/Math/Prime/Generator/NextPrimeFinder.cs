@@ -1,17 +1,9 @@
-using System;
+namespace System.Text;
 
-namespace Mono.Math.Prime.Generator;
-
-internal class NextPrimeFinder : SequentialSearchPrimeGeneratorBase
+public enum NormalizationForm
 {
-	protected override BigInteger GenerateSearchBase(int bits, object Context)
-	{
-		if (Context == null)
-		{
-			throw new ArgumentNullException("Context");
-		}
-		BigInteger bigInteger = new BigInteger((BigInteger)Context);
-		bigInteger.SetBit(0u);
-		return bigInteger;
-	}
+	FormC = 1,
+	FormD = 2,
+	FormKC = 5,
+	FormKD = 6
 }

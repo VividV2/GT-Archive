@@ -1,2 +1,6 @@
-namespace System.Runtime.InteropServices;
-
+namespace Microsoft.Win32.SafeHandles
+{
+}
+namespace System.Text
+{
+}

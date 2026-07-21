@@ -1,13 +1,17 @@
 using System.ComponentModel;
 
-namespace Oculus.Platform;
-
-public enum AbuseReportType
+namespace Oculus.Platform
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("OBJECT")]
-	Object,
-	[Description("USER")]
-	User
+}
+namespace Oculus.Platform
+{
+	public enum AbuseReportType
+	{
+		[Description("UNKNOWN")]
+		Unknown,
+		[Description("OBJECT")]
+		Object,
+		[Description("USER")]
+		User
+	}
 }

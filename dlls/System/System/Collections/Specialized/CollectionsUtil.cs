@@ -1,2 +1,9 @@
-// Could not decompile System.Collections.Specialized.CollectionsUtil
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net;
+
+internal enum HttpBehaviour : byte
+{
+	Unknown,
+	HTTP10,
+	HTTP11PartiallyCompliant,
+	HTTP11
+}

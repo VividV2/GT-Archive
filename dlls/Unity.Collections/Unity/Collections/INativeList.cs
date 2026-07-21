@@ -1,16 +1,12 @@
-namespace Unity.Collections
+namespace Unity.Collections;
+
+public interface INativeList<T> : IIndexable<T> where T : unmanaged
 {
-	public interface INativeList<T> : IIndexable<T> where T : unmanaged
-	{
-		int Capacity { get; set; }
+	int Capacity { get; set; }
 
-		bool IsEmpty { get; }
+	bool IsEmpty { get; }
 
-		T this[int index] { get; set; }
+	T this[int index] { get; set; }
 
-		void Clear();
-	}
-}
-namespace Unity.Collections
-{
+	void Clear();
 }

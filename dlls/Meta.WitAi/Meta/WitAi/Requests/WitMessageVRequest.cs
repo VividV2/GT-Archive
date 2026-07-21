@@ -1,2 +1,2 @@
-namespace Meta.WitAi.Utilities;
-
+// Could not decompile Meta.WitAi.Requests.WitMessageVRequest
+// This type uses unsupported IL or has too many generic parameters.

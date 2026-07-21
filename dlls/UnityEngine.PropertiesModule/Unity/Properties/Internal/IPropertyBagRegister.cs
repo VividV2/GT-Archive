@@ -1,6 +1,3 @@
-namespace Unity.Properties.Internal;
-
-internal interface IPropertyBagRegister
+namespace Unity.Properties
 {
-	void Register();
 }

@@ -1,14 +1,2 @@
-namespace Pathfinding.Poly2Tri;
-
-public class DTSweepBasin
-{
-	public AdvancingFrontNode leftNode;
-
-	public AdvancingFrontNode bottomNode;
-
-	public AdvancingFrontNode rightNode;
-
-	public double width;
-
-	public bool leftHighest;
-}
+// Could not decompile Pathfinding.Poly2Tri.DTSweepBasin
+// This type uses unsupported IL or has too many generic parameters.

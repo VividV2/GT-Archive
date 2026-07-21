@@ -28,3 +28,6 @@ public enum CameraEvent
 	BeforeHaloAndLensFlares,
 	AfterHaloAndLensFlares
 }
+namespace JetBrains.Annotations
+{
+}

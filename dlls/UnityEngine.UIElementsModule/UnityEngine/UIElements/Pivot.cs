@@ -1,22 +1,14 @@
 namespace UnityEngine.UIElements;
 
-public enum LineCap
+public enum Pivot
 {
-	Butt,
-	Round
-}
-namespace UnityEngine.UIElements
-{
-	public enum Pivot
-	{
-		Center,
-		TopLeft,
-		TopCenter,
-		TopRight,
-		LeftCenter,
-		RightCenter,
-		BottomLeft,
-		BottomCenter,
-		BottomRight
-	}
+	Center,
+	TopLeft,
+	TopCenter,
+	TopRight,
+	LeftCenter,
+	RightCenter,
+	BottomLeft,
+	BottomCenter,
+	BottomRight
 }

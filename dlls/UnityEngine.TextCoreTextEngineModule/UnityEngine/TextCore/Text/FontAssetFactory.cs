@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.TextCore.Text.FontAssetFactory
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.TextCore.Text
+{
+}
+namespace UnityEngine.TextCore.Text
+{
+}

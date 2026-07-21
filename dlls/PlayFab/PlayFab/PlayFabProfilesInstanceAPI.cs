@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class UserFacebookInstantGamesIdInfo : PlayFabBaseModel
-{
-	public string FacebookInstantGamesId;
-}
+// Could not decompile PlayFab.PlayFabProfilesInstanceAPI
+// This type uses unsupported IL or has too many generic parameters.

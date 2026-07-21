@@ -1,25 +1,16 @@
-using System;
-using System;
-
-namespace UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives
+namespace UnityEngine.XR.Interaction.Toolkit.Filtering
 {
-	[Obsolete("The Affordance System namespace and all associated classes have been deprecated. The existing affordance system will be moved, replaced and updated with a new interaction feedback system in a future version of XRI.")]
-	public enum ColorBlendMode : byte
-	{
-		Solid,
-		Add,
-		Mix
-	}
 }
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation
+namespace UnityEngine.XR.Interaction.Toolkit.Filtering
 {
-	[Flags]
-	public enum TargetedDevices
+	public enum PokeAxis
 	{
-		None = 0,
-		FPS = 1,
-		LeftDevice = 2,
-		RightDevice = 4,
-		HMD = 8
+		None,
+		X,
+		Y,
+		Z,
+		NegativeX,
+		NegativeY,
+		NegativeZ
 	}
 }

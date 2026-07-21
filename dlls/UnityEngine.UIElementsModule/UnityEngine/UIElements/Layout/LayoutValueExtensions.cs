@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.UIElements.Layout.LayoutValueExtensions
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements.Layout;
+
+internal enum LayoutDirection
+{
+	Inherit,
+	LTR,
+	RTL
+}
+namespace UnityEngine.UIElements.StyleSheets
+{
+}

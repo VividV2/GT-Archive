@@ -1,14 +1,5 @@
 namespace Valve.VR
 {
-	public struct VRVulkanTextureArrayData_t
-	{
-		public uint m_unArrayIndex;
-
-		public uint m_unArraySize;
-	}
-}
-namespace Valve.VR
-{
 	public struct VROverlayView_t
 	{
 		public ulong overlayHandle;
@@ -20,19 +11,17 @@ namespace Valve.VR
 }
 namespace Valve.VR
 {
-	public struct InputDigitalActionData_t
+	public enum ETrackedControllerRole
 	{
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bActive;
-
-		public ulong activeOrigin;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bState;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bChanged;
-
-		public float fUpdateTime;
+		Invalid = 0,
+		LeftHand = 1,
+		RightHand = 2,
+		OptOut = 3,
+		Treadmill = 4,
+		Stylus = 5,
+		Max = 5
 	}
+}
+namespace Valve.VR
+{
 }

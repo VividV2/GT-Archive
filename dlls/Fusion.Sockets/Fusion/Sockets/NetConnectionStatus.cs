@@ -1,10 +1,2 @@
-namespace Fusion.Sockets;
+namespace Fusion.Sockets.Stun;
 
-public enum NetConnectionStatus
-{
-	Created = 1,
-	Connecting,
-	Connected,
-	Disconnected,
-	Shutdown
-}

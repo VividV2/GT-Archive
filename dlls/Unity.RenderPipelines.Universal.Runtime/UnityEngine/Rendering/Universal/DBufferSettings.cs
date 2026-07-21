@@ -1,9 +1,2 @@
-using System;
-
-namespace UnityEngine.Rendering.Universal;
-
-[Serializable]
-internal class DBufferSettings
-{
-	public DecalSurfaceData surfaceData = DecalSurfaceData.AlbedoNormalMAOS;
-}
+// Could not decompile UnityEngine.Rendering.Universal.DBufferSettings
+// This type uses unsupported IL or has too many generic parameters.

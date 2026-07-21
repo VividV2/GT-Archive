@@ -1,2 +1,16 @@
-// Could not decompile PlayFab.ClientModels.PaymentOption
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class PaymentOption : PlayFabBaseModel
+{
+	public string Currency;
+
+	public uint Price;
+
+	public string ProviderName;
+
+	public uint StoreCredit;
+}

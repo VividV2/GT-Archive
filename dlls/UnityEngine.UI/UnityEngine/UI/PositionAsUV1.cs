@@ -1,3 +1,2 @@
-namespace UnityEngine.EventSystems
-{
-}
+namespace UnityEngine.EventSystems;
+

@@ -1,2 +1,2 @@
-namespace Unity.Loading;
-
+// Could not decompile Unity.Loading.ContentFile
+// This type uses unsupported IL or has too many generic parameters.

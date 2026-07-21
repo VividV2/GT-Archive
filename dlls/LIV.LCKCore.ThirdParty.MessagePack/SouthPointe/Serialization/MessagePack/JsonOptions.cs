@@ -1,2 +1,10 @@
-// Could not decompile SouthPointe.Serialization.MessagePack.JsonOptions
-// This type uses unsupported IL or has too many generic parameters.
+namespace SouthPointe.Serialization.MessagePack;
+
+public class JsonOptions
+{
+	public bool PrettyPrint;
+
+	public string IndentationString = "    ";
+
+	public string ValueSeparator = "\n";
+}

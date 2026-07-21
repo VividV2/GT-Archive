@@ -1,2 +1,9 @@
-// Could not decompile Unity.Scripting.LifecycleManagement.IgnoreForUAL0015Attribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.Scripting.LifecycleManagement
+{
+	internal abstract class LifecycleAttributeBase : RequiredMemberAttribute
+	{
+	}
+}
+namespace UnityEngine.Rendering
+{
+}

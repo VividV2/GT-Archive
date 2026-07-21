@@ -1,54 +1,36 @@
-using System.Collections.Generic;
-using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace GT_CustomMapSupportRuntime
+namespace GT_CustomMapSupportRuntime;
+
+public struct ForceVolumeProperties
 {
-	public struct WaterVolumeProperties
-	{
-		public Transform? surfacePlane;
+	public float accel;
 
-		public List<MeshCollider> surfaceColliders;
+	public float maxDepth;
 
-		public CMSZoneShaderSettings.EZoneLiquidType liquidType;
-	}
-}
-namespace GT_CustomMapSupportRuntime
-{
-	public struct ForceVolumeProperties
-	{
-		public float accel;
+	public float maxSpeed;
 
-		public float maxDepth;
+	public bool disableGrip;
 
-		public float maxSpeed;
+	public bool dampenLateralVelocity;
 
-		public bool disableGrip;
+	public float dampenXVel;
 
-		public bool dampenLateralVelocity;
+	public float dampenZVel;
 
-		public float dampenXVel;
+	public bool applyPullToCenterAcceleration;
 
-		public float dampenZVel;
+	public float pullToCenterAccel;
 
-		public bool applyPullToCenterAcceleration;
+	public float pullToCenterMaxSpeed;
 
-		public float pullToCenterAccel;
+	public float pullToCenterMinDistance;
 
-		public float pullToCenterMaxSpeed;
+	public AudioClip? enterClip;
 
-		public float pullToCenterMinDistance;
+	public AudioClip? exitClip;
 
-		public AudioClip? enterClip;
+	public AudioClip? loopClip;
 
-		public AudioClip? exitClip;
-
-		public AudioClip? loopClip;
-
-		public AudioClip? loopCrescendoClip;
-	}
-}
-namespace GT_CustomMapSupportRuntime
-{
+	public AudioClip? loopCrescendoClip;
 }

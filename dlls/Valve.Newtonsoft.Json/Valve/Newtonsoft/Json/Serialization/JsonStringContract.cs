@@ -1,2 +1,25 @@
-// Could not decompile Valve.Newtonsoft.Json.Serialization.JsonStringContract
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Valve.Newtonsoft.Json.Serialization
+{
+}
+namespace Valve.Newtonsoft.Json.Serialization
+{
+}
+namespace Valve.Newtonsoft.Json.Serialization
+{
+	public class JsonStringContract : JsonPrimitiveContract
+	{
+		public JsonStringContract(Type underlyingType)
+			: base(underlyingType)
+		{
+			ContractType = JsonContractType.String;
+		}
+	}
+}
+namespace Valve.Newtonsoft.Json.Serialization
+{
+}
+namespace Valve.Newtonsoft.Json.Serialization
+{
+}

@@ -1,2 +1,15 @@
-// Could not decompile System.Xml.Schema.XsdSimpleValue
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Xsl
+{
+}
+namespace System.Xml.Xsl.IlGen
+{
+}
+namespace System.Xml.Schema
+{
+}
+namespace System.Xml.Serialization
+{
+}
+namespace System.Xml.Serialization
+{
+}

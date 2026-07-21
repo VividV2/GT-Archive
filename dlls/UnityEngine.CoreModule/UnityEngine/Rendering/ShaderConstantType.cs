@@ -1,12 +1,8 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public enum ShaderConstantType
 {
-	public enum ShaderConstantType
-	{
-		Vector,
-		Matrix,
-		Struct
-	}
-}
-namespace UnityEngine.Rendering
-{
+	Vector,
+	Matrix,
+	Struct
 }

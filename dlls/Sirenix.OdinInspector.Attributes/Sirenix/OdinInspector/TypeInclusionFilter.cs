@@ -1,18 +1,14 @@
 using System;
 
-namespace Sirenix.OdinInspector
+namespace Sirenix.OdinInspector;
+
+[Flags]
+public enum TypeInclusionFilter
 {
-}
-namespace Sirenix.OdinInspector
-{
-	[Flags]
-	public enum TypeInclusionFilter
-	{
-		None = 0,
-		IncludeConcreteTypes = 1,
-		IncludeGenerics = 2,
-		IncludeAbstracts = 4,
-		IncludeInterfaces = 8,
-		IncludeAll = 0xF
-	}
+	None = 0,
+	IncludeConcreteTypes = 1,
+	IncludeGenerics = 2,
+	IncludeAbstracts = 4,
+	IncludeInterfaces = 8,
+	IncludeAll = 0xF
 }

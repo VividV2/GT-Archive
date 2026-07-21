@@ -1,2 +1,14 @@
-// Could not decompile System.Linq.Parallel.ProducerComparerInt
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace System.Linq;
+
+/// <summary>Represents the result of a sorting operation.</summary>
+/// <typeparam name="T">The type of the content of the data source.</typeparam>
+/// <summary>Represents the result of a sorting operation.</summary>
+/// <typeparam name="T">The type of the content of the data source.</typeparam>
+public interface IOrderedQueryable<out T> : IQueryable<T>, IEnumerable<T>, IEnumerable, IQueryable, IOrderedQueryable
+{
+}

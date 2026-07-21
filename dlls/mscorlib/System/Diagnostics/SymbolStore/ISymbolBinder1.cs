@@ -1,25 +1,12 @@
-using System.Runtime.InteropServices;
-
-namespace System.Diagnostics.SymbolStore
+namespace System.Diagnostics.Contracts
 {
-	/// <summary>Represents a symbol binder for managed code.</summary>
-	[ComVisible(true)]
-	public interface ISymbolBinder1
+	[Conditional("CONTRACTS_FULL")]
+	[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+	public sealed class ContractInvariantMethodAttribute : Attribute
 	{
-		/// <summary>Gets the interface of the symbol reader for the current file.</summary>
-		/// <param name="importer">An <see cref="T:System.IntPtr" /> that refers to the metadata import interface.</param>
-		/// <param name="filename">The name of the file for which the reader interface is required.</param>
-		/// <param name="searchPath">The search path used to locate the symbol file.</param>
-		/// <returns>The <see cref="T:System.Diagnostics.SymbolStore.ISymbolReader" /> interface that reads the debugging symbols.</returns>
-		ISymbolReader GetReader(IntPtr importer, string filename, string searchPath);
+		public ContractInvariantMethodAttribute()
+		{
+			base..ctor();
+		}
 	}
-}
-namespace System.Reflection.Emit
-{
-}
-namespace System.Diagnostics
-{
-}
-namespace System.Globalization
-{
 }

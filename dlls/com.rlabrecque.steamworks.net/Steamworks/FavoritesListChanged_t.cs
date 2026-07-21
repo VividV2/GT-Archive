@@ -1,16 +1,43 @@
-namespace Steamworks;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-public enum ESNetSocketState
+namespace Steamworks
 {
-	k_ESNetSocketStateInvalid = 0,
-	k_ESNetSocketStateConnected = 1,
-	k_ESNetSocketStateInitiated = 10,
-	k_ESNetSocketStateLocalCandidatesFound = 11,
-	k_ESNetSocketStateReceivedRemoteCandidates = 12,
-	k_ESNetSocketStateChallengeHandshake = 15,
-	k_ESNetSocketStateDisconnecting = 21,
-	k_ESNetSocketStateLocalDisconnect = 22,
-	k_ESNetSocketStateTimeoutDuringConnect = 23,
-	k_ESNetSocketStateRemoteEndDisconnected = 24,
-	k_ESNetSocketStateConnectionBroken = 25
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(502)]
+	public struct FavoritesListChanged_t
+	{
+		public const int k_iCallback = 502;
+
+		public uint m_nIP;
+
+		public uint m_nQueryPort;
+
+		public uint m_nConnPort;
+
+		public uint m_nAppID;
+
+		public uint m_nFlags;
+
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bAdd;
+
+		public AccountID_t m_unAccountId;
+	}
+}
+namespace Steamworks
+{
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
+	[CallbackIdentity(4508)]
+	public struct HTML_ChangedTitle_t
+	{
+		public const int k_iCallback = 4508;
+
+		public HHTMLBrowser unBrowserHandle;
+
+		public string pchTitle;
+	}
 }

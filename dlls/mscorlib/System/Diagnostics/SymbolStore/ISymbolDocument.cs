@@ -1,11 +1,3 @@
-using System.Security;
-
-namespace System.Globalization;
-
-internal struct InternalEncodingDataItem
+namespace System.Threading.Tasks
 {
-	[SecurityCritical]
-	internal string webName;
-
-	internal ushort codePage;
 }

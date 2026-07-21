@@ -1,6 +1,6 @@
-namespace System.Runtime.InteropServices.ComTypes
+namespace System.Threading
 {
 }
-namespace System.Runtime.CompilerServices
+namespace System.Security.Permissions
 {
 }

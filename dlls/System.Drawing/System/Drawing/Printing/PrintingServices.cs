@@ -1,7 +1,3 @@
-namespace System.Drawing.Drawing2D;
-
-internal enum CustomLineCapType
+namespace System.Drawing
 {
-	Default,
-	AdjustableArrowCap
 }

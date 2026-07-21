@@ -1,11 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public struct MetadataValue
-{
-	public int NameID;
-
-	public uint Value;
-}
-namespace UnityEngine.Rendering
-{
-}
+// Could not decompile UnityEngine.Rendering.MachineLearningOperator
+// This type uses unsupported IL or has too many generic parameters.

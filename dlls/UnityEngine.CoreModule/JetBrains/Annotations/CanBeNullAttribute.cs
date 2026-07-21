@@ -1,2 +1,12 @@
-// Could not decompile JetBrains.Annotations.CanBeNullAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.Profiling
+{
+}
+namespace UnityEngineInternal
+{
+	public enum MemorylessMode
+	{
+		Unused,
+		Forced,
+		Automatic
+	}
+}

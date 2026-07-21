@@ -1,11 +1,3 @@
-namespace Voxels;
-
-public enum MeshGenerationMode
+namespace GorillaTag.Cosmetics
 {
-	MarchingCubes,
-	SurfaceNets
-}
-public interface IDebugObject
-{
-	void OnDestroyDebugObject();
 }

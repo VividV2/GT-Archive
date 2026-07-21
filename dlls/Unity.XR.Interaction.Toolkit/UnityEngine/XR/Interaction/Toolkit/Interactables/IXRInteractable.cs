@@ -1,6 +1,2 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics
-{
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Readers
-{
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Interactables.IXRInteractable
+// This type uses unsupported IL or has too many generic parameters.

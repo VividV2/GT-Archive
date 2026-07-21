@@ -1,5 +1,3 @@
-using System;
-using System.Runtime.InteropServices;
 using System.Runtime.InteropServices;
 
 namespace Steamworks;
@@ -25,25 +23,4 @@ public struct RemoteStorageEnumerateWorkshopFilesResult_t
 	public AppId_t m_nAppId;
 
 	public uint m_unStartIndex;
-}
-namespace Steamworks
-{
-	public enum ERemoteStoragePublishedFileVisibility
-	{
-		k_ERemoteStoragePublishedFileVisibilityPublic,
-		k_ERemoteStoragePublishedFileVisibilityFriendsOnly,
-		k_ERemoteStoragePublishedFileVisibilityPrivate,
-		k_ERemoteStoragePublishedFileVisibilityUnlisted
-	}
-}
-namespace Steamworks
-{
-	[System.Flags]
-	public enum EHTMLKeyModifiers
-	{
-		k_eHTMLKeyModifier_None = 0,
-		k_eHTMLKeyModifier_AltDown = 1,
-		k_eHTMLKeyModifier_CtrlDown = 2,
-		k_eHTMLKeyModifier_ShiftDown = 4
-	}
 }

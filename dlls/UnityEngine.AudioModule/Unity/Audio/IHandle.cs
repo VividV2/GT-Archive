@@ -8,6 +8,6 @@ namespace Unity.Audio
 	{
 	}
 }
-namespace UnityEngine
+namespace UnityEngine.Audio
 {
 }

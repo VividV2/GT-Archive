@@ -11,6 +11,3 @@ public interface IDesignerSerializationProvider
 	/// <returns>An instance of a serializer of the type requested, or <see langword="null" /> if the request cannot be satisfied.</returns>
 	object GetSerializer(IDesignerSerializationManager manager, object currentSerializer, Type objectType, Type serializerType);
 }
-namespace System.Net
-{
-}

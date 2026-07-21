@@ -1,3 +1,9 @@
+namespace System.ComponentModel.Composition.Primitives
+{
+}
+namespace System.ComponentModel.Composition
+{
+}
 namespace System.ComponentModel.Composition.Hosting
 {
 	/// <summary>Defines options for export providers.</summary>
@@ -13,10 +19,4 @@ namespace System.ComponentModel.Composition.Hosting
 		/// <summary>This provider is an export composition service.</summary>
 		ExportCompositionService = 4
 	}
-}
-namespace System.ComponentModel.Composition.Hosting
-{
-}
-namespace System.ComponentModel.Composition.ReflectionModel
-{
 }

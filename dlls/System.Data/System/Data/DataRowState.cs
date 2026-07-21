@@ -1,36 +1,28 @@
-namespace System.Data;
-
-public enum SqlDbType
+namespace System.Data.SqlTypes
 {
-	BigInt = 0,
-	Binary = 1,
-	Bit = 2,
-	Char = 3,
-	DateTime = 4,
-	Decimal = 5,
-	Float = 6,
-	Image = 7,
-	Int = 8,
-	Money = 9,
-	NChar = 10,
-	NText = 11,
-	NVarChar = 12,
-	Real = 13,
-	UniqueIdentifier = 14,
-	SmallDateTime = 15,
-	SmallInt = 16,
-	SmallMoney = 17,
-	Text = 18,
-	Timestamp = 19,
-	TinyInt = 20,
-	VarBinary = 21,
-	VarChar = 22,
-	Variant = 23,
-	Xml = 25,
-	Udt = 29,
-	Structured = 30,
-	Date = 31,
-	Time = 32,
-	DateTime2 = 33,
-	DateTimeOffset = 34
+	/// <summary>The <see cref="T:System.Data.SqlTypes.TypeCharSchemaImporterExtension" /> class is not intended for use as a stand-alone component, but as a class from which other classes derive standard functionality.</summary>
+	public sealed class TypeCharSchemaImporterExtension : SqlTypesSchemaImporterExtensionHelper
+	{
+		/// <summary>Initializes a new instance of the <see cref="T:System.Data.SqlTypes.TypeCharSchemaImporterExtension" /> class.</summary>
+		public TypeCharSchemaImporterExtension()
+			: base("char", "System.Data.SqlTypes.SqlString", direct: false)
+		{
+		}
+	}
+}
+namespace System.Data.Common
+{
+}
+namespace System.Data.Odbc
+{
+	public delegate void OdbcInfoMessageEventHandler(object sender, OdbcInfoMessageEventArgs e);
+}
+namespace System.Data.SqlClient
+{
+}
+namespace System.Data.Common
+{
+}
+namespace System.Data.SqlClient
+{
 }

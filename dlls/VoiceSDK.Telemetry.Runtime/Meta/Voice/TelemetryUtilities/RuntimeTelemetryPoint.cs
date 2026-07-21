@@ -1,35 +1,42 @@
-namespace Meta.Voice.TelemetryUtilities;
-
-public enum RuntimeTelemetryPoint
+namespace Meta.Voice.TelemetryUtilities
 {
-	MicOn,
-	ListeningStarted,
-	AudioBlockSent,
-	PartialResponseReceived,
-	FullResponseReceived,
-	FirstPartialTranscriptionReceivedByClient,
-	FullTranscriptionReceivedByClient,
-	FullUserTranscriptionSentToServer,
-	FirstPartialTranscriptionReceivedFromClient,
-	FullUserTranscriptionReceivedFromClient,
-	FullUserTranscriptionSentFromServer,
-	FirstPartialTextResponseSentToServer,
-	FullTextResponseSentToServer,
-	PartialTTSSent,
-	FullTTSSent,
-	PartialTTSAudioReceived,
-	FinalTTSAudioReceived,
-	FirstPartialAudioDecode,
-	FinalAudioDecode,
-	FirstPartialAudioSentToClient,
-	FinalAudioSentToClient,
-	FirstPartialAudioFromServer,
-	FinalAudioFromServer,
-	PlaybackStarted,
-	PlaybackStopped,
-	TtsLoadBegin,
-	TtsLoadComplete,
-	ListeningStopped,
-	FinalAudioSamplesEmpty,
-	FinalAudioEventsEmpty
+	public enum RuntimeTelemetryPoint
+	{
+		MicOn,
+		ListeningStarted,
+		AudioBlockSent,
+		PartialResponseReceived,
+		FullResponseReceived,
+		FirstPartialTranscriptionReceivedByClient,
+		FullTranscriptionReceivedByClient,
+		FullUserTranscriptionSentToServer,
+		FirstPartialTranscriptionReceivedFromClient,
+		FullUserTranscriptionReceivedFromClient,
+		FullUserTranscriptionSentFromServer,
+		FirstPartialTextResponseSentToServer,
+		FullTextResponseSentToServer,
+		PartialTTSSent,
+		FullTTSSent,
+		PartialTTSAudioReceived,
+		FinalTTSAudioReceived,
+		FirstPartialAudioDecode,
+		FinalAudioDecode,
+		FirstPartialAudioSentToClient,
+		FinalAudioSentToClient,
+		FirstPartialAudioFromServer,
+		FinalAudioFromServer,
+		PlaybackStarted,
+		PlaybackStopped,
+		TtsLoadBegin,
+		TtsLoadComplete,
+		ListeningStopped,
+		FinalAudioSamplesEmpty,
+		FinalAudioEventsEmpty
+	}
+}
+namespace Meta.Voice.TelemetryUtilities
+{
+}
+namespace Meta.Voice.TelemetryUtilities
+{
 }

@@ -1,2 +1,10 @@
-// Could not decompile ExitGames.Client.Photon.EnetChannel
-// This type uses unsupported IL or has too many generic parameters.
+namespace ExitGames.Client.Photon;
+
+public enum DebugLevel : byte
+{
+	OFF = 0,
+	ERROR = 1,
+	WARNING = 2,
+	INFO = 3,
+	ALL = 5
+}

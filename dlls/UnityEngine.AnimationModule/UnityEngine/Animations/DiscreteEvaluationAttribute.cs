@@ -1,10 +1,2 @@
-using System;
-using UnityEngine.Scripting;
-
-namespace UnityEngine.Animations;
-
-[RequiredByNativeCode]
-[AttributeUsage(AttributeTargets.Field)]
-public class DiscreteEvaluationAttribute : Attribute
-{
-}
+// Could not decompile UnityEngine.Animations.DiscreteEvaluationAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,11 +1,8 @@
 namespace System.Drawing;
 
-[Flags]
-public enum FontStyle
+internal struct CGPoint64
 {
-	Regular = 0,
-	Bold = 1,
-	Italic = 2,
-	Underline = 4,
-	Strikeout = 8
+	public double x;
+
+	public double y;
 }

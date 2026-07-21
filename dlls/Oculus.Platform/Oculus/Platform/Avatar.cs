@@ -1,14 +1,2 @@
-using System.ComponentModel;
-using System.ComponentModel;
-
-namespace Oculus.Platform;
-
-public enum UserPresenceStatus
-{
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("ONLINE")]
-	Online,
-	[Description("OFFLINE")]
-	Offline
-}
+// Could not decompile Oculus.Platform.Avatar
+// This type uses unsupported IL or has too many generic parameters.

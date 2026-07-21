@@ -4,6 +4,3 @@ namespace Microsoft.Win32;
 /// <param name="sender">The source of the event. When this event is raised by the <see cref="T:Microsoft.Win32.SystemEvents" /> class, this object is always <see langword="null" />.</param>
 /// <param name="e">A <see cref="T:Microsoft.Win32.SessionEndingEventArgs" /> that contains the event data.</param>
 public delegate void SessionEndingEventHandler(object sender, SessionEndingEventArgs e);
-namespace System.CodeDom.Compiler
-{
-}

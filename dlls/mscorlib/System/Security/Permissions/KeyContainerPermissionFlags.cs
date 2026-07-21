@@ -1,3 +1,3 @@
-namespace System.Security.Util
+namespace System
 {
 }

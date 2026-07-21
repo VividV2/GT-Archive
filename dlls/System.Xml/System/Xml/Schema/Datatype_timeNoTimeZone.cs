@@ -1,9 +1,2 @@
-namespace System.Xml.Schema;
+namespace MS.Internal.Xml.XPath;
 
-internal class Datatype_timeNoTimeZone : Datatype_dateTimeBase
-{
-	internal Datatype_timeNoTimeZone()
-		: base(XsdDateTimeFlags.XdrTimeNoTz)
-	{
-	}
-}

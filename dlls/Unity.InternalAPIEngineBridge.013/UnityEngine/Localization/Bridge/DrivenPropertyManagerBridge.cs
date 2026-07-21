@@ -14,3 +14,6 @@ internal class DrivenPropertyManagerBridge
 	{
 	}
 }
+namespace UnityEngine.Localization.Bridge
+{
+}

@@ -1,7 +1,11 @@
-namespace System.IO;
-
-public enum MatchType
+namespace System.IO
 {
-	Simple,
-	Win32
+}
+namespace System.IO
+{
+	public enum MatchType
+	{
+		Simple,
+		Win32
+	}
 }

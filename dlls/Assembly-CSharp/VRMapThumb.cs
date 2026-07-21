@@ -1,6 +1,2 @@
-internal interface ITickSystemPost
-{
-	bool PostTickRunning { get; set; }
-
-	void PostTick();
-}
+// Could not decompile VRMapThumb
+// This type uses unsupported IL or has too many generic parameters.

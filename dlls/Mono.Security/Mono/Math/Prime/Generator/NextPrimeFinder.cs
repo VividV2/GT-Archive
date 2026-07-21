@@ -1,2 +1,21 @@
-// Could not decompile Mono.Math.Prime.Generator.NextPrimeFinder
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Mono.Math.Prime.Generator
+{
+	public class NextPrimeFinder : SequentialSearchPrimeGeneratorBase
+	{
+		protected override BigInteger GenerateSearchBase(int bits, object Context)
+		{
+			if (Context == null)
+			{
+				throw new ArgumentNullException("Context");
+			}
+			BigInteger bigInteger = new BigInteger((BigInteger)Context);
+			bigInteger.SetBit(0u);
+			return bigInteger;
+		}
+	}
+}
+namespace Mono.Security.Authenticode
+{
+}

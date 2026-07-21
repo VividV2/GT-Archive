@@ -1,20 +1,16 @@
-namespace Oculus.Interaction.Input
+namespace Oculus.Interaction.Input;
+
+public enum PinchGrabParam
 {
-	public enum PinchGrabParam
-	{
-		PinchDistanceStart,
-		PinchDistanceStopMax,
-		PinchDistanceStopOffset,
-		PinchHqDistanceStart,
-		PinchHqDistanceStopMax,
-		PinchHqDistanceStopOffset,
-		PinchHqViewAngleThreshold,
-		ThumbDistanceStart,
-		ThumbDistanceStopMax,
-		ThumbDistanceStopOffset,
-		ThumbMaxDot
-	}
-}
-namespace Oculus.Interaction.PoseDetection.Debug
-{
+	PinchDistanceStart,
+	PinchDistanceStopMax,
+	PinchDistanceStopOffset,
+	PinchHqDistanceStart,
+	PinchHqDistanceStopMax,
+	PinchHqDistanceStopOffset,
+	PinchHqViewAngleThreshold,
+	ThumbDistanceStart,
+	ThumbDistanceStopMax,
+	ThumbDistanceStopOffset,
+	ThumbMaxDot
 }

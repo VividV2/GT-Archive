@@ -1,20 +1,16 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.GroupsModels
+namespace PlayFab.GroupsModels;
+
+[Serializable]
+public class UpdateGroupRoleRequest : PlayFabRequestCommon
 {
-	[Serializable]
-	public class UpdateGroupRoleRequest : PlayFabRequestCommon
-	{
-		public int? ExpectedProfileVersion;
+	public int? ExpectedProfileVersion;
 
-		public EntityKey Group;
+	public EntityKey Group;
 
-		public string RoleId;
+	public string RoleId;
 
-		public string RoleName;
-	}
-}
-namespace PlayFab.ExperimentationModels
-{
+	public string RoleName;
 }

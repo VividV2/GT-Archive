@@ -1,14 +1,10 @@
-namespace UnityEngine.TextCore
+namespace UnityEngine.TextCore;
+
+public enum GlyphClassDefinitionType
 {
-}
-namespace UnityEngine.TextCore
-{
-	public enum GlyphClassDefinitionType
-	{
-		Undefined,
-		Base,
-		Ligature,
-		Mark,
-		Component
-	}
+	Undefined,
+	Base,
+	Ligature,
+	Mark,
+	Component
 }

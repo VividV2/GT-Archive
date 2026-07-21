@@ -1,12 +1,2 @@
-namespace Meta.Voice.TelemetryUtilities.PerformanceTracing;
-
-public class UnityProfilerTraceProvider : ITraceProvider
-{
-	public void BeginSample(string sampleName)
-	{
-	}
-
-	public void EndSample(string sampleName)
-	{
-	}
-}
+// Could not decompile Meta.Voice.TelemetryUtilities.PerformanceTracing.UnityProfilerTraceProvider
+// This type uses unsupported IL or has too many generic parameters.

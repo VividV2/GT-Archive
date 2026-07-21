@@ -1,13 +1,2 @@
-using System.Diagnostics;
-
-namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler
-{
-	[DebuggerDisplay("PassInputData: Res({resource.index})")]
-	internal readonly struct PassInputData(ResourceHandle resource)
-	{
-		public readonly ResourceHandle resource = resource;
-	}
-}
-namespace UnityEngine.Rendering.RenderGraphModule
-{
-}
+// Could not decompile UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler.PassInputData
+// This type uses unsupported IL or has too many generic parameters.

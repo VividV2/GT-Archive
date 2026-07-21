@@ -1,2 +1,2 @@
-namespace Meta.XR.MRUtilityKit;
+namespace Meta.XR.MRUtilityKit.SceneDecorator;
 

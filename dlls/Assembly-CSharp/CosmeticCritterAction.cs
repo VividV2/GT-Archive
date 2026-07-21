@@ -10,3 +10,5 @@ public enum CosmeticCritterAction
 	SpawnLinked = 8,
 	ShadeHeartbeat = 0x10
 }
+namespace CjLib;
+

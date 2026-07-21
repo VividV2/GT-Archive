@@ -1,29 +1,8 @@
-using System;
-using UnityEngine;
-using System;
-using UnityEngine;
+namespace Oculus.Interaction.Input;
 
-namespace Oculus.Interaction.Input
+public enum JointFreedom
 {
-	public interface IHmd
-	{
-		event Action WhenUpdated;
-
-		bool TryGetRootPose(out Pose pose);
-	}
-}
-namespace Oculus.Interaction.Input.Visuals
-{
-}
-namespace Oculus.Interaction.Input
-{
-	public enum JointFreedom
-	{
-		Free,
-		Constrained,
-		Locked
-	}
-}
-namespace Oculus.Interaction
-{
+	Free,
+	Constrained,
+	Locked
 }

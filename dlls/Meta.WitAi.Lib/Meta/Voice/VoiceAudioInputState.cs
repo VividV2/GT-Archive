@@ -7,6 +7,3 @@ public enum VoiceAudioInputState
 	On,
 	Deactivating
 }
-namespace Meta.WitAi.Data.Info
-{
-}

@@ -1,2 +1,13 @@
-// Could not decompile Unity.Properties.TypeConversion
-// This type uses unsupported IL or has too many generic parameters.
+using System.Reflection;
+using System.Reflection;
+
+namespace Unity.Properties.Internal;
+
+internal static class ReflectionUtilities
+{
+	public static string SanitizeMemberName(MemberInfo info)
+	{
+		return info.Name.Replace(".", "_").Replace("<", "_").Replace(">", "_")
+			.Replace("+", "_");
+	}
+}

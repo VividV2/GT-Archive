@@ -1,31 +1,6 @@
-namespace OVR.OpenVR
-{
-}
-namespace OVR.OpenVR
-{
-}
-namespace OVR.OpenVR
-{
-	public struct DriverDirectMode_FrameTiming
-	{
-		public uint m_nSize;
+namespace OVR.OpenVR;
 
-		public uint m_nNumFramePresents;
-
-		public uint m_nNumMisPresented;
-
-		public uint m_nNumDroppedFrames;
-
-		public uint m_nReprojectionFlags;
-	}
-}
-namespace OVR.OpenVR
+public struct VREvent_SpatialAnchor_t
 {
-}
-namespace OVR.OpenVR
-{
-	public struct VREvent_SpatialAnchor_t
-	{
-		public uint unHandle;
-	}
+	public uint unHandle;
 }

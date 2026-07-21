@@ -1,6 +1,21 @@
-namespace Photon.Pun;
+using Photon.Realtime;
+using UnityEngine;
+using Photon.Realtime;
+using UnityEngine;
 
-public interface IPunObservable
+namespace Photon.Pun
 {
-	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info);
+	public interface IPunPrefabPoolVerify : IPunPrefabPool
+	{
+		bool VerifyInstantiation(Player sender, string prefabId, Vector3 position, Quaternion rotation, int[] viewIds, out GameObject prefab);
+
+		GameObject Instantiate(GameObject prefab, Vector3 position, Quaternion rotation);
+	}
+}
+namespace Photon.Pun
+{
+	public interface IPunObservable
+	{
+		void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info);
+	}
 }

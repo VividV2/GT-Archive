@@ -1,8 +1,12 @@
-namespace UnityEngine.InputSystem.Interactions;
-
-public enum PressBehavior
+namespace UnityEngine.InputSystem.Composites
 {
-	PressOnly,
-	ReleaseOnly,
-	PressAndRelease
+}
+namespace UnityEngine.InputSystem.Interactions
+{
+	public enum PressBehavior
+	{
+		PressOnly,
+		ReleaseOnly,
+		PressAndRelease
+	}
 }

@@ -1,7 +1,20 @@
-namespace UnityEngine;
-
-public enum ShadowProjection
+namespace UnityEngine.Rendering
 {
-	CloseFit,
-	StableFit
+	public enum VideoShadersIncludeMode
+	{
+		[InspectorName("Don't include")]
+		Never,
+		[InspectorName("Include if referenced")]
+		Referenced,
+		[InspectorName("Always include")]
+		Always
+	}
+}
+namespace UnityEngine
+{
+	public enum ShadowProjection
+	{
+		CloseFit,
+		StableFit
+	}
 }

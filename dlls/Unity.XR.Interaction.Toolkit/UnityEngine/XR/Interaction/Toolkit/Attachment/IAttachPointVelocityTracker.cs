@@ -1,21 +1,11 @@
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.XR.Interaction.Toolkit.Interactables
-{
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Attachment
-{
-	[MovedFrom("UnityEngine.XR.Interaction.Toolkit.Interaction")]
-	public interface IAttachPointVelocityTracker : IAttachPointVelocityProvider
-	{
-		void UpdateAttachPointVelocityData(Transform attachTransform);
+namespace UnityEngine.XR.Interaction.Toolkit.Attachment;
 
-		void UpdateAttachPointVelocityData(Transform attachTransform, Transform xrOriginTransform);
-	}
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Interactables
+[MovedFrom("UnityEngine.XR.Interaction.Toolkit.Interaction")]
+public interface IAttachPointVelocityTracker : IAttachPointVelocityProvider
 {
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs
-{
+	void UpdateAttachPointVelocityData(Transform attachTransform);
+
+	void UpdateAttachPointVelocityData(Transform attachTransform, Transform xrOriginTransform);
 }

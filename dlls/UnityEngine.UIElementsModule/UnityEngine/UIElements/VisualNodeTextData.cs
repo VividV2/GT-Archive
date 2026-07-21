@@ -1,11 +1,40 @@
+using System;
+using UnityEngine.Bindings;
 using UnityEngine.Bindings;
 
-namespace UnityEngine.UIElements;
-
-[NativeType(Header = "Modules/UIElements/VisualNodeTextData.h")]
-internal struct VisualNodeTextData
+namespace UnityEngine.UIElements
 {
-	internal LanguageDirection LanguageDirection;
+	public interface IVisualElementScheduledItem
+	{
+		VisualElement element { get; }
 
-	internal LanguageDirection LocalLanguageDirection;
+		bool isActive { get; }
+
+		void Resume();
+
+		void Pause();
+
+		void ExecuteLater(long delayMs);
+
+		IVisualElementScheduledItem StartingIn(long delayMs);
+
+		IVisualElementScheduledItem Every(long intervalMs);
+
+		IVisualElementScheduledItem Until(Func<bool> stopCondition);
+
+		IVisualElementScheduledItem ForDuration(long durationMs);
+	}
+}
+namespace UnityEngine.UIElements
+{
+	[NativeType(Header = "Modules/UIElements/VisualNodeTextData.h")]
+	internal struct VisualNodeTextData
+	{
+		internal LanguageDirection LanguageDirection;
+
+		internal LanguageDirection LocalLanguageDirection;
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

@@ -1,11 +1,12 @@
-namespace System.EnterpriseServices;
+using System.Runtime.InteropServices;
 
-[Serializable]
-public enum TransactionIsolationLevel
+namespace System.EnterpriseServices
 {
-	Any = 0,
-	ReadCommitted = 2,
-	ReadUncommitted = 1,
-	RepeatableRead = 3,
-	Serializable = 4
+	[Serializable]
+	[ComVisible(false)]
+	public enum TransactionVote
+	{
+		Abort = 1,
+		Commit = 0
+	}
 }

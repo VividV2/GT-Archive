@@ -1,7 +1,2 @@
-namespace System.Drawing.Drawing2D;
-
-public enum FillMode
-{
-	Alternate,
-	Winding
-}
+// Could not decompile System.Drawing.Imaging.EmfPlusRecordType
+// This type uses unsupported IL or has too many generic parameters.

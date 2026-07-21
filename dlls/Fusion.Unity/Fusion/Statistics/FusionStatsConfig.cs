@@ -1,10 +1,2 @@
-#define FUSION_LOGLEVEL_TRACE
-namespace Fusion.Statistics
-{
-}
-namespace Fusion
-{
-}
-namespace Fusion.Statistics
-{
-}
+// Could not decompile Fusion.Statistics.FusionStatsConfig
+// This type uses unsupported IL or has too many generic parameters.

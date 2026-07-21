@@ -1,27 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-namespace Meta.WitAi.Data;
-
-public class AudioBufferPrefabProvider : MonoBehaviour, IAudioBufferProvider
-{
-	[SerializeField]
-	private AudioBuffer _audioBufferPrefab;
-
-	private void Awake()
-	{
-		AudioBuffer.AudioBufferProvider = this;
-	}
-
-	public AudioBuffer InstantiateAudioBuffer()
-	{
-		if (_audioBufferPrefab == null)
-		{
-			return null;
-		}
-		GameObject obj = Object.Instantiate(_audioBufferPrefab.gameObject, null, worldPositionStays: true);
-		GameObject obj;
-		obj.name = _audioBufferPrefab.gameObject.name;
-		return obj.GetComponent<AudioBuffer>();
-	}
-}
+// Could not decompile Meta.WitAi.CallbackHandlers.SimpleStringEntityHandler
+// This type uses unsupported IL or has too many generic parameters.

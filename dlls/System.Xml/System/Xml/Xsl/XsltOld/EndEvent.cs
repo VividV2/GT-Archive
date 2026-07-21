@@ -1,22 +1,2 @@
-using System.Xml.XPath;
-
-namespace System.Xml.Xsl.XsltOld
-{
-	internal class EndEvent : Event
-	{
-		private XPathNodeType nodeType;
-
-		internal EndEvent(XPathNodeType nodeType)
-		{
-			this.nodeType = nodeType;
-		}
-
-		public override bool Output(Processor processor, ActionFrame frame)
-		{
-			return processor.EndEvent(nodeType);
-		}
-	}
-}
-namespace MS.Internal.Xml.XPath
-{
-}
+// Could not decompile System.Xml.Xsl.XsltOld.EndEvent
+// This type uses unsupported IL or has too many generic parameters.

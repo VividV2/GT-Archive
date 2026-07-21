@@ -1,12 +1,13 @@
-namespace PlayFab.CloudScriptModels
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class AddSharedGroupMembersRequest : PlayFabRequestCommon
 {
-	public enum EmailVerificationStatus
-	{
-		Unverified,
-		Pending,
-		Confirmed
-	}
-}
-namespace PlayFab.CloudScriptModels
-{
+	public List<string> PlayFabIds;
+
+	public string SharedGroupId;
 }

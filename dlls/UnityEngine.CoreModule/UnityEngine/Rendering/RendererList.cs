@@ -1,14 +1,2 @@
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.Rendering;
-
-[MovedFrom("UnityEngine.Experimental.Rendering")]
-public struct RayTracingSubMeshFlagsConfig
-{
-	public RayTracingSubMeshFlags opaqueMaterials;
-
-	public RayTracingSubMeshFlags transparentMaterials;
-
-	public RayTracingSubMeshFlags alphaTestedMaterials;
-}
+// Could not decompile UnityEngine.Rendering.RendererList
+// This type uses unsupported IL or has too many generic parameters.

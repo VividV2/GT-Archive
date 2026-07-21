@@ -1,58 +1,54 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public interface IPointerEvent
 {
-	public interface IPointerEvent
-	{
-		int pointerId { get; }
+	int pointerId { get; }
 
-		string pointerType { get; }
+	string pointerType { get; }
 
-		bool isPrimary { get; }
+	bool isPrimary { get; }
 
-		int button { get; }
+	int button { get; }
 
-		int pressedButtons { get; }
+	int pressedButtons { get; }
 
-		Vector3 position { get; }
+	Vector3 position { get; }
 
-		Vector3 localPosition { get; }
+	Vector3 localPosition { get; }
 
-		Vector3 deltaPosition { get; }
+	Vector3 deltaPosition { get; }
 
-		float deltaTime { get; }
+	float deltaTime { get; }
 
-		int clickCount { get; }
+	int clickCount { get; }
 
-		float pressure { get; }
+	float pressure { get; }
 
-		float tangentialPressure { get; }
+	float tangentialPressure { get; }
 
-		float altitudeAngle { get; }
+	float altitudeAngle { get; }
 
-		float azimuthAngle { get; }
+	float azimuthAngle { get; }
 
-		float twist { get; }
+	float twist { get; }
 
-		Vector2 tilt { get; }
+	Vector2 tilt { get; }
 
-		PenStatus penStatus { get; }
+	PenStatus penStatus { get; }
 
-		Vector2 radius { get; }
+	Vector2 radius { get; }
 
-		Vector2 radiusVariance { get; }
+	Vector2 radiusVariance { get; }
 
-		EventModifiers modifiers { get; }
+	EventModifiers modifiers { get; }
 
-		bool shiftKey { get; }
+	bool shiftKey { get; }
 
-		bool ctrlKey { get; }
+	bool ctrlKey { get; }
 
-		bool commandKey { get; }
+	bool commandKey { get; }
 
-		bool altKey { get; }
+	bool altKey { get; }
 
-		bool actionKey { get; }
-	}
-}
-namespace UnityEngine.UIElements
-{
+	bool actionKey { get; }
 }

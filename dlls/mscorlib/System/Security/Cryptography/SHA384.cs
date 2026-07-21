@@ -1,2 +1,9 @@
-// Could not decompile System.Security.Cryptography.SHA384
-// This type uses unsupported IL or has too many generic parameters.
+namespace System
+{
+	internal struct BRECORD
+	{
+		private IntPtr pvRecord;
+
+		private IntPtr pRecInfo;
+	}
+}

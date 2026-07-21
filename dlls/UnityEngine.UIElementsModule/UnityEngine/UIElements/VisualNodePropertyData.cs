@@ -1,6 +1,2 @@
-namespace UnityEngine.UIElements;
+namespace UnityEngine.UIElements.UIR;
 
-internal struct VisualNodePropertyData
-{
-	public unsafe void* Ptr;
-}

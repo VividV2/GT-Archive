@@ -1,6 +1,2 @@
-namespace System.Diagnostics.CodeAnalysis;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue, Inherited = false)]
-internal sealed class MaybeNullAttribute : Attribute
-{
-}
+// Could not decompile System.Diagnostics.CodeAnalysis.MaybeNullAttribute
+// This type uses unsupported IL or has too many generic parameters.

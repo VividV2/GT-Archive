@@ -1,2 +1,3 @@
-namespace Viveport.Internal;
-
+namespace LitJson
+{
+}

@@ -1,2 +1,19 @@
-// Could not decompile Valve.VR.EVRMuraCorrectionMode
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR
+{
+	public struct RenderModel_ComponentState_t
+	{
+		public HmdMatrix34_t mTrackingToComponentRenderModel;
+
+		public HmdMatrix34_t mTrackingToComponentLocal;
+
+		public uint uProperties;
+	}
+}
+namespace Valve.VR
+{
+	public enum EVRMuraCorrectionMode
+	{
+		Default,
+		NoCorrection
+	}
+}

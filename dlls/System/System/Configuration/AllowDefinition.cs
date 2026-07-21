@@ -6,3 +6,6 @@ internal enum AllowDefinition
 	MachineOnly,
 	MachineToApplication
 }
+namespace System.Security.Authentication.ExtendedProtection
+{
+}

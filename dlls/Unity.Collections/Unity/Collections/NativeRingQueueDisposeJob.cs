@@ -1,15 +1,2 @@
-using Unity.Burst;
-using Unity.Jobs;
-
-namespace Unity.Collections;
-
-[BurstCompile]
-internal struct NativeRingQueueDisposeJob : IJob
-{
-	public NativeRingQueueDispose Data;
-
-	public void Execute()
-	{
-		Data.Dispose();
-	}
-}
+// Could not decompile Unity.Collections.NativeRingQueueDisposeJob
+// This type uses unsupported IL or has too many generic parameters.

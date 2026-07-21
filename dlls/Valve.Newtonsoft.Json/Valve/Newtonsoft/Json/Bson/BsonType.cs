@@ -1,15 +1,25 @@
-namespace Valve.Newtonsoft.Json.Linq.JsonPath;
+namespace Valve.Newtonsoft.Json.Bson;
 
-internal enum QueryOperator
+internal enum BsonType : sbyte
 {
-	None,
-	Equals,
-	NotEquals,
-	Exists,
-	LessThan,
-	LessThanOrEquals,
-	GreaterThan,
-	GreaterThanOrEquals,
-	And,
-	Or
+	Number = 1,
+	String = 2,
+	Object = 3,
+	Array = 4,
+	Binary = 5,
+	Undefined = 6,
+	Oid = 7,
+	Boolean = 8,
+	Date = 9,
+	Null = 10,
+	Regex = 11,
+	Reference = 12,
+	Code = 13,
+	Symbol = 14,
+	CodeWScope = 15,
+	Integer = 16,
+	TimeStamp = 17,
+	Long = 18,
+	MinKey = -1,
+	MaxKey = sbyte.MaxValue
 }

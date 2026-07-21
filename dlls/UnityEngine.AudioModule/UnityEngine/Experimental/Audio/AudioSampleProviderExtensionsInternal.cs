@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.Experimental.Audio.AudioSampleProviderExtensionsInternal
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Bindings;
+using UnityEngine.Bindings;
+
+namespace Unity.Audio;
+
+[VisibleToOtherModules]
+internal interface IValidatable
+{
+	bool Valid { get; }
+}

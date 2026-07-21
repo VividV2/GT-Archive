@@ -1,3 +1,6 @@
-namespace System.Threading
+namespace System.Runtime.Versioning
+{
+}
+namespace System.Runtime.InteropServices.WindowsRuntime
 {
 }

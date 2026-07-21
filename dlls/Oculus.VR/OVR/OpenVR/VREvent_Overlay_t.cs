@@ -1,8 +1,18 @@
-namespace OVR.OpenVR;
-
-public struct VREvent_Overlay_t
+namespace OVR.OpenVR
 {
-	public ulong overlayHandle;
+	public struct VREvent_Overlay_t
+	{
+		public ulong overlayHandle;
 
-	public ulong devicePath;
+		public ulong devicePath;
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct VRControllerAxis_t
+	{
+		public float x;
+
+		public float y;
+	}
 }

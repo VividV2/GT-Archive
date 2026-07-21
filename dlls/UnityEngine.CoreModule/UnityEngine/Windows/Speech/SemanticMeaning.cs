@@ -1,12 +1,8 @@
-namespace UnityEngine.Windows.Speech
-{
-	public struct SemanticMeaning
-	{
-		public string key;
+namespace UnityEngine.Windows.Speech;
 
-		public string[] values;
-	}
-}
-namespace UnityEngine.Events
+public struct SemanticMeaning
 {
+	public string key;
+
+	public string[] values;
 }

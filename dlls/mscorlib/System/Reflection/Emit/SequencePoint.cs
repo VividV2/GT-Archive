@@ -1,14 +1,2 @@
-namespace System.Reflection.Emit;
+namespace System.Runtime.Remoting.Metadata;
 
-internal struct SequencePoint
-{
-	public int Offset;
-
-	public int Line;
-
-	public int Col;
-
-	public int EndLine;
-
-	public int EndCol;
-}

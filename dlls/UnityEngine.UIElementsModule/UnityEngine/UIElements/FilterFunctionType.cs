@@ -1,17 +1,21 @@
 using System;
 
-namespace UnityEngine.UIElements;
-
-[Serializable]
-internal enum FilterFunctionType
+namespace UnityEngine.UIElements
 {
-	None,
-	Custom,
-	Tint,
-	Opacity,
-	Invert,
-	Grayscale,
-	Sepia,
-	Blur,
-	Count
+	[Serializable]
+	internal enum FilterFunctionType
+	{
+		None,
+		Custom,
+		Tint,
+		Opacity,
+		Invert,
+		Grayscale,
+		Sepia,
+		Blur,
+		Count
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

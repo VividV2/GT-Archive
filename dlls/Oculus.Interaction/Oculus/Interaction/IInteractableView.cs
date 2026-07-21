@@ -3,9 +3,6 @@ using System.Collections.Generic;
 
 namespace Oculus.Interaction
 {
-}
-namespace Oculus.Interaction
-{
 	public interface IInteractableView
 	{
 		object Data { get; }

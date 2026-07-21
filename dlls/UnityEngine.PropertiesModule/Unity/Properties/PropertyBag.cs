@@ -1,6 +1,2 @@
-namespace Unity.Properties;
-
-public interface IExcludePropertyAdapter<TContainer, TValue> : IPropertyVisitorAdapter
-{
-	bool IsExcluded(in ExcludeContext<TContainer, TValue> context, ref TContainer container, ref TValue value);
-}
+// Could not decompile Unity.Properties.PropertyBag
+// This type uses unsupported IL or has too many generic parameters.

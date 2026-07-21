@@ -1,10 +1,2 @@
-using System;
-using Meta.WitAi.Json;
-using UnityEngine.Events;
-
-namespace Meta.WitAi.Events;
-
-[Serializable]
-public class WitObjectEvent : UnityEvent<WitResponseClass>
-{
-}
+// Could not decompile Meta.WitAi.Events.WitObjectEvent
+// This type uses unsupported IL or has too many generic parameters.

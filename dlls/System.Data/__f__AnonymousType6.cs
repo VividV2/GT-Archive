@@ -1,2 +1,0 @@
-namespace Microsoft.SqlServer.Server;
-

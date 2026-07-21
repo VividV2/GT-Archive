@@ -1,10 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public interface IDebugDisplaySettingsData : IDebugDisplaySettingsQuery
-{
-	IDebugDisplaySettingsPanelDisposable CreatePanel();
-
-	void Reset()
-	{
-	}
-}
+// Could not decompile UnityEngine.Rendering.IDebugDisplaySettingsData
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,22 @@
-// Could not decompile Fusion.LagCompensation.LagCompensationDraw
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+internal struct SimulationRenderSequencer
+{
+	private ulong _sequence;
+
+	public bool ConsumeRenderUpdate(NetworkRunner runner)
+	{
+		return ConsumeRenderUpdate(runner._simulation);
+	}
+
+	public bool ConsumeRenderUpdate(Simulation simulation)
+	{
+		bool flag = simulation.InterpolateSequence != _sequence;
+		bool flag;
+		if (flag)
+		{
+			_sequence = simulation.InterpolateSequence;
+		}
+		return flag;
+	}
+}

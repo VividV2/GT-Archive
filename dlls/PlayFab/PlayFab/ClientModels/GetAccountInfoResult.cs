@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.ClientModels.GetAccountInfoResult
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.CloudScriptModels;
+
+[Serializable]
+public class TagModel : PlayFabBaseModel
+{
+	public string TagValue;
+}

@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Scripting;
-
-namespace UnityEngine;
-
-[UsedByNativeCode]
-public sealed class ImageEffectOpaque : Attribute
-{
-}
+// Could not decompile UnityEngine.ImageEffectOpaque
+// This type uses unsupported IL or has too many generic parameters.

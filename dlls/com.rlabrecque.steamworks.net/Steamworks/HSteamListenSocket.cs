@@ -1,2 +1,9 @@
-// Could not decompile Steamworks.HSteamListenSocket
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Runtime.InteropServices;
+using System;
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void SteamInputActionEventCallbackPointer(IntPtr SteamInputActionEvent);

@@ -1,8 +1,2 @@
-using System;
+namespace UnityEngine.Bindings;
 
-namespace Unity.Collections.LowLevel.Unsafe;
-
-[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property)]
-public class WriteAccessRequiredAttribute : Attribute
-{
-}

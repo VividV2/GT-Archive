@@ -1,11 +1,10 @@
-namespace Steamworks
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
+[CallbackIdentity(1702)]
+public struct GCMessageFailed_t
 {
-	public enum ESteamInputGlyphStyle
-	{
-		ESteamInputGlyphStyle_Knockout = 0,
-		ESteamInputGlyphStyle_Light = 1,
-		ESteamInputGlyphStyle_Dark = 2,
-		ESteamInputGlyphStyle_NeutralColorABXY = 0x10,
-		ESteamInputGlyphStyle_SolidABXY = 0x20
-	}
+	public const int k_iCallback = 1702;
 }

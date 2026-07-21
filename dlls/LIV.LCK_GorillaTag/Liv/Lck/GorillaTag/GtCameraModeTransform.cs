@@ -1,2 +1,12 @@
-// Could not decompile Liv.Lck.GorillaTag.GtCameraModeTransform
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace Liv.Lck.GorillaTag;
+
+[Serializable]
+public struct GtCameraModeTransform
+{
+	public Vector3 position;
+
+	public Vector3 rotation;
+}

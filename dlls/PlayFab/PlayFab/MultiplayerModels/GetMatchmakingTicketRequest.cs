@@ -1,14 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class GetMatchmakingTicketRequest : PlayFabRequestCommon
-{
-	public bool EscapeObject;
-
-	public string QueueName;
-
-	public string TicketId;
-}
+// Could not decompile PlayFab.MultiplayerModels.GetMatchmakingTicketRequest
+// This type uses unsupported IL or has too many generic parameters.

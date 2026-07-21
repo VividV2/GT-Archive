@@ -1,6 +1,10 @@
-namespace Oculus.Interaction;
-
-public interface IPointableElement : IPointable
+namespace Oculus.Interaction
 {
-	void ProcessPointerEvent(PointerEvent evt);
+	public interface IPointableElement : IPointable
+	{
+		void ProcessPointerEvent(PointerEvent evt);
+	}
+}
+namespace Oculus.Interaction
+{
 }

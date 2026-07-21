@@ -1,12 +1,13 @@
 using System;
 using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class UnlinkTwitchAccountRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string AccessToken;
+}
+namespace PlayFab.ClientModels
+{
+	[Serializable]
+	public class UnlinkGoogleAccountRequest : PlayFabRequestCommon
+	{
+	}
 }

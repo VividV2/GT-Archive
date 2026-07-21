@@ -1,13 +1,2 @@
-namespace JetBrains.Annotations
-{
-	public enum AssertionConditionType
-	{
-		IS_TRUE,
-		IS_FALSE,
-		IS_NULL,
-		IS_NOT_NULL
-	}
-}
-namespace Unity.Collections
-{
-}
+// Could not decompile Unity.Collections.NativeLeakDetection
+// This type uses unsupported IL or has too many generic parameters.

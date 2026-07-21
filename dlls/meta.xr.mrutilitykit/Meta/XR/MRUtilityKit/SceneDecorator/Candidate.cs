@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine;
 
 namespace Meta.XR.MRUtilityKit.SceneDecorator;
 

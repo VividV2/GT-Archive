@@ -1,14 +1,2 @@
-namespace System
-{
-	[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-	internal class MonoLimitationAttribute : System.MonoTODOAttribute
-	{
-		public MonoLimitationAttribute(string comment)
-			: base(comment)
-		{
-		}
-	}
-}
-namespace System.EnterpriseServices
-{
-}
+// Could not decompile System.EnterpriseServices.SecurityCallers
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,20 +1,37 @@
-namespace UnityEngine.Analytics
-{
-	[Serializable]
-	[StructLayout(LayoutKind.Sequential)]
-	[ExcludeFromDocs]
-	[RequiredByNativeCode(GenerateProxy = true)]
-	public class SubsystemsAnalyticStart : SubsystemsAnalyticBase
-	{
-		public SubsystemsAnalyticStart()
-			: base("SubsystemStart")
-		{
-		}
+using System;
+using System.Runtime.InteropServices;
+using UnityEngine.Analytics;
+using UnityEngine.Internal;
+using UnityEngine.Scripting;
+using System;
+using System.Runtime.InteropServices;
+using UnityEngine.Analytics;
+using UnityEngine.Internal;
+using UnityEngine.Scripting;
+using System;
+using System.Runtime.InteropServices;
+using UnityEngine.Analytics;
+using UnityEngine.Internal;
+using UnityEngine.Scripting;
 
-		[RequiredByNativeCode]
-		internal static SubsystemsAnalyticStart CreateSubsystemsAnalyticStart()
-		{
-			return new SubsystemsAnalyticStart();
-		}
+namespace UnityEditor.Analytics;
+
+[Serializable]
+[StructLayout(LayoutKind.Sequential)]
+[ExcludeFromDocs]
+[RequiredByNativeCode(GenerateProxy = true)]
+public class VCProviderAnalytics : AnalyticsEventBase
+{
+	public string Mode;
+
+	public VCProviderAnalytics()
+		: base("versioncontrol_ProviderSettings_OnUpdate", 1)
+	{
+	}
+
+	[RequiredByNativeCode]
+	internal static VCProviderAnalytics CreateVCProviderAnalytics()
+	{
+		return new VCProviderAnalytics();
 	}
 }

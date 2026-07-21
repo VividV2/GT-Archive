@@ -2,15 +2,6 @@ using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Photon.Voice.PUN.UtilityScripts
-{
-}
-namespace Photon.Voice.PUN
-{
-}
-namespace Photon.Voice.PUN
-{
-}
 [CompilerGenerated]
 [EditorBrowsable(EditorBrowsableState.Never)]
 [GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]

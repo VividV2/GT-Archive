@@ -1,9 +1,13 @@
-namespace UnityEngine;
-
-public enum TextureWrapMode
+namespace UnityEngine.Bindings
 {
-	Repeat,
-	Clamp,
-	Mirror,
-	MirrorOnce
+}
+namespace UnityEngine
+{
+	public enum TextureWrapMode
+	{
+		Repeat,
+		Clamp,
+		Mirror,
+		MirrorOnce
+	}
 }

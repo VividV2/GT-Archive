@@ -1,10 +1,14 @@
 using System;
 
-namespace Unity.Profiling;
-
-[Flags]
-public enum ProfilerCategoryFlags : ushort
+namespace UnityEngine.Events
 {
-	None = 0,
-	Builtin = 1
+}
+namespace Unity.Profiling
+{
+	[Flags]
+	public enum ProfilerCategoryFlags : ushort
+	{
+		None = 0,
+		Builtin = 1
+	}
 }

@@ -1,10 +1,6 @@
-namespace UnityEngine.Animations.Rigging
+namespace UnityEngine.Animations.Rigging;
+
+public interface IWeightedAnimationJob : IAnimationJob
 {
-	public interface IWeightedAnimationJob : IAnimationJob
-	{
-		FloatProperty jobWeight { get; set; }
-	}
-}
-namespace UnityEngine.Animations.Rigging
-{
+	FloatProperty jobWeight { get; set; }
 }

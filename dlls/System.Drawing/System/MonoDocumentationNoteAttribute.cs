@@ -1,12 +1,12 @@
-namespace System.Drawing
+namespace System.Drawing.Drawing2D
 {
 }
-namespace System.Drawing
+namespace System.Drawing.Design
 {
-}
-namespace System.Drawing.Imaging
-{
-}
-namespace System.Drawing
-{
+	public interface IToolboxUser
+	{
+		bool GetToolSupported(ToolboxItem tool);
+
+		void ToolPicked(ToolboxItem tool);
+	}
 }

@@ -1,3 +1,2 @@
-namespace System.Runtime.Serialization;
+namespace Internal.Runtime.Augments;
 
-public delegate void SerializationEventHandler(StreamingContext context);

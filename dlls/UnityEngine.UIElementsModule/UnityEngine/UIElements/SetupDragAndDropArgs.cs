@@ -1,19 +1,2 @@
-using System.Collections.Generic;
-
-namespace UnityEngine.UIElements;
-
-public readonly struct SetupDragAndDropArgs
-{
-	public readonly VisualElement draggedElement;
-
-	public readonly IEnumerable<int> selectedIds;
-
-	public readonly StartDragArgs startDragArgs;
-
-	internal SetupDragAndDropArgs(VisualElement draggedElement, IEnumerable<int> selectedIds, StartDragArgs startDragArgs)
-	{
-		this.draggedElement = draggedElement;
-		this.selectedIds = selectedIds;
-		this.startDragArgs = startDragArgs;
-	}
-}
+// Could not decompile UnityEngine.UIElements.SetupDragAndDropArgs
+// This type uses unsupported IL or has too many generic parameters.

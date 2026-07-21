@@ -1,10 +1,19 @@
 namespace System.Net;
 
-internal static class IPAddressParserStatics
+internal enum FtpOperation
 {
-	public const int IPv4AddressBytes = 4;
-
-	public const int IPv6AddressBytes = 16;
-
-	public const int IPv6AddressShorts = 8;
+	DownloadFile,
+	ListDirectory,
+	ListDirectoryDetails,
+	UploadFile,
+	UploadFileUnique,
+	AppendFile,
+	DeleteFile,
+	GetDateTimestamp,
+	GetFileSize,
+	Rename,
+	MakeDirectory,
+	RemoveDirectory,
+	PrintWorkingDirectory,
+	Other
 }

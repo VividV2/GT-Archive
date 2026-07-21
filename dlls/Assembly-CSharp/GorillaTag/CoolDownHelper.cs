@@ -1,18 +1,2 @@
-namespace GorillaNetworking;
-
-public class GetAcceptedAgreementsRequest
-{
-	public string[] AgreementKeys;
-}
-public interface IRequestableOwnershipGuardCallbacks
-{
-	void OnOwnershipTransferred(NetPlayer toPlayer, NetPlayer fromPlayer);
-
-	bool OnOwnershipRequest(NetPlayer fromPlayer);
-
-	void OnMyOwnerLeft();
-
-	bool OnMasterClientAssistedTakeoverRequest(NetPlayer fromPlayer, NetPlayer toPlayer);
-
-	void OnMyCreatorLeft();
-}
+// Could not decompile GorillaTag.CoolDownHelper
+// This type uses unsupported IL or has too many generic parameters.

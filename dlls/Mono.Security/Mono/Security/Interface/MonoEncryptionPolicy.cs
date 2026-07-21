@@ -1,20 +1,8 @@
-namespace Mono.Security.Interface
-{
-	internal interface IMonoSslClientAuthenticationOptions : IMonoAuthenticationOptions
-	{
-		LocalCertificateSelectionCallback LocalCertificateSelectionCallback { get; set; }
+namespace Mono.Security.Interface;
 
-		string TargetHost { get; set; }
-
-		X509CertificateCollection ClientCertificates { get; set; }
-	}
-}
-namespace Mono.Security.Interface
+public enum MonoEncryptionPolicy
 {
-	public enum MonoEncryptionPolicy
-	{
-		RequireEncryption,
-		AllowNoEncryption,
-		NoEncryption
-	}
+	RequireEncryption,
+	AllowNoEncryption,
+	NoEncryption
 }

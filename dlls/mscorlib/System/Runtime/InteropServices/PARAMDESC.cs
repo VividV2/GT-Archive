@@ -1,13 +1,7 @@
-namespace System.Runtime.InteropServices;
-
-/// <summary>Use <see cref="T:System.Runtime.InteropServices.ComTypes.PARAMDESC" /> instead.</summary>
-[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-[Obsolete("Use System.Runtime.InteropServices.ComTypes.PARAMDESC instead. http://go.microsoft.com/fwlink/?linkid=14202", false)]
-public struct PARAMDESC
+namespace Mono.Interop
 {
-	/// <summary>Represents a pointer to a value that is being passed between processes.</summary>
-	public IntPtr lpVarValue;
-
-	/// <summary>Represents bitmask values that describe the structure element, parameter, or return value.</summary>
-	public PARAMFLAG wParamFlags;
+	[Guid("00020400-0000-0000-C000-000000000046")]
+	internal interface IDispatch
+	{
+	}
 }

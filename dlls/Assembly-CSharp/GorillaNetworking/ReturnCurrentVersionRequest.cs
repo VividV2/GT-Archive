@@ -1,12 +1,8 @@
-namespace GorillaNetworking
-{
-	public class ReturnCurrentVersionRequest
-	{
-		public string CurrentVersion;
+namespace GorillaNetworking;
 
-		public int? UpdatedSynchTest;
-	}
-}
-namespace GorillaTag
+public class ReturnCurrentVersionRequest
 {
+	public string CurrentVersion;
+
+	public int? UpdatedSynchTest;
 }

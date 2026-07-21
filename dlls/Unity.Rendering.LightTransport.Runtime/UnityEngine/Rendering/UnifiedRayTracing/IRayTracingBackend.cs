@@ -1,14 +1,10 @@
-namespace UnityEngine.Rendering.Sampling
-{
-}
-namespace UnityEngine.Rendering.UnifiedRayTracing
-{
-	internal interface IRayTracingBackend
-	{
-		IRayTracingShader CreateRayTracingShader(Object shader, string kernelName, GraphicsBuffer dispatchBuffer);
+namespace UnityEngine.Rendering.UnifiedRayTracing;
 
-		IRayTracingAccelStruct CreateAccelerationStructure(AccelerationStructureOptions options, ReferenceCounter counter);
+internal interface IRayTracingBackend
+{
+	IRayTracingShader CreateRayTracingShader(Object shader, string kernelName, GraphicsBuffer dispatchBuffer);
 
-		ulong GetRequiredTraceScratchBufferSizeInBytes(uint width, uint height, uint depth);
-	}
+	IRayTracingAccelStruct CreateAccelerationStructure(AccelerationStructureOptions options, ReferenceCounter counter);
+
+	ulong GetRequiredTraceScratchBufferSizeInBytes(uint width, uint height, uint depth);
 }

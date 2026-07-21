@@ -1,8 +1,3 @@
-namespace UnityEngine.Rendering;
-
-public struct MetadataValue
+namespace UnityEngine.Experimental.Rendering
 {
-	public int NameID;
-
-	public uint Value;
 }

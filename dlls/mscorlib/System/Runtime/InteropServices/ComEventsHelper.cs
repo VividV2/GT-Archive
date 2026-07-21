@@ -1,2 +1,2 @@
-namespace System.Runtime.InteropServices.WindowsRuntime;
+namespace System.Runtime.Remoting.Messaging;
 

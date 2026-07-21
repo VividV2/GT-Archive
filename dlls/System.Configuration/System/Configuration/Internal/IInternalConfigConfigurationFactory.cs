@@ -18,6 +18,3 @@ public interface IInternalConfigConfigurationFactory
 	/// <returns>A normalized subpath string.</returns>
 	string NormalizeLocationSubPath(string subPath, IConfigErrorInfo errorInfo);
 }
-namespace System.Configuration
-{
-}

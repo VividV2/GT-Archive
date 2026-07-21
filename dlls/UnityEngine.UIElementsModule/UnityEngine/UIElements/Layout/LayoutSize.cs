@@ -1,11 +1,8 @@
-namespace UnityEngine.UIElements.UIR;
+namespace UnityEngine.UIElements.StyleSheets;
 
-internal enum RenderDataDirtyTypeClasses
+internal enum StyleValidationStatus
 {
-	Clipping,
-	Opacity,
-	Color,
-	TransformSize,
-	Visuals,
-	Count
+	Ok,
+	Error,
+	Warning
 }

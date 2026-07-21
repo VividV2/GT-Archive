@@ -1,22 +1,12 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public interface IEventHandler
 {
-	internal interface IMouseEventInternal
-	{
-		IPointerEvent sourcePointerEvent { get; }
+	void SendEvent(EventBase e);
 
-		bool recomputeTopElementUnderMouse { get; }
-	}
-}
-namespace UnityEngine.UIElements
-{
-	public interface IEventHandler
-	{
-		void SendEvent(EventBase e);
+	void HandleEvent(EventBase evt);
 
-		void HandleEvent(EventBase evt);
+	bool HasTrickleDownHandlers();
 
-		bool HasTrickleDownHandlers();
-
-		bool HasBubbleUpHandlers();
-	}
+	bool HasBubbleUpHandlers();
 }

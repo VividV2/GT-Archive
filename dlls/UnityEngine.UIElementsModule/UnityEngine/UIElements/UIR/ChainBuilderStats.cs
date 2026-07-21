@@ -1,54 +1,50 @@
-namespace UnityEngine.UIElements.UIR
+namespace UnityEngine.UIElements.UIR;
+
+internal struct ChainBuilderStats
 {
-	internal struct ChainBuilderStats
-	{
-		public uint elementsAdded;
+	public uint elementsAdded;
 
-		public uint elementsRemoved;
+	public uint elementsRemoved;
 
-		public uint recursiveClipUpdates;
+	public uint recursiveClipUpdates;
 
-		public uint recursiveClipUpdatesExpanded;
+	public uint recursiveClipUpdatesExpanded;
 
-		public uint nonRecursiveClipUpdates;
+	public uint nonRecursiveClipUpdates;
 
-		public uint recursiveTransformUpdates;
+	public uint recursiveTransformUpdates;
 
-		public uint recursiveTransformUpdatesExpanded;
+	public uint recursiveTransformUpdatesExpanded;
 
-		public uint recursiveOpacityUpdates;
+	public uint recursiveOpacityUpdates;
 
-		public uint recursiveOpacityUpdatesExpanded;
+	public uint recursiveOpacityUpdatesExpanded;
 
-		public uint opacityIdUpdates;
+	public uint opacityIdUpdates;
 
-		public uint colorUpdates;
+	public uint colorUpdates;
 
-		public uint colorUpdatesExpanded;
+	public uint colorUpdatesExpanded;
 
-		public uint recursiveVisualUpdates;
+	public uint recursiveVisualUpdates;
 
-		public uint recursiveVisualUpdatesExpanded;
+	public uint recursiveVisualUpdatesExpanded;
 
-		public uint nonRecursiveVisualUpdates;
+	public uint nonRecursiveVisualUpdates;
 
-		public uint dirtyProcessed;
+	public uint dirtyProcessed;
 
-		public uint nudgeTransformed;
+	public uint nudgeTransformed;
 
-		public uint boneTransformed;
+	public uint boneTransformed;
 
-		public uint skipTransformed;
+	public uint skipTransformed;
 
-		public uint visualUpdateTransformed;
+	public uint visualUpdateTransformed;
 
-		public uint updatedMeshAllocations;
+	public uint updatedMeshAllocations;
 
-		public uint newMeshAllocations;
+	public uint newMeshAllocations;
 
-		public uint groupTransformElementsChanged;
-	}
-}
-namespace UnityEngine.UIElements.UIR
-{
+	public uint groupTransformElementsChanged;
 }

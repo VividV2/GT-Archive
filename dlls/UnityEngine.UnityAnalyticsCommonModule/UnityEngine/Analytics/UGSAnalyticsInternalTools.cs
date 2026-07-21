@@ -1,12 +1,6 @@
-using UnityEngine.Internal;
-
-namespace UnityEngine.Analytics;
-
-[ExcludeFromDocs]
-public interface UGSAnalyticsInternalTools
+namespace UnityEditor.Analytics
 {
-	static void SetPrivacyStatus(bool status)
-	{
-		AnalyticsCommon.ugsAnalyticsEnabled = status;
-	}
+}
+namespace UnityEditor.Analytics
+{
 }

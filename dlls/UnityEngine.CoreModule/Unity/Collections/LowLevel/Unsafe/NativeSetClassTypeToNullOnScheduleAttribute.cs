@@ -1,10 +1,2 @@
-using System;
-using UnityEngine.Scripting;
-
-namespace Unity.Collections.LowLevel.Unsafe;
-
-[AttributeUsage(AttributeTargets.Field)]
-[RequiredByNativeCode]
-public sealed class NativeSetClassTypeToNullOnScheduleAttribute : Attribute
-{
-}
+// Could not decompile Unity.Collections.LowLevel.Unsafe.NativeSetClassTypeToNullOnScheduleAttribute
+// This type uses unsupported IL or has too many generic parameters.

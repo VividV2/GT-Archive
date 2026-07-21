@@ -1,9 +1,2 @@
-namespace System.Net.Configuration
-{
-}
-namespace System.Net.NetworkInformation
-{
-}
-namespace System.ComponentModel
-{
-}
+// Could not decompile System.Diagnostics.TraceFilter
+// This type uses unsupported IL or has too many generic parameters.

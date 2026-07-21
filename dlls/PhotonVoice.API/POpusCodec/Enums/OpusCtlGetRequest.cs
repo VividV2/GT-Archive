@@ -23,6 +23,6 @@ namespace POpusCodec.Enums
 		LastPacketDurationRequest = 4039
 	}
 }
-namespace Photon.Voice
+namespace POpusCodec
 {
 }

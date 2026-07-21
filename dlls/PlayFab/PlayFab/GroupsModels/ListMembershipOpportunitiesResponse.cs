@@ -1,6 +1,13 @@
-namespace PlayFab.GroupsModels
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.GroupsModels;
+
+[Serializable]
+public class ListMembershipOpportunitiesResponse : PlayFabResultCommon
 {
-}
-namespace PlayFab.ExperimentationModels
-{
+	public List<GroupApplication> Applications;
+
+	public List<GroupInvitation> Invitations;
 }

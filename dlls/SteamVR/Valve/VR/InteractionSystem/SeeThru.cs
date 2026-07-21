@@ -1,26 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-namespace Valve.VR.InteractionSystem;
-
-public class ItemPackage : MonoBehaviour
-{
-	public enum ItemPackageType
-	{
-		Unrestricted,
-		OneHanded,
-		TwoHanded
-	}
-
-	public new string name;
-
-	public ItemPackageType packageType;
-
-	public GameObject itemPrefab;
-
-	public GameObject otherHandItemPrefab;
-
-	public GameObject previewPrefab;
-
-	public GameObject fadedPreviewPrefab;
-}
+// Could not decompile Valve.VR.InteractionSystem.SeeThru
+// This type uses unsupported IL or has too many generic parameters.

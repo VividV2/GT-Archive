@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.XR.OpenXR.NativeTypes.XrSessionState
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.XR.OpenXR.API;
+
+public enum UnityXRShadingRateFormat
+{
+	kUnityXRShadingRateFormatNone,
+	kUnityXRShadingRateR8G8
+}
+namespace UnityEngine.XR.OpenXR.NativeTypes
+{
+}

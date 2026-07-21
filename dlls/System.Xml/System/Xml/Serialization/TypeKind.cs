@@ -1,32 +1,6 @@
-using System.Xml.Xsl.Qil;
-using System.Xml.Xsl.Qil;
+namespace System.Xml.Xsl;
 
-namespace System.Xml.Xsl.XPath
-{
-	internal interface IFocus
-	{
-		QilNode GetCurrent();
-
-		QilNode GetPosition();
-
-		QilNode GetLast();
-	}
-}
-namespace System.Xml.Serialization
-{
-	internal enum TypeKind
-	{
-		Root,
-		Primitive,
-		Enum,
-		Struct,
-		Class,
-		Array,
-		Collection,
-		Enumerable,
-		Void,
-		Node,
-		Attribute,
-		Serializable
-	}
-}
+/// <summary>Represents the method that will handle the <see cref="E:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered" /> event.</summary>
+/// <param name="sender">The source of the event.</param>
+/// <param name="e">The <see cref="T:System.Xml.Xsl.XsltMessageEncounteredEventArgs" /> containing the event data.</param>
+public delegate void XsltMessageEncounteredEventHandler(object sender, XsltMessageEncounteredEventArgs e);

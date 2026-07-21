@@ -1,2 +1,2 @@
-namespace PlayFab.Json;
+namespace PlayFab.ExperimentationModels;
 

@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.Rendering.Universal.InclusiveRange
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+internal enum DecalTechnique
+{
+	Invalid,
+	DBuffer,
+	ScreenSpace,
+	GBuffer
+}

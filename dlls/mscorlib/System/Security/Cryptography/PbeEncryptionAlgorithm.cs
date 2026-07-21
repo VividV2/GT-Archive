@@ -1,10 +1,21 @@
-namespace System.Security.Cryptography;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization;
 
-public enum PbeEncryptionAlgorithm
+namespace System.Runtime.Remoting.Messaging
 {
-	Unknown,
-	Aes128Cbc,
-	Aes192Cbc,
-	Aes256Cbc,
-	TripleDes3KeyPkcs12
+	internal interface ISerializationRootObject
+	{
+		void RootSetObjectData(SerializationInfo info, StreamingContext context);
+	}
+}
+namespace System.Security.Cryptography
+{
+	public enum PbeEncryptionAlgorithm
+	{
+		Unknown,
+		Aes128Cbc,
+		Aes192Cbc,
+		Aes256Cbc,
+		TripleDes3KeyPkcs12
+	}
 }

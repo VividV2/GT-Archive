@@ -1,10 +1,6 @@
-namespace Meta.Voice
+namespace Meta.Voice;
+
+public interface ITranscriptionRequestOptions : IVoiceRequestOptions
 {
-	public interface ITranscriptionRequestOptions : IVoiceRequestOptions
-	{
-		float AudioThreshold { get; }
-	}
-}
-namespace Meta.Conduit
-{
+	float AudioThreshold { get; }
 }

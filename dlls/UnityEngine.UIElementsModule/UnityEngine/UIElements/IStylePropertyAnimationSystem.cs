@@ -1,17 +1,12 @@
-using UnityEngine.Bindings;
-using UnityEngine.Bindings;
-
 namespace UnityEngine.UIElements;
 
-[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
-internal enum StyleSelectorType
+public enum WhiteSpace
 {
-	Unknown,
-	Wildcard,
-	Type,
-	Class,
-	PseudoClass,
-	RecursivePseudoClass,
-	ID,
-	Predicate
+	Normal,
+	NoWrap,
+	Pre,
+	PreWrap
+}
+namespace UnityEngine.UIElements
+{
 }

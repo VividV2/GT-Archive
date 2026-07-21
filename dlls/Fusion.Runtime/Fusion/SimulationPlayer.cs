@@ -1,4 +1,3 @@
-#define DEBUG
 namespace Fusion;
 
 internal class SimulationPlayer

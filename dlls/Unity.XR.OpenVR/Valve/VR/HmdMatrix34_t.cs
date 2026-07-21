@@ -1,10 +1,2 @@
-namespace Valve.VR;
-
-public enum EVRRenderModelTextureFormat
-{
-	RGBA8_SRGB,
-	BC2,
-	BC4,
-	BC7,
-	BC7_SRGB
-}
+// Could not decompile Valve.VR.HmdMatrix34_t
+// This type uses unsupported IL or has too many generic parameters.

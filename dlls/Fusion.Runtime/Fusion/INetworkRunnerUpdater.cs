@@ -1,8 +1,15 @@
-namespace Fusion;
-
-public interface INetworkRunnerUpdater
+namespace Fusion
 {
-	void Initialize(NetworkRunner runner);
+}
+namespace Fusion
+{
+	public interface INetworkRunnerUpdater
+	{
+		void Initialize(NetworkRunner runner);
 
-	void Shutdown(NetworkRunner runner);
+		void Shutdown(NetworkRunner runner);
+	}
+}
+namespace Fusion
+{
 }

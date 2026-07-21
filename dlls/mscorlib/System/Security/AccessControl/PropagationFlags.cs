@@ -1,2 +1,8 @@
-// Could not decompile System.Security.AccessControl.PropagationFlags
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Threading;
+
+[Flags]
+internal enum SynchronizationContextProperties
+{
+	None = 0,
+	RequireWaitNotification = 1
+}

@@ -1,6 +1,16 @@
-namespace Oculus.Platform.Models
+using System.ComponentModel;
+using System.ComponentModel;
+
+namespace Oculus.Platform;
+
+public enum AchievementType
 {
-}
-namespace Oculus.Platform.Models
-{
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("SIMPLE")]
+	Simple,
+	[Description("BITFIELD")]
+	Bitfield,
+	[Description("COUNT")]
+	Count
 }

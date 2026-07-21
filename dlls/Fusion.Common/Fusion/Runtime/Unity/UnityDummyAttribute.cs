@@ -1,2 +1,21 @@
-// Could not decompile Fusion.Runtime.Unity.UnityDummyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Diagnostics;
+
+namespace Fusion.Runtime.Unity
+{
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Field, AllowMultiple = true)]
+	[Conditional("FUSION_UNITY")]
+	internal class UnityDummyAttribute : Attribute
+	{
+		public UnityDummyAttribute()
+		{
+		}
+
+		public UnityDummyAttribute(string str)
+		{
+		}
+	}
+}
+namespace Fusion
+{
+}

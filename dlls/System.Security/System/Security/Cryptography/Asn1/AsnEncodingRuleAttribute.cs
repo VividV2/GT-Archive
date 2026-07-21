@@ -1,13 +1,13 @@
-using System.Security.Cryptography.Asn1;
-using System.Security.Cryptography.Asn1;
-
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-internal struct PolicyInformation
+namespace System.Security.Cryptography.Pkcs.Asn1
 {
-	[ObjectIdentifier]
-	public string PolicyIdentifier;
+	internal struct SigningCertificateAsn
+	{
+		public EssCertId[] Certs;
 
-	[OptionalValue]
-	public PolicyQualifierInfo[] PolicyQualifiers;
+		[OptionalValue]
+		public PolicyInformation[] Policies;
+	}
+}
+namespace System.Security.Cryptography.Pkcs
+{
 }

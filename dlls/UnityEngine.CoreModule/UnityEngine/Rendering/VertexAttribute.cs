@@ -2,15 +2,6 @@ using UnityEngine.Scripting.APIUpdating;
 
 namespace UnityEngine.Rendering
 {
-	public enum ShaderConstantType
-	{
-		Vector,
-		Matrix,
-		Struct
-	}
-}
-namespace UnityEngine.Rendering
-{
 	[MovedFrom("UnityEngine.Experimental.Rendering")]
 	public enum VertexAttribute
 	{
@@ -29,4 +20,7 @@ namespace UnityEngine.Rendering
 		BlendWeight,
 		BlendIndices
 	}
+}
+namespace UnityEngine.Rendering
+{
 }

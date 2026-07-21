@@ -1,9 +1,2 @@
-namespace UnityEngine.Rendering;
-
-public enum LightProbeUsage
-{
-	Off = 0,
-	BlendProbes = 1,
-	UseProxyVolume = 2,
-	CustomProvided = 4
-}
+// Could not decompile UnityEngine.Playables.ScriptPlayableOutput
+// This type uses unsupported IL or has too many generic parameters.

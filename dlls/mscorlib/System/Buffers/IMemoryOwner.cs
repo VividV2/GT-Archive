@@ -1,6 +1,10 @@
-namespace System.Buffers;
-
-public interface IMemoryOwner<T> : IDisposable
+namespace System.Buffers
 {
-	Memory<T> Memory { get; }
+	public interface IMemoryOwner<T> : IDisposable
+	{
+		Memory<T> Memory { get; }
+	}
+}
+namespace System.Collections.Generic
+{
 }

@@ -1,9 +1,2 @@
-namespace System.Runtime.CompilerServices;
-
-[FriendAccessAllowed]
-internal sealed class AssemblyAttributesGoHereM
-{
-	internal AssemblyAttributesGoHereM()
-	{
-	}
-}
+// Could not decompile System.Runtime.CompilerServices.AssemblyAttributesGoHereM
+// This type uses unsupported IL or has too many generic parameters.

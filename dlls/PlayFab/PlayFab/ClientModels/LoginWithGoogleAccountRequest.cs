@@ -1,2 +1,10 @@
-// Could not decompile PlayFab.ClientModels.LoginWithGoogleAccountRequest
-// This type uses unsupported IL or has too many generic parameters.
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class LinkKongregateAccountResult : PlayFabResultCommon
+{
+	public LinkKongregateAccountResult()
+	{
+		base..ctor();
+	}
+}

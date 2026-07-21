@@ -1,6 +1,2 @@
-namespace System.Security.Cryptography.X509Certificates
-{
-}
-namespace System.CodeDom
-{
-}
+// Could not decompile System.Net.Mail.DotAtomReader
+// This type uses unsupported IL or has too many generic parameters.

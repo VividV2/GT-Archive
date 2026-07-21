@@ -1,8 +1,3 @@
-namespace POpusCodec.Enums;
-
-public enum OpusApplicationType
+namespace POpusCodec.Enums
 {
-	Voip = 2048,
-	Audio = 2049,
-	RestrictedLowDelay = 2051
 }

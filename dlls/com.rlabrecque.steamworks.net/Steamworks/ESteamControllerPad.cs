@@ -1,2 +1,7 @@
-// Could not decompile Steamworks.ESteamControllerPad
-// This type uses unsupported IL or has too many generic parameters.
+namespace Steamworks;
+
+public enum ESteamControllerPad
+{
+	k_ESteamControllerPad_Left,
+	k_ESteamControllerPad_Right
+}

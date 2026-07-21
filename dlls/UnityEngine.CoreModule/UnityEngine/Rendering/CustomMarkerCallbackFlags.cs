@@ -1,24 +1,10 @@
 using System;
-using System;
 
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+[Flags]
+public enum CustomMarkerCallbackFlags
 {
-	[Flags]
-	public enum CustomMarkerCallbackFlags
-	{
-		CustomMarkerCallbackDefault = 0,
-		CustomMarkerCallbackForceInvalidateStateTracking = 4
-	}
-}
-namespace UnityEngine.Rendering
-{
-	public enum VideoShadersIncludeMode
-	{
-		[InspectorName("Don't include")]
-		Never,
-		[InspectorName("Include if referenced")]
-		Referenced,
-		[InspectorName("Always include")]
-		Always
-	}
+	CustomMarkerCallbackDefault = 0,
+	CustomMarkerCallbackForceInvalidateStateTracking = 4
 }

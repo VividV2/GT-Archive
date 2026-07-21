@@ -1,4 +1,3 @@
-#define DEBUG
 namespace Fusion.Protocol;
 
 internal enum PeerMode : byte

@@ -1,6 +1,10 @@
-namespace UnityEngine.Timeline;
-
-public interface INotificationOptionProvider
+namespace UnityEngine.Timeline
 {
-	NotificationFlags flags { get; }
+}
+namespace UnityEngine.Timeline
+{
+	public interface INotificationOptionProvider
+	{
+		NotificationFlags flags { get; }
+	}
 }

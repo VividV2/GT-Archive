@@ -1,3 +1,9 @@
-namespace UnityEngine.Events;
+namespace UnityEngine.Rendering;
 
-public delegate void UnityAction();
+public enum BatchDrawCommandType
+{
+	Direct,
+	Indirect,
+	Procedural,
+	ProceduralIndirect
+}

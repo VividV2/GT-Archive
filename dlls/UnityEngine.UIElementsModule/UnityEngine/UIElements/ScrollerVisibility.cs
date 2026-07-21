@@ -1,12 +1,8 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum ScrollerVisibility
 {
-}
-namespace UnityEngine.UIElements
-{
-	public enum ScrollerVisibility
-	{
-		Auto,
-		AlwaysVisible,
-		Hidden
-	}
+	Auto,
+	AlwaysVisible,
+	Hidden
 }

@@ -1,19 +1,2 @@
-using System.Reflection;
-using System.Runtime.Serialization;
-
-namespace System.Runtime.Remoting.Metadata
-{
-	internal class RemotingFieldCachedData
-	{
-		internal RemotingFieldCachedData(RuntimeFieldInfo ri)
-		{
-		}
-
-		internal RemotingFieldCachedData(SerializationFieldInfo ri)
-		{
-		}
-	}
-}
-namespace System.Runtime.Remoting.Lifetime
-{
-}
+// Could not decompile System.Runtime.Remoting.Metadata.RemotingFieldCachedData
+// This type uses unsupported IL or has too many generic parameters.

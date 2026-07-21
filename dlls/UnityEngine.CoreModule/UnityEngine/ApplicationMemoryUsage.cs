@@ -1,10 +1,14 @@
-namespace UnityEngine;
-
-public enum ApplicationMemoryUsage
+namespace UnityEngine
 {
-	Unknown,
-	Low,
-	Medium,
-	High,
-	Critical
+	public enum ApplicationMemoryUsage
+	{
+		Unknown,
+		Low,
+		Medium,
+		High,
+		Critical
+	}
+}
+namespace UnityEngine.Events
+{
 }

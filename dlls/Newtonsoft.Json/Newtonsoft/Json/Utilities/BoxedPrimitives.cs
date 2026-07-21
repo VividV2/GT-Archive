@@ -1,2 +1,2 @@
-namespace Newtonsoft.Json.Utilities;
-
+// Could not decompile Newtonsoft.Json.Utilities.BoxedPrimitives
+// This type uses unsupported IL or has too many generic parameters.

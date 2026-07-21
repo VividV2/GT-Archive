@@ -1,43 +1,50 @@
-using UnityEngine;
-
-[HelpURL("https://geom.io/bakery/wiki/index.php?title=Manual#Bakery_Direct_Light")]
-[ExecuteInEditMode]
-[DisallowMultipleComponent]
-public class BakeryDirectLight : MonoBehaviour
+public struct BakeryLightmapGroupPlain
 {
-	public Color color = Color.white;
+	public string name;
 
-	public float intensity = 1f;
+	public int resolution;
 
-	public float shadowSpread = 0.01f;
+	public int id;
 
-	public int samples = 16;
+	public int renderMode;
 
-	public int bitmask = 1;
+	public int renderDirMode;
 
-	public bool bakeToIndirect;
+	public int atlasPacker;
 
-	public bool shadowmask;
+	public bool vertexBake;
 
-	public bool shadowmaskDenoise;
+	public bool containsTerrains;
 
-	public float indirectIntensity = 1f;
+	public bool probes;
 
-	public Texture2D cloudShadow;
+	public bool isImplicit;
 
-	public float cloudShadowTilingX = 0.01f;
+	public bool computeSSS;
 
-	public float cloudShadowTilingY = 0.01f;
+	public int sssSamples;
 
-	public float cloudShadowOffsetX;
+	public float sssDensity;
 
-	public float cloudShadowOffsetY;
+	public float sssR;
 
-	public bool supersample;
+	public float sssG;
 
-	public int UID;
+	public float sssB;
 
-	public static int lightsChanged;
+	public float fakeShadowBias;
 
-	private static GameObject objShownError;
+	public bool transparentSelfShadow;
+
+	public bool flipNormal;
+
+	public string parentName;
+
+	public int sceneLodLevel;
+
+	public bool autoResolution;
+
+	public int holeFilling;
+
+	public int vertexSamplingDensity;
 }

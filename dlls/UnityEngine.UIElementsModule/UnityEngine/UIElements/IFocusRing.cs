@@ -1,8 +1,12 @@
-namespace UnityEngine.UIElements;
-
-public interface IFocusRing
+namespace UnityEngine.UIElements
 {
-	FocusChangeDirection GetFocusChangeDirection(Focusable currentFocusable, EventBase e);
+	public interface IFocusRing
+	{
+		FocusChangeDirection GetFocusChangeDirection(Focusable currentFocusable, EventBase e);
 
-	Focusable GetNextFocusable(Focusable currentFocusable, FocusChangeDirection direction);
+		Focusable GetNextFocusable(Focusable currentFocusable, FocusChangeDirection direction);
+	}
+}
+namespace UnityEngine.UIElements
+{
 }

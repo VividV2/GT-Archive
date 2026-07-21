@@ -1,6 +1,10 @@
-namespace Fusion;
-
-public interface IBeforeTick : IPublicFacingInterface
+namespace Fusion
 {
-	void BeforeTick();
+	public interface IBeforeTick : IPublicFacingInterface
+	{
+		void BeforeTick();
+	}
+}
+namespace Fusion
+{
 }

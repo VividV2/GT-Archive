@@ -1,6 +1,2 @@
-namespace System.Diagnostics.Contracts.Internal
-{
-}
-namespace System.Diagnostics.Tracing
-{
-}
+// Could not decompile System.Reflection.Emit.OpCodeNames
+// This type uses unsupported IL or has too many generic parameters.

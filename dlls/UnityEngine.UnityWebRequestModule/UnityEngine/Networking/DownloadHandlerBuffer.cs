@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Networking.DownloadHandlerBuffer
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Networking;
+
+public interface IMultipartFormSection
+{
+	string sectionName { get; }
+
+	byte[] sectionData { get; }
+
+	string fileName { get; }
+
+	string contentType { get; }
+}

@@ -1,9 +1,6 @@
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Comfort;
-
-[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
-public interface ITunnelingVignetteProvider
+namespace UnityEngine.XR.Interaction.Toolkit.Interactors
 {
-	VignetteParameters vignetteParameters { get; }
+}
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Readers
+{
 }

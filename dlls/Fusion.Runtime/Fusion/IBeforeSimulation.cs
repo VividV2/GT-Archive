@@ -1,10 +1,6 @@
-namespace Fusion
+namespace Fusion;
+
+public interface IBeforeSimulation : IPublicFacingInterface
 {
-}
-namespace Fusion
-{
-	public interface IBeforeSimulation : IPublicFacingInterface
-	{
-		void BeforeSimulation(int forwardTickCount);
-	}
+	void BeforeSimulation(int forwardTickCount);
 }

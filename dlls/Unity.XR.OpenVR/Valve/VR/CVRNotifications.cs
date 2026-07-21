@@ -1,11 +1,2 @@
-namespace Valve.VR;
-
-public enum EDeviceActivityLevel
-{
-	k_EDeviceActivityLevel_Unknown = -1,
-	k_EDeviceActivityLevel_Idle,
-	k_EDeviceActivityLevel_UserInteraction,
-	k_EDeviceActivityLevel_UserInteraction_Timeout,
-	k_EDeviceActivityLevel_Standby,
-	k_EDeviceActivityLevel_Idle_Timeout
-}
+// Could not decompile Valve.VR.CVRNotifications
+// This type uses unsupported IL or has too many generic parameters.

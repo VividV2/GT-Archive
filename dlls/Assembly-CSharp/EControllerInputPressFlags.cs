@@ -9,5 +9,3 @@ public enum EControllerInputPressFlags
 	Primary = 4,
 	Secondary = 8
 }
-namespace GorillaTag;
-

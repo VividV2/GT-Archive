@@ -1,9 +1,13 @@
-using System;
-using System;
-
-namespace Newtonsoft.Json;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
-public sealed class JsonIgnoreAttribute : Attribute
+namespace Newtonsoft.Json.Serialization
+{
+	public class DefaultNamingStrategy : NamingStrategy
+	{
+		protected override string ResolvePropertyName(string name)
+		{
+			return name;
+		}
+	}
+}
+namespace Newtonsoft.Json.Converters
 {
 }

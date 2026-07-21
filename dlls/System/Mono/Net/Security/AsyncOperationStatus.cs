@@ -1,9 +1,3 @@
-namespace Mono.Net.Security;
-
-internal enum AsyncOperationStatus
+namespace System.Security.Permissions
 {
-	Initialize,
-	Continue,
-	ReadDone,
-	Complete
 }

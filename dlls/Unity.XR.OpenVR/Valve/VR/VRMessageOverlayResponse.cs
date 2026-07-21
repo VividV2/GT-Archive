@@ -1,5 +1,15 @@
 namespace Valve.VR
 {
+	public enum EVRDistortionFunctionType
+	{
+		None,
+		FTheta,
+		Extended_FTheta,
+		MAX_DISTORTION_FUNCTION_TYPES
+	}
+}
+namespace Valve.VR
+{
 	public enum VRMessageOverlayResponse
 	{
 		ButtonPress_0,
@@ -13,14 +23,4 @@ namespace Valve.VR
 }
 namespace Valve.VR
 {
-	public enum ETrackedDeviceClass
-	{
-		Invalid,
-		HMD,
-		Controller,
-		GenericTracker,
-		TrackingReference,
-		DisplayRedirect,
-		Max
-	}
 }

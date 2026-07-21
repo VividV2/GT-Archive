@@ -1,24 +1,20 @@
-namespace UnityEngine.Animations.Rigging
+namespace UnityEngine.Animations.Rigging;
+
+public interface IRigConstraint
 {
-}
-namespace UnityEngine.Animations.Rigging
-{
-	public interface IRigConstraint
-	{
-		IAnimationJobData data { get; }
+	IAnimationJobData data { get; }
 
-		IAnimationJobBinder binder { get; }
+	IAnimationJobBinder binder { get; }
 
-		Component component { get; }
+	Component component { get; }
 
-		float weight { get; set; }
+	float weight { get; set; }
 
-		bool IsValid();
+	bool IsValid();
 
-		IAnimationJob CreateJob(Animator animator);
+	IAnimationJob CreateJob(Animator animator);
 
-		void UpdateJob(IAnimationJob job);
+	void UpdateJob(IAnimationJob job);
 
-		void DestroyJob(IAnimationJob job);
-	}
+	void DestroyJob(IAnimationJob job);
 }

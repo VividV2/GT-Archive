@@ -1,8 +1,3 @@
-namespace UnityEngine.UI;
-
-public interface ILayoutGroup : ILayoutController
-{
-}
 namespace UnityEngine.UI
 {
 	internal static class Misc
@@ -42,4 +37,7 @@ namespace UnityEngine.UI
 			}
 		}
 	}
+}
+namespace UnityEngine.UI
+{
 }

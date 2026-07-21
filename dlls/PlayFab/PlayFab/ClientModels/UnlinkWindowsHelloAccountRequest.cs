@@ -1,6 +1,10 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class UnlinkWindowsHelloAccountRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.ClientModels
-{
+	public string PublicKeyHint;
 }

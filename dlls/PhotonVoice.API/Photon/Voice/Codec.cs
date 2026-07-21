@@ -1,6 +1,4 @@
-using System;
-
-namespace POpusCodec
+namespace Photon.Voice
 {
 }
 namespace Photon.Voice
@@ -13,44 +11,18 @@ namespace Photon.Voice
 }
 namespace Photon.Voice
 {
-	public enum AudioSampleType
-	{
-		Source,
-		Short,
-		Float
-	}
 }
 namespace Photon.Voice
 {
-	public enum FrameFlags : byte
+	public interface ILocalVoiceAudio
 	{
-		Config = 1,
-		KeyFrame = 2,
-		PartialFrame = 4,
-		EndOfStream = 8
-	}
-}
-namespace Photon.Voice
-{
-	public interface IEncoderDirectImage : IEncoderDirect<ImageBufferNative>, IEncoder, System.IDisposable
-	{
-		ImageFormat ImageFormat { get; }
-	}
-}
-namespace Photon.Voice
-{
-}
-namespace Photon.Voice
-{
-	public interface ILogger
-	{
-		void LogError(string fmt, params object[] args);
+		IVoiceDetector VoiceDetector { get; }
 
-		void LogWarning(string fmt, params object[] args);
+		ILevelMeter LevelMeter { get; }
 
-		void LogInfo(string fmt, params object[] args);
+		bool VoiceDetectorCalibrating { get; }
 
-		void LogDebug(string fmt, params object[] args);
+		void VoiceDetectorCalibrate(int durationMs, Action<float> onCalibrated = null);
 	}
 }
 namespace Photon.Voice

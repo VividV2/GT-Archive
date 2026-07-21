@@ -1,6 +1,10 @@
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnMouseUpAsButtonHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask OnMouseUpAsButtonAsync();
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+	public interface IAsyncOnMouseUpAsButtonHandler
+	{
+		UniTask OnMouseUpAsButtonAsync();
+	}
 }

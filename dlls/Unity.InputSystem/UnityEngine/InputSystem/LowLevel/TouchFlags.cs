@@ -12,6 +12,3 @@ internal enum TouchFlags : byte
 	OrphanedPrimaryTouch = 0x40,
 	BeganInSameFrame = 0x80
 }
-namespace UnityEngine.InputSystem.Utilities
-{
-}

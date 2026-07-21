@@ -1,20 +1,2 @@
-namespace DigitalOpus.MB.Core
-{
-	public enum MB_RenderType
-	{
-		meshRenderer,
-		skinnedMeshRenderer
-	}
-}
-namespace DigitalOpus.MB.Core
-{
-	public enum MB_TextureTilingTreatment
-	{
-		none,
-		considerUVs,
-		edgeToEdgeX,
-		edgeToEdgeY,
-		edgeToEdgeXY,
-		unknown
-	}
-}
+// Could not decompile DigitalOpus.MB.Core.MB2_EditorMethodsInterface
+// This type uses unsupported IL or has too many generic parameters.

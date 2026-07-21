@@ -1,12 +1,2 @@
-namespace Technie.PhysicsCreator.Skinned;
+namespace Technie.PhysicsCreator.QHull;
 
-public enum ColliderType
-{
-	Convex,
-	Capsule,
-	Box,
-	Sphere
-}
-namespace Technie.PhysicsCreator.Skinned
-{
-}

@@ -1,20 +1,2 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(163)]
-	public struct GetAuthSessionTicketResponse_t
-	{
-		public const int k_iCallback = 163;
-
-		public HAuthTicket m_hAuthTicket;
-
-		public EResult m_eResult;
-	}
-}
-namespace Steamworks
-{
-}
+// Could not decompile Steamworks.SteamRelayNetworkStatus_t
+// This type uses unsupported IL or has too many generic parameters.

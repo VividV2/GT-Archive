@@ -1,11 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetPlayFabIDsFromGoogleIDsRequest : PlayFabRequestCommon
-{
-	public List<string> GoogleIDs;
-}
+// Could not decompile PlayFab.ClientModels.GetPlayFabIDsFromGoogleIDsRequest
+// This type uses unsupported IL or has too many generic parameters.

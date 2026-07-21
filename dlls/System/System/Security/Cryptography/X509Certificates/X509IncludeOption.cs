@@ -1,11 +1,18 @@
-namespace System
+namespace System.Security.Cryptography.X509Certificates
 {
-	internal static class IOSelector
+	/// <summary>Specifies how much of the X.509 certificate chain should be included in the X.509 data.</summary>
+	public enum X509IncludeOption
 	{
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		public static extern void Add(IntPtr handle, IOSelectorJob job);
-
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		public static extern void Remove(IntPtr handle);
+		/// <summary>No X.509 chain information is included.</summary>
+		None,
+		/// <summary>The entire X.509 chain is included except for the root certificate.</summary>
+		ExcludeRoot,
+		/// <summary>Only the end certificate is included in the X.509 chain information.</summary>
+		EndCertOnly,
+		/// <summary>The entire X.509 chain is included.</summary>
+		WholeChain
 	}
+}
+namespace System.ComponentModel
+{
 }

@@ -1,14 +1,36 @@
-namespace UnityEngine.Playables;
-
-internal static class DataPlayableBinding
+namespace UnityEngine.Playables
 {
-	public static PlayableBinding Create<TDataStream, TPlayer>(string name, Object key) where TDataStream : new() where TPlayer : Object
+	internal static class DataPlayableBinding
 	{
-		return PlayableBinding.CreateInternal(name, key, typeof(TPlayer), CreateDataOutput<TDataStream>);
-	}
+		public static PlayableBinding Create<TDataStream, TPlayer>(string name, Object key) where TDataStream : new() where TPlayer : Object
+		{
+			return PlayableBinding.CreateInternal(name, key, typeof(TPlayer), CreateDataOutput<TDataStream>);
+		}
 
-	private static PlayableOutput CreateDataOutput<TDataStream>(PlayableGraph graph, string name) where TDataStream : new()
-	{
-		return DataPlayableOutput.Create<TDataStream>(graph, name);
+		private static PlayableOutput CreateDataOutput<TDataStream>(PlayableGraph graph, string name) where TDataStream : new()
+		{
+			return DataPlayableOutput.Create<TDataStream>(graph, name);
+		}
 	}
+}
+namespace UnityEngine.Playables
+{
+}
+namespace UnityEngine.Playables
+{
+}
+namespace UnityEngine.Playables
+{
+	internal interface IDataPlayer
+	{
+		void Bind(DataPlayableOutput output);
+
+		void Release(DataPlayableOutput output);
+	}
+}
+namespace UnityEngine.Playables
+{
+}
+namespace UnityEngine.Playables
+{
 }

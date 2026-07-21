@@ -1,8 +1,12 @@
-namespace Meta.WitAi.TTS.Data;
-
-public interface ITTSEvent
+namespace Meta.WitAi.TTS.Data
 {
-	string EventType { get; }
+	public interface ITTSEvent
+	{
+		string EventType { get; }
 
-	int SampleOffset { get; }
+		int SampleOffset { get; }
+	}
+}
+namespace Meta.WitAi.TTS.Data
+{
 }

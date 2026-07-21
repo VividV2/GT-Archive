@@ -1,3 +1,3 @@
-namespace System.Net.Configuration
+namespace Mono.Unity
 {
 }

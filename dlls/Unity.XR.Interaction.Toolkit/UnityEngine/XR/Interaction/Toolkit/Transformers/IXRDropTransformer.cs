@@ -1,10 +1,2 @@
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-
-namespace UnityEngine.XR.Interaction.Toolkit.Transformers;
-
-public interface IXRDropTransformer : IXRGrabTransformer
-{
-	bool canProcessOnDrop { get; }
-
-	void OnDrop(XRGrabInteractable grabInteractable, DropEventArgs args);
-}
+// Could not decompile UnityEngine.XR.Interaction.Toolkit.Transformers.IXRDropTransformer
+// This type uses unsupported IL or has too many generic parameters.

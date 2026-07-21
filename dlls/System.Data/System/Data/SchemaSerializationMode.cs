@@ -1,14 +1,10 @@
-namespace System.Data
+namespace System.Data;
+
+/// <summary>Specifies the action to take with regard to the current and remaining rows during an <see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />.</summary>
+public enum UpdateStatus
 {
-	/// <summary>Indicates the schema serialization mode for a typed <see cref="T:System.Data.DataSet" />.</summary>
-	public enum SchemaSerializationMode
-	{
-		/// <summary>Includes schema serialization for a typed <see cref="T:System.Data.DataSet" />. The default.</summary>
-		IncludeSchema = 1,
-		/// <summary>Skips schema serialization for a typed <see cref="T:System.Data.DataSet" />.</summary>
-		ExcludeSchema
-	}
-}
-namespace System.Data.Common
-{
+	Continue,
+	ErrorsOccurred,
+	SkipCurrentRow,
+	SkipAllRemainingRows
 }

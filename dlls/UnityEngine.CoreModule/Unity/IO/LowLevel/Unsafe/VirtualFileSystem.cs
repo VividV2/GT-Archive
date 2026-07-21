@@ -1,15 +1,2 @@
-using UnityEngine.Bindings;
-using UnityEngine.Bindings;
-
-namespace Unity.IO.LowLevel.Unsafe;
-
-[NativeHeader("Runtime/File/AsyncReadManagerMetrics.h")]
-public enum ProcessingState
-{
-	Unknown,
-	InQueue,
-	Reading,
-	Completed,
-	Failed,
-	Canceled
-}
+// Could not decompile Unity.IO.LowLevel.Unsafe.VirtualFileSystem
+// This type uses unsupported IL or has too many generic parameters.

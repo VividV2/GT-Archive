@@ -1,10 +1,14 @@
-namespace Fusion.Sockets;
-
-internal enum NetCommands : byte
+namespace Fusion.Sockets
 {
-	Connect = 1,
-	Accepted,
-	Refused,
-	Disconnect,
-	Ping
+}
+namespace Fusion.Sockets
+{
+	internal enum NetCommands : byte
+	{
+		Connect = 1,
+		Accepted,
+		Refused,
+		Disconnect,
+		Ping
+	}
 }

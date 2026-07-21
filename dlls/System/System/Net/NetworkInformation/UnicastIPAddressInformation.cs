@@ -1,2 +1,6 @@
-namespace System.Net.Configuration;
-
+namespace System.Net
+{
+}
+namespace System.Diagnostics
+{
+}

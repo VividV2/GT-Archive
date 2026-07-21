@@ -1,8 +1,5 @@
 namespace System.Runtime.Serialization
 {
-}
-namespace System.Runtime.Serialization
-{
 	internal interface IDataNode
 	{
 		Type DataType { get; }
@@ -27,4 +24,10 @@ namespace System.Runtime.Serialization
 
 		void Clear();
 	}
+}
+namespace System.Runtime.Serialization
+{
+}
+namespace System.Xml
+{
 }

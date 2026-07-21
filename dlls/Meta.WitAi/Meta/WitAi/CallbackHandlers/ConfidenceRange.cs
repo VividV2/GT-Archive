@@ -1,20 +1,2 @@
-using System;
-using UnityEngine.Events;
-
-namespace Meta.WitAi.CallbackHandlers
-{
-	[Serializable]
-	public class ConfidenceRange
-	{
-		public float minConfidence;
-
-		public float maxConfidence;
-
-		public UnityEvent onWithinConfidenceRange = new UnityEvent();
-
-		public UnityEvent onOutsideConfidenceRange = new UnityEvent();
-	}
-}
-namespace Meta.WitAi.Configuration
-{
-}
+// Could not decompile Meta.WitAi.CallbackHandlers.ConfidenceRange
+// This type uses unsupported IL or has too many generic parameters.

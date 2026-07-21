@@ -1,2 +1,13 @@
-// Could not decompile $BurstDirectCallInitializer
-// This type uses unsupported IL or has too many generic parameters.
+using Unity.Burst;
+using UnityEngine;
+
+namespace Unity.Burst.Intrinsics;
+
+internal static class $BurstDirectCallInitializer
+{
+	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
+	private static void Initialize()
+	{
+		BurstCompilerOptions options = BurstCompiler.Options;
+	}
+}

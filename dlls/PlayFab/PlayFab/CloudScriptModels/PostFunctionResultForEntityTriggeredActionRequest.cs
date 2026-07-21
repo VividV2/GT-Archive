@@ -1,2 +1,15 @@
-// Could not decompile PlayFab.CloudScriptModels.PostFunctionResultForEntityTriggeredActionRequest
-// This type uses unsupported IL or has too many generic parameters.
+namespace PlayFab.CloudScriptModels
+{
+	[Serializable]
+	public class NameIdentifier : PlayFabBaseModel
+	{
+		public string Id;
+
+		public string Name;
+
+		public NameIdentifier()
+		{
+			base..ctor();
+		}
+	}
+}

@@ -1,8 +1,14 @@
-namespace Steamworks;
+using System.Runtime.InteropServices;
 
-public enum ESNetSocketConnectionType
+namespace Steamworks
 {
-	k_ESNetSocketConnectionTypeNotConnected,
-	k_ESNetSocketConnectionTypeUDP,
-	k_ESNetSocketConnectionTypeUDPRelay
+	[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
+	[CallbackIdentity(4102)]
+	public struct MusicPlayerRemoteWillDeactivate_t
+	{
+		public const int k_iCallback = 4102;
+	}
+}
+namespace Steamworks
+{
 }

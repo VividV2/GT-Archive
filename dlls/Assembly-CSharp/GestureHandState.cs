@@ -1,7 +1,5 @@
 using System;
 
-namespace GorillaTag;
-
 [Flags]
 public enum GestureHandState : uint
 {

@@ -1,8 +1,16 @@
-namespace Steamworks
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(3413)]
+public struct RemoveUGCDependencyResult_t
 {
-	public enum ESteamInputLEDFlag
-	{
-		k_ESteamInputLEDFlag_SetColor,
-		k_ESteamInputLEDFlag_RestoreUserDefault
-	}
+	public const int k_iCallback = 3413;
+
+	public EResult m_eResult;
+
+	public PublishedFileId_t m_nPublishedFileId;
+
+	public PublishedFileId_t m_nChildPublishedFileId;
 }

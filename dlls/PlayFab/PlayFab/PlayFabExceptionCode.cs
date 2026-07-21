@@ -1,11 +1,15 @@
-namespace PlayFab;
-
-public enum PlayFabExceptionCode
+namespace PlayFab
 {
-	AuthContextRequired,
-	BuildError,
-	DeveloperKeyNotSet,
-	EntityTokenNotSet,
-	NotLoggedIn,
-	TitleNotSet
+	public enum PlayFabExceptionCode
+	{
+		AuthContextRequired,
+		BuildError,
+		DeveloperKeyNotSet,
+		EntityTokenNotSet,
+		NotLoggedIn,
+		TitleNotSet
+	}
+}
+namespace PlayFab.ProfilesModels
+{
 }

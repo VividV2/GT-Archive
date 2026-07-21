@@ -1,10 +1,2 @@
-namespace UnityEngine.UIElements;
-
-public abstract class TypedUxmlAttributeDescription<T> : UxmlAttributeDescription
-{
-	public T defaultValue { get; set; }
-
-	public override string defaultValueAsString => defaultValue.ToString();
-
-	public abstract T GetValueFromBag(IUxmlAttributes bag, CreationContext cc);
-}
+// Could not decompile UnityEngine.UIElements.TypedUxmlAttributeDescription`1
+// This type uses unsupported IL or has too many generic parameters.

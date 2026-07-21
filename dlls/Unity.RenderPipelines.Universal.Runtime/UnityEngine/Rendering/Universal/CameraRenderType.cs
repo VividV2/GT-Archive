@@ -1,11 +1,7 @@
-namespace UnityEngine.Rendering.Universal
+namespace UnityEngine.Rendering.Universal;
+
+public enum CameraRenderType
 {
-	public enum CameraRenderType
-	{
-		Base,
-		Overlay
-	}
-}
-namespace UnityEngine.Rendering.Universal.Internal
-{
+	Base,
+	Overlay
 }

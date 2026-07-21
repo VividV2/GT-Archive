@@ -1,6 +1,10 @@
-namespace UnityEngine.Localization.SmartFormat.PersistentVariables;
-
-public interface IMetadataVariable : IVariable
+namespace UnityEngine.Localization.SmartFormat.PersistentVariables
 {
-	string VariableName { get; }
+	public interface IMetadataVariable : IVariable
+	{
+		string VariableName { get; }
+	}
+}
+namespace UnityEngine.Localization.SmartFormat.Utilities
+{
 }

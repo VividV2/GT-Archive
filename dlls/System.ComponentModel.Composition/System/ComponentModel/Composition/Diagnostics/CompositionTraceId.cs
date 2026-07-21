@@ -1,9 +1,18 @@
-namespace System.ComponentModel.Composition
+namespace System.ComponentModel.Composition.Diagnostics;
+
+internal enum CompositionTraceId : ushort
+{
+	Rejection_DefinitionRejected = 1,
+	Rejection_DefinitionResurrected,
+	Discovery_AssemblyLoadFailed,
+	Discovery_DefinitionMarkedWithPartNotDiscoverableAttribute,
+	Discovery_DefinitionMismatchedExportArity,
+	Discovery_DefinitionContainsNoExports,
+	Discovery_MemberMarkedWithMultipleImportAndImportMany
+}
+namespace System.ComponentModel.Composition.Hosting
 {
 }
-namespace Microsoft.Internal.Collections
-{
-}
-namespace System.ComponentModel.Composition
+namespace System.ComponentModel.Composition.Hosting
 {
 }

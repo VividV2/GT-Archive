@@ -1,9 +1,2 @@
-namespace System.Runtime.InteropServices;
-
-internal static class AddrofIntrinsics
-{
-	internal static IntPtr AddrOf<T>(T ftn)
-	{
-		return Marshal.GetFunctionPointerForDelegate(ftn);
-	}
-}
+// Could not decompile System.Runtime.InteropServices.AddrofIntrinsics
+// This type uses unsupported IL or has too many generic parameters.

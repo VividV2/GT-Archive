@@ -1,15 +1,2 @@
-using System;
-using UnityEngine;
-
-namespace Meta.WitAi.Attributes;
-
-[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-public class HideIfAttribute : PropertyAttribute
-{
-	public string conditionFieldName;
-
-	public HideIfAttribute(string conditionFieldName)
-	{
-		this.conditionFieldName = conditionFieldName;
-	}
-}
+// Could not decompile Meta.WitAi.Attributes.HideIfAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,7 +1,2 @@
-using System;
-
-namespace Mono;
-
-internal class NullByRefReturnException : Exception
-{
-}
+// Could not decompile Mono.NullByRefReturnException
+// This type uses unsupported IL or has too many generic parameters.

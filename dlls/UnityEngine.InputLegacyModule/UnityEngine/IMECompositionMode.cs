@@ -1,8 +1,20 @@
-namespace UnityEngine;
-
-public enum IMECompositionMode
+namespace UnityEngine
 {
-	Auto,
-	On,
-	Off
+	public enum TouchPhase
+	{
+		Began,
+		Moved,
+		Stationary,
+		Ended,
+		Canceled
+	}
+}
+namespace UnityEngine
+{
+	public enum IMECompositionMode
+	{
+		Auto,
+		On,
+		Off
+	}
 }

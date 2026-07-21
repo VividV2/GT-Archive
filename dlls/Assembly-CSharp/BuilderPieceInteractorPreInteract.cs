@@ -1,26 +1,2 @@
-using UnityEngine;
-
-namespace GorillaTagScripts;
-
-public class BuilderPieceInteractorPreInteract : MonoBehaviour
-{
-	public BuilderPieceInteractor interactor;
-
-	private void Awake()
-	{
-	}
-
-	private void LateUpdate()
-	{
-	}
-}
-public enum GTShaderTransparencyMode
-{
-	Opaque,
-	AlphaTest,
-	Transparent,
-	Premultiplied,
-	Add,
-	Multiply,
-	DitherBlueLive
-}
+// Could not decompile BuilderPieceInteractorPreInteract
+// This type uses unsupported IL or has too many generic parameters.

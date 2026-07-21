@@ -1,11 +1,19 @@
+using System.Runtime.InteropServices;
+
 namespace Valve.VR;
 
-public enum EVRComponentProperty
+public struct InputDigitalActionData_t
 {
-	IsStatic = 1,
-	IsVisible = 2,
-	IsTouched = 4,
-	IsPressed = 8,
-	IsScrolled = 0x10,
-	IsHighlighted = 0x20
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bActive;
+
+	public ulong activeOrigin;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bState;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bChanged;
+
+	public float fUpdateTime;
 }

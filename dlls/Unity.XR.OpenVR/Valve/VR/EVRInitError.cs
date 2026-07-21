@@ -1,7 +1,12 @@
+using System;
+
 namespace Valve.VR;
 
-public enum VROverlayInputMethod
+public struct D3D12TextureData_t
 {
-	None,
-	Mouse
+	public IntPtr m_pResource;
+
+	public IntPtr m_pCommandQueue;
+
+	public uint m_nNodeMask;
 }

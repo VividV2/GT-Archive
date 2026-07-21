@@ -1,21 +1,25 @@
-namespace ExitGames.Client.Photon;
-
-public enum StatusCode
+namespace ExitGames.Client.Photon
 {
-	Connect = 1024,
-	Disconnect = 1025,
-	Exception = 1026,
-	ExceptionOnConnect = 1023,
-	ServerAddressInvalid = 1050,
-	DnsExceptionOnConnect = 1051,
-	SecurityExceptionOnConnect = 1022,
-	SendError = 1030,
-	ExceptionOnReceive = 1039,
-	TimeoutDisconnect = 1040,
-	DisconnectByServerTimeout = 1041,
-	DisconnectByServerUserLimit = 1042,
-	DisconnectByServerLogic = 1043,
-	DisconnectByServerReasonUnknown = 1044,
-	EncryptionEstablished = 1048,
-	EncryptionFailedToEstablish = 1049
+}
+namespace ExitGames.Client.Photon
+{
+	public enum StatusCode
+	{
+		Connect = 1024,
+		Disconnect = 1025,
+		Exception = 1026,
+		ExceptionOnConnect = 1023,
+		ServerAddressInvalid = 1050,
+		DnsExceptionOnConnect = 1051,
+		SecurityExceptionOnConnect = 1022,
+		SendError = 1030,
+		ExceptionOnReceive = 1039,
+		TimeoutDisconnect = 1040,
+		DisconnectByServerTimeout = 1041,
+		DisconnectByServerUserLimit = 1042,
+		DisconnectByServerLogic = 1043,
+		DisconnectByServerReasonUnknown = 1044,
+		EncryptionEstablished = 1048,
+		EncryptionFailedToEstablish = 1049
+	}
 }

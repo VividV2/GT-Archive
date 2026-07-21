@@ -1,10 +1,2 @@
-namespace Photon.Voice.Unity;
-
-public class AndroidAudioInParameters
-{
-	public bool EnableAEC;
-
-	public bool EnableAGC;
-
-	public bool EnableNS;
-}
+// Could not decompile Photon.Voice.Unity.AndroidAudioInParameters
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,15 +1,2 @@
-namespace Unity.Collections;
-
-[NativeContainer]
-[GenerateTestsForBurstCompatibility]
-internal struct NativeListDispose
-{
-	[NativeDisableUnsafePtrRestriction]
-	public UntypedUnsafeList* m_ListData;
-
-	public void Dispose()
-	{
-		listData = (UnsafeList<int>*)m_ListData;
-		UnsafeList<int>.Destroy(listData);
-	}
-}
+// Could not decompile Unity.Collections.LowLevel.Unsafe.UnsafeStreamBlockData
+// This type uses unsupported IL or has too many generic parameters.

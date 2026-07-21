@@ -1,2 +1,5 @@
-namespace Sirenix.OdinInspector;
+using Sirenix.OdinInspector;
 
+public class XAtt : ShowInInspectorAttribute
+{
+}

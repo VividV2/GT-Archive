@@ -1,19 +1,17 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(3407)]
+public struct UserFavoriteItemsListChanged_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(4522)]
-	public struct HTML_SetCursor_t
-	{
-		public const int k_iCallback = 4522;
+	public const int k_iCallback = 3407;
 
-		public HHTMLBrowser unBrowserHandle;
+	public PublishedFileId_t m_nPublishedFileId;
 
-		public uint eMouseCursor;
-	}
-}
-namespace Steamworks
-{
+	public EResult m_eResult;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bWasAddRequest;
 }

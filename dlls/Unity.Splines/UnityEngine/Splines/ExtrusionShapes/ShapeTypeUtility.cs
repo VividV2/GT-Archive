@@ -1,39 +1,43 @@
 using System;
 
-namespace UnityEngine.Splines.ExtrusionShapes;
-
-internal static class ShapeTypeUtility
+namespace UnityEngine.Splines.ExtrusionShapes
 {
-	public static ShapeType GetShapeType(object obj)
+	internal static class ShapeTypeUtility
 	{
-		if (!(obj is Circle))
+		public static ShapeType GetShapeType(object obj)
 		{
-			if (!(obj is Square))
+			if (!(obj is Circle))
 			{
-				if (!(obj is Road))
+				if (!(obj is Square))
 				{
-					if (obj is SplineShape)
+					if (!(obj is Road))
 					{
-						return ShapeType.Spline;
+						if (obj is SplineShape)
+						{
+							return ShapeType.Spline;
+						}
+						throw new ArgumentException("obj is not a recognized shape", "obj");
 					}
-					throw new ArgumentException("obj is not a recognized shape", "obj");
+					return ShapeType.Road;
 				}
-				return ShapeType.Road;
+				return ShapeType.Square;
 			}
-			return ShapeType.Square;
+			return ShapeType.Circle;
 		}
-		return ShapeType.Circle;
-	}
 
-	public static IExtrudeShape CreateShape(ShapeType type)
-	{
-		return type switch
+		public static IExtrudeShape CreateShape(ShapeType type)
 		{
-			ShapeType.Square => new Square(), 
-			ShapeType.Road => new Road(), 
-			ShapeType.Spline => new SplineShape(), 
-			ShapeType.Circle => new Circle(), 
-			_ => throw new ArgumentOutOfRangeException("type"), 
-		};
+			return type switch
+			{
+				ShapeType.Square => new Square(), 
+				ShapeType.Road => new Road(), 
+				ShapeType.Spline => new SplineShape(), 
+				ShapeType.Circle => new Circle(), 
+				_ => throw new ArgumentOutOfRangeException("type"), 
+			};
+		}
 	}
+}
+namespace UnityEngine.Splines
+{
 }

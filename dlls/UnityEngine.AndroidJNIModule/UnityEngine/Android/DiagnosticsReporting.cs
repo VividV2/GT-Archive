@@ -1,12 +1,2 @@
-namespace UnityEngine.Android
-{
-	public static class DiagnosticsReporting
-	{
-		public static void CallReportFullyDrawn()
-		{
-		}
-	}
-}
-namespace UnityEngine
-{
-}
+// Could not decompile UnityEngine.Android.DiagnosticsReporting
+// This type uses unsupported IL or has too many generic parameters.

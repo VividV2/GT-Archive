@@ -1,24 +1,2 @@
-using System;
-
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
-{
-	[Serializable]
-	public class StringTrackedProperty : TrackedProperty<string>
-	{
-		protected override string ConvertFromString(string value)
-		{
-			return value;
-		}
-
-		protected override string ConvertToString(string value)
-		{
-			return value;
-		}
-	}
-}
-namespace UnityEngine.Localization.Components
-{
-}
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
-{
-}
+// Could not decompile UnityEngine.Localization.PropertyVariants.TrackedProperties.StringTrackedProperty
+// This type uses unsupported IL or has too many generic parameters.

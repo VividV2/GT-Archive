@@ -1,6 +1,14 @@
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnPreCullHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask OnPreCullAsync();
+	public interface IAsyncOnPreCullHandler
+	{
+		UniTask OnPreCullAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
+	public interface IAsyncResetHandler
+	{
+		UniTask ResetAsync();
+	}
 }

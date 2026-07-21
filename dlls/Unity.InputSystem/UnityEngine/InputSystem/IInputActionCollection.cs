@@ -2,26 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem.Utilities;
 
-namespace UnityEngine.InputSystem
+namespace UnityEngine.InputSystem;
+
+public interface IInputActionCollection : IEnumerable<InputAction>, IEnumerable
 {
-	public interface IInputActionCollection : IEnumerable<InputAction>, IEnumerable
-	{
-		InputBinding? bindingMask { get; set; }
+	InputBinding? bindingMask { get; set; }
 
-		ReadOnlyArray<InputDevice>? devices { get; set; }
+	ReadOnlyArray<InputDevice>? devices { get; set; }
 
-		ReadOnlyArray<InputControlScheme> controlSchemes { get; }
+	ReadOnlyArray<InputControlScheme> controlSchemes { get; }
 
-		bool Contains(InputAction action);
+	bool Contains(InputAction action);
 
-		void Enable();
+	void Enable();
 
-		void Disable();
-	}
-}
-namespace UnityEngine.InputSystem.Controls
-{
-}
-namespace Unity.XR.Oculus.Input
-{
+	void Disable();
 }

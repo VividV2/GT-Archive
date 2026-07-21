@@ -1,2 +1,8 @@
-// Could not decompile Cysharp.Threading.Tasks.Triggers.IAsyncOnDeselectHandler
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.EventSystems;
+
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnDeselectHandler
+{
+	UniTask<BaseEventData> OnDeselectAsync();
+}

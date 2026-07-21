@@ -1,12 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetPaymentTokenResult : PlayFabResultCommon
+namespace PlayFab.ClientModels
 {
-	public string OrderId;
-
-	public string ProviderToken;
+}
+namespace PlayFab.ClientModels
+{
 }

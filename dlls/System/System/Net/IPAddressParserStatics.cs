@@ -8,3 +8,6 @@ internal static class IPAddressParserStatics
 
 	public const int IPv6AddressShorts = 8;
 }
+namespace System.Collections.Specialized
+{
+}

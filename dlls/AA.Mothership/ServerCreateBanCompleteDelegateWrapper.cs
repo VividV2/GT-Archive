@@ -1,2 +1,0 @@
-// Could not decompile ServerCreateBanCompleteDelegateWrapper
-// This type uses unsupported IL or has too many generic parameters.

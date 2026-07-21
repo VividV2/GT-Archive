@@ -1,8 +1,11 @@
-namespace UnityEngine.UIElements
+using UnityEngine.Bindings;
+
+namespace UnityEngine.UIElements;
+
+[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
+internal enum OverflowInternal
 {
-	public enum SliceType
-	{
-		Sliced,
-		Tiled
-	}
+	Visible,
+	Hidden,
+	Scroll
 }

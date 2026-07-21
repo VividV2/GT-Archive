@@ -1,2 +1,8 @@
-// Could not decompile ExitGames.Client.Photon.OperationRequest
-// This type uses unsupported IL or has too many generic parameters.
+namespace ExitGames.Client.Photon;
+
+public class OperationRequest
+{
+	public byte OperationCode;
+
+	public ParameterDictionary Parameters;
+}

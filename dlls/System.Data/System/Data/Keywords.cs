@@ -1,2 +1,2 @@
-namespace Microsoft.SqlServer.Server;
-
+// Could not decompile System.Data.Keywords
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,8 @@
-// Could not decompile Meta.XR.MultiplayerBlocks.Shared.CustomMatchmakingUtils
-// This type uses unsupported IL or has too many generic parameters.
+namespace Meta.XR.MultiplayerBlocks.Shared;
+
+public interface IAvatarStreamConfig
+{
+	void SetAvatarStreamLOD(AvatarStreamLOD lod);
+
+	void SetAvatarUpdateIntervalInS(float interval);
+}

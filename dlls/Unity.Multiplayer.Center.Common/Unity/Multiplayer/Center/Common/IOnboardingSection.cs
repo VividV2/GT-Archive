@@ -1,21 +1,12 @@
 using UnityEngine.UIElements;
-using UnityEngine.UIElements;
 
-namespace Unity.Multiplayer.Center.Common.Analytics
+namespace Unity.Multiplayer.Center.Common;
+
+public interface IOnboardingSection
 {
-	public interface IOnboardingSectionAnalyticsProvider
-	{
-		void SendInteractionEvent(InteractionDataType type, string displayName);
-	}
-}
-namespace Unity.Multiplayer.Center.Common
-{
-	public interface IOnboardingSection
-	{
-		VisualElement Root { get; }
+	VisualElement Root { get; }
 
-		void Load();
+	void Load();
 
-		void Unload();
-	}
+	void Unload();
 }

@@ -1,15 +1,2 @@
-using UnityEngine.Scripting;
-
-namespace UnityEngine.Rendering;
-
-[UsedByNativeCode]
-internal struct GPUDrivenMeshLodInfo
-{
-	public int levelCount;
-
-	public float lodSlope;
-
-	public float lodBias;
-
-	public bool lodSelectionActive => levelCount > 1;
-}
+// Could not decompile UnityEngine.Rendering.GPUDrivenMeshLodInfo
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,6 +1,10 @@
-namespace g3;
-
-public interface ICancelSource
+namespace g3
 {
-	bool Cancelled();
+	public interface ICancelSource
+	{
+		bool Cancelled();
+	}
+}
+namespace g3
+{
 }

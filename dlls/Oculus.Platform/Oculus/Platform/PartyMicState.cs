@@ -1,19 +1,5 @@
-using System.ComponentModel;
+namespace Oculus.Platform.Models;
 
-namespace Oculus.Platform;
-
-public enum PartyMicState
+namespace Oculus.Platform
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("PARTY")]
-	Party,
-	[Description("APP")]
-	App,
-	[Description("MUTE")]
-	Mute,
-	[Description("INACTIVE")]
-	Inactive,
-	[Description("INPUT_SHARED")]
-	InputShared
 }

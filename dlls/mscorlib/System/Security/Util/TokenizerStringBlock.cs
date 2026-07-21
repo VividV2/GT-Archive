@@ -1,2 +1,11 @@
-// Could not decompile System.Security.Util.TokenizerStringBlock
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Security.Util;
+
+internal sealed class TokenizerStringBlock
+{
+	internal string[] m_block = new string[16];
+
+	internal TokenizerStringBlock m_next;
+}
+namespace System
+{
+}

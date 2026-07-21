@@ -1,2 +1,14 @@
-// Could not decompile Unity.IO.LowLevel.Unsafe.ProcessingState
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Bindings;
+
+namespace Unity.IO.LowLevel.Unsafe;
+
+[NativeHeader("Runtime/File/AsyncReadManagerMetrics.h")]
+public enum ProcessingState
+{
+	Unknown,
+	InQueue,
+	Reading,
+	Completed,
+	Failed,
+	Canceled
+}

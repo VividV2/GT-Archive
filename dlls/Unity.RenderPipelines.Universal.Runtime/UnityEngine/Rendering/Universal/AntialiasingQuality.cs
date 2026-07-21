@@ -1,12 +1,8 @@
-namespace UnityEngine.Rendering.Universal
+namespace UnityEngine.Rendering.Universal;
+
+public enum AntialiasingQuality
 {
-	public enum AntialiasingQuality
-	{
-		Low,
-		Medium,
-		High
-	}
-}
-namespace UnityEngine.Rendering.Universal
-{
+	Low,
+	Medium,
+	High
 }

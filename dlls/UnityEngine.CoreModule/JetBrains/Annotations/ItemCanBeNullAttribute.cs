@@ -1,8 +1,2 @@
-namespace Unity.IO.LowLevel.Unsafe;
+namespace UnityEngineInternal;
 
-public struct ReadCommandArray
-{
-	public unsafe ReadCommand* ReadCommands;
-
-	public int CommandCount;
-}

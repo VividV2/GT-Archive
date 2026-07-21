@@ -1,2 +1,0 @@
-namespace Meta.XR.MRUtilityKit;
-

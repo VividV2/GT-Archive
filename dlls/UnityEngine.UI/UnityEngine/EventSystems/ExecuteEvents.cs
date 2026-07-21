@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.EventSystems.ExecuteEvents
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.EventSystems;
+
+public enum MoveDirection
+{
+	Left,
+	Up,
+	Right,
+	Down,
+	None
+}

@@ -1,7 +1,11 @@
-namespace PlayFab.ClientModels;
-
-public enum GameInstanceState
+namespace PlayFab.CloudScriptModels
 {
-	Open,
-	Closed
+}
+namespace PlayFab.ClientModels
+{
+	public enum GameInstanceState
+	{
+		Open,
+		Closed
+	}
 }

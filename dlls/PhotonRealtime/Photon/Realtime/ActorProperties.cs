@@ -1,2 +1,10 @@
-// Could not decompile Photon.Realtime.ActorProperties
-// This type uses unsupported IL or has too many generic parameters.
+namespace Photon.Realtime;
+
+public class ActorProperties
+{
+	public const byte PlayerName = byte.MaxValue;
+
+	public const byte IsInactive = 254;
+
+	public const byte UserId = 253;
+}

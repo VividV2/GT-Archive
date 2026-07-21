@@ -1,2 +1,11 @@
-// Could not decompile Pathfinding.ClipperLib.ClipperException
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Pathfinding.ClipperLib;
+
+internal class ClipperException : Exception
+{
+	public ClipperException(string description)
+		: base(description)
+	{
+	}
+}

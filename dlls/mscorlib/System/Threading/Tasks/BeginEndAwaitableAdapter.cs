@@ -1,19 +1,2 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace System.Threading.Tasks;
-
-internal interface IProducerConsumerQueue<T> : IEnumerable<T>, IEnumerable
-{
-	bool IsEmpty { get; }
-
-	int Count { get; }
-
-	void Enqueue(T item);
-
-	bool TryDequeue(out T result);
-
-	int GetCountSafe(object syncObj);
-}
+// Could not decompile System.Threading.Tasks.BeginEndAwaitableAdapter
+// This type uses unsupported IL or has too many generic parameters.

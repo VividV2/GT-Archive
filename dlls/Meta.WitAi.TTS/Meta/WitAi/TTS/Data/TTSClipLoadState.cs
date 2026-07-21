@@ -1,13 +1,9 @@
-namespace Meta.WitAi.TTS.Data
+namespace Meta.WitAi.TTS.Data;
+
+public enum TTSClipLoadState
 {
-}
-namespace Meta.WitAi.TTS.Data
-{
-	public enum TTSClipLoadState
-	{
-		Unloaded,
-		Preparing,
-		Loaded,
-		Error
-	}
+	Unloaded,
+	Preparing,
+	Loaded,
+	Error
 }

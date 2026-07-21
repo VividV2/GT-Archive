@@ -1,157 +1,106 @@
+using System;
+using UnityEngine;
+
 namespace GT_CustomMapSupportRuntime;
 
-public enum SurfaceSoundOverride
+[DisallowMultipleComponent]
+public class MapDescriptor : MonoBehaviour
 {
-	Default = 0,
-	None = 1,
-	pillowhandtap = 3,
-	grassrockhandtap = 7,
-	barkhandtap = 8,
-	woodhandtap = 9,
-	dirthandtap = 14,
-	metalhandtap = 18,
-	crystalhandtap = 20,
-	leafcrunch = 31,
-	snowstep = 32,
-	crystalhandtap_root_2octdown = 40,
-	crystalhandtap_second_2octdown = 41,
-	crystalhandtap_third_2octdown = 42,
-	crystalhandtap_fifth_2octdown = 43,
-	crystalhandtap_sixth_2octdown = 44,
-	crystalhandtap_root_1octdown = 45,
-	crystalhandtap_second_1octdown = 46,
-	crystalhandtap_third_1octdown = 47,
-	crystalhandtap_fifth_1octdown = 48,
-	crystalhandtap_sixth_1octdown = 49,
-	crystalhandtap_root = 50,
-	crystalhandtap_root_second = 51,
-	crystalhandtap_third = 52,
-	crystalhandtap_fifth = 53,
-	crystalhandtap_sixth = 54,
-	umbrellaopen = 64,
-	umbrellaclose = 65,
-	keyboardclick = 66,
-	buttonpress = 67,
-	p2_racktom = 68,
-	p1_snare = 69,
-	p2_floor_tom_2 = 70,
-	p2_kick = 71,
-	p1_open_hat = 72,
-	bongolowest = 73,
-	bongohigh = 74,
-	squeak_squeeze = 75,
-	squeak_release = 76,
-	bonerattle = 77,
-	Tombstone_Surface_04 = 78,
-	cauldroninner = 79,
-	Cauldron_Surface_04 = 80,
-	pumpkinhit = 81,
-	Web_Surface_02 = 82,
-	ShortTurkeyGobbleBQuiet = 83,
-	foodpop = 84,
-	bite1 = 85,
-	bite2 = 86,
-	bite3 = 87,
-	HayImpactA = 88,
-	ropecreak = 89,
-	planthit = 90,
-	ToyFrogSound = 91,
-	VineHit1 = 92,
-	cloud2 = 93,
-	woodfloor2 = 94,
-	tire = 95,
-	fruitsquish_1 = 96,
-	washingmachinehit = 98,
-	LeafHit1 = 99,
-	skyjunglewood2 = 100,
-	skyjunglewood = 101,
-	huthit = 105,
-	fireflyjarhit = 106,
-	beanbag1 = 107,
-	beanbag2 = 108,
-	softhit1 = 110,
-	storewoodhit = 112,
-	shelfhit = 114,
-	roofhit = 115,
-	cranehit = 116,
-	rughit1 = 118,
-	snowglobehit = 120,
-	ornamenthit = 121,
-	gifthit = 134,
-	ToyGorillaElf_Squeeze = 140,
-	ToyGorillaElf_Release = 141,
-	metalhit1 = 146,
-	metalhit2 = 149,
-	PenguinSqueeze = 154,
-	PenguinRelease = 155,
-	WolfSqueeze = 156,
-	WolfRelease = 157,
-	BoxHit = 160,
-	DungeonPillowHit = 164,
-	BasementWoodWall = 173,
-	BookHit = 178,
-	MonkeyeSqueeze = 187,
-	DragonSqueeze = 188,
-	ConcreteHit = 189,
-	BeeSqueeze = 191,
-	SpongeSquish = 193,
-	SpongeRelease_CC0_234872__mlsulli__sponge_being_squeezed_01 = 194,
-	CoyoteHowl_Quiet2 = 195,
-	DivingBoardBounce = 196,
-	SandTap = 197,
-	PalmTreeBark = 198,
-	SharkSqueeze = 200,
-	SharkRelease = 201,
-	TentBounce = 202,
-	FireworkMortarInteraction_01__442359__toddcircle__metallic_slap = 203,
-	WaterBalloonGrab_04 = 204,
-	SlipAndSlideStep = 205,
-	DolphinSqueeze3 = 206,
-	DolphinRelease3 = 207,
-	BugSprayShort = 208,
-	Trampoline1 = 210,
-	ButtonSplitDownQuiet = 211,
-	ButtonSplitUpQuiet = 212,
-	HugeCrystalHit = 213,
-	crystalhandtap_seventh = 214,
-	crystalhandtap_seventh_1octup = 215,
-	crystalhandtap_seventh_1octdown = 216,
-	crystalhandtap_seventh_2octdown = 217,
-	crystalhandtap_fourth = 218,
-	crystalhandtap_fourth_1octdown = 219,
-	crystalhandtap_fourth_1octup = 220,
-	crystalhandtap_fourth_2octdown = 221,
-	EelSqueeze = 222,
-	EelRelease = 223,
-	crystalhandtap_root_1octup = 224,
-	crystalhandtap_second_1octup = 225,
-	crystalhandtap_third_1octup = 226,
-	crystalhandtap_fifth_1octup = 227,
-	crystalhandtap_sixth_1octup = 228,
-	BottleSqueeze = 229,
-	LavaRockBucketGrab_01 = 231,
-	sfx_phoenix_caw_fiery_short = 232,
-	sfx_fan_open = 233,
-	sfx_fan_close = 234,
-	CatSqueeze = 235,
-	CatRelease = 236,
-	Squirrel_Squeezy_Toy_01_SFX = 237,
-	Turkey_Baster_Cosmetic_01_SFX = 238,
-	Turkey_Baster_Cosmetic_02_SFX = 239,
-	SFX_Tin_Soldier_Monke_Toy_001 = 242,
-	SFX_Tin_Soldier_Monke_Toy_002 = 243,
-	GT_Tuning_Fork_001 = 244,
-	GT_Tuning_Fork_002 = 245,
-	GT_Tuning_Fork_Fail_006 = 246,
-	GT_Tuning_Fork_deepring = 247,
-	GT_Tuning_Fork_neutralring = 248,
-	HeartSqueeze = 250,
-	HeartBeat1 = 251,
-	Smoker_Bellows_Out_short01 = 253,
-	Smoker_Bellows_In_short02 = 254,
-	Race_Bell = 255,
-	hand_tap_bounce_house_001 = 256,
-	hand_tap_bounce_house_002 = 257,
-	Purple_Step_01 = 258,
-	GT_Gate_Fence_Closing_End = 259
+	[Obsolete("Moved to Map Export Settings")]
+	public bool IsInitialScene = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool DisableHoldingHandsAllGameModes = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool DisableHoldingHandsCustomOnly = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public float watchHoldDuration = 0.5f;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool watchShouldTagPlayer = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool watchShouldKickPlayer = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool watchInfectionOverride = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public float watchHoldDuration_Infection = 0.5f;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool watchShouldTagPlayer_Infection = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool watchShouldKickPlayer_Infection = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool watchCustomModeOverride = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public float watchHoldDuration_CustomMode = 0.5f;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool watchShouldTagPlayer_CustomMode = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool watchShouldKickPlayer_CustomMode = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool UseUberShaderDynamicLighting = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public Color UberShaderAmbientDynamicLight = Color.black;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public TextAsset? CustomGamemode;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public bool DevMode = false;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public int MaxPlayers = 10;
+
+	public const float MIN_DIAMETER = 1000f;
+
+	public const float MAX_DIAMETER = 50000f;
+
+	[Tooltip("If \"AddSkybox\" is enabled, a skybox will automatically be added to your scene prior to export.")]
+	public bool AddSkybox = true;
+
+	[Range(1000f, 50000f)]
+	[Tooltip("Set the size of the skybox.")]
+	public float SkyboxDiameter = 1000f;
+
+	[Tooltip("If \"CustomSkybox\" texture is valid, it will be used on the added skybox, otherwise the skybox will use the \"Bobbie\\Outer\" shader along with \"CustomSkyboxTint\".")]
+	public Cubemap? CustomSkybox;
+
+	[Tooltip("If \"CustomSkybox\" texture is set to None, this color will be used to Tint the skybox")]
+	public Color CustomSkyboxTint = new Color(0.224f, 0.424f, 0.839f, 1f);
+
+	[Tooltip("How should lighting be baked/exported?\n 1. Default_Unity - this will bake lighting using Unity's built-in system\n 2. Alternative - this will not trigger a light bake and will NOT delete Lightmapping data before exporting (use this option if you use a 3rd party baker like Bakery)\n 3. Off - this will not bake lighting and will delete Lightmapping data before exporting")]
+	public ExportLightingType LightingExportType = ExportLightingType.Default_Unity;
+
+	[Tooltip("If \"ExportAllObjects\" is enabled, any objects that aren't a child object of your MapDescriptor will be automatically re-parented to the MapDescriptor GameObject prior to export.")]
+	public bool ExportAllObjects = true;
+
+	[Obsolete("Moved to Map Export Settings")]
+	public VirtualStumpReturnWatchProps GetReturnToVStumpWatchProps()
+	{
+		VirtualStumpReturnWatchProps result = default(VirtualStumpReturnWatchProps);
+		result.holdDuration = watchHoldDuration;
+		result.shouldTagPlayer = watchShouldTagPlayer;
+		result.shouldKickPlayer = watchShouldKickPlayer;
+		result.infectionOverride = watchInfectionOverride;
+		result.holdDuration_Infection = watchHoldDuration_Infection;
+		result.shouldTagPlayer_Infection = watchShouldTagPlayer_Infection;
+		result.shouldKickPlayer_Infection = watchShouldKickPlayer_Infection;
+		result.customModeOverride = watchCustomModeOverride;
+		result.holdDuration_Custom = watchHoldDuration_CustomMode;
+		result.shouldTagPlayer_CustomMode = watchShouldTagPlayer_CustomMode;
+		result.shouldKickPlayer_CustomMode = watchShouldKickPlayer_CustomMode;
+		return result;
+	}
 }

@@ -1,18 +1,16 @@
-using System.Security.Cryptography.Pkcs;
+using System.Security.Cryptography.Asn1;
+using System.Security.Cryptography.Asn1;
 
-namespace Internal.Cryptography;
-
-internal abstract class RecipientInfoPal
+namespace System.Security.Cryptography.Pkcs.Asn1
 {
-	public abstract byte[] EncryptedKey { get; }
-
-	public abstract AlgorithmIdentifier KeyEncryptionAlgorithm { get; }
-
-	public abstract SubjectIdentifier RecipientIdentifier { get; }
-
-	public abstract int Version { get; }
-
-	internal RecipientInfoPal()
+	internal struct RecipientEncryptedKeyAsn
 	{
+		internal KeyAgreeRecipientIdentifierAsn Rid;
+
+		[OctetString]
+		internal ReadOnlyMemory<byte> EncryptedKey;
 	}
+}
+namespace Internal.Cryptography.Pal.AnyOS
+{
 }

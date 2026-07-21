@@ -1,6 +1,27 @@
-namespace VYaml.Annotations
+namespace VYaml.Parser;
+
+internal enum ParseState
 {
-}
-namespace VYaml.Internal
-{
+	StreamStart,
+	ImplicitDocumentStart,
+	DocumentStart,
+	DocumentContent,
+	DocumentEnd,
+	BlockNode,
+	BlockSequenceFirstEntry,
+	BlockSequenceEntry,
+	IndentlessSequenceEntry,
+	BlockMappingFirstKey,
+	BlockMappingKey,
+	BlockMappingValue,
+	FlowSequenceFirstEntry,
+	FlowSequenceEntry,
+	FlowSequenceEntryMappingKey,
+	FlowSequenceEntryMappingValue,
+	FlowSequenceEntryMappingEnd,
+	FlowMappingFirstKey,
+	FlowMappingKey,
+	FlowMappingValue,
+	FlowMappingEmptyValue,
+	End
 }

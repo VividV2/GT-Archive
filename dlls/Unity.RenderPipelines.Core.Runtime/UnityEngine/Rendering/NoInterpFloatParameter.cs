@@ -1,21 +1,2 @@
-using System;
-using System.Diagnostics;
-
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
-	[Serializable]
-	[DebuggerDisplay("{m_Value} ({m_OverrideState})")]
-	public class NoInterpFloatParameter : VolumeParameter<float>
-	{
-		public NoInterpFloatParameter(float value, bool overrideState = false)
-			: base(value, overrideState)
-		{
-		}
-	}
-}
-namespace UnityEngine.Rendering
-{
-}
+// Could not decompile UnityEngine.Rendering.NoInterpFloatParameter
+// This type uses unsupported IL or has too many generic parameters.

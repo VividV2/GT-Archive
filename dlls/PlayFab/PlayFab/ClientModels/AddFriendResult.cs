@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class AddFriendResult : PlayFabResultCommon
-{
-	public bool Created;
-}
+// Could not decompile PlayFab.ClientModels.AddFriendResult
+// This type uses unsupported IL or has too many generic parameters.

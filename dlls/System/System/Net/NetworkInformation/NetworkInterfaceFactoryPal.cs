@@ -1,22 +1,19 @@
-namespace System.Net.NetworkInformation
+namespace System.Net.Sockets;
+
+/// <summary>The type of asynchronous socket operation most recently performed with this context object.</summary>
+public enum SocketAsyncOperation
 {
-	internal static class NetworkInterfaceFactoryPal
-	{
-		public static NetworkInterfaceFactory Create()
-		{
-			NetworkInterfaceFactory networkInterfaceFactory = UnixNetworkInterfaceFactoryPal.Create();
-			if (networkInterfaceFactory == null)
-			{
-				networkInterfaceFactory = Win32NetworkInterfaceFactoryPal.Create();
-			}
-			if (networkInterfaceFactory == null)
-			{
-				throw new NotImplementedException();
-			}
-			return networkInterfaceFactory;
-		}
-	}
-}
-namespace System.Net.WebSockets
-{
+	/// <summary>None of the socket operations.</summary>
+	None,
+	/// <summary>A socket Accept operation.</summary>
+	Accept,
+	/// <summary>A socket Connect operation.</summary>
+	Connect,
+	Disconnect,
+	Receive,
+	ReceiveFrom,
+	ReceiveMessageFrom,
+	Send,
+	SendPackets,
+	SendTo
 }

@@ -1,14 +1,2 @@
-namespace Voxels;
-
-public enum MeshGenerationMode
-{
-	MarchingCubes,
-	SurfaceNets
-}
-public interface IDebugObject
-{
-	void OnDestroyDebugObject();
-}
-namespace GorillaLocomotion.Swimming
-{
-}
+// Could not decompile GorillaTag.Audio.LoudSpeakerVolume
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,12 +1,28 @@
-namespace System.Net;
+using System.IO;
 
-internal enum WebParseErrorCode
+namespace System.CodeDom.Compiler;
+
+public interface ICodeGenerator
 {
-	Generic,
-	InvalidHeaderName,
-	InvalidContentLength,
-	IncompleteHeaderLine,
-	CrLfError,
-	InvalidChunkFormat,
-	UnexpectedServerResponse
+	bool IsValidIdentifier(string value);
+
+	void ValidateIdentifier(string value);
+
+	string CreateEscapedIdentifier(string value);
+
+	string CreateValidIdentifier(string value);
+
+	string GetTypeOutput(CodeTypeReference type);
+
+	bool Supports(GeneratorSupport supports);
+
+	void GenerateCodeFromExpression(CodeExpression e, TextWriter w, CodeGeneratorOptions o);
+
+	void GenerateCodeFromStatement(CodeStatement e, TextWriter w, CodeGeneratorOptions o);
+
+	void GenerateCodeFromNamespace(CodeNamespace e, TextWriter w, CodeGeneratorOptions o);
+
+	void GenerateCodeFromCompileUnit(CodeCompileUnit e, TextWriter w, CodeGeneratorOptions o);
+
+	void GenerateCodeFromType(CodeTypeDeclaration e, TextWriter w, CodeGeneratorOptions o);
 }

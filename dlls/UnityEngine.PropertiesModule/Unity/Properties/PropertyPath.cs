@@ -1,8 +1,2 @@
-namespace Unity.Properties;
-
-internal struct IndexedCollectionSharedPropertyState
-{
-	public int Index;
-
-	public bool IsReadOnly;
-}
+// Could not decompile Unity.Properties.PropertyPath
+// This type uses unsupported IL or has too many generic parameters.

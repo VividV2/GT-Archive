@@ -1,2 +1,20 @@
-// Could not decompile Backtrace.Unity.Model.BacktraceSelfSSLCertificateHandler
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Networking;
+
+namespace Backtrace.Unity.Model
+{
+}
+namespace Backtrace.Unity.Runtime.Native.Base
+{
+}
+namespace Backtrace.Unity.Model
+{
+	public class BacktraceSelfSSLCertificateHandler : CertificateHandler
+	{
+		private static readonly string PUB_KEY = string.Empty;
+
+		protected override bool ValidateCertificate(byte[] certificateData)
+		{
+			return true;
+		}
+	}
+}

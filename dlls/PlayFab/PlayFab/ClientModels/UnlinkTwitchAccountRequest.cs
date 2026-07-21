@@ -1,10 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class UnlinkTwitchAccountRequest : PlayFabRequestCommon
-{
-	public string AccessToken;
-}
+// Could not decompile PlayFab.ClientModels.UnlinkTwitchAccountRequest
+// This type uses unsupported IL or has too many generic parameters.

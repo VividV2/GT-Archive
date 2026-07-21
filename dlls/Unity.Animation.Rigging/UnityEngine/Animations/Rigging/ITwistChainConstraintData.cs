@@ -1,16 +1,17 @@
-namespace UnityEngine.Animations.Rigging;
-
-public interface ITwistChainConstraintData
+namespace UnityEngine.Animations.Rigging
 {
-	Transform root { get; }
+	public interface ITwistChainConstraintData
+	{
+		Transform root { get; }
 
-	Transform tip { get; }
+		Transform tip { get; }
 
-	Transform rootTarget { get; }
+		Transform rootTarget { get; }
 
-	Transform tipTarget { get; }
+		Transform tipTarget { get; }
 
-	AnimationCurve curve { get; }
+		AnimationCurve curve { get; }
+	}
 }
 namespace UnityEngine.Animations.Rigging
 {

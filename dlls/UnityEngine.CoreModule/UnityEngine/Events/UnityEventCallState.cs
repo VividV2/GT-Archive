@@ -1,8 +1,12 @@
-namespace UnityEngine.Events;
-
-public enum UnityEventCallState
+namespace UnityEngine.Experimental.GlobalIllumination
 {
-	Off,
-	EditorAndRuntime,
-	RuntimeOnly
+}
+namespace UnityEngine.Events
+{
+	public enum UnityEventCallState
+	{
+		Off,
+		EditorAndRuntime,
+		RuntimeOnly
+	}
 }

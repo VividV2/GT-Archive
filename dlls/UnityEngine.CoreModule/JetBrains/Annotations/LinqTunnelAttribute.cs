@@ -1,8 +1,2 @@
-using System;
-
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.Method)]
-public sealed class LinqTunnelAttribute : Attribute
-{
-}
+// Could not decompile JetBrains.Annotations.LinqTunnelAttribute
+// This type uses unsupported IL or has too many generic parameters.

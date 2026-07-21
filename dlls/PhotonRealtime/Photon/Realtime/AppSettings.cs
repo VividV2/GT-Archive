@@ -1,12 +1,2 @@
-namespace Photon.Realtime
-{
-	public enum AuthModeOption
-	{
-		Auth,
-		AuthOnce,
-		AuthOnceWss
-	}
-}
-namespace Photon.Realtime
-{
-}
+// Could not decompile Photon.Realtime.AppSettings
+// This type uses unsupported IL or has too many generic parameters.

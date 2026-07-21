@@ -8,3 +8,6 @@ public interface IIdentityPermissionFactory
 	/// <returns>The new identity permission.</returns>
 	IPermission CreateIdentityPermission(Evidence evidence);
 }
+namespace System.Runtime.Serialization
+{
+}

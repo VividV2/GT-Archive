@@ -1,22 +1,12 @@
-using System.Runtime.InteropServices;
+namespace Steamworks;
 
-namespace Steamworks
+[System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(1111)]
+public struct LeaderboardUGCSet_t
 {
-	[System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(347)]
-	public struct SetPersonaNameResponse_t
-	{
-		public const int k_iCallback = 347;
+	public const int k_iCallback = 1111;
 
-		[System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.I1)]
-		public bool m_bSuccess;
+	public EResult m_eResult;
 
-		[System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.I1)]
-		public bool m_bLocalSuccess;
-
-		public EResult m_result;
-	}
-}
-namespace Steamworks
-{
+	public SteamLeaderboard_t m_hSteamLeaderboard;
 }

@@ -1,12 +1,2 @@
-using System;
-using System;
-using System;
-
-namespace Oculus.Platform.Models;
-
-public class PaidOffer(IntPtr o)
-{
-	public readonly Price Price = new Price(CAPI.ovr_PaidOffer_GetPrice(o));
-
-	public readonly OfferTerm SubscriptionTerm = CAPI.ovr_PaidOffer_GetSubscriptionTerm(o);
-}
+// Could not decompile Oculus.Platform.Models.LeaderboardList
+// This type uses unsupported IL or has too many generic parameters.

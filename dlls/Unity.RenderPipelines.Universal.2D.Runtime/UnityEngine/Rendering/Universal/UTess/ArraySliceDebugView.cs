@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.Rendering.Universal.UTess.ArraySliceDebugView`1
-// This type uses unsupported IL or has too many generic parameters.
+using Unity.Mathematics;
+using Unity.Mathematics;
+
+namespace UnityEngine.Rendering.Universal.UTess;
+
+internal struct UBounds
+{
+	public double2 min;
+
+	public double2 max;
+}

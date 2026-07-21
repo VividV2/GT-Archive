@@ -1,2 +1,7 @@
-// Could not decompile Meta.XR.MultiplayerBlocks.Shared.PlatformInit_
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Meta.XR.MultiplayerBlocks.Shared;
+
+public class PlatformInit_ : MonoBehaviour
+{
+}

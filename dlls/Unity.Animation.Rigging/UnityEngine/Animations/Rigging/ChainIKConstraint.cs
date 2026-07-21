@@ -1,2 +1,18 @@
-// Could not decompile UnityEngine.Animations.Rigging.ChainIKConstraint
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Animations.Rigging
+{
+	public interface ITwistChainConstraintData
+	{
+		Transform root { get; }
+
+		Transform tip { get; }
+
+		Transform rootTarget { get; }
+
+		Transform tipTarget { get; }
+
+		AnimationCurve curve { get; }
+	}
+}
+namespace UnityEngine.Animations.Rigging
+{
+}

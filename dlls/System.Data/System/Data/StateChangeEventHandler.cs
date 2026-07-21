@@ -1,28 +1,6 @@
 namespace System.Data;
 
-public enum StatementType
-{
-	Select,
-	Insert,
-	Update,
-	Delete,
-	Batch
-}
-namespace System.Data.SqlClient
-{
-}
-namespace System.Data.Common
-{
-}
-namespace System.Data.SqlClient
-{
-}
-namespace System.Data.SqlTypes
-{
-}
-namespace System.Data.Odbc
-{
-}
-namespace System.Data.SqlClient
-{
-}
+/// <summary>Represents the method that will handle the <see cref="E:System.Data.Common.DbConnection.StateChange" /> event.</summary>
+/// <param name="sender">The source of the event.</param>
+/// <param name="e">The <see cref="T:System.Data.StateChangeEventArgs" /> that contains the event data.</param>
+public delegate void StateChangeEventHandler(object sender, StateChangeEventArgs e);

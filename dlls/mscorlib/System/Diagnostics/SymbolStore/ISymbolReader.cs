@@ -1,12 +1,3 @@
-namespace System.Diagnostics.CodeAnalysis;
-
-[AttributeUsage(AttributeTargets.Parameter, Inherited = false)]
-public sealed class NotNullWhenAttribute : Attribute
+namespace System.Diagnostics.Tracing
 {
-	public bool ReturnValue { get; }
-
-	public NotNullWhenAttribute(bool returnValue)
-	{
-		ReturnValue = returnValue;
-	}
 }

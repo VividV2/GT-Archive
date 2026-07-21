@@ -1,10 +1,2 @@
-using System.Runtime.InteropServices;
-using Newtonsoft.Json;
-
-namespace Modio.API.SchemaDefinitions;
-
-[StructLayout(LayoutKind.Sequential, Size = 1)]
-[JsonObject]
-internal readonly struct Response204
-{
-}
+// Could not decompile Modio.API.SchemaDefinitions.Response204
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,11 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class ListMatchmakingTicketsForPlayerResult : PlayFabResultCommon
-{
-	public List<string> TicketIds;
-}
+// Could not decompile PlayFab.MultiplayerModels.ListMatchmakingTicketsForPlayerResult
+// This type uses unsupported IL or has too many generic parameters.

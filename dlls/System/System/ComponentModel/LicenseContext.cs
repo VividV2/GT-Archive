@@ -1,15 +1,2 @@
-namespace System.Net.Sockets
-{
-	public enum SocketAsyncOperation
-	{
-		None,
-		Accept,
-		Connect,
-		Disconnect,
-		Receive,
-		ReceiveFrom,
-		ReceiveMessageFrom,
-		Send,
-		SendPackets,
-		SendTo
-	}
+// Could not decompile System.ComponentModel.LicenseContext
+// This type uses unsupported IL or has too many generic parameters.

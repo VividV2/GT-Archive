@@ -1,17 +1,21 @@
 using System;
 
-namespace UnityEngine.ParticleSystemJobs;
-
-public static class IJobParticleSystemParallelForBatchExtensions
+namespace UnityEngine.ParticleSystemJobs
 {
-	public static void EarlyJobInit<T>() where T : struct, IJobParticleSystemParallelForBatch
+	public static class IJobParticleSystemParallelForBatchExtensions
 	{
-		ParticleSystemParallelForBatchJobStruct<T>.Initialize();
-	}
+		public static void EarlyJobInit<T>() where T : struct, IJobParticleSystemParallelForBatch
+		{
+			ParticleSystemParallelForBatchJobStruct<T>.Initialize();
+		}
 
-	internal static IntPtr GetReflectionData<T>() where T : struct, IJobParticleSystemParallelForBatch
-	{
-		ParticleSystemParallelForBatchJobStruct<T>.Initialize();
-		return ParticleSystemParallelForBatchJobStruct<T>.jobReflectionData.Data;
+		internal static IntPtr GetReflectionData<T>() where T : struct, IJobParticleSystemParallelForBatch
+		{
+			ParticleSystemParallelForBatchJobStruct<T>.Initialize();
+			return ParticleSystemParallelForBatchJobStruct<T>.jobReflectionData.Data;
+		}
 	}
+}
+namespace UnityEngine.ParticleSystemJobs
+{
 }

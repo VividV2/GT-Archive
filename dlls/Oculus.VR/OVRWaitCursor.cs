@@ -1,2 +1,7 @@
-// Could not decompile OVRWaitCursor
-// This type uses unsupported IL or has too many generic parameters.
+namespace OVRSimpleJSON;
+
+public enum JSONContainerType
+{
+	Array,
+	Object
+}

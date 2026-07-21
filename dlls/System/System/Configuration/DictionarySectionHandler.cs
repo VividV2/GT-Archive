@@ -1,2 +1,2 @@
-namespace System.CodeDom.Compiler;
-
+// Could not decompile System.Configuration.DictionarySectionHandler
+// This type uses unsupported IL or has too many generic parameters.

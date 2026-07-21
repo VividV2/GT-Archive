@@ -6,3 +6,6 @@ internal enum Salt
 	IdSalt = 17,
 	ClassSalt = 19
 }
+namespace UnityEngine.UIElements
+{
+}

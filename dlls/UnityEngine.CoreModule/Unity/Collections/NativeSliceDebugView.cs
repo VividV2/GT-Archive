@@ -1,13 +1,23 @@
-namespace Unity.Collections;
+namespace UnityEngine.Rendering;
 
-internal sealed class NativeSliceDebugView<T> where T : struct
+public enum ShadingRateFragmentSize
 {
-	private NativeSlice<T> m_Array;
-
-	public T[] Items => m_Array.ToArray();
-
-	public NativeSliceDebugView(NativeSlice<T> array)
-	{
-		m_Array = array;
-	}
+	[InspectorName("FragmentSize 1x1")]
+	FragmentSize1x1,
+	[InspectorName("FragmentSize 1x2")]
+	FragmentSize1x2,
+	[InspectorName("FragmentSize 2x1")]
+	FragmentSize2x1,
+	[InspectorName("FragmentSize 2x2")]
+	FragmentSize2x2,
+	[InspectorName("FragmentSize 1x4")]
+	FragmentSize1x4,
+	[InspectorName("FragmentSize 4x1")]
+	FragmentSize4x1,
+	[InspectorName("FragmentSize 2x4")]
+	FragmentSize2x4,
+	[InspectorName("FragmentSize 4x2")]
+	FragmentSize4x2,
+	[InspectorName("FragmentSize 4x4")]
+	FragmentSize4x4
 }

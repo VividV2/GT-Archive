@@ -1,15 +1,3 @@
-using System.ComponentModel;
-
-namespace Oculus.Platform;
-
-public enum KeyValuePairType
+namespace Oculus.Platform.Models
 {
-	[Description("STRING")]
-	String,
-	[Description("INTEGER")]
-	Int,
-	[Description("DOUBLE")]
-	Double,
-	[Description("UNKNOWN")]
-	Unknown
 }

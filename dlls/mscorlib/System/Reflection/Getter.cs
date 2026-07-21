@@ -1,7 +1,3 @@
-namespace System.Reflection
-{
-	internal delegate R Getter<T, R>(T _this);
-}
-namespace System.Reflection
-{
-}
+namespace System.Reflection;
+
+internal delegate R Getter<T, R>(T _this);

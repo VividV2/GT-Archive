@@ -1,9 +1,13 @@
-namespace UnityEngine.UIElements.StyleSheets;
-
-internal enum MatchResultErrorCode
+namespace UnityEngine.UIElements.Experimental
 {
-	None,
-	Syntax,
-	EmptyValue,
-	ExpectedEndOfValue
+}
+namespace UnityEngine.UIElements.StyleSheets
+{
+	internal enum MatchResultErrorCode
+	{
+		None,
+		Syntax,
+		EmptyValue,
+		ExpectedEndOfValue
+	}
 }

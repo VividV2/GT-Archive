@@ -1,2 +1,9 @@
-// Could not decompile Steamworks.ELeaderboardDataRequest
-// This type uses unsupported IL or has too many generic parameters.
+namespace Steamworks;
+
+public enum ELeaderboardDataRequest
+{
+	k_ELeaderboardDataRequestGlobal,
+	k_ELeaderboardDataRequestGlobalAroundUser,
+	k_ELeaderboardDataRequestFriends,
+	k_ELeaderboardDataRequestUsers
+}

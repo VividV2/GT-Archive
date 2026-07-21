@@ -1,8 +1,12 @@
-namespace Photon.Realtime;
-
-public enum ClientAppType
+namespace Photon.Realtime
 {
-	Realtime,
-	Voice,
-	Fusion
+	public enum ClientAppType
+	{
+		Realtime,
+		Voice,
+		Fusion
+	}
+}
+namespace Photon.Realtime
+{
 }

@@ -9,6 +9,6 @@ namespace UnityEngine
 		Exception
 	}
 }
-namespace Unity.IO.LowLevel.Unsafe
+namespace UnityEngine
 {
 }

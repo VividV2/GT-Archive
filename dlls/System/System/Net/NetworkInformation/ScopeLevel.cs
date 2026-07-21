@@ -1,19 +1,12 @@
-namespace System.CodeDom.Compiler
+namespace System.Net.Mail
 {
-}
-namespace System.Net
-{
-	public interface IAuthenticationModule
+	[Flags]
+	public enum DeliveryNotificationOptions
 	{
-		bool CanPreAuthenticate { get; }
-
-		string AuthenticationType { get; }
-
-		Authorization Authenticate(string challenge, WebRequest request, ICredentials credentials);
-
-		Authorization PreAuthenticate(WebRequest request, ICredentials credentials);
+		None = 0,
+		OnSuccess = 1,
+		OnFailure = 2,
+		Delay = 4,
+		Never = 0x8000000
 	}
-}
-namespace System.Net.Configuration
-{
 }

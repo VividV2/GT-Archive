@@ -1,12 +1,3 @@
-namespace Fusion;
-
-internal interface IFeedbackController
+namespace Fusion
 {
-	double Output();
-
-	void Update(double sample, double target, double dt);
-
-	void Reset();
-
-	void ResetOutput();
 }

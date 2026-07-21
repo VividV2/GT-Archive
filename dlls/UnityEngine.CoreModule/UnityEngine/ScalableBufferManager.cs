@@ -1,8 +1,11 @@
-namespace UnityEngine;
+namespace UnityEngine.Rendering;
 
-public enum FilterMode
+public interface IRenderPipelineResources : IRenderPipelineGraphicsSettings
 {
-	Point,
-	Bilinear,
-	Trilinear
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine
+{
 }

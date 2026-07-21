@@ -1,29 +1,22 @@
 using System;
 
-namespace UnityEngine.Rendering.UnifiedRayTracing
+namespace UnityEngine.Rendering.UnifiedRayTracing;
+
+internal interface IRayTracingAccelStruct : IDisposable
 {
-}
-namespace UnityEngine.Rendering.UnifiedRayTracing
-{
-	internal interface IRayTracingAccelStruct : IDisposable
-	{
-		int AddInstance(MeshInstanceDesc meshInstance);
+	int AddInstance(MeshInstanceDesc meshInstance);
 
-		void RemoveInstance(int instanceHandle);
+	void RemoveInstance(int instanceHandle);
 
-		void ClearInstances();
+	void ClearInstances();
 
-		void UpdateInstanceTransform(int instanceHandle, Matrix4x4 localToWorldMatrix);
+	void UpdateInstanceTransform(int instanceHandle, Matrix4x4 localToWorldMatrix);
 
-		void UpdateInstanceID(int instanceHandle, uint instanceID);
+	void UpdateInstanceID(int instanceHandle, uint instanceID);
 
-		void UpdateInstanceMask(int instanceHandle, uint mask);
+	void UpdateInstanceMask(int instanceHandle, uint mask);
 
-		void Build(CommandBuffer cmd, GraphicsBuffer scratchBuffer);
+	void Build(CommandBuffer cmd, GraphicsBuffer scratchBuffer);
 
-		ulong GetBuildScratchBufferRequiredSizeInBytes();
-	}
-}
-namespace UnityEngine.Rendering.UnifiedRayTracing
-{
+	ulong GetBuildScratchBufferRequiredSizeInBytes();
 }

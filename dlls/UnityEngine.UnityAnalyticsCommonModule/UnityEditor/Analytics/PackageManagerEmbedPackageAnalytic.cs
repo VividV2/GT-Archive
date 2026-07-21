@@ -1,24 +1,2 @@
-using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Internal;
-using UnityEngine.Scripting;
-
-namespace UnityEditor.Analytics;
-
-[Serializable]
-[StructLayout(LayoutKind.Sequential)]
-[ExcludeFromDocs]
-[RequiredByNativeCode(GenerateProxy = true)]
-public class PackageManagerEmbedPackageAnalytic : PackageManagerBaseAnalytic
-{
-	public PackageManagerEmbedPackageAnalytic()
-		: base("embedPackage")
-	{
-	}
-
-	[RequiredByNativeCode]
-	internal static PackageManagerEmbedPackageAnalytic CreatePackageManagerEmbedPackageAnalytic()
-	{
-		return new PackageManagerEmbedPackageAnalytic();
-	}
-}
+// Could not decompile UnityEditor.Analytics.PackageManagerEmbedPackageAnalytic
+// This type uses unsupported IL or has too many generic parameters.

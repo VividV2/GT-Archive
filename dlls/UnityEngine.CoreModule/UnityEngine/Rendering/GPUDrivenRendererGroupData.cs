@@ -1,66 +1,60 @@
-using Unity.Collections;
+using System;
+using System;
+using System;
+using System;
 
-namespace UnityEngine.Rendering;
+namespace UnityEngine;
 
-internal struct GPUDrivenRendererGroupData
+namespace UnityEngine.Rendering
 {
-	public NativeArray<int> rendererGroupID;
+	[Flags]
+	public enum UISubset
+	{
+		UIToolkit_UGUI = 1,
+		LowLevel = 2,
+		All = -1
+	}
+}
+namespace Unity.Profiling.Memory
+{
+	[Flags]
+	public enum CaptureFlags : uint
+	{
+		ManagedObjects = 1u,
+		NativeObjects = 2u,
+		NativeAllocations = 4u,
+		NativeAllocationSites = 8u,
+		NativeStackTraces = 0x10u
+	}
+}
+namespace JetBrains.Annotations
+{
+	[AttributeUsage(AttributeTargets.Parameter)]
+	public sealed class PathReferenceAttribute : Attribute
+	{
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		private readonly string <BasePath>k__BackingField;
 
-	public NativeArray<Bounds> localBounds;
+		[CanBeNull]
+		public string BasePath
+		{
+			[CompilerGenerated]
+			get
+			{
+				return <BasePath>k__BackingField;
+			}
+		}
 
-	public NativeArray<Vector4> lightmapScaleOffset;
+		public PathReferenceAttribute()
+		{
+			base..ctor();
+		}
 
-	public NativeArray<int> gameObjectLayer;
-
-	public NativeArray<uint> renderingLayerMask;
-
-	public NativeArray<int> lodGroupID;
-
-	public NativeArray<int> lightmapIndex;
-
-	public NativeArray<GPUDrivenPackedRendererData> packedRendererData;
-
-	public NativeArray<int> rendererPriority;
-
-	public NativeArray<int> meshIndex;
-
-	public NativeArray<short> subMeshStartIndex;
-
-	public NativeArray<int> materialsOffset;
-
-	public NativeArray<short> materialsCount;
-
-	public NativeArray<int> instancesOffset;
-
-	public NativeArray<int> instancesCount;
-
-	public NativeArray<GPUDrivenRendererEditorData> editorData;
-
-	public NativeArray<GPUDrivenRendererMeshLodData> meshLodData;
-
-	public NativeArray<int> invalidRendererGroupID;
-
-	public NativeArray<Matrix4x4> localToWorldMatrix;
-
-	public NativeArray<Matrix4x4> prevLocalToWorldMatrix;
-
-	public NativeArray<int> rendererGroupIndex;
-
-	public NativeArray<int> meshID;
-
-	public NativeArray<GPUDrivenMeshLodInfo> meshLodInfo;
-
-	public NativeArray<short> subMeshCount;
-
-	public NativeArray<int> subMeshDescOffset;
-
-	public NativeArray<SubMeshDescriptor> subMeshDesc;
-
-	public NativeArray<int> materialIndex;
-
-	public NativeArray<int> materialID;
-
-	public NativeArray<GPUDrivenPackedMaterialData> packedMaterialData;
-
-	public NativeArray<int> materialFilterFlags;
+		public PathReferenceAttribute([NotNull][PathReference] string basePath)
+		{
+			base..ctor();
+			<BasePath>k__BackingField = basePath;
+		}
+	}
 }

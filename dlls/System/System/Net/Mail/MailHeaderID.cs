@@ -1,9 +1,8 @@
-namespace System.Security.Cryptography.X509Certificates
+namespace System.Net;
+
+internal struct WebParseError
 {
-}
-namespace System.Configuration
-{
-}
-namespace Mono.Net.Dns
-{
+	public WebParseErrorSection Section;
+
+	public WebParseErrorCode Code;
 }

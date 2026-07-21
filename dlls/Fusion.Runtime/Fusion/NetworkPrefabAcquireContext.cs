@@ -1,12 +1,2 @@
-using System;
-using System;
-
-namespace Fusion;
-
-[Flags]
-internal enum NetworkObjectHeaderPlayerDataFlags
-{
-	InAreaOfInterest = 1,
-	ForceInterest = 2,
-	AllInterestFlags = 3
-}
+// Could not decompile Fusion.NetworkPrefabAcquireContext
+// This type uses unsupported IL or has too many generic parameters.

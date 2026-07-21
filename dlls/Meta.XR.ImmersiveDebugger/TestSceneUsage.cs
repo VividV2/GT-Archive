@@ -1,8 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-namespace Meta.XR.ImmersiveDebugger.Utils;
-
-internal class Vector2Container : ValueContainer<Vector2>
-{
-}
+// Could not decompile TestSceneUsage
+// This type uses unsupported IL or has too many generic parameters.

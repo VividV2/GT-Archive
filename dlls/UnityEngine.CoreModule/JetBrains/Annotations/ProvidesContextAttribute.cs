@@ -1,8 +1,2 @@
-using System;
-
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Interface | AttributeTargets.Parameter | AttributeTargets.GenericParameter)]
-public sealed class ProvidesContextAttribute : Attribute
-{
-}
+// Could not decompile JetBrains.Annotations.ProvidesContextAttribute
+// This type uses unsupported IL or has too many generic parameters.

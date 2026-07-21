@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.Experimental.Playables.TexturePlayableGraphExtensions
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Rendering;
+using UnityEngine.Rendering;
+
+namespace UnityEngine.Experimental.Rendering;
+
+public struct ShaderWarmupSetup
+{
+	public VertexAttributeDescriptor[] vdecl;
+}

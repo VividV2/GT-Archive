@@ -1,2 +1,2 @@
-// Could not decompile Modio.API.SchemaDefinitions.LineItemsObject
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.API.SchemaDefinitions;
+

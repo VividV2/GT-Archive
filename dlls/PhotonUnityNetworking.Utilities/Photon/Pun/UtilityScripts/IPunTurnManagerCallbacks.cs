@@ -1,29 +1,16 @@
 using Photon.Realtime;
 
-namespace Photon.Pun.UtilityScripts
-{
-}
-namespace Photon.Pun.UtilityScripts
-{
-}
-namespace Photon.Pun.UtilityScripts
-{
-	public interface IPunTurnManagerCallbacks
-	{
-		void OnTurnBegins(int turn);
+namespace Photon.Pun.UtilityScripts;
 
-		void OnTurnCompleted(int turn);
-
-		void OnPlayerMove(Player player, int turn, object move);
-
-		void OnPlayerFinished(Player player, int turn, object move);
-
-		void OnTurnTimeEnds(int turn);
-	}
-}
-namespace Photon.Pun.UtilityScripts
+public interface IPunTurnManagerCallbacks
 {
-}
-namespace Photon.Pun.UtilityScripts
-{
+	void OnTurnBegins(int turn);
+
+	void OnTurnCompleted(int turn);
+
+	void OnPlayerMove(Player player, int turn, object move);
+
+	void OnPlayerFinished(Player player, int turn, object move);
+
+	void OnTurnTimeEnds(int turn);
 }

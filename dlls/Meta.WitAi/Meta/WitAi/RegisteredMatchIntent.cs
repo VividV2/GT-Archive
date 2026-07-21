@@ -1,13 +1,2 @@
-using System;
-using System.Reflection;
-
-namespace Meta.WitAi;
-
-internal class RegisteredMatchIntent
-{
-	public Type type;
-
-	public MethodInfo method;
-
-	public MatchIntent matchIntent;
-}
+// Could not decompile Meta.WitAi.RegisteredMatchIntent
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,18 +1,2 @@
-using MS.Internal.Xml.XPath;
-
-namespace System.Xml.Xsl.XsltOld;
-
-internal sealed class TheQuery
-{
-	internal InputScopeManager _ScopeManager;
-
-	private CompiledXpathExpr _CompiledQuery;
-
-	internal CompiledXpathExpr CompiledQuery => _CompiledQuery;
-
-	internal TheQuery(CompiledXpathExpr compiledQuery, InputScopeManager manager)
-	{
-		_CompiledQuery = compiledQuery;
-		_ScopeManager = manager.Clone();
-	}
-}
+// Could not decompile System.Xml.Xsl.XsltOld.TheQuery
+// This type uses unsupported IL or has too many generic parameters.

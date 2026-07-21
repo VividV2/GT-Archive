@@ -1,2 +1,5 @@
-namespace OVR.OpenVR;
+using UnityEngine;
 
+internal class OVRReadOnlyAttribute : PropertyAttribute
+{
+}

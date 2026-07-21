@@ -1,8 +1,12 @@
 using System;
 
-namespace Oculus.Interaction;
-
-public interface IDeltaTimeConsumer
+namespace Oculus.Interaction
 {
-	void SetDeltaTimeProvider(Func<float> deltaTimeProvider);
+}
+namespace Oculus.Interaction
+{
+	public interface IDeltaTimeConsumer
+	{
+		void SetDeltaTimeProvider(Func<float> deltaTimeProvider);
+	}
 }

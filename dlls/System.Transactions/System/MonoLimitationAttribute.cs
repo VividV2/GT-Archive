@@ -1,10 +1,7 @@
-namespace System;
+namespace System.Transactions;
 
-[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-internal class MonoLimitationAttribute : System.MonoTODOAttribute
+public enum DependentCloneOption
 {
-	public MonoLimitationAttribute(string comment)
-		: base(comment)
-	{
-	}
+	BlockCommitUntilComplete,
+	RollbackIfNotComplete
 }

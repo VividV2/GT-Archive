@@ -1,6 +1,2 @@
-using UnityEngine;
-
-internal interface ILckVideoTextureProvider
-{
-	RenderTexture CameraTrackTexture { get; }
-}
+// Could not decompile ILckVideoTextureProvider
+// This type uses unsupported IL or has too many generic parameters.

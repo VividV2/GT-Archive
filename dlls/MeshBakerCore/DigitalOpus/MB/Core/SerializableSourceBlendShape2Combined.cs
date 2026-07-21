@@ -1,8 +1,2 @@
-namespace DigitalOpus.MB.Core;
-
-public interface IAssignToMeshCustomizer
-{
-}
-namespace DigitalOpus.MB.Core
-{
-}
+// Could not decompile DigitalOpus.MB.Core.SerializableSourceBlendShape2Combined
+// This type uses unsupported IL or has too many generic parameters.

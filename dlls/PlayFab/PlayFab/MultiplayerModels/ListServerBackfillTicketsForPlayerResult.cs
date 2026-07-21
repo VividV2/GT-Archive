@@ -8,7 +8,7 @@ using PlayFab.SharedModels;
 namespace PlayFab.MultiplayerModels;
 
 [Serializable]
-public class ListMatchmakingTicketsForPlayerResult : PlayFabResultCommon
+public class ListServerBackfillTicketsForPlayerResult : PlayFabResultCommon
 {
 	public List<string> TicketIds;
 }

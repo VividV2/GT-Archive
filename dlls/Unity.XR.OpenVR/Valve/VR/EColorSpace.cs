@@ -9,21 +9,14 @@ namespace Valve.VR
 }
 namespace Valve.VR
 {
-	public struct IVRNotifications
+	public struct VROverlayIntersectionResults_t
 	{
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EVRNotificationError _CreateNotification(ulong ulOverlayHandle, ulong ulUserValue, EVRNotificationType type, IntPtr pchText, EVRNotificationStyle style, ref NotificationBitmap_t pImage, ref uint pNotificationId);
+		public HmdVector3_t vPoint;
 
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EVRNotificationError _RemoveNotification(uint notificationId);
+		public HmdVector3_t vNormal;
 
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _CreateNotification CreateNotification;
+		public HmdVector2_t vUVs;
 
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _RemoveNotification RemoveNotification;
+		public float fDistance;
 	}
-}
-namespace Valve.VR
-{
 }

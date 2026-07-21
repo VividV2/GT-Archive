@@ -1,2 +1,16 @@
-// Could not decompile System.Reflection.ModuleExtensions
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Reflection;
+
+public static class ModuleExtensions
+{
+	public static bool HasModuleVersionId(this Module module)
+	{
+		Requires.NotNull(module, "module");
+		return true;
+	}
+
+	public static Guid GetModuleVersionId(this Module module)
+	{
+		Requires.NotNull(module, "module");
+		return module.ModuleVersionId;
+	}
+}

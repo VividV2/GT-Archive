@@ -1,15 +1,11 @@
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering
-{
-	public interface IXRInteractionStrengthFilter
-	{
-		bool canProcess { get; }
+namespace UnityEngine.XR.Interaction.Toolkit.Filtering;
 
-		float Process(IXRInteractor interactor, IXRInteractable interactable, float interactionStrength);
-	}
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Interactables
+public interface IXRInteractionStrengthFilter
 {
+	bool canProcess { get; }
+
+	float Process(IXRInteractor interactor, IXRInteractable interactable, float interactionStrength);
 }

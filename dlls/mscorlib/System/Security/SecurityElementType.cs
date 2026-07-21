@@ -1,12 +1,8 @@
-namespace System.Security.Policy
+namespace System.Security;
+
+internal enum SecurityElementType
 {
-}
-namespace System.Security
-{
-	internal enum SecurityElementType
-	{
-		Regular,
-		Format,
-		Comment
-	}
+	Regular,
+	Format,
+	Comment
 }

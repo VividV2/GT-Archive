@@ -1,16 +1,12 @@
-namespace UnityEngine.Animations.Rigging
+namespace UnityEngine.Animations.Rigging;
+
+public interface ITwistCorrectionData
 {
-	public interface ITwistCorrectionData
-	{
-		Transform source { get; }
+	Transform source { get; }
 
-		WeightedTransformArray twistNodes { get; }
+	WeightedTransformArray twistNodes { get; }
 
-		Vector3 twistAxis { get; }
+	Vector3 twistAxis { get; }
 
-		string twistNodesProperty { get; }
-	}
-}
-namespace UnityEngine.Animations.Rigging
-{
+	string twistNodesProperty { get; }
 }

@@ -1,2 +1,6 @@
-namespace System.Diagnostics;
-
+namespace System.Configuration
+{
+}
+namespace Mono
+{
+}

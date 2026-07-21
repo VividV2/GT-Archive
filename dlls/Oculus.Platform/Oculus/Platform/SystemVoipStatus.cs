@@ -1,5 +1,8 @@
 using System.ComponentModel;
 
+namespace Oculus.Platform.Models
+{
+}
 namespace Oculus.Platform
 {
 	public enum SystemVoipStatus
@@ -14,6 +17,6 @@ namespace Oculus.Platform
 		Active
 	}
 }
-namespace Oculus.Platform
+namespace Oculus.Platform.Models
 {
 }

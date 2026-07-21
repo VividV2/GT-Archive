@@ -1,20 +1,2 @@
-using System;
-
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Playables
-{
-	public static class ScriptPlayableBinding
-	{
-		public static PlayableBinding Create(string name, Object key, Type type)
-		{
-			return PlayableBinding.CreateInternal(name, key, type, CreateScriptOutput);
-		}
-
-		private static PlayableOutput CreateScriptOutput(PlayableGraph graph, string name)
-		{
-			return ScriptPlayableOutput.Create(graph, name);
-		}
-	}
-}
+// Could not decompile UnityEngine.Playables.ScriptPlayableBinding
+// This type uses unsupported IL or has too many generic parameters.

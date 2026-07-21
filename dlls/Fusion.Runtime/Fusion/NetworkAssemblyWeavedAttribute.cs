@@ -1,2 +1,8 @@
-// Could not decompile Fusion.NetworkAssemblyWeavedAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Fusion;
+
+[AttributeUsage(AttributeTargets.Assembly, Inherited = false, AllowMultiple = false)]
+public sealed class NetworkAssemblyWeavedAttribute : Attribute
+{
+}

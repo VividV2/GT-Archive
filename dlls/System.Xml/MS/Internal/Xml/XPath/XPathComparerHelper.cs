@@ -1,6 +1,2 @@
-namespace System.Xml.Xsl.Qil
-{
-}
-namespace System.Xml.Serialization
-{
-}
+// Could not decompile MS.Internal.Xml.XPath.XPathComparerHelper
+// This type uses unsupported IL or has too many generic parameters.

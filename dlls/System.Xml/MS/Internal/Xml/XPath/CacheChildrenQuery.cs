@@ -1,6 +1,2 @@
-namespace System.Xml.Schema
-{
-}
-namespace System.Xml.Schema
-{
-}
+// Could not decompile MS.Internal.Xml.XPath.CacheChildrenQuery
+// This type uses unsupported IL or has too many generic parameters.

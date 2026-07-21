@@ -1,9 +1,2 @@
-namespace UnityEngine.Playables;
+namespace UnityEngine.Windows.Speech;
 
-public enum DirectorUpdateMode
-{
-	DSPClock,
-	GameTime,
-	UnscaledGameTime,
-	Manual
-}

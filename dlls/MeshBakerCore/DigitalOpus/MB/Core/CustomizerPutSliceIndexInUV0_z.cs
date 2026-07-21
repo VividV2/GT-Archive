@@ -7,6 +7,3 @@ public enum MB_OutputOptions
 	bakeTextureAtlasesOnly,
 	bakeIntoSceneObject
 }
-namespace DigitalOpus.MB.Core
-{
-}

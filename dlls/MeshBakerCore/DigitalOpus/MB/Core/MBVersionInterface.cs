@@ -1,112 +1,44 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
-using System;
-using System;
 
 namespace DigitalOpus.MB.Core
 {
-	public enum MB_MeshPivotLocation
+	public interface MB_IMeshCombinerSingle_BoneProcessor : IDisposable
 	{
-		worldOrigin,
-		boundsCenter,
-		customLocation
-	}
-}
-namespace DigitalOpus.MB.Core
-{
-	[Flags]
-	public enum MB_MeshVertexChannelFlags
-	{
-		none = 0,
-		vertex = 1,
-		normal = 2,
-		tangent = 4,
-		colors = 8,
-		uv0 = 0x10,
-		nuvsSliceIdx = 0x20,
-		uv2 = 0x40,
-		uv3 = 0x80,
-		uv4 = 0x100,
-		uv5 = 0x200,
-		uv6 = 0x400,
-		uv7 = 0x800,
-		uv8 = 0x1000,
-		blendWeight = 0x2000,
-		blendIndices = 0x4000
-	}
-}
-namespace DigitalOpus.MB.Core
-{
-	public interface MBVersionInterface
-	{
-		string version();
+		bool GetCachedSMRMeshData(MB_DynamicGameObject dgo);
 
-		bool Is_2018_3_OrNewer();
+		void AddBonesToNewBonesArrayAndAdjustBWIndexes1(MB_DynamicGameObject dgo, int vertsIdx);
 
-		bool Is_2017_1_OrNewer();
+		void AllocateAndSetupSMRDataStructures(List<MB_DynamicGameObject> toAddDGOs, List<MB_DynamicGameObject> mbDynamicObjectsInCombinedMesh, int newVertSize, IVertexAndTriangleProcessor vertexAndTriangleProcessor);
 
-		bool GetActive(UnityEngine.GameObject go);
+		void BuildBoneIdx2DGOMapIfNecessary(int[] _goToDelete);
 
-		void SetActive(UnityEngine.GameObject go, bool isActive);
+		void CopyBonesWeAreKeepingToNewBonesArrayAndAdjustBWIndexes(int totalDeleteVerts);
 
-		void SetActiveRecursively(UnityEngine.GameObject go, bool isActive);
+		void InsertNewBonesIntoBonesArray();
 
-		UnityEngine.Object[] FindSceneObjectsOfType(Type t);
+		int GetNewBonesSize();
 
-		bool IsRunningAndMeshNotReadWriteable(Mesh m);
+		void RemoveBonesForDgosWeAreDeleting(MB_DynamicGameObject dgo);
 
-		Vector2[] GetMeshUVChannel(int channel, Mesh m, MB2_LogLevel LOG_LEVEL);
+		void CopyBoneWeightsFromMeshForDGOsInCombined(MB_DynamicGameObject dgo, int targVidx);
 
-		void MeshClear(Mesh m, bool t);
+		void CopyVertsNormsTansToBuffers(MB_DynamicGameObject dgo, MB_IMeshBakerSettings settings, int vertsIdx, Vector3[] nnorms, Vector4[] ntangs, Vector3[] nverts, Vector3[] normals, Vector4[] tangents, Vector3[] verts);
 
-		void MeshAssignUVChannel(int channel, Mesh m, Vector2[] uvs);
+		void CopyVertsNormsTansToBuffers(MB_DynamicGameObject dgo, MB_IMeshBakerSettings settings, int vertsIdx, NativeSlice<Vector3> nnorms, NativeSlice<Vector4> ntangs, NativeSlice<Vector3> nverts, NativeSlice<Vector3> normals, NativeSlice<Vector4> tangents, NativeSlice<Vector3> verts);
 
-		Vector4 GetLightmapTilingOffset(Renderer r);
+		void DisposeOfTemporarySMRData();
 
-		Transform[] GetBones(Renderer r, bool isSkinnedMeshWithBones);
+		void ApplySMRdataToMeshToBuffer();
 
-		void OptimizeMesh(Mesh m);
+		void ApplySMRdataToMesh(MB3_MeshCombinerSingle combiner, Mesh mesh);
 
-		int GetBlendShapeFrameCount(Mesh m, int shapeIndex);
+		void UpdateGameObjects_ReadBoneWeightInfoFromCombinedMesh();
 
-		float GetBlendShapeFrameWeight(Mesh m, int shapeIndex, int frameIndex);
+		void UpdateGameObjects_UpdateBWIndexes(MB_DynamicGameObject dgo);
 
-		void GetBlendShapeFrameVertices(Mesh m, int shapeIndex, int frameIndex, Vector3[] vs, Vector3[] ns, Vector3[] ts);
-
-		void ClearBlendShapes(Mesh m);
-
-		void AddBlendShapeFrame(Mesh m, string nm, float wt, Vector3[] vs, Vector3[] ns, Vector3[] ts);
-
-		int MaxMeshVertexCount();
-
-		void SetMeshIndexFormatAndClearMesh(Mesh m, int numVerts, bool vertices, bool justClearTriangles);
-
-		bool GraphicsUVStartsAtTop();
-
-		bool IsTextureReadable(Texture2D tex);
-
-		bool IsSwizzledNormalMapPlatform();
-
-		bool IsMaterialKeywordValid(Material mat, string keyword);
-
-		bool IsTexture_sRGBgammaCorrected(Texture2D tex, bool hint);
-
-		bool CollectPropertyNames(List<ShaderTextureProperty> texPropertyNames, ShaderTextureProperty[] shaderTexPropertyNames, List<ShaderTextureProperty> _customShaderPropNames, Material resultMaterial, MB2_LogLevel LOG_LEVEL);
-
-		void DoSpecialRenderPipeline_TexturePackerFastSetup(GameObject cameraGameObject);
-
-		ColorSpace GetProjectColorSpace();
-
-		MBVersion.PipelineType DetectPipeline();
-
-		string UnescapeURL(string url);
-
-		IEnumerator FindRuntimeMaterialsFromAddresses(MB2_TextureBakeResults textureBakeResult, MB2_TextureBakeResults.CoroutineResult isComplete);
-
-		float GetScaleInLightmap(MeshRenderer r);
-
-		bool IsAssetInProject(UnityEngine.Object target);
+		bool DB_CheckIntegrity();
 	}
 }

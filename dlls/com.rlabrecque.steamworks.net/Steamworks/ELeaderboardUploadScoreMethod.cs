@@ -1,8 +1,12 @@
-namespace Steamworks;
-
-public enum ELeaderboardUploadScoreMethod
+namespace Steamworks
 {
-	k_ELeaderboardUploadScoreMethodNone,
-	k_ELeaderboardUploadScoreMethodKeepBest,
-	k_ELeaderboardUploadScoreMethodForceUpdate
+}
+namespace Steamworks
+{
+	public enum ELeaderboardUploadScoreMethod
+	{
+		k_ELeaderboardUploadScoreMethodNone,
+		k_ELeaderboardUploadScoreMethodKeepBest,
+		k_ELeaderboardUploadScoreMethodForceUpdate
+	}
 }

@@ -1,2 +1,3 @@
-namespace PlayFab.GroupsModels;
-
+namespace PlayFab.ProfilesModels
+{
+}

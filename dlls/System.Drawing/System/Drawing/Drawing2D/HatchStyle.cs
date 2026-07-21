@@ -1,13 +1,10 @@
-namespace System.Drawing.Imaging;
+namespace System.Drawing;
 
-/// <summary>Specifies which GDI+ objects use color adjustment information.</summary>
-public enum ColorAdjustType
+internal enum BrushType
 {
-	Default,
-	Bitmap,
-	Brush,
-	Pen,
-	Text,
-	Count,
-	Any
+	BrushTypeSolidColor,
+	BrushTypeHatchFill,
+	BrushTypeTextureFill,
+	BrushTypePathGradient,
+	BrushTypeLinearGradient
 }

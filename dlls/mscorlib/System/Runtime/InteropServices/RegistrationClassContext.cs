@@ -1,41 +1,46 @@
-using System.Reflection.Emit;
-
 namespace System.Runtime.InteropServices;
 
-/// <summary>Exposes the <see cref="T:System.Reflection.Emit.TypeBuilder" /> class to unmanaged code.</summary>
-[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-[Guid("7E5678EE-48B3-3F83-B076-C58543498A58")]
-[TypeLibImportClass(typeof(TypeBuilder))]
-[ComVisible(true)]
-[CLSCompliant(false)]
-public interface _TypeBuilder
+/// <summary>Specifies the set of execution contexts in which a class object will be made available for requests to construct instances.</summary>
+[Flags]
+public enum RegistrationClassContext
 {
-	/// <summary>Maps a set of names to a corresponding set of dispatch identifiers.</summary>
-	/// <param name="riid">Reserved for future use. Must be IID_NULL.</param>
-	/// <param name="rgszNames">An array of names to be mapped.</param>
-	/// <param name="cNames">The count of the names to be mapped.</param>
-	/// <param name="lcid">The locale context in which to interpret the names.</param>
-	/// <param name="rgDispId">An array allocated by the caller that receives the identifiers corresponding to the names.</param>
-	void GetIDsOfNames([In] ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);
-
-	/// <summary>Retrieves the type information for an object, which can be used to get the type information for an interface.</summary>
-	/// <param name="iTInfo">The type information to return.</param>
-	/// <param name="lcid">The locale identifier for the type information.</param>
-	/// <param name="ppTInfo">A pointer to the requested type information object.</param>
-	void GetTypeInfo(uint iTInfo, uint lcid, IntPtr ppTInfo);
-
-	/// <summary>Retrieves the number of type information interfaces that an object provides (either 0 or 1).</summary>
-	/// <param name="pcTInfo">If this is really an out parameter as the syntax above indicates, the wording here should be "When this method returns, contains a pointer to a location that receives the number of type information interfaces provided by the object. This parameter is passed uninitialized.</param>
-	void GetTypeInfoCount(out uint pcTInfo);
-
-	/// <summary>Provides access to properties and methods exposed by an object.</summary>
-	/// <param name="dispIdMember">An identifier of a member.</param>
-	/// <param name="riid">Reserved for future use. Must be IID_NULL.</param>
-	/// <param name="lcid">The locale context in which to interpret arguments.</param>
-	/// <param name="wFlags">Flags describing the context of the call.</param>
-	/// <param name="pDispParams">A pointer to a structure containing an array of arguments, an array of argument DISPIDs for named arguments, and counts for the number of elements in the arrays.</param>
-	/// <param name="pVarResult">A pointer to the location where the result will be stored.</param>
-	/// <param name="pExcepInfo">A pointer to a structure that contains exception information.</param>
-	/// <param name="puArgErr">The index of the first argument that has an error.</param>
-	void Invoke(uint dispIdMember, [In] ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);
+	/// <summary>Disables activate-as-activator (AAA) activations for this activation only.</summary>
+	DisableActivateAsActivator = 0x8000,
+	/// <summary>Enables activate-as-activator (AAA) activations for this activation only.</summary>
+	EnableActivateAsActivator = 0x10000,
+	/// <summary>Allows the downloading of code from the Directory Service or the Internet.</summary>
+	EnableCodeDownload = 0x2000,
+	/// <summary>Begin this activation from the default context of the current apartment.</summary>
+	FromDefaultContext = 0x20000,
+	/// <summary>The code that manages objects of this class is an in-process handler.</summary>
+	InProcessHandler = 2,
+	/// <summary>Not used.</summary>
+	InProcessHandler16 = 0x20,
+	/// <summary>The code that creates and manages objects of this class is a DLL that runs in the same process as the caller of the function specifying the class context.</summary>
+	InProcessServer = 1,
+	/// <summary>Not used.</summary>
+	InProcessServer16 = 8,
+	/// <summary>The EXE code that creates and manages objects of this class runs on same machine but is loaded in a separate process space.</summary>
+	LocalServer = 4,
+	/// <summary>Disallows the downloading of code from the Directory Service or the Internet.</summary>
+	NoCodeDownload = 0x400,
+	/// <summary>Specifies whether activation fails if it uses custom marshaling.</summary>
+	NoCustomMarshal = 0x1000,
+	/// <summary>Overrides the logging of failures.</summary>
+	NoFailureLog = 0x4000,
+	/// <summary>A remote machine context.</summary>
+	RemoteServer = 0x10,
+	/// <summary>Not used.</summary>
+	Reserved1 = 0x40,
+	/// <summary>Not used.</summary>
+	Reserved2 = 0x80,
+	/// <summary>Not used.</summary>
+	Reserved3 = 0x100,
+	/// <summary>Not used.</summary>
+	Reserved4 = 0x200,
+	/// <summary>Not used.</summary>
+	Reserved5 = 0x800
+}
+namespace System.Runtime.Serialization.Formatters.Binary
+{
 }

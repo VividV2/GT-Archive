@@ -1,20 +1,12 @@
-namespace UnityEngine;
-
-public struct BoundingSphere
+namespace UnityEngine.Rendering
 {
-	public Vector3 position;
-
-	public float radius;
-
-	public BoundingSphere(Vector3 pos, float rad)
+	public enum GraphicsTier
 	{
-		position = pos;
-		radius = rad;
+		Tier1,
+		Tier2,
+		Tier3
 	}
-
-	public BoundingSphere(Vector4 packedSphere)
-	{
-		position = new Vector3(packedSphere.x, packedSphere.y, packedSphere.z);
-		radius = packedSphere.w;
-	}
+}
+namespace UnityEngine.LowLevel
+{
 }

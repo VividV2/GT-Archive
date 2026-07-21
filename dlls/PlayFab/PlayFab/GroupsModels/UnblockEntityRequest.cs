@@ -1,9 +1,12 @@
-namespace PlayFab.ExperimentationModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.GroupsModels;
+
+[Serializable]
+public class UnblockEntityRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.GroupsModels
-{
-}
-namespace PlayFab.ExperimentationModels
-{
+	public EntityKey Entity;
+
+	public EntityKey Group;
 }

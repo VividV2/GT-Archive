@@ -1,2 +1,3 @@
-// Could not decompile System.Data.SqlClient.TdsParserStaticMethods
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data;
+
+internal delegate void DataRowCreatedEventHandler(object sender, DataRow r);

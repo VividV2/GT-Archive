@@ -1,9 +1,16 @@
 using Unity.Jobs.LowLevel.Unsafe;
 
-namespace Unity.Jobs;
-
-[JobProducerType(typeof(IJobForExtensions.ForJobStruct<>))]
-public interface IJobFor
+namespace UnityEngine.Assertions.Must
 {
-	void Execute(int index);
+}
+namespace Unity.Jobs
+{
+	[JobProducerType(typeof(IJobForExtensions.ForJobStruct<>))]
+	public interface IJobFor
+	{
+		void Execute(int index);
+	}
+}
+namespace UnityEngine
+{
 }

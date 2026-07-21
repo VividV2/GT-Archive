@@ -1,17 +1,7 @@
-using System;
-using System.Collections.Generic;
-using Backtrace.Unity.Json;
-using UnityEngine.Networking;
-
-namespace Backtrace.Unity.Model;
-
-internal interface IBacktraceHttpClient
+namespace Backtrace.Unity.Model.Attributes
 {
-	bool IgnoreSslValidation { get; set; }
-
-	void Post(string submissionUrl, BacktraceJObject jObject, Action<long, bool, string> onComplete);
-
-	UnityWebRequest Post(string submissionUrl, string json, IEnumerable<string> attachments, IDictionary<string, string> attributes);
-
-	UnityWebRequest Post(string submissionUrl, byte[] minidump, IEnumerable<string> attachments, IDictionary<string, string> attributes);
+	public interface IScopeAttributeProvider
+	{
+		void GetAttributes(IDictionary<string, string> attributes);
+	}
 }

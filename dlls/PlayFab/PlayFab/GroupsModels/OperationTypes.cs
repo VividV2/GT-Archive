@@ -1,13 +1,9 @@
-namespace PlayFab.GroupsModels
+namespace PlayFab.GroupsModels;
+
+public enum OperationTypes
 {
-}
-namespace PlayFab.GroupsModels
-{
-	public enum OperationTypes
-	{
-		Created,
-		Updated,
-		Deleted,
-		None
-	}
+	Created,
+	Updated,
+	Deleted,
+	None
 }

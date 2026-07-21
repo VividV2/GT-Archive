@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.Localization.Operations.LocalizationGroupOperation
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+namespace UnityEngine.Localization;
+
+public interface IPreloadRequired
+{
+	AsyncOperationHandle PreloadOperation { get; }
+}

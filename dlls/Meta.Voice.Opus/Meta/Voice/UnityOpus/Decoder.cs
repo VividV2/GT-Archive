@@ -1,2 +1,7 @@
-// Could not decompile Meta.Voice.UnityOpus.Decoder
-// This type uses unsupported IL or has too many generic parameters.
+namespace Meta.Voice.UnityOpus;
+
+public enum NumChannels
+{
+	Mono = 1,
+	Stereo
+}

@@ -4,6 +4,3 @@ namespace System.Runtime.CompilerServices;
 public static class IsExplicitlyDereferenced
 {
 }
-namespace System.Runtime.CompilerServices
-{
-}

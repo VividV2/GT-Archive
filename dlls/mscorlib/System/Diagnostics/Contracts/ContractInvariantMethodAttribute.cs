@@ -1,2 +1,13 @@
-// Could not decompile System.Diagnostics.Contracts.ContractInvariantMethodAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Threading.Tasks
+{
+	internal static class TaskAwaiters
+	{
+		public static ForceAsyncAwaiter ForceAsync(this Task task)
+		{
+			return new ForceAsyncAwaiter(task);
+		}
+	}
+}
+namespace System.Threading.Tasks
+{
+}

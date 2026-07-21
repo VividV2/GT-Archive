@@ -1,13 +1,2 @@
-using UnityEngine;
-using UnityEngine;
-
-namespace Unity.Cinemachine
-{
-}
-namespace Unity.Cinemachine
-{
-	public interface IInputAxisReader
-	{
-		float GetValue(Object context, IInputAxisOwner.AxisDescriptor.Hints hint);
-	}
-}
+// Could not decompile Unity.Cinemachine.CinemachineSplineSmoother
+// This type uses unsupported IL or has too many generic parameters.

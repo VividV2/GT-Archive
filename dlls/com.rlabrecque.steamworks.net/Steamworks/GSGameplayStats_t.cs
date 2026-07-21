@@ -1,2 +1,18 @@
-// Could not decompile Steamworks.GSGameplayStats_t
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(207)]
+public struct GSGameplayStats_t
+{
+	public const int k_iCallback = 207;
+
+	public EResult m_eResult;
+
+	public int m_nRank;
+
+	public uint m_unTotalConnects;
+
+	public uint m_unTotalMinutesPlayed;
+}

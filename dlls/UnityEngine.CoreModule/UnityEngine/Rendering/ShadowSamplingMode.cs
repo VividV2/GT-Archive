@@ -1,8 +1,2 @@
-namespace UnityEngine.Rendering;
+namespace Unity.IntegerTime;
 
-public enum ShadowSamplingMode
-{
-	CompareDepths,
-	RawDepth,
-	None
-}

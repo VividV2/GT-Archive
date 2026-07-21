@@ -1,8 +1,24 @@
-namespace UnityEngine;
-
-public enum LODFadeMode
+namespace UnityEngine
 {
-	None,
-	CrossFade,
-	SpeedTree
+	public enum SpriteDrawMode
+	{
+		Simple,
+		Sliced,
+		Tiled
+	}
+}
+namespace UnityEngine
+{
+	public enum LODFadeMode
+	{
+		None,
+		CrossFade,
+		SpeedTree
+	}
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine.Rendering
+{
 }

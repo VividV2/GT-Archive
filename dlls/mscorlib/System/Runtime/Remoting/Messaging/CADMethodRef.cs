@@ -1,2 +1,6 @@
-// Could not decompile System.Runtime.Remoting.Messaging.CADMethodRef
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Security.Cryptography
+{
+}
+namespace System.Security.Policy
+{
+}

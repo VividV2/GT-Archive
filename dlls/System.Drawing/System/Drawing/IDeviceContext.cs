@@ -10,6 +10,3 @@ public interface IDeviceContext : IDisposable
 	/// <summary>Releases the handle of a Windows device context.</summary>
 	void ReleaseHdc();
 }
-namespace System.Drawing
-{
-}

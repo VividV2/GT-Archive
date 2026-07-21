@@ -1,15 +1,11 @@
-namespace UnityEngine.UIElements.Layout
+namespace UnityEngine.UIElements.Layout;
+
+internal enum LayoutJustify
 {
-	internal enum LayoutJustify
-	{
-		FlexStart,
-		Center,
-		FlexEnd,
-		SpaceBetween,
-		SpaceAround,
-		SpaceEvenly
-	}
-}
-namespace UnityEngine.UIElements.Layout
-{
+	FlexStart,
+	Center,
+	FlexEnd,
+	SpaceBetween,
+	SpaceAround,
+	SpaceEvenly
 }

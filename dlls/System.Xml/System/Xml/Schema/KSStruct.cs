@@ -1,2 +1,20 @@
-// Could not decompile System.Xml.Schema.KSStruct
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema
+{
+	internal class KSStruct
+	{
+		public int depth;
+
+		public KeySequence ks;
+
+		public LocatedActiveAxis[] fields;
+
+		public KSStruct(KeySequence ks, int dim)
+		{
+			this.ks = ks;
+			fields = new LocatedActiveAxis[dim];
+		}
+	}
+}
+namespace System.Xml.Schema
+{
+}

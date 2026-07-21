@@ -1,6 +1,3 @@
-namespace System.Data
-{
-}
-namespace System.Data
+namespace System.Data.SqlClient.SNI
 {
 }

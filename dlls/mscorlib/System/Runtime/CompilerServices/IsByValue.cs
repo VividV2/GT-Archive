@@ -1,9 +1,19 @@
-namespace System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
-/// <summary>Indicates that a modified method argument should be interpreted as having object passed-by-value semantics. This modifier is applied to reference types.  This class cannot be inherited.</summary>
-public static class IsByValue
+namespace System.Security.Cryptography;
+
+[Serializable]
+[Flags]
+[ComVisible(true)]
+public enum CspProviderFlags
 {
-}
-namespace System.Runtime.InteropServices.WindowsRuntime
-{
+	NoFlags = 0,
+	UseMachineKeyStore = 1,
+	UseDefaultKeyContainer = 2,
+	UseNonExportableKey = 4,
+	UseExistingKey = 8,
+	UseArchivableKey = 0x10,
+	UseUserProtectedKey = 0x20,
+	NoPrompt = 0x40,
+	CreateEphemeralKey = 0x80
 }

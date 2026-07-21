@@ -1,15 +1,2 @@
-using System;
-
-namespace UnityEngine.Events;
-
-[Serializable]
-public enum PersistentListenerMode
-{
-	EventDefined,
-	Void,
-	Object,
-	Int,
-	Float,
-	String,
-	Bool
-}
+// Could not decompile UnityEngine.Events.PersistentListenerMode
+// This type uses unsupported IL or has too many generic parameters.

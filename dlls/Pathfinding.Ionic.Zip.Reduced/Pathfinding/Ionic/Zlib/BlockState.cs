@@ -1,9 +1,2 @@
-namespace Pathfinding.Ionic.Zlib;
-
-internal enum BlockState
-{
-	NeedMore,
-	BlockDone,
-	FinishStarted,
-	FinishDone
-}
+// Could not decompile Pathfinding.Ionic.Zlib.BlockState
+// This type uses unsupported IL or has too many generic parameters.

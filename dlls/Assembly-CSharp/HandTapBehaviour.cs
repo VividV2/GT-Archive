@@ -1,8 +1,2 @@
-using UnityEngine;
-
-namespace Fusion.CodeGen;
-
-public abstract class HandTapBehaviour : MonoBehaviour
-{
-	internal abstract void OnTap(HandEffectContext handContext);
-}
+// Could not decompile HandTapBehaviour
+// This type uses unsupported IL or has too many generic parameters.

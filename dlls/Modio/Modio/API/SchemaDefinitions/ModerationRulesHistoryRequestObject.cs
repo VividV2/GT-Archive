@@ -1,2 +1,13 @@
-// Could not decompile Modio.API.SchemaDefinitions.ModerationRulesHistoryRequestObject
-// This type uses unsupported IL or has too many generic parameters.
+using Newtonsoft.Json;
+
+namespace Modio.API.SchemaDefinitions
+{
+}
+namespace Modio.API.SchemaDefinitions
+{
+	[JsonObject]
+	internal readonly struct ModerationRulesHistoryRequestObject(string timeframe)
+	{
+		internal readonly string Timeframe = timeframe;
+	}
+}

@@ -1,9 +1,2 @@
-namespace System.Xml.Serialization
-{
-}
-namespace System.Xml.Schema
-{
-}
-namespace System.Xml.Xsl.Xslt
-{
-}
+// Could not decompile System.Xml.Schema.AutoValidator
+// This type uses unsupported IL or has too many generic parameters.

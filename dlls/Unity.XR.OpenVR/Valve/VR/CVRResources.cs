@@ -1,7 +1,8 @@
 namespace Valve.VR;
 
-public enum EChaperoneConfigFile
+public struct Compositor_BenchmarkResults
 {
-	Live = 1,
-	Temp
+	public float m_flMegaPixelsPerSecond;
+
+	public float m_flHmdRecommendedMegaPixelsPerSecond;
 }

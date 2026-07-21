@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.UIElements.ScreenOverlayPanelPicker
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+internal struct TextVertex
+{
+	public Vector3 position;
+
+	public Color32 color;
+
+	public Vector2 uv0;
+}

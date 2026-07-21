@@ -1,6 +1,2 @@
-namespace UnityEngine.Animations.Rigging
-{
-}
-namespace UnityEngine.Animations.Rigging
-{
-}
+// Could not decompile UnityEngine.Animations.Rigging.MultiParentConstraintJobBinder`1
+// This type uses unsupported IL or has too many generic parameters.

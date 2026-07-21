@@ -1,3 +1,3 @@
-namespace System.Text.RegularExpressions
+namespace System.Windows.Markup
 {
 }

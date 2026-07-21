@@ -1,2 +1,11 @@
-// Could not decompile Steamworks.EDenyReason
-// This type uses unsupported IL or has too many generic parameters.
+namespace Steamworks
+{
+	public enum EPlayerResult_t
+	{
+		k_EPlayerResultFailedToConnect = 1,
+		k_EPlayerResultAbandoned,
+		k_EPlayerResultKicked,
+		k_EPlayerResultIncomplete,
+		k_EPlayerResultCompleted
+	}
+}

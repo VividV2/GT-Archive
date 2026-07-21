@@ -1,40 +1,12 @@
 using System;
 using UnityEngine;
-using System;
-using UnityEngine;
 
-namespace Liv.Lck.GorillaTag
-{
-	[Serializable]
-	public struct CameraModeAsset
-	{
-		public Sprite Icon;
+namespace Liv.Lck.GorillaTag;
 
-		public string Name;
-	}
-}
-namespace Liv.Lck.GorillaTag
+[Serializable]
+public struct CameraModeAsset
 {
-}
-namespace Liv.Lck.GorillaTag
-{
-}
-namespace Liv.Lck.GorillaTag
-{
-	[Serializable]
-	public struct GtCameraModeTransform
-	{
-		public Vector3 position;
+	public Sprite Icon;
 
-		public Vector3 rotation;
-	}
-}
-namespace Liv.Lck.GorillaTag
-{
-}
-namespace Liv.Lck.GorillaTag
-{
-}
-namespace Liv.Lck.GorillaTag
-{
+	public string Name;
 }

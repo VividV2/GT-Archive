@@ -1,21 +1,2 @@
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
-
-namespace Unity.Collections;
-
-[UsedByNativeCode]
-[VisibleToOtherModules(new string[] { "UnityEngine.AIModule" })]
-internal enum LeakCategory
-{
-	Invalid,
-	Malloc,
-	TempJob,
-	Persistent,
-	LightProbesQuery,
-	NativeTest,
-	MeshDataArray,
-	TransformAccessArray,
-	NavMeshQuery
-}
+// Could not decompile Unity.Collections.CollectionExtensions
+// This type uses unsupported IL or has too many generic parameters.

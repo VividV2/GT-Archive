@@ -1,21 +1,2 @@
-using System.Runtime.CompilerServices;
-using System.Security;
-
-namespace System;
-
-[FriendAccessAllowed]
-internal class CLRConfig
-{
-	[FriendAccessAllowed]
-	[SecurityCritical]
-	[SuppressUnmanagedCodeSecurity]
-	internal static bool CheckLegacyManagedDeflateStream()
-	{
-		return false;
-	}
-
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[SuppressUnmanagedCodeSecurity]
-	[SecurityCritical]
-	internal static extern bool CheckThrowUnobservedTaskExceptions();
-}
+// Could not decompile System.CLRConfig
+// This type uses unsupported IL or has too many generic parameters.

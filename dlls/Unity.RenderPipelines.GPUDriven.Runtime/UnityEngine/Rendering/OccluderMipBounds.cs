@@ -1,12 +1,8 @@
-namespace UnityEngine.Rendering
-{
-	internal struct OccluderMipBounds
-	{
-		public Vector2Int offset;
+namespace UnityEngine.Rendering;
 
-		public Vector2Int size;
-	}
-}
-namespace UnityEngine.Rendering
+internal struct OccluderMipBounds
 {
+	public Vector2Int offset;
+
+	public Vector2Int size;
 }

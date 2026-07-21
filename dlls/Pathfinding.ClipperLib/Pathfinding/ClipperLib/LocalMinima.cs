@@ -1,12 +1,6 @@
-namespace Pathfinding.ClipperLib;
-
-internal class LocalMinima
+namespace Pathfinding.ClipperLib
 {
-	public long Y;
-
-	public TEdge LeftBound;
-
-	public TEdge RightBound;
-
-	public LocalMinima Next;
+}
+namespace Pathfinding.ClipperLib
+{
 }

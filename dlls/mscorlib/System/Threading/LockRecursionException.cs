@@ -1,2 +1,21 @@
-// Could not decompile System.Threading.LockRecursionException
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.InteropServices;
+
+/// <summary>Describes the callbacks that the type library importer makes when importing a type library.</summary>
+/// <summary>Describes the callbacks that the type library importer makes when importing a type library.</summary>
+[Serializable]
+[ComVisible(true)]
+public enum ImporterEventKind
+{
+	/// <summary>Specifies that the event is invoked when a type has been imported.</summary>
+	/// <summary>Specifies that the event is invoked when a type has been imported.</summary>
+	NOTIF_TYPECONVERTED,
+	/// <summary>Specifies that the event is invoked when a warning occurs during conversion.</summary>
+	/// <summary>Specifies that the event is invoked when a warning occurs during conversion.</summary>
+	NOTIF_CONVERTWARNING,
+	/// <summary>This property is not supported in this version of the .NET Framework.</summary>
+	/// <summary>This property is not supported in this version of the .NET Framework.</summary>
+	ERROR_REFTOINVALIDTYPELIB
+}
+namespace System.Threading.Tasks
+{
+}

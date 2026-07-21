@@ -1,10 +1,19 @@
-namespace UnityEngine.UIElements;
-
-public enum StyleKeyword
+namespace UnityEngine.UIElements
 {
-	Undefined,
-	Null,
-	Auto,
-	None,
-	Initial
+	public enum StyleKeyword
+	{
+		Undefined,
+		Null,
+		Auto,
+		None,
+		Initial
+	}
+}
+namespace UnityEngine.UIElements
+{
+	public enum TextOverflow
+	{
+		Clip,
+		Ellipsis
+	}
 }

@@ -1,6 +1,2 @@
-namespace System.CodeDom
-{
-}
-namespace System.Net
-{
-}
+// Could not decompile System.ComponentModel.TypeConverterAttribute
+// This type uses unsupported IL or has too many generic parameters.

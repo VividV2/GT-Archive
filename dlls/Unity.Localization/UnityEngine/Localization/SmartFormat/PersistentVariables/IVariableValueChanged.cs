@@ -1,15 +1,8 @@
 using System;
 
-namespace UnityEngine.Localization.SmartFormat.PersistentVariables
+namespace UnityEngine.Localization.SmartFormat.PersistentVariables;
+
+public interface IVariableValueChanged : IVariable
 {
-	public interface IVariableValueChanged : IVariable
-	{
-		event Action<IVariable> ValueChanged;
-	}
-}
-namespace UnityEngine.Localization.Operations
-{
-}
-namespace UnityEngine.Localization.Operations
-{
+	event Action<IVariable> ValueChanged;
 }

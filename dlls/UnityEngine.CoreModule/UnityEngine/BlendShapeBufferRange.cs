@@ -1,8 +1,2 @@
-namespace UnityEngine;
-
-public enum CustomRenderTextureUpdateMode
-{
-	OnLoad,
-	Realtime,
-	OnDemand
-}
+// Could not decompile UnityEngine.BlendShapeBufferRange
+// This type uses unsupported IL or has too many generic parameters.

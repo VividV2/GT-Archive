@@ -1,2 +1,12 @@
-// Could not decompile PlayFab.GroupsModels.RemoveGroupApplicationRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.GroupsModels;
+
+[Serializable]
+public class RemoveGroupApplicationRequest : PlayFabRequestCommon
+{
+	public EntityKey Entity;
+
+	public EntityKey Group;
+}

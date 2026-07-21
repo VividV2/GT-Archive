@@ -1,9 +1,2 @@
-namespace UnityEngine.UIElements;
-
-public class NavigationCancelEvent : NavigationEventBase<NavigationCancelEvent>
-{
-	static NavigationCancelEvent()
-	{
-		EventBase<NavigationCancelEvent>.SetCreateFunction(() => new NavigationCancelEvent());
-	}
-}
+// Could not decompile UnityEngine.UIElements.NavigationCancelEvent
+// This type uses unsupported IL or has too many generic parameters.

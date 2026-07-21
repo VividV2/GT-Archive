@@ -1,2 +1,3 @@
-// Could not decompile LitJson.ExporterFunc`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace LitJson;
+
+public delegate void ExporterFunc<T>(T obj, JsonWriter writer);

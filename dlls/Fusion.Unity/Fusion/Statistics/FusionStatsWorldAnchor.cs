@@ -1,15 +1,2 @@
-using System;
-using System;
-
-namespace Fusion.Statistics;
-
-[Flags]
-internal enum NetworkObjectStat
-{
-	InBandwidth = 1,
-	OutBandwidth = 2,
-	InPackets = 4,
-	OutPackets = 8,
-	AverageInPacketSize = 0x10,
-	AverageOutPacketSize = 0x20
-}
+// Could not decompile Fusion.Statistics.FusionStatsWorldAnchor
+// This type uses unsupported IL or has too many generic parameters.

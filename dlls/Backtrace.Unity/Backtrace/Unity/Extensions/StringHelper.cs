@@ -1,9 +1,2 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-
-namespace Backtrace.Unity.Model.Attributes;
-
-public interface IScopeAttributeProvider
-{
-	void GetAttributes(IDictionary<string, string> attributes);
-}
+// Could not decompile Backtrace.Unity.Extensions.StringHelper
+// This type uses unsupported IL or has too many generic parameters.

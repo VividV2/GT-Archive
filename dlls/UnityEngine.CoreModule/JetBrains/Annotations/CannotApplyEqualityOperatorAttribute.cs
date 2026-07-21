@@ -1,8 +1,2 @@
-using System;
-
-namespace JetBrains.Annotations;
-
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface)]
-public sealed class CannotApplyEqualityOperatorAttribute : Attribute
-{
-}
+// Could not decompile JetBrains.Annotations.CannotApplyEqualityOperatorAttribute
+// This type uses unsupported IL or has too many generic parameters.

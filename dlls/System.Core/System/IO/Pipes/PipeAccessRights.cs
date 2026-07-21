@@ -1,16 +1,5 @@
-namespace System.Linq.Expressions.Compiler;
-
-internal enum LabelScopeKind
+namespace System.IO.Pipes
 {
-	Statement,
-	Block,
-	Switch,
-	Lambda,
-	Try,
-	Catch,
-	Finally,
-	Filter,
-	Expression
 }
 namespace System.Linq.Parallel
 {

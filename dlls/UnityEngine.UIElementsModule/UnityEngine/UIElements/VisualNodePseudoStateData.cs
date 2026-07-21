@@ -1,13 +1,17 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine.UIElements;
-
-[NativeType(Header = "Modules/UIElements/VisualNodePseudoStateData.h")]
-internal struct VisualNodePseudoStateData
+namespace UnityEngine.UIElements.UIR
 {
-	public PseudoStates States;
+}
+namespace UnityEngine.UIElements
+{
+	[NativeType(Header = "Modules/UIElements/VisualNodePseudoStateData.h")]
+	internal struct VisualNodePseudoStateData
+	{
+		public PseudoStates States;
 
-	public PseudoStates TriggerMask;
+		public PseudoStates TriggerMask;
 
-	public PseudoStates DependencyMask;
+		public PseudoStates DependencyMask;
+	}
 }

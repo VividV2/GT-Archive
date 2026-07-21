@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace Liv.Lck.Tablet;
+
 [RequireComponent(typeof(Camera))]
 public class DroneFakeCameraMimicer : MonoBehaviour
 {

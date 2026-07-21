@@ -1,2 +1,9 @@
-// Could not decompile OVROverlayCanvasManager
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine;
+
+public abstract class OVRCursor : MonoBehaviour
+{
+	public abstract void SetCursorRay(Transform ray);
+
+	public abstract void SetCursorStartDest(Vector3 start, Vector3 dest, Vector3 normal);
+}

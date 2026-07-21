@@ -1,18 +1,2 @@
-using System;
-
-namespace Valve.VR
-{
-	public struct VRControllerAxis_t
-	{
-		public float x;
-
-		public float y;
-	}
-}
-namespace Valve.VR
-{
-	public struct CVRSettingHelper
-	{
-		public IntPtr m_pSettings;
-	}
-}
+// Could not decompile Valve.VR.CVRSettingHelper
+// This type uses unsupported IL or has too many generic parameters.

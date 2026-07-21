@@ -1,13 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace Valve.VR;
-
-public struct InputPoseActionData_t
-{
-	[MarshalAs(UnmanagedType.I1)]
-	public bool bActive;
-
-	public ulong activeOrigin;
-
-	public TrackedDevicePose_t pose;
-}
+// Could not decompile Valve.VR.InputPoseActionData_t
+// This type uses unsupported IL or has too many generic parameters.

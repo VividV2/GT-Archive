@@ -1,2 +1,8 @@
-// Could not decompile System.ComponentModel.Composition.ReflectionModel.ReflectionWritableMember
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.ComponentModel.Composition.ReflectionModel;
+
+internal abstract class ReflectionWritableMember : ReflectionMember
+{
+	public abstract bool CanWrite { get; }
+
+	public abstract void SetValue(object instance, object value);
+}

@@ -1,2 +1,12 @@
-// Could not decompile System.Reflection.Missing
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Reflection;
+
+public struct InterfaceMapping
+{
+	public Type TargetType;
+
+	public Type InterfaceType;
+
+	public MethodInfo[] TargetMethods;
+
+	public MethodInfo[] InterfaceMethods;
+}

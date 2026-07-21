@@ -1,14 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.DataModels;
 
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class AcceptTradeResponse : PlayFabResultCommon
-{
-	public TradeInfo Trade;
-}

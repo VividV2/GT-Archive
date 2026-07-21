@@ -1,14 +1,2 @@
-namespace Meta.WitAi.Utilities
-{
-	public class CaptionData
-	{
-		public string Text;
-
-		public string DisplayText;
-
-		public string RequestId;
-	}
-}
-namespace Meta.Voice.Audio.Decoding
-{
-}
+// Could not decompile Meta.Voice.Net.WebSockets.Requests.WitWebSocketSubscriptionRequest
+// This type uses unsupported IL or has too many generic parameters.

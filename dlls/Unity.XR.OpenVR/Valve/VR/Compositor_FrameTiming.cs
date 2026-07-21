@@ -1,12 +1,9 @@
 namespace Valve.VR
 {
-	public struct RenderModel_ComponentState_t
+	public enum EVRDebugError
 	{
-		public HmdMatrix34_t mTrackingToComponentRenderModel;
-
-		public HmdMatrix34_t mTrackingToComponentLocal;
-
-		public uint uProperties;
+		Success,
+		BadParameter
 	}
 }
 namespace Valve.VR

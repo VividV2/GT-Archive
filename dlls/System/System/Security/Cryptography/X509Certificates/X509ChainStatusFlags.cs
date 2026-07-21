@@ -1,6 +1,13 @@
-namespace System.Text.RegularExpressions
+namespace System.ComponentModel;
+
+public abstract class ContainerFilterService
 {
-}
-namespace System.Net.Configuration
-{
+	protected ContainerFilterService()
+	{
+	}
+
+	public virtual ComponentCollection FilterComponents(ComponentCollection components)
+	{
+		return components;
+	}
 }

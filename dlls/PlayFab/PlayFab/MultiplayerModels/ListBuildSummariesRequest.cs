@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class ListBuildSummariesRequest : PlayFabRequestCommon
-{
-	public int? PageSize;
-
-	public string SkipToken;
-}
+// Could not decompile PlayFab.MultiplayerModels.ListBuildSummariesRequest
+// This type uses unsupported IL or has too many generic parameters.

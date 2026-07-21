@@ -1,12 +1,14 @@
-namespace System.Security.Cryptography.Pkcs.Asn1
+using System.Security.Cryptography.Asn1;
+
+namespace System.Security.Cryptography.Pkcs.Asn1;
+
+internal struct EncapsulatedContentInfoAsn
 {
-}
-namespace System.Security.Cryptography.Xml
-{
-}
-namespace System.Security.Cryptography.Pkcs.Asn1
-{
-}
-namespace System.Security.Cryptography.Pkcs
-{
+	[ObjectIdentifier]
+	public string ContentType;
+
+	[AnyValue]
+	[ExpectedTag(0, ExplicitTag = true)]
+	[OptionalValue]
+	public ReadOnlyMemory<byte>? Content;
 }

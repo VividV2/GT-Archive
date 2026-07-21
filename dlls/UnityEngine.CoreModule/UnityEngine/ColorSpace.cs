@@ -1,8 +1,12 @@
-namespace UnityEngine;
-
-public enum ColorSpace
+namespace UnityEngine.Bindings
 {
-	Uninitialized = -1,
-	Gamma,
-	Linear
+}
+namespace UnityEngine
+{
+	public enum ColorSpace
+	{
+		Uninitialized = -1,
+		Gamma,
+		Linear
+	}
 }

@@ -1,20 +1,2 @@
-namespace GorillaTag;
-
-public abstract class ListProcessorAbstract<T> : ListProcessor<T>
-{
-	protected ListProcessorAbstract()
-	{
-		m_itemProcessorDelegate = ProcessItem;
-	}
-
-	protected ListProcessorAbstract(int capacity)
-		: base(capacity, (InAction<T>)null)
-	{
-		m_itemProcessorDelegate = ProcessItem;
-	}
-
-	protected abstract void ProcessItem(in T item);
-}
-namespace GorillaNetworking
-{
-}
+// Could not decompile GorillaTag.ListProcessorAbstract`1
+// This type uses unsupported IL or has too many generic parameters.

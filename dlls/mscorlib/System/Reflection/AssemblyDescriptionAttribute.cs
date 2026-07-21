@@ -1,6 +1,2 @@
-namespace System.Runtime.CompilerServices;
-
-[AttributeUsage(AttributeTargets.Parameter, Inherited = false)]
-public sealed class EnumeratorCancellationAttribute : Attribute
-{
-}
+// Could not decompile System.Reflection.AssemblyDescriptionAttribute
+// This type uses unsupported IL or has too many generic parameters.

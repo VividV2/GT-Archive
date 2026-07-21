@@ -1,6 +1,15 @@
-namespace PlayFab.ProfilesModels
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class UpdateBuildAliasRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.InsightsModels
-{
+	public string AliasId;
+
+	public string AliasName;
+
+	public List<BuildSelectionCriterion> BuildSelectionCriteria;
 }

@@ -7,6 +7,3 @@ internal enum RenderGraphPassType
 	Raster,
 	Compute
 }
-namespace UnityEngine.Rendering.RenderGraphModule
-{
-}

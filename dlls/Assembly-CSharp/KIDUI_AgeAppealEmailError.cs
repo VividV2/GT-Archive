@@ -1,2 +1,2 @@
-namespace Voxels;
-
+// Could not decompile KIDUI_AgeAppealEmailError
+// This type uses unsupported IL or has too many generic parameters.

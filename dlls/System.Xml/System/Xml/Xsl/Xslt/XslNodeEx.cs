@@ -1,6 +1,2 @@
-namespace System.Xml.Xsl
-{
-}
-namespace System.Xml
-{
-}
+// Could not decompile System.Xml.Xsl.Xslt.XslNodeEx
+// This type uses unsupported IL or has too many generic parameters.

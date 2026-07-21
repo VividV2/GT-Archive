@@ -1,16 +1,3 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetLeaderboardAroundCharacterRequest : PlayFabRequestCommon
+namespace PlayFab.ClientModels
 {
-	public string CharacterId;
-
-	public string CharacterType;
-
-	public int? MaxResultsCount;
-
-	public string StatisticName;
 }

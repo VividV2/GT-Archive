@@ -1,16 +1,2 @@
-namespace UnityEngine.Rendering.Universal
-{
-}
-namespace UnityEngine.Rendering.Universal
-{
-	internal class LocalMinima
-	{
-		internal long Y;
-
-		internal TEdge LeftBound;
-
-		internal TEdge RightBound;
-
-		internal LocalMinima Next;
-	}
-}
+// Could not decompile UnityEngine.Rendering.Universal.LocalMinima
+// This type uses unsupported IL or has too many generic parameters.

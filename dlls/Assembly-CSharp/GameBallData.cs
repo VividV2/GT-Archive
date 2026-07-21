@@ -12,5 +12,3 @@ public struct GameBallData
 
 	public int grabbedByActorNumber;
 }
-namespace GorillaTagScripts;
-

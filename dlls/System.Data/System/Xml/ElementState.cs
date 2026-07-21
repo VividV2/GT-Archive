@@ -1,15 +1,11 @@
-namespace System.Xml
+namespace System.Xml;
+
+internal enum ElementState
 {
-	internal enum ElementState
-	{
-		None,
-		Defoliated,
-		WeakFoliation,
-		StrongFoliation,
-		Foliating,
-		Defoliating
-	}
-}
-namespace System.Xml
-{
+	None,
+	Defoliated,
+	WeakFoliation,
+	StrongFoliation,
+	Foliating,
+	Defoliating
 }

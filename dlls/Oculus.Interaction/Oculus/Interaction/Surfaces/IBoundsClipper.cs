@@ -1,12 +1,8 @@
 using UnityEngine;
 
-namespace Oculus.Interaction.PoseDetection
+namespace Oculus.Interaction.Surfaces;
+
+public interface IBoundsClipper
 {
-}
-namespace Oculus.Interaction.Surfaces
-{
-	public interface IBoundsClipper
-	{
-		bool GetLocalBounds(Transform localTo, out Bounds bounds);
-	}
+	bool GetLocalBounds(Transform localTo, out Bounds bounds);
 }

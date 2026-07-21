@@ -1,3 +1,5 @@
-namespace System.Data.SqlClient
+namespace Microsoft.SqlServer.Server;
+
+internal abstract class SmiMetaDataProperty
 {
 }

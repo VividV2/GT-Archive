@@ -1,9 +1,2 @@
-namespace System.Runtime.Remoting.Metadata.W3cXsd2001
-{
-}
-namespace System.Runtime.Remoting.Metadata
-{
-}
-namespace System.Runtime.Remoting.Activation
-{
-}
+// Could not decompile System.Runtime.Remoting.Metadata.W3cXsd2001.SoapDateTime
+// This type uses unsupported IL or has too many generic parameters.

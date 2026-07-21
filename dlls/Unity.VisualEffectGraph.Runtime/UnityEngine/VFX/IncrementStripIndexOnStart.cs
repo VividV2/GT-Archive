@@ -1,2 +1,2 @@
-namespace UnityEngine.VFX;
-
+// Could not decompile UnityEngine.VFX.IncrementStripIndexOnStart
+// This type uses unsupported IL or has too many generic parameters.

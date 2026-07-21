@@ -8,6 +8,3 @@ internal enum ContentTypeValues
 	AppData = 23,
 	Unrecognized = 255
 }
-namespace System.Net.NetworkInformation
-{
-}

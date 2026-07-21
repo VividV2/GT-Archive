@@ -1,3 +1,3 @@
-namespace Mono
+namespace System.Security.Cryptography.X509Certificates
 {
 }

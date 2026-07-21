@@ -1,2 +1,10 @@
-// Could not decompile Steamworks.ECheckFileSignature
-// This type uses unsupported IL or has too many generic parameters.
+namespace Steamworks;
+
+public enum ECheckFileSignature
+{
+	k_ECheckFileSignatureInvalidSignature,
+	k_ECheckFileSignatureValidSignature,
+	k_ECheckFileSignatureFileNotFound,
+	k_ECheckFileSignatureNoSignaturesFoundForThisApp,
+	k_ECheckFileSignatureNoSignaturesFoundForThisFile
+}

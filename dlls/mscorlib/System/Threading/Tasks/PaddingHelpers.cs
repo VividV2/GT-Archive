@@ -1,6 +1,3 @@
-namespace System.Threading.Tasks;
-
-internal static class PaddingHelpers
+namespace System.Security.Cryptography
 {
-	internal const int CACHE_LINE_SIZE = 128;
 }

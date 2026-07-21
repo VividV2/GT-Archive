@@ -1,13 +1,2 @@
-namespace System.Drawing.Drawing2D;
-
-public enum PathPointType
-{
-	Start = 0,
-	Line = 1,
-	Bezier = 3,
-	PathTypeMask = 7,
-	DashMode = 16,
-	PathMarker = 32,
-	CloseSubpath = 128,
-	Bezier3 = 3
-}
+// Could not decompile System.Drawing.Imaging.WmfMetaHeader
+// This type uses unsupported IL or has too many generic parameters.

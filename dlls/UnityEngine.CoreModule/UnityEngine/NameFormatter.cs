@@ -1,2 +1,2 @@
-namespace UnityEngine.Bindings;
+namespace UnityEngine.Experimental.Rendering;
 

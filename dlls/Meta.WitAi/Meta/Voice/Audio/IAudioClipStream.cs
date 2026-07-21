@@ -1,6 +1,19 @@
-using Meta.Voice.Net.Encoding.Wit;
-using Meta.Voice.Net.Encoding.Wit;
+using System;
+using UnityEngine.Events;
+using System;
+using UnityEngine.Events;
 
-namespace Meta.Voice.Net.WebSockets;
+namespace Meta.Voice.Net.PubSub;
 
-public delegate bool WitWebSocketResponseProcessor(string topicId, string requestId, string clientUserId, WitChunk responseChunk);
+public interface IPubSubAdapter
+{
+	PubSubSettings Settings { get; set; }
+
+	PubSubSubscriptionState SubscriptionState { get; }
+
+	UnityEvent OnSubscribed { get; }
+
+	UnityEvent OnUnsubscribed { get; }
+
+	event Action<PubSubSubscriptionState> OnTopicSubscriptionStateChange;
+}

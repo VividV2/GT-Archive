@@ -1,9 +1,2 @@
-using System;
-using UnityEngine.Events;
-
-namespace Meta.WitAi.CallbackHandlers;
-
-[Serializable]
-public class StringEntityMatchEvent : UnityEvent<string>
-{
-}
+// Could not decompile Meta.WitAi.CallbackHandlers.StringEntityMatchEvent
+// This type uses unsupported IL or has too many generic parameters.

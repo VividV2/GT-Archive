@@ -1,15 +1,31 @@
-namespace OVR.OpenVR;
-
-public struct HmdQuaternion_t
+namespace OVR.OpenVR
 {
-	public double w;
-
-	public double x;
-
-	public double y;
-
-	public double z;
+	public enum VROverlayFlags
+	{
+		None,
+		Curved,
+		RGSS4X,
+		NoDashboardTab,
+		AcceptsGamepadEvents,
+		ShowGamepadFocus,
+		SendVRScrollEvents,
+		SendVRTouchpadEvents,
+		ShowTouchPadScrollWheel,
+		TransferOwnershipToInternalProcess,
+		SideBySide_Parallel,
+		SideBySide_Crossed,
+		Panorama,
+		StereoPanorama,
+		SortWithNonSceneOverlays,
+		VisibleInDashboard
+	}
 }
 namespace OVR.OpenVR
 {
+	public enum EVRSkeletalTransformSpace
+	{
+		Model,
+		Parent,
+		Additive
+	}
 }

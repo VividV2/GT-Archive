@@ -1,3 +1,2 @@
-namespace System.IO.Hashing
-{
-}
+namespace System.Runtime.CompilerServices;
+

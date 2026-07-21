@@ -1,11 +1,2 @@
-namespace Unity.Properties;
-
-public abstract class ConcreteTypeVisitor : IPropertyBagVisitor
-{
-	protected abstract void VisitContainer<TContainer>(ref TContainer container);
-
-	void IPropertyBagVisitor.Visit<TContainer>(IPropertyBag<TContainer> properties, ref TContainer container)
-	{
-		VisitContainer(ref container);
-	}
-}
+// Could not decompile Unity.Properties.ConcreteTypeVisitor
+// This type uses unsupported IL or has too many generic parameters.

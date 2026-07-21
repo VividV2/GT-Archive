@@ -1,11 +1,2 @@
-using System;
-
-namespace Modio.Extensions;
-
-public static class DateTimeExtensions
-{
-	public static DateTime GetUtcDateTime(this long timeStamp)
-	{
-		return DateTime.UnixEpoch.AddSeconds(timeStamp);
-	}
-}
+// Could not decompile Modio.Extensions.DateTimeExtensions
+// This type uses unsupported IL or has too many generic parameters.

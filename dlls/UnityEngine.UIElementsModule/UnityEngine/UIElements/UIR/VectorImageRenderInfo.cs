@@ -1,3 +1,4 @@
+#define UNITY_ASSERTIONS
 namespace UnityEngine.UIElements.UIR
 {
 	internal class VectorImageRenderInfo : LinkedPoolItem<VectorImageRenderInfo>
@@ -17,5 +18,8 @@ namespace UnityEngine.UIElements.UIR
 	}
 }
 namespace UnityEngine.UIElements.UIR
+{
+}
+namespace UnityEngine.UIElements.Layout
 {
 }

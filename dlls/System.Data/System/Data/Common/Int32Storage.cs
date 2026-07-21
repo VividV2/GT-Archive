@@ -1,5 +1,2 @@
-namespace System.Data.SqlClient;
+namespace System.Data.Common;
 
-internal abstract class DataFeed
-{
-}

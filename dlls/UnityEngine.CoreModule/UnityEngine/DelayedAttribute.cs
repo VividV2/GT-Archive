@@ -1,8 +1,2 @@
-using System;
-
-namespace UnityEngine;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-public sealed class DelayedAttribute : PropertyAttribute
-{
-}
+// Could not decompile UnityEngine.DelayedAttribute
+// This type uses unsupported IL or has too many generic parameters.

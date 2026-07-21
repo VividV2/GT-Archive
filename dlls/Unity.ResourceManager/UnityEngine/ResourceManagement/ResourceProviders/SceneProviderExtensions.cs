@@ -15,6 +15,6 @@ namespace UnityEngine.ResourceManagement.ResourceProviders
 		}
 	}
 }
-namespace UnityEngine.ResourceManagement.ResourceLocations
+namespace UnityEngine.ResourceManagement.Util
 {
 }

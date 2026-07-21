@@ -1,20 +1,2 @@
-namespace Meta.WitAi.TTS.Data;
-
-public enum Viseme
-{
-	sil,
-	PP,
-	FF,
-	TH,
-	DD,
-	kk,
-	CH,
-	SS,
-	nn,
-	RR,
-	aa,
-	E,
-	ih,
-	oh,
-	ou
-}
+// Could not decompile Meta.WitAi.TTS.Data.TTSVisemeEvent
+// This type uses unsupported IL or has too many generic parameters.

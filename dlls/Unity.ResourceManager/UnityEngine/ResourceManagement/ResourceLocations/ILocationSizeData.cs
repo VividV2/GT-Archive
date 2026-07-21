@@ -1,6 +1,10 @@
-namespace UnityEngine.ResourceManagement.ResourceLocations;
-
-public interface ILocationSizeData
+namespace UnityEngine.ResourceManagement.AsyncOperations
 {
-	long ComputeSize(IResourceLocation location, ResourceManager resourceManager);
+}
+namespace UnityEngine.ResourceManagement.ResourceLocations
+{
+	public interface ILocationSizeData
+	{
+		long ComputeSize(IResourceLocation location, ResourceManager resourceManager);
+	}
 }

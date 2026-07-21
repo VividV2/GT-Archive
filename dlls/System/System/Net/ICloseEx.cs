@@ -1,10 +1,6 @@
-namespace System.Net
+namespace System.Net;
+
+internal interface ICloseEx
 {
-	internal interface ICloseEx
-	{
-		void CloseEx(CloseExState closeState);
-	}
-}
-namespace System.Net
-{
+	void CloseEx(CloseExState closeState);
 }

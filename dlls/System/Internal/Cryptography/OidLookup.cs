@@ -1,2 +1,6 @@
-namespace System.CodeDom;
-
+namespace Mono.Audio
+{
+}
+namespace System.Media
+{
+}

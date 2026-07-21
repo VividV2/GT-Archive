@@ -1,8 +1,15 @@
-namespace System.Xml.Xsl.IlGen;
-
-internal enum BranchingContext
+namespace System.Xml.Schema
 {
-	None,
-	OnTrue,
-	OnFalse
+}
+namespace System.Xml.Xsl
+{
+}
+namespace System.Xml.Xsl.IlGen
+{
+	internal enum BranchingContext
+	{
+		None,
+		OnTrue,
+		OnFalse
+	}
 }

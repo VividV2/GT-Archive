@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.LowLevelPhysics.ImmediatePhysics
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine
+{
+}
+namespace UnityEngine.LowLevelPhysics
+{
+}
+namespace UnityEngine
+{
+}

@@ -7,3 +7,6 @@ internal enum WebParseErrorSection
 	ResponseStatusLine,
 	ResponseBody
 }
+namespace System.Net
+{
+}

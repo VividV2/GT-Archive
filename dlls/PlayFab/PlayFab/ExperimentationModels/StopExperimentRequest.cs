@@ -1,22 +1,10 @@
-namespace PlayFab.ExperimentationModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ExperimentationModels;
+
+[Serializable]
+public class StopExperimentRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.Public
-{
-	public interface IScreenTimeTracker
-	{
-		void OnEnable();
-
-		void OnDisable();
-
-		void OnDestroy();
-
-		void OnApplicationQuit();
-
-		void OnApplicationFocus(bool isFocused);
-
-		void ClientSessionStart(string entityId, string entityType, string playFabUserId);
-
-		void Send();
-	}
+	public string ExperimentId;
 }

@@ -1,3 +1,2 @@
-namespace System.Data.Common
-{
-}
+// Could not decompile System.Data.SqlTypes.TypeFloatSchemaImporterExtension
+// This type uses unsupported IL or has too many generic parameters.

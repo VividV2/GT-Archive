@@ -104,6 +104,3 @@ internal enum StylePropertyId
 	Width = 131104,
 	WordSpacing = 65551
 }
-namespace UnityEngine.UIElements.StyleSheets
-{
-}

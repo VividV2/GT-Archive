@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class CancelServerBackfillTicketRequest : PlayFabRequestCommon
-{
-	public string QueueName;
-
-	public string TicketId;
-}
+// Could not decompile PlayFab.MultiplayerModels.CancelServerBackfillTicketRequest
+// This type uses unsupported IL or has too many generic parameters.

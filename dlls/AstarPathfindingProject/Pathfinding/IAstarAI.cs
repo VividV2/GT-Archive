@@ -1,0 +1,2 @@
+namespace Pathfinding.RVO;
+

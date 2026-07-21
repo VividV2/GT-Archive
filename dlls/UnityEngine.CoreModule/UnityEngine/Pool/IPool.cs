@@ -1,8 +1,21 @@
-namespace UnityEngine.Pool;
+using System;
+using System;
 
-internal interface IPool
+namespace UnityEngine.Pool
 {
-	int CountInactive { get; }
+	internal interface IPool
+	{
+		int CountInactive { get; }
 
-	void Clear();
+		void Clear();
+	}
+}
+namespace Unity.Jobs.LowLevel.Unsafe
+{
+	[Obsolete("Reflection data is now universal between job types. The parameter can be removed.", false)]
+	public enum JobType
+	{
+		Single,
+		ParallelFor
+	}
 }

@@ -1,2 +1,12 @@
-// Could not decompile Meta.XR.Acoustics.MaterialData
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System;
+
+namespace Meta.XR.Acoustics;
+
+[Flags]
+public enum ObjectFlags : uint
+{
+	EMPTY = 0u,
+	ENABLED = 1u,
+	STATIC = 2u
+}

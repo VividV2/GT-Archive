@@ -1,14 +1,21 @@
 using System.Xml;
 
-namespace System.Configuration;
-
-/// <summary>Handles the access to certain configuration sections.</summary>
-public interface IConfigurationSectionHandler
+namespace System.Configuration
 {
-	/// <summary>Creates a configuration section handler.</summary>
-	/// <param name="parent">Parent object.</param>
-	/// <param name="configContext">Configuration context object.</param>
-	/// <param name="section">Section XML node.</param>
-	/// <returns>The created section handler object.</returns>
-	object Create(object parent, object configContext, XmlNode section);
+	/// <summary>Handles the access to certain configuration sections.</summary>
+	public interface IConfigurationSectionHandler
+	{
+		/// <summary>Creates a configuration section handler.</summary>
+		/// <param name="parent">Parent object.</param>
+		/// <param name="configContext">Configuration context object.</param>
+		/// <param name="section">Section XML node.</param>
+		/// <returns>The created section handler object.</returns>
+		object Create(object parent, object configContext, XmlNode section);
+	}
+}
+namespace System.Configuration
+{
+}
+namespace System.Security.Authentication.ExtendedProtection
+{
 }

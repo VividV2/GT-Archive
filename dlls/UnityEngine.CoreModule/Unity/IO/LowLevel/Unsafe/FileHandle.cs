@@ -1,2 +1,5 @@
-namespace JetBrains.Annotations;
+namespace UnityEngine;
 
+namespace UnityEngine.PlayerLoop
+{
+}

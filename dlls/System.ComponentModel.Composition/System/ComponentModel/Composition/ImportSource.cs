@@ -10,9 +10,6 @@ public enum ImportSource
 	/// <summary>Imports may be satisfied only from an ancestor scope.</summary>
 	NonLocal
 }
-namespace System.ComponentModel.Composition.Hosting
-{
-}
-namespace System.ComponentModel.Composition.ReflectionModel
+namespace Microsoft.Internal
 {
 }

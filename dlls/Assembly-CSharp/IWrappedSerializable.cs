@@ -1,6 +1,8 @@
 using Fusion;
 using Photon.Pun;
 
+namespace GorillaTag.GuidedRefs;
+
 internal interface IWrappedSerializable : INetworkStruct
 {
 	void OnSerializeRead(object newData);

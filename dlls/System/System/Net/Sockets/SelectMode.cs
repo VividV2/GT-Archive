@@ -1,12 +1,6 @@
-namespace System.Net.Sockets;
-
-/// <summary>Defines the polling modes for the <see cref="M:System.Net.Sockets.Socket.Poll(System.Int32,System.Net.Sockets.SelectMode)" /> method.</summary>
-public enum SelectMode
+namespace System.Net.NetworkInformation
 {
-	/// <summary>Read status mode.</summary>
-	SelectRead,
-	/// <summary>Write status mode.</summary>
-	SelectWrite,
-	/// <summary>Error status mode.</summary>
-	SelectError
+}
+namespace System.Net
+{
 }

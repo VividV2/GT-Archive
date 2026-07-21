@@ -1,62 +1,58 @@
 using UnityEngine;
 
-namespace GT_CustomMapSupportRuntime
+namespace GT_CustomMapSupportRuntime;
+
+public static class Utilities
 {
-	public static class Utilities
+	public static string SanitizeString(string str)
 	{
-		public static string SanitizeString(string str)
+		string text = "";
+		for (int i = 0; i < str.Length; i++)
 		{
-			string text = "";
-			for (int i = 0; i < str.Length; i++)
+			if (char.IsLetterOrDigit(str[i]))
 			{
-				if (char.IsLetterOrDigit(str[i]))
-				{
-					text += str[i];
-				}
-				else if (char.IsWhiteSpace(str[i]))
-				{
-					text += "-";
-				}
+				text += str[i];
 			}
-			return text;
-		}
-
-		private static void StripMeshesForObjectsOfType<T>(GameObject rootObject)
-		{
-			T[] componentsInChildren = rootObject.GetComponentsInChildren<T>();
-			foreach (T val in componentsInChildren)
+			else if (char.IsWhiteSpace(str[i]))
 			{
-				Component component = val as Component;
-				if (!(component == null))
-				{
-					if (component.gameObject.GetComponent<Renderer>() != null)
-					{
-						Object.DestroyImmediate(component.gameObject.GetComponent<Renderer>());
-					}
-					if (component.gameObject.GetComponent<MeshFilter>() != null)
-					{
-						Object.DestroyImmediate(component.gameObject.GetComponent<MeshFilter>());
-					}
-				}
+				text += "-";
 			}
 		}
+		return text;
+	}
 
-		public static string GetSceneNameFromFilePath(string filePath, bool sanitizeName = true)
+	private static void StripMeshesForObjectsOfType<T>(GameObject rootObject)
+	{
+		T[] componentsInChildren = rootObject.GetComponentsInChildren<T>();
+		foreach (T val in componentsInChildren)
 		{
-			string[] array = filePath.Split('/')[^1].Split('.');
-			string text = "";
-			for (int i = 0; i < array.Length - 1; i++)
+			Component component = val as Component;
+			if (!(component == null))
 			{
-				text += array[i];
-				if (i < array.Length - 2)
+				if (component.gameObject.GetComponent<Renderer>() != null)
 				{
-					text += ".";
+					Object.DestroyImmediate(component.gameObject.GetComponent<Renderer>());
+				}
+				if (component.gameObject.GetComponent<MeshFilter>() != null)
+				{
+					Object.DestroyImmediate(component.gameObject.GetComponent<MeshFilter>());
 				}
 			}
-			return sanitizeName ? SanitizeString(text) : text;
 		}
 	}
-}
-namespace GT_CustomMapSupportRuntime
-{
+
+	public static string GetSceneNameFromFilePath(string filePath, bool sanitizeName = true)
+	{
+		string[] array = filePath.Split('/')[^1].Split('.');
+		string text = "";
+		for (int i = 0; i < array.Length - 1; i++)
+		{
+			text += array[i];
+			if (i < array.Length - 2)
+			{
+				text += ".";
+			}
+		}
+		return sanitizeName ? SanitizeString(text) : text;
+	}
 }

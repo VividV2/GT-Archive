@@ -1,6 +1,9 @@
-namespace UnityEngine.Rendering
+using UnityEngine.Scripting;
+
+namespace UnityEngine.Rendering;
+
+[UsedByNativeCode]
+internal struct GPUDrivenRendererEditorData
 {
-}
-namespace UnityEngine.Apple
-{
+	public ulong sceneCullingMask;
 }

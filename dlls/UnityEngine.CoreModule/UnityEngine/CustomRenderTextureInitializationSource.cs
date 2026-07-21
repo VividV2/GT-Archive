@@ -1,7 +1,11 @@
-namespace UnityEngine;
-
-public enum CustomRenderTextureInitializationSource
+namespace UnityEngine
 {
-	TextureAndColor,
-	Material
+	public enum CustomRenderTextureInitializationSource
+	{
+		TextureAndColor,
+		Material
+	}
+}
+namespace UnityEngine
+{
 }

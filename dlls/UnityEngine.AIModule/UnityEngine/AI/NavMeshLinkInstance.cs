@@ -1,11 +1,2 @@
-namespace UnityEngine.AI;
-
-public enum NavMeshBuildSourceShape
-{
-	Mesh,
-	Terrain,
-	Box,
-	Sphere,
-	Capsule,
-	ModifierBox
-}
+// Could not decompile UnityEngine.AI.NavMeshLinkInstance
+// This type uses unsupported IL or has too many generic parameters.

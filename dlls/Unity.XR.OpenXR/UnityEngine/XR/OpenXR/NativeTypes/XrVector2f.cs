@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.XR.OpenXR.NativeTypes.XrVector2f
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
+namespace UnityEngine.XR.OpenXR.Input;
+
+[StructLayout(LayoutKind.Sequential, Size = 1)]
+public struct Haptic
+{
+}

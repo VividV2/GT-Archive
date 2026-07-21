@@ -1,9 +1,2 @@
-namespace UnityEngine.UIElements
-{
-	internal class StringObjectListPool : ObjectListPool<string>
-	{
-	}
-}
-namespace UnityEngine.UIElements
-{
-}
+// Could not decompile UnityEngine.UIElements.StringObjectListPool
+// This type uses unsupported IL or has too many generic parameters.

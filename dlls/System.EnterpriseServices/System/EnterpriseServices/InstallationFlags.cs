@@ -1,16 +1,37 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
 namespace System.EnterpriseServices;
 
-/// <summary>Specifies the values allowed for transaction outcome voting.</summary>
-/// <summary>Specifies the values allowed for transaction outcome voting.</summary>
-[Serializable]
+[AttributeUsage(AttributeTargets.Assembly)]
 [ComVisible(false)]
-public enum TransactionVote
+public sealed class ApplicationIDAttribute : Attribute, IConfigurationAttribute
 {
-	/// <summary>Aborts the current transaction.</summary>
-	Abort = 1,
-	/// <summary>Commits the current transaction.</summary>
-	Commit = 0
+	private Guid guid;
+
+	public Guid Value
+	{
+		get
+		{
+			return guid;
+		}
+	}
+
+	public ApplicationIDAttribute(string guid)
+	{
+		base..ctor();
+		this.guid = new Guid(guid);
+	}
+
+	bool IConfigurationAttribute.AfterSaveChanges(Hashtable info)
+	{
+		return false;
+	}
+
+	bool IConfigurationAttribute.Apply(Hashtable cache)
+	{
+		return false;
+	}
+
+	bool IConfigurationAttribute.IsValidTarget(string s)
+	{
+		return s == "Application";
+	}
 }

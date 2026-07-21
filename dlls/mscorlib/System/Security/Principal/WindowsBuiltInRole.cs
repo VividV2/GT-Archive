@@ -1,7 +1,3 @@
-namespace System.Security.AccessControl;
-
-public enum AccessControlType
+namespace System.Runtime.InteropServices
 {
-	Allow,
-	Deny
 }

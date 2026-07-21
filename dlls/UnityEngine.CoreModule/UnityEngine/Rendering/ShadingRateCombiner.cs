@@ -1,9 +1,28 @@
-namespace UnityEngine.Rendering;
+using System;
 
-public enum ShadingRateCombiner
+namespace UnityEngine.Rendering
 {
-	Keep,
-	Override,
-	Min,
-	Max
+	public enum ShadingRateCombiner
+	{
+		Keep,
+		Override,
+		Min,
+		Max
+	}
+}
+namespace UnityEngine.Rendering
+{
+	[Flags]
+	public enum CopyTextureSupport
+	{
+		None = 0,
+		Basic = 1,
+		Copy3D = 2,
+		DifferentTypes = 4,
+		TextureToRT = 8,
+		RTToTexture = 0x10
+	}
+}
+namespace UnityEngine
+{
 }

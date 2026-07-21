@@ -1,12 +1,2 @@
-namespace Newtonsoft.Json.Bson;
-
-internal class BsonBinary : BsonValue
-{
-	public BsonBinaryType BinaryType { get; set; }
-
-	public BsonBinary(byte[] value, BsonBinaryType binaryType)
-		: base(value, BsonType.Binary)
-	{
-		BinaryType = binaryType;
-	}
-}
+// Could not decompile Newtonsoft.Json.Bson.BsonBinary
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,11 +1,10 @@
 using System;
-using UnityEngine.Events;
-using System;
+using Meta.WitAi.Requests;
 using UnityEngine.Events;
 
 namespace Meta.WitAi.Composer;
 
 [Serializable]
-public class ComposerSessionEvent : UnityEvent<ComposerSessionData>
+public class ComposerSessionRequestEvent : UnityEvent<ComposerSessionData, VoiceServiceRequest>
 {
 }

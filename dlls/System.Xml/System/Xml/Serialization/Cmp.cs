@@ -9,3 +9,6 @@ internal enum Cmp
 	NotEqualTo,
 	GreaterThanOrEqualTo
 }
+namespace System.Xml.Serialization
+{
+}

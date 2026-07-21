@@ -1,13 +1,9 @@
-namespace Photon.Voice.IOS
+namespace Photon.Voice.IOS;
+
+public enum AudioSessionCategoryOption
 {
-	public enum AudioSessionCategoryOption
-	{
-		MixWithOthers = 1,
-		DuckOthers = 2,
-		AllowBluetooth = 4,
-		DefaultToSpeaker = 8
-	}
-}
-namespace Photon.Voice
-{
+	MixWithOthers = 1,
+	DuckOthers = 2,
+	AllowBluetooth = 4,
+	DefaultToSpeaker = 8
 }

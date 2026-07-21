@@ -1,3 +1,6 @@
-namespace UnityEngine
+namespace Unity.Scripting
+{
+}
+namespace UnityEngine.Rendering
 {
 }

@@ -1,13 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ProfilesModels;
-
-[Serializable]
-public class SetEntityProfilePolicyRequest : PlayFabRequestCommon
-{
-	public EntityKey Entity;
-
-	public List<EntityPermissionStatement> Statements;
-}
+// Could not decompile PlayFab.ProfilesModels.SetEntityProfilePolicyRequest
+// This type uses unsupported IL or has too many generic parameters.

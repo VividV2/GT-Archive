@@ -1,13 +1,6 @@
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace TMPro;
-
-public interface ITextElement
+namespace TMPro
 {
-	Material sharedMaterial { get; }
-
-	void Rebuild(CanvasUpdate update);
-
-	int GetInstanceID();
+}
+namespace TMPro
+{
 }

@@ -1,10 +1,2 @@
-namespace PlayFab.SharedModels;
-
-public class HttpResponseObject
-{
-	public int code;
-
-	public string status;
-
-	public object data;
-}
+// Could not decompile PlayFab.SharedModels.HttpResponseObject
+// This type uses unsupported IL or has too many generic parameters.

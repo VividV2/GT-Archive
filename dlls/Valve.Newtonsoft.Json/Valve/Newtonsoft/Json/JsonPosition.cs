@@ -1,12 +1,2 @@
-namespace Valve.Newtonsoft.Json.Utilities;
-
-internal enum ParserTimeZone
-{
-	Unspecified,
-	Utc,
-	LocalWestOfUtc,
-	LocalEastOfUtc
-}
-namespace Valve.Newtonsoft.Json
-{
-}
+// Could not decompile Valve.Newtonsoft.Json.JsonPosition
+// This type uses unsupported IL or has too many generic parameters.

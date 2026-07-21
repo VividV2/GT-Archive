@@ -1,7 +1,19 @@
+using System;
+using System;
+
 namespace UnityEngine.Rendering.Universal;
 
-internal enum EdgeSides
+[Obsolete("Will be removed in 2025.1", true)]
+public enum EndType
 {
-	esLeft,
-	esRight
+	etClosedPolygon,
+	etClosedLine
+}
+namespace UnityEngine.Rendering.Universal
+{
+	internal enum EdgeSides
+	{
+		esLeft,
+		esRight
+	}
 }

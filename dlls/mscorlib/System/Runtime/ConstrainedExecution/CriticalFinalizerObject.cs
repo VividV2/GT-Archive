@@ -1,2 +1,6 @@
-// Could not decompile System.Runtime.ConstrainedExecution.CriticalFinalizerObject
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Threading
+{
+}
+namespace System
+{
+}

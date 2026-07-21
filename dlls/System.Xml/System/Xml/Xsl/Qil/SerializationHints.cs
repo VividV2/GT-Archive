@@ -1,8 +1,2 @@
-namespace System.Xml.Xsl.Qil;
+namespace System.Xml.Xsl.Xslt;
 
-internal enum SerializationHints
-{
-	None,
-	CData,
-	DisableOutputEscaping
-}

@@ -1,7 +1,2 @@
-public enum GTAgeStatusType
-{
-	PROHIBITED,
-	DIGITALMINOR,
-	DIGITALYOUTH,
-	LEGALADULT
-}
+// Could not decompile GorillaNetworking.GorillaATMKeyButton
+// This type uses unsupported IL or has too many generic parameters.

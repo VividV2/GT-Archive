@@ -1,11 +1,2 @@
-namespace System.Linq.Expressions;
-
-internal class ByRefAssignBinaryExpression : AssignBinaryExpression
-{
-	internal override bool IsByRef => true;
-
-	internal ByRefAssignBinaryExpression(Expression left, Expression right)
-		: base(left, right)
-	{
-	}
-}
+// Could not decompile System.Linq.Expressions.ByRefAssignBinaryExpression
+// This type uses unsupported IL or has too many generic parameters.

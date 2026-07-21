@@ -44,9 +44,3 @@ internal enum StorageType
 	SqlSingle,
 	SqlString
 }
-namespace System.Data.Common
-{
-}
-namespace System.Data.Common
-{
-}

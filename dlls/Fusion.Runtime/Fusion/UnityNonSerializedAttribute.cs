@@ -1,2 +1,13 @@
-// Could not decompile Fusion.UnityNonSerializedAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Diagnostics;
+
+namespace Fusion;
+
+[AttributeUsage(AttributeTargets.Property)]
+[Conditional("FUSION_UNITY")]
+[Conditional("UNITY_EDITOR")]
+[Conditional("UNITY_2020_1_OR_NEWER")]
+[UnityPropertyAttributeProxy(typeof(NonSerializedAttribute))]
+public sealed class UnityNonSerializedAttribute : Attribute
+{
+}

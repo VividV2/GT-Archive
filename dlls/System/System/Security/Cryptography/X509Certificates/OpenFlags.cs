@@ -1,7 +1,3 @@
-namespace System.Configuration;
-
-public enum SpecialSetting
+namespace System
 {
-	ConnectionString,
-	WebServiceUrl
 }

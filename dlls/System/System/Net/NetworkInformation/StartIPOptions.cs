@@ -8,6 +8,3 @@ internal enum StartIPOptions
 	StartIPv4 = 1,
 	StartIPv6 = 2
 }
-namespace Mono.Btls
-{
-}

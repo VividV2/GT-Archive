@@ -2,9 +2,6 @@ using System;
 
 namespace Steamworks
 {
-}
-namespace Steamworks
-{
 	[Flags]
 	public enum ERemoteStoragePlatform
 	{
@@ -17,5 +14,14 @@ namespace Steamworks
 		k_ERemoteStoragePlatformAndroid = 0x20,
 		k_ERemoteStoragePlatformIOS = 0x40,
 		k_ERemoteStoragePlatformAll = -1
+	}
+}
+namespace Steamworks
+{
+	public enum ELeaderboardUploadScoreMethod
+	{
+		k_ELeaderboardUploadScoreMethodNone,
+		k_ELeaderboardUploadScoreMethodKeepBest,
+		k_ELeaderboardUploadScoreMethodForceUpdate
 	}
 }

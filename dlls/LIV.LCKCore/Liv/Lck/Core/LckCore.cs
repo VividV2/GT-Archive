@@ -1,10 +1,2 @@
-namespace Liv.Lck.Core;
-
-internal enum LckTelemetryContextType : uint
-{
-	RecordingContext,
-	StreamingContext
-}
-namespace Liv.Lck.Core
-{
-}
+// Could not decompile Liv.Lck.Core.LckCore
+// This type uses unsupported IL or has too many generic parameters.

@@ -8,6 +8,3 @@ public struct SteamInventoryDefinitionUpdate_t
 {
 	public const int k_iCallback = 4702;
 }
-namespace Steamworks
-{
-}

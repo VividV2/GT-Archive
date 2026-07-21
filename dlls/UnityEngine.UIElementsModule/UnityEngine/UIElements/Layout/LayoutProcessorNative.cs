@@ -1,11 +1,2 @@
-namespace UnityEngine.UIElements.UIR;
-
-internal enum RenderDataDirtyTypeClasses
-{
-	Clipping,
-	Opacity,
-	Color,
-	TransformSize,
-	Visuals,
-	Count
-}
+// Could not decompile UnityEngine.UIElements.Layout.LayoutProcessorNative
+// This type uses unsupported IL or has too many generic parameters.

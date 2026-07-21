@@ -1,3 +1,7 @@
-namespace System;
-
-internal delegate void IOAsyncCallback(IOAsyncResult ioares);
+namespace System.Diagnostics
+{
+}
+namespace System
+{
+	internal delegate void IOAsyncCallback(IOAsyncResult ioares);
+}

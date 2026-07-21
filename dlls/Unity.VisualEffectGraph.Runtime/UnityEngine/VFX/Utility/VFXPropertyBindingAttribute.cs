@@ -1,14 +1,2 @@
-using System;
-
-namespace UnityEngine.VFX.Utility;
-
-[AttributeUsage(AttributeTargets.Field)]
-public class VFXPropertyBindingAttribute : PropertyAttribute
-{
-	public string[] EditorTypes;
-
-	public VFXPropertyBindingAttribute(params string[] editorTypes)
-	{
-		EditorTypes = editorTypes;
-	}
-}
+// Could not decompile UnityEngine.VFX.Utility.VFXPropertyBindingAttribute
+// This type uses unsupported IL or has too many generic parameters.

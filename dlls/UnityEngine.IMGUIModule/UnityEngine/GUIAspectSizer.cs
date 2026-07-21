@@ -1,18 +1,22 @@
-namespace UnityEngine;
-
-internal sealed class GUIAspectSizer : GUILayoutEntry
+namespace UnityEngine
 {
-	private float aspect;
-
-	public GUIAspectSizer(float aspect, GUILayoutOption[] options)
-		: base(0f, 0f, 0f, 0f, GUIStyle.none)
+	internal sealed class GUIAspectSizer : GUILayoutEntry
 	{
-		this.aspect = aspect;
-		ApplyOptions(options);
-	}
+		private float aspect;
 
-	public override void CalcHeight()
-	{
-		minHeight = (maxHeight = rect.width / aspect);
+		public GUIAspectSizer(float aspect, GUILayoutOption[] options)
+			: base(0f, 0f, 0f, 0f, GUIStyle.none)
+		{
+			this.aspect = aspect;
+			ApplyOptions(options);
+		}
+
+		public override void CalcHeight()
+		{
+			minHeight = (maxHeight = rect.width / aspect);
+		}
 	}
+}
+namespace UnityEngine
+{
 }

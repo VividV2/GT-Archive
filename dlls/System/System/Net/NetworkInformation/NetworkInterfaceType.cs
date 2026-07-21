@@ -1,2 +1,3 @@
-namespace System.CodeDom;
-
+namespace System.ComponentModel.Design
+{
+}

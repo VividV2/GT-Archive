@@ -1,12 +1,8 @@
-namespace Microsoft.SqlServer.Server
+namespace Microsoft.SqlServer.Server;
+
+internal enum SmiPropertySelector
 {
-	internal enum SmiPropertySelector
-	{
-		DefaultFields,
-		SortOrder,
-		UniqueKey
-	}
-}
-namespace Microsoft.SqlServer.Server
-{
+	DefaultFields,
+	SortOrder,
+	UniqueKey
 }

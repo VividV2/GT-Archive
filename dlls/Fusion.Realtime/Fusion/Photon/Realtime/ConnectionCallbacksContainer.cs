@@ -1,2 +1,0 @@
-namespace Fusion.Photon.Realtime;
-

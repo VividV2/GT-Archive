@@ -1,6 +1,9 @@
-namespace Unity.Properties;
-
-public interface ICollectionPropertyBagAccept<TContainer>
+namespace Unity.Properties
 {
-	void Accept(ICollectionPropertyBagVisitor visitor, ref TContainer container);
+}
+namespace Unity.Properties
+{
+}
+namespace Unity.Properties
+{
 }

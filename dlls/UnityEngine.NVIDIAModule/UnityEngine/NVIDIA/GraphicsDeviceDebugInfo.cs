@@ -1,12 +1,16 @@
-namespace UnityEngine.NVIDIA;
-
-internal struct GraphicsDeviceDebugInfo
+namespace UnityEngine.NVIDIA
 {
-	public uint NVDeviceVersion;
+	internal struct GraphicsDeviceDebugInfo
+	{
+		public uint NVDeviceVersion;
 
-	public uint NGXVersion;
+		public uint NGXVersion;
 
-	public unsafe DLSSDebugFeatureInfos* dlssInfos;
+		public unsafe DLSSDebugFeatureInfos* dlssInfos;
 
-	public uint dlssInfosCount;
+		public uint dlssInfosCount;
+	}
+}
+namespace UnityEngine.NVIDIA
+{
 }

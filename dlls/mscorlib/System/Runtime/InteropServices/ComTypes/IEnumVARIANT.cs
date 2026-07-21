@@ -1,2 +1,10 @@
-// Could not decompile System.Runtime.InteropServices.ComTypes.IEnumVARIANT
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Security;
+
+internal struct RuntimeDeclSecurityEntry
+{
+	public IntPtr blob;
+
+	public int size;
+
+	public int index;
+}

@@ -1,8 +1,2 @@
-namespace Photon.Realtime;
-
-public enum LobbyType : byte
-{
-	Default = 0,
-	SqlLobby = 2,
-	AsyncRandomLobby = 3
-}
+// Could not decompile Photon.Realtime.MatchMakingCallbacksContainer
+// This type uses unsupported IL or has too many generic parameters.

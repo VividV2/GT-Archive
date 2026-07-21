@@ -1,8 +1,2 @@
-namespace System.Net;
-
-internal static class HttpSysSettings
-{
-	public const bool EnableNonUtf8 = true;
-
-	public const bool FavorUtf8 = true;
-}
+// Could not decompile System.Net.Security.SafeFreeCertContext
+// This type uses unsupported IL or has too many generic parameters.

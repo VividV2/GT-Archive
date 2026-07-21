@@ -1,7 +1,6 @@
-namespace System.Configuration;
-
-public enum SpecialSetting
+namespace System.Net
 {
-	ConnectionString,
-	WebServiceUrl
+}
+namespace System.Security.Permissions
+{
 }

@@ -1,7 +1,11 @@
-namespace Modio.Errors;
-
-public enum RateLimitErrorCode : long
+namespace Modio.Errors
 {
-	RATELIMITED = 11008L,
-	RATELIMITED_SAME_ENDPOINT
+	public enum RateLimitErrorCode : long
+	{
+		RATELIMITED = 11008L,
+		RATELIMITED_SAME_ENDPOINT
+	}
+}
+namespace Modio.Customizations
+{
 }

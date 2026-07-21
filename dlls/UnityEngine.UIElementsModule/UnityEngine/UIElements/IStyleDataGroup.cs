@@ -1,12 +1,8 @@
-namespace UnityEngine.UIElements
-{
-	internal interface IStyleDataGroup<T>
-	{
-		T Copy();
+namespace UnityEngine.UIElements;
 
-		void CopyFrom(ref T other);
-	}
-}
-namespace UnityEngine.UIElements
+internal interface IStyleDataGroup<T>
 {
+	T Copy();
+
+	void CopyFrom(ref T other);
 }

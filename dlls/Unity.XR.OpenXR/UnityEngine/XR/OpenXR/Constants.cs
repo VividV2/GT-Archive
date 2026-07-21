@@ -1,19 +1,6 @@
-namespace UnityEngine.XR.OpenXR.NativeTypes
+namespace UnityEngine.XR.OpenXR;
+
+public static class Constants
 {
-	public enum XrEnvironmentBlendMode
-	{
-		Opaque = 1,
-		Additive,
-		AlphaBlend
-	}
-}
-namespace UnityEngine.XR.OpenXR.API
-{
-	public enum UnityXRDepthTextureFormat
-	{
-		kUnityXRDepthTextureFormat24bitOrGreater,
-		kUnityXRDepthTextureFormat16bit,
-		kUnityXRDepthTextureFormatReference,
-		kUnityXRDepthTextureFormatNone
-	}
+	public const string k_SettingsKey = "com.unity.xr.openxr.settings4";
 }

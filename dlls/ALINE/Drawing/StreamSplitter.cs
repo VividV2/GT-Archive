@@ -1,2 +1,6 @@
-namespace Drawing.Text;
-
+namespace Drawing.Examples
+{
+}
+namespace Drawing.Examples
+{
+}

@@ -1,10 +1,6 @@
-using System;
-
-namespace UnityEngine;
-
-internal struct CastHelper<T>
+namespace UnityEngine.Experimental.GlobalIllumination
 {
-	public T t;
-
-	public IntPtr onePointerFurtherThanT;
+}
+namespace UnityEngine
+{
 }

@@ -1,19 +1,12 @@
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
-	internal struct MeshProceduralInfo
-	{
-		public MeshTopology topology;
+namespace UnityEngine.Rendering;
 
-		public uint baseVertex;
+internal struct MeshProceduralInfo
+{
+	public MeshTopology topology;
 
-		public uint firstIndex;
+	public uint baseVertex;
 
-		public uint indexCount;
-	}
+	public uint firstIndex;
+
+	public uint indexCount;
 }

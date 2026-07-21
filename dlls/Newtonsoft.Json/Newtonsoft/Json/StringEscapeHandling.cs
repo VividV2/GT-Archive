@@ -7,6 +7,6 @@ namespace Newtonsoft.Json
 		EscapeHtml
 	}
 }
-namespace Newtonsoft.Json
+namespace Newtonsoft.Json.Converters
 {
 }

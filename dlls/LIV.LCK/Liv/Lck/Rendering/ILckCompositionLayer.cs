@@ -1,18 +1,14 @@
 using UnityEngine;
 
-namespace Liv.Lck.Encoding
+namespace Liv.Lck.Rendering;
+
+public interface ILckCompositionLayer
 {
-}
-namespace Liv.Lck.Rendering
-{
-	public interface ILckCompositionLayer
-	{
-		string Name { get; set; }
+	string Name { get; set; }
 
-		Material BlendMaterial { get; set; }
+	Material BlendMaterial { get; set; }
 
-		bool IsActive { get; set; }
+	bool IsActive { get; set; }
 
-		Texture CurrentTexture { get; }
-	}
+	Texture CurrentTexture { get; }
 }

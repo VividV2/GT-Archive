@@ -1,21 +1,17 @@
 using System;
 using UnityEngine.Scripting;
 
-namespace UnityEngine
-{
-	[AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-	[UsedByNativeCode]
-	public class InspectorNameAttribute : PropertyAttribute
-	{
-		public readonly string displayName;
+namespace UnityEngine;
 
-		public InspectorNameAttribute(string displayName)
-			: base(applyToCollection: true)
-		{
-			this.displayName = displayName;
-		}
-	}
-}
-namespace UnityEngine
+[AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
+[UsedByNativeCode]
+public class InspectorNameAttribute : PropertyAttribute
 {
+	public readonly string displayName;
+
+	public InspectorNameAttribute(string displayName)
+		: base(applyToCollection: true)
+	{
+		this.displayName = displayName;
+	}
 }

@@ -1,6 +1,2 @@
-namespace System.Diagnostics.Contracts.Internal
-{
-}
-namespace System.Diagnostics.Tracing
-{
-}
+namespace System.Threading.Tasks;
+

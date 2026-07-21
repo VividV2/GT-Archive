@@ -1,3 +1,2 @@
-namespace Mono.Security.Interface
-{
-}
+namespace Mono.Security.X509;
+

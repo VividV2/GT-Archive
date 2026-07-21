@@ -26,6 +26,3 @@ internal enum BidiCategory
 	FirstStrongIsolate,
 	PopDirectionIsolate
 }
-namespace System.Reflection.Emit
-{
-}

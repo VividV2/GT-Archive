@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.Localization.SmartFormat.GlobalVariables.GlobalVariable`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
+
+public interface ITrackedPropertyValue<T> : ITrackedProperty
+{
+	bool GetValue(LocaleIdentifier localeIdentifier, out T foundValue);
+
+	bool GetValue(LocaleIdentifier localeIdentifier, LocaleIdentifier fallback, out T foundValue);
+
+	void SetValue(LocaleIdentifier localeIdentifier, T value);
+}

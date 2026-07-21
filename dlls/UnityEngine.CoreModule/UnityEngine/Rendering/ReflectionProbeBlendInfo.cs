@@ -1,3 +1,2 @@
-namespace UnityEngine.Rendering
-{
-}
+namespace Unity.Jobs.LowLevel.Unsafe;
+

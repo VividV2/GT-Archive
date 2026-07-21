@@ -1,2 +1,19 @@
-// Could not decompile UnityEngine.UIElements.PointerOverEvent
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements
+{
+	[EventCategory(EventCategory.EnterLeave)]
+	public sealed class PointerOverEvent : PointerEventBase<PointerOverEvent>
+	{
+		static PointerOverEvent()
+		{
+			EventBase<PointerOverEvent>.SetCreateFunction(() => new PointerOverEvent());
+		}
+
+		internal override void Dispatch(BaseVisualElementPanel panel)
+		{
+			EventDispatchUtilities.DispatchToAssignedTarget(this, panel);
+		}
+	}
+}
+namespace UnityEngine.UIElements
+{
+}

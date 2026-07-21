@@ -1,15 +1,19 @@
-namespace TMPro;
-
-public enum TextContainerAnchors
+namespace TMPro
 {
-	TopLeft,
-	Top,
-	TopRight,
-	Left,
-	Middle,
-	Right,
-	BottomLeft,
-	Bottom,
-	BottomRight,
-	Custom
+}
+namespace TMPro
+{
+	public enum TextContainerAnchors
+	{
+		TopLeft,
+		Top,
+		TopRight,
+		Left,
+		Middle,
+		Right,
+		BottomLeft,
+		Bottom,
+		BottomRight,
+		Custom
+	}
 }

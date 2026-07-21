@@ -1,9 +1,2 @@
-namespace UnityEngine
-{
-	public class AudioBehaviour : Behaviour
-	{
-	}
-}
-namespace UnityEngine
-{
-}
+namespace UnityEngine.Audio;
+

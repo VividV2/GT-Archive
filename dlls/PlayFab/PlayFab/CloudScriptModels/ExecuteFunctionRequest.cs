@@ -1,12 +1,16 @@
+using System;
+using PlayFab.SharedModels;
+
 namespace PlayFab.CloudScriptModels;
 
 [Serializable]
-public class TagModel : PlayFabBaseModel
+public class ExecuteFunctionRequest : PlayFabRequestCommon
 {
-	public string TagValue;
+	public EntityKey Entity;
 
-	public TagModel()
-	{
-		base..ctor();
-	}
+	public string FunctionName;
+
+	public object FunctionParameter;
+
+	public bool? GeneratePlayStreamEvent;
 }

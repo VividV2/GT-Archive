@@ -1,3 +1,2 @@
-namespace System.Diagnostics.CodeAnalysis
-{
-}
+// Could not decompile System.Extensions
+// This type uses unsupported IL or has too many generic parameters.

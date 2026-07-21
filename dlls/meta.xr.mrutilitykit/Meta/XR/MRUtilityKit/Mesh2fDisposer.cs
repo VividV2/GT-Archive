@@ -1,2 +1,18 @@
-// Could not decompile Meta.XR.MRUtilityKit.Mesh2fDisposer
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Meta.XR.MRUtilityKit;
+
+internal struct Mesh2fDisposer : IDisposable
+{
+	public MRUKNativeFuncs.MrukMesh2f Mesh;
+
+	internal Mesh2fDisposer(MRUKNativeFuncs.MrukMesh2f mesh)
+	{
+		Mesh = mesh;
+	}
+
+	public void Dispose()
+	{
+		MRUKNativeFuncs.FreeMesh(ref Mesh);
+	}
+}

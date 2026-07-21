@@ -1,2 +1,6 @@
-// Could not decompile Valve.Newtonsoft.Json.Serialization.CachedAttributeGetter`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.Newtonsoft.Json.Utilities
+{
+}
+namespace Valve.Newtonsoft.Json.Utilities
+{
+}

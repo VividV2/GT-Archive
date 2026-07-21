@@ -1,10 +1,14 @@
-namespace UnityEngine.Experimental.Rendering;
-
-public enum DefaultFormat
+namespace UnityEngine.Experimental.Rendering
 {
-	LDR,
-	HDR,
-	DepthStencil,
-	Shadow,
-	Video
+	public enum DefaultFormat
+	{
+		LDR,
+		HDR,
+		DepthStencil,
+		Shadow,
+		Video
+	}
+}
+namespace UnityEngine
+{
 }

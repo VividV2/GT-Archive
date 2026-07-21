@@ -1,3 +1,2 @@
-public class GetPlayerDataRequest : KIDRequestData
-{
-}
+// Could not decompile GetPlayerDataRequest
+// This type uses unsupported IL or has too many generic parameters.

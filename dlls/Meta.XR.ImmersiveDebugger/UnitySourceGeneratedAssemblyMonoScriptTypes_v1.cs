@@ -1,2 +1,2 @@
-namespace Meta.XR.ImmersiveDebugger;
+namespace Meta.XR.ImmersiveDebugger.Manager;
 

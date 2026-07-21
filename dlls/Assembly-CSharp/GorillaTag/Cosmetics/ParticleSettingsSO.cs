@@ -1,15 +1,2 @@
-using UnityEngine;
-
-namespace GorillaTag.Cosmetics
-{
-	[CreateAssetMenu(fileName = "Particle Settings", menuName = "ScriptableObjects/ParticleSettings")]
-	public class ParticleSettingsSO : ScriptableObject
-	{
-		public Color startColor;
-
-		public float startSize;
-	}
-}
-namespace GorillaTagScripts
-{
-}
+// Could not decompile GorillaTag.Cosmetics.ParticleSettingsSO
+// This type uses unsupported IL or has too many generic parameters.

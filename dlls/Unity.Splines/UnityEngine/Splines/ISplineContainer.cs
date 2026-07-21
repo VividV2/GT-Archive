@@ -1,14 +1,10 @@
 using System.Collections.Generic;
 
-namespace UnityEngine.Splines
-{
-	public interface ISplineContainer
-	{
-		IReadOnlyList<Spline> Splines { get; set; }
+namespace UnityEngine.Splines;
 
-		KnotLinkCollection KnotLinkCollection { get; }
-	}
-}
-namespace UnityEngine.Splines
+public interface ISplineContainer
 {
+	IReadOnlyList<Spline> Splines { get; set; }
+
+	KnotLinkCollection KnotLinkCollection { get; }
 }

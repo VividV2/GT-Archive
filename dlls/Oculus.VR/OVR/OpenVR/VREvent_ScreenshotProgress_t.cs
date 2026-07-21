@@ -1,6 +1,16 @@
-namespace OVR.OpenVR;
+using System;
 
-public struct VREvent_ScreenshotProgress_t
+namespace OVR.OpenVR
 {
-	public float progress;
+	public struct VREvent_ScreenshotProgress_t
+	{
+		public float progress;
+	}
+}
+namespace OVR.OpenVR
+{
+	public struct CVRSettingHelper
+	{
+		public System.IntPtr m_pSettings;
+	}
 }

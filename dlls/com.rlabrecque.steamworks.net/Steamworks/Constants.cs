@@ -1,13 +1,11 @@
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Runtime.InteropServices;
-using System.Text;
+namespace Steamworks;
 
-namespace Steamworks
+public enum ELobbyComparison
 {
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SteamAPIWarningMessageHook_t(int nSeverity, StringBuilder pchDebugText);
-}
-namespace Steamworks
-{
+	k_ELobbyComparisonEqualToOrLessThan = -2,
+	k_ELobbyComparisonLessThan,
+	k_ELobbyComparisonEqual,
+	k_ELobbyComparisonGreaterThan,
+	k_ELobbyComparisonEqualToOrGreaterThan,
+	k_ELobbyComparisonNotEqual
 }

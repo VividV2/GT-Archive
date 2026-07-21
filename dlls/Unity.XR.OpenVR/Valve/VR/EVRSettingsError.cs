@@ -1,8 +1,9 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum EVRTrackedCameraFrameType
 {
-	public enum VROverlayInputMethod
-	{
-		None,
-		Mouse
-	}
+	Distorted,
+	Undistorted,
+	MaximumUndistorted,
+	MAX_CAMERA_FRAME_TYPES
 }

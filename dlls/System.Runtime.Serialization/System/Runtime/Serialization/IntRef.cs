@@ -1,13 +1,2 @@
-namespace System.Runtime.Serialization;
-
-internal class IntRef
-{
-	private int value;
-
-	public int Value => value;
-
-	public IntRef(int value)
-	{
-		this.value = value;
-	}
-}
+// Could not decompile System.Runtime.Serialization.IntRef
+// This type uses unsupported IL or has too many generic parameters.

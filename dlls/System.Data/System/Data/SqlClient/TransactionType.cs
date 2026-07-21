@@ -1,6 +1,14 @@
-namespace System.Data.SqlTypes
+namespace System.Data.SqlClient
 {
+	internal enum TransactionType
+	{
+		LocalFromTSQL = 1,
+		LocalFromAPI,
+		Delegated,
+		Distributed,
+		Context
+	}
 }
-namespace System.Data.Odbc
+namespace System.Data.ProviderBase
 {
 }

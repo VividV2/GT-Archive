@@ -1,11 +1,15 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine.UIElements.StyleSheets;
-
-[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
-internal struct StylePropertyValue
+namespace UnityEngine.UIElements.StyleSheets
 {
-	public StyleSheet sheet;
+	[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
+	internal struct StylePropertyValue
+	{
+		public StyleSheet sheet;
 
-	public StyleValueHandle handle;
+		public StyleValueHandle handle;
+	}
+}
+namespace UnityEngine.UIElements.Layout
+{
 }

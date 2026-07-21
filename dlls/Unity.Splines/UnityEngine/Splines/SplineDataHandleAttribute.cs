@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.Splines.SplineDataHandleAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Splines;
+
+[Obsolete("Use SplineDataHandles.DataPointHandles instead and EditorTools to interact with SplineData.", false)]
+[AttributeUsage(AttributeTargets.Field)]
+public abstract class SplineDataHandleAttribute : Attribute
+{
+}

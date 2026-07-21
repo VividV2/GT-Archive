@@ -1,10 +1,2 @@
-namespace System.Xml.Serialization;
-
-internal class UrtTypes
-{
-	internal const string Namespace = "http://microsoft.com/wsdl/types/";
-
-	private UrtTypes()
-	{
-	}
-}
+// Could not decompile System.Xml.Xsl.Qil.QilDepthChecker
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,3 +1,2 @@
-namespace Backtrace.Unity.Model
-{
-}
+namespace Backtrace.Unity.Model.Breadcrumbs;
+

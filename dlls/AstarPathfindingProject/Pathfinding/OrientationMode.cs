@@ -1,11 +1,7 @@
-namespace Pathfinding
+namespace Pathfinding;
+
+public enum OrientationMode
 {
-	public enum OrientationMode
-	{
-		ZAxisForward,
-		YAxisForward
-	}
-}
-namespace Pathfinding
-{
+	ZAxisForward,
+	YAxisForward
 }

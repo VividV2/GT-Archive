@@ -1,10 +1,14 @@
 using UnityEngine;
 
-namespace Unity.Cinemachine;
-
-public interface ISignalSource6D
+namespace Unity.Cinemachine
 {
-	float SignalDuration { get; }
+	public interface ISignalSource6D
+	{
+		float SignalDuration { get; }
 
-	void GetSignal(float timeSinceSignalStart, out Vector3 pos, out Quaternion rot);
+		void GetSignal(float timeSinceSignalStart, out Vector3 pos, out Quaternion rot);
+	}
+}
+namespace Unity.Cinemachine
+{
 }

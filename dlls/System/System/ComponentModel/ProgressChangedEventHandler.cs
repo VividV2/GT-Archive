@@ -1,6 +1,19 @@
-namespace System.ComponentModel.Design
+namespace System.Net;
+
+internal enum FtpOperation
 {
-}
-namespace System.ComponentModel
-{
+	DownloadFile,
+	ListDirectory,
+	ListDirectoryDetails,
+	UploadFile,
+	UploadFileUnique,
+	AppendFile,
+	DeleteFile,
+	GetDateTimestamp,
+	GetFileSize,
+	Rename,
+	MakeDirectory,
+	RemoveDirectory,
+	PrintWorkingDirectory,
+	Other
 }

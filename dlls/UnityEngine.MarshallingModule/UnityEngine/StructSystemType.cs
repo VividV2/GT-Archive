@@ -1,14 +1,10 @@
 using System;
 using UnityEngine.Internal;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[ExcludeFromDocs]
+internal struct StructSystemType
 {
-	[ExcludeFromDocs]
-	internal struct StructSystemType
-	{
-		public Type field;
-	}
-}
-namespace UnityEngine
-{
+	public Type field;
 }

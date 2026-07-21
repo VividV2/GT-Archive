@@ -1,3 +1,3 @@
-namespace System.CodeDom.Compiler
+namespace System.Text.RegularExpressions
 {
 }

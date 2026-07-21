@@ -1,2 +1,2 @@
-namespace Meta.WitAi.TTS.Data;
+namespace Meta.WitAi.TTS.UX;
 

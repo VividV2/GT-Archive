@@ -1,2 +1,10 @@
-// Could not decompile OVR.OpenVR.HmdVector3_t
-// This type uses unsupported IL or has too many generic parameters.
+namespace OVR.OpenVR;
+
+public struct HmdVector3_t
+{
+	public float v0;
+
+	public float v1;
+
+	public float v2;
+}

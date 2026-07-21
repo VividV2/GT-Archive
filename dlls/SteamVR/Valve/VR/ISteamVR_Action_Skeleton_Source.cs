@@ -2,34 +2,35 @@ using UnityEngine;
 
 namespace Valve.VR
 {
-	public interface ISteamVR_Action_In_Source : ISteamVR_Action_Source
+	[Serializable]
+	public class SteamVR_Input_BindingFile_Haptic
 	{
-		bool changed { get; }
+		public string output;
 
-		bool lastChanged { get; }
+		public string path;
 
-		float changedTime { get; }
+		public override bool Equals(object obj)
+		{
+			if (obj is SteamVR_Input_BindingFile_Haptic)
+			{
+				steamVR_Input_BindingFile_Haptic = (SteamVR_Input_BindingFile_Haptic)obj;
+				if (string.op_Equality(steamVR_Input_BindingFile_Haptic.output, output) && string.op_Equality(steamVR_Input_BindingFile_Haptic.path, path))
+					return true;
+				return false;
+			}
+			return base.Equals(obj);
+		}
 
-		float updateTime { get; }
+		public override int GetHashCode()
+		{
+			return base.GetHashCode();
+		}
 
-		ulong activeOrigin { get; }
-
-		ulong lastActiveOrigin { get; }
-
-		SteamVR_Input_Sources activeDevice { get; }
-
-		uint trackedDeviceIndex { get; }
-
-		string renderModelComponentName { get; }
-
-		string localizedOriginName { get; }
+		public SteamVR_Input_BindingFile_Haptic()
+		{
+			base..ctor();
+		}
 	}
-}
-namespace Valve.VR
-{
-}
-namespace Valve.VR.InteractionSystem
-{
 }
 namespace Valve.VR
 {
@@ -95,9 +96,6 @@ namespace Valve.VR
 
 		float[] lastFingerSplays { get; }
 	}
-}
-namespace Valve.VR
-{
 }
 namespace Valve.VR
 {

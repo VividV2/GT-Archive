@@ -1,22 +1,11 @@
 namespace OVR.OpenVR;
 
-public enum EVRInputError
+public enum ECollisionBoundsStyle
 {
-	None,
-	NameNotFound,
-	WrongType,
-	InvalidHandle,
-	InvalidParam,
-	NoSteam,
-	MaxCapacityReached,
-	IPCError,
-	NoActiveActionSet,
-	InvalidDevice,
-	InvalidSkeleton,
-	InvalidBoneCount,
-	InvalidCompressedData,
-	NoData,
-	BufferTooSmall,
-	MismatchedActionManifest,
-	MissingSkeletonData
+	COLLISION_BOUNDS_STYLE_BEGINNER,
+	COLLISION_BOUNDS_STYLE_INTERMEDIATE,
+	COLLISION_BOUNDS_STYLE_SQUARES,
+	COLLISION_BOUNDS_STYLE_ADVANCED,
+	COLLISION_BOUNDS_STYLE_NONE,
+	COLLISION_BOUNDS_STYLE_COUNT
 }

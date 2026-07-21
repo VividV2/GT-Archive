@@ -1,16 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class GetRemoteLoginEndpointRequest : PlayFabRequestCommon
-{
-	public string BuildId;
-
-	public string Region;
-
-	public string VmId;
-}
+// Could not decompile PlayFab.Json.JsonArray
+// This type uses unsupported IL or has too many generic parameters.

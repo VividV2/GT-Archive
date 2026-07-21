@@ -1,10 +1,6 @@
-namespace System.Diagnostics.Tracing;
-
-[Flags]
-public enum EventTags
+namespace System.Diagnostics.SymbolStore
 {
-	None = 0
 }
-namespace System.Diagnostics.Contracts
+namespace System.Diagnostics.Tracing
 {
 }

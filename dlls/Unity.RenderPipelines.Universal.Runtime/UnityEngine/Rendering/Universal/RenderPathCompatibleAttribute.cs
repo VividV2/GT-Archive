@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.Universal.RenderPathCompatibleAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering.Universal;
+
+[AttributeUsage(AttributeTargets.Field)]
+internal sealed class RenderPathCompatibleAttribute : Attribute
+{
+	public RenderPathCompatibility renderPath;
+
+	public RenderPathCompatibleAttribute(RenderPathCompatibility renderPath)
+	{
+		this.renderPath = renderPath;
+	}
+}

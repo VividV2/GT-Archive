@@ -1,6 +1,2 @@
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
-}
+// Could not decompile UnityEngine.Rendering.GraphicsFence
+// This type uses unsupported IL or has too many generic parameters.

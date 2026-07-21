@@ -1,6 +1,12 @@
-namespace System.Runtime.Remoting.Channels
+namespace System.Threading
 {
 }
-namespace System.Runtime.Remoting.Channels
+namespace System.Threading.Tasks
+{
+}
+namespace System.Resources
+{
+}
+namespace Mono.Security
 {
 }

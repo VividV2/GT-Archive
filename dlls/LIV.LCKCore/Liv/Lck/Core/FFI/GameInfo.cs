@@ -1,19 +1,2 @@
-namespace Liv.Lck.Core.FFI;
-
-internal enum ReturnCode : uint
-{
-	Ok,
-	Error,
-	Panic,
-	InvalidArgument,
-	BackendUnavailable,
-	Uninitialized,
-	BackendDataParsingError,
-	BackendClientError,
-	UserNotLoggedIn,
-	NullPointer,
-	LoginAttemptExpired,
-	Fatal,
-	RateLimiterBackoff,
-	InvalidTrackingId
-}
+// Could not decompile Liv.Lck.Core.FFI.GameInfo
+// This type uses unsupported IL or has too many generic parameters.

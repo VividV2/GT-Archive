@@ -1,14 +1,2 @@
-using System;
-
-namespace Mono.Security.Cryptography;
-
-[Serializable]
-public struct DHParameters
-{
-	public byte[] P;
-
-	public byte[] G;
-
-	[NonSerialized]
-	public byte[] X;
-}
+// Could not decompile Mono.Security.Cryptography.DHParameters
+// This type uses unsupported IL or has too many generic parameters.

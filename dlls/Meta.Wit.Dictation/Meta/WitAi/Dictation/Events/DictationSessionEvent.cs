@@ -1,10 +1,2 @@
-using System;
-using Meta.WitAi.Dictation.Data;
-using UnityEngine.Events;
-
-namespace Meta.WitAi.Dictation.Events;
-
-[Serializable]
-public class DictationSessionEvent : UnityEvent<DictationSession>
-{
-}
+// Could not decompile Meta.WitAi.Dictation.Events.DictationSessionEvent
+// This type uses unsupported IL or has too many generic parameters.

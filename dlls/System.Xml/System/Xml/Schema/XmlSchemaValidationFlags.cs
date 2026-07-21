@@ -1,9 +1,6 @@
-namespace System.Xml.Xsl.Runtime
+namespace System.Xml.Schema
 {
 }
-namespace System.Xml
-{
-}
-namespace System.Xml
+namespace System.Xml.Schema
 {
 }

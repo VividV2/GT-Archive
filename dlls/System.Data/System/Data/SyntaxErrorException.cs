@@ -1,2 +1,9 @@
-// Could not decompile System.Data.SyntaxErrorException
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data.SqlClient;
+
+internal enum TdsParserState
+{
+	Closed,
+	OpenNotLoggedIn,
+	OpenLoggedIn,
+	Broken
+}

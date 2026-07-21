@@ -1,14 +1,21 @@
 using System.IO;
 
-namespace System.Net.Mime;
-
-internal interface IEncodableStream
+namespace System.Diagnostics
 {
-	int DecodeBytes(byte[] buffer, int offset, int count);
+}
+namespace System.Net.Mime
+{
+	internal interface IEncodableStream
+	{
+		int DecodeBytes(byte[] buffer, int offset, int count);
 
-	int EncodeBytes(byte[] buffer, int offset, int count);
+		int EncodeBytes(byte[] buffer, int offset, int count);
 
-	string GetEncodedString();
+		string GetEncodedString();
 
-	Stream GetStream();
+		Stream GetStream();
+	}
+}
+namespace System.Diagnostics
+{
 }

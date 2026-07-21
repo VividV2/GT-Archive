@@ -1,3 +1,6 @@
-namespace PlayFab.ProfilesModels
+namespace PlayFab.MultiplayerModels
+{
+}
+namespace PlayFab.MultiplayerModels
 {
 }

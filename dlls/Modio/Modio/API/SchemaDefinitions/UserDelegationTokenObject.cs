@@ -1,2 +1,6 @@
-// Could not decompile Modio.API.SchemaDefinitions.UserDelegationTokenObject
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.API.SchemaDefinitions
+{
+}
+namespace Modio.API.SchemaDefinitions
+{
+}

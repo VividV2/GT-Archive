@@ -1,10 +1,6 @@
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class AcceptTradeResponse : PlayFabResultCommon
+namespace PlayFab.CloudScriptModels
 {
-	public TradeInfo Trade;
+}
+namespace PlayFab.Internal
+{
 }

@@ -1,10 +1,6 @@
-namespace Fusion
+namespace Fusion;
+
+public interface IAfterUpdateRemotePrefabs : IPublicFacingInterface
 {
-}
-namespace Fusion
-{
-	public interface IAfterUpdateRemotePrefabs : IPublicFacingInterface
-	{
-		void AfterUpdateRemotePrefabs();
-	}
+	void AfterUpdateRemotePrefabs();
 }

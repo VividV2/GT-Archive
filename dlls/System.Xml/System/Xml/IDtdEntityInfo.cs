@@ -1,3 +1,6 @@
+namespace System.Xml.Schema
+{
+}
 namespace System.Xml
 {
 	internal interface IDtdEntityInfo
@@ -27,6 +30,6 @@ namespace System.Xml
 		int LinePosition { get; }
 	}
 }
-namespace System.Xml.Xsl.XsltOld
+namespace System.Xml
 {
 }

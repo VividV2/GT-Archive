@@ -1,16 +1,2 @@
-namespace System.Net;
-
-internal enum ContentTypeValues
-{
-	ChangeCipherSpec = 20,
-	Alert = 21,
-	HandShake = 22,
-	AppData = 23,
-	Unrecognized = 255
-}
-namespace System.Net.NetworkInformation
-{
-}
-namespace System.Net.Cache
-{
-}
+// Could not decompile System.Net.IntPtrHelper
+// This type uses unsupported IL or has too many generic parameters.

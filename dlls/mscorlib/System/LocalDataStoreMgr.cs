@@ -1,30 +1,6 @@
-using System;
-using System.IO;
-using System.Security;
-using System;
-using System.IO;
-using System.Security;
-
-namespace Microsoft.Win32.SafeHandles;
-
-[SecurityCritical]
-internal class SafeFindHandle : SafeHandleZeroOrMinusOneIsInvalid
+namespace System.Runtime.InteropServices
 {
-	[SecurityCritical]
-	internal SafeFindHandle()
-		: base(ownsHandle: true)
-	{
-	}
-
-	internal SafeFindHandle(IntPtr preexistingHandle)
-		: base(ownsHandle: true)
-	{
-		SetHandle(preexistingHandle);
-	}
-
-	[SecurityCritical]
-	protected override bool ReleaseHandle()
-	{
-		return MonoIO.FindCloseFile(handle);
-	}
+}
+namespace System.Reflection
+{
 }

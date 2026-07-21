@@ -4,16 +4,6 @@ using UnityEngine;
 
 namespace Unity.Collections
 {
-	public enum ParseError
-	{
-		None,
-		Syntax,
-		Overflow,
-		Underflow
-	}
-}
-namespace Unity.Collections
-{
 	[Serializable]
 	[StructLayout(LayoutKind.Explicit, Size = 16)]
 	[GenerateTestsForBurstCompatibility]
@@ -27,4 +17,7 @@ namespace Unity.Collections
 		[SerializeField]
 		public ulong byte0008;
 	}
+}
+namespace Unity.Collections
+{
 }

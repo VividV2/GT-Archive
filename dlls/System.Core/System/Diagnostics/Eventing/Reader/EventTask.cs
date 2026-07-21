@@ -1,9 +1,2 @@
-namespace System.Management.Instrumentation
-{
-}
-namespace System.Linq.Expressions
-{
-}
-namespace System.Linq.Expressions.Compiler
-{
-}
+// Could not decompile System.Diagnostics.Eventing.Reader.EventTask
+// This type uses unsupported IL or has too many generic parameters.

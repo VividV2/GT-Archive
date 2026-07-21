@@ -1,15 +1,33 @@
-using System.Collections.Generic;
-using UnityEngine.Bindings;
-using System.Collections.Generic;
+using System;
+using System;
 
 namespace UnityEngine.Rendering
 {
-	internal delegate void GPUDrivenRendererDataNativeCallback(in GPUDrivenRendererGroupDataNative rendererDataNative, List<Mesh> meshes, List<Material> materials, GPUDrivenRendererDataCallback callback);
+	[Flags]
+	public enum MeshUpdateFlags
+	{
+		Default = 0,
+		DontValidateIndices = 1,
+		DontResetBoneBounds = 2,
+		DontNotifyMeshUsers = 4,
+		DontRecalculateBounds = 8,
+		DontValidateLodRanges = 0x10
+	}
+}
+namespace UnityEngine
+{
+	public enum TransparencySortMode
+	{
+		Default,
+		Perspective,
+		Orthographic,
+		CustomAxis
+	}
 }
 namespace UnityEngine.Rendering
 {
-	[NativeHeader("Runtime/Export/Graphics/MachineLearning.bindings.h")]
-	[NativeHeader("Runtime/Graphics/MachineLearning/MachineLearningTensor.h")]
+	[UnityEngine.Bindings.NativeHeader("Runtime/Export/Graphics/MachineLearning.bindings.h")]
+	[UnityEngine.Bindings.NativeHeader("Runtime/Graphics/MachineLearning/MachineLearningTensor.h")]
 	public enum MachineLearningDataType
 	{
 		Unknown,

@@ -18,6 +18,3 @@ public interface IKeyboardEvent
 
 	bool actionKey { get; }
 }
-namespace UnityEngine.UIElements
-{
-}

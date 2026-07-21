@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.TerrainUtils.TerrainTileCoord
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.TerrainUtils
+{
+	public readonly struct TerrainTileCoord(int tileX, int tileZ)
+	{
+		public readonly int tileX = tileX;
+
+		public readonly int tileZ = tileZ;
+	}
+}
+namespace UnityEngine
+{
+}

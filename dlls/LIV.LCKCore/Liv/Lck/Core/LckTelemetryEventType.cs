@@ -1,26 +1,22 @@
-namespace Liv.Lck.Core
+namespace Liv.Lck.Core;
+
+public enum LckTelemetryEventType : uint
 {
-}
-namespace Liv.Lck.Core
-{
-	public enum LckTelemetryEventType : uint
-	{
-		GameInitialized,
-		RecordingStarted,
-		StreamingStarted,
-		ServiceCreated,
-		ServiceDisposed,
-		CameraEnabled,
-		CameraDisabled,
-		RecordingStopped,
-		StreamingStopped,
-		StreamingError,
-		PhotoCaptured,
-		RecorderError,
-		PhotoCaptureError,
-		SdkError,
-		Performance,
-		EchoEnabled,
-		EchoSaved
-	}
+	GameInitialized,
+	RecordingStarted,
+	StreamingStarted,
+	ServiceCreated,
+	ServiceDisposed,
+	CameraEnabled,
+	CameraDisabled,
+	RecordingStopped,
+	StreamingStopped,
+	StreamingError,
+	PhotoCaptured,
+	RecorderError,
+	PhotoCaptureError,
+	SdkError,
+	Performance,
+	EchoEnabled,
+	EchoSaved
 }

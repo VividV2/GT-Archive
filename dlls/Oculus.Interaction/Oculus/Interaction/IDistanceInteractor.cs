@@ -1,12 +1,19 @@
 using UnityEngine;
 
-namespace Oculus.Interaction;
-
-public interface IDistanceInteractor : IInteractorView
+namespace Oculus.Interaction.Body.PoseDetection
 {
-	Pose Origin { get; }
+}
+namespace Oculus.Interaction
+{
+	public interface IDistanceInteractor : IInteractorView
+	{
+		Pose Origin { get; }
 
-	Vector3 HitPoint { get; }
+		Vector3 HitPoint { get; }
 
-	IRelativeToRef DistanceInteractable { get; }
+		IRelativeToRef DistanceInteractable { get; }
+	}
+}
+namespace Oculus.Interaction.GrabAPI
+{
 }

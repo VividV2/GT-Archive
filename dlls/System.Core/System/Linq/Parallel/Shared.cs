@@ -1,27 +1,2 @@
-namespace System.IO.MemoryMappedFiles
-{
-}
-namespace System.Dynamic
-{
-}
-namespace System.Linq.Parallel
-{
-	internal class Shared<T>
-	{
-		internal T Value;
-
-		internal Shared(T value)
-		{
-			Value = value;
-		}
-	}
-}
-namespace System.Linq.Parallel
-{
-}
-namespace System.Linq.Parallel
-{
-}
-namespace System.Linq.Expressions.Compiler
-{
-}
+// Could not decompile System.Linq.Parallel.Shared`1
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,13 @@
-// Could not decompile Unity.Scripting.LifecycleManagement.AfterAssemblyLoadedAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.IO.LowLevel.Unsafe;
+
+public enum FileReadType
+{
+	Sync,
+	Async
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine.Windows.Speech
+{
+}

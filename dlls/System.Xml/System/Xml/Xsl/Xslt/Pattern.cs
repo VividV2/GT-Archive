@@ -1,8 +1,2 @@
-namespace System.Xml.Xsl.Xslt;
+namespace System.Xml.Xsl.Runtime;
 
-internal struct Pattern(TemplateMatch match, int priority)
-{
-	public readonly TemplateMatch Match = match;
-
-	public readonly int Priority = priority;
-}

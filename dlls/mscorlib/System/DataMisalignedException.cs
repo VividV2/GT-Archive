@@ -1,12 +1,2 @@
-using System;
-using System;
-
-namespace Mono.Interop;
-
-[AttributeUsage(AttributeTargets.Method)]
-internal sealed class MonoPInvokeCallbackAttribute : Attribute
-{
-	public MonoPInvokeCallbackAttribute(Type t)
-	{
-	}
-}
+// Could not decompile System.DataMisalignedException
+// This type uses unsupported IL or has too many generic parameters.

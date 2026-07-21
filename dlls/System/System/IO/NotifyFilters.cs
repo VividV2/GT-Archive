@@ -1,2 +1,13 @@
-// Could not decompile System.IO.NotifyFilters
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.ComponentModel.Design;
+
+public enum ViewTechnology
+{
+	[Obsolete("This value has been deprecated. Use ViewTechnology.Default instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+	Passthrough,
+	[Obsolete("This value has been deprecated. Use ViewTechnology.Default instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+	WindowsForms,
+	Default
+}
+namespace System
+{
+}

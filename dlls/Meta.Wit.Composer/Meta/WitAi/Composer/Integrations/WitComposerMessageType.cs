@@ -1,10 +1,6 @@
-namespace Meta.WitAi.Composer.Integrations
+namespace Meta.WitAi.Composer.Integrations;
+
+public enum WitComposerMessageType
 {
-	public enum WitComposerMessageType
-	{
-		Message
-	}
-}
-namespace Meta.WitAi.Composer.Integrations
-{
+	Message
 }

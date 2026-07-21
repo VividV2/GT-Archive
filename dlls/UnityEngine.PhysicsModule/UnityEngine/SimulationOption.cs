@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.SimulationOption
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine;
+
+public enum SimulationOption : ushort
+{
+	None,
+	SyncTransforms,
+	IgnoreEmptyScenes,
+	All
+}

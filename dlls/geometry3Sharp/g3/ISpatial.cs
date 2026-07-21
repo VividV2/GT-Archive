@@ -1,20 +1,16 @@
-namespace g3
+namespace g3;
+
+public interface ISpatial
 {
-	public interface ISpatial
-	{
-		bool SupportsNearestTriangle { get; }
+	bool SupportsNearestTriangle { get; }
 
-		bool SupportsTriangleRayIntersection { get; }
+	bool SupportsTriangleRayIntersection { get; }
 
-		bool SupportsPointContainment { get; }
+	bool SupportsPointContainment { get; }
 
-		int FindNearestTriangle(Vector3d p, double fMaxDist = double.MaxValue);
+	int FindNearestTriangle(Vector3d p, double fMaxDist = double.MaxValue);
 
-		int FindNearestHitTriangle(Ray3d ray, double fMaxDist = double.MaxValue);
+	int FindNearestHitTriangle(Ray3d ray, double fMaxDist = double.MaxValue);
 
-		bool IsInside(Vector3d p);
-	}
-}
-namespace g3
-{
+	bool IsInside(Vector3d p);
 }

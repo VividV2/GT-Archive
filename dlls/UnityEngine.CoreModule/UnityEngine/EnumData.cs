@@ -1,26 +1,37 @@
-using System;
-using UnityEngine.Bindings;
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine;
-
-[VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule" })]
-internal struct EnumData
+namespace UnityEngine.Rendering
 {
-	public Enum[] values;
+	[MovedFrom("UnityEngine.Experimental.Rendering")]
+	public struct RayTracingInstanceCullingMaterialTest
+	{
+		public string[] deniedShaderPasses;
 
-	public int[] flagValues;
+		public RayTracingInstanceCullingShaderTagConfig[] requiredShaderTags;
+	}
+}
+namespace UnityEngine
+{
+	[UnityEngine.Bindings.VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule" })]
+	internal struct EnumData
+	{
+		public System.Enum[] values;
 
-	public string[] displayNames;
+		public int[] flagValues;
 
-	public string[] names;
+		public string[] displayNames;
 
-	public string[] tooltip;
+		public string[] names;
 
-	public bool flags;
+		public string[] tooltip;
 
-	public Type underlyingType;
+		public bool flags;
 
-	public bool unsigned;
+		public System.Type underlyingType;
 
-	public bool serializable;
+		public bool unsigned;
+
+		public bool serializable;
+	}
 }

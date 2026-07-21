@@ -1,15 +1,8 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum SteamVR_Input_ActionFile_Action_Requirements
 {
-	public enum SteamVR_Input_ActionFile_Action_Requirements
-	{
-		optional,
-		suggested,
-		mandatory
-	}
-}
-namespace Valve.VR.InteractionSystem
-{
-}
-namespace Valve.VR.InteractionSystem
-{
+	optional,
+	suggested,
+	mandatory
 }

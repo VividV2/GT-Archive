@@ -1,30 +1,3 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(4508)]
-	public struct HTML_ChangedTitle_t
-	{
-		public const int k_iCallback = 4508;
-
-		public HHTMLBrowser unBrowserHandle;
-
-		public string pchTitle;
-	}
-}
-namespace Steamworks
-{
-	public enum EP2PSend
-	{
-		k_EP2PSendUnreliable,
-		k_EP2PSendUnreliableNoDelay,
-		k_EP2PSendReliable,
-		k_EP2PSendReliableWithBuffering
-	}
-}
 namespace Steamworks
 {
 	public enum EGameSearchErrorCode_t
@@ -42,22 +15,6 @@ namespace Steamworks
 }
 namespace Steamworks
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1314)]
-	public struct RemoteStorageEnumerateUserSubscribedFilesResult_t
-	{
-		public const int k_iCallback = 1314;
-
-		public EResult m_eResult;
-
-		public int m_nResultsReturned;
-
-		public int m_nTotalResultCount;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
-		public PublishedFileId_t[] m_rgPublishedFileId;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
-		public uint[] m_rgRTimeSubscribed;
-	}
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	public delegate void SteamAPI_CheckCallbackRegistered_t(int iCallbackNum);
 }

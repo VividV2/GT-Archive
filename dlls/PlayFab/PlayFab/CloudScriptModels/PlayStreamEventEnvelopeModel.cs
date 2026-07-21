@@ -1,3 +1,2 @@
-namespace PlayFab.DataModels
-{
-}
+namespace PlayFab.GroupsModels;
+

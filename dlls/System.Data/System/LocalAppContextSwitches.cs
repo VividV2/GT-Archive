@@ -1,6 +1,2 @@
-namespace System
-{
-}
-namespace System
-{
-}
+namespace Microsoft.SqlServer.Server;
+

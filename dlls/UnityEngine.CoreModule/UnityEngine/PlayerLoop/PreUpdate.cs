@@ -1,2 +1,2 @@
-namespace UnityEngine.Windows.WebCam;
+namespace Unity.Scripting.LifecycleManagement;
 

@@ -1,12 +1,16 @@
-namespace UnityEngine.Rendering.UnifiedRayTracing;
-
-internal struct GeoPoolMeshChunk
+namespace UnityEngine.Rendering.UnifiedRayTracing
 {
-	public int indexOffset;
+	internal struct GeoPoolMeshChunk
+	{
+		public int indexOffset;
 
-	public int indexCount;
+		public int indexCount;
 
-	public int vertexOffset;
+		public int vertexOffset;
 
-	public int vertexCount;
+		public int vertexCount;
+	}
+}
+namespace UnityEngine.Rendering.UnifiedRayTracing
+{
 }

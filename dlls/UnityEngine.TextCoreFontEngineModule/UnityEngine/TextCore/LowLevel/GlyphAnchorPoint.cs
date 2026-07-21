@@ -1,2 +1,2 @@
-namespace UnityEngine.TextCore.LowLevel;
-
+// Could not decompile UnityEngine.TextCore.LowLevel.GlyphAnchorPoint
+// This type uses unsupported IL or has too many generic parameters.

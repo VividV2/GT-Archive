@@ -1,17 +1,31 @@
-namespace System.Runtime.InteropServices.ComTypes;
-
-[ComImport]
-[Guid("00000102-0000-0000-C000-000000000046")]
-[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-public interface IEnumMoniker
+namespace System.Runtime.InteropServices
 {
-	[PreserveSig]
-	int Next(int celt, [Out][MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IMoniker[] rgelt, IntPtr pceltFetched);
-
-	[PreserveSig]
-	int Skip(int celt);
-
-	void Reset();
-
-	void Clone(out IEnumMoniker ppenum);
+	[Serializable]
+	[Flags]
+	[Obsolete("Use System.Runtime.InteropServices.ComTypes.VARFLAGS instead. http://go.microsoft.com/fwlink/?linkid=14202", false)]
+	public enum VARFLAGS : short
+	{
+		VARFLAG_FREADONLY = 1,
+		VARFLAG_FSOURCE = 2,
+		VARFLAG_FBINDABLE = 4,
+		VARFLAG_FREQUESTEDIT = 8,
+		VARFLAG_FDISPLAYBIND = 0x10,
+		VARFLAG_FDEFAULTBIND = 0x20,
+		VARFLAG_FHIDDEN = 0x40,
+		VARFLAG_FRESTRICTED = 0x80,
+		VARFLAG_FDEFAULTCOLLELEM = 0x100,
+		VARFLAG_FUIDEFAULT = 0x200,
+		VARFLAG_FNONBROWSABLE = 0x400,
+		VARFLAG_FREPLACEABLE = 0x800,
+		VARFLAG_FIMMEDIATEBIND = 0x1000
+	}
+}
+namespace System.Runtime.Remoting.Services
+{
+}
+namespace System.Security.Policy
+{
+}
+namespace System.Runtime.Remoting.Messaging
+{
 }

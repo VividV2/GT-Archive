@@ -1,3 +1,3 @@
-namespace System.Runtime.Versioning
+namespace System
 {
 }

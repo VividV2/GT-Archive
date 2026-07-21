@@ -1,15 +1,12 @@
-namespace System.Drawing
+namespace System.Drawing;
+
+public enum GraphicsUnit
 {
-}
-namespace System.Drawing
-{
-}
-namespace System.Drawing
-{
-}
-namespace System.Drawing
-{
-}
-namespace System.Drawing.Printing
-{
+	World,
+	Display,
+	Pixel,
+	Point,
+	Inch,
+	Document,
+	Millimeter
 }

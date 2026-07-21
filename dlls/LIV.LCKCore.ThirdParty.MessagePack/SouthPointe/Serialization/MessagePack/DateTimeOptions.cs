@@ -1,6 +1,2 @@
-namespace SouthPointe.Serialization.MessagePack;
-
-public class DateTimeOptions
-{
-	public DateTimePackingFormat PackingFormat;
-}
+// Could not decompile SouthPointe.Serialization.MessagePack.DateTimeOptions
+// This type uses unsupported IL or has too many generic parameters.

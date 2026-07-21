@@ -1,22 +1,2 @@
-namespace System.IO;
-
-[Flags]
-internal enum EventFlags : ushort
-{
-	Add = 1,
-	Delete = 2,
-	Enable = 4,
-	Disable = 8,
-	OneShot = 0x10,
-	Clear = 0x20,
-	Receipt = 0x40,
-	Dispatch = 0x80,
-	Flag0 = 0x1000,
-	Flag1 = 0x2000,
-	SystemFlags = 0xF000,
-	EOF = 0x8000,
-	Error = 0x4000
-}
-namespace System.IO
-{
-}
+// Could not decompile System.CodeDom.CodeGotoStatement
+// This type uses unsupported IL or has too many generic parameters.

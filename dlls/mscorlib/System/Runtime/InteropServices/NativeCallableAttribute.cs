@@ -1,16 +1,2 @@
-namespace System.Runtime.InteropServices
-{
-	[AttributeUsage(AttributeTargets.Method)]
-	internal sealed class NativeCallableAttribute : Attribute
-	{
-		public string EntryPoint;
-
-		public CallingConvention CallingConvention;
-	}
-}
-namespace System.Runtime.InteropServices
-{
-}
-namespace System.Runtime.Serialization.Formatters.Binary
-{
-}
+// Could not decompile System.Runtime.InteropServices.NativeCallableAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -3,21 +3,17 @@ using UnityEngine.Scripting;
 using UnityEngine.Bindings;
 using UnityEngine.Scripting;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[UsedByNativeCode]
+[NativeHeader("Runtime/Graphics/ColorGamut.h")]
+public enum ColorGamut
 {
-	[UsedByNativeCode]
-	[NativeHeader("Runtime/Graphics/ColorGamut.h")]
-	public enum ColorGamut
-	{
-		sRGB,
-		Rec709,
-		Rec2020,
-		DisplayP3,
-		HDR10,
-		DolbyHDR,
-		P3D65G22
-	}
-}
-namespace Unity.Collections
-{
+	sRGB,
+	Rec709,
+	Rec2020,
+	DisplayP3,
+	HDR10,
+	DolbyHDR,
+	P3D65G22
 }

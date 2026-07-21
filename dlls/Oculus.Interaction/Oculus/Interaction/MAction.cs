@@ -1,8 +1,17 @@
 using System;
+using UnityEngine;
+using UnityEngine;
 
 namespace Oculus.Interaction;
 
-public interface MAction<out T>
+public interface IPointableCanvas : IPointableElement, IPointable
 {
-	event Action<T> Action;
+	Canvas Canvas { get; }
+}
+namespace Oculus.Interaction
+{
+	public interface MAction<out T>
+	{
+		event Action<T> Action;
+	}
 }

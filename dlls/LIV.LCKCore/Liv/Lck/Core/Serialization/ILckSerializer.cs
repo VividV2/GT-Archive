@@ -1,10 +1,23 @@
-namespace Liv.Lck.Core.Serialization;
-
-public interface ILckSerializer
+namespace Liv.Lck.Core
 {
-	SerializationType SerializationType { get; }
-
-	byte[] Serialize(object data);
-
-	T Deserialize<T>(byte[] data);
+}
+namespace Liv.Lck.Core.FFI
+{
+	internal enum ReturnCode : uint
+	{
+		Ok,
+		Error,
+		Panic,
+		InvalidArgument,
+		BackendUnavailable,
+		Uninitialized,
+		BackendDataParsingError,
+		BackendClientError,
+		UserNotLoggedIn,
+		NullPointer,
+		LoginAttemptExpired,
+		Fatal,
+		RateLimiterBackoff,
+		InvalidTrackingId
+	}
 }

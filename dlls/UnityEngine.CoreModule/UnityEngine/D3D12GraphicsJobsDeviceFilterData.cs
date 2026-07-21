@@ -1,8 +1,12 @@
-namespace UnityEngine;
-
-public struct D3D12GraphicsJobsDeviceFilterData
+namespace UnityEngine
 {
-	public GraphicsJobsFilterMode preferredMode;
+	public struct D3D12GraphicsJobsDeviceFilterData
+	{
+		public GraphicsJobsFilterMode preferredMode;
 
-	public D3D12DeviceFilterData filter;
+		public D3D12DeviceFilterData filter;
+	}
+}
+namespace UnityEngine
+{
 }

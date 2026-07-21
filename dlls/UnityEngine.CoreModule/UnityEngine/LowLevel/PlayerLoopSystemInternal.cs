@@ -1,21 +1,22 @@
-namespace UnityEngine.Rendering
+using System;
+using UnityEngine.Bindings;
+using UnityEngine.Scripting;
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.LowLevel;
+
+[NativeType(Header = "Runtime/Misc/PlayerLoop.h")]
+[MovedFrom("UnityEngine.Experimental.LowLevel")]
+[RequiredByNativeCode]
+internal struct PlayerLoopSystemInternal
 {
-	public enum VertexAttributeFormat
-	{
-		Float32,
-		Float16,
-		UNorm8,
-		SNorm8,
-		UNorm16,
-		SNorm16,
-		UInt8,
-		SInt8,
-		UInt16,
-		SInt16,
-		UInt32,
-		SInt32
-	}
-}
-namespace UnityEngine.Search
-{
+	public Type type;
+
+	public PlayerLoopSystem.UpdateFunction updateDelegate;
+
+	public IntPtr updateFunction;
+
+	public IntPtr loopConditionFunction;
+
+	public int numSubSystems;
 }

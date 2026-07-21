@@ -1,3 +1,3 @@
-namespace System.Net
+namespace System.Collections.Generic
 {
 }

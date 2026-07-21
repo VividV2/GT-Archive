@@ -1,14 +1,2 @@
-namespace UnityEngine.Rendering;
-
-internal class LogarithmicAttribute : PropertyAttribute
-{
-	public int min;
-
-	public int max;
-
-	public LogarithmicAttribute(int min, int max)
-	{
-		this.min = min;
-		this.max = max;
-	}
-}
+// Could not decompile UnityEngine.Rendering.LogarithmicAttribute
+// This type uses unsupported IL or has too many generic parameters.

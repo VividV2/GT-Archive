@@ -1,12 +1,2 @@
-namespace Valve.VR
-{
-	public enum EDeviceType
-	{
-		Invalid = -1,
-		DirectX11,
-		Vulkan
-	}
-}
-namespace Valve.VR
-{
-}
+// Could not decompile Valve.VR.EDeviceType
+// This type uses unsupported IL or has too many generic parameters.

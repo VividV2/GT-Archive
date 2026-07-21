@@ -1,12 +1,16 @@
-namespace System.IO.Compression;
-
-internal interface IFileFormatReader
+namespace System.IO.Compression
 {
-	bool ReadHeader(InputBuffer input);
+	internal interface IFileFormatReader
+	{
+		bool ReadHeader(InputBuffer input);
 
-	bool ReadFooter(InputBuffer input);
+		bool ReadFooter(InputBuffer input);
 
-	void UpdateWithBytesRead(byte[] buffer, int offset, int bytesToCopy);
+		void UpdateWithBytesRead(byte[] buffer, int offset, int bytesToCopy);
 
-	void Validate();
+		void Validate();
+	}
+}
+namespace System.IO.Compression
+{
 }

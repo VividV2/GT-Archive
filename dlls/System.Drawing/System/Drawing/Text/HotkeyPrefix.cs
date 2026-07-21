@@ -1,43 +1,66 @@
-namespace Unity
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
+namespace System.Drawing.Imaging
 {
-}
-namespace System.Drawing
-{
+	[StructLayout(LayoutKind.Sequential)]
+	internal class MetafileHeaderEmf
+	{
+		public MetafileType type;
+
+		public int size;
+
+		public int version;
+
+		public EmfPlusFlags emfPlusFlags;
+
+		public float dpiX;
+
+		public float dpiY;
+
+		public int X;
+
+		public int Y;
+
+		public int Width;
+
+		public int Height;
+
+		public SafeNativeMethods.ENHMETAHEADER EmfHeader;
+
+		public int EmfPlusHeaderSize;
+
+		public int LogicalDpiX;
+
+		public int LogicalDpiY;
+	}
 }
 namespace System.Drawing.Imaging
 {
-}
-namespace System.Drawing.Text
-{
-	/// <summary>Specifies the type of display for hot-key prefixes that relate to text.</summary>
-	public enum HotkeyPrefix
+	public enum PixelFormat
 	{
-		/// <summary>No hot-key prefix.</summary>
-		None,
-		/// <summary>Display the hot-key prefix.</summary>
-		Show,
-		/// <summary>Do not display the hot-key prefix.</summary>
-		Hide
+		Indexed = 65536,
+		Gdi = 131072,
+		Alpha = 262144,
+		PAlpha = 524288,
+		Extended = 1048576,
+		Canonical = 2097152,
+		Undefined = 0,
+		DontCare = 0,
+		Format1bppIndexed = 196865,
+		Format4bppIndexed = 197634,
+		Format8bppIndexed = 198659,
+		Format16bppGrayScale = 1052676,
+		Format16bppRgb555 = 135173,
+		Format16bppRgb565 = 135174,
+		Format16bppArgb1555 = 397319,
+		Format24bppRgb = 137224,
+		Format32bppRgb = 139273,
+		Format32bppArgb = 2498570,
+		Format32bppPArgb = 925707,
+		Format48bppRgb = 1060876,
+		Format64bppArgb = 3424269,
+		Format64bppPArgb = 1851406,
+		Max = 15
 	}
-}
-namespace System.Drawing.Printing
-{
-}
-namespace System.Drawing.Drawing2D
-{
-}
-namespace System.Drawing.Drawing2D
-{
-	public enum CompositingQuality
-	{
-		Invalid = -1,
-		Default,
-		HighSpeed,
-		HighQuality,
-		GammaCorrected,
-		AssumeLinear
-	}
-}
-namespace System.Drawing.Design
-{
 }

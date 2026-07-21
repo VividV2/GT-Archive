@@ -1,9 +1,16 @@
+using System.Runtime.InteropServices;
+
 namespace Steamworks;
 
-public enum EWorkshopVote
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(4506)]
+public struct HTML_FinishedRequest_t
 {
-	k_EWorkshopVoteUnvoted,
-	k_EWorkshopVoteFor,
-	k_EWorkshopVoteAgainst,
-	k_EWorkshopVoteLater
+	public const int k_iCallback = 4506;
+
+	public HHTMLBrowser unBrowserHandle;
+
+	public string pchURL;
+
+	public string pchPageTitle;
 }

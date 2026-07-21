@@ -1,16 +1,2 @@
-using System;
-using UnityEngine.UI;
-
-namespace UnityEngine.Localization.PropertyVariants.TrackedObjects;
-
-[Serializable]
-[DisplayName("UI Graphic", null)]
-[CustomTrackedObject(typeof(Graphic), true)]
-public class TrackedUGuiGraphic : JsonSerializerTrackedObject
-{
-	protected override void PostApplyTrackedProperties()
-	{
-		((Graphic)base.Target).SetAllDirty();
-		base.PostApplyTrackedProperties();
-	}
-}
+// Could not decompile UnityEngine.Localization.PropertyVariants.TrackedObjects.TrackedUGuiGraphic
+// This type uses unsupported IL or has too many generic parameters.

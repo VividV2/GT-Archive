@@ -1,8 +1,12 @@
-namespace Pathfinding.Ionic.Zip;
-
-public enum EncryptionAlgorithm
+namespace Pathfinding.Ionic.Zip
 {
-	None = 0,
-	PkzipWeak = 1,
-	Unsupported = 4
+	public enum EncryptionAlgorithm
+	{
+		None = 0,
+		PkzipWeak = 1,
+		Unsupported = 4
+	}
+}
+namespace Pathfinding.Ionic.Zip
+{
 }

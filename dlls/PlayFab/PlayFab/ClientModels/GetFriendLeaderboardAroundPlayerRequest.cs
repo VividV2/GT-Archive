@@ -1,14 +1,2 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class GetPlayFabIDsFromKongregateIDsRequest : PlayFabRequestCommon
-{
-	public List<string> KongregateIDs;
-}
+// Could not decompile PlayFab.ClientModels.GetFriendLeaderboardAroundPlayerRequest
+// This type uses unsupported IL or has too many generic parameters.

@@ -6,6 +6,3 @@ internal enum SerializedCommandType
 	SetTexture,
 	ApplyBatchProps
 }
-namespace UnityEngine.UIElements.UIR
-{
-}

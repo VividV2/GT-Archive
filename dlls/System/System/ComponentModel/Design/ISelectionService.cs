@@ -1,8 +1,5 @@
 using System.Collections;
 
-namespace System.ComponentModel
-{
-}
 namespace System.ComponentModel.Design
 {
 	/// <summary>Provides an interface for a designer to select components.</summary>
@@ -42,9 +39,6 @@ namespace System.ComponentModel.Design
 		void SetSelectedComponents(ICollection components, SelectionTypes selectionType);
 	}
 }
-namespace System.Net.NetworkInformation
-{
-}
-namespace System.ComponentModel
+namespace System.Net.Configuration
 {
 }

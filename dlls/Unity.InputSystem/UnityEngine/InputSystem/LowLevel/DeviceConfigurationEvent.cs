@@ -1,6 +1,2 @@
-namespace UnityEngine.InputSystem.LowLevel;
-
-public interface IInputUpdateCallbackReceiver
-{
-	void OnUpdate();
-}
+// Could not decompile UnityEngine.InputSystem.LowLevel.DeviceConfigurationEvent
+// This type uses unsupported IL or has too many generic parameters.

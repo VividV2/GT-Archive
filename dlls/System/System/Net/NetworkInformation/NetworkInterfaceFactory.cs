@@ -1,2 +1,15 @@
-// Could not decompile System.Net.NetworkInformation.NetworkInterfaceFactory
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net.NetworkInformation;
+
+internal abstract class NetworkInterfaceFactory
+{
+	public abstract NetworkInterface[] GetAllNetworkInterfaces();
+
+	public abstract int GetLoopbackInterfaceIndex();
+
+	public abstract IPAddress GetNetMask(IPAddress address);
+
+	public static NetworkInterfaceFactory Create()
+	{
+		return NetworkInterfaceFactoryPal.Create();
+	}
+}

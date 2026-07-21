@@ -1,3 +1,10 @@
-namespace Meta.Voice.Net.PubSub;
+using System;
+using System.Text;
+using UnityEngine.Events;
 
-public delegate void PubSubTopicSubscriptionDelegate(string topicId, PubSubSubscriptionState subscriptionState);
+namespace Meta.Voice;
+
+[Serializable]
+public class NLPRequestResponseValidatorEvent<TResponseData> : UnityEvent<TResponseData, StringBuilder>
+{
+}

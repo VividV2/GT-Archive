@@ -1,8 +1,18 @@
 using UnityEngine.Playables;
 
-namespace UnityEngine.Timeline;
-
-public interface IPropertyPreview
+namespace UnityEngine.Timeline
 {
-	void GatherProperties(PlayableDirector director, IPropertyCollector driver);
+}
+namespace UnityEngine.Timeline
+{
+}
+namespace UnityEngine.Timeline
+{
+}
+namespace UnityEngine.Timeline
+{
+	public interface IPropertyPreview
+	{
+		void GatherProperties(PlayableDirector director, IPropertyCollector driver);
+	}
 }

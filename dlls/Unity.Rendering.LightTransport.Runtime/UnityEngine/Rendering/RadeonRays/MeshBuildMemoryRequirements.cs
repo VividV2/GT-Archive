@@ -1,10 +1,10 @@
+using System;
+
 namespace UnityEngine.Rendering.RadeonRays;
 
-internal struct MeshBuildMemoryRequirements
+[Flags]
+internal enum BuildFlags
 {
-	public ulong buildScratchSizeInDwords;
-
-	public ulong bvhSizeInDwords;
-
-	public ulong bvhLeavesSizeInDwords;
+	None = 0,
+	PreferFastBuild = 1
 }

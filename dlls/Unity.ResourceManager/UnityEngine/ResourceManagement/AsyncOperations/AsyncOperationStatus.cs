@@ -1,8 +1,12 @@
-namespace UnityEngine.ResourceManagement.AsyncOperations;
-
-public enum AsyncOperationStatus
+namespace UnityEngine.ResourceManagement.AsyncOperations
 {
-	None,
-	Succeeded,
-	Failed
+	public enum AsyncOperationStatus
+	{
+		None,
+		Succeeded,
+		Failed
+	}
+}
+namespace UnityEngine.ResourceManagement.ResourceProviders
+{
 }

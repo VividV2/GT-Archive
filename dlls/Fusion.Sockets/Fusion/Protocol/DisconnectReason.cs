@@ -1,3 +1,9 @@
+namespace Microsoft.CodeAnalysis
+{
+}
+namespace Fusion.Protocol
+{
+}
 namespace Fusion.Protocol
 {
 	public enum DisconnectReason : byte
@@ -11,7 +17,4 @@ namespace Fusion.Protocol
 		ServerAlreadyInRoom,
 		Error
 	}
-}
-namespace Fusion.Protocol
-{
 }

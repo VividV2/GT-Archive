@@ -1,10 +1,2 @@
-using System;
-using Meta.WitAi.TTS.Data;
-using UnityEngine.Events;
-
-namespace Meta.WitAi.TTS.Events;
-
-[Serializable]
-public class TTSClipDownloadEvent : UnityEvent<TTSClipData, string>
-{
-}
+// Could not decompile Meta.WitAi.TTS.Events.TTSClipDownloadEvent
+// This type uses unsupported IL or has too many generic parameters.

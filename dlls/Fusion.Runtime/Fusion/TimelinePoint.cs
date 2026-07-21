@@ -1,9 +1,10 @@
-namespace Fusion.LagCompensation;
+namespace Fusion;
 
-public enum HitType
+internal struct TimelinePoint(Tick snapshot, Tick tick, double tickDeltaDouble)
 {
-	None,
-	Hitbox,
-	PhysX,
-	Box2D
+	public Tick Snapshot = snapshot;
+
+	public Tick Tick = tick;
+
+	public double Time = (double)(int)tick * tickDeltaDouble;
 }

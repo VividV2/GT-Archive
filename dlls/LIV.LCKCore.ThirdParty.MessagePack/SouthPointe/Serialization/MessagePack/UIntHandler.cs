@@ -1,2 +1,9 @@
-// Could not decompile SouthPointe.Serialization.MessagePack.UIntHandler
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System;
+
+namespace SouthPointe.Serialization.MessagePack;
+
+[AttributeUsage(AttributeTargets.Method, Inherited = false)]
+public sealed class OnDeserializingAttribute : Attribute
+{
+}

@@ -1,0 +1,6 @@
+namespace Fusion
+{
+}
+namespace Fusion
+{
+}

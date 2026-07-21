@@ -1,19 +1,15 @@
-namespace Unity.Collections.LowLevel.Unsafe
+namespace Unity.Collections.LowLevel.Unsafe;
+
+[GenerateTestsForBurstCompatibility]
+internal struct UnsafeStreamRange
 {
-	[GenerateTestsForBurstCompatibility]
-	internal struct UnsafeStreamRange
-	{
-		internal unsafe UnsafeStreamBlock* Block;
+	internal unsafe UnsafeStreamBlock* Block;
 
-		internal int OffsetInFirstBlock;
+	internal int OffsetInFirstBlock;
 
-		internal int ElementCount;
+	internal int ElementCount;
 
-		internal int LastOffset;
+	internal int LastOffset;
 
-		internal int NumberOfBlocks;
-	}
-}
-namespace Unity.Collections.LowLevel.Unsafe
-{
+	internal int NumberOfBlocks;
 }

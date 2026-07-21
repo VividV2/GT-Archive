@@ -1,9 +1,2 @@
-using System;
-using System;
-
-namespace Oculus.Platform.Models;
-
-public class LaunchInvitePanelFlowResult(IntPtr o)
-{
-	public readonly UserList InvitedUsers = new UserList(CAPI.ovr_LaunchInvitePanelFlowResult_GetInvitedUsers(o));
-}
+// Could not decompile Oculus.Platform.Models.PidList
+// This type uses unsupported IL or has too many generic parameters.

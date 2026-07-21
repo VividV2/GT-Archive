@@ -1,2 +1,6 @@
-// Could not decompile System.Diagnostics.SymbolStore.SymLanguageVendor
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Collections
+{
+}
+namespace System.Collections
+{
+}

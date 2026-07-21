@@ -1,15 +1,8 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public enum DistanceMetric
 {
-	public enum DistanceMetric
-	{
-		Perspective,
-		Orthographic,
-		CustomAxis
-	}
-}
-namespace UnityEngine.Rendering.RendererUtils
-{
-}
-namespace UnityEngine.Rendering
-{
+	Perspective,
+	Orthographic,
+	CustomAxis
 }

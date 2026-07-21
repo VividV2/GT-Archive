@@ -1,2 +1,8 @@
-// Could not decompile Unity.Burst.CompilerServices.SkipLocalsInitAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.Burst.CompilerServices;
+
+[AttributeUsage(AttributeTargets.Method)]
+public class SkipLocalsInitAttribute : Attribute
+{
+}

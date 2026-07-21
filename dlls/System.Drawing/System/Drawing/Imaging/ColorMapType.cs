@@ -1,9 +1,11 @@
-namespace System.Drawing.Drawing2D
+namespace System.Drawing;
+
+internal struct GdiColorPalette
 {
-	public enum CoordinateSpace
-	{
-		World,
-		Page,
-		Device
-	}
+	internal int Flags;
+
+	internal int Count;
+}
+namespace System.Drawing
+{
 }

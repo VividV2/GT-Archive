@@ -1,11 +1,7 @@
-namespace Liv.Lck.GorillaTag
+namespace Liv.Lck.GorillaTag;
+
+public enum DroneMovementMode
 {
-	public enum DroneMovementMode
-	{
-		Free,
-		Orbiting
-	}
-}
-namespace Liv.Lck.GorillaTag
-{
+	Free,
+	Orbiting
 }

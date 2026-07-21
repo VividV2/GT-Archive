@@ -1,8 +1,2 @@
-using System;
-using UnityEngine;
-using UnityEngine.Events;
-
-[Serializable]
-public class LightningDispatcherEvent : UnityEvent<Vector3, Vector3>
-{
-}
+// Could not decompile LightningDispatcherEvent
+// This type uses unsupported IL or has too many generic parameters.

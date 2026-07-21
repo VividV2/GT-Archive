@@ -1,9 +1,2 @@
-using Meta.WitAi.Configuration;
-using Meta.WitAi.Configuration;
-
-namespace Meta.WitAi;
-
-public interface IWitRuntimeConfigSetter
-{
-	WitRuntimeConfiguration RuntimeConfiguration { set; }
-}
+// Could not decompile Meta.WitAi.Events.EventRegistry
+// This type uses unsupported IL or has too many generic parameters.

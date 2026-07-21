@@ -1,8 +1,2 @@
-namespace Fusion.Photon.Realtime;
-
-internal enum LobbyType : byte
-{
-	Default = 0,
-	SqlLobby = 2,
-	AsyncRandomLobby = 3
-}
+// Could not decompile Fusion.Photon.Realtime.PhotonPing
+// This type uses unsupported IL or has too many generic parameters.

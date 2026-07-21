@@ -1,2 +1,2 @@
-namespace Meta.WitAi;
-
+// Could not decompile Meta.WitAi.MatchIntentRegistry
+// This type uses unsupported IL or has too many generic parameters.

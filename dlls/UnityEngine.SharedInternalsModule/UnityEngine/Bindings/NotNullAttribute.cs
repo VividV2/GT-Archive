@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.Bindings.NotNullAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Bindings
+{
+	[AttributeUsage(AttributeTargets.Parameter)]
+	[VisibleToOtherModules]
+	internal class NotNullAttribute : Attribute, IBindingsAttribute
+	{
+	}
+}
+namespace UnityEngine.Bindings
+{
+}

@@ -1,3 +1,3 @@
-namespace System.Diagnostics
+namespace Mono.Net.Security
 {
 }

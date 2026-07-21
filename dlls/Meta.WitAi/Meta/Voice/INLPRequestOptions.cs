@@ -1,8 +1,8 @@
-namespace Meta.Voice;
+using UnityEngine;
 
-public interface INLPRequestOptions : ITranscriptionRequestOptions, IVoiceRequestOptions
+namespace Meta.Voice.Audio
 {
-	NLPRequestInputType InputType { get; set; }
-
-	string Text { get; set; }
-}
+	public interface IAudioClipSetter
+	{
+		bool SetClip(AudioClip clip);
+	}

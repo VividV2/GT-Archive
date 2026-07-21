@@ -1,2 +1,39 @@
-// Could not decompile PlayFab.ClientModels.RegisterPlayFabUserRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels
+{
+	[Serializable]
+	public class PSNAccountPlayFabIdPair : PlayFabBaseModel
+	{
+		public string PlayFabId;
+
+		public string PSNAccountId;
+	}
+}
+namespace PlayFab.ClientModels
+{
+	[Serializable]
+	public class RegisterPlayFabUserRequest : PlayFabRequestCommon
+	{
+		public string DisplayName;
+
+		public string Email;
+
+		public string EncryptedRequest;
+
+		public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
+
+		public string Password;
+
+		public string PlayerSecret;
+
+		public bool? RequireBothUsernameAndEmail;
+
+		public string TitleId;
+
+		public string Username;
+	}
+}

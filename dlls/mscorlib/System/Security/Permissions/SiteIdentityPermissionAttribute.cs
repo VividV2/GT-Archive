@@ -1,6 +1,2 @@
-namespace System.Security.Permissions
-{
-}
-namespace System.Security.Permissions
-{
-}
+// Could not decompile System.Security.Permissions.SiteIdentityPermissionAttribute
+// This type uses unsupported IL or has too many generic parameters.

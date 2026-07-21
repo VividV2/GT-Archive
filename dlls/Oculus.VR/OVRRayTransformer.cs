@@ -1,2 +1,6 @@
-// Could not decompile OVRRayTransformer
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public abstract class OVRRayTransformer : MonoBehaviour
+{
+	public abstract Ray TransformRay(Ray ray);
+}

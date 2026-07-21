@@ -1,20 +1,2 @@
-namespace System.Net
-{
-}
-namespace System.Net
-{
-	internal enum DataParseStatus
-	{
-		NeedMoreData,
-		ContinueParsing,
-		Done,
-		Invalid,
-		DataTooBig
-	}
-}
-namespace System.Net
-{
-}
-namespace System.Net
-{
-}
+// Could not decompile System.Net.ExceptionCheck
+// This type uses unsupported IL or has too many generic parameters.

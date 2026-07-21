@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.ProBuilder.KdTree.HyperRect`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.ProBuilder.KdTree;
+
+internal enum AddDuplicateBehavior
+{
+	Skip,
+	Error,
+	Update,
+	Collect
+}

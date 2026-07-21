@@ -1,15 +1,11 @@
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering
-{
-	public interface IXRHoverFilter
-	{
-		bool canProcess { get; }
+namespace UnityEngine.XR.Interaction.Toolkit.Filtering;
 
-		bool Process(IXRHoverInteractor interactor, IXRHoverInteractable interactable);
-	}
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Interactors
+public interface IXRHoverFilter
 {
+	bool canProcess { get; }
+
+	bool Process(IXRHoverInteractor interactor, IXRHoverInteractable interactable);
 }

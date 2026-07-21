@@ -1,7 +1,2 @@
-namespace System.Diagnostics.CodeAnalysis;
-
-[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
-[ExcludeFromCodeCoverage]
-internal sealed class UnscopedRefAttribute : Attribute
-{
-}
+// Could not decompile System.Runtime.Versioning.RequiresPreviewFeaturesAttribute
+// This type uses unsupported IL or has too many generic parameters.

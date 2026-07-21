@@ -1,12 +1,16 @@
-namespace UnityEngine.Rendering;
-
-internal struct DrawBatch
+namespace UnityEngine.Rendering
 {
-	public DrawKey key;
+}
+namespace UnityEngine.Rendering
+{
+	internal struct DrawBatch
+	{
+		public DrawKey key;
 
-	public int instanceCount;
+		public int instanceCount;
 
-	public int instanceOffset;
+		public int instanceOffset;
 
-	public MeshProceduralInfo procInfo;
+		public MeshProceduralInfo procInfo;
+	}
 }

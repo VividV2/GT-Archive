@@ -1,2 +1,0 @@
-namespace UnityEngine.Animations.Rigging;
-

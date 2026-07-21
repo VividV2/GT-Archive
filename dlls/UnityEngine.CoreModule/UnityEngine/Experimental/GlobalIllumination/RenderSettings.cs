@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.Experimental.GlobalIllumination.RenderSettings
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.CompilerServices;
+using UnityEngine.Bindings;
+
+namespace UnityEngine.Experimental.GlobalIllumination;
+
+[NativeHeader("Runtime/Camera/RenderSettings.h")]
+[StaticAccessor("GetRenderSettings()", StaticAccessorType.Dot)]
+public class RenderSettings
+{
+	public static extern bool useRadianceAmbientProbe
+	{
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		get;
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		set;
+	}
+}

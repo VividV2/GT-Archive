@@ -1,2 +1,8 @@
-// Could not decompile System.Security.Permissions.PermissionHelper
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.ComponentModel;
+
+public interface ICancelAddNew
+{
+	void CancelNew(int itemIndex);
+
+	void EndNew(int itemIndex);
+}

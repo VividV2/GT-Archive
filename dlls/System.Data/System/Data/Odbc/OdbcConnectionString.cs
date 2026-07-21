@@ -1,24 +1,2 @@
-namespace System.Data
-{
-}
-namespace System.Data.SqlTypes
-{
-	internal enum SqlBytesCharsState
-	{
-		Null = 0,
-		Buffer = 1,
-		Stream = 3
-	}
-}
-namespace System.Data.Odbc
-{
-}
-namespace System.Data.SqlClient
-{
-}
-namespace System.Data.ProviderBase
-{
-}
-namespace Microsoft.SqlServer.Server
-{
-}
+// Could not decompile System.Data.Odbc.OdbcConnectionString
+// This type uses unsupported IL or has too many generic parameters.

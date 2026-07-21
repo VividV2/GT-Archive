@@ -1,12 +1,2 @@
-using System;
-using UnityEngine;
-
-namespace Voxels;
-
-[Serializable]
-public struct TextureEntry
-{
-	public Texture2D Diffuse;
-
-	public Texture2D Normal;
-}
+// Could not decompile GorillaTagScripts.VirtualStumpCustomMaps.UI.PlayerCountHelper
+// This type uses unsupported IL or has too many generic parameters.

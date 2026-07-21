@@ -1,10 +1,2 @@
-namespace System.Reflection.Metadata;
-
-public static class AssemblyExtensions
-{
-	[CLSCompliant(false)]
-	public unsafe static bool TryGetRawMetadata(this Assembly assembly, out byte* blob, out int length)
-	{
-		throw new NotImplementedException();
-	}
-}
+// Could not decompile System.Reflection.Metadata.AssemblyExtensions
+// This type uses unsupported IL or has too many generic parameters.

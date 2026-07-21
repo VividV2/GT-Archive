@@ -1,21 +1,9 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public enum RealtimeGICPUUsage
 {
-	public enum RealtimeGICPUUsage
-	{
-		Low = 25,
-		Medium = 50,
-		High = 75,
-		Unlimited = 100
-	}
-}
-namespace UnityEngine.Rendering
-{
-	public enum LightShadowResolution
-	{
-		FromQualitySettings = -1,
-		Low,
-		Medium,
-		High,
-		VeryHigh
-	}
+	Low = 25,
+	Medium = 50,
+	High = 75,
+	Unlimited = 100
 }

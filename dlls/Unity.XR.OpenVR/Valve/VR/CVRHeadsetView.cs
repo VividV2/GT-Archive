@@ -1,2 +1,8 @@
-// Could not decompile Valve.VR.CVRHeadsetView
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR;
+
+public struct Compositor_BenchmarkResults
+{
+	public float m_flMegaPixelsPerSecond;
+
+	public float m_flHmdRecommendedMegaPixelsPerSecond;
+}

@@ -1,6 +1,3 @@
-namespace Microsoft.CodeAnalysis
-{
-}
 namespace Newtonsoft.Json
 {
 	public interface IArrayPool<T>
@@ -8,5 +5,15 @@ namespace Newtonsoft.Json
 		T[] Rent(int minimumLength);
 
 		void Return(T[]? array);
+	}
+}
+namespace Newtonsoft.Json
+{
+	internal enum JsonContainerType
+	{
+		None,
+		Object,
+		Array,
+		Constructor
 	}
 }

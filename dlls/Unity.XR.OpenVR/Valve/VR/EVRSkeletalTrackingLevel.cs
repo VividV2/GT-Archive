@@ -1,3 +1,19 @@
+namespace Valve.VR;
+
+public enum EChaperoneImportFlags
+{
+	EChaperoneImport_BoundsOnly = 1
+}
+namespace Valve.VR
+{
+	public enum EVRSkeletalReferencePose
+	{
+		BindPose,
+		OpenHand,
+		Fist,
+		GripLimit
+	}
+}
 namespace Valve.VR
 {
 	public enum EVRSkeletalTrackingLevel
@@ -7,21 +23,5 @@ namespace Valve.VR
 		VRSkeletalTracking_Full = 2,
 		Count = 3,
 		Max = 2
-	}
-}
-namespace Valve.VR
-{
-	public enum ChaperoneCalibrationState
-	{
-		OK = 1,
-		Warning = 100,
-		Warning_BaseStationMayHaveMoved = 101,
-		Warning_BaseStationRemoved = 102,
-		Warning_SeatedBoundsInvalid = 103,
-		Error = 200,
-		Error_BaseStationUninitialized = 201,
-		Error_BaseStationConflict = 202,
-		Error_PlayAreaInvalid = 203,
-		Error_CollisionBoundsInvalid = 204
 	}
 }

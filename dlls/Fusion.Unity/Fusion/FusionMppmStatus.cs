@@ -1,12 +1,8 @@
-namespace Fusion
+namespace Fusion;
+
+public enum FusionMppmStatus
 {
-	public enum FusionMppmStatus
-	{
-		Disabled,
-		MainInstance,
-		VirtualInstance
-	}
-}
-namespace Fusion
-{
+	Disabled,
+	MainInstance,
+	VirtualInstance
 }

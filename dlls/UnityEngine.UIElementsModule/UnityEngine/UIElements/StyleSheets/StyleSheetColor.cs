@@ -1,2 +1,2 @@
-namespace UnityEngine.UIElements.Layout;
-
+// Could not decompile UnityEngine.UIElements.StyleSheets.StyleSheetColor
+// This type uses unsupported IL or has too many generic parameters.

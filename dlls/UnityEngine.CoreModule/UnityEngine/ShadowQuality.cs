@@ -1,12 +1,8 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum ShadowQuality
 {
-	public enum ShadowQuality
-	{
-		Disable,
-		HardOnly,
-		All
-	}
-}
-namespace UnityEngine
-{
+	Disable,
+	HardOnly,
+	All
 }

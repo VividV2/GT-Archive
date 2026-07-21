@@ -1,11 +1,3 @@
-namespace System.EnterpriseServices
+namespace System.EnterpriseServices.Internal
 {
-	[AttributeUsage(AttributeTargets.Class)]
-	[ComVisible(false)]
-	public sealed class PrivateComponentAttribute : Attribute
-	{
-		public PrivateComponentAttribute()
-		{
-		}
-	}
 }

@@ -1,6 +1,7 @@
-namespace System.IO.Compression
+namespace System.Net
 {
+	public delegate void UploadFileCompletedEventHandler(object sender, UploadFileCompletedEventArgs e);
 }
-namespace System.Text.RegularExpressions
+namespace System.Security.Cryptography.X509Certificates
 {
 }

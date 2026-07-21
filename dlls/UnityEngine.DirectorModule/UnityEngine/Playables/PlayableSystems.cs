@@ -8,6 +8,39 @@ using UnityEngine.Scripting;
 
 namespace UnityEngine.Playables
 {
+	internal static class DataPlayableBinding
+	{
+		public static PlayableBinding Create<TDataStream, TPlayer>(string name, Object key) where TDataStream : new() where TPlayer : Object
+		{
+			return PlayableBinding.CreateInternal(name, key, typeof(TPlayer), CreateDataOutput<TDataStream>);
+		}
+
+		private static PlayableOutput CreateDataOutput<TDataStream>(PlayableGraph graph, string name) where TDataStream : new()
+		{
+			return DataPlayableOutput.Create<TDataStream>(graph, name);
+		}
+	}
+}
+namespace UnityEngine.Playables
+{
+}
+namespace UnityEngine.Playables
+{
+}
+namespace UnityEngine.Playables
+{
+	internal interface IDataPlayer
+	{
+		void Bind(DataPlayableOutput output);
+
+		void Release(DataPlayableOutput output);
+	}
+}
+namespace UnityEngine.Playables
+{
+}
+namespace UnityEngine.Playables
+{
 	[StaticAccessor("PlayableSystemsBindings", StaticAccessorType.DoubleColon)]
 	[NativeHeader("Modules/Director/ScriptBindings/PlayableSystems.bindings.h")]
 	internal static class PlayableSystems
@@ -182,7 +215,4 @@ namespace UnityEngine.Playables
 			s_RWLock = new ReaderWriterLockSlim();
 		}
 	}
-}
-namespace UnityEngine.Playables
-{
 }

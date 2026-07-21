@@ -1,6 +1,10 @@
-namespace Meta.WitAi.Interfaces;
-
-public interface IDataUploadHandler
+namespace Meta.WitAi.Interfaces
 {
-	void Write(byte[] buffer, int offset, int length);
+	public interface IDataUploadHandler
+	{
+		void Write(byte[] buffer, int offset, int length);
+	}
+}
+namespace Meta.WitAi.Events
+{
 }

@@ -1,6 +1,2 @@
-namespace System.Collections.Specialized
-{
-}
-namespace System.Security.Cryptography.X509Certificates
-{
-}
+// Could not decompile Microsoft.Win32.IntranetZoneCredentialPolicy
+// This type uses unsupported IL or has too many generic parameters.

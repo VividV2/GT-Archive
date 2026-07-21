@@ -1,14 +1,12 @@
-using System.Collections.Generic;
+namespace System.IO;
 
-namespace System.Collections.Concurrent;
-
-public interface IProducerConsumerCollection<T> : IEnumerable<T>, IEnumerable, ICollection
+/// <summary>Specifies the position in a stream to use for seeking.</summary>
+public enum SeekOrigin
 {
-	void CopyTo(T[] array, int index);
-
-	bool TryAdd(T item);
-
-	bool TryTake(out T item);
-
-	T[] ToArray();
+	/// <summary>Specifies the beginning of a stream.</summary>
+	Begin,
+	/// <summary>Specifies the current position within a stream.</summary>
+	Current,
+	/// <summary>Specifies the end of a stream.</summary>
+	End
 }

@@ -1,11 +1,7 @@
-namespace UnityEngine.Audio
+namespace UnityEngine.Audio;
+
+public enum AudioMixerUpdateMode
 {
-	public enum AudioMixerUpdateMode
-	{
-		Normal,
-		UnscaledTime
-	}
-}
-namespace UnityEngine.Audio
-{
+	Normal,
+	UnscaledTime
 }

@@ -1,2 +1,2 @@
-namespace Valve.Newtonsoft.Json.Bson;
-
+// Could not decompile Valve.Newtonsoft.Json.Converters.IsoDateTimeConverter
+// This type uses unsupported IL or has too many generic parameters.

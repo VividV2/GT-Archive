@@ -1,20 +1,2 @@
-namespace UnityEngine.UIElements.UIR
-{
-	internal class MeshHandle : LinkedPoolItem<MeshHandle>
-	{
-		internal Alloc allocVerts;
-
-		internal Alloc allocIndices;
-
-		internal uint triangleCount;
-
-		internal Page allocPage;
-
-		internal uint allocTime;
-
-		internal uint updateAllocID;
-	}
-}
-namespace UnityEngine.UIElements.UIR
-{
-}
+// Could not decompile UnityEngine.UIElements.UIR.MeshHandle
+// This type uses unsupported IL or has too many generic parameters.

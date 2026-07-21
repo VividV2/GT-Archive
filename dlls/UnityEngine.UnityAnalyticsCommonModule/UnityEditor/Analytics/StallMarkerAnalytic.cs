@@ -3,29 +3,30 @@ using System.Runtime.InteropServices;
 using UnityEngine.Analytics;
 using UnityEngine.Internal;
 using UnityEngine.Scripting;
+using System;
+using System.Runtime.InteropServices;
+using UnityEngine.Analytics;
+using UnityEngine.Internal;
+using UnityEngine.Scripting;
 
 namespace UnityEditor.Analytics;
 
 [Serializable]
 [StructLayout(LayoutKind.Sequential)]
-[RequiredByNativeCode(GenerateProxy = true)]
 [ExcludeFromDocs]
-internal class StallMarkerAnalytic : AnalyticsEventBase
+[RequiredByNativeCode(GenerateProxy = true)]
+public class VCProviderAnalytics : AnalyticsEventBase
 {
-	public string Name;
+	public string Mode;
 
-	public bool HasProgressMarkup;
-
-	public double Duration;
-
-	public StallMarkerAnalytic()
-		: base("editorStallMarker", 1)
+	public VCProviderAnalytics()
+		: base("versioncontrol_ProviderSettings_OnUpdate", 1)
 	{
 	}
 
 	[RequiredByNativeCode]
-	internal static StallMarkerAnalytic CreateStallMarkerAnalytic()
+	internal static VCProviderAnalytics CreateVCProviderAnalytics()
 	{
-		return new StallMarkerAnalytic();
+		return new VCProviderAnalytics();
 	}
 }

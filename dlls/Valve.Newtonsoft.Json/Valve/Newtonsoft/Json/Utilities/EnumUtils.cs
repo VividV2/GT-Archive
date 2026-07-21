@@ -1,16 +1,2 @@
-using System.Collections.Generic;
-using Valve.Newtonsoft.Json.Utilities;
-using System.Collections.Generic;
-using Valve.Newtonsoft.Json.Utilities;
-
-namespace Valve.Newtonsoft.Json.Serialization;
-
-internal class DefaultContractResolverState
-{
-	public Dictionary<ResolverContractKey, JsonContract> ContractCache;
-
-	public PropertyNameTable NameTable = new PropertyNameTable();
-}
-namespace Valve.Newtonsoft.Json.Utilities
-{
-}
+// Could not decompile Valve.Newtonsoft.Json.Utilities.EnumUtils
+// This type uses unsupported IL or has too many generic parameters.

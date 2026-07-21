@@ -1,5 +1,14 @@
 using System.Xml.XPath;
 
+namespace MS.Internal.Xml.XPath
+{
+}
+namespace System.Xml.Xsl.XsltOld
+{
+}
+namespace System.Xml.Serialization
+{
+}
 namespace System.Xml.Xsl.Runtime
 {
 	internal abstract class XmlSequenceWriter
@@ -10,7 +19,4 @@ namespace System.Xml.Xsl.Runtime
 
 		public abstract void WriteItem(XPathItem item);
 	}
-}
-namespace System.Xml.Schema
-{
 }

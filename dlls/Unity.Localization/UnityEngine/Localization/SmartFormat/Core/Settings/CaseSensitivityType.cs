@@ -1,7 +1,14 @@
-namespace UnityEngine.Localization.SmartFormat.Core.Settings;
-
-public enum CaseSensitivityType
+namespace UnityEngine.Localization.SmartFormat.Core.Settings
 {
-	CaseSensitive,
-	CaseInsensitive
+	public enum CaseSensitivityType
+	{
+		CaseSensitive,
+		CaseInsensitive
+	}
+}
+namespace UnityEngine.Localization
+{
+}
+namespace UnityEngine.Localization.Metadata
+{
 }

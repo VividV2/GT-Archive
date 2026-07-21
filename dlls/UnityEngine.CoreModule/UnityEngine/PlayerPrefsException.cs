@@ -1,6 +1,11 @@
-namespace UnityEngine
+using System;
+
+namespace UnityEngine;
+
+public class PlayerPrefsException : Exception
 {
-}
-namespace UnityEngine
-{
+	public PlayerPrefsException(string error)
+		: base(error)
+	{
+	}
 }

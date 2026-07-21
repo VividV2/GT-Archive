@@ -1,2 +1,2 @@
-namespace Microsoft.Win32.SafeHandles;
-
+// Could not decompile System.Reflection.DispatchProxy
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,7 +1,6 @@
-namespace System.Data.Sql
+namespace System.Data.SqlClient
 {
 }
-namespace System.Data
+namespace System.Data.SqlClient.SNI
 {
-	public delegate void DataRowChangeEventHandler(object sender, DataRowChangeEventArgs e);
 }

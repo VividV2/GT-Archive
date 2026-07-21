@@ -1,6 +1,2 @@
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Cryptography.X509Certificates;
-
-namespace Mono.Security.Interface;
-
-internal delegate X509Certificate MonoServerCertificateSelectionCallback(object sender, string hostName);
+// Could not decompile Mono.Security.Interface.MonoTlsConnectionInfo
+// This type uses unsupported IL or has too many generic parameters.

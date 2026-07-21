@@ -1,2 +1,2 @@
-namespace Meta.XR.MultiplayerBlocks.Fusion;
+namespace Fusion.CodeGen;
 

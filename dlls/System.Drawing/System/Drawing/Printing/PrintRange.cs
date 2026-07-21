@@ -1,3 +1,7 @@
-namespace System.Drawing.Printing
+namespace System.Drawing.Drawing2D;
+
+public enum CompositingMode
 {
+	SourceOver,
+	SourceCopy
 }

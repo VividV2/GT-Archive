@@ -4,6 +4,3 @@ public interface ICapabilityModifier
 {
 	bool TryGetCapabilityValue(string capabilityKey, out bool capabilityValue);
 }
-namespace Unity.XR.CoreUtils.Collections
-{
-}

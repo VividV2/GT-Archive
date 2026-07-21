@@ -1,8 +1,5 @@
 namespace System.Net
 {
-}
-namespace System.Net
-{
 	internal enum DataParseStatus
 	{
 		NeedMoreData,
@@ -12,7 +9,7 @@ namespace System.Net
 		DataTooBig
 	}
 }
-namespace System.Net
+namespace System.Diagnostics
 {
 }
 namespace System.Net

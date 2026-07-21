@@ -1,18 +1,2 @@
-namespace System.CodeDom
-{
-}
-namespace System
-{
-	/// <summary>A customizable parser based on the news scheme using the Network News Transfer Protocol (NNTP).</summary>
-	public class NewsStyleUriParser : UriParser
-	{
-		/// <summary>Create a customizable parser based on the news scheme using the Network News Transfer Protocol (NNTP).</summary>
-		public NewsStyleUriParser()
-			: base(UriParser.NewsUri.Flags)
-		{
-		}
-	}
-}
-namespace System.Security.Authentication.ExtendedProtection.Configuration
-{
-}
+// Could not decompile System.NewsStyleUriParser
+// This type uses unsupported IL or has too many generic parameters.

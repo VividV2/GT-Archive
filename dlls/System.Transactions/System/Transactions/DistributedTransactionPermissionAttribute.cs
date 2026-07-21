@@ -1,2 +1,2 @@
-namespace System.Transactions.Configuration;
+namespace System.Transactions;
 

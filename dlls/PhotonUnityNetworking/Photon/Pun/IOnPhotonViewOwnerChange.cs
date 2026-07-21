@@ -1,8 +1,12 @@
 using Photon.Realtime;
 
-namespace Photon.Pun;
-
-public interface IOnPhotonViewOwnerChange : IPhotonViewCallback
+namespace Photon.Pun
 {
-	void OnOwnerChange(Player newOwner, Player previousOwner);
+}
+namespace Photon.Pun
+{
+	public interface IOnPhotonViewOwnerChange : IPhotonViewCallback
+	{
+		void OnOwnerChange(Player newOwner, Player previousOwner);
+	}
 }

@@ -1,10 +1,2 @@
-namespace GorillaNetworking;
-
-public class CheckForBadNameRequest
-{
-	public string name;
-
-	public bool forRoom;
-
-	public bool forTroop;
-}
+// Could not decompile GorillaNetworking.CheckForBadNameRequest
+// This type uses unsupported IL or has too many generic parameters.

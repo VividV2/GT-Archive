@@ -1,5 +1,4 @@
 using System.Xml.Xsl.Qil;
-using System.Xml.Xsl.Qil;
 
 namespace System.Xml.Xsl.XPath
 {
@@ -12,21 +11,12 @@ namespace System.Xml.Xsl.XPath
 		QilNode GetLast();
 	}
 }
+namespace System.Xml.Schema
+{
+}
 namespace System.Xml.Serialization
 {
-	internal enum TypeKind
-	{
-		Root,
-		Primitive,
-		Enum,
-		Struct,
-		Class,
-		Array,
-		Collection,
-		Enumerable,
-		Void,
-		Node,
-		Attribute,
-		Serializable
-	}
+}
+namespace System.Xml.Serialization
+{
 }

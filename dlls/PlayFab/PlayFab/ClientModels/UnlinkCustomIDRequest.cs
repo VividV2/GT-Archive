@@ -1,11 +1,10 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class UnlinkCustomIDRequest : PlayFabRequestCommon
 {
-	[Serializable]
-	public class UserAppleIdInfo : PlayFabBaseModel
-	{
-		public string AppleSubjectId;
-	}
+	public string CustomId;
 }

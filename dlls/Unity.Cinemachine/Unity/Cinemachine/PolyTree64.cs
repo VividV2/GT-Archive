@@ -1,12 +1,2 @@
-namespace Unity.Cinemachine
-{
-	internal class PolyTree64 : PolyPath64
-	{
-	}
-}
-namespace Unity.Cinemachine
-{
-}
-namespace Unity.Cinemachine
-{
-}
+// Could not decompile Unity.Cinemachine.PolyTree64
+// This type uses unsupported IL or has too many generic parameters.

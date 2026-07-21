@@ -1,3 +1,0 @@
-namespace System.Data.SqlClient
-{
-}

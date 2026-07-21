@@ -1,19 +1,2 @@
-using System.Runtime.InteropServices;
-
-namespace System
-{
-	[StructLayout(LayoutKind.Sequential)]
-	internal sealed class MonoCQItem
-	{
-		private object[] array;
-
-		private byte[] array_state;
-
-		private int head;
-
-		private int tail;
-	}
-}
-namespace System.Security.Permissions
-{
-}
+// Could not decompile System.MonoCQItem
+// This type uses unsupported IL or has too many generic parameters.

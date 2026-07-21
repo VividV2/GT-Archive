@@ -1,8 +1,9 @@
-namespace Microsoft.SqlServer.Server;
-
-internal abstract class SmiEventSink
+namespace Microsoft.SqlServer.Server
 {
+	internal abstract class SmiEventSink
+	{
+	}
 }
-namespace System.Threading.Tasks
+namespace Microsoft.SqlServer.Server
 {
 }

@@ -1,13 +1,2 @@
-using System;
-using UnityEngine.Scripting;
-
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-	[UsedByNativeCode]
-	public sealed class ExecuteInEditMode : Attribute
-	{
-	}
-}
+// Could not decompile UnityEngine.ExecuteInEditMode
+// This type uses unsupported IL or has too many generic parameters.

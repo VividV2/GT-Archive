@@ -1,6 +1,2 @@
-namespace System.Xml.Xsl.Runtime
-{
-}
-namespace System.Xml
-{
-}
+// Could not decompile Microsoft.Win32.UnsafeNativeMethods
+// This type uses unsupported IL or has too many generic parameters.

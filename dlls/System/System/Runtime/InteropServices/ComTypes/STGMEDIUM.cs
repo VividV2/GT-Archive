@@ -1,6 +1,6 @@
-namespace System.Configuration
+namespace System.Security.Permissions
 {
 }
-namespace Mono.Net.Security
+namespace System.IO.Ports
 {
 }

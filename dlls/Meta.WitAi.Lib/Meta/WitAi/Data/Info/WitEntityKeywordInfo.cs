@@ -1,18 +1,2 @@
-using System;
-using System;
-
-namespace Meta.WitAi.Data.Info;
-
-[Serializable]
-public struct WitVoiceInfo
-{
-	public string name;
-
-	public string locale;
-
-	public string gender;
-
-	public string[] styles;
-
-	public string[] supported_features;
-}
+// Could not decompile Meta.WitAi.Data.Info.WitEntityKeywordInfo
+// This type uses unsupported IL or has too many generic parameters.

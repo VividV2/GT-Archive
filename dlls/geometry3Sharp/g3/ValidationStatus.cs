@@ -1,9 +1,15 @@
-namespace g3
+namespace g3;
+
+public enum ValidationStatus
 {
-}
-namespace g3
-{
-}
-namespace g3
-{
+	Ok,
+	NotAVertex,
+	NotBoundaryVertex,
+	NotBoundaryEdge,
+	NotATriangle,
+	VerticesNotConnectedByEdge,
+	IncorrectLoopOrientation,
+	DuplicateTriangles,
+	NearDegenerateMeshEdges,
+	NearDenegerateInputGeometry
 }

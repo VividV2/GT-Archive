@@ -1,5 +1,61 @@
 using System;
+using UnityEngine.Bindings;
+using UnityEngine.Bindings;
 
+namespace UnityEngine.Rendering
+{
+	[NativeHeader("Runtime/GfxDevice/GfxDeviceTypes.h")]
+	public enum BlendOp
+	{
+		Add,
+		Subtract,
+		ReverseSubtract,
+		Min,
+		Max,
+		LogicalClear,
+		LogicalSet,
+		LogicalCopy,
+		LogicalCopyInverted,
+		LogicalNoop,
+		LogicalInvert,
+		LogicalAnd,
+		LogicalNand,
+		LogicalOr,
+		LogicalNor,
+		LogicalXor,
+		LogicalEquivalence,
+		LogicalAndReverse,
+		LogicalAndInverted,
+		LogicalOrReverse,
+		LogicalOrInverted,
+		Multiply,
+		Screen,
+		Overlay,
+		Darken,
+		Lighten,
+		ColorDodge,
+		ColorBurn,
+		HardLight,
+		SoftLight,
+		Difference,
+		Exclusion,
+		HSLHue,
+		HSLSaturation,
+		HSLColor,
+		HSLLuminosity
+	}
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine
+{
+	public enum HDRDisplayBitDepth
+	{
+		BitDepth10,
+		BitDepth16
+	}
+}
 namespace UnityEngine.Rendering
 {
 	[Flags]
@@ -16,7 +72,4 @@ namespace UnityEngine.Rendering
 		CommonOpaque = 0x3B,
 		CommonTransparent = 0x17
 	}
-}
-namespace UnityEngine.Rendering
-{
 }

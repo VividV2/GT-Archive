@@ -1,14 +1,2 @@
-namespace Mono.Net.Security;
-
-internal class AsyncRenegotiateRequest : AsyncProtocolRequest
-{
-	public AsyncRenegotiateRequest(MobileAuthenticatedStream parent)
-		: base(parent, sync: false)
-	{
-	}
-
-	protected override AsyncOperationStatus Run(AsyncOperationStatus status)
-	{
-		return base.Parent.ProcessHandshake(status, renegotiate: true);
-	}
-}
+// Could not decompile Mono.Net.Security.AsyncRenegotiateRequest
+// This type uses unsupported IL or has too many generic parameters.

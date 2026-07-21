@@ -1,3 +1,9 @@
-namespace System.Security.AccessControl
+namespace System
+{
+}
+namespace Mono.Math
+{
+}
+namespace System.Text
 {
 }

@@ -1,18 +1,14 @@
 using System;
 
-namespace UnityEngine.ProBuilder.Shapes
-{
-	[AttributeUsage(AttributeTargets.Class)]
-	public class ShapeAttribute : Attribute
-	{
-		public string name;
+namespace UnityEngine.ProBuilder.Shapes;
 
-		public ShapeAttribute(string n)
-		{
-			name = n;
-		}
-	}
-}
-namespace UnityEngine.ProBuilder
+[AttributeUsage(AttributeTargets.Class)]
+public class ShapeAttribute : Attribute
 {
+	public string name;
+
+	public ShapeAttribute(string n)
+	{
+		name = n;
+	}
 }

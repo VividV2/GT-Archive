@@ -1,6 +1,11 @@
-namespace Unity.XR.CoreUtils
+using System;
+
+namespace Unity.XR.CoreUtils;
+
+[Flags]
+public enum CachedSearchType
 {
-}
-namespace Unity.XR.CoreUtils
-{
+	Children = 1,
+	Self = 2,
+	Parents = 4
 }

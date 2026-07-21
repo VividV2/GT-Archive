@@ -1,8 +1,2 @@
-using System;
-
-namespace UnityEngine.UIElements;
-
-[AttributeUsage(AttributeTargets.Class, Inherited = false)]
-public class UxmlObjectAttribute : Attribute
-{
-}
+// Could not decompile UnityEngine.UIElements.UxmlObjectAttribute
+// This type uses unsupported IL or has too many generic parameters.

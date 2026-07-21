@@ -1,11 +1,2 @@
-using UnityEngine;
-
-namespace Meta.WitAi.Data;
-
-public class SimulatedResponseMessage
-{
-	public float delay;
-
-	[TextArea]
-	public string responseBody;
-}
+// Could not decompile Meta.WitAi.Data.SimulatedResponseMessage
+// This type uses unsupported IL or has too many generic parameters.

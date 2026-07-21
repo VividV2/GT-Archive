@@ -1,8 +1,2 @@
-using System.Collections.Generic;
-
-namespace GorillaNetworking;
-
-public class SubmitAcceptedAgreementsRequest
-{
-	public Dictionary<string, string> Agreements;
-}
+// Could not decompile GorillaNetworking.SubmitAcceptedAgreementsRequest
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,18 @@
-// Could not decompile System.Linq.Parallel.Wrapper`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq.Parallel
+{
+	internal struct Wrapper<T>
+	{
+		internal T Value;
+
+		internal Wrapper(T value)
+		{
+			Value = value;
+		}
+	}
+}
+namespace System.Linq
+{
+}
+namespace System.Linq.Parallel
+{
+}

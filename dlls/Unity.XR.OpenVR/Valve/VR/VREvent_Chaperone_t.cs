@@ -1,8 +1,11 @@
-namespace Valve.VR;
-
-public struct VREvent_Chaperone_t
+namespace Valve.VR
 {
-	public ulong m_nPreviousUniverse;
+	public struct HmdVector3d_t
+	{
+		public double v0;
 
-	public ulong m_nCurrentUniverse;
+		public double v1;
+
+		public double v2;
+	}
 }

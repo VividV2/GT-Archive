@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.UIElements.UIR.LinkedPoolItem`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements.UIR;
+
+internal class LinkedPoolItem<T>
+{
+	internal T poolNext;
+}

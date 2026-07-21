@@ -1,15 +1,2 @@
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-	public enum PrimitiveType
-	{
-		Sphere,
-		Capsule,
-		Cylinder,
-		Cube,
-		Plane,
-		Quad
-	}
-}
+namespace UnityEngine.Pool;
+

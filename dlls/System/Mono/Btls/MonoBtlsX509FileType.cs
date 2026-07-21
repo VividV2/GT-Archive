@@ -1,8 +1,12 @@
-namespace Mono.Btls;
-
-internal enum MonoBtlsX509FileType
+namespace System.Diagnostics
 {
-	PEM = 1,
-	ASN1,
-	DEFAULT
+}
+namespace Mono.Btls
+{
+	internal enum MonoBtlsX509FileType
+	{
+		PEM = 1,
+		ASN1,
+		DEFAULT
+	}
 }

@@ -1,2 +1,2 @@
-namespace System.Runtime.CompilerServices;
-
+// Could not decompile System.Linq.Parallel.NullableIntMinMaxAggregationOperator
+// This type uses unsupported IL or has too many generic parameters.

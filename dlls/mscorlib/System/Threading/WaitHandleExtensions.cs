@@ -1,2 +1,8 @@
-// Could not decompile System.Threading.WaitHandleExtensions
-// This type uses unsupported IL or has too many generic parameters.
+namespace System;
+
+internal sealed class MonoType : RuntimeType
+{
+	private MonoType()
+	{
+	}
+}

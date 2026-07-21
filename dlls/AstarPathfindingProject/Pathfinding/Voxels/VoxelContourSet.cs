@@ -1,11 +1,2 @@
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Pathfinding.Voxels;
-
-public class VoxelContourSet
-{
-	public List<VoxelContour> conts;
-
-	public Bounds bounds;
-}
+// Could not decompile Pathfinding.Voxels.VoxelContourSet
+// This type uses unsupported IL or has too many generic parameters.

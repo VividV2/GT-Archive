@@ -1,7 +1,3 @@
-namespace System.Threading;
-
-/// <summary>Represents the method that executes on a <see cref="T:System.Threading.Thread" />.</summary>
-public delegate void ThreadStart();
-namespace System
+namespace System.Security.Policy
 {
 }

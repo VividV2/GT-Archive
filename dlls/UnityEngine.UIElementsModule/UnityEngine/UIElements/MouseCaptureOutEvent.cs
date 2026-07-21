@@ -1,2 +1,15 @@
-// Could not decompile UnityEngine.UIElements.MouseCaptureOutEvent
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public class MouseCaptureOutEvent : MouseCaptureEventBase<MouseCaptureOutEvent>
+{
+	static MouseCaptureOutEvent()
+	{
+		EventBase<MouseCaptureOutEvent>.SetCreateFunction(() => new MouseCaptureOutEvent());
+	}
+
+	protected internal override void PreDispatch(IPanel panel)
+	{
+		base.PreDispatch(panel);
+		base.elementTarget.UpdateCursorStyle(eventTypeId);
+	}
+}

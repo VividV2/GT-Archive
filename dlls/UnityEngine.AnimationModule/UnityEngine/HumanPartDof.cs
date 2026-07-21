@@ -1,22 +1,30 @@
 namespace UnityEngine;
 
-public enum HumanPartDof
+public enum QueueMode
 {
-	Body,
-	Head,
-	LeftLeg,
-	RightLeg,
-	LeftArm,
-	RightArm,
-	LeftThumb,
-	LeftIndex,
-	LeftMiddle,
-	LeftRing,
-	LeftLittle,
-	RightThumb,
-	RightIndex,
-	RightMiddle,
-	RightRing,
-	RightLittle,
-	LastHumanPartDof
+	CompleteOthers = 0,
+	PlayNow = 2
+}
+namespace UnityEngine
+{
+	public enum HumanPartDof
+	{
+		Body,
+		Head,
+		LeftLeg,
+		RightLeg,
+		LeftArm,
+		RightArm,
+		LeftThumb,
+		LeftIndex,
+		LeftMiddle,
+		LeftRing,
+		LeftLittle,
+		RightThumb,
+		RightIndex,
+		RightMiddle,
+		RightRing,
+		RightLittle,
+		LastHumanPartDof
+	}
 }

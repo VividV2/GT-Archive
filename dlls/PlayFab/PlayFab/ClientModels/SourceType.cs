@@ -1,14 +1,12 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-
 namespace PlayFab.ClientModels;
 
-[Serializable]
-public class UserAppleIdInfo : PlayFabBaseModel
+public enum SourceType
 {
-	public string AppleSubjectId;
+	Admin,
+	BackEnd,
+	GameClient,
+	GameServer,
+	Partner,
+	Custom,
+	API
 }

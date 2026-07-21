@@ -1,8 +1,8 @@
 namespace UnityEngine.InputSystem.LowLevel;
 
-public interface IInputStateChangeMonitor
+public interface ITextInputReceiver
 {
-	void NotifyControlStateChanged(InputControl control, double time, InputEventPtr eventPtr, long monitorIndex);
+	void OnTextInput(char character);
 
-	void NotifyTimerExpired(InputControl control, double time, long monitorIndex, int timerIndex);
+	void OnIMECompositionChanged(IMECompositionString compositionString);
 }

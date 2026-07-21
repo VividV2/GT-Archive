@@ -1,12 +1,2 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
-
-internal sealed class InternalFE
-{
-	internal FormatterTypeStyle FEtypeFormat;
-
-	internal FormatterAssemblyStyle FEassemblyFormat;
-
-	internal TypeFilterLevel FEsecurityLevel;
-
-	internal InternalSerializerTypeE FEserializerTypeEnum;
-}
+// Could not decompile System.Runtime.Serialization.Formatters.Binary.InternalFE
+// This type uses unsupported IL or has too many generic parameters.

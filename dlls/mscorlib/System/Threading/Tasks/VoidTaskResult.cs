@@ -1,8 +1,29 @@
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using System.Security;
 
-namespace System.Threading.Tasks;
+namespace System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Sequential, Size = 1)]
-internal struct VoidTaskResult
+[ComImport]
+[Guid("1CF2B120-547D-101B-8E65-08002B2BD119")]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[SuppressUnmanagedCodeSecurity]
+internal interface IErrorInfo
+{
+	[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+	int GetGUID(out Guid pGuid);
+
+	[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+	int GetSource([MarshalAs(UnmanagedType.BStr)] out string pBstrSource);
+
+	[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+	int GetDescription([MarshalAs(UnmanagedType.BStr)] out string pbstrDescription);
+
+	[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+	int GetHelpFile([MarshalAs(UnmanagedType.BStr)] out string pBstrHelpFile);
+
+	[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+	int GetHelpContext(out uint pdwHelpContext);
+}
+namespace System
 {
 }

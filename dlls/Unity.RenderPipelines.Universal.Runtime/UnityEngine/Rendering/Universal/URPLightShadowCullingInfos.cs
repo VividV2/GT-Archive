@@ -1,15 +1,2 @@
-using Unity.Collections;
-
-namespace UnityEngine.Rendering.Universal;
-
-internal struct URPLightShadowCullingInfos
-{
-	public NativeArray<ShadowSliceData> slices;
-
-	public uint slicesValidMask;
-
-	public readonly bool IsSliceValid(int i)
-	{
-		return (slicesValidMask & (1 << i)) != 0;
-	}
-}
+// Could not decompile UnityEngine.Rendering.Universal.URPLightShadowCullingInfos
+// This type uses unsupported IL or has too many generic parameters.

@@ -3,10 +3,13 @@ using System.Runtime.InteropServices;
 
 namespace Fusion
 {
-	public interface ISpawned : IPublicFacingInterface
+	public interface ISimulationEnter : IPublicFacingInterface
 	{
-		void Spawned();
+		void SimulationEnter();
 	}
+}
+namespace Fusion
+{
 }
 namespace Fusion
 {
@@ -87,11 +90,4 @@ namespace Fusion
 }
 namespace Fusion
 {
-}
-namespace Fusion
-{
-	public interface IBeforeUpdate : IPublicFacingInterface
-	{
-		void BeforeUpdate();
-	}
 }

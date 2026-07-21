@@ -1,8 +1,9 @@
 namespace Valve.Newtonsoft.Json;
 
-public interface IArrayPool<T>
+public enum Required
 {
-	T[] Rent(int minimumLength);
-
-	void Return(T[] array);
+	Default,
+	AllowNull,
+	Always,
+	DisallowNull
 }

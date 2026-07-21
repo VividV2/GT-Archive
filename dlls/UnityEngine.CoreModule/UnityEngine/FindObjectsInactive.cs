@@ -1,7 +1,18 @@
-namespace UnityEngine;
+namespace UnityEngine.Rendering;
 
-public enum FindObjectsInactive
+public struct SubPassDescriptor
 {
-	Exclude,
-	Include
+	public AttachmentIndexArray inputs;
+
+	public AttachmentIndexArray colorOutputs;
+
+	public SubPassFlags flags;
+}
+namespace UnityEngine
+{
+	public enum FindObjectsInactive
+	{
+		Exclude,
+		Include
+	}
 }

@@ -1,6 +1,2 @@
-namespace GorillaTagScripts.UI.ModIO
-{
-}
-namespace GorillaTag.Rendering
-{
-}
+// Could not decompile BakeBlendShape
+// This type uses unsupported IL or has too many generic parameters.

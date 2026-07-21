@@ -1,2 +1,22 @@
-// Could not decompile UnityEngine.TextCore.GlyphMetrics
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics;
+using UnityEngine.Bindings;
+using UnityEngine.Scripting;
+using System.Diagnostics;
+using UnityEngine.Bindings;
+using UnityEngine.Scripting;
+
+namespace UnityEngine.TextCore.LowLevel;
+
+[DebuggerDisplay("{familyName} - {styleName}")]
+[VisibleToOtherModules(new string[] { "UnityEngine.TextCoreTextEngineModule" })]
+[UsedByNativeCode]
+internal struct FontReference
+{
+	public string familyName;
+
+	public string styleName;
+
+	public int faceIndex;
+
+	public string filePath;
+}

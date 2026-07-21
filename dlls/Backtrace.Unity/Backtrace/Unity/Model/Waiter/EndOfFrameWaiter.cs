@@ -1,11 +1,2 @@
-using UnityEngine;
-
-namespace Backtrace.Unity.Model.Waiter;
-
-public class EndOfFrameWaiter : IWaiter
-{
-	public YieldInstruction Wait()
-	{
-		return new WaitForEndOfFrame();
-	}
-}
+// Could not decompile Backtrace.Unity.Model.Waiter.EndOfFrameWaiter
+// This type uses unsupported IL or has too many generic parameters.

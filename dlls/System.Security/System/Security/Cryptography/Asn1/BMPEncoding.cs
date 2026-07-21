@@ -1,24 +1,48 @@
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.Asn1;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.Asn1;
+namespace System.Security.Cryptography.Pkcs;
 
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-[StructLayout(LayoutKind.Sequential)]
-internal sealed class KeyAgreeRecipientInfoAsn
+public abstract class RecipientInfo
 {
-	internal int Version;
+	[CompilerGenerated]
+	private readonly RecipientInfoType <Type>k__BackingField;
 
-	[ExpectedTag(0, ExplicitTag = true)]
-	internal OriginatorIdentifierOrKeyAsn Originator;
+	[CompilerGenerated]
+	private readonly RecipientInfoPal <Pal>k__BackingField;
 
-	[ExpectedTag(1, ExplicitTag = true)]
-	[OctetString]
-	[OptionalValue]
-	internal ReadOnlyMemory<byte>? Ukm;
+	public RecipientInfoType Type
+	{
+		[CompilerGenerated]
+		get
+		{
+			return <Type>k__BackingField;
+		}
+	}
 
-	internal AlgorithmIdentifierAsn KeyEncryptionAlgorithm;
+	public abstract int Version { get; }
 
-	internal RecipientEncryptedKeyAsn[] RecipientEncryptedKeys;
+	public abstract SubjectIdentifier RecipientIdentifier { get; }
+
+	public abstract AlgorithmIdentifier KeyEncryptionAlgorithm { get; }
+
+	public abstract byte[] EncryptedKey { get; }
+
+	internal RecipientInfoPal Pal
+	{
+		[CompilerGenerated]
+		get
+		{
+			return <Pal>k__BackingField;
+		}
+	}
+
+	internal RecipientInfo(RecipientInfoType type, RecipientInfoPal pal)
+	{
+		base..ctor();
+		<Type>k__BackingField = type;
+		<Pal>k__BackingField = pal;
+	}
+
+	internal RecipientInfo()
+	{
+		ThrowStub.ThrowNotSupportedException();
+	}
 }

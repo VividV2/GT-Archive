@@ -1,23 +1,12 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.ExperimentationModels;
 
-namespace PlayFab.MultiplayerModels
+public enum AnalysisTaskState
 {
-	[Serializable]
-	public class GetMultiplayerServerLogsResponse : PlayFabResultCommon
-	{
-		public string LogDownloadUrl;
-	}
-}
-namespace PlayFab.Json
-{
-	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
-	public class JsonProperty : Attribute
-	{
-		public string PropertyName;
-
-		public NullValueHandling NullValueHandling;
-	}
+	Waiting,
+	ReadyForSubmission,
+	SubmittingToPipeline,
+	Running,
+	Completed,
+	Failed,
+	Canceled
 }

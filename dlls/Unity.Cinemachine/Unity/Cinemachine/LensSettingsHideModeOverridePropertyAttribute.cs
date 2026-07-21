@@ -1,11 +1,2 @@
-using UnityEngine;
-
-namespace Unity.Cinemachine
-{
-	public sealed class LensSettingsHideModeOverridePropertyAttribute : PropertyAttribute
-	{
-	}
-}
-namespace Unity.Cinemachine
-{
-}
+// Could not decompile Unity.Cinemachine.LensSettingsHideModeOverridePropertyAttribute
+// This type uses unsupported IL or has too many generic parameters.

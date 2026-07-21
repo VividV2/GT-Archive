@@ -1,32 +1,5 @@
-using System.Xml.Xsl.Qil;
-using System.Xml.Xsl.Qil;
+namespace System.Xml.Serialization;
 
-namespace System.Xml.Xsl.XPath
-{
-	internal interface IFocus
-	{
-		QilNode GetCurrent();
-
-		QilNode GetPosition();
-
-		QilNode GetLast();
-	}
-}
-namespace System.Xml.Serialization
-{
-	internal enum TypeKind
-	{
-		Root,
-		Primitive,
-		Enum,
-		Struct,
-		Class,
-		Array,
-		Collection,
-		Enumerable,
-		Void,
-		Node,
-		Attribute,
-		Serializable
-	}
-}
+/// <summary>Delegate that is used by the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class for serialization of types from SOAP-encoded, non-root XML data. </summary>
+/// <param name="o">The object being serialized.</param>
+public delegate void XmlSerializationWriteCallback(object o);

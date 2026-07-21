@@ -1,34 +1,14 @@
-using System.Collections;
-using System.Collections;
+namespace System.ComponentModel;
 
-namespace System.IO
+/// <summary>Specifies values to indicate whether a property can be bound to a data element or another property.</summary>
+public enum BindableSupport
 {
-	/// <summary>Represents the method that will handle the <see cref="E:System.IO.FileSystemWatcher.Changed" />, <see cref="E:System.IO.FileSystemWatcher.Created" />, or <see cref="E:System.IO.FileSystemWatcher.Deleted" /> event of a <see cref="T:System.IO.FileSystemWatcher" /> class.</summary>
-	/// <param name="sender">The source of the event.</param>
-	/// <param name="e">The <see cref="T:System.IO.FileSystemEventArgs" /> that contains the event data.</param>
-	/// <summary>Represents the method that will handle the <see cref="E:System.IO.FileSystemWatcher.Changed" />, <see cref="E:System.IO.FileSystemWatcher.Created" />, or <see cref="E:System.IO.FileSystemWatcher.Deleted" /> event of a <see cref="T:System.IO.FileSystemWatcher" /> class.</summary>
-	/// <param name="sender">The source of the event.</param>
-	/// <param name="e">The <see cref="T:System.IO.FileSystemEventArgs" /> that contains the event data.</param>
-	public delegate void FileSystemEventHandler(object sender, FileSystemEventArgs e);
-}
-namespace System.ComponentModel.Design
-{
-	/// <summary>Provides support for building a set of related custom designers.</summary>
-	/// <summary>Provides support for building a set of related custom designers.</summary>
-	public interface ITreeDesigner : IDesigner, IDisposable
-	{
-		/// <summary>Gets a collection of child designers.</summary>
-		/// <returns>An <see cref="T:System.Collections.ICollection" />, containing the collection of <see cref="T:System.ComponentModel.Design.IDesigner" /> child objects of the current designer.</returns>
-		/// <summary>Gets a collection of child designers.</summary>
-		/// <returns>An <see cref="T:System.Collections.ICollection" />, containing the collection of <see cref="T:System.ComponentModel.Design.IDesigner" /> child objects of the current designer.</returns>
-		ICollection Children { get; }
-
-		/// <summary>Gets the parent designer.</summary>
-		/// <returns>An <see cref="T:System.ComponentModel.Design.IDesigner" /> representing the parent designer, or <see langword="null" /> if there is no parent.</returns>
-		/// <summary>Gets the parent designer.</summary>
-		/// <returns>An <see cref="T:System.ComponentModel.Design.IDesigner" /> representing the parent designer, or <see langword="null" /> if there is no parent.</returns>
-		IDesigner Parent { get; }
-	}
+	/// <summary>The property is not bindable at design time.</summary>
+	No,
+	/// <summary>The property is bindable at design time.</summary>
+	Yes,
+	/// <summary>The property is set to the default.</summary>
+	Default
 }
 namespace System.ComponentModel
 {

@@ -1,9 +1,2 @@
-namespace UnityEngine.TerrainUtils;
-
-internal enum TerrainMapStatusCode
-{
-	OK = 0,
-	Overlapping = 1,
-	SizeMismatch = 4,
-	EdgeAlignmentMismatch = 8
-}
+// Could not decompile UnityEngine.TerrainTools.TerrainPaintUtility
+// This type uses unsupported IL or has too many generic parameters.

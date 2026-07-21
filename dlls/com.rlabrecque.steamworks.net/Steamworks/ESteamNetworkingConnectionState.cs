@@ -1,33 +1,15 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-
 namespace Steamworks;
 
-[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
-[CallbackIdentity(4106)]
-public struct MusicPlayerWantsPause_t
+public enum ESteamNetworkingConnectionState
 {
-	public const int k_iCallback = 4106;
-}
-namespace Steamworks
-{
-}
-namespace Steamworks
-{
-	public enum ESteamNetworkingConnectionState
-	{
-		k_ESteamNetworkingConnectionState_None = 0,
-		k_ESteamNetworkingConnectionState_Connecting = 1,
-		k_ESteamNetworkingConnectionState_FindingRoute = 2,
-		k_ESteamNetworkingConnectionState_Connected = 3,
-		k_ESteamNetworkingConnectionState_ClosedByPeer = 4,
-		k_ESteamNetworkingConnectionState_ProblemDetectedLocally = 5,
-		k_ESteamNetworkingConnectionState_FinWait = -1,
-		k_ESteamNetworkingConnectionState_Linger = -2,
-		k_ESteamNetworkingConnectionState_Dead = -3,
-		k_ESteamNetworkingConnectionState__Force32Bit = int.MaxValue
-	}
-}
-namespace Steamworks
-{
+	k_ESteamNetworkingConnectionState_None = 0,
+	k_ESteamNetworkingConnectionState_Connecting = 1,
+	k_ESteamNetworkingConnectionState_FindingRoute = 2,
+	k_ESteamNetworkingConnectionState_Connected = 3,
+	k_ESteamNetworkingConnectionState_ClosedByPeer = 4,
+	k_ESteamNetworkingConnectionState_ProblemDetectedLocally = 5,
+	k_ESteamNetworkingConnectionState_FinWait = -1,
+	k_ESteamNetworkingConnectionState_Linger = -2,
+	k_ESteamNetworkingConnectionState_Dead = -3,
+	k_ESteamNetworkingConnectionState__Force32Bit = int.MaxValue
 }

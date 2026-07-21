@@ -1,8 +1,2 @@
-namespace Mono.Btls;
-
-internal enum MonoBtlsX509FileType
-{
-	PEM = 1,
-	ASN1,
-	DEFAULT
-}
+// Could not decompile System.Text.RegularExpressions.Group
+// This type uses unsupported IL or has too many generic parameters.

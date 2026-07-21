@@ -1,2 +1,2 @@
-namespace GorillaTag.CosmeticSystem;
-
+// Could not decompile Example
+// This type uses unsupported IL or has too many generic parameters.

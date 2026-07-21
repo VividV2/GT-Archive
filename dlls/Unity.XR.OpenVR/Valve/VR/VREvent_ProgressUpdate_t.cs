@@ -1,40 +1,16 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public struct VREvent_ProgressUpdate_t
 {
-	public struct VRTextureBounds_t
-	{
-		public float uMin;
+	public ulong ulApplicationPropertyContainer;
 
-		public float vMin;
+	public ulong pathDevice;
 
-		public float uMax;
+	public ulong pathInputSource;
 
-		public float vMax;
-	}
-}
-namespace Valve.VR
-{
-	public struct VREvent_ProgressUpdate_t
-	{
-		public ulong ulApplicationPropertyContainer;
+	public ulong pathProgressAction;
 
-		public ulong pathDevice;
+	public ulong pathIcon;
 
-		public ulong pathInputSource;
-
-		public ulong pathProgressAction;
-
-		public ulong pathIcon;
-
-		public float fProgress;
-	}
-}
-namespace Valve.VR
-{
-	public enum EVRInputStringBits
-	{
-		VRInputString_Hand = 1,
-		VRInputString_ControllerType = 2,
-		VRInputString_InputSource = 4,
-		VRInputString_All = -1
-	}
+	public float fProgress;
 }

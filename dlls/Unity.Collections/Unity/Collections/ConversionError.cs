@@ -1,9 +1,13 @@
-namespace Unity.Collections;
-
-public enum ConversionError
+namespace Unity.Collections
 {
-	None,
-	Overflow,
-	Encoding,
-	CodePoint
+	public enum ConversionError
+	{
+		None,
+		Overflow,
+		Encoding,
+		CodePoint
+	}
+}
+namespace Unity.Collections
+{
 }

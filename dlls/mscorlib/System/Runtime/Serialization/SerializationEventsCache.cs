@@ -1,7 +1,2 @@
-namespace System.Runtime.Remoting.Messaging;
-
-internal enum ArgInfoType : byte
-{
-	In,
-	Out
-}
+// Could not decompile System.Runtime.Serialization.SerializationEventsCache
+// This type uses unsupported IL or has too many generic parameters.

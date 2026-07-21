@@ -1,3 +1,2 @@
-namespace System.Drawing.Design
-{
-}
+// Could not decompile System.Drawing.IconInfo
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,12 +1,8 @@
 using System;
 
-namespace Cysharp.Threading.Tasks
+namespace Cysharp.Threading.Tasks;
+
+public interface IAsyncTextSelectionEventHandler<T> : IDisposable
 {
-	public interface IAsyncTextSelectionEventHandler<T> : IDisposable
-	{
-		UniTask<T> OnTextSelectionAsync();
-	}
-}
-namespace Cysharp.Threading.Tasks
-{
+	UniTask<T> OnTextSelectionAsync();
 }

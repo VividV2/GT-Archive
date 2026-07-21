@@ -1,21 +1,14 @@
-using System.Runtime.InteropServices;
+using System;
+using System;
 
 namespace UnityEngineInternal.Input;
 
-[StructLayout(LayoutKind.Explicit, Pack = 1, Size = 20)]
-internal struct NativeInputEventBuffer
+[Flags]
+internal enum NativeInputUpdateType
 {
-	public const int structSize = 20;
-
-	[FieldOffset(0)]
-	public unsafe void* eventBuffer;
-
-	[FieldOffset(8)]
-	public int eventCount;
-
-	[FieldOffset(12)]
-	public int sizeInBytes;
-
-	[FieldOffset(16)]
-	public int capacityInBytes;
+	Dynamic = 1,
+	Fixed = 2,
+	BeforeRender = 4,
+	Editor = 8,
+	IgnoreFocus = int.MinValue
 }

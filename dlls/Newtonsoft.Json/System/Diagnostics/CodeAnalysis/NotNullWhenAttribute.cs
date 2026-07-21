@@ -1,12 +1,2 @@
-namespace System.Diagnostics.CodeAnalysis;
-
-[AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false)]
-internal sealed class NotNullWhenAttribute : Attribute
-{
-	public bool ReturnValue { get; }
-
-	public NotNullWhenAttribute(bool returnValue)
-	{
-		ReturnValue = returnValue;
-	}
-}
+// Could not decompile System.Diagnostics.CodeAnalysis.NotNullWhenAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,28 @@
-// Could not decompile Valve.Newtonsoft.Json.Serialization.CamelCaseNamingStrategy
-// This type uses unsupported IL or has too many generic parameters.
+using Valve.Newtonsoft.Json.Utilities;
+
+namespace Valve.Newtonsoft.Json.Serialization
+{
+	public class CamelCaseNamingStrategy : NamingStrategy
+	{
+		public CamelCaseNamingStrategy(bool processDictionaryKeys, bool overrideSpecifiedNames)
+		{
+			base.ProcessDictionaryKeys = processDictionaryKeys;
+			base.OverrideSpecifiedNames = overrideSpecifiedNames;
+		}
+
+		public CamelCaseNamingStrategy()
+		{
+		}
+
+		protected override string ResolvePropertyName(string name)
+		{
+			return StringUtils.ToCamelCase(name);
+		}
+	}
+}
+namespace Valve.Newtonsoft.Json
+{
+}
+namespace Valve.Newtonsoft.Json.Utilities
+{
+}

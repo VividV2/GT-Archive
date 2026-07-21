@@ -1,10 +1,9 @@
-namespace System.IO.Ports;
+namespace System.Reflection;
 
-public enum SerialData
+/// <summary>Represents an object that provides a custom type.</summary>
+public interface ICustomTypeProvider
 {
-	Chars = 1,
-	Eof
-}
-namespace System.ComponentModel
-{
+	/// <summary>Gets the custom type provided by this object.</summary>
+	/// <returns>The custom type.</returns>
+	Type GetCustomType();
 }

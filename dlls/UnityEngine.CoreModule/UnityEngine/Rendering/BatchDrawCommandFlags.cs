@@ -1,6 +1,6 @@
 using System;
 
-namespace UnityEngine.Rendering
+namespace UnityEngine
 {
 }
 namespace UnityEngine.Rendering
@@ -18,10 +18,4 @@ namespace UnityEngine.Rendering
 		LODCrossFade = 0x30,
 		UseLegacyLightmapsKeyword = 0x40
 	}
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
 }

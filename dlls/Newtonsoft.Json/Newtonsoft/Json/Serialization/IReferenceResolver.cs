@@ -11,6 +11,14 @@ namespace Newtonsoft.Json.Serialization
 		void AddReference(object context, string reference, object value);
 	}
 }
-namespace Newtonsoft.Json.Serialization
+namespace Newtonsoft.Json.Converters
 {
+	internal interface IXmlDeclaration : IXmlNode
+	{
+		string? Version { get; }
+
+		string? Encoding { get; set; }
+
+		string? Standalone { get; set; }
+	}
 }

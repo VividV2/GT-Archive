@@ -1,7 +1,2 @@
-using UnityEngine;
-
-namespace Unity.Mathematics;
-
-public class DoNotNormalizeAttribute : PropertyAttribute
-{
-}
+// Could not decompile Unity.Mathematics.DoNotNormalizeAttribute
+// This type uses unsupported IL or has too many generic parameters.

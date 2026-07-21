@@ -1,3 +1,6 @@
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Scripting.APIUpdating;
+
 namespace UnityEngine.Rendering
 {
 	public enum VertexAttributeFormat
@@ -16,6 +19,14 @@ namespace UnityEngine.Rendering
 		SInt32
 	}
 }
-namespace UnityEngine.Search
+namespace UnityEngine.Rendering
 {
+	[MovedFrom("UnityEngine.Rendering.RendererUtils")]
+	public enum RendererListStatus
+	{
+		kRendererListInvalid = -2,
+		kRendererListProcessing,
+		kRendererListEmpty,
+		kRendererListPopulated
+	}
 }

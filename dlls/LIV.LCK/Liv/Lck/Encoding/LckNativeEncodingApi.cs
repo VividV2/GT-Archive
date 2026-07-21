@@ -1,9 +1,2 @@
-namespace Liv.Lck.UI
-{
-}
-namespace Liv.Lck.Tablet
-{
-}
-namespace Liv.Lck.Settings
-{
-}
+namespace Liv.NGFX;
+

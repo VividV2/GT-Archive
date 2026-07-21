@@ -1,27 +1,2 @@
-using UnityEngine;
-
-namespace Valve.VR.InteractionSystem.Sample;
-
-public class RenderModelChangerUI : UIElement
-{
-	public GameObject leftPrefab;
-
-	public GameObject rightPrefab;
-
-	protected SkeletonUIOptions ui;
-
-	protected override void Awake()
-	{
-		base.Awake();
-		ui = GetComponentInParent<SkeletonUIOptions>();
-	}
-
-	protected override void OnButtonClick()
-	{
-		base.OnButtonClick();
-		if (ui != null)
-		{
-			ui.SetRenderModel(this);
-		}
-	}
-}
+// Could not decompile Valve.VR.InteractionSystem.Sample.RenderModelChangerUI
+// This type uses unsupported IL or has too many generic parameters.

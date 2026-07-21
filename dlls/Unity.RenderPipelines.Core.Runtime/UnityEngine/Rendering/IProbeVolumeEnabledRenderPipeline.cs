@@ -2,9 +2,6 @@ using System;
 
 namespace UnityEngine.Rendering
 {
-}
-namespace UnityEngine.Rendering
-{
 	public interface IProbeVolumeEnabledRenderPipeline
 	{
 		bool supportProbeVolume { get; }
@@ -14,4 +11,10 @@ namespace UnityEngine.Rendering
 		[Obsolete("This field is no longer necessary")]
 		ProbeVolumeSceneData probeVolumeSceneData { get; }
 	}
+}
+namespace UnityEngine.Rendering
+{
+}
+namespace UnityEngine.Rendering.RenderGraphModule
+{
 }

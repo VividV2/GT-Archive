@@ -1,15 +1,2 @@
-using System;
-
-namespace UnityEngine.Localization.SmartFormat.PersistentVariables
-{
-	public interface IVariableValueChanged : IVariable
-	{
-		event Action<IVariable> ValueChanged;
-	}
-}
-namespace UnityEngine.Localization.Operations
-{
-}
-namespace UnityEngine.Localization.Operations
-{
-}
+// Could not decompile UnityEngine.Localization.SmartFormat.PersistentVariables.ShortVariable
+// This type uses unsupported IL or has too many generic parameters.

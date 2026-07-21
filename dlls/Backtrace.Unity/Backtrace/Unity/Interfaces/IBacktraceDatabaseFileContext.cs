@@ -3,36 +3,29 @@ using System.IO;
 using Backtrace.Unity.Model;
 using Backtrace.Unity.Model.Database;
 
-namespace Backtrace.Unity.Interfaces
+namespace Backtrace.Unity.Interfaces;
+
+internal interface IBacktraceDatabaseFileContext
 {
-	internal interface IBacktraceDatabaseFileContext
-	{
-		int ScreenshotQuality { get; set; }
+	int ScreenshotQuality { get; set; }
 
-		int ScreenshotMaxHeight { get; set; }
+	int ScreenshotMaxHeight { get; set; }
 
-		IEnumerable<FileInfo> GetRecords();
+	IEnumerable<FileInfo> GetRecords();
 
-		IEnumerable<FileInfo> GetAll();
+	IEnumerable<FileInfo> GetAll();
 
-		bool ValidFileConsistency();
+	bool ValidFileConsistency();
 
-		void RemoveOrphaned(IEnumerable<BacktraceDatabaseRecord> existingRecords);
+	void RemoveOrphaned(IEnumerable<BacktraceDatabaseRecord> existingRecords);
 
-		void Clear();
+	void Clear();
 
-		void Delete(BacktraceDatabaseRecord record);
+	void Delete(BacktraceDatabaseRecord record);
 
-		IEnumerable<string> GenerateRecordAttachments(BacktraceData data);
+	IEnumerable<string> GenerateRecordAttachments(BacktraceData data);
 
-		bool Save(BacktraceDatabaseRecord record);
+	bool Save(BacktraceDatabaseRecord record);
 
-		bool IsValidRecord(BacktraceDatabaseRecord record);
-	}
-}
-namespace Backtrace.Unity.Model.Breadcrumbs.Storage
-{
-}
-namespace Backtrace.Unity.Model.Attributes
-{
+	bool IsValidRecord(BacktraceDatabaseRecord record);
 }

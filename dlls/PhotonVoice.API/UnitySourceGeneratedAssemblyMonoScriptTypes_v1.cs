@@ -1,0 +1,2 @@
+namespace Photon.Voice.Windows;
+

@@ -1,34 +1,30 @@
+using System.Security.Cryptography.Asn1;
+using System.Security.Cryptography.Asn1;
+
 namespace System.Security.Cryptography.Pkcs.Asn1
 {
-	internal enum PkiStatus
+	internal struct OtherKeyAttributeAsn
 	{
-		Granted,
-		GrantedWithMods,
-		Rejection,
-		Waiting,
-		RevocationWarning,
-		RevocationNotification,
-		KeyUpdateWarning
+		[ObjectIdentifier]
+		internal string KeyAttrId;
+
+		[OptionalValue]
+		[AnyValue]
+		internal ReadOnlyMemory<byte>? KeyAttr;
 	}
 }
 namespace System.Security.Cryptography.Pkcs.Asn1
 {
-	internal struct EnvelopedDataAsn
+	internal struct PkiStatusInfo
 	{
-		public int Version;
+		public int Status;
 
 		[OptionalValue]
-		[ExpectedTag(0)]
-		public OriginatorInfoAsn OriginatorInfo;
-
-		[SetOf]
-		public RecipientInfoAsn[] RecipientInfos;
-
-		public EncryptedContentInfoAsn EncryptedContentInfo;
+		[AnyValue]
+		[ExpectedTag(TagClass.Universal, 16)]
+		public ReadOnlyMemory<byte>? StatusString;
 
 		[OptionalValue]
-		[ExpectedTag(1)]
-		[SetOf]
-		public AttributeAsn[] UnprotectedAttributes;
+		public PkiFailureInfo? FailInfo;
 	}
 }

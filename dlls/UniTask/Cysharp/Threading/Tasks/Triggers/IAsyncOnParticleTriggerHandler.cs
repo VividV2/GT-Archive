@@ -1,6 +1,10 @@
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnParticleTriggerHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask OnParticleTriggerAsync();
+	public interface IAsyncOnParticleTriggerHandler
+	{
+		UniTask OnParticleTriggerAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
 }

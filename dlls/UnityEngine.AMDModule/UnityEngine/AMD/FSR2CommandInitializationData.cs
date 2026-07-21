@@ -1,33 +1,17 @@
+using System;
+using System;
+
 namespace UnityEngine.AMD;
 
-public struct FSR2CommandInitializationData
+[Flags]
+public enum FfxFsr2InitializationFlags
 {
-	public uint maxRenderSizeWidth;
-
-	public uint maxRenderSizeHeight;
-
-	public uint displaySizeWidth;
-
-	public uint displaySizeHeight;
-
-	public FfxFsr2InitializationFlags ffxFsrFlags;
-
-	internal uint featureSlot;
-
-	public void SetFlag(FfxFsr2InitializationFlags flag, bool value)
-	{
-		if (value)
-		{
-			ffxFsrFlags |= flag;
-		}
-		else
-		{
-			ffxFsrFlags &= ~flag;
-		}
-	}
-
-	public bool GetFlag(FfxFsr2InitializationFlags flag)
-	{
-		return (ffxFsrFlags & flag) != 0;
-	}
+	EnableHighDynamicRange = 1,
+	EnableDisplayResolutionMotionVectors = 2,
+	EnableMotionVectorsJitterCancellation = 4,
+	DepthInverted = 8,
+	EnableDepthInfinite = 0x10,
+	EnableAutoExposure = 0x20,
+	EnableDynamicResolution = 0x40,
+	EnableTexture1DUsage = 0x80
 }

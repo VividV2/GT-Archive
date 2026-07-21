@@ -1,6 +1,3 @@
-namespace System.Xml.Xsl.XsltOld
-{
-}
 namespace System.Xml.Xsl.XPath
 {
 	internal enum XPathAxis
@@ -21,4 +18,7 @@ namespace System.Xml.Xsl.XPath
 		Self,
 		Root
 	}
+}
+namespace System.Xml.Xsl.Xslt
+{
 }

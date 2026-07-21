@@ -1,8 +1,12 @@
 using UnityEngine.ParticleSystemJobs;
 
-namespace Cysharp.Threading.Tasks.Triggers;
-
-public interface IAsyncOnParticleUpdateJobScheduledHandler
+namespace Cysharp.Threading.Tasks.Triggers
 {
-	UniTask<ParticleSystemJobData> OnParticleUpdateJobScheduledAsync();
+	public interface IAsyncOnParticleUpdateJobScheduledHandler
+	{
+		UniTask<ParticleSystemJobData> OnParticleUpdateJobScheduledAsync();
+	}
+}
+namespace Cysharp.Threading.Tasks.Triggers
+{
 }

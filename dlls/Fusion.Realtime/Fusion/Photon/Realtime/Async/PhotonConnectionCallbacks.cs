@@ -1,19 +1,9 @@
 using System;
-using System.Collections.Generic;
+using System;
 
 namespace Fusion.Photon.Realtime.Async;
 
-internal class PhotonConnectionCallbacks
+internal class OperationException(short errorCode, string message) : Exception($"{message} (ErrorCode: {errorCode})")
 {
-	public Action ConnectedToMaster;
-
-	public Action ConnectedToNameServer;
-
-	public Action<RegionHandler> RegionListReceived;
-
-	public Action<DisconnectCause> Disconnected;
-
-	public Action<string> CustomAuthenticationFailed;
-
-	public Action<Dictionary<string, object>> CustomAuthenticationResponse;
+	public short ErrorCode = errorCode;
 }

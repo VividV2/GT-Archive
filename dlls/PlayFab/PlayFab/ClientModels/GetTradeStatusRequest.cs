@@ -1,2 +1,12 @@
-// Could not decompile PlayFab.ClientModels.GetTradeStatusRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetTradeStatusRequest : PlayFabRequestCommon
+{
+	public string OfferingPlayerId;
+
+	public string TradeId;
+}

@@ -1,5 +1,8 @@
 namespace UnityEngine
 {
+}
+namespace UnityEngine
+{
 	internal enum CollisionPairFlags : ushort
 	{
 		RemovedShape = 1,
@@ -8,15 +11,5 @@ namespace UnityEngine
 		ActorPairLostTouch = 8,
 		InternalHasImpulses = 0x10,
 		InternalContactsAreFlipped = 0x20
-	}
-}
-namespace UnityEngine
-{
-	public enum SimulationOption : ushort
-	{
-		None,
-		SyncTransforms,
-		IgnoreEmptyScenes,
-		All
 	}
 }

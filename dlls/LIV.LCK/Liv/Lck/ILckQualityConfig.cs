@@ -1,8 +1,12 @@
 using System.Collections.Generic;
 
-namespace Liv.Lck;
-
-public interface ILckQualityConfig
+namespace Liv.Lck
 {
-	List<QualityOption> GetQualityOptionsForSystem();
+}
+namespace Liv.Lck
+{
+	public interface ILckQualityConfig
+	{
+		List<QualityOption> GetQualityOptionsForSystem();
+	}
 }

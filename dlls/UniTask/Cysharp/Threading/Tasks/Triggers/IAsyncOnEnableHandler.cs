@@ -1,10 +1,6 @@
-namespace Cysharp.Threading.Tasks.Triggers
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnEnableHandler
 {
-	public interface IAsyncOnEnableHandler
-	{
-		UniTask OnEnableAsync();
-	}
-}
-namespace Cysharp.Threading.Tasks.Triggers
-{
+	UniTask OnEnableAsync();
 }

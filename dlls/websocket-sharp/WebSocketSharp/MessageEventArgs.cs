@@ -1,2 +1,2 @@
-namespace WebSocketSharp;
-
+// Could not decompile WebSocketSharp.MessageEventArgs
+// This type uses unsupported IL or has too many generic parameters.

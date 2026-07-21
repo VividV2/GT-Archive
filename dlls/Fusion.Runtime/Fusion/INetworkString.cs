@@ -1,6 +1,10 @@
-namespace Fusion;
-
-internal interface INetworkString
+namespace Fusion
 {
-	bool Equals<TOtherSize>(ref NetworkString<TOtherSize> other) where TOtherSize : unmanaged, IFixedStorage;
+}
+namespace Fusion
+{
+	internal interface INetworkString
+	{
+		bool Equals<TOtherSize>(ref NetworkString<TOtherSize> other) where TOtherSize : unmanaged, IFixedStorage;
+	}
 }

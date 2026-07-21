@@ -1,15 +1,2 @@
-using UnityEngine;
-
-namespace GorillaTagScripts
-{
-	public class BuilderTestTools : MonoBehaviour
-	{
-		public void Awake()
-		{
-			Object.Destroy(this);
-		}
-	}
-}
-namespace GorillaTag.Cosmetics
-{
-}
+// Could not decompile GorillaTagScripts.BuilderTestTools
+// This type uses unsupported IL or has too many generic parameters.

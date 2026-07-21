@@ -1,9 +1,2 @@
-namespace UnityEngine.UIElements;
-
-internal static class RuntimeEventDispatcher
-{
-	public static EventDispatcher Create()
-	{
-		return EventDispatcher.CreateDefault();
-	}
-}
+// Could not decompile UnityEngine.UIElements.RuntimeEventDispatcher
+// This type uses unsupported IL or has too many generic parameters.

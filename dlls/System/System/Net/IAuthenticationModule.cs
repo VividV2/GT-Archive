@@ -1,3 +1,3 @@
-namespace System.Security.Authentication.ExtendedProtection.Configuration
+namespace System.Security.Cryptography.X509Certificates
 {
 }

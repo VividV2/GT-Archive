@@ -1,9 +1,11 @@
-namespace System.Net.Mail
+using System;
+
+namespace ObjCRuntimeInternal;
+
+internal static class NativeObjectHelper
 {
-}
-namespace System.Diagnostics
-{
-}
-namespace System.Security.Cryptography.X509Certificates
-{
+	public static IntPtr GetHandle(this INativeObject self)
+	{
+		return self?.Handle ?? IntPtr.Zero;
+	}
 }

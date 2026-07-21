@@ -1,12 +1,2 @@
-using System;
-using System;
-
-namespace TagEffects;
-
-[Serializable]
-public class TagEffectsComboResult
-{
-	public TagEffectsCombo input;
-
-	public TagEffectPack[] output;
-}
+// Could not decompile GorillaTag.Audio.DuplicateAudioSource
+// This type uses unsupported IL or has too many generic parameters.

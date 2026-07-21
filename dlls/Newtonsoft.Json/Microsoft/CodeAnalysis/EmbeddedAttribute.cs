@@ -1,2 +1,2 @@
-namespace Newtonsoft.Json;
-
+// Could not decompile Microsoft.CodeAnalysis.EmbeddedAttribute
+// This type uses unsupported IL or has too many generic parameters.

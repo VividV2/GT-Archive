@@ -1,10 +1,2 @@
-using UnityEngine.Scripting;
-
-namespace Unity.IO.LowLevel.Unsafe;
-
-[RequiredByNativeCode]
-public enum FileState
-{
-	Absent,
-	Exists
-}
+// Could not decompile Unity.IO.LowLevel.Unsafe.FileState
+// This type uses unsupported IL or has too many generic parameters.

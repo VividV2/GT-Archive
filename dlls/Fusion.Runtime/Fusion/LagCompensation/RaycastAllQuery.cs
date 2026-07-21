@@ -1,2 +1,2 @@
-namespace Fusion.Statistics;
+namespace Fusion;
 

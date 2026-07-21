@@ -1,2 +1,7 @@
-// Could not decompile System.Diagnostics.ProcessInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
+
+namespace Mono.Btls;
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+internal delegate int MonoBtlsVerifyCallback(MonoBtlsX509StoreCtx ctx);

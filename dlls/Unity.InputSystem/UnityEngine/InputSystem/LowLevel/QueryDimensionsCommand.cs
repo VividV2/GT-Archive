@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.InputSystem.LowLevel.QueryDimensionsCommand
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.InputSystem.Haptics;
+
+public interface IHaptics
+{
+	void PauseHaptics();
+
+	void ResumeHaptics();
+
+	void ResetHaptics();
+}

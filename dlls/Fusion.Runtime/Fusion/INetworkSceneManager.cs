@@ -1,6 +1,41 @@
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
+namespace Fusion.LagCompensation
+{
+	internal interface ILagCompensationBroadphase
+	{
+		void CopyFrom(ILagCompensationBroadphase other);
+
+		void Traverse(IBoundsTraversalTest hitTest, HashSet<HitboxRoot> candidateRoots, int layerMask);
+
+		void Add(HitboxRoot root);
+
+		bool Remove(HitboxRoot root);
+
+		void Update(HitboxRoot changed, int tick);
+	}
+}
+namespace Fusion
+{
+	[StructLayout(LayoutKind.Explicit)]
+	[NetworkStructWeaved(10)]
+	public struct NetworkPhysicsInfo : INetworkStruct
+	{
+		public const int WORD_COUNT = 10;
+
+		public const int SIZE = 40;
+
+		[FieldOffset(0)]
+		public float TimeScale;
+	}
+}
 namespace Fusion
 {
 	public interface INetworkSceneManager
@@ -34,6 +69,12 @@ namespace Fusion
 		bool OnSceneInfoChanged(NetworkSceneInfo sceneInfo, NetworkSceneInfoChangeSource changeSource);
 	}
 }
+namespace Fusion.Statistics
+{
+}
 namespace Fusion
+{
+}
+namespace Fusion.Statistics
 {
 }

@@ -1,10 +1,14 @@
-namespace UnityEngine.UIElements.UIR;
-
-internal struct Transform3x4
+namespace UnityEngine.UIElements.UIR
 {
-	public Vector4 v0;
+	internal struct Transform3x4
+	{
+		public Vector4 v0;
 
-	public Vector4 v1;
+		public Vector4 v1;
 
-	public Vector4 v2;
+		public Vector4 v2;
+	}
+}
+namespace UnityEngine.UIElements.Layout
+{
 }

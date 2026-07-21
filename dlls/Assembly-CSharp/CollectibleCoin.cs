@@ -1,0 +1,6 @@
+namespace GorillaTagScripts
+{
+}
+namespace GorillaTag
+{
+}

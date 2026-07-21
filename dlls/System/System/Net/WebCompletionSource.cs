@@ -1,13 +1,2 @@
-namespace System.Net
-{
-	internal class WebCompletionSource : WebCompletionSource<object>
-	{
-		public WebCompletionSource()
-			: base(true)
-		{
-		}
-	}
-}
-namespace System.Net
-{
-}
+// Could not decompile System.Net.WebCompletionSource
+// This type uses unsupported IL or has too many generic parameters.

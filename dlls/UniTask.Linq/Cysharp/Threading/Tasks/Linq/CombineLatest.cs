@@ -1,2 +1,2 @@
-// Could not decompile Cysharp.Threading.Tasks.Linq.CombineLatest`13
+// Could not decompile Cysharp.Threading.Tasks.Linq.CombineLatest`6
 // This type uses unsupported IL or has too many generic parameters.

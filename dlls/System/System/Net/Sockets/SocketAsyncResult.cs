@@ -1,2 +1,2 @@
-// Could not decompile System.Net.Sockets.SocketAsyncResult
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.IO;
+

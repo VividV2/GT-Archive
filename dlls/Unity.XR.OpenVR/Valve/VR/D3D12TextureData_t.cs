@@ -1,21 +1,12 @@
 using System;
-using System;
 
 namespace Valve.VR;
 
-public struct PropertyWrite_t
+public struct D3D12TextureData_t
 {
-	public ETrackedDeviceProperty prop;
+	public IntPtr m_pResource;
 
-	public EPropertyWriteType writeType;
+	public IntPtr m_pCommandQueue;
 
-	public ETrackedPropertyError eSetError;
-
-	public IntPtr pvBuffer;
-
-	public uint unBufferSize;
-
-	public uint unTag;
-
-	public ETrackedPropertyError eError;
+	public uint m_nNodeMask;
 }

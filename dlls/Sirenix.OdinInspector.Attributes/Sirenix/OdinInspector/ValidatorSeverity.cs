@@ -1,13 +1,9 @@
-namespace Sirenix.OdinInspector
+namespace Sirenix.OdinInspector;
+
+[EnumToggleButtons]
+public enum ValidatorSeverity
 {
-	[EnumToggleButtons]
-	public enum ValidatorSeverity
-	{
-		Error,
-		Warning,
-		Ignore
-	}
-}
-namespace Sirenix.OdinInspector
-{
+	Error,
+	Warning,
+	Ignore
 }

@@ -1,11 +1,2 @@
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.Networking.PlayerConnection;
-
-[MovedFrom("UnityEngine.Experimental.Networking.PlayerConnection")]
-public enum ConnectionTarget
-{
-	None,
-	Player,
-	Editor
-}
+// Could not decompile UnityEngine.Networking.PlayerConnection.ConnectionTarget
+// This type uses unsupported IL or has too many generic parameters.

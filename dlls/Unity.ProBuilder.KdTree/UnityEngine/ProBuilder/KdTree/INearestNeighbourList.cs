@@ -1,18 +1,14 @@
-namespace UnityEngine.ProBuilder.KdTree
+namespace UnityEngine.ProBuilder.KdTree;
+
+internal interface INearestNeighbourList<TItem, TDistance>
 {
-	internal interface INearestNeighbourList<TItem, TDistance>
-	{
-		int MaxCapacity { get; }
+	int MaxCapacity { get; }
 
-		int Count { get; }
+	int Count { get; }
 
-		bool Add(TItem item, TDistance distance);
+	bool Add(TItem item, TDistance distance);
 
-		TItem GetFurtherest();
+	TItem GetFurtherest();
 
-		TItem RemoveFurtherest();
-	}
-}
-namespace UnityEngine.ProBuilder.KdTree
-{
+	TItem RemoveFurtherest();
 }

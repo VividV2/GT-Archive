@@ -1,22 +1,7 @@
-namespace System.Runtime.InteropServices;
+namespace System;
 
-/// <summary>Use <see cref="T:System.Runtime.InteropServices.ComTypes.DISPPARAMS" /> instead.</summary>
-[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-[Obsolete("Use System.Runtime.InteropServices.ComTypes.DISPPARAMS instead. http://go.microsoft.com/fwlink/?linkid=14202", false)]
-public struct DISPPARAMS
-{
-	/// <summary>Represents a reference to the array of arguments.</summary>
-	public IntPtr rgvarg;
-
-	/// <summary>Represents the dispatch IDs of named arguments.</summary>
-	public IntPtr rgdispidNamedArgs;
-
-	/// <summary>Represents the count of arguments.</summary>
-	public int cArgs;
-
-	/// <summary>Represents the count of named arguments.</summary>
-	public int cNamedArgs;
-}
-namespace System.Runtime.InteropServices
-{
-}
+/// <summary>Represents the method that will handle the event raised by an exception that is not handled by the application domain.</summary>
+/// <param name="sender">The source of the unhandled exception event.</param>
+/// <param name="e">An UnhandledExceptionEventArgs that contains the event data.</param>
+[Serializable]
+public delegate void UnhandledExceptionEventHandler(object sender, UnhandledExceptionEventArgs e);

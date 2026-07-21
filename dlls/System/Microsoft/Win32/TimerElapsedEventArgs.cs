@@ -1,2 +1,3 @@
-// Could not decompile Microsoft.Win32.TimerElapsedEventArgs
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Threading;
+
+public delegate void ThreadExceptionEventHandler(object sender, ThreadExceptionEventArgs e);

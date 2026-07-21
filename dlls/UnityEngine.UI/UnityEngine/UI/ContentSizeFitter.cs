@@ -1,10 +1,2 @@
-namespace UnityEngine.UI
-{
-}
-namespace UnityEngine.UI
-{
-	public interface ILayoutIgnorer
-	{
-		bool ignoreLayout { get; }
-	}
-}
+// Could not decompile UnityEngine.UI.ContentSizeFitter
+// This type uses unsupported IL or has too many generic parameters.

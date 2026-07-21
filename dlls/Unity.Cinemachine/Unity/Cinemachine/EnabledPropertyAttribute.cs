@@ -1,12 +1,2 @@
-namespace Unity.Cinemachine;
-
-public sealed class EnabledPropertyAttribute : FoldoutWithEnabledButtonAttribute
-{
-	public string ToggleDisabledText;
-
-	public EnabledPropertyAttribute(string enabledProperty = "Enabled", string toggleText = "")
-		: base(enabledProperty)
-	{
-		ToggleDisabledText = toggleText;
-	}
-}
+// Could not decompile Unity.Cinemachine.EnabledPropertyAttribute
+// This type uses unsupported IL or has too many generic parameters.

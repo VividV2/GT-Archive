@@ -1,3 +1,3 @@
-namespace System.Drawing.Internal
+namespace System.Drawing
 {
 }

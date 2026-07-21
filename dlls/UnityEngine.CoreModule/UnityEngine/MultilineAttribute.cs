@@ -1,23 +1,2 @@
-using System;
+namespace UnityEngine;
 
-namespace UnityEngine
-{
-	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-	public sealed class MultilineAttribute : PropertyAttribute
-	{
-		public readonly int lines;
-
-		public MultilineAttribute()
-		{
-			lines = 3;
-		}
-
-		public MultilineAttribute(int lines)
-		{
-			this.lines = lines;
-		}
-	}
-}
-namespace UnityEngine
-{
-}

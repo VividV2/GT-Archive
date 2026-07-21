@@ -1,6 +1,2 @@
-namespace System.Diagnostics.CodeAnalysis;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, Inherited = false)]
-internal sealed class AllowNullAttribute : Attribute
-{
-}
+// Could not decompile System.IO.Hashing.XxHashShared
+// This type uses unsupported IL or has too many generic parameters.

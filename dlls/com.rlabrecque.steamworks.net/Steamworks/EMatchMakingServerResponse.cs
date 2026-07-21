@@ -1,3 +1,8 @@
-namespace Steamworks
+namespace Steamworks;
+
+public enum EMatchMakingServerResponse
 {
+	eServerResponded,
+	eServerFailedToRespond,
+	eNoServersListedOnMasterServer
 }

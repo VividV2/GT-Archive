@@ -1,2 +1,2 @@
-namespace System.Xml.Linq;
-
+// Could not decompile System.Xml.Linq.ElementWriter
+// This type uses unsupported IL or has too many generic parameters.

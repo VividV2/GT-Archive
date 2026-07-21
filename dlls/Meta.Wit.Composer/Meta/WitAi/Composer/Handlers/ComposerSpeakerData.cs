@@ -3,23 +3,16 @@ using Meta.WitAi.TTS.Utilities;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Meta.WitAi.Composer.Integrations
-{
-}
-namespace Meta.WitAi.Composer.Handlers
-{
-	[Serializable]
-	public struct ComposerSpeakerData
-	{
-		[SerializeField]
-		[FormerlySerializedAs("speakerName")]
-		public string SpeakerName;
+namespace Meta.WitAi.Composer.Handlers;
 
-		[SerializeField]
-		[FormerlySerializedAs("speaker")]
-		public TTSSpeaker Speaker;
-	}
-}
-namespace Meta.WitAi.Composer.Handlers
+[Serializable]
+public struct ComposerSpeakerData
 {
+	[SerializeField]
+	[FormerlySerializedAs("speakerName")]
+	public string SpeakerName;
+
+	[SerializeField]
+	[FormerlySerializedAs("speaker")]
+	public TTSSpeaker Speaker;
 }

@@ -2,14 +2,11 @@ using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
-namespace Steamworks
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(4114)]
+public struct MusicPlayerWantsPlayingRepeatStatus_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(4114)]
-	public struct MusicPlayerWantsPlayingRepeatStatus_t
-	{
-		public const int k_iCallback = 4114;
+	public const int k_iCallback = 4114;
 
-		public int m_nPlayingRepeatStatus;
-	}
+	public int m_nPlayingRepeatStatus;
 }

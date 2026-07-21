@@ -1,10 +1,18 @@
-using System;
-using PlayFab.SharedModels;
+namespace PlayFab.Public;
 
-namespace PlayFab.MultiplayerModels;
-
-[Serializable]
-public class GetMatchmakingQueueResult : PlayFabResultCommon
+public interface IScreenTimeTracker
 {
-	public MatchmakingQueueConfig MatchmakingQueue;
+	void OnEnable();
+
+	void OnDisable();
+
+	void OnDestroy();
+
+	void OnApplicationQuit();
+
+	void OnApplicationFocus(bool isFocused);
+
+	void ClientSessionStart(string entityId, string entityType, string playFabUserId);
+
+	void Send();
 }

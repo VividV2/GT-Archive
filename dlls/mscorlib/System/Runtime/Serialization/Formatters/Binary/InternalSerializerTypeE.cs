@@ -1,7 +1,11 @@
-namespace System.Runtime.Serialization.Formatters.Binary;
-
-internal enum InternalSerializerTypeE
+namespace System.Runtime.Remoting
 {
-	Soap = 1,
-	Binary
+}
+namespace System.Runtime.Serialization.Formatters.Binary
+{
+	internal enum InternalSerializerTypeE
+	{
+		Soap = 1,
+		Binary
+	}
 }

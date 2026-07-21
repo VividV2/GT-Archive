@@ -15,6 +15,6 @@ namespace System.Runtime.Versioning
 		Phone
 	}
 }
-namespace System.Runtime.Serialization
+namespace System.Security.AccessControl
 {
 }

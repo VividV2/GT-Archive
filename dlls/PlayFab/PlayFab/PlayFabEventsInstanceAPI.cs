@@ -1,12 +1,2 @@
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-
-namespace PlayFab.ClientModels;
-
-[Serializable]
-public class AddUsernamePasswordResult : PlayFabResultCommon
-{
-	public string Username;
-}
+// Could not decompile PlayFab.PlayFabEventsInstanceAPI
+// This type uses unsupported IL or has too many generic parameters.

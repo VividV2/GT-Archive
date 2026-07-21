@@ -1,12 +1,8 @@
-namespace Steamworks
+namespace Steamworks;
+
+public enum EHTMLMouseButton
 {
-	public enum EHTMLMouseButton
-	{
-		eHTMLMouseButton_Left,
-		eHTMLMouseButton_Right,
-		eHTMLMouseButton_Middle
-	}
-}
-namespace Steamworks
-{
+	eHTMLMouseButton_Left,
+	eHTMLMouseButton_Right,
+	eHTMLMouseButton_Middle
 }

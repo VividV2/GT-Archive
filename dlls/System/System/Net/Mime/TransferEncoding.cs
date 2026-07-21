@@ -1,36 +1,19 @@
-namespace System.Net.NetworkInformation
+namespace System.Net.Mime;
+
+/// <summary>Specifies the Content-Transfer-Encoding header information for an email message attachment.</summary>
+public enum TransferEncoding
 {
-	public enum IPStatus
-	{
-		Success = 0,
-		DestinationNetworkUnreachable = 11002,
-		DestinationHostUnreachable = 11003,
-		DestinationProtocolUnreachable = 11004,
-		DestinationPortUnreachable = 11005,
-		DestinationProhibited = 11004,
-		NoResources = 11006,
-		BadOption = 11007,
-		HardwareError = 11008,
-		PacketTooBig = 11009,
-		TimedOut = 11010,
-		BadRoute = 11012,
-		TtlExpired = 11013,
-		TtlReassemblyTimeExceeded = 11014,
-		ParameterProblem = 11015,
-		SourceQuench = 11016,
-		BadDestination = 11018,
-		DestinationUnreachable = 11040,
-		TimeExceeded = 11041,
-		BadHeader = 11042,
-		UnrecognizedNextHeader = 11043,
-		IcmpError = 11044,
-		DestinationScopeMismatch = 11045,
-		Unknown = -1
-	}
+	/// <summary>Indicates that the transfer encoding is unknown.</summary>
+	Unknown = -1,
+	/// <summary>Encodes data that consists of printable characters in the US-ASCII character set. See RFC 2406 Section 6.7.</summary>
+	QuotedPrintable,
+	/// <summary>Encodes stream-based data. See RFC 2406 Section 6.8.</summary>
+	Base64,
+	/// <summary>Used for data that is not encoded. The data is in 7-bit US-ASCII characters with a total line length of no longer than 1000 characters. See RFC2406 Section 2.7.</summary>
+	SevenBit,
+	/// <summary>The data is in 8-bit characters that may represent international characters with a total line length of no longer than 1000 8-bit characters. For more information about this 8-bit MIME transport extension, see IETF RFC 6152.</summary>
+	EightBit
 }
-namespace System.Net
-{
-}
-namespace System.Net
+namespace System.CodeDom
 {
 }

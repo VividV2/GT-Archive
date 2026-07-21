@@ -1,15 +1,2 @@
-using Unity.Burst;
-using Unity.Jobs;
-
-namespace Unity.Collections;
-
-[BurstCompile]
-internal struct UnsafeQueueDisposeJob : IJob
-{
-	public UnsafeQueueDispose Data;
-
-	public void Execute()
-	{
-		Data.Dispose();
-	}
-}
+// Could not decompile Unity.Collections.UnsafeQueueDisposeJob
+// This type uses unsupported IL or has too many generic parameters.

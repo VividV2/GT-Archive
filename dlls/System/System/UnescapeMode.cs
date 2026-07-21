@@ -1,17 +1,13 @@
-namespace System
+namespace System;
+
+[Flags]
+internal enum UnescapeMode
 {
-	[Flags]
-	internal enum UnescapeMode
-	{
-		CopyOnly = 0,
-		Escape = 1,
-		Unescape = 2,
-		EscapeUnescape = 3,
-		V1ToStringFlag = 4,
-		UnescapeAll = 8,
-		UnescapeAllOrThrow = 0x18
-	}
-}
-namespace System.Collections.Generic
-{
+	CopyOnly = 0,
+	Escape = 1,
+	Unescape = 2,
+	EscapeUnescape = 3,
+	V1ToStringFlag = 4,
+	UnescapeAll = 8,
+	UnescapeAllOrThrow = 0x18
 }

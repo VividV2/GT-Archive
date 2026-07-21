@@ -1,12 +1,2 @@
-namespace System
-{
-	internal struct Coord(int x, int y)
-	{
-		public short X = (short)x;
-
-		public short Y = (short)y;
-	}
-}
-namespace System
-{
-}
+// Could not decompile Mono.Globalization.Unicode.MSCompatUnicodeTableUtil
+// This type uses unsupported IL or has too many generic parameters.

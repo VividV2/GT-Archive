@@ -1,16 +1,10 @@
-namespace UnityEngine.Rendering.Universal;
+namespace UnityEngine.Rendering.Universal.UTess;
 
-internal enum RenderPassEvent2D
+internal struct UEncroachingSegment
 {
-	None = -1,
-	BeforeRendering = 0,
-	BeforeRenderingLayer = 100,
-	BeforeRenderingShadows = 200,
-	BeforeRenderingNormals = 300,
-	BeforeRenderingLights = 400,
-	BeforeRenderingSprites = 500,
-	AfterRenderingLayer = 600,
-	BeforeRenderingPostProcessing = 700,
-	AfterRenderingPostProcessing = 800,
-	AfterRendering = 900
+	public float2 a;
+
+	public float2 b;
+
+	public int index;
 }

@@ -1,12 +1,16 @@
-namespace PlayFab.ClientModels;
-
-public enum TradeStatus
+namespace PlayFab.ClientModels
 {
-	Invalid,
-	Opening,
-	Open,
-	Accepting,
-	Accepted,
-	Filled,
-	Cancelled
+}
+namespace PlayFab.ClientModels
+{
+	public enum TradeStatus
+	{
+		Invalid,
+		Opening,
+		Open,
+		Accepting,
+		Accepted,
+		Filled,
+		Cancelled
+	}
 }

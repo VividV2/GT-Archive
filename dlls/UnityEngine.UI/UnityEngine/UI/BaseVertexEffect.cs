@@ -1,2 +1,6 @@
-namespace UnityEngine.UI;
+namespace UnityEngine.EventSystems;
 
+public interface ICancelHandler : IEventSystemHandler
+{
+	void OnCancel(BaseEventData eventData);
+}

@@ -1,3 +1,3 @@
-namespace System.Configuration
-{
-}
+namespace System.Net;
+
+internal delegate void UnlockConnectionDelegate();

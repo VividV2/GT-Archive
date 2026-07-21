@@ -1,2 +1,8 @@
-// Could not decompile Unity.Scripting.LifecycleManagement.ClearCacheBetweenCodeLoadsAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.Scripting.LifecycleManagement;
+
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
+internal sealed class ClearCacheBetweenCodeLoadsAttribute : LifecycleAttributeBase
+{
+}

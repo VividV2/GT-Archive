@@ -1,9 +1,2 @@
-namespace UnityEngine.UIElements.Layout;
-
-internal enum LayoutFlexDirection
-{
-	Column,
-	ColumnReverse,
-	Row,
-	RowReverse
-}
+// Could not decompile UnityEngine.UIElements.UIR.ImplicitPool`1
+// This type uses unsupported IL or has too many generic parameters.

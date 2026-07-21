@@ -1,10 +1,2 @@
-namespace Valve.VR;
+namespace Valve.VR.InteractionSystem;
 
-public enum SteamVR_Skeleton_FingerIndexEnum
-{
-	thumb,
-	index,
-	middle,
-	ring,
-	pinky
-}

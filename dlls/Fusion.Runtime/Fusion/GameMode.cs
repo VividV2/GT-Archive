@@ -1,11 +1,2 @@
-namespace Fusion;
-
-public enum GameMode
-{
-	Single = 1,
-	Shared,
-	Server,
-	Host,
-	Client,
-	AutoHostOrClient
-}
+// Could not decompile Fusion.GameMode
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,19 +1,12 @@
-namespace UnityEngine.XR.OpenXR.Features.Extensions.PerformanceSettings
-{
-	public struct PerformanceChangeNotification
-	{
-		public PerformanceDomain domain;
+namespace UnityEngine.XR.OpenXR.Features.Extensions.PerformanceSettings;
 
-		public PerformanceSubDomain subDomain;
-
-		public PerformanceNotificationLevel fromLevel;
-
-		public PerformanceNotificationLevel toLevel;
-	}
-}
-namespace UnityEngine.XR.OpenXR.Input
+public struct PerformanceChangeNotification
 {
-}
-namespace UnityEngine.XR.OpenXR.Input
-{
+	public PerformanceDomain domain;
+
+	public PerformanceSubDomain subDomain;
+
+	public PerformanceNotificationLevel fromLevel;
+
+	public PerformanceNotificationLevel toLevel;
 }

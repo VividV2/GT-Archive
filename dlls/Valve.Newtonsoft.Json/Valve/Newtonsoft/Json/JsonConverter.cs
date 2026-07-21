@@ -1,16 +1,23 @@
-using System;
-
 namespace Valve.Newtonsoft.Json;
 
-public abstract class JsonConverter
+public enum JsonToken
 {
-	public virtual bool CanRead => true;
-
-	public virtual bool CanWrite => true;
-
-	public abstract void WriteJson(JsonWriter writer, object value, JsonSerializer serializer);
-
-	public abstract object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer);
-
-	public abstract bool CanConvert(Type objectType);
+	None,
+	StartObject,
+	StartArray,
+	StartConstructor,
+	PropertyName,
+	Comment,
+	Raw,
+	Integer,
+	Float,
+	String,
+	Boolean,
+	Null,
+	Undefined,
+	EndObject,
+	EndArray,
+	EndConstructor,
+	Date,
+	Bytes
 }

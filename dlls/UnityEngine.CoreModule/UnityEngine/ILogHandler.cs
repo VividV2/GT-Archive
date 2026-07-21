@@ -1,10 +1,3 @@
-using System;
-
-namespace UnityEngine;
-
-public interface ILogHandler
+namespace UnityEngine
 {
-	void LogFormat(LogType logType, Object context, string format, params object[] args);
-
-	void LogException(Exception exception, Object context);
 }

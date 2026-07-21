@@ -1,7 +1,23 @@
-namespace System.Diagnostics.Tracing;
-
-[Flags]
-public enum EventFieldTags
+namespace System.Diagnostics.CodeAnalysis
 {
-	None = 0
+}
+namespace System.Diagnostics.SymbolStore
+{
+	[ComVisible(true)]
+	public interface ISymbolScope
+	{
+		int EndOffset { get; }
+
+		ISymbolMethod Method { get; }
+
+		ISymbolScope Parent { get; }
+
+		int StartOffset { get; }
+
+		ISymbolScope[] GetChildren();
+
+		ISymbolVariable[] GetLocals();
+
+		ISymbolNamespace[] GetNamespaces();
+	}
 }

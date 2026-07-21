@@ -1,2 +1,26 @@
-// Could not decompile Fusion.NetworkRunnerUpdaterDummy
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System;
+
+namespace Fusion
+{
+	[Serializable]
+	public struct RpcInvokeInfo
+	{
+		public RpcLocalInvokeResult LocalInvokeResult;
+
+		public RpcSendCullResult SendCullResult;
+
+		public RpcSendResult SendResult;
+
+		public override string ToString()
+		{
+			return $"[Local: {LocalInvokeResult}, SendCull: {SendCullResult}, Send: {SendResult}]";
+		}
+	}
+}
+namespace Fusion
+{
+}
+namespace Fusion
+{
+}

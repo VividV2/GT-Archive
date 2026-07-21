@@ -1,5 +1,3 @@
-namespace OVR.OpenVR;
-
 public enum OVRTextureFormat
 {
 	NONE,

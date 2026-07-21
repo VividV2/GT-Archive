@@ -1,16 +1,7 @@
-internal sealed class Locale
+namespace System.Transactions;
+
+public enum DependentCloneOption
 {
-	private Locale()
-	{
-	}
-
-	public static string GetText(string msg)
-	{
-		return msg;
-	}
-
-	public static string GetText(string fmt, params object[] args)
-	{
-		return string.Format(fmt, args);
-	}
+	BlockCommitUntilComplete,
+	RollbackIfNotComplete
 }

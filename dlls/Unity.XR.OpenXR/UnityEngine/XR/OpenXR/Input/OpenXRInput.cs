@@ -1,6 +1,2 @@
-namespace UnityEngine.XR.OpenXR.Features.Interactions
-{
-}
-namespace UnityEngine.XR.OpenXR.Features.Interactions
-{
-}
+// Could not decompile UnityEngine.XR.OpenXR.Input.OpenXRInput
+// This type uses unsupported IL or has too many generic parameters.

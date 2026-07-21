@@ -1,16 +1,2 @@
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.UIElements;
-
-[MovedFrom(true, "UnityEditor.UIElements", "UnityEditor.UIElementsModule", null)]
-public interface IValueField<T>
-{
-	T value { get; set; }
-
-	void ApplyInputDeviceDelta(Vector3 delta, DeltaSpeed speed, T startValue);
-
-	void StartDragging();
-
-	void StopDragging();
-}
+// Could not decompile UnityEngine.UIElements.DropdownMenuItem
+// This type uses unsupported IL or has too many generic parameters.

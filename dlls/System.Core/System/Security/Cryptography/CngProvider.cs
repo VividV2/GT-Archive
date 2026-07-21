@@ -1,2 +1,2 @@
-namespace System.Linq;
-
+// Could not decompile System.Security.Cryptography.CngProvider
+// This type uses unsupported IL or has too many generic parameters.

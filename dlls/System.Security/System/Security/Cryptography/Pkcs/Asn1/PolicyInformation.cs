@@ -1,13 +1,16 @@
 using System.Security.Cryptography.Asn1;
-using System.Security.Cryptography.Asn1;
 
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-internal struct PolicyInformation
+namespace System.Security.Cryptography.Pkcs.Asn1
 {
-	[ObjectIdentifier]
-	public string PolicyIdentifier;
+	internal struct PolicyInformation
+	{
+		[ObjectIdentifier]
+		public string PolicyIdentifier;
 
-	[OptionalValue]
-	public PolicyQualifierInfo[] PolicyQualifiers;
+		[OptionalValue]
+		public PolicyQualifierInfo[] PolicyQualifiers;
+	}
+}
+namespace System.Security.Cryptography.Asn1
+{
 }

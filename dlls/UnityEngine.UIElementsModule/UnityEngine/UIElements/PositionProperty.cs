@@ -1,12 +1,16 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine.UIElements;
-
-[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
-internal enum PositionProperty
+namespace UnityEngine.UIElements
 {
-	Top,
-	Bottom,
-	Left,
-	Right
+}
+namespace UnityEngine.UIElements
+{
+	[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
+	internal enum PositionProperty
+	{
+		Top,
+		Bottom,
+		Left,
+		Right
+	}
 }

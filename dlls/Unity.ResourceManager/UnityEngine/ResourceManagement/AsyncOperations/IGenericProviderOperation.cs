@@ -3,31 +3,42 @@ using System.Collections.Generic;
 using UnityEngine.ResourceManagement.ResourceLocations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 
-namespace UnityEngine.ResourceManagement.AsyncOperations;
-
-internal interface IGenericProviderOperation
+namespace UnityEngine.ResourceManagement.AsyncOperations
 {
-	int ProvideHandleVersion { get; }
+	internal interface IGenericProviderOperation
+	{
+		int ProvideHandleVersion { get; }
 
-	IResourceLocation Location { get; }
+		IResourceLocation Location { get; }
 
-	int DependencyCount { get; }
+		int DependencyCount { get; }
 
-	Type RequestedType { get; }
+		Type RequestedType { get; }
 
-	void Init(ResourceManager rm, IResourceProvider provider, IResourceLocation location, AsyncOperationHandle<IList<AsyncOperationHandle>> depOp);
+		void Init(ResourceManager rm, IResourceProvider provider, IResourceLocation location, AsyncOperationHandle<IList<AsyncOperationHandle>> depOp);
 
-	void Init(ResourceManager rm, IResourceProvider provider, IResourceLocation location, AsyncOperationHandle<IList<AsyncOperationHandle>> depOp, bool releaseDependenciesOnFailure);
+		void Init(ResourceManager rm, IResourceProvider provider, IResourceLocation location, AsyncOperationHandle<IList<AsyncOperationHandle>> depOp, bool releaseDependenciesOnFailure);
 
-	void GetDependencies(IList<object> dstList);
+		void GetDependencies(IList<object> dstList);
 
-	TDepObject GetDependency<TDepObject>(int index);
+		TDepObject GetDependency<TDepObject>(int index);
 
-	void SetProgressCallback(Func<float> callback);
+		void SetProgressCallback(Func<float> callback);
 
-	void ProviderCompleted<T>(T result, bool status, Exception e);
+		void ProviderCompleted<T>(T result, bool status, Exception e);
 
-	void SetDownloadProgressCallback(Func<DownloadStatus> callback);
+		void SetDownloadProgressCallback(Func<DownloadStatus> callback);
 
-	void SetWaitForCompletionCallback(Func<bool> callback);
+		void SetWaitForCompletionCallback(Func<bool> callback);
+	}
+}
+namespace UnityEngine.ResourceManagement.ResourceLocations
+{
+	public interface ILocationSizeData
+	{
+		long ComputeSize(IResourceLocation location, ResourceManager resourceManager);
+	}
+}
+namespace UnityEngine.ResourceManagement.ResourceProviders
+{
 }

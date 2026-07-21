@@ -1,10 +1,23 @@
-namespace g3;
+using System;
+using System;
 
-public interface IDeformableMesh : IMesh, IPointSet
+namespace g3
 {
-	void SetVertex(int vID, Vector3d vNewPos);
+	[Flags]
+	public enum MeshHints
+	{
+		None = 0,
+		IsCompact = 1
+	}
+}
+namespace g3
+{
+	public interface IDeformableMesh : IMesh, IPointSet
+	{
+		void SetVertex(int vID, Vector3d vNewPos);
 
-	void SetVertexNormal(int vid, Vector3f vNewNormal);
+		void SetVertexNormal(int vid, Vector3f vNewNormal);
 
-	void SetVertexUV(int i, Vector2f uv);
+		void SetVertexUV(int i, Vector2f uv);
+	}
 }

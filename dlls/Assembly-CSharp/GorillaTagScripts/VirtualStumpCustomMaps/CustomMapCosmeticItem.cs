@@ -1,15 +1,8 @@
-using System;
-using GorillaNetworking.Store;
-using GT_CustomMapSupportRuntime;
+using UnityEngine;
 
-namespace GorillaTagScripts.VirtualStumpCustomMaps;
-
-[Serializable]
-public struct CustomMapCosmeticItem
+namespace GorillaTag.Cosmetics
 {
-	public GTObjectPlaceholder.ECustomMapCosmeticItem customMapItemSlot;
-
-	public HeadModel_CosmeticStand.BustType bustType;
-
-	public string playFabID;
-}
+	public interface IProjectile
+	{
+		void Launch(Vector3 startPosition, Quaternion startRotation, Vector3 velocity, float chargeFrac, VRRig ownerRig, int progressStep = -1);
+	}

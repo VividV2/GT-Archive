@@ -1,6 +1,2 @@
-namespace System.Xml.Schema
-{
-}
-namespace System.Xml.Serialization
-{
-}
+// Could not decompile System.Xml.Serialization.Soap
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,10 +1,14 @@
 using System;
 
-namespace Photon.Voice;
-
-public interface IAudioInChangeNotifier : IDisposable
+namespace Photon.Voice
 {
-	bool IsSupported { get; }
+}
+namespace Photon.Voice
+{
+	public interface IAudioInChangeNotifier : IDisposable
+	{
+		bool IsSupported { get; }
 
-	string Error { get; }
+		string Error { get; }
+	}
 }

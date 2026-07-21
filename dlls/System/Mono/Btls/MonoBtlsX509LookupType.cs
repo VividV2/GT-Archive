@@ -1,9 +1,13 @@
-namespace Mono.Btls;
-
-internal enum MonoBtlsX509LookupType
+namespace Mono.Btls
 {
-	UNKNOWN,
-	FILE,
-	HASH_DIR,
-	MONO
+	internal enum MonoBtlsX509LookupType
+	{
+		UNKNOWN,
+		FILE,
+		HASH_DIR,
+		MONO
+	}
+}
+namespace System.Configuration
+{
 }

@@ -1,6 +1,2 @@
-namespace UnityEngine.UIElements.UIR
-{
-}
-namespace UnityEngine.UIElements.UIR
-{
-}
+// Could not decompile UnityEngine.UIElements.UIR.EntryPreProcessor
+// This type uses unsupported IL or has too many generic parameters.

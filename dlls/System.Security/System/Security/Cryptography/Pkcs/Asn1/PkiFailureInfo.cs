@@ -1,3 +1,7 @@
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.Asn1;
+using System.Security.Cryptography.Asn1;
+
 namespace System.Security.Cryptography.Pkcs.Asn1
 {
 	[Flags]
@@ -33,28 +37,52 @@ namespace System.Security.Cryptography.Pkcs.Asn1
 		DuplicateCertReq = 0x4000000
 	}
 }
-namespace System.Security.Cryptography.Xml
-{
-}
 namespace System.Security.Cryptography.Pkcs.Asn1
 {
 	[StructLayout(LayoutKind.Sequential)]
-	internal sealed class OriginatorPublicKeyAsn
+	internal sealed class EssCertIdV2
 	{
-		internal AlgorithmIdentifierAsn Algorithm;
-
-		[BitString]
-		internal ReadOnlyMemory<byte> PublicKey;
-
-		public OriginatorPublicKeyAsn()
+		[DefaultValue(new byte[]
 		{
-			base..ctor();
-		}
+			48, 11, 6, 9, 96, 134, 72, 1, 101, 3,
+			4, 2, 1
+		})]
+		public AlgorithmIdentifierAsn HashAlgorithm;
+
+		[OctetString]
+		public ReadOnlyMemory<byte> Hash;
+
+		[OptionalValue]
+		public CadesIssuerSerial? IssuerSerial;
 	}
 }
-namespace System.Security.Cryptography.Pkcs
+namespace System.Security.Cryptography.Pkcs.Asn1
 {
-}
-namespace System.Security.Cryptography.Xml
-{
+	internal struct PssParamsAsn
+	{
+		[ExpectedTag(0, ExplicitTag = true)]
+		[DefaultValue(new byte[]
+		{
+			160, 9, 48, 7, 6, 5, 43, 14, 3, 2,
+			26
+		})]
+		public AlgorithmIdentifierAsn HashAlgorithm;
+
+		[ExpectedTag(1, ExplicitTag = true)]
+		[DefaultValue(new byte[]
+		{
+			161, 22, 48, 20, 6, 9, 42, 134, 72, 134,
+			247, 13, 1, 1, 8, 48, 9, 6, 5, 43,
+			14, 3, 2, 26
+		})]
+		public AlgorithmIdentifierAsn MaskGenAlgorithm;
+
+		[ExpectedTag(2, ExplicitTag = true)]
+		[DefaultValue(new byte[] { 162, 3, 2, 1, 20 })]
+		public int SaltLength;
+
+		[ExpectedTag(3, ExplicitTag = true)]
+		[DefaultValue(new byte[] { 163, 3, 2, 1, 1 })]
+		public int TrailerField;
+	}
 }

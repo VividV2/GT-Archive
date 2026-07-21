@@ -1,6 +1,9 @@
+using System;
+using System;
+
 namespace Fusion;
 
-public interface IAfterAllTicks : IPublicFacingInterface
+public class PreserveInPluginAttribute : Attribute
 {
-	void AfterAllTicks(bool resimulation, int tickCount);
+	public bool KeepNonStateMembers { get; set; } = true;
 }

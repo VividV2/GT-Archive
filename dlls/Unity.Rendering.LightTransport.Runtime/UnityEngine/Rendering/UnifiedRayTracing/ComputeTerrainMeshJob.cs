@@ -1,14 +1,2 @@
-namespace UnityEngine.Rendering.Sampling
-{
-}
-namespace UnityEngine.Rendering.UnifiedRayTracing
-{
-	internal interface IRayTracingBackend
-	{
-		IRayTracingShader CreateRayTracingShader(Object shader, string kernelName, GraphicsBuffer dispatchBuffer);
-
-		IRayTracingAccelStruct CreateAccelerationStructure(AccelerationStructureOptions options, ReferenceCounter counter);
-
-		ulong GetRequiredTraceScratchBufferSizeInBytes(uint width, uint height, uint depth);
-	}
-}
+// Could not decompile UnityEngine.Rendering.UnifiedRayTracing.ComputeTerrainMeshJob
+// This type uses unsupported IL or has too many generic parameters.

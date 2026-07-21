@@ -1,8 +1,8 @@
 namespace UnityEngine.ProBuilder.Poly2Tri;
 
-internal class DTSweepEdgeEvent
+internal enum TriangulationMode
 {
-	public DTSweepConstraint ConstrainedEdge;
-
-	public bool Right;
+	Unconstrained,
+	Constrained,
+	Polygon
 }

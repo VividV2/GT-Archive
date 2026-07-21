@@ -1,9 +1,21 @@
-namespace UnityEngine.Rendering;
-
-public enum LightProbeUsage
+namespace Unity.Collections
 {
-	Off = 0,
-	BlendProbes = 1,
-	UseProxyVolume = 2,
-	CustomProvided = 4
+	[AttributeUsage(AttributeTargets.Field)]
+	[RequiredByNativeCode]
+	public sealed class NativeFixedLengthAttribute : Attribute
+	{
+		public int FixedLength;
+
+		public NativeFixedLengthAttribute(int fixedLength)
+		{
+			base..ctor();
+			FixedLength = fixedLength;
+		}
+	}
+}
+namespace UnityEngine
+{
+}
+namespace UnityEngine.Rendering
+{
 }

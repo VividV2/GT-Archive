@@ -21,6 +21,3 @@ public enum CustomAuthenticationType : byte
 	FacebookGaming = 15,
 	None = byte.MaxValue
 }
-namespace Photon.Realtime
-{
-}

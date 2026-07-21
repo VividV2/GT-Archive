@@ -1,13 +1,2 @@
-using System;
-using System;
-using System;
-using System;
-
-[Flags]
-public enum GestureDigitFlexion : uint
-{
-	None = 0u,
-	Open = 0x10u,
-	Closed = 0x20u,
-	Bent = 0x40u
-}
+// Could not decompile CritterSpawnTrigger
+// This type uses unsupported IL or has too many generic parameters.

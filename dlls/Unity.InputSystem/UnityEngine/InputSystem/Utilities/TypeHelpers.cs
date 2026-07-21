@@ -1,16 +1,2 @@
-using System;
-using System;
-
-namespace UnityEngine.InputSystem.Utilities;
-
-internal static class ExceptionHelpers
-{
-	public static bool IsExceptionIndicatingBugInCode(this Exception exception)
-	{
-		if (!(exception is NullReferenceException) && !(exception is IndexOutOfRangeException))
-		{
-			return exception is ArgumentException;
-		}
-		return true;
-	}
-}
+// Could not decompile UnityEngine.InputSystem.Utilities.TypeHelpers
+// This type uses unsupported IL or has too many generic parameters.

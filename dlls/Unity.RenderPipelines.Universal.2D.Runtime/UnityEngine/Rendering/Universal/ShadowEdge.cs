@@ -1,11 +1,15 @@
-namespace UnityEngine.Rendering.Universal.UTess;
+namespace UnityEngine.Rendering.Universal;
 
-internal enum UEventType
+internal struct ShadowEdge(int indexA, int indexB)
 {
-	EVENT_POINT,
-	EVENT_END,
-	EVENT_START
-}
-namespace UnityEngine.Rendering.Universal
-{
+	public int v0 = indexA;
+
+	public int v1 = indexB;
+
+	public void Reverse()
+	{
+		int num = v0;
+		v0 = v1;
+		v1 = num;
+	}
 }

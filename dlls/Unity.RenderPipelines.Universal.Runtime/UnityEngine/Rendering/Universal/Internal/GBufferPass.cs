@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.Rendering.Universal.Internal.GBufferPass
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+public enum SoftShadowQuality
+{
+	[InspectorName("Use settings from Render Pipeline Asset")]
+	UsePipelineSettings,
+	Low,
+	Medium,
+	High
+}
+namespace UnityEngine.Rendering.Universal
+{
+}

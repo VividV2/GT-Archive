@@ -4,9 +4,3 @@ namespace System.Net.NetworkInformation;
 /// <param name="sender">The source of the event.</param>
 /// <param name="e">An <see cref="T:System.EventArgs" /> object that contains data about the event.</param>
 public delegate void NetworkAddressChangedEventHandler(object sender, EventArgs e);
-namespace System.Net.Mail
-{
-}
-namespace System.Collections.ObjectModel
-{
-}

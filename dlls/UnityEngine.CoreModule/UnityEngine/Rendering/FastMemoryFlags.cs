@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.Rendering.FastMemoryFlags
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+internal delegate void GPUDrivenLODGroupDataNativeCallback(in GPUDrivenLODGroupDataNative lodGroupDataNative, GPUDrivenLODGroupDataCallback callback);
+namespace UnityEngine
+{
+}

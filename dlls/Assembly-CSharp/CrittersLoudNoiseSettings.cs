@@ -1,12 +1,2 @@
-using System.Runtime.Serialization;
-using System.Runtime.Serialization;
-
-public enum PlayerPlatform
-{
-	[EnumMember(Value = "meta")]
-	Meta,
-	[EnumMember(Value = "steam")]
-	Steam,
-	[EnumMember(Value = "sony")]
-	Sony
-}
+// Could not decompile CrittersLoudNoiseSettings
+// This type uses unsupported IL or has too many generic parameters.

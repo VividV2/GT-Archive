@@ -1,17 +1,2 @@
-namespace System.CodeDom;
-
-/// <summary>Specifies how the code type reference is to be resolved.</summary>
-/// <summary>Specifies how the code type reference is to be resolved.</summary>
-[Flags]
-public enum CodeTypeReferenceOptions
-{
-	/// <summary>Resolve the type from the root namespace.</summary>
-	/// <summary>Resolve the type from the root namespace.</summary>
-	GlobalReference = 1,
-	/// <summary>Resolve the type from the type parameter.</summary>
-	/// <summary>Resolve the type from the type parameter.</summary>
-	GenericTypeParameter = 2
-}
-namespace Mono.Net.Security.Private
-{
-}
+// Could not decompile System.CodeDom.CodeTypeMember
+// This type uses unsupported IL or has too many generic parameters.

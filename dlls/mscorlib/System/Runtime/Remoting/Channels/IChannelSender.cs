@@ -1,6 +1,7 @@
-namespace System.Runtime.Remoting
+namespace System.Runtime.InteropServices
 {
-}
-namespace System.Runtime.Remoting.Lifetime
-{
+	public interface ICustomFactory
+	{
+		MarshalByRefObject CreateInstance(Type serverType);
+	}
 }

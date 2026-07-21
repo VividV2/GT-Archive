@@ -1,32 +1,30 @@
-namespace System.Data.SqlClient.SNI
+namespace System.Data.SqlClient
 {
-	internal abstract class SNIHandle
+	internal enum TransactionState
 	{
-		public abstract uint Status { get; }
-
-		public abstract Guid ConnectionId { get; }
-
-		public abstract void Dispose();
-
-		public abstract void SetAsyncCallbacks(SNIAsyncCallback receiveCallback, SNIAsyncCallback sendCallback);
-
-		public abstract void SetBufferSize(int bufferSize);
-
-		public abstract uint Send(SNIPacket packet);
-
-		public abstract uint SendAsync(SNIPacket packet, bool disposePacketAfterSendAsync, SNIAsyncCallback callback = null);
-
-		public abstract uint Receive(out SNIPacket packet, int timeoutInMilliseconds);
-
-		public abstract uint ReceiveAsync(ref SNIPacket packet);
-
-		public abstract uint EnableSsl(uint options);
-
-		public abstract void DisableSsl();
-
-		public abstract uint CheckConnection();
+		Pending,
+		Active,
+		Aborted,
+		Committed,
+		Unknown
 	}
 }
-namespace System.Data.OleDb
+namespace System.Data.SqlClient.SNI
+{
+	internal enum SNIProviders
+	{
+		HTTP_PROV,
+		NP_PROV,
+		SESSION_PROV,
+		SIGN_PROV,
+		SM_PROV,
+		SMUX_PROV,
+		SSL_PROV,
+		TCP_PROV,
+		MAX_PROVS,
+		INVALID_PROV
+	}
+}
+namespace System.Data.Common
 {
 }

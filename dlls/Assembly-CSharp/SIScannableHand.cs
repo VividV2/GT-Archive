@@ -1,18 +1,2 @@
-using UnityEngine;
-
-public enum GTAgeStatusType
-{
-	PROHIBITED,
-	DIGITALMINOR,
-	DIGITALYOUTH,
-	LEGALADULT
-}
-public class SIScannableHand : MonoBehaviour
-{
-	public SIPlayer parentPlayer;
-
-	private void Awake()
-	{
-		parentPlayer = GetComponentInParent<SIPlayer>();
-	}
-}
+// Could not decompile SIScannableHand
+// This type uses unsupported IL or has too many generic parameters.

@@ -1,2 +1,19 @@
-// Could not decompile PlayFab.ClientModels.GetCharacterLeaderboardRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetCharacterLeaderboardRequest : PlayFabRequestCommon
+{
+	public string CharacterType;
+
+	public int? MaxResultsCount;
+
+	public int StartPosition;
+
+	public string StatisticName;
+}
+namespace PlayFab.Internal
+{
+}

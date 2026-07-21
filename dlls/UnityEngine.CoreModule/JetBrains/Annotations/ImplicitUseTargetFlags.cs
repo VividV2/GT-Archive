@@ -1,12 +1,3 @@
-using System;
-
-namespace JetBrains.Annotations;
-
-[Flags]
-public enum ImplicitUseTargetFlags
+namespace Unity.Profiling.LowLevel.Unsafe
 {
-	Default = 1,
-	Itself = 1,
-	Members = 2,
-	WithMembers = 3
 }

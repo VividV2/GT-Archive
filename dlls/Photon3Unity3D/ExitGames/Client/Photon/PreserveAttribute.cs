@@ -1,11 +1,2 @@
-using System;
-
-namespace ExitGames.Client.Photon
-{
-	public class PreserveAttribute : Attribute
-	{
-	}
-}
-namespace ExitGames.Client.Photon
-{
-}
+// Could not decompile ExitGames.Client.Photon.PreserveAttribute
+// This type uses unsupported IL or has too many generic parameters.

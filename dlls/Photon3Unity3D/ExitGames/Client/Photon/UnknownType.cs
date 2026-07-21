@@ -1,2 +1,10 @@
-// Could not decompile ExitGames.Client.Photon.UnknownType
-// This type uses unsupported IL or has too many generic parameters.
+namespace ExitGames.Client.Photon;
+
+public class UnknownType
+{
+	public byte TypeCode;
+
+	public int Size;
+
+	public byte[] Data;
+}

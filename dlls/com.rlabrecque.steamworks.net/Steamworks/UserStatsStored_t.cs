@@ -1,2 +1,14 @@
-// Could not decompile Steamworks.UserStatsStored_t
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(1102)]
+public struct UserStatsStored_t
+{
+	public const int k_iCallback = 1102;
+
+	public ulong m_nGameID;
+
+	public EResult m_eResult;
+}

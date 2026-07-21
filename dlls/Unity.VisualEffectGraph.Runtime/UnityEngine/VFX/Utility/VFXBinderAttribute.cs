@@ -1,14 +1,2 @@
-using System;
-
-namespace UnityEngine.VFX.Utility;
-
-[AttributeUsage(AttributeTargets.Class)]
-public class VFXBinderAttribute : PropertyAttribute
-{
-	public string MenuPath;
-
-	public VFXBinderAttribute(string menuPath)
-	{
-		MenuPath = menuPath;
-	}
-}
+// Could not decompile UnityEngine.VFX.Utility.VFXBinderAttribute
+// This type uses unsupported IL or has too many generic parameters.

@@ -24,6 +24,3 @@ public struct VRVulkanTextureData_t
 
 	public uint m_nSampleCount;
 }
-namespace Valve.VR
-{
-}

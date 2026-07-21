@@ -1,2 +1,10 @@
-// Could not decompile System.Runtime.CompilerServices.AsyncIteratorStateMachineAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.CompilerServices;
+
+[AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
+public sealed class AsyncIteratorStateMachineAttribute : StateMachineAttribute
+{
+	public AsyncIteratorStateMachineAttribute(Type stateMachineType)
+		: base(stateMachineType)
+	{
+	}
+}

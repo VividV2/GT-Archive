@@ -1,13 +1,10 @@
-namespace Fusion
+#define DEBUG
+namespace Fusion;
+
+public enum NetworkPrefabTableGetPrefabResult
 {
-}
-namespace Fusion
-{
-	public enum NetworkPrefabTableGetPrefabResult
-	{
-		Success,
-		InProgress,
-		NotFound,
-		LoadError
-	}
+	Success,
+	InProgress,
+	NotFound,
+	LoadError
 }

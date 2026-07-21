@@ -1,6 +1,9 @@
-namespace System.Runtime.Serialization
+namespace System.Runtime.Serialization;
+
+internal class ENTITIESDataContract : StringDataContract
 {
-}
-namespace System.Runtime.Serialization
-{
+	internal ENTITIESDataContract()
+		: base(DictionaryGlobals.ENTITIESLocalName, DictionaryGlobals.SchemaNamespace)
+	{
+	}
 }
