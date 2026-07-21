@@ -10,6 +10,3 @@ public enum ZipArchiveMode
 	/// <summary>Both read and write operations are permitted for archive entries.</summary>
 	Update
 }
-namespace System.IO.Compression
-{
-}

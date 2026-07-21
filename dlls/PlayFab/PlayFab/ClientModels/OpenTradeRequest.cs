@@ -1,2 +1,15 @@
-// Could not decompile PlayFab.ClientModels.OpenTradeRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class OpenTradeRequest : PlayFabRequestCommon
+{
+	public List<string> AllowedPlayerIds;
+
+	public List<string> OfferedInventoryInstanceIds;
+
+	public List<string> RequestedCatalogItemIds;
+}

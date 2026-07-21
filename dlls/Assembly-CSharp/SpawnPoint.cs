@@ -1,2 +1,8 @@
-// Could not decompile SpawnPoint
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class SpawnPoint : MonoBehaviour
+{
+	public GTZone startZone;
+
+	public float startSize = 1f;
+}

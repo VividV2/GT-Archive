@@ -1,2 +1,36 @@
-// Could not decompile UnityEngine.UIElements.PointerCaptureEventBase`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+[EventCategory(EventCategory.Pointer)]
+public abstract class PointerCaptureEventBase<T> : EventBase<T>, IPointerCaptureEvent, IPointerCaptureEventInternal where T : PointerCaptureEventBase<T>, new()
+{
+	public IEventHandler relatedTarget { get; private set; }
+
+	public int pointerId { get; private set; }
+
+	protected override void Init()
+	{
+		base.Init();
+		LocalInit();
+	}
+
+	private void LocalInit()
+	{
+		base.propagation = EventPropagation.BubblesOrTricklesDown;
+		relatedTarget = null;
+		pointerId = PointerId.invalidPointerId;
+	}
+
+	public static T GetPooled(IEventHandler target, IEventHandler relatedTarget, int pointerId)
+	{
+		T val = EventBase<T>.GetPooled();
+		val.elementTarget = (VisualElement)target;
+		val.relatedTarget = relatedTarget;
+		val.pointerId = pointerId;
+		return val;
+	}
+
+	protected PointerCaptureEventBase()
+	{
+		LocalInit();
+	}
+}

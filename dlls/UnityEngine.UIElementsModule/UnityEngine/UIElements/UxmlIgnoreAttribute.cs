@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.UIElements.UxmlIgnoreAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.UIElements;
+
+[AttributeUsage(AttributeTargets.Field, Inherited = false)]
+public class UxmlIgnoreAttribute : Attribute
+{
+}

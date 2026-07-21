@@ -1,31 +1,9 @@
-using UnityEngine.Scripting;
-using UnityEngine.Scripting;
+namespace UnityEngine;
 
-namespace UnityEngine
+internal enum EnabledOrientation
 {
-	[RequiredByNativeCode]
-	public interface ISerializationCallbackReceiver
-	{
-		[RequiredByNativeCode]
-		void OnBeforeSerialize();
-
-		[RequiredByNativeCode]
-		void OnAfterDeserialize();
-	}
-}
-namespace UnityEngine
-{
-	internal enum EnabledOrientation
-	{
-		kAutorotateToPortrait = 1,
-		kAutorotateToPortraitUpsideDown = 2,
-		kAutorotateToLandscapeLeft = 4,
-		kAutorotateToLandscapeRight = 8
-	}
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
+	kAutorotateToPortrait = 1,
+	kAutorotateToPortraitUpsideDown = 2,
+	kAutorotateToLandscapeLeft = 4,
+	kAutorotateToLandscapeRight = 8
 }

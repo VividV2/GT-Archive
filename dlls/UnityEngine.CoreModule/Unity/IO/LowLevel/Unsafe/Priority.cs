@@ -1,2 +1,10 @@
-// Could not decompile Unity.IO.LowLevel.Unsafe.Priority
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting;
+
+namespace Unity.IO.LowLevel.Unsafe;
+
+[RequiredByNativeCode]
+public enum Priority
+{
+	PriorityLow,
+	PriorityHigh
+}

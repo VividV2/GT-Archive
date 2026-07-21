@@ -1,2 +1,15 @@
-// Could not decompile System.Net.InternalException
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.Serialization;
+
+namespace System.Net;
+
+internal class InternalException : SystemException
+{
+	internal InternalException()
+	{
+	}
+
+	internal InternalException(SerializationInfo serializationInfo, StreamingContext streamingContext)
+		: base(serializationInfo, streamingContext)
+	{
+	}
+}

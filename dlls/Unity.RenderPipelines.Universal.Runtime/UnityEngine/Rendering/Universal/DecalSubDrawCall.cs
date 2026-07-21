@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.Rendering.Universal.DecalSubDrawCall
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+internal struct DecalSubDrawCall
+{
+	public int start;
+
+	public int end;
+
+	public int count => end - start;
+}

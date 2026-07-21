@@ -1,2 +1,13 @@
-// Could not decompile Oculus.Platform.Models.AvatarEditorResult
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Oculus.Platform.Models;
+
+public class AvatarEditorResult
+{
+	public readonly bool RequestSent;
+
+	public AvatarEditorResult(IntPtr o)
+	{
+		RequestSent = CAPI.ovr_AvatarEditorResult_GetRequestSent(o);
+	}
+}

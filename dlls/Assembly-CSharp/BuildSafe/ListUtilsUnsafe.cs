@@ -1,2 +1,11 @@
-// Could not decompile BuildSafe.ListUtilsUnsafe`1
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace BuildSafe;
+
+public static class ListUtilsUnsafe<T>
+{
+	public static T[] GetInternalArray(List<T> list)
+	{
+		return null;
+	}
+}

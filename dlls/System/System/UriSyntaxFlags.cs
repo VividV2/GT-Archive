@@ -33,9 +33,3 @@ internal enum UriSyntaxFlags
 	AllowIdn = 0x4000000,
 	AllowIriParsing = 0x10000000
 }
-namespace System.Security.Cryptography
-{
-}
-namespace Mono
-{
-}

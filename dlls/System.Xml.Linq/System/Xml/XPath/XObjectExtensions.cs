@@ -1,36 +1,20 @@
 using System.Xml.Linq;
 
-namespace System.Xml.XPath
+namespace System.Xml.XPath;
+
+internal static class XObjectExtensions
 {
-	internal static class XObjectExtensions
+	public static XContainer GetParent(this XObject obj)
 	{
-		public static XContainer GetParent(this XObject obj)
+		XContainer xContainer = obj.Parent;
+		if (xContainer == null)
 		{
-			XContainer xContainer = obj.Parent;
-			if (xContainer == null)
-			{
-				xContainer = obj.Document;
-			}
-			if (xContainer == obj)
-			{
-				return null;
-			}
-			return xContainer;
+			xContainer = obj.Document;
 		}
+		if (xContainer == obj)
+		{
+			return null;
+		}
+		return xContainer;
 	}
-}
-namespace System.Xml.Schema
-{
-}
-namespace System.Xml.XPath
-{
-}
-namespace System.Xml.Linq
-{
-}
-namespace System.Xml.Linq
-{
-}
-namespace System.Xml.Linq
-{
 }

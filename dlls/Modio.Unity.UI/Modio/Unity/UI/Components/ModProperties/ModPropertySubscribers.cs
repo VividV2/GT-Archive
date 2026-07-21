@@ -1,2 +1,13 @@
-// Could not decompile Modio.Unity.UI.Components.ModProperties.ModPropertySubscribers
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Modio.Mods;
+
+namespace Modio.Unity.UI.Components.ModProperties;
+
+[Serializable]
+public class ModPropertySubscribers : ModPropertyNumberBase
+{
+	protected override long GetValue(Mod mod)
+	{
+		return mod.Stats.Subscribers;
+	}
+}

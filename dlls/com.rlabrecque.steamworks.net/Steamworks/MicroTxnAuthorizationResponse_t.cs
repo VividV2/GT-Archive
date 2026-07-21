@@ -1,13 +1,16 @@
-namespace Steamworks
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(152)]
+public struct MicroTxnAuthorizationResponse_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(4522)]
-	public struct HTML_SetCursor_t
-	{
-		public const int k_iCallback = 4522;
+	public const int k_iCallback = 152;
 
-		public HHTMLBrowser unBrowserHandle;
+	public uint m_unAppID;
 
-		public uint eMouseCursor;
-	}
+	public ulong m_ulOrderID;
+
+	public byte m_bAuthorized;
 }

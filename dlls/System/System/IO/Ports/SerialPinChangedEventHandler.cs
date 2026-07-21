@@ -1,28 +1,6 @@
-using System.IO;
+namespace System.IO.Ports;
 
-namespace System.CodeDom.Compiler;
-
-public interface ICodeGenerator
-{
-	bool IsValidIdentifier(string value);
-
-	void ValidateIdentifier(string value);
-
-	string CreateEscapedIdentifier(string value);
-
-	string CreateValidIdentifier(string value);
-
-	string GetTypeOutput(CodeTypeReference type);
-
-	bool Supports(GeneratorSupport supports);
-
-	void GenerateCodeFromExpression(CodeExpression e, TextWriter w, CodeGeneratorOptions o);
-
-	void GenerateCodeFromStatement(CodeStatement e, TextWriter w, CodeGeneratorOptions o);
-
-	void GenerateCodeFromNamespace(CodeNamespace e, TextWriter w, CodeGeneratorOptions o);
-
-	void GenerateCodeFromCompileUnit(CodeCompileUnit e, TextWriter w, CodeGeneratorOptions o);
-
-	void GenerateCodeFromType(CodeTypeDeclaration e, TextWriter w, CodeGeneratorOptions o);
-}
+/// <summary>Represents the method that will handle the <see cref="E:System.IO.Ports.SerialPort.PinChanged" /> event of a <see cref="T:System.IO.Ports.SerialPort" /> object.</summary>
+/// <param name="sender">The source of the event, which is the <see cref="T:System.IO.Ports.SerialPort" /> object.</param>
+/// <param name="e">A <see cref="T:System.IO.Ports.SerialPinChangedEventArgs" /> object that contains the event data.</param>
+public delegate void SerialPinChangedEventHandler(object sender, SerialPinChangedEventArgs e);

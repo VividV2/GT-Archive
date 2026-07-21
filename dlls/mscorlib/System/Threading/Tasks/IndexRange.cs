@@ -1,22 +1,15 @@
 using System.Runtime.InteropServices;
 
-namespace System.Threading.Tasks
-{
-	[StructLayout(LayoutKind.Auto)]
-	internal struct IndexRange
-	{
-		internal long _nFromInclusive;
+namespace System.Threading.Tasks;
 
-		internal long _nToExclusive;
-
-		internal volatile Box<long> _nSharedCurrentIndexOffset;
-
-		internal int _bRangeFinished;
-	}
-}
-namespace System
+[StructLayout(LayoutKind.Auto)]
+internal struct IndexRange
 {
-}
-namespace System.Threading.Tasks
-{
+	internal long _nFromInclusive;
+
+	internal long _nToExclusive;
+
+	internal volatile Box<long> _nSharedCurrentIndexOffset;
+
+	internal int _bRangeFinished;
 }

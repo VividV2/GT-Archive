@@ -1,7 +1,5 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
+namespace System.Diagnostics;
 
-namespace Mono.Btls;
-
-[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-internal delegate int MonoBtlsVerifyCallback(MonoBtlsX509StoreCtx ctx);
+internal class ProcessInfo
+{
+}

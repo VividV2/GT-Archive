@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.AddressableAssets.AssetReferenceGameObject
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.AddressableAssets;
+
+[Serializable]
+public class AssetReferenceGameObject : AssetReferenceT<GameObject>
+{
+	public AssetReferenceGameObject(string guid)
+		: base(guid)
+	{
+	}
+}

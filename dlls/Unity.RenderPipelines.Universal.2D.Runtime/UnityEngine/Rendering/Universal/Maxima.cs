@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.Rendering.Universal.Maxima
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+internal class Maxima
+{
+	internal long X;
+
+	internal Maxima Next;
+
+	internal Maxima Prev;
+}

@@ -1,2 +1,20 @@
-// Could not decompile System.Data.SqlClient.SqlConnectionPoolProviderInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System.Data.ProviderBase;
+
+namespace System.Data.SqlClient;
+
+internal sealed class SqlConnectionPoolProviderInfo : DbConnectionPoolProviderInfo
+{
+	private string _instanceName;
+
+	internal string InstanceName
+	{
+		get
+		{
+			return _instanceName;
+		}
+		set
+		{
+			_instanceName = value;
+		}
+	}
+}

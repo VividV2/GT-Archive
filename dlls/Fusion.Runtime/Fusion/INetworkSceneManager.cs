@@ -1,80 +1,35 @@
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
-namespace Fusion.LagCompensation
+namespace Fusion;
+
+public interface INetworkSceneManager
 {
-	internal interface ILagCompensationBroadphase
-	{
-		void CopyFrom(ILagCompensationBroadphase other);
+	bool IsBusy { get; }
 
-		void Traverse(IBoundsTraversalTest hitTest, HashSet<HitboxRoot> candidateRoots, int layerMask);
+	Scene MainRunnerScene { get; }
 
-		void Add(HitboxRoot root);
+	void Initialize(NetworkRunner runner);
 
-		bool Remove(HitboxRoot root);
+	void Shutdown();
 
-		void Update(HitboxRoot changed, int tick);
-	}
-}
-namespace Fusion
-{
-	[StructLayout(LayoutKind.Explicit)]
-	[NetworkStructWeaved(10)]
-	public struct NetworkPhysicsInfo : INetworkStruct
-	{
-		public const int WORD_COUNT = 10;
+	bool IsRunnerScene(Scene scene);
 
-		public const int SIZE = 40;
+	bool TryGetPhysicsScene2D(out PhysicsScene2D scene2D);
 
-		[FieldOffset(0)]
-		public float TimeScale;
-	}
-}
-namespace Fusion
-{
-	public interface INetworkSceneManager
-	{
-		bool IsBusy { get; }
+	bool TryGetPhysicsScene3D(out PhysicsScene scene3D);
 
-		Scene MainRunnerScene { get; }
+	void MakeDontDestroyOnLoad(GameObject obj);
 
-		void Initialize(NetworkRunner runner);
+	bool MoveGameObjectToScene(GameObject gameObject, SceneRef sceneRef);
 
-		void Shutdown();
+	NetworkSceneAsyncOp LoadScene(SceneRef sceneRef, NetworkLoadSceneParameters parameters);
 
-		bool IsRunnerScene(Scene scene);
+	NetworkSceneAsyncOp UnloadScene(SceneRef sceneRef);
 
-		bool TryGetPhysicsScene2D(out PhysicsScene2D scene2D);
+	SceneRef GetSceneRef(GameObject gameObject);
 
-		bool TryGetPhysicsScene3D(out PhysicsScene scene3D);
+	SceneRef GetSceneRef(string sceneNameOrPath);
 
-		void MakeDontDestroyOnLoad(GameObject obj);
-
-		bool MoveGameObjectToScene(GameObject gameObject, SceneRef sceneRef);
-
-		NetworkSceneAsyncOp LoadScene(SceneRef sceneRef, NetworkLoadSceneParameters parameters);
-
-		NetworkSceneAsyncOp UnloadScene(SceneRef sceneRef);
-
-		SceneRef GetSceneRef(GameObject gameObject);
-
-		SceneRef GetSceneRef(string sceneNameOrPath);
-
-		bool OnSceneInfoChanged(NetworkSceneInfo sceneInfo, NetworkSceneInfoChangeSource changeSource);
-	}
-}
-namespace Fusion.Statistics
-{
-}
-namespace Fusion
-{
-}
-namespace Fusion.Statistics
-{
+	bool OnSceneInfoChanged(NetworkSceneInfo sceneInfo, NetworkSceneInfoChangeSource changeSource);
 }

@@ -1,2 +1,23 @@
-// Could not decompile Oculus.Interaction.MinMaxPair
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace Oculus.Interaction;
+
+[Serializable]
+public struct MinMaxPair
+{
+	[SerializeField]
+	private bool _useRandomRange;
+
+	[SerializeField]
+	private float _min;
+
+	[SerializeField]
+	private float _max;
+
+	public bool UseRandomRange => _useRandomRange;
+
+	public float Min => _min;
+
+	public float Max => _max;
+}

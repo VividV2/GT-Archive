@@ -1,2 +1,17 @@
-// Could not decompile DevInspectorScanner
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DevInspectorScanner : MonoBehaviour
+{
+	public Text hintTextOutput;
+
+	public float scanDistance = 10f;
+
+	public float scanAngle = 30f;
+
+	public LayerMask scanLayerMask;
+
+	public string targetComponentName;
+
+	public float rayPerDegree = 10f;
+}

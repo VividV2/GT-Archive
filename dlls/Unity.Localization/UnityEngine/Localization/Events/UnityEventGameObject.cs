@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.Localization.Events.UnityEventGameObject
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace UnityEngine.Localization.Events;
+
+[Serializable]
+public class UnityEventGameObject : UnityEvent<GameObject>
+{
+}

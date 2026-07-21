@@ -1,2 +1,18 @@
-// Could not decompile PlayerConfig
-// This type uses unsupported IL or has too many generic parameters.
+public class PlayerConfig
+{
+	public const string Player_Nickname = "playerName";
+
+	public const string Player_HasDoneTutorial = "didTutorial";
+
+	public const string Player_HasSeenGhostReactor = "seenGhostReactor";
+
+	public const string Player_HasFlaggedWrongStump = "spawnInWrongStump";
+
+	public const string Player_LastSawScheduledEventTime = "lastSawScheduledEventTime";
+
+	public const string Done = "done";
+
+	public const string Nope = "nope";
+
+	public const string FlagTrue = "flagged";
+}

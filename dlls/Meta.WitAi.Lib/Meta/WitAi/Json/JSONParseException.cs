@@ -1,2 +1,11 @@
-// Could not decompile Meta.WitAi.Json.JSONParseException
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Meta.WitAi.Json;
+
+public class JSONParseException : Exception
+{
+	public JSONParseException(string message)
+		: base(message)
+	{
+	}
+}

@@ -1,2 +1,42 @@
-// Could not decompile UnityEngine.TextCore.LowLevel.SequenceLookupRecord
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Bindings;
+using UnityEngine.Scripting;
+
+namespace UnityEngine.TextCore.LowLevel;
+
+[Serializable]
+[UsedByNativeCode]
+internal struct SequenceLookupRecord
+{
+	[SerializeField]
+	[NativeName("glyphSequenceIndex")]
+	private uint m_GlyphSequenceIndex;
+
+	[SerializeField]
+	[NativeName("lookupListIndex")]
+	private uint m_LookupListIndex;
+
+	public uint glyphSequenceIndex
+	{
+		get
+		{
+			return m_GlyphSequenceIndex;
+		}
+		set
+		{
+			m_GlyphSequenceIndex = value;
+		}
+	}
+
+	public uint lookupListIndex
+	{
+		get
+		{
+			return m_LookupListIndex;
+		}
+		set
+		{
+			m_LookupListIndex = value;
+		}
+	}
+}

@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.InputSystem.Utilities.DisplayStringFormatAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.InputSystem.Utilities;
+
+[AttributeUsage(AttributeTargets.Class, Inherited = true)]
+public class DisplayStringFormatAttribute : Attribute
+{
+	public string formatString { get; set; }
+
+	public DisplayStringFormatAttribute(string formatString)
+	{
+		this.formatString = formatString;
+	}
+}

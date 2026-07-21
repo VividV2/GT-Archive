@@ -1,2 +1,19 @@
-// Could not decompile UnityEngine.UIElements.CanStartDragArgs
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace UnityEngine.UIElements;
+
+public readonly struct CanStartDragArgs
+{
+	public readonly VisualElement draggedElement;
+
+	public readonly int id;
+
+	public readonly IEnumerable<int> selectedIds;
+
+	internal CanStartDragArgs(VisualElement draggedElement, int id, IEnumerable<int> selectedIds)
+	{
+		this.draggedElement = draggedElement;
+		this.id = id;
+		this.selectedIds = selectedIds;
+	}
+}

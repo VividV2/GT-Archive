@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.UIElements.BindingTarget
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+internal readonly struct BindingTarget(VisualElement element, in BindingId bindingId)
+{
+	public readonly VisualElement element = element;
+
+	public readonly BindingId bindingId = bindingId;
+}

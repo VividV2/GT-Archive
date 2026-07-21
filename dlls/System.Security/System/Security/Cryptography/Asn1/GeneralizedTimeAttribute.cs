@@ -1,2 +1,7 @@
-// Could not decompile System.Security.Cryptography.Asn1.GeneralizedTimeAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Security.Cryptography.Asn1;
+
+[AttributeUsage(AttributeTargets.Field)]
+internal sealed class GeneralizedTimeAttribute : AsnTypeAttribute
+{
+	public bool DisallowFractions { get; set; }
+}

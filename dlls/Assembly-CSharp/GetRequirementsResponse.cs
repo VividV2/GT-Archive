@@ -1,2 +1,8 @@
-// Could not decompile GetRequirementsResponse
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using KID.Model;
+
+[Serializable]
+public class GetRequirementsResponse : GetAgeGateRequirementsResponse
+{
+	public int PlatformMinimumAge { get; set; }
+}

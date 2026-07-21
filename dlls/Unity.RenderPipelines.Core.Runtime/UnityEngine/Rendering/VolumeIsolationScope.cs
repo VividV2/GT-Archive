@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.Rendering.VolumeIsolationScope
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Runtime.InteropServices;
+
+namespace UnityEngine.Rendering;
+
+[StructLayout(LayoutKind.Sequential, Size = 1)]
+[Obsolete("VolumeIsolationScope is deprecated, it does not have any effect anymore.")]
+public struct VolumeIsolationScope : IDisposable
+{
+	public VolumeIsolationScope(bool unused)
+	{
+	}
+
+	void IDisposable.Dispose()
+	{
+	}
+}

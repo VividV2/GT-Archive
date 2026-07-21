@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.Localization.SmartFormat.Core.Formatting.DataNotReadyException
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Localization.SmartFormat.Core.Formatting;
+
+internal class DataNotReadyException : Exception
+{
+	public string Text { get; private set; }
+
+	public DataNotReadyException()
+	{
+	}
+
+	public DataNotReadyException(string text)
+	{
+		Text = text;
+	}
+}

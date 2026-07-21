@@ -1,12 +1,14 @@
-using UnityEngine;
-using UnityEngine;
+namespace Oculus.Interaction.PoseDetection;
 
-namespace Oculus.Interaction.Surfaces;
+public class FeatureStateDescription
+{
+	public string Id { get; }
 
-public interface IBoundsClipper
-{
-	bool GetLocalBounds(Transform localTo, out Bounds bounds);
-}
-namespace Oculus.Interaction.PoseDetection.Debug
-{
+	public string Name { get; }
+
+	public FeatureStateDescription(string id, string name)
+	{
+		Id = id;
+		Name = name;
+	}
 }

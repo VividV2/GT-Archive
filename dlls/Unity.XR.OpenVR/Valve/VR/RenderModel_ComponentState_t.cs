@@ -1,19 +1,10 @@
-namespace Valve.VR
-{
-	public struct RenderModel_ComponentState_t
-	{
-		public HmdMatrix34_t mTrackingToComponentRenderModel;
+namespace Valve.VR;
 
-		public HmdMatrix34_t mTrackingToComponentLocal;
-
-		public uint uProperties;
-	}
-}
-namespace Valve.VR
+public struct RenderModel_ComponentState_t
 {
-	public enum EVRMuraCorrectionMode
-	{
-		Default,
-		NoCorrection
-	}
+	public HmdMatrix34_t mTrackingToComponentRenderModel;
+
+	public HmdMatrix34_t mTrackingToComponentLocal;
+
+	public uint uProperties;
 }

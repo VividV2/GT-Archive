@@ -1,38 +1,10 @@
-namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler
-{
-	internal enum PassBreakReason
-	{
-		NotOptimized,
-		TargetSizeMismatch,
-		NextPassReadsTexture,
-		NextPassTargetsTexture,
-		NonRasterPass,
-		DifferentDepthTextures,
-		AttachmentLimitReached,
-		SubPassLimitReached,
-		EndOfGraph,
-		FRStateMismatch,
-		DifferentShadingRateImages,
-		DifferentShadingRateStates,
-		PassMergingDisabled,
-		Merged,
-		Count
-	}
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
-	public interface ICameraHistoryReadAccess
-	{
-		public delegate void HistoryRequestDelegate(IPerFrameHistoryAccessTracker historyAccess);
+using UnityEngine.Rendering;
 
-		event HistoryRequestDelegate OnGatherHistoryRequests;
+namespace UnityEngine.Experimental.Rendering;
 
-		Type GetHistoryForRead<Type>() where Type : ContextItem;
-	}
-}
-namespace UnityEngine.Rendering.RenderGraphModule
+public static class SinglepassKeywords
 {
+	public static GlobalKeyword STEREO_MULTIVIEW_ON;
+
+	public static GlobalKeyword STEREO_INSTANCING_ON;
 }

@@ -1,2 +1,11 @@
-// Could not decompile PlayFab.MultiplayerModels.ListMatchmakingQueuesResult
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class ListMatchmakingQueuesResult : PlayFabResultCommon
+{
+	public List<MatchmakingQueueConfig> MatchMakingQueues;
+}

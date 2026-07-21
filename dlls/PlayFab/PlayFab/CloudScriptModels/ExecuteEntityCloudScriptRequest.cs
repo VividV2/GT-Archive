@@ -1,24 +1,20 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.CloudScriptModels;
+
+[Serializable]
+public class ExecuteEntityCloudScriptRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.CloudScriptModels
-{
-	[Serializable]
-	public class ExecuteEntityCloudScriptRequest : PlayFabRequestCommon
-	{
-		public EntityKey Entity;
+	public EntityKey Entity;
 
-		public string FunctionName;
+	public string FunctionName;
 
-		public object FunctionParameter;
+	public object FunctionParameter;
 
-		public bool? GeneratePlayStreamEvent;
+	public bool? GeneratePlayStreamEvent;
 
-		public CloudScriptRevisionOption? RevisionSelection;
+	public CloudScriptRevisionOption? RevisionSelection;
 
-		public int? SpecificRevision;
-	}
+	public int? SpecificRevision;
 }

@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.LOD
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+[UsedByNativeCode]
+public struct LOD(float screenRelativeTransitionHeight, Renderer[] renderers)
+{
+	public float screenRelativeTransitionHeight = screenRelativeTransitionHeight;
+
+	public float fadeTransitionWidth = 0f;
+
+	public Renderer[] renderers = renderers;
+}

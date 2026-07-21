@@ -1,87 +1,33 @@
 using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.U2D
+namespace UnityEngine.U2D;
+
+[MovedFrom("UnityEngine.Experimental.U2D")]
+public struct SpriteShapeParameters
 {
-	internal enum SpriteShapeDataType
-	{
-		Index,
-		Segment,
-		BoundingBox,
-		ChannelVertex,
-		ChannelTexCoord0,
-		ChannelNormal,
-		ChannelTangent,
-		ChannelColor,
-		DataCount
-	}
-}
-namespace UnityEngine.U2D
-{
-}
-namespace UnityEngine.U2D
-{
-	[MovedFrom("UnityEngine.Experimental.U2D")]
-	public struct ShapeControlPoint
-	{
-		public Vector3 position;
+	public Matrix4x4 transform;
 
-		public Vector3 leftTangent;
+	public Texture2D fillTexture;
 
-		public Vector3 rightTangent;
+	public uint fillScale;
 
-		public int mode;
-	}
-}
-namespace UnityEngine.U2D
-{
-	[MovedFrom("UnityEngine.Experimental.U2D")]
-	public struct SpriteShapeParameters
-	{
-		public Matrix4x4 transform;
+	public uint splineDetail;
 
-		public Texture2D fillTexture;
+	public float angleThreshold;
 
-		public uint fillScale;
+	public float borderPivot;
 
-		public uint splineDetail;
+	public float bevelCutoff;
 
-		public float angleThreshold;
+	public float bevelSize;
 
-		public float borderPivot;
+	public bool carpet;
 
-		public float bevelCutoff;
+	public bool smartSprite;
 
-		public float bevelSize;
+	public bool adaptiveUV;
 
-		public bool carpet;
+	public bool spriteBorders;
 
-		public bool smartSprite;
-
-		public bool adaptiveUV;
-
-		public bool spriteBorders;
-
-		public bool stretchUV;
-	}
-}
-namespace UnityEngine.U2D
-{
-	[MovedFrom("UnityEngine.Experimental.U2D")]
-	public struct AngleRangeInfo
-	{
-		public float start;
-
-		public float end;
-
-		public uint order;
-
-		public int[] sprites;
-	}
-}
-namespace UnityEngine.U2D
-{
-}
-namespace UnityEngine.U2D
-{
+	public bool stretchUV;
 }

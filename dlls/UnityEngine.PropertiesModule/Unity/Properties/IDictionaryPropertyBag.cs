@@ -1,6 +1,7 @@
+using System.Collections.Generic;
+
 namespace Unity.Properties;
 
-public interface IVisitPropertyAdapter<TContainer, TValue> : IPropertyVisitorAdapter
+public interface IDictionaryPropertyBag<TDictionary, TKey, TValue> : ICollectionPropertyBag<TDictionary, KeyValuePair<TKey, TValue>>, IPropertyBag<TDictionary>, IPropertyBag, ICollectionPropertyBagAccept<TDictionary>, IDictionaryPropertyBagAccept<TDictionary>, IDictionaryPropertyAccept<TDictionary>, IKeyedProperties<TDictionary, object> where TDictionary : IDictionary<TKey, TValue>
 {
-	void Visit(in VisitContext<TContainer, TValue> context, ref TContainer container, ref TValue value);
 }

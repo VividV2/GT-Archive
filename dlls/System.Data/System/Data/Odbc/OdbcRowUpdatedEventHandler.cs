@@ -4,6 +4,3 @@ namespace System.Data.Odbc;
 /// <param name="sender">The source of the event.</param>
 /// <param name="e">The <see cref="T:System.Data.Odbc.OdbcRowUpdatedEventArgs" /> that contains the event data.</param>
 public delegate void OdbcRowUpdatedEventHandler(object sender, OdbcRowUpdatedEventArgs e);
-namespace System.Data.Common
-{
-}

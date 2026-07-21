@@ -1,2 +1,8 @@
-// Could not decompile VYaml.Parser.VersionDirective
-// This type uses unsupported IL or has too many generic parameters.
+namespace VYaml.Parser;
+
+internal struct VersionDirective(int major, int minor) : ITokenContent
+{
+	public readonly int Major = major;
+
+	public readonly int Minor = minor;
+}

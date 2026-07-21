@@ -2,64 +2,39 @@ using System;
 using UnityEngine.Rendering;
 using UnityEngine.XR;
 
-namespace UnityEngine.Experimental.Rendering
+namespace UnityEngine.Experimental.Rendering;
+
+public struct XRPassCreateInfo
 {
-	public struct XRPassCreateInfo
-	{
-		internal RenderTargetIdentifier renderTarget;
+	internal RenderTargetIdentifier renderTarget;
 
-		internal RenderTextureDescriptor renderTargetDesc;
+	internal RenderTextureDescriptor renderTargetDesc;
 
-		internal RenderTargetIdentifier motionVectorRenderTarget;
+	internal RenderTargetIdentifier motionVectorRenderTarget;
 
-		internal RenderTextureDescriptor motionVectorRenderTargetDesc;
+	internal RenderTextureDescriptor motionVectorRenderTargetDesc;
 
-		internal ScriptableCullingParameters cullingParameters;
+	internal ScriptableCullingParameters cullingParameters;
 
-		internal Material occlusionMeshMaterial;
+	internal Material occlusionMeshMaterial;
 
-		internal float occlusionMeshScale;
+	internal float occlusionMeshScale;
 
-		internal int renderTargetScaledWidth;
+	internal int renderTargetScaledWidth;
 
-		internal int renderTargetScaledHeight;
+	internal int renderTargetScaledHeight;
 
-		internal IntPtr foveatedRenderingInfo;
+	internal IntPtr foveatedRenderingInfo;
 
-		internal int multipassId;
+	internal int multipassId;
 
-		internal int cullingPassId;
+	internal int cullingPassId;
 
-		internal bool copyDepth;
+	internal bool copyDepth;
 
-		internal bool hasMotionVectorPass;
+	internal bool hasMotionVectorPass;
 
-		internal bool spaceWarpRightHandedNDC;
+	internal bool spaceWarpRightHandedNDC;
 
-		internal XRDisplaySubsystem.XRRenderPass xrSdkRenderPass;
-	}
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering.UI
-{
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering
-{
-}
-namespace UnityEngine.Rendering.RenderGraphModule.NativeRenderPassCompiler
-{
-}
-namespace UnityEngine.Rendering.RenderGraphModule
-{
-}
-namespace UnityEngine.Rendering
-{
+	internal XRDisplaySubsystem.XRRenderPass xrSdkRenderPass;
 }

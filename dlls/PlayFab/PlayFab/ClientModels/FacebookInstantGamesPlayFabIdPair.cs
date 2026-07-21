@@ -1,23 +1,12 @@
 using System;
 using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class FacebookInstantGamesPlayFabIdPair : PlayFabBaseModel
-	{
-		public string FacebookInstantGamesId;
+namespace PlayFab.ClientModels;
 
-		public string PlayFabId;
-	}
-}
-namespace PlayFab.ClientModels
+[Serializable]
+public class FacebookInstantGamesPlayFabIdPair : PlayFabBaseModel
 {
-	[Serializable]
-	public class CancelTradeResponse : PlayFabResultCommon
-	{
-		public TradeInfo Trade;
-	}
+	public string FacebookInstantGamesId;
+
+	public string PlayFabId;
 }

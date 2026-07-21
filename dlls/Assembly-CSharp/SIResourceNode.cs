@@ -1,2 +1,8 @@
-// Could not decompile SIResourceNode
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class SIResourceNode : MonoBehaviour
+{
+	public SIResource resourcePrefab;
+
+	public GameEntity activeResource;
+}

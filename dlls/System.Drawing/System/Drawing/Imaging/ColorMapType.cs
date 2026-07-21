@@ -1,11 +1,10 @@
-namespace System.Drawing;
+namespace System.Drawing.Imaging;
 
-internal struct GdiColorPalette
+/// <summary>Specifies the types of color maps.</summary>
+public enum ColorMapType
 {
-	internal int Flags;
-
-	internal int Count;
-}
-namespace System.Drawing
-{
+	/// <summary>A default color map.</summary>
+	Default,
+	/// <summary>Specifies a color map for a <see cref="T:System.Drawing.Brush" />.</summary>
+	Brush
 }

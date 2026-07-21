@@ -10,6 +10,3 @@ internal interface IConfigurationAttribute
 
 	bool IsValidTarget(string s);
 }
-namespace System.EnterpriseServices
-{
-}

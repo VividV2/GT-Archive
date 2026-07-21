@@ -1,18 +1,8 @@
-namespace UnityEngine.Android
+namespace UnityEngine.Android;
+
+public enum AndroidOrientation
 {
-	public enum AndroidOrientation
-	{
-		Undefined,
-		Portrait,
-		Landscape
-	}
-}
-namespace UnityEngine.Android
-{
-	public enum AndroidKeyboardHidden
-	{
-		Undefined,
-		No,
-		Yes
-	}
+	Undefined,
+	Portrait,
+	Landscape
 }

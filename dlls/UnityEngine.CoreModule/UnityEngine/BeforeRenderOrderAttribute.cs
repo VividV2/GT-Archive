@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.BeforeRenderOrderAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine;
+
+[AttributeUsage(AttributeTargets.Method)]
+public class BeforeRenderOrderAttribute : Attribute
+{
+	public int order { get; private set; }
+
+	public BeforeRenderOrderAttribute(int order)
+	{
+		this.order = order;
+	}
+}

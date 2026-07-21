@@ -1,11 +1,18 @@
-namespace System.Runtime.Serialization;
+namespace System.Security.AccessControl;
 
-/// <summary>Allows an object to control its own serialization and deserialization.</summary>
-public interface ISerializable
+/// <summary>Specifies the type of access control modification to perform. This enumeration is used by methods of the <see cref="T:System.Security.AccessControl.ObjectSecurity" /> class and its descendents.</summary>
+public enum AccessControlModification
 {
-	/// <summary>Populates a <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with the data needed to serialize the target object.</summary>
-	/// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> to populate with data.</param>
-	/// <param name="context">The destination (see <see cref="T:System.Runtime.Serialization.StreamingContext" />) for this serialization.</param>
-	/// <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
-	void GetObjectData(SerializationInfo info, StreamingContext context);
+	/// <summary>Add the specified authorization rule to the access control list (ACL).</summary>
+	Add,
+	/// <summary>Remove all authorization rules from the ACL, then add the specified authorization rule to the ACL.</summary>
+	Set,
+	/// <summary>Remove authorization rules that contain the same SID as the specified authorization rule from the ACL, and then add the specified authorization rule to the ACL.</summary>
+	Reset,
+	/// <summary>Remove authorization rules that contain the same security identifier (SID) and access mask as the specified authorization rule from the ACL.</summary>
+	Remove,
+	/// <summary>Remove authorization rules that contain the same SID as the specified authorization rule from the ACL.</summary>
+	RemoveAll,
+	/// <summary>Remove authorization rules that exactly match the specified authorization rule from the ACL.</summary>
+	RemoveSpecific
 }

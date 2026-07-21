@@ -1,35 +1,20 @@
-namespace System.Xml.Schema
+namespace System.Xml.XPath;
+
+/// <summary>Specifies the return type of the XPath expression.</summary>
+public enum XPathResultType
 {
-}
-namespace System.Xml
-{
-	internal interface IDtdEntityInfo
-	{
-		string Name { get; }
-
-		bool IsExternal { get; }
-
-		bool IsDeclaredInExternal { get; }
-
-		bool IsUnparsedEntity { get; }
-
-		bool IsParameterEntity { get; }
-
-		string BaseUriString { get; }
-
-		string DeclaredUriString { get; }
-
-		string SystemId { get; }
-
-		string PublicId { get; }
-
-		string Text { get; }
-
-		int LineNumber { get; }
-
-		int LinePosition { get; }
-	}
-}
-namespace System.Xml
-{
+	/// <summary>A numeric value.</summary>
+	Number = 0,
+	/// <summary>A <see cref="T:System.String" /> value.</summary>
+	String = 1,
+	/// <summary>A <see cref="T:System.Boolean" /><see langword="true" /> or <see langword="false" /> value.</summary>
+	Boolean = 2,
+	/// <summary>A node collection.</summary>
+	NodeSet = 3,
+	/// <summary>A tree fragment.</summary>
+	Navigator = 1,
+	/// <summary>Any of the XPath node types.</summary>
+	Any = 5,
+	/// <summary>The expression does not evaluate to the correct XPath type.</summary>
+	Error = 6
 }

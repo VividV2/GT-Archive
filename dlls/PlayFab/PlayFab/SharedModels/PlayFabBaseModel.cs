@@ -1,2 +1,9 @@
-// Could not decompile PlayFab.SharedModels.PlayFabBaseModel
-// This type uses unsupported IL or has too many generic parameters.
+namespace PlayFab.SharedModels;
+
+public class PlayFabBaseModel
+{
+	public string ToJson()
+	{
+		return PluginManager.GetPlugin<ISerializerPlugin>(PluginContract.PlayFab_Serializer).SerializeObject(this);
+	}
+}

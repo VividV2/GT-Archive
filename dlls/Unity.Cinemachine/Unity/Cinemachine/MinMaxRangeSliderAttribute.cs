@@ -1,2 +1,16 @@
-// Could not decompile Unity.Cinemachine.MinMaxRangeSliderAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Unity.Cinemachine;
+
+public sealed class MinMaxRangeSliderAttribute : PropertyAttribute
+{
+	public float Min;
+
+	public float Max;
+
+	public MinMaxRangeSliderAttribute(float min, float max)
+	{
+		Min = min;
+		Max = max;
+	}
+}

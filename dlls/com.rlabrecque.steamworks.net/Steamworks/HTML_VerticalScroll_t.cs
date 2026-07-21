@@ -1,46 +1,23 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(4512)]
+public struct HTML_VerticalScroll_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(5202)]
-	public struct SearchForGameResultCallback_t
-	{
-		public const int k_iCallback = 5202;
+	public const int k_iCallback = 4512;
 
-		public ulong m_ullSearchID;
+	public HHTMLBrowser unBrowserHandle;
 
-		public EResult m_eResult;
+	public uint unScrollMax;
 
-		public int m_nCountPlayersInGame;
+	public uint unScrollCurrent;
 
-		public int m_nCountAcceptedGame;
+	public float flPageScale;
 
-		public CSteamID m_steamIDHost;
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bVisible;
 
-		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bFinalCallback;
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(4512)]
-	public struct HTML_VerticalScroll_t
-	{
-		public const int k_iCallback = 4512;
-
-		public HHTMLBrowser unBrowserHandle;
-
-		public uint unScrollMax;
-
-		public uint unScrollCurrent;
-
-		public float flPageScale;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bVisible;
-
-		public uint unPageSize;
-	}
+	public uint unPageSize;
 }

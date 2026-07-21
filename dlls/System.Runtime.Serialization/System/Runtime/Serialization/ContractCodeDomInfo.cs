@@ -1,26 +1,56 @@
+using System.CodeDom;
+using System.Collections.Generic;
+
 namespace System.Runtime.Serialization;
 
-internal sealed class TypeInformation
+internal class ContractCodeDomInfo
 {
-	private string fullTypeName;
+	internal bool IsProcessed;
 
-	private string assemblyString;
+	internal CodeTypeDeclaration TypeDeclaration;
 
-	private bool hasTypeForwardedFrom;
+	internal CodeTypeReference TypeReference;
 
-	internal string FullTypeName => fullTypeName;
+	internal CodeNamespace CodeNamespace;
 
-	internal string AssemblyString => assemblyString;
+	internal bool ReferencedTypeExists;
 
-	internal bool HasTypeForwardedFrom => hasTypeForwardedFrom;
+	internal bool UsesWildcardNamespace;
 
-	internal TypeInformation(string fullTypeName, string assemblyString, bool hasTypeForwardedFrom)
+	private string clrNamespace;
+
+	private Dictionary<string, object> memberNames;
+
+	internal string ClrNamespace
 	{
-		this.fullTypeName = fullTypeName;
-		this.assemblyString = assemblyString;
-		this.hasTypeForwardedFrom = hasTypeForwardedFrom;
+		get
+		{
+			if (!ReferencedTypeExists)
+			{
+				return clrNamespace;
+			}
+			return null;
+		}
+		set
+		{
+			if (ReferencedTypeExists)
+			{
+				throw DiagnosticUtility.ExceptionUtility.ThrowHelperError(new InvalidOperationException(SR.GetString("Cannot set namespace for already referenced type. Base type is '{0}'.", TypeReference.BaseType)));
+			}
+			clrNamespace = value;
+		}
 	}
-}
-namespace System.Runtime.Serialization
-{
+
+	internal Dictionary<string, object> GetMemberNames()
+	{
+		if (ReferencedTypeExists)
+		{
+			throw DiagnosticUtility.ExceptionUtility.ThrowHelperError(new InvalidOperationException(SR.GetString("Cannot set members for already referenced type. Base type is '{0}'.", TypeReference.BaseType)));
+		}
+		if (memberNames == null)
+		{
+			memberNames = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
+		}
+		return memberNames;
+	}
 }

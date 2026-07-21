@@ -1,2 +1,33 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.SelectEnterEventArgs
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+
+namespace UnityEngine.XR.Interaction.Toolkit;
+
+public class SelectEnterEventArgs : BaseInteractionEventArgs
+{
+	public new IXRSelectInteractor interactorObject
+	{
+		get
+		{
+			return (IXRSelectInteractor)base.interactorObject;
+		}
+		set
+		{
+			base.interactorObject = value;
+		}
+	}
+
+	public new IXRSelectInteractable interactableObject
+	{
+		get
+		{
+			return (IXRSelectInteractable)base.interactableObject;
+		}
+		set
+		{
+			base.interactableObject = value;
+		}
+	}
+
+	public XRInteractionManager manager { get; set; }
+}

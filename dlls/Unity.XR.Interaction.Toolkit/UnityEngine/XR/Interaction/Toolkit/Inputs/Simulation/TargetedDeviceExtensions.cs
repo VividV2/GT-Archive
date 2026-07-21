@@ -1,2 +1,19 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.TargetedDeviceExtensions
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
+
+internal static class TargetedDeviceExtensions
+{
+	public static TargetedDevices WithDevice(this TargetedDevices devices, TargetedDevices device)
+	{
+		return devices | device;
+	}
+
+	public static TargetedDevices WithoutDevice(this TargetedDevices devices, TargetedDevices device)
+	{
+		return devices & ~device;
+	}
+
+	public static bool HasDevice(this TargetedDevices devices, TargetedDevices device)
+	{
+		return (devices & device) == device;
+	}
+}

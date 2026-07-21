@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.UIElements.UxmlTypeRestriction
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.UIElements;
+
+public abstract class UxmlTypeRestriction : IEquatable<UxmlTypeRestriction>
+{
+	public virtual bool Equals(UxmlTypeRestriction other)
+	{
+		return this == other;
+	}
+}

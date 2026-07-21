@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.Splines.DataPointComparer`1
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace UnityEngine.Splines;
+
+internal class DataPointComparer<T> : IComparer<T> where T : IDataPoint
+{
+	public int Compare(T x, T y)
+	{
+		return x.Index.CompareTo(y.Index);
+	}
+}

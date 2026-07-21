@@ -1,2 +1,14 @@
-// Could not decompile GameLightOverride
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GameLightOverride : MonoBehaviour
+{
+	public void MaxGameLightOverride(int newMaxLights)
+	{
+		GameLightingManager.instance.SetMaxLights(newMaxLights);
+	}
+
+	private void OnDisable()
+	{
+		GameLightingManager.instance.SetMaxLights(20);
+	}
+}

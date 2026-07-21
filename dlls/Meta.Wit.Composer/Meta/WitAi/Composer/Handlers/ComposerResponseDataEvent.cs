@@ -1,2 +1,10 @@
-// Could not decompile Meta.WitAi.Composer.Handlers.ComposerResponseDataEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Meta.WitAi.Composer.Data;
+using UnityEngine.Events;
+
+namespace Meta.WitAi.Composer.Handlers;
+
+[Serializable]
+public class ComposerResponseDataEvent : UnityEvent<ComposerResponseData>
+{
+}

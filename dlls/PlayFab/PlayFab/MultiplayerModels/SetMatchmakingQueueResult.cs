@@ -1,6 +1,9 @@
-namespace PlayFab.MultiplayerModels
-{
-}
-namespace PlayFab.MultiplayerModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class SetMatchmakingQueueResult : PlayFabResultCommon
 {
 }

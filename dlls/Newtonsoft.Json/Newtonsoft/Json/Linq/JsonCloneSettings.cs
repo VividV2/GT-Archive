@@ -1,2 +1,16 @@
-// Could not decompile Newtonsoft.Json.Linq.JsonCloneSettings
-// This type uses unsupported IL or has too many generic parameters.
+namespace Newtonsoft.Json.Linq;
+
+public class JsonCloneSettings
+{
+	internal static readonly JsonCloneSettings SkipCopyAnnotations = new JsonCloneSettings
+	{
+		CopyAnnotations = false
+	};
+
+	public bool CopyAnnotations { get; set; }
+
+	public JsonCloneSettings()
+	{
+		CopyAnnotations = true;
+	}
+}

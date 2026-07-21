@@ -1,13 +1,9 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public class FocusEvent : FocusEventBase<FocusEvent>
 {
-	public class FocusEvent : FocusEventBase<FocusEvent>
+	static FocusEvent()
 	{
-		static FocusEvent()
-		{
-			EventBase<FocusEvent>.SetCreateFunction(() => new FocusEvent());
-		}
+		EventBase<FocusEvent>.SetCreateFunction(() => new FocusEvent());
 	}
-}
-namespace UnityEngine.UIElements
-{
 }

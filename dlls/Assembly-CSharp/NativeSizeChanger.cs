@@ -1,2 +1,12 @@
-// Could not decompile NativeSizeChanger
-// This type uses unsupported IL or has too many generic parameters.
+using GorillaLocomotion;
+using UnityEngine;
+
+public class NativeSizeChanger : MonoBehaviour
+{
+	public void Activate(NativeSizeChangerSettings settings)
+	{
+		settings.WorldPosition = base.transform.position;
+		settings.ActivationTime = Time.time;
+		GTPlayer.Instance.SetNativeScale(settings);
+	}
+}

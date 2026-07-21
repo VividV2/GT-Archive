@@ -1,20 +1,16 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class LoginWithWindowsHelloRequest : PlayFabRequestCommon
 {
-	[Serializable]
-	public class LoginWithWindowsHelloRequest : PlayFabRequestCommon
-	{
-		public string ChallengeSignature;
+	public string ChallengeSignature;
 
-		public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
+	public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
 
-		public string PublicKeyHint;
+	public string PublicKeyHint;
 
-		public string TitleId;
-	}
-}
-namespace PlayFab.ClientModels
-{
+	public string TitleId;
 }

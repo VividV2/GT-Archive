@@ -1,19 +1,12 @@
-namespace OVR.OpenVR
-{
-}
-namespace OVR.OpenVR
-{
-}
-namespace OVR.OpenVR
-{
-	public struct RenderModel_Vertex_t
-	{
-		public HmdVector3_t vPosition;
+namespace OVR.OpenVR;
 
-		public HmdVector3_t vNormal;
+public struct RenderModel_Vertex_t
+{
+	public HmdVector3_t vPosition;
 
-		public float rfTextureCoord0;
+	public HmdVector3_t vNormal;
 
-		public float rfTextureCoord1;
-	}
+	public float rfTextureCoord0;
+
+	public float rfTextureCoord1;
 }

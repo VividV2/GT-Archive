@@ -1,5 +1,3 @@
-namespace GorillaTag.CosmeticSystem;
-
 public enum ScratchSoundType
 {
 	Pause,

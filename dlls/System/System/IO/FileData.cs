@@ -1,2 +1,14 @@
-// Could not decompile System.IO.FileData
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.IO;
+
+internal class FileData
+{
+	public string Directory;
+
+	public FileAttributes Attributes;
+
+	public bool NotExists;
+
+	public DateTime CreationTime;
+
+	public DateTime LastWriteTime;
+}

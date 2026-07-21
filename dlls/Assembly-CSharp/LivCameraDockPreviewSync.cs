@@ -1,2 +1,14 @@
-// Could not decompile LivCameraDockPreviewSync
-// This type uses unsupported IL or has too many generic parameters.
+using Docking;
+using UnityEngine;
+
+[ExecuteAlways]
+public class LivCameraDockPreviewSync : MonoBehaviour
+{
+	private LivCameraDock dock;
+
+	private Camera parentCamera;
+
+	private float _lastCameraFOV = -1f;
+
+	private float _lastDockFOV = -1f;
+}

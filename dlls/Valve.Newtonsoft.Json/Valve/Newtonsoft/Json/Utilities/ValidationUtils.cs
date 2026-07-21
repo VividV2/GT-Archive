@@ -1,2 +1,14 @@
-// Could not decompile Valve.Newtonsoft.Json.Utilities.ValidationUtils
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Valve.Newtonsoft.Json.Utilities;
+
+internal static class ValidationUtils
+{
+	public static void ArgumentNotNull(object value, string parameterName)
+	{
+		if (value == null)
+		{
+			throw new ArgumentNullException(parameterName);
+		}
+	}
+}

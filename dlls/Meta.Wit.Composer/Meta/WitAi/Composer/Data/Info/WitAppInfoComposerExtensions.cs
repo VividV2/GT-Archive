@@ -1,16 +1,12 @@
 using System;
-using UnityEngine;
-using System;
-using UnityEngine;
+using Meta.WitAi.Data.Configuration;
 
 namespace Meta.WitAi.Composer.Data.Info;
 
-[Serializable]
-public struct ComposerGraphValues
+public static class WitAppInfoComposerExtensions
 {
-	[Tooltip("The path name referenced in Composer")]
-	public string path;
-
-	[Tooltip("The values assigned to this path in Composer")]
-	public string[] values;
+	public static WitComposerData Composer(this IWitRequestConfiguration configuration)
+	{
+		return (WitComposerData)Array.Find(configuration.GetConfigData(), (WitConfigurationAssetData d) => d is WitComposerData);
+	}
 }

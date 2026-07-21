@@ -48,9 +48,3 @@ public interface IInternalConfigRoot
 	/// <param name="configPath">The path of the configuration file.</param>
 	void RemoveConfig(string configPath);
 }
-namespace System.Configuration.Internal
-{
-}
-namespace System.Configuration
-{
-}

@@ -1,2 +1,12 @@
-// Could not decompile MeshAndMaterials
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+[Serializable]
+public class MeshAndMaterials
+{
+	public MeshRenderer meshRenderer;
+
+	public Material offMaterial;
+
+	public Material onMaterial;
+}

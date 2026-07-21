@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Timeline.CustomStyleAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Timeline;
+
+[AttributeUsage(AttributeTargets.Class)]
+public class CustomStyleAttribute : Attribute
+{
+	public readonly string ussStyle;
+
+	public CustomStyleAttribute(string ussStyle)
+	{
+		this.ussStyle = ussStyle;
+	}
+}

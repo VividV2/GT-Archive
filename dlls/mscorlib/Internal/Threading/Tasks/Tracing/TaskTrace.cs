@@ -1,42 +1,60 @@
-namespace System
+using Internal.Runtime.Augments;
+
+namespace Internal.Threading.Tasks.Tracing;
+
+internal static class TaskTrace
 {
-	/// <summary>Defines a generalized method that a value type or class implements to create a type-specific method for determining equality of instances.</summary>
-	/// <typeparam name="T">The type of objects to compare.</typeparam>
-	/// <summary>Defines a generalized method that a value type or class implements to create a type-specific method for determining equality of instances.</summary>
-	/// <typeparam name="T">The type of objects to compare.</typeparam>
-	/// <summary>Defines a generalized method that a value type or class implements to create a type-specific method for determining equality of instances.</summary>
-	/// <typeparam name="T">The type of objects to compare.</typeparam>
-	public interface IEquatable<T>
+	private static TaskTraceCallbacks s_callbacks;
+
+	public static bool Enabled
 	{
-		/// <summary>Indicates whether the current object is equal to another object of the same type.</summary>
-		/// <param name="other">An object to compare with this object.</param>
-		/// <returns>
-		///   <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <see langword="false" />.</returns>
-		/// <summary>Indicates whether the current object is equal to another object of the same type.</summary>
-		/// <param name="other">An object to compare with this object.</param>
-		/// <returns>
-		///   <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <see langword="false" />.</returns>
-		/// <summary>Indicates whether the current object is equal to another object of the same type.</summary>
-		/// <param name="other">An object to compare with this object.</param>
-		/// <returns>
-		///   <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <see langword="false" />.</returns>
-		bool Equals(T other);
+		get
+		{
+			TaskTraceCallbacks taskTraceCallbacks = s_callbacks;
+			if (taskTraceCallbacks == null)
+			{
+				return false;
+			}
+			if (!taskTraceCallbacks.Enabled)
+			{
+				return false;
+			}
+			return true;
+		}
 	}
-}
-namespace System.Security
-{
-	/// <summary>Specifies the default partial-trust visibility for code that is marked with the <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" /> (APTCA) attribute.</summary>
-	/// <summary>Specifies the default partial-trust visibility for code that is marked with the <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" /> (APTCA) attribute.</summary>
-	/// <summary>Specifies the default partial-trust visibility for code that is marked with the <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" /> (APTCA) attribute.</summary>
-	public enum PartialTrustVisibilityLevel
+
+	public static void Initialize(TaskTraceCallbacks callbacks)
 	{
-		/// <summary>The assembly can always be called by partial-trust code.</summary>
-		/// <summary>The assembly can always be called by partial-trust code.</summary>
-		/// <summary>The assembly can always be called by partial-trust code.</summary>
-		VisibleToAllHosts,
-		/// <summary>The assembly has been audited for partial trust, but it is not visible to partial-trust code in all hosts. To make the assembly visible to partial-trust code, add it to the <see cref="P:System.AppDomainSetup.PartialTrustVisibleAssemblies" /> property.</summary>
-		/// <summary>The assembly has been audited for partial trust, but it is not visible to partial-trust code in all hosts. To make the assembly visible to partial-trust code, add it to the <see cref="P:System.AppDomainSetup.PartialTrustVisibleAssemblies" /> property.</summary>
-		/// <summary>The assembly has been audited for partial trust, but it is not visible to partial-trust code in all hosts. To make the assembly visible to partial-trust code, add it to the <see cref="P:System.AppDomainSetup.PartialTrustVisibleAssemblies" /> property.</summary>
-		NotVisibleByDefault
+		s_callbacks = callbacks;
+	}
+
+	public static void TaskWaitBegin_Asynchronous(int OriginatingTaskSchedulerID, int OriginatingTaskID, int TaskID)
+	{
+		s_callbacks?.TaskWaitBegin_Asynchronous(OriginatingTaskSchedulerID, OriginatingTaskID, TaskID);
+	}
+
+	public static void TaskWaitBegin_Synchronous(int OriginatingTaskSchedulerID, int OriginatingTaskID, int TaskID)
+	{
+		s_callbacks?.TaskWaitBegin_Synchronous(OriginatingTaskSchedulerID, OriginatingTaskID, TaskID);
+	}
+
+	public static void TaskWaitEnd(int OriginatingTaskSchedulerID, int OriginatingTaskID, int TaskID)
+	{
+		s_callbacks?.TaskWaitEnd(OriginatingTaskSchedulerID, OriginatingTaskID, TaskID);
+	}
+
+	public static void TaskScheduled(int OriginatingTaskSchedulerID, int OriginatingTaskID, int TaskID, int CreatingTaskID, int TaskCreationOptions)
+	{
+		s_callbacks?.TaskScheduled(OriginatingTaskSchedulerID, OriginatingTaskID, TaskID, CreatingTaskID, TaskCreationOptions);
+	}
+
+	public static void TaskStarted(int OriginatingTaskSchedulerID, int OriginatingTaskID, int TaskID)
+	{
+		s_callbacks?.TaskStarted(OriginatingTaskSchedulerID, OriginatingTaskID, TaskID);
+	}
+
+	public static void TaskCompleted(int OriginatingTaskSchedulerID, int OriginatingTaskID, int TaskID, bool IsExceptional)
+	{
+		s_callbacks?.TaskCompleted(OriginatingTaskSchedulerID, OriginatingTaskID, TaskID, IsExceptional);
 	}
 }

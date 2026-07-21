@@ -1,19 +1,12 @@
 using UnityEngine;
 
-namespace Oculus.Interaction
-{
-	public struct TubePoint
-	{
-		public Vector3 position;
+namespace Oculus.Interaction;
 
-		public Quaternion rotation;
+public struct TubePoint
+{
+	public Vector3 position;
 
-		public float relativeLength;
-	}
-}
-namespace Oculus.Interaction
-{
-}
-namespace Oculus.Interaction.Input
-{
+	public Quaternion rotation;
+
+	public float relativeLength;
 }

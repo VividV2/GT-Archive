@@ -1,2 +1,8 @@
-// Could not decompile System.Xml.Schema.Datatype_IDREF
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+internal class Datatype_IDREF : Datatype_NCName
+{
+	public override XmlTypeCode TypeCode => XmlTypeCode.Idref;
+
+	public override XmlTokenizedType TokenizedType => XmlTokenizedType.IDREF;
+}

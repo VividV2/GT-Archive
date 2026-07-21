@@ -1,2 +1,16 @@
-// Could not decompile MonkeBallPlayer
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class MonkeBallPlayer : MonoBehaviour
+{
+	public GameBallPlayer gamePlayer;
+
+	public MonkeBallGoalZone currGoalZone;
+
+	private void Awake()
+	{
+		if (gamePlayer == null)
+		{
+			gamePlayer = GetComponent<GameBallPlayer>();
+		}
+	}
+}

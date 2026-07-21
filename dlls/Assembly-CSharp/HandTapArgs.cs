@@ -1,2 +1,8 @@
-// Could not decompile HandTapArgs
-// This type uses unsupported IL or has too many generic parameters.
+public class HandTapArgs : FXSArgs
+{
+	public int soundIndex;
+
+	public bool isLeftHand;
+
+	public float tapVolume;
+}

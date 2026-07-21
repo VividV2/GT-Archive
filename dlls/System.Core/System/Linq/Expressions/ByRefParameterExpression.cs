@@ -1,2 +1,14 @@
-// Could not decompile System.Linq.Expressions.ByRefParameterExpression
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq.Expressions;
+
+internal sealed class ByRefParameterExpression : TypedParameterExpression
+{
+	internal ByRefParameterExpression(Type type, string name)
+		: base(type, name)
+	{
+	}
+
+	internal override bool GetIsByRef()
+	{
+		return true;
+	}
+}

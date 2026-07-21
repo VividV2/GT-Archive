@@ -1,2 +1,8 @@
-// Could not decompile SlingshotTester
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class SlingshotTester : MonoBehaviour
+{
+	public SlingshotTestScenario currentScenario;
+
+	public SlingshotTestScenario[] scenarioList;
+}

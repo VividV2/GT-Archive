@@ -1,2 +1,28 @@
-// Could not decompile UnityEngine.UIElements.PointerManipulator
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public abstract class PointerManipulator : MouseManipulator
+{
+	private int m_CurrentPointerId;
+
+	protected bool CanStartManipulation(IPointerEvent e)
+	{
+		foreach (ManipulatorActivationFilter activator in base.activators)
+		{
+			if (activator.Matches(e))
+			{
+				m_CurrentPointerId = e.pointerId;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	protected bool CanStopManipulation(IPointerEvent e)
+	{
+		if (e == null)
+		{
+			return false;
+		}
+		return e.pointerId == m_CurrentPointerId;
+	}
+}

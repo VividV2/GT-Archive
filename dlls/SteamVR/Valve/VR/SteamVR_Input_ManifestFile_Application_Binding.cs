@@ -1,2 +1,8 @@
-// Could not decompile Valve.VR.SteamVR_Input_ManifestFile_Application_Binding
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR;
+
+public class SteamVR_Input_ManifestFile_Application_Binding
+{
+	public string controller_type;
+
+	public string binding_url;
+}

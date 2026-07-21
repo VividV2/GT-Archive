@@ -1,2 +1,12 @@
-// Could not decompile Backtrace.Unity.Common.ExceptionExtensions
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Backtrace.Unity.Model;
+
+namespace Backtrace.Unity.Common;
+
+public static class ExceptionExtensions
+{
+	public static BacktraceReport ToBacktraceReport(this Exception source)
+	{
+		return new BacktraceReport(source);
+	}
+}

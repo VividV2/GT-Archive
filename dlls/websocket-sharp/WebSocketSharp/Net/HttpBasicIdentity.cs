@@ -1,6 +1,16 @@
-namespace WebSocketSharp.Net
+using System.Security.Principal;
+
+namespace WebSocketSharp.Net;
+
+public class HttpBasicIdentity : GenericIdentity
 {
-}
-namespace WebSocketSharp.Net
-{
+	private string _password;
+
+	public virtual string Password => _password;
+
+	internal HttpBasicIdentity(string username, string password)
+		: base(username, "Basic")
+	{
+		_password = password;
+	}
 }

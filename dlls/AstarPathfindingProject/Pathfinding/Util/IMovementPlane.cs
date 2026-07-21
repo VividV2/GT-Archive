@@ -1,16 +1,12 @@
 using UnityEngine;
 
-namespace Pathfinding.Util
-{
-}
-namespace Pathfinding.Util
-{
-	public interface IMovementPlane
-	{
-		Vector2 ToPlane(Vector3 p);
+namespace Pathfinding.Util;
 
-		Vector2 ToPlane(Vector3 p, out float elevation);
+public interface IMovementPlane
+{
+	Vector2 ToPlane(Vector3 p);
 
-		Vector3 ToWorld(Vector2 p, float elevation = 0f);
-	}
+	Vector2 ToPlane(Vector3 p, out float elevation);
+
+	Vector3 ToWorld(Vector2 p, float elevation = 0f);
 }

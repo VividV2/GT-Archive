@@ -10,6 +10,3 @@ public enum UriKind
 	/// <summary>The Uri is a relative Uri.</summary>
 	Relative
 }
-namespace Mono.Unity
-{
-}

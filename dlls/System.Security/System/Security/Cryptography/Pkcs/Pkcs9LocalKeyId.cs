@@ -1,2 +1,27 @@
-// Could not decompile System.Security.Cryptography.Pkcs.Pkcs9LocalKeyId
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Security.Cryptography.Pkcs;
+
+public sealed class Pkcs9LocalKeyId : Pkcs9AttributeObject
+{
+	public ReadOnlyMemory<byte> KeyId
+	{
+		get
+		{
+			throw new PlatformNotSupportedException();
+		}
+	}
+
+	public Pkcs9LocalKeyId()
+	{
+		throw new PlatformNotSupportedException();
+	}
+
+	public Pkcs9LocalKeyId(byte[] keyId)
+	{
+		throw new PlatformNotSupportedException();
+	}
+
+	public Pkcs9LocalKeyId(ReadOnlySpan<byte> keyId)
+	{
+		throw new PlatformNotSupportedException();
+	}
+}

@@ -1,2 +1,8 @@
-// Could not decompile EdMeshCombinerModifierUVOffset
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class EdMeshCombinerModifierUVOffset : MonoBehaviour
+{
+	public Vector2 minUvOffset = Vector2.zero;
+
+	public Vector2 maxUvOffset = Vector2.one;
+}

@@ -1,2 +1,11 @@
-// Could not decompile Oculus.Interaction.MoveFromTargetProvider
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Oculus.Interaction;
+
+public class MoveFromTargetProvider : MonoBehaviour, IMovementProvider
+{
+	public IMovement CreateMovement()
+	{
+		return new MoveFromTarget();
+	}
+}

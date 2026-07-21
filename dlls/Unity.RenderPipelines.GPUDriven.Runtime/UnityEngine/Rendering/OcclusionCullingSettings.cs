@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.Rendering.OcclusionCullingSettings
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+public struct OcclusionCullingSettings(int viewInstanceID, OcclusionTest occlusionTest)
+{
+	public int viewInstanceID = viewInstanceID;
+
+	public OcclusionTest occlusionTest = occlusionTest;
+
+	public int instanceMultiplier = 1;
+}

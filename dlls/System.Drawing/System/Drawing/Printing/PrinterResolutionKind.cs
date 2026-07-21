@@ -1,8 +1,16 @@
-namespace System.Drawing;
+namespace System.Drawing.Printing;
 
-internal struct GdiColorMap
+/// <summary>Specifies a printer resolution.</summary>
+public enum PrinterResolutionKind
 {
-	internal int from;
-
-	internal int to;
+	/// <summary>High resolution.</summary>
+	High = -4,
+	/// <summary>Medium resolution.</summary>
+	Medium,
+	/// <summary>Low resolution.</summary>
+	Low,
+	/// <summary>Draft-quality resolution.</summary>
+	Draft,
+	/// <summary>Custom resolution.</summary>
+	Custom
 }

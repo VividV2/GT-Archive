@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Rendering.Universal.OutPt
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+internal class OutPt
+{
+	internal int Idx;
+
+	internal IntPoint Pt;
+
+	internal OutPt Next;
+
+	internal OutPt Prev;
+}

@@ -1,2 +1,13 @@
-// Could not decompile GREntityDestroyTrigger
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GREntityDestroyTrigger : MonoBehaviour
+{
+	private void OnTriggerEnter(Collider other)
+	{
+		GameEntity component = other.attachedRigidbody.GetComponent<GameEntity>();
+		if (component != null && component.IsAuthority())
+		{
+			component.manager.RequestDestroyItem(component.id);
+		}
+	}
+}

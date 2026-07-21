@@ -1,2 +1,10 @@
-// Could not decompile PlayFab.MultiplayerModels.ConnectedPlayer
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class ConnectedPlayer : PlayFabBaseModel
+{
+	public string PlayerId;
+}

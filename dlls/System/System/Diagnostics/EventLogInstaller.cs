@@ -1,2 +1,6 @@
-// Could not decompile System.Diagnostics.EventLogInstaller
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Diagnostics;
+
+[System.MonoTODO]
+internal class EventLogInstaller
+{
+}

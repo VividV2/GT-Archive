@@ -1,18 +1,14 @@
 using UnityEngine.SceneManagement;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+public struct InstantiateParameters
 {
-	public struct InstantiateParameters
-	{
-		public Transform parent;
+	public Transform parent;
 
-		public Scene scene;
+	public Scene scene;
 
-		public bool worldSpace;
+	public bool worldSpace;
 
-		public bool originalImmutable;
-	}
-}
-namespace UnityEngine
-{
+	public bool originalImmutable;
 }

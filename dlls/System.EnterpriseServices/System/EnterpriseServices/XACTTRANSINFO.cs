@@ -1,11 +1,29 @@
-using System;
+using System.Runtime.InteropServices;
 
-namespace Unity;
+namespace System.EnterpriseServices;
 
-internal sealed class ThrowStub : ObjectDisposedException
+/// <summary>Represents a structure used in the <see cref="T:System.EnterpriseServices.ITransaction" /> interface.</summary>
+[ComVisible(false)]
+public struct XACTTRANSINFO
 {
-	public static void ThrowNotSupportedException()
-	{
-		throw new PlatformNotSupportedException();
-	}
+	/// <summary>Specifies zero. This field is reserved.</summary>
+	public int grfRMSupported;
+
+	/// <summary>Specifies zero. This field is reserved.</summary>
+	public int grfRMSupportedRetaining;
+
+	/// <summary>Represents a bitmask that indicates which <see langword="grfTC" /> flags this transaction implementation supports.</summary>
+	public int grfTCSupported;
+
+	/// <summary>Specifies zero. This field is reserved.</summary>
+	public int grfTCSupportedRetaining;
+
+	/// <summary>Specifies zero. This field is reserved.</summary>
+	public int isoFlags;
+
+	/// <summary>Represents the isolation level associated with this transaction object. ISOLATIONLEVEL_UNSPECIFIED indicates that no isolation level was specified.</summary>
+	public int isoLevel;
+
+	/// <summary>Represents the unit of work associated with this transaction.</summary>
+	public BOID uow;
 }

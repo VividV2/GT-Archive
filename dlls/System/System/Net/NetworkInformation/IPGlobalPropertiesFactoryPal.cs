@@ -1,6 +1,18 @@
-namespace System.Net.NetworkInformation
+namespace System.Net.NetworkInformation;
+
+internal static class IPGlobalPropertiesFactoryPal
 {
-}
-namespace System.Net.Configuration
-{
+	public static IPGlobalProperties Create()
+	{
+		IPGlobalProperties iPGlobalProperties = UnixIPGlobalPropertiesFactoryPal.Create();
+		if (iPGlobalProperties == null)
+		{
+			iPGlobalProperties = Win32IPGlobalPropertiesFactoryPal.Create();
+		}
+		if (iPGlobalProperties == null)
+		{
+			throw new NotImplementedException();
+		}
+		return iPGlobalProperties;
+	}
 }

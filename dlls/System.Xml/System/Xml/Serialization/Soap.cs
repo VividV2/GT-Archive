@@ -1,2 +1,16 @@
-// Could not decompile System.Xml.Serialization.Soap
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Serialization;
+
+internal class Soap
+{
+	internal const string Encoding = "http://schemas.xmlsoap.org/soap/encoding/";
+
+	internal const string UrType = "anyType";
+
+	internal const string Array = "Array";
+
+	internal const string ArrayType = "arrayType";
+
+	private Soap()
+	{
+	}
+}

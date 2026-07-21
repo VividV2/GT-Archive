@@ -1,2 +1,20 @@
-// Could not decompile Fusion.NetworkedWeavedArrayAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Fusion;
+
+[AttributeUsage(AttributeTargets.Property)]
+public class NetworkedWeavedArrayAttribute : Attribute
+{
+	public int Capacity { get; }
+
+	public int ElementWordCount { get; }
+
+	public Type ElementReaderWriterType { get; }
+
+	public NetworkedWeavedArrayAttribute(int capacity, int elementWordCount, Type elementReaderWriter)
+	{
+		Capacity = capacity;
+		ElementWordCount = elementWordCount;
+		ElementReaderWriterType = elementReaderWriter;
+	}
+}

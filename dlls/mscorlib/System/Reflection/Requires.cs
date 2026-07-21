@@ -1,2 +1,12 @@
-// Could not decompile System.Reflection.Requires
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Reflection;
+
+internal static class Requires
+{
+	internal static void NotNull(object obj, string name)
+	{
+		if (obj == null)
+		{
+			throw new ArgumentNullException(name);
+		}
+	}
+}

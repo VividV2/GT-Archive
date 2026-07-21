@@ -1,2 +1,8 @@
-// Could not decompile System.Runtime.CompilerServices.DependencyReductionRootAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics;
+
+namespace System.Runtime.CompilerServices;
+
+[Conditional("NOT_MONO")]
+internal class DependencyReductionRootAttribute : Attribute
+{
+}

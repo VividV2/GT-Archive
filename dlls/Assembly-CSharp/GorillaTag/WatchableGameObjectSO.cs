@@ -1,2 +1,8 @@
-// Could not decompile GorillaTag.WatchableGameObjectSO
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTag;
+
+[CreateAssetMenu(fileName = "WatchableGameObjectSO", menuName = "ScriptableObjects/WatchableGameObjectSO")]
+public class WatchableGameObjectSO : WatchableGenericSO<GameObject>
+{
+}

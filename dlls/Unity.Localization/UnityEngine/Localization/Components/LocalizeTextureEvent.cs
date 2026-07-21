@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.Localization.Components.LocalizeTextureEvent
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Localization.Events;
+
+namespace UnityEngine.Localization.Components;
+
+[AddComponentMenu("Localization/Asset/Localize Texture Event")]
+public class LocalizeTextureEvent : LocalizedAssetEvent<Texture, LocalizedTexture, UnityEventTexture>
+{
+}

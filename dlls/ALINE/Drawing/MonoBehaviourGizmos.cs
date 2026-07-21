@@ -1,2 +1,18 @@
-// Could not decompile Drawing.MonoBehaviourGizmos
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Drawing;
+
+public abstract class MonoBehaviourGizmos : MonoBehaviour, IDrawGizmos
+{
+	public MonoBehaviourGizmos()
+	{
+	}
+
+	private void OnDrawGizmosSelected()
+	{
+	}
+
+	public virtual void DrawGizmos()
+	{
+	}
+}

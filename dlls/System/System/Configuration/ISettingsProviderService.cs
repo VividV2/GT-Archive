@@ -1,15 +1,10 @@
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using Mono.Security.Interface;
+namespace System.Configuration;
 
-namespace Mono.Net.Security
+/// <summary>Provides an interface for defining an alternate application settings provider.</summary>
+public interface ISettingsProviderService
 {
-	internal delegate bool ServerCertValidationCallbackWrapper(ServerCertValidationCallback callback, X509Certificate certificate, X509Chain chain, MonoSslPolicyErrors sslPolicyErrors);
-}
-namespace System.IO.Ports
-{
-	public delegate void SerialPinChangedEventHandler(object sender, SerialPinChangedEventArgs e);
-}
-namespace System.Configuration
-{
+	/// <summary>Returns the settings provider compatible with the specified settings property.</summary>
+	/// <param name="property">The <see cref="T:System.Configuration.SettingsProperty" /> that requires serialization.</param>
+	/// <returns>If found, the <see cref="T:System.Configuration.SettingsProvider" /> that can persist the specified settings property; otherwise, <see langword="null" />.</returns>
+	SettingsProvider GetSettingsProvider(SettingsProperty property);
 }

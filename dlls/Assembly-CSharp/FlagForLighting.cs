@@ -1,2 +1,19 @@
-// Could not decompile FlagForLighting
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class FlagForLighting : MonoBehaviour
+{
+	public enum TimeOfDay
+	{
+		Sunrise,
+		TenAM,
+		Noon,
+		ThreePM,
+		Sunset,
+		Night,
+		RainingDay,
+		RainingNight,
+		None
+	}
+
+	public TimeOfDay myTimeOfDay;
+}

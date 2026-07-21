@@ -1,2 +1,38 @@
-// Could not decompile TMPro.MultipleSubstitutionRecord
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace TMPro;
+
+[Serializable]
+public struct MultipleSubstitutionRecord
+{
+	[SerializeField]
+	private uint m_TargetGlyphID;
+
+	[SerializeField]
+	private uint[] m_SubstituteGlyphIDs;
+
+	public uint targetGlyphID
+	{
+		get
+		{
+			return m_TargetGlyphID;
+		}
+		set
+		{
+			m_TargetGlyphID = value;
+		}
+	}
+
+	public uint[] substituteGlyphIDs
+	{
+		get
+		{
+			return m_SubstituteGlyphIDs;
+		}
+		set
+		{
+			m_SubstituteGlyphIDs = value;
+		}
+	}
+}

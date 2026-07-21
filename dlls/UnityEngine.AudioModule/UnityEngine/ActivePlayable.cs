@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.ActivePlayable
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Playables;
+
+namespace UnityEngine;
+
+internal struct ActivePlayable
+{
+	public PlayableSettings settings { get; }
+
+	public PlayableHandle clipPlayableHandle { get; }
+}

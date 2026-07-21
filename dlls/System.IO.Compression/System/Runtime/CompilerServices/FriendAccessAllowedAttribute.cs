@@ -1,9 +1,5 @@
-namespace System.IO.Compression
-{
-}
-namespace System.IO.Compression
-{
-}
-namespace System.IO.Compression
+namespace System.Runtime.CompilerServices;
+
+internal class FriendAccessAllowedAttribute : Attribute
 {
 }

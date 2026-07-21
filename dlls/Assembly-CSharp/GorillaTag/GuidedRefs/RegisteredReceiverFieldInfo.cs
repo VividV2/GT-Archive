@@ -1,17 +1,13 @@
 using UnityEngine.Serialization;
 
-namespace GorillaTag.GuidedRefs
-{
-	public struct RegisteredReceiverFieldInfo
-	{
-		[FormerlySerializedAs("receiver")]
-		public IGuidedRefReceiverMono receiverMono;
+namespace GorillaTag.GuidedRefs;
 
-		public int fieldId;
-
-		public int index;
-	}
-}
-namespace GorillaNetworking.Store
+public struct RegisteredReceiverFieldInfo
 {
+	[FormerlySerializedAs("receiver")]
+	public IGuidedRefReceiverMono receiverMono;
+
+	public int fieldId;
+
+	public int index;
 }

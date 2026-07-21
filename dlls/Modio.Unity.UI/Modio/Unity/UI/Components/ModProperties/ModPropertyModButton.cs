@@ -1,2 +1,11 @@
-// Could not decompile Modio.Unity.UI.Components.ModProperties.ModPropertyModButton
-// This type uses unsupported IL or has too many generic parameters.
+using Modio.Mods;
+
+namespace Modio.Unity.UI.Components.ModProperties;
+
+public class ModPropertyModButton : ModPropertyButtonBase<Mod>
+{
+	protected override Mod GetProperty(Mod mod)
+	{
+		return mod;
+	}
+}

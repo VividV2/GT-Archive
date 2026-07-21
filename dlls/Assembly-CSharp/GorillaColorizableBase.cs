@@ -1,2 +1,6 @@
-// Could not decompile GorillaColorizableBase
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public abstract class GorillaColorizableBase : MonoBehaviour
+{
+	public abstract void SetColor(Color color);
+}

@@ -1,2 +1,16 @@
-// Could not decompile GorillaTag.GuidedRefs.Internal.RelayInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+
+namespace GorillaTag.GuidedRefs.Internal;
+
+public class RelayInfo
+{
+	[NonSerialized]
+	public IGuidedRefTargetMono targetMono;
+
+	[NonSerialized]
+	public List<RegisteredReceiverFieldInfo> registeredFields;
+
+	[NonSerialized]
+	public List<RegisteredReceiverFieldInfo> resolvedFields;
+}

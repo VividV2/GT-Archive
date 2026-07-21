@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.Timeline.ActivationPlayableAsset
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Playables;
+
+namespace UnityEngine.Timeline;
+
+internal class ActivationPlayableAsset : PlayableAsset, ITimelineClipAsset
+{
+	public ClipCaps clipCaps => ClipCaps.None;
+
+	public override Playable CreatePlayable(PlayableGraph graph, GameObject go)
+	{
+		return Playable.Create(graph);
+	}
+}

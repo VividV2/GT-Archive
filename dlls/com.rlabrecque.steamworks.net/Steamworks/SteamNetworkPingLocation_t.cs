@@ -1,2 +1,10 @@
-// Could not decompile Steamworks.SteamNetworkPingLocation_t
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+public struct SteamNetworkPingLocation_t
+{
+	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 512)]
+	public byte[] m_data;
+}

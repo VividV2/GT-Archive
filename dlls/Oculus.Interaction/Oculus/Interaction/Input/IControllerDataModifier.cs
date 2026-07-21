@@ -1,13 +1,9 @@
 using System;
 
-namespace Oculus.Interaction.Input
+namespace Oculus.Interaction.Input;
+
+[Obsolete]
+public interface IControllerDataModifier
 {
-	[Obsolete]
-	public interface IControllerDataModifier
-	{
-		void Apply(ControllerDataAsset controllerDataAsset, Handedness handedness);
-	}
-}
-namespace Oculus.Interaction.HandGrab
-{
+	void Apply(ControllerDataAsset controllerDataAsset, Handedness handedness);
 }

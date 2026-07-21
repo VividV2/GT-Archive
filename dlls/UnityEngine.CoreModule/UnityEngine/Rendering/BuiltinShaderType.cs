@@ -1,31 +1,16 @@
 using System;
-using System;
 
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public enum BuiltinShaderType
 {
-	[Flags]
-	internal enum DrawRendererFlags
-	{
-		None = 0,
-		EnableDynamicBatching = 1,
-		EnableInstancing = 2
-	}
-}
-namespace UnityEngine.Rendering
-{
-	public enum BuiltinShaderType
-	{
-		DeferredShading,
-		DeferredReflections,
-		[Obsolete("LegacyDeferredLighting has been removed.", false)]
-		LegacyDeferredLighting,
-		ScreenSpaceShadows,
-		DepthNormals,
-		MotionVectors,
-		LightHalo,
-		LensFlare
-	}
-}
-namespace UnityEngine.Rendering
-{
+	DeferredShading,
+	DeferredReflections,
+	[Obsolete("LegacyDeferredLighting has been removed.", false)]
+	LegacyDeferredLighting,
+	ScreenSpaceShadows,
+	DepthNormals,
+	MotionVectors,
+	LightHalo,
+	LensFlare
 }

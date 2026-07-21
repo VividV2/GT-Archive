@@ -1,2 +1,12 @@
-// Could not decompile GRDoorWrapper
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GRDoorWrapper : MonoBehaviour
+{
+	[SerializeField]
+	private GRDoor grDoor;
+
+	public void ToggleDoor(bool value)
+	{
+		grDoor.SetDoorState(value ? GRDoor.DoorState.Open : GRDoor.DoorState.Closed);
+	}
+}

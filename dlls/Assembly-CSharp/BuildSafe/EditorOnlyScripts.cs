@@ -1,2 +1,12 @@
-// Could not decompile BuildSafe.EditorOnlyScripts
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics;
+using UnityEngine;
+
+namespace BuildSafe;
+
+internal static class EditorOnlyScripts
+{
+	[Conditional("UNITY_EDITOR")]
+	public static void Cleanup(GameObject[] rootObjects, bool force = false)
+	{
+	}
+}

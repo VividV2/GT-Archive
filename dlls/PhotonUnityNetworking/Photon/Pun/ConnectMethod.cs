@@ -1,15 +1,9 @@
 namespace Photon.Pun;
 
-public interface IPhotonViewCallback
+public enum ConnectMethod
 {
-}
-namespace Photon.Pun
-{
-	public enum ConnectMethod
-	{
-		NotCalled,
-		ConnectToMaster,
-		ConnectToRegion,
-		ConnectToBest
-	}
+	NotCalled,
+	ConnectToMaster,
+	ConnectToRegion,
+	ConnectToBest
 }

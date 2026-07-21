@@ -1,12 +1,10 @@
-namespace PlayFab.ExperimentationModels;
+using System;
+using PlayFab.SharedModels;
 
-public enum AnalysisTaskState
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class GetMultiplayerServerLogsResponse : PlayFabResultCommon
 {
-	Waiting,
-	ReadyForSubmission,
-	SubmittingToPipeline,
-	Running,
-	Completed,
-	Failed,
-	Canceled
+	public string LogDownloadUrl;
 }

@@ -1,2 +1,20 @@
-// Could not decompile g3.ArrayAlias`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace g3;
+
+public struct ArrayAlias<T>(T[] source, int i)
+{
+	public T[] Source = source;
+
+	public int Index = i;
+
+	public T this[int i]
+	{
+		get
+		{
+			return Source[Index + i];
+		}
+		set
+		{
+			Source[Index + i] = value;
+		}
+	}
+}

@@ -1,20 +1,16 @@
 using UnityEngine.Bindings;
 
-namespace Unity.Hierarchy
+namespace Unity.Hierarchy;
+
+[NativeHeader("Modules/HierarchyCore/Public/HierarchySearch.h")]
+public enum HierarchySearchFilterOperator
 {
-	[NativeHeader("Modules/HierarchyCore/Public/HierarchySearch.h")]
-	public enum HierarchySearchFilterOperator
-	{
-		Equal,
-		Contains,
-		Greater,
-		GreaterOrEqual,
-		Lesser,
-		LesserOrEqual,
-		NotEqual,
-		Not
-	}
-}
-namespace Unity.Hierarchy
-{
+	Equal,
+	Contains,
+	Greater,
+	GreaterOrEqual,
+	Lesser,
+	LesserOrEqual,
+	NotEqual,
+	Not
 }

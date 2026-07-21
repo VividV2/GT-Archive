@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.UIElements.StyleSheets.StyleValidationResult
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements.StyleSheets;
+
+internal struct StyleValidationResult
+{
+	public StyleValidationStatus status;
+
+	public string message;
+
+	public string errorValue;
+
+	public string hint;
+
+	public bool success => status == StyleValidationStatus.Ok;
+}

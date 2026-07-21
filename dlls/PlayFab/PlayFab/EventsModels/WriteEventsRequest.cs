@@ -1,2 +1,11 @@
-// Could not decompile PlayFab.EventsModels.WriteEventsRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.EventsModels;
+
+[Serializable]
+public class WriteEventsRequest : PlayFabRequestCommon
+{
+	public List<EventContents> Events;
+}

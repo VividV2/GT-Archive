@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.ResourceManagement.Util.SerializedTypeRestrictionAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.ResourceManagement.Util;
+
+public class SerializedTypeRestrictionAttribute : Attribute
+{
+	public Type type;
+}

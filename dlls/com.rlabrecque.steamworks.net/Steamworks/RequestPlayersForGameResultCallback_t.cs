@@ -1,19 +1,30 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(5212)]
+public struct RequestPlayersForGameResultCallback_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 4)]
-	[CallbackIdentity(1201)]
-	public struct SocketStatusCallback_t
-	{
-		public const int k_iCallback = 1201;
+	public const int k_iCallback = 5212;
 
-		public SNetSocket_t m_hSocket;
+	public EResult m_eResult;
 
-		public SNetListenSocket_t m_hListenSocket;
+	public ulong m_ullSearchID;
 
-		public CSteamID m_steamIDRemote;
+	public CSteamID m_SteamIDPlayerFound;
 
-		public int m_eSNetSocketState;
-	}
+	public CSteamID m_SteamIDLobby;
+
+	public PlayerAcceptState_t m_ePlayerAcceptState;
+
+	public int m_nPlayerIndex;
+
+	public int m_nTotalPlayersFound;
+
+	public int m_nTotalPlayersAcceptedGame;
+
+	public int m_nSuggestedTeamIndex;
+
+	public ulong m_ullUniqueGameID;
 }

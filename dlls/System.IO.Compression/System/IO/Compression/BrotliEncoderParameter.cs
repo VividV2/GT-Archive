@@ -1,2 +1,11 @@
-// Could not decompile System.IO.Compression.BrotliEncoderParameter
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.IO.Compression;
+
+internal enum BrotliEncoderParameter
+{
+	Mode,
+	Quality,
+	LGWin,
+	LGBlock,
+	LCModeling,
+	SizeHint
+}

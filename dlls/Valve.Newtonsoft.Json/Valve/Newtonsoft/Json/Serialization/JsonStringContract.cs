@@ -1,25 +1,12 @@
 using System;
 
-namespace Valve.Newtonsoft.Json.Serialization
+namespace Valve.Newtonsoft.Json.Serialization;
+
+public class JsonStringContract : JsonPrimitiveContract
 {
-}
-namespace Valve.Newtonsoft.Json.Serialization
-{
-}
-namespace Valve.Newtonsoft.Json.Serialization
-{
-	public class JsonStringContract : JsonPrimitiveContract
+	public JsonStringContract(Type underlyingType)
+		: base(underlyingType)
 	{
-		public JsonStringContract(Type underlyingType)
-			: base(underlyingType)
-		{
-			ContractType = JsonContractType.String;
-		}
+		ContractType = JsonContractType.String;
 	}
-}
-namespace Valve.Newtonsoft.Json.Serialization
-{
-}
-namespace Valve.Newtonsoft.Json.Serialization
-{
 }

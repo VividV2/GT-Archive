@@ -1,26 +1,22 @@
 using System;
 
-namespace Fusion
+namespace Fusion;
+
+public struct SimulationBehaviourListScope : IDisposable
 {
-	public struct SimulationBehaviourListScope : IDisposable
+	private SimulationBehaviourUpdater.BehaviourList _list;
+
+	internal SimulationBehaviourListScope(SimulationBehaviourUpdater.BehaviourList list)
 	{
-		private SimulationBehaviourUpdater.BehaviourList _list;
+		_list = list;
+		_list.LockCount++;
+	}
 
-		internal SimulationBehaviourListScope(SimulationBehaviourUpdater.BehaviourList list)
+	public void Dispose()
+	{
+		if (--_list.LockCount == 0)
 		{
-			_list = list;
-			_list.LockCount++;
-		}
-
-		public void Dispose()
-		{
-			if (--_list.LockCount == 0)
-			{
-				_list.RemoveAllPending();
-			}
+			_list.RemoveAllPending();
 		}
 	}
-}
-namespace Fusion
-{
 }

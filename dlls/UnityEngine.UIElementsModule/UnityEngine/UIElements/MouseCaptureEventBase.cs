@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.UIElements.MouseCaptureEventBase`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public abstract class MouseCaptureEventBase<T> : PointerCaptureEventBase<T>, IMouseCaptureEvent where T : MouseCaptureEventBase<T>, new()
+{
+	public new IEventHandler relatedTarget => base.relatedTarget;
+
+	public static T GetPooled(IEventHandler target, IEventHandler relatedTarget)
+	{
+		return PointerCaptureEventBase<T>.GetPooled(target, relatedTarget, 0);
+	}
+}

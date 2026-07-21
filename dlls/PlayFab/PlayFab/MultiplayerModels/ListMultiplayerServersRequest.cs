@@ -1,2 +1,16 @@
-// Could not decompile PlayFab.MultiplayerModels.ListMultiplayerServersRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class ListMultiplayerServersRequest : PlayFabRequestCommon
+{
+	public string BuildId;
+
+	public int? PageSize;
+
+	public string Region;
+
+	public string SkipToken;
+}

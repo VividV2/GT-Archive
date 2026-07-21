@@ -1,2 +1,6 @@
-// Could not decompile BoingKit.BoingKit
-// This type uses unsupported IL or has too many generic parameters.
+namespace BoingKit;
+
+public static class BoingKit
+{
+	public static readonly Version Version = new Version(1, 2, 37);
+}

@@ -1,10 +1,6 @@
-namespace Cysharp.Threading.Tasks.Triggers
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnBecameVisibleHandler
 {
-}
-namespace Cysharp.Threading.Tasks.Triggers
-{
-	public interface IAsyncOnBecameVisibleHandler
-	{
-		UniTask OnBecameVisibleAsync();
-	}
+	UniTask OnBecameVisibleAsync();
 }

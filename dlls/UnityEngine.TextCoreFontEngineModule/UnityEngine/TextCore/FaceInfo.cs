@@ -1,127 +1,379 @@
 using System;
 using UnityEngine.Bindings;
 using UnityEngine.Scripting;
-using System;
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
+using UnityEngine.TextCore.LowLevel;
 
 namespace UnityEngine.TextCore;
 
 [Serializable]
 [UsedByNativeCode]
-public struct GlyphRect : IEquatable<GlyphRect>
+public struct FaceInfo
 {
-	[NativeName("x")]
 	[SerializeField]
-	private int m_X;
-
-	[NativeName("y")]
-	[SerializeField]
-	private int m_Y;
+	[NativeName("faceIndex")]
+	private int m_FaceIndex;
 
 	[SerializeField]
-	[NativeName("width")]
-	private int m_Width;
+	[NativeName("familyName")]
+	private string m_FamilyName;
 
-	[NativeName("height")]
 	[SerializeField]
-	private int m_Height;
+	[NativeName("styleName")]
+	private string m_StyleName;
 
-	private static readonly GlyphRect s_ZeroGlyphRect;
+	[NativeName("pointSize")]
+	[SerializeField]
+	private float m_PointSize;
 
-	public int x
+	[NativeName("scale")]
+	[SerializeField]
+	private float m_Scale;
+
+	[NativeName("unitsPerEM")]
+	[SerializeField]
+	private int m_UnitsPerEM;
+
+	[NativeName("lineHeight")]
+	[SerializeField]
+	private float m_LineHeight;
+
+	[NativeName("ascentLine")]
+	[SerializeField]
+	private float m_AscentLine;
+
+	[SerializeField]
+	[NativeName("capLine")]
+	private float m_CapLine;
+
+	[SerializeField]
+	[NativeName("meanLine")]
+	private float m_MeanLine;
+
+	[SerializeField]
+	[NativeName("baseline")]
+	private float m_Baseline;
+
+	[SerializeField]
+	[NativeName("descentLine")]
+	private float m_DescentLine;
+
+	[SerializeField]
+	[NativeName("superscriptOffset")]
+	private float m_SuperscriptOffset;
+
+	[SerializeField]
+	[NativeName("superscriptSize")]
+	private float m_SuperscriptSize;
+
+	[SerializeField]
+	[NativeName("subscriptOffset")]
+	private float m_SubscriptOffset;
+
+	[SerializeField]
+	[NativeName("subscriptSize")]
+	private float m_SubscriptSize;
+
+	[SerializeField]
+	[NativeName("underlineOffset")]
+	private float m_UnderlineOffset;
+
+	[SerializeField]
+	[NativeName("underlineThickness")]
+	private float m_UnderlineThickness;
+
+	[SerializeField]
+	[NativeName("strikethroughOffset")]
+	private float m_StrikethroughOffset;
+
+	[NativeName("strikethroughThickness")]
+	[SerializeField]
+	private float m_StrikethroughThickness;
+
+	[NativeName("tabWidth")]
+	[SerializeField]
+	private float m_TabWidth;
+
+	[VisibleToOtherModules(new string[] { "UnityEngine.TextCoreTextEngineModule" })]
+	internal int faceIndex
 	{
 		get
 		{
-			return m_X;
+			return m_FaceIndex;
 		}
 		set
 		{
-			m_X = value;
+			m_FaceIndex = value;
 		}
 	}
 
-	public int y
+	public string familyName
 	{
 		get
 		{
-			return m_Y;
+			return m_FamilyName;
 		}
 		set
 		{
-			m_Y = value;
+			m_FamilyName = value;
 		}
 	}
 
-	public int width
+	public string styleName
 	{
 		get
 		{
-			return m_Width;
+			return m_StyleName;
 		}
 		set
 		{
-			m_Width = value;
+			m_StyleName = value;
 		}
 	}
 
-	public int height
+	public float pointSize
 	{
 		get
 		{
-			return m_Height;
+			return m_PointSize;
 		}
 		set
 		{
-			m_Height = value;
+			m_PointSize = value;
 		}
 	}
 
-	public static GlyphRect zero => s_ZeroGlyphRect;
-
-	public GlyphRect(int x, int y, int width, int height)
+	public float scale
 	{
-		m_X = x;
-		m_Y = y;
-		m_Width = width;
-		m_Height = height;
+		get
+		{
+			return m_Scale;
+		}
+		set
+		{
+			m_Scale = value;
+		}
 	}
 
-	public GlyphRect(Rect rect)
+	[VisibleToOtherModules(new string[] { "UnityEngine.TextCoreTextEngineModule" })]
+	internal int unitsPerEM
 	{
-		m_X = (int)rect.x;
-		m_Y = (int)rect.y;
-		m_Width = (int)rect.width;
-		m_Height = (int)rect.height;
+		get
+		{
+			return m_UnitsPerEM;
+		}
+		set
+		{
+			m_UnitsPerEM = value;
+		}
 	}
 
-	public override int GetHashCode()
+	public float lineHeight
 	{
-		return base.GetHashCode();
+		get
+		{
+			return m_LineHeight;
+		}
+		set
+		{
+			m_LineHeight = value;
+		}
 	}
 
-	public override bool Equals(object obj)
+	public float ascentLine
 	{
-		return base.Equals(obj);
+		get
+		{
+			return m_AscentLine;
+		}
+		set
+		{
+			m_AscentLine = value;
+		}
 	}
 
-	public bool Equals(GlyphRect other)
+	public float capLine
 	{
-		return base.Equals((object)other);
+		get
+		{
+			return m_CapLine;
+		}
+		set
+		{
+			m_CapLine = value;
+		}
 	}
 
-	public static bool operator ==(GlyphRect lhs, GlyphRect rhs)
+	public float meanLine
 	{
-		return lhs.x == rhs.x && lhs.y == rhs.y && lhs.width == rhs.width && lhs.height == rhs.height;
+		get
+		{
+			return m_MeanLine;
+		}
+		set
+		{
+			m_MeanLine = value;
+		}
 	}
 
-	public static bool operator !=(GlyphRect lhs, GlyphRect rhs)
+	public float baseline
 	{
-		return lhs != rhs;
+		get
+		{
+			return m_Baseline;
+		}
+		set
+		{
+			m_Baseline = value;
+		}
 	}
 
-	static GlyphRect()
+	public float descentLine
 	{
-		s_ZeroGlyphRect = new GlyphRect(0, 0, 0, 0);
+		get
+		{
+			return m_DescentLine;
+		}
+		set
+		{
+			m_DescentLine = value;
+		}
+	}
+
+	public float superscriptOffset
+	{
+		get
+		{
+			return m_SuperscriptOffset;
+		}
+		set
+		{
+			m_SuperscriptOffset = value;
+		}
+	}
+
+	public float superscriptSize
+	{
+		get
+		{
+			return m_SuperscriptSize;
+		}
+		set
+		{
+			m_SuperscriptSize = value;
+		}
+	}
+
+	public float subscriptOffset
+	{
+		get
+		{
+			return m_SubscriptOffset;
+		}
+		set
+		{
+			m_SubscriptOffset = value;
+		}
+	}
+
+	public float subscriptSize
+	{
+		get
+		{
+			return m_SubscriptSize;
+		}
+		set
+		{
+			m_SubscriptSize = value;
+		}
+	}
+
+	public float underlineOffset
+	{
+		get
+		{
+			return m_UnderlineOffset;
+		}
+		set
+		{
+			m_UnderlineOffset = value;
+		}
+	}
+
+	public float underlineThickness
+	{
+		get
+		{
+			return m_UnderlineThickness;
+		}
+		set
+		{
+			m_UnderlineThickness = value;
+		}
+	}
+
+	public float strikethroughOffset
+	{
+		get
+		{
+			return m_StrikethroughOffset;
+		}
+		set
+		{
+			m_StrikethroughOffset = value;
+		}
+	}
+
+	public float strikethroughThickness
+	{
+		get
+		{
+			return m_StrikethroughThickness;
+		}
+		set
+		{
+			m_StrikethroughThickness = value;
+		}
+	}
+
+	public float tabWidth
+	{
+		get
+		{
+			return m_TabWidth;
+		}
+		set
+		{
+			m_TabWidth = value;
+		}
+	}
+
+	internal FaceInfo(string familyName, string styleName, int pointSize, float scale, int unitsPerEM, float lineHeight, float ascentLine, float capLine, float meanLine, float baseline, float descentLine, float superscriptOffset, float superscriptSize, float subscriptOffset, float subscriptSize, float underlineOffset, float underlineThickness, float strikethroughOffset, float strikethroughThickness, float tabWidth)
+	{
+		m_FaceIndex = 0;
+		m_FamilyName = familyName;
+		m_StyleName = styleName;
+		m_PointSize = pointSize;
+		m_Scale = scale;
+		m_UnitsPerEM = unitsPerEM;
+		m_LineHeight = lineHeight;
+		m_AscentLine = ascentLine;
+		m_CapLine = capLine;
+		m_MeanLine = meanLine;
+		m_Baseline = baseline;
+		m_DescentLine = descentLine;
+		m_SuperscriptOffset = superscriptOffset;
+		m_SuperscriptSize = superscriptSize;
+		m_SubscriptOffset = subscriptOffset;
+		m_SubscriptSize = subscriptSize;
+		m_UnderlineOffset = underlineOffset;
+		m_UnderlineThickness = underlineThickness;
+		m_StrikethroughOffset = strikethroughOffset;
+		m_StrikethroughThickness = strikethroughThickness;
+		m_TabWidth = tabWidth;
+	}
+
+	public bool Compare(FaceInfo other)
+	{
+		return familyName == other.familyName && styleName == other.styleName && faceIndex == other.faceIndex && pointSize == other.pointSize && FontEngineUtilities.Approximately(scale, other.scale) && FontEngineUtilities.Approximately(unitsPerEM, other.unitsPerEM) && FontEngineUtilities.Approximately(lineHeight, other.lineHeight) && FontEngineUtilities.Approximately(ascentLine, other.ascentLine) && FontEngineUtilities.Approximately(capLine, other.capLine) && FontEngineUtilities.Approximately(meanLine, other.meanLine) && FontEngineUtilities.Approximately(baseline, other.baseline) && FontEngineUtilities.Approximately(descentLine, other.descentLine) && FontEngineUtilities.Approximately(superscriptOffset, other.superscriptOffset) && FontEngineUtilities.Approximately(superscriptSize, other.superscriptSize) && FontEngineUtilities.Approximately(subscriptOffset, other.subscriptOffset) && FontEngineUtilities.Approximately(subscriptSize, other.subscriptSize) && FontEngineUtilities.Approximately(underlineOffset, other.underlineOffset) && FontEngineUtilities.Approximately(underlineThickness, other.underlineThickness) && FontEngineUtilities.Approximately(strikethroughOffset, other.strikethroughOffset) && FontEngineUtilities.Approximately(strikethroughThickness, other.strikethroughThickness) && FontEngineUtilities.Approximately(tabWidth, other.tabWidth);
 	}
 }

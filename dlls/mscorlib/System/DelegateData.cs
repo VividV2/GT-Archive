@@ -1,2 +1,10 @@
-// Could not decompile System.DelegateData
-// This type uses unsupported IL or has too many generic parameters.
+namespace System;
+
+internal sealed class DelegateData
+{
+	public Type target_type;
+
+	public string method_name;
+
+	public bool curried_first_arg;
+}

@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.SelectionBaseAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine;
+
+[AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
+public class SelectionBaseAttribute : Attribute
+{
+}

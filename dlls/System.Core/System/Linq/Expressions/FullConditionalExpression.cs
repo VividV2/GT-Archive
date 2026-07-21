@@ -1,2 +1,17 @@
-// Could not decompile System.Linq.Expressions.FullConditionalExpression
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq.Expressions;
+
+internal class FullConditionalExpression : ConditionalExpression
+{
+	private readonly Expression _false;
+
+	internal FullConditionalExpression(Expression test, Expression ifTrue, Expression ifFalse)
+		: base(test, ifTrue)
+	{
+		_false = ifFalse;
+	}
+
+	internal override Expression GetFalse()
+	{
+		return _false;
+	}
+}

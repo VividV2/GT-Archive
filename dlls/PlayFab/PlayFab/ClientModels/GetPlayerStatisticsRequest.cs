@@ -1,7 +1,13 @@
-namespace PlayFab.Internal;
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
 
-public enum ApiProcessingEventType
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetPlayerStatisticsRequest : PlayFabRequestCommon
 {
-	Pre,
-	Post
+	public List<string> StatisticNames;
+
+	public List<StatisticNameVersion> StatisticNameVersions;
 }

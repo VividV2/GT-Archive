@@ -1,2 +1,10 @@
-// Could not decompile System.Buffers.ReadOnlySequenceSegment`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Buffers;
+
+public abstract class ReadOnlySequenceSegment<T>
+{
+	public ReadOnlyMemory<T> Memory { get; protected set; }
+
+	public ReadOnlySequenceSegment<T> Next { get; protected set; }
+
+	public long RunningIndex { get; protected set; }
+}

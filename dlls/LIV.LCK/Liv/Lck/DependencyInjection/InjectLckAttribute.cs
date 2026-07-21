@@ -1,2 +1,9 @@
-// Could not decompile Liv.Lck.DependencyInjection.InjectLckAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace Liv.Lck.DependencyInjection;
+
+[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field)]
+public sealed class InjectLckAttribute : PropertyAttribute
+{
+}

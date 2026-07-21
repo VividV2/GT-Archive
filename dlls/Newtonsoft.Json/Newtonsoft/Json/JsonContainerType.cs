@@ -1,19 +1,9 @@
-namespace Newtonsoft.Json
-{
-	public interface IArrayPool<T>
-	{
-		T[] Rent(int minimumLength);
+namespace Newtonsoft.Json;
 
-		void Return(T[]? array);
-	}
-}
-namespace Newtonsoft.Json
+internal enum JsonContainerType
 {
-	internal enum JsonContainerType
-	{
-		None,
-		Object,
-		Array,
-		Constructor
-	}
+	None,
+	Object,
+	Array,
+	Constructor
 }

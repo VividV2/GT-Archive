@@ -1,2 +1,24 @@
-// Could not decompile FreezePosition
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class FreezePosition : MonoBehaviour
+{
+	public Transform target;
+
+	public Vector3 localPosition;
+
+	private void FixedUpdate()
+	{
+		if ((bool)target)
+		{
+			target.localPosition = localPosition;
+		}
+	}
+
+	private void LateUpdate()
+	{
+		if ((bool)target)
+		{
+			target.localPosition = localPosition;
+		}
+	}
+}

@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.MipmapLimitDescriptor
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine;
+
+public struct MipmapLimitDescriptor
+{
+	public bool useMipmapLimit { get; }
+
+	public string groupName { get; }
+
+	public MipmapLimitDescriptor(bool useMipmapLimit, string groupName)
+	{
+		this.useMipmapLimit = useMipmapLimit;
+		this.groupName = groupName;
+	}
+}

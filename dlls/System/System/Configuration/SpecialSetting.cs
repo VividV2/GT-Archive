@@ -1,6 +1,10 @@
-namespace System;
+namespace System.Configuration;
 
-internal static class LocalAppContextSwitches
+/// <summary>Specifies the special setting category of a application settings property.</summary>
+public enum SpecialSetting
 {
-	public static readonly bool MemberDescriptorEqualsReturnsFalseIfEquivalent;
+	/// <summary>The configuration property represents a connection string, typically for a data store or network resource.</summary>
+	ConnectionString,
+	/// <summary>The configuration property represents a Uniform Resource Locator (URL) to a Web service.</summary>
+	WebServiceUrl
 }

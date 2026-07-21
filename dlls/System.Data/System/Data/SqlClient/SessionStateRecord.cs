@@ -1,2 +1,12 @@
-// Could not decompile System.Data.SqlClient.SessionStateRecord
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data.SqlClient;
+
+internal class SessionStateRecord
+{
+	internal bool _recoverable;
+
+	internal uint _version;
+
+	internal int _dataLength;
+
+	internal byte[] _data;
+}

@@ -1,2 +1,12 @@
-// Could not decompile Valve.VR.InteractionSystem.ArrowheadRotation
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Valve.VR.InteractionSystem;
+
+public class ArrowheadRotation : MonoBehaviour
+{
+	private void Start()
+	{
+		float x = Random.Range(0f, 180f);
+		base.transform.localEulerAngles = new Vector3(x, -90f, 90f);
+	}
+}

@@ -1,12 +1,43 @@
 using System;
-using PlayFab.SharedModels;
-using System;
+using System.Collections.Generic;
+using System.Net;
 using PlayFab.SharedModels;
 
-namespace PlayFab.CloudScriptModels;
+namespace PlayFab.Internal;
 
-[Serializable]
-public class TagModel : PlayFabBaseModel
+public class CallRequestContainer
 {
-	public string TagValue;
+	public HttpRequestState HttpState = HttpRequestState.Idle;
+
+	public HttpWebRequest HttpRequest;
+
+	public string ApiEndpoint;
+
+	public string FullUrl;
+
+	public byte[] Payload;
+
+	public string JsonResponse;
+
+	public PlayFabRequestCommon ApiRequest;
+
+	public Dictionary<string, string> RequestHeaders;
+
+	public PlayFabResultCommon ApiResult;
+
+	public PlayFabError Error;
+
+	public Action DeserializeResultJson;
+
+	public Action InvokeSuccessCallback;
+
+	public Action<PlayFabError> ErrorCallback;
+
+	public object CustomData;
+
+	public PlayFabApiSettings settings;
+
+	public PlayFabAuthenticationContext context;
+
+	public IPlayFabInstanceApi instanceApi;
 }

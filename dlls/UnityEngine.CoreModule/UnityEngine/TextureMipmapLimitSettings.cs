@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.TextureMipmapLimitSettings
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine;
+
+public struct TextureMipmapLimitSettings
+{
+	public TextureMipmapLimitBiasMode limitBiasMode { get; set; }
+
+	public int limitBias { get; set; }
+}

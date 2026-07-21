@@ -1,2 +1,22 @@
-// Could not decompile System.Net.ReceiveState
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net;
+
+internal class ReceiveState
+{
+	private const int bufferSize = 1024;
+
+	internal ResponseDescription Resp;
+
+	internal int ValidThrough;
+
+	internal byte[] Buffer;
+
+	internal CommandStream Connection;
+
+	internal ReceiveState(CommandStream connection)
+	{
+		Connection = connection;
+		Resp = new ResponseDescription();
+		Buffer = new byte[1024];
+		ValidThrough = 0;
+	}
+}

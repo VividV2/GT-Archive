@@ -1,2 +1,18 @@
-// Could not decompile Unity.Collections.LowLevel.Unsafe.UnsafeParallelHashMapDisposeJob
-// This type uses unsupported IL or has too many generic parameters.
+using Unity.Burst;
+using Unity.Jobs;
+
+namespace Unity.Collections.LowLevel.Unsafe;
+
+[BurstCompile]
+internal struct UnsafeParallelHashMapDisposeJob : IJob
+{
+	[NativeDisableUnsafePtrRestriction]
+	public unsafe UnsafeParallelHashMapData* Data;
+
+	public AllocatorManager.AllocatorHandle Allocator;
+
+	public unsafe void Execute()
+	{
+		UnsafeParallelHashMapData.DeallocateHashMap(Data, Allocator);
+	}
+}

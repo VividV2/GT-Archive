@@ -1,10 +1,18 @@
-namespace System.Drawing.Printing
+namespace System.Drawing.Drawing2D;
+
+/// <summary>Specifies whether smoothing (antialiasing) is applied to lines and curves and the edges of filled areas.</summary>
+public enum SmoothingMode
 {
-	public enum PrintRange
-	{
-		AllPages = 0,
-		SomePages = 2,
-		Selection = 1,
-		CurrentPage = 4194304
-	}
+	/// <summary>Specifies an invalid mode.</summary>
+	Invalid = -1,
+	/// <summary>Specifies no antialiasing.</summary>
+	Default,
+	/// <summary>Specifies no antialiasing.</summary>
+	HighSpeed,
+	/// <summary>Specifies antialiased rendering.</summary>
+	HighQuality,
+	/// <summary>Specifies no antialiasing.</summary>
+	None,
+	/// <summary>Specifies antialiased rendering.</summary>
+	AntiAlias
 }

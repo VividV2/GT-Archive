@@ -1,2 +1,9 @@
-// Could not decompile SpawnManager
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class SpawnManager : MonoBehaviour
+{
+	public Transform[] ChildrenXfs()
+	{
+		return base.transform.GetComponentsInChildren<Transform>();
+	}
+}

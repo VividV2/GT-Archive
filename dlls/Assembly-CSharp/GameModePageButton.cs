@@ -1,2 +1,16 @@
-// Could not decompile GameModePageButton
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GameModePageButton : GorillaPressableButton
+{
+	[SerializeField]
+	private GameModePages selector;
+
+	[SerializeField]
+	private bool left;
+
+	public override void ButtonActivation()
+	{
+		base.ButtonActivation();
+		selector.ChangePage(left);
+	}
+}

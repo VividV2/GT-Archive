@@ -1,11 +1,21 @@
-namespace Steamworks
+namespace Steamworks;
+
+public enum EDenyReason
 {
-	public enum EPlayerResult_t
-	{
-		k_EPlayerResultFailedToConnect = 1,
-		k_EPlayerResultAbandoned,
-		k_EPlayerResultKicked,
-		k_EPlayerResultIncomplete,
-		k_EPlayerResultCompleted
-	}
+	k_EDenyInvalid,
+	k_EDenyInvalidVersion,
+	k_EDenyGeneric,
+	k_EDenyNotLoggedOn,
+	k_EDenyNoLicense,
+	k_EDenyCheater,
+	k_EDenyLoggedInElseWhere,
+	k_EDenyUnknownText,
+	k_EDenyIncompatibleAnticheat,
+	k_EDenyMemoryCorruption,
+	k_EDenyIncompatibleSoftware,
+	k_EDenySteamConnectionLost,
+	k_EDenySteamConnectionError,
+	k_EDenySteamResponseTimedOut,
+	k_EDenySteamValidationStalled,
+	k_EDenySteamOwnerLeftGuestUser
 }

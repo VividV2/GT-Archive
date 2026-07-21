@@ -1,2 +1,15 @@
-// Could not decompile Modio.Unity.ModioPreInitializer
-// This type uses unsupported IL or has too many generic parameters.
+using Modio.Extensions;
+using UnityEngine;
+
+namespace Modio.Unity;
+
+public class ModioPreInitializer : MonoBehaviour
+{
+	private void Start()
+	{
+		if (!ModioClient.IsInitialized)
+		{
+			ModioClient.Init().ForgetTaskSafely();
+		}
+	}
+}

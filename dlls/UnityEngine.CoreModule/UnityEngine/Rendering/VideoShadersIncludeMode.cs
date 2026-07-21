@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.Rendering.VideoShadersIncludeMode
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+public enum VideoShadersIncludeMode
+{
+	[InspectorName("Don't include")]
+	Never,
+	[InspectorName("Include if referenced")]
+	Referenced,
+	[InspectorName("Always include")]
+	Always
+}

@@ -1,2 +1,14 @@
-// Could not decompile Oculus.Interaction.Input.DefaultHandSkeletonProvider
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Oculus.Interaction.Input;
+
+public class DefaultHandSkeletonProvider : MonoBehaviour, IHandSkeletonProvider
+{
+	private readonly HandSkeleton[] _skeletons = new HandSkeleton[2]
+	{
+		HandSkeleton.DefaultLeftSkeleton,
+		HandSkeleton.DefaultRightSkeleton
+	};
+
+	public HandSkeleton this[Handedness handedness] => _skeletons[(int)handedness];
+}

@@ -1,25 +1,17 @@
-namespace System.Drawing.Imaging;
+namespace System.Drawing;
 
-/// <summary>Used to specify the data type of the <see cref="T:System.Drawing.Imaging.EncoderParameter" /> used with the <see cref="Overload:System.Drawing.Image.Save" /> or <see cref="Overload:System.Drawing.Image.SaveAdd" /> method of an image.</summary>
-public enum EncoderParameterValueType
+/// <summary>Specifies style information applied to text.</summary>
+[Flags]
+public enum FontStyle
 {
-	ValueTypeByte = 1,
-	ValueTypeAscii,
-	ValueTypeShort,
-	ValueTypeLong,
-	ValueTypeRational,
-	ValueTypeLongRange,
-	ValueTypeUndefined,
-	ValueTypeRationalRange
-}
-namespace System
-{
-	[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-	internal class MonoNotSupportedAttribute : MonoTODOAttribute
-	{
-		public MonoNotSupportedAttribute(string comment)
-			: base(comment)
-		{
-		}
-	}
+	/// <summary>Normal text.</summary>
+	Regular = 0,
+	/// <summary>Bold text.</summary>
+	Bold = 1,
+	/// <summary>Italic text.</summary>
+	Italic = 2,
+	/// <summary>Underlined text.</summary>
+	Underline = 4,
+	/// <summary>Text with a line through the middle.</summary>
+	Strikeout = 8
 }

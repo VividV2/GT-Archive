@@ -1,2 +1,13 @@
-// Could not decompile Unity.Cinemachine.CameraPipelineAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.Cinemachine;
+
+public sealed class CameraPipelineAttribute : Attribute
+{
+	public CinemachineCore.Stage Stage { get; private set; }
+
+	public CameraPipelineAttribute(CinemachineCore.Stage stage)
+	{
+		Stage = stage;
+	}
+}

@@ -1,2 +1,12 @@
-// Could not decompile PlayFab.ClientModels.GetPlayerProfileRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetPlayerProfileRequest : PlayFabRequestCommon
+{
+	public string PlayFabId;
+
+	public PlayerProfileViewConstraints ProfileConstraints;
+}

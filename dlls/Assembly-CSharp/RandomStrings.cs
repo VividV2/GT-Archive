@@ -1,2 +1,3 @@
-// Could not decompile RandomStrings
-// This type uses unsupported IL or has too many generic parameters.
+public class RandomStrings : RandomContainer<string>
+{
+}

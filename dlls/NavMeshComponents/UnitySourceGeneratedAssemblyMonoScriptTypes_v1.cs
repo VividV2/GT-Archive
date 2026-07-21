@@ -2,21 +2,6 @@ using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace UnityEngine.AI
-{
-}
-namespace UnityEngine.AI
-{
-}
-namespace UnityEngine.AI
-{
-	public enum CollectObjects
-	{
-		All,
-		Volume,
-		Children
-	}
-}
 [CompilerGenerated]
 [EditorBrowsable(EditorBrowsableState.Never)]
 [GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]

@@ -14,6 +14,3 @@ public class BindableVariable<T> : BindableVariableBase<T> where T : IEquatable<
 		return base.Value.Equals(other);
 	}
 }
-namespace Unity.XR.CoreUtils.Bindings.Variables
-{
-}

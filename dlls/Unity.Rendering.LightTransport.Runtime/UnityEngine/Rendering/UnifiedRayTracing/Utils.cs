@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Rendering.UnifiedRayTracing.Utils
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.UnifiedRayTracing;
+
+internal static class Utils
+{
+	public static void Destroy(Object obj)
+	{
+		if (obj != null)
+		{
+			Object.Destroy(obj);
+		}
+	}
+}

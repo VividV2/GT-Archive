@@ -1,2 +1,15 @@
-// Could not decompile TestTeleportDestination
-// This type uses unsupported IL or has too many generic parameters.
+using GorillaTag;
+using UnityEngine;
+
+[GTStripGameObjectFromBuild("!GT_AUTOMATED_PERF_TEST && !BETA")]
+public class TestTeleportDestination : MonoBehaviour
+{
+	public GTZone[] zones;
+
+	public GameObject teleportTransform;
+
+	private void OnDrawGizmosSelected()
+	{
+		Debug.DrawRay(base.transform.position, base.transform.forward * 2f, Color.magenta);
+	}
+}

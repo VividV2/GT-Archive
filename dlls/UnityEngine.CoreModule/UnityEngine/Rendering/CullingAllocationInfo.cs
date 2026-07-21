@@ -1,15 +1,16 @@
-namespace Unity.Collections
+namespace UnityEngine.Rendering;
+
+internal struct CullingAllocationInfo
 {
-	[UsedByNativeCode]
-	public enum Allocator
-	{
-		Invalid = 0,
-		None = 1,
-		Temp = 2,
-		TempJob = 3,
-		Persistent = 4,
-		AudioKernel = 5,
-		Domain = 6,
-		FirstUserIndex = 64
-	}
+	public unsafe VisibleLight* visibleLightsPtr;
+
+	public unsafe VisibleLight* visibleOffscreenVertexLightsPtr;
+
+	public unsafe VisibleReflectionProbe* visibleReflectionProbesPtr;
+
+	public int visibleLightCount;
+
+	public int visibleOffscreenVertexLightCount;
+
+	public int visibleReflectionProbeCount;
 }

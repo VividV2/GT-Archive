@@ -1,2 +1,23 @@
-// Could not decompile System.Xml.Xsl.XsltOld.TemplateBaseAction
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Xsl.XsltOld;
+
+internal abstract class TemplateBaseAction : ContainerAction
+{
+	protected int variableCount;
+
+	private int variableFreeSlot;
+
+	public int AllocateVariableSlot()
+	{
+		int result = variableFreeSlot;
+		variableFreeSlot++;
+		if (variableCount < variableFreeSlot)
+		{
+			variableCount = variableFreeSlot;
+		}
+		return result;
+	}
+
+	public void ReleaseVariableSlots(int n)
+	{
+	}
+}

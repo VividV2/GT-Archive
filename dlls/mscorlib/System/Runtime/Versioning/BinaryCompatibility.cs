@@ -1,2 +1,10 @@
-// Could not decompile System.Runtime.Versioning.BinaryCompatibility
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Versioning;
+
+internal static class BinaryCompatibility
+{
+	public static readonly bool TargetsAtLeast_Desktop_V4_5 = true;
+
+	public static readonly bool TargetsAtLeast_Desktop_V4_5_1 = true;
+
+	public static bool TargetsAtLeast_Desktop_V4_5_2 => true;
+}

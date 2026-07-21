@@ -1,10 +1,6 @@
-namespace System.Runtime.CompilerServices
+namespace System.Threading;
+
+internal interface IDeferredDisposable
 {
-}
-namespace System.Threading
-{
-	internal interface IDeferredDisposable
-	{
-		void OnFinalRelease(bool disposed);
-	}
+	void OnFinalRelease(bool disposed);
 }

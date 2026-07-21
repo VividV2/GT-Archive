@@ -10,12 +10,3 @@ public enum ChunkState
 	CollisionBaked,
 	MeshAssigned
 }
-[Serializable]
-public struct MatrixZonePair
-{
-	[]
-	public Matrix4x4 matrix;
-
-	[]
-	public int zoneIndex;
-}

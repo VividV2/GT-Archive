@@ -1,2 +1,12 @@
-// Could not decompile GorillaSceneCamera
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GorillaSceneCamera : MonoBehaviour
+{
+	public GorillaSceneTransform[] sceneTransforms;
+
+	public void SetSceneCamera(int sceneIndex)
+	{
+		base.transform.position = sceneTransforms[sceneIndex].scenePosition;
+		base.transform.eulerAngles = sceneTransforms[sceneIndex].sceneRotation;
+	}
+}

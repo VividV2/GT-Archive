@@ -1,6 +1,11 @@
-namespace Modio.API.SchemaDefinitions
+using Newtonsoft.Json;
+
+namespace Modio.API.SchemaDefinitions;
+
+[JsonObject]
+internal readonly struct UpdateModMediaResponse(long code, string message)
 {
-}
-namespace ICSharpCode.SharpZipLib.Zip
-{
+	internal readonly long Code = code;
+
+	internal readonly string Message = message;
 }

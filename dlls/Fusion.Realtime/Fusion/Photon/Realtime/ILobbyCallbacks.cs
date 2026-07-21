@@ -1,14 +1,14 @@
-namespace Fusion;
+using System.Collections.Generic;
 
-public struct RegionInfo
-{
-	public string RegionCode;
+namespace Fusion.Photon.Realtime;
 
-	public int RegionPing;
-}
-namespace Fusion.Photon.Realtime
+internal interface ILobbyCallbacks
 {
-}
-namespace Fusion.Photon.Realtime
-{
+	void OnJoinedLobby();
+
+	void OnLeftLobby();
+
+	void OnRoomListUpdate(List<RoomInfo> roomList);
+
+	void OnLobbyStatisticsUpdate(List<TypedLobbyInfo> lobbyStatistics);
 }

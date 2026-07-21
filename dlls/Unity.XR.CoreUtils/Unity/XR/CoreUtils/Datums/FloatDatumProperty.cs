@@ -1,2 +1,17 @@
-// Could not decompile Unity.XR.CoreUtils.Datums.FloatDatumProperty
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.XR.CoreUtils.Datums;
+
+[Serializable]
+public class FloatDatumProperty : DatumProperty<float, FloatDatum>
+{
+	public FloatDatumProperty(float value)
+		: base(value)
+	{
+	}
+
+	public FloatDatumProperty(FloatDatum datum)
+		: base(datum)
+	{
+	}
+}

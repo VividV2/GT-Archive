@@ -1,2 +1,17 @@
-// Could not decompile System.Collections.Generic.ComparisonComparer`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Collections.Generic;
+
+[Serializable]
+internal class ComparisonComparer<T> : Comparer<T>
+{
+	private readonly Comparison<T> _comparison;
+
+	public ComparisonComparer(Comparison<T> comparison)
+	{
+		_comparison = comparison;
+	}
+
+	public override int Compare(T x, T y)
+	{
+		return _comparison(x, y);
+	}
+}

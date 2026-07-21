@@ -1,14 +1,10 @@
-namespace UnityEngine.UIElements
-{
-	internal struct PanelClearSettings
-	{
-		public bool clearDepthStencil;
+namespace UnityEngine.UIElements;
 
-		public bool clearColor;
-
-		public Color color;
-	}
-}
-namespace UnityEngine.UIElements
+internal struct PanelClearSettings
 {
+	public bool clearDepthStencil;
+
+	public bool clearColor;
+
+	public Color color;
 }

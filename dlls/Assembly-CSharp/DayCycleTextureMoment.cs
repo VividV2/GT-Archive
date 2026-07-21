@@ -1,2 +1,10 @@
-// Could not decompile DayCycleTextureMoment
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+[Serializable]
+public class DayCycleTextureMoment
+{
+	public Texture2D sunnyTex;
+
+	public Texture2D cloudyTex;
+}

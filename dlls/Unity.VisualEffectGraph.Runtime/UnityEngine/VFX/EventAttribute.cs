@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.VFX.EventAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.VFX.Utility;
+
+namespace UnityEngine.VFX;
+
+[Serializable]
+internal abstract class EventAttribute
+{
+	public ExposedProperty id;
+
+	public abstract bool ApplyToVFX(VFXEventAttribute eventAttribute);
+}

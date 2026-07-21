@@ -1,2 +1,17 @@
-// Could not decompile Meta.WitAi.Data.Info.WitTraitInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace Meta.WitAi.Data.Info;
+
+[Serializable]
+public class WitTraitInfo
+{
+	[SerializeField]
+	public string name;
+
+	[SerializeField]
+	public string id;
+
+	[SerializeField]
+	public WitTraitValueInfo[] values;
+}

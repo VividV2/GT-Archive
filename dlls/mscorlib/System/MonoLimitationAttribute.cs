@@ -1,2 +1,10 @@
-// Could not decompile System.MonoLimitationAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System;
+
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+internal class MonoLimitationAttribute : MonoTODOAttribute
+{
+	public MonoLimitationAttribute(string comment)
+		: base(comment)
+	{
+	}
+}

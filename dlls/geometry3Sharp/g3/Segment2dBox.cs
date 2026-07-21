@@ -1,2 +1,20 @@
-// Could not decompile g3.Segment2dBox
-// This type uses unsupported IL or has too many generic parameters.
+namespace g3;
+
+public class Segment2dBox
+{
+	public Segment2d Segment;
+
+	public Segment2dBox()
+	{
+	}
+
+	public Segment2dBox(Segment2d seg)
+	{
+		Segment = seg;
+	}
+
+	public static implicit operator Segment2d(Segment2dBox box)
+	{
+		return box.Segment;
+	}
+}

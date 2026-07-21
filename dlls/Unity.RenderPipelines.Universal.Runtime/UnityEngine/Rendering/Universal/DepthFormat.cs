@@ -1,11 +1,19 @@
 namespace UnityEngine.Rendering.Universal;
 
-public enum HDRACESPreset
+public enum DepthFormat
 {
-	ACES1000Nits = 3,
-	ACES2000Nits,
-	ACES4000Nits
-}
-namespace UnityEngine.Rendering.Universal
-{
+	[RenderPathCompatible(RenderPathCompatibility.All)]
+	Default = 0,
+	[RenderPathCompatible(RenderPathCompatibility.Forward | RenderPathCompatibility.ForwardPlus)]
+	Depth_16 = 90,
+	[RenderPathCompatible(RenderPathCompatibility.Forward | RenderPathCompatibility.ForwardPlus)]
+	Depth_24 = 91,
+	[RenderPathCompatible(RenderPathCompatibility.Forward | RenderPathCompatibility.ForwardPlus)]
+	Depth_32 = 93,
+	[RenderPathCompatible(RenderPathCompatibility.All)]
+	Depth_16_Stencil_8 = 151,
+	[RenderPathCompatible(RenderPathCompatibility.All)]
+	Depth_24_Stencil_8 = 92,
+	[RenderPathCompatible(RenderPathCompatibility.All)]
+	Depth_32_Stencil_8 = 94
 }

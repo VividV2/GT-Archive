@@ -1,19 +1,26 @@
-namespace Valve.VR
-{
-	public enum VROverlayInputMethod
-	{
-		None,
-		Mouse
-	}
-}
-namespace Valve.VR
-{
-	public struct VREvent_Mouse_t
-	{
-		public float x;
+namespace Valve.VR;
 
-		public float y;
-
-		public uint button;
-	}
+public enum EVRInputError
+{
+	None,
+	NameNotFound,
+	WrongType,
+	InvalidHandle,
+	InvalidParam,
+	NoSteam,
+	MaxCapacityReached,
+	IPCError,
+	NoActiveActionSet,
+	InvalidDevice,
+	InvalidSkeleton,
+	InvalidBoneCount,
+	InvalidCompressedData,
+	NoData,
+	BufferTooSmall,
+	MismatchedActionManifest,
+	MissingSkeletonData,
+	InvalidBoneIndex,
+	InvalidPriority,
+	PermissionDenied,
+	InvalidRenderModel
 }

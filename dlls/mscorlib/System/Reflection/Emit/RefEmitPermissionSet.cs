@@ -1,6 +1,10 @@
-namespace System.Reflection
+using System.Security.Permissions;
+
+namespace System.Reflection.Emit;
+
+internal struct RefEmitPermissionSet(SecurityAction action, string pset)
 {
-}
-namespace System.Runtime.InteropServices
-{
+	public SecurityAction action = action;
+
+	public string pset = pset;
 }

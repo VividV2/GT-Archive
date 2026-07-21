@@ -1,2 +1,13 @@
-// Could not decompile g3.ConstantIndexMap
-// This type uses unsupported IL or has too many generic parameters.
+namespace g3;
+
+public class ConstantIndexMap : IIndexMap
+{
+	public int Constant;
+
+	public int this[int index] => Constant;
+
+	public ConstantIndexMap(int c)
+	{
+		Constant = c;
+	}
+}

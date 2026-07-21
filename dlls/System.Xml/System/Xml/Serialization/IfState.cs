@@ -1,2 +1,34 @@
-// Could not decompile System.Xml.Serialization.IfState
-// This type uses unsupported IL or has too many generic parameters.
+using System.Reflection.Emit;
+
+namespace System.Xml.Serialization;
+
+internal class IfState
+{
+	private Label elseBegin;
+
+	private Label endIf;
+
+	internal Label EndIf
+	{
+		get
+		{
+			return endIf;
+		}
+		set
+		{
+			endIf = value;
+		}
+	}
+
+	internal Label ElseBegin
+	{
+		get
+		{
+			return elseBegin;
+		}
+		set
+		{
+			elseBegin = value;
+		}
+	}
+}

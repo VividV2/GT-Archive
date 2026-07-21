@@ -1,25 +1,13 @@
-using System;
-using System;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 
-namespace Mono.Security.Interface
+namespace Mono.Security.Interface;
+
+internal interface IMonoSslClientAuthenticationOptions : IMonoAuthenticationOptions
 {
-	[Flags]
-	public enum MonoSslPolicyErrors
-	{
-		None = 0,
-		RemoteCertificateNotAvailable = 1,
-		RemoteCertificateNameMismatch = 2,
-		RemoteCertificateChainErrors = 4
-	}
-}
-namespace Mono.Security.Interface
-{
-	internal interface IMonoSslClientAuthenticationOptions : IMonoAuthenticationOptions
-	{
-		System.Net.Security.LocalCertificateSelectionCallback LocalCertificateSelectionCallback { get; set; }
+	LocalCertificateSelectionCallback LocalCertificateSelectionCallback { get; set; }
 
-		string TargetHost { get; set; }
+	string TargetHost { get; set; }
 
-		System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates { get; set; }
-	}
+	X509CertificateCollection ClientCertificates { get; set; }
 }

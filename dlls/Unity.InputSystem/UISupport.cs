@@ -1,15 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
-namespace UnityEngine.InputSystem;
-
-public interface IInputActionCollection2 : IInputActionCollection, IEnumerable<InputAction>, IEnumerable
+internal static class UISupport
 {
-	IEnumerable<InputBinding> bindings { get; }
-
-	InputAction FindAction(string actionNameOrId, bool throwIfNotFound = false);
-
-	int FindBinding(InputBinding mask, out InputAction action);
+	public static void Initialize()
+	{
+		InputSystem.RegisterLayout("\n            {\n                \"name\" : \"VirtualMouse\",\n                \"extend\" : \"Mouse\"\n            }\n        ");
+	}
 }

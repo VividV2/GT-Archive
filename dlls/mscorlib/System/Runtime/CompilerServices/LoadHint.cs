@@ -11,6 +11,3 @@ public enum LoadHint
 	/// <summary>The dependency is sometimes loaded.</summary>
 	Sometimes
 }
-namespace System.Threading
-{
-}

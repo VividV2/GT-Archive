@@ -21,6 +21,3 @@ internal sealed class TypeInformation
 		this.hasTypeForwardedFrom = hasTypeForwardedFrom;
 	}
 }
-namespace System.Runtime.Serialization
-{
-}

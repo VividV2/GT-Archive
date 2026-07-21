@@ -1,2 +1,13 @@
-// Could not decompile System.Net.TcpValidationHelpers
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net;
+
+internal static class TcpValidationHelpers
+{
+	public static bool ValidatePortNumber(int port)
+	{
+		if (port >= 0)
+		{
+			return port <= 65535;
+		}
+		return false;
+	}
+}

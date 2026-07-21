@@ -1,2 +1,11 @@
-// Could not decompile PhotonAuthenticatorSettingsScriptableObject
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "PhotonAuthenticatorSettings", menuName = "ScriptableObjects/PhotonAuthenticatorSettings")]
+public class PhotonAuthenticatorSettingsScriptableObject : ScriptableObject
+{
+	public string PunAppId;
+
+	public string FusionAppId;
+
+	public string VoiceAppId;
+}

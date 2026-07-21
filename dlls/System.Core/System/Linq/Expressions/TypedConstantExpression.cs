@@ -1,2 +1,12 @@
-// Could not decompile System.Linq.Expressions.TypedConstantExpression
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq.Expressions;
+
+internal class TypedConstantExpression : ConstantExpression
+{
+	public sealed override Type Type { get; }
+
+	internal TypedConstantExpression(object value, Type type)
+		: base(value)
+	{
+		Type = type;
+	}
+}

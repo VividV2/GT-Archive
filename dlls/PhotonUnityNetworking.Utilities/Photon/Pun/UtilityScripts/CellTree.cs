@@ -1,2 +1,15 @@
-// Could not decompile Photon.Pun.UtilityScripts.CellTree
-// This type uses unsupported IL or has too many generic parameters.
+namespace Photon.Pun.UtilityScripts;
+
+public class CellTree
+{
+	public CellTreeNode RootNode { get; private set; }
+
+	public CellTree()
+	{
+	}
+
+	public CellTree(CellTreeNode root)
+	{
+		RootNode = root;
+	}
+}

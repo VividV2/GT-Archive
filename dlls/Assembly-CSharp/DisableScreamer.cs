@@ -1,2 +1,9 @@
-// Could not decompile DisableScreamer
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class DisableScreamer : MonoBehaviour
+{
+	private void OnDisable()
+	{
+		Debug.LogError("oh my god i've been disabled! aaag!!! AAAAAAAAA!!!!", base.gameObject);
+	}
+}

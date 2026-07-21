@@ -1,2 +1,18 @@
-// Could not decompile System.Net.WebProxyData
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections;
+
+namespace System.Net;
+
+internal class WebProxyData
+{
+	internal bool bypassOnLocal;
+
+	internal bool automaticallyDetectSettings;
+
+	internal Uri proxyAddress;
+
+	internal Hashtable proxyHostAddresses;
+
+	internal Uri scriptLocation;
+
+	internal ArrayList bypassList;
+}

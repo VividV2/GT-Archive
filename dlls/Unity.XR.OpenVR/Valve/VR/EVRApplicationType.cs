@@ -1,2 +1,16 @@
-// Could not decompile Valve.VR.EVRApplicationType
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR;
+
+public enum EVRApplicationType
+{
+	VRApplication_Other,
+	VRApplication_Scene,
+	VRApplication_Overlay,
+	VRApplication_Background,
+	VRApplication_Utility,
+	VRApplication_VRMonitor,
+	VRApplication_SteamWatchdog,
+	VRApplication_Bootstrapper,
+	VRApplication_WebHelper,
+	VRApplication_OpenXR,
+	VRApplication_Max
+}

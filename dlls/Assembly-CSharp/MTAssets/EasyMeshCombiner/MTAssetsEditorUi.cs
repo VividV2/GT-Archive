@@ -1,2 +1,8 @@
-// Could not decompile MTAssets.EasyMeshCombiner.MTAssetsEditorUi
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace MTAssets.EasyMeshCombiner;
+
+[AddComponentMenu("")]
+public class MTAssetsEditorUi : MonoBehaviour
+{
+}

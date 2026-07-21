@@ -1,28 +1,10 @@
-namespace System.Drawing.Drawing2D
+namespace System.Drawing.Imaging;
+
+/// <summary>Specifies two modes for color component values.</summary>
+public enum ColorMode
 {
-	internal enum BrushType
-	{
-		SolidColor,
-		HatchFill,
-		TextureFill,
-		PathGradient,
-		LinearGradient
-	}
-}
-namespace System.Drawing.Drawing2D
-{
-	public enum WrapMode
-	{
-		Tile,
-		TileFlipX,
-		TileFlipY,
-		TileFlipXY,
-		Clamp
-	}
-}
-namespace System.Drawing.Drawing2D
-{
-}
-namespace System.Drawing
-{
+	/// <summary>The integer values supplied are 32-bit values.</summary>
+	Argb32Mode,
+	/// <summary>The integer values supplied are 64-bit values.</summary>
+	Argb64Mode
 }

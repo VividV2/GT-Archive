@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportingEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
+
+[Serializable]
+[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
+public sealed class TeleportingEvent : UnityEvent<TeleportingEventArgs>
+{
+}

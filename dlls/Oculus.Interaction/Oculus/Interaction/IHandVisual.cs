@@ -2,21 +2,17 @@ using System;
 using Oculus.Interaction.Input;
 using UnityEngine;
 
-namespace Oculus.Interaction
+namespace Oculus.Interaction;
+
+public interface IHandVisual
 {
-	public interface IHandVisual
-	{
-		IHand Hand { get; }
+	IHand Hand { get; }
 
-		bool IsVisible { get; }
+	bool IsVisible { get; }
 
-		bool ForceOffVisibility { get; set; }
+	bool ForceOffVisibility { get; set; }
 
-		event Action WhenHandVisualUpdated;
+	event Action WhenHandVisualUpdated;
 
-		Pose GetJointPose(HandJointId jointId, Space space);
-	}
-}
-namespace Oculus.Interaction
-{
+	Pose GetJointPose(HandJointId jointId, Space space);
 }

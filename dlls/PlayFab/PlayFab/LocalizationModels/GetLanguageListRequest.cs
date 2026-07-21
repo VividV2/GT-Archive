@@ -1,21 +1,9 @@
 using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.MultiplayerModels;
+namespace PlayFab.LocalizationModels;
 
 [Serializable]
-public class ListQosServersForTitleResponse : PlayFabResultCommon
+public class GetLanguageListRequest : PlayFabRequestCommon
 {
-	public int PageSize;
-
-	public List<QosServer> QosServers;
-
-	public string SkipToken;
 }

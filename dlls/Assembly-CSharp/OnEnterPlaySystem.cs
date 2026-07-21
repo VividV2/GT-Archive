@@ -1,2 +1,8 @@
-// Could not decompile OnEnterPlaySystem
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+public static class OnEnterPlaySystem
+{
+	public static void AddCallback(Action callback)
+	{
+	}
+}

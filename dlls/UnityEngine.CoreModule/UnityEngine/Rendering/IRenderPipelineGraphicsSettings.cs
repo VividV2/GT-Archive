@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Rendering.IRenderPipelineGraphicsSettings
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+public interface IRenderPipelineGraphicsSettings
+{
+	int version { get; }
+
+	bool isAvailableInPlayerBuild => false;
+
+	void Reset()
+	{
+	}
+}

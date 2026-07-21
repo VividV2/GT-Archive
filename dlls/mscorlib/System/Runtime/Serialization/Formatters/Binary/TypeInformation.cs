@@ -1,2 +1,23 @@
-// Could not decompile System.Runtime.Serialization.Formatters.Binary.TypeInformation
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Serialization.Formatters.Binary;
+
+internal sealed class TypeInformation
+{
+	private string fullTypeName;
+
+	private string assemblyString;
+
+	private bool hasTypeForwardedFrom;
+
+	internal string FullTypeName => fullTypeName;
+
+	internal string AssemblyString => assemblyString;
+
+	internal bool HasTypeForwardedFrom => hasTypeForwardedFrom;
+
+	internal TypeInformation(string fullTypeName, string assemblyString, bool hasTypeForwardedFrom)
+	{
+		this.fullTypeName = fullTypeName;
+		this.assemblyString = assemblyString;
+		this.hasTypeForwardedFrom = hasTypeForwardedFrom;
+	}
+}

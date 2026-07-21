@@ -1,2 +1,9 @@
-// Could not decompile Unity.XR.CoreUtils.FloatUnityEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace Unity.XR.CoreUtils;
+
+[Serializable]
+public class FloatUnityEvent : UnityEvent<float>
+{
+}

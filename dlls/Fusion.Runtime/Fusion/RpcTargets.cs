@@ -1,19 +1,12 @@
 using System;
 
-namespace Fusion
+namespace Fusion;
+
+[Flags]
+public enum RpcTargets
 {
-	[Flags]
-	public enum RpcTargets
-	{
-		StateAuthority = 1,
-		InputAuthority = 2,
-		Proxies = 4,
-		All = 7
-	}
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
+	StateAuthority = 1,
+	InputAuthority = 2,
+	Proxies = 4,
+	All = 7
 }

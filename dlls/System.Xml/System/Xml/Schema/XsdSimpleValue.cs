@@ -1,15 +1,18 @@
-namespace System.Xml.Xsl
+namespace System.Xml.Schema;
+
+internal class XsdSimpleValue
 {
-}
-namespace System.Xml.Xsl.IlGen
-{
-}
-namespace System.Xml.Schema
-{
-}
-namespace System.Xml.Serialization
-{
-}
-namespace System.Xml.Serialization
-{
+	private XmlSchemaSimpleType xmlType;
+
+	private object typedValue;
+
+	public XmlSchemaSimpleType XmlType => xmlType;
+
+	public object TypedValue => typedValue;
+
+	public XsdSimpleValue(XmlSchemaSimpleType st, object value)
+	{
+		xmlType = st;
+		typedValue = value;
+	}
 }

@@ -1,2 +1,15 @@
-// Could not decompile Unity.Collections.NativeStreamDisposeJob
-// This type uses unsupported IL or has too many generic parameters.
+using Unity.Burst;
+using Unity.Jobs;
+
+namespace Unity.Collections;
+
+[BurstCompile]
+internal struct NativeStreamDisposeJob : IJob
+{
+	public NativeStreamDispose Data;
+
+	public void Execute()
+	{
+		Data.Dispose();
+	}
+}

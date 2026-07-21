@@ -1,20 +1,17 @@
-namespace System.Security.AccessControl
+namespace System.Runtime.InteropServices.ComTypes;
+
+/// <summary>Stores the parameters that are used during a moniker binding operation.</summary>
+public struct BIND_OPTS
 {
-	[Flags]
-	public enum AceFlags : byte
-	{
-		None = 0,
-		ObjectInherit = 1,
-		ContainerInherit = 2,
-		NoPropagateInherit = 4,
-		InheritOnly = 8,
-		InheritanceFlags = 0xF,
-		Inherited = 0x10,
-		SuccessfulAccess = 0x40,
-		FailedAccess = 0x80,
-		AuditFlags = 0xC0
-	}
-}
-namespace System
-{
+	/// <summary>Specifies the size, in bytes, of the <see langword="BIND_OPTS" /> structure.</summary>
+	public int cbStruct;
+
+	/// <summary>Controls aspects of moniker binding operations.</summary>
+	public int grfFlags;
+
+	/// <summary>Represents flags that should be used when opening the file that contains the object identified by the moniker.</summary>
+	public int grfMode;
+
+	/// <summary>Indicates the amount of time (clock time in milliseconds, as returned by the <see langword="GetTickCount" /> function) that the caller specified to complete the binding operation.</summary>
+	public int dwTickCountDeadline;
 }

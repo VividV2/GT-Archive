@@ -1,8 +1,6 @@
 using Unity.Burst;
 using UnityEngine;
 
-namespace Unity.Burst.Intrinsics;
-
 internal static class $BurstDirectCallInitializer
 {
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]

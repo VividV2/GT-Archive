@@ -1,2 +1,12 @@
-// Could not decompile DevInspectorColor
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+public class DevInspectorColor : Attribute
+{
+	public string Color { get; }
+
+	public DevInspectorColor(string color)
+	{
+		Color = color;
+	}
+}

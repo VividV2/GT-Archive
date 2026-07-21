@@ -1,6 +1,7 @@
-namespace UnityEngine.Localization.Pseudo;
+namespace UnityEngine.Localization.Settings;
 
-public interface IPseudoLocalizationMethod
+public enum AsynchronousBehaviour
 {
-	void Transform(Message message);
+	Default,
+	ForceSynchronous
 }

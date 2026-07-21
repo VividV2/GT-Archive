@@ -1,14 +1,10 @@
 using System.Reflection;
 
-namespace Meta.XR.ImmersiveDebugger.UserInterface
-{
-	internal interface IInspector
-	{
-		IMember RegisterMember(MemberInfo memberInfo, DebugMember attribute);
+namespace Meta.XR.ImmersiveDebugger.UserInterface;
 
-		IMember GetMember(MemberInfo memberInfo);
-	}
-}
-namespace Meta.XR.ImmersiveDebugger.Utils
+internal interface IInspector
 {
+	IMember RegisterMember(MemberInfo memberInfo, DebugMember attribute);
+
+	IMember GetMember(MemberInfo memberInfo);
 }

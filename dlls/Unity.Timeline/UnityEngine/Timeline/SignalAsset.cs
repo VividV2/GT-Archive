@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.Timeline.SignalAsset
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Timeline;
+
+[AssetFileNameExtension("signal", new string[] { })]
+public class SignalAsset : ScriptableObject
+{
+	internal static event Action<SignalAsset> OnEnableCallback;
+
+	private void OnEnable()
+	{
+		if (SignalAsset.OnEnableCallback != null)
+		{
+			SignalAsset.OnEnableCallback(this);
+		}
+	}
+}

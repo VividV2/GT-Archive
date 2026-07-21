@@ -1,2 +1,9 @@
-// Could not decompile Fusion.FixedStorage
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+public static class FixedStorage
+{
+	public unsafe static int GetWordCount<T>() where T : unmanaged, IFixedStorage
+	{
+		return sizeof(T) / 4;
+	}
+}

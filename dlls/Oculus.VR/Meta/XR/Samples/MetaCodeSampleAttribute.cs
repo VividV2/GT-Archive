@@ -1,2 +1,13 @@
-// Could not decompile Meta.XR.Samples.MetaCodeSampleAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Meta.XR.Samples;
+
+public class MetaCodeSampleAttribute : Attribute
+{
+	public string SampleName { get; private set; }
+
+	public MetaCodeSampleAttribute(string sampleName)
+	{
+		SampleName = sampleName;
+	}
+}

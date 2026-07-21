@@ -1,7 +1,11 @@
-namespace UnityEngine;
+using System;
+using UnityEngine.Scripting;
 
-public enum SendMessageOptions
+namespace Unity.Collections.LowLevel.Unsafe;
+
+[Obsolete("Use NativeSetThreadIndexAttribute instead")]
+[AttributeUsage(AttributeTargets.Struct)]
+[RequiredByNativeCode]
+public sealed class NativeContainerNeedsThreadIndexAttribute : Attribute
 {
-	RequireReceiver,
-	DontRequireReceiver
 }

@@ -1,2 +1,8 @@
-// Could not decompile Pathfinding.LayerGridGraphUpdate
-// This type uses unsupported IL or has too many generic parameters.
+namespace Pathfinding;
+
+public class LayerGridGraphUpdate : GraphUpdateObject
+{
+	public bool recalculateNodes;
+
+	public bool preserveExistingNodes = true;
+}

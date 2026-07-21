@@ -1,2 +1,7 @@
-// Could not decompile Oculus.Interaction.Samples.ShouldHideHandOnGrab
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Oculus.Interaction.Samples;
+
+public class ShouldHideHandOnGrab : MonoBehaviour
+{
+}

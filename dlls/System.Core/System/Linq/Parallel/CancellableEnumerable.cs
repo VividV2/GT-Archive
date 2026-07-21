@@ -1,2 +1,20 @@
-// Could not decompile System.Linq.Parallel.CancellableEnumerable
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+using System.Threading;
+
+namespace System.Linq.Parallel;
+
+internal static class CancellableEnumerable
+{
+	internal static IEnumerable<TElement> Wrap<TElement>(IEnumerable<TElement> source, CancellationToken token)
+	{
+		int count = 0;
+		foreach (TElement item in source)
+		{
+			if ((count++ & 0x3F) == 0)
+			{
+				CancellationState.ThrowIfCanceled(token);
+			}
+			yield return item;
+		}
+	}
+}

@@ -1,18 +1,37 @@
-namespace System.Runtime.InteropServices
+namespace System.Text;
+
+[Serializable]
+internal sealed class InternalDecoderBestFitFallback : DecoderFallback
 {
-	[CLSCompliant(false)]
-	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-	[Guid("ED3E4384-D7E2-3FA7-8FFD-8940D330519A")]
-	[TypeLibImportClass(typeof(ConstructorBuilder))]
-	[ComVisible(true)]
-	public interface _ConstructorBuilder
+	internal Encoding _encoding;
+
+	internal char[] _arrayBestFit;
+
+	internal char _cReplacement = '?';
+
+	public override int MaxCharCount => 1;
+
+	internal InternalDecoderBestFitFallback(Encoding encoding)
 	{
-		void GetIDsOfNames([In] ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);
+		_encoding = encoding;
+	}
 
-		void GetTypeInfo(uint iTInfo, uint lcid, IntPtr ppTInfo);
+	public override DecoderFallbackBuffer CreateFallbackBuffer()
+	{
+		return new InternalDecoderBestFitFallbackBuffer(this);
+	}
 
-		void GetTypeInfoCount(out uint pcTInfo);
+	public override bool Equals(object value)
+	{
+		if (value is InternalDecoderBestFitFallback internalDecoderBestFitFallback)
+		{
+			return _encoding.CodePage == internalDecoderBestFitFallback._encoding.CodePage;
+		}
+		return false;
+	}
 
-		void Invoke(uint dispIdMember, [In] ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);
+	public override int GetHashCode()
+	{
+		return _encoding.CodePage;
 	}
 }

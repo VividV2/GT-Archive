@@ -1,2 +1,18 @@
-// Could not decompile PlayFab.ClientModels.UserSteamInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class UserSteamInfo : PlayFabBaseModel
+{
+	public TitleActivationStatus? SteamActivationStatus;
+
+	public string SteamCountry;
+
+	public Currency? SteamCurrency;
+
+	public string SteamId;
+
+	public string SteamName;
+}

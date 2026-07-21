@@ -2,30 +2,26 @@ using System.Runtime.InteropServices;
 using UnityEngine.Bindings;
 using UnityEngine.UIElements.Layout;
 
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+[NativeType(Header = "Modules/UIElements/VisualNodeData.h")]
+internal struct VisualNodeData
 {
-	[NativeType(Header = "Modules/UIElements/VisualNodeData.h")]
-	internal struct VisualNodeData
-	{
-		public VisualPanelHandle Panel;
+	public VisualPanelHandle Panel;
 
-		public VisualNodeHandle LogicalParent;
+	public VisualNodeHandle LogicalParent;
 
-		public VisualElementFlags Flags;
+	public VisualElementFlags Flags;
 
-		public VisualNodeCallbackInterest CallbackInterest;
+	public VisualNodeCallbackInterest CallbackInterest;
 
-		public LayoutNode LayoutNode;
+	public LayoutNode LayoutNode;
 
-		public uint ControlId;
+	public uint ControlId;
 
-		[MarshalAs(UnmanagedType.U1)]
-		public bool Enabled;
+	[MarshalAs(UnmanagedType.U1)]
+	public bool Enabled;
 
-		[MarshalAs(UnmanagedType.U1)]
-		public bool IsRootVisualContainer;
-	}
-}
-namespace UnityEngine.UIElements.UIR
-{
+	[MarshalAs(UnmanagedType.U1)]
+	public bool IsRootVisualContainer;
 }

@@ -1,2 +1,9 @@
-// Could not decompile System.Runtime.Serialization.IDDataContract
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Serialization;
+
+internal class IDDataContract : StringDataContract
+{
+	internal IDDataContract()
+		: base(DictionaryGlobals.XSDIDLocalName, DictionaryGlobals.SchemaNamespace)
+	{
+	}
+}

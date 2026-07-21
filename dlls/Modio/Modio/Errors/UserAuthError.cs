@@ -1,2 +1,13 @@
-// Could not decompile Modio.Errors.UserAuthError
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.Errors;
+
+public class UserAuthError : Error
+{
+	public new static readonly UserAuthError None = new UserAuthError(UserAuthErrorCode.NONE);
+
+	public new UserAuthErrorCode Code => (UserAuthErrorCode)base.Code;
+
+	public UserAuthError(UserAuthErrorCode code)
+		: base((ErrorCode)code)
+	{
+	}
+}

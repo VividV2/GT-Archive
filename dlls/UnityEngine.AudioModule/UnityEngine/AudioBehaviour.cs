@@ -1,2 +1,5 @@
-namespace UnityEngine.Audio;
+namespace UnityEngine;
 
+public class AudioBehaviour : Behaviour
+{
+}

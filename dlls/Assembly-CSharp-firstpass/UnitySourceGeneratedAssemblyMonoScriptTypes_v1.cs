@@ -1,50 +1,74 @@
-namespace MathGeoLib;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-[PublicAPI]
-public struct Matrix3X4
+[CompilerGenerated]
+[EditorBrowsable(EditorBrowsableState.Never)]
+[GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]
+internal class UnitySourceGeneratedAssemblyMonoScriptTypes_v1
 {
-	public readonly float M00;
-
-	public readonly float M01;
-
-	public readonly float M02;
-
-	public readonly float M03;
-
-	public readonly float M10;
-
-	public readonly float M11;
-
-	public readonly float M12;
-
-	public readonly float M13;
-
-	public readonly float M20;
-
-	public readonly float M21;
-
-	public readonly float M22;
-
-	public readonly float M23;
-
-	public Matrix3X4(float m00, float m01, float m02, float m03, float m10, float m11, float m12, float m13, float m20, float m21, float m22, float m23)
+	private struct MonoScriptData
 	{
-		M00 = m00;
-		M01 = m01;
-		M02 = m02;
-		M03 = m03;
-		M10 = m10;
-		M11 = m11;
-		M12 = m12;
-		M13 = m13;
-		M20 = m20;
-		M21 = m21;
-		M22 = m22;
-		M23 = m23;
+		public byte[] FilePathsData;
+
+		public byte[] TypesData;
+
+		public int TotalTypes;
+
+		public int TotalFiles;
+
+		public bool IsEditorOnly;
 	}
 
-	public override string ToString()
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	private static MonoScriptData Get()
 	{
-		return string.Concat(string.Format("{0}: {1}, ", "M00", M00), string.Format("{0}: {1}, ", "M01", M01), string.Format("{0}: {1}, ", "M02", M02), string.Format("{0}: {1}, ", "M03", M03), string.Format("{0}: {1}, ", "M10", M10), string.Format("{0}: {1}, ", "M11", M11), string.Format("{0}: {1}, ", "M12", M12), string.Format("{0}: {1}, ", "M13", M13), string.Format("{0}: {1}, ", "M20", M20), string.Format("{0}: {1}, ", "M21", M21), string.Format("{0}: {1}, ", "M22", M22), string.Format("{0}: {1}", "M23", M23));
+		return new MonoScriptData
+		{
+			FilePathsData = new byte[190]
+			{
+				0, 0, 0, 1, 0, 0, 0, 35, 92, 65,
+				115, 115, 101, 116, 115, 92, 80, 108, 117, 103,
+				105, 110, 115, 92, 77, 97, 116, 104, 71, 101,
+				111, 76, 105, 98, 92, 76, 105, 110, 101, 51,
+				46, 99, 115, 0, 0, 0, 1, 0, 0, 0,
+				39, 92, 65, 115, 115, 101, 116, 115, 92, 80,
+				108, 117, 103, 105, 110, 115, 92, 77, 97, 116,
+				104, 71, 101, 111, 76, 105, 98, 92, 77, 97,
+				116, 114, 105, 120, 51, 88, 52, 46, 99, 115,
+				0, 0, 0, 2, 0, 0, 0, 49, 92, 65,
+				115, 115, 101, 116, 115, 92, 80, 108, 117, 103,
+				105, 110, 115, 92, 77, 97, 116, 104, 71, 101,
+				111, 76, 105, 98, 92, 79, 114, 105, 101, 110,
+				116, 101, 100, 66, 111, 117, 110, 100, 105, 110,
+				103, 66, 111, 120, 46, 99, 115, 0, 0, 0,
+				1, 0, 0, 0, 35, 92, 65, 115, 115, 101,
+				116, 115, 92, 80, 108, 117, 103, 105, 110, 115,
+				92, 77, 97, 116, 104, 71, 101, 111, 76, 105,
+				98, 92, 80, 108, 97, 110, 101, 46, 99, 115
+			},
+			TypesData = new byte[151]
+			{
+				0, 0, 0, 0, 16, 77, 97, 116, 104, 71,
+				101, 111, 76, 105, 98, 124, 76, 105, 110, 101,
+				51, 0, 0, 0, 0, 20, 77, 97, 116, 104,
+				71, 101, 111, 76, 105, 98, 124, 77, 97, 116,
+				114, 105, 120, 51, 88, 52, 0, 0, 0, 0,
+				30, 77, 97, 116, 104, 71, 101, 111, 76, 105,
+				98, 124, 79, 114, 105, 101, 110, 116, 101, 100,
+				66, 111, 117, 110, 100, 105, 110, 103, 66, 111,
+				120, 0, 0, 0, 0, 44, 77, 97, 116, 104,
+				71, 101, 111, 76, 105, 98, 46, 79, 114, 105,
+				101, 110, 116, 101, 100, 66, 111, 117, 110, 100,
+				105, 110, 103, 66, 111, 120, 124, 78, 97, 116,
+				105, 118, 101, 77, 101, 116, 104, 111, 100, 115,
+				0, 0, 0, 0, 16, 77, 97, 116, 104, 71,
+				101, 111, 76, 105, 98, 124, 80, 108, 97, 110,
+				101
+			},
+			TotalFiles = 4,
+			TotalTypes = 5,
+			IsEditorOnly = false
+		};
 	}
 }

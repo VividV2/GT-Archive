@@ -1,2 +1,6 @@
-// Could not decompile System.Diagnostics.CodeAnalysis.AllowNullAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Diagnostics.CodeAnalysis;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, Inherited = false)]
+public sealed class AllowNullAttribute : Attribute
+{
+}

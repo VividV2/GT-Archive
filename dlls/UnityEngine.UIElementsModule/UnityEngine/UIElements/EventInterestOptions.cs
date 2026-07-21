@@ -1,11 +1,7 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum EventInterestOptions
 {
-}
-namespace UnityEngine.UIElements
-{
-	public enum EventInterestOptions
-	{
-		Inherit = 0,
-		AllEventTypes = -1
-	}
+	Inherit = 0,
+	AllEventTypes = -1
 }

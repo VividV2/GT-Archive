@@ -1,13 +1,11 @@
-namespace System.Xml.Serialization;
+namespace System.Xml.Schema;
 
-/// <summary>Instructs the <see cref="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)" /> method of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> not to serialize the public field or public read/write property value.</summary>
-/// <summary>Instructs the <see cref="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)" /> method of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> not to serialize the public field or public read/write property value.</summary>
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue)]
-public class XmlIgnoreAttribute : Attribute
+internal class Datatype_year : Datatype_dateTimeBase
 {
-	/// <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlIgnoreAttribute" /> class.</summary>
-	/// <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlIgnoreAttribute" /> class.</summary>
-	public XmlIgnoreAttribute()
+	public override XmlTypeCode TypeCode => XmlTypeCode.GYear;
+
+	internal Datatype_year()
+		: base(XsdDateTimeFlags.GYear)
 	{
 	}
 }

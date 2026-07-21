@@ -1,2 +1,9 @@
-// Could not decompile Oculus.Interaction.Input.Compatibility.OVR.HandFingerUtils
-// This type uses unsupported IL or has too many generic parameters.
+namespace Oculus.Interaction.Input.Compatibility.OVR;
+
+public static class HandFingerUtils
+{
+	public static HandFingerFlags ToFlags(HandFinger handFinger)
+	{
+		return (HandFingerFlags)(1 << (int)handFinger);
+	}
+}

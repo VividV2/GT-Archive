@@ -1,2 +1,15 @@
-// Could not decompile Oculus.Interaction.Unity.Input.InputAxis
-// This type uses unsupported IL or has too many generic parameters.
+using Oculus.Interaction.Input;
+using UnityEngine;
+
+namespace Oculus.Interaction.Unity.Input;
+
+public class InputAxis : MonoBehaviour, IAxis1D
+{
+	[SerializeField]
+	private string _axisName;
+
+	public float Value()
+	{
+		return UnityEngine.Input.GetAxis(_axisName);
+	}
+}

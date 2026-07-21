@@ -1,16 +1,36 @@
-using System.Collections;
-using System.Collections;
+namespace System.EnterpriseServices.CompensatingResourceManager;
 
-namespace System.EnterpriseServices;
-
-internal interface IConfigurationAttribute
+/// <summary>Represents an unstructured log record delivered as a COM+ <see langword="CrmLogRecordRead" /> structure. This class cannot be inherited.</summary>
+public sealed class LogRecord
 {
-	bool AfterSaveChanges(Hashtable info);
+	private LogRecordFlags flags;
 
-	bool Apply(Hashtable info);
+	private object record;
 
-	bool IsValidTarget(string s);
-}
-namespace System.EnterpriseServices
-{
+	private int sequence;
+
+	/// <summary>Gets a value that indicates when the log record was written.</summary>
+	/// <returns>A bitwise combination of the <see cref="T:System.EnterpriseServices.CompensatingResourceManager.LogRecordFlags" /> values which provides information about when this record was written.</returns>
+	public LogRecordFlags Flags => flags;
+
+	/// <summary>Gets the log record user data.</summary>
+	/// <returns>A single BLOB that contains the user data.</returns>
+	public object Record => record;
+
+	/// <summary>The sequence number of the log record.</summary>
+	/// <returns>An integer value that specifies the sequence number of the log record.</returns>
+	public int Sequence => sequence;
+
+	[System.MonoTODO]
+	internal LogRecord()
+	{
+	}
+
+	[System.MonoTODO]
+	internal LogRecord(_LogRecord logRecord)
+	{
+		flags = (LogRecordFlags)logRecord.dwCrmFlags;
+		sequence = logRecord.dwSequenceNumber;
+		record = logRecord.blobUserData;
+	}
 }

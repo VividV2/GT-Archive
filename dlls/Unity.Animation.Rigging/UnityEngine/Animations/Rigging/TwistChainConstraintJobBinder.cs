@@ -1,28 +1,42 @@
-namespace UnityEngine.Animations.Rigging
+using Unity.Collections;
+
+namespace UnityEngine.Animations.Rigging;
+
+public class TwistChainConstraintJobBinder<T> : AnimationJobBinder<TwistChainConstraintJob, T> where T : struct, IAnimationJobData, ITwistChainConstraintData
 {
-}
-namespace UnityEngine.Animations.Rigging
-{
-	[DisallowMultipleComponent]
-	[AddComponentMenu("Animation Rigging/Multi-Aim Constraint")]
-	[HelpURL("https://docs.unity3d.com/Packages/com.unity.animation.rigging@1.3/manual/constraints/MultiAimConstraint.html")]
-	public class MultiAimConstraint : RigConstraint<MultiAimConstraintJob, MultiAimConstraintData, MultiAimConstraintJobBinder<MultiAimConstraintData>>
+	public override TwistChainConstraintJob Create(Animator animator, ref T data, Component component)
 	{
-		protected override void OnValidate()
+		Transform[] array = ConstraintsUtils.ExtractChain(data.root, data.tip);
+		float[] array2 = ConstraintsUtils.ExtractSteps(array);
+		TwistChainConstraintJob result = new TwistChainConstraintJob
 		{
-			base.OnValidate();
-			WeightedTransformArray array = m_Data.sourceObjects;
-			WeightedTransformArray array;
-			WeightedTransformArray.OnValidate(ref array);
-			m_Data.sourceObjects = array;
-			Vector2 limits = m_Data.limits;
-			Vector2 limits;
-			limits.x = Mathf.Clamp(limits.x, -180f, 180f);
-			limits.y = Mathf.Clamp(limits.y, -180f, 180f);
-			m_Data.limits = limits;
+			chain = new NativeArray<ReadWriteTransformHandle>(array.Length, Allocator.Persistent, NativeArrayOptions.UninitializedMemory),
+			steps = new NativeArray<float>(array.Length, Allocator.Persistent, NativeArrayOptions.UninitializedMemory),
+			weights = new NativeArray<float>(array.Length, Allocator.Persistent, NativeArrayOptions.UninitializedMemory),
+			rotations = new NativeArray<Quaternion>(array.Length, Allocator.Persistent, NativeArrayOptions.UninitializedMemory),
+			rootTarget = ReadWriteTransformHandle.Bind(animator, data.rootTarget),
+			tipTarget = ReadWriteTransformHandle.Bind(animator, data.tipTarget)
+		};
+		for (int i = 0; i < array.Length; i++)
+		{
+			result.chain[i] = ReadWriteTransformHandle.Bind(animator, array[i]);
+			result.steps[i] = array2[i];
+			result.weights[i] = Mathf.Clamp01(data.curve.Evaluate(array2[i]));
 		}
+		result.rotations[0] = Quaternion.identity;
+		result.rotations[array.Length - 1] = Quaternion.identity;
+		for (int j = 1; j < array.Length - 1; j++)
+		{
+			result.rotations[j] = Quaternion.Inverse(Quaternion.Lerp(array[0].rotation, array[^1].rotation, result.weights[j])) * array[j].rotation;
+		}
+		return result;
 	}
-}
-namespace UnityEngine.Animations.Rigging
-{
+
+	public override void Destroy(TwistChainConstraintJob job)
+	{
+		job.chain.Dispose();
+		job.weights.Dispose();
+		job.steps.Dispose();
+		job.rotations.Dispose();
+	}
 }

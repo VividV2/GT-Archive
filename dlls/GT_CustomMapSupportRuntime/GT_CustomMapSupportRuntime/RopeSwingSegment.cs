@@ -1,10 +1,10 @@
+using UnityEngine;
+
 namespace GT_CustomMapSupportRuntime;
 
-public enum TriggerSource
+public class RopeSwingSegment : MonoBehaviour
 {
-	None,
-	Hands,
-	Head,
-	Body,
-	HeadOrBody
+	public GameObject? ropeSwingParent;
+
+	public int boneIndex;
 }

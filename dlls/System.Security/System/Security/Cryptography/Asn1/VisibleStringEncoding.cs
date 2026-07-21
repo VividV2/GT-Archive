@@ -1,12 +1,9 @@
-using System.Security.Cryptography.Asn1;
+namespace System.Security.Cryptography.Asn1;
 
-namespace System.Security.Cryptography.Pkcs.Asn1;
-
-internal struct Rfc3161TimeStampResp
+internal class VisibleStringEncoding : RestrictedAsciiStringEncoding
 {
-	public PkiStatusInfo Status;
-
-	[AnyValue]
-	[OptionalValue]
-	public ReadOnlyMemory<byte>? TimeStampToken;
+	internal VisibleStringEncoding()
+		: base(32, 126)
+	{
+	}
 }

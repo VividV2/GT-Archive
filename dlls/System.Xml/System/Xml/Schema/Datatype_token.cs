@@ -1,2 +1,8 @@
-// Could not decompile System.Xml.Schema.Datatype_token
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+internal class Datatype_token : Datatype_normalizedString
+{
+	public override XmlTypeCode TypeCode => XmlTypeCode.Token;
+
+	internal override XmlSchemaWhiteSpace BuiltInWhitespaceFacet => XmlSchemaWhiteSpace.Collapse;
+}

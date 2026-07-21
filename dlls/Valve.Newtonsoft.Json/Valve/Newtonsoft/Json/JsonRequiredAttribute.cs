@@ -1,2 +1,8 @@
-// Could not decompile Valve.Newtonsoft.Json.JsonRequiredAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Valve.Newtonsoft.Json;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
+public sealed class JsonRequiredAttribute : Attribute
+{
+}

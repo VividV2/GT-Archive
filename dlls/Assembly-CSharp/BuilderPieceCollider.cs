@@ -1,2 +1,6 @@
-// Could not decompile BuilderPieceCollider
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class BuilderPieceCollider : MonoBehaviour
+{
+	public BuilderPiece piece;
+}

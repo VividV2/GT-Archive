@@ -1,2 +1,10 @@
-// Could not decompile IGameHitter
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public interface IGameHitter
+{
+	void OnSuccessfulHit(GameHitData hit);
+
+	void OnSuccessfulHitPlayer(GRPlayer player, Vector3 hitPosition)
+	{
+	}
+}

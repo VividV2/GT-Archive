@@ -1,21 +1,12 @@
-using System;
-using System.Security.Permissions;
+namespace System.Diagnostics;
 
-namespace Microsoft.Win32;
-
-[PermissionSet(SecurityAction.LinkDemand, Unrestricted = true)]
-[PermissionSet(SecurityAction.InheritanceDemand, Unrestricted = true)]
-public class TimerElapsedEventArgs : EventArgs
+/// <summary>Specifies how to handle entries in an event log that has reached its maximum file size.</summary>
+public enum OverflowAction
 {
-	private IntPtr mytimerId;
-
-	public IntPtr TimerId => mytimerId;
-
-	public TimerElapsedEventArgs(IntPtr timerId)
-	{
-		mytimerId = timerId;
-	}
-}
-namespace System.ComponentModel
-{
+	/// <summary>Indicates that existing entries are retained when the event log is full and new entries are discarded.</summary>
+	DoNotOverwrite = -1,
+	/// <summary>Indicates that each new entry overwrites the oldest entry when the event log is full.</summary>
+	OverwriteAsNeeded,
+	/// <summary>Indicates that new events overwrite events older than specified by the <see cref="P:System.Diagnostics.EventLog.MinimumRetentionDays" /> property value when the event log is full. New events are discarded if the event log is full and there are no events older than specified by the <see cref="P:System.Diagnostics.EventLog.MinimumRetentionDays" /> property value.</summary>
+	OverwriteOlder
 }

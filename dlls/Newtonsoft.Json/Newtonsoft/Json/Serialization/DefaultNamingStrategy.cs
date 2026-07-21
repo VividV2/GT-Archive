@@ -1,13 +1,9 @@
-namespace Newtonsoft.Json.Serialization
+namespace Newtonsoft.Json.Serialization;
+
+public class DefaultNamingStrategy : NamingStrategy
 {
-	public class DefaultNamingStrategy : NamingStrategy
+	protected override string ResolvePropertyName(string name)
 	{
-		protected override string ResolvePropertyName(string name)
-		{
-			return name;
-		}
+		return name;
 	}
-}
-namespace Newtonsoft.Json.Converters
-{
 }

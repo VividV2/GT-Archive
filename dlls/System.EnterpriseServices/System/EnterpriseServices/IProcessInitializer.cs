@@ -15,12 +15,3 @@ public interface IProcessInitializer
 	/// <param name="punkProcessControl">In Microsoft Windows XP, a pointer to the <see langword="IUnknown" /> interface of the COM component starting up. In Microsoft Windows 2000, this argument is always <see langword="null" />.</param>
 	void Startup([In][MarshalAs(UnmanagedType.IUnknown)] object punkProcessControl);
 }
-namespace System.EnterpriseServices
-{
-}
-namespace System.EnterpriseServices.CompensatingResourceManager
-{
-}
-namespace System.EnterpriseServices
-{
-}

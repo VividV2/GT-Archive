@@ -1,2 +1,12 @@
-// Could not decompile Backtrace.Unity.Model.Metrics.MetricsSubmissionJob`1
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace Backtrace.Unity.Model.Metrics;
+
+internal sealed class MetricsSubmissionJob<T>
+{
+	public double NextInvokeTime { get; set; }
+
+	public ICollection<T> Events { get; set; }
+
+	public uint NumberOfAttempts { get; set; }
+}

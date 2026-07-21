@@ -1,25 +1,18 @@
 using System;
 
-namespace Fusion
+namespace Fusion;
+
+[Serializable]
+public struct RpcInvokeInfo
 {
-	[Serializable]
-	public struct RpcInvokeInfo
+	public RpcLocalInvokeResult LocalInvokeResult;
+
+	public RpcSendCullResult SendCullResult;
+
+	public RpcSendResult SendResult;
+
+	public override string ToString()
 	{
-		public RpcLocalInvokeResult LocalInvokeResult;
-
-		public RpcSendCullResult SendCullResult;
-
-		public RpcSendResult SendResult;
-
-		public override string ToString()
-		{
-			return $"[Local: {LocalInvokeResult}, SendCull: {SendCullResult}, Send: {SendResult}]";
-		}
+		return $"[Local: {LocalInvokeResult}, SendCull: {SendCullResult}, Send: {SendResult}]";
 	}
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
 }

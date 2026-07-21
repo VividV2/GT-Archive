@@ -1,17 +1,10 @@
-namespace System.Net
+namespace System.Net;
+
+internal enum DataParseStatus
 {
-	internal enum DataParseStatus
-	{
-		NeedMoreData,
-		ContinueParsing,
-		Done,
-		Invalid,
-		DataTooBig
-	}
-}
-namespace System.Diagnostics
-{
-}
-namespace System.Net
-{
+	NeedMoreData,
+	ContinueParsing,
+	Done,
+	Invalid,
+	DataTooBig
 }

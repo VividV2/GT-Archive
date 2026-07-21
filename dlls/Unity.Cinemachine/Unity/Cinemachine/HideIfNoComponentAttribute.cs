@@ -1,2 +1,14 @@
-// Could not decompile Unity.Cinemachine.HideIfNoComponentAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace Unity.Cinemachine;
+
+public sealed class HideIfNoComponentAttribute : PropertyAttribute
+{
+	public Type ComponentType;
+
+	public HideIfNoComponentAttribute(Type type)
+	{
+		ComponentType = type;
+	}
+}

@@ -1,14 +1,5 @@
-namespace Fusion
+namespace Fusion;
+
+public interface IRunnerVisibilityRecognizedType
 {
-	public interface IRunnerVisibilityRecognizedType
-	{
-	}
-}
-namespace Fusion.Statistics
-{
-	public enum CanvasAnchor
-	{
-		TopLeft,
-		TopRight
-	}
 }

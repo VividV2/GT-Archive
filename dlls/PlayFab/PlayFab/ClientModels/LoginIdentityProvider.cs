@@ -1,30 +1,26 @@
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+public enum LoginIdentityProvider
 {
-	public enum LoginIdentityProvider
-	{
-		Unknown,
-		PlayFab,
-		Custom,
-		GameCenter,
-		GooglePlay,
-		Steam,
-		XBoxLive,
-		PSN,
-		Kongregate,
-		Facebook,
-		IOSDevice,
-		AndroidDevice,
-		Twitch,
-		WindowsHello,
-		GameServer,
-		CustomServer,
-		NintendoSwitch,
-		FacebookInstantGames,
-		OpenIdConnect,
-		Apple,
-		NintendoSwitchAccount
-	}
-}
-namespace PlayFab.ClientModels
-{
+	Unknown,
+	PlayFab,
+	Custom,
+	GameCenter,
+	GooglePlay,
+	Steam,
+	XBoxLive,
+	PSN,
+	Kongregate,
+	Facebook,
+	IOSDevice,
+	AndroidDevice,
+	Twitch,
+	WindowsHello,
+	GameServer,
+	CustomServer,
+	NintendoSwitch,
+	FacebookInstantGames,
+	OpenIdConnect,
+	Apple,
+	NintendoSwitchAccount
 }

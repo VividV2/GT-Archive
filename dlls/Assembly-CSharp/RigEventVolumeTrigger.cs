@@ -1,2 +1,9 @@
-// Could not decompile RigEventVolumeTrigger
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class RigEventVolumeTrigger : MonoBehaviour
+{
+	[SerializeField]
+	private VRRig _rig;
+
+	public VRRig Rig => _rig;
+}

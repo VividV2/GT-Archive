@@ -1,6 +1,12 @@
-namespace PlayFab.MultiplayerModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.GroupsModels;
+
+[Serializable]
+public class GroupRole : PlayFabBaseModel
 {
-}
-namespace PlayFab.MultiplayerModels
-{
+	public string RoleId;
+
+	public string RoleName;
 }

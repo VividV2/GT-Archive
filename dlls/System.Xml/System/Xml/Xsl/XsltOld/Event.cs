@@ -1,9 +1,17 @@
-namespace System.Xml.Xsl.Qil
+namespace System.Xml.Xsl.XsltOld;
+
+internal abstract class Event
 {
-}
-namespace System.Xml.Xsl.Qil
-{
-}
-namespace System.Xml.Xsl.Xslt
-{
+	internal virtual DbgData DbgData => DbgData.Empty;
+
+	public virtual void ReplaceNamespaceAlias(Compiler compiler)
+	{
+	}
+
+	public abstract bool Output(Processor processor, ActionFrame frame);
+
+	internal void OnInstructionExecute(Processor processor)
+	{
+		processor.OnInstructionExecute();
+	}
 }

@@ -1,2 +1,16 @@
-// Could not decompile BuilderRendererPreRender
-// This type uses unsupported IL or has too many generic parameters.
+public class BuilderRendererPreRender : MonoBehaviourPostTick
+{
+	public BuilderRenderer builderRenderer;
+
+	private void Awake()
+	{
+	}
+
+	public override void PostTick()
+	{
+		if (builderRenderer != null)
+		{
+			builderRenderer.PreRenderIndirect();
+		}
+	}
+}

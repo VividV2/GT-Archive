@@ -1,38 +1,38 @@
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
+namespace UnityEngine.UIElements.Experimental;
 
-namespace UnityEngine.UIElements.StyleSheets;
-
-[StructLayout(LayoutKind.Explicit)]
-[DebuggerDisplay("id = {id}, keyword = {keyword}, number = {number}, boolean = {boolean}, color = {color}, object = {resource}")]
-internal struct StyleValue
+[EventCategory(EventCategory.PointerMove)]
+public class PointerMoveLinkTagEvent : PointerEventBase<PointerMoveLinkTagEvent>
 {
-	[FieldOffset(0)]
-	public StylePropertyId id;
+	public string linkID { get; private set; }
 
-	[FieldOffset(4)]
-	public StyleKeyword keyword;
+	public string linkText { get; private set; }
 
-	[FieldOffset(8)]
-	public float number;
+	static PointerMoveLinkTagEvent()
+	{
+		EventBase<PointerMoveLinkTagEvent>.SetCreateFunction(() => new PointerMoveLinkTagEvent());
+	}
 
-	[FieldOffset(8)]
-	public Length length;
+	protected override void Init()
+	{
+		base.Init();
+		LocalInit();
+	}
 
-	[FieldOffset(8)]
-	public Color color;
+	private void LocalInit()
+	{
+		base.propagation = EventPropagation.BubblesOrTricklesDown;
+	}
 
-	[FieldOffset(8)]
-	public GCHandle resource;
+	public static PointerMoveLinkTagEvent GetPooled(IPointerEvent evt, string linkID, string linkText)
+	{
+		PointerMoveLinkTagEvent pointerMoveLinkTagEvent = PointerEventBase<PointerMoveLinkTagEvent>.GetPooled(evt);
+		pointerMoveLinkTagEvent.linkID = linkID;
+		pointerMoveLinkTagEvent.linkText = linkText;
+		return pointerMoveLinkTagEvent;
+	}
 
-	[FieldOffset(8)]
-	public BackgroundPosition position;
-
-	[FieldOffset(8)]
-	public BackgroundRepeat repeat;
-}
-namespace UnityEngine.UIElements.Internal
-{
+	public PointerMoveLinkTagEvent()
+	{
+		LocalInit();
+	}
 }

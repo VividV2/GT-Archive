@@ -1,7 +1,8 @@
-namespace Cysharp.Threading.Tasks.Triggers
+using UnityEngine.EventSystems;
+
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnDragHandler
 {
-	public interface IAsyncOnMoveHandler
-	{
-		UniTask<AxisEventData> OnMoveAsync();
-	}
+	UniTask<PointerEventData> OnDragAsync();
 }

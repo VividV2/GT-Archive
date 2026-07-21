@@ -1,2 +1,8 @@
-// Could not decompile PropHuntTaggableProp
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class PropHuntTaggableProp : MonoBehaviour
+{
+	public VRRig ownerRig;
+
+	public Vector3 offset;
+}

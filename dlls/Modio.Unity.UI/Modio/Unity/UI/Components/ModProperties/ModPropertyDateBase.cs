@@ -1,2 +1,24 @@
-// Could not decompile Modio.Unity.UI.Components.ModProperties.ModPropertyDateBase
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Modio.Mods;
+using Modio.Unity.UI.Components.Localization;
+using TMPro;
+using UnityEngine;
+
+namespace Modio.Unity.UI.Components.ModProperties;
+
+[Serializable]
+public abstract class ModPropertyDateBase : IModProperty
+{
+	[SerializeField]
+	private TMP_Text _text;
+
+	[SerializeField]
+	private string _format = "dd MMM, yy";
+
+	public virtual void OnModUpdate(Mod mod)
+	{
+		_text.text = GetValue(mod).ToString(_format, ModioUILocalizationManager.CultureInfo);
+	}
+
+	protected abstract DateTime GetValue(Mod mod);
+}

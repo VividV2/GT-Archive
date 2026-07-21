@@ -1,2 +1,9 @@
-// Could not decompile System.Xml.Schema.Datatype_dateTimeNoTimeZone
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+internal class Datatype_dateTimeNoTimeZone : Datatype_dateTimeBase
+{
+	internal Datatype_dateTimeNoTimeZone()
+		: base(XsdDateTimeFlags.XdrDateTimeNoTz)
+	{
+	}
+}

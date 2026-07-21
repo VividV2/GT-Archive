@@ -6,6 +6,3 @@ public enum ScreenSpaceLensFlareResolution
 	Quarter = 4,
 	Eighth = 8
 }
-namespace UnityEngine.Rendering.Universal
-{
-}

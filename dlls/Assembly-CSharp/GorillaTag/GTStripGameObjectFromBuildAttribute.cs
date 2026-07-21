@@ -1,2 +1,14 @@
-// Could not decompile GorillaTag.GTStripGameObjectFromBuildAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace GorillaTag;
+
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+public class GTStripGameObjectFromBuildAttribute : Attribute
+{
+	public string Condition { get; }
+
+	public GTStripGameObjectFromBuildAttribute(string condition = "")
+	{
+		Condition = condition;
+	}
+}

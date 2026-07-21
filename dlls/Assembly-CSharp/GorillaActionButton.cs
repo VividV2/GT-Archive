@@ -1,2 +1,14 @@
-// Could not decompile GorillaActionButton
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine.Events;
+
+public class GorillaActionButton : GorillaPressableButton
+{
+	[SerializeField]
+	public UnityEvent onPress;
+
+	public override void ButtonActivation()
+	{
+		base.ButtonActivation();
+		onPress.Invoke();
+	}
+}

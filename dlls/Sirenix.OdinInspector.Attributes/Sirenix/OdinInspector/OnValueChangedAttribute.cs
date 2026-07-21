@@ -2,45 +2,38 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace Sirenix.OdinInspector
+namespace Sirenix.OdinInspector;
+
+[DontApplyToListElements]
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = true)]
+[Conditional("UNITY_EDITOR")]
+public sealed class OnValueChangedAttribute : Attribute
 {
-}
-namespace Sirenix.OdinInspector
-{
-	[DontApplyToListElements]
-	[AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = true)]
-	[Conditional("UNITY_EDITOR")]
-	public sealed class OnValueChangedAttribute : Attribute
+	public string Action;
+
+	public bool IncludeChildren;
+
+	public bool InvokeOnUndoRedo = true;
+
+	public bool InvokeOnInitialize;
+
+	[Obsolete("Use the Action member instead.", false)]
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public string MethodName
 	{
-		public string Action;
-
-		public bool IncludeChildren;
-
-		public bool InvokeOnUndoRedo = true;
-
-		public bool InvokeOnInitialize;
-
-		[Obsolete("Use the Action member instead.", false)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public string MethodName
+		get
 		{
-			get
-			{
-				return Action;
-			}
-			set
-			{
-				Action = value;
-			}
+			return Action;
 		}
-
-		public OnValueChangedAttribute(string action, bool includeChildren = false)
+		set
 		{
-			Action = action;
-			IncludeChildren = includeChildren;
+			Action = value;
 		}
 	}
-}
-namespace Sirenix.OdinInspector
-{
+
+	public OnValueChangedAttribute(string action, bool includeChildren = false)
+	{
+		Action = action;
+		IncludeChildren = includeChildren;
+	}
 }

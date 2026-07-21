@@ -1,9 +1,12 @@
+using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
 
-namespace Unity.Audio;
+namespace UnityEngine.Audio;
 
-[VisibleToOtherModules]
-internal interface IValidatable
+[NativeHeader("Modules/Audio/Public/ScriptBindings/Audio.bindings.h")]
+internal sealed class AudioManagerTestProxy
 {
-	bool Valid { get; }
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[NativeMethod(Name = "AudioManagerTestProxy::ComputeAudibilityConsistency", IsFreeFunction = true)]
+	internal static extern bool ComputeAudibilityConsistency();
 }

@@ -1,6 +1,11 @@
-namespace PlayFab.MultiplayerModels
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.EventsModels;
+
+[Serializable]
+public class WriteEventsResponse : PlayFabResultCommon
 {
-}
-namespace PlayFab.MultiplayerModels
-{
+	public List<string> AssignedEventIds;
 }

@@ -1,2 +1,9 @@
-// Could not decompile SIBlasterExplosion
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class SIBlasterExplosion : MonoBehaviour
+{
+	private void OnDisable()
+	{
+		SIGadgetBlasterProjectile.DespawnExplosion(base.gameObject);
+	}
+}

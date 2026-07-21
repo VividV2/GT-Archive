@@ -1,60 +1,177 @@
-using System.Text;
-using System.Text;
+using System;
+using System.Runtime.ExceptionServices;
+using System.Threading;
+using UnityEngine;
 
 namespace Fusion;
 
-public static class LogUtils
+internal sealed class UnityLogStream : LogStream
 {
-	public unsafe readonly struct DumpDeferredPtr<T>(T* ptr) where T : unmanaged, ILogDumpable
+	private readonly FusionUnityLoggerBase _logger;
+
+	private readonly LogLevel _logLevel;
+
+	private readonly string _prefix;
+
+	private readonly LogFlags _flags;
+
+	public UnityLogStream(FusionUnityLoggerBase logger, LogLevel logLevel, TraceChannels channel, LogFlags flags)
 	{
-		public unsafe override string ToString()
+		_prefix = ((channel == (TraceChannels)0 || channel == TraceChannels.Global) ? "" : channel.ToString());
+		_logLevel = logLevel;
+		_logger = logger;
+		_flags = flags;
+	}
+
+	public override void Log(ILogSource source, string message)
+	{
+		var (text, context) = _logger.CreateMessage(new FusionUnityLoggerBase.LogContext(message, _prefix, source, _flags));
+		if (text != null)
 		{
-			if (ptr != null)
+			switch (_logLevel)
 			{
-				StringBuilder stringBuilder = new StringBuilder();
-				StringBuilder stringBuilder;
-				ptr->Dump(stringBuilder);
-				return stringBuilder.ToString();
+			case LogLevel.Error:
+				Debug.LogError(text, context);
+				break;
+			case LogLevel.Warn:
+				Debug.LogWarning(text, context);
+				break;
+			default:
+				Debug.Log(text, context);
+				break;
 			}
-			return "null";
 		}
 	}
 
-	public readonly struct DumpDeferredStruct<T>(T obj) where T : unmanaged, ILogDumpable
+	public override void Log(string message)
 	{
-		public override string ToString()
+		var (text, context) = _logger.CreateMessage(new FusionUnityLoggerBase.LogContext(message, _prefix, null, _flags));
+		if (text != null)
 		{
-			StringBuilder stringBuilder = new StringBuilder();
-			StringBuilder stringBuilder;
-			obj.Dump(stringBuilder);
-			return stringBuilder.ToString();
-		}
-	}
-
-	public readonly struct DumpDeferredClass(ILogDumpable obj)
-	{
-		public readonly ILogDumpable Obj = obj;
-
-		public override string ToString()
-		{
-			if (Obj != null)
+			switch (_logLevel)
 			{
-				StringBuilder stringBuilder = new StringBuilder();
-				StringBuilder stringBuilder;
-				Obj.Dump(stringBuilder);
-				return stringBuilder.ToString();
+			case LogLevel.Error:
+				Debug.LogError(text, context);
+				break;
+			case LogLevel.Warn:
+				Debug.LogWarning(text, context);
+				break;
+			default:
+				Debug.Log(text, context);
+				break;
 			}
-			return "null";
 		}
 	}
 
-	public unsafe static DumpDeferredPtr<T> GetDump<T>(T* ptr) where T : unmanaged, ILogDumpable
+	public override void Log(ILogSource source, string message, Exception error)
 	{
-		return new DumpDeferredPtr<T>(ptr);
+		var (text, obj) = _logger.CreateMessage(new FusionUnityLoggerBase.LogContext((message ?? error.GetType().FullName) + " <i>See next error log entry for details.</i>", null, source, (LogFlags)0));
+		if (text == null)
+		{
+			return;
+		}
+		Debug.LogWarning(text, obj);
+		if (Application.isEditor)
+		{
+			ExceptionDispatchInfo edi = ExceptionDispatchInfo.Capture(error);
+			Thread thread = new Thread((ThreadStart)delegate
+			{
+				edi.Throw();
+			});
+			thread.Start();
+			thread.Join();
+		}
+		else if ((bool)obj)
+		{
+			Debug.LogException(error, obj);
+		}
+		else
+		{
+			Debug.LogException(error);
+		}
 	}
 
-	public static DumpDeferredClass GetDump<T>(T obj) where T : class, ILogDumpable
+	public override void Log(string message, Exception error)
 	{
-		return new DumpDeferredClass(obj);
+		var (text, obj) = _logger.CreateMessage(new FusionUnityLoggerBase.LogContext((message ?? error.GetType().FullName) + " <i>See next error log entry for details.</i>", null, null, (LogFlags)0));
+		if (text == null)
+		{
+			return;
+		}
+		Debug.LogWarning(text, obj);
+		if (Application.isEditor)
+		{
+			ExceptionDispatchInfo edi = ExceptionDispatchInfo.Capture(error);
+			Thread thread = new Thread((ThreadStart)delegate
+			{
+				edi.Throw();
+			});
+			thread.Start();
+			thread.Join();
+		}
+		else if ((bool)obj)
+		{
+			Debug.LogException(error, obj);
+		}
+		else
+		{
+			Debug.LogException(error);
+		}
+	}
+
+	public override void Log(ILogSource source, Exception error)
+	{
+		var (text, obj) = _logger.CreateMessage(new FusionUnityLoggerBase.LogContext(error.GetType().FullName + " <i>See next error log entry for details.</i>", null, source, (LogFlags)0));
+		if (text == null)
+		{
+			return;
+		}
+		Debug.LogWarning(text, obj);
+		if (Application.isEditor)
+		{
+			ExceptionDispatchInfo edi = ExceptionDispatchInfo.Capture(error);
+			Thread thread = new Thread((ThreadStart)delegate
+			{
+				edi.Throw();
+			});
+			thread.Start();
+			thread.Join();
+		}
+		else if ((bool)obj)
+		{
+			Debug.LogException(error, obj);
+		}
+		else
+		{
+			Debug.LogException(error);
+		}
+	}
+
+	public override void Log(Exception error)
+	{
+		var (text, obj) = _logger.CreateMessage(new FusionUnityLoggerBase.LogContext(error.GetType().FullName + " <i>See next error log entry for details.</i>", null, null, (LogFlags)0));
+		if (text == null)
+		{
+			return;
+		}
+		Debug.LogWarning(text, obj);
+		if (Application.isEditor)
+		{
+			ExceptionDispatchInfo edi = ExceptionDispatchInfo.Capture(error);
+			Thread thread = new Thread((ThreadStart)delegate
+			{
+				edi.Throw();
+			});
+			thread.Start();
+			thread.Join();
+		}
+		else if ((bool)obj)
+		{
+			Debug.LogException(error, obj);
+		}
+		else
+		{
+			Debug.LogException(error);
+		}
 	}
 }

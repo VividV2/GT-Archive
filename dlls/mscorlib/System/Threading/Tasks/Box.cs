@@ -1,2 +1,11 @@
-// Could not decompile System.Threading.Tasks.Box`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Threading.Tasks;
+
+internal class Box<T>
+{
+	internal T Value;
+
+	internal Box(T value)
+	{
+		Value = value;
+	}
+}

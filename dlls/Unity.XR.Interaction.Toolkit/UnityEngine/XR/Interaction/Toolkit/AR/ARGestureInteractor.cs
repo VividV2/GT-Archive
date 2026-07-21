@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.AR.ARGestureInteractor
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.XR.Interaction.Toolkit.AR;
+
+[Obsolete("ARGestureInteractor has been replaced by the XRScreenspaceController and XRRayInteractor.")]
+public class ARGestureInteractor
+{
+}

@@ -1,11 +1,14 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.CloudScriptModels;
+
+[Serializable]
+public class FunctionExecutionError : PlayFabBaseModel
 {
-}
-namespace PlayFab.CloudScriptModels
-{
-	public enum PushNotificationPlatform
-	{
-		ApplePushNotificationService,
-		GoogleCloudMessaging
-	}
+	public string Error;
+
+	public string Message;
+
+	public string StackTrace;
 }

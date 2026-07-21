@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.Localization.SmartFormat.GlobalVariables.GlobalVariablesGroup
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Localization.SmartFormat.PersistentVariables;
+
+namespace UnityEngine.Localization.SmartFormat.GlobalVariables;
+
+[Obsolete("Please use UnityEngine.Localization.SmartFormat.PersistentVariables.VariablesGroupAsset instead.")]
+public class GlobalVariablesGroup : VariablesGroupAsset
+{
+}

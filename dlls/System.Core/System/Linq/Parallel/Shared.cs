@@ -1,2 +1,11 @@
-// Could not decompile System.Linq.Parallel.Shared`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq.Parallel;
+
+internal class Shared<T>
+{
+	internal T Value;
+
+	internal Shared(T value)
+	{
+		Value = value;
+	}
+}

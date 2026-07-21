@@ -2,18 +2,7 @@ using ExitGames.Client.Photon;
 
 namespace Fusion.Photon.Realtime;
 
-internal enum JoinType
+internal interface IWebRpcCallback
 {
-	CreateRoom,
-	JoinRoom,
-	JoinRandomRoom,
-	JoinRandomOrCreateRoom,
-	JoinOrCreateRoom
-}
-namespace Fusion.Photon.Realtime
-{
-	internal interface IWebRpcCallback
-	{
-		void OnWebRpcResponse(OperationResponse response);
-	}
+	void OnWebRpcResponse(OperationResponse response);
 }

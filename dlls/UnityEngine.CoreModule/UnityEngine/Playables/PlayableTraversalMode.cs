@@ -1,18 +1,7 @@
-namespace UnityEngineInternal
+namespace UnityEngine.Playables;
+
+public enum PlayableTraversalMode
 {
-	public enum TypeInferenceRules
-	{
-		TypeReferencedByFirstArgument,
-		TypeReferencedBySecondArgument,
-		ArrayOfTypeReferencedByFirstArgument,
-		TypeOfFirstArgument
-	}
-}
-namespace UnityEngine.Playables
-{
-	public enum PlayableTraversalMode
-	{
-		Mix,
-		Passthrough
-	}
+	Mix,
+	Passthrough
 }

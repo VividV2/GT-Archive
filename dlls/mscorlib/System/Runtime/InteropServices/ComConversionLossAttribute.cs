@@ -1,2 +1,12 @@
-// Could not decompile System.Runtime.InteropServices.ComConversionLossAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.InteropServices;
+
+/// <summary>Indicates that information was lost about a class or interface when it was imported from a type library to an assembly.</summary>
+[AttributeUsage(AttributeTargets.All, Inherited = false)]
+[ComVisible(true)]
+public sealed class ComConversionLossAttribute : Attribute
+{
+	/// <summary>Initializes a new instance of the <see langword="ComConversionLossAttribute" /> class.</summary>
+	public ComConversionLossAttribute()
+	{
+	}
+}

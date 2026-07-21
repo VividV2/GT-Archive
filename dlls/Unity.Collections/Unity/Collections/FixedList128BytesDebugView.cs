@@ -1,2 +1,13 @@
-// Could not decompile Unity.Collections.FixedList128BytesDebugView`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.Collections;
+
+internal sealed class FixedList128BytesDebugView<T> where T : unmanaged
+{
+	private FixedList128Bytes<T> m_List;
+
+	public T[] Items => m_List.ToArray();
+
+	public FixedList128BytesDebugView(FixedList128Bytes<T> list)
+	{
+		m_List = list;
+	}
+}

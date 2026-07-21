@@ -1,13 +1,9 @@
-namespace VYaml.Annotations
+namespace VYaml.Annotations;
+
+public enum NamingConvention
 {
-	public enum NamingConvention
-	{
-		LowerCamelCase,
-		UpperCamelCase,
-		SnakeCase,
-		KebabCase
-	}
-}
-namespace VYaml.Internal
-{
+	LowerCamelCase,
+	UpperCamelCase,
+	SnakeCase,
+	KebabCase
 }

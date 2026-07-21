@@ -1,2 +1,10 @@
-// Could not decompile Unity.XR.CoreUtils.QuaternionUnityEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace Unity.XR.CoreUtils;
+
+[Serializable]
+public class QuaternionUnityEvent : UnityEvent<Quaternion>
+{
+}

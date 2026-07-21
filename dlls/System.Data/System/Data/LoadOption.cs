@@ -1,14 +1,12 @@
 namespace System.Data;
 
-internal enum AggregateType
+/// <summary>Controls how the values from the data source will be applied to existing rows when using the <see cref="Overload:System.Data.DataTable.Load" /> or <see cref="Overload:System.Data.DataSet.Load" /> method.</summary>
+public enum LoadOption
 {
-	None = 0,
-	Sum = 4,
-	Mean = 5,
-	Min = 6,
-	Max = 7,
-	First = 8,
-	Count = 9,
-	Var = 10,
-	StDev = 11
+	/// <summary>The incoming values for this row will be written to both the current value and the original value versions of the data for each column.</summary>
+	OverwriteChanges = 1,
+	/// <summary>The incoming values for this row will be written to the original value version of each column. The current version of the data in each column will not be changed.  This is the default.</summary>
+	PreserveChanges,
+	/// <summary>The incoming values for this row will be written to the current version of each column. The original version of each column's data will not be changed.</summary>
+	Upsert
 }

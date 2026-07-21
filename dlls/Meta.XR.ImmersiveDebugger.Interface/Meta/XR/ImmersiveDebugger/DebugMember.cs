@@ -2,78 +2,56 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
-using UnityEngine;
 
-namespace Meta.XR.ImmersiveDebugger
+namespace Meta.XR.ImmersiveDebugger;
+
+[Serializable]
+[AttributeUsage(AttributeTargets.Enum | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field)]
+public class DebugMember : PreserveAttribute
 {
-	public class CustomIntegrationConfigBase : MonoBehaviour, ICustomIntegrationConfig
+	public const string DisplayNameTooltip = "Optional name override to be used in the Inspector Panel";
+
+	private static readonly Dictionary<DebugColor, Color> ParsedColors = new Dictionary<DebugColor, Color>
 	{
-		private void Awake()
 		{
-			CustomIntegrationConfig.SetupAllConfig(this);
+			DebugColor.Red,
+			Color.red
+		},
+		{
+			DebugColor.Gray,
+			Color.gray
 		}
+	};
 
-		private void OnDestroy()
-		{
-			CustomIntegrationConfig.ClearAllConfig(this);
-		}
+	public DebugGizmoType GizmoType;
 
-		public virtual Camera GetCamera()
-		{
-			return null;
-		}
+	public bool ShowGizmoByDefault;
+
+	public Color Color = Color.gray;
+
+	public bool Tweakable = true;
+
+	public float Min;
+
+	public float Max = 1f;
+
+	public string Category;
+
+	public string Description;
+
+	[Tooltip("Optional name override to be used in the Inspector Panel")]
+	public string DisplayName;
+
+	public DebugMember(DebugColor color = DebugColor.Gray)
+	{
+		ParsedColors.TryGetValue(color, out Color);
 	}
-}
-namespace Meta.XR.ImmersiveDebugger
-{
-	[Serializable]
-	[AttributeUsage(AttributeTargets.Enum | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field)]
-	public class DebugMember : PreserveAttribute
+
+	public DebugMember(string colorString)
 	{
-		public const string DisplayNameTooltip = "Optional name override to be used in the Inspector Panel";
-
-		private static readonly Dictionary<DebugColor, Color> ParsedColors = new Dictionary<DebugColor, Color>
+		if (!string.IsNullOrEmpty(colorString))
 		{
-			{
-				DebugColor.Red,
-				Color.red
-			},
-			{
-				DebugColor.Gray,
-				Color.gray
-			}
-		};
-
-		public DebugGizmoType GizmoType;
-
-		public bool ShowGizmoByDefault;
-
-		public Color Color = Color.gray;
-
-		public bool Tweakable = true;
-
-		public float Min;
-
-		public float Max = 1f;
-
-		public string Category;
-
-		public string Description;
-
-		[Tooltip("Optional name override to be used in the Inspector Panel")]
-		public string DisplayName;
-
-		public DebugMember(DebugColor color = DebugColor.Gray)
-		{
-			ParsedColors.TryGetValue(color, out Color);
-		}
-
-		public DebugMember(string colorString)
-		{
-			if (!string.IsNullOrEmpty(colorString))
-			{
-				Color = (ColorUtility.TryParseHtmlString(colorString, out var color) ? color : Color.gray);
-			}
+			Color = (ColorUtility.TryParseHtmlString(colorString, out var color) ? color : Color.gray);
 		}
 	}
 }

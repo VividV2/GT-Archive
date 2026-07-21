@@ -1,24 +1,26 @@
-namespace System.EnterpriseServices
+using System.Runtime.InteropServices;
+
+namespace System.EnterpriseServices.Internal;
+
+/// <summary>Specifies methods for generating common language runtime (CLR) metadata for a COM+ component.</summary>
+[Guid("d8013ff0-730b-45e2-ba24-874b7242c425")]
+public interface IComSoapMetadata
 {
-	[Serializable]
-	[Flags]
-	public enum InstallationFlags
-	{
-		Configure = 0x400,
-		ConfigureComponentsOnly = 0x10,
-		CreateTargetApplication = 2,
-		Default = 0,
-		ExpectExistingTypeLib = 1,
-		FindOrCreateTargetApplication = 4,
-		Install = 0x200,
-		ReconfigureExistingApplication = 8,
-		Register = 0x100,
-		ReportWarningsToConsole = 0x20
-	}
-}
-namespace System.EnterpriseServices
-{
-}
-namespace System.EnterpriseServices
-{
+	/// <summary>Generates an assembly that contains common language runtime (CLR) metadata for a COM+ component represented by the specified type library.</summary>
+	/// <param name="SrcTypeLibFileName">The name of the type library for which to generate an assembly.</param>
+	/// <param name="OutPath">The folder in which to generate an assembly.</param>
+	/// <returns>The generated assembly name.</returns>
+	[DispId(1)]
+	[return: MarshalAs(UnmanagedType.BStr)]
+	string Generate([MarshalAs(UnmanagedType.BStr)] string SrcTypeLibFileName, [MarshalAs(UnmanagedType.BStr)] string OutPath);
+
+	/// <summary>Generates an assembly that contains common language runtime (CLR) metadata for a COM+ component represented by the specified type library, signs the assembly with a strong-named key pair, and installs it in the global assembly cache.</summary>
+	/// <param name="SrcTypeLibFileName">The name of the type library for which to generate an assembly.</param>
+	/// <param name="OutPath">The folder in which to generate an assembly.</param>
+	/// <param name="InstallGac">A flag that indicates whether to install the assembly in the global assembly cache.</param>
+	/// <param name="Error">A string to which an error message can be written.</param>
+	/// <returns>The generated assembly name.</returns>
+	[DispId(2)]
+	[return: MarshalAs(UnmanagedType.BStr)]
+	string GenerateSigned([MarshalAs(UnmanagedType.BStr)] string SrcTypeLibFileName, [MarshalAs(UnmanagedType.BStr)] string OutPath, [MarshalAs(UnmanagedType.Bool)] bool InstallGac, [MarshalAs(UnmanagedType.BStr)] out string Error);
 }

@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.Timeline.NotKeyableAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Timeline;
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Field)]
+public class NotKeyableAttribute : Attribute
+{
+}

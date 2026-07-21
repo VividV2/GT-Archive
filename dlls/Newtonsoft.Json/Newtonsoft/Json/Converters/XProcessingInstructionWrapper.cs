@@ -1,2 +1,27 @@
-// Could not decompile Newtonsoft.Json.Converters.XProcessingInstructionWrapper
-// This type uses unsupported IL or has too many generic parameters.
+using System.Xml.Linq;
+
+namespace Newtonsoft.Json.Converters;
+
+internal class XProcessingInstructionWrapper : XObjectWrapper
+{
+	private XProcessingInstruction ProcessingInstruction => (XProcessingInstruction)base.WrappedNode;
+
+	public override string? LocalName => ProcessingInstruction.Target;
+
+	public override string? Value
+	{
+		get
+		{
+			return ProcessingInstruction.Data;
+		}
+		set
+		{
+			ProcessingInstruction.Data = value ?? string.Empty;
+		}
+	}
+
+	public XProcessingInstructionWrapper(XProcessingInstruction processingInstruction)
+		: base(processingInstruction)
+	{
+	}
+}

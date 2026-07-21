@@ -1,10 +1,12 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.CloudScriptModels;
+
+[Serializable]
+public class PostFunctionResultForFunctionExecutionRequest : PlayFabRequestCommon
 {
-	public enum AdActivity
-	{
-		Opened,
-		Closed,
-		Start,
-		End
-	}
+	public EntityKey Entity;
+
+	public ExecuteFunctionResult FunctionResult;
 }

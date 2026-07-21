@@ -1,2 +1,11 @@
-// Could not decompile Modio.API.SchemaDefinitions.KeyValuePairObject
-// This type uses unsupported IL or has too many generic parameters.
+using Newtonsoft.Json;
+
+namespace Modio.API.SchemaDefinitions;
+
+[JsonObject]
+internal readonly struct KeyValuePairObject(string key, string value)
+{
+	internal readonly string Key = key;
+
+	internal readonly string Value = value;
+}

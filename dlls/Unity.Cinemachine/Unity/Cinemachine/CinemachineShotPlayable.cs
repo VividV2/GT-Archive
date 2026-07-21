@@ -1,2 +1,10 @@
-// Could not decompile Unity.Cinemachine.CinemachineShotPlayable
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Playables;
+
+namespace Unity.Cinemachine;
+
+internal sealed class CinemachineShotPlayable : PlayableBehaviour
+{
+	public CinemachineVirtualCameraBase VirtualCamera;
+
+	public bool IsValid => VirtualCamera != null;
+}

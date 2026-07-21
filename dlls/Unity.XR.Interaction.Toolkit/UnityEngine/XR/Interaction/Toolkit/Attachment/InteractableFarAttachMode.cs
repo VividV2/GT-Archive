@@ -1,12 +1,8 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Attachment
+namespace UnityEngine.XR.Interaction.Toolkit.Attachment;
+
+public enum InteractableFarAttachMode
 {
-	public enum InteractableFarAttachMode
-	{
-		DeferToInteractor,
-		Near,
-		Far
-	}
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Interactors
-{
+	DeferToInteractor,
+	Near,
+	Far
 }

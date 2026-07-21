@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.MeshUpdateFlags
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering;
+
+[Flags]
+public enum MeshUpdateFlags
+{
+	Default = 0,
+	DontValidateIndices = 1,
+	DontResetBoneBounds = 2,
+	DontNotifyMeshUsers = 4,
+	DontRecalculateBounds = 8,
+	DontValidateLodRanges = 0x10
+}

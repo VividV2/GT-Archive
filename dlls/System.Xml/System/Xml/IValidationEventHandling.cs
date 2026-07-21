@@ -1,17 +1,10 @@
 using System.Xml.Schema;
 
-namespace System.Xml
-{
-	internal interface IValidationEventHandling
-	{
-		object EventHandler { get; }
+namespace System.Xml;
 
-		void SendEvent(Exception exception, XmlSeverityType severity);
-	}
-}
-namespace System.Xml.Schema
+internal interface IValidationEventHandling
 {
-}
-namespace System.Xml.Xsl
-{
+	object EventHandler { get; }
+
+	void SendEvent(Exception exception, XmlSeverityType severity);
 }

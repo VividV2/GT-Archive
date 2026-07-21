@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.Rendering.ProbeTouchupVolume
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering;
+
+[Obsolete("ProbeTouchupVolume has been deprecated (UnityUpgradable) -> ProbeAdjustmentVolume", false)]
+public class ProbeTouchupVolume : ProbeAdjustmentVolume
+{
+}

@@ -1,7 +1,3 @@
-namespace Mono.Math.Prime
-{
-	public delegate bool PrimalityTest(BigInteger bi, ConfidenceFactor confidence);
-}
-namespace Mono.Security.Cryptography
-{
-}
+namespace Mono.Math.Prime;
+
+public delegate bool PrimalityTest(BigInteger bi, ConfidenceFactor confidence);

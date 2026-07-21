@@ -1,2 +1,11 @@
-// Could not decompile PerfTestObjectDestroyer
-// This type uses unsupported IL or has too many generic parameters.
+using GorillaTag;
+using UnityEngine;
+
+[GTStripGameObjectFromBuild("!GT_AUTOMATED_PERF_TEST && !BETA")]
+public class PerfTestObjectDestroyer : MonoBehaviour
+{
+	private void Start()
+	{
+		Object.DestroyImmediate(base.gameObject, allowDestroyingAssets: true);
+	}
+}

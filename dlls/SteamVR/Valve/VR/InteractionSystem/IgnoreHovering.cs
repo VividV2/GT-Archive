@@ -1,2 +1,9 @@
-// Could not decompile Valve.VR.InteractionSystem.IgnoreHovering
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Valve.VR.InteractionSystem;
+
+public class IgnoreHovering : MonoBehaviour
+{
+	[Tooltip("If Hand is not null, only ignore the specified hand")]
+	public Hand onlyIgnoreHand;
+}

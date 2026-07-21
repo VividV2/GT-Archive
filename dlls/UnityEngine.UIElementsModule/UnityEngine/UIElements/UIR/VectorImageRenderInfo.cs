@@ -1,25 +1,17 @@
-#define UNITY_ASSERTIONS
-namespace UnityEngine.UIElements.UIR
+namespace UnityEngine.UIElements.UIR;
+
+internal class VectorImageRenderInfo : LinkedPoolItem<VectorImageRenderInfo>
 {
-	internal class VectorImageRenderInfo : LinkedPoolItem<VectorImageRenderInfo>
+	public int useCount;
+
+	public GradientRemap firstGradientRemap;
+
+	public Alloc gradientSettingsAlloc;
+
+	public void Reset()
 	{
-		public int useCount;
-
-		public GradientRemap firstGradientRemap;
-
-		public Alloc gradientSettingsAlloc;
-
-		public void Reset()
-		{
-			useCount = 0;
-			firstGradientRemap = null;
-			gradientSettingsAlloc = default(Alloc);
-		}
+		useCount = 0;
+		firstGradientRemap = null;
+		gradientSettingsAlloc = default(Alloc);
 	}
-}
-namespace UnityEngine.UIElements.UIR
-{
-}
-namespace UnityEngine.UIElements.Layout
-{
 }

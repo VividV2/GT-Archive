@@ -1,52 +1,25 @@
-namespace System
+using System.Runtime.InteropServices;
+
+namespace System.Security.Permissions;
+
+/// <summary>Allows security actions for <see cref="T:System.Security.Permissions.GacIdentityPermission" /> to be applied to code using declarative security. This class cannot be inherited.</summary>
+[Serializable]
+[ComVisible(true)]
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method, AllowMultiple = true, Inherited = false)]
+public sealed class GacIdentityPermissionAttribute : CodeAccessSecurityAttribute
 {
-	/// <summary>Defines a generalized type-specific comparison method that a value type or class implements to order or sort its instances.</summary>
-	/// <summary>Defines a generalized type-specific comparison method that a value type or class implements to order or sort its instances.</summary>
-	public interface IComparable
+	/// <summary>Initializes a new instance of the <see cref="T:System.Security.Permissions.GacIdentityPermissionAttribute" /> class with the specified <see cref="T:System.Security.Permissions.SecurityAction" /> value.</summary>
+	/// <param name="action">One of the <see cref="T:System.Security.Permissions.SecurityAction" /> values.</param>
+	/// <exception cref="T:System.ArgumentException">The <paramref name="action" /> parameter is not a valid <see cref="T:System.Security.Permissions.SecurityAction" /> value.</exception>
+	public GacIdentityPermissionAttribute(SecurityAction action)
+		: base(action)
 	{
-		/// <summary>Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.</summary>
-		/// <param name="obj">An object to compare with this instance.</param>
-		/// <returns>A value that indicates the relative order of the objects being compared. The return value has these meanings:  
-		///   Value  
-		///
-		///   Meaning  
-		///
-		///   Less than zero  
-		///
-		///   This instance precedes <paramref name="obj" /> in the sort order.  
-		///
-		///   Zero  
-		///
-		///   This instance occurs in the same position in the sort order as <paramref name="obj" />.  
-		/// <summary>Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.</summary>
-		///
-		/// <param name="obj">An object to compare with this instance.</param>
-		/// <returns>A value that indicates the relative order of the objects being compared. The return value has these meanings:  
-		///   Greater than zero  
-		///   Value  
-		///
-		///   This instance follows <paramref name="obj" /> in the sort order.</returns>
-		///
-		///   Meaning  
-		/// <exception cref="T:System.ArgumentException">
-		///
-		///   <paramref name="obj" /> is not the same type as this instance.</exception>
-		///   Less than zero  
-		///
-		///   This instance precedes <paramref name="obj" /> in the sort order.  
-		///
-		///   Zero  
-		///
-		///   This instance occurs in the same position in the sort order as <paramref name="obj" />.  
-		///
-		///   Greater than zero  
-		///
-		///   This instance follows <paramref name="obj" /> in the sort order.</returns>
-		/// <exception cref="T:System.ArgumentException">
-		///   <paramref name="obj" /> is not the same type as this instance.</exception>
-		int CompareTo(object obj);
 	}
-}
-namespace System.Runtime.InteropServices.WindowsRuntime
-{
+
+	/// <summary>Creates a new <see cref="T:System.Security.Permissions.GacIdentityPermission" /> object.</summary>
+	/// <returns>A <see cref="T:System.Security.Permissions.GacIdentityPermission" /> that corresponds to this attribute.</returns>
+	public override IPermission CreatePermission()
+	{
+		return new GacIdentityPermission();
+	}
 }

@@ -1,2 +1,12 @@
-// Could not decompile GorillaTagCompetitivePrivateRoomBlocker
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GorillaTagCompetitivePrivateRoomBlocker : MonoBehaviour
+{
+	[SerializeField]
+	private GameObject blocker;
+
+	private void Update()
+	{
+		blocker.SetActive(NetworkSystem.Instance.SessionIsPrivate);
+	}
+}

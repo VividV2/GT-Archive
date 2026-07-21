@@ -1,33 +1,13 @@
-using System;
-using System.Diagnostics;
-using System;
-using System.Diagnostics;
-using System;
-using System.Diagnostics;
+namespace Newtonsoft.Json.Bson;
 
-namespace Newtonsoft.Json.Serialization
+internal class BsonBoolean : BsonValue
 {
-	public interface ITraceWriter
+	public static readonly BsonBoolean False = new BsonBoolean(value: false);
+
+	public static readonly BsonBoolean True = new BsonBoolean(value: true);
+
+	private BsonBoolean(bool value)
+		: base(value, BsonType.Boolean)
 	{
-		TraceLevel LevelFilter { get; }
-
-		void Trace(TraceLevel level, string message, Exception? ex);
 	}
-}
-namespace Newtonsoft.Json.Converters
-{
-	internal interface IXmlElement : IXmlNode
-	{
-		bool IsEmpty { get; }
-
-		void SetAttributeNode(IXmlNode attribute);
-
-		string? GetPrefixOfNamespace(string namespaceUri);
-	}
-}
-namespace Newtonsoft.Json.Serialization
-{
-}
-namespace Newtonsoft.Json.Converters
-{
 }

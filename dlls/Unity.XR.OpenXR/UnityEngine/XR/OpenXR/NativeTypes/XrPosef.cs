@@ -1,20 +1,8 @@
 namespace UnityEngine.XR.OpenXR.NativeTypes;
 
-public enum XrEnvironmentBlendMode
+public struct XrPosef(Vector3 vec3, Quaternion quaternion)
 {
-	Opaque = 1,
-	Additive,
-	AlphaBlend
-}
-namespace UnityEngine.XR.OpenXR.Features.Interactions
-{
-}
-namespace UnityEngine.XR.OpenXR.Input
-{
-}
-namespace UnityEngine.XR.OpenXR.Input
-{
-}
-namespace UnityEngine.XR.OpenXR.Features.Interactions
-{
+	public XrQuaternionf Orientation = new XrQuaternionf(quaternion);
+
+	public XrVector3f Position = new XrVector3f(vec3);
 }

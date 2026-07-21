@@ -1,2 +1,15 @@
-// Could not decompile Modio.Users.LegacyUserSaveObject
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Modio.Users;
+
+[Serializable]
+public class LegacyUserSaveObject
+{
+	public string oAuthToken;
+
+	public long oAuthExpiryDate;
+
+	public bool oAuthTokenWasRejected;
+
+	public LegacyUserObject userObject;
+}

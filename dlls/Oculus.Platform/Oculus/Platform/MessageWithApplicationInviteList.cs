@@ -1,2 +1,22 @@
-// Could not decompile Oculus.Platform.MessageWithApplicationInviteList
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Oculus.Platform.Models;
+
+namespace Oculus.Platform;
+
+public class MessageWithApplicationInviteList : Message<ApplicationInviteList>
+{
+	public MessageWithApplicationInviteList(IntPtr c_message)
+		: base(c_message)
+	{
+	}
+
+	public override ApplicationInviteList GetApplicationInviteList()
+	{
+		return base.Data;
+	}
+
+	protected override ApplicationInviteList GetDataFromMessage(IntPtr c_message)
+	{
+		return new ApplicationInviteList(CAPI.ovr_Message_GetApplicationInviteArray(CAPI.ovr_Message_GetNativeMessage(c_message)));
+	}
+}

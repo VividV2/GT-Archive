@@ -1,16 +1,14 @@
-namespace System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
-/// <summary>Use <see cref="T:System.Runtime.InteropServices.ComTypes.BINDPTR" /> instead.</summary>
-[StructLayout(LayoutKind.Explicit, CharSet = CharSet.Unicode)]
-[Obsolete]
-public struct BINDPTR
+namespace System.Security.Policy;
+
+/// <summary>Determines whether an application should be executed and which set of permissions should be granted to it.</summary>
+[ComVisible(true)]
+public interface IApplicationTrustManager : ISecurityEncodable
 {
-	[FieldOffset(0)]
-	public IntPtr lpfuncdesc;
-
-	[FieldOffset(0)]
-	public IntPtr lptcomp;
-
-	[FieldOffset(0)]
-	public IntPtr lpvardesc;
+	/// <summary>Determines whether an application should be executed and which set of permissions should be granted to it.</summary>
+	/// <param name="activationContext">The activation context for the application.</param>
+	/// <param name="context">The trust manager context for the application.</param>
+	/// <returns>An object that contains security decisions about the application.</returns>
+	ApplicationTrust DetermineApplicationTrust(ActivationContext activationContext, TrustManagerContext context);
 }

@@ -1,2 +1,7 @@
-// Could not decompile PrimaryButtonEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+[Serializable]
+public class PrimaryButtonEvent : UnityEvent<bool>
+{
+}

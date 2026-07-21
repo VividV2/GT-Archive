@@ -1,2 +1,16 @@
-// Could not decompile GorillaTagScripts.Builder.BuilderAnimateOnTap
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTagScripts.Builder;
+
+public class BuilderAnimateOnTap : BuilderPieceTappable
+{
+	[SerializeField]
+	private Animation anim;
+
+	public override void OnTapReplicated()
+	{
+		base.OnTapReplicated();
+		anim.Rewind();
+		anim.Play();
+	}
+}

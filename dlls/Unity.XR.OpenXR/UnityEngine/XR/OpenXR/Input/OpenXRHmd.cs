@@ -1,2 +1,21 @@
-// Could not decompile UnityEngine.XR.OpenXR.Input.OpenXRHmd
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.InputSystem.Controls;
+using UnityEngine.InputSystem.Layouts;
+using UnityEngine.InputSystem.XR;
+using UnityEngine.Scripting;
+
+namespace UnityEngine.XR.OpenXR.Input;
+
+[Preserve]
+[InputControlLayout(displayName = "OpenXR HMD")]
+internal class OpenXRHmd : XRHMD
+{
+	[Preserve]
+	[InputControl]
+	private ButtonControl userPresence { get; set; }
+
+	protected override void FinishSetup()
+	{
+		base.FinishSetup();
+		userPresence = GetChildControl<ButtonControl>("UserPresence");
+	}
+}

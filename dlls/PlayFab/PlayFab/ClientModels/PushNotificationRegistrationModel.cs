@@ -1,2 +1,12 @@
-// Could not decompile PlayFab.ClientModels.PushNotificationRegistrationModel
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class PushNotificationRegistrationModel : PlayFabBaseModel
+{
+	public string NotificationEndpointARN;
+
+	public PushNotificationPlatform? Platform;
+}

@@ -1,30 +1,33 @@
-using UnityEngine.ResourceManagement.AsyncOperations;
+using System;
+using System.ComponentModel;
 using UnityEngine.ResourceManagement.ResourceLocations;
-using UnityEngine.SceneManagement;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceLocations;
-using UnityEngine.SceneManagement;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.SceneManagement;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.SceneManagement;
+using UnityEngine.ResourceManagement.Util;
+using UnityEngine.U2D;
 
 namespace UnityEngine.ResourceManagement.ResourceProviders;
 
-internal interface ISceneProvider2 : ISceneProvider
+[DisplayName("Sprites from Atlases Provider")]
+public class AtlasSpriteProvider : ResourceProviderBase
 {
-	AsyncOperationHandle<SceneInstance> ReleaseScene(ResourceManager resourceManager, AsyncOperationHandle<SceneInstance> sceneLoadHandle, UnloadSceneOptions unloadOptions);
-}
-namespace UnityEngine.ResourceManagement.ResourceProviders
-{
-	public interface ISceneProvider
+	public override void Provide(ProvideHandle providerInterface)
 	{
-		AsyncOperationHandle<SceneInstance> ProvideScene(ResourceManager resourceManager, IResourceLocation location, LoadSceneMode loadMode, bool activateOnLoad, int priority);
+		SpriteAtlas dependency = providerInterface.GetDependency<SpriteAtlas>(0);
+		if (dependency == null)
+		{
+			providerInterface.Complete<Sprite>(null, status: false, new Exception("Sprite atlas failed to load for location " + providerInterface.Location.PrimaryKey + "."));
+			return;
+		}
+		ResourceManagerConfig.ExtractKeyAndSubKey(providerInterface.ResourceManager.TransformInternalId(providerInterface.Location), out var mainKey, out var subKey);
+		string name = (string.IsNullOrEmpty(subKey) ? mainKey : subKey);
+		Sprite sprite = dependency.GetSprite(name);
+		providerInterface.Complete(sprite, sprite != null, (sprite != null) ? null : new Exception("Sprite failed to load for location " + providerInterface.Location.PrimaryKey + "."));
+	}
 
-		AsyncOperationHandle<SceneInstance> ProvideScene(ResourceManager resourceManager, IResourceLocation location, LoadSceneParameters loadSceneParameters, bool activateOnLoad, int priority);
-
-		AsyncOperationHandle<SceneInstance> ProvideScene(ResourceManager resourceManager, IResourceLocation location, LoadSceneParameters loadSceneParameters, SceneReleaseMode releaseMode, bool activateOnLoad, int priority);
-
-		AsyncOperationHandle<SceneInstance> ReleaseScene(ResourceManager resourceManager, AsyncOperationHandle<SceneInstance> sceneLoadHandle);
+	public override void Release(IResourceLocation location, object obj)
+	{
+		if (obj is Sprite obj2)
+		{
+			Object.Destroy(obj2);
+		}
 	}
 }

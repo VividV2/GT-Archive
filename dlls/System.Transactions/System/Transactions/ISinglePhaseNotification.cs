@@ -7,6 +7,3 @@ public interface ISinglePhaseNotification : IEnlistmentNotification
 	/// <param name="singlePhaseEnlistment">A <see cref="T:System.Transactions.SinglePhaseEnlistment" /> used to send a response to the transaction manager.</param>
 	void SinglePhaseCommit(SinglePhaseEnlistment singlePhaseEnlistment);
 }
-namespace System.Transactions
-{
-}

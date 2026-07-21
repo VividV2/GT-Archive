@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.Universal.PreTile
-// This type uses unsupported IL or has too many generic parameters.
+using Unity.Mathematics;
+
+namespace UnityEngine.Rendering.Universal;
+
+public struct PreTile
+{
+	public float4 planeLeft;
+
+	public float4 planeRight;
+
+	public float4 planeBottom;
+
+	public float4 planeTop;
+}

@@ -1,29 +1,25 @@
 using System;
 using System.Collections.Generic;
 
-namespace UnityEngine.ResourceManagement.ResourceLocations
+namespace UnityEngine.ResourceManagement.ResourceLocations;
+
+public interface IResourceLocation
 {
-	public interface IResourceLocation
-	{
-		string InternalId { get; }
+	string InternalId { get; }
 
-		string ProviderId { get; }
+	string ProviderId { get; }
 
-		IList<IResourceLocation> Dependencies { get; }
+	IList<IResourceLocation> Dependencies { get; }
 
-		int DependencyHashCode { get; }
+	int DependencyHashCode { get; }
 
-		bool HasDependencies { get; }
+	bool HasDependencies { get; }
 
-		object Data { get; }
+	object Data { get; }
 
-		string PrimaryKey { get; }
+	string PrimaryKey { get; }
 
-		Type ResourceType { get; }
+	Type ResourceType { get; }
 
-		int Hash(Type resultType);
-	}
-}
-namespace UnityEngine.ResourceManagement.ResourceLocations
-{
+	int Hash(Type resultType);
 }

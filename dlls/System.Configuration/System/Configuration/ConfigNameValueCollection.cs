@@ -1,9 +1,30 @@
+using System.Collections.Specialized;
+
 namespace System.Configuration;
 
-[Flags]
-internal enum ConfigurationLockType
+internal class ConfigNameValueCollection : NameValueCollection
 {
-	Attribute = 1,
-	Element = 2,
-	Exclude = 0x10
+	private bool modified;
+
+	public bool IsModified => modified;
+
+	public ConfigNameValueCollection()
+	{
+	}
+
+	public ConfigNameValueCollection(System.Configuration.ConfigNameValueCollection col)
+		: base(col.Count, col)
+	{
+	}
+
+	public void ResetModified()
+	{
+		modified = false;
+	}
+
+	public override void Set(string name, string value)
+	{
+		base.Set(name, value);
+		modified = true;
+	}
 }

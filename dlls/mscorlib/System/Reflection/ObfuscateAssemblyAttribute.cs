@@ -1,18 +1,24 @@
-namespace System.Runtime.InteropServices;
+namespace System.Reflection;
 
-/// <summary>Identifies the type of class interface that is generated for a class.</summary>
-/// <summary>Identifies the type of class interface that is generated for a class.</summary>
-[Serializable]
-[ComVisible(true)]
-public enum ClassInterfaceType
+/// <summary>Instructs obfuscation tools to use their standard obfuscation rules for the appropriate assembly type.</summary>
+[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = false, Inherited = false)]
+public sealed class ObfuscateAssemblyAttribute : Attribute
 {
-	/// <summary>Indicates that no class interface is generated for the class. If no interfaces are implemented explicitly, the class can only provide late-bound access through the <see langword="IDispatch" /> interface. This is the recommended setting for <see cref="T:System.Runtime.InteropServices.ClassInterfaceAttribute" />. Using <see langword="ClassInterfaceType.None" /> is the only way to expose functionality through interfaces implemented explicitly by the class.</summary>
-	/// <summary>Indicates that no class interface is generated for the class. If no interfaces are implemented explicitly, the class can only provide late-bound access through the <see langword="IDispatch" /> interface. This is the recommended setting for <see cref="T:System.Runtime.InteropServices.ClassInterfaceAttribute" />. Using <see langword="ClassInterfaceType.None" /> is the only way to expose functionality through interfaces implemented explicitly by the class.</summary>
-	None,
-	/// <summary>Indicates that the class only supports late binding for COM clients. A <see langword="dispinterface" /> for the class is automatically exposed to COM clients on request. The type library produced by Tlbexp.exe (Type Library Exporter) does not contain type information for the <see langword="dispinterface" /> in order to prevent clients from caching the DISPIDs of the interface. The <see langword="dispinterface" /> does not exhibit the versioning problems described in <see cref="T:System.Runtime.InteropServices.ClassInterfaceAttribute" /> because clients can only late-bind to the interface.</summary>
-	/// <summary>Indicates that the class only supports late binding for COM clients. A <see langword="dispinterface" /> for the class is automatically exposed to COM clients on request. The type library produced by Tlbexp.exe (Type Library Exporter) does not contain type information for the <see langword="dispinterface" /> in order to prevent clients from caching the DISPIDs of the interface. The <see langword="dispinterface" /> does not exhibit the versioning problems described in <see cref="T:System.Runtime.InteropServices.ClassInterfaceAttribute" /> because clients can only late-bind to the interface.</summary>
-	AutoDispatch,
-	/// <summary>Indicates that a dual class interface is automatically generated for the class and exposed to COM. Type information is produced for the class interface and published in the type library. Using <see langword="AutoDual" /> is strongly discouraged because of the versioning limitations described in <see cref="T:System.Runtime.InteropServices.ClassInterfaceAttribute" />.</summary>
-	/// <summary>Indicates that a dual class interface is automatically generated for the class and exposed to COM. Type information is produced for the class interface and published in the type library. Using <see langword="AutoDual" /> is strongly discouraged because of the versioning limitations described in <see cref="T:System.Runtime.InteropServices.ClassInterfaceAttribute" />.</summary>
-	AutoDual
+	/// <summary>Gets a <see cref="T:System.Boolean" /> value indicating whether the assembly was marked private.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the assembly was marked private; otherwise, <see langword="false" />.</returns>
+	public bool AssemblyIsPrivate { get; }
+
+	/// <summary>Gets or sets a <see cref="T:System.Boolean" /> value indicating whether the obfuscation tool should remove the attribute after processing.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the obfuscation tool should remove the attribute after processing; otherwise, <see langword="false" />. The default value for this property is <see langword="true" />.</returns>
+	public bool StripAfterObfuscation { get; set; } = true;
+
+	/// <summary>Initializes a new instance of the <see cref="T:System.Reflection.ObfuscateAssemblyAttribute" /> class, specifying whether the assembly to be obfuscated is public or private.</summary>
+	/// <param name="assemblyIsPrivate">
+	///   <see langword="true" /> if the assembly is used within the scope of one application; otherwise, <see langword="false" />.</param>
+	public ObfuscateAssemblyAttribute(bool assemblyIsPrivate)
+	{
+		AssemblyIsPrivate = assemblyIsPrivate;
+	}
 }

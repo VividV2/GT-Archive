@@ -1,2 +1,35 @@
-// Could not decompile System.Runtime.Remoting.Channels.ServerDispatchSinkProvider
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections;
+
+namespace System.Runtime.Remoting.Channels;
+
+internal class ServerDispatchSinkProvider : IServerFormatterSinkProvider, IServerChannelSinkProvider
+{
+	public IServerChannelSinkProvider Next
+	{
+		get
+		{
+			return null;
+		}
+		set
+		{
+			throw new NotSupportedException();
+		}
+	}
+
+	public ServerDispatchSinkProvider()
+	{
+	}
+
+	public ServerDispatchSinkProvider(IDictionary properties, ICollection providerData)
+	{
+	}
+
+	public IServerChannelSink CreateSink(IChannelReceiver channel)
+	{
+		return new ServerDispatchSink();
+	}
+
+	public void GetChannelData(IChannelDataStore channelData)
+	{
+	}
+}

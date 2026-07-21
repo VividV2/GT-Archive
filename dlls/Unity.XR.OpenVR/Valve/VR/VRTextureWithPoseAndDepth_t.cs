@@ -1,20 +1,16 @@
 using System;
 
-namespace Valve.VR
+namespace Valve.VR;
+
+public struct VRTextureWithPoseAndDepth_t
 {
-	public struct VRTextureWithPoseAndDepth_t
-	{
-		public IntPtr handle;
+	public IntPtr handle;
 
-		public ETextureType eType;
+	public ETextureType eType;
 
-		public EColorSpace eColorSpace;
+	public EColorSpace eColorSpace;
 
-		public HmdMatrix34_t mDeviceToAbsoluteTracking;
+	public HmdMatrix34_t mDeviceToAbsoluteTracking;
 
-		public VRTextureDepthInfo_t depth;
-	}
-}
-namespace Valve.VR
-{
+	public VRTextureDepthInfo_t depth;
 }

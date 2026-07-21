@@ -1,33 +1,13 @@
 using System;
 using System.Collections.Generic;
 using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
 
-namespace PlayFab.GroupsModels
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class CustomRegionSelectionRuleExpansion : PlayFabBaseModel
 {
-	[Serializable]
-	public class UpdateGroupRequest : PlayFabRequestCommon
-	{
-		public string AdminRoleId;
+	public List<OverrideUnsignedInt> MaxLatencyOverrides;
 
-		public int? ExpectedProfileVersion;
-
-		public EntityKey Group;
-
-		public string GroupName;
-
-		public string MemberRoleId;
-	}
-}
-namespace PlayFab.MultiplayerModels
-{
-	[Serializable]
-	public class CustomRegionSelectionRuleExpansion : PlayFabBaseModel
-	{
-		public List<OverrideUnsignedInt> MaxLatencyOverrides;
-
-		public uint SecondsBetweenExpansions;
-	}
+	public uint SecondsBetweenExpansions;
 }

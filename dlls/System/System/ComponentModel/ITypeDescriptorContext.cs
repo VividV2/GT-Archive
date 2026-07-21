@@ -23,9 +23,3 @@ public interface ITypeDescriptorContext : IServiceProvider
 	/// <summary>Raises the <see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentChanged" /> event.</summary>
 	void OnComponentChanged();
 }
-namespace System.ComponentModel.Design.Serialization
-{
-}
-namespace System.Text.RegularExpressions
-{
-}

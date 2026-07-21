@@ -1,2 +1,18 @@
-// Could not decompile ICSharpCode.SharpZipLib.Zip.StaticDiskDataSource
-// This type uses unsupported IL or has too many generic parameters.
+using System.IO;
+
+namespace ICSharpCode.SharpZipLib.Zip;
+
+public class StaticDiskDataSource : IStaticDataSource
+{
+	private readonly string fileName_;
+
+	public StaticDiskDataSource(string fileName)
+	{
+		fileName_ = fileName;
+	}
+
+	public Stream GetSource()
+	{
+		return File.Open(fileName_, FileMode.Open, FileAccess.Read, FileShare.Read);
+	}
+}

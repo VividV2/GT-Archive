@@ -1,2 +1,6 @@
-// Could not decompile System.EmptyArray`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace System;
+
+internal static class EmptyArray<T>
+{
+	public static readonly T[] Value = new T[0];
+}

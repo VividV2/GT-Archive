@@ -1,2 +1,26 @@
-// Could not decompile UnityEngine.UIElements.UxmlRootElementTraits
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+
+namespace UnityEngine.UIElements;
+
+[Obsolete("UxmlRootElementTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+public class UxmlRootElementTraits : UxmlTraits
+{
+	protected UxmlStringAttributeDescription m_Name = new UxmlStringAttributeDescription
+	{
+		name = "name"
+	};
+
+	private UxmlStringAttributeDescription m_Class = new UxmlStringAttributeDescription
+	{
+		name = "class"
+	};
+
+	public override IEnumerable<UxmlChildElementDescription> uxmlChildElementsDescription
+	{
+		get
+		{
+			yield return new UxmlChildElementDescription(typeof(VisualElement));
+		}
+	}
+}

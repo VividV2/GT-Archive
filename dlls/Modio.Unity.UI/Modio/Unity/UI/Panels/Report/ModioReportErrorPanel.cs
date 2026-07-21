@@ -1,2 +1,5 @@
-// Could not decompile Modio.Unity.UI.Panels.Report.ModioReportErrorPanel
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.Unity.UI.Panels.Report;
+
+public class ModioReportErrorPanel : ModioErrorPanelBase
+{
+}

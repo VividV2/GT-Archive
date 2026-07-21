@@ -1,2 +1,12 @@
-// Could not decompile System.Linq.Expressions.TypedParameterExpression
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq.Expressions;
+
+internal class TypedParameterExpression : ParameterExpression
+{
+	public sealed override Type Type { get; }
+
+	internal TypedParameterExpression(Type type, string name)
+		: base(name)
+	{
+		Type = type;
+	}
+}

@@ -1,14 +1,27 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(167)]
+public struct DurationControl_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1104)]
-	public struct LeaderboardFindResult_t
-	{
-		public const int k_iCallback = 1104;
+	public const int k_iCallback = 167;
 
-		public SteamLeaderboard_t m_hSteamLeaderboard;
+	public EResult m_eResult;
 
-		public byte m_bLeaderboardFound;
-	}
+	public AppId_t m_appid;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bApplicable;
+
+	public int m_csecsLast5h;
+
+	public EDurationControlProgress m_progress;
+
+	public EDurationControlNotification m_notification;
+
+	public int m_csecsToday;
+
+	public int m_csecsRemaining;
+}

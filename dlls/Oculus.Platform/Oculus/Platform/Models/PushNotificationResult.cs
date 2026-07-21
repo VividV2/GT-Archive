@@ -1,2 +1,13 @@
-// Could not decompile Oculus.Platform.Models.PushNotificationResult
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Oculus.Platform.Models;
+
+public class PushNotificationResult
+{
+	public readonly string Id;
+
+	public PushNotificationResult(IntPtr o)
+	{
+		Id = CAPI.ovr_PushNotificationResult_GetId(o);
+	}
+}

@@ -1,26 +1,19 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Liv.Lck.Echo
+namespace Liv.Lck.Echo;
+
+internal interface ILckEcho : IDisposable
 {
-	internal interface ILckEcho : IDisposable
-	{
-		bool IsEnabled { get; }
+	bool IsEnabled { get; }
 
-		bool IsSaving { get; }
+	bool IsSaving { get; }
 
-		Task<LckResult> SetEnabledAsync(bool enabled);
+	Task<LckResult> SetEnabledAsync(bool enabled);
 
-		LckResult TriggerSave();
+	LckResult TriggerSave();
 
-		TimeSpan GetBufferDuration();
+	TimeSpan GetBufferDuration();
 
-		TimeSpan GetMaxBufferDuration();
-	}
-}
-namespace Liv.Lck.Rendering
-{
-}
-namespace Liv.Lck
-{
+	TimeSpan GetMaxBufferDuration();
 }

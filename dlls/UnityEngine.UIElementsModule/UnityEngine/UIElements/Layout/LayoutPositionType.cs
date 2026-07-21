@@ -1,11 +1,7 @@
-namespace UnityEngine.UIElements.Layout
+namespace UnityEngine.UIElements.Layout;
+
+internal enum LayoutPositionType
 {
-	internal enum LayoutPositionType
-	{
-		Relative,
-		Absolute
-	}
-}
-namespace UnityEngine.UIElements.UIR
-{
+	Relative,
+	Absolute
 }

@@ -1,2 +1,10 @@
-// Could not decompile GTDisableStaticOnAwake
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GTDisableStaticOnAwake : MonoBehaviour
+{
+	private void Awake()
+	{
+		base.gameObject.isStatic = false;
+		Object.Destroy(this);
+	}
+}

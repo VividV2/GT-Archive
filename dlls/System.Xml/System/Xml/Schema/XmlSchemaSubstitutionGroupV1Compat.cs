@@ -1,2 +1,11 @@
-// Could not decompile System.Xml.Schema.XmlSchemaSubstitutionGroupV1Compat
-// This type uses unsupported IL or has too many generic parameters.
+using System.Xml.Serialization;
+
+namespace System.Xml.Schema;
+
+internal class XmlSchemaSubstitutionGroupV1Compat : XmlSchemaSubstitutionGroup
+{
+	private XmlSchemaChoice choice = new XmlSchemaChoice();
+
+	[XmlIgnore]
+	internal XmlSchemaChoice Choice => choice;
+}

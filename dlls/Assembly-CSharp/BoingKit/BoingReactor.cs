@@ -1,2 +1,19 @@
-// Could not decompile BoingKit.BoingReactor
-// This type uses unsupported IL or has too many generic parameters.
+namespace BoingKit;
+
+public class BoingReactor : BoingBehavior
+{
+	protected override void Register()
+	{
+		BoingManager.Register(this);
+	}
+
+	protected override void Unregister()
+	{
+		BoingManager.Unregister(this);
+	}
+
+	public override void PrepareExecute()
+	{
+		PrepareExecute(accumulateEffectors: true);
+	}
+}

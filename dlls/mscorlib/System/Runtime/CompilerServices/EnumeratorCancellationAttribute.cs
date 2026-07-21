@@ -1,2 +1,6 @@
-// Could not decompile System.Runtime.CompilerServices.EnumeratorCancellationAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.CompilerServices;
+
+[AttributeUsage(AttributeTargets.Parameter, Inherited = false)]
+public sealed class EnumeratorCancellationAttribute : Attribute
+{
+}

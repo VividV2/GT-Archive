@@ -1,28 +1,9 @@
-using System.IO;
+namespace System.ComponentModel;
 
-namespace System.CodeDom.Compiler;
-
-public interface ICodeGenerator
+/// <summary>Provides functionality for nested containers, which logically contain zero or more other components and are owned by a parent component.</summary>
+public interface INestedContainer : IContainer, IDisposable
 {
-	bool IsValidIdentifier(string value);
-
-	void ValidateIdentifier(string value);
-
-	string CreateEscapedIdentifier(string value);
-
-	string CreateValidIdentifier(string value);
-
-	string GetTypeOutput(CodeTypeReference type);
-
-	bool Supports(GeneratorSupport supports);
-
-	void GenerateCodeFromExpression(CodeExpression e, TextWriter w, CodeGeneratorOptions o);
-
-	void GenerateCodeFromStatement(CodeStatement e, TextWriter w, CodeGeneratorOptions o);
-
-	void GenerateCodeFromNamespace(CodeNamespace e, TextWriter w, CodeGeneratorOptions o);
-
-	void GenerateCodeFromCompileUnit(CodeCompileUnit e, TextWriter w, CodeGeneratorOptions o);
-
-	void GenerateCodeFromType(CodeTypeDeclaration e, TextWriter w, CodeGeneratorOptions o);
+	/// <summary>Gets the owning component for the nested container.</summary>
+	/// <returns>The <see cref="T:System.ComponentModel.IComponent" /> that owns the nested container.</returns>
+	IComponent Owner { get; }
 }

@@ -1,2 +1,8 @@
-// Could not decompile Valve.Newtonsoft.Json.Bson.BsonProperty
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.Newtonsoft.Json.Bson;
+
+internal class BsonProperty
+{
+	public BsonString Name { get; set; }
+
+	public BsonToken Value { get; set; }
+}

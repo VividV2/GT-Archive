@@ -1,13 +1,19 @@
-namespace Newtonsoft.Json.Serialization
+namespace Newtonsoft.Json.Utilities;
+
+internal class FSharpFunction
 {
-	public class DefaultNamingStrategy : NamingStrategy
+	private readonly object? _instance;
+
+	private readonly MethodCall<object?, object> _invoker;
+
+	public FSharpFunction(object? instance, MethodCall<object?, object> invoker)
 	{
-		protected override string ResolvePropertyName(string name)
-		{
-			return name;
-		}
+		_instance = instance;
+		_invoker = invoker;
 	}
-}
-namespace Newtonsoft.Json.Converters
-{
+
+	public object Invoke(params object[] args)
+	{
+		return _invoker(_instance, args);
+	}
 }

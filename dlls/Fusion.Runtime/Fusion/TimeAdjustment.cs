@@ -1,2 +1,13 @@
-// Could not decompile Fusion.TimeAdjustment
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+internal struct TimeAdjustment(Tick tick, double total)
+{
+	public Tick Tick = tick;
+
+	public double Total = total;
+
+	public override string ToString()
+	{
+		return $"({Tick}, {Total})";
+	}
+}

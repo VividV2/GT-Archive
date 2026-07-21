@@ -1,14 +1,10 @@
-namespace System.Data.SqlClient
+namespace System.Data.SqlClient;
+
+internal enum EncryptionOptions
 {
-}
-namespace System.Data.SqlClient
-{
-	internal enum EncryptionOptions
-	{
-		OFF,
-		ON,
-		NOT_SUP,
-		REQ,
-		LOGIN
-	}
+	OFF,
+	ON,
+	NOT_SUP,
+	REQ,
+	LOGIN
 }

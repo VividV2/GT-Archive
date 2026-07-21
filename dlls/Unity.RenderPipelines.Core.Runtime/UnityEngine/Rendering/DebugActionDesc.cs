@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Rendering.DebugActionDesc
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.InputSystem;
+
+namespace UnityEngine.Rendering;
+
+internal class DebugActionDesc
+{
+	public InputAction buttonAction;
+
+	public DebugActionRepeatMode repeatMode;
+
+	public float repeatDelay;
+}

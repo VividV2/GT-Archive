@@ -1,16 +1,20 @@
-namespace Steamworks
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+[CallbackIdentity(208)]
+public struct GSClientGroupStatus_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(1316)]
-	public struct RemoteStorageUpdatePublishedFileResult_t
-	{
-		public const int k_iCallback = 1316;
+	public const int k_iCallback = 208;
 
-		public EResult m_eResult;
+	public CSteamID m_SteamIDUser;
 
-		public PublishedFileId_t m_nPublishedFileId;
+	public CSteamID m_SteamIDGroup;
 
-		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bUserNeedsToAcceptWorkshopLegalAgreement;
-	}
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bMember;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bOfficer;
 }

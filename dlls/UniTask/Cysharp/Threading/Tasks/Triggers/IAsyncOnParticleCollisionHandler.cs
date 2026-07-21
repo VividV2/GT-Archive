@@ -1,7 +1,8 @@
-namespace Cysharp.Threading.Tasks.Triggers
+using UnityEngine;
+
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnParticleCollisionHandler
 {
-	public interface IAsyncOnParticleSystemStoppedHandler
-	{
-		UniTask OnParticleSystemStoppedAsync();
-	}
+	UniTask<GameObject> OnParticleCollisionAsync();
 }

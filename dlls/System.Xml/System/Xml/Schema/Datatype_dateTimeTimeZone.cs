@@ -1,6 +1,9 @@
-namespace System.Xml.Serialization
+namespace System.Xml.Schema;
+
+internal class Datatype_dateTimeTimeZone : Datatype_dateTimeBase
 {
-}
-namespace System.Xml.Xsl.Runtime
-{
+	internal Datatype_dateTimeTimeZone()
+		: base(XsdDateTimeFlags.XdrDateTime)
+	{
+	}
 }

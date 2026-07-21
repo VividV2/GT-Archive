@@ -1,2 +1,15 @@
-// Could not decompile SkeletonPathingNode
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class SkeletonPathingNode : MonoBehaviour
+{
+	public bool ejectionPoint;
+
+	public SkeletonPathingNode[] connectedNodes;
+
+	public float distanceToExitNode;
+
+	private void Awake()
+	{
+		base.gameObject.SetActive(value: false);
+	}
+}

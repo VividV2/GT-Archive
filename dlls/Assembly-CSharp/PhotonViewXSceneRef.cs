@@ -1,2 +1,20 @@
-// Could not decompile PhotonViewXSceneRef
-// This type uses unsupported IL or has too many generic parameters.
+using Photon.Pun;
+using UnityEngine;
+
+public class PhotonViewXSceneRef : MonoBehaviour
+{
+	[SerializeField]
+	private XSceneRef reference;
+
+	public PhotonView photonView
+	{
+		get
+		{
+			if (reference.TryResolve(out PhotonView result))
+			{
+				return result;
+			}
+			return null;
+		}
+	}
+}

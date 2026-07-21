@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.Rendering.ListBufferExtensions
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering;
+
+public static class ListBufferExtensions
+{
+	public unsafe static void QuickSort<T>(this ListBuffer<T> self) where T : unmanaged, IComparable<T>
+	{
+		CoreUnsafeUtils.QuickSort<int>(self.Count, self.BufferPtr);
+	}
+}

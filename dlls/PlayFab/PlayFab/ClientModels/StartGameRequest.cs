@@ -1,18 +1,20 @@
 using System;
 using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
 
 namespace PlayFab.ClientModels;
 
 [Serializable]
-public class PaymentOption : PlayFabBaseModel
+public class StartGameRequest : PlayFabRequestCommon
 {
-	public string Currency;
+	public string BuildVersion;
 
-	public uint Price;
+	public string CharacterId;
 
-	public string ProviderName;
+	public string CustomCommandLineData;
 
-	public uint StoreCredit;
+	public string GameMode;
+
+	public Region Region;
+
+	public string StatisticName;
 }

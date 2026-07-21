@@ -1,2 +1,8 @@
-// Could not decompile System.Globalization.HebrewNumberParsingContext
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Globalization;
+
+internal struct HebrewNumberParsingContext(int result)
+{
+	internal HebrewNumber.HS state = HebrewNumber.HS.Start;
+
+	internal int result = result;
+}

@@ -1,2 +1,17 @@
-// Could not decompile Modio.Unity.UI.Components.ModProperties.ModPropertyCreator
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Modio.Mods;
+using UnityEngine;
+
+namespace Modio.Unity.UI.Components.ModProperties;
+
+[Serializable]
+public class ModPropertyCreator : IModProperty
+{
+	[SerializeField]
+	private ModioUIUser _user;
+
+	public void OnModUpdate(Mod mod)
+	{
+		_user.SetUser(mod.Creator);
+	}
+}

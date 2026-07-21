@@ -1,2 +1,12 @@
-// Could not decompile InvalidType
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+public class InvalidType : ProxyType
+{
+	private Type _self = typeof(InvalidType);
+
+	public override string Name => _self.Name;
+
+	public override string FullName => _self.FullName;
+
+	public override string AssemblyQualifiedName => _self.AssemblyQualifiedName;
+}

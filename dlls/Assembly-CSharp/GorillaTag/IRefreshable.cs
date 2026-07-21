@@ -1,2 +1,6 @@
-// Could not decompile GorillaTag.IRefreshable
-// This type uses unsupported IL or has too many generic parameters.
+namespace GorillaTag;
+
+public interface IRefreshable
+{
+	void Refresh();
+}

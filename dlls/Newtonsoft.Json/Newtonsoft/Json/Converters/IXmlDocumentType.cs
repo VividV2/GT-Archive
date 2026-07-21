@@ -1,31 +1,12 @@
-using System;
-using System;
+namespace Newtonsoft.Json.Converters;
 
-namespace Newtonsoft.Json.Serialization
+internal interface IXmlDocumentType : IXmlNode
 {
-	public interface ISerializationBinder
-	{
-		Type BindToType(string? assemblyName, string typeName);
+	string Name { get; }
 
-		void BindToName(Type serializedType, out string? assemblyName, out string? typeName);
-	}
-}
-namespace Newtonsoft.Json.Bson
-{
-}
-namespace Newtonsoft.Json.Converters
-{
-	internal interface IXmlDocumentType : IXmlNode
-	{
-		string Name { get; }
+	string? System { get; }
 
-		string? System { get; }
+	string? Public { get; }
 
-		string? Public { get; }
-
-		string? InternalSubset { get; }
-	}
-}
-namespace Newtonsoft.Json
-{
+	string? InternalSubset { get; }
 }

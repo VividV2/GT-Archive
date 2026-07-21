@@ -1,6 +1,9 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public sealed class TransitionStartEvent : TransitionEventBase<TransitionStartEvent>
 {
-}
-namespace UnityEngine.UIElements
-{
+	static TransitionStartEvent()
+	{
+		EventBase<TransitionStartEvent>.SetCreateFunction(() => new TransitionStartEvent());
+	}
 }

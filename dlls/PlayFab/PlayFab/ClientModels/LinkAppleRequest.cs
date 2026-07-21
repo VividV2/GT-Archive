@@ -1,2 +1,12 @@
-// Could not decompile PlayFab.ClientModels.LinkAppleRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class LinkAppleRequest : PlayFabRequestCommon
+{
+	public bool? ForceLink;
+
+	public string IdentityToken;
+}

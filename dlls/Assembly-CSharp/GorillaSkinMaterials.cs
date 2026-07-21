@@ -8,5 +8,3 @@ internal enum GorillaSkinMaterials
 	Chest = 4,
 	Scoreboard = 8
 }
-namespace GorillaTag.Cosmetics;
-

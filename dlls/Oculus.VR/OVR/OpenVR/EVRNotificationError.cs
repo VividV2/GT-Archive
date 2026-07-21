@@ -1,2 +1,10 @@
-// Could not decompile OVR.OpenVR.EVRNotificationError
-// This type uses unsupported IL or has too many generic parameters.
+namespace OVR.OpenVR;
+
+public enum EVRNotificationError
+{
+	OK = 0,
+	InvalidNotificationId = 100,
+	NotificationQueueFull = 101,
+	InvalidOverlayHandle = 102,
+	SystemWithUserValueAlreadyExists = 103
+}

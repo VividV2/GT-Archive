@@ -1,2 +1,17 @@
-// Could not decompile Oculus.Platform.NetSyncDisconnectReason
-// This type uses unsupported IL or has too many generic parameters.
+using System.ComponentModel;
+
+namespace Oculus.Platform;
+
+public enum NetSyncDisconnectReason
+{
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("LOCAL_TERMINATED")]
+	LocalTerminated,
+	[Description("SERVER_TERMINATED")]
+	ServerTerminated,
+	[Description("FAILED")]
+	Failed,
+	[Description("LOST")]
+	Lost
+}

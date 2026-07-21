@@ -1,23 +1,13 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Security;
-using System.IO;
-using System.Runtime.InteropServices;
-using System.Security;
-using System.IO;
-using System.Runtime.InteropServices;
-using System.Security;
 
 namespace System.Configuration.Internal;
 
 /// <summary>Defines interfaces used by internal .NET structures to initialize application configuration properties.</summary>
-/// <summary>Defines interfaces used by internal .NET structures to initialize application configuration properties.</summary>
 [ComVisible(false)]
 public interface IInternalConfigHost
 {
-	/// <summary>Returns a value indicating whether the configuration is remote.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the configuration is remote; otherwise, <see langword="false" />.</returns>
 	/// <summary>Returns a value indicating whether the configuration is remote.</summary>
 	/// <returns>
 	///   <see langword="true" /> if the configuration is remote; otherwise, <see langword="false" />.</returns>
@@ -26,14 +16,8 @@ public interface IInternalConfigHost
 	/// <summary>Returns a value indicating whether the host configuration supports change notification.</summary>
 	/// <returns>
 	///   <see langword="true" /> if the configuration supports change notification; otherwise, <see langword="false" />.</returns>
-	/// <summary>Returns a value indicating whether the host configuration supports change notification.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the configuration supports change notification; otherwise, <see langword="false" />.</returns>
 	bool SupportsChangeNotifications { get; }
 
-	/// <summary>Returns a value indicating whether the host configuration supports location tags.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the configuration supports location tags; otherwise, <see langword="false" />.</returns>
 	/// <summary>Returns a value indicating whether the host configuration supports location tags.</summary>
 	/// <returns>
 	///   <see langword="true" /> if the configuration supports location tags; otherwise, <see langword="false" />.</returns>
@@ -42,14 +26,8 @@ public interface IInternalConfigHost
 	/// <summary>Returns a value indicating whether the host configuration supports path tags.</summary>
 	/// <returns>
 	///   <see langword="true" /> if the configuration supports path tags; otherwise, <see langword="false" />.</returns>
-	/// <summary>Returns a value indicating whether the host configuration supports path tags.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the configuration supports path tags; otherwise, <see langword="false" />.</returns>
 	bool SupportsPath { get; }
 
-	/// <summary>Returns a value indicating whether the host configuration supports configuration refresh.</summary>
-	/// <returns>
-	///   <see langword="true" /> if the configuration supports configuration refresh; otherwise, <see langword="false" />.</returns>
 	/// <summary>Returns a value indicating whether the host configuration supports configuration refresh.</summary>
 	/// <returns>
 	///   <see langword="true" /> if the configuration supports configuration refresh; otherwise, <see langword="false" />.</returns>
@@ -59,15 +37,8 @@ public interface IInternalConfigHost
 	/// <param name="configPath">A string representing the path of the application configuration file.</param>
 	/// <param name="locationSubPath">A string representing a subpath location of the configuration element.</param>
 	/// <returns>A context object for a <see cref="T:System.Configuration.ConfigurationElement" /> object of an application configuration.</returns>
-	/// <summary>Creates and returns a context object for a <see cref="T:System.Configuration.ConfigurationElement" /> of an application configuration.</summary>
-	/// <param name="configPath">A string representing the path of the application configuration file.</param>
-	/// <param name="locationSubPath">A string representing a subpath location of the configuration element.</param>
-	/// <returns>A context object for a <see cref="T:System.Configuration.ConfigurationElement" /> object of an application configuration.</returns>
 	object CreateConfigurationContext(string configPath, string locationSubPath);
 
-	/// <summary>Creates and returns a deprecated context object of the application configuration.</summary>
-	/// <param name="configPath">A string representing a path to an application configuration file.</param>
-	/// <returns>A deprecated context object of the application configuration.</returns>
 	/// <summary>Creates and returns a deprecated context object of the application configuration.</summary>
 	/// <param name="configPath">A string representing a path to an application configuration file.</param>
 	/// <returns>A deprecated context object of the application configuration.</returns>
@@ -78,24 +49,12 @@ public interface IInternalConfigHost
 	/// <param name="protectionProvider">The <see cref="T:System.Configuration.ProtectedConfigurationProvider" /> object.</param>
 	/// <param name="protectedConfigSection">The <see cref="T:System.Configuration.ProtectedConfigurationSection" /> object.</param>
 	/// <returns>A decrypted configuration section as a string.</returns>
-	/// <summary>Decrypts an encrypted configuration section and returns it as a string.</summary>
-	/// <param name="encryptedXml">An encrypted XML string representing a configuration section.</param>
-	/// <param name="protectionProvider">The <see cref="T:System.Configuration.ProtectedConfigurationProvider" /> object.</param>
-	/// <param name="protectedConfigSection">The <see cref="T:System.Configuration.ProtectedConfigurationSection" /> object.</param>
-	/// <returns>A decrypted configuration section as a string.</returns>
 	string DecryptSection(string encryptedXml, ProtectedConfigurationProvider protectionProvider, ProtectedConfigurationSection protectedConfigSection);
 
 	/// <summary>Deletes the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the application configuration file.</summary>
 	/// <param name="streamName">A string representing the name of the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</param>
-	/// <summary>Deletes the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the application configuration file.</summary>
-	/// <param name="streamName">A string representing the name of the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</param>
 	void DeleteStream(string streamName);
 
-	/// <summary>Encrypts a configuration section and returns it as a string.</summary>
-	/// <param name="clearTextXml">An XML string representing a configuration section to encrypt.</param>
-	/// <param name="protectionProvider">The <see cref="T:System.Configuration.ProtectedConfigurationProvider" /> object.</param>
-	/// <param name="protectedConfigSection">The <see cref="T:System.Configuration.ProtectedConfigurationSection" /> object.</param>
-	/// <returns>An encrypted configuration section represented as a string.</returns>
 	/// <summary>Encrypts a configuration section and returns it as a string.</summary>
 	/// <param name="clearTextXml">An XML string representing a configuration section to encrypt.</param>
 	/// <param name="protectionProvider">The <see cref="T:System.Configuration.ProtectedConfigurationProvider" /> object.</param>
@@ -107,17 +66,8 @@ public interface IInternalConfigHost
 	/// <param name="configPath">A string representing the path of the application configuration file.</param>
 	/// <param name="locationSubPath">The subpath location of the configuration file.</param>
 	/// <returns>A string representing the complete path to an application configuration file.</returns>
-	/// <summary>Returns the complete path to an application configuration file based on the location subpath.</summary>
-	/// <param name="configPath">A string representing the path of the application configuration file.</param>
-	/// <param name="locationSubPath">The subpath location of the configuration file.</param>
-	/// <returns>A string representing the complete path to an application configuration file.</returns>
 	string GetConfigPathFromLocationSubPath(string configPath, string locationSubPath);
 
-	/// <summary>Returns a <see cref="T:System.Type" /> object representing the type of the configuration object.</summary>
-	/// <param name="typeName">The type name</param>
-	/// <param name="throwOnError">
-	///   <see langword="true" /> to throw an exception if an error occurs; otherwise, <see langword="false" /></param>
-	/// <returns>A <see cref="T:System.Type" /> object representing the type of the configuration object.</returns>
 	/// <summary>Returns a <see cref="T:System.Type" /> object representing the type of the configuration object.</summary>
 	/// <param name="typeName">The type name</param>
 	/// <param name="throwOnError">
@@ -128,16 +78,8 @@ public interface IInternalConfigHost
 	/// <summary>Returns a string representing a type name from the <see cref="T:System.Type" /> object representing the type of the configuration.</summary>
 	/// <param name="t">A <see cref="T:System.Type" /> object.</param>
 	/// <returns>A string representing the type name from a <see cref="T:System.Type" /> object representing the type of the configuration.</returns>
-	/// <summary>Returns a string representing a type name from the <see cref="T:System.Type" /> object representing the type of the configuration.</summary>
-	/// <param name="t">A <see cref="T:System.Type" /> object.</param>
-	/// <returns>A string representing the type name from a <see cref="T:System.Type" /> object representing the type of the configuration.</returns>
 	string GetConfigTypeName(Type t);
 
-	/// <summary>Associates the configuration with a <see cref="T:System.Security.PermissionSet" /> object.</summary>
-	/// <param name="configRecord">An <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object.</param>
-	/// <param name="permissionSet">The <see cref="T:System.Security.PermissionSet" /> object to associate with the configuration.</param>
-	/// <param name="isHostReady">
-	///   <see langword="true" /> to indicate the configuration host is has completed building associated permissions; otherwise, <see langword="false" />.</param>
 	/// <summary>Associates the configuration with a <see cref="T:System.Security.PermissionSet" /> object.</summary>
 	/// <param name="configRecord">An <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> object.</param>
 	/// <param name="permissionSet">The <see cref="T:System.Security.PermissionSet" /> object to associate with the configuration.</param>
@@ -148,15 +90,8 @@ public interface IInternalConfigHost
 	/// <summary>Returns a string representing the configuration file name associated with the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</summary>
 	/// <param name="configPath">A string representing the path of the application configuration file.</param>
 	/// <returns>A string representing the configuration file name associated with the <see cref="T:System.IO.Stream" /> I/O tasks on the configuration file.</returns>
-	/// <summary>Returns a string representing the configuration file name associated with the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</summary>
-	/// <param name="configPath">A string representing the path of the application configuration file.</param>
-	/// <returns>A string representing the configuration file name associated with the <see cref="T:System.IO.Stream" /> I/O tasks on the configuration file.</returns>
 	string GetStreamName(string configPath);
 
-	/// <summary>Returns a string representing the configuration file name associated with the <see cref="T:System.IO.Stream" /> object performing I/O tasks on a remote configuration file.</summary>
-	/// <param name="streamName">A string representing the configuration file name associated with the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</param>
-	/// <param name="configSource">A string representing a path to a remote configuration file.</param>
-	/// <returns>A string representing the configuration file name associated with the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</returns>
 	/// <summary>Returns a string representing the configuration file name associated with the <see cref="T:System.IO.Stream" /> object performing I/O tasks on a remote configuration file.</summary>
 	/// <param name="streamName">A string representing the configuration file name associated with the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</param>
 	/// <param name="configSource">A string representing a path to a remote configuration file.</param>
@@ -166,13 +101,8 @@ public interface IInternalConfigHost
 	/// <summary>Returns the version of the <see cref="T:System.IO.Stream" /> object associated with configuration file.</summary>
 	/// <param name="streamName">A string representing the name of the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</param>
 	/// <returns>The version of the <see cref="T:System.IO.Stream" /> object associated with configuration file.</returns>
-	/// <summary>Returns the version of the <see cref="T:System.IO.Stream" /> object associated with configuration file.</summary>
-	/// <param name="streamName">A string representing the name of the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</param>
-	/// <returns>The version of the <see cref="T:System.IO.Stream" /> object associated with configuration file.</returns>
 	object GetStreamVersion(string streamName);
 
-	/// <summary>Instructs the host to impersonate and returns an <see cref="T:System.IDisposable" /> object required by the internal .NET structure.</summary>
-	/// <returns>An <see cref="T:System.IDisposable" /> value.</returns>
 	/// <summary>Instructs the host to impersonate and returns an <see cref="T:System.IDisposable" /> object required by the internal .NET structure.</summary>
 	/// <returns>An <see cref="T:System.IDisposable" /> value.</returns>
 	IDisposable Impersonate();
@@ -180,17 +110,8 @@ public interface IInternalConfigHost
 	/// <summary>Initializes a configuration host.</summary>
 	/// <param name="configRoot">The configuration root object.</param>
 	/// <param name="hostInitParams">The parameter object containing the values used for initializing the configuration host.</param>
-	/// <summary>Initializes a configuration host.</summary>
-	/// <param name="configRoot">The configuration root object.</param>
-	/// <param name="hostInitParams">The parameter object containing the values used for initializing the configuration host.</param>
 	void Init(IInternalConfigRoot configRoot, params object[] hostInitParams);
 
-	/// <summary>Initializes a configuration object.</summary>
-	/// <param name="locationSubPath">The subpath location of the configuration file.</param>
-	/// <param name="configPath">A string representing the path of the application configuration file.</param>
-	/// <param name="locationConfigPath">A string representing the location of a configuration path.</param>
-	/// <param name="configRoot">The <see cref="T:System.Configuration.Internal.IInternalConfigRoot" /> object.</param>
-	/// <param name="hostInitConfigurationParams">The parameter object containing the values used for initializing the configuration host.</param>
 	/// <summary>Initializes a configuration object.</summary>
 	/// <param name="locationSubPath">The subpath location of the configuration file.</param>
 	/// <param name="configPath">A string representing the path of the application configuration file.</param>
@@ -203,16 +124,8 @@ public interface IInternalConfigHost
 	/// <param name="configPath">A string representing the path of the application configuration file.</param>
 	/// <returns>
 	///   <see langword="true" /> the configuration file is located at a higher level in the configuration hierarchy than the application configuration; otherwise, <see langword="false" />.</returns>
-	/// <summary>Returns a value indicating whether the configuration file is located at a higher level in the configuration hierarchy than the application configuration.</summary>
-	/// <param name="configPath">A string representing the path of the application configuration file.</param>
-	/// <returns>
-	///   <see langword="true" /> the configuration file is located at a higher level in the configuration hierarchy than the application configuration; otherwise, <see langword="false" />.</returns>
 	bool IsAboveApplication(string configPath);
 
-	/// <summary>Returns a value indicating whether a child record is required for a child configuration path.</summary>
-	/// <param name="configPath">A string representing the path of the application configuration file.</param>
-	/// <returns>
-	///   <see langword="true" /> if child record is required for a child configuration path; otherwise, <see langword="false" />.</returns>
 	/// <summary>Returns a value indicating whether a child record is required for a child configuration path.</summary>
 	/// <param name="configPath">A string representing the path of the application configuration file.</param>
 	/// <returns>
@@ -225,18 +138,8 @@ public interface IInternalConfigHost
 	/// <param name="allowExeDefinition">A <see cref="T:System.Configuration.ConfigurationAllowExeDefinition" /> object.</param>
 	/// <returns>
 	///   <see langword="true" /> if a different <see cref="T:System.Type" /> definition is allowable for an application configuration object; otherwise, <see langword="false" />.</returns>
-	/// <summary>Determines if a different <see cref="T:System.Type" /> definition is allowable for an application configuration object.</summary>
-	/// <param name="configPath">A string representing the path of the application configuration file.</param>
-	/// <param name="allowDefinition">A <see cref="T:System.Configuration.ConfigurationAllowDefinition" /> object.</param>
-	/// <param name="allowExeDefinition">A <see cref="T:System.Configuration.ConfigurationAllowExeDefinition" /> object.</param>
-	/// <returns>
-	///   <see langword="true" /> if a different <see cref="T:System.Type" /> definition is allowable for an application configuration object; otherwise, <see langword="false" />.</returns>
 	bool IsDefinitionAllowed(string configPath, ConfigurationAllowDefinition allowDefinition, ConfigurationAllowExeDefinition allowExeDefinition);
 
-	/// <summary>Returns a value indicating whether the file path used by a <see cref="T:System.IO.Stream" /> object to read a configuration file is a valid path.</summary>
-	/// <param name="streamName">A string representing the name of the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</param>
-	/// <returns>
-	///   <see langword="true" /> if the path used by a <see cref="T:System.IO.Stream" /> object to read a configuration file is a valid path; otherwise, <see langword="false" />.</returns>
 	/// <summary>Returns a value indicating whether the file path used by a <see cref="T:System.IO.Stream" /> object to read a configuration file is a valid path.</summary>
 	/// <param name="streamName">A string representing the name of the <see cref="T:System.IO.Stream" /> object performing I/O tasks on the configuration file.</param>
 	/// <returns>
@@ -352,7 +255,4 @@ public interface IInternalConfigHost
 	/// <param name="assertPermissions">
 	///   <see langword="true" /> to assert permissions; otherwise, <see langword="false" />.</param>
 	void WriteCompleted(string streamName, bool success, object writeContext, bool assertPermissions);
-}
-namespace System.Configuration.Provider
-{
 }

@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.UIElements.UIR.ExtraRenderData
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements.UIR;
+
+internal class ExtraRenderData : LinkedPoolItem<ExtraRenderData>
+{
+	public BasicNode<MeshHandle> extraMesh;
+}

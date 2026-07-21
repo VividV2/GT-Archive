@@ -1,2 +1,14 @@
-// Could not decompile Meta.Conduit.ConduitValueAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Meta.Conduit;
+
+[AttributeUsage(AttributeTargets.Field)]
+public class ConduitValueAttribute : Attribute
+{
+	public string[] Aliases { get; }
+
+	public ConduitValueAttribute(params string[] aliases)
+	{
+		Aliases = aliases;
+	}
+}

@@ -1,2 +1,7 @@
-// Could not decompile UnityEngine.Timeline.ControlTrack
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Timeline;
+
+[TrackClipType(typeof(ControlPlayableAsset), false)]
+[ExcludeFromPreset]
+public class ControlTrack : TrackAsset
+{
+}

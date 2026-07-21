@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.Rendering.ReloadGroupAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering;
+
+[AttributeUsage(AttributeTargets.Class)]
+public sealed class ReloadGroupAttribute : Attribute
+{
+}

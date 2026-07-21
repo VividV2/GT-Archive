@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.ClientModels.RefreshPSNAuthTokenRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class RefreshPSNAuthTokenRequest : PlayFabRequestCommon
+{
+	public string AuthCode;
+
+	public int? IssuerId;
+
+	public string RedirectUri;
+}

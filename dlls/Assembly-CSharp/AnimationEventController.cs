@@ -1,2 +1,12 @@
-// Could not decompile AnimationEventController
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class AnimationEventController : MonoBehaviour
+{
+	public GameObject fxAttack;
+
+	public void TriggerAttackVFX()
+	{
+		fxAttack.SetActive(value: false);
+		fxAttack.SetActive(value: true);
+	}
+}

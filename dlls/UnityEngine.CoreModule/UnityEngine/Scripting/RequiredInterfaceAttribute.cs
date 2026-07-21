@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.Scripting.RequiredInterfaceAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Scripting;
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface, AllowMultiple = true)]
+public class RequiredInterfaceAttribute : Attribute
+{
+	public RequiredInterfaceAttribute(Type interfaceType)
+	{
+	}
+}

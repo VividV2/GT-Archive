@@ -1,20 +1,7 @@
 namespace System.IO.Compression;
 
-internal enum BrotliEncoderOperation
+internal enum ZipVersionMadeByPlatform : byte
 {
-	Process,
-	Flush,
-	Finish,
-	EmitMetadata
-}
-namespace System.IO.Compression
-{
-}
-namespace System.IO.Compression
-{
-	internal enum ZipVersionMadeByPlatform : byte
-	{
-		Windows = 0,
-		Unix = 3
-	}
+	Windows = 0,
+	Unix = 3
 }

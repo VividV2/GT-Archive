@@ -1,2 +1,9 @@
-// Could not decompile Meta.Voice.NLPRequestResponseEvent`1
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace Meta.Voice;
+
+[Serializable]
+public class NLPRequestResponseEvent<TResponseData> : UnityEvent<TResponseData>
+{
+}

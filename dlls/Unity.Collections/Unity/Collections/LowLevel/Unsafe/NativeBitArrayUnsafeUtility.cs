@@ -1,2 +1,16 @@
-// Could not decompile Unity.Collections.LowLevel.Unsafe.NativeBitArrayUnsafeUtility
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.Collections.LowLevel.Unsafe;
+
+[GenerateTestsForBurstCompatibility]
+public static class NativeBitArrayUnsafeUtility
+{
+	public unsafe static NativeBitArray ConvertExistingDataToNativeBitArray(void* ptr, int sizeInBytes, AllocatorManager.AllocatorHandle allocator)
+	{
+		UnsafeBitArray* ptr2 = UnsafeBitArray.Alloc(Allocator.Persistent);
+		*ptr2 = new UnsafeBitArray(ptr, sizeInBytes, allocator);
+		return new NativeBitArray
+		{
+			m_BitArray = ptr2,
+			m_Allocator = Allocator.Persistent
+		};
+	}
+}

@@ -1,11 +1,7 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum WaitTimeoutMode
 {
-	public enum WaitTimeoutMode
-	{
-		Realtime,
-		InGameTime
-	}
-}
-namespace UnityEngine.Windows.WebCam
-{
+	Realtime,
+	InGameTime
 }

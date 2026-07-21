@@ -1,7 +1,3 @@
-namespace Utilities
-{
-}
-namespace LitJson
-{
-	public delegate TValue ImporterFunc<TJson, TValue>(TJson input);
-}
+namespace LitJson;
+
+public delegate TValue ImporterFunc<TJson, TValue>(TJson input);

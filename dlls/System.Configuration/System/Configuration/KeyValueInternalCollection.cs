@@ -1,2 +1,17 @@
-// Could not decompile System.Configuration.KeyValueInternalCollection
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Specialized;
+
+namespace System.Configuration;
+
+internal class KeyValueInternalCollection : NameValueCollection
+{
+	public void SetReadOnly()
+	{
+		base.IsReadOnly = true;
+	}
+
+	public override void Add(string name, string val)
+	{
+		Remove(name);
+		base.Add(name, val);
+	}
+}

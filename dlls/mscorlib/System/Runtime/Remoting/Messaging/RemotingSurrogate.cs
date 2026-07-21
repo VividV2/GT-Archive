@@ -1,17 +1,27 @@
-using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 
-namespace System.Security.Principal
+namespace System.Runtime.Remoting.Messaging;
+
+internal class RemotingSurrogate : ISerializationSurrogate
 {
-	[Serializable]
-	[ComVisible(true)]
-	public enum WindowsAccountType
+	public virtual void GetObjectData(object obj, SerializationInfo si, StreamingContext sc)
 	{
-		Normal,
-		Guest,
-		System,
-		Anonymous
+		if (obj == null || si == null)
+		{
+			throw new ArgumentNullException();
+		}
+		if (RemotingServices.IsTransparentProxy(obj))
+		{
+			RemotingServices.GetRealProxy(obj).GetObjectData(si, sc);
+		}
+		else
+		{
+			RemotingServices.GetObjectData(obj, si, sc);
+		}
 	}
-}
-namespace System.Security.Permissions
-{
+
+	public virtual object SetObjectData(object obj, SerializationInfo si, StreamingContext sc, ISurrogateSelector selector)
+	{
+		throw new NotSupportedException();
+	}
 }

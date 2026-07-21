@@ -1,2 +1,15 @@
-// Could not decompile UnityEngine.FailedToLoadScriptObject
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+[StructLayout(LayoutKind.Sequential)]
+[RequiredByNativeCode]
+[NativeClass(null)]
+[ExcludeFromObjectFactory]
+internal class FailedToLoadScriptObject : Object
+{
+	private FailedToLoadScriptObject()
+	{
+	}
+}

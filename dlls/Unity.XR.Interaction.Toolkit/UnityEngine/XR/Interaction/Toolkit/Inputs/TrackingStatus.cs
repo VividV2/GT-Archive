@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Inputs.TrackingStatus
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs;
+
+public struct TrackingStatus
+{
+	public bool isConnected { get; set; }
+
+	public bool isTracked { get; set; }
+
+	public InputTrackingState trackingState { get; set; }
+}

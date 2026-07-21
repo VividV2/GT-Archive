@@ -1,2 +1,27 @@
-// Could not decompile System.Xml.Serialization.Mapping
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Serialization;
+
+internal abstract class Mapping
+{
+	private bool isSoap;
+
+	internal bool IsSoap
+	{
+		get
+		{
+			return isSoap;
+		}
+		set
+		{
+			isSoap = value;
+		}
+	}
+
+	internal Mapping()
+	{
+	}
+
+	protected Mapping(Mapping mapping)
+	{
+		isSoap = mapping.isSoap;
+	}
+}

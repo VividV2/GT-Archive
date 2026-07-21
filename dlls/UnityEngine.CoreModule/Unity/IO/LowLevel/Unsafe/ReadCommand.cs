@@ -1,2 +1,10 @@
-// Could not decompile Unity.IO.LowLevel.Unsafe.ReadCommand
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.IO.LowLevel.Unsafe;
+
+public struct ReadCommand
+{
+	public unsafe void* Buffer;
+
+	public long Offset;
+
+	public long Size;
+}

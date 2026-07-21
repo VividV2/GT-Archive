@@ -1,2 +1,10 @@
-// Could not decompile Newtonsoft.Json.Linq.JsonSelectSettings
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Newtonsoft.Json.Linq;
+
+public class JsonSelectSettings
+{
+	public TimeSpan? RegexMatchTimeout { get; set; }
+
+	public bool ErrorWhenNoMatch { get; set; }
+}

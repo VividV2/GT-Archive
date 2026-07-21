@@ -1,2 +1,27 @@
-// Could not decompile UnityEngine.Bindings.NativeHeaderAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Bindings;
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue, AllowMultiple = true)]
+[VisibleToOtherModules]
+internal class NativeHeaderAttribute : Attribute, IBindingsHeaderProviderAttribute, IBindingsAttribute
+{
+	public string Header { get; set; }
+
+	public NativeHeaderAttribute()
+	{
+	}
+
+	public NativeHeaderAttribute(string header)
+	{
+		if (header == null)
+		{
+			throw new ArgumentNullException("header");
+		}
+		if (header == "")
+		{
+			throw new ArgumentException("header cannot be empty", "header");
+		}
+		Header = header;
+	}
+}

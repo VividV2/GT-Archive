@@ -1,2 +1,11 @@
-// Could not decompile PlayFab.Json.JsonProperty
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace PlayFab.Json;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+public class JsonProperty : Attribute
+{
+	public string PropertyName;
+
+	public NullValueHandling NullValueHandling;
+}

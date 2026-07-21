@@ -1,2 +1,6 @@
-// Could not decompile GRLevelAnchor
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GRLevelAnchor : MonoBehaviour
+{
+	public Transform navigablePoint;
+}

@@ -1,13 +1,12 @@
-namespace System.Threading.Tasks
+namespace System.Diagnostics.Contracts;
+
+/// <summary>Marks a method as being the invariant method for a class.</summary>
+[Conditional("CONTRACTS_FULL")]
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+public sealed class ContractInvariantMethodAttribute : Attribute
 {
-	internal static class TaskAwaiters
+	/// <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.Contracts.ContractInvariantMethodAttribute" /> class.</summary>
+	public ContractInvariantMethodAttribute()
 	{
-		public static ForceAsyncAwaiter ForceAsync(this Task task)
-		{
-			return new ForceAsyncAwaiter(task);
-		}
 	}
-}
-namespace System.Threading.Tasks
-{
 }

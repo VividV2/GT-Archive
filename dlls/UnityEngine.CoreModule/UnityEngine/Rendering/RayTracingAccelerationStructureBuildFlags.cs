@@ -1,20 +1,12 @@
-namespace UnityEngine.Rendering
+using System;
+
+namespace UnityEngine.Rendering;
+
+[Flags]
+public enum RayTracingAccelerationStructureBuildFlags
 {
-	public enum VideoShadersIncludeMode
-	{
-		[InspectorName("Don't include")]
-		Never,
-		[InspectorName("Include if referenced")]
-		Referenced,
-		[InspectorName("Always include")]
-		Always
-	}
-}
-namespace UnityEngine
-{
-	public enum ShadowProjection
-	{
-		CloseFit,
-		StableFit
-	}
+	None = 0,
+	PreferFastTrace = 1,
+	PreferFastBuild = 2,
+	MinimizeMemory = 4
 }

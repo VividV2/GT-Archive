@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.UIElements.AttachToPanelEvent
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public class AttachToPanelEvent : PanelChangedEventBase<AttachToPanelEvent>
+{
+	static AttachToPanelEvent()
+	{
+		EventBase<AttachToPanelEvent>.SetCreateFunction(() => new AttachToPanelEvent());
+	}
+}

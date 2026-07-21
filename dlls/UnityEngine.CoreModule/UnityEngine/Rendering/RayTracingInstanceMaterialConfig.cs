@@ -1,22 +1,15 @@
 using UnityEngine.Scripting.APIUpdating;
 
-namespace UnityEngine.Rendering
-{
-	[MovedFrom("UnityEngine.Experimental.Rendering")]
-	public struct RayTracingInstanceMaterialConfig
-	{
-		public int renderQueueLowerBound;
+namespace UnityEngine.Rendering;
 
-		public int renderQueueUpperBound;
-
-		public RayTracingInstanceCullingShaderTagConfig[] optionalShaderTags;
-
-		public string[] optionalShaderKeywords;
-	}
-}
-namespace UnityEngine.Rendering
+[MovedFrom("UnityEngine.Experimental.Rendering")]
+public struct RayTracingInstanceMaterialConfig
 {
-}
-namespace UnityEngine
-{
+	public int renderQueueLowerBound;
+
+	public int renderQueueUpperBound;
+
+	public RayTracingInstanceCullingShaderTagConfig[] optionalShaderTags;
+
+	public string[] optionalShaderKeywords;
 }

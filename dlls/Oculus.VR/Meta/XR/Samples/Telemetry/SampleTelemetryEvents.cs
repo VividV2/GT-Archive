@@ -1,15 +1,29 @@
-namespace OVR.OpenVR
+namespace Meta.XR.Samples.Telemetry;
+
+internal static class SampleTelemetryEvents
 {
-	public struct VRActiveActionSet_t
+	[OVRTelemetry.Markers]
+	public static class EventTypes
 	{
-		public ulong ulActionSet;
+		public const int Open = 163055403;
 
-		public ulong ulRestrictedToDevice;
+		public const int Close = 163056880;
 
-		public ulong ulSecondaryActionSet;
+		public const int Run = 163061602;
+	}
 
-		public uint unPadding;
+	public static class AnnotationTypes
+	{
+		public const string Sample = "Sample";
 
-		public int nPriority;
+		public const string TimeSpent = "TimeSpent";
+
+		public const string TimeSinceEditorStart = "TimeSinceEditorStart";
+
+		public const string BuildTarget = "BuildTarget";
+
+		public const string RuntimePlatform = "RuntimePlatform";
+
+		public const string InEditor = "InEditor";
 	}
 }

@@ -1,2 +1,11 @@
-// Could not decompile KID.Client.OpenAPIDateConverter
-// This type uses unsupported IL or has too many generic parameters.
+using Newtonsoft.Json.Converters;
+
+namespace KID.Client;
+
+public class OpenAPIDateConverter : IsoDateTimeConverter
+{
+	public OpenAPIDateConverter()
+	{
+		base.DateTimeFormat = "yyyy-MM-dd";
+	}
+}

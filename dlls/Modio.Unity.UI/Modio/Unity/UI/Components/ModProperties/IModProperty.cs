@@ -1,12 +1,8 @@
 using Modio.Mods;
 
-namespace Modio.Unity.UI.Components.ModProperties
+namespace Modio.Unity.UI.Components.ModProperties;
+
+public interface IModProperty
 {
-	public interface IModProperty
-	{
-		void OnModUpdate(Mod mod);
-	}
-}
-namespace Modio.Unity.UI.Components.ModProperties
-{
+	void OnModUpdate(Mod mod);
 }

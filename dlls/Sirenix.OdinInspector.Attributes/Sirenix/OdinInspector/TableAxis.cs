@@ -1,11 +1,7 @@
-namespace Sirenix.OdinInspector
+namespace Sirenix.OdinInspector;
+
+public enum TableAxis
 {
-	public enum TableAxis
-	{
-		X,
-		Y
-	}
-}
-namespace Sirenix.OdinInspector
-{
+	X,
+	Y
 }

@@ -1,15 +1,18 @@
-namespace K4os.Compression.LZ4
+namespace System.Diagnostics.CodeAnalysis;
+
+[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property, Inherited = false, AllowMultiple = true)]
+[ExcludeFromCodeCoverage]
+internal sealed class MemberNotNullAttribute : Attribute
 {
-	internal class AssemblyHook
+	public string[] Members { get; }
+
+	public MemberNotNullAttribute(string member)
 	{
-		private AssemblyHook()
-		{
-		}
+		Members = new string[1] { member };
 	}
-}
-namespace System.Diagnostics.CodeAnalysis
-{
-}
-namespace System.Runtime.Versioning
-{
+
+	public MemberNotNullAttribute(params string[] members)
+	{
+		Members = members;
+	}
 }

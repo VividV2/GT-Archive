@@ -1,18 +1,14 @@
 using System.Threading.Tasks;
 
-namespace System.Xml
+namespace System.Xml;
+
+internal interface IDtdParser
 {
-}
-namespace System.Xml
-{
-	internal interface IDtdParser
-	{
-		IDtdInfo ParseInternalDtd(IDtdParserAdapter adapter, bool saveInternalSubset);
+	IDtdInfo ParseInternalDtd(IDtdParserAdapter adapter, bool saveInternalSubset);
 
-		IDtdInfo ParseFreeFloatingDtd(string baseUri, string docTypeName, string publicId, string systemId, string internalSubset, IDtdParserAdapter adapter);
+	IDtdInfo ParseFreeFloatingDtd(string baseUri, string docTypeName, string publicId, string systemId, string internalSubset, IDtdParserAdapter adapter);
 
-		Task<IDtdInfo> ParseInternalDtdAsync(IDtdParserAdapter adapter, bool saveInternalSubset);
+	Task<IDtdInfo> ParseInternalDtdAsync(IDtdParserAdapter adapter, bool saveInternalSubset);
 
-		Task<IDtdInfo> ParseFreeFloatingDtdAsync(string baseUri, string docTypeName, string publicId, string systemId, string internalSubset, IDtdParserAdapter adapter);
-	}
+	Task<IDtdInfo> ParseFreeFloatingDtdAsync(string baseUri, string docTypeName, string publicId, string systemId, string internalSubset, IDtdParserAdapter adapter);
 }

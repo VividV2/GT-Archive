@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.MultiplayerModels.MatchmakingQueueTeam
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class MatchmakingQueueTeam : PlayFabBaseModel
+{
+	public uint MaxTeamSize;
+
+	public uint MinTeamSize;
+
+	public string Name;
+}

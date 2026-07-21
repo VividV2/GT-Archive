@@ -1,13 +1,9 @@
-namespace Pathfinding.Ionic.Zip
+namespace Pathfinding.Ionic.Zip;
+
+public enum ZipErrorAction
 {
-}
-namespace Pathfinding.Ionic.Zip
-{
-	public enum ZipErrorAction
-	{
-		Throw,
-		Skip,
-		Retry,
-		InvokeErrorEvent
-	}
+	Throw,
+	Skip,
+	Retry,
+	InvokeErrorEvent
 }

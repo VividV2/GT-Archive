@@ -1,10 +1,6 @@
-namespace OVR.OpenVR
+namespace OVR.OpenVR;
+
+public enum EChaperoneImportFlags
 {
-	public enum EChaperoneImportFlags
-	{
-		EChaperoneImport_BoundsOnly = 1
-	}
-}
-namespace OVR.OpenVR
-{
+	EChaperoneImport_BoundsOnly = 1
 }

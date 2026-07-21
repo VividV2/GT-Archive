@@ -6,6 +6,3 @@ public enum IsolatedStorageSecurityOptions
 	/// <summary>The quota can be increased for isolated storage.</summary>
 	IncreaseQuotaForApplication = 4
 }
-namespace System.Collections.Generic
-{
-}

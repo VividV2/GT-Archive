@@ -1,9 +1,5 @@
-using System.IO;
-using System.IO;
+using UnityEngine;
 
-public interface IGameEntitySerialize
+public class HoldableRightHandReference : MonoBehaviour
 {
-	void OnGameEntitySerialize(BinaryWriter writer);
-
-	void OnGameEntityDeserialize(BinaryReader reader);
 }

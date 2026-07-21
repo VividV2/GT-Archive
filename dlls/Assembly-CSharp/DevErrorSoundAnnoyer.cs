@@ -1,2 +1,19 @@
-// Could not decompile DevErrorSoundAnnoyer
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DevErrorSoundAnnoyer : MonoBehaviour
+{
+	[SerializeField]
+	private AudioClip errorSound;
+
+	[SerializeField]
+	private AudioSource audioSource;
+
+	[SerializeField]
+	private Text errorUIText;
+
+	[SerializeField]
+	private Font errorFont;
+
+	public string displayedText;
+}

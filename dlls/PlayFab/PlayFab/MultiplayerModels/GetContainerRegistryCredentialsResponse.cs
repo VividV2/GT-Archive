@@ -12,6 +12,3 @@ public class GetContainerRegistryCredentialsResponse : PlayFabResultCommon
 
 	public string Username;
 }
-namespace PlayFab.EventsModels
-{
-}

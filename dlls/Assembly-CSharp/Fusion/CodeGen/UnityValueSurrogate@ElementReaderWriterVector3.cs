@@ -1,2 +1,33 @@
-// Could not decompile Fusion.CodeGen.UnityValueSurrogate@ElementReaderWriterVector3
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Fusion.Internal;
+using UnityEngine;
+
+namespace Fusion.CodeGen;
+
+[Serializable]
+[WeaverGenerated]
+internal class UnityValueSurrogate@ElementReaderWriterVector3 : UnityValueSurrogate<Vector3, Fusion.ElementReaderWriterVector3>
+{
+	[WeaverGenerated]
+	public Vector3 Data;
+
+	[WeaverGenerated]
+	public override Vector3 DataProperty
+	{
+		[WeaverGenerated]
+		get
+		{
+			return Data;
+		}
+		[WeaverGenerated]
+		set
+		{
+			Data = value;
+		}
+	}
+
+	[WeaverGenerated]
+	public UnityValueSurrogate@ElementReaderWriterVector3()
+	{
+	}
+}

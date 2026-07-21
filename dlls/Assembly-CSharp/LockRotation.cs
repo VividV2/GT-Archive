@@ -1,2 +1,16 @@
-// Could not decompile LockRotation
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class LockRotation : MonoBehaviour
+{
+	private Quaternion lockedRot;
+
+	private void Start()
+	{
+		lockedRot = base.transform.rotation;
+	}
+
+	private void LateUpdate()
+	{
+		base.transform.rotation = lockedRot;
+	}
+}

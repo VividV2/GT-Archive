@@ -1,38 +1,34 @@
 using Unity.Mathematics;
 
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+internal struct ProbeVolumeShadingParameters
 {
-	internal struct ProbeVolumeShadingParameters
-	{
-		public float normalBias;
+	public float normalBias;
 
-		public float viewBias;
+	public float viewBias;
 
-		public bool scaleBiasByMinDistanceBetweenProbes;
+	public bool scaleBiasByMinDistanceBetweenProbes;
 
-		public float samplingNoise;
+	public float samplingNoise;
 
-		public float weight;
+	public float weight;
 
-		public APVLeakReductionMode leakReductionMode;
+	public APVLeakReductionMode leakReductionMode;
 
-		public int frameIndexForNoise;
+	public int frameIndexForNoise;
 
-		public float reflNormalizationLowerClamp;
+	public float reflNormalizationLowerClamp;
 
-		public float reflNormalizationUpperClamp;
+	public float reflNormalizationUpperClamp;
 
-		public float skyOcclusionIntensity;
+	public float skyOcclusionIntensity;
 
-		public bool skyOcclusionShadingDirection;
+	public bool skyOcclusionShadingDirection;
 
-		public int regionCount;
+	public int regionCount;
 
-		public uint4 regionLayerMasks;
+	public uint4 regionLayerMasks;
 
-		public Vector3 worldOffset;
-	}
-}
-namespace UnityEngine.Rendering
-{
+	public Vector3 worldOffset;
 }

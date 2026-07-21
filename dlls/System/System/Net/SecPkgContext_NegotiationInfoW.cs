@@ -1,12 +1,8 @@
-namespace System.Diagnostics
-{
-}
-namespace System.Net
-{
-	internal struct SecPkgContext_NegotiationInfoW
-	{
-		internal IntPtr PackageInfo;
+namespace System.Net;
 
-		internal uint NegotiationState;
-	}
+internal struct SecPkgContext_NegotiationInfoW
+{
+	internal IntPtr PackageInfo;
+
+	internal uint NegotiationState;
 }

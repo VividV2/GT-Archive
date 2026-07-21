@@ -1,7 +1,12 @@
-namespace PlayFab.ProfilesModels;
+using System;
+using PlayFab.SharedModels;
 
-public enum EffectType
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class EntityKey : PlayFabBaseModel
 {
-	Allow,
-	Deny
+	public string Id;
+
+	public string Type;
 }

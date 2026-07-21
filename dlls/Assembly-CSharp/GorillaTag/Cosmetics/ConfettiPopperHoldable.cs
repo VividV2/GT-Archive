@@ -1,2 +1,5 @@
-// Could not decompile GorillaTag.Cosmetics.ConfettiPopperHoldable
-// This type uses unsupported IL or has too many generic parameters.
+namespace GorillaTag.Cosmetics;
+
+public class ConfettiPopperHoldable : TransferrableObject
+{
+}

@@ -18,6 +18,3 @@ internal enum StyleValueFunction
 	FilterSepia,
 	FilterBlur
 }
-namespace UnityEngine.UIElements
-{
-}

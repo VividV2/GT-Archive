@@ -1,2 +1,18 @@
-// Could not decompile UnityEngine.Rendering.Universal.OutRec
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+internal class OutRec
+{
+	internal int Idx;
+
+	internal bool IsHole;
+
+	internal bool IsOpen;
+
+	internal OutRec FirstLeft;
+
+	internal OutPt Pts;
+
+	internal OutPt BottomPt;
+
+	internal PolyNode PolyNode;
+}

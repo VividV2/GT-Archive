@@ -1,11 +1,20 @@
-namespace UnityEngine.Rendering;
+using System;
+using Unity.Collections;
 
-public enum BatchCullingViewType
+namespace UnityEngine;
+
+internal struct TypeDispatchData : IDisposable
 {
-	Unknown,
-	Camera,
-	Light,
-	Picking,
-	SelectionOutline,
-	Filtering
+	public Object[] changed;
+
+	public NativeArray<int> changedID;
+
+	public NativeArray<int> destroyedID;
+
+	public void Dispose()
+	{
+		changed = null;
+		changedID.Dispose();
+		destroyedID.Dispose();
+	}
 }

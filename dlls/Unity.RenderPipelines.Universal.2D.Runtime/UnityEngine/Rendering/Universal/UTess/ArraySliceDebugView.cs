@@ -1,11 +1,13 @@
-using Unity.Mathematics;
-using Unity.Mathematics;
-
 namespace UnityEngine.Rendering.Universal.UTess;
 
-internal struct UBounds
+internal sealed class ArraySliceDebugView<T> where T : struct
 {
-	public double2 min;
+	private ArraySlice<T> m_Slice;
 
-	public double2 max;
+	public T[] Items => m_Slice.ToArray();
+
+	public ArraySliceDebugView(ArraySlice<T> slice)
+	{
+		m_Slice = slice;
+	}
 }

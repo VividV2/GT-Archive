@@ -1,2 +1,21 @@
-// Could not decompile System.Resources.Win32EncodedResource
-// This type uses unsupported IL or has too many generic parameters.
+using System.IO;
+
+namespace System.Resources;
+
+internal class Win32EncodedResource : Win32Resource
+{
+	private byte[] data;
+
+	public byte[] Data => data;
+
+	internal Win32EncodedResource(NameOrId type, NameOrId name, int language, byte[] data)
+		: base(type, name, language)
+	{
+		this.data = data;
+	}
+
+	public override void WriteTo(Stream s)
+	{
+		s.Write(data, 0, data.Length);
+	}
+}

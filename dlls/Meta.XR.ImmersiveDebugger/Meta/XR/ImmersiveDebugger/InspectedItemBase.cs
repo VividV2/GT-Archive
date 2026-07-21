@@ -1,15 +1,28 @@
 using System;
-using System;
+using UnityEngine;
 
-namespace Meta.XR.ImmersiveDebugger.Utils;
+namespace Meta.XR.ImmersiveDebugger;
 
 [Serializable]
-internal struct ValueStruct<T>
+internal class InspectedItemBase
 {
-	public string ValueName;
+	[SerializeField]
+	public bool enabled;
 
-	public T Value;
-}
-namespace Meta.XR.ImmersiveDebugger.UserInterface
-{
+	[SerializeField]
+	protected string typeName;
+
+	public bool Valid { get; protected set; }
+
+	public bool Visible
+	{
+		get
+		{
+			if (Valid)
+			{
+				return enabled;
+			}
+			return false;
+		}
+	}
 }

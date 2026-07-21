@@ -1,2 +1,9 @@
-// Could not decompile Meta.WitAi.Composer.Attributes.VersionTagDropdownAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace Meta.WitAi.Composer.Attributes;
+
+[AttributeUsage(AttributeTargets.Field)]
+public class VersionTagDropdownAttribute : PropertyAttribute
+{
+}

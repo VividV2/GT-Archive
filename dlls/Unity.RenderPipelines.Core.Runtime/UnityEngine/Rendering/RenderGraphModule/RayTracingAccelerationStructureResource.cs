@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Rendering.RenderGraphModule.RayTracingAccelerationStructureResource
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics;
+
+namespace UnityEngine.Rendering.RenderGraphModule;
+
+[DebuggerDisplay("RayTracingAccelerationStructureResource ({desc.name})")]
+internal class RayTracingAccelerationStructureResource : RenderGraphResource<RayTracingAccelerationStructureDesc, RayTracingAccelerationStructure>
+{
+	public override string GetName()
+	{
+		return desc.name;
+	}
+}

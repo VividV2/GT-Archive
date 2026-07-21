@@ -1,2 +1,14 @@
-// Could not decompile Meta.WitAi.Data.VoiceSession
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Meta.WitAi.Json;
+
+namespace Meta.WitAi.Data;
+
+[Serializable]
+public class VoiceSession
+{
+	public VoiceService service;
+
+	public WitResponseNode response;
+
+	public bool validResponse;
+}

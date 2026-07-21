@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Types
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.ComponentModel;
+
+namespace UnityEngine;
+
+public static class Types
+{
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	[Obsolete("This was an internal method which is no longer used", true)]
+	public static Type GetType(string typeName, string assemblyName)
+	{
+		return null;
+	}
+}

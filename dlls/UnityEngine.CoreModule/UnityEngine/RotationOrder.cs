@@ -1,15 +1,11 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+internal enum RotationOrder
 {
-	internal enum RotationOrder
-	{
-		OrderXYZ,
-		OrderXZY,
-		OrderYZX,
-		OrderYXZ,
-		OrderZXY,
-		OrderZYX
-	}
-}
-namespace UnityEngine
-{
+	OrderXYZ,
+	OrderXZY,
+	OrderYZX,
+	OrderYXZ,
+	OrderZXY,
+	OrderZYX
 }

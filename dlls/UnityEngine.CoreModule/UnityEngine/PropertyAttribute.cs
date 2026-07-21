@@ -1,2 +1,23 @@
-// Could not decompile UnityEngine.PropertyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
+[UsedByNativeCode]
+public abstract class PropertyAttribute : Attribute
+{
+	public int order { get; set; }
+
+	public bool applyToCollection { get; }
+
+	protected PropertyAttribute()
+		: this(applyToCollection: false)
+	{
+	}
+
+	protected PropertyAttribute(bool applyToCollection)
+	{
+		this.applyToCollection = applyToCollection;
+	}
+}

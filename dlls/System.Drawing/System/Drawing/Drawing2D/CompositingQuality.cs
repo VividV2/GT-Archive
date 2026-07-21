@@ -1,61 +1,18 @@
-namespace System.Drawing.Printing
+namespace System.Drawing.Drawing2D;
+
+/// <summary>Specifies the quality level to use during compositing.</summary>
+public enum CompositingQuality
 {
-	public enum Duplex
-	{
-		Default = -1,
-		Simplex = 1,
-		Horizontal = 3,
-		Vertical = 2
-	}
-}
-namespace System.Drawing
-{
-}
-namespace System.Internal
-{
-}
-namespace System.Drawing.Drawing2D
-{
-	public enum PenAlignment
-	{
-		Center,
-		Inset,
-		Outset,
-		Left,
-		Right
-	}
-}
-namespace System.Drawing.Drawing2D
-{
-}
-namespace System.Drawing
-{
-	internal enum Status
-	{
-		Ok,
-		GenericError,
-		InvalidParameter,
-		OutOfMemory,
-		ObjectBusy,
-		InsufficientBuffer,
-		NotImplemented,
-		Win32Error,
-		WrongState,
-		Aborted,
-		FileNotFound,
-		ValueOverflow,
-		AccessDenied,
-		UnknownImageFormat,
-		FontFamilyNotFound,
-		FontStyleNotFound,
-		NotTrueTypeFont,
-		UnsupportedGdiplusVersion,
-		GdiplusNotInitialized,
-		PropertyNotFound,
-		PropertyNotSupported,
-		ProfileNotFound
-	}
-}
-namespace System.Drawing.Printing
-{
+	/// <summary>Invalid quality.</summary>
+	Invalid = -1,
+	/// <summary>Default quality.</summary>
+	Default,
+	/// <summary>High speed, low quality.</summary>
+	HighSpeed,
+	/// <summary>High quality, low speed compositing.</summary>
+	HighQuality,
+	/// <summary>Gamma correction is used.</summary>
+	GammaCorrected,
+	/// <summary>Assume linear values.</summary>
+	AssumeLinear
 }

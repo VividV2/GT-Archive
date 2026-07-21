@@ -1,2 +1,24 @@
-// Could not decompile DevInspector
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DevInspector : MonoBehaviour
+{
+	public GameObject pivot;
+
+	public Text outputInfo;
+
+	public Component[] componentToInspect;
+
+	public bool isEnabled;
+
+	public bool autoFind = true;
+
+	public GameObject canvas;
+
+	public int sidewaysOffset;
+
+	private void OnEnable()
+	{
+		Object.Destroy(base.gameObject);
+	}
+}

@@ -1,45 +1,25 @@
 using System;
-using UnityEngine.Bindings;
 
-namespace UnityEngine;
+namespace UnityEngine.Rendering;
 
-[NativeHeader("Runtime/GfxDevice/GfxDeviceTypes.h")]
-[NativeClass("GfxBufferID")]
-public readonly struct GraphicsBufferHandle : IEquatable<GraphicsBufferHandle>
+public struct ScopedRenderPass : IDisposable
 {
-	public readonly uint value;
+	private ScriptableRenderContext m_Context;
 
-	public override int GetHashCode()
+	internal ScopedRenderPass(ScriptableRenderContext context)
 	{
-		return value.GetHashCode();
+		m_Context = context;
 	}
 
-	public override bool Equals(object obj)
+	public void Dispose()
 	{
-		if (obj is GraphicsBufferHandle)
+		try
 		{
-			return Equals((GraphicsBufferHandle)obj);
+			m_Context.EndRenderPass();
 		}
-		return false;
-	}
-
-	public bool Equals(GraphicsBufferHandle other)
-	{
-		return value == other.value;
-	}
-
-	public int CompareTo(GraphicsBufferHandle other)
-	{
-		return value.CompareTo(other.value);
-	}
-
-	public static bool operator ==(GraphicsBufferHandle a, GraphicsBufferHandle b)
-	{
-		return a.Equals(b);
-	}
-
-	public static bool operator !=(GraphicsBufferHandle a, GraphicsBufferHandle b)
-	{
-		return !a.Equals(b);
+		catch (Exception innerException)
+		{
+			throw new InvalidOperationException("The ScopedRenderPass instance is not valid. This can happen if it was constructed using the default constructor.", innerException);
+		}
 	}
 }

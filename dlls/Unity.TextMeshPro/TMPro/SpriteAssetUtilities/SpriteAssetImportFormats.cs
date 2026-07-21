@@ -1,11 +1,7 @@
-namespace TMPro
+namespace TMPro.SpriteAssetUtilities;
+
+public enum SpriteAssetImportFormats
 {
-}
-namespace TMPro.SpriteAssetUtilities
-{
-	public enum SpriteAssetImportFormats
-	{
-		None,
-		TexturePackerJsonArray
-	}
+	None,
+	TexturePackerJsonArray
 }

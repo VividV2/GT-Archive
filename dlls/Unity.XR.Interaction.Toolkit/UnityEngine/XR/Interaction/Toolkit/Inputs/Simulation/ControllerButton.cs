@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.ControllerButton
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
+
+public enum ControllerButton
+{
+	PrimaryButton,
+	PrimaryTouch,
+	SecondaryButton,
+	SecondaryTouch,
+	GripButton,
+	TriggerButton,
+	MenuButton,
+	Primary2DAxisClick,
+	Primary2DAxisTouch,
+	Secondary2DAxisClick,
+	Secondary2DAxisTouch,
+	UserPresence
+}

@@ -1,2 +1,9 @@
-// Could not decompile GorillaTag.WatchableIntSO
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTag;
+
+[CreateAssetMenu(fileName = "WatchableIntSO", menuName = "ScriptableObjects/WatchableIntSO")]
+public class WatchableIntSO : WatchableGenericSO<int>
+{
+	private int currentValue => base.Value;
+}

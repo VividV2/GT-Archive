@@ -1,45 +1,35 @@
 using System;
 using System.Collections.Generic;
 using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class TradeInfo : PlayFabBaseModel
 {
-	[Serializable]
-	public class TradeInfo : PlayFabBaseModel
-	{
-		public List<string> AcceptedInventoryInstanceIds;
+	public List<string> AcceptedInventoryInstanceIds;
 
-		public string AcceptedPlayerId;
+	public string AcceptedPlayerId;
 
-		public List<string> AllowedPlayerIds;
+	public List<string> AllowedPlayerIds;
 
-		public DateTime? CancelledAt;
+	public DateTime? CancelledAt;
 
-		public DateTime? FilledAt;
+	public DateTime? FilledAt;
 
-		public DateTime? InvalidatedAt;
+	public DateTime? InvalidatedAt;
 
-		public List<string> OfferedCatalogItemIds;
+	public List<string> OfferedCatalogItemIds;
 
-		public List<string> OfferedInventoryInstanceIds;
+	public List<string> OfferedInventoryInstanceIds;
 
-		public string OfferingPlayerId;
+	public string OfferingPlayerId;
 
-		public DateTime? OpenedAt;
+	public DateTime? OpenedAt;
 
-		public List<string> RequestedCatalogItemIds;
+	public List<string> RequestedCatalogItemIds;
 
-		public TradeStatus? Status;
+	public TradeStatus? Status;
 
-		public string TradeId;
-	}
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class RemoveGenericIDResult : PlayFabResultCommon
-	{
-	}
+	public string TradeId;
 }

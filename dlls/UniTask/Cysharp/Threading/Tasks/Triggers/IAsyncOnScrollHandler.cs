@@ -1,12 +1,8 @@
 using UnityEngine.EventSystems;
 
-namespace Cysharp.Threading.Tasks.Triggers
+namespace Cysharp.Threading.Tasks.Triggers;
+
+public interface IAsyncOnScrollHandler
 {
-}
-namespace Cysharp.Threading.Tasks.Triggers
-{
-	public interface IAsyncOnScrollHandler
-	{
-		UniTask<PointerEventData> OnScrollAsync();
-	}
+	UniTask<PointerEventData> OnScrollAsync();
 }

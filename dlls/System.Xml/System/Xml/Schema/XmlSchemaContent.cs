@@ -1,2 +1,10 @@
-// Could not decompile System.Xml.Schema.XmlSchemaContent
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+/// <summary>An abstract class for schema content.</summary>
+public abstract class XmlSchemaContent : XmlSchemaAnnotated
+{
+	/// <summary>Initializes a new instance of the <see cref="T:System.Xml.Schema.XmlSchemaContent" /> class.</summary>
+	protected XmlSchemaContent()
+	{
+	}
+}

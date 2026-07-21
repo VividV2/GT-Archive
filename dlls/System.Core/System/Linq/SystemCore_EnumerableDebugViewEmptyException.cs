@@ -1,2 +1,6 @@
-// Could not decompile System.Linq.SystemCore_EnumerableDebugViewEmptyException
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq;
+
+internal sealed class SystemCore_EnumerableDebugViewEmptyException : Exception
+{
+	public string Empty => "Enumeration yielded no results";
+}

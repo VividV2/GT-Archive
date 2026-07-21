@@ -1,12 +1,8 @@
-namespace OVR.OpenVR
+namespace OVR.OpenVR;
+
+public enum EVRSkeletalTransformSpace
 {
-}
-namespace OVR.OpenVR
-{
-	public enum EVRSkeletalTransformSpace
-	{
-		Model,
-		Parent,
-		Additive
-	}
+	Model,
+	Parent,
+	Additive
 }

@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.ISerializationCallbackReceiver
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+[RequiredByNativeCode]
+public interface ISerializationCallbackReceiver
+{
+	[RequiredByNativeCode]
+	void OnBeforeSerialize();
+
+	[RequiredByNativeCode]
+	void OnAfterDeserialize();
+}

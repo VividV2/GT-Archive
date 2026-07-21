@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.UIElements.ColumnSortingMode
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public enum ColumnSortingMode
+{
+	None,
+	Default,
+	Custom
+}

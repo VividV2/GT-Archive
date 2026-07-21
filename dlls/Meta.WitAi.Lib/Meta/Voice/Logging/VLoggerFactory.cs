@@ -1,2 +1,9 @@
-// Could not decompile Meta.Voice.Logging.VLoggerFactory
-// This type uses unsupported IL or has too many generic parameters.
+namespace Meta.Voice.Logging;
+
+internal class VLoggerFactory : IVLoggerFactory
+{
+	public IVLogger GetLogger(string category, ILogSink logSink)
+	{
+		return new VLogger(category, logSink);
+	}
+}

@@ -1,13 +1,6 @@
-namespace Fusion
+namespace Fusion;
+
+public interface INetworkPrefabSource : INetworkAssetSource<NetworkObject>
 {
-	public interface INetworkPrefabSource : INetworkAssetSource<NetworkObject>
-	{
-		NetworkObjectGuid AssetGuid { get; }
-	}
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
+	NetworkObjectGuid AssetGuid { get; }
 }

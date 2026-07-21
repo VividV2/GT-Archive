@@ -1,2 +1,9 @@
-// Could not decompile System.Diagnostics.Tracing.PollingCounter
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Diagnostics.Tracing;
+
+public class PollingCounter : DiagnosticCounter
+{
+	public PollingCounter(string name, EventSource eventSource, Func<double> metricProvider)
+		: base(name, eventSource)
+	{
+	}
+}

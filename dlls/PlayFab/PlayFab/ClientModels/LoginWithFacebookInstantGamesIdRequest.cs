@@ -1,13 +1,20 @@
+using System;
+using PlayFab.SharedModels;
+
 namespace PlayFab.ClientModels;
 
-public enum MatchmakeStatus
+[Serializable]
+public class LoginWithFacebookInstantGamesIdRequest : PlayFabRequestCommon
 {
-	Complete,
-	Waiting,
-	GameNotFound,
-	NoAvailableSlots,
-	SessionClosed
-}
-namespace PlayFab.ClientModels
-{
+	public bool? CreateAccount;
+
+	public string EncryptedRequest;
+
+	public string FacebookInstantGamesSignature;
+
+	public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
+
+	public string PlayerSecret;
+
+	public string TitleId;
 }

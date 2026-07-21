@@ -1,2 +1,12 @@
-// Could not decompile TestScript
-// This type uses unsupported IL or has too many generic parameters.
+using GorillaTag;
+using UnityEngine;
+
+[GTStripGameObjectFromBuild("!QATESTING")]
+public class TestScript : MonoBehaviour
+{
+	public GameObject testDelete;
+
+	public int callbackOrder => 0;
+
+	public static bool IsUIOpen => false;
+}

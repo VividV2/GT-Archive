@@ -1,2 +1,13 @@
-// Could not decompile g3.ShiftIndexMap
-// This type uses unsupported IL or has too many generic parameters.
+namespace g3;
+
+public class ShiftIndexMap : IIndexMap
+{
+	public int Shift;
+
+	public int this[int index] => index + Shift;
+
+	public ShiftIndexMap(int n)
+	{
+		Shift = n;
+	}
+}

@@ -1,12 +1,19 @@
-namespace Viveport.Internal;
+using UnityEngine;
+using UnityEngine.Events;
 
-internal enum ELeaderboardDisplayType
+namespace PerformanceSystems;
+
+public interface ILod
 {
-	k_ELeaderboardDisplayTypeNone,
-	k_ELeaderboardDisplayTypeNumeric,
-	k_ELeaderboardDisplayTypeTimeSeconds,
-	k_ELeaderboardDisplayTypeTimeMilliSeconds
-}
-namespace UnityEngine.XR.Interaction.Toolkit
-{
+	int CurrentLod { get; }
+
+	Vector3 Position { get; }
+
+	float[] LodRanges { get; }
+
+	UnityEvent[] OnLodRangeEvents { get; }
+
+	UnityEvent OnCulledEvent { get; }
+
+	void UpdateLod(Vector3 refPos);
 }

@@ -1,2 +1,12 @@
-// Could not decompile System.Data.SqlClient.SqlLoginAck
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data.SqlClient;
+
+internal sealed class SqlLoginAck
+{
+	internal byte majorVersion;
+
+	internal byte minorVersion;
+
+	internal short buildNum;
+
+	internal uint tdsVersion;
+}

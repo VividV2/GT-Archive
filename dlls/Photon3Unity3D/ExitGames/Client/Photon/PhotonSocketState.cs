@@ -1,12 +1,9 @@
 namespace ExitGames.Client.Photon;
 
-namespace ExitGames.Client.Photon
+public enum PhotonSocketState
 {
-	public enum PhotonSocketState
-	{
-		Disconnected,
-		Connecting,
-		Connected,
-		Disconnecting
-	}
+	Disconnected,
+	Connecting,
+	Connected,
+	Disconnecting
 }

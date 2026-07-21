@@ -1,6 +1,12 @@
-namespace PlayFab.MultiplayerModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ExperimentationModels;
+
+[Serializable]
+public class Variable : PlayFabBaseModel
 {
-}
-namespace PlayFab.MultiplayerModels
-{
+	public string Name;
+
+	public string Value;
 }

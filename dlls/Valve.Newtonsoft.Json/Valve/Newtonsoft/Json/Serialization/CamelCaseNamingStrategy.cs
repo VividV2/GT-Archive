@@ -1,28 +1,21 @@
 using Valve.Newtonsoft.Json.Utilities;
 
-namespace Valve.Newtonsoft.Json.Serialization
+namespace Valve.Newtonsoft.Json.Serialization;
+
+public class CamelCaseNamingStrategy : NamingStrategy
 {
-	public class CamelCaseNamingStrategy : NamingStrategy
+	public CamelCaseNamingStrategy(bool processDictionaryKeys, bool overrideSpecifiedNames)
 	{
-		public CamelCaseNamingStrategy(bool processDictionaryKeys, bool overrideSpecifiedNames)
-		{
-			base.ProcessDictionaryKeys = processDictionaryKeys;
-			base.OverrideSpecifiedNames = overrideSpecifiedNames;
-		}
-
-		public CamelCaseNamingStrategy()
-		{
-		}
-
-		protected override string ResolvePropertyName(string name)
-		{
-			return StringUtils.ToCamelCase(name);
-		}
+		base.ProcessDictionaryKeys = processDictionaryKeys;
+		base.OverrideSpecifiedNames = overrideSpecifiedNames;
 	}
-}
-namespace Valve.Newtonsoft.Json
-{
-}
-namespace Valve.Newtonsoft.Json.Utilities
-{
+
+	public CamelCaseNamingStrategy()
+	{
+	}
+
+	protected override string ResolvePropertyName(string name)
+	{
+		return StringUtils.ToCamelCase(name);
+	}
 }

@@ -1,9 +1,10 @@
-namespace Oculus.Platform.Models
+namespace Oculus.Platform;
+
+public static class Parties
 {
-}
-namespace Oculus.Platform.Models
-{
-}
-namespace Oculus.Platform.Models
-{
+	public static void SetPartyUpdateNotificationCallback(Message<Oculus.Platform.Models.PartyUpdateNotification>.Callback callback)
+	{
+		EventManager.SendUnifiedEvent(isEssential: true, "platform_sdk", "PSDK_Parties_PartyUpdateNotificationCallback", "");
+		Callback.SetNotificationCallback(Message.MessageType.Notification_Party_PartyUpdate, callback);
+	}
 }

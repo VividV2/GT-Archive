@@ -1,2 +1,19 @@
-// Could not decompile UnityEngine.Timeline.GroupTrack
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using UnityEngine.Playables;
+
+namespace UnityEngine.Timeline;
+
+[Serializable]
+[TrackClipType(typeof(TrackAsset))]
+[SupportsChildTracks(null, int.MaxValue)]
+[ExcludeFromPreset]
+public class GroupTrack : TrackAsset
+{
+	public override IEnumerable<PlayableBinding> outputs => PlayableBinding.None;
+
+	internal override bool CanCompileClips()
+	{
+		return false;
+	}
+}

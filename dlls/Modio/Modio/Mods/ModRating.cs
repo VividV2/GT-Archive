@@ -1,12 +1,8 @@
-namespace Modio.Mods
+namespace Modio.Mods;
+
+public enum ModRating
 {
-}
-namespace Modio.Mods
-{
-	public enum ModRating
-	{
-		Positive = 1,
-		Negative = -1,
-		None = 0
-	}
+	Positive = 1,
+	Negative = -1,
+	None = 0
 }

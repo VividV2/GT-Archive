@@ -1,77 +1,10 @@
-namespace System.Drawing.Imaging
+namespace System.Drawing.Drawing2D;
+
+/// <summary>Specifies how the source colors are combined with the background colors.</summary>
+public enum CompositingMode
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	internal class MetafileHeaderWmf
-	{
-		public MetafileType type;
-
-		public int size;
-
-		public int version;
-
-		public EmfPlusFlags emfPlusFlags;
-
-		public float dpiX;
-
-		public float dpiY;
-
-		public int X;
-
-		public int Y;
-
-		public int Width;
-
-		public int Height;
-
-		[MarshalAs(UnmanagedType.Struct)]
-		public MetaHeader WmfHeader;
-
-		public int dummy1;
-
-		public int dummy2;
-
-		public int dummy3;
-
-		public int dummy4;
-
-		public int dummy5;
-
-		public int dummy6;
-
-		public int dummy7;
-
-		public int dummy8;
-
-		public int dummy9;
-
-		public int dummy10;
-
-		public int dummy11;
-
-		public int dummy12;
-
-		public int dummy13;
-
-		public int dummy14;
-
-		public int dummy15;
-
-		public int dummy16;
-
-		public int EmfPlusHeaderSize;
-
-		public int LogicalDpiX;
-
-		public int LogicalDpiY;
-
-		public MetafileHeaderWmf()
-		{
-			size = Marshal.SizeOf(Type.GetTypeFromHandle(typeof(MetafileHeaderWmf).TypeHandle));
-			WmfHeader = new MetaHeader();
-			base..ctor();
-		}
-	}
-}
-namespace System.Drawing.Drawing2D
-{
+	/// <summary>Specifies that when a color is rendered, it is blended with the background color. The blend is determined by the alpha component of the color being rendered.</summary>
+	SourceOver,
+	/// <summary>Specifies that when a color is rendered, it overwrites the background color.</summary>
+	SourceCopy
 }

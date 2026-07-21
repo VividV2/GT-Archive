@@ -1,2 +1,29 @@
-// Could not decompile Unity.XR.CoreUtils.GUI.EnumDisplayAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace Unity.XR.CoreUtils.GUI;
+
+public sealed class EnumDisplayAttribute : PropertyAttribute
+{
+	public string[] Names;
+
+	public int[] Values;
+
+	public EnumDisplayAttribute(params object[] enumValues)
+	{
+		Names = new string[enumValues.Length];
+		Values = new int[enumValues.Length];
+		int num = 0;
+		while (num < Values.Length)
+		{
+			if (!(enumValues[num] is Enum obj))
+			{
+				Debug.LogError($"Non-enum passed into EnumDisplay Attribute: {enumValues[num]}");
+				continue;
+			}
+			Names[num] = obj.ToString();
+			Values[num] = Convert.ToInt32(obj);
+			num++;
+		}
+	}
+}

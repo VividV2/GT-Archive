@@ -1,18 +1,11 @@
 using System;
 
-namespace Unity.Profiling
+namespace Unity.Profiling;
+
+[Flags]
+public enum ProfilerCounterOptions : ushort
 {
-	[Flags]
-	public enum ProfilerCounterOptions : ushort
-	{
-		None = 0,
-		FlushOnEndOfFrame = 2,
-		ResetToZeroOnFlush = 4
-	}
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
+	None = 0,
+	FlushOnEndOfFrame = 2,
+	ResetToZeroOnFlush = 4
 }

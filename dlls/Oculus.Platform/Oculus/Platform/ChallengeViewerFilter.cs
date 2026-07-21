@@ -1,6 +1,17 @@
-namespace Oculus.Platform.Models
+using System.ComponentModel;
+
+namespace Oculus.Platform;
+
+public enum ChallengeViewerFilter
 {
-}
-namespace Oculus.Platform.Models
-{
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("ALL_VISIBLE")]
+	AllVisible,
+	[Description("PARTICIPATING")]
+	Participating,
+	[Description("INVITED")]
+	Invited,
+	[Description("PARTICIPATING_OR_INVITED")]
+	ParticipatingOrInvited
 }

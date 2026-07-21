@@ -1,50 +1,46 @@
-namespace TMPro
+namespace TMPro;
+
+public struct TMP_LineInfo
 {
-}
-namespace TMPro
-{
-	public struct TMP_LineInfo
-	{
-		internal int controlCharacterCount;
+	internal int controlCharacterCount;
 
-		public int characterCount;
+	public int characterCount;
 
-		public int visibleCharacterCount;
+	public int visibleCharacterCount;
 
-		public int spaceCount;
+	public int spaceCount;
 
-		public int visibleSpaceCount;
+	public int visibleSpaceCount;
 
-		public int wordCount;
+	public int wordCount;
 
-		public int firstCharacterIndex;
+	public int firstCharacterIndex;
 
-		public int firstVisibleCharacterIndex;
+	public int firstVisibleCharacterIndex;
 
-		public int lastCharacterIndex;
+	public int lastCharacterIndex;
 
-		public int lastVisibleCharacterIndex;
+	public int lastVisibleCharacterIndex;
 
-		public float length;
+	public float length;
 
-		public float lineHeight;
+	public float lineHeight;
 
-		public float ascender;
+	public float ascender;
 
-		public float baseline;
+	public float baseline;
 
-		public float descender;
+	public float descender;
 
-		public float maxAdvance;
+	public float maxAdvance;
 
-		public float width;
+	public float width;
 
-		public float marginLeft;
+	public float marginLeft;
 
-		public float marginRight;
+	public float marginRight;
 
-		public HorizontalAlignmentOptions alignment;
+	public HorizontalAlignmentOptions alignment;
 
-		public Extents lineExtents;
-	}
+	public Extents lineExtents;
 }

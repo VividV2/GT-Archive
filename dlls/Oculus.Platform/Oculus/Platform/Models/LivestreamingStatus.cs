@@ -1,16 +1,25 @@
-using System.ComponentModel;
-using System.ComponentModel;
+using System;
 
-namespace Oculus.Platform;
+namespace Oculus.Platform.Models;
 
-public enum AchievementType
+public class LivestreamingStatus
 {
-	[Description("UNKNOWN")]
-	Unknown,
-	[Description("SIMPLE")]
-	Simple,
-	[Description("BITFIELD")]
-	Bitfield,
-	[Description("COUNT")]
-	Count
+	public readonly bool CommentsVisible;
+
+	public readonly bool IsPaused;
+
+	public readonly bool LivestreamingEnabled;
+
+	public readonly int LivestreamingType;
+
+	public readonly bool MicEnabled;
+
+	public LivestreamingStatus(IntPtr o)
+	{
+		CommentsVisible = CAPI.ovr_LivestreamingStatus_GetCommentsVisible(o);
+		IsPaused = CAPI.ovr_LivestreamingStatus_GetIsPaused(o);
+		LivestreamingEnabled = CAPI.ovr_LivestreamingStatus_GetLivestreamingEnabled(o);
+		LivestreamingType = CAPI.ovr_LivestreamingStatus_GetLivestreamingType(o);
+		MicEnabled = CAPI.ovr_LivestreamingStatus_GetMicEnabled(o);
+	}
 }

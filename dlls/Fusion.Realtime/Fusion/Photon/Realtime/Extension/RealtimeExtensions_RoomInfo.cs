@@ -1,15 +1,11 @@
 using System.Collections.Generic;
 
-namespace Fusion.Photon.Realtime.Extension
+namespace Fusion.Photon.Realtime.Extension;
+
+internal static class RealtimeExtensions_RoomInfo
 {
-	internal static class RealtimeExtensions_RoomInfo
+	public static Dictionary<string, SessionProperty> GetCustomProperties(this RoomInfo roomInfo)
 	{
-		public static Dictionary<string, SessionProperty> GetCustomProperties(this RoomInfo roomInfo)
-		{
-			return roomInfo.CustomProperties.ConvertToDictionaryProperty();
-		}
+		return roomInfo.CustomProperties.ConvertToDictionaryProperty();
 	}
-}
-namespace Fusion.Photon.Realtime
-{
 }

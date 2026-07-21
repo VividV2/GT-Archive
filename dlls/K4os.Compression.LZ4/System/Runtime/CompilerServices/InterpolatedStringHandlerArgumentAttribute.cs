@@ -1,2 +1,20 @@
-// Could not decompile System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics.CodeAnalysis;
+
+namespace System.Runtime.CompilerServices;
+
+[AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
+[ExcludeFromCodeCoverage]
+internal sealed class InterpolatedStringHandlerArgumentAttribute : Attribute
+{
+	public string[] Arguments { get; }
+
+	public InterpolatedStringHandlerArgumentAttribute(string argument)
+	{
+		Arguments = new string[1] { argument };
+	}
+
+	public InterpolatedStringHandlerArgumentAttribute(params string[] arguments)
+	{
+		Arguments = arguments;
+	}
+}

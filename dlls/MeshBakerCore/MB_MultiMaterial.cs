@@ -1,2 +1,14 @@
-// Could not decompile MB_MultiMaterial
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+[Serializable]
+public class MB_MultiMaterial
+{
+	public Material combinedMaterial;
+
+	public bool considerMeshUVs;
+
+	[NonReorderable]
+	public List<Material> sourceMaterials = new List<Material>();
+}

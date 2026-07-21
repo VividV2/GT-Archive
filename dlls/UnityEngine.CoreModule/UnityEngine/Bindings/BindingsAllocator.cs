@@ -1,2 +1,31 @@
-// Could not decompile UnityEngine.Bindings.BindingsAllocator
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.CompilerServices;
+
+namespace UnityEngine.Bindings;
+
+[VisibleToOtherModules]
+[NativeHeader("Runtime/Scripting/Marshalling/BindingsAllocator.h")]
+[StaticAccessor("Marshalling::BindingsAllocator", StaticAccessorType.DoubleColon)]
+internal static class BindingsAllocator
+{
+	private struct NativeOwnedMemory
+	{
+		public unsafe void* data;
+	}
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[ThreadSafe]
+	public unsafe static extern void* Malloc(int size);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[ThreadSafe]
+	public unsafe static extern void Free(void* ptr);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[ThreadSafe]
+	public unsafe static extern void FreeNativeOwnedMemory(void* ptr);
+
+	public unsafe static void* GetNativeOwnedDataPointer(void* ptr)
+	{
+		return ((NativeOwnedMemory*)ptr)->data;
+	}
+}

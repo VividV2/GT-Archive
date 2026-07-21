@@ -1,2 +1,22 @@
-// Could not decompile Oculus.Platform.MessageWithSystemVoipState
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Oculus.Platform.Models;
+
+namespace Oculus.Platform;
+
+public class MessageWithSystemVoipState : Message<SystemVoipState>
+{
+	public MessageWithSystemVoipState(IntPtr c_message)
+		: base(c_message)
+	{
+	}
+
+	public override SystemVoipState GetSystemVoipState()
+	{
+		return base.Data;
+	}
+
+	protected override SystemVoipState GetDataFromMessage(IntPtr c_message)
+	{
+		return new SystemVoipState(CAPI.ovr_Message_GetSystemVoipState(CAPI.ovr_Message_GetNativeMessage(c_message)));
+	}
+}

@@ -1,12 +1,8 @@
-namespace Unity.Collections
-{
-	public interface IIndexable<T> where T : unmanaged
-	{
-		int Length { get; set; }
+namespace Unity.Collections;
 
-		ref T ElementAt(int index);
-	}
-}
-namespace Unity.Collections
+public interface IIndexable<T> where T : unmanaged
 {
+	int Length { get; set; }
+
+	ref T ElementAt(int index);
 }

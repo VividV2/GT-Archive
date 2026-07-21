@@ -1,2 +1,46 @@
-// Could not decompile System.Xml.Schema.XmlSchemaCollectionNode
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+internal sealed class XmlSchemaCollectionNode
+{
+	private string namespaceUri;
+
+	private SchemaInfo schemaInfo;
+
+	private XmlSchema schema;
+
+	internal string NamespaceURI
+	{
+		get
+		{
+			return namespaceUri;
+		}
+		set
+		{
+			namespaceUri = value;
+		}
+	}
+
+	internal SchemaInfo SchemaInfo
+	{
+		get
+		{
+			return schemaInfo;
+		}
+		set
+		{
+			schemaInfo = value;
+		}
+	}
+
+	internal XmlSchema Schema
+	{
+		get
+		{
+			return schema;
+		}
+		set
+		{
+			schema = value;
+		}
+	}
+}

@@ -1,18 +1,11 @@
-namespace System.Runtime.InteropServices.ComTypes
-{
-	[Guid("496B0ABF-CDEE-11d3-88E8-00902754C43A")]
-	internal interface IEnumerator
-	{
-		object Current { get; }
+namespace System.Runtime.InteropServices.ComTypes;
 
-		bool MoveNext();
+[Guid("496B0ABF-CDEE-11d3-88E8-00902754C43A")]
+internal interface IEnumerator
+{
+	object Current { get; }
 
-		void Reset();
-	}
-}
-namespace System
-{
-}
-namespace System.Runtime.Serialization
-{
+	bool MoveNext();
+
+	void Reset();
 }

@@ -1,2 +1,18 @@
-// Could not decompile ZoneRootRegister
-// This type uses unsupported IL or has too many generic parameters.
+using GorillaTag;
+using UnityEngine;
+
+public class ZoneRootRegister : MonoBehaviour
+{
+	[SerializeField]
+	private WatchableGameObjectSO watchableSlot;
+
+	private void Awake()
+	{
+		watchableSlot.Value = base.gameObject;
+	}
+
+	private void OnDestroy()
+	{
+		watchableSlot.Value = null;
+	}
+}

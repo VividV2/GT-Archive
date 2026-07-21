@@ -1,2 +1,9 @@
-// Could not decompile Modio.API.SchemaDefinitions.EntitlementDetailsObject
-// This type uses unsupported IL or has too many generic parameters.
+using Newtonsoft.Json;
+
+namespace Modio.API.SchemaDefinitions;
+
+[JsonObject]
+public readonly struct EntitlementDetailsObject(long tokens_allocated)
+{
+	internal readonly long TokensAllocated = tokens_allocated;
+}

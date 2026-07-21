@@ -1,2 +1,32 @@
-// Could not decompile Fusion.CodeGen.UnityArraySurrogate@ElementReaderWriterInt64
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Fusion.Internal;
+
+namespace Fusion.CodeGen;
+
+[Serializable]
+[WeaverGenerated]
+internal class UnityArraySurrogate@ElementReaderWriterInt64 : UnityArraySurrogate<long, Fusion.ElementReaderWriterInt64>
+{
+	[WeaverGenerated]
+	public long[] Data = Array.Empty<long>();
+
+	[WeaverGenerated]
+	public override long[] DataProperty
+	{
+		[WeaverGenerated]
+		get
+		{
+			return Data;
+		}
+		[WeaverGenerated]
+		set
+		{
+			Data = value;
+		}
+	}
+
+	[WeaverGenerated]
+	public UnityArraySurrogate@ElementReaderWriterInt64()
+	{
+	}
+}

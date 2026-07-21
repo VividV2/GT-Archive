@@ -1,2 +1,9 @@
-// Could not decompile GorillaTagScripts.Builder.SharedBlocksKeyboardButton
-// This type uses unsupported IL or has too many generic parameters.
+namespace GorillaTagScripts.Builder;
+
+public class SharedBlocksKeyboardButton : GorillaKeyButton<SharedBlocksKeyboardBindings>
+{
+	protected override void OnButtonPressedEvent()
+	{
+		GameEvents.OnSharedBlocksKeyboardButtonPressedEvent.Invoke(Binding);
+	}
+}

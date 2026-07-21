@@ -1,20 +1,16 @@
 using System.Collections.Generic;
 
-namespace Valve.Newtonsoft.Json.Bson
-{
-}
-namespace Valve.Newtonsoft.Json.Linq
-{
-	public class JTokenEqualityComparer : IEqualityComparer<JToken>
-	{
-		public bool Equals(JToken x, JToken y)
-		{
-			return JToken.DeepEquals(x, y);
-		}
+namespace Valve.Newtonsoft.Json.Linq;
 
-		public int GetHashCode(JToken obj)
-		{
-			return obj?.GetDeepHashCode() ?? 0;
-		}
+public class JTokenEqualityComparer : IEqualityComparer<JToken>
+{
+	public bool Equals(JToken x, JToken y)
+	{
+		return JToken.DeepEquals(x, y);
+	}
+
+	public int GetHashCode(JToken obj)
+	{
+		return obj?.GetDeepHashCode() ?? 0;
 	}
 }

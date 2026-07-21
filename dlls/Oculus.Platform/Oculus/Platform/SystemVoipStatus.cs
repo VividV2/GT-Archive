@@ -1,22 +1,15 @@
 using System.ComponentModel;
 
-namespace Oculus.Platform.Models
+namespace Oculus.Platform;
+
+public enum SystemVoipStatus
 {
-}
-namespace Oculus.Platform
-{
-	public enum SystemVoipStatus
-	{
-		[Description("UNKNOWN")]
-		Unknown,
-		[Description("UNAVAILABLE")]
-		Unavailable,
-		[Description("SUPPRESSED")]
-		Suppressed,
-		[Description("ACTIVE")]
-		Active
-	}
-}
-namespace Oculus.Platform.Models
-{
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("UNAVAILABLE")]
+	Unavailable,
+	[Description("SUPPRESSED")]
+	Suppressed,
+	[Description("ACTIVE")]
+	Active
 }

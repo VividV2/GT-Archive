@@ -1,12 +1,8 @@
 using UnityEngine;
 
-namespace Meta.Voice.Audio
+namespace Meta.Voice.Audio;
+
+public interface IAudioSourceProvider
 {
-	public interface IAudioSourceProvider
-	{
-		AudioSource AudioSource { get; }
-	}
-}
-namespace Meta.Voice.Audio
-{
+	AudioSource AudioSource { get; }
 }

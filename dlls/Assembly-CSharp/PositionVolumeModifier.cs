@@ -1,2 +1,11 @@
-// Could not decompile PositionVolumeModifier
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class PositionVolumeModifier : MonoBehaviour
+{
+	public TimeOfDayDependentAudio audioToMod;
+
+	public void OnTriggerStay(Collider other)
+	{
+		audioToMod.isModified = true;
+	}
+}

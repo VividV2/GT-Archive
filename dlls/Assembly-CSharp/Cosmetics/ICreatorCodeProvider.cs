@@ -1,16 +1,12 @@
 using UnityEngine;
 
-namespace BuildSafe
-{
-}
-namespace Cosmetics
-{
-	public interface ICreatorCodeProvider
-	{
-		GameObject GameObject { get; }
+namespace Cosmetics;
 
-		string TerminalId { get; }
+public interface ICreatorCodeProvider
+{
+	GameObject GameObject { get; }
 
-		void GetCreatorCode(out string code, out NexusGroupId[] groups);
-	}
+	string TerminalId { get; }
+
+	void GetCreatorCode(out string code, out NexusGroupId[] groups);
 }

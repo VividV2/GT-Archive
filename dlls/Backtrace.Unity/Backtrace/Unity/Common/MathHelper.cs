@@ -1,2 +1,16 @@
-// Could not decompile Backtrace.Unity.Common.MathHelper
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Backtrace.Unity.Common;
+
+internal static class MathHelper
+{
+	public static double Clamp(double value, double minimum, double maximum)
+	{
+		return Math.Max(minimum, Math.Min(maximum, value));
+	}
+
+	public static double Uniform(double minimum, double maximum)
+	{
+		return new Random().NextDouble() * (maximum - minimum) + minimum;
+	}
+}

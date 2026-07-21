@@ -1,2 +1,12 @@
-// Could not decompile Steamworks.SteamNetworkingMessagesSessionRequest_t
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(1251)]
+public struct SteamNetworkingMessagesSessionRequest_t
+{
+	public const int k_iCallback = 1251;
+
+	public SteamNetworkingIdentity m_identityRemote;
+}

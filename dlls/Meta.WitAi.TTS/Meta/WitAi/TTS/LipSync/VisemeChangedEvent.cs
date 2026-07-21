@@ -1,2 +1,10 @@
-// Could not decompile Meta.WitAi.TTS.LipSync.VisemeChangedEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Meta.WitAi.TTS.Data;
+using UnityEngine.Events;
+
+namespace Meta.WitAi.TTS.LipSync;
+
+[Serializable]
+public class VisemeChangedEvent : UnityEvent<Viseme>
+{
+}

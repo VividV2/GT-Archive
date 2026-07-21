@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.Networking.PlayerConnection.MessageEventArgs
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Networking.PlayerConnection;
+
+[Serializable]
+public class MessageEventArgs
+{
+	public int playerId;
+
+	public byte[] data;
+}

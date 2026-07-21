@@ -1,2 +1,17 @@
-// Could not decompile Pathfinding.EndingConditionDistance
-// This type uses unsupported IL or has too many generic parameters.
+namespace Pathfinding;
+
+public class EndingConditionDistance : PathEndingCondition
+{
+	public int maxGScore = 100;
+
+	public EndingConditionDistance(Path p, int maxGScore)
+		: base(p)
+	{
+		this.maxGScore = maxGScore;
+	}
+
+	public override bool TargetFound(PathNode node)
+	{
+		return node.G >= maxGScore;
+	}
+}

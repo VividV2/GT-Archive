@@ -1,5 +1,3 @@
-namespace Mono.Security;
-
 internal static class Consts
 {
 	public const string MonoCorlibVersion = "1A5E0066-58DC-428A-B21C-0AD6CDAE2789";

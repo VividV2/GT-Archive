@@ -1,2 +1,15 @@
-// Could not decompile Meta.WitAi.Data.Entities.DynamicEntityProvider
-// This type uses unsupported IL or has too many generic parameters.
+using Meta.WitAi.Interfaces;
+using UnityEngine;
+
+namespace Meta.WitAi.Data.Entities;
+
+public class DynamicEntityProvider : MonoBehaviour, IDynamicEntitiesProvider
+{
+	[SerializeField]
+	protected WitDynamicEntities entities;
+
+	public WitDynamicEntities GetDynamicEntities()
+	{
+		return entities;
+	}
+}

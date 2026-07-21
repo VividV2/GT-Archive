@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.YieldInstruction
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+[StructLayout(LayoutKind.Sequential)]
+[UsedByNativeCode]
+public class YieldInstruction
+{
+}

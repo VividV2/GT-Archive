@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.UIElements.Layout.LayoutOverflow
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements.Layout;
+
+internal enum LayoutOverflow
+{
+	Visible,
+	Hidden,
+	Scroll
+}

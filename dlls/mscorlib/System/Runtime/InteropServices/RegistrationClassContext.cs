@@ -41,6 +41,3 @@ public enum RegistrationClassContext
 	/// <summary>Not used.</summary>
 	Reserved5 = 0x800
 }
-namespace System.Runtime.Serialization.Formatters.Binary
-{
-}

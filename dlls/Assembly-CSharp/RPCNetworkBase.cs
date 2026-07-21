@@ -1,2 +1,6 @@
-// Could not decompile RPCNetworkBase
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+internal abstract class RPCNetworkBase : MonoBehaviour
+{
+	public abstract void SetClassTarget(IWrappedSerializable target, GorillaWrappedSerializer netHandler);
+}

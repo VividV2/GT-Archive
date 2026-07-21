@@ -1,10 +1,28 @@
-namespace UnityEngine.InputSystem.Haptics;
+using System.Runtime.InteropServices;
+using UnityEngine.InputSystem.Utilities;
 
-public interface IHaptics
+namespace UnityEngine.InputSystem.LowLevel;
+
+[StructLayout(LayoutKind.Explicit, Size = 16)]
+public struct QueryDimensionsCommand : IInputDeviceCommandInfo
 {
-	void PauseHaptics();
+	internal const int kSize = 16;
 
-	void ResumeHaptics();
+	[FieldOffset(0)]
+	public InputDeviceCommand baseCommand;
 
-	void ResetHaptics();
+	[FieldOffset(8)]
+	public Vector2 outDimensions;
+
+	public static FourCC Type => new FourCC('D', 'I', 'M', 'S');
+
+	public FourCC typeStatic => Type;
+
+	public static QueryDimensionsCommand Create()
+	{
+		return new QueryDimensionsCommand
+		{
+			baseCommand = new InputDeviceCommand(Type, 16)
+		};
+	}
 }

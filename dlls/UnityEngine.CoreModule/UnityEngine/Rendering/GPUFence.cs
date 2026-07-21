@@ -1,10 +1,11 @@
-namespace UnityEngine;
+using System;
+using System.Runtime.InteropServices;
 
-public enum ReceiveGI
+namespace UnityEngine.Rendering;
+
+[StructLayout(LayoutKind.Sequential, Size = 1)]
+[Obsolete("GPUFence has been deprecated. Use GraphicsFence instead (UnityUpgradable) -> GraphicsFence", false)]
+public struct GPUFence
 {
-	Lightmaps = 1,
-	LightProbes
-}
-namespace UnityEngine.Rendering
-{
+	public bool passed => true;
 }

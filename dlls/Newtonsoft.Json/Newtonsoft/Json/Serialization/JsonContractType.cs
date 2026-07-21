@@ -1,18 +1,14 @@
-namespace Newtonsoft.Json.Converters
+namespace Newtonsoft.Json.Serialization;
+
+internal enum JsonContractType
 {
-}
-namespace Newtonsoft.Json.Serialization
-{
-	internal enum JsonContractType
-	{
-		None,
-		Object,
-		Array,
-		Primitive,
-		String,
-		Dictionary,
-		Dynamic,
-		Serializable,
-		Linq
-	}
+	None,
+	Object,
+	Array,
+	Primitive,
+	String,
+	Dictionary,
+	Dynamic,
+	Serializable,
+	Linq
 }

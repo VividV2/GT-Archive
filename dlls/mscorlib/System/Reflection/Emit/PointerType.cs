@@ -1,2 +1,31 @@
-// Could not decompile System.Reflection.Emit.PointerType
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+
+namespace System.Reflection.Emit;
+
+[StructLayout(LayoutKind.Sequential)]
+internal class PointerType : SymbolType
+{
+	internal PointerType(Type elementType)
+		: base(elementType)
+	{
+	}
+
+	internal override Type InternalResolve()
+	{
+		return m_baseType.InternalResolve().MakePointerType();
+	}
+
+	protected override bool IsPointerImpl()
+	{
+		return true;
+	}
+
+	internal override string FormatName(string elementName)
+	{
+		if (elementName == null)
+		{
+			return null;
+		}
+		return elementName + "*";
+	}
+}

@@ -1,2 +1,8 @@
-// Could not decompile Unity.Burst.BurstDiscardAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.Burst;
+
+[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property)]
+public class BurstDiscardAttribute : Attribute
+{
+}

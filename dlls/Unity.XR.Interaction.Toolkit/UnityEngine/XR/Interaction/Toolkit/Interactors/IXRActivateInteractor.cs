@@ -1,16 +1,15 @@
 using System.Collections.Generic;
+using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering;
+namespace UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public interface IXRTargetFilter
+[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
+public interface IXRActivateInteractor : IXRInteractor
 {
-	bool canProcess { get; }
+	bool shouldActivate { get; }
 
-	void Link(IXRInteractor interactor);
+	bool shouldDeactivate { get; }
 
-	void Unlink(IXRInteractor interactor);
-
-	void Process(IXRInteractor interactor, List<IXRInteractable> targets, List<IXRInteractable> results);
+	void GetActivateTargets(List<IXRActivateInteractable> targets);
 }

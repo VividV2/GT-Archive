@@ -1,7 +1,9 @@
-namespace Newtonsoft.Json;
+using Microsoft.CodeAnalysis;
 
-public enum NullValueHandling
+namespace System.Runtime.CompilerServices;
+
+[CompilerGenerated]
+[Microsoft.CodeAnalysis.Embedded]
+internal sealed class IsReadOnlyAttribute : Attribute
 {
-	Include,
-	Ignore
 }

@@ -1,19 +1,38 @@
-using System;
-using UnityEngine.Events;
-using System;
-using UnityEngine.Events;
+namespace Meta.Voice.Audio;
 
-namespace Meta.Voice.Net.PubSub;
-
-public interface IPubSubAdapter
+public interface IAudioClipStream
 {
-	PubSubSettings Settings { get; set; }
+	bool IsReady { get; }
 
-	PubSubSubscriptionState SubscriptionState { get; }
+	bool IsComplete { get; }
 
-	UnityEvent OnSubscribed { get; }
+	int Channels { get; }
 
-	UnityEvent OnUnsubscribed { get; }
+	int SampleRate { get; }
 
-	event Action<PubSubSubscriptionState> OnTopicSubscriptionStateChange;
+	int AddedSamples { get; }
+
+	int ExpectedSamples { get; }
+
+	int TotalSamples { get; }
+
+	float Length { get; }
+
+	float StreamReadyLength { get; }
+
+	AudioClipStreamSampleDelegate OnAddSamples { get; set; }
+
+	AudioClipStreamDelegate OnStreamReady { get; set; }
+
+	AudioClipStreamDelegate OnStreamUpdated { get; set; }
+
+	AudioClipStreamDelegate OnStreamComplete { get; set; }
+
+	AudioClipStreamDelegate OnStreamUnloaded { get; set; }
+
+	void AddSamples(float[] samples, int offset, int length);
+
+	void SetExpectedSamples(int expectedSamples);
+
+	void Unload();
 }

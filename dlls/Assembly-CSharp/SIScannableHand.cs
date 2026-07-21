@@ -1,2 +1,11 @@
-// Could not decompile SIScannableHand
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class SIScannableHand : MonoBehaviour
+{
+	public SIPlayer parentPlayer;
+
+	private void Awake()
+	{
+		parentPlayer = GetComponentInParent<SIPlayer>();
+	}
+}

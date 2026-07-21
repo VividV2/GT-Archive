@@ -8,6 +8,3 @@ public struct ComplexSegment2d
 
 	public PlanarComplex.Element element;
 }
-namespace g3
-{
-}

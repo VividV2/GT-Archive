@@ -1,2 +1,16 @@
-// Could not decompile PlayFab.ClientModels.TitleNewsItem
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class TitleNewsItem : PlayFabBaseModel
+{
+	public string Body;
+
+	public string NewsId;
+
+	public DateTime Timestamp;
+
+	public string Title;
+}

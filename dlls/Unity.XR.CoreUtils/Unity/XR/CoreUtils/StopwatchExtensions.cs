@@ -1,2 +1,13 @@
-// Could not decompile Unity.XR.CoreUtils.StopwatchExtensions
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics;
+
+namespace Unity.XR.CoreUtils;
+
+public static class StopwatchExtensions
+{
+	public static void Restart(this Stopwatch stopwatch)
+	{
+		stopwatch.Stop();
+		stopwatch.Reset();
+		stopwatch.Start();
+	}
+}

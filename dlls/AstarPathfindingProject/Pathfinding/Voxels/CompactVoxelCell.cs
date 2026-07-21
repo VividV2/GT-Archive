@@ -1,2 +1,8 @@
-// Could not decompile Pathfinding.Voxels.CompactVoxelCell
-// This type uses unsupported IL or has too many generic parameters.
+namespace Pathfinding.Voxels;
+
+public struct CompactVoxelCell(uint i, uint c)
+{
+	public uint index = i;
+
+	public uint count = c;
+}

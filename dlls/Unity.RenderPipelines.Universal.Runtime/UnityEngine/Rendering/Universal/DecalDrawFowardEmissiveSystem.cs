@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.Universal.DecalDrawFowardEmissiveSystem
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+internal class DecalDrawFowardEmissiveSystem : DecalDrawSystem
+{
+	public DecalDrawFowardEmissiveSystem(DecalEntityManager entityManager)
+		: base("DecalDrawFowardEmissiveSystem.Execute", entityManager)
+	{
+	}
+
+	protected override int GetPassIndex(DecalCachedChunk decalCachedChunk)
+	{
+		return decalCachedChunk.passIndexEmissive;
+	}
+}

@@ -3,23 +3,11 @@ using UnityEngine.Scripting;
 namespace UnityEngine.VFX;
 
 [RequiredByNativeCode]
-public struct VFXBatchedEffectInfo
+public struct VFXCameraXRSettings
 {
-	public VisualEffectAsset vfxAsset;
+	public uint viewTotal;
 
-	public uint activeBatchCount;
+	public uint viewCount;
 
-	public uint inactiveBatchCount;
-
-	public uint activeInstanceCount;
-
-	public uint unbatchedInstanceCount;
-
-	public uint totalInstanceCapacity;
-
-	public uint maxInstancePerBatchCapacity;
-
-	public ulong totalGPUSizeInBytes;
-
-	public ulong totalCPUSizeInBytes;
+	public uint viewOffset;
 }

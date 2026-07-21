@@ -1,37 +1,37 @@
-namespace UnityEngine.Android;
+using System;
 
-public enum AndroidAssetPackStatus
+namespace UnityEngine;
+
+internal class GlobalJavaObjectRef
 {
-	Unknown,
-	Pending,
-	Downloading,
-	Transferring,
-	Completed,
-	Failed,
-	Canceled,
-	WaitingForWifi,
-	NotInstalled
-}
-namespace UnityEngine.Android
-{
-	public enum ExitReason
+	private bool m_disposed = false;
+
+	protected IntPtr m_jobject;
+
+	public GlobalJavaObjectRef(IntPtr jobject)
 	{
-		Unknown,
-		ExitSelf,
-		Signaled,
-		LowMemory,
-		Crash,
-		CrashNative,
-		ANR,
-		InititalizationFailure,
-		PermissionChange,
-		ExcessiveResourceUsage,
-		UserRequested,
-		UserStopped,
-		DependencyDied,
-		Other,
-		Freezer,
-		PackageStateChange,
-		PackageUpdated
+		m_jobject = ((jobject == IntPtr.Zero) ? IntPtr.Zero : AndroidJNI.NewGlobalRef(jobject));
+	}
+
+	~GlobalJavaObjectRef()
+	{
+		Dispose();
+	}
+
+	public static implicit operator IntPtr(GlobalJavaObjectRef obj)
+	{
+		return obj.m_jobject;
+	}
+
+	public void Dispose()
+	{
+		if (!m_disposed)
+		{
+			m_disposed = true;
+			if (m_jobject != IntPtr.Zero)
+			{
+				AndroidJNISafe.QueueDeleteGlobalRef(m_jobject);
+			}
+		}
 	}
 }

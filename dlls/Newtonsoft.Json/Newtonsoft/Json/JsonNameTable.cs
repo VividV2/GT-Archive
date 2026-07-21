@@ -1,2 +1,6 @@
-// Could not decompile Newtonsoft.Json.JsonNameTable
-// This type uses unsupported IL or has too many generic parameters.
+namespace Newtonsoft.Json;
+
+public abstract class JsonNameTable
+{
+	public abstract string? Get(char[] key, int start, int length);
+}

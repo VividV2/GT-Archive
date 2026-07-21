@@ -1,35 +1,17 @@
-using System;
 using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4502)]
-public struct HTML_NeedsPaint_t
+[CallbackIdentity(3403)]
+public struct CreateItemResult_t
 {
-	public const int k_iCallback = 4502;
+	public const int k_iCallback = 3403;
 
-	public HHTMLBrowser unBrowserHandle;
+	public EResult m_eResult;
 
-	public IntPtr pBGRA;
+	public PublishedFileId_t m_nPublishedFileId;
 
-	public uint unWide;
-
-	public uint unTall;
-
-	public uint unUpdateX;
-
-	public uint unUpdateY;
-
-	public uint unUpdateWide;
-
-	public uint unUpdateTall;
-
-	public uint unScrollX;
-
-	public uint unScrollY;
-
-	public float flPageScale;
-
-	public uint unPageSerial;
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bUserNeedsToAcceptWorkshopLegalAgreement;
 }

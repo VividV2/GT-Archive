@@ -1,2 +1,9 @@
-// Could not decompile System.ComponentModel.SRCategoryAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.ComponentModel;
+
+internal sealed class SRCategoryAttribute : CategoryAttribute
+{
+	public SRCategoryAttribute(string category)
+		: base(category)
+	{
+	}
+}

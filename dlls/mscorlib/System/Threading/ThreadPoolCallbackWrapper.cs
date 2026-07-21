@@ -1,2 +1,24 @@
-// Could not decompile System.Threading.ThreadPoolCallbackWrapper
-// This type uses unsupported IL or has too many generic parameters.
+using Internal.Runtime.Augments;
+
+namespace System.Threading;
+
+internal struct ThreadPoolCallbackWrapper
+{
+	private RuntimeThread _currentThread;
+
+	public static ThreadPoolCallbackWrapper Enter()
+	{
+		return new ThreadPoolCallbackWrapper
+		{
+			_currentThread = RuntimeThread.InitializeThreadPoolThread()
+		};
+	}
+
+	public void Exit(bool resetThread = true)
+	{
+		if (resetThread)
+		{
+			_currentThread.ResetThreadPoolThread();
+		}
+	}
+}

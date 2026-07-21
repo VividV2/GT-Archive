@@ -1,10 +1,22 @@
-namespace PlayFab.Internal;
+using System;
+using PlayFab.SharedModels;
 
-public enum AuthType
+namespace PlayFab.CloudScriptModels;
+
+[Serializable]
+public class SubscriptionModel : PlayFabBaseModel
 {
-	None,
-	PreLoginSession,
-	LoginSession,
-	DevSecretKey,
-	EntityToken
+	public DateTime Expiration;
+
+	public DateTime InitialSubscriptionTime;
+
+	public bool IsActive;
+
+	public SubscriptionProviderStatus? Status;
+
+	public string SubscriptionId;
+
+	public string SubscriptionItemId;
+
+	public string SubscriptionProvider;
 }

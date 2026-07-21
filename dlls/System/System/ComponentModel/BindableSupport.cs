@@ -10,6 +10,3 @@ public enum BindableSupport
 	/// <summary>The property is set to the default.</summary>
 	Default
 }
-namespace System.ComponentModel
-{
-}

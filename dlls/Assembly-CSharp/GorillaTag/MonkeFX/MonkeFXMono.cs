@@ -1,2 +1,8 @@
-// Could not decompile GorillaTag.MonkeFX.MonkeFXMono
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTag.MonkeFX;
+
+public class MonkeFXMono : MonoBehaviour
+{
+	public MonkeFXSettingsSO[] settings;
+}

@@ -1,18 +1,15 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
 namespace System.EnterpriseServices;
 
-/// <summary>Indicates whether to create a new context based on the current context or on the information in <see cref="T:System.EnterpriseServices.ServiceConfig" />.</summary>
-/// <summary>Indicates whether to create a new context based on the current context or on the information in <see cref="T:System.EnterpriseServices.ServiceConfig" />.</summary>
-[Serializable]
+/// <summary>Sets the description on an assembly (application), component, method, or interface. This class cannot be inherited.</summary>
 [ComVisible(false)]
-public enum InheritanceOption
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Interface)]
+public sealed class DescriptionAttribute : Attribute
 {
-	/// <summary>The new context is created from the existing context. <see cref="F:System.EnterpriseServices.InheritanceOption.Inherit" /> is the default value for <see cref="P:System.EnterpriseServices.ServiceConfig.Inheritance" />.</summary>
-	/// <summary>The new context is created from the existing context. <see cref="F:System.EnterpriseServices.InheritanceOption.Inherit" /> is the default value for <see cref="P:System.EnterpriseServices.ServiceConfig.Inheritance" />.</summary>
-	Inherit,
-	/// <summary>The new context is created from the default context.</summary>
-	/// <summary>The new context is created from the default context.</summary>
-	Ignore
+	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.DescriptionAttribute" /> class.</summary>
+	/// <param name="desc">The description of the assembly (application), component, method, or interface.</param>
+	public DescriptionAttribute(string desc)
+	{
+	}
 }

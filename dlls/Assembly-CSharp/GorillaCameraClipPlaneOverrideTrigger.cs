@@ -1,2 +1,18 @@
-// Could not decompile GorillaCameraClipPlaneOverrideTrigger
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GorillaCameraClipPlaneOverrideTrigger : GorillaTriggerBox
+{
+	private Camera mainCamera;
+
+	public float clipPlaneFarDistanceOverride;
+
+	private void Awake()
+	{
+		mainCamera = Camera.main;
+	}
+
+	public override void OnBoxTriggered()
+	{
+		mainCamera.farClipPlane = clipPlaneFarDistanceOverride;
+	}
+}

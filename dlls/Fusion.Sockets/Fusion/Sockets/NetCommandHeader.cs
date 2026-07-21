@@ -1,5 +1,3 @@
-#define DEBUG
-using System.Runtime.InteropServices;
 using System.Runtime.InteropServices;
 
 namespace Fusion.Sockets;

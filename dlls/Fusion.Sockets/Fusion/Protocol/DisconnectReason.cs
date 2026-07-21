@@ -1,20 +1,13 @@
-namespace Microsoft.CodeAnalysis
+namespace Fusion.Protocol;
+
+public enum DisconnectReason : byte
 {
-}
-namespace Fusion.Protocol
-{
-}
-namespace Fusion.Protocol
-{
-	public enum DisconnectReason : byte
-	{
-		None,
-		ServerLogic,
-		InvalidEventCode,
-		InvalidJoinMsgType,
-		InvalidJoinGameMode,
-		IncompatibleConfiguration,
-		ServerAlreadyInRoom,
-		Error
-	}
+	None,
+	ServerLogic,
+	InvalidEventCode,
+	InvalidJoinMsgType,
+	InvalidJoinGameMode,
+	IncompatibleConfiguration,
+	ServerAlreadyInRoom,
+	Error
 }

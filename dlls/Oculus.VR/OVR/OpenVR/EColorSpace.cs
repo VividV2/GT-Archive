@@ -1,12 +1,8 @@
-namespace OVR.OpenVR
+namespace OVR.OpenVR;
+
+public enum EColorSpace
 {
-}
-namespace OVR.OpenVR
-{
-	public enum EColorSpace
-	{
-		Auto,
-		Gamma,
-		Linear
-	}
+	Auto,
+	Gamma,
+	Linear
 }

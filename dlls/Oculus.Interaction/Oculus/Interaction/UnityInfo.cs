@@ -1,2 +1,14 @@
-// Could not decompile Oculus.Interaction.UnityInfo
-// This type uses unsupported IL or has too many generic parameters.
+namespace Oculus.Interaction;
+
+public static class UnityInfo
+{
+	public static bool IsEditor()
+	{
+		return false;
+	}
+
+	public static bool Version_2020_3_Or_Newer()
+	{
+		return true;
+	}
+}

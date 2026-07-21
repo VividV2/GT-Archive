@@ -1,12 +1,30 @@
 using System;
+using System.Collections.Generic;
 
 namespace UnityEngine.UIElements;
 
-[Obsolete("This enum only has one supported value. The Default backend should always be used, as it is more stable and covers all use cases.")]
-public enum UIToolkitInputBackendOption
+[Obsolete("IUxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+public interface IBaseUxmlFactory
 {
-	Default = 0,
-	InputSystemCompatibleBackend = 0,
-	[Obsolete("The Legacy backend is not supported anymore. Use the default backend, which is more stable and covers all use cases already.")]
-	LegacyBackend = 1
+	string uxmlName { get; }
+
+	string uxmlNamespace { get; }
+
+	string uxmlQualifiedName { get; }
+
+	Type uxmlType { get; }
+
+	bool canHaveAnyAttribute { get; }
+
+	IEnumerable<UxmlAttributeDescription> uxmlAttributesDescription { get; }
+
+	IEnumerable<UxmlChildElementDescription> uxmlChildElementsDescription { get; }
+
+	string substituteForTypeName { get; }
+
+	string substituteForTypeNamespace { get; }
+
+	string substituteForTypeQualifiedName { get; }
+
+	bool AcceptsAttributeBag(IUxmlAttributes bag, CreationContext cc);
 }

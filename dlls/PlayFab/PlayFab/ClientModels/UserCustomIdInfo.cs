@@ -1,9 +1,10 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class UserCustomIdInfo : PlayFabBaseModel
 {
-}
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
+	public string CustomId;
 }

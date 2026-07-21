@@ -1,6 +1,10 @@
-namespace System.EnterpriseServices
+namespace System;
+
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+internal class MonoDocumentationNoteAttribute : System.MonoTODOAttribute
 {
-}
-namespace System.EnterpriseServices
-{
+	public MonoDocumentationNoteAttribute(string comment)
+		: base(comment)
+	{
+	}
 }

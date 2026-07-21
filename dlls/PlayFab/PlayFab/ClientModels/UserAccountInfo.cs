@@ -1,24 +1,53 @@
-namespace Ionic.Zlib
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class UserAccountInfo : PlayFabBaseModel
 {
-	public static class ZlibConstants
-	{
-		public const int WindowBitsMax = 15;
+	public UserAndroidDeviceInfo AndroidDeviceInfo;
 
-		public const int WindowBitsDefault = 15;
+	public UserAppleIdInfo AppleAccountInfo;
 
-		public const int Z_OK = 0;
+	public DateTime Created;
 
-		public const int Z_STREAM_END = 1;
+	public UserCustomIdInfo CustomIdInfo;
 
-		public const int Z_NEED_DICT = 2;
+	public UserFacebookInfo FacebookInfo;
 
-		public const int Z_STREAM_ERROR = -2;
+	public UserFacebookInstantGamesIdInfo FacebookInstantGamesIdInfo;
 
-		public const int Z_DATA_ERROR = -3;
+	public UserGameCenterInfo GameCenterInfo;
 
-		public const int Z_BUF_ERROR = -5;
+	public UserGoogleInfo GoogleInfo;
 
-		public const int WorkingBufferSizeDefault = 16384;
+	public UserIosDeviceInfo IosDeviceInfo;
 
-		public const int WorkingBufferSizeMin = 1024;
-	}
+	public UserKongregateInfo KongregateInfo;
+
+	public UserNintendoSwitchAccountIdInfo NintendoSwitchAccountInfo;
+
+	public UserNintendoSwitchDeviceIdInfo NintendoSwitchDeviceIdInfo;
+
+	public List<UserOpenIdInfo> OpenIdInfo;
+
+	public string PlayFabId;
+
+	public UserPrivateAccountInfo PrivateInfo;
+
+	public UserPsnInfo PsnInfo;
+
+	public UserSteamInfo SteamInfo;
+
+	public UserTitleInfo TitleInfo;
+
+	public UserTwitchInfo TwitchInfo;
+
+	public string Username;
+
+	public UserWindowsHelloInfo WindowsHelloInfo;
+
+	public UserXboxInfo XboxInfo;
+}

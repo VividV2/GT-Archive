@@ -1,6 +1,6 @@
-namespace System.Data.Odbc
+namespace System.Data;
+
+internal interface IFilter
 {
-}
-namespace System.Data.Odbc
-{
+	bool Invoke(DataRow row, DataRowVersion version);
 }

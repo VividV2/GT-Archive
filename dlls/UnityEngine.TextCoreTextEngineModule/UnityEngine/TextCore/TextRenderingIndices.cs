@@ -1,16 +1,12 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine.TextCore.Text
-{
-}
-namespace UnityEngine.TextCore
-{
-	[NativeHeader("Modules/TextCoreTextEngine/Native/TextRenderingIndices.h")]
-	[VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule" })]
-	internal struct TextRenderingIndices
-	{
-		public int meshIndex;
+namespace UnityEngine.TextCore;
 
-		public int textElementInfoIndex;
-	}
+[NativeHeader("Modules/TextCoreTextEngine/Native/TextRenderingIndices.h")]
+[VisibleToOtherModules(new string[] { "UnityEngine.UIElementsModule" })]
+internal struct TextRenderingIndices
+{
+	public int meshIndex;
+
+	public int textElementInfoIndex;
 }

@@ -1,2 +1,14 @@
-// Could not decompile System.Threading.Tasks.BeginEndAwaitableAdapter
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Threading.Tasks;
+
+internal sealed class BeginEndAwaitableAdapter : RendezvousAwaitable<IAsyncResult>
+{
+	public static readonly AsyncCallback Callback = delegate(IAsyncResult asyncResult)
+	{
+		((BeginEndAwaitableAdapter)asyncResult.AsyncState).SetResult(asyncResult);
+	};
+
+	public BeginEndAwaitableAdapter()
+	{
+		base.RunContinuationsAsynchronously = false;
+	}
+}

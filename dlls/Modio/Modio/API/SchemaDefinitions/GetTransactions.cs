@@ -1,2 +1,11 @@
-// Could not decompile Modio.API.SchemaDefinitions.GetTransactions
-// This type uses unsupported IL or has too many generic parameters.
+using Newtonsoft.Json;
+
+namespace Modio.API.SchemaDefinitions;
+
+[JsonObject]
+internal readonly struct GetTransactions(TransactionObject[] data, PaginationObject download)
+{
+	internal readonly TransactionObject[] Data = data;
+
+	internal readonly PaginationObject Download = download;
+}

@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.UI.UIHoverEventArgs
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.XR.Interaction.Toolkit.UI;
+
+public class UIHoverEventArgs
+{
+	public IUIInteractor interactorObject { get; set; }
+
+	public TrackedDeviceModel deviceModel { get; set; }
+
+	public GameObject uiObject { get; set; }
+}

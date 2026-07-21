@@ -1,2 +1,12 @@
-// Could not decompile System.Runtime.Remoting.Messaging.MCMDictionary
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Remoting.Messaging;
+
+internal class MCMDictionary : MessageDictionary
+{
+	public static string[] InternalKeys = new string[6] { "__Uri", "__MethodName", "__TypeName", "__MethodSignature", "__Args", "__CallContext" };
+
+	public MCMDictionary(IMethodMessage message)
+		: base(message)
+	{
+		base.MethodKeys = InternalKeys;
+	}
+}

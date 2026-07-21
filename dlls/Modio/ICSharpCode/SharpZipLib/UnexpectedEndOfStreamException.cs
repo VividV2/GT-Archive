@@ -1,11 +1,30 @@
-using Newtonsoft.Json;
+using System;
+using System.Runtime.Serialization;
 
-namespace Modio.API.SchemaDefinitions;
+namespace ICSharpCode.SharpZipLib;
 
-[JsonObject]
-internal readonly struct MultipartUploadObject(string upload_id, long status)
+[Serializable]
+public class UnexpectedEndOfStreamException : StreamDecodingException
 {
-	internal readonly string UploadId = upload_id;
+	private const string GenericMessage = "Input stream ended unexpectedly";
 
-	internal readonly long Status = status;
+	public UnexpectedEndOfStreamException()
+		: base("Input stream ended unexpectedly")
+	{
+	}
+
+	public UnexpectedEndOfStreamException(string message)
+		: base(message)
+	{
+	}
+
+	public UnexpectedEndOfStreamException(string message, Exception innerException)
+		: base(message, innerException)
+	{
+	}
+
+	protected UnexpectedEndOfStreamException(SerializationInfo info, StreamingContext context)
+		: base(info, context)
+	{
+	}
 }

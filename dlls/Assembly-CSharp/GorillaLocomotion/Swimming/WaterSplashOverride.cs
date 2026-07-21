@@ -1,2 +1,18 @@
-// Could not decompile GorillaLocomotion.Swimming.WaterSplashOverride
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaLocomotion.Swimming;
+
+public class WaterSplashOverride : MonoBehaviour
+{
+	public bool suppressWaterEffects;
+
+	public bool playBigSplash;
+
+	public bool playDrippingEffect = true;
+
+	public bool scaleByPlayersScale;
+
+	public bool overrideBoundingRadius;
+
+	public float boundingRadiusOverride = 1f;
+}

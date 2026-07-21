@@ -10,6 +10,3 @@ public enum SecurityRuleSet : byte
 	/// <summary>Indicates that the runtime will enforce level 2 transparency rules.</summary>
 	Level2
 }
-namespace System.Security.Permissions
-{
-}

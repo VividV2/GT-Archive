@@ -1,2 +1,15 @@
-// Could not decompile Newtonsoft.Json.Utilities.ValidationUtils
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Newtonsoft.Json.Utilities;
+
+internal static class ValidationUtils
+{
+	public static void ArgumentNotNull([NotNull] object? value, string parameterName)
+	{
+		if (value == null)
+		{
+			throw new ArgumentNullException(parameterName);
+		}
+	}
+}

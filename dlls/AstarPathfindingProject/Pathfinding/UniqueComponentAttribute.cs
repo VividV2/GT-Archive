@@ -1,2 +1,9 @@
-// Could not decompile Pathfinding.UniqueComponentAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Pathfinding;
+
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+public class UniqueComponentAttribute : Attribute
+{
+	public string tag;
+}

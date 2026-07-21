@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.Rendering.InvalidImportException
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering;
+
+public class InvalidImportException : Exception
+{
+	public InvalidImportException(string message)
+		: base(message)
+	{
+	}
+}

@@ -1,42 +1,52 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
+using UnityEngine;
 
-namespace PlayFab.ClientModels;
+namespace PlayFab.Internal;
 
-[Serializable]
-public class GetPlayerCombinedInfoRequestParams : PlayFabBaseModel
+public class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBehaviour<T>
 {
-	public bool GetCharacterInventories;
+	private static T _instance;
 
-	public bool GetCharacterList;
+	protected bool initialized;
 
-	public bool GetPlayerProfile;
+	public static T instance
+	{
+		get
+		{
+			CreateInstance();
+			return _instance;
+		}
+	}
 
-	public bool GetPlayerStatistics;
+	public static void CreateInstance()
+	{
+		if (_instance == null)
+		{
+			_instance = Object.FindObjectOfType<T>();
+			if (_instance == null)
+			{
+				_instance = new GameObject(typeof(T).Name).AddComponent<T>();
+			}
+			if (!_instance.initialized)
+			{
+				_instance.Initialize();
+				_instance.initialized = true;
+			}
+		}
+	}
 
-	public bool GetTitleData;
+	public virtual void Awake()
+	{
+		if (Application.isPlaying)
+		{
+			Object.DontDestroyOnLoad(this);
+		}
+		if (_instance != null)
+		{
+			Object.DestroyImmediate(base.gameObject);
+		}
+	}
 
-	public bool GetUserAccountInfo;
-
-	public bool GetUserData;
-
-	public bool GetUserInventory;
-
-	public bool GetUserReadOnlyData;
-
-	public bool GetUserVirtualCurrency;
-
-	public List<string> PlayerStatisticNames;
-
-	public PlayerProfileViewConstraints ProfileConstraints;
-
-	public List<string> TitleDataKeys;
-
-	public List<string> UserDataKeys;
-
-	public List<string> UserReadOnlyDataKeys;
+	protected virtual void Initialize()
+	{
+	}
 }

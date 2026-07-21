@@ -1,2 +1,13 @@
-// Could not decompile System.Net.Security.SafeFreeContextBuffer_SECURITY
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net.Security;
+
+internal sealed class SafeFreeContextBuffer_SECURITY : SafeFreeContextBuffer
+{
+	internal SafeFreeContextBuffer_SECURITY()
+	{
+	}
+
+	protected override bool ReleaseHandle()
+	{
+		return global::Interop.SspiCli.FreeContextBuffer(handle) == 0;
+	}
+}

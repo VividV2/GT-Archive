@@ -1,23 +1,16 @@
-namespace Steamworks
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(3406)]
+public struct DownloadItemResult_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(4505)]
-	public struct HTML_URLChanged_t
-	{
-		public const int k_iCallback = 4505;
+	public const int k_iCallback = 3406;
 
-		public HHTMLBrowser unBrowserHandle;
+	public AppId_t m_unAppID;
 
-		public string pchURL;
+	public PublishedFileId_t m_nPublishedFileId;
 
-		public string pchPostData;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bIsRedirect;
-
-		public string pchPageTitle;
-
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bNewNavigation;
-	}
+	public EResult m_eResult;
 }

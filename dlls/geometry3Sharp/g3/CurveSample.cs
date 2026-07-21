@@ -1,2 +1,8 @@
-// Could not decompile g3.CurveSample
-// This type uses unsupported IL or has too many generic parameters.
+namespace g3;
+
+public struct CurveSample(Vector3d p, Vector3d t)
+{
+	public Vector3d position = p;
+
+	public Vector3d tangent = t;
+}

@@ -1,37 +1,27 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+public struct InputMotionData_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	public struct InputMotionData_t
-	{
-		public float rotQuatX;
+	public float rotQuatX;
 
-		public float rotQuatY;
+	public float rotQuatY;
 
-		public float rotQuatZ;
+	public float rotQuatZ;
 
-		public float rotQuatW;
+	public float rotQuatW;
 
-		public float posAccelX;
+	public float posAccelX;
 
-		public float posAccelY;
+	public float posAccelY;
 
-		public float posAccelZ;
+	public float posAccelZ;
 
-		public float rotVelX;
+	public float rotVelX;
 
-		public float rotVelY;
+	public float rotVelY;
 
-		public float rotVelZ;
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	public struct SteamNetworkPingLocation_t
-	{
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 512)]
-		public byte[] m_data;
-	}
+	public float rotVelZ;
 }

@@ -12,6 +12,3 @@ public enum DataRowVersion
 	/// <summary>The default version of <see cref="T:System.Data.DataRowState" />. For a <see langword="DataRowState" /> value of <see langword="Added" />, <see langword="Modified" /> or <see langword="Deleted" />, the default version is <see langword="Current" />. For a <see cref="T:System.Data.DataRowState" /> value of <see langword="Detached" />, the version is <see langword="Proposed" />.</summary>
 	Default = 1536
 }
-namespace System.Data
-{
-}

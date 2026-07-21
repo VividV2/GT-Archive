@@ -1,2 +1,39 @@
-// Could not decompile Meta.WitAi.Interfaces.CustomTranscriptionProvider
-// This type uses unsupported IL or has too many generic parameters.
+using Meta.WitAi.Events;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace Meta.WitAi.Interfaces;
+
+public abstract class CustomTranscriptionProvider : MonoBehaviour, ITranscriptionProvider
+{
+	[SerializeField]
+	private bool overrideMicLevel;
+
+	private WitTranscriptionEvent onPartialTranscription = new WitTranscriptionEvent();
+
+	private WitTranscriptionEvent onFullTranscription = new WitTranscriptionEvent();
+
+	private UnityEvent onStoppedListening = new UnityEvent();
+
+	private UnityEvent onStartListening = new UnityEvent();
+
+	private WitMicLevelChangedEvent onMicLevelChanged = new WitMicLevelChangedEvent();
+
+	public string LastTranscription { get; }
+
+	public WitTranscriptionEvent OnPartialTranscription => onPartialTranscription;
+
+	public WitTranscriptionEvent OnFullTranscription => onFullTranscription;
+
+	public UnityEvent OnStoppedListening => onStoppedListening;
+
+	public UnityEvent OnStartListening => onStartListening;
+
+	public WitMicLevelChangedEvent OnMicLevelChanged => onMicLevelChanged;
+
+	public bool OverrideMicLevel => overrideMicLevel;
+
+	public abstract void Activate();
+
+	public abstract void Deactivate();
+}

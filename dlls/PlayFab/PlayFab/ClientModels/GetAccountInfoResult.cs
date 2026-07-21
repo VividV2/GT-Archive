@@ -1,14 +1,10 @@
 using System;
 using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
 
-namespace PlayFab.CloudScriptModels;
+namespace PlayFab.ClientModels;
 
 [Serializable]
-public class TagModel : PlayFabBaseModel
+public class GetAccountInfoResult : PlayFabResultCommon
 {
-	public string TagValue;
+	public UserAccountInfo AccountInfo;
 }

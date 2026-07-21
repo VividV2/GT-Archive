@@ -1,22 +1,26 @@
-namespace Fusion;
+using UnityEngine;
 
-internal struct SimulationRenderSequencer
+namespace Fusion.LagCompensation;
+
+public class LagCompensationDraw
 {
-	private ulong _sequence;
+	public SnapshotHistoryDraw SnapshotHistoryDraw;
 
-	public bool ConsumeRenderUpdate(NetworkRunner runner)
+	public BVHDraw BVHDraw;
+
+	internal LagCompensationDraw(HitboxBuffer _buffer)
 	{
-		return ConsumeRenderUpdate(runner._simulation);
+		SnapshotHistoryDraw = new SnapshotHistoryDraw(_buffer);
+		BVHDraw = new BVHDraw(_buffer);
 	}
 
-	public bool ConsumeRenderUpdate(Simulation simulation)
+	public static void GizmosDrawWireCapsule(Vector3 topCenter, Vector3 bottomCenter, float capsuleRadius)
 	{
-		bool flag = simulation.InterpolateSequence != _sequence;
-		bool flag;
-		if (flag)
-		{
-			_sequence = simulation.InterpolateSequence;
-		}
-		return flag;
+		Gizmos.DrawWireSphere(topCenter, capsuleRadius);
+		Gizmos.DrawWireSphere(bottomCenter, capsuleRadius);
+		Gizmos.DrawLine(topCenter + Vector3.left * capsuleRadius, bottomCenter + Vector3.left * capsuleRadius);
+		Gizmos.DrawLine(topCenter + Vector3.right * capsuleRadius, bottomCenter + Vector3.right * capsuleRadius);
+		Gizmos.DrawLine(topCenter + Vector3.forward * capsuleRadius, bottomCenter + Vector3.forward * capsuleRadius);
+		Gizmos.DrawLine(topCenter + Vector3.back * capsuleRadius, bottomCenter + Vector3.back * capsuleRadius);
 	}
 }

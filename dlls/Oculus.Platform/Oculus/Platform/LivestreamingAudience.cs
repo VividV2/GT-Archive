@@ -1,24 +1,15 @@
 using System.ComponentModel;
-using System.ComponentModel;
 
-namespace Oculus.Platform
+namespace Oculus.Platform;
+
+public enum LivestreamingAudience
 {
-	public enum NetSyncVoipMicSource
-	{
-		[Description("UNKNOWN")]
-		Unknown,
-		[Description("NONE")]
-		None,
-		[Description("INTERNAL")]
-		Internal
-	}
-}
-namespace Oculus.Platform
-{
-}
-namespace Oculus.Platform
-{
-}
-namespace Oculus.Platform
-{
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("PUBLIC")]
+	Public,
+	[Description("FRIENDS")]
+	Friends,
+	[Description("ONLY_ME")]
+	OnlyMe
 }

@@ -1,9 +1,8 @@
-namespace Photon.Voice
+using System;
+
+namespace Photon.Voice;
+
+public interface IEncoderDirect<B> : IEncoder, IDisposable
 {
-}
-namespace Photon.Voice.Unity
-{
-}
-namespace Photon.Voice
-{
+	void Input(B buf);
 }

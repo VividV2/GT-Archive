@@ -1,2 +1,22 @@
-// Could not decompile g3.ImplicitUnion3d
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace g3;
+
+public class ImplicitUnion3d : BoundedImplicitFunction3d, ImplicitFunction3d
+{
+	public BoundedImplicitFunction3d A;
+
+	public BoundedImplicitFunction3d B;
+
+	public double Value(ref Vector3d pt)
+	{
+		return Math.Min(A.Value(ref pt), B.Value(ref pt));
+	}
+
+	public AxisAlignedBox3d Bounds()
+	{
+		AxisAlignedBox3d result = A.Bounds();
+		result.Contain(B.Bounds());
+		return result;
+	}
+}

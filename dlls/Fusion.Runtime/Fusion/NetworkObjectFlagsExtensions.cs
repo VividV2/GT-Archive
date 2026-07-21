@@ -1,4 +1,3 @@
-#define DEBUG
 using System.Runtime.CompilerServices;
 
 namespace Fusion;

@@ -1,10 +1,10 @@
-namespace System.Drawing;
+namespace System;
 
-internal enum BrushType
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+internal class MonoNotSupportedAttribute : System.MonoTODOAttribute
 {
-	BrushTypeSolidColor,
-	BrushTypeHatchFill,
-	BrushTypeTextureFill,
-	BrushTypePathGradient,
-	BrushTypeLinearGradient
+	public MonoNotSupportedAttribute(string comment)
+		: base(comment)
+	{
+	}
 }

@@ -1,2 +1,12 @@
-// Could not decompile PlayFab.MultiplayerModels.CancelAllMatchmakingTicketsForPlayerRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class CancelAllMatchmakingTicketsForPlayerRequest : PlayFabRequestCommon
+{
+	public EntityKey Entity;
+
+	public string QueueName;
+}

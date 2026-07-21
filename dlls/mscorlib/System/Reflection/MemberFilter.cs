@@ -6,6 +6,3 @@ namespace System.Reflection;
 /// <returns>
 ///   <see langword="true" /> to include the member in the filtered list; otherwise <see langword="false" />.</returns>
 public delegate bool MemberFilter(MemberInfo m, object filterCriteria);
-namespace System.Reflection.Emit
-{
-}

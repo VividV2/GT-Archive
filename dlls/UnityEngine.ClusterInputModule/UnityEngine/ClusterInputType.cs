@@ -1,16 +1,12 @@
 using System;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[Obsolete("This type is deprecated and will be removed in Unity 7.", false)]
+public enum ClusterInputType
 {
-	[Obsolete("This type is deprecated and will be removed in Unity 7.", false)]
-	public enum ClusterInputType
-	{
-		Button,
-		Axis,
-		Tracker,
-		CustomProvidedInput
-	}
-}
-namespace UnityEngine
-{
+	Button,
+	Axis,
+	Tracker,
+	CustomProvidedInput
 }

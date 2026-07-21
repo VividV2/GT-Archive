@@ -1,2 +1,6 @@
-// Could not decompile PlayFab.SharedModels.PlayFabRequestCommon
-// This type uses unsupported IL or has too many generic parameters.
+namespace PlayFab.SharedModels;
+
+public class PlayFabRequestCommon : PlayFabBaseModel
+{
+	public PlayFabAuthenticationContext AuthenticationContext;
+}

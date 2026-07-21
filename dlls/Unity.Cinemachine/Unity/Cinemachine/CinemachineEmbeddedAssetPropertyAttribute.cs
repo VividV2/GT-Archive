@@ -1,2 +1,13 @@
-// Could not decompile Unity.Cinemachine.CinemachineEmbeddedAssetPropertyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Unity.Cinemachine;
+
+public sealed class CinemachineEmbeddedAssetPropertyAttribute : PropertyAttribute
+{
+	public bool WarnIfNull;
+
+	public CinemachineEmbeddedAssetPropertyAttribute(bool warnIfNull = false)
+	{
+		WarnIfNull = warnIfNull;
+	}
+}

@@ -1,2 +1,6 @@
-// Could not decompile GorillaSkinCatalog
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GorillaSkinCatalog : ScriptableObject
+{
+	public GorillaSkin[] skins = new GorillaSkin[0];
+}

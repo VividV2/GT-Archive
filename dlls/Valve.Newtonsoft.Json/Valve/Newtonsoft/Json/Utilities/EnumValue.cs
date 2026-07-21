@@ -1,2 +1,18 @@
-// Could not decompile Valve.Newtonsoft.Json.Utilities.EnumValue`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.Newtonsoft.Json.Utilities;
+
+internal class EnumValue<T> where T : struct
+{
+	private readonly string _name;
+
+	private readonly T _value;
+
+	public string Name => _name;
+
+	public T Value => _value;
+
+	public EnumValue(string name, T value)
+	{
+		_name = name;
+		_value = value;
+	}
+}

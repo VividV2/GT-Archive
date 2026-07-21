@@ -1,2 +1,8 @@
-// Could not decompile Unity.IO.LowLevel.Unsafe.FileInfoResult
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.IO.LowLevel.Unsafe;
+
+public struct FileInfoResult
+{
+	public long FileSize;
+
+	public FileState FileState;
+}

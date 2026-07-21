@@ -1,66 +1,115 @@
 using System;
-using UnityEngine;
-using System;
+using System.Collections;
+using Meta.XR.Util;
 using UnityEngine;
 
-public interface OVRMixedRealityCaptureConfiguration
+[HelpURL("https://developer.oculus.com/documentation/unity/unity-scene-use-scene-anchors/#what-does-ovrscenemanager-do")]
+[RequireComponent(typeof(OVRSceneManager))]
+[Obsolete("OVRSceneManager and associated classes are deprecated (v65), please use MR Utility Kit instead (https://developer.oculus.com/documentation/unity/unity-mr-utility-kit-overview)")]
+[Feature(Feature.Scene)]
+public class OVRSceneModelLoader : MonoBehaviour
 {
-	bool enableMixedReality { get; set; }
+	private const float RetryingReminderDelay = 10f;
 
-	LayerMask extraHiddenLayers { get; set; }
+	private bool _sceneCaptureRequested;
 
-	LayerMask extraVisibleLayers { get; set; }
+	protected OVRSceneManager SceneManager { get; private set; }
 
-	bool dynamicCullingMask { get; set; }
+	protected virtual void Start()
+	{
+		OVRTelemetry.SendEvent(163059869);
+		SceneManager = GetComponent<OVRSceneManager>();
+		OVRSceneManager sceneManager = SceneManager;
+		sceneManager.SceneModelLoadedSuccessfully = (Action)Delegate.Combine(sceneManager.SceneModelLoadedSuccessfully, new Action(OnSceneModelLoadedSuccessfully));
+		OVRSceneManager sceneManager2 = SceneManager;
+		sceneManager2.NoSceneModelToLoad = (Action)Delegate.Combine(sceneManager2.NoSceneModelToLoad, new Action(OnNoSceneModelToLoad));
+		OVRSceneManager sceneManager3 = SceneManager;
+		sceneManager3.NewSceneModelAvailable = (Action)Delegate.Combine(sceneManager3.NewSceneModelAvailable, new Action(OnNewSceneModelAvailable));
+		SceneManager.LoadSceneModelFailedPermissionNotGranted += OnLoadSceneModelFailedPermissionNotGranted;
+		OVRSceneManager sceneManager4 = SceneManager;
+		sceneManager4.SceneCaptureReturnedWithoutError = (Action)Delegate.Combine(sceneManager4.SceneCaptureReturnedWithoutError, new Action(OnSceneCaptureReturnedWithoutError));
+		OVRSceneManager sceneManager5 = SceneManager;
+		sceneManager5.UnexpectedErrorWithSceneCapture = (Action)Delegate.Combine(sceneManager5.UnexpectedErrorWithSceneCapture, new Action(OnUnexpectedErrorWithSceneCapture));
+		OnStart();
+	}
 
-	OVRManager.CompositionMethod compositionMethod { get; set; }
+	private IEnumerator AttemptToLoadSceneModel()
+	{
+		float timeSinceReminder = 0f;
+		do
+		{
+			timeSinceReminder += Time.deltaTime;
+			if (timeSinceReminder >= 10f)
+			{
+				timeSinceReminder = 0f;
+			}
+			yield return null;
+		}
+		while (!SceneManager.LoadSceneModel());
+	}
 
-	Color externalCompositionBackdropColorRift { get; set; }
+	protected virtual void OnStart()
+	{
+		LoadSceneModel();
+	}
 
-	Color externalCompositionBackdropColorQuest { get; set; }
+	protected static OVRTask<bool> RequestScenePermissionAsync()
+	{
+		return OVRTask.FromResult(result: true);
+	}
 
-	[Obsolete("Deprecated", false)]
-	OVRManager.CameraDevice capturingCameraDevice { get; set; }
+	protected virtual async void OnLoadSceneModelFailedPermissionNotGranted()
+	{
+		SceneManager.Verbose?.Log("OVRSceneModelLoader", "Requesting permission com.oculus.permission.USE_SCENE");
+		if (await RequestScenePermissionAsync())
+		{
+			SceneManager.Verbose?.Log("OVRSceneModelLoader", "Permission com.oculus.permission.USE_SCENE granted. Attempting to load scene model.");
+			LoadSceneModel();
+		}
+		else
+		{
+			SceneManager.Verbose?.Log("OVRSceneModelLoader", "Permission com.oculus.permission.USE_SCENE denied. Scene model will not be loaded.");
+		}
+	}
 
-	bool flipCameraFrameHorizontally { get; set; }
+	private void LoadSceneModel()
+	{
+		SceneManager.Verbose?.Log("OVRSceneModelLoader", "OnStart() calling OVRSceneManager.LoadSceneModel()");
+		if (!SceneManager.LoadSceneModel() && OVRManager.isHmdPresent)
+		{
+			StartCoroutine(AttemptToLoadSceneModel());
+		}
+	}
 
-	bool flipCameraFrameVertically { get; set; }
+	protected virtual void OnSceneModelLoadedSuccessfully()
+	{
+		SceneManager.Verbose?.Log("OVRSceneModelLoader", "OVRSceneManager.LoadSceneModel() completed successfully.");
+	}
 
-	float handPoseStateLatency { get; set; }
+	protected virtual void OnNoSceneModelToLoad()
+	{
+		if (_sceneCaptureRequested)
+		{
+			SceneManager.Verbose?.Log("OVRSceneModelLoader", "OnSceneCaptureReturnedWithoutError() There is no scene model, but we have already requested scene capture once. No further action will be taken.");
+			return;
+		}
+		SceneManager.Verbose?.Log("OVRSceneModelLoader", "OnNoSceneModelToLoad() calling OVRSceneManager.RequestSceneCapture()");
+		_sceneCaptureRequested = SceneManager.RequestSceneCapture();
+	}
 
-	float sandwichCompositionRenderLatency { get; set; }
+	protected virtual void OnNewSceneModelAvailable()
+	{
+		SceneManager.Verbose?.Log("OVRSceneModelLoader", "OnNewSceneModelAvailable() calling OVRSceneManager.LoadSceneModel()");
+		SceneManager.LoadSceneModel();
+	}
 
-	int sandwichCompositionBufferedFrames { get; set; }
+	protected virtual void OnSceneCaptureReturnedWithoutError()
+	{
+		SceneManager.Verbose?.Log("OVRSceneModelLoader", "Room setup returned without errors.");
+	}
 
-	Color chromaKeyColor { get; set; }
-
-	float chromaKeySimilarity { get; set; }
-
-	float chromaKeySmoothRange { get; set; }
-
-	float chromaKeySpillRange { get; set; }
-
-	bool useDynamicLighting { get; set; }
-
-	[Obsolete("Deprecated", false)]
-	OVRManager.DepthQuality depthQuality { get; set; }
-
-	float dynamicLightingSmoothFactor { get; set; }
-
-	float dynamicLightingDepthVariationClampingValue { get; set; }
-
-	[Obsolete("Deprecated", false)]
-	OVRManager.VirtualGreenScreenType virtualGreenScreenType { get; set; }
-
-	float virtualGreenScreenTopY { get; set; }
-
-	float virtualGreenScreenBottomY { get; set; }
-
-	bool virtualGreenScreenApplyDepthCulling { get; set; }
-
-	float virtualGreenScreenDepthTolerance { get; set; }
-
-	OVRManager.MrcActivationMode mrcActivationMode { get; set; }
-
-	OVRManager.InstantiateMrcCameraDelegate instantiateMixedRealityCameraGameObject { get; set; }
+	protected virtual void OnUnexpectedErrorWithSceneCapture()
+	{
+		SceneManager.Verbose?.LogError("OVRSceneModelLoader", "Requesting the Room Setup failed. The Scene Model cannot be loaded.");
+	}
 }

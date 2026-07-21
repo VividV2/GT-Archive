@@ -1,2 +1,5 @@
-// Could not decompile DisconnectFromRoom
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class DisconnectFromRoom : MonoBehaviour
+{
+}

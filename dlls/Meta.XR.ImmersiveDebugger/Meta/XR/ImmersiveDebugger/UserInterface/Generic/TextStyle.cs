@@ -1,2 +1,14 @@
-// Could not decompile Meta.XR.ImmersiveDebugger.UserInterface.Generic.TextStyle
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Meta.XR.ImmersiveDebugger.UserInterface.Generic;
+
+public class TextStyle : Style
+{
+	public TextAnchor textAlignement;
+
+	public Font font;
+
+	public int fontSize = 14;
+
+	public Color color = Color.white;
+}

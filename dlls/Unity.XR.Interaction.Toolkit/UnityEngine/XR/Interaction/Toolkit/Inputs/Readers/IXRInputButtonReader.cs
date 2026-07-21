@@ -1,14 +1,10 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Interactors
-{
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Readers
-{
-	public interface IXRInputButtonReader : IXRInputValueReader<float>, IXRInputValueReader
-	{
-		bool ReadIsPerformed();
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Readers;
 
-		bool ReadWasPerformedThisFrame();
+public interface IXRInputButtonReader : IXRInputValueReader<float>, IXRInputValueReader
+{
+	bool ReadIsPerformed();
 
-		bool ReadWasCompletedThisFrame();
-	}
+	bool ReadWasPerformedThisFrame();
+
+	bool ReadWasCompletedThisFrame();
 }

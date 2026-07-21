@@ -1,21 +1,11 @@
 using System;
 
-namespace Fusion
+namespace Fusion;
+
+[Flags]
+internal enum NetworkObjectHeaderPlayerDataFlags
 {
-	[Flags]
-	internal enum NetworkObjectHeaderPlayerDataFlags
-	{
-		InAreaOfInterest = 1,
-		ForceInterest = 2,
-		AllInterestFlags = 3
-	}
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
+	InAreaOfInterest = 1,
+	ForceInterest = 2,
+	AllInterestFlags = 3
 }

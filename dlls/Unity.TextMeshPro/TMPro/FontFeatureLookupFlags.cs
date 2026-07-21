@@ -1,7 +1,11 @@
+using System;
+
 namespace TMPro;
 
-public enum TMP_TextElementType
+[Flags]
+public enum FontFeatureLookupFlags
 {
-	Character,
-	Sprite
+	None = 0,
+	IgnoreLigatures = 4,
+	IgnoreSpacingAdjustments = 0x100
 }

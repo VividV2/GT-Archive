@@ -1,18 +1,10 @@
-namespace Newtonsoft.Json.Linq.JsonPath;
+using System;
 
-internal enum QueryOperator
+namespace Newtonsoft.Json.Linq;
+
+[Flags]
+public enum MergeNullValueHandling
 {
-	None,
-	Equals,
-	NotEquals,
-	Exists,
-	LessThan,
-	LessThanOrEquals,
-	GreaterThan,
-	GreaterThanOrEquals,
-	And,
-	Or,
-	RegexEquals,
-	StrictEquals,
-	StrictNotEquals
+	Ignore = 0,
+	Merge = 1
 }

@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.Universal.DecalDrawDBufferSystem
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+internal class DecalDrawDBufferSystem : DecalDrawSystem
+{
+	public DecalDrawDBufferSystem(DecalEntityManager entityManager)
+		: base("DecalDrawIntoDBufferSystem.Execute", entityManager)
+	{
+	}
+
+	protected override int GetPassIndex(DecalCachedChunk decalCachedChunk)
+	{
+		return decalCachedChunk.passIndexDBuffer;
+	}
+}

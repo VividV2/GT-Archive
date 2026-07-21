@@ -1,41 +1,17 @@
-using System;
-using System;
+namespace Steamworks;
 
-namespace Steamworks
+public enum EChatEntryType
 {
-	public enum ESteamInputType
-	{
-		k_ESteamInputType_Unknown = 0,
-		k_ESteamInputType_SteamController = 1,
-		k_ESteamInputType_XBox360Controller = 2,
-		k_ESteamInputType_XBoxOneController = 3,
-		k_ESteamInputType_GenericGamepad = 4,
-		k_ESteamInputType_PS4Controller = 5,
-		k_ESteamInputType_AppleMFiController = 6,
-		k_ESteamInputType_AndroidController = 7,
-		k_ESteamInputType_SwitchJoyConPair = 8,
-		k_ESteamInputType_SwitchJoyConSingle = 9,
-		k_ESteamInputType_SwitchProController = 10,
-		k_ESteamInputType_MobileTouch = 11,
-		k_ESteamInputType_PS3Controller = 12,
-		k_ESteamInputType_PS5Controller = 13,
-		k_ESteamInputType_SteamDeckController = 14,
-		k_ESteamInputType_Count = 15,
-		k_ESteamInputType_MaximumPossibleValue = 255
-	}
-}
-namespace Steamworks
-{
-	[Flags]
-	public enum EItemState
-	{
-		k_EItemStateNone = 0,
-		k_EItemStateSubscribed = 1,
-		k_EItemStateLegacyItem = 2,
-		k_EItemStateInstalled = 4,
-		k_EItemStateNeedsUpdate = 8,
-		k_EItemStateDownloading = 0x10,
-		k_EItemStateDownloadPending = 0x20,
-		k_EItemStateDisabledLocally = 0x40
-	}
+	k_EChatEntryTypeInvalid = 0,
+	k_EChatEntryTypeChatMsg = 1,
+	k_EChatEntryTypeTyping = 2,
+	k_EChatEntryTypeInviteGame = 3,
+	k_EChatEntryTypeEmote = 4,
+	k_EChatEntryTypeLeftConversation = 6,
+	k_EChatEntryTypeEntered = 7,
+	k_EChatEntryTypeWasKicked = 8,
+	k_EChatEntryTypeWasBanned = 9,
+	k_EChatEntryTypeDisconnected = 10,
+	k_EChatEntryTypeHistoricalChat = 11,
+	k_EChatEntryTypeLinkBlocked = 14
 }

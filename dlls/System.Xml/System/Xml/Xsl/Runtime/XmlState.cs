@@ -1,16 +1,12 @@
-namespace System.Xml.Xsl.Runtime
+namespace System.Xml.Xsl.Runtime;
+
+internal enum XmlState
 {
-	internal enum XmlState
-	{
-		WithinSequence,
-		EnumAttrs,
-		WithinContent,
-		WithinAttr,
-		WithinNmsp,
-		WithinComment,
-		WithinPI
-	}
-}
-namespace System.Xml.Schema
-{
+	WithinSequence,
+	EnumAttrs,
+	WithinContent,
+	WithinAttr,
+	WithinNmsp,
+	WithinComment,
+	WithinPI
 }

@@ -1,2 +1,6 @@
-// Could not decompile System.Diagnostics.CodeAnalysis.NotNullAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Diagnostics.CodeAnalysis;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue, Inherited = false)]
+public sealed class NotNullAttribute : Attribute
+{
+}

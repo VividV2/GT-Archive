@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.Rendering.UnifiedRayTracing.GeometryPoolEntryInfo
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.UnifiedRayTracing;
+
+internal struct GeometryPoolEntryInfo
+{
+	public bool valid;
+
+	public uint refCount;
+
+	public static GeometryPoolEntryInfo NewDefault()
+	{
+		return new GeometryPoolEntryInfo
+		{
+			valid = false,
+			refCount = 0u
+		};
+	}
+}

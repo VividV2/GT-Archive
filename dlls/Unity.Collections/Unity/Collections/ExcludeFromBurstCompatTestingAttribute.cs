@@ -1,2 +1,14 @@
-// Could not decompile Unity.Collections.ExcludeFromBurstCompatTestingAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.Collections;
+
+[AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property)]
+public class ExcludeFromBurstCompatTestingAttribute : Attribute
+{
+	public string Reason { get; set; }
+
+	public ExcludeFromBurstCompatTestingAttribute(string _reason)
+	{
+		Reason = _reason;
+	}
+}

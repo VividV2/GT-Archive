@@ -1,2 +1,16 @@
-// Could not decompile XNode.SceneGraph`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace XNode;
+
+public class SceneGraph<T> : SceneGraph where T : NodeGraph
+{
+	public new T graph
+	{
+		get
+		{
+			return base.graph as T;
+		}
+		set
+		{
+			base.graph = value;
+		}
+	}
+}

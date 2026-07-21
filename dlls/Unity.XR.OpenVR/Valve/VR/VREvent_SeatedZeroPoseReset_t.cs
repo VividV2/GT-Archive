@@ -1,6 +1,9 @@
-namespace Valve.VR
+using System.Runtime.InteropServices;
+
+namespace Valve.VR;
+
+public struct VREvent_SeatedZeroPoseReset_t
 {
-	public struct VREvent_SpatialAnchor_t
-	{
-		public uint unHandle;
-	}
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bResetBySystemMenu;
+}

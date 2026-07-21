@@ -1,31 +1,15 @@
-namespace System.Runtime.InteropServices
+namespace System.Runtime.InteropServices.ComTypes;
+
+/// <summary>Identifies the target operating system platform.</summary>
+[Serializable]
+public enum SYSKIND
 {
-	[Serializable]
-	[Flags]
-	[Obsolete("Use System.Runtime.InteropServices.ComTypes.VARFLAGS instead. http://go.microsoft.com/fwlink/?linkid=14202", false)]
-	public enum VARFLAGS : short
-	{
-		VARFLAG_FREADONLY = 1,
-		VARFLAG_FSOURCE = 2,
-		VARFLAG_FBINDABLE = 4,
-		VARFLAG_FREQUESTEDIT = 8,
-		VARFLAG_FDISPLAYBIND = 0x10,
-		VARFLAG_FDEFAULTBIND = 0x20,
-		VARFLAG_FHIDDEN = 0x40,
-		VARFLAG_FRESTRICTED = 0x80,
-		VARFLAG_FDEFAULTCOLLELEM = 0x100,
-		VARFLAG_FUIDEFAULT = 0x200,
-		VARFLAG_FNONBROWSABLE = 0x400,
-		VARFLAG_FREPLACEABLE = 0x800,
-		VARFLAG_FIMMEDIATEBIND = 0x1000
-	}
-}
-namespace System.Runtime.Remoting.Services
-{
-}
-namespace System.Security.Policy
-{
-}
-namespace System.Runtime.Remoting.Messaging
-{
+	/// <summary>The target operating system for the type library is 16-bit Windows systems. By default, data fields are packed.</summary>
+	SYS_WIN16,
+	/// <summary>The target operating system for the type library is 32-bit Windows systems. By default, data fields are naturally aligned (for example, 2-byte integers are aligned on even-byte boundaries; 4-byte integers are aligned on quad-word boundaries, and so on).</summary>
+	SYS_WIN32,
+	/// <summary>The target operating system for the type library is Apple Macintosh. By default, all data fields are aligned on even-byte boundaries.</summary>
+	SYS_MAC,
+	/// <summary>The target operating system for the type library is 64-bit Windows systems.</summary>
+	SYS_WIN64
 }

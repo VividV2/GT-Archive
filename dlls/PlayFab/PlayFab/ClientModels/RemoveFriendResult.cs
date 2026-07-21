@@ -1,21 +1,9 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class RemoveFriendResult : PlayFabResultCommon
 {
-	[Serializable]
-	public class RemoveFriendResult : PlayFabResultCommon
-	{
-	}
-}
-namespace PlayFab.ClientModels
-{
-	public enum TitleActivationStatus
-	{
-		None,
-		ActivatedTitleKey,
-		PendingSteam,
-		ActivatedSteam,
-		RevokedSteam
-	}
 }

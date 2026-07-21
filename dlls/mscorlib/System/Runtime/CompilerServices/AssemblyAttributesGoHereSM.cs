@@ -1,2 +1,9 @@
-// Could not decompile System.Runtime.CompilerServices.AssemblyAttributesGoHereSM
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.CompilerServices;
+
+[FriendAccessAllowed]
+internal sealed class AssemblyAttributesGoHereSM
+{
+	internal AssemblyAttributesGoHereSM()
+	{
+	}
+}

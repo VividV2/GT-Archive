@@ -1,9 +1,25 @@
-namespace UnityEngine
+namespace UnityEngine.LowLevelPhysics;
+
+public struct SphereGeometry : IGeometry
 {
-}
-namespace UnityEngine.LowLevelPhysics
-{
-}
-namespace UnityEngine
-{
+	private float m_Radius;
+
+	public float Radius
+	{
+		get
+		{
+			return m_Radius;
+		}
+		set
+		{
+			m_Radius = value;
+		}
+	}
+
+	public GeometryType GeometryType => GeometryType.Sphere;
+
+	public SphereGeometry(float radius)
+	{
+		m_Radius = radius;
+	}
 }

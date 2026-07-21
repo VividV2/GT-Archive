@@ -1,2 +1,7 @@
-// Could not decompile MagicIngredientType
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "IngredientTypeSO", menuName = "ScriptableObjects/Add New Magic Ingredient Type")]
+public class MagicIngredientType : ScriptableObject
+{
+	public Color color;
+}

@@ -1,21 +1,12 @@
 using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.MultiplayerModels;
+namespace PlayFab.GroupsModels;
 
 [Serializable]
-public class ListQosServersForTitleResponse : PlayFabResultCommon
+public class AcceptGroupApplicationRequest : PlayFabRequestCommon
 {
-	public int PageSize;
+	public EntityKey Entity;
 
-	public List<QosServer> QosServers;
-
-	public string SkipToken;
+	public EntityKey Group;
 }

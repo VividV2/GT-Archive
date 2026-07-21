@@ -1,2 +1,11 @@
-// Could not decompile GorillaNetworking.Store.SpawnedBundle
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace GorillaNetworking.Store;
+
+[Serializable]
+public class SpawnedBundle
+{
+	public string spawnLocationPath;
+
+	public BundleStand bundleStand;
+}

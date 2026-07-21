@@ -1,2 +1,6 @@
-// Could not decompile System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Diagnostics.CodeAnalysis;
+
+[AttributeUsage(AttributeTargets.Method, Inherited = false)]
+public sealed class DoesNotReturnAttribute : Attribute
+{
+}

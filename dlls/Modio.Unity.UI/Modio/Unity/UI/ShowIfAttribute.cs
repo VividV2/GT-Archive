@@ -1,2 +1,12 @@
-// Could not decompile Modio.Unity.UI.ShowIfAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace Modio.Unity.UI;
+
+[AttributeUsage(AttributeTargets.Field)]
+public class ShowIfAttribute : PropertyAttribute
+{
+	public ShowIfAttribute(string predicateName)
+	{
+	}
+}

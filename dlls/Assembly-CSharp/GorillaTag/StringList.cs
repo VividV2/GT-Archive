@@ -1,2 +1,12 @@
-// Could not decompile GorillaTag.StringList
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTag;
+
+[CreateAssetMenu(fileName = "New String List", menuName = "String List")]
+public class StringList : ScriptableObject
+{
+	[SerializeField]
+	private string[] strings;
+
+	public string[] Strings => strings;
+}

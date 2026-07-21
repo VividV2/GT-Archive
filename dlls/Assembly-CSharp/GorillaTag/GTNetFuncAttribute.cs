@@ -1,2 +1,9 @@
-// Could not decompile GorillaTag.GTNetFuncAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Diagnostics;
+
+namespace GorillaTag;
+
+[Conditional("UNITY_EDITOR")]
+public class GTNetFuncAttribute : Attribute
+{
+}

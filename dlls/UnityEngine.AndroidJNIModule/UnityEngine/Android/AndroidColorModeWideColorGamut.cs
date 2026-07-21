@@ -1,21 +1,8 @@
-namespace UnityEngine.Android
+namespace UnityEngine.Android;
+
+public enum AndroidColorModeWideColorGamut
 {
-	public enum AndroidColorModeWideColorGamut
-	{
-		Undefined,
-		No,
-		Yes
-	}
-}
-namespace UnityEngine.Android
-{
-	[NativeType(Header = "Modules/AndroidJNI/Public/GameStateHelper.h")]
-	public enum AndroidGameState
-	{
-		Unknown,
-		None,
-		GamePlayInterruptible,
-		GamePlayUninterruptible,
-		Content
-	}
+	Undefined,
+	No,
+	Yes
 }

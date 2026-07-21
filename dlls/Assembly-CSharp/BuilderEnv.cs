@@ -1,2 +1,12 @@
-// Could not decompile BuilderEnv
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class BuilderEnv : MonoBehaviour
+{
+	private void Start()
+	{
+	}
+
+	private void Update()
+	{
+	}
+}

@@ -1,2 +1,17 @@
-// Could not decompile Unity.XR.CoreUtils.Datums.StringDatumProperty
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.XR.CoreUtils.Datums;
+
+[Serializable]
+public class StringDatumProperty : DatumProperty<string, StringDatum>
+{
+	public StringDatumProperty(string value)
+		: base(value)
+	{
+	}
+
+	public StringDatumProperty(StringDatum datum)
+		: base(datum)
+	{
+	}
+}

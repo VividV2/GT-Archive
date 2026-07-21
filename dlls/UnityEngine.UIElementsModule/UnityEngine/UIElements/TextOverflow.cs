@@ -1,19 +1,7 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum TextOverflow
 {
-	public enum StyleKeyword
-	{
-		Undefined,
-		Null,
-		Auto,
-		None,
-		Initial
-	}
-}
-namespace UnityEngine.UIElements
-{
-	public enum TextOverflow
-	{
-		Clip,
-		Ellipsis
-	}
+	Clip,
+	Ellipsis
 }

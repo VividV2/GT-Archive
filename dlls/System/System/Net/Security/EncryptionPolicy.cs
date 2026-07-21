@@ -1,15 +1,12 @@
-namespace System.Net.NetworkInformation;
+namespace System.Net.Security;
 
-/// <summary>The scope level for an IPv6 address.</summary>
-public enum ScopeLevel
+/// <summary>The EncryptionPolicy to use.</summary>
+public enum EncryptionPolicy
 {
-	/// <summary>The scope level is not specified.</summary>
-	None = 0,
-	Interface = 1,
-	Link = 2,
-	Subnet = 3,
-	Admin = 4,
-	Site = 5,
-	Organization = 8,
-	Global = 14
+	/// <summary>Require encryption and never allow a NULL cipher.</summary>
+	RequireEncryption,
+	/// <summary>Prefer that full encryption be used, but allow a NULL cipher (no encryption) if the server agrees.</summary>
+	AllowNoEncryption,
+	/// <summary>Allow no encryption and request that a NULL cipher be used if the other endpoint can handle a NULL cipher.</summary>
+	NoEncryption
 }

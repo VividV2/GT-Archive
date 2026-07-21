@@ -1,12 +1,11 @@
 using System;
-using PlayFab.SharedModels;
-using System;
+using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.GroupsModels;
+namespace PlayFab.ProfilesModels;
 
 [Serializable]
-public class ListGroupBlocksRequest : PlayFabRequestCommon
+public class GetEntityProfilesResponse : PlayFabResultCommon
 {
-	public EntityKey Group;
+	public List<EntityProfileBody> Profiles;
 }

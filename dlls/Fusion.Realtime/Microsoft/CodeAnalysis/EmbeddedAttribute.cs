@@ -1,17 +1,10 @@
-namespace Fusion.Photon.Realtime;
+using System;
+using System.Runtime.CompilerServices;
 
-internal struct PhotonPortDefinition
+namespace Microsoft.CodeAnalysis;
+
+[CompilerGenerated]
+[Microsoft.CodeAnalysis.Embedded]
+internal sealed class EmbeddedAttribute : Attribute
 {
-	public static readonly PhotonPortDefinition AlternativeUdpPorts = new PhotonPortDefinition
-	{
-		NameServerPort = 27000,
-		MasterServerPort = 27001,
-		GameServerPort = 27002
-	};
-
-	public ushort NameServerPort;
-
-	public ushort MasterServerPort;
-
-	public ushort GameServerPort;
 }

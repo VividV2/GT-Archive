@@ -1,2 +1,6 @@
-// Could not decompile FlagForBaking
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class FlagForBaking : MonoBehaviour
+{
+	public bool enableForBaking;
+}

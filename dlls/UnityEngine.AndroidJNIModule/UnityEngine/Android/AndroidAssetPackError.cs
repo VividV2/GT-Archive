@@ -16,6 +16,3 @@ public enum AndroidAssetPackError
 	AppNotOwned = -13,
 	InternalError = -100
 }
-namespace UnityEngine.Android
-{
-}

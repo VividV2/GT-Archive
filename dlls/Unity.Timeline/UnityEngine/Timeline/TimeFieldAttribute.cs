@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.Timeline.TimeFieldAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Timeline;
+
+internal class TimeFieldAttribute : PropertyAttribute
+{
+	public enum UseEditMode
+	{
+		None,
+		ApplyEditMode
+	}
+
+	public UseEditMode useEditMode { get; }
+
+	public TimeFieldAttribute(UseEditMode useEditMode = UseEditMode.ApplyEditMode)
+	{
+		this.useEditMode = useEditMode;
+	}
+}

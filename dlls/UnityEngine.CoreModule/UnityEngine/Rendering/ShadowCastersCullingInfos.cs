@@ -1,14 +1,10 @@
 using Unity.Collections;
 
-namespace UnityEngine.Rendering
-{
-	public struct ShadowCastersCullingInfos
-	{
-		public NativeArray<ShadowSplitData> splitBuffer;
+namespace UnityEngine.Rendering;
 
-		public NativeArray<LightShadowCasterCullingInfo> perLightInfos;
-	}
-}
-namespace UnityEngine.Pool
+public struct ShadowCastersCullingInfos
 {
+	public NativeArray<ShadowSplitData> splitBuffer;
+
+	public NativeArray<LightShadowCasterCullingInfo> perLightInfos;
 }

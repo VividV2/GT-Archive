@@ -1,2 +1,17 @@
-// Could not decompile GestureNode
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+[Serializable]
+public class GestureNode
+{
+	public bool track;
+
+	public GestureHandState state;
+
+	public GestureDigitFlexion flexion;
+
+	public GestureAlignment alignment;
+
+	[Space]
+	public GestureNodeFlags flags;
+}

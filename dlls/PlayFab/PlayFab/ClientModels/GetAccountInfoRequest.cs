@@ -1,6 +1,16 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetAccountInfoRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.ClientModels
-{
+	public string Email;
+
+	public string PlayFabId;
+
+	public string TitleDisplayName;
+
+	public string Username;
 }

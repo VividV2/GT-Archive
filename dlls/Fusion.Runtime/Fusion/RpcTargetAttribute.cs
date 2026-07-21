@@ -1,2 +1,8 @@
-// Could not decompile Fusion.RpcTargetAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Fusion;
+
+[AttributeUsage(AttributeTargets.Parameter)]
+public class RpcTargetAttribute : Attribute
+{
+}

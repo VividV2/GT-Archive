@@ -1,6 +1,14 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class ReportAdActivityRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.ClientModels
-{
+	public AdActivity Activity;
+
+	public string PlacementId;
+
+	public string RewardId;
 }

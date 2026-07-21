@@ -1,27 +1,23 @@
 using System.Collections.Generic;
 using Pathfinding.Serialization;
 
-namespace Pathfinding
+namespace Pathfinding;
+
+public interface IGraphInternals
 {
-	public interface IGraphInternals
-	{
-		string SerializedEditorSettings { get; set; }
+	string SerializedEditorSettings { get; set; }
 
-		void OnDestroy();
+	void OnDestroy();
 
-		void DestroyAllNodes();
+	void DestroyAllNodes();
 
-		IEnumerable<Progress> ScanInternal();
+	IEnumerable<Progress> ScanInternal();
 
-		void SerializeExtraInfo(GraphSerializationContext ctx);
+	void SerializeExtraInfo(GraphSerializationContext ctx);
 
-		void DeserializeExtraInfo(GraphSerializationContext ctx);
+	void DeserializeExtraInfo(GraphSerializationContext ctx);
 
-		void PostDeserialization(GraphSerializationContext ctx);
+	void PostDeserialization(GraphSerializationContext ctx);
 
-		void DeserializeSettingsCompatibility(GraphSerializationContext ctx);
-	}
-}
-namespace Pathfinding
-{
+	void DeserializeSettingsCompatibility(GraphSerializationContext ctx);
 }

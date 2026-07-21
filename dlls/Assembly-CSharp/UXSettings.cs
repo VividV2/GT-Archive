@@ -1,2 +1,7 @@
-// Could not decompile UXSettings
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "UXSettings", menuName = "UXSettings")]
+public class UXSettings : ScriptableObject
+{
+	public float StickSensitvity = 0.5f;
+}

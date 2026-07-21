@@ -1,2 +1,20 @@
-// Could not decompile Oculus.Interaction.HandSphere
-// This type uses unsupported IL or has too many generic parameters.
+using Oculus.Interaction.Input;
+using UnityEngine;
+
+namespace Oculus.Interaction;
+
+public struct HandSphere
+{
+	public Vector3 Position { get; }
+
+	public float Radius { get; }
+
+	public HandJointId Joint { get; }
+
+	public HandSphere(Vector3 position, float radius, HandJointId joint)
+	{
+		Position = position;
+		Radius = radius;
+		Joint = joint;
+	}
+}

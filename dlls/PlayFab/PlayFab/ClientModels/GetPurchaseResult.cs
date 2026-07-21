@@ -1,35 +1,18 @@
 using System;
 using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetPurchaseResult : PlayFabResultCommon
 {
-	[Serializable]
-	public class LoginWithPlayFabRequest : PlayFabRequestCommon
-	{
-		public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
+	public string OrderId;
 
-		public string Password;
+	public string PaymentProvider;
 
-		public string TitleId;
+	public DateTime PurchaseDate;
 
-		public string Username;
-	}
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class GetPurchaseResult : PlayFabResultCommon
-	{
-		public string OrderId;
+	public string TransactionId;
 
-		public string PaymentProvider;
-
-		public DateTime PurchaseDate;
-
-		public string TransactionId;
-
-		public string TransactionStatus;
-	}
+	public string TransactionStatus;
 }

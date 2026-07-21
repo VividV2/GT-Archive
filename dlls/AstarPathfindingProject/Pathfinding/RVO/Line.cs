@@ -1,14 +1,10 @@
 using UnityEngine;
 
-namespace Pathfinding.RVO
-{
-	public struct Line
-	{
-		public Vector2 point;
+namespace Pathfinding.RVO;
 
-		public Vector2 dir;
-	}
-}
-namespace Pathfinding.Util
+public struct Line
 {
+	public Vector2 point;
+
+	public Vector2 dir;
 }

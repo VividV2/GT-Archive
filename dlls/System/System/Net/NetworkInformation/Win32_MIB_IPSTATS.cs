@@ -1,9 +1,50 @@
-using System.Security.Cryptography.X509Certificates;
+namespace System.Net.NetworkInformation;
 
-namespace System.Net.Security
+internal struct Win32_MIB_IPSTATS
 {
-	internal delegate X509Certificate LocalCertSelectionCallback(string targetHost, X509CertificateCollection localCertificates, X509Certificate remoteCertificate, string[] acceptableIssuers);
-}
-namespace System.Net.Security
-{
+	public int Forwarding;
+
+	public int DefaultTTL;
+
+	public uint InReceives;
+
+	public uint InHdrErrors;
+
+	public uint InAddrErrors;
+
+	public uint ForwDatagrams;
+
+	public uint InUnknownProtos;
+
+	public uint InDiscards;
+
+	public uint InDelivers;
+
+	public uint OutRequests;
+
+	public uint RoutingDiscards;
+
+	public uint OutDiscards;
+
+	public uint OutNoRoutes;
+
+	public uint ReasmTimeout;
+
+	public uint ReasmReqds;
+
+	public uint ReasmOks;
+
+	public uint ReasmFails;
+
+	public uint FragOks;
+
+	public uint FragFails;
+
+	public uint FragCreates;
+
+	public int NumIf;
+
+	public int NumAddr;
+
+	public int NumRoutes;
 }

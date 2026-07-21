@@ -1,2 +1,13 @@
-// Could not decompile Modio.Errors.ApiError
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.Errors;
+
+public class ApiError : Error
+{
+	public new static readonly ApiError None = new ApiError(ApiErrorCode.NONE);
+
+	public new ApiErrorCode Code => (ApiErrorCode)base.Code;
+
+	public ApiError(ApiErrorCode code)
+		: base((ErrorCode)code)
+	{
+	}
+}

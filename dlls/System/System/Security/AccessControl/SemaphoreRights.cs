@@ -1,42 +1,24 @@
-namespace System.IO
+using System.Runtime.InteropServices;
+
+namespace System.Security.AccessControl;
+
+/// <summary>Specifies the access control rights that can be applied to named system semaphore objects.</summary>
+[Flags]
+[ComVisible(false)]
+public enum SemaphoreRights
 {
-	[Flags]
-	public enum NotifyFilters
-	{
-		Attributes = 4,
-		CreationTime = 0x40,
-		DirectoryName = 2,
-		FileName = 1,
-		LastAccess = 0x20,
-		LastWrite = 0x10,
-		Security = 0x100,
-		Size = 8
-	}
-}
-namespace System
-{
-	[Flags]
-	public enum UriComponents
-	{
-		Scheme = 1,
-		UserInfo = 2,
-		Host = 4,
-		Port = 8,
-		Path = 0x10,
-		Query = 0x20,
-		Fragment = 0x40,
-		StrongPort = 0x80,
-		NormalizedHost = 0x100,
-		KeepDelimiter = 0x40000000,
-		SerializationInfoString = int.MinValue,
-		AbsoluteUri = 0x7F,
-		HostAndPort = 0x84,
-		StrongAuthority = 0x86,
-		SchemeAndServer = 0xD,
-		HttpRequestUrl = 0x3D,
-		PathAndQuery = 0x30
-	}
-}
-namespace System.ComponentModel.Design
-{
+	/// <summary>The right to release a named semaphore.</summary>
+	Modify = 2,
+	/// <summary>The right to delete a named semaphore.</summary>
+	Delete = 0x10000,
+	/// <summary>The right to open and copy the access rules and audit rules for a named semaphore.</summary>
+	ReadPermissions = 0x20000,
+	/// <summary>The right to change the security and audit rules associated with a named semaphore.</summary>
+	ChangePermissions = 0x40000,
+	/// <summary>The right to change the owner of a named semaphore.</summary>
+	TakeOwnership = 0x80000,
+	/// <summary>The right to wait on a named semaphore.</summary>
+	Synchronize = 0x100000,
+	/// <summary>The right to exert full control over a named semaphore, and to modify its access rules and audit rules.</summary>
+	FullControl = 0x1F0003
 }

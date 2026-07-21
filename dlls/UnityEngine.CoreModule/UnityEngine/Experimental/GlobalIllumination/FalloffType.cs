@@ -1,14 +1,10 @@
-namespace UnityEngine.Categorization
+namespace UnityEngine.Experimental.GlobalIllumination;
+
+public enum FalloffType : byte
 {
-}
-namespace UnityEngine.Experimental.GlobalIllumination
-{
-	public enum FalloffType : byte
-	{
-		InverseSquared,
-		InverseSquaredNoRangeAttenuation,
-		Linear,
-		Legacy,
-		Undefined
-	}
+	InverseSquared,
+	InverseSquaredNoRangeAttenuation,
+	Linear,
+	Legacy,
+	Undefined
 }

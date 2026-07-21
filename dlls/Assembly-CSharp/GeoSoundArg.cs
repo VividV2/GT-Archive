@@ -1,2 +1,6 @@
-// Could not decompile GeoSoundArg
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GeoSoundArg : FXSArgs
+{
+	public Vector3 position;
+}

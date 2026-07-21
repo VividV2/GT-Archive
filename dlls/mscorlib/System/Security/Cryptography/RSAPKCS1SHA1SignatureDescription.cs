@@ -1,2 +1,9 @@
-// Could not decompile System.Security.Cryptography.RSAPKCS1SHA1SignatureDescription
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Security.Cryptography;
+
+internal class RSAPKCS1SHA1SignatureDescription : RSAPKCS1SignatureDescription
+{
+	public RSAPKCS1SHA1SignatureDescription()
+		: base("SHA1", "System.Security.Cryptography.SHA1Cng")
+	{
+	}
+}

@@ -1,2 +1,21 @@
-// Could not decompile UnityEngine.InputSystem.Controls.DoubleControl
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.InputSystem.LowLevel;
+
+namespace UnityEngine.InputSystem.Controls;
+
+public class DoubleControl : InputControl<double>
+{
+	public DoubleControl()
+	{
+		m_StateBlock.format = InputStateBlock.FormatDouble;
+	}
+
+	public unsafe override double ReadUnprocessedValueFromState(void* statePtr)
+	{
+		return m_StateBlock.ReadDouble(statePtr);
+	}
+
+	public unsafe override void WriteValueIntoState(double value, void* statePtr)
+	{
+		m_StateBlock.WriteDouble(statePtr, value);
+	}
+}

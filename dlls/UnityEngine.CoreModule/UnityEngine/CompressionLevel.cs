@@ -1,15 +1,11 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum CompressionLevel
 {
-	public enum CompressionLevel
-	{
-		None,
-		Fastest,
-		Fast,
-		Normal,
-		High,
-		Maximum
-	}
-}
-namespace UnityEngine
-{
+	None,
+	Fastest,
+	Fast,
+	Normal,
+	High,
+	Maximum
 }

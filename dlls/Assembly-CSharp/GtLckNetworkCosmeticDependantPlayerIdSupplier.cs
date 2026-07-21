@@ -1,2 +1,20 @@
-// Could not decompile GtLckNetworkCosmeticDependantPlayerIdSupplier
-// This type uses unsupported IL or has too many generic parameters.
+using Liv.Lck.Cosmetics;
+using UnityEngine;
+
+public class GtLckNetworkCosmeticDependantPlayerIdSupplier : MonoBehaviour, ILckCosmeticDependantPlayerIdSupplier
+{
+	[SerializeField]
+	private VRRig vrrig;
+
+	public event PlayerIdUpdatedEvent PlayerIdUpdated;
+
+	public string GetPlayerId()
+	{
+		return vrrig.OwningNetPlayer.UserId;
+	}
+
+	public void UpdatePlayerId()
+	{
+		this.PlayerIdUpdated?.Invoke();
+	}
+}

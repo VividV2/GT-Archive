@@ -1,5 +1,4 @@
 using System.Security.Permissions;
-using System.Security.Permissions;
 using Unity;
 
 namespace System.Management.Instrumentation;

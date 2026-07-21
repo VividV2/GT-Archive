@@ -1,44 +1,15 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
-namespace System.Security.Cryptography;
+namespace System.Runtime.CompilerServices;
 
-/// <summary>Contains the typical parameters for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-/// <summary>Contains the typical parameters for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
+/// <summary>Applies metadata to an assembly that indicates that a type is an unmanaged type.  This class cannot be inherited.</summary>
 [Serializable]
 [ComVisible(true)]
-public struct DSAParameters
+[AttributeUsage(AttributeTargets.Struct, Inherited = true)]
+public sealed class NativeCppClassAttribute : Attribute
 {
-	/// <summary>Specifies the <see langword="P" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	/// <summary>Specifies the <see langword="P" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	public byte[] P;
-
-	/// <summary>Specifies the <see langword="Q" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	/// <summary>Specifies the <see langword="Q" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	public byte[] Q;
-
-	/// <summary>Specifies the <see langword="G" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	/// <summary>Specifies the <see langword="G" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	public byte[] G;
-
-	/// <summary>Specifies the <see langword="Y" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	/// <summary>Specifies the <see langword="Y" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	public byte[] Y;
-
-	/// <summary>Specifies the <see langword="J" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	/// <summary>Specifies the <see langword="J" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	public byte[] J;
-
-	/// <summary>Specifies the <see langword="X" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	/// <summary>Specifies the <see langword="X" /> parameter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	[NonSerialized]
-	public byte[] X;
-
-	/// <summary>Specifies the seed for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	/// <summary>Specifies the seed for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	public byte[] Seed;
-
-	/// <summary>Specifies the counter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	/// <summary>Specifies the counter for the <see cref="T:System.Security.Cryptography.DSA" /> algorithm.</summary>
-	public int Counter;
+	/// <summary>Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.NativeCppClassAttribute" /> class.</summary>
+	public NativeCppClassAttribute()
+	{
+	}
 }

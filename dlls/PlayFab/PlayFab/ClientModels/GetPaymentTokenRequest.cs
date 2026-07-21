@@ -1,2 +1,10 @@
-// Could not decompile PlayFab.ClientModels.GetPaymentTokenRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetPaymentTokenRequest : PlayFabRequestCommon
+{
+	public string TokenProvider;
+}

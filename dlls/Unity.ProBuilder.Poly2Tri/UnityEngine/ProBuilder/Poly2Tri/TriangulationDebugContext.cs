@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.ProBuilder.Poly2Tri.TriangulationDebugContext
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.ProBuilder.Poly2Tri;
+
+internal abstract class TriangulationDebugContext
+{
+	protected TriangulationContext _tcx;
+
+	public TriangulationDebugContext(TriangulationContext tcx)
+	{
+		_tcx = tcx;
+	}
+
+	public abstract void Clear();
+}

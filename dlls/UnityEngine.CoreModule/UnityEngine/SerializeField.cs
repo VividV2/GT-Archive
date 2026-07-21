@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.SerializeField
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+[RequiredByNativeCode]
+public sealed class SerializeField : Attribute
+{
+}

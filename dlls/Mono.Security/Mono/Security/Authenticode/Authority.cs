@@ -1,12 +1,8 @@
-namespace Mono.Security.Authenticode
+namespace Mono.Security.Authenticode;
+
+public enum Authority
 {
-	public enum Authority
-	{
-		Individual,
-		Commercial,
-		Maximum
-	}
-}
-namespace Mono.Security.Interface
-{
+	Individual,
+	Commercial,
+	Maximum
 }

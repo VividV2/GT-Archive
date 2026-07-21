@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.UIElements.UxmlAttributeBindingPathAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.UIElements;
+
+internal class UxmlAttributeBindingPathAttribute : Attribute
+{
+	public string path { get; private set; }
+
+	public UxmlAttributeBindingPathAttribute(string bindingPath)
+	{
+		path = bindingPath;
+	}
+}

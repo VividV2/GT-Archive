@@ -24,9 +24,3 @@ public interface IXsltContextVariable
 	/// <returns>An <see cref="T:System.Object" /> representing the value of the variable. Possible return types include number, string, Boolean, document fragment, or node set.</returns>
 	object Evaluate(XsltContext xsltContext);
 }
-namespace System.Xml.Serialization
-{
-}
-namespace System.Xml.Xsl.IlGen
-{
-}

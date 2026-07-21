@@ -1,2 +1,8 @@
-// Could not decompile System.Xml.Schema.Position
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+internal struct Position(int symbol, object particle)
+{
+	public int symbol = symbol;
+
+	public object particle = particle;
+}

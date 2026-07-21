@@ -1,2 +1,9 @@
-// Could not decompile Liv.Lck.Streaming.LckStreamingConfiguredCorrectlyState
-// This type uses unsupported IL or has too many generic parameters.
+namespace Liv.Lck.Streaming;
+
+public class LckStreamingConfiguredCorrectlyState : LckStreamingBaseState
+{
+	public override void EnterState(LckStreamingController controller)
+	{
+		controller.HideNotifications();
+	}
+}

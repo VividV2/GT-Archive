@@ -1,2 +1,22 @@
-// Could not decompile Meta.XR.ImmersiveDebugger.Hierarchy.ComponentItem
-// This type uses unsupported IL or has too many generic parameters.
+using Meta.XR.ImmersiveDebugger.Manager;
+using Meta.XR.ImmersiveDebugger.Utils;
+using UnityEngine;
+
+namespace Meta.XR.ImmersiveDebugger.Hierarchy;
+
+internal class ComponentItem : Item<Component>
+{
+	public override string Label => base.Handle.Type.Name;
+
+	public override bool Valid => _owner != null;
+
+	public override Category Category => new Category
+	{
+		Item = base.Parent
+	};
+
+	protected override InstanceHandle BuildHandle()
+	{
+		return new InstanceHandle(_owner.GetType(), _owner);
+	}
+}

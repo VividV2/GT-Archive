@@ -1,22 +1,15 @@
-namespace System.Runtime.InteropServices.ComTypes;
+using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-public struct ELEMDESC
+namespace System.Runtime.Remoting;
+
+/// <summary>Specifies how custom errors are handled.</summary>
+[ComVisible(true)]
+public enum CustomErrorsModes
 {
-	[StructLayout(LayoutKind.Explicit, CharSet = CharSet.Unicode)]
-	public struct DESCUNION
-	{
-		[FieldOffset(0)]
-		public IDLDESC idldesc;
-
-		[FieldOffset(0)]
-		public PARAMDESC paramdesc;
-	}
-
-	public TYPEDESC tdesc;
-
-	public DESCUNION desc;
-}
-namespace Mono
-{
+	/// <summary>All callers receive filtered exception information.</summary>
+	On,
+	/// <summary>All callers receive complete exception information.</summary>
+	Off,
+	/// <summary>Local callers receive complete exception information; remote callers receive filtered exception information.</summary>
+	RemoteOnly
 }

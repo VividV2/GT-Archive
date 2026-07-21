@@ -1,2 +1,18 @@
-// Could not decompile UnityEngine.DefaultExecutionOrder
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+[UsedByNativeCode]
+[AttributeUsage(AttributeTargets.Class)]
+public class DefaultExecutionOrder : Attribute
+{
+	private int m_Order;
+
+	public int order => m_Order;
+
+	public DefaultExecutionOrder(int order)
+	{
+		m_Order = order;
+	}
+}

@@ -1,10 +1,20 @@
+using System;
+using PlayFab.SharedModels;
+
 namespace PlayFab.ClientModels;
 
 [Serializable]
-public class LinkKongregateAccountResult : PlayFabResultCommon
+public class LoginWithGoogleAccountRequest : PlayFabRequestCommon
 {
-	public LinkKongregateAccountResult()
-	{
-		base..ctor();
-	}
+	public bool? CreateAccount;
+
+	public string EncryptedRequest;
+
+	public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
+
+	public string PlayerSecret;
+
+	public string ServerAuthCode;
+
+	public string TitleId;
 }

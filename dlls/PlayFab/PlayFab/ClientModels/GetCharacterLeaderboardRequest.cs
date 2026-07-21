@@ -14,6 +14,3 @@ public class GetCharacterLeaderboardRequest : PlayFabRequestCommon
 
 	public string StatisticName;
 }
-namespace PlayFab.Internal
-{
-}

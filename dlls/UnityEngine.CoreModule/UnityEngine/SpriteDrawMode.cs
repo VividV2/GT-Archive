@@ -1,24 +1,8 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum SpriteDrawMode
 {
-	public enum SpriteDrawMode
-	{
-		Simple,
-		Sliced,
-		Tiled
-	}
-}
-namespace UnityEngine
-{
-	public enum LODFadeMode
-	{
-		None,
-		CrossFade,
-		SpeedTree
-	}
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine.Rendering
-{
+	Simple,
+	Sliced,
+	Tiled
 }

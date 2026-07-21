@@ -1,2 +1,9 @@
-// Could not decompile GorillaTag.Cosmetics.AOEContextEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace GorillaTag.Cosmetics;
+
+[Serializable]
+public class AOEContextEvent : UnityEvent<AOEReceiver.AOEContext>
+{
+}

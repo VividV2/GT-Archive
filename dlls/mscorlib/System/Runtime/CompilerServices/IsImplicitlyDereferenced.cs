@@ -1,19 +1,6 @@
-using System.Runtime.InteropServices;
+namespace System.Runtime.CompilerServices;
 
-namespace System.Security.Cryptography;
-
-[Serializable]
-[Flags]
-[ComVisible(true)]
-public enum CspProviderFlags
+/// <summary>Indicates that the modified garbage collection reference represents a reference parameter within a method signature. This class cannot be inherited.</summary>
+public static class IsImplicitlyDereferenced
 {
-	NoFlags = 0,
-	UseMachineKeyStore = 1,
-	UseDefaultKeyContainer = 2,
-	UseNonExportableKey = 4,
-	UseExistingKey = 8,
-	UseArchivableKey = 0x10,
-	UseUserProtectedKey = 0x20,
-	NoPrompt = 0x40,
-	CreateEphemeralKey = 0x80
 }

@@ -1,2 +1,8 @@
-// Could not decompile Oculus.Interaction.Input.ControllerDataSourceConfig
-// This type uses unsupported IL or has too many generic parameters.
+namespace Oculus.Interaction.Input;
+
+public class ControllerDataSourceConfig
+{
+	public Handedness Handedness { get; set; }
+
+	public ITrackingToWorldTransformer TrackingToWorldTransformer { get; set; }
+}

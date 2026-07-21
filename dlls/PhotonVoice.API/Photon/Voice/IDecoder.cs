@@ -1,22 +1,12 @@
 using System;
 
-namespace Photon.Voice
-{
-}
-namespace Photon.Voice
-{
-	public interface IDecoder : IDisposable
-	{
-		string Error { get; }
+namespace Photon.Voice;
 
-		void Open(VoiceInfo info);
+public interface IDecoder : IDisposable
+{
+	string Error { get; }
 
-		void Input(ref FrameBuffer buf);
-	}
-}
-namespace Photon.Voice
-{
-}
-namespace Photon.Voice
-{
+	void Open(VoiceInfo info);
+
+	void Input(ref FrameBuffer buf);
 }

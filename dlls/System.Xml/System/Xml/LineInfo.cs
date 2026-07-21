@@ -1,2 +1,14 @@
-// Could not decompile System.Xml.LineInfo
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml;
+
+internal struct LineInfo(int lineNo, int linePos)
+{
+	internal int lineNo = lineNo;
+
+	internal int linePos = linePos;
+
+	public void Set(int lineNo, int linePos)
+	{
+		this.lineNo = lineNo;
+		this.linePos = linePos;
+	}
+}

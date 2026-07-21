@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.Bindings.IgnoreAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Bindings;
+
+[AttributeUsage(AttributeTargets.Field)]
+[VisibleToOtherModules]
+internal class IgnoreAttribute : Attribute, IBindingsAttribute
+{
+	public bool DoesNotContributeToSize { get; set; }
+}

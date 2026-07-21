@@ -1,12 +1,8 @@
-namespace System.Linq.Expressions
-{
-}
-namespace System.Linq.Expressions
-{
-	internal interface IParameterProvider
-	{
-		int ParameterCount { get; }
+namespace System.Linq.Expressions;
 
-		ParameterExpression GetParameter(int index);
-	}
+internal interface IParameterProvider
+{
+	int ParameterCount { get; }
+
+	ParameterExpression GetParameter(int index);
 }

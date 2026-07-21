@@ -1,2 +1,12 @@
-// Could not decompile PlayFab.ClientModels.UserTwitchInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class UserTwitchInfo : PlayFabBaseModel
+{
+	public string TwitchId;
+
+	public string TwitchUserName;
+}

@@ -1,2 +1,9 @@
-// Could not decompile DestroyOnDisabled
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class DestroyOnDisabled : MonoBehaviour
+{
+	private void OnDisable()
+	{
+		Object.Destroy(base.gameObject);
+	}
+}

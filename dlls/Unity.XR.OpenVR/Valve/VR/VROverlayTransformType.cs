@@ -1,23 +1,14 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum VROverlayTransformType
 {
-	public enum EVRDistortionFunctionType
-	{
-		None,
-		FTheta,
-		Extended_FTheta,
-		MAX_DISTORTION_FUNCTION_TYPES
-	}
-}
-namespace Valve.VR
-{
-	public enum VRMessageOverlayResponse
-	{
-		ButtonPress_0,
-		ButtonPress_1,
-		ButtonPress_2,
-		ButtonPress_3,
-		CouldntFindSystemOverlay,
-		CouldntFindOrCreateClientOverlay,
-		ApplicationQuit
-	}
+	VROverlayTransform_Invalid = -1,
+	VROverlayTransform_Absolute,
+	VROverlayTransform_TrackedDeviceRelative,
+	VROverlayTransform_SystemOverlay,
+	VROverlayTransform_TrackedComponent,
+	VROverlayTransform_Cursor,
+	VROverlayTransform_DashboardTab,
+	VROverlayTransform_DashboardThumb,
+	VROverlayTransform_Mountable
 }

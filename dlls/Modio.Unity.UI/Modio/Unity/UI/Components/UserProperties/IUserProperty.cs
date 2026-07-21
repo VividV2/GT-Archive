@@ -1,12 +1,8 @@
 using Modio.Users;
 
-namespace Modio.Unity.UI.Components.UserProperties
+namespace Modio.Unity.UI.Components.UserProperties;
+
+public interface IUserProperty
 {
-	public interface IUserProperty
-	{
-		void OnUserUpdate(UserProfile user);
-	}
-}
-namespace Modio.Unity.UI.Components
-{
+	void OnUserUpdate(UserProfile user);
 }

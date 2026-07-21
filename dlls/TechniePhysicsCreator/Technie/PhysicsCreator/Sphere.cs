@@ -1,2 +1,10 @@
-// Could not decompile Technie.PhysicsCreator.Sphere
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Technie.PhysicsCreator;
+
+public class Sphere
+{
+	public Vector3 center;
+
+	public float radius = 1f;
+}

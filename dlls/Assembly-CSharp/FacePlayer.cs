@@ -1,2 +1,9 @@
-// Could not decompile FacePlayer
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class FacePlayer : MonoBehaviour
+{
+	private void LateUpdate()
+	{
+		base.transform.rotation = Quaternion.LookRotation(base.transform.position - GorillaTagger.Instance.headCollider.transform.position) * Quaternion.AngleAxis(-90f, Vector3.up);
+	}
+}

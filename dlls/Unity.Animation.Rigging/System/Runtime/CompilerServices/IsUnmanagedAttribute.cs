@@ -1,13 +1,9 @@
 using Microsoft.CodeAnalysis;
 
-namespace System.Runtime.CompilerServices
-{
-	[CompilerGenerated]
-	[Microsoft.CodeAnalysis.Embedded]
-	internal sealed class IsUnmanagedAttribute : Attribute
-	{
-	}
-}
-namespace UnityEngine.Animations.Rigging
+namespace System.Runtime.CompilerServices;
+
+[CompilerGenerated]
+[Microsoft.CodeAnalysis.Embedded]
+internal sealed class IsUnmanagedAttribute : Attribute
 {
 }

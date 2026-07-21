@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Rendering.Universal.MotionBlurModeParameter
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering.Universal;
+
+[Serializable]
+public sealed class MotionBlurModeParameter : VolumeParameter<MotionBlurMode>
+{
+	public MotionBlurModeParameter(MotionBlurMode value, bool overrideState = false)
+		: base(value, overrideState)
+	{
+	}
+}

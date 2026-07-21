@@ -1,2 +1,9 @@
-// Could not decompile Photon.Voice.AudioInEnumeratorNotSupported
-// This type uses unsupported IL or has too many generic parameters.
+namespace Photon.Voice;
+
+internal class AudioInEnumeratorNotSupported : DeviceEnumeratorNotSupported
+{
+	public AudioInEnumeratorNotSupported(ILogger logger)
+		: base(logger, "Current platform is not supported by audio input DeviceEnumerator.")
+	{
+	}
+}

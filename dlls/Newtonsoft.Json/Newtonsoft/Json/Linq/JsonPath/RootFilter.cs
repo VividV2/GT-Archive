@@ -1,21 +1,17 @@
 using System.Collections.Generic;
 
-namespace Newtonsoft.Json.Linq.JsonPath
+namespace Newtonsoft.Json.Linq.JsonPath;
+
+internal class RootFilter : PathFilter
 {
-	internal class RootFilter : PathFilter
+	public static readonly RootFilter Instance = new RootFilter();
+
+	private RootFilter()
 	{
-		public static readonly RootFilter Instance = new RootFilter();
-
-		private RootFilter()
-		{
-		}
-
-		public override IEnumerable<JToken> ExecuteFilter(JToken root, IEnumerable<JToken> current, JsonSelectSettings? settings)
-		{
-			return new JToken[1] { root };
-		}
 	}
-}
-namespace Newtonsoft.Json.Schema
-{
+
+	public override IEnumerable<JToken> ExecuteFilter(JToken root, IEnumerable<JToken> current, JsonSelectSettings? settings)
+	{
+		return new JToken[1] { root };
+	}
 }

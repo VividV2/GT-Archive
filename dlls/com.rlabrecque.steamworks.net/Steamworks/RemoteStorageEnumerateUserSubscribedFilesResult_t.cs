@@ -1,19 +1,22 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(1314)]
+public struct RemoteStorageEnumerateUserSubscribedFilesResult_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(207)]
-	public struct GSGameplayStats_t
-	{
-		public const int k_iCallback = 207;
+	public const int k_iCallback = 1314;
 
-		public EResult m_eResult;
+	public EResult m_eResult;
 
-		public int m_nRank;
+	public int m_nResultsReturned;
 
-		public uint m_unTotalConnects;
+	public int m_nTotalResultCount;
 
-		public uint m_unTotalMinutesPlayed;
-	}
+	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
+	public PublishedFileId_t[] m_rgPublishedFileId;
+
+	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
+	public uint[] m_rgRTimeSubscribed;
 }

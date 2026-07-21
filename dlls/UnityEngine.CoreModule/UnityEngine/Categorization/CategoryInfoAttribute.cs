@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.Categorization.CategoryInfoAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Categorization;
+
+[AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
+public sealed class CategoryInfoAttribute : Attribute
+{
+	public int Order { get; set; } = int.MaxValue;
+
+	public string Name { get; set; } = null;
+}

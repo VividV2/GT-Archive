@@ -15,12 +15,3 @@ internal class NsAlias
 		ImportPrecedence = importPrecedence;
 	}
 }
-namespace System.Xml.Xsl.XsltOld
-{
-}
-namespace System.Xml.Schema
-{
-}
-namespace System.Xml.Schema
-{
-}

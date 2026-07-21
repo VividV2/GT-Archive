@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Interactables.DistanceInfo
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.XR.Interaction.Toolkit.Interactables;
+
+[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
+public struct DistanceInfo
+{
+	public Vector3 point { get; set; }
+
+	public float distanceSqr { get; set; }
+
+	public Collider collider { get; set; }
+}

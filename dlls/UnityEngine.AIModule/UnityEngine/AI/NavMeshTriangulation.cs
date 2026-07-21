@@ -1,2 +1,19 @@
-// Could not decompile UnityEngine.AI.NavMeshTriangulation
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Scripting;
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.AI;
+
+[MovedFrom("UnityEngine")]
+[UsedByNativeCode]
+public struct NavMeshTriangulation
+{
+	public Vector3[] vertices;
+
+	public int[] indices;
+
+	public int[] areas;
+
+	[Obsolete("Use areas instead.")]
+	public int[] layers => areas;
+}

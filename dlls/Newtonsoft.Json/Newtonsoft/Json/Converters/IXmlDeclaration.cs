@@ -1,24 +1,10 @@
-namespace Newtonsoft.Json.Serialization
+namespace Newtonsoft.Json.Converters;
+
+internal interface IXmlDeclaration : IXmlNode
 {
-	public interface IReferenceResolver
-	{
-		object ResolveReference(object context, string reference);
+	string? Version { get; }
 
-		string GetReference(object context, object value);
+	string? Encoding { get; set; }
 
-		bool IsReferenced(object context, object value);
-
-		void AddReference(object context, string reference, object value);
-	}
-}
-namespace Newtonsoft.Json.Converters
-{
-	internal interface IXmlDeclaration : IXmlNode
-	{
-		string? Version { get; }
-
-		string? Encoding { get; set; }
-
-		string? Standalone { get; set; }
-	}
+	string? Standalone { get; set; }
 }

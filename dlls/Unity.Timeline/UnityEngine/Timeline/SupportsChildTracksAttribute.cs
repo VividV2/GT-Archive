@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.Timeline.SupportsChildTracksAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Timeline;
+
+[AttributeUsage(AttributeTargets.Class, Inherited = false)]
+internal class SupportsChildTracksAttribute : Attribute
+{
+	public readonly Type childType;
+
+	public readonly int levels;
+
+	public SupportsChildTracksAttribute(Type childType = null, int levels = int.MaxValue)
+	{
+		this.childType = childType;
+		this.levels = levels;
+	}
+}

@@ -1,2 +1,15 @@
-// Could not decompile NexusCreatorCode
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "NexusCreatorCode", menuName = "Nexus/NexusCreatorCode")]
+public class NexusCreatorCode : ScriptableObject
+{
+	[SerializeField]
+	private string code;
+
+	[SerializeField]
+	private NexusGroupId groupId;
+
+	public string Code => code;
+
+	public NexusGroupId GroupId => groupId;
+}

@@ -1,10 +1,12 @@
+using System;
+
 namespace Valve.VR;
 
-public struct HmdVector3_t
+public struct VRTextureDepthInfo_t
 {
-	public float v0;
+	public IntPtr handle;
 
-	public float v1;
+	public HmdMatrix44_t mProjection;
 
-	public float v2;
+	public HmdVector2_t vRange;
 }

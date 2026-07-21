@@ -1,2 +1,12 @@
-// Could not decompile SerializablePerformanceReport`1
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+
+[Serializable]
+public class SerializablePerformanceReport<T>
+{
+	public string reportDate;
+
+	public string version;
+
+	public List<T> results;
+}

@@ -1,7 +1,16 @@
+using System.Runtime.InteropServices;
+
 namespace Valve.VR;
 
-public enum EVRSummaryType
+public struct VREvent_Process_t
 {
-	FromAnimation,
-	FromDevice
+	public uint pid;
+
+	public uint oldPid;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bForced;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bConnectionLost;
 }

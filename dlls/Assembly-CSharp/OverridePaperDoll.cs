@@ -1,2 +1,8 @@
-// Could not decompile OverridePaperDoll
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class OverridePaperDoll : MonoBehaviour
+{
+	public GameObject rightSideOverride;
+
+	public bool replacesHeadMesh;
+}

@@ -1,2 +1,9 @@
-// Could not decompile ObjectExtensions
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public static class ObjectExtensions
+{
+	public static void Destroy(this Object target)
+	{
+		Object.Destroy(target);
+	}
+}

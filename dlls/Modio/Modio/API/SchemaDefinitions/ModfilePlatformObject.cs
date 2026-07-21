@@ -1,2 +1,11 @@
-// Could not decompile Modio.API.SchemaDefinitions.ModfilePlatformObject
-// This type uses unsupported IL or has too many generic parameters.
+using Newtonsoft.Json;
+
+namespace Modio.API.SchemaDefinitions;
+
+[JsonObject(MemberSerialization.Fields)]
+internal readonly struct ModfilePlatformObject(string platform, long status)
+{
+	internal readonly string Platform = platform;
+
+	internal readonly long Status = status;
+}

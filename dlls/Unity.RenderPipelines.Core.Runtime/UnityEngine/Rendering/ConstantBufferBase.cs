@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.Rendering.ConstantBufferBase
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+public abstract class ConstantBufferBase
+{
+	public abstract void Release();
+}

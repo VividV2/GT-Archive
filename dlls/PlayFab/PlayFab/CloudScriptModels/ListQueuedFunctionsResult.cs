@@ -1,6 +1,11 @@
-namespace PlayFab.ClientModels
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.CloudScriptModels;
+
+[Serializable]
+public class ListQueuedFunctionsResult : PlayFabResultCommon
 {
-}
-namespace PlayFab.ClientModels
-{
+	public List<QueuedFunctionModel> Functions;
 }

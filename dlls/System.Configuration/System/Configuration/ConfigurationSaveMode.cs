@@ -10,6 +10,3 @@ public enum ConfigurationSaveMode
 	/// <summary>Causes only modified properties to be written to the configuration file, even when the value is the same as the inherited value.</summary>
 	Modified = 0
 }
-namespace System.Configuration
-{
-}

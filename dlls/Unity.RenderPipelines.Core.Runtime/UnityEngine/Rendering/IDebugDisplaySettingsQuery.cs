@@ -1,2 +1,15 @@
-// Could not decompile UnityEngine.Rendering.IDebugDisplaySettingsQuery
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+public interface IDebugDisplaySettingsQuery
+{
+	bool AreAnySettingsActive { get; }
+
+	bool IsPostProcessingAllowed => true;
+
+	bool IsLightingActive => true;
+
+	bool TryGetScreenClearColor(ref Color color)
+	{
+		return false;
+	}
+}

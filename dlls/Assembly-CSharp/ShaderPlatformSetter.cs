@@ -1,2 +1,11 @@
-// Could not decompile ShaderPlatformSetter
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public static class ShaderPlatformSetter
+{
+	[RuntimeInitializeOnLoadMethod]
+	public static void HandleRuntimeInitializeOnLoad()
+	{
+		Shader.DisableKeyword("PLATFORM_IS_ANDROID");
+		Shader.DisableKeyword("QATESTING");
+	}
+}

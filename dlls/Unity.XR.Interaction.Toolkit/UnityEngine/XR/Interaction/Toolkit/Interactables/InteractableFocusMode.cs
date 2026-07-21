@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Interactables.InteractableFocusMode
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.XR.Interaction.Toolkit.Interactables;
+
+[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
+public enum InteractableFocusMode
+{
+	None,
+	Single,
+	Multiple
+}

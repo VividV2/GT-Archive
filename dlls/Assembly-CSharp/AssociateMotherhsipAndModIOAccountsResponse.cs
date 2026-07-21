@@ -1,2 +1,8 @@
-// Could not decompile AssociateMotherhsipAndModIOAccountsResponse
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+
+[Serializable]
+public class AssociateMotherhsipAndModIOAccountsResponse
+{
+	private List<ModIOMothershipAssociation> Results = new List<ModIOMothershipAssociation>();
+}

@@ -1,17 +1,13 @@
-namespace OVR.OpenVR
+namespace OVR.OpenVR;
+
+public enum ETextureType
 {
-	public enum ETextureType
-	{
-		Invalid = -1,
-		DirectX,
-		OpenGL,
-		Vulkan,
-		IOSurface,
-		DirectX12,
-		DXGISharedHandle,
-		Metal
-	}
-}
-namespace OVR.OpenVR
-{
+	Invalid = -1,
+	DirectX,
+	OpenGL,
+	Vulkan,
+	IOSurface,
+	DirectX12,
+	DXGISharedHandle,
+	Metal
 }

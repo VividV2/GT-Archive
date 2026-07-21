@@ -1,2 +1,10 @@
-// Could not decompile System.Configuration.UserSettingsGroup
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Configuration;
+
+/// <summary>Represents a grouping of related user settings sections within a configuration file. This class cannot be inherited.</summary>
+public sealed class UserSettingsGroup : ConfigurationSectionGroup
+{
+	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.UserSettingsGroup" /> class.</summary>
+	public UserSettingsGroup()
+	{
+	}
+}

@@ -1,2 +1,24 @@
-// Could not decompile PlayFab.ClientModels.LoginResult
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class LoginResult : PlayFabLoginResultCommon
+{
+	public EntityTokenResponse EntityToken;
+
+	public GetPlayerCombinedInfoResultPayload InfoResultPayload;
+
+	public DateTime? LastLoginTime;
+
+	public bool NewlyCreated;
+
+	public string PlayFabId;
+
+	public string SessionTicket;
+
+	public UserSettings SettingsForUser;
+
+	public TreatmentAssignment TreatmentAssignment;
+}

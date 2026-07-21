@@ -1,2 +1,8 @@
-// Could not decompile Meta.WitAi.Json.JsonIgnoreAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Meta.WitAi.Json;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
+public class JsonIgnoreAttribute : Attribute
+{
+}

@@ -1,2 +1,6 @@
-// Could not decompile Liv.Lck.Streaming.LckStreamingBaseState
-// This type uses unsupported IL or has too many generic parameters.
+namespace Liv.Lck.Streaming;
+
+public abstract class LckStreamingBaseState
+{
+	public abstract void EnterState(LckStreamingController controller);
+}

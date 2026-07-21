@@ -1,2 +1,11 @@
-// Could not decompile Valve.VR.InteractionSystem.HideOnHandFocusLost
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Valve.VR.InteractionSystem;
+
+public class HideOnHandFocusLost : MonoBehaviour
+{
+	private void OnHandFocusLost(Hand hand)
+	{
+		base.gameObject.SetActive(value: false);
+	}
+}

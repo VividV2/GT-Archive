@@ -1,12 +1,6 @@
 namespace Fusion.Photon.Realtime;
 
-internal enum RoomOptionBit
+internal interface IErrorInfoCallback
 {
-	CheckUserOnJoin = 1,
-	DeleteCacheOnLeave = 2,
-	SuppressRoomEvents = 4,
-	PublishUserId = 8,
-	DeleteNullProps = 0x10,
-	BroadcastPropsChangeToAll = 0x20,
-	SuppressPlayerInfo = 0x40
+	void OnErrorInfo(ErrorInfo errorInfo);
 }

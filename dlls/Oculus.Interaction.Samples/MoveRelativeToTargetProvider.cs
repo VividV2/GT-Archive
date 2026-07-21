@@ -1,2 +1,10 @@
-// Could not decompile MoveRelativeToTargetProvider
-// This type uses unsupported IL or has too many generic parameters.
+using Oculus.Interaction;
+using UnityEngine;
+
+public class MoveRelativeToTargetProvider : MonoBehaviour, IMovementProvider
+{
+	public IMovement CreateMovement()
+	{
+		return new MoveRelativeToTarget();
+	}
+}

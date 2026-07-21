@@ -1,7 +1,9 @@
-namespace UnityEngine;
+using Microsoft.CodeAnalysis;
 
-public enum ShadowmaskMode
+namespace System.Runtime.CompilerServices;
+
+[Microsoft.CodeAnalysis.Embedded]
+[CompilerGenerated]
+internal sealed class IsUnmanagedAttribute : Attribute
 {
-	Shadowmask,
-	DistanceShadowmask
 }

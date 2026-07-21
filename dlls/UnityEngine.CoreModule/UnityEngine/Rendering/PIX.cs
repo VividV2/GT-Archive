@@ -1,9 +1,21 @@
-namespace UnityEngine;
+using System.Runtime.CompilerServices;
+using UnityEngine.Bindings;
 
-public enum LightmapCompression
+namespace UnityEngine.Rendering;
+
+[NativeHeader("PlatformDependent/Win/Profiler/PixBindings.h")]
+[NativeConditional("PLATFORM_WIN && ENABLE_PROFILER")]
+public class PIX
 {
-	None,
-	LowQuality,
-	NormalQuality,
-	HighQuality
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[FreeFunction("PIX::BeginGPUCapture")]
+	public static extern void BeginGPUCapture();
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[FreeFunction("PIX::EndGPUCapture")]
+	public static extern void EndGPUCapture();
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[FreeFunction("PIX::IsAttached")]
+	public static extern bool IsAttached();
 }

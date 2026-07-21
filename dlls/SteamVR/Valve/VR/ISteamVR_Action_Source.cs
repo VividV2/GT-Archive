@@ -1,24 +1,20 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public interface ISteamVR_Action_Source
 {
-	public interface ISteamVR_Action_Source
-	{
-		bool active { get; }
+	bool active { get; }
 
-		bool activeBinding { get; }
+	bool activeBinding { get; }
 
-		bool lastActive { get; }
+	bool lastActive { get; }
 
-		bool lastActiveBinding { get; }
+	bool lastActiveBinding { get; }
 
-		string fullPath { get; }
+	string fullPath { get; }
 
-		ulong handle { get; }
+	ulong handle { get; }
 
-		SteamVR_ActionSet actionSet { get; }
+	SteamVR_ActionSet actionSet { get; }
 
-		SteamVR_ActionDirections direction { get; }
-	}
-}
-namespace Valve.VR
-{
+	SteamVR_ActionDirections direction { get; }
 }

@@ -1,2 +1,15 @@
-// Could not decompile System.Reflection.SignatureGenericMethodParameterType
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Reflection;
+
+internal sealed class SignatureGenericMethodParameterType : SignatureGenericParameterType
+{
+	public sealed override bool IsGenericTypeParameter => false;
+
+	public sealed override bool IsGenericMethodParameter => true;
+
+	public sealed override string Name => "!!" + GenericParameterPosition;
+
+	internal SignatureGenericMethodParameterType(int position)
+		: base(position)
+	{
+	}
+}

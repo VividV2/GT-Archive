@@ -1,20 +1,13 @@
 using UnityEngine.Networking;
 
-namespace Backtrace.Unity.Model
-{
-}
-namespace Backtrace.Unity.Runtime.Native.Base
-{
-}
-namespace Backtrace.Unity.Model
-{
-	public class BacktraceSelfSSLCertificateHandler : CertificateHandler
-	{
-		private static readonly string PUB_KEY = string.Empty;
+namespace Backtrace.Unity.Model;
 
-		protected override bool ValidateCertificate(byte[] certificateData)
-		{
-			return true;
-		}
+public class BacktraceSelfSSLCertificateHandler : CertificateHandler
+{
+	private static readonly string PUB_KEY = string.Empty;
+
+	protected override bool ValidateCertificate(byte[] certificateData)
+	{
+		return true;
 	}
 }

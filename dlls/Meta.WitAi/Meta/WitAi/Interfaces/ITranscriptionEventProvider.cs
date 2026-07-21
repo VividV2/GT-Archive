@@ -1,10 +1,6 @@
-namespace Meta.WitAi.Interfaces
+namespace Meta.WitAi.Interfaces;
+
+public interface ITranscriptionEventProvider
 {
-	public interface ITranscriptionEventProvider
-	{
-		ITranscriptionEvent TranscriptionEvents { get; }
-	}
-}
-namespace Meta.WitAi.Events
-{
+	ITranscriptionEvent TranscriptionEvents { get; }
 }

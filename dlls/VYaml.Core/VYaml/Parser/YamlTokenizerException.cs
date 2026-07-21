@@ -1,2 +1,11 @@
-// Could not decompile VYaml.Parser.YamlTokenizerException
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace VYaml.Parser;
+
+internal class YamlTokenizerException : Exception
+{
+	public YamlTokenizerException(in Marker marker, string message)
+		: base($"{message} at {marker}")
+	{
+	}
+}

@@ -1,2 +1,16 @@
-// Could not decompile RoomCountForZone
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+[Serializable]
+internal class RoomCountForZone
+{
+	[SerializeField]
+	private GTZone zone;
+
+	[SerializeField]
+	private int count;
+
+	public int Count => count;
+
+	public GTZone Zone => zone;
+}

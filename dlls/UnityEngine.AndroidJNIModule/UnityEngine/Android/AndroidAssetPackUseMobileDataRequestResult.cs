@@ -1,15 +1,11 @@
-namespace UnityEngine.Android
-{
-	public class AndroidAssetPackUseMobileDataRequestResult
-	{
-		public bool allowed { get; }
+namespace UnityEngine.Android;
 
-		internal AndroidAssetPackUseMobileDataRequestResult(bool allowed)
-		{
-			this.allowed = allowed;
-		}
-	}
-}
-namespace UnityEngine.Android
+public class AndroidAssetPackUseMobileDataRequestResult
 {
+	public bool allowed { get; }
+
+	internal AndroidAssetPackUseMobileDataRequestResult(bool allowed)
+	{
+		this.allowed = allowed;
+	}
 }

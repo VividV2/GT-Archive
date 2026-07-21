@@ -1,20 +1,14 @@
-using System.IO;
+using System.Collections;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
 
-namespace System.Runtime.Remoting.Channels
-{
-	[ComVisible(true)]
-	public interface IServerResponseChannelSinkStack
-	{
-		void AsyncProcessResponse(IMessage msg, ITransportHeaders headers, Stream stream);
+namespace System.Runtime.Remoting.Channels;
 
-		Stream GetResponseStream(IMessage msg, ITransportHeaders headers);
-	}
-}
-namespace System.Reflection
+/// <summary>Provides the base interface for channel sinks.</summary>
+[ComVisible(true)]
+public interface IChannelSinkBase
 {
-}
-namespace System.Reflection
-{
+	/// <summary>Gets a dictionary through which properties on the sink can be accessed.</summary>
+	/// <returns>A dictionary through which properties on the sink can be accessed, or <see langword="null" /> if the channel sink does not support properties.</returns>
+	/// <exception cref="T:System.Security.SecurityException">The immediate caller does not have infrastructure permission.</exception>
+	IDictionary Properties { get; }
 }

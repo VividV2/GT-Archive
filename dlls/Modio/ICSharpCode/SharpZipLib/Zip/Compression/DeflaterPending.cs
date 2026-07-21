@@ -1,2 +1,9 @@
-// Could not decompile ICSharpCode.SharpZipLib.Zip.Compression.DeflaterPending
-// This type uses unsupported IL or has too many generic parameters.
+namespace ICSharpCode.SharpZipLib.Zip.Compression;
+
+public class DeflaterPending : PendingBuffer
+{
+	public DeflaterPending()
+		: base(65536)
+	{
+	}
+}

@@ -1,2 +1,10 @@
-// Could not decompile Valve.VR.SteamVR_Behaviour_Vector3Event
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace Valve.VR;
+
+[Serializable]
+public class SteamVR_Behaviour_Vector3Event : UnityEvent<SteamVR_Behaviour_Vector3, SteamVR_Input_Sources, Vector3, Vector3>
+{
+}

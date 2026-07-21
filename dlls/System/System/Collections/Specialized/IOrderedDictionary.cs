@@ -43,6 +43,3 @@ public interface IOrderedDictionary : IDictionary, ICollection, IEnumerable
 	///  The <see cref="T:System.Collections.Specialized.IOrderedDictionary" /> collection has a fixed size.</exception>
 	void RemoveAt(int index);
 }
-namespace System.Diagnostics
-{
-}

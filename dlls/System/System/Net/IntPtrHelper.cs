@@ -1,2 +1,14 @@
-// Could not decompile System.Net.IntPtrHelper
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net;
+
+internal static class IntPtrHelper
+{
+	internal static IntPtr Add(IntPtr a, int b)
+	{
+		return (IntPtr)((long)a + b);
+	}
+
+	internal static long Subtract(IntPtr a, IntPtr b)
+	{
+		return (long)a - (long)b;
+	}
+}

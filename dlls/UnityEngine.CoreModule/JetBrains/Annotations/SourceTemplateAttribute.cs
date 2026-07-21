@@ -1,8 +1,8 @@
-namespace UnityEngine;
+using System;
 
-internal enum CullingQueryOptions
+namespace JetBrains.Annotations;
+
+[AttributeUsage(AttributeTargets.Method)]
+public sealed class SourceTemplateAttribute : Attribute
 {
-	Normal,
-	IgnoreVisibility,
-	IgnoreDistance
 }

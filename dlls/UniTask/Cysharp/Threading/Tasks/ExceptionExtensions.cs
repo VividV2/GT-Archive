@@ -1,2 +1,11 @@
-// Could not decompile Cysharp.Threading.Tasks.ExceptionExtensions
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Cysharp.Threading.Tasks;
+
+public static class ExceptionExtensions
+{
+	public static bool IsOperationCanceledException(this Exception exception)
+	{
+		return exception is OperationCanceledException;
+	}
+}

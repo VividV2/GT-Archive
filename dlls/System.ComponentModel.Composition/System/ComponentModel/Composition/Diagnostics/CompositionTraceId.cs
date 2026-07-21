@@ -10,9 +10,3 @@ internal enum CompositionTraceId : ushort
 	Discovery_DefinitionContainsNoExports,
 	Discovery_MemberMarkedWithMultipleImportAndImportMany
 }
-namespace System.ComponentModel.Composition.Hosting
-{
-}
-namespace System.ComponentModel.Composition.Hosting
-{
-}

@@ -1,2 +1,18 @@
-// Could not decompile UnityEngine.InputSystem.UI.ExtendedAxisEventData
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.EventSystems;
+
+namespace UnityEngine.InputSystem.UI;
+
+internal class ExtendedAxisEventData : AxisEventData, INavigationEventData
+{
+	public InputDevice device { get; set; }
+
+	public ExtendedAxisEventData(EventSystem eventSystem)
+		: base(eventSystem)
+	{
+	}
+
+	public override string ToString()
+	{
+		return $"MoveDir: {base.moveDir}\nMoveVector: {base.moveVector}";
+	}
+}

@@ -1,2 +1,8 @@
-// Could not decompile Valve.VR.CVRSettingHelper
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Valve.VR;
+
+public struct CVRSettingHelper
+{
+	public IntPtr m_pSettings;
+}

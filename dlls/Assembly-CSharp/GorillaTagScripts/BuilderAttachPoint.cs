@@ -1,2 +1,16 @@
-// Could not decompile GorillaTagScripts.BuilderAttachPoint
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTagScripts;
+
+public class BuilderAttachPoint : MonoBehaviour
+{
+	public Transform center;
+
+	private void Awake()
+	{
+		if (center == null)
+		{
+			center = base.transform;
+		}
+	}
+}

@@ -1,2 +1,13 @@
-// Could not decompile Fusion.FusionMppmCommand
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Fusion;
+
+[Serializable]
+public abstract class FusionMppmCommand
+{
+	public virtual bool NeedsAck => false;
+
+	public virtual string PersistentKey => null;
+
+	public abstract void Execute();
+}

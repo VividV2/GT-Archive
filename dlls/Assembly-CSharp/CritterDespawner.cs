@@ -1,2 +1,9 @@
-// Could not decompile CritterDespawner
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class CritterDespawner : MonoBehaviour
+{
+	public void DespawnAllCritters()
+	{
+		CrittersManager.instance.QueueDespawnAllCritters();
+	}
+}

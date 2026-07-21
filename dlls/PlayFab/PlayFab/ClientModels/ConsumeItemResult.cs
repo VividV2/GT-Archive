@@ -1,6 +1,12 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class ConsumeItemResult : PlayFabResultCommon
 {
-}
-namespace PlayFab.Internal
-{
+	public string ItemInstanceId;
+
+	public int RemainingUses;
 }

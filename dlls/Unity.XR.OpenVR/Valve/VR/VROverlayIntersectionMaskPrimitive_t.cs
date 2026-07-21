@@ -1,2 +1,8 @@
-// Could not decompile Valve.VR.VROverlayIntersectionMaskPrimitive_t
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR;
+
+public struct VROverlayIntersectionMaskPrimitive_t
+{
+	public EVROverlayIntersectionMaskPrimitiveType m_nPrimitiveType;
+
+	public VROverlayIntersectionMaskPrimitive_Data_t m_Primitive;
+}

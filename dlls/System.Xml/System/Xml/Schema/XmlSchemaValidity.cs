@@ -10,6 +10,3 @@ public enum XmlSchemaValidity
 	/// <summary>The XML item is invalid.</summary>
 	Invalid
 }
-namespace MS.Internal.Xml.XPath
-{
-}

@@ -1,2 +1,16 @@
-// Could not decompile Fusion.NetworkObjectPrefabData
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Fusion;
+
+public class NetworkObjectPrefabData : Behaviour
+{
+	public NetworkObjectGuid Guid;
+
+	private void OnValidate()
+	{
+		if (Application.isEditor && base.gameObject.scene.IsValid())
+		{
+			base.hideFlags |= HideFlags.HideAndDontSave | HideFlags.HideInInspector;
+		}
+	}
+}

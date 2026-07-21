@@ -1,6 +1,11 @@
-namespace UnityEngine.Animations
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.Animations;
+
+[MovedFrom("UnityEngine.Experimental.Animations")]
+public enum CustomStreamPropertyType
 {
-	internal interface IConstraintInternal
-	{
-	}
+	Float = 5,
+	Bool = 6,
+	Int = 10
 }

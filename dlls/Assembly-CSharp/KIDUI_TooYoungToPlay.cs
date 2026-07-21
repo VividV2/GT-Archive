@@ -1,2 +1,14 @@
-// Could not decompile KIDUI_TooYoungToPlay
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class KIDUI_TooYoungToPlay : MonoBehaviour
+{
+	public void ShowTooYoungToPlayScreen()
+	{
+		base.gameObject.SetActive(value: true);
+	}
+
+	public void OnQuitPressed()
+	{
+		Application.Quit();
+	}
+}

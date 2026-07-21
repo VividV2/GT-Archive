@@ -1,2 +1,17 @@
-// Could not decompile Utilities.NetTimeAverages
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.CompilerServices;
+
+namespace Utilities;
+
+public class NetTimeAverages : DoubleAverages
+{
+	public NetTimeAverages(int sampleCount)
+		: base(sampleCount)
+	{
+	}
+
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	protected override double DefaultTypeValue()
+	{
+		return 1.0;
+	}
+}

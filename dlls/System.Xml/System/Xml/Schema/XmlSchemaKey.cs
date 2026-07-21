@@ -1,2 +1,10 @@
-// Could not decompile System.Xml.Schema.XmlSchemaKey
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+/// <summary>This class represents the <see langword="key" /> element from XMLSchema as specified by the World Wide Web Consortium (W3C).</summary>
+public class XmlSchemaKey : XmlSchemaIdentityConstraint
+{
+	/// <summary>Initializes a new instance of the <see cref="T:System.Xml.Schema.XmlSchemaKey" /> class.</summary>
+	public XmlSchemaKey()
+	{
+	}
+}

@@ -1,13 +1,10 @@
-namespace Unity.IO.LowLevel.Unsafe;
+using System;
+using UnityEngine.Bindings;
 
-public enum FileReadType
-{
-	Sync,
-	Async
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine.Windows.Speech
+namespace Unity.Scripting.LifecycleManagement;
+
+[VisibleToOtherModules]
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
+internal sealed class AfterAssemblyLoadedAttribute : LifecycleAttributeBase
 {
 }

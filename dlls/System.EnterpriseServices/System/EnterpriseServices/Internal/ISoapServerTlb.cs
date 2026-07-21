@@ -1,28 +1,47 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
-namespace System.EnterpriseServices
-{
-	/// <summary>Implemented by the <see cref="T:System.EnterpriseServices.ServicedComponent" /> class to obtain information about the component via the <see cref="M:System.EnterpriseServices.IServicedComponentInfo.GetComponentInfo(System.Int32@,System.String[]@)" /> method.</summary>
-	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-	[Guid("8165B19E-8D3A-4d0b-80C8-97DE310DB583")]
-	public interface IServicedComponentInfo
-	{
-		/// <summary>Obtains certain information about the <see cref="T:System.EnterpriseServices.ServicedComponent" /> class instance.</summary>
-		/// <param name="infoMask">A bitmask where 0x00000001 is a key for the serviced component's process ID, 0x00000002 is a key for the application domain ID, and 0x00000004 is a key for the serviced component's remote URI.</param>
-		/// <param name="infoArray">A string array that may contain any or all of the following, in order: the serviced component's process ID, the application domain ID, and the serviced component's remote URI.</param>
-		void GetComponentInfo(ref int infoMask, out string[] infoArray);
-	}
-}
-namespace System.EnterpriseServices
-{
-	/// <summary>Installs and configures assemblies in the COM+ catalog.</summary>
-	[Guid("55e3ea25-55cb-4650-8887-18e8d30bb4bc")]
-	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-	public interface IRegistrationHelper
-	{
-		void InstallAssembly([In][MarshalAs(UnmanagedType.BStr)] string assembly, [In][Out][MarshalAs(UnmanagedType.BStr)] ref string application, [In][Out][MarshalAs(UnmanagedType.BStr)] ref string tlb, [In] InstallationFlags installFlags);
+namespace System.EnterpriseServices.Internal;
 
-		void UninstallAssembly([In][MarshalAs(UnmanagedType.BStr)] string assembly, [In][MarshalAs(UnmanagedType.BStr)] string application);
-	}
+/// <summary>Processes authenticated, encrypted SOAP components on servers.</summary>
+[Guid("1E7BA9F7-21DB-4482-929E-21BDE2DFE51C")]
+public interface ISoapServerTlb
+{
+	/// <summary>Adds the entries for a server type library to the Web.config and Default.disco files, depending on security options, and generates a proxy if necessary.</summary>
+	/// <param name="progId">The programmatic identifier of the class.</param>
+	/// <param name="classId">The class identifier (CLSID) for the type library.</param>
+	/// <param name="interfaceId">The IID for the type library.</param>
+	/// <param name="srcTlbPath">The path for the file containing the type library.</param>
+	/// <param name="rootWebServer">The root Web server.</param>
+	/// <param name="baseUrl">The base URL that contains the virtual root.</param>
+	/// <param name="virtualRoot">The name of the virtual root.</param>
+	/// <param name="clientActivated">
+	///   <see langword="true" /> if client activated; otherwise, <see langword="false" />.</param>
+	/// <param name="wellKnown">
+	///   <see langword="true" /> if well-known; otherwise, <see langword="false" />.</param>
+	/// <param name="discoFile">
+	///   <see langword="true" /> if a discovery file; otherwise, <see langword="false" />.</param>
+	/// <param name="operation">The operation to perform. Specify either "delete" or an empty string.</param>
+	/// <param name="assemblyName">When this method returns, contains the name of the assembly.</param>
+	/// <param name="typeName">When this method returns, contains the type of the assembly.</param>
+	/// <exception cref="T:System.Security.SecurityException">A caller in the call chain does not have permission to access unmanaged code.</exception>
+	/// <exception cref="T:System.PlatformNotSupportedException">The SOAP utility is not available.</exception>
+	/// <exception cref="T:System.EnterpriseServices.ServicedComponentException">The call to get the system directory failed.</exception>
+	[DispId(1)]
+	void AddServerTlb([MarshalAs(UnmanagedType.BStr)] string progId, [MarshalAs(UnmanagedType.BStr)] string classId, [MarshalAs(UnmanagedType.BStr)] string interfaceId, [MarshalAs(UnmanagedType.BStr)] string srcTlbPath, [MarshalAs(UnmanagedType.BStr)] string rootWebServer, [MarshalAs(UnmanagedType.BStr)] string baseUrl, [MarshalAs(UnmanagedType.BStr)] string virtualRoot, [MarshalAs(UnmanagedType.BStr)] string clientActivated, [MarshalAs(UnmanagedType.BStr)] string wellKnown, [MarshalAs(UnmanagedType.BStr)] string discoFile, [MarshalAs(UnmanagedType.BStr)] string operation, [MarshalAs(UnmanagedType.BStr)] out string assemblyName, [MarshalAs(UnmanagedType.BStr)] out string typeName);
+
+	/// <summary>Removes entries for a server type library from the Web.config and Default.disco files, depending on security options.</summary>
+	/// <param name="progId">The programmatic identifier of the class.</param>
+	/// <param name="classId">The class identifier (CLSID) for the type library.</param>
+	/// <param name="interfaceId">The IID for the type library.</param>
+	/// <param name="srcTlbPath">The path for the file containing the type library.</param>
+	/// <param name="rootWebServer">The root Web server.</param>
+	/// <param name="baseUrl">The base URL that contains the virtual root.</param>
+	/// <param name="virtualRoot">The name of the virtual root.</param>
+	/// <param name="operation">Not used. Specify <see langword="null" /> for this parameter.</param>
+	/// <param name="assemblyName">The name of the assembly.</param>
+	/// <param name="typeName">The type of the assembly.</param>
+	/// <exception cref="T:System.Security.SecurityException">A caller in the call chain does not have permission to access unmanaged code.</exception>
+	/// <exception cref="T:System.PlatformNotSupportedException">The SOAP utility is not available.</exception>
+	[DispId(2)]
+	void DeleteServerTlb([MarshalAs(UnmanagedType.BStr)] string progId, [MarshalAs(UnmanagedType.BStr)] string classId, [MarshalAs(UnmanagedType.BStr)] string interfaceId, [MarshalAs(UnmanagedType.BStr)] string srcTlbPath, [MarshalAs(UnmanagedType.BStr)] string rootWebServer, [MarshalAs(UnmanagedType.BStr)] string baseUrl, [MarshalAs(UnmanagedType.BStr)] string virtualRoot, [MarshalAs(UnmanagedType.BStr)] string operation, [MarshalAs(UnmanagedType.BStr)] string assemblyName, [MarshalAs(UnmanagedType.BStr)] string typeName);
 }

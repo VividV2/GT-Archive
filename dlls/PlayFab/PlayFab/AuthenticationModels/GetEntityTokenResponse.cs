@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.AuthenticationModels.GetEntityTokenResponse
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.AuthenticationModels;
+
+[Serializable]
+public class GetEntityTokenResponse : PlayFabResultCommon
+{
+	public EntityKey Entity;
+
+	public string EntityToken;
+
+	public DateTime? TokenExpiration;
+}

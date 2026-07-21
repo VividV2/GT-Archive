@@ -1,14 +1,10 @@
-namespace UnityEngine.UIElements
+namespace UnityEngine.UIElements;
+
+public enum Align
 {
-	public enum Align
-	{
-		Auto,
-		FlexStart,
-		Center,
-		FlexEnd,
-		Stretch
-	}
-}
-namespace UnityEngine.UIElements
-{
+	Auto,
+	FlexStart,
+	Center,
+	FlexEnd,
+	Stretch
 }

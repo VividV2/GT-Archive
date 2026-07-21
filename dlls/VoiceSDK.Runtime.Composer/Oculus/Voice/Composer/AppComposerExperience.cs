@@ -1,2 +1,8 @@
-// Could not decompile Oculus.Voice.Composer.AppComposerExperience
-// This type uses unsupported IL or has too many generic parameters.
+using Meta.WitAi.Composer.Integrations;
+
+namespace Oculus.Voice.Composer;
+
+public class AppComposerExperience : WitComposerService
+{
+	public AppVoiceExperience AppVoiceExperience => (AppVoiceExperience)base.VoiceService;
+}

@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.UIElements.TransitionRunEvent
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public sealed class TransitionRunEvent : TransitionEventBase<TransitionRunEvent>
+{
+	static TransitionRunEvent()
+	{
+		EventBase<TransitionRunEvent>.SetCreateFunction(() => new TransitionRunEvent());
+	}
+}

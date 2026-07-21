@@ -1,14 +1,7 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine;
+
+public enum HDRDisplayBitDepth
 {
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-	public enum HDRDisplayBitDepth
-	{
-		BitDepth10,
-		BitDepth16
-	}
+	BitDepth10,
+	BitDepth16
 }

@@ -1,2 +1,8 @@
-// Could not decompile MetaXRAcousticSceneGroup
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "MetaXRAudio/Acoustic Scene Group")]
+internal class MetaXRAcousticSceneGroup : ScriptableObject
+{
+	[SerializeField]
+	internal string[] sceneGuids;
+}

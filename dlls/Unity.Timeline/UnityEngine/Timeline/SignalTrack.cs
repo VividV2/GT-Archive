@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.Timeline.SignalTrack
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Timeline;
+
+[Serializable]
+[TrackBindingType(typeof(SignalReceiver))]
+[TrackColor(0.25f, 0.25f, 0.25f)]
+[ExcludeFromPreset]
+public class SignalTrack : MarkerTrack
+{
+}

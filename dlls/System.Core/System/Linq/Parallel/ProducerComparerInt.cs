@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections;
 using System.Collections.Generic;
 
-namespace System.Linq;
+namespace System.Linq.Parallel;
 
-/// <summary>Represents the result of a sorting operation.</summary>
-/// <typeparam name="T">The type of the content of the data source.</typeparam>
-/// <summary>Represents the result of a sorting operation.</summary>
-/// <typeparam name="T">The type of the content of the data source.</typeparam>
-public interface IOrderedQueryable<out T> : IQueryable<T>, IEnumerable<T>, IEnumerable, IQueryable, IOrderedQueryable
+internal class ProducerComparerInt : IComparer<Producer<int>>
 {
+	public int Compare(Producer<int> x, Producer<int> y)
+	{
+		return y.MaxKey - x.MaxKey;
+	}
 }

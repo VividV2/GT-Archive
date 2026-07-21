@@ -1,9 +1,5 @@
-namespace VYaml.Parser
-{
-	public interface ITokenContent
-	{
-	}
-}
-namespace VYaml.Serialization
+namespace VYaml.Parser;
+
+public interface ITokenContent
 {
 }

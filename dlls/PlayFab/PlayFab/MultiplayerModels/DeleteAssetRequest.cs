@@ -1,2 +1,10 @@
-// Could not decompile PlayFab.MultiplayerModels.DeleteAssetRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class DeleteAssetRequest : PlayFabRequestCommon
+{
+	public string FileName;
+}

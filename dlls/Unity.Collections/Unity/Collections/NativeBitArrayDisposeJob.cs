@@ -1,2 +1,15 @@
-// Could not decompile Unity.Collections.NativeBitArrayDisposeJob
-// This type uses unsupported IL or has too many generic parameters.
+using Unity.Burst;
+using Unity.Jobs;
+
+namespace Unity.Collections;
+
+[BurstCompile]
+internal struct NativeBitArrayDisposeJob : IJob
+{
+	public NativeBitArrayDispose Data;
+
+	public void Execute()
+	{
+		Data.Dispose();
+	}
+}

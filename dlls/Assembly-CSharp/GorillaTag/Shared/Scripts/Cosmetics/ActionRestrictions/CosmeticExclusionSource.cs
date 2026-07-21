@@ -1,2 +1,11 @@
-// Could not decompile GorillaTag.Shared.Scripts.Cosmetics.ActionRestrictions.CosmeticExclusionSource
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTag.Shared.Scripts.Cosmetics.ActionRestrictions;
+
+public class CosmeticExclusionSource : MonoBehaviour
+{
+	public bool IsRestricted()
+	{
+		return CosmeticExclusionZoneRegistryUtility.IsPositionRestricted(base.transform.position);
+	}
+}

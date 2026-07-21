@@ -1,2 +1,15 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Interactables.IXRActivateInteractable
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.XR.Interaction.Toolkit.Interactables;
+
+[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
+public interface IXRActivateInteractable : IXRInteractable
+{
+	ActivateEvent activated { get; }
+
+	DeactivateEvent deactivated { get; }
+
+	void OnActivated(ActivateEventArgs args);
+
+	void OnDeactivated(DeactivateEventArgs args);
+}

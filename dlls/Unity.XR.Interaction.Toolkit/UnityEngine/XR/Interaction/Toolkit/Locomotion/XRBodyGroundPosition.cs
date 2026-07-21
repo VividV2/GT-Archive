@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Locomotion.XRBodyGroundPosition
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion;
+
+public class XRBodyGroundPosition : IXRBodyTransformation
+{
+	public Vector3 targetPosition { get; set; }
+
+	public virtual void Apply(XRMovableBody body)
+	{
+		Transform originTransform = body.originTransform;
+		originTransform.position = targetPosition + originTransform.position - body.GetBodyGroundWorldPosition();
+	}
+}

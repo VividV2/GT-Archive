@@ -1,10 +1,14 @@
-namespace UnityEngine.XR.OpenXR.API;
+namespace UnityEngine.XR.OpenXR.NativeTypes;
 
-public enum UnityXRShadingRateFormat
+public enum XrSessionState
 {
-	kUnityXRShadingRateFormatNone,
-	kUnityXRShadingRateR8G8
-}
-namespace UnityEngine.XR.OpenXR.NativeTypes
-{
+	Unknown,
+	Idle,
+	Ready,
+	Synchronized,
+	Visible,
+	Focused,
+	Stopping,
+	LossPending,
+	Exiting
 }

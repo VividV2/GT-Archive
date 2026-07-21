@@ -1,2 +1,13 @@
-// Could not decompile Meta.XR.ImmersiveDebugger.UserInterface.ProxyConsoleLine
-// This type uses unsupported IL or has too many generic parameters.
+using Meta.XR.ImmersiveDebugger.UserInterface.Generic;
+
+namespace Meta.XR.ImmersiveDebugger.UserInterface;
+
+internal class ProxyConsoleLine : ProxyController<ConsoleLine>
+{
+	public LogEntry Entry { get; set; }
+
+	protected override void Fill()
+	{
+		base.Target.Entry = Entry;
+	}
+}

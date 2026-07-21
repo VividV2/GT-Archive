@@ -16,6 +16,3 @@ public enum ProcessPriorityClass
 	/// <summary>Specifies that the process has the highest possible priority.</summary>
 	RealTime = 256
 }
-namespace Microsoft.CSharp
-{
-}

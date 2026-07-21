@@ -1,11 +1,7 @@
-namespace System.Security.Cryptography.Xml
+namespace System.Security.Cryptography.Xml;
+
+internal enum CertUsageType
 {
-	internal enum CertUsageType
-	{
-		Verification,
-		Decryption
-	}
-}
-namespace System.Security.Cryptography.Xml
-{
+	Verification,
+	Decryption
 }

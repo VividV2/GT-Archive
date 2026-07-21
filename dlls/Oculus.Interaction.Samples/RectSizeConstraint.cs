@@ -1,2 +1,19 @@
-// Could not decompile RectSizeConstraint
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+[ExecuteAlways]
+[RequireComponent(typeof(RectTransform))]
+public class RectSizeConstraint : UIBehaviour
+{
+	public RectTransform target;
+
+	protected virtual void LateUpdate()
+	{
+		if (target != null)
+		{
+			RectTransform obj = (RectTransform)base.transform;
+			obj.sizeDelta = new Vector2(target.rect.width, target.rect.height);
+			obj.ForceUpdateRectTransforms();
+		}
+	}
+}

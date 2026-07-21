@@ -1,14 +1,10 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
+[CallbackIdentity(4102)]
+public struct MusicPlayerRemoteWillDeactivate_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 1)]
-	[CallbackIdentity(4102)]
-	public struct MusicPlayerRemoteWillDeactivate_t
-	{
-		public const int k_iCallback = 4102;
-	}
-}
-namespace Steamworks
-{
+	public const int k_iCallback = 4102;
 }

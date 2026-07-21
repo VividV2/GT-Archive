@@ -1,2 +1,12 @@
-namespace PlayFab.GroupsModels;
+using System;
+using PlayFab.SharedModels;
 
+namespace PlayFab.ProfilesModels;
+
+[Serializable]
+public class GetEntityProfileRequest : PlayFabRequestCommon
+{
+	public bool? DataAsObject;
+
+	public EntityKey Entity;
+}

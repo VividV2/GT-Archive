@@ -1,8 +1,14 @@
-namespace PlayFab.CloudScriptModels;
+using System;
+using PlayFab.SharedModels;
 
-public enum EmailVerificationStatus
+namespace PlayFab.DataModels;
+
+[Serializable]
+public class ObjectResult : PlayFabBaseModel
 {
-	Unverified,
-	Pending,
-	Confirmed
+	public object DataObject;
+
+	public string EscapedDataObject;
+
+	public string ObjectName;
 }

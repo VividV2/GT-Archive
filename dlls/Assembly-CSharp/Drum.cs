@@ -1,2 +1,10 @@
-// Could not decompile Drum
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class Drum : MonoBehaviour
+{
+	public bool disabler;
+
+	public AudioSource mySource;
+
+	public int myIndex;
+}

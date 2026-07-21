@@ -1,24 +1,8 @@
-namespace UnityEngine.Playables
-{
-}
-namespace UnityEngine.Playables
-{
-}
-namespace UnityEngine.Playables
-{
-}
-namespace UnityEngine.Playables
-{
-	internal interface IDataPlayer
-	{
-		void Bind(DataPlayableOutput output);
+namespace UnityEngine.Playables;
 
-		void Release(DataPlayableOutput output);
-	}
-}
-namespace UnityEngine.Playables
+internal interface IDataPlayer
 {
-}
-namespace UnityEngine.Playables
-{
+	void Bind(DataPlayableOutput output);
+
+	void Release(DataPlayableOutput output);
 }

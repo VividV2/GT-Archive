@@ -1,23 +1,13 @@
-namespace System.Data
+using System;
+
+namespace Microsoft.SqlServer.Server;
+
+/// <summary>Describes the type of access to user data for a user-defined method or function.</summary>
+[Serializable]
+public enum DataAccessKind
 {
-	internal enum Nodes
-	{
-		Noop,
-		Unop,
-		UnopSpec,
-		Binop,
-		BinopSpec,
-		Zop,
-		Call,
-		Const,
-		Name,
-		Paren,
-		Conv
-	}
-}
-namespace System.Data.ProviderBase
-{
-}
-namespace System.Data.SqlClient
-{
+	/// <summary>The method or function does not access user data.</summary>
+	None,
+	/// <summary>The method or function reads user data.</summary>
+	Read
 }

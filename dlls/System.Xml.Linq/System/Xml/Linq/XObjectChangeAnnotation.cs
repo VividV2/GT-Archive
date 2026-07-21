@@ -1,2 +1,8 @@
-// Could not decompile System.Xml.Linq.XObjectChangeAnnotation
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Linq;
+
+internal class XObjectChangeAnnotation
+{
+	internal EventHandler<XObjectChangeEventArgs> changing;
+
+	internal EventHandler<XObjectChangeEventArgs> changed;
+}

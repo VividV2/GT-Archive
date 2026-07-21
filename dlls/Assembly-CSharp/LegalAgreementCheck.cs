@@ -1,2 +1,13 @@
-// Could not decompile LegalAgreementCheck
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class LegalAgreementCheck : MonoBehaviour
+{
+	[SerializeField]
+	private LegalAgreementTextAsset[] agreements;
+
+	[SerializeField]
+	private bool testAgreement;
+
+	[SerializeField]
+	private LegalAgreements legalAgreements;
+}

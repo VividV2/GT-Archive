@@ -1,6 +1,16 @@
-namespace UnityEngine
+using System;
+
+namespace UnityEngine;
+
+public enum AudioSpeakerMode
 {
-}
-namespace UnityEngine
-{
+	[Obsolete("Raw speaker mode is not supported. Do not use.", true)]
+	Raw,
+	Mono,
+	Stereo,
+	Quad,
+	Surround,
+	Mode5point1,
+	Mode7point1,
+	Prologic
 }

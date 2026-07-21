@@ -1,15 +1,12 @@
-namespace PlayFab.CloudScriptModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.CloudScriptModels;
+
+[Serializable]
+public class PostFunctionResultForEntityTriggeredActionRequest : PlayFabRequestCommon
 {
-	[Serializable]
-	public class NameIdentifier : PlayFabBaseModel
-	{
-		public string Id;
+	public EntityKey Entity;
 
-		public string Name;
-
-		public NameIdentifier()
-		{
-			base..ctor();
-		}
-	}
+	public ExecuteFunctionResult FunctionResult;
 }

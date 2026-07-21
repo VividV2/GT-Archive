@@ -1,2 +1,13 @@
-// Could not decompile Unity.Properties.HashSetPropertyBag`1
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace Unity.Properties;
+
+public class HashSetPropertyBag<TElement> : SetPropertyBagBase<HashSet<TElement>, TElement>
+{
+	protected override InstantiationKind InstantiationKind => InstantiationKind.PropertyBagOverride;
+
+	protected override HashSet<TElement> Instantiate()
+	{
+		return new HashSet<TElement>();
+	}
+}

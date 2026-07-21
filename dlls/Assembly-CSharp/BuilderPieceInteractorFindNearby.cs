@@ -1,2 +1,16 @@
-// Could not decompile BuilderPieceInteractorFindNearby
-// This type uses unsupported IL or has too many generic parameters.
+public class BuilderPieceInteractorFindNearby : MonoBehaviourPostTick
+{
+	public BuilderPieceInteractor pieceInteractor;
+
+	private void Awake()
+	{
+	}
+
+	public override void PostTick()
+	{
+		if (pieceInteractor != null)
+		{
+			pieceInteractor.StartFindNearbyPieces();
+		}
+	}
+}

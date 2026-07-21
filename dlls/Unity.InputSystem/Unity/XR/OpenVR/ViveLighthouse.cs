@@ -1,2 +1,9 @@
-// Could not decompile Unity.XR.OpenVR.ViveLighthouse
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Layouts;
+
+namespace Unity.XR.OpenVR;
+
+[InputControlLayout(displayName = "Vive Lighthouse", hideInUI = true)]
+public class ViveLighthouse : TrackedDevice
+{
+}

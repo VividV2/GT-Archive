@@ -1,2 +1,28 @@
-// Could not decompile GorillaNetworking.Store.DynamicCosmeticStand_Link
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaNetworking.Store;
+
+public class DynamicCosmeticStand_Link : MonoBehaviour
+{
+	public DynamicCosmeticStand stand;
+
+	public void SetStandType(HeadModel_CosmeticStand.BustType type)
+	{
+		stand.SetStandType(type);
+	}
+
+	public void SpawnItemOntoStand(string PlayFabID)
+	{
+		stand.SpawnItemOntoStand(PlayFabID);
+	}
+
+	public void SaveCosmeticMountPosition()
+	{
+		stand.UpdateCosmeticsMountPositions();
+	}
+
+	public void ClearCosmeticItems()
+	{
+		stand.ClearCosmetics();
+	}
+}

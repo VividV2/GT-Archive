@@ -1,2 +1,13 @@
-// Could not decompile System.ComponentModel.IntSecurity
-// This type uses unsupported IL or has too many generic parameters.
+using System.IO;
+using System.Security.Permissions;
+
+namespace System.ComponentModel;
+
+[HostProtection(SecurityAction.LinkDemand, SharedState = true)]
+internal static class IntSecurity
+{
+	public static string UnsafeGetFullPath(string fileName)
+	{
+		return Path.GetFullPath(fileName);
+	}
+}

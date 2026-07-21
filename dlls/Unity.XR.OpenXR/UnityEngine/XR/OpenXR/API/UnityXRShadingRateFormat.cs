@@ -5,9 +5,3 @@ public enum UnityXRShadingRateFormat
 	kUnityXRShadingRateFormatNone,
 	kUnityXRShadingRateR8G8
 }
-namespace UnityEngine.XR.OpenXR.NativeTypes
-{
-}
-namespace UnityEngine.XR.OpenXR.Features.Interactions
-{
-}

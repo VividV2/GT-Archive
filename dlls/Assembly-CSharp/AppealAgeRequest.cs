@@ -1,2 +1,11 @@
-// Could not decompile AppealAgeRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+[Serializable]
+public class AppealAgeRequest : KIDRequestData
+{
+	public int Age;
+
+	public string Email;
+
+	public string Locale;
+}

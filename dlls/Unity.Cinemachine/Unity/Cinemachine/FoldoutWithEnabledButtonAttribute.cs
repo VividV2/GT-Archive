@@ -1,2 +1,13 @@
-// Could not decompile Unity.Cinemachine.FoldoutWithEnabledButtonAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Unity.Cinemachine;
+
+public class FoldoutWithEnabledButtonAttribute : PropertyAttribute
+{
+	public string EnabledPropertyName;
+
+	public FoldoutWithEnabledButtonAttribute(string enabledProperty = "Enabled")
+	{
+		EnabledPropertyName = enabledProperty;
+	}
+}

@@ -1,2 +1,12 @@
-// Could not decompile GRPlayerProgressionHandler
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GRPlayerProgressionHandler : MonoBehaviour
+{
+	private void Start()
+	{
+	}
+
+	private void Update()
+	{
+	}
+}

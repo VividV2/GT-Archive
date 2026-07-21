@@ -1,12 +1,10 @@
-namespace System.Drawing.Drawing2D
-{
-}
-namespace System.Drawing.Design
-{
-	public interface IToolboxUser
-	{
-		bool GetToolSupported(ToolboxItem tool);
+namespace System;
 
-		void ToolPicked(ToolboxItem tool);
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+internal class MonoDocumentationNoteAttribute : System.MonoTODOAttribute
+{
+	public MonoDocumentationNoteAttribute(string comment)
+		: base(comment)
+	{
 	}
 }

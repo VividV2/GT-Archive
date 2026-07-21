@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.UIElements.TransitionCancelEvent
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public sealed class TransitionCancelEvent : TransitionEventBase<TransitionCancelEvent>
+{
+	static TransitionCancelEvent()
+	{
+		EventBase<TransitionCancelEvent>.SetCreateFunction(() => new TransitionCancelEvent());
+	}
+}

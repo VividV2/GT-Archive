@@ -1,2 +1,12 @@
-// Could not decompile GorillaCTFUI
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GorillaCTFUI : MonoBehaviour
+{
+	private void Start()
+	{
+	}
+
+	private void Update()
+	{
+	}
+}

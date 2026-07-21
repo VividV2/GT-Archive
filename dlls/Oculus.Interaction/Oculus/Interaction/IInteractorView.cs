@@ -1,12 +1,28 @@
+using System;
+
 namespace Oculus.Interaction;
 
-public interface ITransformer
+public interface IInteractorView
 {
-	void Initialize(IGrabbable grabbable);
+	int Identifier { get; }
 
-	void BeginTransform();
+	object Data { get; }
 
-	void UpdateTransform();
+	bool HasCandidate { get; }
 
-	void EndTransform();
+	object CandidateProperties { get; }
+
+	bool HasInteractable { get; }
+
+	bool HasSelectedInteractable { get; }
+
+	InteractorState State { get; }
+
+	event Action<InteractorStateChangeArgs> WhenStateChanged;
+
+	event Action WhenPreprocessed;
+
+	event Action WhenProcessed;
+
+	event Action WhenPostprocessed;
 }

@@ -1,2 +1,11 @@
-// Could not decompile Mono.Interop.MonoPInvokeCallbackAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Mono.Interop;
+
+[AttributeUsage(AttributeTargets.Method)]
+internal sealed class MonoPInvokeCallbackAttribute : Attribute
+{
+	public MonoPInvokeCallbackAttribute(Type t)
+	{
+	}
+}

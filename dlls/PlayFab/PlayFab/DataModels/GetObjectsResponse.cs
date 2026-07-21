@@ -1,2 +1,15 @@
-// Could not decompile PlayFab.DataModels.GetObjectsResponse
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.DataModels;
+
+[Serializable]
+public class GetObjectsResponse : PlayFabResultCommon
+{
+	public EntityKey Entity;
+
+	public Dictionary<string, ObjectResult> Objects;
+
+	public int ProfileVersion;
+}

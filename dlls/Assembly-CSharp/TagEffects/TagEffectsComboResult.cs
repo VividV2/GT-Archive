@@ -1,2 +1,11 @@
-// Could not decompile TagEffects.TagEffectsComboResult
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace TagEffects;
+
+[Serializable]
+public class TagEffectsComboResult
+{
+	public TagEffectsCombo input;
+
+	public TagEffectPack[] output;
+}

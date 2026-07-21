@@ -1,16 +1,14 @@
 using System;
 using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
 
 namespace PlayFab.ClientModels;
 
 [Serializable]
-public class StatisticUpdate : PlayFabBaseModel
+public class RegisterForIOSPushNotificationRequest : PlayFabRequestCommon
 {
-	public string StatisticName;
+	public string ConfirmationMessage;
 
-	public int Value;
+	public string DeviceToken;
 
-	public uint? Version;
+	public bool? SendPushNotificationConfirmation;
 }

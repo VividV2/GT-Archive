@@ -1,2 +1,20 @@
-// Could not decompile NativeWebSocket.WebSocketUnexpectedException
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace NativeWebSocket;
+
+public class WebSocketUnexpectedException : WebSocketException
+{
+	public WebSocketUnexpectedException()
+	{
+	}
+
+	public WebSocketUnexpectedException(string message)
+		: base(message)
+	{
+	}
+
+	public WebSocketUnexpectedException(string message, Exception inner)
+		: base(message, inner)
+	{
+	}
+}

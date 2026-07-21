@@ -54,6 +54,3 @@ public static class SchemaTableColumn
 	/// <summary>Specifies the name of the column in the schema table.</summary>
 	public static readonly string BaseColumnName = "BaseColumnName";
 }
-namespace System.Data.Common
-{
-}

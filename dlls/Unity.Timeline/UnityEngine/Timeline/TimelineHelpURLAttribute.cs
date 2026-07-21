@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Timeline.TimelineHelpURLAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Diagnostics;
+
+namespace UnityEngine.Timeline;
+
+[Conditional("UNITY_EDITOR")]
+internal class TimelineHelpURLAttribute : Attribute
+{
+	public TimelineHelpURLAttribute(Type type)
+	{
+	}
+}

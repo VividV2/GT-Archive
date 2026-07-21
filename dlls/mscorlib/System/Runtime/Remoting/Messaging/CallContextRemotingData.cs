@@ -1,2 +1,29 @@
-// Could not decompile System.Runtime.Remoting.Messaging.CallContextRemotingData
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Remoting.Messaging;
+
+[Serializable]
+internal class CallContextRemotingData : ICloneable
+{
+	private string _logicalCallID;
+
+	internal string LogicalCallID
+	{
+		get
+		{
+			return _logicalCallID;
+		}
+		set
+		{
+			_logicalCallID = value;
+		}
+	}
+
+	internal bool HasInfo => _logicalCallID != null;
+
+	public object Clone()
+	{
+		return new CallContextRemotingData
+		{
+			LogicalCallID = LogicalCallID
+		};
+	}
+}

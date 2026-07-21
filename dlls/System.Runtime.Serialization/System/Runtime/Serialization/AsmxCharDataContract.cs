@@ -1,2 +1,9 @@
-// Could not decompile System.Runtime.Serialization.AsmxCharDataContract
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Serialization;
+
+internal class AsmxCharDataContract : CharDataContract
+{
+	internal AsmxCharDataContract()
+		: base(DictionaryGlobals.CharLocalName, DictionaryGlobals.AsmxTypesNamespace)
+	{
+	}
+}

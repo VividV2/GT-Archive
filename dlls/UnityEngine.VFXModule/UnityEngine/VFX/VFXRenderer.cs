@@ -1,2 +1,15 @@
-// Could not decompile UnityEngine.VFX.VFXRenderer
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Bindings;
+using UnityEngine.Scripting;
+
+namespace UnityEngine.VFX;
+
+[RejectDragAndDropMaterial]
+[NativeType(Header = "Modules/VFX/Public/VFXRenderer.h")]
+[RequiredByNativeCode]
+public sealed class VFXRenderer : Renderer
+{
+	[RequiredMember]
+	public VFXRenderer()
+	{
+	}
+}

@@ -1,2 +1,12 @@
-// Could not decompile Steamworks.LowBatteryPower_t
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(702)]
+public struct LowBatteryPower_t
+{
+	public const int k_iCallback = 702;
+
+	public byte m_nMinutesBatteryLeft;
+}

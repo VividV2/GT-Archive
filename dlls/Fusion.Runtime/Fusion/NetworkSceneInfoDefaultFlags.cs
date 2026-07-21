@@ -1,14 +1,10 @@
 using System;
 
-namespace Fusion
+namespace Fusion;
+
+[Flags]
+public enum NetworkSceneInfoDefaultFlags : uint
 {
-	[Flags]
-	public enum NetworkSceneInfoDefaultFlags : uint
-	{
-		SceneCountMask = 0xFu,
-		ConterMask = 0xFFFF0u
-	}
-}
-namespace Fusion
-{
+	SceneCountMask = 0xFu,
+	ConterMask = 0xFFFF0u
 }

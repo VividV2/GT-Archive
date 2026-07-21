@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.ExecuteAlways
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+[UsedByNativeCode]
+public sealed class ExecuteAlways : Attribute
+{
+}

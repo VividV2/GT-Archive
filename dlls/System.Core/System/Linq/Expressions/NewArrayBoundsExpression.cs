@@ -1,2 +1,13 @@
-// Could not decompile System.Linq.Expressions.NewArrayBoundsExpression
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.ObjectModel;
+
+namespace System.Linq.Expressions;
+
+internal sealed class NewArrayBoundsExpression : NewArrayExpression
+{
+	public sealed override ExpressionType NodeType => ExpressionType.NewArrayBounds;
+
+	internal NewArrayBoundsExpression(Type type, ReadOnlyCollection<Expression> expressions)
+		: base(type, expressions)
+	{
+	}
+}

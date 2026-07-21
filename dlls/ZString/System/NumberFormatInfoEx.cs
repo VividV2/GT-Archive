@@ -1,2 +1,15 @@
-// Could not decompile System.NumberFormatInfoEx
-// This type uses unsupported IL or has too many generic parameters.
+using System.Globalization;
+
+namespace System;
+
+internal static class NumberFormatInfoEx
+{
+	internal static bool HasInvariantNumberSigns(this NumberFormatInfo info)
+	{
+		if (info.PositiveSign == "+")
+		{
+			return info.NegativeSign == "-";
+		}
+		return false;
+	}
+}

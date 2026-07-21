@@ -1,48 +1,53 @@
 namespace System.Configuration;
 
-/// <summary>Provides dynamic validation of an object.</summary>
-/// <summary>Provides dynamic validation of an object.</summary>
-public sealed class CallbackValidator : ConfigurationValidatorBase
+/// <summary>Specifies a <see cref="T:System.Configuration.CallbackValidator" /> object to use for code validation. This class cannot be inherited.</summary>
+[AttributeUsage(AttributeTargets.Property)]
+public sealed class CallbackValidatorAttribute : ConfigurationValidatorAttribute
 {
+	private string callbackMethodName = "";
+
 	private Type type;
 
-	private ValidatorCallback callback;
+	private ConfigurationValidatorBase instance;
 
-	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.CallbackValidator" /> class.</summary>
-	/// <param name="type">The type of object that will be validated.</param>
-	/// <param name="callback">The <see cref="T:System.Configuration.ValidatorCallback" /> used as the delegate.</param>
-	/// <exception cref="T:System.ArgumentNullException">
-	///   <paramref name="type" /> is <see langword="null" />.</exception>
-	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.CallbackValidator" /> class.</summary>
-	/// <param name="type">The type of object that will be validated.</param>
-	/// <param name="callback">The <see cref="T:System.Configuration.ValidatorCallback" /> used as the delegate.</param>
-	/// <exception cref="T:System.ArgumentNullException">
-	///   <paramref name="type" /> is <see langword="null" />.</exception>
-	public CallbackValidator(Type type, ValidatorCallback callback)
+	/// <summary>Gets or sets the name of the callback method.</summary>
+	/// <returns>The name of the method to call.</returns>
+	public string CallbackMethodName
 	{
-		this.type = type;
-		this.callback = callback;
+		get
+		{
+			return callbackMethodName;
+		}
+		set
+		{
+			callbackMethodName = value;
+			instance = null;
+		}
 	}
 
-	/// <summary>Determines whether the type of the object can be validated.</summary>
-	/// <param name="type">The type of object.</param>
-	/// <summary>Determines whether the type of the object can be validated.</summary>
-	/// <param name="type">The type of object.</param>
-	/// <returns>
-	/// <returns>
-	///   <see langword="true" /> if the <see langword="type" /> parameter matches the type used as the first parameter when creating an instance of <see cref="T:System.Configuration.CallbackValidator" />; otherwise, <see langword="false" />.</returns>
-	///   <see langword="true" /> if the <see langword="type" /> parameter matches the type used as the first parameter when creating an instance of <see cref="T:System.Configuration.CallbackValidator" />; otherwise, <see langword="false" />.</returns>
-	public override bool CanValidate(Type type)
+	/// <summary>Gets or sets the type of the validator.</summary>
+	/// <returns>The <see cref="T:System.Type" /> of the current validator attribute instance.</returns>
+	public Type Type
 	{
-		return type == this.type;
+		get
+		{
+			return type;
+		}
+		set
+		{
+			type = value;
+			instance = null;
+		}
 	}
 
-	/// <summary>Determines whether the value of an object is valid.</summary>
-	/// <param name="value">The value of an object.</param>
-	/// <summary>Determines whether the value of an object is valid.</summary>
-	/// <param name="value">The value of an object.</param>
-	public override void Validate(object value)
+	/// <summary>Gets the validator instance.</summary>
+	/// <returns>The current <see cref="T:System.Configuration.ConfigurationValidatorBase" /> instance.</returns>
+	/// <exception cref="T:System.ArgumentNullException">The value of the <see cref="P:System.Configuration.CallbackValidatorAttribute.Type" /> property is <see langword="null" />.</exception>
+	/// <exception cref="T:System.ArgumentException">The <see cref="P:System.Configuration.CallbackValidatorAttribute.CallbackMethodName" /> property is not set to a public static void method with one object parameter.</exception>
+	public override ConfigurationValidatorBase ValidatorInstance => instance;
+
+	/// <summary>Initializes a new instance of the <see cref="T:System.Configuration.CallbackValidatorAttribute" /> class.</summary>
+	public CallbackValidatorAttribute()
 	{
-		callback(value);
 	}
 }

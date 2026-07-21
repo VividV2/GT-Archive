@@ -1,2 +1,14 @@
-// Could not decompile Meta.WitAi.Utilities.EventSystemInstantiator
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
+
+namespace Meta.WitAi.Utilities;
+
+public class EventSystemInstantiator : MonoBehaviour
+{
+	public void Awake()
+	{
+		base.gameObject.GetOrAddComponent<EventSystem>();
+		base.gameObject.GetOrAddComponent<InputSystemUIInputModule>();
+	}
+}

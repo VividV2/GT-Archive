@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Inputs.Cardinal
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs;
+
+public enum Cardinal
+{
+	North,
+	South,
+	East,
+	West
+}

@@ -1,2 +1,9 @@
-// Could not decompile System.Xml.Xsl.Xslt.RootLevel
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Xsl.Xslt;
+
+internal class RootLevel : StylesheetLevel
+{
+	public RootLevel(Stylesheet principal)
+	{
+		Imports = new Stylesheet[1] { principal };
+	}
+}

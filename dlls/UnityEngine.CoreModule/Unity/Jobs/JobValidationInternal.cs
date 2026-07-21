@@ -1,2 +1,27 @@
-// Could not decompile Unity.Jobs.JobValidationInternal
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Diagnostics;
+using Unity.Burst;
+using UnityEngine.Bindings;
+
+namespace Unity.Jobs;
+
+[VisibleToOtherModules(new string[] { "UnityEngine.ParticleSystemModule" })]
+internal static class JobValidationInternal
+{
+	[VisibleToOtherModules(new string[] { "UnityEngine.ParticleSystemModule" })]
+	[Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]
+	internal static void CheckReflectionDataCorrect<T>(IntPtr reflectionData)
+	{
+	}
+
+	[BurstDiscard]
+	[Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]
+	private static void CheckReflectionDataCorrectInternal<T>(IntPtr reflectionData, ref bool burstCompiled)
+	{
+		if (reflectionData == IntPtr.Zero)
+		{
+			throw new InvalidOperationException($"Reflection data was not set up by an Initialize() call. Support for burst compiled calls to Schedule depends on the Collections package.\n\nFor generic job types, please include [assembly: RegisterGenericJobType(typeof({typeof(T)}))] in your source file.");
+		}
+		burstCompiled = false;
+	}
+}

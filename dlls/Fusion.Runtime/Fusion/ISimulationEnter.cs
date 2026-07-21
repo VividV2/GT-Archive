@@ -1,13 +1,6 @@
-namespace Fusion
+namespace Fusion;
+
+public interface ISimulationEnter : IPublicFacingInterface
 {
-	public interface ISimulationEnter : IPublicFacingInterface
-	{
-		void SimulationEnter();
-	}
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
+	void SimulationEnter();
 }

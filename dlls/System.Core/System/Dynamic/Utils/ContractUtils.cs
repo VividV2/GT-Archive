@@ -1,34 +1,84 @@
-using System.Security.Permissions;
-using System.Security.Permissions;
-using Unity;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq.Expressions;
 
-namespace System.Management.Instrumentation;
+namespace System.Dynamic.Utils;
 
-/// <summary>This class is used by the WMI.NET Provider Extensions framework. It is the base class for all the management attributes that can be applied to members.Note: the WMI .NET libraries are now considered in final state, and no further development, enhancements, or updates will be available for non-security related issues affecting these libraries. The MI APIs should be used for all new development.</summary>
-/// <summary>This class is used by the WMI.NET Provider Extensions framework. It is the base class for all the management attributes that can be applied to members.Note: the WMI .NET libraries are now considered in final state, and no further development, enhancements, or updates will be available for non-security related issues affecting these libraries. The MI APIs should be used for all new development.</summary>
-[AttributeUsage(AttributeTargets.All)]
-[HostProtection(SecurityAction.LinkDemand, MayLeakOnAbort = true)]
-public abstract class ManagementMemberAttribute : Attribute
+internal static class ContractUtils
 {
-	/// <summary>Gets or sets the name of the management attribute.</summary>
-	/// <returns>Returns a string which is the name of the management attribute.</returns>
-	/// <summary>Gets or sets the name of the management attribute.</summary>
-	/// <returns>Returns a string which is the name of the management attribute.</returns>
-	public string Name
+	[ExcludeFromCodeCoverage]
+	public static Exception Unreachable => new InvalidOperationException("Code supposed to be unreachable");
+
+	public static void Requires(bool precondition, string paramName)
 	{
-		get
+		if (!precondition)
 		{
-			Unity.ThrowStub.ThrowNotSupportedException();
-			return null;
-		}
-		set
-		{
+			throw Error.InvalidArgumentValue(paramName);
 		}
 	}
 
-	/// <summary>Initializes a new instance of <see cref="T:System.Management.ManagementMemberAttribute" /> the class. This is the default constructor.</summary>
-	/// <summary>Initializes a new instance of <see cref="T:System.Management.ManagementMemberAttribute" /> the class. This is the default constructor.</summary>
-	protected ManagementMemberAttribute()
+	public static void RequiresNotNull(object value, string paramName)
 	{
+		if (value == null)
+		{
+			throw new ArgumentNullException(paramName);
+		}
+	}
+
+	public static void RequiresNotNull(object value, string paramName, int index)
+	{
+		if (value == null)
+		{
+			throw new ArgumentNullException(GetParamName(paramName, index));
+		}
+	}
+
+	public static void RequiresNotEmpty<T>(ICollection<T> collection, string paramName)
+	{
+		RequiresNotNull(collection, paramName);
+		if (collection.Count == 0)
+		{
+			throw Error.NonEmptyCollectionRequired(paramName);
+		}
+	}
+
+	public static void RequiresNotNullItems<T>(IList<T> array, string arrayName)
+	{
+		RequiresNotNull(array, arrayName);
+		int i = 0;
+		for (int count = array.Count; i < count; i++)
+		{
+			if (array[i] == null)
+			{
+				throw new ArgumentNullException(GetParamName(arrayName, i));
+			}
+		}
+	}
+
+	[Conditional("DEBUG")]
+	public static void AssertLockHeld(object lockObject)
+	{
+	}
+
+	private static string GetParamName(string paramName, int index)
+	{
+		if (index < 0)
+		{
+			return paramName;
+		}
+		return $"{paramName}[{index}]";
+	}
+
+	public static void RequiresArrayRange<T>(IList<T> array, int offset, int count, string offsetName, string countName)
+	{
+		if (count < 0)
+		{
+			throw new ArgumentOutOfRangeException(countName);
+		}
+		if (offset < 0 || array.Count - offset < count)
+		{
+			throw new ArgumentOutOfRangeException(offsetName);
+		}
 	}
 }

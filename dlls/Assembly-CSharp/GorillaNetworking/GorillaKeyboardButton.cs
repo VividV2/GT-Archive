@@ -1,2 +1,9 @@
-// Could not decompile GorillaNetworking.GorillaKeyboardButton
-// This type uses unsupported IL or has too many generic parameters.
+namespace GorillaNetworking;
+
+public class GorillaKeyboardButton : GorillaKeyButton<GorillaKeyboardBindings>
+{
+	protected override void OnButtonPressedEvent()
+	{
+		GameEvents.OnGorrillaKeyboardButtonPressedEvent.Invoke(Binding);
+	}
+}

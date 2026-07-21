@@ -1,18 +1,14 @@
+using UnityEngine.Scripting.APIUpdating;
+
 namespace UnityEngine.UIElements;
 
-internal interface ISerializableJsonDictionary
+[MovedFrom(true, "UnityEditor.UIElements", "UnityEditor.UIElementsModule", null)]
+public abstract class BaseFieldMouseDragger
 {
-	void Set<T>(string key, T value) where T : class;
+	public void SetDragZone(VisualElement dragElement)
+	{
+		SetDragZone(dragElement, new Rect(0f, 0f, -1f, -1f));
+	}
 
-	T Get<T>(string key) where T : class;
-
-	T GetScriptable<T>(string key) where T : ScriptableObject;
-
-	void Overwrite(object obj, string key);
-
-	bool ContainsKey(string key);
-
-	void OnBeforeSerialize();
-
-	void OnAfterDeserialize();
+	public abstract void SetDragZone(VisualElement dragElement, Rect hotZone);
 }

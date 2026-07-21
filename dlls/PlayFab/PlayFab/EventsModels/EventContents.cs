@@ -1,38 +1,22 @@
 using System;
 using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
 
-namespace PlayFab.MultiplayerModels;
+namespace PlayFab.EventsModels;
 
 [Serializable]
-public class GetContainerRegistryCredentialsResponse : PlayFabResultCommon
+public class EventContents : PlayFabBaseModel
 {
-	public string DnsName;
+	public EntityKey Entity;
 
-	public string Password;
+	public string EventNamespace;
 
-	public string Username;
-}
-namespace PlayFab.EventsModels
-{
-	[Serializable]
-	public class EventContents : PlayFabBaseModel
-	{
-		public EntityKey Entity;
+	public string Name;
 
-		public string EventNamespace;
+	public string OriginalId;
 
-		public string Name;
+	public DateTime? OriginalTimestamp;
 
-		public string OriginalId;
+	public object Payload;
 
-		public DateTime? OriginalTimestamp;
-
-		public object Payload;
-
-		public string PayloadJSON;
-	}
+	public string PayloadJSON;
 }

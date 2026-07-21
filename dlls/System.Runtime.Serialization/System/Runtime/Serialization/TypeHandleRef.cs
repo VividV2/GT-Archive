@@ -1,2 +1,27 @@
-// Could not decompile System.Runtime.Serialization.TypeHandleRef
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Serialization;
+
+internal class TypeHandleRef
+{
+	private RuntimeTypeHandle value;
+
+	public RuntimeTypeHandle Value
+	{
+		get
+		{
+			return value;
+		}
+		set
+		{
+			this.value = value;
+		}
+	}
+
+	public TypeHandleRef()
+	{
+	}
+
+	public TypeHandleRef(RuntimeTypeHandle value)
+	{
+		this.value = value;
+	}
+}

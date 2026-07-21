@@ -1,2 +1,16 @@
-// Could not decompile Unity.XR.CoreUtils.ScriptableSettingsPathAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.XR.CoreUtils;
+
+[AttributeUsage(AttributeTargets.Class)]
+public class ScriptableSettingsPathAttribute : Attribute
+{
+	private readonly string m_Path;
+
+	public string Path => m_Path;
+
+	public ScriptableSettingsPathAttribute(string path = "")
+	{
+		m_Path = path;
+	}
+}

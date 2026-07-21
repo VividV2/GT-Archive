@@ -1,15 +1,8 @@
 using System;
 
-namespace Photon.Voice
+namespace Photon.Voice;
+
+public interface IDataReader<T> : IDisposable
 {
-	public interface IEncoderDirectImage : IEncoderDirect<ImageBufferNative>, IEncoder, IDisposable
-	{
-		ImageFormat ImageFormat { get; }
-	}
-}
-namespace Photon.Voice
-{
-}
-namespace Photon.Voice.IOS
-{
+	bool Read(T[] buffer);
 }

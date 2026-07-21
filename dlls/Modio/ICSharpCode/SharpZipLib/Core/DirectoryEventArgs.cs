@@ -1,2 +1,14 @@
-// Could not decompile ICSharpCode.SharpZipLib.Core.DirectoryEventArgs
-// This type uses unsupported IL or has too many generic parameters.
+namespace ICSharpCode.SharpZipLib.Core;
+
+public class DirectoryEventArgs : ScanEventArgs
+{
+	private readonly bool hasMatchingFiles_;
+
+	public bool HasMatchingFiles => hasMatchingFiles_;
+
+	public DirectoryEventArgs(string name, bool hasMatchingFiles)
+		: base(name)
+	{
+		hasMatchingFiles_ = hasMatchingFiles;
+	}
+}

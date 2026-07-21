@@ -1,2 +1,15 @@
-// Could not decompile Pathfinding.Util.ObjectPool`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace Pathfinding.Util;
+
+public static class ObjectPool<T> where T : class, IAstarPooledObject, new()
+{
+	public static T Claim()
+	{
+		return ObjectPoolSimple<T>.Claim();
+	}
+
+	public static void Release(ref T obj)
+	{
+		obj.OnEnterPool();
+		ObjectPoolSimple<T>.Release(ref obj);
+	}
+}

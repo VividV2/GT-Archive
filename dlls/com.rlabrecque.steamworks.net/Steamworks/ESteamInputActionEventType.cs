@@ -1,14 +1,7 @@
-using System.Runtime.InteropServices;
-
 namespace Steamworks;
 
-[StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4624)]
-public struct GetOPFSettingsResult_t
+public enum ESteamInputActionEventType
 {
-	public const int k_iCallback = 4624;
-
-	public EResult m_eResult;
-
-	public AppId_t m_unVideoAppID;
+	ESteamInputActionEventType_DigitalAction,
+	ESteamInputActionEventType_AnalogAction
 }

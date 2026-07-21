@@ -1,2 +1,24 @@
-// Could not decompile UnityEngine.UIElements.UxmlAttributeOverridesTraits
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+
+namespace UnityEngine.UIElements;
+
+[Obsolete("UxmlAttributeOverridesTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+public class UxmlAttributeOverridesTraits : UxmlTraits
+{
+	internal const string k_ElementNameAttributeName = "element-name";
+
+	private UxmlStringAttributeDescription m_ElementName = new UxmlStringAttributeDescription
+	{
+		name = "element-name",
+		use = UxmlAttributeDescription.Use.Required
+	};
+
+	public override IEnumerable<UxmlChildElementDescription> uxmlChildElementsDescription
+	{
+		get
+		{
+			yield break;
+		}
+	}
+}

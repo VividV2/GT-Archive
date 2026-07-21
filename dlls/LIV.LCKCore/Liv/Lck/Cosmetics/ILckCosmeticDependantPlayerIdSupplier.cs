@@ -1,17 +1,10 @@
-namespace Liv.Lck.Cosmetics
-{
-	public interface ILckCosmeticDependantPlayerIdSupplier
-	{
-		event PlayerIdUpdatedEvent PlayerIdUpdated;
+namespace Liv.Lck.Cosmetics;
 
-		string GetPlayerId();
+public interface ILckCosmeticDependantPlayerIdSupplier
+{
+	event PlayerIdUpdatedEvent PlayerIdUpdated;
 
-		void UpdatePlayerId();
-	}
-}
-namespace Liv.Lck.Core.Cosmetics
-{
-}
-namespace Liv.Lck.Core
-{
+	string GetPlayerId();
+
+	void UpdatePlayerId();
 }

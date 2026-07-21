@@ -1,2 +1,23 @@
-// Could not decompile GorillaTagScripts.EnvItem
-// This type uses unsupported IL or has too many generic parameters.
+using Photon.Pun;
+using UnityEngine;
+
+namespace GorillaTagScripts;
+
+public class EnvItem : MonoBehaviour, IPunInstantiateMagicCallback
+{
+	public int spawnedByPhotonViewId;
+
+	public void OnEnable()
+	{
+	}
+
+	public void OnDisable()
+	{
+	}
+
+	public void OnPhotonInstantiate(PhotonMessageInfo info)
+	{
+		object[] instantiationData = info.photonView.InstantiationData;
+		spawnedByPhotonViewId = (int)instantiationData[0];
+	}
+}

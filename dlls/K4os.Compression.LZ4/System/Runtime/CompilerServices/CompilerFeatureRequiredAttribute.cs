@@ -1,2 +1,21 @@
-// Could not decompile System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics.CodeAnalysis;
+
+namespace System.Runtime.CompilerServices;
+
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = false)]
+[ExcludeFromCodeCoverage]
+internal sealed class CompilerFeatureRequiredAttribute : Attribute
+{
+	public const string RefStructs = "RefStructs";
+
+	public const string RequiredMembers = "RequiredMembers";
+
+	public string FeatureName { get; }
+
+	public bool IsOptional { get; set; }
+
+	public CompilerFeatureRequiredAttribute(string featureName)
+	{
+		FeatureName = featureName;
+	}
+}

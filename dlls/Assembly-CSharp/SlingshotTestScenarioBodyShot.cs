@@ -1,2 +1,12 @@
-// Could not decompile SlingshotTestScenarioBodyShot
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class SlingshotTestScenarioBodyShot : SlingshotTestScenario
+{
+	public GameObject projectilePrefab;
+
+	public VRRig targetRig;
+
+	public Collider[] targetColliders;
+
+	public GameObject anchor;
+}

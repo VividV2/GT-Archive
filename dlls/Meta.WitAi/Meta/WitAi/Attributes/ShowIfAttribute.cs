@@ -1,2 +1,15 @@
-// Could not decompile Meta.WitAi.Attributes.ShowIfAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace Meta.WitAi.Attributes;
+
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+public class ShowIfAttribute : PropertyAttribute
+{
+	public string conditionFieldName;
+
+	public ShowIfAttribute(string conditionFieldName)
+	{
+		this.conditionFieldName = conditionFieldName;
+	}
+}

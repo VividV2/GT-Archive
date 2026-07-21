@@ -1,18 +1,11 @@
 using System;
 
-namespace Unity
+namespace Unity;
+
+internal sealed class ThrowStub : ObjectDisposedException
 {
-	internal sealed class ThrowStub : ObjectDisposedException
+	public static void ThrowNotSupportedException()
 	{
-		public static void ThrowNotSupportedException()
-		{
-			throw new PlatformNotSupportedException();
-		}
+		throw new PlatformNotSupportedException();
 	}
-}
-namespace System.Net.Http.Headers
-{
-}
-namespace System.Net.Http.Headers
-{
 }

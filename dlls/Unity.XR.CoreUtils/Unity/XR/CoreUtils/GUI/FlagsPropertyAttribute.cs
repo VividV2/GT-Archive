@@ -1,2 +1,7 @@
-// Could not decompile Unity.XR.CoreUtils.GUI.FlagsPropertyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Unity.XR.CoreUtils.GUI;
+
+public sealed class FlagsPropertyAttribute : PropertyAttribute
+{
+}

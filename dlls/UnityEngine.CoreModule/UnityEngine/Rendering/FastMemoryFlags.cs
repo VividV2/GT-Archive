@@ -1,6 +1,11 @@
+using System;
+
 namespace UnityEngine.Rendering;
 
-internal delegate void GPUDrivenLODGroupDataNativeCallback(in GPUDrivenLODGroupDataNative lodGroupDataNative, GPUDrivenLODGroupDataCallback callback);
-namespace UnityEngine
+[Flags]
+public enum FastMemoryFlags
 {
+	None = 0,
+	SpillTop = 1,
+	SpillBottom = 2
 }

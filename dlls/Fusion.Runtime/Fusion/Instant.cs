@@ -1,2 +1,10 @@
-// Could not decompile Fusion.Instant
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+internal struct Instant
+{
+	public double Input { get; internal set; }
+
+	public double Local { get; internal set; }
+
+	public double Remote { get; internal set; }
+}

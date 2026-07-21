@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.PreloadData
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+internal class PreloadData : Object
+{
+	[RequiredByNativeCode]
+	internal void PreloadDataDontStripMe()
+	{
+	}
+}

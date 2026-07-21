@@ -14,32 +14,32 @@ public static class ClusterSerialization
 {
 	public unsafe static int SaveTimeManagerState(NativeArray<byte> buffer)
 	{
-		return SaveTimeManagerStateInternal(NativeArrayUnsafeUtility.GetUnsafePtr(buffer), buffer.Length);
+		return SaveTimeManagerStateInternal(buffer.GetUnsafePtr(), buffer.Length);
 	}
 
 	public unsafe static bool RestoreTimeManagerState(NativeArray<byte> buffer)
 	{
-		return RestoreTimeManagerStateInternal(NativeArrayUnsafeUtility.GetUnsafePtr(buffer), buffer.Length);
+		return RestoreTimeManagerStateInternal(buffer.GetUnsafePtr(), buffer.Length);
 	}
 
 	public unsafe static int SaveInputManagerState(NativeArray<byte> buffer)
 	{
-		return SaveInputManagerStateInternal(NativeArrayUnsafeUtility.GetUnsafePtr(buffer), buffer.Length);
+		return SaveInputManagerStateInternal(buffer.GetUnsafePtr(), buffer.Length);
 	}
 
 	public unsafe static bool RestoreInputManagerState(NativeArray<byte> buffer)
 	{
-		return RestoreInputManagerStateInternal(NativeArrayUnsafeUtility.GetUnsafePtr(buffer), buffer.Length);
+		return RestoreInputManagerStateInternal(buffer.GetUnsafePtr(), buffer.Length);
 	}
 
 	public unsafe static int SaveClusterInputState(NativeArray<byte> buffer)
 	{
-		return SaveClusterInputStateInternal(NativeArrayUnsafeUtility.GetUnsafePtr(buffer), buffer.Length);
+		return SaveClusterInputStateInternal(buffer.GetUnsafePtr(), buffer.Length);
 	}
 
 	public unsafe static bool RestoreClusterInputState(NativeArray<byte> buffer)
 	{
-		return RestoreClusterInputStateInternal(NativeArrayUnsafeUtility.GetUnsafePtr(buffer), buffer.Length);
+		return RestoreClusterInputStateInternal(buffer.GetUnsafePtr(), buffer.Length);
 	}
 
 	[MethodImpl(MethodImplOptions.InternalCall)]

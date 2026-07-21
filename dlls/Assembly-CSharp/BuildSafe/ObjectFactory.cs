@@ -1,2 +1,17 @@
-// Could not decompile BuildSafe.ObjectFactory
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+namespace BuildSafe;
+
+public static class ObjectFactory
+{
+	public static event Action<Component> componentWasAdded
+	{
+		add
+		{
+		}
+		remove
+		{
+		}
+	}
+}

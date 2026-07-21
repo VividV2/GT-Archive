@@ -1,2 +1,15 @@
-// Could not decompile Unity.IO.LowLevel.Unsafe.AssetLoadingSubsystem
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.IO.LowLevel.Unsafe;
+
+public enum AssetLoadingSubsystem
+{
+	Other,
+	Texture,
+	VirtualTexture,
+	Mesh,
+	Audio,
+	Scripts,
+	EntitiesScene,
+	EntitiesStreamBinaryReader,
+	FileInfo,
+	ContentLoading
+}

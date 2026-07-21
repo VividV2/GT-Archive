@@ -1,2 +1,26 @@
-// Could not decompile System.Runtime.Remoting.EnvoyInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.Remoting.Messaging;
+
+namespace System.Runtime.Remoting;
+
+[Serializable]
+internal class EnvoyInfo : IEnvoyInfo
+{
+	private IMessageSink envoySinks;
+
+	public IMessageSink EnvoySinks
+	{
+		get
+		{
+			return envoySinks;
+		}
+		set
+		{
+			envoySinks = value;
+		}
+	}
+
+	public EnvoyInfo(IMessageSink sinks)
+	{
+		envoySinks = sinks;
+	}
+}

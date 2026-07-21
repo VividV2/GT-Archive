@@ -1,2 +1,9 @@
-// Could not decompile OrientedBoundsEditorUtils
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public static class OrientedBoundsEditorUtils
+{
+	public static OrientedBounds ComputeBounds(Vector3[] points)
+	{
+		return OrientedBounds.Empty;
+	}
+}

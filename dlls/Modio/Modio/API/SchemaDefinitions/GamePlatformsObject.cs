@@ -1,16 +1,15 @@
-using System.Runtime.InteropServices;
-using Newtonsoft.Json;
-using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 
-namespace Modio.API.SchemaDefinitions
+namespace Modio.API.SchemaDefinitions;
+
+[JsonObject]
+internal readonly struct GamePlatformsObject(string platform, string label, bool moderated, bool locked)
 {
-	[StructLayout(LayoutKind.Sequential, Size = 1)]
-	[JsonObject]
-	internal readonly struct Response204
-	{
-	}
-}
-namespace Modio.API.SchemaDefinitions
-{
+	internal readonly string Platform = platform;
+
+	internal readonly string Label = label;
+
+	internal readonly bool Moderated = moderated;
+
+	internal readonly bool Locked = locked;
 }

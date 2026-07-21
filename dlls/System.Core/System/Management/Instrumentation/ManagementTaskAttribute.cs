@@ -1,18 +1,29 @@
-using System.Reflection.Emit;
-using System.Reflection.Emit;
+using System.Security.Permissions;
+using Unity;
 
-namespace System.Security.Cryptography.X509Certificates
+namespace System.Management.Instrumentation;
+
+/// <summary>The ManagementTask attribute indicates that the target method implements a WMI method.Note: the WMI .NET libraries are now considered in final state, and no further development, enhancements, or updates will be available for non-security related issues affecting these libraries. The MI APIs should be used for all new development.</summary>
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
+[HostProtection(SecurityAction.LinkDemand, MayLeakOnAbort = true)]
+public sealed class ManagementTaskAttribute : ManagementMemberAttribute
 {
-}
-namespace System.Diagnostics.Eventing.Reader
-{
-}
-namespace System.Linq.Expressions.Compiler
-{
-	internal interface ILocalCache
+	/// <summary>Gets or sets a value that defines the type of output that the method that is marked with the ManagementTask attribute will output.</summary>
+	/// <returns>A <see cref="T:System.Type" /> value that indicates the type of output that the method that is marked with the ManagementTask attribute will output.</returns>
+	public Type Schema
 	{
-		LocalBuilder GetLocal(Type type);
+		get
+		{
+			Unity.ThrowStub.ThrowNotSupportedException();
+			return null;
+		}
+		set
+		{
+		}
+	}
 
-		void FreeLocal(LocalBuilder local);
+	/// <summary>Initializes a new instance of the <see cref="T:System.Management.ManagementTaskAttribute" /> class. This is the default constructor.</summary>
+	public ManagementTaskAttribute()
+	{
 	}
 }

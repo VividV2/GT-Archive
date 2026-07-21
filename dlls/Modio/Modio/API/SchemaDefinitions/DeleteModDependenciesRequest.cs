@@ -1,2 +1,19 @@
-// Could not decompile Modio.API.SchemaDefinitions.DeleteModDependenciesRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
+namespace Modio.API.SchemaDefinitions;
+
+[JsonObject]
+internal readonly struct DeleteModDependenciesRequest(long[] dependencies) : IApiRequest
+{
+	private static readonly Dictionary<string, object> _bodyParameters = new Dictionary<string, object>();
+
+	internal readonly long[] Dependencies = dependencies;
+
+	public IReadOnlyDictionary<string, object> GetBodyParameters()
+	{
+		_bodyParameters.Clear();
+		_bodyParameters.Add("dependencies", Dependencies);
+		return _bodyParameters;
+	}
+}

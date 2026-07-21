@@ -1,2 +1,9 @@
-// Could not decompile System.Xml.Xsl.Runtime.XmlDateTimeSortKey
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Xsl.Runtime;
+
+internal class XmlDateTimeSortKey : XmlIntegerSortKey
+{
+	public XmlDateTimeSortKey(DateTime value, XmlCollation collation)
+		: base(value.Ticks, collation)
+	{
+	}
+}

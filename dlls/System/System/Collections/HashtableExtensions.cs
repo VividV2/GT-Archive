@@ -1,2 +1,15 @@
-// Could not decompile System.Collections.HashtableExtensions
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Collections;
+
+internal static class HashtableExtensions
+{
+	public static bool TryGetValue<T>(this Hashtable table, object key, out T value)
+	{
+		if (table.ContainsKey(key))
+		{
+			value = (T)table[key];
+			return true;
+		}
+		value = default(T);
+		return false;
+	}
+}

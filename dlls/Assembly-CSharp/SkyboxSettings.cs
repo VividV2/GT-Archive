@@ -1,2 +1,16 @@
-// Could not decompile SkyboxSettings
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+[ExecuteInEditMode]
+public class SkyboxSettings : MonoBehaviour
+{
+	[SerializeField]
+	private Material _skyMaterial;
+
+	private void OnEnable()
+	{
+		if ((bool)_skyMaterial)
+		{
+			RenderSettings.skybox = _skyMaterial;
+		}
+	}
+}

@@ -4,6 +4,3 @@ namespace System.ComponentModel.Design;
 /// <param name="sender">The source of the event.</param>
 /// <param name="e">A <see cref="T:System.ComponentModel.Design.ComponentChangingEventArgs" /> event that contains the event data.</param>
 public delegate void ComponentChangingEventHandler(object sender, ComponentChangingEventArgs e);
-namespace System.Net
-{
-}

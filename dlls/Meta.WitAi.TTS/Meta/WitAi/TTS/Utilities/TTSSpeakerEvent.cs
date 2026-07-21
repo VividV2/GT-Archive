@@ -1,2 +1,9 @@
-// Could not decompile Meta.WitAi.TTS.Utilities.TTSSpeakerEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace Meta.WitAi.TTS.Utilities;
+
+[Serializable]
+public class TTSSpeakerEvent : UnityEvent<TTSSpeaker, string>
+{
+}

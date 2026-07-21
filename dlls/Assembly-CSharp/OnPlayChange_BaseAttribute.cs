@@ -1,2 +1,13 @@
-// Could not decompile OnPlayChange_BaseAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Reflection;
+
+public class OnPlayChange_BaseAttribute : Attribute
+{
+	public virtual void OnEnterPlay(FieldInfo field)
+	{
+	}
+
+	public virtual void OnEnterPlay(MethodInfo method)
+	{
+	}
+}

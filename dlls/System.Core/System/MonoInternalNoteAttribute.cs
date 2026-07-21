@@ -1,14 +1,10 @@
-namespace System.Linq.Parallel
+namespace System;
+
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+internal class MonoInternalNoteAttribute : MonoTODOAttribute
 {
-}
-namespace System
-{
-	[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-	internal class MonoInternalNoteAttribute : MonoTODOAttribute
+	public MonoInternalNoteAttribute(string comment)
+		: base(comment)
 	{
-		public MonoInternalNoteAttribute(string comment)
-			: base(comment)
-		{
-		}
 	}
 }

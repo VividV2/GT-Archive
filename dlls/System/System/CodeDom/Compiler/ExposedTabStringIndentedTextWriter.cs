@@ -1,38 +1,23 @@
-using System;
-using System.Runtime.InteropServices;
+using System.IO;
 
-namespace Mono.Net
+namespace System.CodeDom.Compiler;
+
+internal sealed class ExposedTabStringIndentedTextWriter : IndentedTextWriter
 {
-	internal class CFUrl : CFObject
+	internal string TabString { get; }
+
+	public ExposedTabStringIndentedTextWriter(TextWriter writer, string tabString)
+		: base(writer, tabString)
 	{
-		public CFUrl(IntPtr handle, bool own)
-			: base(handle, own)
-		{
-		}
+		TabString = tabString ?? "    ";
+	}
 
-		[DllImport("/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation")]
-		private static extern IntPtr CFURLCreateWithString(IntPtr allocator, IntPtr str, IntPtr baseURL);
-
-		public static CFUrl Create(string absolute)
+	internal void InternalOutputTabs()
+	{
+		TextWriter innerWriter = base.InnerWriter;
+		for (int i = 0; i < base.Indent; i++)
 		{
-			if (string.IsNullOrEmpty(absolute))
-			{
-				return null;
-			}
-			CFString cFString = CFString.Create(absolute);
-			IntPtr intPtr = CFURLCreateWithString(IntPtr.Zero, cFString.Handle, IntPtr.Zero);
-			cFString.Dispose();
-			if (intPtr == IntPtr.Zero)
-			{
-				return null;
-			}
-			return new CFUrl(intPtr, own: true);
+			innerWriter.Write(TabString);
 		}
 	}
-}
-namespace System.Security.Permissions
-{
-}
-namespace System.Text.RegularExpressions
-{
 }

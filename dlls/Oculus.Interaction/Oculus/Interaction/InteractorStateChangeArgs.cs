@@ -1,2 +1,14 @@
-// Could not decompile Oculus.Interaction.InteractorStateChangeArgs
-// This type uses unsupported IL or has too many generic parameters.
+namespace Oculus.Interaction;
+
+public struct InteractorStateChangeArgs
+{
+	public InteractorState PreviousState { get; }
+
+	public InteractorState NewState { get; }
+
+	public InteractorStateChangeArgs(InteractorState previousState, InteractorState newState)
+	{
+		PreviousState = previousState;
+		NewState = newState;
+	}
+}

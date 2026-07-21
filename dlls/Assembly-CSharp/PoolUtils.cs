@@ -1,2 +1,9 @@
-// Could not decompile PoolUtils
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public static class PoolUtils
+{
+	public static int GameObjHashCode(GameObject obj)
+	{
+		return obj.tag.GetHashCode();
+	}
+}

@@ -1,2 +1,17 @@
-// Could not decompile CosmeticRoom.ItemScripts.TrickTreatHoldable
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace CosmeticRoom.ItemScripts;
+
+public class TrickTreatHoldable : TransferrableObject
+{
+	public MeshCollider candyCollider;
+
+	protected override void LateUpdateLocal()
+	{
+		base.LateUpdateLocal();
+		if ((bool)candyCollider)
+		{
+			candyCollider.enabled = IsMyItem() && IsHeld();
+		}
+	}
+}

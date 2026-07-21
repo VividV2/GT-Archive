@@ -1,2 +1,10 @@
-// Could not decompile Fusion.NetworkSerializeMethodAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Fusion;
+
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+public sealed class NetworkSerializeMethodAttribute : Attribute
+{
+	[Obsolete("No longer used. Use a method that returns a struct instead.", true)]
+	public int MaxSize { get; set; }
+}

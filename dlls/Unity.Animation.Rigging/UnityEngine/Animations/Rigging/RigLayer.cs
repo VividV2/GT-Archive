@@ -1,54 +1,139 @@
+using System;
+using UnityEngine.Serialization;
+
 namespace UnityEngine.Animations.Rigging;
 
-public static class QuaternionExt
+[Serializable]
+public class RigLayer : IRigLayer
 {
-	private const float k_FloatMin = 1E-10f;
+	[SerializeField]
+	[FormerlySerializedAs("rig")]
+	private Rig m_Rig;
 
-	public static readonly Quaternion zero = new Quaternion(0f, 0f, 0f, 0f);
+	[SerializeField]
+	[FormerlySerializedAs("active")]
+	private bool m_Active = true;
 
-	public static Quaternion FromToRotation(Vector3 from, Vector3 to)
+	private IRigConstraint[] m_Constraints;
+
+	private IAnimationJob[] m_Jobs;
+
+	public Rig rig
 	{
-		float num = Vector3.Dot(from.normalized, to.normalized);
-		float num;
-		if (num >= 1f)
+		get
 		{
-			return Quaternion.identity;
+			return m_Rig;
 		}
-		if (num <= -1f)
+		private set
 		{
-			Vector3 axis = Vector3.Cross(from, Vector3.right);
-			Vector3 axis;
-			if (axis.sqrMagnitude == 0f)
+			m_Rig = value;
+		}
+	}
+
+	public bool active
+	{
+		get
+		{
+			return m_Active;
+		}
+		set
+		{
+			m_Active = value;
+		}
+	}
+
+	public string name
+	{
+		get
+		{
+			if (!(rig != null))
 			{
-				axis = Vector3.Cross(from, Vector3.up);
+				return "no-name";
 			}
-			return Quaternion.AngleAxis(180f, axis);
+			return rig.gameObject.name;
 		}
-		return Quaternion.AngleAxis(Mathf.Acos(num) * 57.29578f, Vector3.Cross(from, to).normalized);
 	}
 
-	public static Quaternion Add(Quaternion rhs, Quaternion lhs)
+	public IRigConstraint[] constraints
 	{
-		float num = Mathf.Sign(Quaternion.Dot(rhs, lhs));
-		float num;
-		return new Quaternion(rhs.x + num * lhs.x, rhs.y + num * lhs.y, rhs.z + num * lhs.z, rhs.w + num * lhs.w);
-	}
-
-	public static Quaternion Scale(Quaternion q, float scale)
-	{
-		return new Quaternion(q.x * scale, q.y * scale, q.z * scale, q.w * scale);
-	}
-
-	public static Quaternion NormalizeSafe(Quaternion q)
-	{
-		float num = Quaternion.Dot(q, q);
-		float num;
-		if (num > 1E-10f)
+		get
 		{
-			float num2 = 1f / Mathf.Sqrt(num);
-			float num2;
-			return new Quaternion(q.x * num2, q.y * num2, q.z * num2, q.w * num2);
+			if (!isInitialized)
+			{
+				return null;
+			}
+			return m_Constraints;
 		}
-		return Quaternion.identity;
+	}
+
+	public IAnimationJob[] jobs
+	{
+		get
+		{
+			if (!isInitialized)
+			{
+				return null;
+			}
+			return m_Jobs;
+		}
+	}
+
+	public bool isInitialized { get; private set; }
+
+	public RigLayer(Rig rig, bool active = true)
+	{
+		this.rig = rig;
+		this.active = active;
+	}
+
+	public bool Initialize(Animator animator)
+	{
+		if (isInitialized)
+		{
+			return true;
+		}
+		if (rig != null)
+		{
+			m_Constraints = RigUtils.GetConstraints(rig);
+			if (m_Constraints == null || m_Constraints.Length == 0)
+			{
+				return false;
+			}
+			m_Jobs = RigUtils.CreateAnimationJobs(animator, m_Constraints);
+			return isInitialized = true;
+		}
+		return false;
+	}
+
+	public void Update()
+	{
+		if (isInitialized)
+		{
+			int i = 0;
+			for (int num = m_Constraints.Length; i < num; i++)
+			{
+				m_Constraints[i].UpdateJob(m_Jobs[i]);
+			}
+		}
+	}
+
+	public void Reset()
+	{
+		if (isInitialized)
+		{
+			RigUtils.DestroyAnimationJobs(m_Constraints, m_Jobs);
+			m_Constraints = null;
+			m_Jobs = null;
+			isInitialized = false;
+		}
+	}
+
+	public bool IsValid()
+	{
+		if (rig != null)
+		{
+			return isInitialized;
+		}
+		return false;
 	}
 }

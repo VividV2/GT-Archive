@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.UI.InteractorHitData
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.UIElements;
+
+namespace UnityEngine.XR.Interaction.Toolkit.UI;
+
+internal struct InteractorHitData
+{
+	public Vector3 closestPoint;
+
+	public Vector3 interactorOrigin;
+
+	public Vector3 interactorDirection;
+
+	public UIDocument hitDocument;
+}

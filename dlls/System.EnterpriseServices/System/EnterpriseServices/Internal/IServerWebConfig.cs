@@ -1,28 +1,25 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
-namespace System.EnterpriseServices
-{
-	/// <summary>Implemented by the <see cref="T:System.EnterpriseServices.ServicedComponent" /> class to obtain information about the component via the <see cref="M:System.EnterpriseServices.IServicedComponentInfo.GetComponentInfo(System.Int32@,System.String[]@)" /> method.</summary>
-	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-	[Guid("8165B19E-8D3A-4d0b-80C8-97DE310DB583")]
-	public interface IServicedComponentInfo
-	{
-		/// <summary>Obtains certain information about the <see cref="T:System.EnterpriseServices.ServicedComponent" /> class instance.</summary>
-		/// <param name="infoMask">A bitmask where 0x00000001 is a key for the serviced component's process ID, 0x00000002 is a key for the application domain ID, and 0x00000004 is a key for the serviced component's remote URI.</param>
-		/// <param name="infoArray">A string array that may contain any or all of the following, in order: the serviced component's process ID, the application domain ID, and the serviced component's remote URI.</param>
-		void GetComponentInfo(ref int infoMask, out string[] infoArray);
-	}
-}
-namespace System.EnterpriseServices
-{
-	/// <summary>Installs and configures assemblies in the COM+ catalog.</summary>
-	[Guid("55e3ea25-55cb-4650-8887-18e8d30bb4bc")]
-	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-	public interface IRegistrationHelper
-	{
-		void InstallAssembly([In][MarshalAs(UnmanagedType.BStr)] string assembly, [In][Out][MarshalAs(UnmanagedType.BStr)] ref string application, [In][Out][MarshalAs(UnmanagedType.BStr)] ref string tlb, [In] InstallationFlags installFlags);
+namespace System.EnterpriseServices.Internal;
 
-		void UninstallAssembly([In][MarshalAs(UnmanagedType.BStr)] string assembly, [In][MarshalAs(UnmanagedType.BStr)] string application);
-	}
+/// <summary>Creates a Web.config file for a SOAP-enabled COM+ application and adds component entries to the file for COM interfaces being published in the application.</summary>
+[Guid("6261e4b5-572a-4142-a2f9-1fe1a0c97097")]
+public interface IServerWebConfig
+{
+	/// <summary>Adds XML elements to a Web.config file for a COM interface being published in a SOAP-enabled COM+ application.</summary>
+	/// <param name="FilePath">The path for the existing Web.config file.</param>
+	/// <param name="AssemblyName">The name of the assembly that contains the type being added.</param>
+	/// <param name="TypeName">The name of the type being added.</param>
+	/// <param name="ProgId">The programmatic identifier for the type being added.</param>
+	/// <param name="Mode">A string constant that corresponds to the name of a member from the <see cref="T:System.Runtime.Remoting.WellKnownObjectMode" /> enumeration, which indicates how a well-known object is activated.</param>
+	/// <param name="Error">A string to which an error message can be written.</param>
+	[DispId(1)]
+	void AddElement([MarshalAs(UnmanagedType.BStr)] string FilePath, [MarshalAs(UnmanagedType.BStr)] string AssemblyName, [MarshalAs(UnmanagedType.BStr)] string TypeName, [MarshalAs(UnmanagedType.BStr)] string ProgId, [MarshalAs(UnmanagedType.BStr)] string Mode, [MarshalAs(UnmanagedType.BStr)] out string Error);
+
+	/// <summary>Creates a Web.config file for a SOAP-enabled COM+ application so that the file is ready to have XML elements added for COM interfaces being published.</summary>
+	/// <param name="FilePath">The folder in which to create the configuration file.</param>
+	/// <param name="FileRootName">The string value to which a config extension can be added (for example, Web for Web.config).</param>
+	/// <param name="Error">A string to which an error message can be written.</param>
+	[DispId(2)]
+	void Create([MarshalAs(UnmanagedType.BStr)] string FilePath, [MarshalAs(UnmanagedType.BStr)] string FileRootName, [MarshalAs(UnmanagedType.BStr)] out string Error);
 }

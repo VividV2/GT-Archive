@@ -1,17 +1,13 @@
-namespace System
+namespace System;
+
+internal enum ParseFailureKind
 {
-	internal enum ParseFailureKind
-	{
-		None,
-		ArgumentNull,
-		Format,
-		FormatWithParameter,
-		FormatWithOriginalDateTime,
-		FormatWithFormatSpecifier,
-		FormatWithOriginalDateTimeAndParameter,
-		FormatBadDateTimeCalendar
-	}
-}
-namespace Microsoft.Win32
-{
+	None,
+	ArgumentNull,
+	Format,
+	FormatWithParameter,
+	FormatWithOriginalDateTime,
+	FormatWithFormatSpecifier,
+	FormatWithOriginalDateTimeAndParameter,
+	FormatBadDateTimeCalendar
 }

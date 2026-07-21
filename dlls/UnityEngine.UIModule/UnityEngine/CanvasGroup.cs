@@ -1,60 +1,131 @@
 using System;
 using System.Runtime.CompilerServices;
-using Unity.Profiling;
-using UnityEngine.Bindings;
-using System;
-using System.Runtime.CompilerServices;
-using Unity.Profiling;
 using UnityEngine.Bindings;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[NativeHeader("Modules/UI/CanvasGroup.h")]
+[NativeClass("UI::CanvasGroup")]
+public sealed class CanvasGroup : Behaviour, ICanvasRaycastFilter
 {
-	[StaticAccessor("UI::SystemProfilerApi", StaticAccessorType.DoubleColon)]
-	[IgnoredByDeepProfiler]
-	[NativeHeader("Modules/UI/Canvas.h")]
-	public static class UISystemProfilerApi
+	[NativeProperty("Alpha", false, TargetType.Function)]
+	public float alpha
 	{
-		public enum SampleType
+		get
 		{
-			Layout,
-			Render
+			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
+			if (intPtr == (IntPtr)0)
+			{
+				ThrowHelper.ThrowNullReferenceException(this);
+			}
+			return get_alpha_Injected(intPtr);
 		}
-
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		public static extern void BeginSample(SampleType type);
-
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		public static extern void EndSample(SampleType type);
-
-		public unsafe static void AddMarker(string name, Object obj)
+		set
 		{
-			//The blocks IL_0029 are reachable both inside and outside the pinned region starting at IL_0018. ILSpy has duplicated these blocks in order to place them both within and outside the `fixed` statement.
-			try
+			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
+			if (intPtr == (IntPtr)0)
 			{
-				ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
-				ManagedSpanWrapper managedSpanWrapper = default(ManagedSpanWrapper);
-				if (!StringMarshaller.TryMarshalEmptyOrNullString(name, ref managedSpanWrapper))
-				{
-					ReadOnlySpan<char> readOnlySpan = MemoryExtensions.AsSpan(name);
-					ReadOnlySpan<char> readOnlySpan;
-					fixed (char* begin = readOnlySpan)
-					{
-						managedSpanWrapper = new ManagedSpanWrapper(begin, readOnlySpan.Length);
-						AddMarker_Injected(ref managedSpanWrapper, Object.MarshalledUnityObject.Marshal(obj));
-						return;
-					}
-				}
-				AddMarker_Injected(ref managedSpanWrapper, Object.MarshalledUnityObject.Marshal(obj));
+				ThrowHelper.ThrowNullReferenceException(this);
 			}
-			finally
-			{
-			}
+			set_alpha_Injected(intPtr, value);
 		}
-
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		private static extern void AddMarker_Injected(ref ManagedSpanWrapper name, IntPtr obj);
 	}
-}
-namespace UnityEngine
-{
+
+	[NativeProperty("Interactable", false, TargetType.Function)]
+	public bool interactable
+	{
+		get
+		{
+			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
+			if (intPtr == (IntPtr)0)
+			{
+				ThrowHelper.ThrowNullReferenceException(this);
+			}
+			return get_interactable_Injected(intPtr);
+		}
+		set
+		{
+			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
+			if (intPtr == (IntPtr)0)
+			{
+				ThrowHelper.ThrowNullReferenceException(this);
+			}
+			set_interactable_Injected(intPtr, value);
+		}
+	}
+
+	[NativeProperty("BlocksRaycasts", false, TargetType.Function)]
+	public bool blocksRaycasts
+	{
+		get
+		{
+			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
+			if (intPtr == (IntPtr)0)
+			{
+				ThrowHelper.ThrowNullReferenceException(this);
+			}
+			return get_blocksRaycasts_Injected(intPtr);
+		}
+		set
+		{
+			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
+			if (intPtr == (IntPtr)0)
+			{
+				ThrowHelper.ThrowNullReferenceException(this);
+			}
+			set_blocksRaycasts_Injected(intPtr, value);
+		}
+	}
+
+	[NativeProperty("IgnoreParentGroups", false, TargetType.Function)]
+	public bool ignoreParentGroups
+	{
+		get
+		{
+			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
+			if (intPtr == (IntPtr)0)
+			{
+				ThrowHelper.ThrowNullReferenceException(this);
+			}
+			return get_ignoreParentGroups_Injected(intPtr);
+		}
+		set
+		{
+			IntPtr intPtr = MarshalledUnityObject.MarshalNotNull(this);
+			if (intPtr == (IntPtr)0)
+			{
+				ThrowHelper.ThrowNullReferenceException(this);
+			}
+			set_ignoreParentGroups_Injected(intPtr, value);
+		}
+	}
+
+	public bool IsRaycastLocationValid(Vector2 sp, Camera eventCamera)
+	{
+		return blocksRaycasts;
+	}
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern float get_alpha_Injected(IntPtr _unity_self);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern void set_alpha_Injected(IntPtr _unity_self, float value);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern bool get_interactable_Injected(IntPtr _unity_self);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern void set_interactable_Injected(IntPtr _unity_self, bool value);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern bool get_blocksRaycasts_Injected(IntPtr _unity_self);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern void set_blocksRaycasts_Injected(IntPtr _unity_self, bool value);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern bool get_ignoreParentGroups_Injected(IntPtr _unity_self);
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	private static extern void set_ignoreParentGroups_Injected(IntPtr _unity_self, bool value);
 }

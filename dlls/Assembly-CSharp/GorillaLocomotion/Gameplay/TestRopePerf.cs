@@ -1,2 +1,21 @@
-// Could not decompile GorillaLocomotion.Gameplay.TestRopePerf
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections;
+using UnityEngine;
+
+namespace GorillaLocomotion.Gameplay;
+
+public class TestRopePerf : MonoBehaviour
+{
+	[SerializeField]
+	private GameObject ropesOld;
+
+	[SerializeField]
+	private GameObject ropesCustom;
+
+	[SerializeField]
+	private GameObject ropesCustomVectorized;
+
+	private IEnumerator Start()
+	{
+		yield break;
+	}
+}

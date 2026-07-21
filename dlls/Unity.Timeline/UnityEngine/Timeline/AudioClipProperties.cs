@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Timeline.AudioClipProperties
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Playables;
+
+namespace UnityEngine.Timeline;
+
+[Serializable]
+[NotKeyable]
+internal class AudioClipProperties : PlayableBehaviour
+{
+	[Range(0f, 1f)]
+	public float volume = 1f;
+}

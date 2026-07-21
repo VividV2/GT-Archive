@@ -1,2 +1,8 @@
-// Could not decompile Valve.VR.EGamepadTextInputMode
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR;
+
+public enum EGamepadTextInputMode
+{
+	k_EGamepadTextInputModeNormal,
+	k_EGamepadTextInputModePassword,
+	k_EGamepadTextInputModeSubmit
+}

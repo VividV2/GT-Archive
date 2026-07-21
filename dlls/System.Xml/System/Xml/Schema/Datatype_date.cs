@@ -1,2 +1,11 @@
-// Could not decompile System.Xml.Schema.Datatype_date
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+internal class Datatype_date : Datatype_dateTimeBase
+{
+	public override XmlTypeCode TypeCode => XmlTypeCode.Date;
+
+	internal Datatype_date()
+		: base(XsdDateTimeFlags.Date)
+	{
+	}
+}

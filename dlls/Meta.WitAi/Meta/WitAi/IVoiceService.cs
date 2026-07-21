@@ -3,32 +3,25 @@ using Meta.WitAi.Events;
 using Meta.WitAi.Interfaces;
 using Meta.WitAi.Requests;
 
-namespace Meta.WitAi.Utilities
+namespace Meta.WitAi;
+
+public interface IVoiceService : IVoiceEventProvider, ITelemetryEventsProvider, IVoiceActivationHandler
 {
-}
-namespace Meta.WitAi
-{
-	public interface IVoiceService : IVoiceEventProvider, ITelemetryEventsProvider, IVoiceActivationHandler
-	{
-		bool IsRequestActive { get; }
+	bool IsRequestActive { get; }
 
-		bool UsePlatformIntegrations { get; set; }
+	bool UsePlatformIntegrations { get; set; }
 
-		HashSet<VoiceServiceRequest> Requests { get; }
+	HashSet<VoiceServiceRequest> Requests { get; }
 
-		bool MicActive { get; }
+	bool MicActive { get; }
 
-		new VoiceEvents VoiceEvents { get; set; }
+	new VoiceEvents VoiceEvents { get; set; }
 
-		new TelemetryEvents TelemetryEvents { get; set; }
+	new TelemetryEvents TelemetryEvents { get; set; }
 
-		ITranscriptionProvider TranscriptionProvider { get; set; }
+	ITranscriptionProvider TranscriptionProvider { get; set; }
 
-		bool CanActivateAudio();
+	bool CanActivateAudio();
 
-		bool CanSend();
-	}
-}
-namespace Meta.WitAi
-{
+	bool CanSend();
 }

@@ -1,2 +1,9 @@
-// Could not decompile System.Net.Security.SafeFreeCredential_SECURITY
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net.Security;
+
+internal sealed class SafeFreeCredential_SECURITY : SafeFreeCredentials
+{
+	protected override bool ReleaseHandle()
+	{
+		return global::Interop.SspiCli.FreeCredentialsHandle(ref _handle) == 0;
+	}
+}

@@ -1,2 +1,14 @@
-// Could not decompile GorillaComputerLimitedOnlineTrigger
-// This type uses unsupported IL or has too many generic parameters.
+using GorillaNetworking;
+
+public class GorillaComputerLimitedOnlineTrigger : GorillaTriggerBox
+{
+	public override void OnBoxTriggered()
+	{
+		GorillaComputer.instance.SetLimitOnlineScreens(isLimited: true);
+	}
+
+	public override void OnBoxExited()
+	{
+		GorillaComputer.instance.SetLimitOnlineScreens(isLimited: false);
+	}
+}

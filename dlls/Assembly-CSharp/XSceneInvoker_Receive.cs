@@ -1,2 +1,13 @@
-// Could not decompile XSceneInvoker_Receive
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+using UnityEngine.Events;
+
+public class XSceneInvoker_Receive : MonoBehaviour
+{
+	[SerializeField]
+	private UnityEvent evt;
+
+	public void Invoke()
+	{
+		evt.Invoke();
+	}
+}

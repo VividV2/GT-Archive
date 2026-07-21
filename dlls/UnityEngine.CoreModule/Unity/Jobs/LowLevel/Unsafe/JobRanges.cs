@@ -1,17 +1,14 @@
 using System;
-using UnityEngine.Scripting;
 
-namespace UnityEngine
+namespace Unity.Jobs.LowLevel.Unsafe;
+
+public struct JobRanges
 {
-	[AttributeUsage(AttributeTargets.Class, Inherited = false)]
-	[UsedByNativeCode]
-	public class ExcludeFromPresetAttribute : Attribute
-	{
-	}
-}
-namespace UnityEngine.Pool
-{
-}
-namespace UnityEngine.Assertions.Comparers
-{
+	internal int BatchSize;
+
+	internal int NumJobs;
+
+	public int TotalIterationCount;
+
+	internal IntPtr StartEndIndex;
 }

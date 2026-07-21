@@ -1,13 +1,9 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum FullScreenMode
 {
-	public enum FullScreenMode
-	{
-		ExclusiveFullScreen,
-		FullScreenWindow,
-		MaximizedWindow,
-		Windowed
-	}
-}
-namespace UnityEngine
-{
+	ExclusiveFullScreen,
+	FullScreenWindow,
+	MaximizedWindow,
+	Windowed
 }

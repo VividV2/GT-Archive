@@ -1,15 +1,6 @@
-namespace UnityEngine.Rendering.RadeonRays
+namespace UnityEngine.Rendering.RadeonRays;
+
+internal struct SceneBuildMemoryRequirements
 {
-	internal struct SceneBuildMemoryRequirements
-	{
-		public ulong buildScratchSizeInDwords;
-	}
-}
-namespace UnityEngine.Rendering.RadeonRays
-{
-	internal enum RayQueryOutputType
-	{
-		FullHitData,
-		InstanceID
-	}
+	public ulong buildScratchSizeInDwords;
 }

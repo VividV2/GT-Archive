@@ -1,2 +1,16 @@
-// Could not decompile UnityEngine.Rendering.RadeonRays.RadeonRaysShaders
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.RadeonRays;
+
+internal sealed class RadeonRaysShaders
+{
+	public ComputeShader bitHistogram;
+
+	public ComputeShader blockReducePart;
+
+	public ComputeShader blockScan;
+
+	public ComputeShader buildHlbvh;
+
+	public ComputeShader restructureBvh;
+
+	public ComputeShader scatter;
+}

@@ -1,2 +1,9 @@
-// Could not decompile Valve.VR.EVRSkeletalReferencePose
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR;
+
+public enum EVRSkeletalReferencePose
+{
+	BindPose,
+	OpenHand,
+	Fist,
+	GripLimit
+}

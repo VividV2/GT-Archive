@@ -1,2 +1,8 @@
-// Could not decompile Valve.VR.EVRNotificationType
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR;
+
+public enum EVRNotificationType
+{
+	Transient,
+	Persistent,
+	Transient_SystemWithUserValue
+}

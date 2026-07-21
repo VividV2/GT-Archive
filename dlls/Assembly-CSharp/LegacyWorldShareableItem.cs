@@ -1,5 +1,5 @@
-public enum GRStoreItemType
+using Photon.Pun;
+
+public class LegacyWorldShareableItem : MonoBehaviourPunCallbacks
 {
-	Pod,
-	DropChassis
 }

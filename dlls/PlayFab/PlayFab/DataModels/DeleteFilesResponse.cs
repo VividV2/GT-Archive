@@ -1,2 +1,12 @@
-// Could not decompile PlayFab.DataModels.DeleteFilesResponse
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.DataModels;
+
+[Serializable]
+public class DeleteFilesResponse : PlayFabResultCommon
+{
+	public EntityKey Entity;
+
+	public int ProfileVersion;
+}

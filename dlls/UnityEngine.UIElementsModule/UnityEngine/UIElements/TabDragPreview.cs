@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.UIElements.TabDragPreview
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+internal class TabDragPreview : VisualElement
+{
+	public static readonly string ussClassName = TabView.ussClassName + "__drag-preview";
+
+	public TabDragPreview()
+	{
+		AddToClassList(ussClassName);
+		base.pickingMode = PickingMode.Ignore;
+	}
+}

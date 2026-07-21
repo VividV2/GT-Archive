@@ -1,2 +1,9 @@
-// Could not decompile AttemptAgeUpdateRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+[Serializable]
+public class AttemptAgeUpdateRequest : KIDRequestData
+{
+	public int Age;
+
+	public PlayerPlatform Platform;
+}

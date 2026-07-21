@@ -1,16 +1,6 @@
-namespace Photon.Pun
+namespace Photon.Pun;
+
+public interface IOnPhotonViewPreNetDestroy : IPhotonViewCallback
 {
-	public enum PunLogLevel
-	{
-		ErrorsOnly,
-		Informational,
-		Full
-	}
-}
-namespace Photon.Pun
-{
-	public interface IOnPhotonViewPreNetDestroy : IPhotonViewCallback
-	{
-		void OnPreNetDestroy(PhotonView rootView);
-	}
+	void OnPreNetDestroy(PhotonView rootView);
 }

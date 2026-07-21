@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.InputSystem.OnScreen.UGUIOnScreenControlUtils
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.InputSystem.OnScreen;
+
+internal static class UGUIOnScreenControlUtils
+{
+	public static RectTransform GetCanvasRectTransform(Transform transform)
+	{
+		if (!(transform.parent != null))
+		{
+			return null;
+		}
+		return transform.parent.GetComponentInParent<RectTransform>();
+	}
+}

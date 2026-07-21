@@ -1,2 +1,17 @@
-// Could not decompile Valve.VR.InteractionSystem.CustomEvents
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace Valve.VR.InteractionSystem;
+
+public static class CustomEvents
+{
+	[Serializable]
+	public class UnityEventSingleFloat : UnityEvent<float>
+	{
+	}
+
+	[Serializable]
+	public class UnityEventHand : UnityEvent<Hand>
+	{
+	}
+}

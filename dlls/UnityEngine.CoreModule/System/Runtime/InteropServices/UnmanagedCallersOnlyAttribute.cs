@@ -1,10 +1,9 @@
-namespace UnityEngine;
+namespace System.Runtime.InteropServices;
 
-public enum SkinWeights
+[AttributeUsage(AttributeTargets.Method, Inherited = false)]
+internal sealed class UnmanagedCallersOnlyAttribute : Attribute
 {
-	None = 0,
-	OneBone = 1,
-	TwoBones = 2,
-	FourBones = 4,
-	Unlimited = 255
+	public Type[]? CallConvs;
+
+	public string? EntryPoint;
 }

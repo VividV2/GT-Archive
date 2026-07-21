@@ -1,2 +1,13 @@
-// Could not decompile Meta.WitAi.ServiceReferences.VoiceServiceAudioEventReference
-// This type uses unsupported IL or has too many generic parameters.
+using Meta.WitAi.Interfaces;
+using Meta.WitAi.Utilities;
+using UnityEngine;
+
+namespace Meta.WitAi.ServiceReferences;
+
+public class VoiceServiceAudioEventReference : AudioInputServiceReference
+{
+	[SerializeField]
+	private VoiceServiceReference _voiceServiceReference;
+
+	public override IAudioInputEvents AudioEvents => _voiceServiceReference.VoiceService.AudioEvents;
+}

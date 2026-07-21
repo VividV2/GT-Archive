@@ -1,2 +1,27 @@
-// Could not decompile Modio.Unity.UI.Components.ModProperties.ModPropertyInstalled
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Modio.Mods;
+using UnityEngine;
+
+namespace Modio.Unity.UI.Components.ModProperties;
+
+[Serializable]
+public class ModPropertyInstalled : IModProperty
+{
+	[SerializeField]
+	private GameObject _notInstalledActive;
+
+	[SerializeField]
+	private GameObject _installedActive;
+
+	public void OnModUpdate(Mod mod)
+	{
+		if (_notInstalledActive != null)
+		{
+			_notInstalledActive.SetActive(mod.File.State != ModFileState.Installed);
+		}
+		if (_installedActive != null)
+		{
+			_installedActive.SetActive(mod.File.State == ModFileState.Installed);
+		}
+	}
+}

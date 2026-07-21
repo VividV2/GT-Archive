@@ -1,2 +1,14 @@
-// Could not decompile BuilderPieceInteractorPreInteract
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class BuilderPieceInteractorPreInteract : MonoBehaviour
+{
+	public BuilderPieceInteractor interactor;
+
+	private void Awake()
+	{
+	}
+
+	private void LateUpdate()
+	{
+	}
+}

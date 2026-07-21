@@ -1,2 +1,10 @@
-// Could not decompile DropZone
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class DropZone : MonoBehaviour
+{
+	public BodyDockPositions forBodyDock;
+
+	public BodyDockPositions.DropPositions dropPosition;
+
+	public Transform anchor;
+}

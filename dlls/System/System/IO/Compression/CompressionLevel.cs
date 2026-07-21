@@ -10,6 +10,3 @@ public enum CompressionLevel
 	/// <summary>No compression should be performed on the file.</summary>
 	NoCompression
 }
-namespace System.Security.Cryptography
-{
-}

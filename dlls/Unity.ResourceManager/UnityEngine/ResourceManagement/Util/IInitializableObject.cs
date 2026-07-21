@@ -8,6 +8,3 @@ public interface IInitializableObject
 
 	AsyncOperationHandle<bool> InitializeAsync(ResourceManager rm, string id, string data);
 }
-namespace UnityEngine.ResourceManagement.Util
-{
-}

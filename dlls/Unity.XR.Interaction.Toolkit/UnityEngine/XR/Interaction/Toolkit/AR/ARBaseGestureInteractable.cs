@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.AR.ARBaseGestureInteractable
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.XR.Interaction.Toolkit.AR;
+
+[Obsolete("ARBaseGestureInteractable has been deprecated.")]
+public class ARBaseGestureInteractable
+{
+}

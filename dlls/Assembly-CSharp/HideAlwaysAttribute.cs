@@ -1,2 +1,9 @@
-// Could not decompile HideAlwaysAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Diagnostics;
+using Sirenix.OdinInspector;
+
+[Conditional("UNITY_EDITOR")]
+[IncludeMyAttributes]
+public class HideAlwaysAttribute : Attribute
+{
+}

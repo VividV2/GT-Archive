@@ -1,2 +1,10 @@
-// Could not decompile Steamworks.EUGCContentDescriptorID
-// This type uses unsupported IL or has too many generic parameters.
+namespace Steamworks;
+
+public enum EUGCContentDescriptorID
+{
+	k_EUGCContentDescriptor_NudityOrSexualContent = 1,
+	k_EUGCContentDescriptor_FrequentViolenceOrGore,
+	k_EUGCContentDescriptor_AdultOnlySexualContent,
+	k_EUGCContentDescriptor_GratuitousSexualContent,
+	k_EUGCContentDescriptor_AnyMatureContent
+}

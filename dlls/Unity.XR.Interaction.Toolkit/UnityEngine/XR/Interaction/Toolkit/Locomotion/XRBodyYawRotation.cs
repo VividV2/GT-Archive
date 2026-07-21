@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Locomotion.XRBodyYawRotation
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion;
+
+public class XRBodyYawRotation : IXRBodyTransformation
+{
+	public float angleDelta { get; set; }
+
+	public virtual void Apply(XRMovableBody body)
+	{
+		Transform originTransform = body.originTransform;
+		originTransform.RotateAround(body.GetBodyGroundWorldPosition(), originTransform.up, angleDelta);
+	}
+}

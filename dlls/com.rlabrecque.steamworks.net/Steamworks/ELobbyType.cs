@@ -1,14 +1,10 @@
-namespace Steamworks
+namespace Steamworks;
+
+public enum ELobbyType
 {
-	public enum ELobbyType
-	{
-		k_ELobbyTypePrivate,
-		k_ELobbyTypeFriendsOnly,
-		k_ELobbyTypePublic,
-		k_ELobbyTypeInvisible,
-		k_ELobbyTypePrivateUnique
-	}
-}
-namespace Steamworks
-{
+	k_ELobbyTypePrivate,
+	k_ELobbyTypeFriendsOnly,
+	k_ELobbyTypePublic,
+	k_ELobbyTypeInvisible,
+	k_ELobbyTypePrivateUnique
 }

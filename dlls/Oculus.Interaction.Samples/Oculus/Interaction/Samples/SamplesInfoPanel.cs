@@ -1,2 +1,11 @@
-// Could not decompile Oculus.Interaction.Samples.SamplesInfoPanel
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Oculus.Interaction.Samples;
+
+public class SamplesInfoPanel : MonoBehaviour
+{
+	public void HandleUrlButton(string url)
+	{
+		Application.OpenURL(url);
+	}
+}

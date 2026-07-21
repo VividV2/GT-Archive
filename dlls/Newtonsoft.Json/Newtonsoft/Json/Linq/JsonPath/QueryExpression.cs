@@ -1,2 +1,18 @@
-// Could not decompile Newtonsoft.Json.Linq.JsonPath.QueryExpression
-// This type uses unsupported IL or has too many generic parameters.
+namespace Newtonsoft.Json.Linq.JsonPath;
+
+internal abstract class QueryExpression
+{
+	internal QueryOperator Operator;
+
+	public QueryExpression(QueryOperator @operator)
+	{
+		Operator = @operator;
+	}
+
+	public bool IsMatch(JToken root, JToken t)
+	{
+		return IsMatch(root, t, null);
+	}
+
+	public abstract bool IsMatch(JToken root, JToken t, JsonSelectSettings? settings);
+}

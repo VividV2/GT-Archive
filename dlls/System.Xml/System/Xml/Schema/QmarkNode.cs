@@ -1,2 +1,11 @@
-// Could not decompile System.Xml.Schema.QmarkNode
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+internal sealed class QmarkNode : InteriorNode
+{
+	public override bool IsNullable => true;
+
+	public override void ConstructPos(BitSet firstpos, BitSet lastpos, BitSet[] followpos)
+	{
+		base.LeftChild.ConstructPos(firstpos, lastpos, followpos);
+	}
+}

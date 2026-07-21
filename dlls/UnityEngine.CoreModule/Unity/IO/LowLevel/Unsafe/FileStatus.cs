@@ -1,2 +1,9 @@
-// Could not decompile Unity.IO.LowLevel.Unsafe.FileStatus
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.IO.LowLevel.Unsafe;
+
+public enum FileStatus
+{
+	Closed,
+	Pending,
+	Open,
+	OpenFailed
+}

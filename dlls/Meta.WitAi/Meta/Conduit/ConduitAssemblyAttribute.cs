@@ -1,2 +1,8 @@
-// Could not decompile Meta.Conduit.ConduitAssemblyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Meta.Conduit;
+
+[AttributeUsage(AttributeTargets.Assembly)]
+public class ConduitAssemblyAttribute : Attribute
+{
+}

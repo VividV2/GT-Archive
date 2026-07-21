@@ -1,7 +1,5 @@
 using UnityEngine.Bindings;
 using UnityEngine.Scripting;
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
 
 namespace UnityEngine;
 

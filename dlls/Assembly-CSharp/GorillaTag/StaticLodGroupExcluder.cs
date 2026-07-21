@@ -1,2 +1,7 @@
-// Could not decompile GorillaTag.StaticLodGroupExcluder
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTag;
+
+public class StaticLodGroupExcluder : MonoBehaviour
+{
+}

@@ -1,12 +1,8 @@
-namespace Unity.Profiling
+namespace UnityEngineInternal;
+
+public enum MemorylessMode
 {
-}
-namespace UnityEngineInternal
-{
-	public enum MemorylessMode
-	{
-		Unused,
-		Forced,
-		Automatic
-	}
+	Unused,
+	Forced,
+	Automatic
 }

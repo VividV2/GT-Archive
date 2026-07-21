@@ -1,2 +1,12 @@
-// Could not decompile GorillaTag.DeactivateOnAwake
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTag;
+
+public class DeactivateOnAwake : MonoBehaviour
+{
+	private void Awake()
+	{
+		base.gameObject.SetActive(value: false);
+		Object.Destroy(this);
+	}
+}

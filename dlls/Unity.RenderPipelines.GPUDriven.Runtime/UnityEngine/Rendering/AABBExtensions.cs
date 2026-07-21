@@ -1,2 +1,22 @@
-// Could not decompile UnityEngine.Rendering.AABBExtensions
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+internal static class AABBExtensions
+{
+	public static AABB ToAABB(this Bounds bounds)
+	{
+		return new AABB
+		{
+			center = bounds.center,
+			extents = bounds.extents
+		};
+	}
+
+	public static Bounds ToBounds(this AABB aabb)
+	{
+		return new Bounds
+		{
+			center = aabb.center,
+			extents = aabb.extents
+		};
+	}
+}

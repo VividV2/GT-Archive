@@ -1,2 +1,12 @@
-// Could not decompile GRPlayerDamageEffects
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GRPlayerDamageEffects : MonoBehaviour
+{
+	public ParticleSystem radialDamageEffect;
+
+	public MeshRenderer lowHealthVisualRenderer;
+
+	public MeshRenderer frozenVisualRenderer;
+
+	public MeshRenderer stealthModeVisualRenderer;
+}

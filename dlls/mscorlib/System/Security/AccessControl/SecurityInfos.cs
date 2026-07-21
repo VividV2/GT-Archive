@@ -13,6 +13,3 @@ public enum SecurityInfos
 	/// <summary>Specifies the system access control list (SACL).</summary>
 	SystemAcl = 8
 }
-namespace System.Threading
-{
-}

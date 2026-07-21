@@ -1,2 +1,12 @@
-// Could not decompile GREntitySpawnPoint
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GREntitySpawnPoint : MonoBehaviour
+{
+	public GhostReactorSpawnConfig.SpawnPointType spawnPointType;
+
+	public GameEntity entity;
+
+	public GRPatrolPath patrolPath;
+
+	public bool applyScale;
+}

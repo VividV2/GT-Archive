@@ -1,2 +1,16 @@
-// Could not decompile System.Security.Cryptography.Pkcs.Asn1.PkiStatusInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System.Security.Cryptography.Asn1;
+
+namespace System.Security.Cryptography.Pkcs.Asn1;
+
+internal struct PkiStatusInfo
+{
+	public int Status;
+
+	[OptionalValue]
+	[AnyValue]
+	[ExpectedTag(TagClass.Universal, 16)]
+	public ReadOnlyMemory<byte>? StatusString;
+
+	[OptionalValue]
+	public PkiFailureInfo? FailInfo;
+}

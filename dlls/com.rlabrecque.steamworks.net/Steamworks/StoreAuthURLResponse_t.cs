@@ -1,15 +1,25 @@
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
 
 namespace Steamworks;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8)]
-[CallbackIdentity(4527)]
-public struct HTML_BrowserRestarted_t
+[CallbackIdentity(165)]
+public struct StoreAuthURLResponse_t
 {
-	public const int k_iCallback = 4527;
+	public const int k_iCallback = 165;
 
-	public HHTMLBrowser unBrowserHandle;
+	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 512)]
+	private byte[] m_szURL_;
 
-	public HHTMLBrowser unOldBrowserHandle;
+	public string m_szURL
+	{
+		get
+		{
+			return InteropHelp.ByteArrayToStringUTF8(m_szURL_);
+		}
+		set
+		{
+			InteropHelp.StringToByteArrayUTF8(value, m_szURL_, 512);
+		}
+	}
 }

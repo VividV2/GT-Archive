@@ -1,17 +1,6 @@
-using UnityEngine;
-using UnityEngine;
+namespace Cysharp.Threading.Tasks.Triggers;
 
-namespace Cysharp.Threading.Tasks.Triggers
+public interface IAsyncOnMouseExitHandler
 {
-	public interface IAsyncOnCollisionExitHandler
-	{
-		UniTask<Collision> OnCollisionExitAsync();
-	}
-}
-namespace Cysharp.Threading.Tasks.Triggers
-{
-	public interface IAsyncOnMouseExitHandler
-	{
-		UniTask OnMouseExitAsync();
-	}
+	UniTask OnMouseExitAsync();
 }

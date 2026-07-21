@@ -1,55 +1,42 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UnityEngine.NVIDIA
+namespace UnityEngine.NVIDIA;
+
+public class GraphicsDeviceDebugView
 {
-	internal enum PluginEvent
+	internal uint m_ViewId = 0u;
+
+	internal uint m_DeviceVersion = 0u;
+
+	internal uint m_NgxVersion = 0u;
+
+	internal DLSSDebugFeatureInfos[] m_DlssDebugFeatures = null;
+
+	public uint deviceVersion => m_DeviceVersion;
+
+	public uint ngxVersion => m_NgxVersion;
+
+	public IEnumerable<DLSSDebugFeatureInfos> dlssFeatureInfos
 	{
-		DestroyFeature,
-		DLSSExecute,
-		DLSSInit
-	}
-}
-namespace UnityEngine.NVIDIA
-{
-	public class GraphicsDeviceDebugView
-	{
-		internal uint m_ViewId = 0u;
-
-		internal uint m_DeviceVersion = 0u;
-
-		internal uint m_NgxVersion = 0u;
-
-		internal DLSSDebugFeatureInfos[] m_DlssDebugFeatures = null;
-
-		public uint deviceVersion => m_DeviceVersion;
-
-		public uint ngxVersion => m_NgxVersion;
-
-		public IEnumerable<DLSSDebugFeatureInfos> dlssFeatureInfos
+		get
 		{
-			get
+			IEnumerable<DLSSDebugFeatureInfos> result;
+			if (m_DlssDebugFeatures != null)
 			{
-				IEnumerable<DLSSDebugFeatureInfos> result;
-				if (m_DlssDebugFeatures != null)
-				{
-					IEnumerable<DLSSDebugFeatureInfos> dlssDebugFeatures = m_DlssDebugFeatures;
-					result = dlssDebugFeatures;
-				}
-				else
-				{
-					result = Enumerable.Empty<DLSSDebugFeatureInfos>();
-				}
-				return result;
+				IEnumerable<DLSSDebugFeatureInfos> dlssDebugFeatures = m_DlssDebugFeatures;
+				result = dlssDebugFeatures;
 			}
-		}
-
-		internal GraphicsDeviceDebugView(uint viewId)
-		{
-			m_ViewId = viewId;
+			else
+			{
+				result = Enumerable.Empty<DLSSDebugFeatureInfos>();
+			}
+			return result;
 		}
 	}
-}
-namespace UnityEngine.NVIDIA
-{
+
+	internal GraphicsDeviceDebugView(uint viewId)
+	{
+		m_ViewId = viewId;
+	}
 }

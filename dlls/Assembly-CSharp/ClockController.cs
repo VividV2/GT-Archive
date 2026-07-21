@@ -1,2 +1,10 @@
-// Could not decompile ClockController
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class ClockController : MonoBehaviour
+{
+	public Transform Pendulum;
+
+	public float MaxAngleDeflection = 10f;
+
+	public float SpeedOfPendulum = 1f;
+}

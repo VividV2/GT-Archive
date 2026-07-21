@@ -1,2 +1,9 @@
-// Could not decompile System.Runtime.CompilerServices.ModuleInitializerAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics.CodeAnalysis;
+
+namespace System.Runtime.CompilerServices;
+
+[AttributeUsage(AttributeTargets.Method, Inherited = false)]
+[ExcludeFromCodeCoverage]
+internal sealed class ModuleInitializerAttribute : Attribute
+{
+}

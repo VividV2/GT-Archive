@@ -1,2 +1,11 @@
-// Could not decompile GorillaTagScripts.VirtualStumpCustomMaps.UI.CustomMapsKeyboard
-// This type uses unsupported IL or has too many generic parameters.
+using GorillaTagScripts.UI;
+
+namespace GorillaTagScripts.VirtualStumpCustomMaps.UI;
+
+public class CustomMapsKeyboard : GorillaKeyWrapper<CustomMapKeyboardBinding>
+{
+	public static string BindingToString(CustomMapKeyboardBinding binding)
+	{
+		return CustomMapsKeyButton.BindingToString(binding);
+	}
+}

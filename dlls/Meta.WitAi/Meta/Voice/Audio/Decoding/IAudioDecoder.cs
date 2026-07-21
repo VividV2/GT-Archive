@@ -1,12 +1,8 @@
-namespace Meta.Voice.Audio
-{
-}
-namespace Meta.Voice.Audio.Decoding
-{
-	public interface IAudioDecoder
-	{
-		bool WillDecodeInBackground { get; }
+namespace Meta.Voice.Audio.Decoding;
 
-		void Decode(byte[] buffer, int bufferOffset, int bufferLength, AudioSampleDecodeDelegate onSamplesDecoded);
-	}
+public interface IAudioDecoder
+{
+	bool WillDecodeInBackground { get; }
+
+	void Decode(byte[] buffer, int bufferOffset, int bufferLength, AudioSampleDecodeDelegate onSamplesDecoded);
 }

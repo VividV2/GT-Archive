@@ -1,2 +1,16 @@
-// Could not decompile UnityEngine.Rendering.GPUInstanceComponentDesc
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+internal struct GPUInstanceComponentDesc(int inPropertyID, int inByteSize, bool inIsOverriden, bool inPerInstance, InstanceType inInstanceType, InstanceComponentGroup inComponentType)
+{
+	public int propertyID = inPropertyID;
+
+	public int byteSize = inByteSize;
+
+	public bool isOverriden = inIsOverriden;
+
+	public bool isPerInstance = inPerInstance;
+
+	public InstanceType instanceType = inInstanceType;
+
+	public InstanceComponentGroup componentGroup = inComponentType;
+}

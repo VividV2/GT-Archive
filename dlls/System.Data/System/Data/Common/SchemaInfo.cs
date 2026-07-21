@@ -1,17 +1,10 @@
-namespace System.Data.Common
-{
-	internal struct SchemaInfo
-	{
-		public string name;
+namespace System.Data.Common;
 
-		public string typeName;
+internal struct SchemaInfo
+{
+	public string name;
 
-		public Type type;
-	}
-}
-namespace System.Data.SqlClient.SNI
-{
-}
-namespace System.Data.SqlClient
-{
+	public string typeName;
+
+	public Type type;
 }

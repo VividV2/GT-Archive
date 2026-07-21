@@ -1,2 +1,9 @@
-// Could not decompile Meta.WitAi.Composer.Handlers.ComposerActionEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace Meta.WitAi.Composer.Handlers;
+
+[Serializable]
+public class ComposerActionEvent : UnityEvent<ComposerSessionData>
+{
+}

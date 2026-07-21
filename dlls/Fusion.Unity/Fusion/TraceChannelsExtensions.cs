@@ -1,2 +1,9 @@
-// Could not decompile Fusion.TraceChannelsExtensions
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+internal static class TraceChannelsExtensions
+{
+	public static TraceChannels AddChannelsFromDefines(this TraceChannels traceChannels)
+	{
+		return traceChannels;
+	}
+}

@@ -2,14 +2,10 @@ using System;
 using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetPlayFabIDsFromGameCenterIDsResult : PlayFabResultCommon
 {
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class GetPlayFabIDsFromGameCenterIDsResult : PlayFabResultCommon
-	{
-		public List<GameCenterPlayFabIdPair> Data;
-	}
+	public List<GameCenterPlayFabIdPair> Data;
 }

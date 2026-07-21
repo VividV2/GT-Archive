@@ -1,20 +1,13 @@
 using System.ComponentModel;
 
-namespace Oculus.Platform
+namespace Oculus.Platform;
+
+public enum NetSyncVoipMicSource
 {
-	public enum NetSyncVoipMicSource
-	{
-		[Description("UNKNOWN")]
-		Unknown,
-		[Description("NONE")]
-		None,
-		[Description("INTERNAL")]
-		Internal
-	}
-}
-namespace Oculus.Platform
-{
-}
-namespace Oculus.Platform
-{
+	[Description("UNKNOWN")]
+	Unknown,
+	[Description("NONE")]
+	None,
+	[Description("INTERNAL")]
+	Internal
 }

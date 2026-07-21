@@ -1,2 +1,17 @@
-// Could not decompile System.Net.Mime.Base64WriteStateInfo
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net.Mime;
+
+internal class Base64WriteStateInfo : WriteStateInfoBase
+{
+	internal int Padding { get; set; }
+
+	internal byte LastBits { get; set; }
+
+	internal Base64WriteStateInfo()
+	{
+	}
+
+	internal Base64WriteStateInfo(int bufferSize, byte[] header, byte[] footer, int maxLineLength, int mimeHeaderLength)
+		: base(bufferSize, header, footer, maxLineLength, mimeHeaderLength)
+	{
+	}
+}

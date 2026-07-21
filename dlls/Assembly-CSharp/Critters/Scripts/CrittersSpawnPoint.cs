@@ -1,2 +1,12 @@
-// Could not decompile Critters.Scripts.CrittersSpawnPoint
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Critters.Scripts;
+
+public class CrittersSpawnPoint : MonoBehaviour
+{
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.blue;
+		Gizmos.DrawSphere(base.transform.position, 0.1f);
+	}
+}

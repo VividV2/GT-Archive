@@ -1,2 +1,32 @@
-// Could not decompile System.Runtime.Serialization.ISerializableDataMember
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Serialization;
+
+internal class ISerializableDataMember
+{
+	private string name;
+
+	private IDataNode value;
+
+	internal string Name
+	{
+		get
+		{
+			return name;
+		}
+		set
+		{
+			name = value;
+		}
+	}
+
+	internal IDataNode Value
+	{
+		get
+		{
+			return value;
+		}
+		set
+		{
+			this.value = value;
+		}
+	}
+}

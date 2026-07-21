@@ -1,2 +1,8 @@
-// Could not decompile BuilderResources
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "BuilderMaterialResources", menuName = "Gorilla Tag/Builder/Resources", order = 0)]
+public class BuilderResources : ScriptableObject
+{
+	public List<BuilderResourceQuantity> quantities;
+}

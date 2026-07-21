@@ -1,2 +1,8 @@
-// Could not decompile JetBrains.Annotations.NoReorderAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace JetBrains.Annotations;
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface)]
+public sealed class NoReorderAttribute : Attribute
+{
+}

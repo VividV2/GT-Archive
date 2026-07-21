@@ -1,2 +1,9 @@
-// Could not decompile BuilderPieceLod
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BuilderPieceLod
+{
+	public float maxDistance;
+
+	public List<MeshRenderer> meshRenderers;
+}

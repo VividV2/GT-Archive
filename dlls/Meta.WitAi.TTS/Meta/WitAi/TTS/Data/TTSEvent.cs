@@ -1,2 +1,23 @@
-// Could not decompile Meta.WitAi.TTS.Data.TTSEvent`1
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Meta.WitAi.Json;
+
+namespace Meta.WitAi.TTS.Data;
+
+[Serializable]
+public class TTSEvent<TData> : ITTSEvent
+{
+	[JsonProperty]
+	internal string type;
+
+	[JsonProperty]
+	internal int offset;
+
+	[JsonProperty]
+	internal TData data;
+
+	public string EventType => type;
+
+	public int SampleOffset => offset;
+
+	public TData Data => data;
+}

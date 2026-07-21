@@ -1,9 +1,11 @@
-namespace PlayFab.ProfilesModels;
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
 
-public enum OperationTypes
+namespace PlayFab.GroupsModels;
+
+[Serializable]
+public class ListGroupMembersResponse : PlayFabResultCommon
 {
-	Created,
-	Updated,
-	Deleted,
-	None
+	public List<EntityMemberRole> Members;
 }

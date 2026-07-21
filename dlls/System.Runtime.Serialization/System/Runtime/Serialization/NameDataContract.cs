@@ -1,2 +1,9 @@
-// Could not decompile System.Runtime.Serialization.NameDataContract
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Serialization;
+
+internal class NameDataContract : StringDataContract
+{
+	internal NameDataContract()
+		: base(DictionaryGlobals.NameLocalName, DictionaryGlobals.SchemaNamespace)
+	{
+	}
+}

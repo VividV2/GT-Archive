@@ -1,48 +1,69 @@
-namespace System.Security.Cryptography.Pkcs;
+namespace System.Security.Cryptography.Asn1;
 
-public abstract class RecipientInfo
+internal class BMPEncoding : SpanBasedEncoding
 {
-	[CompilerGenerated]
-	private readonly RecipientInfoType <Type>k__BackingField;
-
-	[CompilerGenerated]
-	private readonly RecipientInfoPal <Pal>k__BackingField;
-
-	public RecipientInfoType Type
+	protected override int GetBytes(ReadOnlySpan<char> chars, Span<byte> bytes, bool write)
 	{
-		[CompilerGenerated]
-		get
+		if (chars.IsEmpty)
 		{
-			return <Type>k__BackingField;
+			return 0;
 		}
-	}
-
-	public abstract int Version { get; }
-
-	public abstract SubjectIdentifier RecipientIdentifier { get; }
-
-	public abstract AlgorithmIdentifier KeyEncryptionAlgorithm { get; }
-
-	public abstract byte[] EncryptedKey { get; }
-
-	internal RecipientInfoPal Pal
-	{
-		[CompilerGenerated]
-		get
+		int num = 0;
+		for (int i = 0; i < chars.Length; i++)
 		{
-			return <Pal>k__BackingField;
+			char c = chars[i];
+			if (char.IsSurrogate(c))
+			{
+				base.EncoderFallback.CreateFallbackBuffer().Fallback(c, i);
+				throw new CryptographicException();
+			}
+			ushort num2 = c;
+			if (write)
+			{
+				bytes[num + 1] = (byte)num2;
+				bytes[num] = (byte)(num2 >> 8);
+			}
+			num += 2;
 		}
+		return num;
 	}
 
-	internal RecipientInfo(RecipientInfoType type, RecipientInfoPal pal)
+	protected override int GetChars(ReadOnlySpan<byte> bytes, Span<char> chars, bool write)
 	{
-		base..ctor();
-		<Type>k__BackingField = type;
-		<Pal>k__BackingField = pal;
+		if (bytes.IsEmpty)
+		{
+			return 0;
+		}
+		if (bytes.Length % 2 != 0)
+		{
+			base.DecoderFallback.CreateFallbackBuffer().Fallback(bytes.Slice(bytes.Length - 1).ToArray(), bytes.Length - 1);
+			throw new CryptographicException();
+		}
+		int num = 0;
+		for (int i = 0; i < bytes.Length; i += 2)
+		{
+			char c = (char)((bytes[i] << 8) | bytes[i + 1]);
+			if (char.IsSurrogate(c))
+			{
+				base.DecoderFallback.CreateFallbackBuffer().Fallback(bytes.Slice(i, 2).ToArray(), i);
+				throw new CryptographicException();
+			}
+			if (write)
+			{
+				chars[num] = c;
+			}
+			num++;
+		}
+		return num;
 	}
 
-	internal RecipientInfo()
+	public override int GetMaxByteCount(int charCount)
 	{
-		ThrowStub.ThrowNotSupportedException();
+		return checked(charCount * 2);
+	}
+
+	public override int GetMaxCharCount(int byteCount)
+	{
+		return byteCount / 2;
 	}
 }

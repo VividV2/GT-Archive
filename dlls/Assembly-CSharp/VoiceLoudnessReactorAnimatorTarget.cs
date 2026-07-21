@@ -1,2 +1,12 @@
-// Could not decompile VoiceLoudnessReactorAnimatorTarget
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+
+[Serializable]
+public class VoiceLoudnessReactorAnimatorTarget
+{
+	public Animator animator;
+
+	public bool useSmoothedLoudness;
+
+	public float animatorSpeedToLoudness = 1f;
+}

@@ -1,2 +1,15 @@
-// Could not decompile Oculus.Interaction.Unity.Input.InputKey
-// This type uses unsupported IL or has too many generic parameters.
+using Oculus.Interaction.Input;
+using UnityEngine;
+
+namespace Oculus.Interaction.Unity.Input;
+
+public class InputKey : MonoBehaviour, IButton
+{
+	[SerializeField]
+	private KeyCode _key;
+
+	public bool Value()
+	{
+		return UnityEngine.Input.GetKey(_key);
+	}
+}

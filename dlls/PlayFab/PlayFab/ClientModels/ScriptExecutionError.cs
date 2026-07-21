@@ -1,6 +1,14 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class ScriptExecutionError : PlayFabBaseModel
 {
-}
-namespace Ionic.Zlib
-{
+	public string Error;
+
+	public string Message;
+
+	public string StackTrace;
 }

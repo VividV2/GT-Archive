@@ -1,2 +1,8 @@
-// Could not decompile Liv.Lck.EchoDisableReason
-// This type uses unsupported IL or has too many generic parameters.
+namespace Liv.Lck;
+
+public enum EchoDisableReason
+{
+	User,
+	LowStorage,
+	Error
+}

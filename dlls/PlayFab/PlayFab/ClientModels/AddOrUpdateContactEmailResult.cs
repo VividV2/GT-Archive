@@ -1,13 +1,9 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class AddOrUpdateContactEmailResult : PlayFabResultCommon
-	{
-	}
-}
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class AddOrUpdateContactEmailResult : PlayFabResultCommon
 {
 }

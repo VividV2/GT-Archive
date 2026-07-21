@@ -1,16 +1,25 @@
-using Newtonsoft.Json;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Modio.API.SchemaDefinitions
+namespace Modio.API.SchemaDefinitions;
+
+[JsonObject]
+internal readonly struct UpdateTeamMemberRequest(string email, string position, long level) : IApiRequest
 {
-	[JsonObject]
-	internal readonly struct MessageObject(long code, string message)
+	private static readonly Dictionary<string, object> _bodyParameters = new Dictionary<string, object>();
+
+	internal readonly string Email = email;
+
+	internal readonly string Position = position;
+
+	internal readonly long Level = level;
+
+	public IReadOnlyDictionary<string, object> GetBodyParameters()
 	{
-		internal readonly long Code = code;
-
-		internal readonly string Message = message;
+		_bodyParameters.Clear();
+		_bodyParameters.Add("email", Email);
+		_bodyParameters.Add("position", Position);
+		_bodyParameters.Add("level", Level);
+		return _bodyParameters;
 	}
-}
-namespace Modio.API.SchemaDefinitions
-{
 }

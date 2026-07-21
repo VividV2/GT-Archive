@@ -1,2 +1,13 @@
-// Could not decompile UnityYaml
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using UnityEngine;
+
+public static class UnityYaml
+{
+	private static readonly Assembly EngineAssembly = Assembly.GetAssembly(typeof(MonoBehaviour));
+
+	private static readonly Assembly TerrainAssembly = Assembly.GetAssembly(typeof(Tree));
+
+	public static Dictionary<int, Type> ClassIDToType = new Dictionary<int, Type>();
+}

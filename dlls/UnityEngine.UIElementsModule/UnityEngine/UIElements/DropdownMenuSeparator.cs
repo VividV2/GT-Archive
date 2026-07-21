@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.UIElements.DropdownMenuSeparator
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public class DropdownMenuSeparator : DropdownMenuItem
+{
+	public string subMenuPath { get; }
+
+	public DropdownMenuSeparator(string subMenuPath)
+	{
+		this.subMenuPath = subMenuPath;
+	}
+}

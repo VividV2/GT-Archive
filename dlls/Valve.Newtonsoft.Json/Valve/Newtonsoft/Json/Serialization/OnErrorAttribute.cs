@@ -1,2 +1,8 @@
-// Could not decompile Valve.Newtonsoft.Json.Serialization.OnErrorAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Valve.Newtonsoft.Json.Serialization;
+
+[AttributeUsage(AttributeTargets.Method, Inherited = false)]
+public sealed class OnErrorAttribute : Attribute
+{
+}

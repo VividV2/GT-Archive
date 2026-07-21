@@ -1,2 +1,8 @@
-// Could not decompile InlineFoldoutAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Diagnostics;
+
+[Conditional("UNITY_EDITOR")]
+[AttributeUsage(AttributeTargets.All)]
+public class InlineFoldoutAttribute : Attribute
+{
+}

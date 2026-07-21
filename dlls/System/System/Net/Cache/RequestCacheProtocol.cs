@@ -1,2 +1,9 @@
-// Could not decompile System.Net.Cache.RequestCacheProtocol
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net.Cache;
+
+internal class RequestCacheProtocol
+{
+	public RequestCacheProtocol(object arg1, object arg2)
+	{
+		throw new NotImplementedException();
+	}
+}

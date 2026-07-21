@@ -1,2 +1,6 @@
-// Could not decompile System.IO.Compression.ZLibNative
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.IO.Compression;
+
+internal class ZLibNative
+{
+	public const int GZip_DefaultWindowBits = 31;
+}

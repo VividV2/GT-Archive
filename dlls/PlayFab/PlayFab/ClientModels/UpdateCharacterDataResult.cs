@@ -1,6 +1,10 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class UpdateCharacterDataResult : PlayFabResultCommon
 {
-}
-namespace PlayFab.ClientModels
-{
+	public uint DataVersion;
 }

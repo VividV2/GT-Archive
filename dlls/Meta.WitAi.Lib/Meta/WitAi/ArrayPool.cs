@@ -1,2 +1,14 @@
-// Could not decompile Meta.WitAi.ArrayPool`1
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Meta.WitAi;
+
+public class ArrayPool<TElementType> : ObjectPool<TElementType[]>
+{
+	public int Capacity { get; }
+
+	public ArrayPool(int capacity, int preload = 0)
+		: base((Func<TElementType[]>)(() => new TElementType[capacity]), preload)
+	{
+		Capacity = capacity;
+	}
+}

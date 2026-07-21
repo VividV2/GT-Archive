@@ -1,12 +1,17 @@
+using System;
+
 namespace Fusion;
 
-internal enum NATPunchStage
+[AttributeUsage(AttributeTargets.Property)]
+public class NetworkedWeavedStringAttribute : Attribute
 {
-	None,
-	Local,
-	Public,
-	Relay
-}
-namespace Fusion
-{
+	public int Capacity { get; }
+
+	public string CacheFieldName { get; }
+
+	public NetworkedWeavedStringAttribute(int capacity, string cacheFieldName)
+	{
+		Capacity = capacity;
+		CacheFieldName = cacheFieldName;
+	}
 }

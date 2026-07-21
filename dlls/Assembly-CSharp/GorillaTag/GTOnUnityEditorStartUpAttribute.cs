@@ -1,2 +1,8 @@
-// Could not decompile GorillaTag.GTOnUnityEditorStartUpAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace GorillaTag;
+
+[AttributeUsage(AttributeTargets.Method)]
+public class GTOnUnityEditorStartUpAttribute : Attribute
+{
+}

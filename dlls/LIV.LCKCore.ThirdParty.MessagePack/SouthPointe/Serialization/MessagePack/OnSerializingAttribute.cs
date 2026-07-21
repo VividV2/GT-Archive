@@ -1,2 +1,8 @@
-// Could not decompile SouthPointe.Serialization.MessagePack.OnSerializingAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace SouthPointe.Serialization.MessagePack;
+
+[AttributeUsage(AttributeTargets.Method, Inherited = false)]
+public sealed class OnSerializingAttribute : Attribute
+{
+}

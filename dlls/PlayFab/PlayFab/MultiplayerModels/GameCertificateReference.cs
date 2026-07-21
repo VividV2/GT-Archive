@@ -1,6 +1,12 @@
-namespace PlayFab.MultiplayerModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class GameCertificateReference : PlayFabBaseModel
 {
-}
-namespace PlayFab.MultiplayerModels
-{
+	public string GsdkAlias;
+
+	public string Name;
 }

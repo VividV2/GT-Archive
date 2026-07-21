@@ -1,2 +1,14 @@
-// Could not decompile Mono.Globalization.Unicode.Level2Map
-// This type uses unsupported IL or has too many generic parameters.
+namespace Mono.Globalization.Unicode;
+
+internal class Level2Map
+{
+	public byte Source;
+
+	public byte Replace;
+
+	public Level2Map(byte source, byte replace)
+	{
+		Source = source;
+		Replace = replace;
+	}
+}

@@ -1,12 +1,8 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public enum GraphicsTier
 {
-	public enum GraphicsTier
-	{
-		Tier1,
-		Tier2,
-		Tier3
-	}
-}
-namespace UnityEngine.LowLevel
-{
+	Tier1,
+	Tier2,
+	Tier3
 }

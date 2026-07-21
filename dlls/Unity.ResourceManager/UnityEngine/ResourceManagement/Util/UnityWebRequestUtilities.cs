@@ -1,27 +1,65 @@
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceLocations;
-using UnityEngine.SceneManagement;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.SceneManagement;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.SceneManagement;
+using System;
+using System.Diagnostics;
+using UnityEngine.Networking;
 
-namespace UnityEngine.ResourceManagement.ResourceProviders;
+namespace UnityEngine.ResourceManagement.Util;
 
-internal interface ISceneProvider2 : ISceneProvider
+public class UnityWebRequestUtilities
 {
-	AsyncOperationHandle<SceneInstance> ReleaseScene(ResourceManager resourceManager, AsyncOperationHandle<SceneInstance> sceneLoadHandle, UnloadSceneOptions unloadOptions);
-}
-namespace UnityEngine.ResourceManagement.ResourceProviders
-{
-	public interface ISceneProvider
+	private const string k_AddressablesLogConditional = "ADDRESSABLES_LOG_ALL";
+
+	public static bool RequestHasErrors(UnityWebRequest webReq, out UnityWebRequestResult result)
 	{
-		AsyncOperationHandle<SceneInstance> ProvideScene(ResourceManager resourceManager, IResourceLocation location, LoadSceneMode loadMode, bool activateOnLoad, int priority);
+		result = null;
+		if (webReq == null || !webReq.isDone)
+		{
+			return false;
+		}
+		switch (webReq.result)
+		{
+		case UnityWebRequest.Result.InProgress:
+		case UnityWebRequest.Result.Success:
+			return false;
+		case UnityWebRequest.Result.ConnectionError:
+		case UnityWebRequest.Result.ProtocolError:
+		case UnityWebRequest.Result.DataProcessingError:
+			result = new UnityWebRequestResult(webReq);
+			return true;
+		default:
+			throw new NotImplementedException($"Cannot determine whether UnityWebRequest succeeded or not from result : {webReq.result}");
+		}
+	}
 
-		AsyncOperationHandle<SceneInstance> ProvideScene(ResourceManager resourceManager, IResourceLocation location, LoadSceneParameters loadSceneParameters, bool activateOnLoad, int priority);
+	public static bool IsAssetBundleDownloaded(UnityWebRequestAsyncOperation op)
+	{
+		DownloadHandlerAssetBundle downloadHandlerAssetBundle = (DownloadHandlerAssetBundle)op.webRequest.downloadHandler;
+		if (downloadHandlerAssetBundle != null && downloadHandlerAssetBundle.autoLoadAssetBundle)
+		{
+			return downloadHandlerAssetBundle.isDownloadComplete;
+		}
+		return op.isDone;
+	}
 
-		AsyncOperationHandle<SceneInstance> ProvideScene(ResourceManager resourceManager, IResourceLocation location, LoadSceneParameters loadSceneParameters, SceneReleaseMode releaseMode, bool activateOnLoad, int priority);
+	internal static void LogOperationResult(AsyncOperation op)
+	{
+		if (op is UnityWebRequestAsyncOperation unityWebRequestAsyncOperation)
+		{
+			UnityWebRequestResult unityWebRequestResult = new UnityWebRequestResult(unityWebRequestAsyncOperation.webRequest);
+			if (unityWebRequestResult.Result != UnityWebRequest.Result.Success)
+			{
+				LogError(unityWebRequestResult.ToString());
+			}
+		}
+	}
 
-		AsyncOperationHandle<SceneInstance> ReleaseScene(ResourceManager resourceManager, AsyncOperationHandle<SceneInstance> sceneLoadHandle);
+	[Conditional("ADDRESSABLES_LOG_ALL")]
+	internal static void Log(string msg)
+	{
+		Debug.Log(msg);
+	}
+
+	internal static void LogError(string msg)
+	{
+		Debug.LogError(msg);
 	}
 }

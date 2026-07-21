@@ -1,2 +1,8 @@
-// Could not decompile VYaml.Emitter.YamlEmitOptions
-// This type uses unsupported IL or has too many generic parameters.
+namespace VYaml.Emitter;
+
+public class YamlEmitOptions
+{
+	public static readonly YamlEmitOptions Default = new YamlEmitOptions();
+
+	public int IndentWidth { get; set; } = 2;
+}

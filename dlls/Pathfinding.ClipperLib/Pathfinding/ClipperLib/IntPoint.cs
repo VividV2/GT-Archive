@@ -1,12 +1,54 @@
-using System;
-using System;
-
 namespace Pathfinding.ClipperLib;
 
-internal class ClipperException : Exception
+public struct IntPoint
 {
-	public ClipperException(string description)
-		: base(description)
+	public long X;
+
+	public long Y;
+
+	public IntPoint(long X, long Y)
 	{
+		this.X = X;
+		this.Y = Y;
+	}
+
+	public IntPoint(double x, double y)
+	{
+		X = (long)x;
+		Y = (long)y;
+	}
+
+	public IntPoint(IntPoint pt)
+	{
+		X = pt.X;
+		Y = pt.Y;
+	}
+
+	public override bool Equals(object obj)
+	{
+		if (obj == null)
+		{
+			return false;
+		}
+		if (obj is IntPoint intPoint)
+		{
+			return X == intPoint.X && Y == intPoint.Y;
+		}
+		return false;
+	}
+
+	public override int GetHashCode()
+	{
+		return base.GetHashCode();
+	}
+
+	public static bool operator ==(IntPoint a, IntPoint b)
+	{
+		return a.X == b.X && a.Y == b.Y;
+	}
+
+	public static bool operator !=(IntPoint a, IntPoint b)
+	{
+		return a.X != b.X || a.Y != b.Y;
 	}
 }

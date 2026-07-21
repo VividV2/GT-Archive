@@ -1,2 +1,11 @@
-// Could not decompile System.Linq.Expressions.PrimitiveParameterExpression`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Linq.Expressions;
+
+internal sealed class PrimitiveParameterExpression<T> : ParameterExpression
+{
+	public sealed override Type Type => typeof(T);
+
+	internal PrimitiveParameterExpression(string name)
+		: base(name)
+	{
+	}
+}

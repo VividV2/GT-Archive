@@ -1,2 +1,16 @@
-// Could not decompile Meta.WitAi.Attributes.LabelAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Meta.WitAi.Attributes;
+
+public class LabelAttribute : PropertyAttribute
+{
+	public string LabelFieldPropertyOrMethodName { get; }
+
+	public string TooltipFieldPropertyOrMethodName { get; }
+
+	public LabelAttribute(string labelFieldPropertyOrMethodName, string tooltipFieldPropertyOrMethodName = "")
+	{
+		LabelFieldPropertyOrMethodName = labelFieldPropertyOrMethodName;
+		TooltipFieldPropertyOrMethodName = tooltipFieldPropertyOrMethodName;
+	}
+}

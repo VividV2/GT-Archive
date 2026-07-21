@@ -1,2 +1,14 @@
-// Could not decompile Modio.Unity.UI.Panels.MainMenuPanel
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.Unity.UI.Panels;
+
+public class MainMenuPanel : ModioPanelBase
+{
+	protected override void Start()
+	{
+		OpenPanel();
+		base.Start();
+	}
+
+	protected override void CancelPressed()
+	{
+	}
+}

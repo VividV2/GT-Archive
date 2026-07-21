@@ -1,13 +1,9 @@
 using System;
 
-namespace UnityEngine.Bindings
-{
-	[AttributeUsage(AttributeTargets.Parameter)]
-	[VisibleToOtherModules]
-	internal class NotNullAttribute : Attribute, IBindingsAttribute
-	{
-	}
-}
-namespace UnityEngine.Bindings
+namespace UnityEngine.Bindings;
+
+[AttributeUsage(AttributeTargets.Parameter)]
+[VisibleToOtherModules]
+internal class NotNullAttribute : Attribute, IBindingsAttribute
 {
 }

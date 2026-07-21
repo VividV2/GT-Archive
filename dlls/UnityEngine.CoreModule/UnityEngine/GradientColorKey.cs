@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.GradientColorKey
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+[UsedByNativeCode]
+public struct GradientColorKey(Color col, float time)
+{
+	public Color color = col;
+
+	public float time = time;
+}

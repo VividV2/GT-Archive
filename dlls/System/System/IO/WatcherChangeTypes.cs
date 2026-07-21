@@ -1,22 +1,17 @@
-namespace System.Runtime.InteropServices.ComTypes
+namespace System.IO;
+
+/// <summary>Changes that might occur to a file or directory.</summary>
+[Flags]
+public enum WatcherChangeTypes
 {
-	[ComImport]
-	[Guid("00000103-0000-0000-C000-000000000046")]
-	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-	public interface IEnumSTATDATA
-	{
-		void Clone(out IEnumSTATDATA newEnum);
-
-		[PreserveSig]
-		int Next(int celt, [Out][MarshalAs(UnmanagedType.LPArray)] STATDATA[] rgelt, [Out][MarshalAs(UnmanagedType.LPArray)] int[] pceltFetched);
-
-		[PreserveSig]
-		int Reset();
-
-		[PreserveSig]
-		int Skip(int celt);
-	}
-}
-namespace System.Security.Cryptography.X509Certificates
-{
+	/// <summary>The creation, deletion, change, or renaming of a file or folder.</summary>
+	All = 0xF,
+	/// <summary>The change of a file or folder. The types of changes include: changes to size, attributes, security settings, last write, and last access time.</summary>
+	Changed = 4,
+	/// <summary>The creation of a file or folder.</summary>
+	Created = 1,
+	/// <summary>The deletion of a file or folder.</summary>
+	Deleted = 2,
+	/// <summary>The renaming of a file or folder.</summary>
+	Renamed = 8
 }

@@ -1,33 +1,24 @@
-namespace System.Runtime.Serialization
+using System.Runtime.Serialization;
+
+namespace System.Xml;
+
+internal class MimeHeader
 {
-	internal interface IDataNode
+	private string name;
+
+	private string value;
+
+	public string Name => name;
+
+	public string Value => value;
+
+	public MimeHeader(string name, string value)
 	{
-		Type DataType { get; }
-
-		object Value { get; set; }
-
-		string DataContractName { get; set; }
-
-		string DataContractNamespace { get; set; }
-
-		string ClrTypeName { get; set; }
-
-		string ClrAssemblyName { get; set; }
-
-		string Id { get; set; }
-
-		bool PreservesReferences { get; }
-
-		bool IsFinalValue { get; set; }
-
-		void GetData(ElementData element);
-
-		void Clear();
+		if (name == null)
+		{
+			throw DiagnosticUtility.ExceptionUtility.ThrowHelperArgumentNull("name");
+		}
+		this.name = name;
+		this.value = value;
 	}
-}
-namespace System.Runtime.Serialization
-{
-}
-namespace System.Xml
-{
 }

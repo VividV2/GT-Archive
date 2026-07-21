@@ -1,10 +1,6 @@
-namespace Fusion
+namespace Fusion;
+
+public interface IStateAuthorityChanged : IPublicFacingInterface
 {
-	public interface IStateAuthorityChanged : IPublicFacingInterface
-	{
-		void StateAuthorityChanged();
-	}
-}
-namespace Fusion
-{
+	void StateAuthorityChanged();
 }

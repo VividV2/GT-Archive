@@ -1,6 +1,12 @@
-namespace PlayFab.GroupsModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class GetAssetUploadUrlResponse : PlayFabResultCommon
 {
-}
-namespace PlayFab.MultiplayerModels
-{
+	public string AssetUploadUrl;
+
+	public string FileName;
 }

@@ -1,2 +1,13 @@
-// Could not decompile System.Xml.Schema.Datatype_untypedAtomicType
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+internal class Datatype_untypedAtomicType : Datatype_anyAtomicType
+{
+	internal override XmlSchemaWhiteSpace BuiltInWhitespaceFacet => XmlSchemaWhiteSpace.Preserve;
+
+	public override XmlTypeCode TypeCode => XmlTypeCode.UntypedAtomic;
+
+	internal override XmlValueConverter CreateValueConverter(XmlSchemaType schemaType)
+	{
+		return XmlUntypedConverter.Untyped;
+	}
+}

@@ -1,19 +1,7 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum WebCamFlags
 {
-	public enum WebCamFlags
-	{
-		FrontFacing = 1,
-		AutoFocusPointSupported
-	}
-}
-namespace UnityEngine
-{
-	public enum WebCamKind
-	{
-		Unknown,
-		WideAngle,
-		Telephoto,
-		ColorAndDepth,
-		UltraWideAngle
-	}
+	FrontFacing = 1,
+	AutoFocusPointSupported
 }

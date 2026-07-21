@@ -1,9 +1,14 @@
-namespace System.Security.Cryptography
+using System.Runtime.InteropServices;
+
+namespace System.Runtime.Remoting;
+
+/// <summary>Defines how well-known objects are activated.</summary>
+[Serializable]
+[ComVisible(true)]
+public enum WellKnownObjectMode
 {
-}
-namespace System
-{
-}
-namespace System.Resources
-{
+	/// <summary>Every incoming message is serviced by the same object instance.</summary>
+	Singleton = 1,
+	/// <summary>Every incoming message is serviced by a new object instance.</summary>
+	SingleCall
 }

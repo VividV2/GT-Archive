@@ -10,6 +10,3 @@ public enum XmlNamespaceScope
 	/// <summary>All namespaces that are defined locally at the current node.</summary>
 	Local
 }
-namespace System.Xml
-{
-}

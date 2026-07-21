@@ -1,2 +1,17 @@
-// Could not decompile Assets.OVR.Scripts.Record
-// This type uses unsupported IL or has too many generic parameters.
+namespace Assets.OVR.Scripts;
+
+internal class Record
+{
+	public int sortOrder;
+
+	public string category;
+
+	public string message;
+
+	public Record(int order, string cat, string msg)
+	{
+		sortOrder = order;
+		category = cat;
+		message = msg;
+	}
+}

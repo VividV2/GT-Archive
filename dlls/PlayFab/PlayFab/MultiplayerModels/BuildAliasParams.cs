@@ -1,2 +1,10 @@
-// Could not decompile PlayFab.MultiplayerModels.BuildAliasParams
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class BuildAliasParams : PlayFabBaseModel
+{
+	public string AliasId;
+}

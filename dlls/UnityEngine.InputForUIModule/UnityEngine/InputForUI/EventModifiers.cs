@@ -1,4 +1,3 @@
-#define UNITY_ASSERTIONS
 using System;
 using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;

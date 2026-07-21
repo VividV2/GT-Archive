@@ -1,7 +1,5 @@
 using System;
 
-namespace CjLib;
-
 [Flags]
 internal enum OverrideControllers
 {

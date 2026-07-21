@@ -1,2 +1,5 @@
-// Could not decompile Valve.VR.SteamVR_Action_Out_Source
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.VR;
+
+public abstract class SteamVR_Action_Out_Source : SteamVR_Action_Source, ISteamVR_Action_Out_Source, ISteamVR_Action_Source
+{
+}

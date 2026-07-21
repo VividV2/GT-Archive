@@ -1,2 +1,8 @@
-// Could not decompile Modio.Unity.ModioAndroidSettings
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Modio.Unity;
+
+[Serializable]
+public class ModioAndroidSettings : IModioServiceSettings
+{
+}

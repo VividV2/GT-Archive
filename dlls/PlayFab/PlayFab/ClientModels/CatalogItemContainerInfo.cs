@@ -2,25 +2,16 @@ using System;
 using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class CatalogItemContainerInfo : PlayFabBaseModel
 {
-	[Serializable]
-	public class GetAdPlacementsResult : PlayFabResultCommon
-	{
-		public List<AdPlacementDetails> AdPlacements;
-	}
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class CatalogItemContainerInfo : PlayFabBaseModel
-	{
-		public List<string> ItemContents;
+	public List<string> ItemContents;
 
-		public string KeyItemId;
+	public string KeyItemId;
 
-		public List<string> ResultTableContents;
+	public List<string> ResultTableContents;
 
-		public Dictionary<string, uint> VirtualCurrencyContents;
-	}
+	public Dictionary<string, uint> VirtualCurrencyContents;
 }

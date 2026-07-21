@@ -1,20 +1,8 @@
-namespace System.Data;
+namespace System.Data.SqlClient;
 
-namespace System.Data
+internal enum SqlConnectionInternalSourceType
 {
-}
-namespace System.Data.Odbc
-{
-}
-namespace System.Data
-{
-}
-namespace System.Data.SqlClient
-{
-	internal enum SqlConnectionInternalSourceType
-	{
-		Principle,
-		Failover,
-		RoutingDestination
-	}
+	Principle,
+	Failover,
+	RoutingDestination
 }

@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.TooltipAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine;
+
+[AttributeUsage(AttributeTargets.All, Inherited = true, AllowMultiple = false)]
+public class TooltipAttribute : PropertyAttribute
+{
+	public readonly string tooltip;
+
+	public TooltipAttribute(string tooltip)
+	{
+		this.tooltip = tooltip;
+	}
+}

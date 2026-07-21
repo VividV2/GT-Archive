@@ -1,12 +1,22 @@
-namespace Oculus.Platform.Models;
+using System;
+using Oculus.Platform.Models;
 
-public class BlockedUser
+namespace Oculus.Platform;
+
+public class MessageWithNetSyncSetSessionPropertyResult : Message<NetSyncSetSessionPropertyResult>
 {
-	public readonly ulong Id;
-
-	public BlockedUser(IntPtr o)
+	public MessageWithNetSyncSetSessionPropertyResult(IntPtr c_message)
+		: base(c_message)
 	{
-		base..ctor();
-		Id = CAPI.ovr_BlockedUser_GetId(o);
+	}
+
+	public override NetSyncSetSessionPropertyResult GetNetSyncSetSessionPropertyResult()
+	{
+		return base.Data;
+	}
+
+	protected override NetSyncSetSessionPropertyResult GetDataFromMessage(IntPtr c_message)
+	{
+		return new NetSyncSetSessionPropertyResult(CAPI.ovr_Message_GetNetSyncSetSessionPropertyResult(CAPI.ovr_Message_GetNativeMessage(c_message)));
 	}
 }

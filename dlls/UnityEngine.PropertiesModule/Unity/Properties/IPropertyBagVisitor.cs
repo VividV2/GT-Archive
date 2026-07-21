@@ -4,6 +4,3 @@ public interface IPropertyBagVisitor
 {
 	void Visit<TContainer>(IPropertyBag<TContainer> properties, ref TContainer container);
 }
-namespace Unity.Properties
-{
-}

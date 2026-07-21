@@ -1,2 +1,25 @@
-// Could not decompile System.Net.ClosableStream
-// This type uses unsupported IL or has too many generic parameters.
+using System.IO;
+using System.Threading;
+
+namespace System.Net;
+
+internal class ClosableStream : DelegatedStream
+{
+	private readonly EventHandler _onClose;
+
+	private int _closed;
+
+	internal ClosableStream(Stream stream, EventHandler onClose)
+		: base(stream)
+	{
+		_onClose = onClose;
+	}
+
+	public override void Close()
+	{
+		if (Interlocked.Increment(ref _closed) == 1)
+		{
+			_onClose?.Invoke(this, new EventArgs());
+		}
+	}
+}

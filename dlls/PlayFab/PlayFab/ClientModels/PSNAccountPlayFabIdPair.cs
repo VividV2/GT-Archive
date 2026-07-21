@@ -1,39 +1,12 @@
 using System;
 using PlayFab.SharedModels;
-using System;
-using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class PSNAccountPlayFabIdPair : PlayFabBaseModel
 {
-	[Serializable]
-	public class PSNAccountPlayFabIdPair : PlayFabBaseModel
-	{
-		public string PlayFabId;
+	public string PlayFabId;
 
-		public string PSNAccountId;
-	}
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class RegisterPlayFabUserRequest : PlayFabRequestCommon
-	{
-		public string DisplayName;
-
-		public string Email;
-
-		public string EncryptedRequest;
-
-		public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
-
-		public string Password;
-
-		public string PlayerSecret;
-
-		public bool? RequireBothUsernameAndEmail;
-
-		public string TitleId;
-
-		public string Username;
-	}
+	public string PSNAccountId;
 }

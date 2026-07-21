@@ -1,15 +1,11 @@
 using System;
 
-namespace GorillaGameModes
-{
-	[Serializable]
-	public struct GameModeNameOverrides
-	{
-		public GameModeType mode;
+namespace GorillaGameModes;
 
-		public string displayName;
-	}
-}
-namespace GorillaTagScripts
+[Serializable]
+public struct GameModeNameOverrides
 {
+	public GameModeType mode;
+
+	public string displayName;
 }

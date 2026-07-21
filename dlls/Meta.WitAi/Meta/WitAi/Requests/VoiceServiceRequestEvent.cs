@@ -1,2 +1,9 @@
-// Could not decompile Meta.WitAi.Requests.VoiceServiceRequestEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace Meta.WitAi.Requests;
+
+[Serializable]
+public class VoiceServiceRequestEvent : UnityEvent<VoiceServiceRequest>
+{
+}

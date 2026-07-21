@@ -1,2 +1,8 @@
-// Could not decompile Meta.WitAi.TTS.Data.TTSEmoteEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Meta.WitAi.TTS.Data;
+
+[Serializable]
+public class TTSEmoteEvent : TTSStringEvent
+{
+}

@@ -1,10 +1,20 @@
-namespace UnityEngine.Timeline
+namespace UnityEngine.Timeline;
+
+internal interface ICurvesOwner
 {
-}
-namespace UnityEngine.Timeline
-{
-	public interface INotificationOptionProvider
-	{
-		NotificationFlags flags { get; }
-	}
+	AnimationClip curves { get; }
+
+	bool hasCurves { get; }
+
+	double duration { get; }
+
+	string defaultCurvesName { get; }
+
+	Object asset { get; }
+
+	Object assetOwner { get; }
+
+	TrackAsset targetTrack { get; }
+
+	void CreateCurves(string curvesClipName);
 }

@@ -1,13 +1,6 @@
-namespace Fusion
+namespace Fusion;
+
+public interface IRemotePrefabCreated : IPublicFacingInterface
 {
-	public interface IRemotePrefabCreated : IPublicFacingInterface
-	{
-		void RemotePrefabCreated();
-	}
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
+	void RemotePrefabCreated();
 }

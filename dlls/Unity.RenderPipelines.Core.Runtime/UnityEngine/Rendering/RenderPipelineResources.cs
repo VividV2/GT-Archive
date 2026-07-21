@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.Rendering.RenderPipelineResources
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+public abstract class RenderPipelineResources : ScriptableObject
+{
+	protected virtual string packagePath => null;
+
+	internal string packagePath_Internal => packagePath;
+}

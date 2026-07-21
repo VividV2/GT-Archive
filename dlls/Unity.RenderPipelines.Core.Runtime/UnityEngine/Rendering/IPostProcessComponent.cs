@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.IPostProcessComponent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering;
+
+public interface IPostProcessComponent
+{
+	bool IsActive();
+
+	[Obsolete("Unused #from(2023.1)", false)]
+	bool IsTileCompatible()
+	{
+		return false;
+	}
+}

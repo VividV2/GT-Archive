@@ -1,2 +1,8 @@
-// Could not decompile Unity.XR.CoreUtils.EnumValues`1
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.XR.CoreUtils;
+
+public static class EnumValues<T>
+{
+	public static readonly T[] Values = (T[])Enum.GetValues(typeof(T));
+}

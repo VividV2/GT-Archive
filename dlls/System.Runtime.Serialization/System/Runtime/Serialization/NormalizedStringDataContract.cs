@@ -1,2 +1,9 @@
-// Could not decompile System.Runtime.Serialization.NormalizedStringDataContract
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Serialization;
+
+internal class NormalizedStringDataContract : StringDataContract
+{
+	internal NormalizedStringDataContract()
+		: base(DictionaryGlobals.normalizedStringLocalName, DictionaryGlobals.SchemaNamespace)
+	{
+	}
+}

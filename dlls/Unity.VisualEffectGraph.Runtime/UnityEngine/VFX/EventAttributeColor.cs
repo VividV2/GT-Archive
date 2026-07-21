@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.VFX.EventAttributeColor
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.VFX;
+
+[Serializable]
+internal class EventAttributeColor : EventAttributeVector3
+{
+}

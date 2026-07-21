@@ -1,2 +1,19 @@
-// Could not decompile CrittersAttachPoint
-// This type uses unsupported IL or has too many generic parameters.
+public class CrittersAttachPoint : CrittersActor
+{
+	public enum AnchoredLocationTypes
+	{
+		Arm,
+		Chest,
+		Back
+	}
+
+	public bool fixedOrientation = true;
+
+	public AnchoredLocationTypes anchorLocation;
+
+	public bool isLeft;
+
+	public override void ProcessRemote()
+	{
+	}
+}

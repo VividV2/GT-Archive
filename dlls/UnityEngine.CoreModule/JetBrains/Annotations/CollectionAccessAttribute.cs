@@ -1,2 +1,14 @@
-// Could not decompile JetBrains.Annotations.CollectionAccessAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace JetBrains.Annotations;
+
+[AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property)]
+public sealed class CollectionAccessAttribute : Attribute
+{
+	public CollectionAccessType CollectionAccessType { get; }
+
+	public CollectionAccessAttribute(CollectionAccessType collectionAccessType)
+	{
+		CollectionAccessType = collectionAccessType;
+	}
+}

@@ -1,2 +1,9 @@
-// Could not decompile GTSerializableKeyValue`2
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+[Serializable]
+public struct GTSerializableKeyValue<T1, T2>(T1 k, T2 v)
+{
+	public T1 k = k;
+
+	public T2 v = v;
+}

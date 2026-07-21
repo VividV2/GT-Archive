@@ -3,121 +3,117 @@ using System.Threading.Tasks;
 using Liv.Lck.Recorder;
 using UnityEngine;
 
-namespace Liv.Lck
+namespace Liv.Lck;
+
+public interface ILckService : IDisposable
 {
-	public interface ILckService : IDisposable
-	{
-		event Action<LckResult> OnRecordingStarted;
+	event Action<LckResult> OnRecordingStarted;
 
-		event Action<LckResult> OnRecordingPaused;
+	event Action<LckResult> OnRecordingPaused;
 
-		event Action<LckResult> OnRecordingResumed;
+	event Action<LckResult> OnRecordingResumed;
 
-		event Action<LckResult> OnRecordingStopped;
+	event Action<LckResult> OnRecordingStopped;
 
-		event Action<LckResult> OnStreamingStarted;
+	event Action<LckResult> OnStreamingStarted;
 
-		event Action<LckResult> OnStreamingStopped;
+	event Action<LckResult> OnStreamingStopped;
 
-		event Action<LckResult> OnLowStorageSpace;
+	event Action<LckResult> OnLowStorageSpace;
 
-		event Action<LckResult<RecordingData>> OnRecordingSaved;
+	event Action<LckResult<RecordingData>> OnRecordingSaved;
 
-		event Action<LckResult> OnPhotoSaved;
+	event Action<LckResult> OnPhotoSaved;
 
-		event Action<LckResult<ILckCamera>> OnActiveCameraSet;
+	event Action<LckResult<ILckCamera>> OnActiveCameraSet;
 
-		event Action<LckResult<RecordingData>> OnEchoSaved;
+	event Action<LckResult<RecordingData>> OnEchoSaved;
 
-		event Action<LckResult> OnEchoEnabled;
+	event Action<LckResult> OnEchoEnabled;
 
-		event Action<LckResult, EchoDisableReason> OnEchoDisabled;
+	event Action<LckResult, EchoDisableReason> OnEchoDisabled;
 
-		LckResult StartRecording();
+	LckResult StartRecording();
 
-		LckResult PauseRecording();
+	LckResult PauseRecording();
 
-		LckResult<bool> IsPaused();
+	LckResult<bool> IsPaused();
 
-		LckResult ResumeRecording();
+	LckResult ResumeRecording();
 
-		LckResult StopRecording();
+	LckResult StopRecording();
 
-		LckResult StartStreaming();
+	LckResult StartStreaming();
 
-		LckResult StopStreaming();
+	LckResult StopStreaming();
 
-		LckResult<TimeSpan> GetRecordingDuration();
+	LckResult<TimeSpan> GetRecordingDuration();
 
-		LckResult<TimeSpan> GetStreamDuration();
+	LckResult<TimeSpan> GetStreamDuration();
 
-		LckResult SetTrackFramerate(uint framerate);
+	LckResult SetTrackFramerate(uint framerate);
 
-		LckResult SetTrackDescriptor(CameraTrackDescriptor cameraTrackDescriptor);
+	LckResult SetTrackDescriptor(CameraTrackDescriptor cameraTrackDescriptor);
 
-		LckResult SetTrackResolution(CameraResolutionDescriptor cameraResolutionDescriptor);
+	LckResult SetTrackResolution(CameraResolutionDescriptor cameraResolutionDescriptor);
 
-		LckResult SetTrackBitrate(uint bitrate);
+	LckResult SetTrackBitrate(uint bitrate);
 
-		LckResult SetTrackAudioBitrate(uint audioBitrate);
+	LckResult SetTrackAudioBitrate(uint audioBitrate);
 
-		LckResult SetCameraOrientation(LckCameraOrientation orientation);
+	LckResult SetCameraOrientation(LckCameraOrientation orientation);
 
-		LckResult SetTrackDescriptor(LckCaptureType captureType, CameraTrackDescriptor cameraTrackDescriptor);
+	LckResult SetTrackDescriptor(LckCaptureType captureType, CameraTrackDescriptor cameraTrackDescriptor);
 
-		LckResult<LckCaptureType> GetActiveCaptureType();
+	LckResult<LckCaptureType> GetActiveCaptureType();
 
-		LckResult SetActiveCaptureType(LckCaptureType captureType);
+	LckResult SetActiveCaptureType(LckCaptureType captureType);
 
-		LckResult SetPreviewActive(bool isActive);
+	LckResult SetPreviewActive(bool isActive);
 
-		LckResult<bool> IsRecording();
+	LckResult<bool> IsRecording();
 
-		LckResult<bool> IsStreaming();
+	LckResult<bool> IsStreaming();
 
-		LckResult<bool> IsCapturing();
+	LckResult<bool> IsCapturing();
 
-		LckResult SetGameAudioCaptureActive(bool isActive);
+	LckResult SetGameAudioCaptureActive(bool isActive);
 
-		LckResult SetMicrophoneCaptureActive(bool isActive);
+	LckResult SetMicrophoneCaptureActive(bool isActive);
 
-		LckResult<float> GetMicrophoneOutputLevel();
+	LckResult<float> GetMicrophoneOutputLevel();
 
-		LckResult SetMicrophoneGain(float gain);
+	LckResult SetMicrophoneGain(float gain);
 
-		LckResult SetGameAudioGain(float gain);
+	LckResult SetGameAudioGain(float gain);
 
-		LckResult<float> GetGameOutputLevel();
+	LckResult<float> GetGameOutputLevel();
 
-		LckResult<bool> IsGameAudioMute();
+	LckResult<bool> IsGameAudioMute();
 
-		LckResult SetActiveCamera(string cameraId, string monitorId = null);
+	LckResult SetActiveCamera(string cameraId, string monitorId = null);
 
-		LckResult<ILckCamera> GetActiveCamera();
+	LckResult<ILckCamera> GetActiveCamera();
 
-		LckResult PreloadDiscreetAudio(AudioClip audioClip, float volume, bool forceReload = false);
+	LckResult PreloadDiscreetAudio(AudioClip audioClip, float volume, bool forceReload = false);
 
-		LckResult PlayDiscreetAudioClip(AudioClip audioClip);
+	LckResult PlayDiscreetAudioClip(AudioClip audioClip);
 
-		LckResult StopAllDiscreetAudio();
+	LckResult StopAllDiscreetAudio();
 
-		LckResult SetEchoEnabled(bool enabled);
+	LckResult SetEchoEnabled(bool enabled);
 
-		Task<LckResult> SetEchoEnabledAsync(bool enabled);
+	Task<LckResult> SetEchoEnabledAsync(bool enabled);
 
-		LckResult<bool> IsEchoEnabled();
+	LckResult<bool> IsEchoEnabled();
 
-		LckResult TriggerEchoSave();
+	LckResult TriggerEchoSave();
 
-		LckResult<TimeSpan> GetEchoBufferDuration();
+	LckResult<TimeSpan> GetEchoBufferDuration();
 
-		LckResult<TimeSpan> GetEchoMaxBufferDuration();
+	LckResult<TimeSpan> GetEchoMaxBufferDuration();
 
-		LckResult<LckDescriptor> GetDescriptor();
+	LckResult<LckDescriptor> GetDescriptor();
 
-		LckResult CapturePhoto();
-	}
-}
-namespace Liv.Lck
-{
+	LckResult CapturePhoto();
 }

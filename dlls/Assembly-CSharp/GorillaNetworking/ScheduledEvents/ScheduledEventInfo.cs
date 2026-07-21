@@ -1,19 +1,15 @@
 using System;
 
-namespace GorillaNetworking.ScheduledEvents
+namespace GorillaNetworking.ScheduledEvents;
+
+public struct ScheduledEventInfo
 {
-	public struct ScheduledEventInfo
+	public bool isActive;
+
+	public DateTime scheduledStart;
+
+	public static ScheduledEventInfo None => new ScheduledEventInfo
 	{
-		public bool isActive;
-
-		public DateTime scheduledStart;
-
-		public static ScheduledEventInfo None => new ScheduledEventInfo
-		{
-			isActive = false
-		};
-	}
-}
-namespace GorillaTag.Reactions
-{
+		isActive = false
+	};
 }

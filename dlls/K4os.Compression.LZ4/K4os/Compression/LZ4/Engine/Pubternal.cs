@@ -1,19 +1,26 @@
-using System;
-using System;
+using K4os.Compression.LZ4.Internal;
 
-namespace K4os.Compression.LZ4.Encoders
+namespace K4os.Compression.LZ4.Engine;
+
+public static class Pubternal
 {
-}
-namespace K4os.Compression.LZ4.Encoders
-{
-	public interface ILZ4Encoder : IDisposable
+	public class FastContext : UnmanagedResources
 	{
-		int BlockSize { get; }
+		internal unsafe LL.LZ4_stream_t* Context { get; }
 
-		int BytesReady { get; }
+		public unsafe FastContext()
+		{
+			Context = (LL.LZ4_stream_t*)Mem.AllocZero(sizeof(LL.LZ4_stream_t));
+		}
 
-		unsafe int Topup(byte* source, int length);
+		protected unsafe override void ReleaseUnmanaged()
+		{
+			Mem.Free(Context);
+		}
+	}
 
-		unsafe int Encode(byte* target, int length, bool allowCopy);
+	public unsafe static int CompressFast(FastContext context, byte* source, byte* target, int sourceLength, int targetLength, int acceleration)
+	{
+		return LLxx.LZ4_compress_fast_continue(context.Context, source, target, sourceLength, targetLength, acceleration);
 	}
 }

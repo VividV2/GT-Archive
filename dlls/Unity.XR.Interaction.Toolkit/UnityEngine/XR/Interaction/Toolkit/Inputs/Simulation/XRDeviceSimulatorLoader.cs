@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulatorLoader
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
+
+[Obsolete("XRDeviceSimulatorLoader has been replaced by the XRInteractionSimulatorLoader. ", false)]
+public static class XRDeviceSimulatorLoader
+{
+	public static void Initialize()
+	{
+	}
+}

@@ -8,6 +8,3 @@ public enum ConsoleSpecialKey
 	/// <summary>The <see cref="F:System.ConsoleModifiers.Control" /> modifier key plus the BREAK console key.</summary>
 	ControlBreak
 }
-namespace System.Runtime.Remoting.Channels
-{
-}

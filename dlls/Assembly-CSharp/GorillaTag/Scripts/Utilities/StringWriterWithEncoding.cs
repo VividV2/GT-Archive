@@ -1,2 +1,14 @@
-// Could not decompile GorillaTag.Scripts.Utilities.StringWriterWithEncoding
-// This type uses unsupported IL or has too many generic parameters.
+using System.IO;
+using System.Text;
+
+namespace GorillaTag.Scripts.Utilities;
+
+public class StringWriterWithEncoding : StringWriter
+{
+	public override Encoding Encoding { get; }
+
+	public StringWriterWithEncoding(Encoding encoding)
+	{
+		Encoding = encoding;
+	}
+}

@@ -1,12 +1,8 @@
-namespace Liv.Lck.Encoding
+namespace Liv.Lck.Encoding;
+
+internal enum EncoderConsumer
 {
-	internal enum EncoderConsumer
-	{
-		Recording,
-		Streaming,
-		Echo
-	}
-}
-namespace Liv.Lck.Smoothing
-{
+	Recording,
+	Streaming,
+	Echo
 }

@@ -1,9 +1,16 @@
-using Unity.Multiplayer.Center.Common.Analytics;
-using Unity.Multiplayer.Center.Common.Analytics;
-
 namespace Unity.Multiplayer.Center.Common;
 
-public interface ISectionWithAnalytics
+public interface ISectionDependingOnUserChoices : IOnboardingSection
 {
-	IOnboardingSectionAnalyticsProvider AnalyticsProvider { get; set; }
+	void HandleAnswerData(AnswerData answerData)
+	{
+	}
+
+	void HandleUserSelectionData(SelectedSolutionsData selectedSolutionsData)
+	{
+	}
+
+	void HandlePreset(Preset preset)
+	{
+	}
 }

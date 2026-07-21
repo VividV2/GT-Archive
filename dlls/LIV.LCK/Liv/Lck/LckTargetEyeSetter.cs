@@ -1,2 +1,12 @@
-// Could not decompile Liv.Lck.LckTargetEyeSetter
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Liv.Lck;
+
+[RequireComponent(typeof(Camera))]
+public class LckTargetEyeSetter : MonoBehaviour
+{
+	private void OnValidate()
+	{
+		GetComponent<Camera>().stereoTargetEye = StereoTargetEyeMask.None;
+	}
+}

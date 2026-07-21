@@ -1,13 +1,12 @@
+using System;
+using PlayFab.SharedModels;
+
 namespace PlayFab.ClientModels;
 
-public enum SubscriptionProviderStatus
+[Serializable]
+public class RestoreIOSPurchasesRequest : PlayFabRequestCommon
 {
-	NoError,
-	Cancelled,
-	UnknownError,
-	BillingError,
-	ProductUnavailable,
-	CustomerDidNotAcceptPriceChange,
-	FreeTrial,
-	PaymentPending
+	public string CatalogVersion;
+
+	public string ReceiptData;
 }

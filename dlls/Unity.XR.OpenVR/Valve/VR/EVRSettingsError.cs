@@ -1,9 +1,11 @@
 namespace Valve.VR;
 
-public enum EVRTrackedCameraFrameType
+public enum EVRSettingsError
 {
-	Distorted,
-	Undistorted,
-	MaximumUndistorted,
-	MAX_CAMERA_FRAME_TYPES
+	None,
+	IPCFailed,
+	WriteFailed,
+	ReadFailed,
+	JsonParseFailed,
+	UnsetSettingHasNoDefault
 }

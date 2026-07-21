@@ -1,6 +1,8 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum LightmapsModeLegacy
 {
-}
-namespace UnityEngine.Pool
-{
+	Single,
+	Dual,
+	Directional
 }

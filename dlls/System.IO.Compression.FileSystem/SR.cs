@@ -1,2 +1,6 @@
-// Could not decompile SR
-// This type uses unsupported IL or has too many generic parameters.
+internal class SR
+{
+	public const string IO_DirectoryNameWithData = "Zip entry name ends in directory separator character but contains data.";
+
+	public const string IO_ExtractingResultsInOutside = "Extracting Zip entry would have resulted in a file outside the specified destination directory.";
+}

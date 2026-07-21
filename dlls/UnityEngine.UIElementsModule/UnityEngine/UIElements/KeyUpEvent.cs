@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.UIElements.KeyUpEvent
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+public class KeyUpEvent : KeyboardEventBase<KeyUpEvent>
+{
+	static KeyUpEvent()
+	{
+		EventBase<KeyUpEvent>.SetCreateFunction(() => new KeyUpEvent());
+	}
+}

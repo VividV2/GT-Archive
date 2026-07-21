@@ -6,6 +6,3 @@ internal sealed class TokenizerStringBlock
 
 	internal TokenizerStringBlock m_next;
 }
-namespace System
-{
-}

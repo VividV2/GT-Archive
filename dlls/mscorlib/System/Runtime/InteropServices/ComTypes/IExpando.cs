@@ -1,9 +1,15 @@
-namespace System;
+using System.Reflection;
 
-/// <summary>Encapsulates a method that has no parameters and returns a value of the type specified by the <typeparamref name="TResult" /> parameter.</summary>
-/// <typeparam name="TResult">The type of the return value of the method that this delegate encapsulates.</typeparam>
-/// <returns>The return value of the method that this delegate encapsulates.</returns>
-/// <summary>Encapsulates a method that has no parameters and returns a value of the type specified by the <typeparamref name="TResult" /> parameter.</summary>
-/// <typeparam name="TResult">The type of the return value of the method that this delegate encapsulates.</typeparam>
-/// <returns>The return value of the method that this delegate encapsulates.</returns>
-public delegate TResult Func<out TResult>();
+namespace System.Runtime.InteropServices.ComTypes;
+
+[Guid("AFBF15E6-C37C-11d2-B88E-00A0C9B471B8")]
+internal interface IExpando : IReflect
+{
+	FieldInfo AddField(string name);
+
+	PropertyInfo AddProperty(string name);
+
+	MethodInfo AddMethod(string name, Delegate method);
+
+	void RemoveMember(MemberInfo m);
+}

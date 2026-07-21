@@ -1,2 +1,15 @@
-// Could not decompile Fusion.ServerTimeProviderSettings
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+internal struct ServerTimeProviderSettings
+{
+	public double SimDeltaTime;
+
+	public static ServerTimeProviderSettings Default()
+	{
+		TickRate.Resolved resolved = TickRate.Resolve(TickRate.Default);
+		return new ServerTimeProviderSettings
+		{
+			SimDeltaTime = resolved.ClientTickDelta
+		};
+	}
+}

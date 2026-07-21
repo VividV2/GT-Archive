@@ -1,49 +1,52 @@
-namespace Sirenix.OdinInspector
+using System;
+using System.Diagnostics;
+
+namespace Sirenix.OdinInspector;
+
+[DontApplyToListElements]
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = true)]
+[Conditional("UNITY_EDITOR")]
+public sealed class InlineButtonAttribute : Attribute
 {
-	[DontApplyToListElements]
-	[AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = true)]
-	[Conditional("UNITY_EDITOR")]
-	public class LabelTextAttribute : Attribute
+	public string Action;
+
+	public string Label;
+
+	public string ShowIf;
+
+	[ColorResolver]
+	public string ButtonColor;
+
+	[ColorResolver]
+	public string TextColor;
+
+	public SdfIconType Icon;
+
+	public IconAlignment IconAlignment;
+
+	[Obsolete("Use the Action member instead.", false)]
+	public string MemberMethod
 	{
-		public string Text;
-
-		public bool NicifyText;
-
-		public SdfIconType Icon;
-
-		[ColorResolver]
-		public string IconColor;
-
-		public LabelTextAttribute(string text)
+		get
 		{
-			base..ctor();
-			Text = text;
+			return Action;
 		}
-
-		public LabelTextAttribute(SdfIconType icon)
+		set
 		{
-			base..ctor();
-			Icon = icon;
+			Action = value;
 		}
+	}
 
-		public LabelTextAttribute(string text, bool nicifyText)
-		{
-			base..ctor();
-			Text = text;
-			NicifyText = nicifyText;
-		}
+	public InlineButtonAttribute(string action, string label = null)
+	{
+		Action = action;
+		Label = label;
+	}
 
-		public LabelTextAttribute(string text, SdfIconType icon)
-		{
-			Text = text;
-			Icon = icon;
-		}
-
-		public LabelTextAttribute(string text, bool nicifyText, SdfIconType icon)
-		{
-			Text = text;
-			NicifyText = nicifyText;
-			Icon = icon;
-		}
+	public InlineButtonAttribute(string action, SdfIconType icon, string label = null)
+	{
+		Action = action;
+		Icon = icon;
+		Label = label;
 	}
 }

@@ -1,13 +1,9 @@
-namespace Unity.Collections.LowLevel.Unsafe
-{
-	[GenerateTestsForBurstCompatibility]
-	internal struct UnsafeStreamBlock
-	{
-		internal unsafe UnsafeStreamBlock* Next;
+namespace Unity.Collections.LowLevel.Unsafe;
 
-		internal unsafe fixed byte Data[1];
-	}
-}
-namespace Unity.Jobs
+[GenerateTestsForBurstCompatibility]
+internal struct UnsafeStreamBlock
 {
+	internal unsafe UnsafeStreamBlock* Next;
+
+	internal unsafe fixed byte Data[1];
 }

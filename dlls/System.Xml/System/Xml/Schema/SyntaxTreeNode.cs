@@ -1,2 +1,14 @@
-// Could not decompile System.Xml.Schema.SyntaxTreeNode
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+internal abstract class SyntaxTreeNode
+{
+	public abstract bool IsNullable { get; }
+
+	public virtual bool IsRangeNode => false;
+
+	public abstract void ExpandTree(InteriorNode parent, SymbolsDictionary symbols, Positions positions);
+
+	public abstract SyntaxTreeNode Clone(Positions positions);
+
+	public abstract void ConstructPos(BitSet firstpos, BitSet lastpos, BitSet[] followpos);
+}

@@ -1,17 +1,13 @@
-namespace Pathfinding
+namespace Pathfinding;
+
+public enum GraphDebugMode
 {
-}
-namespace Pathfinding
-{
-	public enum GraphDebugMode
-	{
-		SolidColor,
-		G,
-		H,
-		F,
-		Penalty,
-		Areas,
-		Tags,
-		HierarchicalNode
-	}
+	SolidColor,
+	G,
+	H,
+	F,
+	Penalty,
+	Areas,
+	Tags,
+	HierarchicalNode
 }

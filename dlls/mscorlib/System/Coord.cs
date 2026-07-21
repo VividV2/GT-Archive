@@ -1,2 +1,8 @@
-// Could not decompile System.Coord
-// This type uses unsupported IL or has too many generic parameters.
+namespace System;
+
+internal struct Coord(int x, int y)
+{
+	public short X = (short)x;
+
+	public short Y = (short)y;
+}

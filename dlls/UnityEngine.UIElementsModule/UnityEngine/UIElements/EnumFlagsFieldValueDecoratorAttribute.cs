@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.UIElements.EnumFlagsFieldValueDecoratorAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Bindings;
+
+namespace UnityEngine.UIElements;
+
+[VisibleToOtherModules(new string[] { "UnityEditor.UIBuilderModule" })]
+internal class EnumFlagsFieldValueDecoratorAttribute : PropertyAttribute
+{
+}

@@ -1,33 +1,26 @@
-namespace UnityEngine
+namespace UnityEngine.Experimental.GlobalIllumination;
+
+public struct RectangleLight
 {
-}
-namespace UnityEngine.Experimental.GlobalIllumination
-{
-	public struct RectangleLight
-	{
-		public int instanceID;
+	public int instanceID;
 
-		public bool shadow;
+	public bool shadow;
 
-		public LightMode mode;
+	public LightMode mode;
 
-		public Vector3 position;
+	public Vector3 position;
 
-		public Quaternion orientation;
+	public Quaternion orientation;
 
-		public LinearColor color;
+	public LinearColor color;
 
-		public LinearColor indirectColor;
+	public LinearColor indirectColor;
 
-		public float range;
+	public float range;
 
-		public float width;
+	public float width;
 
-		public float height;
+	public float height;
 
-		public FalloffType falloff;
-	}
-}
-namespace UnityEngine.Events
-{
+	public FalloffType falloff;
 }

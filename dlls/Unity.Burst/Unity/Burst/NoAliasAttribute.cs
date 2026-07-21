@@ -1,2 +1,8 @@
-// Could not decompile Unity.Burst.NoAliasAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.Burst;
+
+[AttributeUsage(AttributeTargets.Struct | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue)]
+public class NoAliasAttribute : Attribute
+{
+}

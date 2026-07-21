@@ -1,2 +1,8 @@
-// Could not decompile GorillaTag.GuidedRefs.GuidedRefHubIdSO
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaTag.GuidedRefs;
+
+[CreateAssetMenu(fileName = "Unnamed_GuidedRefHubIdSO", menuName = "Gorilla Tag/GuidedRefHubIdSO")]
+public class GuidedRefHubIdSO : GuidedRefIdBaseSO
+{
+}

@@ -1,2 +1,8 @@
-// Could not decompile Photon.Pun.UtilityScripts.PunPlayerScores
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Photon.Pun.UtilityScripts;
+
+public class PunPlayerScores : MonoBehaviour
+{
+	public const string PlayerScoreProp = "score";
+}

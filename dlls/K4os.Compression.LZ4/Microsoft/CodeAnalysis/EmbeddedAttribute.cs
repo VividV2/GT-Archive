@@ -1,16 +1,10 @@
-using Microsoft.CodeAnalysis;
+using System;
+using System.Runtime.CompilerServices;
 
-namespace System.Runtime.CompilerServices;
+namespace Microsoft.CodeAnalysis;
 
 [CompilerGenerated]
 [Microsoft.CodeAnalysis.Embedded]
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Interface | AttributeTargets.Delegate, AllowMultiple = false, Inherited = false)]
-internal sealed class NullableContextAttribute : Attribute
+internal sealed class EmbeddedAttribute : Attribute
 {
-	public readonly byte Flag;
-
-	public NullableContextAttribute(byte P_0)
-	{
-		Flag = P_0;
-	}
 }

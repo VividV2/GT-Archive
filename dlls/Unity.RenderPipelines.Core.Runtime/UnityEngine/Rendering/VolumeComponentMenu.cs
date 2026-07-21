@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.VolumeComponentMenu
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering;
+
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
+public class VolumeComponentMenu : Attribute
+{
+	public readonly string menu;
+
+	public VolumeComponentMenu(string menu)
+	{
+		this.menu = menu;
+	}
+}

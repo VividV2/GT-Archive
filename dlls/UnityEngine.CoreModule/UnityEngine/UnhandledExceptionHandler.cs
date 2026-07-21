@@ -1,32 +1,18 @@
 using System;
-using System;
-using System;
-using System;
+using UnityEngine.Bindings;
+using UnityEngine.Scripting;
 
 namespace UnityEngine;
 
-namespace UnityEngine.Rendering
+[NativeHeader("PlatformDependent/iPhonePlayer/IOSScriptBindings.h")]
+internal sealed class UnhandledExceptionHandler
 {
-	[Flags]
-	public enum UISubset
+	[RequiredByNativeCode]
+	private static void RegisterUECatcher()
 	{
-		UIToolkit_UGUI = 1,
-		LowLevel = 2,
-		All = -1
+		AppDomain.CurrentDomain.UnhandledException += delegate(object sender, UnhandledExceptionEventArgs e)
+		{
+			Debug.LogException(e.ExceptionObject as Exception);
+		};
 	}
-}
-namespace Unity.Profiling.Memory
-{
-	[Flags]
-	public enum CaptureFlags : uint
-	{
-		ManagedObjects = 1u,
-		NativeObjects = 2u,
-		NativeAllocations = 4u,
-		NativeAllocationSites = 8u,
-		NativeStackTraces = 0x10u
-	}
-}
-namespace JetBrains.Annotations
-{
 }

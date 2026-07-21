@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.Animations.Rigging.ConstraintProperties
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Animations.Rigging;
+
+internal struct ConstraintProperties
+{
+	public static string s_Weight = "m_Weight";
+
+	public Component component;
+
+	public Property[] properties;
+}

@@ -1,2 +1,17 @@
-// Could not decompile System.Reflection.AssemblyTrademarkAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Reflection;
+
+/// <summary>Defines a trademark custom attribute for an assembly manifest.</summary>
+[AttributeUsage(AttributeTargets.Assembly, Inherited = false)]
+public sealed class AssemblyTrademarkAttribute : Attribute
+{
+	/// <summary>Gets trademark information.</summary>
+	/// <returns>A <see langword="String" /> containing trademark information.</returns>
+	public string Trademark { get; }
+
+	/// <summary>Initializes a new instance of the <see cref="T:System.Reflection.AssemblyTrademarkAttribute" /> class.</summary>
+	/// <param name="trademark">The trademark information.</param>
+	public AssemblyTrademarkAttribute(string trademark)
+	{
+		Trademark = trademark;
+	}
+}

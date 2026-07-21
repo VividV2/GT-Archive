@@ -1,2 +1,11 @@
-// Could not decompile System.Runtime.CompilerServices.IsReadOnlyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.CompilerServices;
+
+/// <summary>Marks a program element as read-only.</summary>
+[AttributeUsage(AttributeTargets.All, Inherited = false)]
+public sealed class IsReadOnlyAttribute : Attribute
+{
+	/// <summary>Creates a new instance of the <see cref="T:System.Runtime.CompilerServices.IsReadOnlyAttribute" /> class.</summary>
+	public IsReadOnlyAttribute()
+	{
+	}
+}

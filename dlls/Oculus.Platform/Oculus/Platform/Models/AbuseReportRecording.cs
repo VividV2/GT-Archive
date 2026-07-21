@@ -1,2 +1,13 @@
-// Could not decompile Oculus.Platform.Models.AbuseReportRecording
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Oculus.Platform.Models;
+
+public class AbuseReportRecording
+{
+	public readonly string RecordingUuid;
+
+	public AbuseReportRecording(IntPtr o)
+	{
+		RecordingUuid = CAPI.ovr_AbuseReportRecording_GetRecordingUuid(o);
+	}
+}

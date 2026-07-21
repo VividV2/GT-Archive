@@ -1,6 +1,13 @@
-namespace System.Reflection.Emit
+namespace System.Reflection;
+
+public sealed class MissingMetadataException : TypeAccessException
 {
-}
-namespace System
-{
+	public MissingMetadataException()
+	{
+	}
+
+	public MissingMetadataException(string message)
+		: base(message)
+	{
+	}
 }

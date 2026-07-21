@@ -1,19 +1,11 @@
-namespace System.Xml.Linq
-{
-	internal class BaseUriAnnotation(string baseUri)
-	{
-		internal string baseUri = baseUri;
-	}
-}
-namespace System.Xml.Linq
-{
-}
-namespace System.Xml.Linq
-{
-	internal class LineInfoAnnotation(int lineNumber, int linePosition)
-	{
-		internal int lineNumber = lineNumber;
+namespace System.Xml.Linq;
 
-		internal int linePosition = linePosition;
+internal class BaseUriAnnotation
+{
+	internal string baseUri;
+
+	public BaseUriAnnotation(string baseUri)
+	{
+		this.baseUri = baseUri;
 	}
 }

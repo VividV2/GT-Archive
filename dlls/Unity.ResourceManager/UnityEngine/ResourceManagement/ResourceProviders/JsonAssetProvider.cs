@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.ResourceManagement.ResourceProviders.JsonAssetProvider
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.ComponentModel;
+
+namespace UnityEngine.ResourceManagement.ResourceProviders;
+
+[DisplayName("JSON Asset Provider")]
+public class JsonAssetProvider : TextDataProvider
+{
+	public override object Convert(Type type, string text)
+	{
+		return JsonUtility.FromJson(text, type);
+	}
+}

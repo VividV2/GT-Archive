@@ -1,11 +1,7 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public enum ShadingRateCombinerStage
 {
-	public enum ShadingRateCombinerStage
-	{
-		Primitive,
-		Fragment
-	}
-}
-namespace UnityEngine.Rendering
-{
+	Primitive,
+	Fragment
 }

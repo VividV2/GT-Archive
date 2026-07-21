@@ -1,42 +1,29 @@
 using System;
-using System.Diagnostics;
-using System.IO;
-using System.Runtime.InteropServices;
-using Backtrace.Unity.Types;
+using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
+using UnityEngine.Profiling;
 
-namespace Backtrace.Unity.Common;
+namespace Backtrace.Unity.Model.Attributes;
 
-internal static class MinidumpHelper
+internal sealed class ProcessAttributeProvider : IDynamicAttributeProvider
 {
-	private static readonly string[] Libraries = new string[2] { "kernel32.dll", "dbghelp.dll" };
-
-	private static bool IsMemoryDumpAvailable()
+	public void GetAttributes(IDictionary<string, string> attributes)
 	{
-		if (UnityEngine.Application.platform == UnityEngine.RuntimePlatform.WindowsEditor || UnityEngine.Application.platform == UnityEngine.RuntimePlatform.WindowsPlayer)
+		if (attributes != null)
 		{
-			return SystemHelper.IsLibraryAvailable(Libraries);
+			attributes["gc.heap.used"] = GC.GetTotalMemory(forceFullCollection: false).ToString(CultureInfo.InvariantCulture);
+			attributes["process.age"] = Math.Round(Time.realtimeSinceStartup).ToString(CultureInfo.InvariantCulture);
+			attributes["system.memory.active"] = Profiler.GetTotalAllocatedMemoryLong().ToString(CultureInfo.InvariantCulture);
+			attributes["system.memory.reserved"] = Profiler.GetTotalReservedMemoryLong().ToString(CultureInfo.InvariantCulture);
+			attributes["system.memory.unused"] = Profiler.GetTotalUnusedReservedMemoryLong().ToString(CultureInfo.InvariantCulture);
+			attributes["system.memory.temp"] = Profiler.GetTempAllocatorSize().ToString(CultureInfo.InvariantCulture);
+			attributes["mono.heap"] = Profiler.GetMonoHeapSizeLong().ToString(CultureInfo.InvariantCulture);
+			attributes["mono.used"] = Profiler.GetMonoUsedSizeLong().ToString(CultureInfo.InvariantCulture);
+			attributes["application.playing"] = Application.isPlaying.ToString(CultureInfo.InvariantCulture);
+			attributes["application.focused"] = Application.isFocused.ToString(CultureInfo.InvariantCulture);
+			attributes["application.background"] = Application.runInBackground.ToString(CultureInfo.InvariantCulture);
+			attributes["application.internet_reachability"] = Application.internetReachability.ToString();
 		}
-		return false;
-	}
-
-	[System.Runtime.InteropServices.DllImport("dbghelp.dll", CallingConvention = System.Runtime.InteropServices.CallingConvention.StdCall, CharSet = System.Runtime.InteropServices.CharSet.Unicode, ExactSpelling = true, SetLastError = true)]
-	internal static extern bool MiniDumpWriteDump(System.IntPtr hProcess, uint processId, System.Runtime.InteropServices.SafeHandle hFile, uint dumpType, ref MiniDumpExceptionInformation expParam, System.IntPtr userStreamParam, System.IntPtr callbackParam);
-
-	[System.Runtime.InteropServices.DllImport("dbghelp.dll", CallingConvention = System.Runtime.InteropServices.CallingConvention.StdCall, CharSet = System.Runtime.InteropServices.CharSet.Unicode, ExactSpelling = true, SetLastError = true)]
-	internal static extern bool MiniDumpWriteDump(System.IntPtr hProcess, uint processId, System.Runtime.InteropServices.SafeHandle hFile, uint dumpType, System.IntPtr expParam, System.IntPtr userStreamParam, System.IntPtr callbackParam);
-
-	internal static bool Write(string filePath, Backtrace.Unity.Types.MiniDumpType options = Backtrace.Unity.Types.MiniDumpType.WithFullMemory, Backtrace.Unity.Types.MinidumpException exceptionType = Backtrace.Unity.Types.MinidumpException.None)
-	{
-		if (!IsMemoryDumpAvailable())
-		{
-			return false;
-		}
-		System.Diagnostics.Process currentProcess = System.Diagnostics.Process.GetCurrentProcess();
-		System.IntPtr handle = currentProcess.Handle;
-		uint id = (uint)currentProcess.Id;
-		MiniDumpExceptionInformation expParam = MiniDumpExceptionInformation.GetInstance(exceptionType);
-		using System.IO.FileStream fileStream = new System.IO.FileStream(filePath, System.IO.FileMode.Create, System.IO.FileAccess.ReadWrite, System.IO.FileShare.Write);
-		return (expParam.ExceptionPointers == System.IntPtr.Zero) ? MiniDumpWriteDump(handle, id, fileStream.SafeFileHandle, (uint)options, System.IntPtr.Zero, System.IntPtr.Zero, System.IntPtr.Zero) : MiniDumpWriteDump(handle, id, fileStream.SafeFileHandle, (uint)options, ref expParam, System.IntPtr.Zero, System.IntPtr.Zero);
 	}
 }

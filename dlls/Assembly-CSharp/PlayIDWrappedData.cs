@@ -1,2 +1,25 @@
-// Could not decompile PlayIDWrappedData`1
-// This type uses unsupported IL or has too many generic parameters.
+internal struct PlayIDWrappedData<T>(T initialValue)
+{
+	private T currentValue = initialValue;
+
+	private T initialValue = initialValue;
+
+	private EnterPlayID id = EnterPlayID.GetCurrent();
+
+	public T Value
+	{
+		get
+		{
+			if (!id.IsCurrent)
+			{
+				return initialValue;
+			}
+			return currentValue;
+		}
+		set
+		{
+			currentValue = value;
+			id = EnterPlayID.GetCurrent();
+		}
+	}
+}

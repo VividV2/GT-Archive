@@ -1,2 +1,6 @@
-// Could not decompile SIResourceRegion
-// This type uses unsupported IL or has too many generic parameters.
+public class SIResourceRegion : SpawnRegion<GameEntity, SIResourceRegion>
+{
+	public SIResource resourcePrefab;
+
+	public float LastSpawnTime { get; set; }
+}

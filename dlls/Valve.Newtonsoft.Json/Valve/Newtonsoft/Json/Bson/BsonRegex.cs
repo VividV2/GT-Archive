@@ -1,2 +1,16 @@
-// Could not decompile Valve.Newtonsoft.Json.Bson.BsonRegex
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.Newtonsoft.Json.Bson;
+
+internal class BsonRegex : BsonToken
+{
+	public BsonString Pattern { get; set; }
+
+	public BsonString Options { get; set; }
+
+	public override BsonType Type => BsonType.Regex;
+
+	public BsonRegex(string pattern, string options)
+	{
+		Pattern = new BsonString(pattern, includeLength: false);
+		Options = new BsonString(options, includeLength: false);
+	}
+}

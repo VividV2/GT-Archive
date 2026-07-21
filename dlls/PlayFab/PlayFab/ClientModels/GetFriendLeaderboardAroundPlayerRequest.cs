@@ -1,2 +1,24 @@
-// Could not decompile PlayFab.ClientModels.GetFriendLeaderboardAroundPlayerRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetFriendLeaderboardAroundPlayerRequest : PlayFabRequestCommon
+{
+	public bool? IncludeFacebookFriends;
+
+	public bool? IncludeSteamFriends;
+
+	public int? MaxResultsCount;
+
+	public string PlayFabId;
+
+	public PlayerProfileViewConstraints ProfileConstraints;
+
+	public string StatisticName;
+
+	public int? Version;
+
+	public string XboxToken;
+}

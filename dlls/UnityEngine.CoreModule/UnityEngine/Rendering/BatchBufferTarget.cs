@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.Rendering.BatchBufferTarget
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+public enum BatchBufferTarget
+{
+	Unknown = 0,
+	UnsupportedByUnderlyingGraphicsApi = -1,
+	RawBuffer = 1,
+	ConstantBuffer = 2
+}

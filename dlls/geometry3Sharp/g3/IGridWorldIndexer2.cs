@@ -1,20 +1,10 @@
-namespace g3
-{
-	public interface IGridWorldIndexer2
-	{
-		Vector2i ToGrid(Vector2d pointf);
+namespace g3;
 
-		Vector2d FromGrid(Vector2i gridpoint);
+public interface IGridWorldIndexer2
+{
+	Vector2i ToGrid(Vector2d pointf);
 
-		Vector2d FromGrid(Vector2d gridpointf);
-	}
-}
-namespace gs
-{
-}
-namespace g3
-{
-}
-namespace g3
-{
+	Vector2d FromGrid(Vector2i gridpoint);
+
+	Vector2d FromGrid(Vector2d gridpointf);
 }

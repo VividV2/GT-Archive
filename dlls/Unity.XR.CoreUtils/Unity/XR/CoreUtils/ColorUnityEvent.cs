@@ -1,2 +1,10 @@
-// Could not decompile Unity.XR.CoreUtils.ColorUnityEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace Unity.XR.CoreUtils;
+
+[Serializable]
+public class ColorUnityEvent : UnityEvent<Color>
+{
+}

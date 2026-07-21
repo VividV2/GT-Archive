@@ -1,34 +1,15 @@
 using System;
-using System.Collections.Generic;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel;
+using UnityEngine.ResourceManagement.Util;
 
-namespace UnityEngine.ResourceManagement.ResourceLocations
+namespace UnityEngine.ResourceManagement.ResourceProviders;
+
+[DisplayName("Binary Asset Provider")]
+internal class BinaryAssetProvider<TAdapter> : BinaryDataProvider where TAdapter : BinaryStorageBuffer.ISerializationAdapter, new()
 {
-	public interface IResourceLocation
+	public override object Convert(Type type, byte[] data)
 	{
-		string InternalId { get; }
-
-		string ProviderId { get; }
-
-		IList<IResourceLocation> Dependencies { get; }
-
-		int DependencyHashCode { get; }
-
-		bool HasDependencies { get; }
-
-		object Data { get; }
-
-		string PrimaryKey { get; }
-
-		Type ResourceType { get; }
-
-		int Hash(Type resultType);
+		uint size;
+		return new BinaryStorageBuffer.Reader(data, 1024, 0u, new TAdapter()).ReadObject(type, 0u, out size, cacheValue: false);
 	}
-}
-namespace UnityEngine.ResourceManagement.ResourceLocations
-{
-}
-namespace UnityEngine.ResourceManagement.ResourceProviders
-{
 }

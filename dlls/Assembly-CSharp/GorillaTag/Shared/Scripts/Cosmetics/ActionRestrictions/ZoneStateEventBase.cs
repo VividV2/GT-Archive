@@ -1,2 +1,9 @@
-// Could not decompile GorillaTag.Shared.Scripts.Cosmetics.ActionRestrictions.ZoneStateEventBase
-// This type uses unsupported IL or has too many generic parameters.
+namespace GorillaTag.Shared.Scripts.Cosmetics.ActionRestrictions;
+
+public class ZoneStateEventBase
+{
+	protected bool IsRestricted(VRRig vrRig)
+	{
+		return CosmeticExclusionZoneRegistry.IsRestricted(vrRig);
+	}
+}

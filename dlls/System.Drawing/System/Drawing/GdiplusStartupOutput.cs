@@ -1,6 +1,15 @@
-namespace System.Drawing
+namespace System.Drawing;
+
+internal struct GdiplusStartupOutput
 {
-}
-namespace System.Drawing
-{
+	internal IntPtr NotificationHook;
+
+	internal IntPtr NotificationUnhook;
+
+	internal static GdiplusStartupOutput MakeGdiplusStartupOutput()
+	{
+		GdiplusStartupOutput result = default(GdiplusStartupOutput);
+		result.NotificationHook = (result.NotificationUnhook = IntPtr.Zero);
+		return result;
+	}
 }

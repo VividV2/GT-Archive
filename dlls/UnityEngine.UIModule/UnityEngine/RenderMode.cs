@@ -1,7 +1,8 @@
 namespace UnityEngine;
 
-public enum StandaloneRenderResize
+public enum RenderMode
 {
-	Enabled,
-	Disabled
+	ScreenSpaceOverlay,
+	ScreenSpaceCamera,
+	WorldSpace
 }

@@ -1,7 +1,8 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
+
+public enum Space
 {
-	public interface IXRHapticImpulseProvider
-	{
-		IXRHapticImpulseChannelGroup GetChannelGroup();
-	}
+	Local,
+	Parent,
+	Screen
 }

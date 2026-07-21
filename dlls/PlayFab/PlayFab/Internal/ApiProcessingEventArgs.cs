@@ -1,16 +1,19 @@
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels;
+namespace PlayFab.Internal;
 
-[Serializable]
-public class CollectionFilter : PlayFabBaseModel
+public class ApiProcessingEventArgs
 {
-	public List<Container_Dictionary_String_String> Excludes;
+	public string ApiEndpoint;
 
-	public List<Container_Dictionary_String_String> Includes;
+	public ApiProcessingEventType EventType;
+
+	public PlayFabRequestCommon Request;
+
+	public PlayFabResultCommon Result;
+
+	public TRequest GetRequest<TRequest>() where TRequest : PlayFabRequestCommon
+	{
+		return Request as TRequest;
+	}
 }

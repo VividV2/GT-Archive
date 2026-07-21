@@ -1,25 +1,27 @@
-namespace Backtrace.Unity.Interfaces
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Backtrace.Unity.Model;
+
+namespace Backtrace.Unity.Interfaces;
+
+public interface IBacktraceApi
 {
-	public interface IBacktraceClient
-	{
-		IBacktraceBreadcrumbs Breadcrumbs { get; }
+	string ServerUrl { get; }
 
-		IBacktraceMetrics Metrics { get; }
+	Action<Exception> OnServerError { get; set; }
 
-		void Send(BacktraceReport report, Action<BacktraceResult> sendCallback);
+	Action<BacktraceResult> OnServerResponse { get; set; }
 
-		void Send(string message, List<string> attachmentPaths = null, Dictionary<string, string> attributes = null);
+	Func<string, BacktraceData, BacktraceResult> RequestHandler { get; set; }
 
-		void Send(Exception exception, List<string> attachmentPaths = null, Dictionary<string, string> attributes = null);
+	bool EnablePerformanceStatistics { get; set; }
 
-		void SetClientReportLimit(uint reportPerMin);
+	IEnumerator Send(BacktraceData data, Action<BacktraceResult> callback = null);
 
-		void Refresh();
+	IEnumerator Send(string json, IEnumerable<string> attachments, int deduplication, Action<BacktraceResult> callback);
 
-		bool EnableBreadcrumbsSupport();
+	IEnumerator Send(string json, IEnumerable<string> attachments, Dictionary<string, string> queryAttributes, Action<BacktraceResult> callback);
 
-		bool EnableMetrics();
-
-		bool EnableMetrics(string uniqueEventsSubmissionUrl, string summedEventsSubmissionUrl, uint timeIntervalInSec, string uniqueEventName);
-	}
+	IEnumerator SendMinidump(string minidumpPath, IEnumerable<string> attachments, IDictionary<string, string> queryAttributes, Action<BacktraceResult> callback = null);
 }

@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.CloudScriptModels.ContactEmailInfoModel
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.CloudScriptModels;
+
+[Serializable]
+public class ContactEmailInfoModel : PlayFabBaseModel
+{
+	public string EmailAddress;
+
+	public string Name;
+
+	public EmailVerificationStatus? VerificationStatus;
+}

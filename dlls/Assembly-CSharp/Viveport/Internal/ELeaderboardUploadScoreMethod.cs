@@ -1,23 +1,8 @@
-namespace PerformanceSystems
-{
-	public interface ITimeSlice
-	{
-		void SliceUpdate();
+namespace Viveport.Internal;
 
-		void SliceUpdateAlways(float deltaTime);
-
-		void SliceUpdate(float deltaTime);
-	}
-}
-namespace Viveport.Internal
+internal enum ELeaderboardUploadScoreMethod
 {
-	internal enum ELeaderboardUploadScoreMethod
-	{
-		k_ELeaderboardUploadScoreMethodNone,
-		k_ELeaderboardUploadScoreMethodKeepBest,
-		k_ELeaderboardUploadScoreMethodForceUpdate
-	}
-}
-namespace LitJson
-{
+	k_ELeaderboardUploadScoreMethodNone,
+	k_ELeaderboardUploadScoreMethodKeepBest,
+	k_ELeaderboardUploadScoreMethodForceUpdate
 }

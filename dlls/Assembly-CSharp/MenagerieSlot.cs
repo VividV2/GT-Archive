@@ -1,2 +1,16 @@
-// Could not decompile MenagerieSlot
-// This type uses unsupported IL or has too many generic parameters.
+using TMPro;
+using UnityEngine;
+
+public class MenagerieSlot : MonoBehaviour
+{
+	public Transform critterMountPoint;
+
+	public TMP_Text label;
+
+	public MenagerieCritter critter;
+
+	private void Reset()
+	{
+		critterMountPoint = base.transform;
+	}
+}

@@ -1,28 +1,24 @@
 using System;
 
-namespace PlayFab.ProfilesModels
+namespace PlayFab;
+
+public interface ITransportPlugin : IPlayFabPlugin
 {
-}
-namespace PlayFab
-{
-	public interface ITransportPlugin : IPlayFabPlugin
-	{
-		bool IsInitialized { get; }
+	bool IsInitialized { get; }
 
-		void Initialize();
+	void Initialize();
 
-		void Update();
+	void Update();
 
-		void OnDestroy();
+	void OnDestroy();
 
-		void SimpleGetCall(string fullUrl, Action<byte[]> successCallback, Action<string> errorCallback);
+	void SimpleGetCall(string fullUrl, Action<byte[]> successCallback, Action<string> errorCallback);
 
-		void SimplePutCall(string fullUrl, byte[] payload, Action<byte[]> successCallback, Action<string> errorCallback);
+	void SimplePutCall(string fullUrl, byte[] payload, Action<byte[]> successCallback, Action<string> errorCallback);
 
-		void SimplePostCall(string fullUrl, byte[] payload, Action<byte[]> successCallback, Action<string> errorCallback);
+	void SimplePostCall(string fullUrl, byte[] payload, Action<byte[]> successCallback, Action<string> errorCallback);
 
-		void MakeApiCall(object reqContainer);
+	void MakeApiCall(object reqContainer);
 
-		int GetPendingMessages();
-	}
+	int GetPendingMessages();
 }

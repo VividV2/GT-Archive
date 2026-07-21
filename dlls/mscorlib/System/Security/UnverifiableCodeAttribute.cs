@@ -1,18 +1,14 @@
-namespace System;
+using System.Runtime.InteropServices;
 
-/// <summary>Defines a method that supports custom formatting of the value of an object.</summary>
-/// <summary>Defines a method that supports custom formatting of the value of an object.</summary>
-public interface ICustomFormatter
+namespace System.Security;
+
+/// <summary>Marks modules containing unverifiable code. This class cannot be inherited.</summary>
+[AttributeUsage(AttributeTargets.Module, AllowMultiple = true, Inherited = false)]
+[ComVisible(true)]
+public sealed class UnverifiableCodeAttribute : Attribute
 {
-	/// <summary>Converts the value of a specified object to an equivalent string representation using specified format and culture-specific formatting information.</summary>
-	/// <param name="format">A format string containing formatting specifications.</param>
-	/// <param name="arg">An object to format.</param>
-	/// <param name="formatProvider">An object that supplies format information about the current instance.</param>
-	/// <returns>The string representation of the value of <paramref name="arg" />, formatted as specified by <paramref name="format" /> and <paramref name="formatProvider" />.</returns>
-	/// <summary>Converts the value of a specified object to an equivalent string representation using specified format and culture-specific formatting information.</summary>
-	/// <param name="format">A format string containing formatting specifications.</param>
-	/// <param name="arg">An object to format.</param>
-	/// <param name="formatProvider">An object that supplies format information about the current instance.</param>
-	/// <returns>The string representation of the value of <paramref name="arg" />, formatted as specified by <paramref name="format" /> and <paramref name="formatProvider" />.</returns>
-	string Format(string format, object arg, IFormatProvider formatProvider);
+	/// <summary>Initializes a new instance of the <see cref="T:System.Security.UnverifiableCodeAttribute" /> class.</summary>
+	public UnverifiableCodeAttribute()
+	{
+	}
 }

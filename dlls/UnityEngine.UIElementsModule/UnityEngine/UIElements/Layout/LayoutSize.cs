@@ -1,8 +1,8 @@
-namespace UnityEngine.UIElements.StyleSheets;
+namespace UnityEngine.UIElements.Layout;
 
-internal enum StyleValidationStatus
+internal struct LayoutSize(float width, float height)
 {
-	Ok,
-	Error,
-	Warning
+	public float width = width;
+
+	public float height = height;
 }

@@ -1,12 +1,8 @@
 using System;
 
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+public interface IDebugData
 {
-	public interface IDebugData
-	{
-		Action GetReset();
-	}
-}
-namespace UnityEngine.Rendering
-{
+	Action GetReset();
 }

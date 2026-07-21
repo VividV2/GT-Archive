@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.UIElements.UIDocumentHierarchicalIndexComparer
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace UnityEngine.UIElements;
+
+internal class UIDocumentHierarchicalIndexComparer : IComparer<UIDocumentHierarchicalIndex>
+{
+	public int Compare(UIDocumentHierarchicalIndex x, UIDocumentHierarchicalIndex y)
+	{
+		return x.CompareTo(y);
+	}
+}

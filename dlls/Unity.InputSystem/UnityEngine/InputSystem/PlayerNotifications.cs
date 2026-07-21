@@ -1,13 +1,9 @@
-namespace UnityEngine.InputSystem
+namespace UnityEngine.InputSystem;
+
+public enum PlayerNotifications
 {
-	public enum PlayerNotifications
-	{
-		SendMessages,
-		BroadcastMessages,
-		InvokeUnityEvents,
-		InvokeCSharpEvents
-	}
-}
-namespace UnityEngine.InputSystem.XR
-{
+	SendMessages,
+	BroadcastMessages,
+	InvokeUnityEvents,
+	InvokeCSharpEvents
 }

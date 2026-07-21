@@ -1,16 +1,9 @@
-namespace System.Net.NetworkInformation
+namespace System.Net.NetworkInformation;
+
+internal static class Win32IPGlobalPropertiesFactoryPal
 {
-	internal static class Win32IPGlobalPropertiesFactoryPal
+	public static IPGlobalProperties Create()
 	{
-		public static IPGlobalProperties Create()
-		{
-			return new Win32IPGlobalProperties();
-		}
+		return new Win32IPGlobalProperties();
 	}
-}
-namespace System.Net
-{
-}
-namespace System.Net
-{
 }

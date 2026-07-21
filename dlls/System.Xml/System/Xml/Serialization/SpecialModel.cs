@@ -1,2 +1,9 @@
-// Could not decompile System.Xml.Serialization.SpecialModel
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Serialization;
+
+internal class SpecialModel : TypeModel
+{
+	internal SpecialModel(Type type, TypeDesc typeDesc, ModelScope scope)
+		: base(type, typeDesc, scope)
+	{
+	}
+}

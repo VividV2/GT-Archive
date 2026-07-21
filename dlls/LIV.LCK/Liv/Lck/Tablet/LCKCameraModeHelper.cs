@@ -1,2 +1,20 @@
-// Could not decompile Liv.Lck.Tablet.LCKCameraModeHelper
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Liv.Lck.Tablet;
+
+public class LCKCameraModeHelper : MonoBehaviour
+{
+	[SerializeField]
+	private CameraMode _cameraMode;
+
+	[SerializeField]
+	private LCKSettingsButtonsController _settingsButtonsController;
+
+	public void SetCameraMode(bool isSelected)
+	{
+		if (isSelected)
+		{
+			_settingsButtonsController.SwitchCameraModes(_cameraMode);
+		}
+	}
+}

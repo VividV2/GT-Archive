@@ -1,2 +1,12 @@
-// Could not decompile IGameProjectileLauncher
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public interface IGameProjectileLauncher
+{
+	void OnProjectileInit(GRRangedEnemyProjectile projectile)
+	{
+	}
+
+	void OnProjectileHit(GRRangedEnemyProjectile projectile, Collision collision)
+	{
+	}
+}

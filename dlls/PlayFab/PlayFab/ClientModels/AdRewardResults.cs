@@ -1,18 +1,15 @@
 using System;
-using PlayFab.SharedModels;
-using System;
+using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.CloudScriptModels;
+namespace PlayFab.ClientModels;
 
 [Serializable]
-public class ExecuteFunctionRequest : PlayFabRequestCommon
+public class AdRewardResults : PlayFabBaseModel
 {
-	public EntityKey Entity;
+	public List<AdRewardItemGranted> GrantedItems;
 
-	public string FunctionName;
+	public Dictionary<string, int> GrantedVirtualCurrencies;
 
-	public object FunctionParameter;
-
-	public bool? GeneratePlayStreamEvent;
+	public Dictionary<string, int> IncrementedStatistics;
 }

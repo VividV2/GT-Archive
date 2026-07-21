@@ -1,2 +1,10 @@
-// Could not decompile VerifyAgeResponse
-// This type uses unsupported IL or has too many generic parameters.
+using KID.Model;
+
+public class VerifyAgeResponse
+{
+	public SessionStatus Status { get; set; }
+
+	public Session? Session { get; set; }
+
+	public KIDDefaultSession DefaultSession { get; set; }
+}

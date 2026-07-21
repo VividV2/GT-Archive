@@ -1,2 +1,15 @@
-// Could not decompile PlayFab.ClientModels.CatalogItemBundleInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class CatalogItemBundleInfo : PlayFabBaseModel
+{
+	public List<string> BundledItems;
+
+	public List<string> BundledResultTables;
+
+	public Dictionary<string, uint> BundledVirtualCurrencies;
+}

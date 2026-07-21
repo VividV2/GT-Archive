@@ -1,73 +1,39 @@
-namespace WebSocketSharp.Net
+namespace WebSocketSharp.Net;
+
+public enum HttpResponseHeader
 {
-}
-namespace WebSocketSharp
-{
-}
-namespace WebSocketSharp.Net
-{
-}
-namespace WebSocketSharp.Net
-{
-}
-namespace WebSocketSharp.Net
-{
-}
-namespace WebSocketSharp.Net
-{
-}
-namespace WebSocketSharp.Net
-{
-}
-namespace WebSocketSharp.Net
-{
-}
-namespace WebSocketSharp.Net
-{
-	public enum HttpResponseHeader
-	{
-		CacheControl,
-		Connection,
-		Date,
-		KeepAlive,
-		Pragma,
-		Trailer,
-		TransferEncoding,
-		Upgrade,
-		Via,
-		Warning,
-		Allow,
-		ContentLength,
-		ContentType,
-		ContentEncoding,
-		ContentLanguage,
-		ContentLocation,
-		ContentMd5,
-		ContentRange,
-		Expires,
-		LastModified,
-		AcceptRanges,
-		Age,
-		ETag,
-		Location,
-		ProxyAuthenticate,
-		RetryAfter,
-		Server,
-		SetCookie,
-		Vary,
-		WwwAuthenticate,
-		SecWebSocketExtensions,
-		SecWebSocketAccept,
-		SecWebSocketProtocol,
-		SecWebSocketVersion
-	}
-}
-namespace WebSocketSharp.Net.WebSockets
-{
-}
-namespace WebSocketSharp.Net
-{
-}
-namespace WebSocketSharp.Net
-{
+	CacheControl,
+	Connection,
+	Date,
+	KeepAlive,
+	Pragma,
+	Trailer,
+	TransferEncoding,
+	Upgrade,
+	Via,
+	Warning,
+	Allow,
+	ContentLength,
+	ContentType,
+	ContentEncoding,
+	ContentLanguage,
+	ContentLocation,
+	ContentMd5,
+	ContentRange,
+	Expires,
+	LastModified,
+	AcceptRanges,
+	Age,
+	ETag,
+	Location,
+	ProxyAuthenticate,
+	RetryAfter,
+	Server,
+	SetCookie,
+	Vary,
+	WwwAuthenticate,
+	SecWebSocketExtensions,
+	SecWebSocketAccept,
+	SecWebSocketProtocol,
+	SecWebSocketVersion
 }

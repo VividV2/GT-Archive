@@ -1,2 +1,33 @@
-// Could not decompile VYaml.Serialization.NullableInt16Formatter
-// This type uses unsupported IL or has too many generic parameters.
+using VYaml.Emitter;
+using VYaml.Parser;
+
+namespace VYaml.Serialization;
+
+public class NullableInt16Formatter : IYamlFormatter<short?>, IYamlFormatter
+{
+	public static readonly NullableInt16Formatter Instance = new NullableInt16Formatter();
+
+	public void Serialize(ref Utf8YamlEmitter emitter, short? value, YamlSerializationContext context)
+	{
+		if (value.HasValue)
+		{
+			emitter.WriteInt32(value.Value);
+		}
+		else
+		{
+			emitter.WriteNull();
+		}
+	}
+
+	public short? Deserialize(ref YamlParser parser, YamlDeserializationContext context)
+	{
+		if (parser.IsNullScalar())
+		{
+			parser.Read();
+			return null;
+		}
+		int scalarAsInt = parser.GetScalarAsInt32();
+		parser.Read();
+		return checked((short)scalarAsInt);
+	}
+}

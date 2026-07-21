@@ -1,2 +1,12 @@
-// Could not decompile Valve.VR.InteractionSystem.DestroyOnDetachedFromHand
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Valve.VR.InteractionSystem;
+
+[RequireComponent(typeof(Interactable))]
+public class DestroyOnDetachedFromHand : MonoBehaviour
+{
+	private void OnDetachedFromHand(Hand hand)
+	{
+		Object.Destroy(base.gameObject);
+	}
+}

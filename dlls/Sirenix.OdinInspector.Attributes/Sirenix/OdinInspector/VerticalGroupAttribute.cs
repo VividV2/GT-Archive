@@ -36,6 +36,3 @@ public class VerticalGroupAttribute : PropertyGroupAttribute
 		}
 	}
 }
-namespace Sirenix.OdinInspector
-{
-}

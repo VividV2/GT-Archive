@@ -1,2 +1,23 @@
-// Could not decompile GorillaBallWall
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GorillaBallWall : MonoBehaviour
+{
+	[OnEnterPlay_SetNull]
+	public static volatile GorillaBallWall instance;
+
+	private void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+		}
+		else if (instance != this)
+		{
+			Object.Destroy(base.gameObject);
+		}
+	}
+
+	private void Update()
+	{
+	}
+}

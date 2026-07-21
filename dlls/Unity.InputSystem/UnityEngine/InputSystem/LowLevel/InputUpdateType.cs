@@ -1,6 +1,15 @@
-namespace UnityEngine.InputSystem.LowLevel
+using System;
+
+namespace UnityEngine.InputSystem.LowLevel;
+
+[Flags]
+public enum InputUpdateType
 {
-}
-namespace UnityEngine.InputSystem.LowLevel
-{
+	None = 0,
+	Dynamic = 1,
+	Fixed = 2,
+	BeforeRender = 4,
+	Editor = 8,
+	Manual = 0x10,
+	Default = 0xB
 }

@@ -1,12 +1,8 @@
-namespace Newtonsoft.Json
+namespace Newtonsoft.Json;
+
+public enum StringEscapeHandling
 {
-	public enum StringEscapeHandling
-	{
-		Default,
-		EscapeNonAscii,
-		EscapeHtml
-	}
-}
-namespace Newtonsoft.Json.Converters
-{
+	Default,
+	EscapeNonAscii,
+	EscapeHtml
 }

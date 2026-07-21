@@ -1,18 +1,14 @@
 using System;
 
-namespace Fusion
-{
-	[AttributeUsage(AttributeTargets.Struct, Inherited = false, AllowMultiple = false)]
-	public sealed class NetworkInputWeavedAttribute : Attribute
-	{
-		public int WordCount { get; }
+namespace Fusion;
 
-		public NetworkInputWeavedAttribute(int wordCount)
-		{
-			WordCount = wordCount;
-		}
-	}
-}
-namespace Fusion
+[AttributeUsage(AttributeTargets.Struct, Inherited = false, AllowMultiple = false)]
+public sealed class NetworkInputWeavedAttribute : Attribute
 {
+	public int WordCount { get; }
+
+	public NetworkInputWeavedAttribute(int wordCount)
+	{
+		WordCount = wordCount;
+	}
 }

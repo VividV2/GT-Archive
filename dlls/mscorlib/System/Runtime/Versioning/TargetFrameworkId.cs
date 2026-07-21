@@ -1,20 +1,16 @@
 using System.Runtime.CompilerServices;
 
-namespace System.Runtime.Versioning
+namespace System.Runtime.Versioning;
+
+[FriendAccessAllowed]
+internal enum TargetFrameworkId
 {
-	[FriendAccessAllowed]
-	internal enum TargetFrameworkId
-	{
-		NotYetChecked,
-		Unrecognized,
-		Unspecified,
-		NetFramework,
-		Portable,
-		NetCore,
-		Silverlight,
-		Phone
-	}
-}
-namespace System.Security.AccessControl
-{
+	NotYetChecked,
+	Unrecognized,
+	Unspecified,
+	NetFramework,
+	Portable,
+	NetCore,
+	Silverlight,
+	Phone
 }

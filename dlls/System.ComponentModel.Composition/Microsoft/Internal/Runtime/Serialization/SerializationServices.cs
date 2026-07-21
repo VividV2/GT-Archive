@@ -1,2 +1,12 @@
-// Could not decompile Microsoft.Internal.Runtime.Serialization.SerializationServices
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.Serialization;
+
+namespace Microsoft.Internal.Runtime.Serialization;
+
+internal static class SerializationServices
+{
+	public static T GetValue<T>(this SerializationInfo info, string name)
+	{
+		Assumes.NotNull(info, name);
+		return (T)info.GetValue(name, typeof(T));
+	}
+}

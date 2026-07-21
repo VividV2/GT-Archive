@@ -1,162 +1,219 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine.Bindings;
+
 namespace UnityEngine.TextCore.Text;
 
-internal enum MarkupTag
+[VisibleToOtherModules(new string[] { "UnityEngine.IMGUIModule", "UnityEngine.UIElementsModule" })]
+internal class TextGenerationSettings : IEquatable<TextGenerationSettings>
 {
-	BOLD = 66,
-	SLASH_BOLD = 1613,
-	ITALIC = 73,
-	SLASH_ITALIC = 1606,
-	UNDERLINE = 85,
-	SLASH_UNDERLINE = 1626,
-	STRIKETHROUGH = 83,
-	SLASH_STRIKETHROUGH = 1628,
-	MARK = 2699125,
-	SLASH_MARK = 57644506,
-	SUBSCRIPT = 92132,
-	SLASH_SUBSCRIPT = 1770219,
-	SUPERSCRIPT = 92150,
-	SLASH_SUPERSCRIPT = 1770233,
-	COLOR = 81999901,
-	SLASH_COLOR = 1909026194,
-	ALPHA = 75165780,
-	A = 65,
-	SLASH_A = 1614,
-	SIZE = 3061285,
-	SLASH_SIZE = 58429962,
-	SPRITE = -991527447,
-	NO_BREAK = 2856657,
-	SLASH_NO_BREAK = 57477502,
-	STYLE = 100252951,
-	SLASH_STYLE = 1927738392,
-	FONT = 2586451,
-	SLASH_FONT = 57747708,
-	SLASH_MATERIAL = -1100708252,
-	LINK = 2656128,
-	SLASH_LINK = 57686191,
-	FONT_WEIGHT = -1889896162,
-	SLASH_FONT_WEIGHT = -757976431,
-	NO_PARSE = -408011596,
-	SLASH_NO_PARSE = -294095813,
-	POSITION = 85420,
-	SLASH_POSITION = 1777699,
-	VERTICAL_OFFSET = 1952379995,
-	SLASH_VERTICAL_OFFSET = -11107948,
-	SPACE = 100083556,
-	SLASH_SPACE = 1927873067,
-	PAGE = 2808691,
-	SLASH_PAGE = 58683868,
-	ALIGN = 75138797,
-	SLASH_ALIGN = 1916026786,
-	WIDTH = 105793766,
-	SLASH_WIDTH = 1923459625,
-	GRADIENT = -1999759898,
-	SLASH_GRADIENT = -1854491959,
-	CHARACTER_SPACE = -1584382009,
-	SLASH_CHARACTER_SPACE = -1394426712,
-	MONOSPACE = -1340221943,
-	SLASH_MONOSPACE = -1638865562,
-	CLASS = 82115566,
-	INDENT = -1514123076,
-	SLASH_INDENT = -1496889389,
-	LINE_INDENT = -844305121,
-	SLASH_LINE_INDENT = 93886352,
-	MARGIN = -1355614050,
-	SLASH_MARGIN = -1649644303,
-	MARGIN_LEFT = -272933656,
-	MARGIN_RIGHT = -447416589,
-	LINE_HEIGHT = -799081892,
-	SLASH_LINE_HEIGHT = 200452819,
-	ACTION = -1827519330,
-	SLASH_ACTION = -1187217679,
-	SCALE = 100553336,
-	SLASH_SCALE = 1928413879,
-	ROTATE = -1000007783,
-	SLASH_ROTATE = -764695562,
-	TABLE = 226476955,
-	SLASH_TABLE = -979118220,
-	TH = 5862489,
-	SLASH_TH = 193346070,
-	TR = 5862467,
-	SLASH_TR = 193346060,
-	TD = 5862485,
-	SLASH_TD = 193346074,
-	LOWERCASE = -1506899689,
-	SLASH_LOWERCASE = -1451284584,
-	ALLCAPS = 218273952,
-	SLASH_ALLCAPS = -797437649,
-	UPPERCASE = -305409418,
-	SLASH_UPPERCASE = -582368199,
-	SMALLCAPS = -766062114,
-	SLASH_SMALLCAPS = 199921873,
-	LIGA = 2655971,
-	SLASH_LIGA = 57686604,
-	FRAC = 2598518,
-	SLASH_FRAC = 57774681,
-	NAME = 2875623,
-	INDEX = 84268030,
-	TINT = 2960519,
-	ANIM = 2283339,
-	MATERIAL = 825491659,
-	HREF = 2535353,
-	ANGLE = 75347905,
-	PADDING = -2144568463,
-	FAMILYNAME = 704251153,
-	STYLENAME = -1207081936,
-	DUOSPACE = 582810522,
-	RED = 91635,
-	GREEN = 87065851,
-	BLUE = 2457214,
-	YELLOW = -882444668,
-	ORANGE = -1108587920,
-	BLACK = 81074727,
-	WHITE = 105680263,
-	PURPLE = -1250222130,
-	GREY = 2638345,
-	LIGHTBLUE = 341063360,
-	TEAL = 2947772,
-	CYAN = 2504597,
-	DARKBLUE = -1960309918,
-	FUCHSIA = -1002715645,
-	SILVER = -960329321,
-	BROWN = 81017702,
-	MAROON = -1355621936,
-	OLIVE = 95492953,
-	NAVY = 2876352,
-	AQUA = 2284356,
-	MAGENTA = -1812576107,
-	TRANSPARENT = -1014785338,
-	LIME = 2656045,
-	BR = 2256,
-	CR = 2289,
-	ZWSP = 3288238,
-	ZWJ = 99623,
-	NBSP = 2869039,
-	SHY = 92674,
-	LEFT = 2660507,
-	RIGHT = 99937376,
-	CENTER = -1591113269,
-	JUSTIFIED = 817091359,
-	FLUSH = 85552164,
-	NONE = 2857034,
-	PLUS = 43,
-	MINUS = 45,
-	PX = 2568,
-	PLUS_PX = 49507,
-	MINUS_PX = 47461,
-	EM = 2216,
-	PLUS_EM = 49091,
-	MINUS_EM = 46789,
-	PCT = 85031,
-	PLUS_PCT = 1634348,
-	MINUS_PCT = 1567082,
-	PERCENTAGE = 37,
-	PLUS_PERCENTAGE = 1454,
-	MINUS_PERCENTAGE = 1512,
-	TRUE = 2932022,
-	FALSE = 85422813,
-	INVALID = 1585415185,
-	NOTDEF = 612146780,
-	NORMAL = -1183493901,
-	DEFAULT = -620974005,
-	REGULAR = 1291372090
+	[VisibleToOtherModules(new string[] { "UnityEngine.IMGUIModule", "UnityEngine.UIElementsModule" })]
+	internal static Func<bool> IsEditorTextRenderingModeBitmap;
+
+	[VisibleToOtherModules(new string[] { "UnityEngine.IMGUIModule", "UnityEngine.UIElementsModule" })]
+	internal static Func<bool> IsEditorTextRenderingModeRaster;
+
+	private RenderedText m_RenderedText;
+
+	private string m_CachedRenderedText;
+
+	public Rect screenRect;
+
+	public FontAsset fontAsset;
+
+	public FontStyles fontStyle = FontStyles.Normal;
+
+	public TextSettings textSettings;
+
+	public TextAlignment textAlignment = TextAlignment.TopLeft;
+
+	public TextOverflowMode overflowMode = TextOverflowMode.Overflow;
+
+	public const float wordWrappingRatio = 0.4f;
+
+	public Color color = Color.white;
+
+	public bool shouldConvertToLinearSpace = true;
+
+	public int fontSize = 18;
+
+	public const bool autoSize = false;
+
+	public const float fontSizeMin = 0f;
+
+	public const float fontSizeMax = 0f;
+
+	internal static readonly List<OTL_FeatureTag> fontFeatures = new List<OTL_FeatureTag> { OTL_FeatureTag.kern };
+
+	public bool emojiFallbackSupport = true;
+
+	public bool richText;
+
+	public bool isRightToLeft;
+
+	public float extraPadding = 6f;
+
+	public bool parseControlCharacters = true;
+
+	public bool isPlaceholder = false;
+
+	public const bool tagNoParsing = false;
+
+	public float characterSpacing;
+
+	public float wordSpacing;
+
+	public const float lineSpacing = 0f;
+
+	public float paragraphSpacing;
+
+	public const float lineSpacingMax = 0f;
+
+	public TextWrappingMode textWrappingMode = TextWrappingMode.Normal;
+
+	public const int maxVisibleCharacters = 99999;
+
+	public const int maxVisibleWords = 99999;
+
+	public const int maxVisibleLines = 99999;
+
+	public const int firstVisibleCharacter = 0;
+
+	public const bool useMaxVisibleDescender = false;
+
+	public TextFontWeight fontWeight = TextFontWeight.Regular;
+
+	public bool isIMGUI;
+
+	public const float charWidthMaxAdj = 0f;
+
+	public float pixelsPerPoint = 1f;
+
+	public RenderedText renderedText
+	{
+		get
+		{
+			return m_RenderedText;
+		}
+		set
+		{
+			m_RenderedText = value;
+			m_CachedRenderedText = null;
+		}
+	}
+
+	public string text
+	{
+		get
+		{
+			return m_CachedRenderedText ?? (m_CachedRenderedText = renderedText.CreateString());
+		}
+		set
+		{
+			renderedText = new RenderedText(value);
+		}
+	}
+
+	public TextGenerationSettings()
+	{
+	}
+
+	internal TextGenerationSettings(TextGenerationSettings tgs)
+	{
+		m_RenderedText = tgs.m_RenderedText;
+		m_CachedRenderedText = tgs.m_CachedRenderedText;
+		screenRect = tgs.screenRect;
+		fontAsset = tgs.fontAsset;
+		fontStyle = tgs.fontStyle;
+		textSettings = tgs.textSettings;
+		textAlignment = tgs.textAlignment;
+		overflowMode = tgs.overflowMode;
+		shouldConvertToLinearSpace = tgs.shouldConvertToLinearSpace;
+		fontSize = tgs.fontSize;
+		emojiFallbackSupport = tgs.emojiFallbackSupport;
+		richText = tgs.richText;
+		isRightToLeft = tgs.isRightToLeft;
+		extraPadding = tgs.extraPadding;
+		parseControlCharacters = tgs.parseControlCharacters;
+		isPlaceholder = tgs.isPlaceholder;
+		characterSpacing = tgs.characterSpacing;
+		wordSpacing = tgs.wordSpacing;
+		paragraphSpacing = tgs.paragraphSpacing;
+		textWrappingMode = tgs.textWrappingMode;
+		fontWeight = tgs.fontWeight;
+		isIMGUI = tgs.isIMGUI;
+	}
+
+	public bool Equals(TextGenerationSettings other)
+	{
+		if ((object)other == null)
+		{
+			return false;
+		}
+		if ((object)this == other)
+		{
+			return true;
+		}
+		return m_RenderedText.Equals(other.m_RenderedText) && screenRect.Equals(other.screenRect) && object.Equals(fontAsset, other.fontAsset) && fontStyle == other.fontStyle && object.Equals(textSettings, other.textSettings) && textAlignment == other.textAlignment && overflowMode == other.overflowMode && color.Equals(other.color) && fontSize.Equals(other.fontSize) && shouldConvertToLinearSpace == other.shouldConvertToLinearSpace && emojiFallbackSupport == other.emojiFallbackSupport && richText == other.richText && isRightToLeft == other.isRightToLeft && extraPadding == other.extraPadding && parseControlCharacters == other.parseControlCharacters && isPlaceholder == other.isPlaceholder && characterSpacing.Equals(other.characterSpacing) && wordSpacing.Equals(other.wordSpacing) && paragraphSpacing.Equals(other.paragraphSpacing) && textWrappingMode == other.textWrappingMode && fontWeight == other.fontWeight && isIMGUI == other.isIMGUI;
+	}
+
+	public override bool Equals(object obj)
+	{
+		if (obj == null)
+		{
+			return false;
+		}
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj.GetType() != GetType())
+		{
+			return false;
+		}
+		return Equals((TextGenerationSettings)obj);
+	}
+
+	public override int GetHashCode()
+	{
+		HashCode hashCode = default(HashCode);
+		hashCode.Add(m_RenderedText);
+		hashCode.Add(screenRect);
+		hashCode.Add(fontAsset);
+		hashCode.Add((int)fontStyle);
+		hashCode.Add(textSettings);
+		hashCode.Add((int)textAlignment);
+		hashCode.Add((int)overflowMode);
+		hashCode.Add(color);
+		hashCode.Add(shouldConvertToLinearSpace);
+		hashCode.Add(fontSize);
+		hashCode.Add(emojiFallbackSupport);
+		hashCode.Add(richText);
+		hashCode.Add(isRightToLeft);
+		hashCode.Add(extraPadding);
+		hashCode.Add(parseControlCharacters);
+		hashCode.Add(isPlaceholder);
+		hashCode.Add(characterSpacing);
+		hashCode.Add(wordSpacing);
+		hashCode.Add(paragraphSpacing);
+		hashCode.Add((int)textWrappingMode);
+		hashCode.Add((int)fontWeight);
+		hashCode.Add(isIMGUI);
+		return hashCode.ToHashCode();
+	}
+
+	public static bool operator ==(TextGenerationSettings left, TextGenerationSettings right)
+	{
+		return object.Equals(left, right);
+	}
+
+	public static bool operator !=(TextGenerationSettings left, TextGenerationSettings right)
+	{
+		return !object.Equals(left, right);
+	}
+
+	public override string ToString()
+	{
+		return string.Format("{0}: {1}\n {2}: {3}\n {4}: {5}\n ", "text", text, "screenRect", screenRect, "fontAsset", fontAsset) + string.Format("{0}: {1}\n {2}: {3}\n {4}: {5}\n {6}: {7}\n {8}: {9}\n ", "fontStyle", fontStyle, "textSettings", textSettings, "textAlignment", textAlignment, "overflowMode", overflowMode, "textWrappingMode", textWrappingMode) + string.Format("{0}: {1}\n {2}: {3}\n {4}: {5}\n {6}: {7}\n {8}: {9}\n ", "color", color, "fontSize", fontSize, "richText", richText, "isRightToLeft", isRightToLeft, "extraPadding", extraPadding) + string.Format("{0}: {1}\n {2}: {3}\n {4}: {5}\n {6}: {7}\n ", "parseControlCharacters", parseControlCharacters, "characterSpacing", characterSpacing, "wordSpacing", wordSpacing, "paragraphSpacing", paragraphSpacing) + string.Format("{0}: {1}\n {2}: {3}\n {4}: {5}\n {6}: {7}", "textWrappingMode", textWrappingMode, "fontWeight", fontWeight, "shouldConvertToLinearSpace", shouldConvertToLinearSpace, "isPlaceholder", isPlaceholder);
+	}
 }

@@ -1,2 +1,24 @@
-// Could not decompile Unity.Collections.LowLevel.Unsafe.UnsafeParallelHashMapBucketData
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.Collections.LowLevel.Unsafe;
+
+[GenerateTestsForBurstCompatibility]
+public struct UnsafeParallelHashMapBucketData
+{
+	public unsafe readonly byte* values;
+
+	public unsafe readonly byte* keys;
+
+	public unsafe readonly byte* next;
+
+	public unsafe readonly byte* buckets;
+
+	public readonly int bucketCapacityMask;
+
+	internal unsafe UnsafeParallelHashMapBucketData(byte* v, byte* k, byte* n, byte* b, int bcm)
+	{
+		values = v;
+		keys = k;
+		next = n;
+		buckets = b;
+		bucketCapacityMask = bcm;
+	}
+}

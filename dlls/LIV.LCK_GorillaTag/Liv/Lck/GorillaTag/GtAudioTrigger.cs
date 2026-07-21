@@ -1,2 +1,19 @@
-// Could not decompile Liv.Lck.GorillaTag.GtAudioTrigger
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Liv.Lck.GorillaTag;
+
+public class GtAudioTrigger : MonoBehaviour
+{
+	[SerializeField]
+	private LckDiscreetAudioController _audioController;
+
+	public void PlayTapStartedSound()
+	{
+		_audioController.PlayDiscreetAudioClip(LckDiscreetAudioController.AudioClip.ClickDown);
+	}
+
+	public void PlayTapEndedSound()
+	{
+		_audioController.PlayDiscreetAudioClip(LckDiscreetAudioController.AudioClip.ClickUp);
+	}
+}

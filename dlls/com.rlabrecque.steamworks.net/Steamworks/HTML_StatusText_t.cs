@@ -1,30 +1,14 @@
 using System.Runtime.InteropServices;
 
-namespace Steamworks
+namespace Steamworks;
+
+[StructLayout(LayoutKind.Sequential, Pack = 8)]
+[CallbackIdentity(4523)]
+public struct HTML_StatusText_t
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(3415)]
-	public struct RemoveAppDependencyResult_t
-	{
-		public const int k_iCallback = 3415;
+	public const int k_iCallback = 4523;
 
-		public EResult m_eResult;
+	public HHTMLBrowser unBrowserHandle;
 
-		public PublishedFileId_t m_nPublishedFileId;
-
-		public AppId_t m_nAppID;
-	}
-}
-namespace Steamworks
-{
-	[StructLayout(LayoutKind.Sequential, Pack = 8)]
-	[CallbackIdentity(4523)]
-	public struct HTML_StatusText_t
-	{
-		public const int k_iCallback = 4523;
-
-		public HHTMLBrowser unBrowserHandle;
-
-		public string pchMsg;
-	}
+	public string pchMsg;
 }

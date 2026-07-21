@@ -1,2 +1,18 @@
-// Could not decompile System.Runtime.Serialization.Formatters.Binary.BinaryUtil
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics;
+
+namespace System.Runtime.Serialization.Formatters.Binary;
+
+internal static class BinaryUtil
+{
+	[Conditional("_LOGGING")]
+	public static void NVTraceI(string name, string value)
+	{
+		BCLDebug.CheckEnabled("BINARY");
+	}
+
+	[Conditional("_LOGGING")]
+	public static void NVTraceI(string name, object value)
+	{
+		BCLDebug.CheckEnabled("BINARY");
+	}
+}

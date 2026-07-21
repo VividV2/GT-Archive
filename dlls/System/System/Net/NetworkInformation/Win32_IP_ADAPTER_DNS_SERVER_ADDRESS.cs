@@ -8,6 +8,3 @@ internal struct Win32_IP_ADAPTER_DNS_SERVER_ADDRESS
 
 	public Win32_SOCKET_ADDRESS Address;
 }
-namespace System.Net.Mail
-{
-}

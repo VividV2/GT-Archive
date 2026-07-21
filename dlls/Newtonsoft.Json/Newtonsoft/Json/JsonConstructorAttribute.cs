@@ -1,2 +1,8 @@
-// Could not decompile Newtonsoft.Json.JsonConstructorAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Newtonsoft.Json;
+
+[AttributeUsage(AttributeTargets.Constructor, AllowMultiple = false)]
+public sealed class JsonConstructorAttribute : Attribute
+{
+}

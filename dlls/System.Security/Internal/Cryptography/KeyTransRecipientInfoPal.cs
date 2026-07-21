@@ -1,12 +1,8 @@
-namespace Internal.Cryptography
+namespace Internal.Cryptography;
+
+internal abstract class KeyTransRecipientInfoPal : RecipientInfoPal
 {
-	internal abstract class KeyTransRecipientInfoPal : RecipientInfoPal
+	internal KeyTransRecipientInfoPal()
 	{
-		internal KeyTransRecipientInfoPal()
-		{
-		}
 	}
-}
-namespace Internal.Cryptography
-{
 }

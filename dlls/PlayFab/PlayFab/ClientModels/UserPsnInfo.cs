@@ -1,2 +1,12 @@
-// Could not decompile PlayFab.ClientModels.UserPsnInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class UserPsnInfo : PlayFabBaseModel
+{
+	public string PsnAccountId;
+
+	public string PsnOnlineId;
+}

@@ -1,2 +1,9 @@
-// Could not decompile Pathfinding.GraphEditorBase
-// This type uses unsupported IL or has too many generic parameters.
+using Pathfinding.Serialization;
+
+namespace Pathfinding;
+
+[JsonOptIn]
+public class GraphEditorBase
+{
+	public NavGraph target;
+}

@@ -1,2 +1,6 @@
-// Could not decompile HandTapBehaviour
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public abstract class HandTapBehaviour : MonoBehaviour
+{
+	internal abstract void OnTap(HandEffectContext handContext);
+}

@@ -1,2 +1,7 @@
-// Could not decompile PersistentAssetReference
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class PersistentAssetReference : MonoBehaviour
+{
+	[SerializeField]
+	private Object[] m_assets;
+}

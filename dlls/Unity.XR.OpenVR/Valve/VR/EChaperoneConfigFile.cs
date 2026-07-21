@@ -1,11 +1,7 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum EChaperoneConfigFile
 {
-	public enum EChaperoneConfigFile
-	{
-		Live = 1,
-		Temp
-	}
-}
-namespace Valve.VR
-{
+	Live = 1,
+	Temp
 }

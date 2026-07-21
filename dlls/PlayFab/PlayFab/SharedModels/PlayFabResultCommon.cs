@@ -1,2 +1,8 @@
-// Could not decompile PlayFab.SharedModels.PlayFabResultCommon
-// This type uses unsupported IL or has too many generic parameters.
+namespace PlayFab.SharedModels;
+
+public class PlayFabResultCommon : PlayFabBaseModel
+{
+	public PlayFabRequestCommon Request;
+
+	public object CustomData;
+}

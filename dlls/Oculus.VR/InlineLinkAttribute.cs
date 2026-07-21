@@ -1,2 +1,11 @@
-// Could not decompile InlineLinkAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class InlineLinkAttribute : PropertyAttribute
+{
+	public string DocumentationURL;
+
+	public InlineLinkAttribute(string documentationURL)
+	{
+		DocumentationURL = documentationURL;
+	}
+}

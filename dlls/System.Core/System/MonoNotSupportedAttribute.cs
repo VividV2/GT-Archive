@@ -1,2 +1,10 @@
-// Could not decompile System.MonoNotSupportedAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System;
+
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+internal class MonoNotSupportedAttribute : MonoTODOAttribute
+{
+	public MonoNotSupportedAttribute(string comment)
+		: base(comment)
+	{
+	}
+}

@@ -1,2 +1,16 @@
-// Could not decompile Oculus.Platform.Models.LaunchBlockFlowResult
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Oculus.Platform.Models;
+
+public class LaunchBlockFlowResult
+{
+	public readonly bool DidBlock;
+
+	public readonly bool DidCancel;
+
+	public LaunchBlockFlowResult(IntPtr o)
+	{
+		DidBlock = CAPI.ovr_LaunchBlockFlowResult_GetDidBlock(o);
+		DidCancel = CAPI.ovr_LaunchBlockFlowResult_GetDidCancel(o);
+	}
+}

@@ -1,22 +1,12 @@
 using System.Xml.Xsl.Qil;
 
-namespace System.Xml.Xsl.XPath
-{
-	internal interface IFocus
-	{
-		QilNode GetCurrent();
+namespace System.Xml.Xsl.XPath;
 
-		QilNode GetPosition();
+internal interface IFocus
+{
+	QilNode GetCurrent();
 
-		QilNode GetLast();
-	}
-}
-namespace System.Xml.Schema
-{
-}
-namespace System.Xml.Serialization
-{
-}
-namespace System.Xml.Serialization
-{
+	QilNode GetPosition();
+
+	QilNode GetLast();
 }

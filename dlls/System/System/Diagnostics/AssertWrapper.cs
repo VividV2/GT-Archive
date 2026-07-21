@@ -1,2 +1,9 @@
-// Could not decompile System.Diagnostics.AssertWrapper
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Diagnostics;
+
+internal class AssertWrapper
+{
+	public static void ShowAssert(string stackTrace, StackFrame frame, string message, string detailMessage)
+	{
+		new DefaultTraceListener().Fail(message, detailMessage);
+	}
+}

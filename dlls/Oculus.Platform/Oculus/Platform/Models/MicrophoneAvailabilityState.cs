@@ -1,2 +1,13 @@
-// Could not decompile Oculus.Platform.Models.MicrophoneAvailabilityState
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Oculus.Platform.Models;
+
+public class MicrophoneAvailabilityState
+{
+	public readonly bool MicrophoneAvailable;
+
+	public MicrophoneAvailabilityState(IntPtr o)
+	{
+		MicrophoneAvailable = CAPI.ovr_MicrophoneAvailabilityState_GetMicrophoneAvailable(o);
+	}
+}

@@ -1,2 +1,13 @@
-// Could not decompile Modio.Errors.SystemError
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.Errors;
+
+public class SystemError : Error
+{
+	public new static readonly SystemError None = new SystemError(SystemErrorCode.NONE);
+
+	public new SystemErrorCode Code => (SystemErrorCode)base.Code;
+
+	public SystemError(SystemErrorCode code)
+		: base((ErrorCode)code)
+	{
+	}
+}

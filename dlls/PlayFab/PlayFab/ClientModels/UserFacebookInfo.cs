@@ -1,16 +1,12 @@
 using System;
 using PlayFab.SharedModels;
 
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class UserFacebookInfo : PlayFabBaseModel
-	{
-		public string FacebookId;
+namespace PlayFab.ClientModels;
 
-		public string FullName;
-	}
-}
-namespace PlayFab.ClientModels
+[Serializable]
+public class UserFacebookInfo : PlayFabBaseModel
 {
+	public string FacebookId;
+
+	public string FullName;
 }

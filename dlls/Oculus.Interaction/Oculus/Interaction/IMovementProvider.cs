@@ -1,10 +1,6 @@
-namespace Oculus.Interaction
+namespace Oculus.Interaction;
+
+public interface IMovementProvider
 {
-	public interface IMovementProvider
-	{
-		IMovement CreateMovement();
-	}
-}
-namespace Oculus.Interaction
-{
+	IMovement CreateMovement();
 }

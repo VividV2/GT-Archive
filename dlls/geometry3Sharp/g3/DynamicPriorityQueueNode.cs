@@ -1,2 +1,8 @@
-// Could not decompile g3.DynamicPriorityQueueNode
-// This type uses unsupported IL or has too many generic parameters.
+namespace g3;
+
+public abstract class DynamicPriorityQueueNode
+{
+	public float priority { get; protected internal set; }
+
+	internal int index { get; set; }
+}

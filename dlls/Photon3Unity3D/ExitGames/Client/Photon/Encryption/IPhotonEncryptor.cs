@@ -12,6 +12,3 @@ public interface IPhotonEncryptor
 
 	int CalculateFragmentLength();
 }
-namespace ExitGames.Client.Photon
-{
-}

@@ -1,2 +1,8 @@
-// Could not decompile Modio.FileIO.ModioDiskTestSettings
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.FileIO;
+
+public class ModioDiskTestSettings : IModioServiceSettings
+{
+	public bool OverrideDiskSpaceRemaining;
+
+	public int BytesRemaining;
+}

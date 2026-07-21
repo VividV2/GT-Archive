@@ -1,2 +1,14 @@
-// Could not decompile Fusion.Sockets.Stun.StunErrorAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion.Sockets.Stun;
+
+internal class StunErrorAttribute
+{
+	public int Code { get; set; } = 0;
+
+	public string ReasonText { get; set; } = "";
+
+	public StunErrorAttribute(int code, string reasonText)
+	{
+		Code = code;
+		ReasonText = reasonText;
+	}
+}

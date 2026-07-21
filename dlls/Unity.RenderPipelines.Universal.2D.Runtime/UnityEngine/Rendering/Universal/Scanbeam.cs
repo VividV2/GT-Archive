@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.Rendering.Universal.Scanbeam
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+internal class Scanbeam
+{
+	internal long Y;
+
+	internal Scanbeam Next;
+}

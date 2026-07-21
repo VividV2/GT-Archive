@@ -1,2 +1,17 @@
-// Could not decompile g3.MeshBoundaryLoopsException
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace g3;
+
+public class MeshBoundaryLoopsException : Exception
+{
+	public bool UnclosedLoop;
+
+	public bool BowtieFailure;
+
+	public bool RepeatedEdge;
+
+	public MeshBoundaryLoopsException(string message)
+		: base(message)
+	{
+	}
+}

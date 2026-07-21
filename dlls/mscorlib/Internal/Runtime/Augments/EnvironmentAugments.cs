@@ -1,2 +1,6 @@
-// Could not decompile Internal.Runtime.Augments.EnvironmentAugments
-// This type uses unsupported IL or has too many generic parameters.
+namespace Internal.Runtime.Augments;
+
+internal static class EnvironmentAugments
+{
+	public static readonly string StackTrace = "";
+}

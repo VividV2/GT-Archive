@@ -1,2 +1,10 @@
-// Could not decompile Liv.Lck.Encoding.EncoderSessionData
-// This type uses unsupported IL or has too many generic parameters.
+namespace Liv.Lck.Encoding;
+
+internal struct EncoderSessionData
+{
+	public ulong EncodedVideoFrames { get; set; }
+
+	public ulong EncodedAudioSamplesPerChannel { get; set; }
+
+	public float CaptureTimeSeconds { get; set; }
+}

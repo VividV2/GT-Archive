@@ -1,20 +1,8 @@
 namespace Valve.VR;
 
-public enum EDeviceActivityLevel
+public enum EVRMouseButton
 {
-	k_EDeviceActivityLevel_Unknown = -1,
-	k_EDeviceActivityLevel_Idle,
-	k_EDeviceActivityLevel_UserInteraction,
-	k_EDeviceActivityLevel_UserInteraction_Timeout,
-	k_EDeviceActivityLevel_Standby,
-	k_EDeviceActivityLevel_Idle_Timeout
-}
-namespace Valve.VR
-{
-	public enum EVRMouseButton
-	{
-		Left = 1,
-		Right = 2,
-		Middle = 4
-	}
+	Left = 1,
+	Right = 2,
+	Middle = 4
 }

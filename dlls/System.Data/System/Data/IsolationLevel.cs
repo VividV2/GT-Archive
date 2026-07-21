@@ -1,36 +1,20 @@
-namespace System.Data.OleDb
+namespace System.Data;
+
+/// <summary>Specifies the transaction locking behavior for the connection.</summary>
+public enum IsolationLevel
 {
-	[MonoTODO("OleDb is not implemented.")]
-	public static class OleDbMetaDataCollectionNames
-	{
-		/// <summary>A constant for use with the GetSchema method that represents the Catalogs collection.</summary>
-		public static readonly string Catalogs;
-
-		/// <summary>A constant for use with the GetSchema method that represents the Collations collection.</summary>
-		public static readonly string Collations;
-
-		/// <summary>A constant for use with the GetSchema method that represents the Columns collection.</summary>
-		public static readonly string Columns;
-
-		/// <summary>A constant for use with the GetSchema method that represents the Indexes collection.</summary>
-		public static readonly string Indexes;
-
-		/// <summary>A constant for use with the GetSchema method that represents the ProcedureColumns collection.</summary>
-		public static readonly string ProcedureColumns;
-
-		/// <summary>A constant for use with the GetSchema method that represents the ProcedureParameters collection.</summary>
-		public static readonly string ProcedureParameters;
-
-		/// <summary>A constant for use with the GetSchema method that represents the Procedures collection.</summary>
-		public static readonly string Procedures;
-
-		/// <summary>A constant for use with the GetSchema method that represents the Tables collection.</summary>
-		public static readonly string Tables;
-
-		/// <summary>A constant for use with the GetSchema method that represents the Views collection.</summary>
-		public static readonly string Views;
-	}
-}
-namespace System.Data.SqlClient
-{
+	/// <summary>A different isolation level than the one specified is being used, but the level cannot be determined.</summary>
+	Unspecified = -1,
+	/// <summary>The pending changes from more highly isolated transactions cannot be overwritten.</summary>
+	Chaos = 16,
+	/// <summary>A dirty read is possible, meaning that no shared locks are issued and no exclusive locks are honored.</summary>
+	ReadUncommitted = 256,
+	/// <summary>Shared locks are held while the data is being read to avoid dirty reads, but the data can be changed before the end of the transaction, resulting in non-repeatable reads or phantom data.</summary>
+	ReadCommitted = 4096,
+	/// <summary>Locks are placed on all data that is used in a query, preventing other users from updating the data. Prevents non-repeatable reads but phantom rows are still possible.</summary>
+	RepeatableRead = 65536,
+	/// <summary>A range lock is placed on the <see cref="T:System.Data.DataSet" />, preventing other users from updating or inserting rows into the dataset until the transaction is complete.</summary>
+	Serializable = 1048576,
+	/// <summary>Reduces blocking by storing a version of data that one application can read while another is modifying the same data. Indicates that from one transaction you cannot see changes made in other transactions, even if you requery.</summary>
+	Snapshot = 16777216
 }

@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.Universal.DecalDrawScreenSpaceSystem
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+internal class DecalDrawScreenSpaceSystem : DecalDrawSystem
+{
+	public DecalDrawScreenSpaceSystem(DecalEntityManager entityManager)
+		: base("DecalDrawScreenSpaceSystem.Execute", entityManager)
+	{
+	}
+
+	protected override int GetPassIndex(DecalCachedChunk decalCachedChunk)
+	{
+		return decalCachedChunk.passIndexScreenSpace;
+	}
+}

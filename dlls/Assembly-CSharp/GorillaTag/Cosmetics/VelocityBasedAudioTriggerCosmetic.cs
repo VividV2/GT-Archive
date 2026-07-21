@@ -1,45 +1,68 @@
-public enum GRStoreItemType
+using GorillaLocomotion.Climbing;
+using UnityEngine;
+
+namespace GorillaTag.Cosmetics;
+
+public class VelocityBasedAudioTriggerCosmetic : MonoBehaviour
 {
-	Pod,
-	DropChassis
-}
-namespace GorillaTagScripts;
+	[SerializeField]
+	private GorillaVelocityTracker velocityTracker;
 
-public struct BuilderPieceData
-{
-	public int pieceId;
+	[SerializeField]
+	private AudioSource audioSource;
 
-	public int pieceIndex;
+	[SerializeField]
+	private AudioClip audioClip;
 
-	public int parentPieceIndex;
+	[SerializeField]
+	private SoundBankPlayer soundBank;
 
-	public int requestedParentPieceIndex;
+	[Tooltip(" Minimum velocity to trigger audio")]
+	[SerializeField]
+	private float minVelocityThreshold = 0.5f;
 
-	public int heldByActorNumber;
+	[SerializeField]
+	private float maxVelocity = 2f;
 
-	public int preventSnapUntilMoved;
+	[SerializeField]
+	private float minOutputVolume;
 
-	public bool isBuiltIntoTable;
+	[SerializeField]
+	private float maxOutputVolume = 1f;
 
-	public BuilderPiece.State state;
-
-	public int privatePlotIndex;
-
-	public bool isArmPiece;
-
-	public BuilderPieceData(BuilderPiece piece)
+	private void Awake()
 	{
-		pieceId = piece.pieceId;
-		pieceIndex = piece.pieceDataIndex;
-		BuilderPiece parentPiece = piece.parentPiece;
-		parentPieceIndex = ((parentPiece == null) ? (-1) : parentPiece.pieceDataIndex);
-		BuilderPiece requestedParentPiece = piece.requestedParentPiece;
-		requestedParentPieceIndex = ((requestedParentPiece == null) ? (-1) : requestedParentPiece.pieceDataIndex);
-		preventSnapUntilMoved = piece.preventSnapUntilMoved;
-		isBuiltIntoTable = piece.isBuiltIntoTable;
-		state = piece.state;
-		privatePlotIndex = piece.privatePlotIndex;
-		isArmPiece = piece.isArmShelf;
-		heldByActorNumber = piece.heldByPlayerActorNumber;
+		if (audioClip != null)
+		{
+			audioSource.clip = audioClip;
+		}
+		if (soundBank != null && audioSource != null)
+		{
+			soundBank.audioSource = audioSource;
+		}
+	}
+
+	private void Update()
+	{
+		Vector3 averageVelocity = velocityTracker.GetAverageVelocity(worldSpace: true);
+		if (averageVelocity.magnitude < minVelocityThreshold)
+		{
+			return;
+		}
+		float t = Mathf.InverseLerp(minVelocityThreshold, maxVelocity, averageVelocity.magnitude);
+		float num = Mathf.Lerp(minOutputVolume, maxOutputVolume, t);
+		audioSource.volume = num;
+		if (audioSource != null && !audioSource.isPlaying && audioClip != null)
+		{
+			audioSource.clip = audioClip;
+			if (audioSource.isActiveAndEnabled)
+			{
+				audioSource.GTPlay();
+			}
+		}
+		else if (soundBank != null && soundBank.soundBank != null && !soundBank.isPlaying)
+		{
+			soundBank.Play(num);
+		}
 	}
 }

@@ -1,2 +1,6 @@
-// Could not decompile g3.IdentityIndexMap
-// This type uses unsupported IL or has too many generic parameters.
+namespace g3;
+
+public class IdentityIndexMap : IIndexMap
+{
+	public int this[int index] => index;
+}

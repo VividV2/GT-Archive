@@ -1,18 +1,11 @@
-namespace UnityEngine.Rendering
-{
-	public enum ReflectionCubemapCompression
-	{
-		Uncompressed,
-		Compressed,
-		Auto
-	}
-}
-namespace UnityEngineInternal
-{
-	internal struct GraphicsDeviceDebugSettings
-	{
-		public float sleepAtStartOfGraphicsJobs;
+namespace UnityEngine.Playables;
 
-		public float sleepBeforeTextureUpload;
+public class Notification : INotification
+{
+	public PropertyName id { get; }
+
+	public Notification(string name)
+	{
+		id = new PropertyName(name);
 	}
 }

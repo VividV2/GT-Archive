@@ -1,2 +1,12 @@
-// Could not decompile HoverboardCantHover
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class HoverboardCantHover : MonoBehaviour
+{
+	private void Start()
+	{
+	}
+
+	private void Update()
+	{
+	}
+}

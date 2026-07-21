@@ -1,30 +1,9 @@
-namespace PlayFab.ClientModels
-{
-	public enum LoginIdentityProvider
-	{
-		Unknown,
-		PlayFab,
-		Custom,
-		GameCenter,
-		GooglePlay,
-		Steam,
-		XBoxLive,
-		PSN,
-		Kongregate,
-		Facebook,
-		IOSDevice,
-		AndroidDevice,
-		Twitch,
-		WindowsHello,
-		GameServer,
-		CustomServer,
-		NintendoSwitch,
-		FacebookInstantGames,
-		OpenIdConnect,
-		Apple,
-		NintendoSwitchAccount
-	}
-}
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class LinkAndroidDeviceIDResult : PlayFabResultCommon
 {
 }

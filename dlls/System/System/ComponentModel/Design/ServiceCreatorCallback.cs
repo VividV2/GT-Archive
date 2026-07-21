@@ -1,38 +1,7 @@
-using System.Collections;
+namespace System.ComponentModel.Design;
 
-namespace System.ComponentModel;
-
-public interface IBindingList : IList, ICollection, IEnumerable
-{
-	bool AllowNew { get; }
-
-	bool AllowEdit { get; }
-
-	bool AllowRemove { get; }
-
-	bool SupportsChangeNotification { get; }
-
-	bool SupportsSearching { get; }
-
-	bool SupportsSorting { get; }
-
-	bool IsSorted { get; }
-
-	PropertyDescriptor SortProperty { get; }
-
-	ListSortDirection SortDirection { get; }
-
-	event ListChangedEventHandler ListChanged;
-
-	object AddNew();
-
-	void AddIndex(PropertyDescriptor property);
-
-	void ApplySort(PropertyDescriptor property, ListSortDirection direction);
-
-	int Find(PropertyDescriptor property, object key);
-
-	void RemoveIndex(PropertyDescriptor property);
-
-	void RemoveSort();
-}
+/// <summary>Provides a callback mechanism that can create an instance of a service on demand.</summary>
+/// <param name="container">The service container that requested the creation of the service.</param>
+/// <param name="serviceType">The type of service to create.</param>
+/// <returns>The service specified by <paramref name="serviceType" />, or <see langword="null" /> if the service could not be created.</returns>
+public delegate object ServiceCreatorCallback(IServiceContainer container, Type serviceType);

@@ -1,2 +1,15 @@
-// Could not decompile Unity.Profiling.DebugScreenCapture
-// This type uses unsupported IL or has too many generic parameters.
+using Unity.Collections;
+using UnityEngine;
+
+namespace Unity.Profiling;
+
+public struct DebugScreenCapture
+{
+	public NativeArray<byte> RawImageDataReference { get; set; }
+
+	public TextureFormat ImageFormat { get; set; }
+
+	public int Width { get; set; }
+
+	public int Height { get; set; }
+}

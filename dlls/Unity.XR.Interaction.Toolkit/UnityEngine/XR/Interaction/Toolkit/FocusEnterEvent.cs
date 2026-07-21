@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.FocusEnterEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace UnityEngine.XR.Interaction.Toolkit;
+
+[Serializable]
+public sealed class FocusEnterEvent : UnityEvent<FocusEnterEventArgs>
+{
+}

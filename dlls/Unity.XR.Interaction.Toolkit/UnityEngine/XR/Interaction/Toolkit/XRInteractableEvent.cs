@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.XRInteractableEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+
+namespace UnityEngine.XR.Interaction.Toolkit;
+
+[Serializable]
+[Obsolete("XRInteractableEvent has been deprecated. Use events specific to each state change instead.", true)]
+public class XRInteractableEvent : UnityEvent<XRBaseInteractor>
+{
+}

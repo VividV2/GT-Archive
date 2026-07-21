@@ -1,2 +1,11 @@
-// Could not decompile GorillaTurningChoice
-// This type uses unsupported IL or has too many generic parameters.
+public class GorillaTurningChoice : GorillaTriggerBox
+{
+	public string choiceName;
+
+	public GorillaTurning parent;
+
+	public override void OnBoxTriggered()
+	{
+		base.OnBoxTriggered();
+	}
+}

@@ -1,2 +1,16 @@
-// Could not decompile System.Threading.Lock
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Threading;
+
+public class Lock
+{
+	private object _lock = new object();
+
+	public void Acquire()
+	{
+		Monitor.Enter(_lock);
+	}
+
+	public void Release()
+	{
+		Monitor.Exit(_lock);
+	}
+}

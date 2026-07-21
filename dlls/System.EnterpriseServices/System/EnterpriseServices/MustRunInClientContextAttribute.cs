@@ -1,59 +1,30 @@
-using System.Collections;
-using System.Collections;
+using System.Runtime.InteropServices;
 
-namespace System.EnterpriseServices
+namespace System.EnterpriseServices;
+
+/// <summary>Forces the attributed object to be created in the context of the creator, if possible. This class cannot be inherited.</summary>
+[AttributeUsage(AttributeTargets.Class)]
+[ComVisible(false)]
+public sealed class MustRunInClientContextAttribute : Attribute
 {
-	/// <summary>Corresponds to the Distributed Transaction Coordinator (DTC) <see langword="ITransaction" /> interface and is supported by objects obtained through <see cref="P:System.EnterpriseServices.ContextUtil.Transaction" />.</summary>
-	/// <summary>Corresponds to the Distributed Transaction Coordinator (DTC) <see langword="ITransaction" /> interface and is supported by objects obtained through <see cref="P:System.EnterpriseServices.ContextUtil.Transaction" />.</summary>
-	[System.Runtime.InteropServices.ComImport]
-	[System.Runtime.InteropServices.Guid("0FB15084-AF41-11CE-BD2B-204C4F4F5020")]
-	[System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)]
-	public interface ITransaction
+	private bool val;
+
+	/// <summary>Gets a value that indicates whether the attributed object is to be created in the context of the creator.</summary>
+	/// <returns>
+	///   <see langword="true" /> if the object is to be created in the context of the creator; otherwise, <see langword="false" />. The default is <see langword="true" />.</returns>
+	public bool Value => val;
+
+	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.MustRunInClientContextAttribute" /> class, requiring creation of the object in the context of the creator.</summary>
+	public MustRunInClientContextAttribute()
+		: this(val: true)
 	{
-		/// <summary>Aborts the transaction.</summary>
-		/// <param name="pboidReason">An optional <see cref="T:System.EnterpriseServices.BOID" /> that indicates why the transaction is being aborted. This parameter can be <see langword="null" />, indicating that no reason for the abort is provided.</param>
-		/// <param name="fRetaining">Must be <see langword="false" />.</param>
-		/// <param name="fAsync">When <paramref name="fAsync" /> is <see langword="true" />, an asynchronous abort is performed and the caller must use <see langword="ITransactionOutcomeEvents" /> to learn the outcome of the transaction.</param>
-		/// <summary>Aborts the transaction.</summary>
-		/// <param name="pboidReason">An optional <see cref="T:System.EnterpriseServices.BOID" /> that indicates why the transaction is being aborted. This parameter can be <see langword="null" />, indicating that no reason for the abort is provided.</param>
-		/// <param name="fRetaining">Must be <see langword="false" />.</param>
-		/// <param name="fAsync">When <paramref name="fAsync" /> is <see langword="true" />, an asynchronous abort is performed and the caller must use <see langword="ITransactionOutcomeEvents" /> to learn the outcome of the transaction.</param>
-		void Abort(ref BOID pboidReason, int fRetaining, int fAsync);
-
-		/// <summary>Commits the transaction.</summary>
-		/// <param name="fRetaining">Must be <see langword="false" />.</param>
-		/// <param name="grfTC">A value taken from the OLE DB enumeration <see langword="XACTTC" />.</param>
-		/// <param name="grfRM">Must be zero.</param>
-		/// <summary>Commits the transaction.</summary>
-		/// <param name="fRetaining">Must be <see langword="false" />.</param>
-		/// <param name="grfTC">A value taken from the OLE DB enumeration <see langword="XACTTC" />.</param>
-		/// <param name="grfRM">Must be zero.</param>
-		void Commit(int fRetaining, int grfTC, int grfRM);
-
-		/// <summary>Returns information about a transaction object.</summary>
-		/// <param name="pinfo">Pointer to the caller-allocated <see cref="T:System.EnterpriseServices.XACTTRANSINFO" /> structure that will receive information about the transaction. Must not be <see langword="null" />.</param>
-		/// <summary>Returns information about a transaction object.</summary>
-		/// <param name="pinfo">Pointer to the caller-allocated <see cref="T:System.EnterpriseServices.XACTTRANSINFO" /> structure that will receive information about the transaction. Must not be <see langword="null" />.</param>
-		void GetTransactionInfo(out XACTTRANSINFO pinfo);
 	}
-}
-namespace System.EnterpriseServices
-{
-}
-namespace System.EnterpriseServices
-{
-	internal interface ISecurityCallContext
+
+	/// <summary>Initializes a new instance of the <see cref="T:System.EnterpriseServices.MustRunInClientContextAttribute" /> class, optionally not creating the object in the context of the creator.</summary>
+	/// <param name="val">
+	///   <see langword="true" /> to create the object in the context of the creator; otherwise, <see langword="false" />.</param>
+	public MustRunInClientContextAttribute(bool val)
 	{
-		int Count { get; }
-
-		void GetEnumerator(ref IEnumerator enumerator);
-
-		object GetItem(string user);
-
-		bool IsCallerInRole(string role);
-
-		bool IsSecurityEnabled();
-
-		bool IsUserInRole(ref object user, string role);
+		this.val = val;
 	}
 }

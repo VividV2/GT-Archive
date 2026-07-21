@@ -1,2 +1,8 @@
-// Could not decompile Valve.Newtonsoft.Json.Linq.JsonPath.QueryExpression
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.Newtonsoft.Json.Linq.JsonPath;
+
+internal abstract class QueryExpression
+{
+	public QueryOperator Operator { get; set; }
+
+	public abstract bool IsMatch(JToken t);
+}

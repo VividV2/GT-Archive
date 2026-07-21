@@ -1,2 +1,17 @@
-// Could not decompile GameNoiseEvent
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public struct GameNoiseEvent
+{
+	public Vector3 position;
+
+	public double eventTime;
+
+	public float duration;
+
+	public float magnitude;
+
+	public bool IsValid()
+	{
+		return (float)(Time.timeAsDouble - eventTime) <= duration;
+	}
+}

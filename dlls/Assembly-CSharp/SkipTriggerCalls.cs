@@ -1,2 +1,16 @@
-// Could not decompile SkipTriggerCalls
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class SkipTriggerCalls : MonoBehaviour
+{
+	private void OnTriggerEnter(Collider other)
+	{
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+	}
+
+	private void OnTriggerStay(Collider other)
+	{
+	}
+}

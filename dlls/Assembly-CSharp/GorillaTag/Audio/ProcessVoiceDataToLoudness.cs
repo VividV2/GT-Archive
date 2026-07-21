@@ -1,2 +1,30 @@
-// Could not decompile GorillaTag.Audio.ProcessVoiceDataToLoudness
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using Photon.Voice;
+using UnityEngine;
+
+namespace GorillaTag.Audio;
+
+internal class ProcessVoiceDataToLoudness : IProcessor<float>, IDisposable
+{
+	private VoiceToLoudness _voiceToLoudness;
+
+	public ProcessVoiceDataToLoudness(VoiceToLoudness voiceToLoudness)
+	{
+		_voiceToLoudness = voiceToLoudness;
+	}
+
+	public float[] Process(float[] buf)
+	{
+		float num = 0f;
+		for (int i = 0; i < buf.Length; i++)
+		{
+			num += Mathf.Abs(buf[i]);
+		}
+		_voiceToLoudness.Loudness = num / (float)buf.Length;
+		return buf;
+	}
+
+	public void Dispose()
+	{
+	}
+}

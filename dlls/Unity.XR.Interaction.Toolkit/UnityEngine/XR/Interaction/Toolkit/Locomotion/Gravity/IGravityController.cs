@@ -1,26 +1,16 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals
+namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Gravity;
+
+public interface IGravityController
 {
-	public enum LineDynamicsMode
-	{
-		Traditional,
-		RetractOnHitLoss,
-		ExpandFromHitPoint
-	}
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Gravity
-{
-	public interface IGravityController
-	{
-		bool canProcess { get; }
+	bool canProcess { get; }
 
-		bool gravityPaused { get; }
+	bool gravityPaused { get; }
 
-		bool TryLockGravity(GravityOverride gravityOverride);
+	bool TryLockGravity(GravityOverride gravityOverride);
 
-		void RemoveGravityLock();
+	void RemoveGravityLock();
 
-		void OnGravityLockChanged(GravityOverride gravityOverride);
+	void OnGravityLockChanged(GravityOverride gravityOverride);
 
-		void OnGroundedChanged(bool isGrounded);
-	}
+	void OnGroundedChanged(bool isGrounded);
 }

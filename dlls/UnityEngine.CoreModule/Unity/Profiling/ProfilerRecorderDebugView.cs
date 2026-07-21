@@ -1,2 +1,13 @@
-// Could not decompile Unity.Profiling.ProfilerRecorderDebugView
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.Profiling;
+
+internal sealed class ProfilerRecorderDebugView
+{
+	private ProfilerRecorder m_Recorder;
+
+	public ProfilerRecorderSample[] Items => m_Recorder.ToArray();
+
+	public ProfilerRecorderDebugView(ProfilerRecorder r)
+	{
+		m_Recorder = r;
+	}
+}

@@ -2,25 +2,6 @@ using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace UnityEngine.Localization.Bridge;
-
-internal class DrivenPropertyManagerBridge
-{
-	public static void RegisterProperty(Object driver, Object target, string propertyPath)
-	{
-	}
-
-	public static void UnregisterProperty(Object driver, Object target, string propertyPath)
-	{
-	}
-
-	public static void UnregisterProperties(Object driver)
-	{
-	}
-}
-namespace UnityEngine.Localization.Bridge
-{
-}
 [CompilerGenerated]
 [EditorBrowsable(EditorBrowsableState.Never)]
 [GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]

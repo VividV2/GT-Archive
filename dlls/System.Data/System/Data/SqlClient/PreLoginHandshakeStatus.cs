@@ -5,6 +5,3 @@ internal enum PreLoginHandshakeStatus
 	Successful,
 	InstanceFailure
 }
-namespace System.Data.SqlClient
-{
-}

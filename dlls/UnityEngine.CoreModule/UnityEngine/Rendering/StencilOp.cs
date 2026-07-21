@@ -1,2 +1,16 @@
-// Could not decompile UnityEngine.Rendering.StencilOp
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Bindings;
+
+namespace UnityEngine.Rendering;
+
+[NativeHeader("Runtime/GfxDevice/GfxDeviceTypes.h")]
+public enum StencilOp
+{
+	Keep,
+	Zero,
+	Replace,
+	IncrementSaturate,
+	DecrementSaturate,
+	Invert,
+	IncrementWrap,
+	DecrementWrap
+}

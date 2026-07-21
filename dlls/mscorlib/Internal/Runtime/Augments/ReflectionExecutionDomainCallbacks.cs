@@ -1,2 +1,12 @@
-// Could not decompile Internal.Runtime.Augments.ReflectionExecutionDomainCallbacks
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Reflection;
+
+namespace Internal.Runtime.Augments;
+
+internal class ReflectionExecutionDomainCallbacks
+{
+	internal Exception CreateMissingMetadataException(Type attributeType)
+	{
+		return new MissingMetadataException();
+	}
+}

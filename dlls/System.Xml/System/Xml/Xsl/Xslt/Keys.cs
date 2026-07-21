@@ -1,2 +1,13 @@
-// Could not decompile System.Xml.Xsl.Xslt.Keys
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Xml.Xsl.Qil;
+
+namespace System.Xml.Xsl.Xslt;
+
+internal class Keys : KeyedCollection<QilName, List<Key>>
+{
+	protected override QilName GetKeyForItem(List<Key> list)
+	{
+		return list[0].Name;
+	}
+}

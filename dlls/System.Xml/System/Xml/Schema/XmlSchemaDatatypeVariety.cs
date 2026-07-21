@@ -10,6 +10,3 @@ public enum XmlSchemaDatatypeVariety
 	/// <summary>A W3C XML schema union type.</summary>
 	Union
 }
-namespace System.Xml.Serialization
-{
-}

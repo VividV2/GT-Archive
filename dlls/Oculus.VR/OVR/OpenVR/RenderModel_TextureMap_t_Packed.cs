@@ -1,2 +1,21 @@
-// Could not decompile OVR.OpenVR.RenderModel_TextureMap_t_Packed
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Runtime.InteropServices;
+
+namespace OVR.OpenVR;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public struct RenderModel_TextureMap_t_Packed(RenderModel_TextureMap_t unpacked)
+{
+	public ushort unWidth = unpacked.unWidth;
+
+	public ushort unHeight = unpacked.unHeight;
+
+	public IntPtr rubTextureMapData = unpacked.rubTextureMapData;
+
+	public void Unpack(ref RenderModel_TextureMap_t unpacked)
+	{
+		unpacked.unWidth = unWidth;
+		unpacked.unHeight = unHeight;
+		unpacked.rubTextureMapData = rubTextureMapData;
+	}
+}

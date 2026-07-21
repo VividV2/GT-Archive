@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.XR.OpenXR.Features.Interactions.EyeTrackingUsages
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.XR.OpenXR.Features.Interactions;
+
+public static class EyeTrackingUsages
+{
+	public static InputFeatureUsage<Vector3> gazePosition = new InputFeatureUsage<Vector3>("gazePosition");
+
+	public static InputFeatureUsage<Quaternion> gazeRotation = new InputFeatureUsage<Quaternion>("gazeRotation");
+}

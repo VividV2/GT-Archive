@@ -1,6 +1,9 @@
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class LinkIOSDeviceIDResult : PlayFabResultCommon
 {
 }

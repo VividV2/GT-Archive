@@ -1,16 +1,10 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
+namespace System;
 
-namespace System.EnterpriseServices;
-
-/// <summary>Represents the unit of work associated with a transaction. This structure is used in <see cref="T:System.EnterpriseServices.XACTTRANSINFO" />.</summary>
-/// <summary>Represents the unit of work associated with a transaction. This structure is used in <see cref="T:System.EnterpriseServices.XACTTRANSINFO" />.</summary>
-[ComVisible(false)]
-public struct BOID
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+internal class MonoExtensionAttribute : System.MonoTODOAttribute
 {
-	/// <summary>Represents an array that contains the data.</summary>
-	/// <summary>Represents an array that contains the data.</summary>
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
-	public byte[] rgb;
+	public MonoExtensionAttribute(string comment)
+		: base(comment)
+	{
+	}
 }

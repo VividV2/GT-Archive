@@ -1,2 +1,16 @@
-// Could not decompile PlayFab.MultiplayerModels.CoreCapacity
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.MultiplayerModels;
+
+[Serializable]
+public class CoreCapacity : PlayFabBaseModel
+{
+	public int Available;
+
+	public string Region;
+
+	public int Total;
+
+	public AzureVmFamily? VmFamily;
+}

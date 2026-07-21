@@ -1,2 +1,11 @@
-// Could not decompile Voxels.Voxel
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Voxels;
+
+[Serializable]
+public struct Voxel(byte material, byte density)
+{
+	public byte Material = material;
+
+	public byte Density = density;
+}

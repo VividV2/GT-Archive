@@ -1,2 +1,9 @@
-// Could not decompile Valve.VR.InteractionSystem.HandEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace Valve.VR.InteractionSystem;
+
+[Serializable]
+public class HandEvent : UnityEvent<Hand>
+{
+}

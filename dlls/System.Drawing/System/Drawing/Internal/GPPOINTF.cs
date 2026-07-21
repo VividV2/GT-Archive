@@ -1,2 +1,26 @@
-// Could not decompile System.Drawing.Internal.GPPOINTF
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+
+namespace System.Drawing.Internal;
+
+[StructLayout(LayoutKind.Sequential)]
+internal class GPPOINTF
+{
+	internal float X;
+
+	internal float Y;
+
+	internal GPPOINTF()
+	{
+	}
+
+	internal GPPOINTF(PointF pt)
+	{
+		X = pt.X;
+		Y = pt.Y;
+	}
+
+	internal PointF ToPoint()
+	{
+		return new PointF(X, Y);
+	}
+}

@@ -1,6 +1,16 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.CloudScriptModels;
+
+[Serializable]
+public class LinkedPlatformAccountModel : PlayFabBaseModel
 {
-}
-namespace PlayFab.Internal
-{
+	public string Email;
+
+	public LoginIdentityProvider? Platform;
+
+	public string PlatformUserId;
+
+	public string Username;
 }

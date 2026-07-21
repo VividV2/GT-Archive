@@ -1,2 +1,16 @@
-// Could not decompile PlayFab.ClientModels.ValidateWindowsReceiptRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class ValidateWindowsReceiptRequest : PlayFabRequestCommon
+{
+	public string CatalogVersion;
+
+	public string CurrencyCode;
+
+	public uint PurchasePrice;
+
+	public string Receipt;
+}

@@ -2,8 +2,6 @@ using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Meta.WitAi.Lib;
-
 [CompilerGenerated]
 [EditorBrowsable(EditorBrowsableState.Never)]
 [GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]

@@ -1,11 +1,12 @@
-namespace PlayFab.ClientModels
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class ConsumeXboxEntitlementsRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.CloudScriptModels
-{
-	public enum PushNotificationPlatform
-	{
-		ApplePushNotificationService,
-		GoogleCloudMessaging
-	}
+	public string CatalogVersion;
+
+	public string XboxToken;
 }

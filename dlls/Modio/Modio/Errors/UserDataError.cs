@@ -1,2 +1,13 @@
-// Could not decompile Modio.Errors.UserDataError
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.Errors;
+
+public class UserDataError : Error
+{
+	public new static readonly UserDataError None = new UserDataError(UserDataErrorCode.NONE);
+
+	public new UserDataErrorCode Code => (UserDataErrorCode)base.Code;
+
+	public UserDataError(UserDataErrorCode code)
+		: base((ErrorCode)code)
+	{
+	}
+}

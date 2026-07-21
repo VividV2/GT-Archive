@@ -1,2 +1,15 @@
-// Could not decompile System.Linq.Expressions.TypedDynamicExpressionN
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
+namespace System.Linq.Expressions;
+
+internal class TypedDynamicExpressionN : DynamicExpressionN
+{
+	public sealed override Type Type { get; }
+
+	internal TypedDynamicExpressionN(Type returnType, Type delegateType, CallSiteBinder binder, IReadOnlyList<Expression> arguments)
+		: base(delegateType, binder, arguments)
+	{
+		Type = returnType;
+	}
+}

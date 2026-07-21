@@ -1,14 +1,10 @@
 using UnityEngine.Bindings;
 
-namespace UnityEngine
+namespace UnityEngine;
+
+[NativeClass("Unity::FixedJoint")]
+[NativeHeader("Modules/Physics/FixedJoint.h")]
+[RequireComponent(typeof(Rigidbody))]
+public class FixedJoint : Joint
 {
-}
-namespace UnityEngine
-{
-	[NativeClass("Unity::FixedJoint")]
-	[NativeHeader("Modules/Physics/FixedJoint.h")]
-	[RequireComponent(typeof(Rigidbody))]
-	public class FixedJoint : Joint
-	{
-	}
 }

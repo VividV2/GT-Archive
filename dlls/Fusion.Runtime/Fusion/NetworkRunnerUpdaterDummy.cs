@@ -1,26 +1,12 @@
-using System;
-using System;
+namespace Fusion;
 
-namespace Fusion
+internal sealed class NetworkRunnerUpdaterDummy : INetworkRunnerUpdater
 {
-	[Serializable]
-	public struct RpcInvokeInfo
+	public void Initialize(NetworkRunner runner)
 	{
-		public RpcLocalInvokeResult LocalInvokeResult;
-
-		public RpcSendCullResult SendCullResult;
-
-		public RpcSendResult SendResult;
-
-		public override string ToString()
-		{
-			return $"[Local: {LocalInvokeResult}, SendCull: {SendCullResult}, Send: {SendResult}]";
-		}
 	}
-}
-namespace Fusion
-{
-}
-namespace Fusion
-{
+
+	public void Shutdown(NetworkRunner runner)
+	{
+	}
 }

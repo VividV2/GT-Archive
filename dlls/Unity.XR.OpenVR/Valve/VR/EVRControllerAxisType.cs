@@ -1,8 +1,9 @@
 namespace Valve.VR;
 
-public enum HeadsetViewMode_t
+public enum EVRControllerAxisType
 {
-	HeadsetViewMode_Left,
-	HeadsetViewMode_Right,
-	HeadsetViewMode_Both
+	k_eControllerAxis_None,
+	k_eControllerAxis_TrackPad,
+	k_eControllerAxis_Joystick,
+	k_eControllerAxis_Trigger
 }

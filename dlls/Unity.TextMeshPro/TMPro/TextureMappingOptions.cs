@@ -7,6 +7,3 @@ public enum TextureMappingOptions
 	Paragraph,
 	MatchAspect
 }
-namespace TMPro
-{
-}

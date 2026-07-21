@@ -1,16 +1,12 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public struct VRTextureBounds_t
 {
-	public struct VRTextureBounds_t
-	{
-		public float uMin;
+	public float uMin;
 
-		public float vMin;
+	public float vMin;
 
-		public float uMax;
+	public float uMax;
 
-		public float vMax;
-	}
-}
-namespace Valve.VR
-{
+	public float vMax;
 }

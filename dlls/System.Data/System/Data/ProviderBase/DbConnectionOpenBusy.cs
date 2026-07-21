@@ -1,2 +1,11 @@
-// Could not decompile System.Data.ProviderBase.DbConnectionOpenBusy
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Data.ProviderBase;
+
+internal sealed class DbConnectionOpenBusy : DbConnectionBusy
+{
+	internal static readonly DbConnectionInternal SingletonInstance = new DbConnectionOpenBusy();
+
+	private DbConnectionOpenBusy()
+		: base(ConnectionState.Open)
+	{
+	}
+}

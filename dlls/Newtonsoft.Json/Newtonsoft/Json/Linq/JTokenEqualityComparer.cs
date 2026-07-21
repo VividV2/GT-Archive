@@ -1,2 +1,16 @@
-// Could not decompile Newtonsoft.Json.Linq.JTokenEqualityComparer
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace Newtonsoft.Json.Linq;
+
+public class JTokenEqualityComparer : IEqualityComparer<JToken>
+{
+	public bool Equals(JToken? x, JToken? y)
+	{
+		return JToken.DeepEquals(x, y);
+	}
+
+	public int GetHashCode(JToken obj)
+	{
+		return obj?.GetDeepHashCode() ?? 0;
+	}
+}

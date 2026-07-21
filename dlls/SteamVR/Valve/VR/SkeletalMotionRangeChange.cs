@@ -1,12 +1,8 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum SkeletalMotionRangeChange
 {
-	public enum SkeletalMotionRangeChange
-	{
-		None = -1,
-		WithController,
-		WithoutController
-	}
-}
-namespace Valve.VR
-{
+	None = -1,
+	WithController,
+	WithoutController
 }

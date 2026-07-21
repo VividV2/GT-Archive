@@ -1,23 +1,32 @@
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+
 namespace Valve.VR;
 
-public struct Compositor_StageRenderSettings
+public struct IVRSpatialAnchors
 {
-	public HmdColor_t m_PrimaryColor;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EVRSpatialAnchorError _CreateSpatialAnchorFromDescriptor(IntPtr pchDescriptor, ref uint pHandleOut);
 
-	public HmdColor_t m_SecondaryColor;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EVRSpatialAnchorError _CreateSpatialAnchorFromPose(uint unDeviceIndex, ETrackingUniverseOrigin eOrigin, ref SpatialAnchorPose_t pPose, ref uint pHandleOut);
 
-	public float m_flVignetteInnerRadius;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EVRSpatialAnchorError _GetSpatialAnchorPose(uint unHandle, ETrackingUniverseOrigin eOrigin, ref SpatialAnchorPose_t pPoseOut);
 
-	public float m_flVignetteOuterRadius;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EVRSpatialAnchorError _GetSpatialAnchorDescriptor(uint unHandle, StringBuilder pchDescriptorOut, ref uint punDescriptorBufferLenInOut);
 
-	public float m_flFresnelStrength;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _CreateSpatialAnchorFromDescriptor CreateSpatialAnchorFromDescriptor;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bBackfaceCulling;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _CreateSpatialAnchorFromPose CreateSpatialAnchorFromPose;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bGreyscale;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _GetSpatialAnchorPose GetSpatialAnchorPose;
 
-	[MarshalAs(UnmanagedType.I1)]
-	public bool m_bWireframe;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _GetSpatialAnchorDescriptor GetSpatialAnchorDescriptor;
 }

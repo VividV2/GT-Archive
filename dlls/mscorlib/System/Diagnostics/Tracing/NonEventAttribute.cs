@@ -1,2 +1,11 @@
-// Could not decompile System.Diagnostics.Tracing.NonEventAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Diagnostics.Tracing;
+
+/// <summary>Identifies a method that is not generating an event.</summary>
+[AttributeUsage(AttributeTargets.Method)]
+public sealed class NonEventAttribute : Attribute
+{
+	/// <summary>Creates a new instance of the <see cref="T:System.Diagnostics.Tracing.NonEventAttribute" /> class.</summary>
+	public NonEventAttribute()
+	{
+	}
+}

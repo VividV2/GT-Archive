@@ -1,2 +1,16 @@
-// Could not decompile Pathfinding.WindowsStore.WindowsStoreCompatibility
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Pathfinding.WindowsStore;
+
+public static class WindowsStoreCompatibility
+{
+	public static Type GetTypeFromInfo(Type type)
+	{
+		return type;
+	}
+
+	public static Type GetTypeInfo(Type type)
+	{
+		return type;
+	}
+}

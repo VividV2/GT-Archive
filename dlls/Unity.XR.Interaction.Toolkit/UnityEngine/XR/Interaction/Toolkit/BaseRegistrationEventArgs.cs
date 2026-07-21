@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.BaseRegistrationEventArgs
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.XR.Interaction.Toolkit;
+
+public abstract class BaseRegistrationEventArgs
+{
+	public XRInteractionManager manager { get; set; }
+}

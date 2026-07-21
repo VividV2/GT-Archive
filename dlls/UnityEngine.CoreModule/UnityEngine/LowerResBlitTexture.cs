@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.LowerResBlitTexture
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting;
+
+namespace UnityEngine;
+
+internal class LowerResBlitTexture : Object
+{
+	[RequiredByNativeCode]
+	internal void LowerResBlitTextureDontStripMe()
+	{
+	}
+}

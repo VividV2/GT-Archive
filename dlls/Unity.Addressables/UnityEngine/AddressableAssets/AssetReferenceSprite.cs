@@ -1,2 +1,17 @@
-// Could not decompile UnityEngine.AddressableAssets.AssetReferenceSprite
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.AddressableAssets;
+
+[Serializable]
+public class AssetReferenceSprite : AssetReferenceT<Sprite>
+{
+	public AssetReferenceSprite(string guid)
+		: base(guid)
+	{
+	}
+
+	public override bool ValidateAsset(string path)
+	{
+		return false;
+	}
+}

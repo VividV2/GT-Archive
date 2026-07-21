@@ -1,16 +1,13 @@
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering
+using System;
+
+namespace UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
+
+[Flags]
+public enum TargetedDevices
 {
-}
-namespace UnityEngine.XR.Interaction.Toolkit.Filtering
-{
-	public enum PokeAxis
-	{
-		None,
-		X,
-		Y,
-		Z,
-		NegativeX,
-		NegativeY,
-		NegativeZ
-	}
+	None = 0,
+	FPS = 1,
+	LeftDevice = 2,
+	RightDevice = 4,
+	HMD = 8
 }

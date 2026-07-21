@@ -1,10 +1,10 @@
-namespace System.Drawing.Imaging;
+namespace System.Drawing.Drawing2D;
 
-public enum ColorChannelFlag
+/// <summary>Specifies how the interior of a closed path is filled.</summary>
+public enum FillMode
 {
-	ColorChannelC,
-	ColorChannelM,
-	ColorChannelY,
-	ColorChannelK,
-	ColorChannelLast
+	/// <summary>Specifies the alternate fill mode.</summary>
+	Alternate,
+	/// <summary>Specifies the winding fill mode.</summary>
+	Winding
 }

@@ -1,2 +1,11 @@
-// Could not decompile System.Reflection.DispatchProxy
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Reflection;
+
+public abstract class DispatchProxy
+{
+	protected abstract object Invoke(MethodInfo targetMethod, object[] args);
+
+	public static T Create<T, TProxy>() where TProxy : DispatchProxy
+	{
+		return (T)DispatchProxyGenerator.CreateProxyInstance(typeof(TProxy), typeof(T));
+	}
+}

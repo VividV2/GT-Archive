@@ -1,7 +1,20 @@
+using System.Runtime.InteropServices;
+
 namespace Steamworks;
 
-public enum ESteamControllerPad
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+[CallbackIdentity(340)]
+public struct GameConnectedChatLeave_t
 {
-	k_ESteamControllerPad_Left,
-	k_ESteamControllerPad_Right
+	public const int k_iCallback = 340;
+
+	public CSteamID m_steamIDClanChat;
+
+	public CSteamID m_steamIDUser;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bKicked;
+
+	[MarshalAs(UnmanagedType.I1)]
+	public bool m_bDropped;
 }

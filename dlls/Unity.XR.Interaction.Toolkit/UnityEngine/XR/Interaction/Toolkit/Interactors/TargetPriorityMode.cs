@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.Interactors.TargetPriorityMode
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.Scripting.APIUpdating;
+
+namespace UnityEngine.XR.Interaction.Toolkit.Interactors;
+
+[MovedFrom("UnityEngine.XR.Interaction.Toolkit")]
+public enum TargetPriorityMode
+{
+	None,
+	HighestPriorityOnly,
+	All
+}

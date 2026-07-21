@@ -1,2 +1,7 @@
-// Could not decompile DayCycleTexturesSO
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "DayCycleTextures", menuName = "Gorilla Tag/Day Cycle Textures", order = 0)]
+public class DayCycleTexturesSO : ScriptableObject
+{
+	public DayCycleTextureMoment[] moments = new DayCycleTextureMoment[10];
+}

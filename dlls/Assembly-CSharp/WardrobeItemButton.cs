@@ -1,2 +1,8 @@
-// Could not decompile WardrobeItemButton
-// This type uses unsupported IL or has too many generic parameters.
+using GorillaNetworking;
+
+public class WardrobeItemButton : GorillaPressableButton
+{
+	public HeadModel controlledModel;
+
+	public CosmeticsController.CosmeticItem currentCosmeticItem;
+}

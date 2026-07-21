@@ -1,19 +1,54 @@
 using System;
-using System;
 
 namespace Sirenix.OdinInspector;
 
-[Flags]
-public enum PrefabKind
+public class UnitAttribute : Attribute
 {
-	None = 0,
-	InstanceInScene = 1,
-	InstanceInPrefab = 2,
-	Regular = 4,
-	Variant = 8,
-	NonPrefabInstance = 0x10,
-	PrefabInstance = 3,
-	PrefabAsset = 0xC,
-	PrefabInstanceAndNonPrefabInstance = 0x13,
-	All = 0x1F
+	public Units Base = Units.Unset;
+
+	public Units Display = Units.Unset;
+
+	public string BaseName;
+
+	public string DisplayName;
+
+	public bool DisplayAsString;
+
+	public bool ForceDisplayUnit;
+
+	public UnitAttribute(Units unit)
+	{
+		Base = unit;
+		Display = unit;
+	}
+
+	public UnitAttribute(string unit)
+	{
+		BaseName = unit;
+		DisplayName = unit;
+	}
+
+	public UnitAttribute(Units @base, Units display)
+	{
+		Base = @base;
+		Display = display;
+	}
+
+	public UnitAttribute(Units @base, string display)
+	{
+		Base = @base;
+		DisplayName = display;
+	}
+
+	public UnitAttribute(string @base, Units display)
+	{
+		BaseName = @base;
+		Display = display;
+	}
+
+	public UnitAttribute(string @base, string display)
+	{
+		BaseName = @base;
+		DisplayName = display;
+	}
 }

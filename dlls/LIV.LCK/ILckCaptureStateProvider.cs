@@ -1,15 +1,8 @@
-namespace Liv.Lck
+using Liv.Lck;
+
+internal interface ILckCaptureStateProvider
 {
-	public interface ILckAudioSource
-	{
-		public delegate void AudioDataCallbackDelegate(AudioBuffer audioBuffer);
+	LckCaptureState CurrentCaptureState { get; }
 
-		void GetAudioData(AudioDataCallbackDelegate callback);
-
-		void EnableCapture();
-
-		void DisableCapture();
-
-		bool IsCapturing();
-	}
+	LckResult<bool> IsPaused();
 }

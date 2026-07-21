@@ -1,2 +1,6 @@
-// Could not decompile UnityEngine.Localization.PropertyVariants.TrackedProperties.ITrackedPropertyRemoveVariant
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Localization.PropertyVariants.TrackedProperties;
+
+internal interface ITrackedPropertyRemoveVariant
+{
+	void RemoveVariant(LocaleIdentifier localeIdentifier);
+}

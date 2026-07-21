@@ -1,37 +1,15 @@
-using System;
-using System;
+namespace UnityEngine.XR.OpenXR.API;
 
-namespace UnityEngine.XR.OpenXR.API
+public enum UnityXRRenderTextureFlags
 {
-	public struct UnityXRTextureData
-	{
-		public IntPtr nativePtr;
-
-		public uint referenceTextureId;
-	}
-}
-namespace UnityEngine.XR.OpenXR.API
-{
-	public struct UnityXRRenderTextureDesc
-	{
-		public UnityXRRenderTextureFormat colorFormat;
-
-		public UnityXRTextureData color;
-
-		public UnityXRDepthTextureFormat depthFormat;
-
-		public UnityXRTextureData depth;
-
-		public UnityXRShadingRateFormat shadingRateFormat;
-
-		public UnityXRTextureData shadingRate;
-
-		public uint width;
-
-		public uint height;
-
-		public uint textureArrayLength;
-
-		public uint flags;
-	}
+	kUnityXRRenderTextureFlagsUVDirectionTopToBottom = 1,
+	kUnityXRRenderTextureFlagsMultisampleAutoResolve = 2,
+	kUnityXRRenderTextureFlagsLockedWidthHeight = 4,
+	kUnityXRRenderTextureFlagsWriteOnly = 8,
+	kUnityXRRenderTextureFlagsSRGB = 0x10,
+	kUnityXRRenderTextureFlagsOptimizeBufferDiscards = 0x20,
+	kUnityXRRenderTextureFlagsMotionVectorTexture = 0x40,
+	kUnityXRRenderTextureFlagsFoveationOffset = 0x80,
+	kUnityXRRenderTextureFlagsViewportAsRenderArea = 0x100,
+	kUnityXRRenderTextureFlagsHDR = 0x200
 }

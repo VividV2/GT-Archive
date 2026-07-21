@@ -1,2 +1,10 @@
-// Could not decompile UnityEngine.Rendering.LightShadowResolution
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering;
+
+public enum LightShadowResolution
+{
+	FromQualitySettings = -1,
+	Low,
+	Medium,
+	High,
+	VeryHigh
+}

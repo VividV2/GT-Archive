@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Rendering.Universal.DepthOfFieldModeParameter
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering.Universal;
+
+[Serializable]
+public sealed class DepthOfFieldModeParameter : VolumeParameter<DepthOfFieldMode>
+{
+	public DepthOfFieldModeParameter(DepthOfFieldMode value, bool overrideState = false)
+		: base(value, overrideState)
+	{
+	}
+}

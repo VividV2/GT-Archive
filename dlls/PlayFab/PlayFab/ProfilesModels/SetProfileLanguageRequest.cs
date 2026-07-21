@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.ProfilesModels.SetProfileLanguageRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ProfilesModels;
+
+[Serializable]
+public class SetProfileLanguageRequest : PlayFabRequestCommon
+{
+	public EntityKey Entity;
+
+	public int? ExpectedVersion;
+
+	public string Language;
+}

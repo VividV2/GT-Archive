@@ -1,2 +1,12 @@
-// Could not decompile GorillaNetworking.CreditsSection
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Collections.Generic;
+
+namespace GorillaNetworking;
+
+[Serializable]
+internal class CreditsSection
+{
+	public string Title { get; set; }
+
+	public List<string> Entries { get; set; }
+}

@@ -1,10 +1,20 @@
-namespace Newtonsoft.Json;
+namespace Newtonsoft.Json.Utilities;
 
-public enum MissingMemberHandling
+internal class EnumInfo
 {
-	Ignore,
-	Error
-}
-namespace Newtonsoft.Json
-{
+	public readonly bool IsFlags;
+
+	public readonly ulong[] Values;
+
+	public readonly string[] Names;
+
+	public readonly string[] ResolvedNames;
+
+	public EnumInfo(bool isFlags, ulong[] values, string[] names, string[] resolvedNames)
+	{
+		IsFlags = isFlags;
+		Values = values;
+		Names = names;
+		ResolvedNames = resolvedNames;
+	}
 }

@@ -1,15 +1,8 @@
-namespace UnityEngine
+namespace UnityEngine;
+
+public enum AudioVelocityUpdateMode
 {
-}
-namespace UnityEngine
-{
-}
-namespace UnityEngine
-{
-	public enum AudioVelocityUpdateMode
-	{
-		Auto,
-		Fixed,
-		Dynamic
-	}
+	Auto,
+	Fixed,
+	Dynamic
 }

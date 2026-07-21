@@ -1,2 +1,8 @@
-namespace GorillaTagScripts.Builder;
-
+public enum ELocale
+{
+	English,
+	French,
+	German,
+	Japanese,
+	Spanish
+}

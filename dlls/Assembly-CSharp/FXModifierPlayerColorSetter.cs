@@ -1,2 +1,13 @@
-// Could not decompile FXModifierPlayerColorSetter
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+[RequireComponent(typeof(PlayerColoredCosmetic))]
+public class FXModifierPlayerColorSetter : FXModifier
+{
+	[SerializeField]
+	private PlayerColoredCosmetic playerColoredCosmetic;
+
+	public override void UpdateScale(float scale, Color color)
+	{
+		playerColoredCosmetic.UpdateColor(color);
+	}
+}

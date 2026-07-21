@@ -1,2 +1,7 @@
-// Could not decompile OVR.OpenVR.EVROverlayIntersectionMaskPrimitiveType
-// This type uses unsupported IL or has too many generic parameters.
+namespace OVR.OpenVR;
+
+public enum EVROverlayIntersectionMaskPrimitiveType
+{
+	OverlayIntersectionPrimitiveType_Rectangle,
+	OverlayIntersectionPrimitiveType_Circle
+}

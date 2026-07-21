@@ -1,6 +1,8 @@
-namespace UnityEngine.Localization.SmartFormat.Core.Extensions;
+using UnityEngine.Localization.SmartFormat.Core.Extensions;
 
-public interface ISource
+namespace UnityEngine.Localization.SmartFormat.PersistentVariables;
+
+public interface IVariable
 {
-	bool TryEvaluateSelector(ISelectorInfo selectorInfo);
+	object GetSourceValue(ISelectorInfo selector);
 }

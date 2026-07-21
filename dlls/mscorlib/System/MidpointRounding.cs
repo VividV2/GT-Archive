@@ -1,24 +1,10 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices;
+namespace System;
 
-namespace System.Security.Permissions;
-
-[Serializable]
-[ComVisible(true)]
-public enum SecurityAction
+/// <summary>Specifies how mathematical rounding methods should process a number that is midway between two numbers.</summary>
+public enum MidpointRounding
 {
-	Demand = 2,
-	Assert,
-	[Obsolete("This requests should not be used")]
-	Deny,
-	PermitOnly,
-	LinkDemand,
-	InheritanceDemand,
-	[Obsolete("This requests should not be used")]
-	RequestMinimum,
-	[Obsolete("This requests should not be used")]
-	RequestOptional,
-	[Obsolete("This requests should not be used")]
-	RequestRefuse
+	/// <summary>When a number is halfway between two others, it is rounded toward the nearest even number.</summary>
+	ToEven,
+	/// <summary>When a number is halfway between two others, it is rounded toward the nearest number that is away from zero.</summary>
+	AwayFromZero
 }

@@ -1,2 +1,7 @@
-// Could not decompile Unity.Cinemachine.SensorSizePropertyAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Unity.Cinemachine;
+
+public sealed class SensorSizePropertyAttribute : PropertyAttribute
+{
+}

@@ -1,16 +1,12 @@
 using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
 using PlayFab.SharedModels;
 
 namespace PlayFab.ClientModels;
 
 [Serializable]
-public class AddSharedGroupMembersRequest : PlayFabRequestCommon
+public class ConsumePSNEntitlementsRequest : PlayFabRequestCommon
 {
-	public List<string> PlayFabIds;
+	public string CatalogVersion;
 
-	public string SharedGroupId;
+	public int ServiceLabel;
 }

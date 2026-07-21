@@ -1,19 +1,29 @@
-using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
-using System.Runtime.CompilerServices;
-using UnityEngine.Bindings;
+using UnityEngine.Scripting;
 
 namespace UnityEngine.XR.Tango;
 
-[NativeConditional("PLATFORM_ANDROID")]
-[NativeHeader("Modules/AR/ARCore/ARCoreScriptApi.h")]
-internal static class TangoInputTracking
+[NativeHeader("ARScriptingClasses.h")]
+[UsedByNativeCode]
+internal struct PoseData
 {
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	private static extern bool Internal_TryGetPoseAtTime(out PoseData pose);
+	public double orientation_x;
 
-	internal static bool TryGetPoseAtTime(out PoseData pose)
-	{
-		return Internal_TryGetPoseAtTime(out pose);
-	}
+	public double orientation_y;
+
+	public double orientation_z;
+
+	public double orientation_w;
+
+	public double translation_x;
+
+	public double translation_y;
+
+	public double translation_z;
+
+	public PoseStatus statusCode;
+
+	public Quaternion rotation => new Quaternion((float)orientation_x, (float)orientation_y, (float)orientation_z, (float)orientation_w);
+
+	public Vector3 position => new Vector3((float)translation_x, (float)translation_y, (float)translation_z);
 }

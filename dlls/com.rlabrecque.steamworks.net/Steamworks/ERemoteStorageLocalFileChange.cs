@@ -1,2 +1,8 @@
-// Could not decompile Steamworks.ERemoteStorageLocalFileChange
-// This type uses unsupported IL or has too many generic parameters.
+namespace Steamworks;
+
+public enum ERemoteStorageLocalFileChange
+{
+	k_ERemoteStorageLocalFileChange_Invalid,
+	k_ERemoteStorageLocalFileChange_FileUpdated,
+	k_ERemoteStorageLocalFileChange_FileDeleted
+}

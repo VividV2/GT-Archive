@@ -1,2 +1,9 @@
-// Could not decompile GRProgressionScriptableObject
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GRProgressionScriptableObject : ScriptableObject
+{
+	[SerializeField]
+	[Header("Progression Tiers")]
+	public List<GRPlayer.ProgressionLevels> progressionData;
+}

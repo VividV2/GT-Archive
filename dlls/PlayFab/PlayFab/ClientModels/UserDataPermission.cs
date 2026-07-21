@@ -1,5 +1,7 @@
 namespace PlayFab.ClientModels;
 
-namespace PlayFab.ClientModels
+public enum UserDataPermission
 {
+	Private,
+	Public
 }

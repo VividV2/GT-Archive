@@ -1,12 +1,10 @@
-namespace PlayFab.DataModels;
+using System;
+using PlayFab.SharedModels;
 
-public enum OperationTypes
+namespace PlayFab.InsightsModels;
+
+[Serializable]
+public class InsightsSetStorageRetentionRequest : PlayFabRequestCommon
 {
-	Created,
-	Updated,
-	Deleted,
-	None
-}
-namespace PlayFab.CloudScriptModels
-{
+	public int RetentionDays;
 }

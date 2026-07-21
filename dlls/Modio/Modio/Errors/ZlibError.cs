@@ -1,2 +1,13 @@
-// Could not decompile Modio.Errors.ZlibError
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.Errors;
+
+public class ZlibError : Error
+{
+	public new static readonly ZlibError None = new ZlibError(ZlibErrorCode.NONE);
+
+	public new ZlibErrorCode Code => (ZlibErrorCode)base.Code;
+
+	public ZlibError(ZlibErrorCode code)
+		: base((ErrorCode)code)
+	{
+	}
+}

@@ -1,13 +1,9 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum EHmdTrackingStyle
 {
-	public enum EHmdTrackingStyle
-	{
-		Unknown,
-		Lighthouse,
-		OutsideInCameras,
-		InsideOutCameras
-	}
-}
-namespace Valve.VR
-{
+	Unknown,
+	Lighthouse,
+	OutsideInCameras,
+	InsideOutCameras
 }

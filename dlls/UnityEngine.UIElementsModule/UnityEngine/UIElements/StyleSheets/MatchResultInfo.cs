@@ -1,7 +1,10 @@
-#define UNITY_ASSERTIONS
-namespace UnityEngine.UIElements.Layout
+namespace UnityEngine.UIElements.StyleSheets;
+
+internal struct MatchResultInfo(bool success, PseudoStates triggerPseudoMask, PseudoStates dependencyPseudoMask)
 {
-}
-namespace UnityEngine.UIElements.UIR
-{
+	public readonly bool success = success;
+
+	public readonly PseudoStates triggerPseudoMask = triggerPseudoMask;
+
+	public readonly PseudoStates dependencyPseudoMask = dependencyPseudoMask;
 }

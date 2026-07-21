@@ -1,2 +1,26 @@
-// Could not decompile BuildSafe.SceneView
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace BuildSafe;
+
+public static class SceneView
+{
+	public static event Action duringSceneGui
+	{
+		add
+		{
+		}
+		remove
+		{
+		}
+	}
+
+	public static event Action duringSceneGuiTick
+	{
+		add
+		{
+		}
+		remove
+		{
+		}
+	}
+}

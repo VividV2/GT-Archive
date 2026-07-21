@@ -1,7 +1,35 @@
-namespace System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 
-public enum CompositingMode
+namespace System.Drawing.Imaging;
+
+[StructLayout(LayoutKind.Sequential)]
+internal class MetafileHeaderEmf
 {
-	SourceOver,
-	SourceCopy
+	public MetafileType type;
+
+	public int size;
+
+	public int version;
+
+	public EmfPlusFlags emfPlusFlags;
+
+	public float dpiX;
+
+	public float dpiY;
+
+	public int X;
+
+	public int Y;
+
+	public int Width;
+
+	public int Height;
+
+	public SafeNativeMethods.ENHMETAHEADER EmfHeader;
+
+	public int EmfPlusHeaderSize;
+
+	public int LogicalDpiX;
+
+	public int LogicalDpiY;
 }

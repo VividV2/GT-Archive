@@ -1,6 +1,9 @@
-namespace UnityEngine.Rendering
+namespace UnityEngine;
+
+public enum ShadowResolution
 {
-}
-namespace UnityEngine.Rendering
-{
+	Low,
+	Medium,
+	High,
+	VeryHigh
 }

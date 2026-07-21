@@ -1,2 +1,21 @@
-// Could not decompile Meta.XR.ImmersiveDebugger.UserInterface.Generic.ButtonForAction
-// This type uses unsupported IL or has too many generic parameters.
+using Meta.XR.ImmersiveDebugger.Manager;
+
+namespace Meta.XR.ImmersiveDebugger.UserInterface.Generic;
+
+internal class ButtonForAction : ButtonWithLabel
+{
+	private ActionHook _hook;
+
+	internal ActionHook Action
+	{
+		get
+		{
+			return _hook;
+		}
+		set
+		{
+			_hook = value;
+			base.Callback = value.Delegate;
+		}
+	}
+}

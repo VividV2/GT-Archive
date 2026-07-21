@@ -1,2 +1,62 @@
-// Could not decompile BuildSafe.SceneBakeTask
-// This type uses unsupported IL or has too many generic parameters.
+using System.Diagnostics;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace BuildSafe;
+
+public abstract class SceneBakeTask : MonoBehaviour
+{
+	[SerializeField]
+	private SceneBakeMode m_bakeMode;
+
+	[SerializeField]
+	private int m_callbackOrder;
+
+	[Space]
+	[SerializeField]
+	private bool m_runIfInactive = true;
+
+	public SceneBakeMode bakeMode
+	{
+		get
+		{
+			return m_bakeMode;
+		}
+		set
+		{
+			m_bakeMode = value;
+		}
+	}
+
+	public virtual int callbackOrder
+	{
+		get
+		{
+			return m_callbackOrder;
+		}
+		set
+		{
+			m_callbackOrder = value;
+		}
+	}
+
+	public bool runIfInactive
+	{
+		get
+		{
+			return m_runIfInactive;
+		}
+		set
+		{
+			m_runIfInactive = value;
+		}
+	}
+
+	[Conditional("UNITY_EDITOR")]
+	public abstract void OnSceneBake(Scene scene, SceneBakeMode mode);
+
+	[Conditional("UNITY_EDITOR")]
+	private void ForceRun()
+	{
+	}
+}

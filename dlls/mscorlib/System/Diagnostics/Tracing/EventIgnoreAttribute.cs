@@ -1,15 +1,11 @@
-namespace System.Configuration.Assemblies;
+namespace System.Diagnostics.Tracing;
 
-/// <summary>Defines the different types of assembly version compatibility. This feature is not available in version 1.0 of the .NET Framework.</summary>
-public enum AssemblyVersionCompatibility
+/// <summary>Specifies a property should be ignored when writing an event type with the <see cref="M:System.Diagnostics.Tracing.EventSource.Write``1(System.String,System.Diagnostics.Tracing.EventSourceOptions@,``0@)" /> method.</summary>
+[AttributeUsage(AttributeTargets.Property)]
+public class EventIgnoreAttribute : Attribute
 {
-	/// <summary>The assembly cannot execute with other versions if they are executing on the same machine.</summary>
-	SameMachine = 1,
-	/// <summary>The assembly cannot execute with other versions if they are executing in the same process.</summary>
-	SameProcess,
-	/// <summary>The assembly cannot execute with other versions if they are executing in the same application domain.</summary>
-	SameDomain
-}
-namespace System.Collections.Generic
-{
+	/// <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.Tracing.EventIgnoreAttribute" /> class.</summary>
+	public EventIgnoreAttribute()
+	{
+	}
 }

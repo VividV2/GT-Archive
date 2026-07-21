@@ -1,2 +1,12 @@
-// Could not decompile GorillaTriggerBox
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class GorillaTriggerBox : MonoBehaviour
+{
+	public virtual void OnBoxTriggered()
+	{
+	}
+
+	public virtual void OnBoxExited()
+	{
+	}
+}

@@ -1,2 +1,11 @@
-// Could not decompile Liv.Lck.Core.Cosmetics.LckAvailableCosmeticInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Liv.Lck.Core.Cosmetics;
+
+[Serializable]
+public struct LckAvailableCosmeticInfo
+{
+	public LckCosmeticInfo CosmeticInfo;
+
+	public string[] PlayerIds;
+}

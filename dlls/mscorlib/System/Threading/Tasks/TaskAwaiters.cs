@@ -1,13 +1,9 @@
-namespace System.Threading.Tasks
+namespace System.Threading.Tasks;
+
+internal static class TaskAwaiters
 {
-	internal static class TaskAwaiters
+	public static ForceAsyncAwaiter ForceAsync(this Task task)
 	{
-		public static ForceAsyncAwaiter ForceAsync(this Task task)
-		{
-			return new ForceAsyncAwaiter(task);
-		}
+		return new ForceAsyncAwaiter(task);
 	}
-}
-namespace System.Threading.Tasks
-{
 }

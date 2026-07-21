@@ -1,2 +1,14 @@
-// Could not decompile ErrorContent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+[Serializable]
+public class ErrorContent
+{
+	public string Message { get; set; }
+
+	public string Error { get; set; }
+
+	public override string ToString()
+	{
+		return "Error: " + Error + ", Message: " + Message;
+	}
+}

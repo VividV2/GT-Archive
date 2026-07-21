@@ -1,30 +1,19 @@
 using System;
 using System.Collections.Generic;
 using PlayFab.SharedModels;
-using System;
-using System.Collections.Generic;
-using PlayFab.SharedModels;
 
 namespace PlayFab.ClientModels;
 
 [Serializable]
-public class RedeemCouponResult : PlayFabResultCommon
+public class MembershipModel : PlayFabBaseModel
 {
-	public List<ItemInstance> GrantedItems;
-}
-namespace PlayFab.ClientModels
-{
-	[Serializable]
-	public class MembershipModel : PlayFabBaseModel
-	{
-		public bool IsActive;
+	public bool IsActive;
 
-		public DateTime MembershipExpiration;
+	public DateTime MembershipExpiration;
 
-		public string MembershipId;
+	public string MembershipId;
 
-		public DateTime? OverrideExpiration;
+	public DateTime? OverrideExpiration;
 
-		public List<SubscriptionModel> Subscriptions;
-	}
+	public List<SubscriptionModel> Subscriptions;
 }

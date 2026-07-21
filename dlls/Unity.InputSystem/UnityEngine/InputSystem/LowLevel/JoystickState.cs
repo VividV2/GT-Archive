@@ -1,30 +1,26 @@
-using System.Runtime.InteropServices;
-using UnityEngine.InputSystem.Utilities;
-using System.Runtime.InteropServices;
+using UnityEngine.InputSystem.Layouts;
 using UnityEngine.InputSystem.Utilities;
 
 namespace UnityEngine.InputSystem.LowLevel;
 
-[StructLayout(LayoutKind.Explicit, Size = 12)]
-internal struct QuerySamplingFrequencyCommand : IInputDeviceCommandInfo
+internal struct JoystickState : IInputStateTypeInfo
 {
-	internal const int kSize = 12;
-
-	[FieldOffset(0)]
-	public InputDeviceCommand baseCommand;
-
-	[FieldOffset(8)]
-	public float frequency;
-
-	public static FourCC Type => new FourCC('S', 'M', 'P', 'L');
-
-	public FourCC typeStatic => Type;
-
-	public static QuerySamplingFrequencyCommand Create()
+	public enum Button
 	{
-		return new QuerySamplingFrequencyCommand
-		{
-			baseCommand = new InputDeviceCommand(Type, 12)
-		};
+		HatSwitchUp,
+		HatSwitchDown,
+		HatSwitchLeft,
+		HatSwitchRight,
+		Trigger
 	}
+
+	[InputControl(name = "trigger", displayName = "Trigger", layout = "Button", usages = new string[] { "PrimaryTrigger", "PrimaryAction", "Submit" }, bit = 4u)]
+	public int buttons;
+
+	[InputControl(displayName = "Stick", layout = "Stick", usage = "Primary2DMotion", processors = "stickDeadzone")]
+	public Vector2 stick;
+
+	public static FourCC kFormat => new FourCC('J', 'O', 'Y');
+
+	public FourCC format => kFormat;
 }

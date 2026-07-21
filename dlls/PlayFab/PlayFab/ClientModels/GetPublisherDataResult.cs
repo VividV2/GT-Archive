@@ -1,9 +1,11 @@
-namespace Ionic.Zlib;
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
 
-internal enum BlockState
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetPublisherDataResult : PlayFabResultCommon
 {
-	NeedMore,
-	BlockDone,
-	FinishStarted,
-	FinishDone
+	public Dictionary<string, string> Data;
 }

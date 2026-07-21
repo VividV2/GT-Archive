@@ -5,6 +5,3 @@ public enum QueueMode
 	CompleteOthers = 0,
 	PlayNow = 2
 }
-namespace UnityEngine
-{
-}

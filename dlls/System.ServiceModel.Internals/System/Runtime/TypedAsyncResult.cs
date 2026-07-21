@@ -1,2 +1,24 @@
-// Could not decompile System.Runtime.TypedAsyncResult`1
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime;
+
+internal abstract class TypedAsyncResult<T> : AsyncResult
+{
+	private T data;
+
+	public T Data => data;
+
+	public TypedAsyncResult(AsyncCallback callback, object state)
+		: base(callback, state)
+	{
+	}
+
+	protected void Complete(T data, bool completedSynchronously)
+	{
+		this.data = data;
+		Complete(completedSynchronously);
+	}
+
+	public static T End(IAsyncResult result)
+	{
+		return AsyncResult.End<TypedAsyncResult<T>>(result).Data;
+	}
+}

@@ -1,75 +1,58 @@
 using System;
 using UnityEngine.Bindings;
-using UnityEngine.Bindings;
 
-namespace Unity.Hierarchy
+namespace Unity.Hierarchy;
+
+[NativeHeader("Modules/HierarchyCore/Public/HierarchyPropertyId.h")]
+internal readonly struct HierarchyPropertyId : IEquatable<HierarchyPropertyId>
 {
-	[NativeHeader("Modules/HierarchyCore/Public/HierarchySearch.h")]
-	public enum HierarchySearchFilterOperator
+	private const int k_HierarchyPropertyIdNull = 0;
+
+	private static readonly HierarchyPropertyId s_Null;
+
+	private readonly int m_Id;
+
+	public static ref readonly HierarchyPropertyId Null => ref s_Null;
+
+	public int Id => m_Id;
+
+	public HierarchyPropertyId()
 	{
-		Equal,
-		Contains,
-		Greater,
-		GreaterOrEqual,
-		Lesser,
-		LesserOrEqual,
-		NotEqual,
-		Not
+		m_Id = 0;
 	}
-}
-namespace Unity.Hierarchy
-{
-	[NativeHeader("Modules/HierarchyCore/Public/HierarchyPropertyId.h")]
-	internal readonly struct HierarchyPropertyId : IEquatable<HierarchyPropertyId>
+
+	internal HierarchyPropertyId(int id)
 	{
-		private const int k_HierarchyPropertyIdNull = 0;
+		m_Id = id;
+	}
 
-		private static readonly HierarchyPropertyId s_Null;
+	public static bool operator ==(in HierarchyPropertyId lhs, in HierarchyPropertyId rhs)
+	{
+		return lhs.Id == rhs.Id;
+	}
 
-		private readonly int m_Id;
+	public static bool operator !=(in HierarchyPropertyId lhs, in HierarchyPropertyId rhs)
+	{
+		return !(lhs == rhs);
+	}
 
-		public static ref readonly HierarchyPropertyId Null => ref s_Null;
+	public bool Equals(HierarchyPropertyId other)
+	{
+		return other.Id == Id;
+	}
 
-		public int Id => m_Id;
+	public override string ToString()
+	{
+		return string.Format("{0}({1})", "HierarchyPropertyId", (this == Null) ? "Null" : ((object)Id));
+	}
 
-		public HierarchyPropertyId()
-		{
-			m_Id = 0;
-		}
+	public override bool Equals(object obj)
+	{
+		return obj is HierarchyPropertyId other && Equals(other);
+	}
 
-		internal HierarchyPropertyId(int id)
-		{
-			m_Id = id;
-		}
-
-		public static bool operator ==(in HierarchyPropertyId lhs, in HierarchyPropertyId rhs)
-		{
-			return lhs.Id == rhs.Id;
-		}
-
-		public static bool operator !=(in HierarchyPropertyId lhs, in HierarchyPropertyId rhs)
-		{
-			return !(lhs == rhs);
-		}
-
-		public bool Equals(HierarchyPropertyId other)
-		{
-			return other.Id == Id;
-		}
-
-		public override string ToString()
-		{
-			return string.Format("{0}({1})", "HierarchyPropertyId", (this == Null) ? "Null" : ((object)Id));
-		}
-
-		public override bool Equals(object obj)
-		{
-			return obj is HierarchyPropertyId other && Equals(other);
-		}
-
-		public override int GetHashCode()
-		{
-			return Id.GetHashCode();
-		}
+	public override int GetHashCode()
+	{
+		return Id.GetHashCode();
 	}
 }

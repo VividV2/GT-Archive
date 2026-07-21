@@ -1,5 +1,4 @@
 using Unity.Multiplayer.Center.Common.Analytics;
-using Unity.Multiplayer.Center.Common.Analytics;
 
 namespace Unity.Multiplayer.Center.Common;
 

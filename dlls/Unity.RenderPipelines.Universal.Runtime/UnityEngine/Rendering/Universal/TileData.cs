@@ -1,2 +1,12 @@
-// Could not decompile UnityEngine.Rendering.Universal.TileData
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+public struct TileData
+{
+	public uint tileID;
+
+	public uint listBitMask;
+
+	public uint relLightOffset;
+
+	public uint unused;
+}

@@ -1,18 +1,7 @@
-namespace TMPro
+namespace TMPro;
+
+public enum MaskingOffsetMode
 {
-	public enum TextWrappingModes
-	{
-		NoWrap,
-		Normal,
-		PreserveWhitespace,
-		PreserveWhitespaceNoWrap
-	}
-}
-namespace TMPro
-{
-	public enum MaskingOffsetMode
-	{
-		Percentage,
-		Pixel
-	}
+	Percentage,
+	Pixel
 }

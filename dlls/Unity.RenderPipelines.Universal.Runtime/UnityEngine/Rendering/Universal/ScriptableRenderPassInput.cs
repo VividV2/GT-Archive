@@ -1,26 +1,13 @@
 using System;
 
-namespace UnityEngine.Rendering.Universal
+namespace UnityEngine.Rendering.Universal;
+
+[Flags]
+public enum ScriptableRenderPassInput
 {
-}
-namespace UnityEngine.Rendering.Universal
-{
-	[Flags]
-	public enum ScriptableRenderPassInput
-	{
-		None = 0,
-		Depth = 1,
-		Normal = 2,
-		Color = 4,
-		Motion = 8
-	}
-}
-namespace UnityEngine.Rendering.Universal
-{
-}
-namespace UnityEngine.Rendering.Universal
-{
-}
-namespace UnityEngine.Rendering.Universal
-{
+	None = 0,
+	Depth = 1,
+	Normal = 2,
+	Color = 4,
+	Motion = 8
 }

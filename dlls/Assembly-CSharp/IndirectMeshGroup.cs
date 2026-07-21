@@ -1,2 +1,14 @@
-// Could not decompile IndirectMeshGroup
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public sealed class IndirectMeshGroup : MonoBehaviour
+{
+	private void OnEnable()
+	{
+		IndirectMeshRenderer.SetGroupVisible(GetInstanceID(), visible: true);
+	}
+
+	private void OnDisable()
+	{
+		IndirectMeshRenderer.SetGroupVisible(GetInstanceID(), visible: false);
+	}
+}

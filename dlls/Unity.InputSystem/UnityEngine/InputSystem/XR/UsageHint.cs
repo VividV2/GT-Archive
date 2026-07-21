@@ -1,13 +1,9 @@
 using System;
 
-namespace UnityEngine.InputSystem.XR
+namespace UnityEngine.InputSystem.XR;
+
+[Serializable]
+public struct UsageHint
 {
-	[Serializable]
-	public struct UsageHint
-	{
-		public string content;
-	}
-}
-namespace UnityEngine.InputSystem.XR
-{
+	public string content;
 }

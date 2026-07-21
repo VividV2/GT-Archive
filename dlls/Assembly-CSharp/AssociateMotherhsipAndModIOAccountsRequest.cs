@@ -1,2 +1,15 @@
-// Could not decompile AssociateMotherhsipAndModIOAccountsRequest
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+[Serializable]
+public class AssociateMotherhsipAndModIOAccountsRequest
+{
+	public string MothershipPlayerId;
+
+	public string MothershipToken;
+
+	public string ModIOId;
+
+	public string ModIOToken;
+
+	public string MothershipEnvId;
+}

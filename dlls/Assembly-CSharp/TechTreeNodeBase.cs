@@ -1,2 +1,10 @@
-// Could not decompile TechTreeNodeBase
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using XNode;
+
+public abstract class TechTreeNodeBase : Node
+{
+	[Serializable]
+	public class Empty
+	{
+	}
+}

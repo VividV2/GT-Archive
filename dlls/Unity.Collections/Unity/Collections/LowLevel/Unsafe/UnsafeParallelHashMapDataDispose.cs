@@ -1,2 +1,16 @@
-// Could not decompile Unity.Collections.LowLevel.Unsafe.UnsafeParallelHashMapDataDispose
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.Collections.LowLevel.Unsafe;
+
+[NativeContainer]
+[GenerateTestsForBurstCompatibility]
+internal struct UnsafeParallelHashMapDataDispose
+{
+	[NativeDisableUnsafePtrRestriction]
+	internal unsafe UnsafeParallelHashMapData* m_Buffer;
+
+	internal AllocatorManager.AllocatorHandle m_AllocatorLabel;
+
+	public unsafe void Dispose()
+	{
+		UnsafeParallelHashMapData.DeallocateHashMap(m_Buffer, m_AllocatorLabel);
+	}
+}

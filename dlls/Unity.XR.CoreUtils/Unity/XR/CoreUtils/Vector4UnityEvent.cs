@@ -1,2 +1,10 @@
-// Could not decompile Unity.XR.CoreUtils.Vector4UnityEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace Unity.XR.CoreUtils;
+
+[Serializable]
+public class Vector4UnityEvent : UnityEvent<Vector4>
+{
+}

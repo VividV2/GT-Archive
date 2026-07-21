@@ -1,2 +1,21 @@
-// Could not decompile VYaml.Serialization.PrimitiveObjectResolver
-// This type uses unsupported IL or has too many generic parameters.
+namespace VYaml.Serialization;
+
+public class PrimitiveObjectResolver : IYamlFormatterResolver
+{
+	private static class FormatterCache<T>
+	{
+		public static readonly IYamlFormatter<T> Formatter;
+
+		static FormatterCache()
+		{
+			Formatter = (IYamlFormatter<T>)PrimitiveObjectFormatter.Instance;
+		}
+	}
+
+	public static readonly PrimitiveObjectResolver Instance = new PrimitiveObjectResolver();
+
+	public IYamlFormatter<T> GetFormatter<T>()
+	{
+		return FormatterCache<T>.Formatter;
+	}
+}

@@ -1,6 +1,8 @@
-namespace System.Runtime.Versioning
+namespace Internal.Runtime.Augments;
+
+internal enum CausalitySynchronousWork
 {
-}
-namespace System.Runtime.InteropServices.WindowsRuntime
-{
+	CompletionNotification,
+	ProgressNotification,
+	Execution
 }

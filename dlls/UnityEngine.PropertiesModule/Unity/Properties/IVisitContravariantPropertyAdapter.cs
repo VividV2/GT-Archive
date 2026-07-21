@@ -1,10 +1,6 @@
-namespace Unity.Properties
+namespace Unity.Properties;
+
+public interface IVisitContravariantPropertyAdapter<in TValue> : IPropertyVisitorAdapter
 {
-	public interface IVisitContravariantPropertyAdapter<in TValue> : IPropertyVisitorAdapter
-	{
-		void Visit<TContainer>(in VisitContext<TContainer> context, ref TContainer container, TValue value);
-	}
-}
-namespace Unity.Properties
-{
+	void Visit<TContainer>(in VisitContext<TContainer> context, ref TContainer container, TValue value);
 }

@@ -1,2 +1,11 @@
-// Could not decompile System.Runtime.CompilerServices.AsyncMethodBuilderAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.CompilerServices;
+
+internal sealed class AsyncMethodBuilderAttribute : Attribute
+{
+	public Type BuilderType { get; }
+
+	public AsyncMethodBuilderAttribute(Type builderType)
+	{
+		BuilderType = builderType;
+	}
+}

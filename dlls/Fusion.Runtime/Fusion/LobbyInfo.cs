@@ -1,2 +1,17 @@
-// Could not decompile Fusion.LobbyInfo
-// This type uses unsupported IL or has too many generic parameters.
+namespace Fusion;
+
+public class LobbyInfo
+{
+	public bool IsValid { get; internal set; }
+
+	public string Name { get; internal set; }
+
+	public string Region { get; internal set; }
+
+	internal void Reset()
+	{
+		IsValid = false;
+		Name = null;
+		Region = null;
+	}
+}

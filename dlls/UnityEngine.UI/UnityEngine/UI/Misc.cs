@@ -1,43 +1,39 @@
-namespace UnityEngine.UI
+namespace UnityEngine.UI;
+
+internal static class Misc
 {
-	internal static class Misc
+	public static void Destroy(Object obj)
 	{
-		public static void Destroy(Object obj)
+		if (!(obj != null))
 		{
-			if (!(obj != null))
+			return;
+		}
+		if (Application.isPlaying)
+		{
+			if (obj is GameObject)
 			{
-				return;
+				(obj as GameObject).transform.parent = null;
 			}
-			if (Application.isPlaying)
-			{
-				if (obj is GameObject)
-				{
-					(obj as GameObject).transform.parent = null;
-				}
-				Object.Destroy(obj);
-			}
-			else
+			Object.Destroy(obj);
+		}
+		else
+		{
+			Object.DestroyImmediate(obj);
+		}
+	}
+
+	public static void DestroyImmediate(Object obj)
+	{
+		if (obj != null)
+		{
+			if (Application.isEditor)
 			{
 				Object.DestroyImmediate(obj);
 			}
-		}
-
-		public static void DestroyImmediate(Object obj)
-		{
-			if (obj != null)
+			else
 			{
-				if (Application.isEditor)
-				{
-					Object.DestroyImmediate(obj);
-				}
-				else
-				{
-					Object.Destroy(obj);
-				}
+				Object.Destroy(obj);
 			}
 		}
 	}
-}
-namespace UnityEngine.UI
-{
 }

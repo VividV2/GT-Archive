@@ -1,6 +1,11 @@
-namespace PlayFab.ClientModels
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetPlayFabIDsFromPSNAccountIDsResult : PlayFabResultCommon
 {
-}
-namespace PlayFab.ClientModels
-{
+	public List<PSNAccountPlayFabIdPair> Data;
 }

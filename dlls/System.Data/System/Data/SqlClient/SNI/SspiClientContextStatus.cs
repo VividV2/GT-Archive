@@ -1,2 +1,13 @@
-// Could not decompile System.Data.SqlClient.SNI.SspiClientContextStatus
-// This type uses unsupported IL or has too many generic parameters.
+using System.Net;
+using System.Net.Security;
+
+namespace System.Data.SqlClient.SNI;
+
+internal class SspiClientContextStatus
+{
+	public SafeFreeCredentials CredentialsHandle { get; set; }
+
+	public SafeDeleteContext SecurityContext { get; set; }
+
+	public ContextFlagsPal ContextFlags { get; set; }
+}

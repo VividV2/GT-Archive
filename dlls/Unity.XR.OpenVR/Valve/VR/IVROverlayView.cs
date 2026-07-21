@@ -1,22 +1,30 @@
+using System.Runtime.InteropServices;
+
 namespace Valve.VR;
 
-public struct HmdMatrix33_t
+public struct IVROverlayView
 {
-	public float m0;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EVROverlayError _AcquireOverlayView(ulong ulOverlayHandle, ref VRNativeDevice_t pNativeDevice, ref VROverlayView_t pOverlayView, uint unOverlayViewSize);
 
-	public float m1;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EVROverlayError _ReleaseOverlayView(ref VROverlayView_t pOverlayView);
 
-	public float m2;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate void _PostOverlayEvent(ulong ulOverlayHandle, ref VREvent_t pvrEvent);
 
-	public float m3;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate bool _IsViewingPermitted(ulong ulOverlayHandle);
 
-	public float m4;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _AcquireOverlayView AcquireOverlayView;
 
-	public float m5;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _ReleaseOverlayView ReleaseOverlayView;
 
-	public float m6;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _PostOverlayEvent PostOverlayEvent;
 
-	public float m7;
-
-	public float m8;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _IsViewingPermitted IsViewingPermitted;
 }

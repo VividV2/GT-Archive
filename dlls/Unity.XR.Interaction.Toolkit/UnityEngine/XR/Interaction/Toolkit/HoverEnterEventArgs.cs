@@ -1,2 +1,33 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.HoverEnterEventArgs
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+
+namespace UnityEngine.XR.Interaction.Toolkit;
+
+public class HoverEnterEventArgs : BaseInteractionEventArgs
+{
+	public new IXRHoverInteractor interactorObject
+	{
+		get
+		{
+			return (IXRHoverInteractor)base.interactorObject;
+		}
+		set
+		{
+			base.interactorObject = value;
+		}
+	}
+
+	public new IXRHoverInteractable interactableObject
+	{
+		get
+		{
+			return (IXRHoverInteractable)base.interactableObject;
+		}
+		set
+		{
+			base.interactableObject = value;
+		}
+	}
+
+	public XRInteractionManager manager { get; set; }
+}

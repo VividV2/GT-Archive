@@ -1,2 +1,13 @@
-// Could not decompile Modio.Errors.HttpError
-// This type uses unsupported IL or has too many generic parameters.
+namespace Modio.Errors;
+
+public class HttpError : Error
+{
+	public new static readonly HttpError None = new HttpError(HttpErrorCode.NONE);
+
+	public new HttpErrorCode Code => (HttpErrorCode)base.Code;
+
+	public HttpError(HttpErrorCode code)
+		: base((ErrorCode)code)
+	{
+	}
+}

@@ -24,6 +24,3 @@ public interface IPointSet
 
 	IEnumerable<int> VertexIndices();
 }
-namespace g3
-{
-}

@@ -1,2 +1,7 @@
-// Could not decompile Unity.Cinemachine.SaveDuringPlayAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Unity.Cinemachine;
+
+public sealed class SaveDuringPlayAttribute : Attribute
+{
+}

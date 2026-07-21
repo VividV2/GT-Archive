@@ -1,2 +1,10 @@
-// Could not decompile RPCArgBuffer`1
-// This type uses unsupported IL or has too many generic parameters.
+using System.Runtime.InteropServices;
+
+public struct RPCArgBuffer<T>(T argStruct) where T : struct
+{
+	public T Args = argStruct;
+
+	public byte[] Data = new byte[DataLength];
+
+	public int DataLength = Marshal.SizeOf(typeof(T));
+}

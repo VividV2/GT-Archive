@@ -1,2 +1,8 @@
-// Could not decompile FXModifier
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class FXModifier : MonoBehaviour
+{
+	public virtual void UpdateScale(float scale, Color color)
+	{
+	}
+}

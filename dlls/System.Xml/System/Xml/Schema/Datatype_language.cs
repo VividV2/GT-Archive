@@ -1,2 +1,6 @@
-// Could not decompile System.Xml.Schema.Datatype_language
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml.Schema;
+
+internal class Datatype_language : Datatype_token
+{
+	public override XmlTypeCode TypeCode => XmlTypeCode.Language;
+}

@@ -1,15 +1,18 @@
 using System;
-using System.Collections.Generic;
 using PlayFab.SharedModels;
 
-namespace PlayFab.MultiplayerModels;
+namespace PlayFab.GroupsModels;
 
 [Serializable]
-public class ListCertificateSummariesResponse : PlayFabResultCommon
+public class UpdateGroupRequest : PlayFabRequestCommon
 {
-	public List<CertificateSummary> CertificateSummaries;
+	public string AdminRoleId;
 
-	public int PageSize;
+	public int? ExpectedProfileVersion;
 
-	public string SkipToken;
+	public EntityKey Group;
+
+	public string GroupName;
+
+	public string MemberRoleId;
 }

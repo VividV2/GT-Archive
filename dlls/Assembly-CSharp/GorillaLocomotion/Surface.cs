@@ -1,2 +1,8 @@
-// Could not decompile GorillaLocomotion.Surface
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GorillaLocomotion;
+
+public class Surface : MonoBehaviour
+{
+	public float slipPercentage;
+}

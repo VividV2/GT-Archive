@@ -1,2 +1,16 @@
-// Could not decompile MenagerieHoldable
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class MenagerieHoldable : HoldableObject
+{
+	public override void OnHover(InteractionPoint pointHovered, GameObject hoveringHand)
+	{
+	}
+
+	public override void OnGrab(InteractionPoint pointGrabbed, GameObject grabbingHand)
+	{
+	}
+
+	public override void DropItemCleanup()
+	{
+	}
+}

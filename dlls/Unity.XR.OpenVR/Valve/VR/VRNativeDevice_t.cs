@@ -1,2 +1,10 @@
-// Could not decompile Valve.VR.VRNativeDevice_t
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Valve.VR;
+
+public struct VRNativeDevice_t
+{
+	public IntPtr handle;
+
+	public EDeviceType eType;
+}

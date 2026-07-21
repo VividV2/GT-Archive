@@ -1,6 +1,11 @@
-namespace UnityEngine.Localization.SmartFormat.PersistentVariables
+namespace UnityEngine.Localization.Metadata;
+
+[HideInInspector]
+public interface ISharedMetadata : IMetadata
 {
-}
-namespace UnityEngine.Localization.PropertyVariants.TrackedProperties
-{
+	bool Contains(long keyId);
+
+	void AddEntry(long keyId);
+
+	void RemoveEntry(long keyId);
 }

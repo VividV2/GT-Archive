@@ -1,2 +1,13 @@
-// Could not decompile Oculus.Platform.Models.LivestreamingApplicationStatus
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Oculus.Platform.Models;
+
+public class LivestreamingApplicationStatus
+{
+	public readonly bool StreamingEnabled;
+
+	public LivestreamingApplicationStatus(IntPtr o)
+	{
+		StreamingEnabled = CAPI.ovr_LivestreamingApplicationStatus_GetStreamingEnabled(o);
+	}
+}

@@ -1,2 +1,13 @@
-// Could not decompile SAnnouncementData
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+[Serializable]
+public struct SAnnouncementData
+{
+	public string ShowAnnouncement;
+
+	public string AnnouncementID;
+
+	public string AnnouncementTitle;
+
+	public string Message;
+}

@@ -1,6 +1,13 @@
-namespace UnityEngine.EventSystems;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 
-public interface ICancelHandler : IEventSystemHandler
+namespace UnityEngine.UI;
+
+[Obsolete("Use BaseMeshEffect instead", true)]
+public abstract class BaseVertexEffect
 {
-	void OnCancel(BaseEventData eventData);
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	[Obsolete("Use BaseMeshEffect.ModifyMeshes instead", true)]
+	public abstract void ModifyVertices(List<UIVertex> vertices);
 }

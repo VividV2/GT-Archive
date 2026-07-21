@@ -1,25 +1,21 @@
 using UnityEngine.Scripting;
 
-namespace UnityEngine.Rendering
+namespace UnityEngine.Rendering;
+
+[UsedByNativeCode]
+internal struct GPUDrivenMaterialFilterEntry
 {
-	[UsedByNativeCode]
-	internal struct GPUDrivenMaterialFilterEntry
-	{
-		public GPUDrivenBitOpType op;
+	public GPUDrivenBitOpType op;
 
-		public int minQueueValue;
+	public int minQueueValue;
 
-		public int maxQueueValue;
+	public int maxQueueValue;
 
-		public ShaderTagId keyTag;
+	public ShaderTagId keyTag;
 
-		public ShaderTagId valueTag;
+	public ShaderTagId valueTag;
 
-		public int flags;
+	public int flags;
 
-		public string keyword;
-	}
-}
-namespace JetBrains.Annotations
-{
+	public string keyword;
 }

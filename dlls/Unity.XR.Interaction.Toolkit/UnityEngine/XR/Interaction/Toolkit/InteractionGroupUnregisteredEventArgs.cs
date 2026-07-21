@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.InteractionGroupUnregisteredEventArgs
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+
+namespace UnityEngine.XR.Interaction.Toolkit;
+
+public class InteractionGroupUnregisteredEventArgs : BaseRegistrationEventArgs
+{
+	public IXRInteractionGroup interactionGroupObject { get; set; }
+}

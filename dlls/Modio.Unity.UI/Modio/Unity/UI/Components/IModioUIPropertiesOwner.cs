@@ -8,6 +8,3 @@ public interface IModioUIPropertiesOwner
 
 	void RemoveUpdatePropertiesListener(UnityAction listener);
 }
-namespace Modio.Unity.UI.Navigation
-{
-}

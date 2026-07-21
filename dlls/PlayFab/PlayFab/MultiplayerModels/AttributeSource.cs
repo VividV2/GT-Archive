@@ -1,11 +1,7 @@
-namespace PlayFab.MultiplayerModels
+namespace PlayFab.MultiplayerModels;
+
+public enum AttributeSource
 {
-	public enum AttributeSource
-	{
-		User,
-		PlayerEntity
-	}
-}
-namespace PlayFab
-{
+	User,
+	PlayerEntity
 }

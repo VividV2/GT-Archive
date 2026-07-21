@@ -1,13 +1,38 @@
-namespace System.Runtime.Serialization.Formatters;
+using System.Globalization;
+using System.Runtime.Serialization;
 
-/// <summary>Indicates the method that will be used during deserialization for locating and loading assemblies.</summary>
-/// <summary>Indicates the method that will be used during deserialization for locating and loading assemblies.</summary>
-public enum FormatterAssemblyStyle
+namespace System;
+
+[Serializable]
+internal sealed class OrdinalIgnoreCaseComparer : OrdinalComparer, ISerializable
 {
-	/// <summary>In simple mode, the assembly used during deserialization need not match exactly the assembly used during serialization. Specifically, the version numbers need not match as the <see cref="Overload:System.Reflection.Assembly.LoadWithPartialName" /> method is used to load the assembly.</summary>
-	/// <summary>In simple mode, the assembly used during deserialization need not match exactly the assembly used during serialization. Specifically, the version numbers need not match as the <see cref="Overload:System.Reflection.Assembly.LoadWithPartialName" /> method is used to load the assembly.</summary>
-	Simple,
-	/// <summary>In full mode, the assembly used during deserialization must match exactly the assembly used during serialization. The <see cref="Overload:System.Reflection.Assembly.Load" /> method of the <see cref="T:System.Reflection.Assembly" /> class is used to load the assembly.</summary>
-	/// <summary>In full mode, the assembly used during deserialization must match exactly the assembly used during serialization. The <see cref="Overload:System.Reflection.Assembly.Load" /> method of the <see cref="T:System.Reflection.Assembly" /> class is used to load the assembly.</summary>
-	Full
+	public OrdinalIgnoreCaseComparer()
+		: base(ignoreCase: true)
+	{
+	}
+
+	public override int Compare(string x, string y)
+	{
+		return string.Compare(x, y, StringComparison.OrdinalIgnoreCase);
+	}
+
+	public override bool Equals(string x, string y)
+	{
+		return string.Equals(x, y, StringComparison.OrdinalIgnoreCase);
+	}
+
+	public override int GetHashCode(string obj)
+	{
+		if (obj == null)
+		{
+			ThrowHelper.ThrowArgumentNullException(ExceptionArgument.obj);
+		}
+		return CompareInfo.GetIgnoreCaseHash(obj);
+	}
+
+	public void GetObjectData(SerializationInfo info, StreamingContext context)
+	{
+		info.SetType(typeof(OrdinalComparer));
+		info.AddValue("_ignoreCase", value: true);
+	}
 }

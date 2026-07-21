@@ -1,2 +1,26 @@
-// Could not decompile Valve.VR.InteractionSystem.Sample.ButtonEffect
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Valve.VR.InteractionSystem.Sample;
+
+public class ButtonEffect : MonoBehaviour
+{
+	public void OnButtonDown(Hand fromHand)
+	{
+		ColorSelf(Color.cyan);
+		fromHand.TriggerHapticPulse(1000);
+	}
+
+	public void OnButtonUp(Hand fromHand)
+	{
+		ColorSelf(Color.white);
+	}
+
+	private void ColorSelf(Color newColor)
+	{
+		Renderer[] componentsInChildren = GetComponentsInChildren<Renderer>();
+		for (int i = 0; i < componentsInChildren.Length; i++)
+		{
+			componentsInChildren[i].material.color = newColor;
+		}
+	}
+}

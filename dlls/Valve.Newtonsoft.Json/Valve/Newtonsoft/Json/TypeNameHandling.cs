@@ -1,26 +1,13 @@
 using System;
 
-namespace Valve.Newtonsoft.Json
+namespace Valve.Newtonsoft.Json;
+
+[Flags]
+public enum TypeNameHandling
 {
-}
-namespace Valve.Newtonsoft.Json
-{
-	[Flags]
-	public enum TypeNameHandling
-	{
-		None = 0,
-		Objects = 1,
-		Arrays = 2,
-		All = 3,
-		Auto = 4
-	}
-}
-namespace Valve.Newtonsoft.Json.Utilities
-{
-}
-namespace Valve.Newtonsoft.Json
-{
-}
-namespace Valve.Newtonsoft.Json.Utilities
-{
+	None = 0,
+	Objects = 1,
+	Arrays = 2,
+	All = 3,
+	Auto = 4
 }

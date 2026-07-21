@@ -19,6 +19,3 @@ public interface IStackWalk
 	/// <summary>Causes every <see cref="M:System.Security.IStackWalk.Demand" /> for all objects except the current one that passes through the calling code to fail, even if code higher in the call stack has been granted permission to access other resources.</summary>
 	void PermitOnly();
 }
-namespace System.Runtime.InteropServices.WindowsRuntime
-{
-}

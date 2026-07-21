@@ -1,62 +1,58 @@
 using System;
 using UnityEngine;
 
-namespace Unity.XR.CoreUtils.Datums
+namespace Unity.XR.CoreUtils;
+
+public readonly struct ARTrackablesParentTransformChangedEventArgs : IEquatable<ARTrackablesParentTransformChangedEventArgs>
 {
-}
-namespace Unity.XR.CoreUtils
-{
-	public readonly struct ARTrackablesParentTransformChangedEventArgs : IEquatable<ARTrackablesParentTransformChangedEventArgs>
+	public XROrigin Origin { get; }
+
+	public Transform TrackablesParent { get; }
+
+	public ARTrackablesParentTransformChangedEventArgs(XROrigin origin, Transform trackablesParent)
 	{
-		public XROrigin Origin { get; }
-
-		public Transform TrackablesParent { get; }
-
-		public ARTrackablesParentTransformChangedEventArgs(XROrigin origin, Transform trackablesParent)
+		if (origin == null)
 		{
-			if (origin == null)
-			{
-				throw new ArgumentNullException("origin");
-			}
-			if (trackablesParent == null)
-			{
-				throw new ArgumentNullException("trackablesParent");
-			}
-			Origin = origin;
-			TrackablesParent = trackablesParent;
+			throw new ArgumentNullException("origin");
 		}
-
-		public bool Equals(ARTrackablesParentTransformChangedEventArgs other)
+		if (trackablesParent == null)
 		{
-			if (Origin == other.Origin)
-			{
-				return TrackablesParent == other.TrackablesParent;
-			}
-			return false;
+			throw new ArgumentNullException("trackablesParent");
 		}
+		Origin = origin;
+		TrackablesParent = trackablesParent;
+	}
 
-		public override bool Equals(object obj)
+	public bool Equals(ARTrackablesParentTransformChangedEventArgs other)
+	{
+		if (Origin == other.Origin)
 		{
-			if (obj is ARTrackablesParentTransformChangedEventArgs other)
-			{
-				return Equals(other);
-			}
-			return false;
+			return TrackablesParent == other.TrackablesParent;
 		}
+		return false;
+	}
 
-		public override int GetHashCode()
+	public override bool Equals(object obj)
+	{
+		if (obj is ARTrackablesParentTransformChangedEventArgs other)
 		{
-			return HashCodeUtil.Combine(HashCodeUtil.ReferenceHash(Origin), HashCodeUtil.ReferenceHash(TrackablesParent));
+			return Equals(other);
 		}
+		return false;
+	}
 
-		public static bool operator ==(ARTrackablesParentTransformChangedEventArgs lhs, ARTrackablesParentTransformChangedEventArgs rhs)
-		{
-			return lhs.Equals(rhs);
-		}
+	public override int GetHashCode()
+	{
+		return HashCodeUtil.Combine(HashCodeUtil.ReferenceHash(Origin), HashCodeUtil.ReferenceHash(TrackablesParent));
+	}
 
-		public static bool operator !=(ARTrackablesParentTransformChangedEventArgs lhs, ARTrackablesParentTransformChangedEventArgs rhs)
-		{
-			return !lhs.Equals(rhs);
-		}
+	public static bool operator ==(ARTrackablesParentTransformChangedEventArgs lhs, ARTrackablesParentTransformChangedEventArgs rhs)
+	{
+		return lhs.Equals(rhs);
+	}
+
+	public static bool operator !=(ARTrackablesParentTransformChangedEventArgs lhs, ARTrackablesParentTransformChangedEventArgs rhs)
+	{
+		return !lhs.Equals(rhs);
 	}
 }

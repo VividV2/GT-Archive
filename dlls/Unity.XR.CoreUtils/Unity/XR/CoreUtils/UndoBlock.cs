@@ -1,64 +1,52 @@
 using System;
 using UnityEngine;
-using System;
-using UnityEngine;
 
-namespace Unity.XR.CoreUtils.Datums
+namespace Unity.XR.CoreUtils;
+
+public class UndoBlock : IDisposable
 {
-}
-namespace Unity.XR.CoreUtils
-{
-	public readonly struct ARTrackablesParentTransformChangedEventArgs : IEquatable<ARTrackablesParentTransformChangedEventArgs>
+	private int m_UndoGroup;
+
+	private bool m_DisposedValue;
+
+	public UndoBlock(string undoLabel, bool testMode = false)
 	{
-		public XROrigin Origin { get; }
+		m_UndoGroup = -1;
+	}
 
-		public Transform TrackablesParent { get; }
+	public void RegisterCreatedObject(UnityEngine.Object objectToUndo)
+	{
+	}
 
-		public ARTrackablesParentTransformChangedEventArgs(XROrigin origin, Transform trackablesParent)
+	public void RecordObject(UnityEngine.Object objectToUndo)
+	{
+	}
+
+	public void SetTransformParent(Transform transform, Transform newParent)
+	{
+		transform.parent = newParent;
+	}
+
+	public T AddComponent<T>(GameObject gameObject) where T : Component
+	{
+		return gameObject.AddComponent<T>();
+	}
+
+	protected virtual void Dispose(bool disposing)
+	{
+		if (!m_DisposedValue)
 		{
-			if (origin == null)
+			if (disposing)
 			{
-				throw new ArgumentNullException("origin");
+				_ = m_UndoGroup;
+				_ = -1;
 			}
-			if (trackablesParent == null)
-			{
-				throw new ArgumentNullException("trackablesParent");
-			}
-			Origin = origin;
-			TrackablesParent = trackablesParent;
+			m_DisposedValue = true;
 		}
+	}
 
-		public bool Equals(ARTrackablesParentTransformChangedEventArgs other)
-		{
-			if (Origin == other.Origin)
-			{
-				return TrackablesParent == other.TrackablesParent;
-			}
-			return false;
-		}
-
-		public override bool Equals(object obj)
-		{
-			if (obj is ARTrackablesParentTransformChangedEventArgs other)
-			{
-				return Equals(other);
-			}
-			return false;
-		}
-
-		public override int GetHashCode()
-		{
-			return HashCodeUtil.Combine(HashCodeUtil.ReferenceHash(Origin), HashCodeUtil.ReferenceHash(TrackablesParent));
-		}
-
-		public static bool operator ==(ARTrackablesParentTransformChangedEventArgs lhs, ARTrackablesParentTransformChangedEventArgs rhs)
-		{
-			return lhs.Equals(rhs);
-		}
-
-		public static bool operator !=(ARTrackablesParentTransformChangedEventArgs lhs, ARTrackablesParentTransformChangedEventArgs rhs)
-		{
-			return !lhs.Equals(rhs);
-		}
+	public void Dispose()
+	{
+		Dispose(disposing: true);
 	}
 }

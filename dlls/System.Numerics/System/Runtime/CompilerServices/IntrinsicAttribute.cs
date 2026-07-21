@@ -1,2 +1,6 @@
-// Could not decompile System.Runtime.CompilerServices.IntrinsicAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.CompilerServices;
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Field, Inherited = false)]
+internal sealed class IntrinsicAttribute : Attribute
+{
+}

@@ -1,2 +1,6 @@
-// Could not decompile System.Runtime.Versioning.NonVersionableAttribute
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Runtime.Versioning;
+
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+internal sealed class NonVersionableAttribute : Attribute
+{
+}

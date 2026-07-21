@@ -1,20 +1,22 @@
-using System.ComponentModel;
-using System.ComponentModel;
+using System;
+using Oculus.Platform.Models;
 
-namespace Oculus.Platform.Models
+namespace Oculus.Platform;
+
+public class MessageWithAssetFileDeleteResult : Message<AssetFileDeleteResult>
 {
-}
-namespace Oculus.Platform
-{
-	public enum VoipSampleRate
+	public MessageWithAssetFileDeleteResult(IntPtr c_message)
+		: base(c_message)
 	{
-		[Description("UNKNOWN")]
-		Unknown,
-		[Description("HZ24000")]
-		HZ24000,
-		[Description("HZ44100")]
-		HZ44100,
-		[Description("HZ48000")]
-		HZ48000
+	}
+
+	public override AssetFileDeleteResult GetAssetFileDeleteResult()
+	{
+		return base.Data;
+	}
+
+	protected override AssetFileDeleteResult GetDataFromMessage(IntPtr c_message)
+	{
+		return new AssetFileDeleteResult(CAPI.ovr_Message_GetAssetFileDeleteResult(CAPI.ovr_Message_GetNativeMessage(c_message)));
 	}
 }

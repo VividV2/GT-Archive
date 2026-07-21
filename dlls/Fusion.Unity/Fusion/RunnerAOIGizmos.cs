@@ -1,2 +1,10 @@
-// Could not decompile Fusion.RunnerAOIGizmos
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Fusion;
+
+[RequireComponent(typeof(NetworkRunner))]
+[ScriptHelp(BackColor = ScriptHeaderBackColor.Sand)]
+[DisallowMultipleComponent]
+public class RunnerAOIGizmos : SimulationBehaviour
+{
+}

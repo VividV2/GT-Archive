@@ -1,2 +1,21 @@
-// Could not decompile UnityEngine.UIElements.MouseOutEvent
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.UIElements;
+
+[EventCategory(EventCategory.EnterLeave)]
+public class MouseOutEvent : MouseEventBase<MouseOutEvent>
+{
+	static MouseOutEvent()
+	{
+		EventBase<MouseOutEvent>.SetCreateFunction(() => new MouseOutEvent());
+	}
+
+	internal override void Dispatch(BaseVisualElementPanel panel)
+	{
+		EventDispatchUtilities.DispatchToAssignedTarget(this, panel);
+	}
+
+	protected internal override void PreDispatch(IPanel panel)
+	{
+		base.PreDispatch(panel);
+		base.elementTarget.UpdateCursorStyle(eventTypeId);
+	}
+}

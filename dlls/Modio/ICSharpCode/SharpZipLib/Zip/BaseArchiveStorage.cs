@@ -1,2 +1,25 @@
-// Could not decompile ICSharpCode.SharpZipLib.Zip.BaseArchiveStorage
-// This type uses unsupported IL or has too many generic parameters.
+using System.IO;
+
+namespace ICSharpCode.SharpZipLib.Zip;
+
+public abstract class BaseArchiveStorage : IArchiveStorage
+{
+	private readonly FileUpdateMode updateMode_;
+
+	public FileUpdateMode UpdateMode => updateMode_;
+
+	protected BaseArchiveStorage(FileUpdateMode updateMode)
+	{
+		updateMode_ = updateMode;
+	}
+
+	public abstract Stream GetTemporaryOutput();
+
+	public abstract Stream ConvertTemporaryToFinal();
+
+	public abstract Stream MakeTemporaryCopy(Stream stream);
+
+	public abstract Stream OpenForDirectUpdate(Stream stream);
+
+	public abstract void Dispose();
+}

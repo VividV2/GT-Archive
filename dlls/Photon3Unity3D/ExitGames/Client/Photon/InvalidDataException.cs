@@ -1,2 +1,11 @@
-// Could not decompile ExitGames.Client.Photon.InvalidDataException
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace ExitGames.Client.Photon;
+
+public class InvalidDataException : Exception
+{
+	public InvalidDataException(string message)
+		: base(message)
+	{
+	}
+}

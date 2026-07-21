@@ -1,2 +1,17 @@
-// Could not decompile GT_CustomMapSupportRuntime.UberShaderDynamicLight
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace GT_CustomMapSupportRuntime;
+
+[RequireComponent(typeof(Light))]
+public class UberShaderDynamicLight : MonoBehaviour
+{
+	public Light? dynamicLight;
+
+	private void Awake()
+	{
+		if (dynamicLight == null)
+		{
+			dynamicLight = GetComponent<Light>();
+		}
+	}
+}

@@ -1,2 +1,8 @@
-// Could not decompile Pathfinding.RichPathPart
-// This type uses unsupported IL or has too many generic parameters.
+using Pathfinding.Util;
+
+namespace Pathfinding;
+
+public abstract class RichPathPart : IAstarPooledObject
+{
+	public abstract void OnEnterPool();
+}

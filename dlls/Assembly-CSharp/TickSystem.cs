@@ -1,2 +1,3 @@
-namespace GorillaTag.Cosmetics;
-
+internal class TickSystem : TickSystem<object>
+{
+}

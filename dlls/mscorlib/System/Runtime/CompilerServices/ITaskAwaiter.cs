@@ -1,3 +1,5 @@
-namespace System
+namespace System.Runtime.CompilerServices;
+
+internal interface ITaskAwaiter
 {
 }

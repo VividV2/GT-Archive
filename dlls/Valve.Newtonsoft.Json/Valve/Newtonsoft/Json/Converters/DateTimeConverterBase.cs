@@ -1,2 +1,19 @@
-// Could not decompile Valve.Newtonsoft.Json.Converters.DateTimeConverterBase
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace Valve.Newtonsoft.Json.Converters;
+
+public abstract class DateTimeConverterBase : JsonConverter
+{
+	public override bool CanConvert(Type objectType)
+	{
+		if ((object)objectType == typeof(DateTime) || (object)objectType == typeof(DateTime?))
+		{
+			return true;
+		}
+		if ((object)objectType == typeof(DateTimeOffset) || (object)objectType == typeof(DateTimeOffset?))
+		{
+			return true;
+		}
+		return false;
+	}
+}

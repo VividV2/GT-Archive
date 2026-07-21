@@ -1,37 +1,33 @@
 using System;
 using System.Diagnostics;
 
-namespace Sirenix.OdinInspector
+namespace Sirenix.OdinInspector;
+
+[AttributeUsage(AttributeTargets.All, AllowMultiple = false)]
+[Conditional("UNITY_EDITOR")]
+public class TableMatrixAttribute : Attribute
 {
-	[AttributeUsage(AttributeTargets.All, AllowMultiple = false)]
-	[Conditional("UNITY_EDITOR")]
-	public class TableMatrixAttribute : Attribute
-	{
-		public bool IsReadOnly;
+	public bool IsReadOnly;
 
-		public bool ResizableColumns = true;
+	public bool ResizableColumns = true;
 
-		public string VerticalTitle;
+	public string VerticalTitle;
 
-		public string HorizontalTitle;
+	public string HorizontalTitle;
 
-		public string DrawElementMethod;
+	public string DrawElementMethod;
 
-		public int RowHeight;
+	public int RowHeight;
 
-		public bool SquareCells;
+	public bool SquareCells;
 
-		public bool HideColumnIndices;
+	public bool HideColumnIndices;
 
-		public bool HideRowIndices;
+	public bool HideRowIndices;
 
-		public bool RespectIndentLevel = true;
+	public bool RespectIndentLevel = true;
 
-		public bool Transpose;
+	public bool Transpose;
 
-		public string Labels;
-	}
-}
-namespace Sirenix.OdinInspector
-{
+	public string Labels;
 }

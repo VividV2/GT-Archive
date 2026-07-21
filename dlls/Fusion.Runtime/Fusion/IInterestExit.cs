@@ -4,6 +4,3 @@ public interface IInterestExit : IPublicFacingInterface
 {
 	void InterestExit(PlayerRef player);
 }
-namespace Fusion
-{
-}

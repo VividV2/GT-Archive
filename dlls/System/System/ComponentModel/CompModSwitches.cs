@@ -1,9 +1,36 @@
-namespace System.Net;
+using System.Diagnostics;
+using System.Security.Permissions;
 
-/// <summary>Represents the method that notifies callers when a continue response is received by the client.</summary>
-/// <param name="StatusCode">The numeric value of the HTTP status from the server.</param>
-/// <param name="httpHeaders">The headers returned with the 100-continue response from the server.</param>
-/// <summary>Represents the method that notifies callers when a continue response is received by the client.</summary>
-/// <param name="StatusCode">The numeric value of the HTTP status from the server.</param>
-/// <param name="httpHeaders">The headers returned with the 100-continue response from the server.</param>
-public delegate void HttpContinueDelegate(int StatusCode, WebHeaderCollection httpHeaders);
+namespace System.ComponentModel;
+
+[HostProtection(SecurityAction.LinkDemand, SharedState = true)]
+internal static class CompModSwitches
+{
+	private static volatile BooleanSwitch commonDesignerServices;
+
+	private static volatile TraceSwitch eventLog;
+
+	public static BooleanSwitch CommonDesignerServices
+	{
+		get
+		{
+			if (commonDesignerServices == null)
+			{
+				commonDesignerServices = new BooleanSwitch("CommonDesignerServices", "Assert if any common designer service is not found.");
+			}
+			return commonDesignerServices;
+		}
+	}
+
+	public static TraceSwitch EventLog
+	{
+		get
+		{
+			if (eventLog == null)
+			{
+				eventLog = new TraceSwitch("EventLog", "Enable tracing for the EventLog component.");
+			}
+			return eventLog;
+		}
+	}
+}

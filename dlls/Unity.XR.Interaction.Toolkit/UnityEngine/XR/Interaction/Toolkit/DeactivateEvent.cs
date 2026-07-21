@@ -1,2 +1,9 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.DeactivateEvent
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Events;
+
+namespace UnityEngine.XR.Interaction.Toolkit;
+
+[Serializable]
+public sealed class DeactivateEvent : UnityEvent<DeactivateEventArgs>
+{
+}

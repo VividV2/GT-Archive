@@ -1,16 +1,20 @@
-namespace System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
-[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface, AllowMultiple = true, Inherited = false)]
-internal sealed class TypeDependencyAttribute : Attribute
+namespace System.Security.Cryptography;
+
+/// <summary>Represents the abstract class from which all mask generator algorithms must derive.</summary>
+[ComVisible(true)]
+public abstract class MaskGenerationMethod
 {
-	private string typeName;
+	/// <summary>When overridden in a derived class, generates a mask with the specified length using the specified random seed.</summary>
+	/// <param name="rgbSeed">The random seed to use to compute the mask.</param>
+	/// <param name="cbReturn">The length of the generated mask in bytes.</param>
+	/// <returns>A randomly generated mask whose length is equal to the <paramref name="cbReturn" /> parameter.</returns>
+	[ComVisible(true)]
+	public abstract byte[] GenerateMask(byte[] rgbSeed, int cbReturn);
 
-	public TypeDependencyAttribute(string typeName)
+	/// <summary>Initializes a new instance of the <see cref="T:System.Security.Cryptography.MaskGenerationMethod" /> class.</summary>
+	protected MaskGenerationMethod()
 	{
-		if (typeName == null)
-		{
-			throw new ArgumentNullException("typeName");
-		}
-		this.typeName = typeName;
 	}
 }

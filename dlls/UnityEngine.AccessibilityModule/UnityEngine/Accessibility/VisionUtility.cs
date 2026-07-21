@@ -32,7 +32,7 @@ public static class VisionUtility
 		new Color32(82, 205, 242, byte.MaxValue)
 	};
 
-	private static readonly float[] s_ColorBlindSafePaletteLuminanceValues = Enumerable.ToArray(Enumerable.Select(s_ColorBlindSafePalette, (Color c) => ComputePerceivedLuminance(c)));
+	private static readonly float[] s_ColorBlindSafePaletteLuminanceValues = s_ColorBlindSafePalette.Select((Color c) => ComputePerceivedLuminance(c)).ToArray();
 
 	internal static float ComputePerceivedLuminance(Color color)
 	{
@@ -81,7 +81,9 @@ public static class VisionUtility
 		{
 			throw new ArgumentNullException("palette");
 		}
-		Color[] array = Enumerable.ToArray(Enumerable.Select(Enumerable.Where(Enumerable.Range(0, s_ColorBlindSafePalette.Length), (int i) => s_ColorBlindSafePaletteLuminanceValues[i] >= minimumLuminance && s_ColorBlindSafePaletteLuminanceValues[i] <= maximumLuminance), (int i) => s_ColorBlindSafePalette[i]));
+		Color[] array = (from i in Enumerable.Range(0, s_ColorBlindSafePalette.Length)
+			where s_ColorBlindSafePaletteLuminanceValues[i] >= minimumLuminance && s_ColorBlindSafePaletteLuminanceValues[i] <= maximumLuminance
+			select s_ColorBlindSafePalette[i]).ToArray();
 		int num = Mathf.Min(paletteLength, array.Length);
 		if (num > 0)
 		{

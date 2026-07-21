@@ -1,9 +1,6 @@
 using System;
 using UnityEngine.Bindings;
 using UnityEngine.Scripting;
-using System;
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
 
 namespace UnityEngine.TextCore;
 
@@ -117,7 +114,7 @@ public struct GlyphRect : IEquatable<GlyphRect>
 
 	public static bool operator !=(GlyphRect lhs, GlyphRect rhs)
 	{
-		return lhs != rhs;
+		return !(lhs == rhs);
 	}
 
 	static GlyphRect()

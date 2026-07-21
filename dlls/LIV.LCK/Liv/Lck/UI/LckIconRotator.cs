@@ -1,2 +1,18 @@
-// Could not decompile Liv.Lck.UI.LckIconRotator
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+namespace Liv.Lck.UI;
+
+public class LckIconRotator : MonoBehaviour
+{
+	[SerializeField]
+	private float _rotationOffset;
+
+	[SerializeField]
+	private Transform _iconTransform;
+
+	public void Rotate()
+	{
+		float z = _iconTransform.localEulerAngles.z + _rotationOffset;
+		_iconTransform.localEulerAngles = new Vector3(0f, 0f, z);
+	}
+}

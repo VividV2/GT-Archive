@@ -1,2 +1,9 @@
-// Could not decompile DestroyIfNotQA
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine;
+
+public class DestroyIfNotQA : MonoBehaviour
+{
+	private void Awake()
+	{
+		Object.Destroy(base.gameObject);
+	}
+}

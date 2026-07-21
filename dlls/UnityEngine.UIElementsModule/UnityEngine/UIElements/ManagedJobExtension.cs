@@ -1,2 +1,11 @@
-// Could not decompile UnityEngine.UIElements.ManagedJobExtension
-// This type uses unsupported IL or has too many generic parameters.
+using Unity.Jobs;
+
+namespace UnityEngine.UIElements;
+
+internal static class ManagedJobExtension
+{
+	public static JobHandle ScheduleOrRunJob<T>(this T jobData, int arrayLength, int innerloopBatchCount, JobHandle dependsOn = default(JobHandle)) where T : struct, IJobParallelFor
+	{
+		return jobData.Schedule(arrayLength, innerloopBatchCount, dependsOn);
+	}
+}

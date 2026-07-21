@@ -1,47 +1,28 @@
 using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Analytics;
 using UnityEngine.Internal;
-using UnityEngine.Scripting;
-using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Analytics;
-using UnityEngine.Internal;
-using UnityEngine.Scripting;
-using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Analytics;
-using UnityEngine.Internal;
-using UnityEngine.Scripting;
-using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Analytics;
-using UnityEngine.Internal;
-using UnityEngine.Scripting;
-using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Analytics;
-using UnityEngine.Internal;
-using UnityEngine.Scripting;
 
-namespace UnityEditor.Analytics;
+namespace UnityEngine.Analytics;
 
-[Serializable]
-[StructLayout(LayoutKind.Sequential)]
 [ExcludeFromDocs]
-[RequiredByNativeCode(GenerateProxy = true)]
-public class VCProviderAnalytics : AnalyticsEventBase
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
+public class AnalyticInfoAttribute : Attribute
 {
-	public string Mode;
+	public int version { get; }
 
-	public VCProviderAnalytics()
-		: base("versioncontrol_ProviderSettings_OnUpdate", 1)
-	{
-	}
+	public string vendorKey { get; }
 
-	[RequiredByNativeCode]
-	internal static VCProviderAnalytics CreateVCProviderAnalytics()
+	public string eventName { get; }
+
+	internal int maxEventsPerHour { get; }
+
+	internal int maxNumberOfElements { get; }
+
+	public AnalyticInfoAttribute(string eventName, string vendorKey = "", int version = 1, int maxEventsPerHour = 1000, int maxNumberOfElements = 1000)
 	{
-		return new VCProviderAnalytics();
+		this.version = version;
+		this.vendorKey = vendorKey;
+		this.eventName = eventName;
+		this.maxEventsPerHour = maxEventsPerHour;
+		this.maxNumberOfElements = maxNumberOfElements;
 	}
 }

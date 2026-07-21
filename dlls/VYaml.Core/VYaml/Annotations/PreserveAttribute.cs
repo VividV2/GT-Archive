@@ -1,2 +1,7 @@
-// Could not decompile VYaml.Annotations.PreserveAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace VYaml.Annotations;
+
+public sealed class PreserveAttribute : Attribute
+{
+}

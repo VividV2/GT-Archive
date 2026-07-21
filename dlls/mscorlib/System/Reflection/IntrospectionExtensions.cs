@@ -1,36 +1,21 @@
-namespace System.Reflection
+namespace System.Reflection;
+
+/// <summary>Contains methods for converting <see cref="T:System.Type" /> objects.</summary>
+public static class IntrospectionExtensions
 {
-	/// <summary>Defines the attributes that can be associated with a parameter. These are defined in CorHdr.h.</summary>
-	[Flags]
-	public enum ParameterAttributes
+	/// <summary>Returns the <see cref="T:System.Reflection.TypeInfo" /> representation of the specified type.</summary>
+	/// <param name="type">The type to convert.</param>
+	/// <returns>The converted object.</returns>
+	public static TypeInfo GetTypeInfo(this Type type)
 	{
-		/// <summary>Specifies that there is no parameter attribute.</summary>
-		None = 0,
-		/// <summary>Specifies that the parameter is an input parameter.</summary>
-		In = 1,
-		/// <summary>Specifies that the parameter is an output parameter.</summary>
-		Out = 2,
-		/// <summary>Specifies that the parameter is a locale identifier (lcid).</summary>
-		Lcid = 4,
-		/// <summary>Specifies that the parameter is a return value.</summary>
-		Retval = 8,
-		/// <summary>Specifies that the parameter is optional.</summary>
-		Optional = 0x10,
-		/// <summary>Specifies that the parameter has a default value.</summary>
-		HasDefault = 0x1000,
-		/// <summary>Specifies that the parameter has field marshaling information.</summary>
-		HasFieldMarshal = 0x2000,
-		/// <summary>Reserved.</summary>
-		Reserved3 = 0x4000,
-		/// <summary>Reserved.</summary>
-		Reserved4 = 0x8000,
-		/// <summary>Specifies that the parameter is reserved.</summary>
-		ReservedMask = 0xF000
+		if (type == null)
+		{
+			throw new ArgumentNullException("type");
+		}
+		if (type is IReflectableType reflectableType)
+		{
+			return reflectableType.GetTypeInfo();
+		}
+		return new TypeDelegator(type);
 	}
-}
-namespace System.Runtime.Remoting.Activation
-{
-}
-namespace System.Reflection.Emit
-{
 }

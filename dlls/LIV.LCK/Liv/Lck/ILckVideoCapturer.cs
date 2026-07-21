@@ -1,20 +1,16 @@
 using System;
 
-namespace Liv.Lck
+namespace Liv.Lck;
+
+internal interface ILckVideoCapturer : IDisposable
 {
-	internal interface ILckVideoCapturer : IDisposable
-	{
-		bool ForceCaptureAllFrames { get; set; }
+	bool ForceCaptureAllFrames { get; set; }
 
-		bool IsCapturing { get; }
+	bool IsCapturing { get; }
 
-		void StartCapturing();
+	void StartCapturing();
 
-		void StopCapturing();
+	void StopCapturing();
 
-		bool HasCurrentFrameBeenCaptured();
-	}
-}
-namespace Liv.Lck
-{
+	bool HasCurrentFrameBeenCaptured();
 }

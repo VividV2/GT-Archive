@@ -1,3 +1,4 @@
-namespace GorillaTag.Cosmetics
+public interface IDebugObject
 {
+	void OnDestroyDebugObject();
 }

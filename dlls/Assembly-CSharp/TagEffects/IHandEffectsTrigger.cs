@@ -1,44 +1,40 @@
 using System;
 using UnityEngine;
 
-namespace BoingKit
+namespace TagEffects;
+
+public interface IHandEffectsTrigger
 {
-}
-namespace TagEffects
-{
-	public interface IHandEffectsTrigger
+	public enum Mode
 	{
-		public enum Mode
-		{
-			HighFive,
-			FistBump,
-			Tag3P,
-			Tag1P,
-			HighFive_And_FistBump
-		}
-
-		Mode EffectMode { get; }
-
-		Transform Transform { get; }
-
-		VRRig Rig { get; }
-
-		bool FingersDown { get; }
-
-		bool FingersUp { get; }
-
-		Vector3 Velocity { get; }
-
-		Action<Mode> OnTrigger { get; set; }
-
-		bool RightHand { get; }
-
-		TagEffectPack CosmeticEffectPack { get; }
-
-		bool Static { get; }
-
-		void OnTriggerEntered(IHandEffectsTrigger other);
-
-		bool InTriggerZone(IHandEffectsTrigger t);
+		HighFive,
+		FistBump,
+		Tag3P,
+		Tag1P,
+		HighFive_And_FistBump
 	}
+
+	Mode EffectMode { get; }
+
+	Transform Transform { get; }
+
+	VRRig Rig { get; }
+
+	bool FingersDown { get; }
+
+	bool FingersUp { get; }
+
+	Vector3 Velocity { get; }
+
+	Action<Mode> OnTrigger { get; set; }
+
+	bool RightHand { get; }
+
+	TagEffectPack CosmeticEffectPack { get; }
+
+	bool Static { get; }
+
+	void OnTriggerEntered(IHandEffectsTrigger other);
+
+	bool InTriggerZone(IHandEffectsTrigger t);
 }

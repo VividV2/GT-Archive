@@ -1,11 +1,19 @@
 namespace System.Reflection;
 
-/// <summary>Represents a delegate that is used to filter a list of members represented in an array of <see cref="T:System.Reflection.MemberInfo" /> objects.</summary>
-/// <param name="m">The <see cref="T:System.Reflection.MemberInfo" /> object to which the filter is applied.</param>
-/// <param name="filterCriteria">An arbitrary object used to filter the list.</param>
-/// <returns>
-///   <see langword="true" /> to include the member in the filtered list; otherwise <see langword="false" />.</returns>
-public delegate bool MemberFilter(MemberInfo m, object filterCriteria);
-namespace System.Reflection.Emit
+/// <summary>Identifies the nature of the code in an executable file.</summary>
+[Flags]
+public enum PortableExecutableKinds
 {
+	/// <summary>The file is not in portable executable (PE) file format.</summary>
+	NotAPortableExecutableImage = 0,
+	/// <summary>The executable contains only Microsoft intermediate language (MSIL), and is therefore neutral with respect to 32-bit or 64-bit platforms.</summary>
+	ILOnly = 1,
+	/// <summary>The executable can be run on a 32-bit platform, or in the 32-bit Windows on Windows (WOW) environment on a 64-bit platform.</summary>
+	Required32Bit = 2,
+	/// <summary>The executable requires a 64-bit platform.</summary>
+	PE32Plus = 4,
+	/// <summary>The executable contains pure unmanaged code.</summary>
+	Unmanaged32Bit = 8,
+	/// <summary>The executable is platform-agnostic but should be run on a 32-bit platform whenever possible.</summary>
+	Preferred32Bit = 0x10
 }

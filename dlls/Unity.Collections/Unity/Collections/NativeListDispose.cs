@@ -1,2 +1,17 @@
-// Could not decompile Unity.Collections.NativeListDispose
-// This type uses unsupported IL or has too many generic parameters.
+using Unity.Collections.LowLevel.Unsafe;
+
+namespace Unity.Collections;
+
+[NativeContainer]
+[GenerateTestsForBurstCompatibility]
+internal struct NativeListDispose
+{
+	[NativeDisableUnsafePtrRestriction]
+	public unsafe UntypedUnsafeList* m_ListData;
+
+	public unsafe void Dispose()
+	{
+		UnsafeList<int>* listData = (UnsafeList<int>*)m_ListData;
+		UnsafeList<int>.Destroy(listData);
+	}
+}

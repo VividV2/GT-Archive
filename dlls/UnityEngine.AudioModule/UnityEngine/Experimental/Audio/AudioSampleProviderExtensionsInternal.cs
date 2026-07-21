@@ -1,10 +1,18 @@
-using UnityEngine.Bindings;
+using System.Runtime.CompilerServices;
 using UnityEngine.Bindings;
 
-namespace Unity.Audio;
+namespace UnityEngine.Experimental.Audio;
 
-[VisibleToOtherModules]
-internal interface IValidatable
+[NativeHeader("Modules/Audio/Public/ScriptBindings/AudioSampleProviderExtensions.bindings.h")]
+[StaticAccessor("AudioSampleProviderExtensionsBindings", StaticAccessorType.DoubleColon)]
+internal static class AudioSampleProviderExtensionsInternal
 {
-	bool Valid { get; }
+	public static float GetSpeed(this AudioSampleProvider provider)
+	{
+		return InternalGetAudioSampleProviderSpeed(provider.id);
+	}
+
+	[MethodImpl(MethodImplOptions.InternalCall)]
+	[NativeMethod(IsThreadSafe = true, ThrowsException = true)]
+	private static extern float InternalGetAudioSampleProviderSpeed(uint providerId);
 }

@@ -1,13 +1,8 @@
-namespace System.Security.Cryptography.Pkcs.Asn1
-{
-	internal struct SigningCertificateAsn
-	{
-		public EssCertId[] Certs;
+namespace System.Security.Cryptography.Asn1;
 
-		[OptionalValue]
-		public PolicyInformation[] Policies;
-	}
-}
-namespace System.Security.Cryptography.Pkcs
+internal abstract class AsnEncodingRuleAttribute : Attribute
 {
+	internal AsnEncodingRuleAttribute()
+	{
+	}
 }

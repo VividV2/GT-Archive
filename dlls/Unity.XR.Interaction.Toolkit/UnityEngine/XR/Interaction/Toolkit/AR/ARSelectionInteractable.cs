@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.XR.Interaction.Toolkit.AR.ARSelectionInteractable
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.XR.Interaction.Toolkit.AR;
+
+[Obsolete("ARSelectionInteractable has been deprecated. To achieve the same results use the interactable's focus state instead.")]
+public class ARSelectionInteractable
+{
+}

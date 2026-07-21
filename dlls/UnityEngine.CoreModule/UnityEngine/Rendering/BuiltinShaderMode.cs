@@ -1,12 +1,8 @@
-namespace UnityEngine
+namespace UnityEngine.Rendering;
+
+public enum BuiltinShaderMode
 {
-}
-namespace UnityEngine.Rendering
-{
-	public enum BuiltinShaderMode
-	{
-		Disabled,
-		UseBuiltin,
-		UseCustom
-	}
+	Disabled,
+	UseBuiltin,
+	UseCustom
 }

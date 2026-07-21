@@ -1,2 +1,10 @@
-// Could not decompile Unity.IO.LowLevel.Unsafe.ReadStatus
-// This type uses unsupported IL or has too many generic parameters.
+namespace Unity.IO.LowLevel.Unsafe;
+
+public enum ReadStatus
+{
+	Complete = 0,
+	InProgress = 1,
+	Failed = 2,
+	Truncated = 4,
+	Canceled = 5
+}

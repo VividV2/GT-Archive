@@ -1,2 +1,16 @@
-// Could not decompile Unity.Jobs.RegisterGenericJobTypeAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using UnityEngine.Scripting.APIUpdating;
+
+namespace Unity.Jobs;
+
+[MovedFrom(true, "Unity.Entities", "Unity.Entities", null)]
+[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+public class RegisterGenericJobTypeAttribute : Attribute
+{
+	public Type ConcreteType;
+
+	public RegisterGenericJobTypeAttribute(Type type)
+	{
+		ConcreteType = type;
+	}
+}

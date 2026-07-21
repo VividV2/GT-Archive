@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.Universal.ComponentUtility
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.Universal;
+
+public static class ComponentUtility
+{
+	public static bool IsUniversalCamera(Camera camera)
+	{
+		return camera.GetComponent<UniversalAdditionalCameraData>() != null;
+	}
+
+	public static bool IsUniversalLight(Light light)
+	{
+		return light.GetComponent<UniversalAdditionalLightData>() != null;
+	}
+}

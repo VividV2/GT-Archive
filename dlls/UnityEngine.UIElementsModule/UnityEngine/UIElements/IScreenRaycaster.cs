@@ -1,7 +1,10 @@
+using System.Collections.Generic;
+
 namespace UnityEngine.UIElements;
 
-public enum LineCap
+internal interface IScreenRaycaster
 {
-	Butt,
-	Round
+	void Update();
+
+	IEnumerable<(Ray ray, Camera camera, bool isInsideCameraRect)> MakeRay(Vector2 mousePosition, int pointerId, int? targetDisplay);
 }

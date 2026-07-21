@@ -1,9 +1,9 @@
-namespace Meta.WitAi.Requests;
+using Meta.WitAi.Configuration;
+using Meta.WitAi.Requests;
 
-public enum WitAudioRequestOption
+namespace Meta.WitAi.Interfaces;
+
+public interface IVoiceServiceRequestProvider
 {
-	None,
-	Speech,
-	Transcribe,
-	Dictation
+	VoiceServiceRequest CreateRequest(WitRuntimeConfiguration requestSettings, WitRequestOptions requestOptions, VoiceServiceRequestEvents requestEvents);
 }

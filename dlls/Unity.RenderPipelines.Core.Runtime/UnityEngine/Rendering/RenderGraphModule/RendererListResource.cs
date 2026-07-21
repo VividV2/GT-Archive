@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.RenderGraphModule.RendererListResource
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.Rendering.RenderGraphModule;
+
+internal struct RendererListResource
+{
+	public RendererListParams desc;
+
+	public RendererList rendererList;
+
+	internal RendererListResource(in RendererListParams desc)
+	{
+		this.desc = desc;
+		rendererList = default(RendererList);
+	}
+}

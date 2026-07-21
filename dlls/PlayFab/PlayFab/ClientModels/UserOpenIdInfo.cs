@@ -1,2 +1,14 @@
-// Could not decompile PlayFab.ClientModels.UserOpenIdInfo
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class UserOpenIdInfo : PlayFabBaseModel
+{
+	public string ConnectionId;
+
+	public string Issuer;
+
+	public string Subject;
+}

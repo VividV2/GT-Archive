@@ -1,2 +1,23 @@
-// Could not decompile Valve.Newtonsoft.Json.Linq.JsonPath.ArrayMultipleIndexFilter
-// This type uses unsupported IL or has too many generic parameters.
+using System.Collections.Generic;
+
+namespace Valve.Newtonsoft.Json.Linq.JsonPath;
+
+internal class ArrayMultipleIndexFilter : PathFilter
+{
+	public List<int> Indexes { get; set; }
+
+	public override IEnumerable<JToken> ExecuteFilter(IEnumerable<JToken> current, bool errorWhenNoMatch)
+	{
+		foreach (JToken t in current)
+		{
+			foreach (int index in Indexes)
+			{
+				JToken tokenIndex = PathFilter.GetTokenIndex(t, errorWhenNoMatch, index);
+				if (tokenIndex != null)
+				{
+					yield return tokenIndex;
+				}
+			}
+		}
+	}
+}

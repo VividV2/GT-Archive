@@ -1,2 +1,14 @@
-// Could not decompile System.Xml.XmlNodeWriterWriteBase64TextArgs
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Xml;
+
+internal class XmlNodeWriterWriteBase64TextArgs
+{
+	internal byte[] TrailBuffer { get; set; }
+
+	internal int TrailCount { get; set; }
+
+	internal byte[] Buffer { get; set; }
+
+	internal int Offset { get; set; }
+
+	internal int Count { get; set; }
+}

@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.Timeline.IgnoreOnPlayableTrackAttribute
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Timeline;
+
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
+internal class IgnoreOnPlayableTrackAttribute : Attribute
+{
+}

@@ -1,2 +1,6 @@
-// Could not decompile GRBossMoonTentacleAttack
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+[Serializable]
+public class GRBossMoonTentacleAttack : GRAbilityAttackSimple
+{
+}

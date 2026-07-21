@@ -1,134 +1,61 @@
 using System;
 using System.Runtime.InteropServices;
-using System;
-using System;
 
-namespace Valve.VR
+namespace Valve.VR;
+
+public struct IVRBlockQueue
 {
-	public enum EChaperoneConfigFile
-	{
-		Live = 1,
-		Temp
-	}
-}
-namespace Valve.VR
-{
-	public struct HmdMatrix44_t
-	{
-		public float m0;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EBlockQueueError _Create(ref ulong pulQueueHandle, IntPtr pchPath, uint unBlockDataSize, uint unBlockHeaderSize, uint unBlockCount);
 
-		public float m1;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EBlockQueueError _Connect(ref ulong pulQueueHandle, IntPtr pchPath);
 
-		public float m2;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EBlockQueueError _Destroy(ulong ulQueueHandle);
 
-		public float m3;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EBlockQueueError _AcquireWriteOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer);
 
-		public float m4;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EBlockQueueError _ReleaseWriteOnlyBlock(ulong ulQueueHandle, ulong ulBlockHandle);
 
-		public float m5;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EBlockQueueError _WaitAndAcquireReadOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer, EBlockQueueReadType eReadType, uint unTimeoutMs);
 
-		public float m6;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EBlockQueueError _AcquireReadOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer, EBlockQueueReadType eReadType);
 
-		public float m7;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EBlockQueueError _ReleaseReadOnlyBlock(ulong ulQueueHandle, ulong ulBlockHandle);
 
-		public float m8;
+	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
+	internal delegate EBlockQueueError _QueueHasReader(ulong ulQueueHandle, ref bool pbHasReaders);
 
-		public float m9;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _Create Create;
 
-		public float m10;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _Connect Connect;
 
-		public float m11;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _Destroy Destroy;
 
-		public float m12;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _AcquireWriteOnlyBlock AcquireWriteOnlyBlock;
 
-		public float m13;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _ReleaseWriteOnlyBlock ReleaseWriteOnlyBlock;
 
-		public float m14;
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _WaitAndAcquireReadOnlyBlock WaitAndAcquireReadOnlyBlock;
 
-		public float m15;
-	}
-}
-namespace Valve.VR
-{
-	public struct IVRBlockQueue
-	{
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EBlockQueueError _Create(ref ulong pulQueueHandle, IntPtr pchPath, uint unBlockDataSize, uint unBlockHeaderSize, uint unBlockCount);
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _AcquireReadOnlyBlock AcquireReadOnlyBlock;
 
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EBlockQueueError _Connect(ref ulong pulQueueHandle, IntPtr pchPath);
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _ReleaseReadOnlyBlock ReleaseReadOnlyBlock;
 
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EBlockQueueError _Destroy(ulong ulQueueHandle);
-
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EBlockQueueError _AcquireWriteOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer);
-
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EBlockQueueError _ReleaseWriteOnlyBlock(ulong ulQueueHandle, ulong ulBlockHandle);
-
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EBlockQueueError _WaitAndAcquireReadOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer, EBlockQueueReadType eReadType, uint unTimeoutMs);
-
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EBlockQueueError _AcquireReadOnlyBlock(ulong ulQueueHandle, ref ulong pulBlockHandle, ref IntPtr ppvBuffer, EBlockQueueReadType eReadType);
-
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EBlockQueueError _ReleaseReadOnlyBlock(ulong ulQueueHandle, ulong ulBlockHandle);
-
-		[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-		internal delegate EBlockQueueError _QueueHasReader(ulong ulQueueHandle, ref bool pbHasReaders);
-
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _Create Create;
-
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _Connect Connect;
-
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _Destroy Destroy;
-
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _AcquireWriteOnlyBlock AcquireWriteOnlyBlock;
-
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _ReleaseWriteOnlyBlock ReleaseWriteOnlyBlock;
-
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _WaitAndAcquireReadOnlyBlock WaitAndAcquireReadOnlyBlock;
-
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _AcquireReadOnlyBlock AcquireReadOnlyBlock;
-
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _ReleaseReadOnlyBlock ReleaseReadOnlyBlock;
-
-		[MarshalAs(UnmanagedType.FunctionPtr)]
-		internal _QueueHasReader QueueHasReader;
-	}
-}
-namespace Valve.VR
-{
-	public struct VRTextureWithPose_t
-	{
-		public IntPtr handle;
-
-		public ETextureType eType;
-
-		public EColorSpace eColorSpace;
-
-		public HmdMatrix34_t mDeviceToAbsoluteTracking;
-	}
-}
-namespace Valve.VR
-{
-	public enum ETrackingResult
-	{
-		Uninitialized = 1,
-		Calibrating_InProgress = 100,
-		Calibrating_OutOfRange = 101,
-		Running_OK = 200,
-		Running_OutOfRange = 201,
-		Fallback_RotationOnly = 300
-	}
+	[MarshalAs(UnmanagedType.FunctionPtr)]
+	internal _QueueHasReader QueueHasReader;
 }

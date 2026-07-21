@@ -1,2 +1,8 @@
-// Could not decompile UnityEngine.InputSystem.XR.Haptics.HapticState
-// This type uses unsupported IL or has too many generic parameters.
+namespace UnityEngine.InputSystem.XR.Haptics;
+
+public struct HapticState(uint samplesQueued, uint samplesAvailable)
+{
+	public uint samplesQueued { get; private set; } = samplesQueued;
+
+	public uint samplesAvailable { get; private set; } = samplesAvailable;
+}

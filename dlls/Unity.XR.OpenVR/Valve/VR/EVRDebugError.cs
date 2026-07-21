@@ -1,11 +1,7 @@
-namespace Valve.VR
+namespace Valve.VR;
+
+public enum EVRDebugError
 {
-	public enum EVRDebugError
-	{
-		Success,
-		BadParameter
-	}
-}
-namespace Valve.VR
-{
+	Success,
+	BadParameter
 }

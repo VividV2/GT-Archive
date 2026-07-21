@@ -1,14 +1,10 @@
-namespace UnityEngine
-{
-}
-namespace UnityEngine.Rendering
-{
-	public struct LightShadowCasterCullingInfo
-	{
-		public RangeInt splitRange;
+namespace UnityEngine.Rendering;
 
-		public BatchCullingProjectionType projectionType;
+public struct LightShadowCasterCullingInfo
+{
+	public RangeInt splitRange;
 
-		public ushort splitExclusionMask;
-	}
+	public BatchCullingProjectionType projectionType;
+
+	public ushort splitExclusionMask;
 }

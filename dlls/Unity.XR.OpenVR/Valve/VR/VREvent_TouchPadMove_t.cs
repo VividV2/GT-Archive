@@ -1,23 +1,19 @@
 using System.Runtime.InteropServices;
 
-namespace Valve.VR
+namespace Valve.VR;
+
+public struct VREvent_TouchPadMove_t
 {
-	public struct VREvent_TouchPadMove_t
-	{
-		[MarshalAs(UnmanagedType.I1)]
-		public bool bFingerDown;
+	[MarshalAs(UnmanagedType.I1)]
+	public bool bFingerDown;
 
-		public float flSecondsFingerDown;
+	public float flSecondsFingerDown;
 
-		public float fValueXFirst;
+	public float fValueXFirst;
 
-		public float fValueYFirst;
+	public float fValueYFirst;
 
-		public float fValueXRaw;
+	public float fValueXRaw;
 
-		public float fValueYRaw;
-	}
-}
-namespace Valve.VR
-{
+	public float fValueYRaw;
 }

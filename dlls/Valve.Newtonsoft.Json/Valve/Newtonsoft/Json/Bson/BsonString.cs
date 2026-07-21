@@ -1,2 +1,14 @@
-// Could not decompile Valve.Newtonsoft.Json.Bson.BsonString
-// This type uses unsupported IL or has too many generic parameters.
+namespace Valve.Newtonsoft.Json.Bson;
+
+internal class BsonString : BsonValue
+{
+	public int ByteCount { get; set; }
+
+	public bool IncludeLength { get; set; }
+
+	public BsonString(object value, bool includeLength)
+		: base(value, BsonType.String)
+	{
+		IncludeLength = includeLength;
+	}
+}

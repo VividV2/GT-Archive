@@ -1,2 +1,6 @@
-// Could not decompile SlingshotTestScenarioBothHolding
-// This type uses unsupported IL or has too many generic parameters.
+public class SlingshotTestScenarioBothHolding : SlingshotTestScenario
+{
+	public TransferrableObject testObject1;
+
+	public TransferrableObject testObject2;
+}

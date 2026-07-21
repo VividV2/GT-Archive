@@ -1,2 +1,13 @@
-// Could not decompile VYaml.Parser.Token
-// This type uses unsupported IL or has too many generic parameters.
+namespace VYaml.Parser;
+
+internal readonly struct Token(TokenType type, ITokenContent? content = null)
+{
+	public readonly TokenType Type = type;
+
+	public readonly ITokenContent? Content = content;
+
+	public override string ToString()
+	{
+		return $"{Type} \"{Content}\"";
+	}
+}

@@ -1,2 +1,13 @@
-// Could not decompile System.Net.HttpRequestCreator
-// This type uses unsupported IL or has too many generic parameters.
+namespace System.Net;
+
+internal class HttpRequestCreator : IWebRequestCreate
+{
+	internal HttpRequestCreator()
+	{
+	}
+
+	public WebRequest Create(Uri uri)
+	{
+		return new HttpWebRequest(uri);
+	}
+}

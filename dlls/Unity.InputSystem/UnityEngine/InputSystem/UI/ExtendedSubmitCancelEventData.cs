@@ -1,2 +1,13 @@
-// Could not decompile UnityEngine.InputSystem.UI.ExtendedSubmitCancelEventData
-// This type uses unsupported IL or has too many generic parameters.
+using UnityEngine.EventSystems;
+
+namespace UnityEngine.InputSystem.UI;
+
+internal class ExtendedSubmitCancelEventData : BaseEventData, INavigationEventData
+{
+	public InputDevice device { get; set; }
+
+	public ExtendedSubmitCancelEventData(EventSystem eventSystem)
+		: base(eventSystem)
+	{
+	}
+}

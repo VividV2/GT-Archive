@@ -1,12 +1,23 @@
+using System;
+using System.Diagnostics;
+
 namespace Sirenix.OdinInspector;
 
-public enum NonDefaultConstructorPreference
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = false)]
+[Conditional("UNITY_EDITOR")]
+[DontApplyToListElements]
+[IncludeMyAttributes]
+[HideInTables]
+public class OnInspectorDisposeAttribute : ShowInInspectorAttribute
 {
-	Exclude,
-	ConstructIdeal,
-	PreferUninitialized,
-	LogWarning
-}
-namespace Sirenix.OdinInspector
-{
+	public string Action;
+
+	public OnInspectorDisposeAttribute()
+	{
+	}
+
+	public OnInspectorDisposeAttribute(string action)
+	{
+		Action = action;
+	}
 }

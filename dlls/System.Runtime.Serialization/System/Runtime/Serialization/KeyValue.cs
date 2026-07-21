@@ -1,45 +1,41 @@
-namespace System.Runtime.Serialization
+namespace System.Runtime.Serialization;
+
+[DataContract(Namespace = "http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+internal struct KeyValue<K, V>
 {
-	[DataContract(Namespace = "http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
-	internal struct KeyValue<K, V>
+	private K key;
+
+	private V value;
+
+	[DataMember(IsRequired = true)]
+	public K Key
 	{
-		private K key;
-
-		private V value;
-
-		[DataMember(IsRequired = true)]
-		public K Key
+		get
 		{
-			get
-			{
-				return key;
-			}
-			set
-			{
-				key = value;
-			}
+			return key;
 		}
-
-		[DataMember(IsRequired = true)]
-		public V Value
+		set
 		{
-			get
-			{
-				return value;
-			}
-			set
-			{
-				this.value = value;
-			}
+			key = value;
 		}
+	}
 
-		internal KeyValue(K key, V value)
+	[DataMember(IsRequired = true)]
+	public V Value
+	{
+		get
 		{
-			this.key = key;
+			return value;
+		}
+		set
+		{
 			this.value = value;
 		}
 	}
-}
-namespace System.Runtime.Serialization
-{
+
+	internal KeyValue(K key, V value)
+	{
+		this.key = key;
+		this.value = value;
+	}
 }

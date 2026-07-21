@@ -1,2 +1,14 @@
-// Could not decompile UnityEngine.Rendering.RenderingLayerMaskParameter
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+using System.Diagnostics;
+
+namespace UnityEngine.Rendering;
+
+[Serializable]
+[DebuggerDisplay("{m_Value} ({m_OverrideState})")]
+public class RenderingLayerMaskParameter : VolumeParameter<RenderingLayerMask>
+{
+	public RenderingLayerMaskParameter(RenderingLayerMask value, bool overrideState = false)
+		: base(value, overrideState)
+	{
+	}
+}

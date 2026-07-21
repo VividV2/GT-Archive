@@ -1,21 +1,12 @@
-using System;
-using System.Security.Permissions;
+namespace System.Security.Cryptography.X509Certificates;
 
-namespace Microsoft.Win32;
-
-[PermissionSet(SecurityAction.LinkDemand, Unrestricted = true)]
-[PermissionSet(SecurityAction.InheritanceDemand, Unrestricted = true)]
-public class TimerElapsedEventArgs : EventArgs
+/// <summary>Specifies which X509 certificates in the chain should be checked for revocation.</summary>
+public enum X509RevocationFlag
 {
-	private IntPtr mytimerId;
-
-	public IntPtr TimerId => mytimerId;
-
-	public TimerElapsedEventArgs(IntPtr timerId)
-	{
-		mytimerId = timerId;
-	}
-}
-namespace System.ComponentModel
-{
+	/// <summary>Only the end certificate is checked for revocation.</summary>
+	EndCertificateOnly,
+	/// <summary>The entire chain of certificates is checked for revocation.</summary>
+	EntireChain,
+	/// <summary>The entire chain, except the root certificate, is checked for revocation.</summary>
+	ExcludeRoot
 }

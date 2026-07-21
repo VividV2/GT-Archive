@@ -1,2 +1,22 @@
-// Could not decompile UnityEngine.Rendering.IShaderVariantSettings
-// This type uses unsupported IL or has too many generic parameters.
+using System;
+
+namespace UnityEngine.Rendering;
+
+[Obsolete("Use GraphicsSettings.GetRenderPipelineSettings<ShaderStrippingSetting>(). #from(23.3)")]
+public interface IShaderVariantSettings
+{
+	ShaderVariantLogLevel shaderVariantLogLevel { get; set; }
+
+	bool exportShaderVariants { get; set; }
+
+	bool stripDebugVariants
+	{
+		get
+		{
+			return false;
+		}
+		set
+		{
+		}
+	}
+}

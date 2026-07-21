@@ -1,6 +1,10 @@
-namespace System.Transactions;
+namespace System;
 
-public interface ITransactionPromoter
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+internal class MonoInternalNoteAttribute : System.MonoTODOAttribute
 {
-	byte[] Promote();
+	public MonoInternalNoteAttribute(string comment)
+		: base(comment)
+	{
+	}
 }

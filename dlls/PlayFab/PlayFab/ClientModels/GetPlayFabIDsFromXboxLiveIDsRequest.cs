@@ -1,9 +1,13 @@
-namespace PlayFab.ClientModels
+using System;
+using System.Collections.Generic;
+using PlayFab.SharedModels;
+
+namespace PlayFab.ClientModels;
+
+[Serializable]
+public class GetPlayFabIDsFromXboxLiveIDsRequest : PlayFabRequestCommon
 {
-}
-namespace PlayFab.ClientModels
-{
-}
-namespace PlayFab.ClientModels
-{
+	public string Sandbox;
+
+	public List<string> XboxLiveAccountIDs;
 }

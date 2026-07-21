@@ -14,6 +14,3 @@ public enum TransferEncoding
 	/// <summary>The data is in 8-bit characters that may represent international characters with a total line length of no longer than 1000 8-bit characters. For more information about this 8-bit MIME transport extension, see IETF RFC 6152.</summary>
 	EightBit
 }
-namespace System.CodeDom
-{
-}

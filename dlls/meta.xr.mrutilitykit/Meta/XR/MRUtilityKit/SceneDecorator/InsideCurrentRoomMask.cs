@@ -1,20 +1,17 @@
+using Meta.XR.Util;
+
 namespace Meta.XR.MRUtilityKit.SceneDecorator;
 
 [Feature(Feature.Scene)]
-public class AnchorDistanceMask : Mask
+public class InsideCurrentRoomMask : Mask
 {
-	public override float SampleMask(Candidate c)
+	public override float SampleMask(Candidate candidate)
 	{
-		return c.anchorDist;
+		return 0f;
 	}
 
 	public override bool Check(Candidate c)
 	{
-		return true;
-	}
-
-	public AnchorDistanceMask()
-	{
-		base..ctor();
+		return MRUK.Instance.GetCurrentRoom().IsPositionInRoom(c.hit.point);
 	}
 }

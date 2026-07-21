@@ -1,14 +1,10 @@
 using System;
 
-namespace Oculus.Interaction
-{
-}
-namespace Oculus.Interaction
-{
-	public interface ISelector
-	{
-		event Action WhenSelected;
+namespace Oculus.Interaction;
 
-		event Action WhenUnselected;
-	}
+public interface ISelector
+{
+	event Action WhenSelected;
+
+	event Action WhenUnselected;
 }
